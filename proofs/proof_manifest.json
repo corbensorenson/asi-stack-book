@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 100,
   "status_counts": {
-    "implemented": 6,
-    "planned": 94
+    "implemented": 8,
+    "planned": 92
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -105,7 +105,7 @@
       "tag": "lean:authority.ceiling.operational_invariant",
       "module": "AsiStackProofs.Authority",
       "formal_target": "Every transition preserves or lowers the active authority ceiling unless a governance grant is present.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 241,
       "module_path": "lean/AsiStackProofs/Authority.lean"
     },
@@ -115,7 +115,7 @@
       "tag": "lean:authority.ceiling.failure_blocks_promotion",
       "module": "AsiStackProofs.Authority",
       "formal_target": "A missing grant blocks execution rather than becoming default authorization.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 242,
       "module_path": "lean/AsiStackProofs/Authority.lean"
     },

@@ -55,7 +55,7 @@
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.Authority",
       "formal_target": "Every transition preserves or lowers the active authority ceiling unless a governance grant is present.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
@@ -65,7 +65,7 @@
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.Authority",
       "formal_target": "A missing grant blocks execution rather than becoming default authorization.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."

@@ -16,7 +16,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The authority_transition_record fixture validates schema/example consistency only; full authority-ceiling, permission-separation, and confused-deputy tests remain unimplemented."
+  - "The authority_transition_record fixture validates schema/example consistency only; full permission-separation and confused-deputy tests remain unimplemented."
+  - "The implemented Authority Lean predicates cover finite-record ceiling preservation and missing-grant denial only; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
-| Test state | `authority_transition_record.valid.json` passes protocol fixture validation; full authority-ceiling, permission-separation, and confused-deputy tests remain planned. |
+| Test state | `authority_transition_record.valid.json` passes protocol fixture validation, and `AsiStackProofs.Authority` builds locally; full permission-separation and confused-deputy tests remain planned. |
 
 ## Drafting guardrail
 
@@ -142,7 +143,7 @@ The smallest useful implementation is an `authority_transition_record` schema pl
 | Test | Purpose | Status |
 |---|---|---|
 | Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; run in this pass |
-| Authority ceiling preservation test | Check that a handoff cannot raise active authority unless a governance grant is present. | planned; not run |
+| Authority ceiling finite-record proof | Check that a valid modeled transition cannot raise active authority unless a governance grant is present. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
 | Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | planned; not run |
 | Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | planned; not run |
 
@@ -150,10 +151,10 @@ The smallest useful implementation is an `authority_transition_record` schema pl
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | planned |
-| `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | planned |
+| `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
+| `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
 
-These proof targets remain planned. The already implemented stack-boundary Lean module covers the narrower external-action handoff predicate introduced in the previous chapter; this chapter's full transition model still needs denial fixtures and formalization.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, and that an over-ceiling execution request with no grant is not authorized by the model. They do not prove tool-wrapper enforcement, confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
 
 ## Source crosswalk
 

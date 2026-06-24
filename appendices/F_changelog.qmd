@@ -56,6 +56,7 @@
 - Implemented `AsiStackProofs.SecurityKernel` for narrow secret-handle authorization and protected-SCIF clearance predicates, then updated the outline and chapter proof statuses without promoting security claims beyond their evidence.
 - Hardened proof-readiness validation so proof triage must stay aligned with the generated proof manifest on tags, chapters, modules, formal targets, and target statuses.
 - Extended proof-readiness validation to require implemented Lean modules to be imported by the package root before proof status can pass the local gate.
+- Implemented `AsiStackProofs.Authority` for narrow authority-ceiling preservation and missing-grant denial predicates, then updated the outline, chapter, proof manifest, triage file, and status report without promoting the chapter claim beyond `argument`.
 
 ## 2026-06-24 - v0.2 manuscript baseline
 
