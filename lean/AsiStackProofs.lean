@@ -9,6 +9,7 @@ import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
+import AsiStackProofs.ProofCarryingContracts
 import AsiStackProofs.ReadinessGates
 import AsiStackProofs.Replacement
 import AsiStackProofs.RuntimeAdapters

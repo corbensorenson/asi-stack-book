@@ -815,20 +815,20 @@
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as a local finite-record Lean predicate requiring theorem references, deterministic fields, and an explicit non-claim boundary before downstream use; it does not resolve external Circle theorem IDs."
     },
     {
       "tag": "lean:circle_contracts.consumer_gate.failure_blocks_promotion",
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as a local finite-record Lean consumer-gate predicate requiring workload, baseline, metric, and evidence artifacts beyond contract readiness before downstream promotion."
     },
     {
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",

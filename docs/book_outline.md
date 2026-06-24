@@ -2314,6 +2314,7 @@ Draft deliverables:
 
 - A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack exists yet.
+- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming external Circle theorem replay.
 - Planned Codex test: Contract schema validation test
 - Planned Codex test: Theorem-id resolution test
 - Planned Codex test: Non-claim preservation test
@@ -2323,8 +2324,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | planned |
-| `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | planned |
+| `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | implemented |
+| `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | implemented |
 
 ### Coil Attention, Cyclic Memory, and Recurrence Contracts
 
