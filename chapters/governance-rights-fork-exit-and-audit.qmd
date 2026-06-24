@@ -77,6 +77,23 @@ Each right is represented as a capability with an owner, scope, artifact require
 
 SCFs later depend on this chapter: capability replacement must preserve protected governance rights across implementation changes.
 
+```{mermaid}
+flowchart LR
+  Transition["Governance transition"] --> Right["Governance right record"]
+  Right --> Audit["Audit artifacts"]
+  Right --> Exit["Exit and export path"]
+  Right --> Fork["Fork boundary"]
+  Right --> Dissent["Dissent channel"]
+  Audit --> Check["Rights preservation check"]
+  Exit --> Check
+  Fork --> Check
+  Dissent --> Check
+  Check -->|preserved| Promote["Transition may proceed"]
+  Check -->|missing or unsafe| Block["Block, redact with reason, or escalate"]
+  Promote --> Evidence["Evidence record"]
+  Block --> Evidence
+```
+
 ## Interfaces
 
 The interface is a Governance Right Record.

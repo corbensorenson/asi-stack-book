@@ -76,6 +76,22 @@ The record classifies the conflict by value type, stakeholder, reversibility, st
 
 The tribunal path is not automatic consensus. It is a way to preserve disagreement, expose unsupported premises, and decide whether the system has enough authority to act.
 
+```{mermaid}
+flowchart LR
+  Action["Proposed action"] --> Conflict["Value conflict record"]
+  Conflict --> Axes["Value axes and stakeholders"]
+  Conflict --> Stakes["Stakes and reversibility"]
+  Conflict --> EvidenceNeed["Evidence requirement"]
+  Axes --> Route["Review route"]
+  Stakes --> Route
+  EvidenceNeed --> Route
+  Route -->|low stakes or reversible| Bounded["Bounded decision"]
+  Route -->|high stakes or unresolved| Review["Tribunal or human review"]
+  Review --> Bounded
+  Bounded --> Residual["Residual uncertainty retained"]
+  Residual --> Evidence["Evidence ledger"]
+```
+
 ## Interfaces
 
 The interface is a Value Conflict Record.

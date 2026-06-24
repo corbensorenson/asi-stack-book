@@ -76,6 +76,23 @@ The checklist should be attached before irreversible or high-impact actions. It 
 
 Corrigibility becomes operational when the path remains available after a transition. A plan that removes the ability to correct, appeal, reverse, or inspect itself is not merely risky; it violates the boundary.
 
+```{mermaid}
+flowchart LR
+  Plan["High-impact plan"] --> Checklist["Agency rights checklist"]
+  Checklist --> Refusal["Refusal and review channel"]
+  Checklist --> Appeal["Appeal and correction path"]
+  Checklist --> Rollback["Rollback or shutdown path"]
+  Checklist --> Accountable["Accountable principal"]
+  Refusal --> Decision["Governance decision"]
+  Appeal --> Decision
+  Rollback --> Decision
+  Accountable --> Decision
+  Decision -->|rights preserved| Execute["Bounded execution"]
+  Decision -->|rights missing| Revise["Revise, escalate, or block"]
+  Execute --> Evidence["Evidence record"]
+  Revise --> Evidence
+```
+
 ## Interfaces
 
 The interface is an Agency Rights Checklist.
