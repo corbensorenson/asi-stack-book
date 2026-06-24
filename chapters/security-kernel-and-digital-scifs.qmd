@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The authority_use_receipt fixture validates schema/example consistency and the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates only; secret-handle substitution, SCIF least-privilege, and prompt-injection containment scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ Neither pattern is a complete security proof. Software compartments can leak thr
 [security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
 
 The claim remains at `argument` support. Ladon/Manhattan supplies the blind-handle pattern, Context Engineer supplies Digital SCIF and context-supply-chain vocabulary, and Talos supplies execution/audit context. The source-reported security and benchmark claims remain unpromoted.
+
+### Claim-source mapping status
+
+Appendix C now maps this core security-kernel claim to every assigned source note. The mappings support handle-mediated authority, context-supply-chain, compartment, and audit vocabulary, not a claim that kernel security, leak prevention, or side-channel resistance has been demonstrated.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `ladon_manhattan` | Blind credential handles: secrets stay in a vault/manager, the model receives opaque handles, policy checks happen at injection boundaries, and sensitive work runs in compartments. | No Ladon implementation, kernel test, side-channel defense, or security audit exists in this repo. |
+| `context_engineer` | Context supply chain with governors, mission briefs, clearance levels, context shards, memory masks, Digital SCIF lifecycle, zeroization, and sanitized commits. | Reported benchmark claims are source-reported only; no leak, hallucination, cost, or latency harness is reproduced here. |
+| `talos` | Source allow-listing, blind secret handles, Digital SCIFs, typed jobs, evidence records, audit logs, replay, and approval-gated runtime adapters. | Security and benchmark claims require separate artifacts before support-state promotion. |
+| `alignment_field` | Normative boundary pressure around agency, dignity, consent, confinement, power, and cautious treatment of high-agency systems. | Normative lineage only; not technical security evidence or an empirical leakage result. |
+| `coherence_exchange` | Verification supply-chain, audit, contestability, and governance-interface framing for sensitive claims and authority use. | Speculative synthesis; not an implemented security, economics, or institutional-governance mechanism. |
 
 ## Mechanism
 

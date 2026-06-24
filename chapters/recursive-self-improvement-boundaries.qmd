@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The self_improvement_transition fixture validates schema/example consistency only; protected-invariant, evaluator-independence, and rollback scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -67,6 +67,23 @@ The boundary is therefore not "never self-improve." It is "self-improve only thr
 [recursive-self-improvement-boundaries.core, label: Design rationale, support: argument] Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
 
 The claim remains at `argument` support. SCF, Benchmaxxing, and RMI provide the bounded replacement and ratchet vocabulary; the Field of God AI Constitution provides protected-invariant pressure; Theseus supplies a source-reported self-evolution lane and architecture gate that were not rerun in this repo.
+
+### Claim-source mapping status
+
+Appendix C now maps this core recursive-self-improvement claim to every assigned source note. The mappings support bounded self-improvement as an evidence-gated transition over fields, gates, ledgers, protected invariants, and rollback paths, not a claim that autonomous improvement has succeeded or is safe.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `scf` | Stable field boundaries, evaluator policy, authority ceilings, lifecycle states, qualification, route validation, recovery, and governance controls for bounded self-improvement. | Does not prove production self-improvement safety, actual rollback, or resistance to evaluator capture. |
+| `benchmaxxing` | Evidence gates through benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, regression floors, residual ledgers, and architecture-change discipline. | No benchmark run, benchmark mutation, or empirical improvement result was produced in this repo. |
+| `rmi` | Modular improvement loops, residual escrow, specialist lifecycle, critical-failure vetoes, regression preservation, and harder frontier selection. | Conceptual systems architecture only; no independent prototype, benchmark run, or deployed ASI behavior is proven. |
+| `alignment_field` | Protected normative pressure around agency, dignity, corrigibility, value conflict, and moral-status caution that self-improvement must not erase. | Philosophical and heuristic lineage only; not empirical proof of consciousness, moral status, or alignment. |
+| `viea` | Durable artifacts, verification ledgers, residuals, feedback, regression coverage, and the rule that repeated capabilities become governed tools rather than invisible behavior drift. | Architecture proposal only; no completed deployment or runtime feedback loop is demonstrated here. |
+| `talos` | Typed work, contract locks, audit logs, replay, delivery evidence, approval gates, residuals, and promotion controls for self-improvement work. | Does not prove autonomous source modification, runtime enforcement, or security behavior. |
+| `moecot` | Compact orchestration, specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, residual tracking, and promotion blockers as runtime-reference context. | Source-reported runtime and benchmark claims remain unverified until artifacts are inspected or reproduced. |
+| `field_of_god_ai_constitution` | Self-improvement freezes, no self-authorization of sovereignty, least sufficient power, auditability, reversibility, consent, and protected constitutional constraints. | Constitutional specification only; no policy engine, red-team suite, or runtime self-improvement evaluation is claimed. |
+| `theseus_self_evolution_system` | Evidence-first self-evolution lane with an intervention ladder, self-evolution governor, guarded teacher edits, ATTD repo-health states, branch isolation, checks, outcome ledgers, and loop closure. | No Theseus scripts, ATTD reports, teacher runner, branch flow, or dashboard endpoints were executed from this repo. |
+| `theseus_architecture_gate` | Pre-training controls checking ratchet completion, safety ledgers, regression suites, residual escrow, procedural tools, routing memory, lifecycle governance, and external-inference zero. | The reported green gate snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON here. |
 
 ## Mechanism
 

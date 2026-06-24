@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The replacement_transaction fixture validates schema/example consistency only; regression preservation and rollback dry-run tests remain unimplemented."
   - "The implemented Replacement Lean predicates cover finite commit records only; they do not prove deployed replacement execution, monitor-window behavior, or rollback execution."
   - "No support-state promotion is implied by this drafting pass."
@@ -64,6 +64,19 @@ Replacement needs transaction semantics because partial success can be worse tha
 [capability-replacement-and-rollback.core, label: Design rationale, support: argument] Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
 
 The claim remains at `argument` support. SCF supplies field identity, RMI and Benchmaxxing supply regression/residual ratchet discipline, Cognitive Loop Closure supplies tool lifecycle pressure, and Talos supplies audit/replay context. None of these sources is a reproduced replacement run in this repo.
+
+### Claim-source mapping status
+
+Appendix C now maps this core replacement claim to every assigned source note. The mappings support replacement transaction vocabulary and gate discipline, not a claim that any real replacement was executed, monitored, rolled back, or benchmarked in this repository.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `scf` | Field identity, implementation artifacts, qualification, state migration, lifecycle, evaluator-integrity, and rollback vocabulary that replacement must preserve. | Does not prove a real replacement has executed, recovered, or resisted evaluator capture. |
+| `rmi` | Frontier movement with regression floors, residual escrow, specialist lifecycle discipline, critical-failure vetoes, and route/arm retirement decisions. | Conceptual framework only; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this note. |
+| `benchmaxxing` | Benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, regression promotion, residual ledgers, and architecture-change discipline. | No benchmark harness, mutation, holdout, or empirical run was performed in this repo. |
+| `cognitive_loop_closure` | Verified tool/procedure lifecycle, loop detection, tool cards, runtime monitoring, revision, retirement, and risk-tiered procedural memory. | No local loop-detection, tool synthesis, or verification harness was executed here. |
+| `talos` | Auditable replacement work through typed jobs, contract locks, adjudication, delivery evidence, feedback, replay, residuals, and controlled promotion. | Does not prove real replacement execution, approval behavior, or runtime enforcement. |
+| `moecot` | Readiness gates, control-plane ledgers, replay, promotion blockers, and residual tracking as runtime-reference context for replacement decisions. | Source-reported runtime context only until code, logs, release artifacts, or benchmark records are inspected or reproduced. |
 
 ## Mechanism
 

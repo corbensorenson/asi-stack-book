@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The stable_capability_field fixture validates schema/example consistency only; route validity and rollback readiness tests remain unimplemented."
   - "The implemented StableCapabilityFields Lean predicates cover finite replacement records only; they do not prove deployed route validation, evaluator integrity, or rollback readiness."
   - "No support-state promotion is implied by this drafting pass."
@@ -63,6 +63,18 @@ SCF makes the upgrade question testable: does this candidate satisfy the same fi
 [stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
 
 The claim remains at `argument` support. The SCF source supplies the field/implementation/evaluator vocabulary; VIEA and Talos supply artifact and execution context; Ladon/Manhattan supplies authority-handle pressure. The chapter does not treat the source's reported executable fragments as locally verified.
+
+### Claim-source mapping status
+
+Appendix C now maps this core SCF claim to every assigned source note. The mappings support the governed-boundary vocabulary for fields, interfaces, authority ceilings, qualification, evidence, routing, and rollback, not a claim that deployed route validation or evaluator integrity has been proven.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `scf` | Stable field identity, versioned contracts, content-bound implementation artifacts, qualification claims, evaluator policy, route validation, lifecycle states, authority ceilings, and recovery paths. | Does not prove production safety, global alignment, strategic-deception resistance, or deployed rollback behavior. |
+| `viea` | Durable artifacts, support states, residuals, regression coverage, routing, verification ledgers, and intent-to-execution handoff boundaries around capability use. | Architecture proposal only; no completed VIEA deployment or benchmark/runtime result is proven here. |
+| `talos` | Typed jobs, deterministic control planes, audit logs, replay, approvals, residual feedback, and promotion controls for capability invocation. | Design source only; execution-security and benchmark behavior are not reproduced in this repo. |
+| `ladon_manhattan` | Authority-handle pressure for capabilities touching secrets or privileged actions: constrained handles, policy boundaries, compartments, and auditable injection points. | Security architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed. |
+| `moecot` | Compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, and promotion blockers around routed capabilities. | Connector-readable implementation-reference context only; source-reported runtime and benchmark claims are not reproduced or inspected here. |
 
 ## Mechanism
 

@@ -1234,13 +1234,40 @@
               "tag": "lean:scf.field_identity.operational_invariant",
               "module": "AsiStackProofs.StableCapabilityFields",
               "target": "An implementation can replace another only if it satisfies the field qualification predicate.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:scf.field_identity.failure_blocks_promotion",
               "module": "AsiStackProofs.StableCapabilityFields",
               "target": "A replacement that expands authority without a governance grant is rejected.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "scf",
+              "mapped_support": "Defines stable field identity, versioned contracts, content-bound implementation artifacts, qualification claims, evaluator policy, route validation, lifecycle states, authority ceilings, and recovery paths.",
+              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or deployed rollback behavior."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports durable artifacts, support states, residuals, regression coverage, routing, verification ledgers, and intent-to-execution handoff boundaries around capability use.",
+              "limits": "Architecture proposal only; no completed VIEA deployment or benchmark/runtime result is proven here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports typed jobs, deterministic control planes, audit logs, replay, approvals, residual feedback, and promotion controls for capability invocation.",
+              "limits": "Design source only; execution-security and benchmark behavior are not reproduced in this repo."
+            },
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supports authority-handle pressure: capabilities that touch secrets or privileged actions need constrained handles, policy boundaries, compartments, and auditable injection points.",
+              "limits": "Security architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Provides implementation-reference context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, and promotion blockers around routed capabilities.",
+              "limits": "Connector-readable implementation-reference context only; source-reported runtime and benchmark claims are not reproduced or inspected here."
             }
           ]
         },
@@ -1309,13 +1336,45 @@
               "tag": "lean:replacement.transaction.operational_invariant",
               "module": "AsiStackProofs.Replacement",
               "target": "A replacement commit requires qualification evidence and rollback metadata.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:replacement.transaction.failure_blocks_promotion",
               "module": "AsiStackProofs.Replacement",
               "target": "A failed regression blocks promotion of the replacement.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "scf",
+              "mapped_support": "Supplies the field identity, implementation artifact, qualification, state migration, lifecycle, evaluator-integrity, and rollback vocabulary that a replacement transaction must preserve.",
+              "limits": "Does not prove a real replacement has executed, recovered, or resisted evaluator capture."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports moving a frontier while preserving regression floors, residual escrow, specialist lifecycle discipline, critical-failure vetoes, and route/arm retirement decisions.",
+              "limits": "Conceptual framework only; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this note."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, regression promotion, residual ledgers, and architecture-change discipline.",
+              "limits": "No benchmark harness, mutation, holdout, or empirical run was performed in this repo."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports verified tool/procedure lifecycle, loop detection, tool cards, runtime monitoring, revision, retirement, and risk-tiered procedural memory.",
+              "limits": "No local loop-detection, tool synthesis, or verification harness was executed here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports replacement as auditable work: typed jobs, contract locks, adjudication, delivery evidence, feedback, replay, residuals, and controlled promotion.",
+              "limits": "Does not prove real replacement execution, approval behavior, or runtime enforcement."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports readiness gates, control-plane ledgers, replay, promotion blockers, and residual tracking as runtime-reference context for replacement decisions.",
+              "limits": "Source-reported runtime context only until code, logs, release artifacts, or benchmark records are inspected or reproduced."
             }
           ]
         },
@@ -1381,13 +1440,40 @@
               "tag": "lean:security.scif.operational_invariant",
               "module": "AsiStackProofs.SecurityKernel",
               "target": "A secret handle can be substituted only inside an authorized execution boundary.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:security.scif.failure_blocks_promotion",
               "module": "AsiStackProofs.SecurityKernel",
               "target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supplies the blind credential handle pattern: secrets stay in a vault/manager, the model receives opaque handles, policy checks happen at injection boundaries, and sensitive work runs in compartments.",
+              "limits": "No Ladon implementation, kernel test, side-channel defense, or security audit exists in this repo."
+            },
+            {
+              "source_id": "context_engineer",
+              "mapped_support": "Supports context as a supply chain with governors, mission briefs, clearance levels, context shards, memory masks, Digital SCIF lifecycle, zeroization, and sanitized commits.",
+              "limits": "Reported benchmark claims are source-reported only; no leak, hallucination, cost, or latency harness is reproduced here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports source allow-listing, blind secret handles, Digital SCIFs, typed jobs, evidence records, audit logs, replay, and approval-gated runtime adapters.",
+              "limits": "Security and benchmark claims require separate artifacts before support-state promotion."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supplies normative boundary pressure around agency, dignity, consent, confinement, power, and cautious treatment of high-agency systems.",
+              "limits": "Normative lineage only; not technical security evidence or an empirical leakage result."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports verification supply-chain, audit, contestability, and governance-interface framing for sensitive claims and authority use.",
+              "limits": "Speculative synthesis; not an implemented security, economics, or institutional-governance mechanism."
             }
           ]
         },
@@ -1471,6 +1557,58 @@
               "module": "AsiStackProofs.SelfImprovement",
               "target": "A proposal evaluated only by the component being replaced cannot be promoted.",
               "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "scf",
+              "mapped_support": "Supplies stable field boundaries, evaluator policy, authority ceilings, lifecycle states, qualification, route validation, recovery, and governance controls for bounded self-improvement.",
+              "limits": "Does not prove production self-improvement safety, actual rollback, or resistance to evaluator capture."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports evidence gates through benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, regression floors, residual ledgers, and architecture-change discipline.",
+              "limits": "No benchmark run, benchmark mutation, or empirical improvement result was produced in this repo."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports modular improvement loops, residual escrow, specialist lifecycle, critical-failure vetoes, regression preservation, and harder frontier selection.",
+              "limits": "Conceptual systems architecture only; no independent prototype, benchmark run, or deployed ASI behavior is proven."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supplies protected normative pressure around agency, dignity, corrigibility, value conflict, and moral-status caution that self-improvement must not erase.",
+              "limits": "Philosophical and heuristic lineage only; not empirical proof of consciousness, moral status, or alignment."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports durable artifacts, verification ledgers, residuals, feedback, regression coverage, and the rule that repeated capabilities become governed tools rather than invisible behavior drift.",
+              "limits": "Architecture proposal only; no completed deployment or runtime feedback loop is demonstrated here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports typed work, contract locks, audit logs, replay, delivery evidence, approval gates, residuals, and promotion controls for self-improvement work.",
+              "limits": "Does not prove autonomous source modification, runtime enforcement, or security behavior."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports compact orchestration, specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, residual tracking, and promotion blockers as runtime-reference context.",
+              "limits": "Source-reported runtime and benchmark claims remain unverified until artifacts are inspected or reproduced."
+            },
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Supports self-improvement freezes, no self-authorization of sovereignty, least sufficient power, auditability, reversibility, consent, and protected constitutional constraints.",
+              "limits": "Constitutional specification only; no policy engine, red-team suite, or runtime self-improvement evaluation is claimed."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports self-evolution as an evidence-first lane with an intervention ladder, self-evolution governor, guarded teacher edits, ATTD repo-health states, branch isolation, checks, outcome ledgers, and loop closure.",
+              "limits": "No Theseus scripts, ATTD reports, teacher runner, branch flow, or dashboard endpoints were executed from this repo."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports readiness gates as pre-training controls that check ratchet completion, safety ledgers, regression suites, residual escrow, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
+              "limits": "The reported green gate snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON here."
             }
           ]
         }
