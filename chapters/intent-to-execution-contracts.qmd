@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`; supporting: `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`; raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
-| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
+| Test state | `intent_execution_trace.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; behavioral execution, replay, and artifact-satisfaction tests remain planned. |
 
 ## Drafting guardrail
 
@@ -153,10 +153,10 @@ Only the fixture-shape check is implemented. The remaining tests require either 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | planned |
-| `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | planned |
+| `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | implemented |
+| `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | implemented |
 
-These proof hooks remain planned. The current schema is the executable boundary today; constraint preservation and approval-blocking still need precise predicates or a replayable execution harness.
+These Lean hooks are implemented as finite-record predicates over execution compilation and approval reviews. They prove only the record-level gates: a compiled job preserves declared parent constraints when the review says preservation is valid, and a job missing required approval cannot transition to running. They do not prove a deployed runtime, trace replay, tool-effect enforcement, artifact satisfaction, or end-to-end execution correctness.
 
 ## Source crosswalk
 

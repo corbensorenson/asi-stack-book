@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 102,
   "status_counts": {
-    "implemented": 68,
-    "planned": 34
+    "implemented": 76,
+    "planned": 26
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -346,7 +346,7 @@
       "tag": "lean:intent_execution.contracts.operational_invariant",
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "A compiled execution job preserves the parent contract constraints.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 892,
       "module_path": "lean/AsiStackProofs/IntentToExecution.lean"
     },
@@ -356,7 +356,7 @@
       "tag": "lean:intent_execution.contracts.failure_blocks_promotion",
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "An execution job without required approval cannot transition to running.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 893,
       "module_path": "lean/AsiStackProofs/IntentToExecution.lean"
     },
@@ -366,7 +366,7 @@
       "tag": "lean:command.semantic_interface.operational_invariant",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A valid command contract contains objective, constraints, output contract, verification, and failure behavior.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 945,
       "module_path": "lean/AsiStackProofs/CommandContracts.lean"
     },
@@ -376,7 +376,7 @@
       "tag": "lean:command.semantic_interface.failure_blocks_promotion",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 946,
       "module_path": "lean/AsiStackProofs/CommandContracts.lean"
     },
@@ -426,7 +426,7 @@
       "tag": "lean:cognitive_compilation.ir.operational_invariant",
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A compiled artifact preserves all required IR obligations.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1109,
       "module_path": "lean/AsiStackProofs/CognitiveCompilation.lean"
     },
@@ -436,7 +436,7 @@
       "tag": "lean:cognitive_compilation.ir.failure_blocks_promotion",
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1110,
       "module_path": "lean/AsiStackProofs/CognitiveCompilation.lean"
     },
@@ -506,7 +506,7 @@
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A context packet admitted for use may still be marked inadequate for a target claim.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1330,
       "module_path": "lean/AsiStackProofs/VerificationBandwidth.lean"
     },
@@ -516,7 +516,7 @@
       "tag": "lean:verification_bandwidth.adequacy.failure_blocks_promotion",
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A high-risk claim with inadequate context cannot receive a verified support label.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 1331,
       "module_path": "lean/AsiStackProofs/VerificationBandwidth.lean"
     },

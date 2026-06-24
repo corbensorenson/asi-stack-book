@@ -295,40 +295,40 @@
       "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "A compiled execution job preserves the parent contract constraints.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite execution-compilation predicate: declared parent constraints are preserved by a valid compilation review."
     },
     {
       "tag": "lean:intent_execution.contracts.failure_blocks_promotion",
       "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "An execution job without required approval cannot transition to running.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite approval-review predicate: missing required approval blocks transition to running."
     },
     {
       "tag": "lean:command.semantic_interface.operational_invariant",
       "chapter_id": "command-contracts-and-semantic-interfaces",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A valid command contract contains objective, constraints, output contract, verification, and failure behavior.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CommandContracts as a finite required-field predicate: command contracts carry objective, constraints, output, verification, and failure behavior fields."
     },
     {
       "tag": "lean:command.semantic_interface.failure_blocks_promotion",
       "chapter_id": "command-contracts-and-semantic-interfaces",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CommandContracts as a finite precedence predicate: hidden or conflicting instructions cannot be accepted as overriding explicit constraints."
     },
     {
       "tag": "lean:planning.control_layer.operational_invariant",
@@ -375,20 +375,20 @@
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A compiled artifact preserves all required IR obligations.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CognitiveCompilation as a finite compiled-artifact predicate: required IR obligations are preserved by a valid compilation review."
     },
     {
       "tag": "lean:cognitive_compilation.ir.failure_blocks_promotion",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CognitiveCompilation as a finite repair-acceptance predicate: accepted repairs that invalidate existing obligations require ledger updates."
     },
     {
       "tag": "lean:vcm.abi.operational_invariant",
@@ -455,20 +455,20 @@
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A context packet admitted for use may still be marked inadequate for a target claim.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite adequacy-state witness: context admission and verification adequacy are distinct states."
     },
     {
       "tag": "lean:verification_bandwidth.adequacy.failure_blocks_promotion",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A high-risk claim with inadequate context cannot receive a verified support label.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite claim-support predicate: high-risk claims with inadequate context cannot receive verified support."
     },
     {
       "tag": "lean:claims.ledger.operational_invariant",

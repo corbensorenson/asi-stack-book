@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`; raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
-| Test state | Context adequacy fixture validation implemented; contradiction-rate tests remain planned. |
+| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; contradiction-rate, distractor-resistance, and escalation-harness tests remain planned. |
 
 ## Drafting guardrail
 
@@ -144,10 +144,10 @@ Only the fixture-shape check is implemented. The other tests require a synthetic
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | planned |
-| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | planned |
+| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | implemented |
+| `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | implemented |
 
-These proof hooks remain planned. Adequacy/admission separation is close to a finite-state invariant; the stronger verification-bandwidth claims need either formal resource assumptions or empirical contradiction tests.
+These Lean hooks are implemented as finite-record predicates over context-packet and claim-support reviews. They prove only the record-level gates: admission and adequacy are distinct states, and a high-risk claim with inadequate context cannot receive a verified support label. They do not prove a model's internal verification bandwidth, contradiction-rate performance, distractor resistance, or escalation quality.
 
 ## Source crosswalk
 

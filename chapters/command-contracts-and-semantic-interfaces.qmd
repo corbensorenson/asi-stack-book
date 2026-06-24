@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `software_magic_grimoire`, `viea`; supporting: `genesiscode`, `cognitive_compilation`, `talos` |
 | Source loading state | source notes: `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`; raw cache: `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
-| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
+| Test state | `command_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.CommandContracts` implements finite required-field and explicit-constraint precedence gates; behavioral execution, prompt-injection, and dispatch-blocking tests remain planned. |
 
 ## Drafting guardrail
 
@@ -156,10 +156,10 @@ Only the fixture-shape check is implemented. The override and dispatch-blocking 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | planned |
-| `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | planned |
+| `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
+| `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
 
-These proof targets remain planned. The first hook is close to schema-level validation; the second needs a formal precedence rule for explicit constraints versus contextual instructions.
+These Lean hooks are implemented as finite-record predicates over command field and constraint-override reviews. They prove only the record-level gates: the required interface fields are present, and a hidden or conflicting instruction cannot override an explicit constraint when the precedence review applies. They do not prove prompt-injection resistance, parser completeness, semantic extraction quality, or behavioral dispatch blocking.
 
 ## Source crosswalk
 

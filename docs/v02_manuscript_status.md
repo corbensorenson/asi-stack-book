@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 51 chapter files, 82,952 chapter words, averaging 1,627 words per chapter.
+Current scale: 51 chapter files, 83,136 chapter words, averaging 1,630 words per chapter.
 
 ## Completed in v0.2
 
@@ -30,9 +30,13 @@ Current scale: 51 chapter files, 82,952 chapter words, averaging 1,627 words per
 - The recursive-self-improvement Lean proof targets are implemented in `AsiStackProofs.SelfImprovement` as narrow finite-record predicates for protected-invariant preservation and sole-self-evaluation promotion blocking.
 - The planning-control Lean proof targets are implemented in `AsiStackProofs.Planning` as narrow finite-record predicates for authority inheritance and unsatisfied-constraint dispatch blocking.
 - The PlanForge DAG Lean proof targets are implemented in `AsiStackProofs.PlanForge` as narrow finite-record predicates for indexed dependency ordering and failed-quality fallback to escalation or residual.
+- The intent-to-execution Lean proof targets are implemented in `AsiStackProofs.IntentToExecution` as narrow finite-record predicates for parent-constraint preservation and missing-approval running blocks.
+- The command-contract Lean proof targets are implemented in `AsiStackProofs.CommandContracts` as narrow finite-record predicates for required interface fields and explicit-constraint precedence.
+- The cognitive-compilation Lean proof targets are implemented in `AsiStackProofs.CognitiveCompilation` as narrow finite-record predicates for IR-obligation preservation and repair-ledger update requirements.
 - The Virtual Context ABI Lean proof targets are implemented in `AsiStackProofs.VirtualContextABI` as narrow finite-record predicates for snapshot-bound resolution and mandatory-miss typed faults.
 - The context-certificate Lean proof targets are implemented in `AsiStackProofs.ContextCertificates` as narrow finite-record predicates for derived-cell certificate completeness and source-authority non-escalation.
 - The context-transaction Lean proof targets are implemented in `AsiStackProofs.ContextTransactions` as narrow finite-record predicates for committed-event snapshot reads and taint propagation without declassification.
+- The verification-bandwidth Lean proof targets are implemented in `AsiStackProofs.VerificationBandwidth` as narrow finite-record predicates for adequacy/admission separation and inadequate-context support blocking.
 - The claim-ledger Lean proof targets are implemented in `AsiStackProofs.ClaimLedger` as narrow finite-record predicates for prior evidence/history preservation and open-contradiction promotion blocking.
 - The typed-job Lean proof targets are implemented in `AsiStackProofs.TypedJobs` as narrow finite-record predicates for declared lifecycle transitions and approval-required execution blocking.
 - The artifact-graph Lean proof targets are implemented in `AsiStackProofs.ArtifactGraph` as narrow finite-record predicates for produced-artifact provenance references and missing-provenance promotion blocking.
@@ -62,7 +66,7 @@ Current scale: 51 chapter files, 82,952 chapter words, averaging 1,627 words per
 - The compactness/compression/semantic-resource chapters now distinguish compact generative records, compression receipts, compressed artifact records, semantic node records, and resource budget fixtures from unimplemented codecs, utility probes, grounding benchmarks, load simulations, scheduler runs, and non-record-level Lean obligations.
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, model-quality evaluations, and non-record-level simulation proof claims.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
-- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 68 are implemented formal-invariant Lean candidates, and 34 remain planned across schema, process, and research routes.
+- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 76 are implemented formal-invariant Lean candidates, and 26 remain planned across schema, process, and research routes.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 377 assigned source/chapter pairs have source notes, and 273 of those pairs are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are chapter-listing and exact claim-to-mechanism mapping work, not support-state promotions.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
@@ -73,7 +77,7 @@ Current scale: 51 chapter files, 82,952 chapter words, averaging 1,627 words per
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-note chapter-listing gaps, source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
-- Some Lean proof targets remain planned or triaged as schema/process/research targets; 68 of 102 proof targets are currently marked implemented.
+- Some Lean proof targets remain planned or triaged as schema/process/research targets; 76 of 102 proof targets are currently marked implemented.
 - Artifact-by-artifact audits for the remaining planned proof targets still need to identify the next schema, policy-model, research, or Lean artifact for each target.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized, including the new fast-generation and decoding-substrate queue.

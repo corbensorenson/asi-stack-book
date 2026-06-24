@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Source loading state | source notes: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
+| Test state | `semantic_atom.valid.json` passes protocol fixture validation; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; source-plan parsing, target lowering, localized repair, and artifact validators remain planned. |
 
 ## Drafting guardrail
 
@@ -148,10 +148,10 @@ Only the fixture-shape check is implemented. The remaining tests require a sourc
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | planned |
-| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | planned |
+| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
 
-These proof targets remain planned. Obligation preservation may become mechanizable once the IR has a transition relation; repair acceptance likely needs both schema checks and artifact-level validators.
+These Lean hooks are implemented as finite-record predicates over compiled-artifact and repair-acceptance reviews. They prove only the record-level gates: required IR obligations are preserved when a valid compilation review says so, and a repair that invalidates an existing obligation cannot be accepted without a ledger update. They do not prove source-plan parsing, target lowering, localized repair performance, compiler correctness, or artifact-level validator coverage.
 
 ## Source crosswalk
 

@@ -3,6 +3,8 @@ import AsiStackProofs.Authority
 import AsiStackProofs.ArtifactCompression
 import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.ClaimLedger
+import AsiStackProofs.CognitiveCompilation
+import AsiStackProofs.CommandContracts
 import AsiStackProofs.CompactGenerativeSystems
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
@@ -14,6 +16,7 @@ import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
 import AsiStackProofs.IntentContracts
+import AsiStackProofs.IntentToExecution
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
 import AsiStackProofs.ProofEnvelope
@@ -31,4 +34,5 @@ import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
 import AsiStackProofs.TypedJobs
 import AsiStackProofs.ValueConflict
+import AsiStackProofs.VerificationBandwidth
 import AsiStackProofs.VirtualContextABI
