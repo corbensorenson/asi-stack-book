@@ -1374,14 +1374,16 @@ Draft deliverables:
 - Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
 - Planned Codex test: Contradiction detection test.
-- Planned Codex test: Belief revision test.
+- Implemented Lean proof target: finite claim updates preserve prior evidence and revision-history references.
+- Implemented Lean proof target: open contradictions block promotion until handled.
+- Planned Codex test: belief revision engine test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | planned |
-| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | planned |
+| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
+| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
 
 ### Spinoza Verification and Proof-Carrying Claims
 
