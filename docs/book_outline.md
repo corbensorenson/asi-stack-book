@@ -1536,16 +1536,16 @@ Draft deliverables:
 
 - A typed-job schema with lifecycle states and permission checks.
 - Implemented protocol validation: `typed_job` fixture validates public record shape only.
-- Planned Codex test: Typed job lifecycle test.
+- Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
 - Planned Codex test: Tool permission enforcement test.
-- Planned Codex test: Human approval gate test.
+- Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | planned |
-| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | planned |
+| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
+| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
 
 ### Artifact Graphs, Audit Logs, and Replay
 

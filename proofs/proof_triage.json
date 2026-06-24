@@ -535,20 +535,20 @@
       "chapter_id": "labor-os-and-typed-jobs",
       "module": "AsiStackProofs.TypedJobs",
       "formal_target": "A job transitions only through valid lifecycle states.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite lifecycle predicate: transition records marked valid must use the declared lifecycle relation."
     },
     {
       "tag": "lean:jobs.lifecycle.failure_blocks_promotion",
       "chapter_id": "labor-os-and-typed-jobs",
       "module": "AsiStackProofs.TypedJobs",
       "formal_target": "A job requiring approval cannot execute before approval is recorded.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite approval predicate: approval-required jobs cannot be allowed to run when no approval record exists."
     },
     {
       "tag": "lean:artifacts.graph.operational_invariant",

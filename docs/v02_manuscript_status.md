@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 78,430 chapter words, averaging 1,569 words per chapter.
+Current scale: 50 chapter files, 78,535 chapter words, averaging 1,571 words per chapter.
 
 ## Completed in v0.2
 
@@ -27,6 +27,7 @@ Current scale: 50 chapter files, 78,430 chapter words, averaging 1,569 words per
 - The context-certificate Lean proof targets are implemented in `AsiStackProofs.ContextCertificates` as narrow finite-record predicates for derived-cell certificate completeness and source-authority non-escalation.
 - The context-transaction Lean proof targets are implemented in `AsiStackProofs.ContextTransactions` as narrow finite-record predicates for committed-event snapshot reads and taint propagation without declassification.
 - The claim-ledger Lean proof targets are implemented in `AsiStackProofs.ClaimLedger` as narrow finite-record predicates for prior evidence/history preservation and open-contradiction promotion blocking.
+- The typed-job Lean proof targets are implemented in `AsiStackProofs.TypedJobs` as narrow finite-record predicates for declared lifecycle transitions and approval-required execution blocking.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
 - `scripts/validate_visual_coverage.py` checks that chapter diagram coverage and the landing-page hero asset remain present.
@@ -50,7 +51,7 @@ Current scale: 50 chapter files, 78,430 chapter words, averaging 1,569 words per
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
-- Most Lean proof targets remain planned or triaged as schema/process/research targets; 26 of 100 proof targets are currently marked implemented.
+- Most Lean proof targets remain planned or triaged as schema/process/research targets; 28 of 100 proof targets are currently marked implemented.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented and remains limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.

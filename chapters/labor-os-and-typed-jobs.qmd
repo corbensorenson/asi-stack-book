@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no job lifecycle or permission-enforcement harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean lifecycle/approval predicates are implemented; no job scheduler, permission-enforcement harness, adapter runner, or replay harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot`; raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`; connector/recovery: `moecot` |
-| Test state | Typed job fixture validation implemented; lifecycle and permission tests remain planned. |
+| Test state | Typed job fixture validation implemented; finite lifecycle and approval predicates implemented in `AsiStackProofs.TypedJobs`; scheduler, permission, adapter, and replay tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats typed jobs as the execution contract for work, not as proof that a labor OS is implemented. The repo validates a typed-job fixture, but it has not run a job scheduler, permission harness, approval gate, or replay system for this chapter.
+This chapter treats typed jobs as the execution contract for work, not as proof that a labor OS is implemented. The repo validates a typed-job fixture and now proves two finite Lean predicates over lifecycle and approval records, but it has not run a job scheduler, permission harness, adapter runner, approval service, or replay system for this chapter.
 
 ## Problem
 
@@ -139,27 +139,27 @@ A typed-job schema with lifecycle states and permission checks.
 
 The smallest useful implementation is the expanded `typed_job` schema and fixture. It validates lifecycle, approval, failure behavior, permissions, audit events, and replay status without claiming a real job was executed.
 
-The fixture validates the job record surface. It does not prove a transition relation, adapter permission check, approval gate, or replay result.
+The fixture validates the job record surface. `AsiStackProofs.TypedJobs` adds a bounded transition predicate for declared lifecycle moves and a bounded approval predicate showing that an approval-required job cannot be allowed to run without an approval record. This does not prove an adapter permission check, scheduler implementation, approval-service integration, or replay result.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; run in this pass |
-| Typed job lifecycle test | Check that jobs transition only through valid lifecycle states. | planned; not run |
+| Typed job lifecycle predicate | Check that a transition record marked valid uses the declared finite lifecycle relation. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
-| Human approval gate test | Check that high-impact jobs cannot run before approval is recorded. | planned; not run |
+| Human approval gate predicate | Check that an approval-required job cannot be allowed to run before approval is recorded. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 
-Only fixture-shape validation is implemented. The remaining tests require a lifecycle checker or job runner that can reject invalid transitions and missing approvals.
+Fixture-shape validation and two bounded Lean predicates are implemented. The remaining tests require a lifecycle checker, permission harness, approval service, adapter runner, or job runner that can reject invalid transitions, missing approvals, and unauthorized effects in an executable environment.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | planned |
-| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | planned |
+| `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
+| `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
 
-These proof hooks remain planned. The schema can require lifecycle and approval fields; it cannot yet prove transition validity.
+These proof hooks are implemented as finite-record predicates. They prove the bounded lifecycle and approval claims stated above; they do not prove the existence or correctness of a full labor-OS runtime.
 
 ## Source crosswalk
 
