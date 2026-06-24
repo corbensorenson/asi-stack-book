@@ -35,6 +35,14 @@ BAD_PHRASES = [
     "replaces all existing methods",
 ]
 
+STALE_GENERATED_PHRASES = [
+    "Probe whether the chapter claim holds under the relevant",
+    "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation",
+    "No Codex tests have been implemented or run for this chapter unless separately recorded",
+    "| Test state | Planned only; no tests have been run",
+    "Support or falsify this chapter's layer claim",
+]
+
 ALLOWED_SUPPORT_STATES = {
     "unsupported",
     "argument",
@@ -196,6 +204,27 @@ def validate_overclaims() -> None:
         sys.exit(2)
 
 
+def validate_stale_generated_language() -> None:
+    violations = []
+    targets = (
+        list((ROOT / "chapters").glob("*.qmd"))
+        + [
+            ROOT / "scripts" / "draft_v02_from_manifest.py",
+            ROOT / "scripts" / "sync_scaffold.py",
+        ]
+    )
+    for path in targets:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for phrase in STALE_GENERATED_PHRASES:
+            if phrase in text:
+                violations.append((path.relative_to(ROOT), phrase))
+    if violations:
+        print("Stale generated manuscript language found:")
+        for path, phrase in violations:
+            print(f" - {path}: {phrase}")
+        sys.exit(2)
+
+
 def validate_claim_states() -> None:
     text = (ROOT / "appendices" / "C_claim_evidence_matrix.qmd").read_text(encoding="utf-8", errors="ignore")
     missing = [state for state in ALLOWED_SUPPORT_STATES if state not in text]
@@ -252,6 +281,7 @@ def main() -> None:
     validate_quarto_generated()
     validate_chapter_frontmatter(chapters)
     validate_overclaims()
+    validate_stale_generated_language()
     validate_claim_states()
     validate_proof_manifest()
     validate_publication_surface()
