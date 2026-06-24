@@ -123,6 +123,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
+- Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
 - Planned Codex test: Layer-boundary audit.
 - Planned Codex test: Source-to-layer traceability review.
 - Planned Codex test: Claim-support label audit.
@@ -177,6 +178,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A costed route ledger with quality predicates, residual accounting, and fallback criteria.
+- Exact Appendix C claim-source mappings for the core claim across all assigned efficiency, compression, simulation, lineage, and implementation-reference sources; support remains `argument` pending measured route, cost, residual, and compression evidence.
 - Planned Codex test: Minimum viable route test.
 - Planned Codex test: Residual burden accounting test.
 - Planned Codex test: Utility-preserving compression test.
@@ -230,6 +232,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A small authority schema and transition table used by chapter examples and future Lean proofs.
+- Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` pending denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts.
 - Planned Codex test: Authority ceiling preservation test.
 - Planned Codex test: Permission separation test.
 - Planned Codex test: Confused-deputy scenario.

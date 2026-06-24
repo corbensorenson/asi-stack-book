@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; measured route cost, residual burden, and utility-preserving compression evidence remain missing."
   - "The costed_route_record fixture validates schema/example consistency only; record-level Lean predicates exist, but route-search completeness, residual-burden measurement, and utility-preserving compression tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -67,6 +67,23 @@ The stack needs a route ledger for the same reason it needs a claim ledger: with
 [the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
 
 The claim remains at `argument` support. RMI supports residual escrow and ratcheting, CGS supports smallest-adequate-structure reasoning, BBVCA and RankFold/NeuralFold support compression vocabulary, and Simulation Scaling keeps feasibility tied to scope and fidelity. None of those source notes is a reproduced efficiency benchmark in this repository.
+
+### Claim-source mapping status
+
+Appendix C now maps this core claim to every assigned source note. The mappings justify the design vocabulary, not measured efficiency.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `viea` | Routed work, workflow-to-tool compilation, durable artifacts, feedback, residuals, benchmarks, and regression coverage. | No reproduced route-cost measurements, deployment logs, or benchmark results. |
+| `rmi` | Benchmark pressure, specialist attempts, loop closure, residual escrow, arm/router improvement, regression preservation, and harder frontiers. | Conceptual architecture here; no reproduced benchmark, prototype inspection, or proof from the note. |
+| `cgs` | Smallest adequate structures with compact seeds, rule systems, memory/state, residual/error, verification, and governance interfaces. | No local CGS benchmark, proof, or implementation. |
+| `rankfold_neuralfold` | Artifact-compression economics, residual bit cost, deterministic reconstruction, manifests, codec parameters, and checks. | No local compression benchmark, implementation artifact, or reproducible ratio. |
+| `bbvca_v9` | Generate-verify-repair compression, reconstruction contracts, retained detail, residuals, repair streams, fallback, boundary costs, and proxy-rate honesty. | No BBVCA Prototype A implementation or reproduced compression ratio. |
+| `simulation_scaling` | Contract-relative feasibility tied to scope, clockspeed, fidelity, efficiency, and bottlenecks. | Theoretical synthesis only here; no physical experiment or simulation benchmark. |
+| `beastbrain` | Local state, persistent memory substrates, routing by semantic intent/tier/critical path/capability, and paging of attention, experts, and memory. | SSD-first, hardware, and performance claims remain source-reported. |
+| `beastbrain_timeless` | Roadmap-independent BeastBrain framing for local intelligence, hardware adaptation, SSD-native memory, planning, verification, and multimodal interaction. | Does not validate hardware adaptation, geometric verification, or distributed scaling. |
+| `aletheia` | Verification and context effort routed by risk, uncertainty, ambiguity, and historical failure. | No live-oracle, adversarial, or implementation evidence for route quality or efficiency. |
+| `moecot` | Compact orchestration, specialist lanes, readiness gates, promotion blockers, residual tracking, ledgers, replay, and handoff. | Runtime and benchmark artifacts have not been ingested or reproduced. |
 
 ## Mechanism
 

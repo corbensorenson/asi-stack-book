@@ -74,6 +74,38 @@
           "problem": "The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.",
           "insufficient": "A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.",
           "core_claim": "Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Frames advanced AI as intent-to-execution machinery that turns human intent into command contracts, durable artifacts, routing, verification, runtime execution, feedback, residuals, tools, benchmarks, and regressions.",
+              "limits": "Architecture proposal and systems framework only; does not prove a completed deployment, benchmark result, or end-to-end ASI stack in this repository."
+            },
+            {
+              "source_id": "beastbrain",
+              "mapped_support": "Supports the whole-stack framing with local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, and interface layers rather than a stateless model.",
+              "limits": "Hardware, cost, context-length, and benchmark claims are source-reported and not locally reproduced."
+            },
+            {
+              "source_id": "aletheia",
+              "mapped_support": "Supports separating generation from trusted output through context acquisition, claim decomposition, verification gates, uncertainty routing, and constitutional governance.",
+              "limits": "No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports the execution/labor layer by treating AI work as typed jobs, deterministic control planes, evidence, isolation, audit, replay, delivery, and residual feedback.",
+              "limits": "Useful as an execution-OS design source, not proof that security or benchmark behavior has been reproduced in this repository."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for a compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, and handoff.",
+              "limits": "Connector-readable source reports architecture state and artifacts, but this repository has not ingested or reproduced MoECOT code, logs, benchmark artifacts, or runtime claims."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports the governed-stack thesis by defining stable capability fields as replaceable machinery behind durable contracts, evidence registries, qualification, routing, authority, lifecycle, and recovery paths.",
+              "limits": "Does not establish production safety, global alignment, or independently validated reversibility for the whole stack."
+            }
+          ],
           "mechanism": [
             "Define each layer by responsibility, interface, artifact, invariant, and failure mode.",
             "Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.",
@@ -158,6 +190,58 @@
           "problem": "The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.",
           "insufficient": "Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.",
           "core_claim": "Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports efficient capability growth through routed work, workflow-to-tool compilation, durable artifacts, feedback, residuals, benchmarks, and regression coverage.",
+              "limits": "Does not provide reproduced route-cost measurements, deployment logs, or benchmark results in this repository."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports the ratchet loop: benchmark pressure, specialist attempts, logs, loop closure, residual escrow, diagnosis, arm/router improvement, regression preservation, and harder frontiers.",
+              "limits": "Conceptual architecture only here; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this source note."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports the smallest-adequate-structure idea with compact seeds, rule systems, memory/state, residual/error, verification, and governance/generation interfaces.",
+              "limits": "No local CGS benchmark, proof, or implementation validates compactness, safety, interpretability, or adequacy."
+            },
+            {
+              "source_id": "rankfold_neuralfold",
+              "mapped_support": "Supports artifact-compression economics through per-artifact transforms, residual bit cost, deterministic reconstruction, manifests, codec parameters, and checks.",
+              "limits": "No local compression benchmarks, implementation artifacts, or reproducible ratios are present."
+            },
+            {
+              "source_id": "bbvca_v9",
+              "mapped_support": "Supports generate-verify-repair compression, contract-relative reconstruction, retained detail, residuals, repair streams, fallback, boundary costs, and proxy-rate honesty.",
+              "limits": "The repository has not implemented BBVCA Prototype A or reproduced compression ratios."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports contract-relative feasibility by tying resource demand to scope, clockspeed, fidelity, efficiency, compute, memory, thermodynamics, and communication bottlenecks.",
+              "limits": "Theoretical synthesis only here; no physical experiment, simulation benchmark, or independent literature audit was run."
+            },
+            {
+              "source_id": "beastbrain",
+              "mapped_support": "Supports efficiency-by-architecture through local state, persistent memory substrates, routing by semantic intent/tier/critical path/capability, and paging of attention, experts, and memory.",
+              "limits": "SSD-first, hardware, and performance claims remain source-reported and unvalidated locally."
+            },
+            {
+              "source_id": "beastbrain_timeless",
+              "mapped_support": "Supports roadmap-independent BeastBrain framing for local intelligence, hardware adaptation, SSD-native memory, planning, verification, and multimodal interaction as architecture directions.",
+              "limits": "Does not validate hardware adaptation, geometric verification, or distributed scaling; use mainly for variant deduplication and evergreen framing."
+            },
+            {
+              "source_id": "aletheia",
+              "mapped_support": "Supports spending verification and context effort by risk, uncertainty, ambiguity, and historical failure rather than treating all outputs as equally trusted.",
+              "limits": "No local live-oracle, adversarial, or implementation evidence proves the efficiency or quality of those routes."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports compact orchestration, specialist lanes, readiness gates, promotion blockers, residual tracking, ledgers, replay, and handoff as implementation-reference context for efficient routing.",
+              "limits": "Source-reported runtime and benchmark artifacts have not been ingested or reproduced here."
+            }
+          ],
           "mechanism": [
             "Use minimum viable intelligence for subtasks.",
             "Turn repeated cognition into durable artifacts, tools, or procedural memory.",
@@ -234,6 +318,38 @@
           "problem": "The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.",
           "insufficient": "Informal ownership boundaries let planning authority, memory access, tool use, and deployment authority blur into each other.",
           "core_claim": "Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports authority boundaries through structured command fields, constraints, verification, failure behavior, artifact graphs, runtime adapters, and ledgers that separate intent, work, evidence, and execution.",
+              "limits": "Does not prove a deployed VIEA authority system or runtime enforcement in this repository."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports typed bounded authority with stable fields, contracts, qualifications, grants, route validation, lifecycle events, evaluator policy, and recovery paths.",
+              "limits": "Does not establish production safety, global alignment, or independently validated route/evaluator behavior."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports effect control through typed job lifecycles, contract locks, source allow-listing, blind secret handles, Digital SCIFs, audit logs, replay, controlled runtime adapters, and approvals.",
+              "limits": "Security and benchmark claims require separate artifacts; this mapping is architectural, not a reproduced enforcement test."
+            },
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supports authority-handle boundaries by keeping credential bytes outside model context, using opaque handles, policy-mediated secret injection, isolated compartments, audit, and zeroization.",
+              "limits": "No Ladon implementation, kernel test, side-channel validation, or security audit exists in this repository."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports proposal/execution separation through a small deterministic kernel, capability boundaries for nondeterministic effects, semantic patches, provenance hashes, replay logs, obligations, and protocol seals.",
+              "limits": "No GenesisCode prototype, replay checker, proof module, benchmark result, or security audit is present here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports fail-closed runtime authority through compact orchestration, specialist lanes, control-plane ledgers, readiness gates, promotion blockers, replay, and handoff.",
+              "limits": "Runtime and benchmark claims remain implementation-reference context until artifacts are imported, inspected, or reproduced."
+            }
+          ],
           "mechanism": [
             "Define principals, authorities, ceilings, grants, revocations, and handoff contracts.",
             "Separate knowledge access from action authority.",
@@ -266,13 +382,13 @@
               "tag": "lean:authority.ceiling.operational_invariant",
               "module": "AsiStackProofs.Authority",
               "target": "Every transition preserves or lowers the active authority ceiling unless a governance grant is present.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:authority.ceiling.failure_blocks_promotion",
               "module": "AsiStackProofs.Authority",
               "target": "A missing grant blocks execution rather than becoming default authorization.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

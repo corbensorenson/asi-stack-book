@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; mechanism-level source-passage audits remain incomplete."
   - "The layer_boundary_record fixture and stack-boundary Lean proofs validate narrow record/proof surfaces only; source-to-layer traceability and claim-support audits remain planned."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -65,6 +65,19 @@ The ASI Stack treats those missing contracts as first-class design objects. It d
 The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence.
 
 The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
+
+### Claim-source mapping status
+
+Appendix C now records exact source-note mappings for this core claim across all assigned sources. The mappings support the architectural frame, not an implementation result.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `viea` | Intent-to-execution machinery with contracts, artifacts, routing, verification, runtime execution, feedback, residuals, tools, benchmarks, and regressions. | Architecture proposal; no completed deployment or end-to-end stack evidence here. |
+| `beastbrain` | A local, stateful stack split across memory, verification, planning, routing, security, consolidation, and interfaces. | Hardware, cost, context-length, and benchmark claims are not locally reproduced. |
+| `aletheia` | Separation between fluent generation and trusted output through context acquisition, claim decomposition, verification, uncertainty routing, and constitutional governance. | No local implementation, live-oracle run, adversarial result, or proof artifact. |
+| `talos` | Execution/labor layer with typed jobs, deterministic control planes, evidence, isolation, audit, replay, delivery, and residual feedback. | Design source, not reproduced security or benchmark evidence. |
+| `moecot` | Compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, and handoff as implementation-reference context. | Code, logs, benchmark artifacts, and runtime claims have not been ingested or reproduced. |
+| `scf` | Stable capability fields as governed replacement boundaries with contracts, evidence registries, qualification, routing, authority, lifecycle, and recovery paths. | Does not prove production safety, global alignment, or whole-stack reversibility. |
 
 ## Stack Map
 
