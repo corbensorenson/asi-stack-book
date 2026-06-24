@@ -735,40 +735,40 @@
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compressed artifact used for a task must pass that task probe or route to fallback.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactCompression as a finite artifact-use predicate: task use requires a passed task probe or fallback routing."
     },
     {
       "tag": "lean:compression.artifacts.failure_blocks_promotion",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compression record cannot omit residual or fallback metadata.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactCompression as a finite metadata-completeness predicate: promotion requires residual and fallback metadata."
     },
     {
       "tag": "lean:representation.semantic_tree.operational_invariant",
       "chapter_id": "semantic-representation-and-tree-structured-models",
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A semantic node marked grounded has at least one provenance link.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SemanticRepresentation as a finite semantic-node predicate: grounded nodes require a positive provenance-link count."
     },
     {
       "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
       "chapter_id": "semantic-representation-and-tree-structured-models",
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A hierarchy update preserves prior node references or records supersession.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SemanticRepresentation as a finite hierarchy-update predicate: applied updates preserve prior references or record supersession."
     },
     {
       "tag": "lean:resources.budgets.operational_invariant",

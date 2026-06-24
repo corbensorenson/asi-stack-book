@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 102,
   "status_counts": {
-    "implemented": 46,
-    "planned": 56
+    "implemented": 50,
+    "planned": 52
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -786,7 +786,7 @@
       "tag": "lean:compression.artifacts.operational_invariant",
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compressed artifact used for a task must pass that task probe or route to fallback.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2141,
       "module_path": "lean/AsiStackProofs/ArtifactCompression.lean"
     },
@@ -796,7 +796,7 @@
       "tag": "lean:compression.artifacts.failure_blocks_promotion",
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compression record cannot omit residual or fallback metadata.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2142,
       "module_path": "lean/AsiStackProofs/ArtifactCompression.lean"
     },
@@ -806,7 +806,7 @@
       "tag": "lean:representation.semantic_tree.operational_invariant",
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A semantic node marked grounded has at least one provenance link.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2194,
       "module_path": "lean/AsiStackProofs/SemanticRepresentation.lean"
     },
@@ -816,7 +816,7 @@
       "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A hierarchy update preserves prior node references or records supersession.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2195,
       "module_path": "lean/AsiStackProofs/SemanticRepresentation.lean"
     },

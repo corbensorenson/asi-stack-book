@@ -2951,13 +2951,13 @@
               "tag": "lean:compression.artifacts.operational_invariant",
               "module": "AsiStackProofs.ArtifactCompression",
               "target": "A compressed artifact used for a task must pass that task probe or route to fallback.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:compression.artifacts.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactCompression",
               "target": "A compression record cannot omit residual or fallback metadata.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3027,13 +3027,13 @@
               "tag": "lean:representation.semantic_tree.operational_invariant",
               "module": "AsiStackProofs.SemanticRepresentation",
               "target": "A semantic node marked grounded has at least one provenance link.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
               "module": "AsiStackProofs.SemanticRepresentation",
               "target": "A hierarchy update preserves prior node references or records supersession.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

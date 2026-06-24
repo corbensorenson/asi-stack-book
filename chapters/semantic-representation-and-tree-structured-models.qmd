@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `treellm`; supporting: `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Source loading state | source notes: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope`; raw cache: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` |
-| Test state | `semantic_node_record.valid.json` and repository-level semantic fixtures pass protocol validation; grounding, hierarchy-revision, and representation-utility tests remain planned. |
+| Test state | `semantic_node_record.valid.json` and repository-level semantic fixtures pass protocol validation; `AsiStackProofs.SemanticRepresentation` implements finite grounded-provenance and hierarchy-update predicates; grounding, hierarchy-revision, and representation-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -153,10 +153,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | planned |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | planned |
+| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
 
-These Lean hooks remain planned. The schema can require provenance and supersession fields, but it does not prove that a graph is grounded, unbiased, or useful. The first mechanized target should stay at the record level: a node marked grounded must carry provenance, and an update must preserve or supersede references.
+These Lean hooks are implemented as finite-record predicates over semantic-node and hierarchy-update fields. They prove only the record-level gates: a node marked grounded has a positive provenance-link count, and an applied hierarchy update either preserves prior references or records supersession. They do not prove that a graph is unbiased, useful, complete, or benchmark-superior to neural-only representations.
 
 ## Source crosswalk
 

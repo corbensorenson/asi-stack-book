@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation; compression-ratio, probe-route fallback, and downstream-utility tests remain planned. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -147,10 +147,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | planned |
-| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | planned |
+| `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
+| `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
 
-These Lean hooks remain planned. The current schema can require residual and fallback metadata, but it does not mechanize the route decision or prove that a compressed artifact is useful for a task. A first proof should model the finite probe-or-fallback predicate, not a compression-performance claim.
+These Lean hooks are implemented as finite-record predicates over artifact-use and metadata fields. They prove only the record-level gates: a compressed artifact selected for a task must have a passed probe or fallback route, and a promoted compression record must expose residual and fallback metadata. They do not prove a compression ratio, decoder correctness, task utility, or benchmark result.
 
 ## Source crosswalk
 

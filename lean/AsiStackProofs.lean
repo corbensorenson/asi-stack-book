@@ -1,4 +1,5 @@
 import AsiStackProofs.Authority
+import AsiStackProofs.ArtifactCompression
 import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.CompactGenerativeSystems
@@ -17,6 +18,7 @@ import AsiStackProofs.Replacement
 import AsiStackProofs.RuntimeAdapters
 import AsiStackProofs.Routing
 import AsiStackProofs.SecurityKernel
+import AsiStackProofs.SemanticRepresentation
 import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
 import AsiStackProofs.TypedJobs
