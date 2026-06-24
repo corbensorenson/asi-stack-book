@@ -45,6 +45,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/sync_proof_manifest.py`.
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_book.py`.
+- Run `python3 scripts/validate_visual_coverage.py`.
 - Run `python3 scripts/validate_schemas.py`.
 - Run `python3 scripts/validate_protocol_examples.py`.
 - Run `(cd lean && lake build)`.
