@@ -15,7 +15,7 @@
       "chapter_id": "asi-is-a-stack-not-a-model",
       "module": "AsiStackProofs.StackBoundaries",
       "formal_target": "A layer without external-action authority can only produce an action through an authorized handoff.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
@@ -25,7 +25,7 @@
       "chapter_id": "asi-is-a-stack-not-a-model",
       "module": "AsiStackProofs.StackBoundaries",
       "formal_target": "A handoff that exceeds the caller authority ceiling is rejected.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."

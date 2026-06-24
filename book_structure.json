@@ -107,13 +107,13 @@
               "tag": "lean:stack.layer_boundaries.operational_invariant",
               "module": "AsiStackProofs.StackBoundaries",
               "target": "A layer without external-action authority can only produce an action through an authorized handoff.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
               "module": "AsiStackProofs.StackBoundaries",
               "target": "A handoff that exceeds the caller authority ceiling is rejected.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

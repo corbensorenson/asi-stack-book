@@ -15,6 +15,7 @@ Current scale: 50 chapter files, 96,051 chapter words, averaging 1,921 words per
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.
 - The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
 - Source notes now exist for RMI, Benchmaxxing, CGS, Octopus Router, and Cognitive Loop Closure in addition to the original backbone notes.
+- The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 
 ## Still Missing for v1.0
 
