@@ -18,6 +18,7 @@ Current scale: 50 chapter files, 77,190 chapter words, averaging 1,544 words per
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
+- `scripts/validate_visual_coverage.py` checks that chapter diagram coverage and the landing-page hero asset remain present.
 - The landing page and Preface are unnumbered front matter, so the Part I chapters begin the numbered book sequence.
 - The landing-page hero image is constrained responsively so desktop and mobile first viewports show the path into current status without horizontal overflow.
 - Four central mechanism chapters now have source-specific hand revisions and Mermaid diagrams for verification bandwidth, cognitive compilation, generate-verify-repair compression, and Digital SCIF authority flow.

@@ -50,6 +50,7 @@
 - Marked the landing page and Preface as unnumbered so Part I begins the numbered chapter sequence instead of treating front matter as chapters.
 - Tightened the landing-page hero image sizing so the first desktop viewport leaves a visible path into the current-status section while mobile remains free of horizontal overflow.
 - Refreshed `docs/v02_manuscript_status.md` with current word count, diagram coverage, front-matter numbering, hero-layout, and stale-language validation status.
+- Added `scripts/validate_visual_coverage.py` and wired it into book validation so missing chapter diagrams or the landing-page hero asset are caught before publication.
 
 ## 2026-06-24 - v0.2 manuscript baseline
 

@@ -286,6 +286,7 @@ def main() -> None:
     validate_proof_manifest()
     validate_publication_surface()
     run_validator("validate_chapter_dod.py")
+    run_validator("validate_visual_coverage.py")
     run_validator("validate_source_notes.py")
     run_validator("validate_proof_readiness.py")
     print("Book validation passed.")
