@@ -1,0 +1,13 @@
+{
+  "proof_claim_id": "proof-claim-demo-001",
+  "claim_id": "claim-demo-001",
+  "required_tier": "procedure",
+  "interpretation_mapping": "The claim concerns local schema-shape validation, not empirical truth.",
+  "justification_artifact": "scripts/validate_protocol_examples.py",
+  "verifier": "local dependency-free schema fixture validator",
+  "verifier_result": "not_run",
+  "limitations": ["fixture alone does not prove the architecture claim", "no theorem is claimed"],
+  "downgrade_rule": "If validation fails, block promotion and keep support at argument or lower.",
+  "tribunal_ref": "",
+  "ledger_update": "No support-state promotion is implied by this fixture."
+}

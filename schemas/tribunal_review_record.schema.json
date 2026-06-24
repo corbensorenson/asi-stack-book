@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/tribunal_review_record.schema.json",
+  "title": "Tribunal Review Record",
+  "type": "object",
+  "required": [
+    "review_id",
+    "target_ref",
+    "risk_class",
+    "dossier_refs",
+    "reviewer_roles",
+    "adversarial_probes",
+    "findings",
+    "evidence_refs",
+    "dissent",
+    "unresolved_issues",
+    "verdict",
+    "required_actions",
+    "human_adjudication"
+  ],
+  "properties": {
+    "review_id": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "risk_class": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "dossier_refs": { "type": "array", "items": { "type": "string" } },
+    "reviewer_roles": { "type": "array", "items": { "type": "string" } },
+    "adversarial_probes": { "type": "array", "items": { "type": "string" } },
+    "findings": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "dissent": { "type": "array", "items": { "type": "string" } },
+    "unresolved_issues": { "type": "array", "items": { "type": "string" } },
+    "verdict": {
+      "type": "string",
+      "enum": ["accept", "revise", "reject", "escalate", "blocked"]
+    },
+    "required_actions": { "type": "array", "items": { "type": "string" } },
+    "human_adjudication": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

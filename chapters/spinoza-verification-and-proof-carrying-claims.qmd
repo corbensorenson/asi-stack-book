@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Claim ledgers store epistemic state. Spinoza defines the verification lane that can move selected claims toward stronger support tiers. Its key separation is proposer versus verifier: neural systems can propose hypotheses, proof sketches, citations, or formalization attempts, but a separate structured process decides whether the claim's tier is justified.
 
-It inherits pressure from the previous chapter, Claim Ledgers and Belief Revision, and makes that pressure operational in a narrower boundary. It hands its output to Unified Adaptive Tribunal and Adversarial Review, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The chapter is deliberately bounded. It does not assume open-domain autoformalization is solved. It defines how the stack handles proof, justification, timeout, mismatch, downgrade, and escalation.
 
 ## Why existing approaches are insufficient
 
 Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity. If `spinoza-verification-and-proof-carrying-claims` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+A model can propose a formal-looking argument that does not mean what the original claim meant. It can cite sources that do not support the claim. It can produce a proof sketch with a hidden gap. It can time out and still sound confident. These are not rare edge cases; they are the normal boundary between generation and verification.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+GenesisCode contributes the obligation-envelope view: accepted artifacts should carry tests, proofs, provenance, or capability policies. Verification Bandwidth adds that high-risk claims may need stronger verification rather than more context.
 
 ## Core Claim
 
@@ -65,27 +65,53 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, separate heuristic proposal from symbolic or structured interrogation. Second, attach formal interpretation mappings, proof bundles, or citation-backed dossiers. Third, downgrade or escalate claims that cannot meet their required tier.
+The mechanism is a Proof-Carrying Claim.
+
+```{mermaid}
+flowchart LR
+  A["Claim record"] --> B["Required tier"]
+  B --> C["Interpretation mapping"]
+  C --> D["Justification artifact"]
+  D --> E{"Verifier result"}
+  E -- "pass" --> F["Promote within tier"]
+  E -- "fail" --> G["Downgrade / block"]
+  E -- "timeout / mismatch" --> H["Residual / tribunal"]
+  F --> I["Claim ledger update"]
+  G --> I
+  H --> I
+```
 
 - Separate heuristic proposal from symbolic or structured interrogation.
 - Attach formal interpretation mappings, proof bundles, or citation-backed dossiers.
 - Downgrade or escalate claims that cannot meet their required tier.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+A proof-carrying claim contains the claim, required tier, interpretation mapping, justification artifact, verifier, verifier result, limitations, downgrade rule, and residuals. Formal proof is one tier, not the default expectation for every claim.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The most important behavior is downgrade discipline. Failed, timed-out, or mismatched verification should never become a promotional story. It should lower the support state, block promotion, or route the claim to tribunal review.
 
 ## Interfaces
 
-The interface for Spinoza Verification and Proof-Carrying Claims is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Proof-Carrying Claim.
 
 - Claim ledger stores proof status.
 - GenesisCode and Lean provide formal hooks.
 - UAT provides adversarial review.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `proof_claim_id`
+- `claim_id`
+- `required_tier`
+- `interpretation_mapping`
+- `justification_artifact`
+- `verifier`
+- `verifier_result`
+- `limitations`
+- `downgrade_rule`
+- `tribunal_ref`
+- `ledger_update`
+
+The claim ledger stores proof status. GenesisCode and Lean provide formal hooks where the claim is formal enough. UAT handles adversarial review where the mapping, evidence, or stakes require multiple reviewers.
 
 ## Invariants
 
@@ -95,7 +121,7 @@ The invariants are the conditions that must remain true even when the implementa
 - A justification artifact is required for promoted claims.
 - Unsupported claims remain marked speculative or blocked.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The tier invariant is strict: a claim cannot occupy a formal or verified tier merely because a proof was attempted. It needs a justification artifact appropriate to the tier and a recorded verifier result.
 
 ## Failure modes
 
@@ -105,13 +131,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Invalid formalization.
 - Justification artifact missing.
 
-For Spinoza Verification and Proof-Carrying Claims, mitigation starts by turning each listed failure into a named reviewable artifact. When `Certified delusion` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Certified delusion happens when the artifact looks formal but certifies the wrong thing. Invalid formalization means the mapping between natural-language claim and formal object is untrusted. Missing justification means the tier is unsupported. Each failure should downgrade or block the claim.
 
 ## Minimal implementation
 
 A tiered proof-carrying claim schema with one non-philosophical invariant example.
 
-The smallest useful implementation is deliberately narrow: A tiered proof-carrying claim schema with one non-philosophical invariant example. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +145,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Proof artifact presence test | Probe whether the chapter claim holds under the relevant Spinoza Verification and Proof-Carrying Claims boundary. | planned; not run |
-| Tier assignment test | Probe whether the chapter claim holds under the relevant Spinoza Verification and Proof-Carrying Claims boundary. | planned; not run |
-| Formalization mismatch review | Probe whether the chapter claim holds under the relevant Spinoza Verification and Proof-Carrying Claims boundary. | planned; not run |
+| Proof artifact presence test | Check that promoted formal or verified claims carry an appropriate artifact reference. | planned; not run |
+| Tier assignment test | Check that support tiers match verifier result and limitations. | planned; not run |
+| Formalization mismatch review | Check that claims with uncertain interpretation mapping route to residual or tribunal review. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +174,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Spinoza Verification and Proof-Carrying Claims defines one boundary in the ASI Stack: Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers. Its job is to make a capability more governable, not merely more impressive.
+Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures.
 
-In v0.2, this chapter gives Spinoza Verification and Proof-Carrying Claims a complete architectural boundary: the stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects. Its next maturity step is to substantiate the boundary through `Claim ledger stores proof status`, preserve `Proof tier is explicit`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it.

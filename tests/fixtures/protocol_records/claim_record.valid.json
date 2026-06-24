@@ -1,0 +1,10 @@
+{
+  "claim_id": "claim-demo-001",
+  "text": "Schema validation demonstrates record shape only, not real-world claim support.",
+  "claim_label": "Design rationale",
+  "support_state": "argument",
+  "source_handles": ["appendices/D_protocol_schemas.qmd"],
+  "tests": ["scripts/validate_protocol_examples.py"],
+  "contradictions": [],
+  "review_status": "open"
+}

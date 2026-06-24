@@ -1,0 +1,15 @@
+{
+  "review_id": "tribunal-demo-001",
+  "target_ref": "claim-demo-001",
+  "risk_class": "medium",
+  "dossier_refs": ["tests/fixtures/protocol_records/claim_record.valid.json"],
+  "reviewer_roles": ["logic critic", "evidence critic", "omission critic"],
+  "adversarial_probes": ["check whether fixture validation is being overstated"],
+  "findings": ["record shape is represented", "substantive evidence is not established"],
+  "evidence_refs": ["scripts/validate_protocol_examples.py"],
+  "dissent": ["No dissent recorded in this fixture."],
+  "unresolved_issues": ["No actual tribunal run has occurred."],
+  "verdict": "revise",
+  "required_actions": ["keep support state conservative", "record validation results separately"],
+  "human_adjudication": "not_required_for_fixture_shape"
+}

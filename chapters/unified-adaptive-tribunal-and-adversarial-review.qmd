@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Complex claims and artifacts need adversarial review that is more structured than one model critique.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Claim ledgers preserve belief state. Spinoza attempts verification. UAT is the escalation layer for claims and artifacts whose stakes, ambiguity, novelty, or evidence conflict require adversarial review. It turns review into a protocol with roles, dossiers, critiques, dissent, consensus rules, unresolved issues, and human adjudication points.
 
-It inherits pressure from the previous chapter, Spinoza Verification and Proof-Carrying Claims, and makes that pressure operational in a narrower boundary. It hands its output to Labor OS and Typed Jobs, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The tribunal is not a truth oracle. UAT's own source discipline is retrieval-bounded: automated review can only judge against the dossier, logic, omissions, and declared constraints it receives. That limitation is a feature because it keeps review claims scoped.
 
 ## Why existing approaches are insufficient
 
 Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: single-pass self-review misses blind spots, evaluator drift, and consensus without evidence. If `unified-adaptive-tribunal-and-adversarial-review` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+One reviewer often shares the generator's blind spots. Multiple reviewers can still collapse into consensus theater if they see the same prompt, optimize for agreement, or fail to preserve dissent. Critique without action is also cheap: a review that finds issues but does not route them into revision, downgrade, residuals, or human adjudication is decoration.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The point is targeted escalation. Most claims should not pay tribunal cost. High-risk claims, contested claims, safety-relevant artifacts, and proof-mismatch cases should.
 
 ## Core Claim
 
@@ -65,27 +65,55 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, assign reviewer roles and critique objectives. Second, use adversarial checks for high-risk claims. Third, record dissent, unresolved issues, and human-adjudication points.
+The mechanism is a Tribunal Review Record.
+
+```{mermaid}
+flowchart LR
+  A["Escalated claim / artifact"] --> B["Review dossier"]
+  B --> C["Reviewer roles"]
+  C --> D["Adversarial probes"]
+  D --> E["Findings + evidence refs"]
+  E --> F{"Consensus with evidence?"}
+  F -- "yes" --> G["Verdict"]
+  F -- "no" --> H["Dissent / unresolved issues"]
+  G --> I["Ledger update"]
+  H --> I
+  I --> J["Human adjudication if required"]
+```
 
 - Assign reviewer roles and critique objectives.
 - Use adversarial checks for high-risk claims.
 - Record dissent, unresolved issues, and human-adjudication points.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Reviewer roles should be explicit: logic critic, citation critic, omission critic, safety critic, implementation critic, or domain reviewer. The review dossier should be explicit too; reviewers should not invent hidden evidence outside the declared boundary unless the protocol allows a retrieval expansion.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The output is not only a verdict. It includes reviewer findings, evidence refs, dissent, unresolved issues, required actions, and whether human adjudication is required. That is what makes critique actionable.
 
 ## Interfaces
 
-The interface for Unified Adaptive Tribunal and Adversarial Review is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Tribunal Review Record.
 
 - Spinoza consumes tribunal results.
 - Planning escalates risky nodes to tribunal.
 - Evidence records reviewer outcomes.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `review_id`
+- `target_ref`
+- `risk_class`
+- `dossier_refs`
+- `reviewer_roles`
+- `adversarial_probes`
+- `findings`
+- `evidence_refs`
+- `dissent`
+- `unresolved_issues`
+- `verdict`
+- `required_actions`
+- `human_adjudication`
+
+Spinoza consumes tribunal results for tier decisions. Planning escalates risky nodes to tribunal. Evidence records reviewer outcomes, unresolved issues, and required actions.
 
 ## Invariants
 
@@ -95,7 +123,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Consensus requires evidence.
 - High-risk reviews are reproducible enough to audit.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+Dissent preservation matters because the future system may later receive evidence that makes the minority view correct. Consensus requires evidence refs, not just agreement. Reproducibility requires the review dossier, roles, probes, and hard stop conditions to be visible enough to audit.
 
 ## Failure modes
 
@@ -105,13 +133,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Consensus theater.
 - Critique without action.
 
-For Unified Adaptive Tribunal and Adversarial Review, mitigation starts by turning each listed failure into a named reviewable artifact. When `Reviewer collusion` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Reviewer collusion can be literal or structural: identical prompts, shared context leakage, or shared blind spots. Consensus theater produces agreement without evidence. Critique without action leaves problems in place. Each failure should block acceptance or create required actions.
 
 ## Minimal implementation
 
 A tribunal protocol for claim/artifact review with reviewer roles and output schema.
 
-The smallest useful implementation is deliberately narrow: A tribunal protocol for claim/artifact review with reviewer roles and output schema. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `tribunal_review_record` schema and fixture. It should show reviewer roles, dossier refs, adversarial probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human-adjudication state.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +147,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Adversarial review coverage test | Probe whether the chapter claim holds under the relevant Unified Adaptive Tribunal and Adversarial Review boundary. | planned; not run |
-| Dissent preservation test | Probe whether the chapter claim holds under the relevant Unified Adaptive Tribunal and Adversarial Review boundary. | planned; not run |
-| Consensus evidence test | Probe whether the chapter claim holds under the relevant Unified Adaptive Tribunal and Adversarial Review boundary. | planned; not run |
+| Adversarial review coverage test | Check that required reviewer roles and probes exist for high-risk reviews. | planned; not run |
+| Dissent preservation test | Check that minority objections remain attached to the review record. | planned; not run |
+| Consensus evidence test | Check that consensus verdicts cite evidence refs and required actions. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +176,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Unified Adaptive Tribunal and Adversarial Review defines one boundary in the ASI Stack: A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty. Its job is to make a capability more governable, not merely more impressive.
+Unified Adaptive Tribunal and Adversarial Review gives the stack a structured escalation protocol. It coordinates reviewer roles, bounded dossiers, adversarial probes, evidence-linked findings, dissent, unresolved issues, verdicts, required actions, and human adjudication.
 
-In v0.2, this chapter gives Unified Adaptive Tribunal and Adversarial Review a complete architectural boundary: complex claims and artifacts need adversarial review that is more structured than one model critique. Its next maturity step is to substantiate the boundary through `Spinoza consumes tribunal results`, preserve `Dissent is preserved`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's limit is as important as its mechanism: a tribunal can improve review discipline, but it cannot manufacture evidence outside its dossier without explicitly expanding the investigation.

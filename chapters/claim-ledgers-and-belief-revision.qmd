@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The VCM chapters decide what context is admitted and adequate. Reasoning now needs to decide what the system believes, why it believes it, how strongly it can say it, and what happens when evidence changes. Spinoza supplies the core discipline: neural systems can propose claims, but claims need structured support states, provenance, contradiction links, defeaters, and downgrade paths before they become commitments.
 
-It inherits pressure from the previous chapter, Verification Bandwidth and Context Adequacy, and makes that pressure operational in a narrower boundary. It hands its output to Spinoza Verification and Proof-Carrying Claims, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+In the book itself, Appendix C is the public claim ledger. The architecture should generalize that discipline: prose is an output view, not the place where belief state lives.
 
 ## Why existing approaches are insufficient
 
 A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs. If `claim-ledgers-and-belief-revision` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+A fluent answer can contain assumptions that were never extracted, contradictions that were never linked, and claims that keep their confident tone after evidence weakens. Belief inertia is the epistemic version of technical debt: a claim remains in circulation because no artifact forces it to be revised.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Aletheia and UAT both push against this failure by decomposing outputs into propositions, preserving unsupported or inferred states, and routing uncertainty to review. The claim ledger gives those states a durable home.
 
 ## Core Claim
 
@@ -65,27 +65,52 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, extract claims into structured records. Second, attach evidence tier, provenance, and uncertainty. Third, revise beliefs when contradictions or stronger evidence appear.
+The mechanism is a Belief Revision Record.
+
+```{mermaid}
+flowchart LR
+  A["Generated or extracted claim"] --> B["Claim record"]
+  B --> C["Evidence refs + support state"]
+  C --> D["Contradiction / defeater scan"]
+  D --> E{"Revision needed?"}
+  E -- "no" --> F["Retain with state"]
+  E -- "yes" --> G["Revise / downgrade / block"]
+  G --> H["Revision history"]
+  F --> H
+  H --> I["Claim ledger"]
+```
 
 - Extract claims into structured records.
 - Attach evidence tier, provenance, and uncertainty.
 - Revise beliefs when contradictions or stronger evidence appear.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The ledger separates claim text, claim label, support state, evidence refs, uncertainty, contradictions, revision reason, and review status. A claim can remain useful while unsupported, speculative, contradicted, or blocked, but it must be labeled accordingly.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Belief revision is not just promotion. It includes downgrade, deprecation, split, merge, contradiction preservation, and residual creation. Negative evidence is an asset because it prevents the system from relearning the same false confidence.
 
 ## Interfaces
 
-The interface for Claim Ledgers and Belief Revision is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Belief Revision Record.
 
 - VCM supplies source context.
 - Spinoza verifies claims.
 - Evidence matrix records book-level claims.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `revision_id`
+- `claim_id`
+- `prior_support_state`
+- `new_support_state`
+- `evidence_refs`
+- `contradiction_refs`
+- `defeaters`
+- `revision_reason`
+- `uncertainty`
+- `review_status`
+- `history_refs`
+
+VCM supplies source context. Spinoza verifies or downgrades claims. UAT can review contested claims. Appendix C records book-level claim support while preserving revision history.
 
 ## Invariants
 
@@ -95,7 +120,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Contradictions remain linked.
 - Revision history is not overwritten.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The non-overwrite invariant is central. New evidence can change the current state, but it cannot erase the fact that a prior state existed, which evidence supported it, and why it changed.
 
 ## Failure modes
 
@@ -105,13 +130,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Belief inertia.
 - Contradiction deletion.
 
-For Claim Ledgers and Belief Revision, mitigation starts by turning each listed failure into a named reviewable artifact. When `Untracked assumptions` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Untracked assumptions should become claims or residuals. Belief inertia should trigger review when contradictions or stronger evidence arrive. Contradiction deletion is unacceptable: contradictions can be resolved, bounded, or refuted, but they should remain linked.
 
 ## Minimal implementation
 
 A claim-record schema and belief-revision transition example.
 
-The smallest useful implementation is deliberately narrow: A claim-record schema and belief-revision transition example. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is the existing `claim_record` schema plus a `belief_revision_record` schema and fixture. The fixture should demonstrate conservative support-state handling without claiming that an actual contested claim has been resolved.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +144,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Claim extraction test | Probe whether the chapter claim holds under the relevant Claim Ledgers and Belief Revision boundary. | planned; not run |
-| Contradiction detection test | Probe whether the chapter claim holds under the relevant Claim Ledgers and Belief Revision boundary. | planned; not run |
-| Belief revision test | Probe whether the chapter claim holds under the relevant Claim Ledgers and Belief Revision boundary. | planned; not run |
+| Claim extraction test | Check that prose claims can be represented separately from prose with labels, support states, and provenance. | planned; not run |
+| Contradiction detection test | Check that contradiction refs remain linked instead of being overwritten. | planned; not run |
+| Belief revision test | Check that support-state updates preserve prior evidence and revision history. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +173,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Claim Ledgers and Belief Revision defines one boundary in the ASI Stack: Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history. Its job is to make a capability more governable, not merely more impressive.
+Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history.
 
-In v0.2, this chapter gives Claim Ledgers and Belief Revision a complete architectural boundary: the architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision. Its next maturity step is to substantiate the boundary through `VCM supplies source context`, preserve `Claims are separable from prose`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise.

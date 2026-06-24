@@ -1,0 +1,13 @@
+{
+  "revision_id": "belief-revision-demo-001",
+  "claim_id": "claim-demo-001",
+  "prior_support_state": "unsupported",
+  "new_support_state": "argument",
+  "evidence_refs": ["schemas/claim_record.schema.json"],
+  "contradiction_refs": [],
+  "defeaters": ["no empirical test result is present"],
+  "revision_reason": "record shape is documented, but support remains conservative",
+  "uncertainty": "fixture does not adjudicate the substantive claim",
+  "review_status": "open",
+  "history_refs": ["tests/fixtures/protocol_records/claim_record.valid.json"]
+}

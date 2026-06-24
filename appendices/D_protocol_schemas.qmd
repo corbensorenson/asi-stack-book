@@ -6,6 +6,7 @@ Executable schema drafts are tracked in `schemas/`:
 
 - `schemas/authority_use_receipt.schema.json`
 - `schemas/authority_transition_record.schema.json`
+- `schemas/belief_revision_record.schema.json`
 - `schemas/claim_record.schema.json`
 - `schemas/command_contract.schema.json`
 - `schemas/compression_receipt.schema.json`
@@ -22,11 +23,13 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/intent_execution_trace.schema.json`
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
+- `schemas/proof_carrying_claim.schema.json`
 - `schemas/replacement_transaction.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/semantic_page_certificate.schema.json`
 - `schemas/stable_capability_field.schema.json`
+- `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/value_conflict_record.schema.json`
 
@@ -527,3 +530,62 @@ claim_record:
 ```
 
 Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
+
+## Belief Revision Record
+
+```yaml
+belief_revision_record:
+  revision_id: string
+  claim_id: string
+  prior_support_state: unsupported
+  new_support_state: argument
+  evidence_refs: []
+  contradiction_refs: []
+  defeaters: []
+  revision_reason: string
+  uncertainty: string
+  review_status: open
+  history_refs: []
+```
+
+This record preserves support-state changes, evidence, contradictions, defeaters, uncertainty, review state, and revision history instead of overwriting prior belief state.
+
+## Proof-Carrying Claim
+
+```yaml
+proof_carrying_claim:
+  proof_claim_id: string
+  claim_id: string
+  required_tier: procedure
+  interpretation_mapping: string
+  justification_artifact: string
+  verifier: string
+  verifier_result: not_run
+  limitations: []
+  downgrade_rule: string
+  tribunal_ref: string
+  ledger_update: string
+```
+
+This record makes proof or justification claims tiered and auditable, including interpretation mapping, verifier result, limitations, downgrade behavior, and ledger impact.
+
+## Tribunal Review Record
+
+```yaml
+tribunal_review_record:
+  review_id: string
+  target_ref: string
+  risk_class: medium
+  dossier_refs: []
+  reviewer_roles: []
+  adversarial_probes: []
+  findings: []
+  evidence_refs: []
+  dissent: []
+  unresolved_issues: []
+  verdict: revise
+  required_actions: []
+  human_adjudication: string
+```
+
+This record keeps adversarial review bounded, reproducible, and actionable through dossier refs, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdicts, required actions, and adjudication state.

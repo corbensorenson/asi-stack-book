@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_carrying_claim.schema.json",
+  "title": "Proof-Carrying Claim",
+  "type": "object",
+  "required": [
+    "proof_claim_id",
+    "claim_id",
+    "required_tier",
+    "interpretation_mapping",
+    "justification_artifact",
+    "verifier",
+    "verifier_result",
+    "limitations",
+    "downgrade_rule",
+    "tribunal_ref",
+    "ledger_update"
+  ],
+  "properties": {
+    "proof_claim_id": { "type": "string", "minLength": 1 },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "required_tier": {
+      "type": "string",
+      "enum": ["citation", "procedure", "synthetic_test", "formal", "human_review", "unknown"]
+    },
+    "interpretation_mapping": { "type": "string", "minLength": 1 },
+    "justification_artifact": { "type": "string", "minLength": 1 },
+    "verifier": { "type": "string", "minLength": 1 },
+    "verifier_result": {
+      "type": "string",
+      "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "downgrade_rule": { "type": "string", "minLength": 1 },
+    "tribunal_ref": { "type": "string" },
+    "ledger_update": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
