@@ -466,19 +466,26 @@ Third-party references should be added only when bibliographic metadata is recor
 
 
 def write_claim_matrix(structure: dict) -> None:
-    source_note_ids = {
-        path.stem
+    source_note_texts = {
+        path.stem: path.read_text(encoding="utf-8")
         for path in SOURCE_NOTES.glob("*.md")
         if path.name not in {"README.md", "_template.md"}
     }
+    source_note_ids = set(source_note_texts)
     rows = []
     for chapter in flatten_chapters(structure):
         chapter_source_ids = source_ids_for(chapter)
         source_label = ", ".join(f"`{source_id}`" for source_id in chapter_source_ids) or "None assigned yet"
         noted_sources = [source_id for source_id in chapter_source_ids if source_id in source_note_ids]
         missing_notes = [source_id for source_id in chapter_source_ids if source_id not in source_note_ids]
+        chapter_mapped_sources = [
+            source_id
+            for source_id in noted_sources
+            if f"`{chapter['id']}`" in source_note_texts.get(source_id, "")
+        ]
         if not chapter_source_ids:
             current_evidence = "No assigned source records yet."
+            source_mapping = "No chapter-level source-note mapping yet."
             open_gap = "Assign source records, create source notes, then map exact claim support before raising support state."
         elif missing_notes:
             current_evidence = (
@@ -486,17 +493,34 @@ def write_claim_matrix(structure: dict) -> None:
                 f"{len(noted_sources)} of {len(chapter_source_ids)} assigned sources have notes; "
                 f"missing notes for {', '.join(f'`{source_id}`' for source_id in missing_notes)}."
             )
+            source_mapping = (
+                f"{len(chapter_mapped_sources)} of {len(chapter_source_ids)} assigned sources explicitly list this chapter in their source notes; "
+                f"missing source notes for {', '.join(f'`{source_id}`' for source_id in missing_notes)}."
+            )
             open_gap = "Create missing source notes, then map exact claim support and tests before raising support state."
         else:
             current_evidence = (
                 f"Source notes available for all {len(chapter_source_ids)} assigned sources; "
                 "support remains `argument` until exact claim-to-source mapping or tests justify promotion."
             )
-            open_gap = "Map the claim to specific source-note mechanisms/evidence and define or run tests before raising support state."
+            if len(chapter_mapped_sources) == len(chapter_source_ids):
+                source_mapping = (
+                    f"All {len(chapter_source_ids)} assigned source notes explicitly list this chapter; "
+                    "mapping remains chapter-level, not claim-level support."
+                )
+            else:
+                missing_mapping = [
+                    source_id for source_id in chapter_source_ids if source_id not in chapter_mapped_sources
+                ]
+                source_mapping = (
+                    f"{len(chapter_mapped_sources)} of {len(chapter_source_ids)} assigned source notes explicitly list this chapter; "
+                    f"chapter-listing gap for {', '.join(f'`{source_id}`' for source_id in missing_mapping)}."
+                )
+            open_gap = "Map the exact claim text to specific source-note mechanisms/evidence and define or run tests before raising support state."
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(open_gap)} |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(open_gap)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
@@ -508,8 +532,8 @@ Each claim has two separate classifications: a claim label that describes what k
 
 No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
-| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Open gap |
-|---|---|---|---|---|---|---|---|
+| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Open gap |
+|---|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
 
 ## Claim Labels
