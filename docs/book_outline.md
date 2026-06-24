@@ -1153,17 +1153,18 @@ Draft deliverables:
 
 - A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
 - Implemented protocol validation: `context_abi_record` fixture validates public record shape only.
-- Planned Codex test: Address/version stability test.
+- Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
 - Planned Codex test: Admission vs adequacy test.
 - Planned Codex test: Conflict adequacy classification test.
-- Planned Codex test: Context fault behavior test.
+- Implemented Lean proof target: mandatory context misses produce typed faults instead of best-effort packets.
+- Planned Codex test: deployed resolver conformance test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | planned |
-| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | planned |
+| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
+| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
 
 ### Semantic Pages, Context Cells, and Certificates
 

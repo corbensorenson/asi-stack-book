@@ -7,3 +7,4 @@ import AsiStackProofs.Replacement
 import AsiStackProofs.SecurityKernel
 import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
+import AsiStackProofs.VirtualContextABI

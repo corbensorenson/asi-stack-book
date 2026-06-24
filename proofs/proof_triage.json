@@ -395,20 +395,20 @@
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextABI",
       "formal_target": "A context reference resolves only when the requested address and version are valid for the snapshot.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.VirtualContextABI as a finite context-reference predicate: resolved records require a matching address, version, and snapshot binding."
     },
     {
       "tag": "lean:vcm.abi.failure_blocks_promotion",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextABI",
       "formal_target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.VirtualContextABI as a finite lookup predicate: mandatory misses emit typed faults and no best-effort materialization."
     },
     {
       "tag": "lean:vcm.certificates.operational_invariant",

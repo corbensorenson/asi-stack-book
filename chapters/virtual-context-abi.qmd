@@ -17,6 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
   - "Only protocol schema/fixture validation is implemented; no VCM resolver or context compiler tests have been run for this chapter."
+  - "Lean coverage is limited to finite context-reference and lookup records; real resolver, adequacy classifier, and context compiler behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
-| Test state | Context ABI fixture validation implemented; resolver and compiler tests remain planned. |
+| Test state | Context ABI fixture validation and `AsiStackProofs.VirtualContextABI` finite-record proofs are implemented; resolver and compiler tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats VCM as a control-plane interface, not as a completed memory product. The repo validates a context ABI record shape, but it does not yet contain a resolver, planner-guided context compiler, snapshot service, or conformance run.
+This chapter treats VCM as a control-plane interface, not as a completed memory product. The repo validates a context ABI record shape and implements narrow finite-record Lean predicates for snapshot-bound reference resolution and mandatory-miss fault behavior. It does not yet contain a resolver, planner-guided context compiler, snapshot service, adequacy classifier, or conformance run.
 
 ## Problem
 
@@ -138,30 +139,31 @@ Flat transcript memory loses addresses, versions, and authority labels. Stale co
 
 A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
 
-The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. It does not prove a real context compiler exists.
+The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
 
-The record is an executable shape constraint. It cannot prove that a semantic address resolves correctly, that a materialization is adequate, or that a typed fault is emitted by a real context service.
+The record is an executable shape constraint. The Lean predicates cannot prove that a real semantic address resolver is correct, that a materialization is adequate, or that a deployed context service emits every required fault.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Context ABI fixture validation | Check that the context ABI fixture includes request, address, version, mount, snapshot, representation contract, authority labels, admission, adequacy, fault, materialization, and audit fields. | implemented by protocol validation; run in this pass |
-| Address/version stability test | Check that context references resolve only against valid addresses and versions for the snapshot. | planned; not run |
+| Snapshot-bound reference predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
 | Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
 | Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |
-| Context fault behavior test | Check that mandatory misses produce typed faults instead of best-effort packets. | planned; not run |
+| Mandatory-miss fault predicate | Check that mandatory misses produce typed faults instead of best-effort packets. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
+| Resolver conformance test | Check that a deployed resolver rejects invalid addresses, versions, mounts, and snapshots before materialization. | planned; not run |
 
-Only the fixture-shape check is implemented. Resolver behavior, adequacy classification, and fault emission require a context compiler or deterministic test harness.
+The fixture-shape check and finite-record proof predicates are implemented. Resolver behavior, adequacy classification, and service-level fault emission require a context compiler or deterministic test harness.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | planned |
-| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | planned |
+| `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
+| `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
 
-These proof hooks remain planned. The schema can require addresses and fault states; snapshot validity and mandatory-miss behavior need a formal lookup relation or executable resolver.
+These proof hooks are implemented only over finite Lean context-reference and lookup records. `AsiStackProofs.VirtualContextABI` checks that a resolved reference has a matching address, version, and snapshot binding, and that a mandatory miss emits a typed fault with no best-effort materialization. The proof does not implement a VCM resolver, adequacy classifier, snapshot service, or context compiler.
 
 ## Source crosswalk
 
