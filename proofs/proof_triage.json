@@ -255,7 +255,7 @@
       "chapter_id": "security-kernel-and-digital-scifs",
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A secret handle can be substituted only inside an authorized execution boundary.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
@@ -265,7 +265,7 @@
       "chapter_id": "security-kernel-and-digital-scifs",
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."

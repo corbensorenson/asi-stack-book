@@ -53,6 +53,7 @@
 - Added `scripts/validate_visual_coverage.py` and wired it into book validation so missing chapter diagrams or the landing-page hero asset are caught before publication.
 - Updated runbooks and generated test-spec output so visual coverage validation is listed with the standard publication checks.
 - Updated the project and installed `asi-stack-book` Codex skill so future writing runs know about visual coverage, schema/fixture validation, Lean build, and diagram standards.
+- Implemented `AsiStackProofs.SecurityKernel` for narrow secret-handle authorization and protected-SCIF clearance predicates, then updated the outline and chapter proof statuses without promoting security claims beyond their evidence.
 
 ## 2026-06-24 - v0.2 manuscript baseline
 

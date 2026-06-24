@@ -16,6 +16,7 @@ Current scale: 50 chapter files, 77,190 chapter words, averaging 1,544 words per
 - The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
 - Source notes now exist for all 59 source records currently assigned to chapters, including the original backbone notes, RMI, Benchmaxxing, CGS, Octopus Router, Cognitive Loop Closure, Project Theseus public-project records, Circle Calculus public-project records, the Field of God AI Constitution, GenesisCode, Verification Bandwidth, Cognitive Compilation, Simulation Scaling, UAT, Ladon/Manhattan, Ratcheting Generative Systems, TokenMana, BeastBrain, TreeLLM, BBVCA, RankFold/NeuralFold, Aletheia, Context Engineer, BugBrain, and the philosophical alignment lineage sources.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
+- The Digital SCIF/security-kernel authorization and clearance predicates are implemented in `AsiStackProofs.SecurityKernel` as narrow finite-record proofs.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
 - `scripts/validate_visual_coverage.py` checks that chapter diagram coverage and the landing-page hero asset remain present.

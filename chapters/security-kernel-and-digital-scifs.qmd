@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The authority_use_receipt fixture validates schema/example consistency only; secret-handle substitution, SCIF least-privilege, and prompt-injection containment scenarios remain unimplemented."
+  - "The authority_use_receipt fixture validates schema/example consistency and the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates only; secret-handle substitution, SCIF least-privilege, and prompt-injection containment scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange` |
 | Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
-| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation; secret-handle substitution, SCIF least-privilege, and prompt-injection containment tests remain planned. |
+| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; secret-handle substitution, SCIF least-privilege, and prompt-injection containment tests remain planned. |
 
 ## Drafting guardrail
 
@@ -147,10 +147,10 @@ The smallest useful implementation is a fake-secret fixture: an agent sees only 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | planned |
-| `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | planned |
+| `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | implemented |
+| `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
 
-These proof targets remain planned. The current executable support is the authority-use receipt fixture; real security claims require a toy handle-substitution test and an explicit threat model.
+These proof targets are implemented only over finite Lean records for authorization, clearance, secret-handle substitution, and protected-SCIF admission. The current executable support does not prove a deployed security kernel, side-channel resistance, or prompt-injection containment; those claims still require a toy handle-substitution test, threat model, and runtime harness.
 
 ## Source crosswalk
 

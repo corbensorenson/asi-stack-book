@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 100,
   "status_counts": {
-    "implemented": 4,
-    "planned": 96
+    "implemented": 6,
+    "planned": 94
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -305,7 +305,7 @@
       "tag": "lean:security.scif.operational_invariant",
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A secret handle can be substituted only inside an authorized execution boundary.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 773,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"
     },
@@ -315,7 +315,7 @@
       "tag": "lean:security.scif.failure_blocks_promotion",
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 774,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"
     },
