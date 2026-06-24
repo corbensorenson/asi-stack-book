@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no readiness-transition or quarantine-routing harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean gate/quarantine predicates are implemented; no readiness-transition checker, residual-ledger harness, benchmark harness, or quarantine-routing harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,11 +39,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/recovery: `moecot` |
 | Source loading state | source notes: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; connector/recovery: `moecot` |
-| Test state | Readiness gate fixture validation implemented; readiness-transition and quarantine tests remain planned. |
+| Test state | Readiness gate fixture validation implemented; finite gate/quarantine predicates implemented in `AsiStackProofs.ReadinessGates`; readiness-transition, residual-ledger, benchmark, and quarantine-routing tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses source notes for RMI, Benchmaxxing, SCF, Octopus Router, Project Theseus, and MoECOT as architecture context. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted.
+This chapter uses source notes for RMI, Benchmaxxing, SCF, Octopus Router, Project Theseus, and MoECOT as architecture context. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted. The repo now proves two finite Lean predicates over readiness records, but it has not implemented a lifecycle engine or rerun any readiness gate.
 
 ## Problem
 
@@ -137,25 +137,29 @@ The smallest useful implementation is a readiness gate schema and fixture. It do
 
 The `readiness_gate_record` schema validates the shape of that record. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
 
+`AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, plus a bounded quarantine predicate blocking ordinary route selection for quarantined targets. These proofs do not implement benchmark evaluation, residual escrow storage, lifecycle transitions, or routing enforcement.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, lifecycle states, evidence, regression results, residual escrow, authority, blockers, quarantine conditions, decision, reviews, and next trigger. | implemented by protocol validation; run in this pass |
-| Readiness gate enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it. | planned; not run |
+| Readiness gate promotion predicate | Check that promoted decisions require all required gates to pass. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
+| Quarantine ordinary-route predicate | Check that quarantined targets cannot be selected for ordinary execution routes. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
+| Readiness transition enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness. | planned; not run |
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | planned; not run |
-| Quarantine behavior test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | planned; not run |
+| Quarantine routing harness test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | planned; not run |
 
-Only fixture-shape validation is implemented. The planned tests require a lifecycle transition checker, residual ledger, and routing harness that respects quarantine state.
+Fixture-shape validation and two bounded Lean predicates are implemented. The planned tests require a lifecycle transition checker, residual ledger, benchmark harness, and routing harness that respects quarantine state.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | planned |
-| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | planned |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
+| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
 
-These proof hooks remain planned. The current schema names the lifecycle states and blockers; it does not yet enforce state-transition rules.
+These proof hooks are implemented as finite-record predicates. They do not prove benchmark quality, residual escrow integrity, lifecycle transition correctness, or routing-harness behavior.
 
 ## Source crosswalk
 

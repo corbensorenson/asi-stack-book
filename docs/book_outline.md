@@ -1822,16 +1822,18 @@ Draft deliverables:
 
 - A module lifecycle state machine and residual escrow ledger.
 - Implemented protocol validation: `readiness_gate_record` fixture validates public record shape only.
-- Planned Codex test: Readiness gate enforcement test.
+- Implemented Lean predicate: promoted decisions require all required gates to pass.
+- Implemented Lean predicate: quarantined targets cannot be selected for ordinary execution routes.
+- Planned Codex test: Readiness transition enforcement test.
 - Planned Codex test: Residual escrow integrity test.
-- Planned Codex test: Quarantine behavior test.
+- Planned Codex test: Quarantine routing harness test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | planned |
-| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | planned |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
+| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
 
 ### MoECOT Runtime and Multi-Core Orchestration
 

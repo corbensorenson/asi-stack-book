@@ -635,20 +635,20 @@
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessGates",
       "formal_target": "A module can enter promoted state only after all required gates pass.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ReadinessGates as a finite gate predicate: promoted decisions require all required gates to pass."
     },
     {
       "tag": "lean:readiness.gates.failure_blocks_promotion",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessGates",
       "formal_target": "A quarantined module cannot be selected for ordinary execution routes.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ReadinessGates as a finite quarantine predicate: quarantined targets cannot be selected for ordinary routes."
     },
     {
       "tag": "lean:moecot.runtime.operational_invariant",
