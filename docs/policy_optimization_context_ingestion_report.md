@@ -23,7 +23,7 @@ Public status: raw packet is local-only and ignored by git. This report is the p
 | Evidence discipline | Separated reward, preference, verifier, benchmark, latency, and governance feedback from evidence and authority claims. |
 | Record schema | Added `policy_optimization_record.schema.json` and a valid fixture for target layer, feedback source, update constraint, evaluation refs, governance gates, rollback, residuals, and non-claims. |
 | Lean hooks | Added `AsiStackProofs.PolicyOptimization` finite predicates for admitted update records and unverified-reward or missing-governance promotion blocking. |
-| Research direction | Preserved PPO, GRPO, DPO, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as external-literature and experiment backlog rather than reported results. |
+| Research direction | Preserved REINFORCE/RLOO/ReMax, TRPO/PPO/RLHF, GRPO/DAPO/GSPO, DPO/IPO/ORPO/KTO/SimPO, RLVR, process rewards, reasoning-budget RL, router-policy RL, and context-policy RL as external-literature and experiment backlog rather than reported results. |
 
 ## External Literature Queue
 
@@ -31,10 +31,11 @@ The packet suggested these external literature families for future source-note w
 
 | Area | Needed before use |
 |---|---|
+| Foundational policy gradients | Add source records/source notes for REINFORCE-style methods, RLOO, ReMax, and REINFORCE++-style work before claiming method behavior. |
 | Trust-region and clipped online RL | Add source records/source notes for TRPO, PPO/RLHF, GRPO, and relevant variants before claiming method behavior. |
-| Critic-free and group-relative RL | Source-note ReMax, RLOO/GRPO descendants, DAPO, GSPO, S-GRPO, and related methods before using reported results. |
+| Critic-free, group-relative, and sequence-level RL | Source-note ReMax, RLOO/GRPO descendants, DAPO, GSPO, S-GRPO, and related methods before using reported results. |
 | Offline preference optimization | Source-note DPO, IPO, ORPO, KTO, SimPO, and related methods before using them as external support. |
-| Verifier-based RL / RLVR | Source-note RLVR and long-context verifier-reward papers before connecting them to VCM as external evidence. |
+| Verifier-based RL / RLVR | Source-note RLVR, process-reward, and long-context verifier-reward papers before connecting them to VCM as external evidence. |
 | Reward hacking and RLHF limitations | Source-note limitation surveys and evaluator-gaming papers before using them as external literature support. |
 | Stack control-policy RL | Design local experiments for planner, router, VCM, execution, verifier, and generation-mode policies before claiming prototype-backed support. |
 

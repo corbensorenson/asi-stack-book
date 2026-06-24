@@ -3761,6 +3761,7 @@
           "mechanism": [
             "Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, or generation mode.",
             "Record the feedback source: human preference, verifier reward, benchmark result, tool result, context-grounding check, governance check, or latency/resource signal.",
+            "Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked.",
             "Constrain the update with drift bounds, evidence gates, rollback plans, and residual accounting.",
             "Evaluate for task success, regressions, reward hacking, authority compliance, and cost before promotion."
           ],
@@ -3787,6 +3788,11 @@
           ],
           "minimal_implementation": "A policy optimization record schema, fixture, and finite Lean predicates that separate feedback, update constraints, evaluation, governance gates, rollback, and non-claims from unrun training results.",
           "codex_tests": [
+            "DPO/offline preference baseline test",
+            "PPO online RL baseline test",
+            "GRPO/RLOO toy math reward test",
+            "Verifier reward loop test",
+            "Length and latency penalty study",
             "Reward-source admissibility test",
             "Reward hacking probe test",
             "Router policy toy RL test",

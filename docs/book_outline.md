@@ -2673,7 +2673,8 @@ Draft arc:
 - Insufficiency: RLHF, preference optimization, and verifier rewards are often framed as model fine-tuning recipes rather than stack-wide update mechanisms.
 - Mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
 - Mechanism: Record the feedback source, reward/preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
-- Mechanism: Keep PPO, GRPO, DPO, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
+- Mechanism: Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked.
+- Mechanism: Keep REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO-style trust-region updates, GRPO/DAPO/GSPO-style group or sequence updates, DPO/IPO/ORPO/KTO/SimPO-style offline preference optimization, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
 - Interface: Benchmarks and verifiers produce reward or preference signals.
 - Interface: VCM and artifact graphs preserve training/evaluation context and evidence references.
 - Interface: Talos records training, tool, and evaluation artifacts.
@@ -2701,7 +2702,12 @@ Draft deliverables:
 - A policy optimization record schema with target layer, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
 - Implemented repository-level fixture: `policy_optimization_record.valid.json` validates policy-update record shape only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
-- External literature queue: TRPO, PPO/RLHF, ReMax, GRPO, DeepSeek-R1, DAPO, GSPO, DPO, ORPO, KTO, SimPO, LongRLVR, S-GRPO, and RLHF limitation work require source records/source notes before support promotion.
+- External literature queue: REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO/RLHF, GRPO, DeepSeek-R1, DAPO, GSPO, DPO, IPO, ORPO, KTO, SimPO, LongRLVR, S-GRPO, process-reward work, and RLHF limitation work require source records/source notes before support promotion.
+- Planned Codex test: DPO/offline preference baseline test.
+- Planned Codex test: PPO online RL baseline test.
+- Planned Codex test: GRPO/RLOO toy math reward test.
+- Planned Codex test: Verifier reward loop test.
+- Planned Codex test: Length and latency penalty study.
 - Planned Codex test: Reward-source admissibility test.
 - Planned Codex test: Reward hacking probe test.
 - Planned Codex test: Router policy toy RL test.

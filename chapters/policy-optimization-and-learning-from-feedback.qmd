@@ -48,6 +48,8 @@ open_evidence_gaps:
 
 This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. External RL papers named here are candidates for future source notes, not support-state promotions.
 
+The public arXiv records linked in the external-literature queue have been checked only as candidate records and title-level anchors. They still need citation-normalized source records and source notes before they can support manuscript claims.
+
 ## Problem
 
 Benchmarks, verifiers, human preferences, tool results, context-grounding checks, and governance violations all produce feedback. A living ASI stack needs a disciplined way to turn that feedback into future behavior. Without that layer, the book can explain how to measure, review, and gate capabilities, but not how the system learns which behaviors to repeat, suppress, shorten, route, verify, or retire.
@@ -112,6 +114,31 @@ The external literature named in the browser packet is best organized by what th
 
 This chapter should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
 
+The chapter should make the target policy explicit before naming an optimizer.
+
+| Stack layer | Policy that can be optimized | Reward boundary |
+|---|---|---|
+| Planner | Decomposition, tool choice, stopping, escalation. | Task success cannot erase constraints, approvals, or residuals. |
+| VCM | Context selection, compression, grounding, context refresh. | More compact context is not better unless evidence adequacy is preserved. |
+| Router / MoECOT | Expert selection, fallback, quorum, latency/cost tradeoff. | Cheap routing cannot bypass readiness, authority, or residual escrow. |
+| Generator | Answer quality, uncertainty style, repair behavior, reasoning length. | Fluent or concise output is not evidence without verifier support. |
+| Verifier / Spinoza | Critique accuracy, contradiction detection, calibrated abstention. | A verifier reward must be audited for gaming and coverage gaps. |
+| Talos execution | Tool policy, job sequencing, artifact success, approval compliance. | Tool success cannot expand the authority envelope. |
+| SCF governance | Promotion, rollback, quarantine, field replacement. | Governance rewards must preserve rights, review, and rollback. |
+| Generation mode | AR, speculative, diffusion-like, early-exit, or slow verified route selection. | Speed is only useful when accepted-output quality and fallback are recorded. |
+
+The training mode should match the available feedback and risk.
+
+| Training mode | Best when | Weakness to record |
+|---|---|---|
+| SFT | High-quality demonstrations exist. | Imitation does not explore better policies. |
+| DPO / IPO / ORPO / KTO / SimPO | Static preference or binary feedback is available. | Limited online exploration and dependence on preference quality. |
+| PPO-style online RL | Online rollout and reward optimization are needed. | Critic cost, tuning sensitivity, and reward-model risk. |
+| GRPO / RLOO / ReMax-style critic-free RL | Multiple samples per prompt can create useful reward contrast. | Needs reliable contrast and can still overfit reward artifacts. |
+| DAPO / GSPO-style variants | Long reasoning, sequence-level rewards, or MoE-specific training needs different granularity. | Fast-moving literature and higher reproduction risk. |
+| RLVR and process rewards | Automatic verifiers, tests, proofs, or step-level checks are available. | Verifiers can be sparse, brittle, or gamed. |
+| Control-policy RL | Planner, router, VCM, execution, verifier, or generation-mode policies need improvement. | Requires system-level reward design and authority-aware evaluation. |
+
 ## Interfaces
 
 ```{mermaid}
@@ -169,6 +196,11 @@ The fixture records target layer, policy ref, training mode, feedback source, re
 | Test | Purpose | Status |
 |---|---|---|
 | Policy optimization record fixture validation | Validate that a policy update records target layer, policy ref, training mode, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| DPO/offline preference baseline test | Establish a minimal static-preference update path and record its non-claims, holdouts, and preference-data limits. | planned; not run |
+| PPO online RL baseline test | Establish a small online reward-update path with explicit drift bounds, reward refs, and baseline comparison. | planned; not run |
+| GRPO/RLOO toy math reward test | Check whether group-relative or leave-one-out sampling improves a toy verifiable task without unstated reward assumptions. | planned; not run |
+| Verifier reward loop test | Use exact or tool verifiers to record reward quality, false positives, false negatives, and residuals. | planned; not run |
+| Length and latency penalty study | Test shorter reasoning or faster routing only when correctness, grounding, and verification adequacy are preserved. | planned; not run |
 | Reward-source admissibility test | Check that unverified reward sources cannot promote a policy update without evaluation and governance refs. | planned; not run |
 | Reward hacking probe test | Check whether a candidate reward can be exploited without real task success. | planned; not run |
 | Router policy toy RL test | Train or simulate a small router-policy update with holdouts, baseline, latency, and authority constraints. | planned; not run |
@@ -193,13 +225,14 @@ The following primary-source candidates were verified as real public records dur
 
 | Area | Candidate sources | Use after source-note work |
 |---|---|---|
-| Trust-region updates | TRPO, PPO-family references | Explain update constraints, KL/drift boundaries, and why bounded updates matter. |
-| Critic-free and group-relative RL | ReMax, DeepSeek-R1/GRPO, DAPO, GSPO, S-GRPO | Compare critic-free reward learning, group-relative advantages, sequence-level rewards, and reasoning-budget penalties. |
-| Offline preference optimization | DPO, ORPO, KTO, SimPO | Explain when static preferences or binary feedback are cheaper than online rollout. |
-| Verifier reward and long context | RLVR and LongRLVR-style context rewards | Connect VCM grounding, verifier rewards, and context-selection policies. |
+| Foundational policy gradients | REINFORCE-style methods, RLOO, ReMax, REINFORCE++-style work | Explain minimal reward-learning substrates and critic-free simplifications. |
+| Trust-region updates | TRPO, PPO, PPO/RLHF-family references | Explain update constraints, KL/drift boundaries, and why bounded updates matter. |
+| Critic-free, group-relative, and sequence-level RL | ReMax, DeepSeek-R1/GRPO, DAPO, GSPO, S-GRPO | Compare critic-free reward learning, group-relative advantages, sequence-level rewards, and reasoning-budget penalties. |
+| Offline preference optimization | DPO, IPO, ORPO, KTO, SimPO | Explain when static preferences or binary feedback are cheaper than online rollout. |
+| Verifier reward and long context | RLVR, process-reward, and LongRLVR-style context rewards | Connect VCM grounding, verifier rewards, and context-selection policies. |
 | RLHF limitations | RLHF limitation surveys and evaluator-gaming work | Feed reward-hacking probes, governance gates, and disclosure/audit requirements. |
 
-Verified candidate links: [TRPO](https://arxiv.org/abs/1502.05477), [ReMax](https://arxiv.org/abs/2310.10505), [DPO](https://arxiv.org/abs/2305.18290), [ORPO](https://arxiv.org/abs/2403.07691), [KTO](https://arxiv.org/abs/2402.01306), [SimPO](https://arxiv.org/abs/2405.14734), [DeepSeek-R1](https://arxiv.org/abs/2501.12948), [DAPO](https://arxiv.org/abs/2503.14476), [GSPO](https://arxiv.org/abs/2507.18071), [S-GRPO](https://arxiv.org/abs/2505.07686), [LongRLVR](https://arxiv.org/abs/2603.02146), and [Open Problems and Fundamental Limitations of RLHF](https://arxiv.org/abs/2307.15217).
+Checked candidate links: [TRPO](https://arxiv.org/abs/1502.05477), [PPO](https://arxiv.org/abs/1707.06347), [ReMax](https://arxiv.org/abs/2310.10505), [DPO](https://arxiv.org/abs/2305.18290), [IPO / preference-learning paradigm](https://arxiv.org/abs/2310.12036), [ORPO](https://arxiv.org/abs/2403.07691), [KTO](https://arxiv.org/abs/2402.01306), [SimPO](https://arxiv.org/abs/2405.14734), [REINFORCE-style RLHF revisiting](https://arxiv.org/abs/2402.14740), [DeepSeek-R1](https://arxiv.org/abs/2501.12948), [DAPO](https://arxiv.org/abs/2503.14476), [GSPO](https://arxiv.org/abs/2507.18071), [S-GRPO](https://arxiv.org/abs/2505.07686), [LongRLVR](https://arxiv.org/abs/2603.02146), and [Open Problems and Fundamental Limitations of RLHF](https://arxiv.org/abs/2307.15217).
 
 ## Source crosswalk
 

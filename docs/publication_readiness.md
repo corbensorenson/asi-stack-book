@@ -38,7 +38,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - Most Lean proof targets now have finite-record implementations; Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`, with the remaining planned targets kept as research agenda items.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
-- External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized.
+- External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized or source-noted.
 - The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.
 
 ## Manuscript Maintenance Checklist
