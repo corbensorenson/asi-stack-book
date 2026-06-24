@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no VCM resolver or context compiler tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Context ABI fixture validation implemented; resolver and compiler tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats VCM as a control-plane interface, not as a completed memory product. The repo validates a context ABI record shape, but it does not yet contain a resolver, planner-guided context compiler, snapshot service, or conformance run.
 
 ## Problem
 
@@ -62,7 +62,7 @@ Ordinary retrieval usually answers "what looks relevant?" VCM must also answer "
 
 [virtual-context-abi.core, label: Design rationale, support: argument] Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Virtual_Context_Memory_v1, Context Engineer / Manhattan Protocol, Verification Bandwidth in Bounded Contexts, Verified Intent-to-Execution Architecture, and Virtual_Context_Memory_v1.0_Editable - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. VCM public v1 supplies the ABI, source binding, adequacy/admission, typed non-success, and audit vocabulary. Context Engineer supplies the context-supply-chain pressure. Verification Bandwidth explains why admitted context may still be inadequate. VIEA connects context materializations to intent and evidence ledgers. The editable VCM and MoECOT sources are available for future refinement, not local implementation proof.
 
 ## Mechanism
 
@@ -120,8 +120,6 @@ Planning requests context by task and semantic address. VCM resolves versions an
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Addresses and versions are stable.
 - Context adequacy is distinct from admission.
 - Faults are typed and visible.
@@ -129,8 +127,6 @@ The invariants are the conditions that must remain true even when the implementa
 Address stability is what makes later verification possible: a claim should not depend on "whatever retrieval returned at the time." Snapshot validity is what makes context replay possible. Typed faults are what prevent missing context from being laundered into confident output.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Flat transcript memory.
 - Stale context.
@@ -144,18 +140,19 @@ A context ABI table covering address, version, mount, snapshot, representation, 
 
 The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. It does not prove a real context compiler exists.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The record is an executable shape constraint. It cannot prove that a semantic address resolves correctly, that a materialization is adequate, or that a typed fault is emitted by a real context service.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Context ABI fixture validation | Check that the context ABI fixture includes request, address, version, mount, snapshot, representation contract, authority labels, admission, adequacy, fault, materialization, and audit fields. | implemented by protocol validation; run in this pass |
 | Address/version stability test | Check that context references resolve only against valid addresses and versions for the snapshot. | planned; not run |
 | Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
 | Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |
 | Context fault behavior test | Check that mandatory misses produce typed faults instead of best-effort packets. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. Resolver behavior, adequacy classification, and fault emission require a context compiler or deterministic test harness.
 
 ### Formalization hooks
 
@@ -164,7 +161,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | planned |
 | `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The schema can require addresses and fault states; snapshot validity and mandatory-miss behavior need a formal lookup relation or executable resolver.
 
 ## Source crosswalk
 
@@ -177,7 +174,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for the VCM ABI and context-supply-chain vocabulary. It does not claim the repo has reproduced VCM conformance artifacts or benchmark results.
 
 ## Summary
 

@@ -1151,6 +1151,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
+- Implemented protocol validation: `context_abi_record` fixture validates public record shape only.
 - Planned Codex test: Address/version stability test.
 - Planned Codex test: Admission vs adequacy test.
 - Planned Codex test: Conflict adequacy classification test.
@@ -1205,6 +1206,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic-page schema with certificate fields and example source-to-summary derivation.
+- Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape only.
 - Planned Codex test: Certificate completeness test.
 - Planned Codex test: Authority preservation test.
 - Planned Codex test: Summary fidelity test.
@@ -1258,6 +1260,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A transaction model for context reads, writes, branches, and deletion closure.
+- Implemented protocol validation: `context_transaction_record` fixture validates public record shape only.
 - Planned Codex test: Read-your-writes snapshot test.
 - Planned Codex test: Taint propagation test.
 - Planned Codex test: Deletion closure test.
@@ -1311,6 +1314,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A context adequacy rubric and verification-bandwidth warning states.
+- Implemented protocol validation: `context_adequacy_record` fixture validates public record shape only.
 - Planned Codex test: Distractor resistance test.
 - Planned Codex test: Adequacy labeling test.
 - Planned Codex test: Verification escalation test.

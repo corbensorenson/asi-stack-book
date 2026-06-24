@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no contradiction-rate or adequacy benchmark has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`; raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Context adequacy fixture validation implemented; contradiction-rate tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats verification bandwidth as a claim-control boundary, not as a measured model law. The repo validates a context adequacy record, but it has not run the proposed contradiction-rate experiment, measured attention interference, or formalized the two-body verification limit.
 
 ## Problem
 
@@ -61,7 +61,7 @@ RAG and long context are therefore necessary infrastructure, not proof. They hel
 
 [verification-bandwidth-and-context-adequacy.core, label: Design rationale, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verification Bandwidth in Bounded Contexts, Virtual_Context_Memory_v1, Proof of Belief / The Spinoza Architecture, TreeLLM, and Virtual_Context_Memory_v1.0_Editable - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Verification Bandwidth supplies the generation-versus-verification distinction, semantic-unit comparison frame, transitive-decay risk, and proposed contradiction-rate test. VCM supplies adequacy/admission states and context packet vocabulary. Spinoza supplies claim-ledger consequences. TreeLLM supplies a representation route for explicit semantic units. Editable VCM remains a refinement source, not a local benchmark.
 
 ## Mechanism
 
@@ -107,8 +107,6 @@ Planning consumes the adequacy state before assigning review effort. VCM uses it
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Adequacy is explicit.
 - More context is not treated as proof.
 - High-risk claims pay verification tax.
@@ -116,8 +114,6 @@ The invariants are the conditions that must remain true even when the implementa
 These invariants are deliberately weaker than a theorem about model cognition. The book does not claim to know a model's true internal workspace. It claims that a governed stack should expose the boundary conditions under which a claim was produced, and should refuse to treat context length as evidence when the comparison task was not actually performed.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Attention interference.
 - False confidence from large context.
@@ -131,17 +127,18 @@ A context adequacy rubric and verification-bandwidth warning states.
 
 The smallest useful implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The existing artifact is narrower: a `context_adequacy_record` schema and fixture. It records semantic units, compression path, verification mode, adequacy state, residual risks, and escalation requirements, but it does not measure verification performance.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Distractor resistance test | Probe whether the chapter claim holds under the relevant Verification Bandwidth and Context Adequacy boundary. | planned; not run |
-| Adequacy labeling test | Probe whether the chapter claim holds under the relevant Verification Bandwidth and Context Adequacy boundary. | planned; not run |
-| Verification escalation test | Probe whether the chapter claim holds under the relevant Verification Bandwidth and Context Adequacy boundary. | planned; not run |
+| Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, semantic units, compression path, verification mode, adequacy state, residual risks, and escalation requirements. | implemented by protocol validation; run in this pass |
+| Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
+| Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | planned; not run |
+| Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. The other tests require a synthetic contradiction suite, logged prompts or deterministic checkers, and claim-ledger outcomes.
 
 ### Formalization hooks
 
@@ -150,7 +147,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | planned |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. Adequacy/admission separation is close to a finite-state invariant; the stronger verification-bandwidth claims need either formal resource assumptions or empirical contradiction tests.
 
 ## Source crosswalk
 
@@ -162,7 +159,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for context adequacy and verification-capacity vocabulary. It does not claim the proposed contradiction-rate experiment has been run.
 
 ## Summary
 
