@@ -139,12 +139,12 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-|  `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
-|  `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
-|  `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
-|  `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
-|  `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-|  `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

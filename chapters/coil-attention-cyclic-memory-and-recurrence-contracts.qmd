@@ -142,10 +142,10 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-|  `coil_attention_memory` | Coil Attention and Memory | cyclic_attention_memory | Proof-linked cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop-exit certificates, work budgets, and alias diagnostics. | source note pending |
-|  `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
-|  `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
-|  `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
+| `coil_attention_memory` | Coil Attention and Memory | cyclic_attention_memory | Proof-linked cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop-exit certificates, work budgets, and alias diagnostics. | source note pending |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

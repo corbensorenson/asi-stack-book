@@ -45,19 +45,19 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 ## Problem
 
-The book itself must remain a living technical system rather than a static anthology.
+The book itself must remain a living technical system rather than a static anthology. That is not a publishing preference. It is part of the architecture. A book about governed self-improving systems should not improve by silently rewriting claims, losing source provenance, or hiding failed tests. It should model the same discipline it asks of the AI stack.
 
-Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The living-book problem is versioned coherence. New papers will arrive. Chapters will split and merge. Proof targets will move from vague ideas to schemas or Lean modules. Some claims will strengthen, some will remain speculative, and some should be deprecated. The system needs a way to absorb those changes without making the reader guess which claims are current, which are supported, and which are only design hypotheses.
 
-It inherits pressure from the previous chapter, Prototype Roadmap, and makes that pressure operational in a narrower boundary. It hands its output to Open Research Agenda and Bibliography Plan, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter defines that operating system. It turns the manuscript into a governed artifact graph: manifest, outline, source inventory, source notes, claim matrix, proof manifest, schemas, tests, changelog, rendered site, and Git history.
 
 ## Why existing approaches are insufficient
 
 Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history. If `living-book-methodology` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+The usual alternatives fail in opposite directions. A static PDF can be polished, but it freezes the source and evidence state at one moment. A loose wiki can change quickly, but it often loses architectural discipline. A code repo can validate structure, but it does not by itself explain the thesis to readers. A chat history can preserve intent, but it is not a public evidence artifact.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The living book needs all four properties at once: readable prose, versioned source, executable validation, and visible evidence state. That combination is what lets the project improve aggressively without becoming a moving target that no reader can audit.
 
 ## Core Claim
 
@@ -67,7 +67,7 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, use `book_structure.json` for order and dynamic chapters. Second, use `docs/book_outline.md` for drafting, source queues, and Lean scope. Third, treat conversation-mined packets as author-intent and lineage context, not as independent evidence. Fourth, use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful. Fifth, require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
+The mechanism is a ratchet. Each improvement should leave the repository in a more informative state than it found it, while preserving the ability to explain what changed.
 
 - Use `book_structure.json` for order and dynamic chapters.
 - Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
@@ -75,9 +75,30 @@ The mechanism turns the core claim into a working contract. First, use `book_str
 - Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
 - Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The key artifact split is deliberate. `book_structure.json` controls order and stable IDs. `docs/book_outline.md` controls drafting intent, source queues, and proof targets. Source notes record what has actually been read. Appendix C records claim support state. The proof manifest records formalization targets. The changelog records meaningful movement. GitHub Pages renders the public state.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Conversation-mined material has a bounded role: it can preserve author intent, terminology, lineage, and recovery tasks, but it is not external evidence. Raw sources stay private unless publication is approved. Public claims move only when the evidence artifact exists.
+
+## Operating loop
+
+```{mermaid}
+flowchart LR
+  Source["New source or idea"] --> Triage["Triage into inventory and outline"]
+  Triage --> Notes["Source note or author-intent record"]
+  Notes --> Draft["Chapter revision"]
+  Draft --> Claims["Claim/evidence matrix update"]
+  Claims --> Proofs["Proof, schema, or test update"]
+  Proofs --> Validate["Validation and render"]
+  Validate --> Release["Commit, changelog, public site"]
+  Release --> Residuals["Open gaps and next queue"]
+  Residuals --> Triage
+
+  Notes -. "no note, no source-derived support" .-> Claims
+  Proofs -. "no run, no result" .-> Claims
+  Validate -. "failure blocks release" .-> Draft
+```
+
+This loop is the book's own version of benchmark ratcheting and cognitive loop closure. Repeated maintenance work should become scripts, validators, schemas, or proof modules. But the same rule applies as everywhere else in the stack: do not close a loop until it is parameterized, testable, and safe to reuse.
 
 ## Interfaces
 
@@ -88,7 +109,7 @@ The interface for Living Book Methodology is the contract that lets adjacent lay
 - Tests feed support states.
 - Releases feed GitHub Pages.
 
-The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+The upstream interface accepts new sources, chapter goals, prototype findings, proof opportunities, and reader-visible gaps. The downstream interface emits synchronized scaffolds, updated chapters, source notes, claim rows, proof manifests, schemas, validation logs, changelog entries, commits, and public renders. If any one of those artifacts is missing, the book should say so instead of smoothing over the gap.
 
 This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
 
@@ -143,18 +164,18 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-|  `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
-|  `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-|  `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | local raw cache available |
-|  `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
-|  `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-|  `moecot_md` | moecot_agent_whitepaper.md | implementation_reference | Markdown export/source version. | source note available; local raw cache available |
-|  `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | local raw cache available |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `moecot_md` | moecot_agent_whitepaper.md | implementation_reference | Markdown export/source version. | source note available; local raw cache available |
+| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-Living Book Methodology defines one boundary in the ASI Stack: The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases. Its job is to make a capability more governable, not merely more impressive.
+Living Book Methodology defines how this project improves without losing its memory. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
 
-In v0.2, this chapter gives Living Book Methodology a complete architectural boundary: the book itself must remain a living technical system rather than a static anthology. Its next maturity step is to substantiate the boundary through `Source ingestion feeds source notes`, preserve `No fabricated source content`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This matters because the book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, and releases, then it has not earned the right to describe governed recursive improvement. The next chapter turns that humility into an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.
