@@ -3,6 +3,7 @@ title: "Benchmark Ratchets and Anti-Goodhart Evidence"
 chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "benchmaxxing"
@@ -20,9 +21,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # Benchmark Ratchets and Anti-Goodhart Evidence
@@ -34,83 +35,134 @@ open_evidence_gaps:
 | Chapter ID | `benchmark-ratchets-and-anti-goodhart-evidence` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
+| Source loading state | source notes: `coherence_exchange`, `moecot`, `road_to_agi`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; pending source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `coherence_exchange`, `moecot` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
 
+Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It inherits pressure from the previous chapter, Executable Specifications and Lean Proof Envelope, and makes that pressure operational in a narrower boundary. It hands its output to Integrated Reference Architecture, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, the book can read as finished before the architecture has been implemented, tested, or falsified at the right boundaries. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Benchmaxxing: The Performance Ratchet, Ratcheting Modular Intelligence, Cognitive Loop Closure, Unified Adaptive Tribunal, and The Coherence Exchange - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, track benchmark mastery thresholds and saturation. Second, generate regressions and hidden checks. Third, move residual failures into escrow and new frontier tasks. Fourth, record negative and inconclusive results as evidence, not cleanup.
 
 - Track benchmark mastery thresholds and saturation.
 - Generate regressions and hidden checks.
 - Move residual failures into escrow and new frontier tasks.
 - Record negative and inconclusive results as evidence, not cleanup.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Routing and SCFs use readiness gates.
 - Evidence matrix records support movement.
 - Changelog records evidence changes.
 
+The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - No test success is claimed without execution.
 - Synthetic and empirical evidence remain distinct.
 - Regressions are preserved.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Benchmark overfitting.
 - Hidden regression deletion.
 - Claim support inflation.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A benchmark ratchet record with frontier, mastery, residuals, regressions, and anti-Goodhart checks.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Saturation detection test | Support or falsify this chapter's layer claim. | planned; not run |
-| Hidden benchmark transfer test | Support or falsify this chapter's layer claim. | planned; not run |
-| Regression preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Saturation detection test | Probe whether the chapter claim holds under the relevant Benchmark Ratchets and Anti-Goodhart Evidence boundary. | planned; not run |
+| Hidden benchmark transfer test | Probe whether the chapter claim holds under the relevant Benchmark Ratchets and Anti-Goodhart Evidence boundary. | planned; not run |
+| Regression preservation test | Probe whether the chapter claim holds under the relevant Benchmark Ratchets and Anti-Goodhart Evidence boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | planned |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
-| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
-| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
-| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
-| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | Planned use from inventory/manifest: Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. |
-| `theseus_architecture_gate` | Theseus Architecture Gate | Planned use from inventory/manifest: Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | Planned use from inventory/manifest: Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | local raw cache available |
+| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | local raw cache available |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | local raw cache available |
+| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | local raw cache available |
+| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
+| `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
+| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+Benchmark Ratchets and Anti-Goodhart Evidence defines one boundary in the ASI Stack: Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

@@ -2,12 +2,13 @@
 
 Last updated: 2026-06-24
 
-This file records the repo changes needed before starting a goal to draft the full book.
+This file records the repo changes that made the full-book v0.2 drafting goal safe to start. The launch phase is complete; the current manuscript status is tracked in `docs/v02_manuscript_status.md`.
 
 The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 ## Completed Readiness Work
 
+- A complete v0.2 manuscript baseline now exists across all 50 manifest-driven chapters.
 - Backbone source notes now exist for VIEA, SCF, PlanForge, Talos, VCM, Spinoza, Alignment Field, MoECOT, and connector-resolved variants.
 - Authenticated connector reads are recorded in `sources/connector_readiness.json` and reflected in the source readiness report.
 - The per-chapter Definition of Done is machine-checked by `scripts/validate_chapter_dod.py`.
@@ -25,9 +26,9 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.
 - External literature has a queue and stance, but not a citation-normalized bibliography.
 
-## Full-Book Drafting Launch Gate
+## Full-Book Maintenance Gate
 
-Before starting an autonomous full-book writing goal, run:
+Before claiming the manuscript is current after a structural or drafting change, run:
 
 ```bash
 python3 scripts/source_readiness_report.py

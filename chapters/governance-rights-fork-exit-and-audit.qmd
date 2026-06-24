@@ -3,6 +3,7 @@ title: "Governance Rights: Fork, Exit, and Audit"
 chapter_id: "governance-rights-fork-exit-and-audit"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "ethica_mechanica"
@@ -15,9 +16,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # Governance Rights: Fork, Exit, and Audit
@@ -29,77 +30,128 @@ open_evidence_gaps:
 | Chapter ID | `governance-rights-fork-exit-and-audit` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `ethica_mechanica`, `coherence_exchange`; supporting: `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
+| Source loading state | source notes: `coherence_exchange`, `alignment_field`, `spinoza`; raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; pending source notes: `ethica_mechanica`, `ladon_manhattan`, `uat`, `field_of_god_ai_constitution`; connector/recovery: `coherence_exchange` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
 
+Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It inherits pressure from the previous chapter, Moral Uncertainty and Value Conflict, and makes that pressure operational in a narrower boundary. It hands its output to Stable Capability Fields, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, authority can leak from persuasive reasoning into action, replacement, or deployment before the stack has earned that authority. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Ethica Mechanica, The Coherence Exchange, Field of God / Alignment Field family, Ladon & The Manhattan Protocol, and Proof of Belief / The Spinoza Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, represent rights as capabilities and required interfaces. Second, attach audit artifacts to governance decisions. Third, treat fork/exit as preserved escape hatches against lock-in.
 
 - Represent rights as capabilities and required interfaces.
 - Attach audit artifacts to governance decisions.
 - Treat fork/exit as preserved escape hatches against lock-in.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Governance issues rights.
 - SCFs preserve rights across replacement.
 - Execution logs evidence for audit.
 
+The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Audit records cannot be silently deleted.
 - Exit paths remain materially usable.
 - Fork rights do not bypass safety constraints.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Governance capture.
 - Data hostage-taking.
 - Opaque automated policy updates.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A governance-rights table with required artifacts, authorities, and failure tests.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Audit-record availability test | Support or falsify this chapter's layer claim. | planned; not run |
-| Exit-path preservation test | Support or falsify this chapter's layer claim. | planned; not run |
-| Fork-right safety test | Support or falsify this chapter's layer claim. | planned; not run |
+| Audit-record availability test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
+| Exit-path preservation test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
+| Fork-right safety test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | planned |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
-| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
-| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | Planned use from inventory/manifest: Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | local raw cache available |
+| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
+| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
+| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | local raw cache available |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+Governance Rights: Fork, Exit, and Audit defines one boundary in the ASI Stack: Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

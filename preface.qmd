@@ -2,9 +2,13 @@
 
 This book is a unification pass across AI architecture papers and prototypes. It is not intended to be a pasted anthology. The goal is to treat the papers as fragments of one proposed architecture for governed, efficient, self-improving AI.
 
+The current manuscript is a v0.2 living draft. It is written as one architecture, but its evidence discipline is intentionally conservative: source-derived support, prototype support, benchmark support, and proof support are recorded only when the corresponding artifact exists in the repository.
+
 ## What this book is
 
 It is a living technical book organized around stack layers: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive improvement.
+
+It is also a working systems-engineering notebook. Chapters define interfaces, invariants, failure modes, minimal implementation targets, source queues, proof hooks, and test plans so the book can keep changing without losing its architecture.
 
 ## What this book is not
 
@@ -13,6 +17,8 @@ It is not a claim that the architecture is complete, proven, or safe in every do
 ## Claim labels
 
 Claims use explicit support states: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, and `external-literature-backed`.
+
+The default support state is `argument`. That label is not a weakness; it is a promise that the manuscript is not pretending to have evidence it has not yet recorded.
 
 ## Why Codex tests matter
 

@@ -166,7 +166,7 @@ def validate_chapter_frontmatter(chapters: list[dict]) -> None:
             stale.append(path.relative_to(ROOT))
         if f'chapter_id: "{chapter["id"]}"' not in text:
             stale.append(path.relative_to(ROOT))
-        if "Source records assigned; source texts not yet ingested." not in text:
+        if "Source loading state" not in text:
             stale.append(path.relative_to(ROOT))
     if stale:
         print("Chapter files need dynamic scaffold status updates:")

@@ -17,6 +17,14 @@ python3 scripts/sync_scaffold.py
 python3 scripts/validate_book.py
 ```
 
+The sync step creates only a generated starting point for a missing chapter. To regenerate the v0.2 manuscript baseline from the manifest, run:
+
+```bash
+python3 scripts/draft_v02_from_manifest.py
+```
+
+Use that command intentionally; it rewrites all chapter files from `book_structure.json`.
+
 ## Add a Chapter
 
 ```bash
@@ -28,6 +36,8 @@ python3 scripts/add_chapter.py \
 python3 scripts/sync_scaffold.py
 python3 scripts/validate_book.py
 ```
+
+Then draft the new chapter directly, or intentionally rerun `python3 scripts/draft_v02_from_manifest.py` if you want to refresh the full baseline from the manifest.
 
 ## Reorder, Merge, or Remove Chapters
 

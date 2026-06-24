@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-24 - v0.2 manuscript baseline
+
+- Drafted all 50 chapters into a complete v0.2 manuscript pass from `book_structure.json`.
+- Added chapter-level source-loading status, proof/formalization hooks, conservative evidence guardrails, and v1.0 source/test/proof obligations to every chapter.
+- Added `scripts/draft_v02_from_manifest.py` as a repeatable full-baseline drafting tool.
+- Updated public-facing status docs so the repo no longer describes the chapters as guarded stubs.
+- Kept all chapter support states conservative; no source-derived, prototype-backed, test-backed, or external-literature-backed promotion happened in this drafting pass.
+
 ## 2026-06-24 - Full-book launch readiness audit
 
 - Added `docs/full_book_writing_goal.md` with recommended wording for the full-book v0.2 drafting goal.

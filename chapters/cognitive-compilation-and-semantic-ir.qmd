@@ -3,6 +3,7 @@ title: "Cognitive Compilation and Semantic IR"
 chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "cognitive_compilation"
@@ -13,9 +14,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # Cognitive Compilation and Semantic IR
@@ -27,75 +28,126 @@ open_evidence_gaps:
 | Chapter ID | `cognitive-compilation-and-semantic-ir` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
+| Source loading state | source notes: `viea`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`; pending source notes: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
 
+Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It inherits pressure from the previous chapter, PlanForge DAGs and Intelligence Arbitrage, and makes that pressure operational in a narrower boundary. It hands its output to Virtual Context ABI, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, a plausible plan can become unreplayable work if context, proof obligations, tool permissions, and artifact identity are not carried together. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [cognitive-compilation-and-semantic-ir.core, label: Design rationale, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Cognitive Compilation, PlanForge: A Compiler Architecture for AI Task Orchestration, GenesisCode, TreeLLM, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, represent requirements, semantics, dependencies, artifacts, and target constraints explicitly. Second, perform incremental repair over IR rather than re-prompting from scratch. Third, compile IR into jobs, code, schemas, or documents.
 
 - Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.
 - Perform incremental repair over IR rather than re-prompting from scratch.
 - Compile IR into jobs, code, schemas, or documents.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Planning produces or consumes IR.
 - Execution receives target-specific artifacts.
 - Verification checks IR-to-output preservation.
 
+The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - IR preserves declared requirements.
 - Repair changes are localized and auditable.
 - Target compilation records assumptions.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - IR drift.
 - Compiler hallucination.
 - Repair that breaks earlier requirements.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A semantic IR sketch and compile/verify/repair loop for one artifact type.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Requirement preservation test | Support or falsify this chapter's layer claim. | planned; not run |
-| Incremental repair regression test | Support or falsify this chapter's layer claim. | planned; not run |
-| Target compilation audit | Support or falsify this chapter's layer claim. | planned; not run |
+| Requirement preservation test | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
+| Incremental repair regression test | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
+| Target compilation audit | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | planned |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/manifest: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
-| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
-| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | local raw cache available |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | local raw cache available |
+| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | local raw cache available |
+| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | local raw cache available |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+Cognitive Compilation and Semantic IR defines one boundary in the ASI Stack: Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

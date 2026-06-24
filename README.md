@@ -10,10 +10,10 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 ## Current Status
 
-The project is ready for manuscript drafting, but it is not yet a completed book.
+The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0 evidence release.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 50 outline chapters exist as guarded stubs across four manifest-driven parts.
+- All 50 outline chapters exist as v0.2 manuscript drafts across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
@@ -23,6 +23,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 - Source documents are cached locally when available, but raw exports are ignored and not published.
 - Claims remain `argument` level unless source notes, prototypes, tests, proofs, or external literature justify promotion.
 - Codex tests are planned; test results are not recorded unless they have actually been run.
+- `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
 
 ## Start Here
 
@@ -32,6 +33,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 | [docs/book_outline.md](docs/book_outline.md) | Cohesive full-book outline and proof target source of truth. |
 | [docs/prewriting_readiness.md](docs/prewriting_readiness.md) | Launch gate for a full-book drafting goal. |
 | [docs/full_book_writing_goal.md](docs/full_book_writing_goal.md) | Suggested wording for the full-book writing goal. |
+| [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Current v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
@@ -82,6 +84,16 @@ python3 scripts/add_chapter.py --part planning-memory-reasoning-execution --titl
 ```
 
 Quarto generates displayed chapter numbers at render time, so chapters can be inserted, moved, merged, or removed without renumbering files.
+
+## Manuscript Regeneration
+
+The v0.2 baseline can be regenerated from `book_structure.json`:
+
+```bash
+python3 scripts/draft_v02_from_manifest.py
+```
+
+This is a bulk rewrite tool. Use it for intentional full-baseline regeneration, not for routine chapter editing after hand-written source-specific prose has been added.
 
 ## Source Discipline
 

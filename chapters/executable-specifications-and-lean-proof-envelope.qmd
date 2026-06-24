@@ -3,6 +3,7 @@ title: "Executable Specifications and Lean Proof Envelope"
 chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "genesiscode"
@@ -17,9 +18,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # Executable Specifications and Lean Proof Envelope
@@ -31,79 +32,130 @@ open_evidence_gaps:
 | Chapter ID | `executable-specifications-and-lean-proof-envelope` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
+| Source loading state | source notes: `spinoza`, `scf`, `talos`, `viea`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`; pending source notes: `genesiscode`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 The book needs to decide which architecture claims should become executable specs or Lean proofs.
 
+Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to Benchmark Ratchets and Anti-Goodhart Evidence, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, the book can read as finished before the architecture has been implemented, tested, or falsified at the right boundaries. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - GenesisCode, Proof of Belief / The Spinoza Architecture, Stable Capability Fields, Talos Protocol, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, translate mechanisms into predicates and transition rules. Second, keep proof manifest generated from the outline. Third, distinguish scaffolded, implemented, blocked, and retired proof targets.
 
 - Translate mechanisms into predicates and transition rules.
 - Keep proof manifest generated from the outline.
 - Distinguish scaffolded, implemented, blocked, and retired proof targets.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Outline defines proof scope.
 - Lean modules implement selected invariants.
 - Validation checks proof-manifest consistency.
 
+The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - No theorem is claimed proven without `lake build`.
 - Proof tags remain stable.
 - Broad claims are decomposed before formalization.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Formalization theater.
 - Unstable proof target names.
 - Claiming proof from prose.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Proof manifest sync test | Support or falsify this chapter's layer claim. | planned; not run |
-| Lake build smoke test | Support or falsify this chapter's layer claim. | planned; not run |
-| Proof target coverage audit | Support or falsify this chapter's layer claim. | planned; not run |
+| Proof manifest sync test | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
+| Lake build smoke test | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
+| Proof target coverage audit | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | A proof target marked implemented has an existing module and passes the build. | planned |
+| `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | A proof target for a non-operational claim remains planned or blocked, not implemented. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
-| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
-| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `circle_calculus_core` | Circle Calculus | Planned use from inventory/manifest: Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | Planned use from inventory/manifest: Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. |
-| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | Planned use from inventory/manifest: CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note pending |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note pending |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note pending |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+Executable Specifications and Lean Proof Envelope defines one boundary in the ASI Stack: Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

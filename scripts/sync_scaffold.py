@@ -208,9 +208,9 @@ def write_chapter_stub(chapter: dict, records: list[dict], rewrite: bool = False
     source_ids = [source_id for source_id in source_ids_for(chapter) if source_id in by_id]
     source_label = ", ".join(f"`{source_id}`" for source_id in source_ids) or "None assigned yet"
     gaps = [
-        "Assigned source texts have not yet been ingested or summarized.",
-        "No Codex tests have been implemented or run.",
-        "Chapter prose is a scaffold, not a completed manuscript draft.",
+        "Chapter is a generated starting point; v1.0 still needs source-note substantiation for all assigned sources.",
+        "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E.",
+        "No support-state promotion is implied by this generated chapter.",
     ]
     crosswalk_rows = []
     for source_id in source_ids:
@@ -229,6 +229,7 @@ title: "{chapter['title']}"
 chapter_id: "{chapter['id']}"
 part_id: "{chapter['_part_id']}"
 status: "{chapter.get('status', 'conceptual')}"
+draft_maturity: "generated starting point"
 last_updated: "{TODAY}"
 primary_sources:{yaml_list(source_ids)}
 evidence_level: "{chapter.get('evidence_level', 'argument')}"
@@ -249,12 +250,12 @@ open_evidence_gaps:{yaml_list(gaps)}
 | Primary source records | {source_label} |
 | Claim label | {qmd_escape(chapter.get('claim_label', 'Design rationale'))} |
 | Evidence level | {qmd_escape(chapter.get('evidence_level', 'argument'))} |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Source loading state | Source records assigned; source notes and raw-cache readiness must be checked before support-state promotion. |
 | Test state | Planned only; no tests have been run. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This generated chapter is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified. Run `python3 scripts/draft_v02_from_manifest.py` only when intentionally regenerating the full v0.2 manuscript baseline.
 
 ## Problem
 

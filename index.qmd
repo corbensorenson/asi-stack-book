@@ -7,11 +7,11 @@
 ::: {.living-dashboard}
 <div>
 <strong>Book state</strong>
-<span>Scaffold ready for drafting</span>
+<span>v0.2 manuscript draft across 50 chapters</span>
 </div>
 <div>
 <strong>Sources</strong>
-<span>Inventoried; cache status tracked</span>
+<span>Inventoried; notes/cache status tracked</span>
 </div>
 <div>
 <strong>Claims</strong>
@@ -46,7 +46,7 @@ flowchart TD
 
 ## How to read
 
-Start with Part I for the architecture thesis and failure model. Then read Part II as the layer-by-layer specification. Part III explains how the layers integrate, how to prototype them, and how the book itself stays alive.
+Start with Part I for the architecture thesis, boundary model, and governance substrate. Read Part II as the operational spine: intent, planning, memory, reasoning, execution, and artifacts. Part III covers routing, compression, representation, mathematical substrates, and cyclic/proof-carrying mechanisms. Part IV explains evidence, implementation, Project Theseus as a reference path, and the living-book process.
 
 The appendices are part of the architecture:
 
@@ -59,3 +59,7 @@ The appendices are part of the architecture:
 ## Evidence discipline
 
 Every major claim should carry a support state. The default state is `argument`. Claims move only when sources are actually read, prototypes are inspected, or tests are actually run. This book should never pretend that source ingestion or test evidence exists before it does.
+
+## Living status
+
+This release is a complete v0.2 manuscript draft, not a final v1.0 evidence release. The chapters are written end to end, but most source-to-claim mappings, external literature citations, executable tests, and Lean/protocol proof targets remain planned until their artifacts are added and recorded.

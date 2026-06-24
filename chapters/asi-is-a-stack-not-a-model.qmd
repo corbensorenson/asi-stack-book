@@ -3,6 +3,7 @@ title: "ASI Is a Stack, Not a Model"
 chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "viea"
@@ -14,9 +15,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # ASI Is a Stack, Not a Model
@@ -28,77 +29,128 @@ open_evidence_gaps:
 | Chapter ID | `asi-is-a-stack-not-a-model` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `talos`, `moecot`, `scf`; raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; pending source notes: `beastbrain`, `aletheia`; connector/recovery: `moecot` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 
+Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to The Efficient ASI Hypothesis, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, authority can leak from persuasive reasoning into action, replacement, or deployment before the stack has earned that authority. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verified Intent-to-Execution Architecture, BeastBrain Cognitive Architecture, Aletheia Foundry, Talos Protocol, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, define each layer by responsibility, interface, artifact, invariant, and failure mode. Second, frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system. Third, treat the whole book as a reference architecture rather than a collection of standalone papers. Fourth, use source queues and evidence states to keep future writing runs context-loaded and honest.
 
 - Define each layer by responsibility, interface, artifact, invariant, and failure mode.
 - Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.
 - Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Use source queues and evidence states to keep future writing runs context-loaded and honest.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Alignment and governance constrain every downstream layer.
 - Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
 - Recursive improvement is a governed transition, not an ambient property of intelligence.
 
+The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Layer boundaries remain explicit.
 - Claims carry support states.
 - Reasoning ability never implies execution authority.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Anthology drift.
 - Monolith drift.
 - Evidence inflation before source notes or tests exist.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Layer-boundary audit | Support or falsify this chapter's layer claim. | planned; not run |
-| Source-to-layer traceability review | Support or falsify this chapter's layer claim. | planned; not run |
-| Claim-support label audit | Support or falsify this chapter's layer claim. | planned; not run |
+| Layer-boundary audit | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
+| Source-to-layer traceability review | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
+| Claim-support label audit | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | A layer without external-action authority can only produce an action through an authorized handoff. | planned |
+| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | A handoff that exceeds the caller authority ceiling is rejected. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
-| `aletheia` | Aletheia Foundry | Planned use from inventory/manifest: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
-| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | local raw cache available |
+| `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | local raw cache available |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+ASI Is a Stack, Not a Model defines one boundary in the ASI Stack: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

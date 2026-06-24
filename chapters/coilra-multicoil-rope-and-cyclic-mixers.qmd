@@ -3,6 +3,7 @@ title: "CoilRA, MultiCoil RoPE, and Cyclic Mixers"
 chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "coilra_multicoil_rope"
@@ -13,9 +14,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # CoilRA, MultiCoil RoPE, and Cyclic Mixers
@@ -27,43 +28,69 @@ open_evidence_gaps:
 | Chapter ID | `coilra-multicoil-rope-and-cyclic-mixers` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
+| Source loading state | pending source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
 
+Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It inherits pressure from the previous chapter, Coil Attention, Cyclic Memory, and Recurrence Contracts, and makes that pressure operational in a narrower boundary. It closes this part by making the remaining handoff to the next part explicit. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, capability growth can become a hidden monolith if routing, compression, representation, and residual accounting are not explicit. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - CoilRA and MultiCoil RoPE, Proof-Carrying RoPE Position Distinguishability, Circle Calculus AI Contract Suite, Theseus Circle Calculus Transfer Lane, and Circle AI Architectures - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts. Second, attach alias, load, and parameter-accounting diagnostics before interpreting model behavior. Third, measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
 
 - Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.
 - Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.
 - Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Semantic representation chapters define when cyclic structure is actually present.
 - Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Resource-economics chapters account for parameters, kernels, memory, and latency.
 - Proof contracts and prototype experiments keep structural facts separate from performance results.
 
+The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Equivariance is not model quality.
 - Parameter reduction is not an adoption proof.
@@ -71,36 +98,61 @@ Parameter-count, equivariance, or exact phase facts can be mistaken for better m
 - Hardware-friendly sizes and kernel costs are recorded.
 - Real-valued RoPE claims are separated from exact integer phase-bank claims.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Mathematical elegance outruns kernels and baselines.
 - Exact finite proofs are overclaimed for real-valued RoPE deployments.
 - Lower parameter count comes with worse quality or runtime.
 - Phase aliases are hidden by residue-only diagnostics.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| RoPE receipt boundary test | Support or falsify this chapter's layer claim. | planned; not run |
-| Cyclic mixer baseline matrix test | Support or falsify this chapter's layer claim. | planned; not run |
-| Residue/winding alias diagnostic | Support or falsify this chapter's layer claim. | planned; not run |
-| Parameter-quality-runtime separation test | Support or falsify this chapter's layer claim. | planned; not run |
+| RoPE receipt boundary test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
+| Cyclic mixer baseline matrix test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
+| Residue/winding alias diagnostic | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
+| Parameter-quality-runtime separation test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | Planned use from inventory/manifest: Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | Planned use from inventory/manifest: Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
-| `circle_ai_architectures` | Circle AI Architectures | Planned use from inventory/manifest: Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note pending |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note pending |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
+| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note pending |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+CoilRA, MultiCoil RoPE, and Cyclic Mixers defines one boundary in the ASI Stack: CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.

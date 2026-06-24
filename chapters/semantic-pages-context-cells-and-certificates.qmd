@@ -3,6 +3,7 @@ title: "Semantic Pages, Context Cells, and Certificates"
 chapter_id: "semantic-pages-context-cells-and-certificates"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
 last_updated: "2026-06-24"
 primary_sources:
   - "vcm_public"
@@ -13,9 +14,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Assigned source texts have not yet been ingested or summarized."
-  - "No Codex tests have been implemented or run."
-  - "Chapter prose is a scaffold, not a completed manuscript draft."
+  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
+  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "No support-state promotion is implied by this drafting pass."
 ---
 
 # Semantic Pages, Context Cells, and Certificates
@@ -27,75 +28,126 @@ open_evidence_gaps:
 | Chapter ID | `semantic-pages-context-cells-and-certificates` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-24 |
 | Primary source records | `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source ingestion state | Source records assigned; source texts not yet ingested. |
-| Test state | Planned only; no tests have been run. |
+| Source queue | primary: `vcm_public`; supporting: `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `vcm_public`, `spinoza`, `vcm_editable`; raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; pending source notes: `verification_bandwidth`, `context_engineer`; connector/recovery: `vcm_editable` |
+| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
 
-This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
 
 ## Problem
 
 Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
 
+Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+
+It inherits pressure from the previous chapter, Virtual Context ABI, and makes that pressure operational in a narrower boundary. It hands its output to Context Transactions, Snapshots, Mounts, and Taint, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+
 ## Why existing approaches are insufficient
 
 Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
+
+The common failure is to treat fluent output as if it already contained the missing system contract. In practice, a plausible plan can become unreplayable work if context, proof obligations, tool permissions, and artifact identity are not carried together. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+
+This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
 ## Core Claim
 
 [semantic-pages-context-cells-and-certificates.core, label: Design rationale, support: argument] VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
 
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Virtual_Context_Memory_v1, Verification Bandwidth in Bounded Contexts, Proof of Belief / The Spinoza Architecture, Context Engineer / Manhattan Protocol, and Virtual_Context_Memory_v1.0_Editable - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
 ## Mechanism
+
+The mechanism turns the core claim into a working contract. First, classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells. Second, attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses. Third, use task-relative representation graphs instead of one linear compression ladder.
 
 - Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.
 - Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.
 - Use task-relative representation graphs instead of one linear compression ladder.
 
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+
+For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+
 ## Interfaces
+
+Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
 
 - Spinoza consumes claim/evidence cells.
 - Planning consumes constraints and decisions.
 - Execution receives only permitted representations.
 
+The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+
 ## Invariants
+
+The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Authority labels survive summarization.
 - Loss contracts are explicit.
 - A derived cell points back to source bindings.
 
+If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+
 ## Failure modes
+
+The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Summary overconfidence.
 - Provenance loss.
 - Authority escalation via compression.
 
+The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+
 ## Minimal implementation
 
 A semantic-page schema with certificate fields and example source-to-summary derivation.
+
+For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+
+The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Certificate completeness test | Support or falsify this chapter's layer claim. | planned; not run |
-| Authority preservation test | Support or falsify this chapter's layer claim. | planned; not run |
-| Summary fidelity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Certificate completeness test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
+| Authority preservation test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
+| Summary fidelity test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
+
+These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | planned |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | planned |
+
+The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
 
 ## Source crosswalk
 
-| Source ID | Title | Planned use |
-|---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
-| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
+| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | local raw cache available |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
+
+The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+Semantic Pages, Context Cells, and Certificates defines one boundary in the ASI Stack: VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates. Its job is to make a capability more governable, not merely more impressive.
+
+The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.
