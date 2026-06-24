@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,15 @@ ALLOWED_TRIAGE = {
     "schema-contract",
     "process-contract",
     "research-agenda",
+}
+
+ALLOWED_STATUSES = {"planned", "scaffolded", "implemented", "blocked", "retired"}
+
+ALLOWED_ROUTES = {
+    "lean-candidate",
+    "schema-first",
+    "policy-model-first",
+    "defer-until-narrowed",
 }
 
 ALLOWLIST_MODULES = {"AsiStackProofs"}
@@ -43,8 +53,19 @@ def main() -> None:
         raise SystemExit("proof manifest and proof triage records must be lists.")
 
     by_tag = {record.get("tag"): record for record in triage_records if isinstance(record, dict)}
-    manifest_tags = {record.get("tag") for record in records if isinstance(record, dict)}
+    manifest_by_tag = {record.get("tag"): record for record in records if isinstance(record, dict)}
+    manifest_tags = set(manifest_by_tag)
     errors: list[str] = []
+
+    triage_tag_counts = Counter(record.get("tag") for record in triage_records if isinstance(record, dict))
+    duplicate_triage_tags = sorted(tag for tag, count in triage_tag_counts.items() if tag is not None and count > 1)
+    if duplicate_triage_tags:
+        errors.append("Duplicate proof triage tags: " + ", ".join(duplicate_triage_tags))
+
+    if "record_count" in triage and triage.get("record_count") != len(triage_records):
+        errors.append(
+            f"Proof triage record_count is {triage.get('record_count')!r}; expected {len(triage_records)}"
+        )
 
     missing_triage = sorted(tag for tag in manifest_tags if tag not in by_tag)
     if missing_triage:
@@ -60,10 +81,33 @@ def main() -> None:
             continue
         tag = record.get("tag")
         triage_class = record.get("triage")
+        route = record.get("recommended_route")
+        target_status = record.get("target_status")
         if triage_class not in ALLOWED_TRIAGE:
             errors.append(f"{tag}: invalid triage class {triage_class!r}")
+        if route not in ALLOWED_ROUTES:
+            errors.append(f"{tag}: invalid recommended route {route!r}")
+        if target_status not in ALLOWED_STATUSES:
+            errors.append(f"{tag}: invalid target status {target_status!r}")
         if not record.get("rationale"):
             errors.append(f"{tag}: missing rationale")
+        manifest_record = manifest_by_tag.get(tag)
+        if manifest_record is None:
+            continue
+        for field in ("chapter_id", "module", "formal_target"):
+            if record.get(field) != manifest_record.get(field):
+                errors.append(
+                    f"{tag}: triage {field} {record.get(field)!r} does not match manifest {manifest_record.get(field)!r}"
+                )
+        if target_status != manifest_record.get("status"):
+            errors.append(
+                f"{tag}: triage target_status {target_status!r} does not match manifest status {manifest_record.get('status')!r}"
+            )
+        if target_status == "implemented":
+            if triage_class != "formal-invariant":
+                errors.append(f"{tag}: implemented proof targets must be triaged as formal-invariant")
+            if route != "lean-candidate":
+                errors.append(f"{tag}: implemented proof targets must use recommended_route 'lean-candidate'")
 
     referenced_modules = {record.get("module") for record in records if isinstance(record, dict)}
     for record in records:

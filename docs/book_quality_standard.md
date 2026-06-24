@@ -35,5 +35,6 @@ The book should read like a serious systems architecture text.
 - Any runnable test, proof, or benchmark must live in a reproducible folder.
 - Proofs and code examples must be linked from chapters only after they exist.
 - Proof targets must stay aligned with `proofs/proof_triage.json`; schema/process/research targets need executable contracts or clearer predicates before they become implemented Lean.
+- Proof triage status must match the generated proof manifest; implemented proof targets must remain formal Lean candidates backed by modules and a passing Lean build.
 - Experimental results must include command, date, environment, and result summary.
 - Validation scripts should fail on structural drift rather than silently tolerating it.

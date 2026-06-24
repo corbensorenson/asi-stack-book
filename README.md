@@ -118,9 +118,10 @@ Generate the machine-readable proof manifest from the outline:
 
 ```bash
 python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_proof_readiness.py
 ```
 
-Do not report a theorem as proven unless the corresponding Lean module exists, the target is marked implemented in the outline, and `lake build` passes. Use `proofs/proof_triage.json` to keep schema/process/research targets from becoming ceremonial Lean.
+Do not report a theorem as proven unless the corresponding Lean module exists, the target is marked implemented in the outline, and `lake build` passes. Use `proofs/proof_triage.json` to keep schema/process/research targets from becoming ceremonial Lean; `scripts/validate_proof_readiness.py` checks that triage tags, modules, formal targets, and target statuses stay aligned with the generated manifest.
 
 ## Contributing
 
