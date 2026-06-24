@@ -775,40 +775,40 @@
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
       "formal_target": "A task budget cannot disable required safety or verification gates.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite required-gate predicate: required safety and verification gates cannot be disabled by a budget decision."
     },
     {
       "tag": "lean:resources.budgets.failure_blocks_promotion",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
       "formal_target": "A high-risk task with insufficient verification budget is blocked or escalated.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite risk/budget predicate: high-risk work with insufficient verification budget must route away from ordinary dispatch."
     },
     {
       "tag": "lean:simulation.fidelity.operational_invariant",
       "chapter_id": "simulation-fidelity-and-physical-constraints",
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite claim-field predicate: simulation claims used as evidence require declared scope, fidelity, and resource bounds."
     },
     {
       "tag": "lean:simulation.fidelity.failure_blocks_promotion",
       "chapter_id": "simulation-fidelity-and-physical-constraints",
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite fidelity-support predicate: promoted experiment results cannot exceed declared support level."
     },
     {
       "tag": "lean:substrates.search.operational_invariant",

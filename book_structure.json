@@ -3103,13 +3103,13 @@
               "tag": "lean:resources.budgets.operational_invariant",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "A task budget cannot disable required safety or verification gates.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:resources.budgets.failure_blocks_promotion",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "A high-risk task with insufficient verification budget is blocked or escalated.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3175,13 +3175,13 @@
               "tag": "lean:simulation.fidelity.operational_invariant",
               "module": "AsiStackProofs.SimulationFidelity",
               "target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:simulation.fidelity.failure_blocks_promotion",
               "module": "AsiStackProofs.SimulationFidelity",
               "target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

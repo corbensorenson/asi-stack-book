@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` |
 | Source loading state | source notes: `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; raw cache: `tokenmana`, `planforge`, `simulation_scaling`, `viea`; connector/recovery: `coherence_exchange` |
-| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; budget-allocation, risk-adjusted verification, and load-stability tests remain planned. |
+| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, scheduler, and load-stability tests remain planned. |
 
 ## Drafting guardrail
 
@@ -153,10 +153,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomics` | A task budget cannot disable required safety or verification gates. | planned |
-| `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomics` | A high-risk task with insufficient verification budget is blocked or escalated. | planned |
+| `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomics` | A task budget cannot disable required safety or verification gates. | implemented |
+| `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomics` | A high-risk task with insufficient verification budget is blocked or escalated. | implemented |
 
-These Lean hooks remain planned. The current schema can require safety-gate and verification-tax fields, but it does not prove load stability or optimal allocation. A useful first proof should model a finite policy predicate: required gates cannot be disabled by a low-budget decision.
+These Lean hooks are implemented as finite-record predicates over required gates, risk class, verification-budget sufficiency, and budget decision fields. They prove only the record-level gates: required safety and verification gates cannot be disabled, and high-risk work with insufficient verification budget must route to escalation, deferral, scope reduction, rejection, or residual accounting rather than ordinary dispatch. They do not prove load stability, economic optimality, welfare effects, scheduler quality, or TokenMana performance.
 
 ## Source crosswalk
 

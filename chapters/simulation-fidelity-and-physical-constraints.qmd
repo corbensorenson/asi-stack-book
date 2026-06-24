@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `simulation_scaling`; supporting: `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
 | Source loading state | source notes: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; raw cache: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
-| Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation; fidelity, resource-bound, and approximation-audit tests remain planned. |
+| Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.SimulationFidelity` implements finite claim-field and fidelity-support predicates; fidelity, resource-bound, approximation-audit, and feasibility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -150,10 +150,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | planned |
-| `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | planned |
+| `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | implemented |
+| `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | implemented |
 
-These Lean hooks remain planned. The schema can require fidelity and resource fields, but it does not prove physical feasibility or validate external physics assumptions. A useful first proof should stay at the claim-boundary level: a result cannot support a claim outside its declared simulation contract.
+These Lean hooks are implemented as finite-record predicates over simulation claim fields and declared support levels. They prove only the record-level gates: a simulation claim used as evidence includes scope, fidelity, and resource bounds, and a promoted experiment result cannot exceed its declared fidelity-support level. They do not prove physical feasibility, validate external physics assumptions, run a simulator, or establish that any benchmark environment transfers to open-world deployment.
 
 ## Source crosswalk
 
