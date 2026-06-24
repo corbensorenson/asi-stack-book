@@ -43,12 +43,16 @@ Cognitive Loop Closure argues that repeated AI reasoning/action trajectories sho
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `fast-generation-architectures` (Fast Generation Architectures)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `living-book-methodology` (Living Book Methodology)
 
 ## Claims To Add Or Update
 
 - Cognitive Loop Closure can support source-derived claims about procedural memory, loop detection, tool-card governance, active parameter discovery, three-mode execution, and tool retirement after specific claims are mapped.
+- Use Cognitive Loop Closure to bound lookahead, trie retrieval, cached continuations, and compiled fast paths so recurring generation shortcuts remain verified, monitored, and retireable.
+- Use Cognitive Loop Closure to distinguish policy learning from procedural compilation: repeated trajectories may become tools only when loop detection, parameter discovery, verification, routing, monitoring, and retirement are recorded.
 - It should not be used to claim that every repeated action should be automated or that verification is absolute in open worlds.
 
 ## Open Questions

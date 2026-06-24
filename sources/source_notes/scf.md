@@ -39,11 +39,13 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 - Recursive Self-Improvement Boundaries
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
+- Policy Optimization and Learning from Feedback
 - Prototype Roadmap
 
 ## Claims To Add Or Update
 
 - Use SCF as the core governed self-improvement substrate.
+- Use SCF to govern whether policy updates are promoted, quarantined, rolled back, or kept experimental, especially when an update could affect authority, evaluator policy, or lifecycle state.
 - Distinguish implementation updates from contract/evaluator/governance updates.
 - Formalize exact identity binding, qualification, route validation, lifecycle ordering, and authority non-escalation as priority Lean/code targets.
 

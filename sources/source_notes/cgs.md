@@ -40,6 +40,7 @@ Compact Generative Systems, or CGS, argues that powerful systems often use a com
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `fast-generation-architectures` (Fast Generation Architectures)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
 - `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
@@ -49,6 +50,7 @@ Compact Generative Systems, or CGS, argues that powerful systems often use a com
 ## Claims To Add Or Update
 
 - CGS can support source-derived claims about residual honesty, generate-verify-repair compression, compact seeds, and governance interfaces after chapter-specific mappings are made.
+- Use CGS to frame fast generation as compact generative leverage only when residual burden, verification cost, fallback, and governance interface remain visible.
 - It should not be used to claim that compactness by itself proves safety, interpretability, or adequacy.
 
 ## Open Questions

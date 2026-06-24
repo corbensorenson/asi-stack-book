@@ -40,13 +40,17 @@ TokenMana proposes regenerative capacity mechanisms for AI usage pricing and res
 ## Book Chapters Supported
 
 - `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 
 ## Claims To Add Or Update
 
 - Use TokenMana to motivate regenerative budgets for models, humans, tools, and review capacity.
+- Use TokenMana to keep fast-generation claims tied to latency, compute, memory, load variance, human friction, and quality constraints rather than raw token throughput.
+- Use TokenMana to bound latency, cost, load, and capacity rewards so efficiency pressure cannot erase quality, sleep/cognitive-friction, or verification constraints.
 - Tie resource economics to load variance, latency, sleep/cognitive cost, and quality rather than tokens alone.
 - Keep claims about equilibrium, profit dominance, and human outcomes at source-proposed status until reproduced.
 

@@ -38,12 +38,16 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 - Claim Ledgers and Belief Revision
 - Spinoza Verification and Proof-Carrying Claims
 - Unified Adaptive Tribunal and Adversarial Review
+- Fast Generation Architectures
+- Policy Optimization and Learning from Feedback
 - Evidence States and Claim Discipline
 - Executable Specifications and Lean Proof Envelope
 
 ## Claims To Add Or Update
 
 - Use Spinoza for the proof-carrying claim and downgrade discipline.
+- Use Spinoza to keep fast-generation acceptance predicates separate from truth, proof, and source support; accepted drafts still need claim-tier evidence.
+- Use Spinoza to keep reward signals, verifier outputs, and preference labels separate from proof, evidence, and admissible belief updates.
 - Treat all proof-carrying claims as bounded by formalization scope and verifier result.
 - Connect Spinoza tiers to Appendix C support states without equating them automatically.
 

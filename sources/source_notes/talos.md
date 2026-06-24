@@ -39,10 +39,14 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Runtime Adapters, Tool Permissions, and Human Approval
 - Security Kernel and Digital SCIFs
 - Benchmark Ratchets and Anti-Goodhart Evidence
+- Fast Generation Architectures
+- Policy Optimization and Learning from Feedback
 
 ## Claims To Add Or Update
 
 - Use Talos as the primary execution/labor OS source.
+- Use Talos to require fast-generation outputs to become typed artifacts with provenance, approval state, evidence records, replay, and failure residuals before delivery.
+- Use Talos to ground execution-policy feedback in typed jobs, artifact evidence, approval gates, audit logs, replay, and residuals rather than informal agent success.
 - Keep all synthetic benchmark and security claims at `argument` or source-reported status until artifacts are ingested.
 - Turn typed job lifecycle and approval-gate invariants into Lean/schema targets.
 

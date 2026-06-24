@@ -45,13 +45,17 @@ Ratcheting Modular Intelligence, or RMI, argues that AI systems should improve b
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
+- `fast-generation-architectures` (Fast Generation Architectures)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update
 
 - RMI can support source-derived discussion of residual escrow, benchmark ratchets, specialist arm lifecycle, and three-mode execution after specific chapter claims are mapped to this note.
+- Use RMI to treat fast generation as one routable capability mode whose promotion depends on specialist lifecycle, residual escrow, regression preservation, and fallback rather than isolated speed.
+- Use RMI to connect policy updates to modular improvement loops, residual escrow, arm/router lifecycle, and regression-floor preservation rather than unconstrained fine-tuning.
 - It should not be used to claim empirical superiority, safety guarantees, or implemented ASI behavior without additional artifacts.
 
 ## Open Questions

@@ -43,6 +43,8 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `fast-generation-architectures` (Fast Generation Architectures)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `prototype-roadmap` (Prototype Roadmap)
 - `living-book-methodology` (Living Book Methodology)
@@ -51,6 +53,8 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 ## Claims To Add Or Update
 
 - Benchmaxxing can support source-derived claims about benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, and architecture-change discipline after specific claims are mapped.
+- Use Benchmaxxing to require accepted-output, task-success, repair-cost, regression, and holdout measurements before any fast-generation mode is treated as an improvement.
+- Use Benchmaxxing to define benchmark, regression, holdout, saturation, and anti-Goodhart inputs for policy-update evaluation records; do not treat benchmark pressure itself as proof of reward quality.
 - It should not be used to claim that any particular model, prototype, or chapter benchmark has passed unless the benchmark run is recorded separately.
 
 ## Open Questions

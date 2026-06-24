@@ -39,10 +39,14 @@ VCM treats the context window as a compiled working cache over a larger versione
 - Context Transactions, Snapshots, Mounts, and Taint
 - Verification Bandwidth and Context Adequacy
 - Claim Ledgers and Belief Revision
+- Fast Generation Architectures
+- Policy Optimization and Learning from Feedback
 
 ## Claims To Add Or Update
 
 - Use VCM as the governed memory/context layer.
+- Use VCM to require fast-generation routes to name context packets, authority, taint, revocation, and adequacy boundaries before measuring speed.
+- Use VCM to define context-policy rewards around source binding, adequacy/admission separation, taint, revocation, and non-success states rather than retrieval volume alone.
 - Keep VCM evidence claims bounded to control-plane properties unless external or local tests are recorded.
 - Formalize adequacy/admission separation, authority non-escalation, taint, and snapshot validity as proof/schema targets.
 

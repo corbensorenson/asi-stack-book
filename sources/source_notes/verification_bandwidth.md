@@ -48,12 +48,16 @@ Verification Bandwidth argues that long context should not be confused with long
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
 - `unified-adaptive-tribunal-and-adversarial-review` (Unified Adaptive Tribunal and Adversarial Review)
+- `fast-generation-architectures` (Fast Generation Architectures)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update
 
 - Use this source to justify a separate context-adequacy layer in the architecture.
+- Use this source to prevent fast-generation speed claims from bypassing verification bandwidth: faster draft production is not faster verified cognition if contradiction checks become the bottleneck.
+- Use this source to bound context-policy and reasoning-budget rewards: longer context or shorter reasoning is not a valid reward unless verification adequacy and contradiction pressure are measured.
 - Treat verification capacity as a scarce resource that must be budgeted, measured, and surfaced in claim ledgers.
 - Require summaries, context cells, and semantic pages to expose coverage and compression loss rather than pretending to preserve all source constraints.
 

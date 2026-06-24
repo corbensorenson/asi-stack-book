@@ -38,11 +38,15 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 - PlanForge DAGs and Intelligence Arbitrage
 - Intent-to-Execution Contracts
 - Resource Economics and Token Budgets
+- Fast Generation Architectures
+- Policy Optimization and Learning from Feedback
 - Integrated Reference Architecture
 
 ## Claims To Add Or Update
 
 - Treat planning as a control layer that emits typed, dependency-aware work rather than prose.
+- Use PlanForge to route generation modes by task risk, dependency structure, latency budget, fallback need, and verification burden.
+- Use PlanForge to define planner-policy rewards for decomposition quality, dependency preservation, tier routing, failure-driven replanning, and stopping conditions.
 - Use PlanForge for the MVI/tier-routing vocabulary, while keeping execution authority outside the planner.
 - Formalize DAG acyclicity, dependency precedence, and failed-quality escalation as priority proof/test targets.
 

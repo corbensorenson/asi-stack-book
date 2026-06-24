@@ -40,11 +40,13 @@ The Octopus Router Architecture, or ORA, proposes a system-level modular AI desi
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 
 ## Claims To Add Or Update
 
 - ORA can support source-derived claims about specialist arms, router authority, dynamic loading, domain quarantine, arm lifecycle, and residual-aware routing after specific claims are mapped.
+- Use ORA to define router-policy update targets, including specialist choice, permission envelopes, dynamic loading, composition, quarantine, and arm lifecycle constraints.
 - It should not be used to claim that routing is solved, that modular systems are automatically safe, or that all deployments should use the same arm structure.
 
 ## Open Questions

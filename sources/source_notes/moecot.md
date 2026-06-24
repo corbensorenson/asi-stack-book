@@ -36,12 +36,14 @@ MoECOT is an implementation-reference architecture for governed, skill-native, l
 - MoECOT Runtime and Multi-Core Orchestration
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
+- Policy Optimization and Learning from Feedback
 - Integrated Reference Architecture
 - Prototype Roadmap
 
 ## Claims To Add Or Update
 
 - Use MoECOT as the concrete runtime/reference implementation lane.
+- Use MoECOT to frame policy optimization as a runtime-adjacent update path for specialist routing and orchestration that still requires readiness, regression, replay, and ledger evidence.
 - Keep runtime and benchmark claims visibly bounded until artifacts are available.
 - Tie MoECOT promotion to readiness, regression, replay, and ledger evidence.
 
