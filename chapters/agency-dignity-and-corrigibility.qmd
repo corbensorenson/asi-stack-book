@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The agency_rights_checklist fixture validates schema/example consistency only; agency-preservation, corrigibility-pathway, and high-impact approval scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -63,6 +63,19 @@ The missing object is an agency-rights check attached to high-impact plans. It a
 [agency-dignity-and-corrigibility.core, label: Design rationale, support: argument] A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements.
 
 The claim remains at `argument` support. Alignment Field, Ethica Mechanica, and the Field of God AI Constitution supply the rights language; the book's contribution is to route that language into review, appeal, rollback, refusal, and accountability artifacts.
+
+### Claim-source mapping status
+
+Appendix C now maps this core agency/corrigibility claim to every assigned source note. The mappings support the rights-and-corrigibility vocabulary, not a claim that a runtime system already preserves human dignity, resists manipulation, or remains corrigible under pressure.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `alignment_field` | Agency, dignity, suffering, moral-threshold, and corrigibility concerns as constraints to preserve during optimization. | Does not validate a consciousness index, moral-status detector, or empirical dignity-preservation result. |
+| `ethica_mechanica` | Contestability, recursive correction, public revision, agency, and limits on AI sovereign authority. | Philosophical and socio-technical framing only; not a tested social process or legal system. |
+| `field_of_god` | Agency, plurality, and dignity preservation as constraints on powerful AI that must not turn coherence into uniformity. | Metaphysical lineage only; no operational guarantee of agency preservation. |
+| `eternal_code` | Coherence, misalignment, agency, and ethical-law vocabulary that can be translated into technical rights language. | Speculative/computational metaphysics; not evidence for the runtime checklist or social outcomes. |
+| `coherence_exchange` | Fork, exit, audit, contestability, value/accounting, and review-market framing relevant to corrigibility and user contestation. | Does not show an epistemic-liquidity or governance mechanism has been implemented or validated. |
+| `field_of_god_ai_constitution` | Agency preservation, consent, non-domination, reversibility, auditability, least sufficient power, memory governance, and no self-authorization of sovereignty. | Constitutional specification only; does not prove deployed corrigibility, manipulation resistance, or approval-gate behavior. |
 
 ## Mechanism
 

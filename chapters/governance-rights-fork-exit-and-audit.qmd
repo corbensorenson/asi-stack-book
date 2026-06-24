@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The governance_right_record fixture validates schema/example consistency only; audit availability, exit-path preservation, and fork-right safety tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -64,6 +64,20 @@ The rights have to be technical. They need artifacts, permissions, retention rul
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
 The claim remains at `argument` support. Ethica Mechanica and Coherence Exchange supply contestability language, Ladon/Manhattan supplies security-bound audit context, and Spinoza/UAT supply review discipline. The chapter turns that language into interfaces without presenting it as implemented governance.
+
+### Claim-source mapping status
+
+Appendix C now maps this core governance-rights claim to every assigned source note. The mappings support the interface vocabulary for audit, exit, fork, dissent, and contestability, not a claim that any deployed institution or runtime already provides those rights.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `ethica_mechanica` | Contestable recursive governance, public correction, agency, institutional memory, and resistance to frozen sovereign authority. | Not a tested institution, legal guarantee, or empirical governance result. |
+| `coherence_exchange` | Fork, exit, audit, contestability, verification supply-chain, value/accounting, and governance-interface framing. | Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed. |
+| `alignment_field` | Dignity, agency, plurality, corrigibility, and governance constraints that rights interfaces should preserve under power. | Normative lineage only; not empirical evidence that rights are preserved. |
+| `ladon_manhattan` | Hidden credential boundaries, handle-based authority, logs, compartments, and policy injection points around audit and authority use. | Architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed. |
+| `spinoza` | Claim graphs, protected axioms, contradiction handling, downgrades, and blocked self-authorizing changes as review discipline for governance decisions. | Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy. |
+| `uat` | Adversarial review, proposition tiering, dossier-bounded verification, unsupported-claim removal, and human sign-off checkpoints for contested governance claims. | Protocol design only; no implemented review process or benchmark result is reproduced. |
+| `field_of_god_ai_constitution` | Auditability, agency preservation, consent, reversibility, least sufficient power, risk-tiered tool use, red-team evaluations, version control, and self-improvement freezes. | Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability. |
 
 ## Mechanism
 

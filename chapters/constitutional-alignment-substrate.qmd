@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The constitutional_predicate_record fixture validates schema/example consistency only; constitutional consistency and ethical self-modification scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -64,6 +64,20 @@ The constitution must therefore be represented in a form other layers can consum
 [constitutional-alignment-substrate.core, label: Design rationale, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
 
 The claim remains at `argument` support. Alignment Field and Ethica Mechanica provide authorial and philosophical lineage; the Field of God AI Constitution provides an operational constitutional vocabulary. The chapter uses those sources to define predicates and uncertainty labels, not to claim that a deployed system is aligned.
+
+### Claim-source mapping status
+
+Appendix C now maps this core constitutional claim to every assigned source note. The mappings support the translation from normative lineage into constitutional predicates, not a claim that moral correctness, deployed alignment, or runtime policy behavior has been proven.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `alignment_field` | Coherence, agency, dignity, corrigibility, value conflict, and consciousness caution as governance constraints. | Philosophical and heuristic lineage only; not empirical proof of consciousness, moral status, or deployed alignment. |
+| `field_of_god` | Coherence, plurality, agency, and dignity as alignment motivations that need translation into rights, boundaries, corrigibility, evidence, and governance. | Metaphysical source; not technical evidence for physics, consciousness, morality, or safety claims. |
+| `ethica_mechanica` | Recursive agency, contestability, correction, and constitutional systems as governance lineage. | Conceptual philosophy, not empirical or formal proof of institutional legitimacy or AI behavior. |
+| `eternal_code` | Axioms, kernels, coherence, misalignment, and ethical-law vocabulary as speculative framing for constitutional predicates. | Speculative framing only; not evidence for physics, consciousness, or governance outcomes. |
+| `coherence_exchange` | Coherence, contestability, verification supply chains, and governance-interface framing for reviewable commitments. | Speculative synthesis; not an implemented economic, governance, or security mechanism. |
+| `spinoza` | Protected axioms, proof/citation/procedure-carrying claims, contradiction handling, downgrades, and limits around self-rewriting constitutional changes. | Does not solve open-domain autoformalization, verifier quality, or whole-system epistemic correctness. |
+| `field_of_god_ai_constitution` | Truth/relation/task alignment, least sufficient power, non-domination, consent, reversibility, auditability, tool-risk tiers, and self-authorization limits. | Specification source only; no runtime policy engine, red-team suite, moral-correctness proof, or system-prompt evaluation is claimed. |
 
 ## Mechanism
 

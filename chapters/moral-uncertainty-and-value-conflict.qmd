@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
   - "The value_conflict_record fixture validates schema/example consistency only; value-conflict classification, review escalation, and residual-uncertainty tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -63,6 +63,19 @@ The failure is false consensus: the system acts as if a contested value question
 [moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
 
 The claim remains at `argument` support. Ethica Mechanica and Alignment Field provide the value-conflict vocabulary, UAT provides adversarial review mechanics, and Spinoza provides downgrade discipline. The chapter does not turn any one source into a final moral authority.
+
+### Claim-source mapping status
+
+Appendix C now maps this core value-conflict claim to every assigned source note. The mappings support explicit recordkeeping, review, and downgrade discipline for unresolved conflicts, not a solved moral theory or an implemented conflict-resolution system.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `ethica_mechanica` | Agency, contestability, recursive correction, constitutional failure, and objections as reasons to preserve disputed values rather than freeze one authority layer. | Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result. |
+| `alignment_field` | Value conflict, suffering, dignity, agency, moral thresholds, coherence, and constraints under uncertainty. | Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness. |
+| `coherence_exchange` | Contestable claim/evidence units, verification supply chains, fork/exit/audit concepts, and coherence/liquidity language for reviewable disagreement. | Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence. |
+| `uat` | Adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims. | Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds. |
+| `spinoza` | Support tiers, contradiction detection, belief revision, defeaters, downgrades, and limits on open-domain formalization. | Does not settle moral uncertainty or prove reviewer/verifier correctness. |
+| `field_of_god_ai_constitution` | Stakeholder checks, uncertainty, consent, reversibility, least sufficient power, truth/relation/task tensions, and non-domination. | No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts. |
 
 ## Mechanism
 
