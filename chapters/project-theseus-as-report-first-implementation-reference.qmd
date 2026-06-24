@@ -103,7 +103,7 @@ The interface is the Theseus Report Crosswalk Record: stack layer, source report
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
+The Theseus invariants preserve the boundary between report-first implementation evidence and public-book claims: a dashboard, work board, or private run can orient the architecture only when its report trail survives.
 
 - The frontier moves while the regression floor holds.
 - Promotion uses external-inference-zero evidence where the local gate requires it.

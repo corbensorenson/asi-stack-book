@@ -98,7 +98,7 @@ The interface lets adjacent layers compose without absorbing each other's author
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
+The proof-contract invariants keep structural receipts from inflating into quality claims: theorem references, executable checks, and non-claim boundaries must survive every downstream transfer.
 
 - Proof status is not a model-quality claim.
 - Python tests and diagrams are evidence, not formal proof.

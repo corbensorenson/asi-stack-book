@@ -111,7 +111,7 @@ The interface is the Living Book Release Record: source commit, rendered site, s
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
+The methodology invariants protect the book from confusing publication activity with evidence: every release can improve prose, diagrams, schemas, or proofs, but it cannot silently upgrade unsupported claims.
 
 - No fabricated source content.
 - No fabricated test results.

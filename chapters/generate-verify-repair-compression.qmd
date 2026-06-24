@@ -111,7 +111,7 @@ VCM can consume lossy summaries only when loss is declared. Routing can choose a
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
+The compression invariants keep compactness honest: every reconstruction, repair stream, declared loss, and fallback threshold must remain visible when a shorter artifact is routed into later layers.
 
 - Verification precedes exactness claims.
 - Repair cost is counted.

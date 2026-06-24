@@ -123,7 +123,7 @@ The interface is the Reference Trace Record: a finite public record of intent, a
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
+The reference-architecture invariants keep an end-to-end trace from becoming a shortcut around the stack: every layer may add evidence, but none may erase authority, provenance, or residual obligations.
 
 - No layer bypasses governance.
 - Artifacts remain traceable.
