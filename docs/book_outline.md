@@ -1044,16 +1044,17 @@ Draft deliverables:
 
 - A DAG schema with node-level capability and verification annotations.
 - Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
-- Planned Codex test: DAG acyclicity test.
+- Implemented Lean proof target: a dispatchable finite indexed plan-graph record carries an acyclicity certificate and ordered member dependency edges.
 - Planned Codex test: Capability tier assignment test.
-- Planned Codex test: Escalation trigger test.
+- Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
+- Planned Codex test: deployed scheduler cycle rejection.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | planned |
-| `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | planned |
+| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
+| `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
 ### Cognitive Compilation and Semantic IR
 

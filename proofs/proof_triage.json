@@ -355,20 +355,20 @@
       "chapter_id": "planforge-dags-and-intelligence-arbitrage",
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.PlanForge as a finite indexed plan-graph predicate: dispatchable records carry an acyclicity certificate and all member dependency edges precede dependents."
     },
     {
       "tag": "lean:planforge.dag.failure_blocks_promotion",
       "chapter_id": "planforge-dags-and-intelligence-arbitrage",
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A node whose quality predicate fails must escalate or emit a residual.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.PlanForge as a finite node-outcome predicate: a failed quality predicate must route to escalation or residual under ValidNodeOutcome."
     },
     {
       "tag": "lean:cognitive_compilation.ir.operational_invariant",

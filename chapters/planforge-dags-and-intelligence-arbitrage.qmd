@@ -17,6 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
+  - "Lean coverage is limited to finite indexed plan-graph and node-outcome predicates; deployed scheduler, tier-adequacy, and cost-quality proofs remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `planforge_compiler_arch`; supporting: `coherence_exchange`, `cognitive_compilation`, `tokenmana`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot`; raw cache: `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
+| Test state | Protocol fixture validation and `AsiStackProofs.PlanForge` finite-record proofs are implemented; scheduler and behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats PlanForge as a scheduler architecture and research target. The repo validates a draft PlanForge DAG fixture, but it does not yet prove acyclicity, measure cost savings, measure quality retention, or implement a tier-routing scheduler.
+This chapter treats PlanForge as a scheduler architecture and research target. The repo validates a draft PlanForge DAG fixture and implements narrow finite-record Lean predicates for indexed dependency order and failed-quality fallback. It does not measure cost savings, measure quality retention, implement a tier-routing scheduler, or prove the behavior of a deployed graph algorithm.
 
 ## Problem
 
@@ -137,29 +138,30 @@ Wrong tier selection produces cheap wrong work. Dependency cycles make a graph a
 
 A DAG schema with node-level capability and verification annotations.
 
-The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, capability tiers, quality predicates, verification requirements, budget limits, route assignments, escalation policy, residuals, and a cost-quality ledger. It does not prove acyclicity; that remains a planned test/proof target.
+The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, capability tiers, quality predicates, verification requirements, budget limits, route assignments, escalation policy, residuals, and a cost-quality ledger. The accompanying Lean module is intentionally narrower than a scheduler: it models finite indexed plan graphs, requires a dispatchable graph record to carry an acyclicity certificate plus ordered dependency edges, and requires failed quality predicates to route to escalation or residual under a valid node-outcome predicate.
 
-That fixture establishes the fields that a later scheduler must fill. It does not prove the graph is acyclic, that the selected tier is adequate, or that a cheaper route preserves quality.
+That fixture establishes the fields that a later scheduler must fill. The Lean predicates do not prove that an external planner constructed the graph correctly, that the selected tier is adequate, or that a cheaper route preserves quality.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | PlanForge DAG fixture validation | Check that the DAG fixture matches the public schema and includes nodes, edges, capability tiers, quality predicates, verification requirements, budgets, routes, escalation, residuals, and cost-quality ledger entries. | implemented by protocol validation; run in this pass |
-| DAG acyclicity test | Check that all dispatchable graphs are acyclic and dependencies precede dependents. | planned; not run |
+| Indexed DAG dispatch predicate | Check that a dispatchable finite plan-graph record carries an acyclicity certificate and that every recorded dependency edge precedes its dependent. | implemented in `AsiStackProofs.PlanForge`; builds locally |
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
-| Escalation trigger test | Check that failed quality predicates escalate or emit residuals instead of being treated as complete. | planned; not run |
+| Failed-quality fallback predicate | Check that a failed quality predicate routes to escalation or residual under the valid node-outcome predicate. | implemented in `AsiStackProofs.PlanForge`; builds locally |
+| Scheduler-level DAG acyclicity test | Check that a deployed scheduler rejects cycles before dispatch. | planned; not run |
 
-Only the fixture-shape check is implemented. Scheduler claims require graph algorithms, route-selection traces, quality predicates, and cost-quality results that can be reproduced.
+The fixture-shape check and finite-record proof predicates are implemented. Scheduler claims require graph algorithms, route-selection traces, quality predicates, and cost-quality results that can be reproduced.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | planned |
-| `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | planned |
+| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
+| `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
-These proof targets remain planned. Acyclicity is a good candidate for either a deterministic validator or a small Lean relation; MVI adequacy and cost-quality dominance likely require empirical traces.
+These proof targets are implemented only over finite Lean plan-graph and node-outcome records. `AsiStackProofs.PlanForge` checks that a dispatchable record carries an acyclicity certificate and ordered member edges, and that a failed quality predicate cannot satisfy the valid outcome predicate unless it escalates or emits a residual. MVI adequacy, scheduler behavior, and cost-quality dominance still require deterministic validators, empirical traces, or later formal models.
 
 ## Source crosswalk
 
