@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_target_record.schema.json",
+  "title": "Proof Target Record",
+  "type": "object",
+  "required": [
+    "proof_id",
+    "chapter_id",
+    "lean_tag",
+    "target_kind",
+    "formal_target",
+    "artifact_refs",
+    "verifier_command",
+    "verifier_result",
+    "support_state_effect",
+    "limitations",
+    "non_claims"
+  ],
+  "properties": {
+    "proof_id": { "type": "string", "minLength": 1 },
+    "chapter_id": { "type": "string", "minLength": 1 },
+    "lean_tag": { "type": "string", "minLength": 1 },
+    "target_kind": {
+      "type": "string",
+      "enum": ["lean_proof", "executable_spec", "schema_contract", "process_contract", "research_target"]
+    },
+    "formal_target": { "type": "string", "minLength": 1 },
+    "artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "verifier_command": { "type": "string", "minLength": 1 },
+    "verifier_result": {
+      "type": "string",
+      "enum": ["pass", "fail", "not_run", "blocked", "out_of_scope"]
+    },
+    "support_state_effect": { "type": "string", "minLength": 1 },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

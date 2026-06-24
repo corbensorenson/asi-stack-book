@@ -2429,9 +2429,9 @@ Draft arc:
 
 - Problem: The book needs to decide which architecture claims should become executable specs or Lean proofs.
 - Insufficiency: Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
-- Mechanism: Translate mechanisms into predicates and transition rules.
+- Mechanism: Maintain a proof target record for each proof/spec candidate.
 - Mechanism: Keep proof manifest generated from the outline.
-- Mechanism: Distinguish scaffolded, implemented, blocked, and retired proof targets.
+- Mechanism: Distinguish Lean proofs, executable specs, schema contracts, process contracts, research targets, blocked targets, and retired targets.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.
@@ -2450,7 +2450,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks.
+- A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Proof target coverage audit.
@@ -2482,8 +2482,8 @@ Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
 - Insufficiency: Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
-- Mechanism: Track benchmark mastery thresholds and saturation.
-- Mechanism: Generate regressions and hidden checks.
+- Mechanism: Track benchmark mastery thresholds and saturation in a benchmark ratchet record.
+- Mechanism: Generate regressions, holdout checks, transfer checks, and contamination checks.
 - Mechanism: Move residual failures into escrow and new frontier tasks.
 - Mechanism: Record negative and inconclusive results as evidence, not cleanup.
 - Interface: Routing and SCFs use readiness gates.
@@ -2504,7 +2504,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A benchmark ratchet record with frontier, mastery, residuals, regressions, and anti-Goodhart checks.
+- A benchmark ratchet record schema with frontier, mastery, residuals, regressions, promotion decisions, and anti-Goodhart checks.
 - Planned Codex test: Saturation detection test.
 - Planned Codex test: Hidden benchmark transfer test.
 - Planned Codex test: Regression preservation test.
@@ -2653,6 +2653,7 @@ Draft arc:
 - Problem: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
 - Insufficiency: A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.
 - Mechanism: Start with source inventory, claim ledger, artifact graph, and validation.
+- Mechanism: Represent each build phase with a prototype phase record.
 - Mechanism: Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order.
 - Mechanism: Delay recursive self-improvement until evaluator and governance integrity are credible.
 - Interface: Each phase unlocks a later layer.
@@ -2673,7 +2674,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A phase table with deliverables, gates, blockers, and acceptance criteria.
+- A prototype phase record schema with deliverables, gates, blockers, validation commands, evidence refs, and acceptance criteria.
 - Planned Codex test: Phase acceptance checklist.
 - Planned Codex test: Dependency gate review.
 - Planned Codex test: Prototype evidence-state audit.
@@ -2763,7 +2764,7 @@ Draft arc:
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 - Mechanism: Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Mechanism: Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.
+- Mechanism: Track recovered and missing items as research backlog records instead of treating them as evidence.
 - Mechanism: Use triage rules to update chapters or add precise new ones.
 - Interface: Appendix G lists corpus and external literature queue.
 - Interface: Source notes support chapter drafting.
@@ -2783,7 +2784,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A bibliography plan with external literature areas, source-note backlog, and insertion/merge rules.
+- A research backlog record schema with external literature areas, source-note state, claim-mapping state, proof/test backlog, and insertion/merge rules.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
 - Planned Codex test: New-paper triage scenario.

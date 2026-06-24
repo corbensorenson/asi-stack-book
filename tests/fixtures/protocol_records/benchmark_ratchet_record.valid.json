@@ -1,0 +1,16 @@
+{
+  "ratchet_id": "benchmark-ratchet-demo-001",
+  "capability_ref": "capability://routing-readiness-demo",
+  "benchmark_ref": "benchmark://source-reported-placeholder",
+  "benchmark_state": "proposed",
+  "run_refs": [],
+  "baseline_refs": ["chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd"],
+  "mastery_threshold": "No threshold accepted until benchmark command, environment, baseline, and contamination notes exist.",
+  "saturation_state": "unknown",
+  "residual_escrow": ["no local benchmark run has been imported or reproduced"],
+  "regression_refs": [],
+  "anti_goodhart_checks": ["holdout requirement", "contamination audit requirement", "negative-result retention"],
+  "promotion_decision": "block",
+  "support_state_effect": "keeps capability support at argument",
+  "negative_results": []
+}

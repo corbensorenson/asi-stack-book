@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/research_backlog_record.schema.json",
+  "title": "Research Backlog Record",
+  "type": "object",
+  "required": [
+    "backlog_id",
+    "source_or_gap",
+    "access_state",
+    "assigned_chapters",
+    "source_note_state",
+    "claim_mapping_state",
+    "external_literature_need",
+    "proof_or_test_backlog",
+    "insertion_decision",
+    "residuals",
+    "next_action"
+  ],
+  "properties": {
+    "backlog_id": { "type": "string", "minLength": 1 },
+    "source_or_gap": { "type": "string", "minLength": 1 },
+    "access_state": {
+      "type": "string",
+      "enum": ["available", "source_note_available", "connector_required", "recovery_required", "missing", "private_restricted"]
+    },
+    "assigned_chapters": { "type": "array", "items": { "type": "string" } },
+    "source_note_state": {
+      "type": "string",
+      "enum": ["none", "planned", "available", "needs_update"]
+    },
+    "claim_mapping_state": {
+      "type": "string",
+      "enum": ["none", "partial", "complete", "blocked"]
+    },
+    "external_literature_need": { "type": "array", "items": { "type": "string" } },
+    "proof_or_test_backlog": { "type": "array", "items": { "type": "string" } },
+    "insertion_decision": {
+      "type": "string",
+      "enum": ["update_existing_chapter", "propose_new_chapter", "appendix_only", "defer", "reject_duplicate", "blocked"]
+    },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "next_action": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

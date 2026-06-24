@@ -1,0 +1,13 @@
+{
+  "proof_id": "proof-target-demo-001",
+  "chapter_id": "executable-specifications-and-lean-proof-envelope",
+  "lean_tag": "lean:proofs.envelope.operational_invariant",
+  "target_kind": "schema_contract",
+  "formal_target": "A proof target cannot be treated as implemented unless the artifact and verifier result exist.",
+  "artifact_refs": ["schemas/proof_target_record.schema.json", "proofs/proof_manifest.json"],
+  "verifier_command": "python3 scripts/validate_protocol_examples.py",
+  "verifier_result": "pass",
+  "support_state_effect": "validates record shape only; does not prove the Lean target",
+  "limitations": ["fixture validation is not a Lean proof", "no target coverage audit has been run"],
+  "non_claims": ["does not claim ASI capability", "does not prove all proof targets are operational"]
+}

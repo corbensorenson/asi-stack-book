@@ -43,91 +43,94 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter distinguishes executable contracts, tests, and Lean proofs. A theorem is not proven because the prose says so; a proof target is implemented only when the corresponding artifact exists and the verifier passes.
 
 ## Problem
 
-The book needs to decide which architecture claims should become executable specs or Lean proofs.
+The book contains many claims that sound formal: authority boundaries, support-state transitions, capability replacement, context adequacy, job lifecycles, proof-carrying claims, and cyclic contracts. Some of these can become Lean proofs. Some should remain JSON Schemas or process contracts. Some are research questions.
 
-Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to Benchmark Ratchets and Anti-Goodhart Evidence, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+GenesisCode supplies the small trusted-kernel and obligation discipline. Spinoza supplies proof-carrying claim and downgrade discipline. Circle Calculus supplies a strong warning: theorem ids and proof status must not be confused with model quality, runtime, memory, or deployment claims.
 
 ## Why existing approaches are insufficient
 
-Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
-
-In this chapter, the failure is more specific than bad prompting or weak model choice: formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions. If `executable-specifications-and-lean-proof-envelope` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions. They are also misleading when tests, diagrams, generated JSON, or Python examples are described as proofs. The stack needs a proof envelope that says what is mechanized, what is executable but not formal, what is blocked, and what is intentionally out of scope.
 
 ## Core Claim
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - GenesisCode, Proof of Belief / The Spinoza Architecture, Stable Capability Fields, Talos Protocol, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. This repository currently has a Lean workspace and implemented stack-boundary proofs, but most chapter proof targets remain planned or better suited to schemas, tests, or process contracts.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, translate mechanisms into predicates and transition rules. Second, keep proof manifest generated from the outline. Third, distinguish scaffolded, implemented, blocked, and retired proof targets.
+The mechanism is a Proof Target Record backed by generated manifests and build checks.
 
-- Translate mechanisms into predicates and transition rules.
-- Keep proof manifest generated from the outline.
-- Distinguish scaffolded, implemented, blocked, and retired proof targets.
+```{mermaid}
+flowchart LR
+  A["Outline proof target"] --> B["Triage"]
+  B --> C{"Operational predicate?"}
+  C -- "yes" --> D["Lean module or executable spec"]
+  C -- "no" --> E["Schema / process / research target"]
+  D --> F["Verifier command"]
+  E --> G["Residual or backlog"]
+  F --> H{"Verifier passed?"}
+  H -- "yes" --> I["Implemented proof/spec state"]
+  H -- "no" --> G
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Each target should record its tag, module, formal target, artifact path, verifier command, verifier result, support-state impact, limitations, and non-claims. A passed schema check can support record shape. A passed Lean build can support a mechanized invariant. Neither can support empirical performance unless an experiment exists.
 
 ## Interfaces
 
-The interface for Executable Specifications and Lean Proof Envelope is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Proof Target Record.
 
-- Outline defines proof scope.
-- Lean modules implement selected invariants.
-- Validation checks proof-manifest consistency.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `proof_id`
+- `chapter_id`
+- `lean_tag`
+- `target_kind`
+- `formal_target`
+- `artifact_refs`
+- `verifier_command`
+- `verifier_result`
+- `support_state_effect`
+- `limitations`
+- `non_claims`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+The outline defines proof scope. `proofs/proof_manifest.json` records the generated target set. Lean modules implement selected invariants. JSON Schemas implement record contracts. Validation checks that manifests, schemas, and examples stay coherent.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - No theorem is claimed proven without `lake build`.
 - Proof tags remain stable.
 - Broad claims are decomposed before formalization.
-
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+- Python tests and diagrams are not Lean proofs.
+- Proof status does not imply model quality or deployment safety.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Formalization theater.
 - Unstable proof target names.
 - Claiming proof from prose.
+- Treating external theorem ids as local proof ownership.
+- Promoting a downstream claim from a structural receipt alone.
 
-For Executable Specifications and Lean Proof Envelope, mitigation starts by turning each listed failure into a named reviewable artifact. When `Formalization theater` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Each failure should downgrade the target or move it to schema/process/research status.
 
 ## Minimal implementation
 
-A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks.
+The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The schema gives future writing runs a public contract for saying what is planned, implemented, blocked, retired, or out of scope.
 
-The smallest useful implementation is deliberately narrow: A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Proof manifest sync test | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
-| Lake build smoke test | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
-| Proof target coverage audit | Probe whether the chapter claim holds under the relevant Executable Specifications and Lean Proof Envelope boundary. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+| Proof manifest sync test | Check that outline proof tags and `proofs/proof_manifest.json` agree. | implemented by validation; run in this pass |
+| Lake build smoke test | Check that local Lean modules build. | run in this pass |
+| Proof target coverage audit | Classify proof targets as Lean, schema, process, or research work. | planned; not run |
 
 ### Formalization hooks
 
@@ -136,26 +139,20 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | A proof target marked implemented has an existing module and passes the build. | planned |
 | `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | A proof target for a non-operational claim remains planned or blocked, not implemented. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
-
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note available |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note available |
-| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
-
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs and theorem manifests. | source note available |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families with explicit non-claims. | source note available |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Exact/discretized RoPE position receipt boundaries and non-claims. | source note available |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | Certified cyclic address/rewrite track with benchmark boundary. | source note available |
 
 ## Summary
 
-Executable Specifications and Lean Proof Envelope defines one boundary in the ASI Stack: Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records. Its job is to make a capability more governable, not merely more impressive.
-
-In v0.2, this chapter gives Executable Specifications and Lean Proof Envelope a complete architectural boundary: the book needs to decide which architecture claims should become executable specs or Lean proofs. Its next maturity step is to substantiate the boundary through `Outline defines proof scope`, preserve `No theorem is claimed proven without `lake build``, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The proof envelope keeps formality useful by keeping it small, operational, and honest. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.

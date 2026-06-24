@@ -1,0 +1,12 @@
+{
+  "phase_id": "prototype-phase-demo-001",
+  "phase_name": "Artifact graph and protocol schema baseline",
+  "unlocks": ["typed execution prototype", "runtime adapter prototype"],
+  "required_artifacts": ["schemas/artifact_graph_record.schema.json", "tests/fixtures/protocol_records/artifact_graph_record.valid.json"],
+  "acceptance_gates": ["schema validation passes", "protocol example validation passes", "publication validation passes"],
+  "blocked_by": [],
+  "validation_commands": ["python3 scripts/validate_schemas.py", "python3 scripts/validate_protocol_examples.py"],
+  "evidence_refs": ["appendices/D_protocol_schemas.qmd"],
+  "non_claims": ["phase record existence is not prototype completion", "local book validation is not ASI benchmark evidence"],
+  "status": "active"
+}

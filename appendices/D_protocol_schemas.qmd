@@ -7,6 +7,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/authority_use_receipt.schema.json`
 - `schemas/authority_transition_record.schema.json`
 - `schemas/artifact_graph_record.schema.json`
+- `schemas/benchmark_ratchet_record.schema.json`
 - `schemas/belief_revision_record.schema.json`
 - `schemas/claim_record.schema.json`
 - `schemas/command_contract.schema.json`
@@ -29,9 +30,12 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
+- `schemas/proof_target_record.schema.json`
 - `schemas/procedural_tool_record.schema.json`
+- `schemas/prototype_phase_record.schema.json`
 - `schemas/readiness_gate_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
+- `schemas/research_backlog_record.schema.json`
 - `schemas/resource_budget_record.schema.json`
 - `schemas/routing_decision_record.schema.json`
 - `schemas/runtime_adapter_invocation.schema.json`
@@ -395,6 +399,28 @@ readiness_gate_record:
 ```
 
 This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to evidence, regressions, residual escrow, authority, blockers, quarantine conditions, review, and stale-gate triggers.
+
+## Benchmark Ratchet Record
+
+```yaml
+benchmark_ratchet_record:
+  ratchet_id: string
+  capability_ref: string
+  benchmark_ref: string
+  benchmark_state: proposed
+  run_refs: []
+  baseline_refs: []
+  mastery_threshold: string
+  saturation_state: unknown
+  residual_escrow: []
+  regression_refs: []
+  anti_goodhart_checks: []
+  promotion_decision: block
+  support_state_effect: string
+  negative_results: []
+```
+
+This record turns benchmark pressure into an evidence-gated decision. It preserves baselines, run records, saturation state, residuals, regressions, anti-Goodhart checks, promotion decisions, support-state effects, and negative results.
 
 ## MoECOT Orchestration Record
 
@@ -900,6 +926,25 @@ proof_carrying_claim:
 
 This record makes proof or justification claims tiered and auditable, including interpretation mapping, verifier result, limitations, downgrade behavior, and ledger impact.
 
+## Proof Target Record
+
+```yaml
+proof_target_record:
+  proof_id: string
+  chapter_id: string
+  lean_tag: string
+  target_kind: schema_contract
+  formal_target: string
+  artifact_refs: []
+  verifier_command: string
+  verifier_result: not_run
+  support_state_effect: string
+  limitations: []
+  non_claims: []
+```
+
+This record separates Lean proofs, executable specs, schema contracts, process contracts, and research targets. It keeps verifier status, artifact references, support-state impact, limitations, and non-claims visible before prose can imply formal support.
+
 ## Tribunal Review Record
 
 ```yaml
@@ -920,3 +965,40 @@ tribunal_review_record:
 ```
 
 This record keeps adversarial review bounded, reproducible, and actionable through dossier refs, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdicts, required actions, and adjudication state.
+
+## Prototype Phase Record
+
+```yaml
+prototype_phase_record:
+  phase_id: string
+  phase_name: string
+  unlocks: []
+  required_artifacts: []
+  acceptance_gates: []
+  blocked_by: []
+  validation_commands: []
+  evidence_refs: []
+  non_claims: []
+  status: proposed
+```
+
+This record keeps the prototype roadmap evidence-aware by linking each phase to deliverables, acceptance gates, blockers, validation commands, evidence references, non-claims, and lifecycle status.
+
+## Research Backlog Record
+
+```yaml
+research_backlog_record:
+  backlog_id: string
+  source_or_gap: string
+  access_state: source_note_available
+  assigned_chapters: []
+  source_note_state: available
+  claim_mapping_state: partial
+  external_literature_need: []
+  proof_or_test_backlog: []
+  insertion_decision: update_existing_chapter
+  residuals: []
+  next_action: string
+```
+
+This record turns future-source and missing-evidence management into a reviewable backlog item. It records access state, source-note state, claim mapping, external literature work, proof/test backlog, insertion decision, residuals, and next action.

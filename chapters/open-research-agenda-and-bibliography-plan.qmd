@@ -55,91 +55,87 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter manages future work. It does not cite unread sources, infer bibliography metadata, or promote missing/private artifacts as evidence.
 
 ## Problem
 
-The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
-
-Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Living Book Methodology, and makes that pressure operational in a narrower boundary. It closes this part by making the remaining handoff to the next part explicit. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+A living book can decay into a pile of sources unless it has a research backlog. Future writing agents need to know which source to load, which chapter owns the boundary, which evidence is missing, which proof target is operational, and when a new paper should update an existing chapter instead of creating a duplicate one.
 
 ## Why existing approaches are insufficient
 
-A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
-
-In this chapter, the failure is more specific than bad prompting or weak model choice: a pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer. If `open-research-agenda-and-bibliography-plan` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer. It also creates citation drift: a chapter may cite a source it has not actually mined, or a new source may be treated as evidence before it has an inventory record and source note.
 
 ## Core Claim
 
 [open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verification Bandwidth in Bounded Contexts, Benchmaxxing: The Performance Ratchet, Field of God / Alignment Field family, Stable Capability Fields, and PlanForge - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The repository has source inventory and source notes, but external literature normalization and claim-to-source mapping remain incomplete.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, maintain source inventory, source notes, bibliography, and source-loading queues. Second, track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items. Third, use triage rules to update chapters or add precise new ones.
+The mechanism is a Research Backlog Record.
 
-- Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.
-- Use triage rules to update chapters or add precise new ones.
+```{mermaid}
+flowchart LR
+  A["New source or gap"] --> B["Inventory record"]
+  B --> C["Source note / access status"]
+  C --> D{"Existing boundary?"}
+  D -- "yes" --> E["Update chapter source queue"]
+  D -- "no" --> F["Propose precise chapter"]
+  E --> G["Claim/evidence mapping"]
+  F --> G
+  G --> H["Proof/test/backlog item"]
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The record should track source id, access state, assigned chapters, source-note state, claim-mapping state, external-literature need, proof/test backlog, insertion decision, and residuals.
 
 ## Interfaces
 
-The interface for Open Research Agenda and Bibliography Plan is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Research Backlog Record.
 
-- Appendix G lists corpus and external literature queue.
-- Source notes support chapter drafting.
-- Book outline tells future agents what to mine.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `backlog_id`
+- `source_or_gap`
+- `access_state`
+- `assigned_chapters`
+- `source_note_state`
+- `claim_mapping_state`
+- `external_literature_need`
+- `proof_or_test_backlog`
+- `insertion_decision`
+- `residuals`
+- `next_action`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Appendix G lists the corpus and external literature queue. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Do not cite unread sources as support.
 - Do not infer bibliographic metadata.
 - New papers update inventory before chapter claims.
-
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+- Missing sources are backlog items, not evidence.
+- New chapters are added only when they own a distinct boundary.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Citation drift.
 - Duplicate chapter creation for overlapping ideas.
 - Missing sources treated as evidence.
-
-For Open Research Agenda and Bibliography Plan, mitigation starts by turning each listed failure into a named reviewable artifact. When `Citation drift` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+- Private empirical results leaking into public claims.
+- External references named by source documents becoming citations before direct verification.
 
 ## Minimal implementation
 
-A bibliography plan with external literature areas, source-note backlog, and insertion/merge rules.
-
-The smallest useful implementation is deliberately narrow: A bibliography plan with external literature areas, source-note backlog, and insertion/merge rules. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The smallest useful implementation is a research backlog schema and fixture. It makes future source ingestion and chapter insertion reviewable.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Source inventory validation test | Probe whether the chapter claim holds under the relevant Open Research Agenda and Bibliography Plan boundary. | planned; not run |
-| Source-note backlog audit | Probe whether the chapter claim holds under the relevant Open Research Agenda and Bibliography Plan boundary. | planned; not run |
-| New-paper triage scenario | Probe whether the chapter claim holds under the relevant Open Research Agenda and Bibliography Plan boundary. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+| Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
+| Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes currently exist for assigned sources; claim mapping remains incomplete |
+| New-paper triage scenario | Check whether a new paper updates an existing chapter or creates a new boundary. | planned; not run |
 
 ### Formalization hooks
 
@@ -148,38 +144,24 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | planned |
 | `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
-
 ## Source crosswalk
 
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
-| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
-| `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache available |
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
-| `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
-| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
-| `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | mathematical_search_substrate | Prime-temporal coil networks as governed specialist cores in MoECOT runtime. | source note available; local raw cache available |
-| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
-| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note available |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
+This chapter intentionally keeps a broad source set because it governs the backlog for the whole book. Appendix G remains the generated corpus map. Appendix H remains author-intent and lineage context, not evidence.
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+Priority backlog:
+
+- Claim-to-source mapping for Appendix C.
+- External literature normalization and direct citation checks.
+- Reproduction or import of any benchmark artifacts before support promotion.
+- Lean triage for proof targets that are currently schema or process contracts.
+- New-paper triage rules for dynamic chapter insertion.
+
+Recovery boundaries:
+
+- MoECOT, Road To AGI, VCM editable, and CoilMoECOT are readable through connector/source notes, but reported benchmark or runtime claims remain unpromoted.
+- Private empirical results must stay out of public claims until artifact, command, environment, and publication permission are recorded.
+- External references named inside source documents must be verified directly before becoming bibliography citations.
 
 ## Summary
 
-Open Research Agenda and Bibliography Plan defines one boundary in the ASI Stack: The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules. Its job is to make a capability more governable, not merely more impressive.
-
-In v0.2, this chapter gives Open Research Agenda and Bibliography Plan a complete architectural boundary: the book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture. Its next maturity step is to substantiate the boundary through `Appendix G lists corpus and external literature queue`, preserve `Do not cite unread sources as support`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The research agenda is the book's backlog discipline. It keeps source ingestion, bibliography, proof targets, experiments, missing evidence, and chapter insertion rules visible so the living book can grow without losing evidence control.

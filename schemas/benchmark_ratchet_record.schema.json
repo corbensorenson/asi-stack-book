@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/benchmark_ratchet_record.schema.json",
+  "title": "Benchmark Ratchet Record",
+  "type": "object",
+  "required": [
+    "ratchet_id",
+    "capability_ref",
+    "benchmark_ref",
+    "benchmark_state",
+    "run_refs",
+    "baseline_refs",
+    "mastery_threshold",
+    "saturation_state",
+    "residual_escrow",
+    "regression_refs",
+    "anti_goodhart_checks",
+    "promotion_decision",
+    "support_state_effect",
+    "negative_results"
+  ],
+  "properties": {
+    "ratchet_id": { "type": "string", "minLength": 1 },
+    "capability_ref": { "type": "string", "minLength": 1 },
+    "benchmark_ref": { "type": "string", "minLength": 1 },
+    "benchmark_state": {
+      "type": "string",
+      "enum": ["proposed", "active", "saturated", "retired", "blocked"]
+    },
+    "run_refs": { "type": "array", "items": { "type": "string" } },
+    "baseline_refs": { "type": "array", "items": { "type": "string" } },
+    "mastery_threshold": { "type": "string", "minLength": 1 },
+    "saturation_state": {
+      "type": "string",
+      "enum": ["unknown", "not_saturated", "suspected", "saturated", "not_applicable"]
+    },
+    "residual_escrow": { "type": "array", "items": { "type": "string" } },
+    "regression_refs": { "type": "array", "items": { "type": "string" } },
+    "anti_goodhart_checks": { "type": "array", "items": { "type": "string" } },
+    "promotion_decision": {
+      "type": "string",
+      "enum": ["promote", "block", "quarantine", "regression_only", "rerun", "not_decided"]
+    },
+    "support_state_effect": { "type": "string", "minLength": 1 },
+    "negative_results": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
