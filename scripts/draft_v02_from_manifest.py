@@ -253,15 +253,39 @@ def test_table(chapter: dict) -> str:
         "|---|---|---|",
     ]
     for test in chapter.get("codex_tests", []):
-        purpose = f"Probe whether the chapter claim holds under the relevant {chapter['title']} boundary."
+        purpose = test_purpose(test, chapter)
         rows.append(f"| {sanitize_cell(test)} | {sanitize_cell(purpose)} | planned; not run |")
     return "\n".join(rows)
 
 
+def test_purpose(test: str, chapter: dict) -> str:
+    name = test.lower()
+    title = chapter["title"]
+    if "validation" in name or "schema" in name or "fixture" in name:
+        return f"Validate the declared {title} record shape without promoting the chapter claim."
+    if "trace" in name:
+        return "Check that every handoff keeps stable parent artifacts, authority refs, evidence refs, and residuals."
+    if "audit" in name:
+        return "Check that the required records are available, replayable, and explicit about missing evidence."
+    if "authority" in name or "approval" in name or "permission" in name:
+        return "Check that execution cannot exceed the declared authority, approval, or permission boundary."
+    if "rollback" in name or "replacement" in name:
+        return "Check that a failed or weakened transition preserves a recorded rollback path."
+    if "residual" in name:
+        return "Check that unresolved obligations remain attached instead of being hidden inside a success label."
+    if "proof" in name or "theorem" in name:
+        return "Check that formal references resolve to recorded proof artifacts before any proof-backed claim is promoted."
+    if "benchmark" in name or "regression" in name or "quality" in name:
+        return "Check the proposed capability against declared baselines, metrics, contamination notes, and negative-result handling."
+    if "review" in name or "tribunal" in name or "dissent" in name:
+        return "Check that contested claims preserve reviewer roles, evidence limits, dissent, and required actions."
+    return f"Check the {title} boundary against the named acceptance condition and record any missing artifact or failed predicate."
+
+
 def chapter_frontmatter(chapter: dict, part: dict, today: str, source_ids: list[str]) -> str:
     open_gaps = [
-        "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources.",
-        "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E.",
+        "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete.",
+        "No chapter-level Codex tests have been implemented or run unless separately recorded in Appendix E.",
         "No support-state promotion is implied by this drafting pass.",
     ]
     return f"""---
@@ -294,7 +318,7 @@ def chapter_status_table(chapter: dict, part: dict, source_ids: list[str], cache
 | Evidence level | {chapter.get('evidence_level', 'argument')} |
 | Source queue | {sanitize_cell(queue_summary(chapter.get('source_queue')))} |
 | Source loading state | {sanitize_cell(source_summary(source_ids, cache_records))} |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |"""
+| Test state | Chapter-level tests remain planned unless an implemented row below records the command and result. |"""
 
 
 def build_chapter(chapter: dict, part: dict, part_index: int, chapter_index: int, prev_title: str | None, next_title: str | None, inventory: dict[str, dict], cache_records: dict[str, dict], today: str) -> str:

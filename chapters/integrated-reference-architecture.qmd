@@ -148,9 +148,9 @@ The smallest useful implementation is the reference flow diagram plus `reference
 | Test | Purpose | Status |
 |---|---|---|
 | Reference trace record fixture validation | Validate that an end-to-end trace record names intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| End-to-end intent trace test | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
-| Artifact continuity audit | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
-| Authority stop-condition test | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
+| End-to-end intent trace test | Execute or replay a demo from intent to plan, context, claim, job, artifact, and evidence record with stable IDs at every layer. | planned; not run |
+| Artifact continuity audit | Check that every handoff cites parent artifacts, authority refs, evidence refs, residuals, and missing-contract records where needed. | planned; not run |
+| Authority stop-condition test | Check that missing authorization, violated stop conditions, or unaccepted residuals block execution rather than becoming silent warnings. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require an actual trace harness or replayable demo with typed artifacts across layers; they are not reported runtime results. When an integration test is implemented, this chapter should link to the command, fixture, environment notes, trace artifacts, and result summary, and Appendix E should be regenerated or updated accordingly.
 
