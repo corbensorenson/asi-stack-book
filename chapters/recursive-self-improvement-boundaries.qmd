@@ -50,17 +50,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapters define stable fields and replacement transactions. Recursive self-improvement is the rule for when the system may initiate those transactions about itself. It is not a general permission to rewrite cognition. It is a bounded protocol over fields, evidence gates, protected invariants, evaluator independence, governance approval, and rollback.
 
-It inherits pressure from the previous chapter, Security Kernel and Digital SCIFs, and makes that pressure operational in a narrower boundary. It closes this part by making the remaining handoff to the next part explicit. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter closes Part I by turning governance into a constraint on future growth. Part II can now describe planning, memory, reasoning, and execution without pretending those mechanisms are allowed to improve themselves freely.
 
 ## Why existing approaches are insufficient
 
 Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory. If `recursive-self-improvement-boundaries` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Unbounded self-improvement makes the evaluator part of the optimization target. A system that can change its own gates, benchmarks, memory, authority ceilings, or constitutional predicates can make itself look better without becoming safer or more capable. Theseus adds a practical engineering pattern: use an intervention ladder and allow teacher or architecture changes only after cheaper interventions and evidence walls are exhausted. Benchmaxxing and RMI add the ratchet: protect regressions, residuals, and lifecycle discipline while moving the frontier.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The boundary is therefore not "never self-improve." It is "self-improve only through governed, reversible, evidence-gated transitions whose evaluators and protected invariants are not controlled by the candidate."
 
 ## Core Claim
 
@@ -70,27 +70,58 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, define improvement proposals, protected invariants, and evidence gates. Second, separate proposing, evaluating, approving, committing, and monitoring. Third, delay autonomous replacement until evaluators and governance are credible.
+The mechanism is a Self-Improvement Transition.
+
+```{mermaid}
+flowchart LR
+  A["Observed wall / residual"] --> B["Improvement proposal"]
+  B --> C["Protected invariant check"]
+  C --> D["Evaluator independence check"]
+  D --> E["Replacement transaction"]
+  E --> F{"Gates pass?"}
+  F -- "no" --> G["Reject / quarantine / residual"]
+  F -- "yes" --> H["Governance approval"]
+  H --> I["Canary / monitor"]
+  I --> J{"Regression or invariant breach?"}
+  J -- "yes" --> K["Rollback / retire"]
+  J -- "no" --> L["Promote"]
+  G --> M["Outcome ledger"]
+  K --> M
+  L --> M
+```
 
 - Define improvement proposals, protected invariants, and evidence gates.
 - Separate proposing, evaluating, approving, committing, and monitoring.
 - Delay autonomous replacement until evaluators and governance are credible.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The proposal must identify the observed wall or residual, the field being changed, the cheaper interventions already tried, protected invariants, evaluator independence evidence, replacement transaction link, governance approval, monitor window, and rollback path. If those records are missing, the proposal remains an idea, not an accepted self-improvement.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Autonomy should be phased. The early stack can propose changes, produce evidence packets, and ask for review. More autonomous replacement should wait until evaluators, readiness gates, rollback paths, and governance logs are credible.
 
 ## Interfaces
 
-The interface for Recursive Self-Improvement Boundaries is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Self-Improvement Transition.
 
 - SCFs define replaceable units.
 - Evidence ratchets provide gates.
 - Alignment supplies protected constraints.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `transition_id`
+- `trigger_residual`
+- `field_id`
+- `proposal`
+- `cheaper_interventions_tried`
+- `protected_invariants`
+- `evaluator_independence`
+- `replacement_transaction`
+- `governance_approval`
+- `monitor_window`
+- `rollback_path`
+- `outcome_state`
+
+SCFs define replaceable units. Evidence ratchets and readiness gates decide whether a proposal can move. Alignment supplies protected constraints. Governance decides whether approval can be delegated.
 
 ## Invariants
 
@@ -100,7 +131,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Evaluator independence is required.
 - Every accepted change remains auditable.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The decisive invariant is non-self-ratification: the candidate may not be the sole judge of whether it should replace the current component. If independent evaluation is unavailable, the transition can still be researched, but it cannot be promoted as governed self-improvement.
 
 ## Failure modes
 
@@ -110,13 +141,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Constitutional weakening.
 - Irreversible flawed upgrades.
 
-For Recursive Self-Improvement Boundaries, mitigation starts by turning each listed failure into a named reviewable artifact. When `Recursive evaluator capture` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Recursive evaluator capture is the core failure: the system improves its ability to pass its own gate. Constitutional weakening removes the predicates that would have blocked the change. Irreversible flawed upgrades turn a failed experiment into a new baseline. These are not acceptable residuals for a default route; they require quarantine or rollback.
 
 ## Minimal implementation
 
 A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.
 
-The smallest useful implementation is deliberately narrow: A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -124,9 +155,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Protected-invariant preservation test | Probe whether the chapter claim holds under the relevant Recursive Self-Improvement Boundaries boundary. | planned; not run |
-| Evaluator independence test | Probe whether the chapter claim holds under the relevant Recursive Self-Improvement Boundaries boundary. | planned; not run |
-| Self-improvement rollback scenario | Probe whether the chapter claim holds under the relevant Recursive Self-Improvement Boundaries boundary. | planned; not run |
+| Protected-invariant preservation test | Check that proposals weakening active constitutional or authority invariants are rejected or escalated. | planned; not run |
+| Evaluator independence test | Check that a candidate cannot be promoted when it is the only evaluator of its own replacement. | planned; not run |
+| Self-improvement rollback scenario | Check that canary failure or invariant breach has a recorded rollback path. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -158,6 +189,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Recursive Self-Improvement Boundaries defines one boundary in the ASI Stack: Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields. Its job is to make a capability more governable, not merely more impressive.
+Recursive Self-Improvement Boundaries defines the stack's rule for changing itself. Self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback.
 
-In v0.2, this chapter gives Recursive Self-Improvement Boundaries a complete architectural boundary: the book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken. Its next maturity step is to substantiate the boundary through `SCFs define replaceable units`, preserve `Self-improvement cannot weaken protected invariants`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This is the handoff from Part I to the operational stack. Planning, memory, reasoning, execution, routing, and compression can become powerful only if their future changes remain auditable, bounded, and reversible.

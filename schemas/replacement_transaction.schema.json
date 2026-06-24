@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/replacement_transaction.schema.json",
+  "title": "Replacement Transaction",
+  "type": "object",
+  "required": [
+    "transaction_id",
+    "field_id",
+    "prior_implementation",
+    "candidate_implementation",
+    "precheck_results",
+    "qualification_evidence",
+    "regression_results",
+    "authority_check",
+    "residual_escrow",
+    "rollback_plan",
+    "approval_record",
+    "monitor_window",
+    "decision"
+  ],
+  "properties": {
+    "transaction_id": { "type": "string", "minLength": 1 },
+    "field_id": { "type": "string", "minLength": 1 },
+    "prior_implementation": { "type": "string", "minLength": 1 },
+    "candidate_implementation": { "type": "string", "minLength": 1 },
+    "precheck_results": { "type": "array", "items": { "type": "string" } },
+    "qualification_evidence": { "type": "array", "items": { "type": "string" } },
+    "regression_results": { "type": "array", "items": { "type": "string" } },
+    "authority_check": { "type": "string", "minLength": 1 },
+    "residual_escrow": { "type": "array", "items": { "type": "string" } },
+    "rollback_plan": { "type": "string", "minLength": 1 },
+    "approval_record": { "type": "string", "minLength": 1 },
+    "monitor_window": { "type": "string", "minLength": 1 },
+    "decision": {
+      "type": "string",
+      "enum": ["reject", "quarantine", "canary", "commit", "rollback", "retire"]
+    }
+  },
+  "additionalProperties": false
+}

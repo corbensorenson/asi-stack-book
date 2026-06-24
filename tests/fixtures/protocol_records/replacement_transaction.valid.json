@@ -1,0 +1,15 @@
+{
+  "transaction_id": "replacement-demo-001",
+  "field_id": "field://demo-context-adequacy",
+  "prior_implementation": "impl://context-adequacy-v0",
+  "candidate_implementation": "impl://context-adequacy-v1",
+  "precheck_results": ["field identity unchanged", "authority ceiling unchanged"],
+  "qualification_evidence": ["schema fixture present", "source-derived promotion not claimed"],
+  "regression_results": ["support-state conservatism preserved", "rollback metadata present"],
+  "authority_check": "candidate does not expand authority beyond read_public_book_context_only",
+  "residual_escrow": ["no real benchmark or production replacement has been run"],
+  "rollback_plan": "Keep impl://context-adequacy-v0 as the default route.",
+  "approval_record": "human-review-required-before-default",
+  "monitor_window": "not_started",
+  "decision": "canary"
+}

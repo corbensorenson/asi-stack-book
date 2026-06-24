@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter makes rights technical. This chapter gives the system a way to improve components without moving the target under those rights. A capability must have a stable meaning before it can be routed to, qualified, replaced, rolled back, or governed. Otherwise every implementation change is also a semantic change, and no one can tell whether the system improved or merely redefined success.
 
-It inherits pressure from the previous chapter, Governance Rights: Fork, Exit, and Audit, and makes that pressure operational in a narrower boundary. It hands its output to Capability Replacement and Rollback, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+SCF supplies the core distinction: a field is the durable semantic boundary; an implementation is a replaceable realization of that boundary. The field carries identity, interface, authority ceiling, evaluator policy, qualification context, route validity, state-migration obligations, evidence, lifecycle state, and recovery paths. That separation is what lets recursive improvement be bounded instead of ambient.
 
 ## Why existing approaches are insufficient
 
 Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics. If `stable-capability-fields` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Replacing a model, tool, prompt, adapter, or specialist can look like an ordinary upgrade while changing the actual capability. A faster implementation may drop edge cases. A stronger model may gain broader authority through a route that was only meant for a narrow field. A new evaluator may be easier to satisfy. A migration may preserve outputs while corrupting hidden state. None of these failures is visible if the system treats "use the new one" as the whole upgrade protocol.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+SCF makes the upgrade question testable: does this candidate satisfy the same field contract, under this qualification context, without expanding authority, losing regressions, capturing the evaluator, or destroying rollback?
 
 ## Core Claim
 
@@ -65,28 +65,58 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, separate field identity from implementation. Second, bind qualification claims to exact artifacts. Third, represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired. Fourth, require route validity and evaluator integrity before promotion.
+The mechanism is a Stable Capability Field record.
+
+```{mermaid}
+flowchart LR
+  A["Stable field identity"] --> B["Interface contract"]
+  B --> C["Authority ceiling"]
+  C --> D["Candidate implementation"]
+  D --> E{"Qualification context"}
+  E --> F{"Evaluator integrity"}
+  F --> G{"Route validity"}
+  G -- "pass" --> H["Lifecycle: canary / qualified / default"]
+  G -- "fail" --> I["Reject / quarantine / residual"]
+  H --> J["Evidence + regression ledger"]
+  I --> J
+  J --> K["Rollback and recovery path"]
+```
 
 - Separate field identity from implementation.
 - Bind qualification claims to exact artifacts.
 - Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired.
 - Require route validity and evaluator integrity before promotion.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Qualification is scoped, not global. A candidate can be qualified for one domain, risk tier, authority ceiling, hardware context, benchmark epoch, or user population without being qualified everywhere. Its evidence should be append-only enough that later readers can reconstruct what was known when it was promoted.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The route proposer may be broad and heuristic; the route validator must be narrow and explicit. It checks field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings before the candidate can become the default route.
 
 ## Interfaces
 
-The interface for Stable Capability Fields is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Stable Capability Field record.
 
 - Planning requests field capabilities.
 - Execution invokes authorized routes.
 - Evidence records qualification and regression results.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `field_id`
+- `semantic_boundary`
+- `interface_contract`
+- `authority_ceiling`
+- `implementations`
+- `lifecycle_state`
+- `qualification_context`
+- `qualification_predicates`
+- `evaluator_policy`
+- `route_validity`
+- `evidence_refs`
+- `state_migration`
+- `regression_suite`
+- `rollback_plan`
+
+Planning requests a field by semantic boundary and capability profile. Execution invokes only authorized routes. Evidence records qualification, regressions, incidents, appeals, and lifecycle transitions. Governance decides whether a field can broaden authority or change evaluator policy.
 
 ## Invariants
 
@@ -97,7 +127,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Qualification context is explicit and time-bound.
 - Rollback remains available after failed mutation.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is identity binding: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
 
 ## Failure modes
 
@@ -107,13 +137,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Evaluator capture.
 - Authority expansion during replacement.
 
-For Stable Capability Fields, mitigation starts by turning each listed failure into a named reviewable artifact. When `Field identity drift` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Field identity drift happens when the name stays stable while the behavior changes. Evaluator capture happens when the candidate influences the policy or measurement that qualifies it. Authority expansion happens when a more capable implementation inherits a route that was safe only for a weaker one. Each should block default promotion until a replacement transaction records the residual and review path.
 
 ## Minimal implementation
 
 An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.
 
-The smallest useful implementation is deliberately narrow: An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is the existing `stable_capability_field` schema expanded with lifecycle, qualification context, evaluator policy, route validity, evidence references, state migration, and rollback metadata. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,10 +151,10 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Qualification predicate test | Probe whether the chapter claim holds under the relevant Stable Capability Fields boundary. | planned; not run |
-| Route validity test | Probe whether the chapter claim holds under the relevant Stable Capability Fields boundary. | planned; not run |
-| Authority non-escalation test | Probe whether the chapter claim holds under the relevant Stable Capability Fields boundary. | planned; not run |
-| Rollback readiness test | Probe whether the chapter claim holds under the relevant Stable Capability Fields boundary. | planned; not run |
+| Qualification predicate test | Check that a candidate cannot enter `qualified` without satisfying the field's declared predicates in context. | planned; not run |
+| Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | planned; not run |
+| Authority non-escalation test | Check that candidate power does not expand the field authority ceiling by default. | planned; not run |
+| Rollback readiness test | Check that recovery and state-migration paths exist before default promotion. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -151,6 +181,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Stable Capability Fields defines one boundary in the ASI Stack: A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy. Its job is to make a capability more governable, not merely more impressive.
+Stable Capability Fields are the stack's upgrade sockets. They let a capability improve by changing implementations while preserving semantic identity, authority ceilings, evaluator policy, evidence, route validity, and rollback.
 
-In v0.2, this chapter gives Stable Capability Fields a complete architectural boundary: the stack needs stable semantic boundaries so implementations can improve without changing what a capability means. Its next maturity step is to substantiate the boundary through `Planning requests field capabilities`, preserve `Replacement cannot expand authority by default`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter makes self-improvement possible without making every upgrade a constitutional event. The next chapter turns field updates into explicit replacement transactions.

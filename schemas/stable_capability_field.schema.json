@@ -3,13 +3,41 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/stable_capability_field.schema.json",
   "title": "Stable Capability Field",
   "type": "object",
-  "required": ["field_id", "semantic_boundary", "authority_ceiling", "implementations", "qualification_predicates", "regression_suite", "rollback_plan"],
+  "required": [
+    "field_id",
+    "semantic_boundary",
+    "interface_contract",
+    "authority_ceiling",
+    "implementations",
+    "lifecycle_state",
+    "qualification_context",
+    "qualification_predicates",
+    "evaluator_policy",
+    "route_validity",
+    "evidence_refs",
+    "state_migration",
+    "regression_suite",
+    "rollback_plan"
+  ],
   "properties": {
     "field_id": { "type": "string", "minLength": 1 },
     "semantic_boundary": { "type": "string", "minLength": 1 },
+    "interface_contract": { "type": "string", "minLength": 1 },
     "authority_ceiling": { "type": "string", "minLength": 1 },
     "implementations": { "type": "array", "items": { "type": "string" } },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["shadow", "canary", "qualified", "default", "deprecated", "retired", "quarantined"]
+    },
+    "qualification_context": { "type": "string", "minLength": 1 },
     "qualification_predicates": { "type": "array", "items": { "type": "string" } },
+    "evaluator_policy": { "type": "string", "minLength": 1 },
+    "route_validity": {
+      "type": "string",
+      "enum": ["unchecked", "valid", "invalid", "residual"]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "state_migration": { "type": "string", "minLength": 1 },
     "regression_suite": { "type": "array", "items": { "type": "string" } },
     "rollback_plan": { "type": "string", "minLength": 1 }
   },

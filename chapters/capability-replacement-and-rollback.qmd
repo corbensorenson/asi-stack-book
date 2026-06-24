@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Stable capability fields define the socket. Replacement defines the transaction that changes what is plugged into it. A system that can improve itself needs a record of the prior implementation, candidate implementation, evidence gates, regressions, residuals, state migration, monitor window, and rollback path.
 
-It inherits pressure from the previous chapter, Stable Capability Fields, and makes that pressure operational in a narrower boundary. It hands its output to Security Kernel and Digital SCIFs, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+RMI and Benchmaxxing supply the ratchet discipline: move the frontier while preserving the floor. Cognitive Loop Closure adds lifecycle discipline for tools that emerge from repeated work. Talos adds job, audit, and replay expectations. SCF supplies the identity boundary that the replacement transaction must preserve.
 
 ## Why existing approaches are insufficient
 
 Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator. If `capability-replacement-and-rollback` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+An ad hoc upgrade can pass a visible benchmark and still delete a regression, change a field's semantics, invalidate a state migration, or make rollback impossible. It can also be self-judged: the component being replaced proposes, evaluates, and approves its own successor. That is not recursive improvement; it is evaluator capture with a success story.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Replacement needs transaction semantics because partial success can be worse than failure. The system should know whether it is in precheck, gate, canary, commit, monitor, rollback, quarantine, or retirement.
 
 ## Core Claim
 
@@ -66,27 +66,59 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, define replacement proposals as artifacts. Second, run qualification, regression, and authority checks. Third, commit only after evidence gates pass and rollback remains available.
+The mechanism is a Replacement Transaction.
+
+```{mermaid}
+flowchart LR
+  A["Prior implementation"] --> B["Replacement proposal"]
+  B --> C["Precheck: field identity + authority"]
+  C --> D["Qualification gates"]
+  D --> E["Regression suite"]
+  E --> F{"Pass with rollback ready?"}
+  F -- "yes" --> G["Canary / commit"]
+  F -- "no" --> H["Reject / quarantine / residual"]
+  G --> I["Monitor window"]
+  I --> J{"Incident or regression?"}
+  J -- "yes" --> K["Rollback"]
+  J -- "no" --> L["Promote / retire prior"]
+  H --> M["Evidence + changelog"]
+  K --> M
+  L --> M
+```
 
 - Define replacement proposals as artifacts.
 - Run qualification, regression, and authority checks.
 - Commit only after evidence gates pass and rollback remains available.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The transaction is an artifact before it is a change. It names the field, prior implementation, candidate, gates, evidence refs, regression suite, residual escrow, rollback command or plan, approval record, monitor window, and final decision. Failed gates become residuals rather than disappearing.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Benchmarks are used as evidence surfaces, not permission slips. If a benchmark saturates, becomes gamed, or fails to transfer, that diagnosis belongs in the transaction.
 
 ## Interfaces
 
-The interface for Capability Replacement and Rollback is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Replacement Transaction.
 
 - SCF defines the field.
 - Benchmarks test behavior.
 - Evidence and changelog record the transition.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `transaction_id`
+- `field_id`
+- `prior_implementation`
+- `candidate_implementation`
+- `precheck_results`
+- `qualification_evidence`
+- `regression_results`
+- `authority_check`
+- `residual_escrow`
+- `rollback_plan`
+- `approval_record`
+- `monitor_window`
+- `decision`
+
+SCF defines the field. Benchmark ratchets and regression suites test behavior. Evidence and changelog records preserve the transition. Governance approves authority changes and high-impact commits.
 
 ## Invariants
 
@@ -96,7 +128,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Regressions stay attached.
 - Rollback metadata is required before promotion.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The transaction must leave enough information to answer a simple question later: what changed, why was it allowed, what got worse, and how could the system return to the prior state?
 
 ## Failure modes
 
@@ -106,13 +138,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Rollback impossible after deployment.
 - Self-judged replacement.
 
-For Capability Replacement and Rollback, mitigation starts by turning each listed failure into a named reviewable artifact. When `Regression deletion` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Regression deletion is the classic false improvement: the candidate does better on the frontier while forgetting what the stack already knew. Rollback impossibility turns a bad canary into permanent damage. Self-judged replacement lets a component rewrite the evidence used to approve it. Each failure blocks promotion.
 
 ## Minimal implementation
 
 A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases.
 
-The smallest useful implementation is deliberately narrow: A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `replacement_transaction` schema and valid fixture. It should validate required evidence and rollback fields, not claim a real replacement succeeded.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -120,9 +152,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Replacement transaction test | Probe whether the chapter claim holds under the relevant Capability Replacement and Rollback boundary. | planned; not run |
-| Regression preservation test | Probe whether the chapter claim holds under the relevant Capability Replacement and Rollback boundary. | planned; not run |
-| Rollback execution dry run | Probe whether the chapter claim holds under the relevant Capability Replacement and Rollback boundary. | planned; not run |
+| Replacement transaction test | Check that a commit cannot occur without precheck, qualification, regression, approval, and rollback records. | planned; not run |
+| Regression preservation test | Check that known regressions remain attached to the candidate decision. | planned; not run |
+| Rollback execution dry run | Check that rollback metadata exists before default promotion. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -150,6 +182,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Capability Replacement and Rollback defines one boundary in the ASI Stack: Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback. Its job is to make a capability more governable, not merely more impressive.
+Capability Replacement and Rollback turns improvement into a transaction. It preserves the prior state, candidate evidence, regressions, residuals, approval, monitor window, and rollback path.
 
-In v0.2, this chapter gives Capability Replacement and Rollback a complete architectural boundary: recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths. Its next maturity step is to substantiate the boundary through `SCF defines the field`, preserve `No replacement without prior and posterior artifacts`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's discipline is floor preservation. The frontier may move only when the existing floor remains visible and recoverable.

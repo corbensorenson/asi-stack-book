@@ -16,6 +16,8 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/governance_right_record.schema.json`
 - `schemas/agency_rights_checklist.schema.json`
 - `schemas/intent_contract.schema.json`
+- `schemas/replacement_transaction.schema.json`
+- `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/typed_job.schema.json`
@@ -281,12 +283,62 @@ This record turns fork, exit, audit, appeal, and dissent into technical rights w
 stable_capability_field:
   field_id: string
   semantic_boundary: string
+  interface_contract: string
   authority_ceiling: string
   implementations: []
+  lifecycle_state: canary
+  qualification_context: string
   qualification_predicates: []
+  evaluator_policy: string
+  route_validity: residual
+  evidence_refs: []
+  state_migration: string
   regression_suite: []
   rollback_plan: string
 ```
+
+This record separates a durable semantic capability boundary from replaceable implementations, while keeping authority, evaluator policy, route validity, evidence, regression, migration, and rollback obligations visible.
+
+## Replacement Transaction
+
+```yaml
+replacement_transaction:
+  transaction_id: string
+  field_id: string
+  prior_implementation: string
+  candidate_implementation: string
+  precheck_results: []
+  qualification_evidence: []
+  regression_results: []
+  authority_check: string
+  residual_escrow: []
+  rollback_plan: string
+  approval_record: string
+  monitor_window: string
+  decision: canary
+```
+
+This record turns capability replacement into an evidence-gated transaction with prior state, candidate state, regressions, residuals, approval, monitoring, and rollback attached.
+
+## Self-Improvement Transition
+
+```yaml
+self_improvement_transition:
+  transition_id: string
+  trigger_residual: string
+  field_id: string
+  proposal: string
+  cheaper_interventions_tried: []
+  protected_invariants: []
+  evaluator_independence: string
+  replacement_transaction: string
+  governance_approval: string
+  monitor_window: string
+  rollback_path: string
+  outcome_state: canary
+```
+
+This record keeps recursive self-improvement bounded by explicit residuals, protected invariants, evaluator independence, governance approval, monitoring, and rollback.
 
 ## Typed Job
 

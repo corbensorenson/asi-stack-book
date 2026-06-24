@@ -1,0 +1,14 @@
+{
+  "transition_id": "self-improvement-demo-001",
+  "trigger_residual": "candidate route appears useful but lacks independent evaluation evidence",
+  "field_id": "field://demo-context-adequacy",
+  "proposal": "Evaluate whether a new context-adequacy implementation should enter canary.",
+  "cheaper_interventions_tried": ["revise the existing validator", "add explicit residual records"],
+  "protected_invariants": ["authority ceiling cannot expand by default", "support states cannot be promoted without evidence"],
+  "evaluator_independence": "candidate is not allowed to be the sole evaluator of its own promotion",
+  "replacement_transaction": "replacement-demo-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary-only; no autonomous production promotion",
+  "rollback_path": "return to impl://context-adequacy-v0 and retain residual escrow",
+  "outcome_state": "canary"
+}
