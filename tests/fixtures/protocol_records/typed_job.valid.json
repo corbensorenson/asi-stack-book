@@ -1,0 +1,10 @@
+{
+  "job_id": "job-demo-001",
+  "contract_id": "command-demo-001",
+  "runtime_adapter": "local-quarto-render",
+  "inputs": ["chapter source", "book manifest"],
+  "outputs": ["_site/index.html"],
+  "permissions": ["read book source", "write local render output"],
+  "audit_events": ["render requested", "render result must be recorded"],
+  "replay_status": "not_run"
+}

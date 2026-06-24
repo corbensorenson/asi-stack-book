@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/command_contract.schema.json",
+  "title": "Command Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "intent_id",
+    "role",
+    "objective",
+    "context_refs",
+    "constraints",
+    "procedure",
+    "allowed_means",
+    "forbidden_means",
+    "output_contract",
+    "verification",
+    "failure_behavior",
+    "authority_ceiling",
+    "required_approvals",
+    "expected_artifacts",
+    "feedback_route"
+  ],
+  "properties": {
+    "contract_id": { "type": "string", "minLength": 1 },
+    "intent_id": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "context_refs": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "procedure": { "type": "array", "items": { "type": "string" } },
+    "allowed_means": { "type": "array", "items": { "type": "string" } },
+    "forbidden_means": { "type": "array", "items": { "type": "string" } },
+    "output_contract": { "type": "string", "minLength": 1 },
+    "verification": { "type": "array", "items": { "type": "string" } },
+    "failure_behavior": { "type": "array", "items": { "type": "string" } },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "required_approvals": { "type": "array", "items": { "type": "string" } },
+    "expected_artifacts": { "type": "array", "items": { "type": "string" } },
+    "feedback_route": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

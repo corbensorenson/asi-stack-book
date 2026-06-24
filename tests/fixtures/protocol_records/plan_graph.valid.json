@@ -1,0 +1,16 @@
+{
+  "plan_id": "plan-demo-001",
+  "command_contract": "command-demo-001",
+  "assumptions": ["assigned source notes are available"],
+  "nodes": ["load-source-context", "revise-chapter", "validate-render"],
+  "dependencies": ["load-source-context -> revise-chapter", "revise-chapter -> validate-render"],
+  "context_requests": ["chapter outline", "source notes", "current chapter file"],
+  "tool_requirements": ["text editor", "schema validator", "quarto renderer"],
+  "authority_requirements": ["write_public_book_only"],
+  "risk_budget": "no private source text may be published",
+  "compute_budget": "local validation and render only",
+  "verification_plan": ["validate_schemas.py", "validate_book.py", "quarto render --to html"],
+  "replanning_policy": "emit residual and repair locally when validation fails",
+  "stop_conditions": ["unavailable source text for a source-derived claim", "unresolved render failure"],
+  "dispatch_state": "dispatchable"
+}

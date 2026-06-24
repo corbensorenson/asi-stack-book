@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Part I produced governed intent: purpose, authority ceilings, protected invariants, rights, and self-improvement boundaries. Part II begins when that intent must become work. VIEA's central move is that intent should not jump straight to a model response or a tool call. It should become a chain of typed artifacts: intent contract, command contract, plan, typed job, runtime action, artifact, verification record, feedback, and residuals.
 
-It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to Command Contracts and Semantic Interfaces, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter is the bridge between governance and cognition. Planning, memory, routing, execution, and evidence can only do disciplined work if the request they receive has a durable identity, constraints, acceptance conditions, side-effect limits, and an artifact trace.
 
 ## Why existing approaches are insufficient
 
 A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control. If `intent-to-execution-contracts` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+The common failure is to treat fluent text as completed work. A response can sound responsive while hiding missing approvals, untracked source boundaries, unverifiable artifacts, unexecuted tests, or side effects that were never authorized. Talos sharpens the point: work should enter a job lifecycle, not a loose conversational state. GenesisCode adds the software version of the same boundary: proposals, effects, replay logs, and obligations must be separated.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The stack needs a contract boundary because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
 
 ## Core Claim
 
@@ -65,27 +65,54 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback. Second, route contracts through planning, memory, verification, and execution layers. Third, attach result artifacts back to the claim and evidence ledger.
+The mechanism is an Intent-to-Execution Trace.
+
+```{mermaid}
+flowchart LR
+  A["Human intent"] --> B["Intent contract"]
+  B --> C["Command contract"]
+  C --> D["Plan graph"]
+  D --> E["Typed jobs"]
+  E --> F{"Authority + approval gate"}
+  F -- "allow" --> G["Runtime adapter / tool"]
+  F -- "deny or missing" --> H["Residual / escalation"]
+  G --> I["Artifact"]
+  I --> J["Verification record"]
+  J --> K["Feedback + evidence ledger"]
+  H --> K
+```
 
 - Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.
 - Route contracts through planning, memory, verification, and execution layers.
 - Attach result artifacts back to the claim and evidence ledger.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The trace is append-only at the level that matters: each transition either produces the next artifact or records why it could not. If a contract cannot be planned, that is a residual. If a job cannot run because approval is missing, that is a residual. If an artifact is produced but verification fails, that is a residual with a repair path.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+This is why the book treats feedback as part of execution, not as a postscript. Result artifacts should update claims, regression suites, tools, and future plans. Failures should become residuals, not disappear into the next prompt.
 
 ## Interfaces
 
-The interface for Intent-to-Execution Contracts is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Intent-to-Execution Trace.
 
 - Intent contracts feed planning.
 - Execution consumes typed jobs derived from contracts.
 - Evidence records contract satisfaction.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `trace_id`
+- `intent_contract`
+- `command_contract`
+- `plan_graph`
+- `typed_jobs`
+- `authority_transitions`
+- `artifacts`
+- `verification_records`
+- `delivery_or_deployment`
+- `feedback_refs`
+- `residuals`
+
+Intent contracts feed planning. Command contracts bind procedure and outputs. Plan graphs decompose the work. Typed jobs carry executable units. Authority transitions control side effects. Verification records decide whether the artifact satisfies the original intent.
 
 ## Invariants
 
@@ -95,7 +122,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Side effects require explicit execution authority.
 - Artifacts remain linked to source intent.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The key invariant is preservation across compilation: the plan, job, artifact, and verification record must still be traceable to the parent intent. If the system cannot show that lineage, it has not executed the intent; it has only produced something near it.
 
 ## Failure modes
 
@@ -105,13 +132,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Artifact identity lost.
 - Approval bypass.
 
-For Intent-to-Execution Contracts, mitigation starts by turning each listed failure into a named reviewable artifact. When `Response mistaken for completed work` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Each failure should block promotion until the trace is repaired.
 
 ## Minimal implementation
 
 A command-contract schema and one end-to-end intent-to-artifact trace.
 
-The smallest useful implementation is deliberately narrow: A command-contract schema and one end-to-end intent-to-artifact trace. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `command_contract` schema plus an `intent_execution_trace` fixture that links an intent contract, plan graph placeholder, typed job, authority transition, artifact, verification record, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +146,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Contract field completeness test | Probe whether the chapter claim holds under the relevant Intent-to-Execution Contracts boundary. | planned; not run |
-| Constraint preservation test | Probe whether the chapter claim holds under the relevant Intent-to-Execution Contracts boundary. | planned; not run |
-| Artifact traceability test | Probe whether the chapter claim holds under the relevant Intent-to-Execution Contracts boundary. | planned; not run |
+| Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | planned; not run |
+| Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | planned; not run |
+| Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +175,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Intent-to-Execution Contracts defines one boundary in the ASI Stack: The stack should transform intent into execution contracts before any tool or runtime action occurs. Its job is to make a capability more governable, not merely more impressive.
+Intent-to-Execution Contracts is the stack's first operational handoff. It turns human intent into a traceable chain of contracts, plans, jobs, artifacts, verification, feedback, and residuals.
 
-In v0.2, this chapter gives Intent-to-Execution Contracts a complete architectural boundary: human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback. Its next maturity step is to substantiate the boundary through `Intent contracts feed planning`, preserve `Contract constraints survive compilation`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action.

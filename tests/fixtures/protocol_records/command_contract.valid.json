@@ -1,0 +1,18 @@
+{
+  "contract_id": "command-demo-001",
+  "intent_id": "intent-demo-001",
+  "role": "book-maintenance-agent",
+  "objective": "Revise a public-safe chapter while preserving evidence discipline.",
+  "context_refs": ["docs/book_outline.md", "sources/source_notes/viea.md"],
+  "constraints": ["do not fabricate source content", "do not promote support states without evidence"],
+  "procedure": ["read assigned source notes", "edit chapter prose", "run validation"],
+  "allowed_means": ["edit tracked Quarto and schema files", "run local validators"],
+  "forbidden_means": ["publish raw private source text", "claim unrun tests passed"],
+  "output_contract": "A committed chapter revision with matching protocol docs.",
+  "verification": ["validate_book.py passes", "quarto render passes"],
+  "failure_behavior": ["emit residual on missing source text", "block dispatch on missing approval"],
+  "authority_ceiling": "write_public_book_only",
+  "required_approvals": ["none for public-safe local draft edits"],
+  "expected_artifacts": ["chapter diff", "schema fixture", "validation summary"],
+  "feedback_route": "appendices/F_changelog.qmd"
+}

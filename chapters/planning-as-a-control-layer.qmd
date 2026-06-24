@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Planning begins after the command contract is explicit. Its job is to decide what work should exist, in what order, with what context, tools, budgets, authority, risk controls, and verification. It should not own memory, perform side effects, or decide that safety constraints are inconvenient. PlanForge supplies the planning middleware frame; Cognitive Compilation supplies the compiler pipeline frame; VIEA supplies the execution spine that the plan must feed.
 
-It inherits pressure from the previous chapter, Command Contracts and Semantic Interfaces, and makes that pressure operational in a narrower boundary. It hands its output to PlanForge DAGs and Intelligence Arbitrage, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The planner is therefore a control layer, not a general cognition blob. It turns contracts into dispatchable structure while preserving constraints and leaving execution authority to downstream gates.
 
 ## Why existing approaches are insufficient
 
 Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes. If `planning-as-a-control-layer` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+A memory layer retrieves context; it should not silently create work. A reasoning layer evaluates claims; it should not silently spend tool authority. An execution layer runs jobs; it should not be the first place dependencies and stop conditions are discovered. When these roles collapse, scope creep looks like initiative, tool overreach looks like competence, and replanning after failure becomes ad hoc.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Planning also needs to be separate from final answers because plans are cheap to reject. A bad plan can be repaired before side effects occur. A bad execution may need rollback, audit, or incident handling.
 
 ## Core Claim
 
@@ -65,28 +65,60 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, compile goals into strategic, tactical, and runtime plans. Second, represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior. Third, delegate execution through typed contracts.
+The mechanism is a Plan Graph.
+
+```{mermaid}
+flowchart LR
+  A["Command contract"] --> B["Assumption extraction"]
+  B --> C["Task graph"]
+  C --> D["Dependency + context requests"]
+  D --> E["Authority / risk / budget annotation"]
+  E --> F["Verification plan"]
+  F --> G{"Dispatchable?"}
+  G -- "yes" --> H["Typed jobs"]
+  G -- "no" --> I["Plan residual / replan"]
+  H --> J["Runtime feedback"]
+  J --> K{"Replan needed?"}
+  K -- "yes" --> C
+  K -- "no" --> L["Plan ledger"]
+  I --> L
+```
 
 - Compile goals into strategic, tactical, and runtime plans.
 - Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior.
 - Delegate execution through typed contracts.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Strategic planning chooses the broad route. Tactical planning decomposes work and dependencies. Runtime planning creates dispatchable nodes and replanning policies. The boundaries matter because only the runtime layer should request specific tools, adapters, or human approvals.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The planner should be allowed to say "I do not have enough context," "this dependency is cyclic," "this tool exceeds authority," or "this budget cannot satisfy the quality predicate." Those outputs are useful plan residuals, not failures to be hidden.
 
 ## Interfaces
 
-The interface for Planning as a Control Layer is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Plan Graph.
 
 - Alignment filters goals.
 - VCM supplies context packets.
 - Routing selects specialists.
 - Execution runs typed jobs.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `plan_id`
+- `command_contract`
+- `assumptions`
+- `nodes`
+- `dependencies`
+- `context_requests`
+- `tool_requirements`
+- `authority_requirements`
+- `risk_budget`
+- `compute_budget`
+- `verification_plan`
+- `replanning_policy`
+- `stop_conditions`
+- `dispatch_state`
+
+Alignment filters goals before planning. VCM supplies context packets. Routing consumes capability requirements. Execution receives typed jobs. Evidence records the plan's assumptions, residuals, verification results, and replanning events.
 
 ## Invariants
 
@@ -96,7 +128,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Runtime replanning preserves authority limits.
 - Tool selection is justified by task requirements.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+A plan node inherits the parent command's authority ceiling unless governance narrows or explicitly changes it. Runtime replanning may change order, route, or decomposition, but it cannot broaden the authority boundary by calling itself adaptation.
 
 ## Failure modes
 
@@ -106,13 +138,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Planning without replanning.
 - Tool choice exceeds authority or budget.
 
-For Planning as a Control Layer, mitigation starts by turning each listed failure into a named reviewable artifact. When `Scope creep` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Scope creep occurs when a plan adds goals that were never accepted. Planning without replanning means failures create improvisation instead of controlled repair. Tool choice exceeding authority or budget means the plan is not dispatchable, even if the work would be useful.
 
 ## Minimal implementation
 
 A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.
 
-The smallest useful implementation is deliberately narrow: A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, and dispatch state. It does not prove the plan is good.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -120,10 +152,10 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Decomposition accuracy test | Probe whether the chapter claim holds under the relevant Planning as a Control Layer boundary. | planned; not run |
-| Dependency ordering test | Probe whether the chapter claim holds under the relevant Planning as a Control Layer boundary. | planned; not run |
-| Context-demand prediction test | Probe whether the chapter claim holds under the relevant Planning as a Control Layer boundary. | planned; not run |
-| Runtime replanning test | Probe whether the chapter claim holds under the relevant Planning as a Control Layer boundary. | planned; not run |
+| Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
+| Dependency ordering test | Check whether dependencies precede dependents before dispatch. | planned; not run |
+| Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
+| Runtime replanning test | Check whether replanning preserves authority, stop conditions, and residual history. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -150,6 +182,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Planning as a Control Layer defines one boundary in the ASI Stack: Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects. Its job is to make a capability more governable, not merely more impressive.
+Planning as a Control Layer converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, verification, stop conditions, and replanning policy before execution begins.
 
-In v0.2, this chapter gives Planning as a Control Layer a complete architectural boundary: goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions. Its next maturity step is to substantiate the boundary through `Alignment filters goals`, preserve `Plans expose constraints and stop conditions`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation.

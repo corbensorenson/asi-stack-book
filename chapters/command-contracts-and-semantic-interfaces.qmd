@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter turns intent into a trace. This chapter defines the control language inside that trace. Software Magic Grimoire supplies the vocabulary: technical words compress mechanisms, responsibilities, workflows, failure shadows, and next actions. VIEA supplies the contract shape: role, objective, context, constraints, procedure, output, verification, and failure behavior.
 
-It inherits pressure from the previous chapter, Intent-to-Execution Contracts, and makes that pressure operational in a narrower boundary. It hands its output to Planning as a Control Layer, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+A command contract is not a prettier prompt. It is the smallest artifact that lets a planner, verifier, tool runner, reviewer, or later agent understand what kind of work has been authorized and what would count as failure.
 
 ## Why existing approaches are insufficient
 
 Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language. If `command-contracts-and-semantic-interfaces` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Free-form prompts are useful for exploration, but they are weak as operational boundaries. They mix discovery, design, implementation, verification, and recovery into one text blob. They also invite hidden instruction conflicts: a context fragment can smuggle a command that overrides the actual contract unless explicit fields dominate implicit prose.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+GenesisCode adds a useful analogy from software: privileged effects and control responses need recognizable protocol shapes. In the ASI Stack, a command must expose output and verification requirements before it can be lowered into planning or execution.
 
 ## Core Claim
 
@@ -65,27 +65,57 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, turn recurring command patterns into reusable templates. Second, treat software words as coordination primitives. Third, bind semantic interfaces to schemas and tests.
+The mechanism is a Command Contract.
+
+```{mermaid}
+flowchart LR
+  A["Natural-language request"] --> B["Semantic extraction"]
+  B --> C["Role + objective"]
+  C --> D["Context + constraints"]
+  D --> E["Procedure + allowed means"]
+  E --> F["Output contract"]
+  F --> G["Verification contract"]
+  G --> H{"Failure behavior declared?"}
+  H -- "yes" --> I["Planning input"]
+  H -- "no" --> J["Missing-contract residual"]
+```
 
 - Turn recurring command patterns into reusable templates.
 - Treat software words as coordination primitives.
 - Bind semantic interfaces to schemas and tests.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The command contract should be compact enough to write often and typed enough to validate. Its field names matter because they become routing handles. "Verification" routes to evidence and tests. "Failure behavior" routes to residuals and escalation. "Allowed means" routes to authority. "Output contract" routes to artifact checks.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Promptcraft remains useful, but only inside this envelope. The command can include a procedure or style, yet those instructions cannot override explicit constraints, authority ceilings, source boundaries, or required verification.
 
 ## Interfaces
 
-The interface for Command Contracts and Semantic Interfaces is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Command Contract.
 
 - Planning consumes structured commands.
 - Execution enforces output contracts.
 - Verification checks stated failure behavior.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `contract_id`
+- `intent_id`
+- `role`
+- `objective`
+- `context_refs`
+- `constraints`
+- `procedure`
+- `allowed_means`
+- `forbidden_means`
+- `output_contract`
+- `verification`
+- `failure_behavior`
+- `authority_ceiling`
+- `required_approvals`
+- `expected_artifacts`
+- `feedback_route`
+
+Planning consumes the structured command. Execution enforces allowed means and output contracts. Verification checks the declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.
 
 ## Invariants
 
@@ -95,7 +125,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Failure behavior is declared.
 - Implicit instructions do not override explicit constraints.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The override rule is central: context can inform a command, but it cannot silently replace explicit constraints. If a source, tool, user message, or retrieved note conflicts with the command contract, the system should emit a conflict residual instead of choosing the most fluent interpretation.
 
 ## Failure modes
 
@@ -105,13 +135,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Prompt injection through context.
 - Unspecified output contract.
 
-For Command Contracts and Semantic Interfaces, mitigation starts by turning each listed failure into a named reviewable artifact. When `Semantic ambiguity` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Semantic ambiguity produces false agreement: everyone thinks the command is clear until the artifact arrives. Prompt injection through context attacks the contract boundary. An unspecified output contract makes verification subjective. All three should become missing-contract or conflict records before planning proceeds.
 
 ## Minimal implementation
 
 A canonical command-contract template used by future chapter drafting and experiment prompts.
 
-The smallest useful implementation is deliberately narrow: A canonical command-contract template used by future chapter drafting and experiment prompts. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate constraints, output, verification, approvals, and failure behavior without claiming the command has been executed.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +149,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Command schema validation test | Probe whether the chapter claim holds under the relevant Command Contracts and Semantic Interfaces boundary. | planned; not run |
-| Failure-behavior declaration test | Probe whether the chapter claim holds under the relevant Command Contracts and Semantic Interfaces boundary. | planned; not run |
-| Prompt override scenario | Probe whether the chapter claim holds under the relevant Command Contracts and Semantic Interfaces boundary. | planned; not run |
+| Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | planned; not run |
+| Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | planned; not run |
+| Prompt override scenario | Check that hidden or conflicting context instructions cannot override explicit constraints. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +178,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Command Contracts and Semantic Interfaces defines one boundary in the ASI Stack: Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior. Its job is to make a capability more governable, not merely more impressive.
+Command Contracts and Semantic Interfaces gives the stack an operational language. It compresses intent into fields that planners, tools, validators, and reviewers can all read without inheriting hidden authority.
 
-In v0.2, this chapter gives Command Contracts and Semantic Interfaces a complete architectural boundary: the stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation. Its next maturity step is to substantiate the boundary through `Planning consumes structured commands`, preserve `A command exposes output and verification requirements`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's discipline is explicitness under compression: make commands short enough to use, but structured enough that failure, verification, and authority remain visible.

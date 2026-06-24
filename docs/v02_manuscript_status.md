@@ -18,7 +18,7 @@ Current scale: 50 chapter files, 97,623 chapter words, averaging 1,952 words per
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Four central mechanism chapters now have source-specific hand revisions and Mermaid diagrams for verification bandwidth, cognitive compilation, generate-verify-repair compression, and Digital SCIF authority flow.
-- Executable schema drafts now cover context adequacy records, semantic atoms, compression receipts, authority-use receipts, costed route records, authority transition records, failure boundary maps, intent contracts, constitutional predicates, agency rights checklists, value conflict records, governance rights records, stable capability fields, replacement transactions, and self-improvement transitions, with valid example fixtures checked by `scripts/validate_protocol_examples.py`.
+- Executable schema drafts now cover context adequacy records, semantic atoms, compression receipts, authority-use receipts, costed route records, authority transition records, failure boundary maps, intent contracts, command contracts, intent-to-execution traces, plan graphs, PlanForge DAGs, typed jobs, constitutional predicates, agency rights checklists, value conflict records, governance rights records, stable capability fields, replacement transactions, and self-improvement transitions, with valid example fixtures checked by `scripts/validate_protocol_examples.py`.
 
 ## Still Missing for v1.0
 

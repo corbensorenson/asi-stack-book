@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter defined the plan graph as the control artifact. This chapter specializes that graph into PlanForge-style DAG planning: decomposition, dependency inference, scheduling, model/tool tier assignment, cost accounting, quality predicates, escalation, and residual handling. PlanForge and the compiler-architecture variant both point to the same design pressure: orchestration should be compiled, not chatted through serially.
 
-It inherits pressure from the previous chapter, Planning as a Control Layer, and makes that pressure operational in a narrower boundary. It hands its output to Cognitive Compilation and Semantic IR, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter is also the book's first major efficiency mechanism after the Efficient ASI thesis. Intelligence arbitrage is not "use cheaper models whenever possible." It is "assign each node the minimum adequate capability plus the verification burden needed to know that adequacy was enough."
 
 ## Why existing approaches are insufficient
 
 Uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation. If `planforge-dags-and-intelligence-arbitrage` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Uniform routing hides structure. Some nodes are clerical, some require domain expertise, some require external tools, some require human approval, and some require adversarial review. Sending everything to the largest model wastes resources and can make the system less inspectable because no one knows which step was actually hard.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The opposite failure is under-routing: a weak worker handles a node whose quality predicate demands stronger reasoning, broader context, or independent verification. TokenMana adds the resource-governance frame: budgets are not just token counts; they include latency, review capacity, burst limits, and human cognitive cost.
 
 ## Core Claim
 
@@ -66,27 +66,56 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, decompose goals into DAGs. Second, annotate nodes with capability tier, budget, context request, risk, and verification requirement. Third, merge redundant branches and escalate only when predicates fail.
+The mechanism is a PlanForge DAG.
+
+```{mermaid}
+flowchart LR
+  A["Accepted plan graph"] --> B["Primitive nodes"]
+  B --> C["Dependency DAG"]
+  C --> D["Capability tier annotation"]
+  D --> E["Budget + risk annotation"]
+  E --> F["Quality predicate"]
+  F --> G["Worker / route assignment"]
+  G --> H{"Predicate passes?"}
+  H -- "yes" --> I["Merge artifact"]
+  H -- "no" --> J["Escalate / residual"]
+  I --> K["Cost-quality ledger"]
+  J --> K
+```
 
 - Decompose goals into DAGs.
 - Annotate nodes with capability tier, budget, context request, risk, and verification requirement.
 - Merge redundant branches and escalate only when predicates fail.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The DAG should expose parallelism, critical path, redundant branches, cached work, and local repair opportunities. A failed node should not force global regeneration unless its dependencies require it. A passed node should not escape verification simply because it was assigned to a cheaper tier.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Cost accounting is evidence discipline, not marketing. A DAG may estimate tokens, time, tool cost, review cost, or latency, but any savings claim remains unpromoted until a reproducible run exists.
 
 ## Interfaces
 
-The interface for PlanForge DAGs and Intelligence Arbitrage is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the PlanForge DAG.
 
 - Routing consumes capability annotations.
 - VCM consumes context requests.
 - Evidence records cost/quality results.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `dag_id`
+- `parent_plan`
+- `nodes`
+- `edges`
+- `capability_tiers`
+- `context_requests`
+- `quality_predicates`
+- `verification_requirements`
+- `budget_limits`
+- `route_assignments`
+- `escalation_policy`
+- `residuals`
+- `cost_quality_ledger`
+
+Routing consumes capability annotations. VCM consumes context requests. Evidence records cost, quality, residuals, and verification. Cognitive Compilation can later lower DAG nodes into semantic atoms or target-specific jobs.
 
 ## Invariants
 
@@ -96,7 +125,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Cost savings do not remove required verification.
 - Escalation paths are explicit.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The efficiency invariant is bounded by verification: cost savings do not count if they delete required checks. A low-tier route can be correct only if the node's quality predicate and escalation policy remain intact.
 
 ## Failure modes
 
@@ -106,13 +135,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Dependency cycles.
 - Economic optimization overriding safety.
 
-For PlanForge DAGs and Intelligence Arbitrage, mitigation starts by turning each listed failure into a named reviewable artifact. When `Wrong tier selection` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Wrong tier selection produces cheap wrong work. Dependency cycles make a graph appear planned while it cannot dispatch. Economic optimization overriding safety is the Goodhart version of planning: the scheduler optimizes cost while silently erasing quality or authority requirements. Each failure should emit a residual, not a successful schedule.
 
 ## Minimal implementation
 
 A DAG schema with node-level capability and verification annotations.
 
-The smallest useful implementation is deliberately narrow: A DAG schema with node-level capability and verification annotations. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, capability tiers, quality predicates, verification requirements, budget limits, route assignments, escalation policy, residuals, and a cost-quality ledger. It does not prove acyclicity; that remains a planned test/proof target.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -120,9 +149,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| DAG acyclicity test | Probe whether the chapter claim holds under the relevant PlanForge DAGs and Intelligence Arbitrage boundary. | planned; not run |
-| Capability tier assignment test | Probe whether the chapter claim holds under the relevant PlanForge DAGs and Intelligence Arbitrage boundary. | planned; not run |
-| Escalation trigger test | Probe whether the chapter claim holds under the relevant PlanForge DAGs and Intelligence Arbitrage boundary. | planned; not run |
+| DAG acyclicity test | Check that all dispatchable graphs are acyclic and dependencies precede dependents. | planned; not run |
+| Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
+| Escalation trigger test | Check that failed quality predicates escalate or emit residuals instead of being treated as complete. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -150,6 +179,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-PlanForge DAGs and Intelligence Arbitrage defines one boundary in the ASI Stack: PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden. Its job is to make a capability more governable, not merely more impressive.
+PlanForge DAGs and Intelligence Arbitrage turns planning into scheduled, typed work. The system decomposes goals, annotates nodes, routes by minimum adequate capability, verifies quality predicates, and records cost-quality outcomes.
 
-In v0.2, this chapter gives PlanForge DAGs and Intelligence Arbitrage a complete architectural boundary: large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing. Its next maturity step is to substantiate the boundary through `Routing consumes capability annotations`, preserve `Dependency order is respected`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals.

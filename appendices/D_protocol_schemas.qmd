@@ -7,6 +7,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/authority_use_receipt.schema.json`
 - `schemas/authority_transition_record.schema.json`
 - `schemas/claim_record.schema.json`
+- `schemas/command_contract.schema.json`
 - `schemas/compression_receipt.schema.json`
 - `schemas/costed_route_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
@@ -16,6 +17,9 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/governance_right_record.schema.json`
 - `schemas/agency_rights_checklist.schema.json`
 - `schemas/intent_contract.schema.json`
+- `schemas/intent_execution_trace.schema.json`
+- `schemas/plan_graph.schema.json`
+- `schemas/planforge_dag.schema.json`
 - `schemas/replacement_transaction.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
@@ -29,14 +33,25 @@ Example fixtures for implemented schema checks are tracked in `tests/fixtures/pr
 
 ```yaml
 command_contract:
-  intent: string
-  requester: string
-  authority_ceiling: string
+  contract_id: string
+  intent_id: string
+  role: string
+  objective: string
+  context_refs: []
   constraints: []
-  expected_artifacts: []
+  procedure: []
+  allowed_means: []
+  forbidden_means: []
+  output_contract: string
+  verification: []
+  failure_behavior: []
+  authority_ceiling: string
   required_approvals: []
-  stop_conditions: []
+  expected_artifacts: []
+  feedback_route: string
 ```
+
+This record turns a request into an operational command with explicit objective, context, constraints, allowed means, output, verification, failure behavior, authority, approvals, artifacts, and feedback route.
 
 ## Intent Contract
 
@@ -57,6 +72,68 @@ intent_contract:
 ```
 
 This record translates natural-language purpose into a bounded contract before planning or execution.
+
+## Intent-to-Execution Trace
+
+```yaml
+intent_execution_trace:
+  trace_id: string
+  intent_contract: string
+  command_contract: string
+  plan_graph: string
+  typed_jobs: []
+  authority_transitions: []
+  artifacts: []
+  verification_records: []
+  delivery_or_deployment: string
+  feedback_refs: []
+  residuals: []
+```
+
+This record preserves the chain from intent to command, plan, job, authority transition, artifact, verification, delivery, feedback, and residuals.
+
+## Plan Graph
+
+```yaml
+plan_graph:
+  plan_id: string
+  command_contract: string
+  assumptions: []
+  nodes: []
+  dependencies: []
+  context_requests: []
+  tool_requirements: []
+  authority_requirements: []
+  risk_budget: string
+  compute_budget: string
+  verification_plan: []
+  replanning_policy: string
+  stop_conditions: []
+  dispatch_state: dispatchable
+```
+
+This record keeps planning separate from memory, reasoning, and execution while making assumptions, dependencies, context, tools, budgets, verification, replanning, and dispatch state explicit.
+
+## PlanForge DAG
+
+```yaml
+planforge_dag:
+  dag_id: string
+  parent_plan: string
+  nodes: []
+  edges: []
+  capability_tiers: []
+  context_requests: []
+  quality_predicates: []
+  verification_requirements: []
+  budget_limits: []
+  route_assignments: []
+  escalation_policy: string
+  residuals: []
+  cost_quality_ledger: []
+```
+
+This record specializes planning into dependency-aware, cost-aware, tier-routed work with explicit verification burdens, escalation policy, residuals, and cost-quality accounting.
 
 ## Context Packet
 

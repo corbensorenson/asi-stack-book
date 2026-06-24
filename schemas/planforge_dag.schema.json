@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/planforge_dag.schema.json",
+  "title": "PlanForge DAG",
+  "type": "object",
+  "required": [
+    "dag_id",
+    "parent_plan",
+    "nodes",
+    "edges",
+    "capability_tiers",
+    "context_requests",
+    "quality_predicates",
+    "verification_requirements",
+    "budget_limits",
+    "route_assignments",
+    "escalation_policy",
+    "residuals",
+    "cost_quality_ledger"
+  ],
+  "properties": {
+    "dag_id": { "type": "string", "minLength": 1 },
+    "parent_plan": { "type": "string", "minLength": 1 },
+    "nodes": { "type": "array", "items": { "type": "string" } },
+    "edges": { "type": "array", "items": { "type": "string" } },
+    "capability_tiers": { "type": "array", "items": { "type": "string" } },
+    "context_requests": { "type": "array", "items": { "type": "string" } },
+    "quality_predicates": { "type": "array", "items": { "type": "string" } },
+    "verification_requirements": { "type": "array", "items": { "type": "string" } },
+    "budget_limits": { "type": "array", "items": { "type": "string" } },
+    "route_assignments": { "type": "array", "items": { "type": "string" } },
+    "escalation_policy": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "cost_quality_ledger": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

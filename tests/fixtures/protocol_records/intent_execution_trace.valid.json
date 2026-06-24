@@ -1,0 +1,13 @@
+{
+  "trace_id": "trace-demo-001",
+  "intent_contract": "intent-demo-001",
+  "command_contract": "command-demo-001",
+  "plan_graph": "plan-demo-001",
+  "typed_jobs": ["job-demo-001"],
+  "authority_transitions": ["authority-demo-001"],
+  "artifacts": ["artifact://public-safe-chapter-revision"],
+  "verification_records": ["verification://local-render-required"],
+  "delivery_or_deployment": "not_deployed_by_fixture",
+  "feedback_refs": ["appendices/F_changelog.qmd"],
+  "residuals": ["fixture validates trace shape only; no execution result is claimed"]
+}

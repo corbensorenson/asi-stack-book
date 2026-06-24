@@ -1,0 +1,15 @@
+{
+  "dag_id": "dag-demo-001",
+  "parent_plan": "plan-demo-001",
+  "nodes": ["load-source-context", "revise-chapter", "validate-render"],
+  "edges": ["load-source-context -> revise-chapter", "revise-chapter -> validate-render"],
+  "capability_tiers": ["load-source-context: retrieval", "revise-chapter: synthesis", "validate-render: deterministic"],
+  "context_requests": ["sources/source_notes/viea.md", "chapters/intent-to-execution-contracts.qmd"],
+  "quality_predicates": ["chapter keeps evidence support conservative", "render succeeds"],
+  "verification_requirements": ["source-note check", "schema validation", "Quarto render"],
+  "budget_limits": ["public-safe text only", "no benchmark claim without run record"],
+  "route_assignments": ["retrieval to file reads", "validation to scripts", "render to Quarto"],
+  "escalation_policy": "failed quality predicate emits residual or escalates for review",
+  "residuals": ["acyclicity is not mechanically checked by this schema fixture"],
+  "cost_quality_ledger": ["fixture records intended cost-quality fields only"]
+}

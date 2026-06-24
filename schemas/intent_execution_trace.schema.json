@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/intent_execution_trace.schema.json",
+  "title": "Intent-to-Execution Trace",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "intent_contract",
+    "command_contract",
+    "plan_graph",
+    "typed_jobs",
+    "authority_transitions",
+    "artifacts",
+    "verification_records",
+    "delivery_or_deployment",
+    "feedback_refs",
+    "residuals"
+  ],
+  "properties": {
+    "trace_id": { "type": "string", "minLength": 1 },
+    "intent_contract": { "type": "string", "minLength": 1 },
+    "command_contract": { "type": "string", "minLength": 1 },
+    "plan_graph": { "type": "string", "minLength": 1 },
+    "typed_jobs": { "type": "array", "items": { "type": "string" } },
+    "authority_transitions": { "type": "array", "items": { "type": "string" } },
+    "artifacts": { "type": "array", "items": { "type": "string" } },
+    "verification_records": { "type": "array", "items": { "type": "string" } },
+    "delivery_or_deployment": { "type": "string", "minLength": 1 },
+    "feedback_refs": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

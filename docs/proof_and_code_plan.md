@@ -39,7 +39,7 @@ Good code candidates:
 
 - source ingestion and cache tools,
 - claim/evidence matrix validators,
-- schema validators for context packets, typed jobs, SCF records, context adequacy records, semantic atoms, compression receipts, authority-use receipts, costed route records, authority transition records, failure boundary maps, intent contracts, constitutional predicates, agency rights checklists, value conflict records, governance rights records, replacement transactions, and self-improvement transitions,
+- schema validators for context packets, typed jobs, SCF records, context adequacy records, semantic atoms, compression receipts, authority-use receipts, costed route records, authority transition records, failure boundary maps, intent contracts, command contracts, intent-to-execution traces, plan graphs, PlanForge DAGs, constitutional predicates, agency rights checklists, value conflict records, governance rights records, replacement transactions, and self-improvement transitions,
 - toy tests for routing, residual escrow, and benchmark ratchets,
 - small synthetic experiments for VCM, planning, Talos, Spinoza, compression, and RMI.
 

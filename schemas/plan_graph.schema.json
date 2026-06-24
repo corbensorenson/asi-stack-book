@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/plan_graph.schema.json",
+  "title": "Plan Graph",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "command_contract",
+    "assumptions",
+    "nodes",
+    "dependencies",
+    "context_requests",
+    "tool_requirements",
+    "authority_requirements",
+    "risk_budget",
+    "compute_budget",
+    "verification_plan",
+    "replanning_policy",
+    "stop_conditions",
+    "dispatch_state"
+  ],
+  "properties": {
+    "plan_id": { "type": "string", "minLength": 1 },
+    "command_contract": { "type": "string", "minLength": 1 },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "nodes": { "type": "array", "items": { "type": "string" } },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "context_requests": { "type": "array", "items": { "type": "string" } },
+    "tool_requirements": { "type": "array", "items": { "type": "string" } },
+    "authority_requirements": { "type": "array", "items": { "type": "string" } },
+    "risk_budget": { "type": "string", "minLength": 1 },
+    "compute_budget": { "type": "string", "minLength": 1 },
+    "verification_plan": { "type": "array", "items": { "type": "string" } },
+    "replanning_policy": { "type": "string", "minLength": 1 },
+    "stop_conditions": { "type": "array", "items": { "type": "string" } },
+    "dispatch_state": {
+      "type": "string",
+      "enum": ["draft", "blocked", "dispatchable", "running", "complete", "residual"]
+    }
+  },
+  "additionalProperties": false
+}
