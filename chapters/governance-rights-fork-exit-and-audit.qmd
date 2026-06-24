@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `coherence_exchange`; supporting: `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; connector/recovery: `coherence_exchange` |
-| Test state | `governance_right_record.valid.json` passes protocol fixture validation; audit-record availability, exit-path preservation, and fork-right safety tests remain planned. |
+| Test state | `governance_right_record.valid.json` passes protocol fixture validation; `AsiStackProofs.GovernanceRights` implements finite audit/exit preservation and protected-right removal gates; audit-record availability, exit-path preservation, and fork-right safety tests remain planned. |
 
 ## Drafting guardrail
 
@@ -150,10 +150,10 @@ The smallest useful implementation is a `governance_right_record` schema plus fi
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | planned |
-| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | planned |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
-These proof targets remain planned. A later formalization should connect rights preservation to SCF replacement and authority transitions; the current fixture validates only the record shape.
+These Lean hooks are implemented as finite-record predicates over governance transition and protected-right removal reviews. They prove only the record-level gates: required audit and exit capabilities are preserved by a valid accepted transition, and removal of a protected right is rejected or marked invalid. They do not prove real access-path availability, fork safety, institutional contestability, or SCF replacement behavior.
 
 ## Source crosswalk
 

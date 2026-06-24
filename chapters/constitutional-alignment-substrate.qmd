@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`; supporting: `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`; connector/recovery: `coherence_exchange` |
-| Test state | `constitutional_predicate_record.valid.json` passes protocol fixture validation; constitutional consistency, self-modification ethics, and power-without-care scenarios remain planned. |
+| Test state | `constitutional_predicate_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Alignment` implements finite active-predicate and protected-predicate weakening gates; constitutional consistency, self-modification ethics, and power-without-care scenarios remain planned. |
 
 ## Drafting guardrail
 
@@ -147,10 +147,10 @@ The smallest useful implementation is a `constitutional_predicate_record` schema
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | planned |
-| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | planned |
+| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
+| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
 
-These proof targets remain planned. The near-term executable work is predicate fixtures and scenario tests; Lean should wait until predicate semantics are precise.
+These Lean hooks are implemented as finite-record predicates over constitutional predicate reviews and self-modification reviews. They prove only the record-level gates: an admitted plan marked against an active predicate must record predicate satisfaction, and a self-modification that weakens a protected predicate must be rejected. They do not prove moral correctness, complete constitutional consistency, self-modification ethics, or alignment behavior in a running system.
 
 ## Source crosswalk
 

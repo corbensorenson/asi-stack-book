@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `ethica_mechanica`; supporting: `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution`; raw cache: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`; connector/recovery: `coherence_exchange` |
-| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; agency-preservation, corrigibility-pathway, and high-impact approval tests remain planned. |
+| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; `AsiStackProofs.Corrigibility` implements finite agency-right preservation and correction-pathway rejection gates; agency-preservation, corrigibility-pathway, and high-impact approval tests remain planned. |
 
 ## Drafting guardrail
 
@@ -150,10 +150,10 @@ The smallest useful implementation is an `agency_rights_checklist` schema plus a
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | planned |
-| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | planned |
+| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
+| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
-These proof targets remain planned. The current executable support is the checklist record; proving corrigibility requires a defined transition model and runtime pathway.
+These Lean hooks are implemented as finite-record predicates over agency transition and correction-pathway reviews. They prove only the record-level gates: a protected agency right remains available after a valid accepted transition, and a transition that removes a required correction pathway is rejected. They do not prove human dignity, manipulation resistance, runtime corrigibility, institutional review quality, or high-impact approval behavior.
 
 ## Source crosswalk
 

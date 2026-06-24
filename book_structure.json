@@ -574,13 +574,13 @@
               "tag": "lean:alignment.constitution.operational_invariant",
               "module": "AsiStackProofs.Alignment",
               "target": "An admitted plan satisfies every active constitutional predicate.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:alignment.constitution.failure_blocks_promotion",
               "module": "AsiStackProofs.Alignment",
               "target": "A self-modification that weakens a protected predicate is rejected.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -648,13 +648,13 @@
               "tag": "lean:corrigibility.agency.operational_invariant",
               "module": "AsiStackProofs.Corrigibility",
               "target": "Protected agency rights remain available after an accepted transition.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:corrigibility.agency.failure_blocks_promotion",
               "module": "AsiStackProofs.Corrigibility",
               "target": "A transition that removes a required correction pathway is rejected.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -722,13 +722,13 @@
               "tag": "lean:values.conflict.operational_invariant",
               "module": "AsiStackProofs.ValueConflict",
               "target": "A decision with unresolved protected conflicts carries a residual conflict record.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:values.conflict.failure_blocks_promotion",
               "module": "AsiStackProofs.ValueConflict",
               "target": "A high-stakes conflict cannot bypass the required review predicate.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -798,13 +798,13 @@
               "tag": "lean:governance.rights.operational_invariant",
               "module": "AsiStackProofs.GovernanceRights",
               "target": "A governance transition preserves required audit and exit capabilities.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:governance.rights.failure_blocks_promotion",
               "module": "AsiStackProofs.GovernanceRights",
               "target": "A transition that removes a protected right is rejected or marked invalid.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -1104,13 +1104,13 @@
               "tag": "lean:self_improvement.boundary.operational_invariant",
               "module": "AsiStackProofs.SelfImprovement",
               "target": "An improvement transition preserves all protected invariants.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.SelfImprovement",
               "target": "A proposal evaluated only by the component being replaced cannot be promoted.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         }

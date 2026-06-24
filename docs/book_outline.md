@@ -452,8 +452,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | planned |
-| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | planned |
+| `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
+| `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
 
 ### Agency, Dignity, and Corrigibility
 
@@ -504,8 +504,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | planned |
-| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | planned |
+| `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
+| `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
 ### Moral Uncertainty and Value Conflict
 
@@ -556,8 +556,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | planned |
-| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | planned |
+| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
+| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
 
 ### Governance Rights: Fork, Exit, and Audit
 
@@ -608,8 +608,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | planned |
-| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | planned |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
 ### Stable Capability Fields
 
@@ -823,8 +823,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | planned |
-| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | planned |
+| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | implemented |
+| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | implemented |
 
 ## Part II - Planning, Memory, Reasoning, and Execution
 

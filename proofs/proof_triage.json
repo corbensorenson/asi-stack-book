@@ -135,80 +135,80 @@
       "chapter_id": "constitutional-alignment-substrate",
       "module": "AsiStackProofs.Alignment",
       "formal_target": "An admitted plan satisfies every active constitutional predicate.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Alignment as a finite constitutional-predicate review: an admitted plan marked against an active predicate must record predicate satisfaction."
     },
     {
       "tag": "lean:alignment.constitution.failure_blocks_promotion",
       "chapter_id": "constitutional-alignment-substrate",
       "module": "AsiStackProofs.Alignment",
       "formal_target": "A self-modification that weakens a protected predicate is rejected.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Alignment as a finite self-modification predicate: weakening a protected predicate requires rejection."
     },
     {
       "tag": "lean:corrigibility.agency.operational_invariant",
       "chapter_id": "agency-dignity-and-corrigibility",
       "module": "AsiStackProofs.Corrigibility",
       "formal_target": "Protected agency rights remain available after an accepted transition.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Corrigibility as a finite agency-transition predicate: protected agency rights remain available after valid accepted transitions."
     },
     {
       "tag": "lean:corrigibility.agency.failure_blocks_promotion",
       "chapter_id": "agency-dignity-and-corrigibility",
       "module": "AsiStackProofs.Corrigibility",
       "formal_target": "A transition that removes a required correction pathway is rejected.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Corrigibility as a finite correction-pathway predicate: removing a required correction pathway requires rejection."
     },
     {
       "tag": "lean:values.conflict.operational_invariant",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "module": "AsiStackProofs.ValueConflict",
       "formal_target": "A decision with unresolved protected conflicts carries a residual conflict record.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite conflict-decision predicate: decisions with unresolved protected conflicts require residual conflict records."
     },
     {
       "tag": "lean:values.conflict.failure_blocks_promotion",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "module": "AsiStackProofs.ValueConflict",
       "formal_target": "A high-stakes conflict cannot bypass the required review predicate.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite high-stakes review predicate: a high-stakes conflict without required review cannot be accepted."
     },
     {
       "tag": "lean:governance.rights.operational_invariant",
       "chapter_id": "governance-rights-fork-exit-and-audit",
       "module": "AsiStackProofs.GovernanceRights",
       "formal_target": "A governance transition preserves required audit and exit capabilities.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.GovernanceRights as a finite governance-transition predicate: accepted transitions preserve required audit and exit capabilities."
     },
     {
       "tag": "lean:governance.rights.failure_blocks_promotion",
       "chapter_id": "governance-rights-fork-exit-and-audit",
       "module": "AsiStackProofs.GovernanceRights",
       "formal_target": "A transition that removes a protected right is rejected or marked invalid.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.GovernanceRights as a finite protected-right predicate: removing a protected right requires rejection or invalid marking."
     },
     {
       "tag": "lean:scf.field_identity.operational_invariant",
@@ -275,20 +275,20 @@
       "chapter_id": "recursive-self-improvement-boundaries",
       "module": "AsiStackProofs.SelfImprovement",
       "formal_target": "An improvement transition preserves all protected invariants.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite improvement-transition predicate: accepted transitions preserve declared protected invariants."
     },
     {
       "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
       "chapter_id": "recursive-self-improvement-boundaries",
       "module": "AsiStackProofs.SelfImprovement",
       "formal_target": "A proposal evaluated only by the component being replaced cannot be promoted.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite self-evaluation predicate: proposals evaluated only by the replaced component cannot be promoted."
     },
     {
       "tag": "lean:intent_execution.contracts.operational_invariant",

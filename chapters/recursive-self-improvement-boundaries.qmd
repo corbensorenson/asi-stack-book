@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` |
-| Test state | `self_improvement_transition.valid.json` passes protocol fixture validation; protected-invariant, evaluator-independence, and rollback scenarios remain planned. |
+| Test state | `self_improvement_transition.valid.json` passes protocol fixture validation; `AsiStackProofs.SelfImprovement` implements finite protected-invariant and sole-self-evaluation gates; protected-invariant, evaluator-independence, and rollback scenarios remain planned. |
 
 ## Drafting guardrail
 
@@ -156,10 +156,10 @@ The smallest useful implementation is a `self_improvement_transition` schema plu
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | planned |
-| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | planned |
+| `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | implemented |
+| `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | implemented |
 
-These proof targets remain planned. The current executable support is the transition record shape; a governed self-improvement claim requires independent gate/evaluator artifacts.
+These Lean hooks are implemented as finite-record predicates over improvement transition and self-evaluation reviews. They prove only the record-level gates: an accepted improvement transition preserves declared protected invariants, and a proposal evaluated only by the replaced component cannot be promoted. They do not prove evaluator independence in practice, runtime self-improvement safety, rollback effectiveness, or phase-gate completion.
 
 ## Source crosswalk
 

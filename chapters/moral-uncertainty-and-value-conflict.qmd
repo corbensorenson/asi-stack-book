@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; connector/recovery: `coherence_exchange` |
-| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; value-conflict classification, review escalation, and residual-uncertainty preservation tests remain planned. |
+| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; value-conflict classification, review escalation, and residual-uncertainty preservation tests remain planned. |
 
 ## Drafting guardrail
 
@@ -148,10 +148,10 @@ The smallest useful implementation is a `value_conflict_record` schema plus a sc
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | planned |
-| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | planned |
+| `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
+| `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
 
-These proof targets remain planned. The current executable surface is the conflict record schema; high-stakes review behavior still needs tests.
+These Lean hooks are implemented as finite-record predicates over conflict decision and high-stakes review records. They prove only the record-level gates: a decision with an unresolved protected conflict carries a residual record, and a high-stakes conflict without required review cannot be accepted. They do not settle moral uncertainty, classify values automatically, prove reviewer quality, or validate a real escalation process.
 
 ## Source crosswalk
 

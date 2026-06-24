@@ -59,7 +59,7 @@ Formal methods are ineffective when applied to vague philosophical claims instea
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
-The claim remains at `argument` support. This repository currently has a Lean workspace and implemented stack-boundary proofs, but most chapter proof targets remain planned or better suited to schemas, tests, or process contracts.
+The claim remains at `argument` support. This repository currently has a Lean workspace and multiple implemented finite-record proof modules, but several chapter proof targets remain planned or better suited to schemas, tests, or process contracts.
 
 ## Mechanism
 
@@ -124,7 +124,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. It does not prove the target.
 
-The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 58 are implemented formal-invariant Lean candidates, and 44 remain planned across schema, process, and research routes. The deeper artifact-by-artifact audit remains a separate planned check.
+The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 68 are implemented formal-invariant Lean candidates, and 34 remain planned across schema, process, and research routes. The deeper artifact-by-artifact audit remains a separate planned check.
 
 ## Codex test plan
 
