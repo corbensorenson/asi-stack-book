@@ -1,5 +1,16 @@
 # Evidence and Test Plan
 
+## Claim labels
+
+| Label | Meaning |
+|---|---|
+| Demonstrated | Shown by a recorded artifact, derivation, implementation, or source-backed example in scope |
+| Measured | Quantified by a recorded measurement or benchmark result |
+| Mechanized | Expressed as runnable code, executable schema, or formal proof target |
+| Hypothesized | Proposed as a testable claim that still needs evidence |
+| Design rationale | Architectural choice supported by reasoning and constraints |
+| Speculative | Exploratory or conjectural; not a deployed-system guarantee |
+
 ## Claim support states
 
 | State | Meaning |
@@ -11,6 +22,12 @@
 | synthetic-test-backed | Supported by controlled synthetic tests |
 | empirical-test-backed | Supported by external/realistic tests |
 | external-literature-backed | Supported by third-party literature |
+| deprecated | Superseded, merged, or retired; retained for lineage and review |
+| refuted | Contradicted by later evidence or tests; retained to preserve negative results |
+
+## Evidence bundle fields
+
+Promoted claims should record source hash, code revision, environment manifest, baseline, test command, metrics, raw logs, negative results, ablations, failure reproduction, artifacts, provenance, conclusion, limitations, and release notes where applicable.
 
 ## Minimum test specs by layer
 

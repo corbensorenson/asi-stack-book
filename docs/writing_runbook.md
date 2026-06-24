@@ -20,6 +20,7 @@ Use source material in this order:
 2. Google Drive connector export/fetch when the local cache is missing or stale.
 3. `sources/source_inventory.json` metadata when source text is unavailable.
 4. Handoff notes only as planning/context, not as source-derived evidence.
+5. Conversation-mined packets only as author intent, architecture lineage, terminology, and recovery cues, not as external evidence or quotable source text.
 
 Use the source queue in `docs/book_outline.md` to decide what is in scope:
 
@@ -28,7 +29,7 @@ Use the source queue in `docs/book_outline.md` to decide what is in scope:
 - Variant sources are used to compare versions or recover missing details.
 - Connector or recovery sources must be loaded through Google Drive or kept as explicit blockers before source-derived claims.
 
-Do not mark a claim as `source-derived` unless the actual source text was read.
+Do not mark a claim as `source-derived` unless the actual source text was read. Do not publish private conversation wording verbatim unless the user explicitly approves that exact text.
 
 ## Chapter Drafting Loop
 
@@ -39,11 +40,24 @@ For each chapter:
 3. Decide which claims remain design hypotheses.
 4. Draft the chapter as one architecture layer, not a pasted anthology.
 5. Update the chapter source crosswalk.
-6. Update Appendix C if claim text or support state changes.
+6. Update Appendix C if claim text, claim label, or support state changes.
 7. Update glossary terms introduced by the chapter.
 8. Add planned proof/code hooks when a mechanism can be formalized or tested.
 9. Update `appendices/F_changelog.qmd`.
 10. Run validation and render.
+
+## Claim Labels
+
+Claim labels describe what kind of statement is being made. Support states describe what currently supports it.
+
+| Label | Use |
+|---|---|
+| `Demonstrated` | A recorded artifact, derivation, implementation, or source-backed example demonstrates the claim in scope. |
+| `Measured` | The claim reports a recorded measurement or benchmark result. |
+| `Mechanized` | The claim is expressed as runnable code, an executable schema, or a formal proof target. |
+| `Hypothesized` | The claim is testable but still needs evidence. |
+| `Design rationale` | The claim is an architectural choice supported by reasoning and constraints. |
+| `Speculative` | The claim is exploratory and cannot support deployment guarantees. |
 
 ## Evidence Movement Rules
 
@@ -55,6 +69,9 @@ For each chapter:
 | `synthetic-test-backed` -> `empirical-test-backed` | Realistic external or field-like test run. |
 | any state -> `unsupported` | Source missing, contradiction found, or claim overreaches evidence. |
 | any state -> `deprecated` chapter/status | Claim or chapter superseded, failed, or merged. |
+| any state -> `refuted` | Later evidence or tests contradict the claim; preserve the negative result. |
+
+Promoted evidence records should include the relevant evidence bundle fields: source hash, code revision, environment manifest, baseline, test command, metrics, raw logs, negative results, ablations, failure reproduction, artifacts, provenance, conclusion, limitations, and release notes.
 
 ## End Every Major Writing Run
 
@@ -62,7 +79,10 @@ Run:
 
 ```bash
 python3 scripts/sync_scaffold.py
+python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
+python3 scripts/validate_schemas.py
 quarto render --to html
 ```
 

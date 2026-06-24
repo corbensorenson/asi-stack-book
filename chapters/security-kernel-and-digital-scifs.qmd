@@ -11,6 +11,7 @@ primary_sources:
   - "alignment_field"
   - "coherence_exchange"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ High-agency systems need security boundaries for secrets, context, permissions, 
 
 Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
 
-## Core claim
+## Core Claim
 
-[security-kernel-and-digital-scifs.core, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
+[security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
 
 ## Mechanism
 

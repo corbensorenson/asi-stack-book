@@ -20,6 +20,7 @@ primary_sources:
   - "moecot"
   - "vcm_editable"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -37,6 +38,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -53,13 +55,14 @@ Readers need to see how the layers operate as one machine from intent to governe
 
 Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 
-## Core claim
+## Core Claim
 
-[integrated-reference-architecture.core, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
+[integrated-reference-architecture.core, label: Design rationale, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
 
 ## Mechanism
 
 - Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.
+- Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.
 - Show which artifact each layer emits.
 - Identify where authority can stop or reroute the process.
 

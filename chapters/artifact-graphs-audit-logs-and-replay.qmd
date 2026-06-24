@@ -13,6 +13,7 @@ primary_sources:
   - "cognitive_loop_closure"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -30,6 +31,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -46,9 +48,9 @@ The stack needs durable artifacts and replayable traces so work can be inspected
 
 If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
 
-## Core claim
+## Core Claim
 
-[artifact-graphs-audit-logs-and-replay.core, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
+[artifact-graphs-audit-logs-and-replay.core, label: Design rationale, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
 
 ## Mechanism
 

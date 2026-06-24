@@ -11,6 +11,7 @@ primary_sources:
   - "simulation_scaling"
   - "rmi"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,13 +46,15 @@ The architecture needs a theory of compact systems that generate useful behavior
 
 Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
 
-## Core claim
+## Core Claim
 
-[compact-generative-systems-and-residual-honesty.core, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
+[compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
 
 ## Mechanism
 
 - Define compact generative cores and their residuals.
+- Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.
+- Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.
 - Separate lawful generation from exact remainder.
 - Record where compactness fails.
 
@@ -74,12 +78,13 @@ Compression can look efficient while moving burden into unmeasured reconstructio
 
 ## Minimal implementation
 
-A compactness ledger with generative core, exact remainder, verification, and residual fields.
+A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| S/R/Q/G/V/E loop consistency test | Support or falsify this chapter's layer claim. | planned; not run |
 | Residual burden test | Support or falsify this chapter's layer claim. | planned; not run |
 | Downstream utility test | Support or falsify this chapter's layer claim. | planned; not run |
 | Fallback behavior test | Support or falsify this chapter's layer claim. | planned; not run |

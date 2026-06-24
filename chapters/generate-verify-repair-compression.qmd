@@ -10,6 +10,7 @@ primary_sources:
   - "cgs"
   - "rankfold_neuralfold"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -27,6 +28,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -43,9 +45,9 @@ Some representations may be compressed by storing a lawful generator plus exact 
 
 Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
 
-## Core claim
+## Core Claim
 
-[generate-verify-repair-compression.core, support: argument] Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
+[generate-verify-repair-compression.core, label: Design rationale, support: argument] Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
 
 ## Mechanism
 

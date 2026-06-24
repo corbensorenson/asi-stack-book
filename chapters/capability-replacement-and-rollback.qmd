@@ -12,6 +12,7 @@ primary_sources:
   - "talos"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ Recursive improvement requires a safe procedure for replacing components while p
 
 Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
 
-## Core claim
+## Core Claim
 
-[capability-replacement-and-rollback.core, support: argument] Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
+[capability-replacement-and-rollback.core, label: Design rationale, support: argument] Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
 
 ## Mechanism
 

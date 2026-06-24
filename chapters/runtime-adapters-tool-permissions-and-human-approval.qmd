@@ -12,6 +12,7 @@ primary_sources:
   - "genesiscode"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,13 +47,14 @@ Plans become real-world effects only through tools, runtimes, deployment adapter
 
 Tool calling without a permission and approval model turns reasoning errors into side effects.
 
-## Core claim
+## Core Claim
 
-[runtime-adapters-tool-permissions-and-human-approval.core, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
+[runtime-adapters-tool-permissions-and-human-approval.core, label: Design rationale, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
 
 ## Mechanism
 
 - Map jobs to runtime adapters with declared capabilities.
+- Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.
 - Require permission checks and approval gates for high-impact actions.
 - Record deployment evidence and rollback handles.
 

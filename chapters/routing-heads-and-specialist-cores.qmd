@@ -12,6 +12,7 @@ primary_sources:
   - "rgs"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ The architecture needs to allocate cognition across specialists rather than forc
 
 Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.
 
-## Core claim
+## Core Claim
 
-[routing-heads-and-specialist-cores.core, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
+[routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
 ## Mechanism
 

@@ -11,6 +11,7 @@ primary_sources:
   - "software_magic_grimoire"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,14 +46,14 @@ Goals need to become governed plans with dependencies, budgets, risk limits, too
 
 Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
 
-## Core claim
+## Core Claim
 
-[planning-as-a-control-layer.core, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
+[planning-as-a-control-layer.core, label: Design rationale, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
 
 ## Mechanism
 
-- Compile goals into strategic and tactical plans.
-- Represent dependencies, constraints, context requests, and replanning triggers.
+- Compile goals into strategic, tactical, and runtime plans.
+- Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior.
 - Delegate execution through typed contracts.
 
 ## Interfaces
@@ -75,7 +77,7 @@ Planning cannot be collapsed into memory, reasoning, or execution because each l
 
 ## Minimal implementation
 
-A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
+A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.
 
 ## Codex test plan
 
@@ -83,6 +85,7 @@ A plan graph format with dependencies, context requests, risk budgets, and stop 
 |---|---|---|
 | Decomposition accuracy test | Support or falsify this chapter's layer claim. | planned; not run |
 | Dependency ordering test | Support or falsify this chapter's layer claim. | planned; not run |
+| Context-demand prediction test | Support or falsify this chapter's layer claim. | planned; not run |
 | Runtime replanning test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk

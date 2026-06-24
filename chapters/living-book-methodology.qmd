@@ -13,6 +13,7 @@ primary_sources:
   - "moecot_md"
   - "road_to_agi"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -30,6 +31,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -46,14 +48,16 @@ The book itself must remain a living technical system rather than a static antho
 
 Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
 
-## Core claim
+## Core Claim
 
-[living-book-methodology.core, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
+[living-book-methodology.core, label: Design rationale, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
 
 ## Mechanism
 
 - Use `book_structure.json` for order and dynamic chapters.
 - Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
+- Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
+- Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
 - Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 
 ## Interfaces

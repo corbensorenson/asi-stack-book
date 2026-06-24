@@ -11,6 +11,7 @@ primary_sources:
   - "simulation_scaling"
   - "viea"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ Compute, context, verification, and human attention are scarce resources that th
 
 Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.
 
-## Core claim
+## Core Claim
 
-[resource-economics-and-token-budgets.core, support: argument] The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value.
+[resource-economics-and-token-budgets.core, label: Design rationale, support: argument] The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value.
 
 ## Mechanism
 

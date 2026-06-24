@@ -13,6 +13,7 @@ primary_sources:
   - "talos"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -30,6 +31,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -46,9 +48,9 @@ The book needs to state when self-improvement is allowed, what it may modify, an
 
 Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
 
-## Core claim
+## Core Claim
 
-[recursive-self-improvement-boundaries.core, support: argument] Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
+[recursive-self-improvement-boundaries.core, label: Design rationale, support: argument] Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
 
 ## Mechanism
 

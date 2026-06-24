@@ -3,10 +3,21 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/claim_record.schema.json",
   "title": "Claim Record",
   "type": "object",
-  "required": ["claim_id", "text", "support_state", "source_handles", "tests", "review_status"],
+  "required": ["claim_id", "text", "claim_label", "support_state", "source_handles", "tests", "review_status"],
   "properties": {
     "claim_id": { "type": "string", "minLength": 1 },
     "text": { "type": "string", "minLength": 1 },
+    "claim_label": {
+      "type": "string",
+      "enum": [
+        "Demonstrated",
+        "Measured",
+        "Mechanized",
+        "Hypothesized",
+        "Design rationale",
+        "Speculative"
+      ]
+    },
     "support_state": {
       "type": "string",
       "enum": [
@@ -16,11 +27,35 @@
         "prototype-backed",
         "synthetic-test-backed",
         "empirical-test-backed",
-        "external-literature-backed"
+        "external-literature-backed",
+        "deprecated",
+        "refuted"
       ]
     },
     "source_handles": { "type": "array", "items": { "type": "string" } },
     "tests": { "type": "array", "items": { "type": "string" } },
+    "evidence_bundle": {
+      "type": "object",
+      "properties": {
+        "source_hash": { "type": "string" },
+        "code_revision": { "type": "string" },
+        "environment_manifest": { "type": "string" },
+        "baseline": { "type": "string" },
+        "test_command": { "type": "string" },
+        "metrics": { "type": "object", "additionalProperties": true },
+        "raw_logs": { "type": "array", "items": { "type": "string" } },
+        "negative_results": { "type": "array", "items": { "type": "string" } },
+        "ablations": { "type": "array", "items": { "type": "string" } },
+        "failure_reproduction": { "type": "string" },
+        "artifacts": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "type": "string" },
+        "conclusion": { "type": "string" },
+        "limitations": { "type": "string" },
+        "release_notes": { "type": "string" }
+      },
+      "additionalProperties": false,
+      "default": {}
+    },
     "contradictions": { "type": "array", "items": { "type": "string" }, "default": [] },
     "review_status": { "type": "string", "enum": ["open", "reviewed", "blocked", "deprecated"] }
   },

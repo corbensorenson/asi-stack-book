@@ -11,6 +11,7 @@ primary_sources:
   - "cgs"
   - "bugbrain"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ The stack needs artifact-level and tensor-level compression strategies that rema
 
 Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
 
-## Core claim
+## Core Claim
 
-[rankfold-neuralfold-and-artifact-compression.core, support: argument] RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
+[rankfold-neuralfold-and-artifact-compression.core, label: Design rationale, support: argument] RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
 
 ## Mechanism
 

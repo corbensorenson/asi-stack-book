@@ -43,6 +43,17 @@ ALLOWED_SUPPORT_STATES = {
     "synthetic-test-backed",
     "empirical-test-backed",
     "external-literature-backed",
+    "deprecated",
+    "refuted",
+}
+
+ALLOWED_CLAIM_LABELS = {
+    "Demonstrated",
+    "Measured",
+    "Mechanized",
+    "Hypothesized",
+    "Design rationale",
+    "Speculative",
 }
 
 
@@ -190,6 +201,9 @@ def validate_claim_states() -> None:
     missing = [state for state in ALLOWED_SUPPORT_STATES if state not in text]
     if missing:
         fail(f"Claim/evidence matrix is missing support-state definitions: {sorted(missing)}")
+    missing_labels = [label for label in ALLOWED_CLAIM_LABELS if label not in text]
+    if missing_labels:
+        fail(f"Claim/evidence matrix is missing claim-label definitions: {sorted(missing_labels)}")
 
 
 def validate_proof_manifest() -> None:

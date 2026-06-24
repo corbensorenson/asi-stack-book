@@ -12,6 +12,7 @@ primary_sources:
   - "cognitive_loop_closure"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ Modules need a lifecycle for promotion, quarantine, retirement, split, merge, an
 
 A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
 
-## Core claim
+## Core Claim
 
-[readiness-gates-residual-escrow-and-quarantine.core, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
+[readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
 
 ## Mechanism
 

@@ -11,6 +11,7 @@ primary_sources:
   - "tokenmana"
   - "alignment_field"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ The architecture needs a realism check on simulations, nested worlds, fidelity, 
 
 Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit.
 
-## Core claim
+## Core Claim
 
-[simulation-fidelity-and-physical-constraints.core, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
+[simulation-fidelity-and-physical-constraints.core, label: Design rationale, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
 
 ## Mechanism
 

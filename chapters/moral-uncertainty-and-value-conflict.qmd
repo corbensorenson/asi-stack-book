@@ -11,6 +11,7 @@ primary_sources:
   - "uat"
   - "spinoza"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ A self-improving system will face value conflicts that cannot be honestly collap
 
 Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.
 
-## Core claim
+## Core Claim
 
-[moral-uncertainty-and-value-conflict.core, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
+[moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
 
 ## Mechanism
 

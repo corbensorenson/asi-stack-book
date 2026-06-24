@@ -15,6 +15,7 @@ primary_sources:
   - "moecot_md"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -32,6 +33,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -48,9 +50,9 @@ The book needs a concrete implementation reference for governed multi-core orche
 
 A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
 
-## Core claim
+## Core Claim
 
-[moecot-runtime-and-multi-core-orchestration.core, support: argument] MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
+[moecot-runtime-and-multi-core-orchestration.core, label: Design rationale, support: argument] MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
 
 ## Mechanism
 

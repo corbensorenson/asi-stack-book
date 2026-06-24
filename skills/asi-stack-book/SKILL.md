@@ -13,7 +13,8 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 - Do not hand-edit `_quarto.yml`; regenerate it with `python3 scripts/sync_scaffold.py`.
 - Do not use numbered chapter filenames. Use stable slug filenames and stable `chapter_id` values.
 - Do not fabricate source content, citations, summaries, benchmark results, or test results.
-- Keep claim support states explicit: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, `external-literature-backed`.
+- Keep claim labels and support states separate. Claim labels: `Demonstrated`, `Measured`, `Mechanized`, `Hypothesized`, `Design rationale`, `Speculative`. Support states: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, `external-literature-backed`, `deprecated`, `refuted`.
+- Treat handoff packets and conversation-mined packets as planning, author-intent, lineage, terminology, and recovery context only. Do not use them as external evidence or quote private conversational wording without explicit approval.
 - Preserve speculative material as speculative.
 - Update `appendices/F_changelog.qmd` for meaningful structural, source, claim, evidence, or publication changes.
 
@@ -29,8 +30,8 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
 7. Run `python3 scripts/sync_scaffold.py` after manifest changes.
 8. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
-9. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
-10. Update Appendix C when a claim changes or its support state changes.
+9. Update chapter prose and source notes only from available source text, clearly labeled design reasoning, or clearly labeled author-intent context.
+10. Update Appendix C when a claim changes, its claim label changes, or its support state changes.
 11. Run `python3 scripts/validate_publication.py` for public-surface changes.
 12. Run `python3 scripts/validate_book.py`.
 13. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
@@ -46,7 +47,7 @@ When the user brings a new AI-related paper:
 5. Decide whether the source updates an existing chapter, needs a new chapter, belongs in an appendix, or should remain unassigned.
 6. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
 7. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
-8. Keep the claim/evidence state at `argument` unless source ingestion or tests justify a stronger state.
+8. Keep support state at `argument` unless source ingestion or tests justify a stronger state.
 
 Read `references/triage.md` when deciding whether to update an existing chapter or create a new one.
 
@@ -58,6 +59,7 @@ Read `references/triage.md` when deciding whether to update an existing chapter 
 - Avoid unscoped safety claims and hype.
 - Treat `docs/book_outline.md` as the source of truth for full-book drafting and Lean proof scope.
 - Follow the outline's source queues before drafting: primary sources first, supporting sources second, variants for version comparison, connector/recovery sources as explicit blockers until loaded.
+- Use conversation-derived context to preserve architecture intent and deduplicate concepts, but keep it out of source-derived support unless the corresponding source text is actually loaded.
 - Keep `proofs/proof_manifest.json` generated from outline `lean:*` proof tags.
 - Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, source crosswalk, and summary.
 

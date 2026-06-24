@@ -11,6 +11,7 @@ primary_sources:
   - "talos"
   - "viea"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ The book needs to decide which architecture claims should become executable spec
 
 Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
 
-## Core claim
+## Core Claim
 
-[executable-specifications-and-lean-proof-envelope.core, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
+[executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
 ## Mechanism
 

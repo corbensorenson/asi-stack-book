@@ -16,6 +16,7 @@ primary_sources:
   - "aletheia"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -33,6 +34,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -49,14 +51,15 @@ The architecture needs a non-scale-only theory for how capability can increase w
 
 Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.
 
-## Core claim
+## Core Claim
 
-[the-efficient-asi-hypothesis.core, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
+[the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
 
 ## Mechanism
 
 - Use minimum viable intelligence for subtasks.
 - Turn repeated cognition into durable artifacts, tools, or procedural memory.
+- Model efficiency through the seed/router/search/generator/verifier/residual loop plus memory and governance.
 - Expose residual burden when routing or compression is incomplete.
 
 ## Interfaces

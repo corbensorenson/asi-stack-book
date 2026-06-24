@@ -75,6 +75,7 @@
           "core_claim": "Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.",
           "mechanism": [
             "Define each layer by responsibility, interface, artifact, invariant, and failure mode.",
+            "Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.",
             "Treat the whole book as a reference architecture rather than a collection of standalone papers.",
             "Use source queues and evidence states to keep future writing runs context-loaded and honest."
           ],
@@ -159,6 +160,7 @@
           "mechanism": [
             "Use minimum viable intelligence for subtasks.",
             "Turn repeated cognition into durable artifacts, tools, or procedural memory.",
+            "Model efficiency through the seed/router/search/generator/verifier/residual loop plus memory and governance.",
             "Expose residual burden when routing or compression is incomplete."
           ],
           "interfaces": [
@@ -386,13 +388,14 @@
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
           },
-          "problem": "The living book needs a shared language for when a claim is only argued, source-derived, prototype-backed, or test-backed.",
+          "problem": "The living book needs a shared language for what kind of claim is being made and what currently supports it.",
           "insufficient": "Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.",
-          "core_claim": "Every major claim should carry a support state and move only when source ingestion, prototype inspection, or actual tests justify the transition.",
+          "core_claim": "Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.",
           "mechanism": [
             "Use Appendix C as the claim ledger.",
+            "Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.",
             "Require source notes before promoting claims to source-derived.",
-            "Require executed tests before test-backed labels."
+            "Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels."
           ],
           "interfaces": [
             "Drafting updates claims.",
@@ -409,10 +412,11 @@
             "Citation laundering.",
             "Silent removal of failed claims."
           ],
-          "minimal_implementation": "A claim record schema, support-state transition table, and validation check.",
+          "minimal_implementation": "A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.",
           "codex_tests": [
             "Support-state transition test",
             "Claim ledger completeness test",
+            "Evidence bundle completeness test",
             "Changelog consistency audit"
           ],
           "lean_module": "AsiStackProofs.EvidenceStates",
@@ -829,6 +833,7 @@
           "mechanism": [
             "Separate field identity from implementation.",
             "Bind qualification claims to exact artifacts.",
+            "Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired.",
             "Require route validity and evaluator integrity before promotion."
           ],
           "interfaces": [
@@ -839,6 +844,7 @@
           "invariants": [
             "Replacement cannot expand authority by default.",
             "Evaluator integrity is protected.",
+            "Qualification context is explicit and time-bound.",
             "Rollback remains available after failed mutation."
           ],
           "failure_modes": [
@@ -846,7 +852,7 @@
             "Evaluator capture.",
             "Authority expansion during replacement."
           ],
-          "minimal_implementation": "An SCF record schema with field identity, implementations, evidence, route validity, and rollback metadata.",
+          "minimal_implementation": "An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.",
           "codex_tests": [
             "Qualification predicate test",
             "Route validity test",
@@ -1305,8 +1311,8 @@
           "insufficient": "Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.",
           "core_claim": "Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.",
           "mechanism": [
-            "Compile goals into strategic and tactical plans.",
-            "Represent dependencies, constraints, context requests, and replanning triggers.",
+            "Compile goals into strategic, tactical, and runtime plans.",
+            "Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior.",
             "Delegate execution through typed contracts."
           ],
           "interfaces": [
@@ -1325,10 +1331,11 @@
             "Planning without replanning.",
             "Tool choice exceeds authority or budget."
           ],
-          "minimal_implementation": "A plan graph format with dependencies, context requests, risk budgets, and stop conditions.",
+          "minimal_implementation": "A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.",
           "codex_tests": [
             "Decomposition accuracy test",
             "Dependency ordering test",
+            "Context-demand prediction test",
             "Runtime replanning test"
           ],
           "lean_module": "AsiStackProofs.Planning",
@@ -1530,6 +1537,7 @@
           "mechanism": [
             "Separate durable memory from active context.",
             "Compile task-relative context packets through an ABI.",
+            "Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.",
             "Expose unsafe, unknown, or unsatisfied context states rather than hiding them."
           ],
           "interfaces": [
@@ -1547,10 +1555,11 @@
             "Stale context.",
             "Silent unsafe fit."
           ],
-          "minimal_implementation": "A context ABI table covering address, version, mount, snapshot, representation, and fault operations.",
+          "minimal_implementation": "A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.",
           "codex_tests": [
             "Address/version stability test",
             "Admission vs adequacy test",
+            "Conflict adequacy classification test",
             "Context fault behavior test"
           ],
           "lean_module": "AsiStackProofs.VirtualContextABI",
@@ -2040,6 +2049,7 @@
           "core_claim": "The execution layer should convert plans into typed jobs managed by a governed labor operating system.",
           "mechanism": [
             "Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.",
+            "Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.",
             "Isolate tools and runtime adapters.",
             "Record job lifecycle and evidence artifacts."
           ],
@@ -2235,6 +2245,7 @@
           "core_claim": "Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.",
           "mechanism": [
             "Map jobs to runtime adapters with declared capabilities.",
+            "Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.",
             "Require permission checks and approval gates for high-impact actions.",
             "Record deployment evidence and rollback handles."
           ],
@@ -2614,6 +2625,8 @@
           "core_claim": "A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.",
           "mechanism": [
             "Define compact generative cores and their residuals.",
+            "Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.",
+            "Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.",
             "Separate lawful generation from exact remainder.",
             "Record where compactness fails."
           ],
@@ -2632,8 +2645,9 @@
             "Hidden residual complexity.",
             "Compactness that damages utility."
           ],
-          "minimal_implementation": "A compactness ledger with generative core, exact remainder, verification, and residual fields.",
+          "minimal_implementation": "A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.",
           "codex_tests": [
+            "S/R/Q/G/V/E loop consistency test",
             "Residual burden test",
             "Downstream utility test",
             "Fallback behavior test"
@@ -3199,7 +3213,8 @@
           "mechanism": [
             "Track benchmark mastery thresholds and saturation.",
             "Generate regressions and hidden checks.",
-            "Move residual failures into escrow and new frontier tasks."
+            "Move residual failures into escrow and new frontier tasks.",
+            "Record negative and inconclusive results as evidence, not cleanup."
           ],
           "interfaces": [
             "Routing and SCFs use readiness gates.",
@@ -3289,6 +3304,7 @@
           "core_claim": "The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.",
           "mechanism": [
             "Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.",
+            "Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.",
             "Show which artifact each layer emits.",
             "Identify where authority can stop or reroute the process."
           ],
@@ -3454,6 +3470,8 @@
           "mechanism": [
             "Use `book_structure.json` for order and dynamic chapters.",
             "Use `docs/book_outline.md` for drafting, source queues, and Lean scope.",
+            "Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.",
+            "Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.",
             "Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog."
           ],
           "interfaces": [
@@ -3549,7 +3567,7 @@
           "core_claim": "The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.",
           "mechanism": [
             "Maintain source inventory, source notes, bibliography, and source-loading queues.",
-            "Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, and SymLiquid if found.",
+            "Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.",
             "Use triage rules to update chapters or add precise new ones."
           ],
           "interfaces": [
@@ -3627,6 +3645,11 @@
       "id": "bibliography",
       "title": "Bibliography and Source Corpus",
       "file": "appendices/G_bibliography.qmd"
+    },
+    {
+      "id": "author-intent-and-architecture-lineage",
+      "title": "Author Intent and Architecture Lineage",
+      "file": "appendices/H_author_intent_and_lineage.qmd"
     }
   ]
 }

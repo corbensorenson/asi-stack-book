@@ -11,6 +11,7 @@ primary_sources:
   - "ladon_manhattan"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,14 +46,15 @@ The stack needs stable semantic boundaries so implementations can improve withou
 
 Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
 
-## Core claim
+## Core Claim
 
-[stable-capability-fields.core, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
+[stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
 
 ## Mechanism
 
 - Separate field identity from implementation.
 - Bind qualification claims to exact artifacts.
+- Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired.
 - Require route validity and evaluator integrity before promotion.
 
 ## Interfaces
@@ -64,6 +67,7 @@ Plugin replacement and model swapping do not define identity, authority, qualifi
 
 - Replacement cannot expand authority by default.
 - Evaluator integrity is protected.
+- Qualification context is explicit and time-bound.
 - Rollback remains available after failed mutation.
 
 ## Failure modes
@@ -74,7 +78,7 @@ Plugin replacement and model swapping do not define identity, authority, qualifi
 
 ## Minimal implementation
 
-An SCF record schema with field identity, implementations, evidence, route validity, and rollback metadata.
+An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.
 
 ## Codex test plan
 

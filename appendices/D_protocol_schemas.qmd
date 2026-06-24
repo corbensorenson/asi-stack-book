@@ -67,9 +67,28 @@ typed_job:
 claim_record:
   claim_id: string
   text: string
+  claim_label: Design rationale
   support_state: argument
   source_handles: []
   tests: []
+  evidence_bundle:
+    source_hash: string
+    code_revision: string
+    environment_manifest: string
+    baseline: string
+    test_command: string
+    metrics: {}
+    raw_logs: []
+    negative_results: []
+    ablations: []
+    failure_reproduction: string
+    artifacts: []
+    provenance: string
+    conclusion: string
+    limitations: string
+    release_notes: string
   contradictions: []
   review_status: open
 ```
+
+Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.

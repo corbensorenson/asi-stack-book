@@ -11,6 +11,7 @@ primary_sources:
   - "genesiscode"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ Human goals need a typed path into execution that preserves requirements, artifa
 
 A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
 
-## Core claim
+## Core Claim
 
-[intent-to-execution-contracts.core, support: argument] The stack should transform intent into execution contracts before any tool or runtime action occurs.
+[intent-to-execution-contracts.core, label: Design rationale, support: argument] The stack should transform intent into execution contracts before any tool or runtime action occurs.
 
 ## Mechanism
 

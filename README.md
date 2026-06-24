@@ -15,7 +15,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 - Quarto book structure is initialized and renders to HTML.
 - All 46 outline chapters exist as guarded stubs across three manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
-- `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order.
+- `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
@@ -32,6 +32,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
 | [appendices/G_bibliography.qmd](appendices/G_bibliography.qmd) | Generated bibliography and source-corpus appendix. |
+| [appendices/H_author_intent_and_lineage.qmd](appendices/H_author_intent_and_lineage.qmd) | Public-safe author-intent and architecture-lineage appendix. |
 | [proofs/proof_manifest.json](proofs/proof_manifest.json) | Generated Lean proof target manifest. |
 | [docs/repository_map.md](docs/repository_map.md) | Repository layout and ownership map. |
 | [docs/publication_readiness.md](docs/publication_readiness.md) | Public-readiness checklist and known blockers. |
@@ -86,7 +87,7 @@ python3 scripts/source_readiness_report.py
 
 The tracked readiness report is `docs/source_readiness_report.md`. Raw exports stay under `sources/raw/`.
 
-Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` unless the source ingestion, prototype review, proof check, or test execution actually happened and is recorded.
+Claims use both a claim label and a support state. Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` unless the source ingestion, prototype review, proof check, or test execution actually happened and is recorded. Conversation-mined material can guide author intent and lineage, but it is not external evidence.
 
 ## Proof Discipline
 

@@ -12,6 +12,7 @@ primary_sources:
   - "coherence_exchange"
   - "spinoza"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `spinoza` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ The stack needs a normative substrate that constrains goals, plans, execution, a
 
 Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
 
-## Core claim
+## Core Claim
 
-[constitutional-alignment-substrate.core, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
+[constitutional-alignment-substrate.core, label: Design rationale, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
 
 ## Mechanism
 

@@ -22,6 +22,7 @@ primary_sources:
   - "road_to_agi"
   - "vcm_editable"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -39,6 +40,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -55,14 +57,14 @@ The book needs a managed research backlog and bibliography plan so new papers ca
 
 A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 
-## Core claim
+## Core Claim
 
-[open-research-agenda-and-bibliography-plan.core, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
+[open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
 
 ## Mechanism
 
 - Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, and SymLiquid if found.
+- Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.
 - Use triage rules to update chapters or add precise new ones.
 
 ## Interfaces

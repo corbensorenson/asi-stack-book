@@ -12,6 +12,7 @@ primary_sources:
   - "coherence_exchange"
   - "verification_bandwidth"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -39,21 +41,22 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-The living book needs a shared language for when a claim is only argued, source-derived, prototype-backed, or test-backed.
+The living book needs a shared language for what kind of claim is being made and what currently supports it.
 
 ## Why existing approaches are insufficient
 
 Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
 
-## Core claim
+## Core Claim
 
-[evidence-states-and-claim-discipline.core, support: argument] Every major claim should carry a support state and move only when source ingestion, prototype inspection, or actual tests justify the transition.
+[evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
 ## Mechanism
 
 - Use Appendix C as the claim ledger.
+- Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Require source notes before promoting claims to source-derived.
-- Require executed tests before test-backed labels.
+- Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 
 ## Interfaces
 
@@ -75,7 +78,7 @@ Without explicit support states, conceptual architecture prose can accidentally 
 
 ## Minimal implementation
 
-A claim record schema, support-state transition table, and validation check.
+A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
 
 ## Codex test plan
 
@@ -83,6 +86,7 @@ A claim record schema, support-state transition table, and validation check.
 |---|---|---|
 | Support-state transition test | Support or falsify this chapter's layer claim. | planned; not run |
 | Claim ledger completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Evidence bundle completeness test | Support or falsify this chapter's layer claim. | planned; not run |
 | Changelog consistency audit | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk

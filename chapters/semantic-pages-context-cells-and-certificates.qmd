@@ -11,6 +11,7 @@ primary_sources:
   - "context_engineer"
   - "vcm_editable"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ Compiled context needs typed semantic units and proof-carrying summaries that pr
 
 Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
 
-## Core claim
+## Core Claim
 
-[semantic-pages-context-cells-and-certificates.core, support: argument] VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
+[semantic-pages-context-cells-and-certificates.core, label: Design rationale, support: argument] VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
 
 ## Mechanism
 

@@ -12,6 +12,7 @@ primary_sources:
   - "tokenmana"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ Large tasks require decomposition, scheduling, tiered model selection, and cost-
 
 Uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation.
 
-## Core claim
+## Core Claim
 
-[planforge-dags-and-intelligence-arbitrage.core, support: argument] PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
+[planforge-dags-and-intelligence-arbitrage.core, label: Design rationale, support: argument] PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
 
 ## Mechanism
 

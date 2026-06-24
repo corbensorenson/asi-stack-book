@@ -11,6 +11,7 @@ primary_sources:
   - "treellm"
   - "viea"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ LLM workflows need intermediate representations that separate requirements, plan
 
 Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
 
-## Core claim
+## Core Claim
 
-[cognitive-compilation-and-semantic-ir.core, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
+[cognitive-compilation-and-semantic-ir.core, label: Design rationale, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
 
 ## Mechanism
 

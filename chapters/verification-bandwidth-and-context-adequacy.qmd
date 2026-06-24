@@ -11,6 +11,7 @@ primary_sources:
   - "treellm"
   - "vcm_editable"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ Long context does not automatically provide long-range reasoning or enough verif
 
 Adding tokens can increase distractors, attention interference, and unverified summary burden.
 
-## Core claim
+## Core Claim
 
-[verification-bandwidth-and-context-adequacy.core, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
+[verification-bandwidth-and-context-adequacy.core, label: Design rationale, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
 
 ## Mechanism
 

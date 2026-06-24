@@ -12,6 +12,7 @@ primary_sources:
   - "moecot"
   - "scf"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,13 +47,14 @@ The book needs a single architecture frame for advanced AI systems that must pla
 
 A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
 
-## Core claim
+## Core Claim
 
-[asi-is-a-stack-not-a-model.core, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
+[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
 ## Mechanism
 
 - Define each layer by responsibility, interface, artifact, invariant, and failure mode.
+- Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.
 - Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Use source queues and evidence states to keep future writing runs context-loaded and honest.
 

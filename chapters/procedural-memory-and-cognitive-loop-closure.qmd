@@ -12,6 +12,7 @@ primary_sources:
   - "talos"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ Repeated reasoning trajectories should not be improvised forever when they can b
 
 Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
 
-## Core claim
+## Core Claim
 
-[procedural-memory-and-cognitive-loop-closure.core, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
+[procedural-memory-and-cognitive-loop-closure.core, label: Design rationale, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
 
 ## Mechanism
 

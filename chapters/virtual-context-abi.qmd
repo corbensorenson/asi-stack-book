@@ -12,6 +12,7 @@ primary_sources:
   - "vcm_editable"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,14 +47,15 @@ Long-horizon agents need a stable interface between durable memory and model-vis
 
 Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
 
-## Core claim
+## Core Claim
 
-[virtual-context-abi.core, support: argument] Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
+[virtual-context-abi.core, label: Design rationale, support: argument] Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
 
 ## Mechanism
 
 - Separate durable memory from active context.
 - Compile task-relative context packets through an ABI.
+- Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
 - Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
 
 ## Interfaces
@@ -75,7 +78,7 @@ Long context windows and ordinary retrieval do not define addressability, eviden
 
 ## Minimal implementation
 
-A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
+A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
 
 ## Codex test plan
 
@@ -83,6 +86,7 @@ A context ABI table covering address, version, mount, snapshot, representation, 
 |---|---|---|
 | Address/version stability test | Support or falsify this chapter's layer claim. | planned; not run |
 | Admission vs adequacy test | Support or falsify this chapter's layer claim. | planned; not run |
+| Conflict adequacy classification test | Support or falsify this chapter's layer claim. | planned; not run |
 | Context fault behavior test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk

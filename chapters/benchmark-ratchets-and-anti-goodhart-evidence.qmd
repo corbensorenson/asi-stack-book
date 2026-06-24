@@ -14,6 +14,7 @@ primary_sources:
   - "moecot"
   - "road_to_agi"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -31,6 +32,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -47,15 +49,16 @@ The architecture needs a way to move capability claims through evidence without 
 
 Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
 
-## Core claim
+## Core Claim
 
-[benchmark-ratchets-and-anti-goodhart-evidence.core, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
+[benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
 
 ## Mechanism
 
 - Track benchmark mastery thresholds and saturation.
 - Generate regressions and hidden checks.
 - Move residual failures into escrow and new frontier tasks.
+- Record negative and inconclusive results as evidence, not cleanup.
 
 ## Interfaces
 

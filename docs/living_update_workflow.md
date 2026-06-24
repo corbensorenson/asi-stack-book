@@ -59,3 +59,12 @@ quarto render --to html
 7. Update `appendices/F_changelog.qmd`.
 
 Do not mark claims as source-derived or test-backed until the source has actually been ingested or the test has actually run.
+
+## Bring in Conversation-Mined Context
+
+1. Move the raw packet under `sources/inbox/` so it remains local-only unless explicitly approved for publication.
+2. Read provenance and limitations first.
+3. Extract only public-safe author intent, terminology, architecture lineage, deduplication decisions, and recovery tasks.
+4. Update `docs/book_outline.md`, `book_structure.json`, appendices, or docs only when the mined context changes the future writing plan.
+5. Do not quote private conversation wording verbatim or mark claims as source-derived from conversation context.
+6. Record a public-safe ingestion report under `docs/` and update the changelog.

@@ -10,6 +10,7 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable cached text exports materially mined: 38.
 - Connector-mined in this working session: `coherence_exchange`.
 - Connector-mined earlier in this same project session and reflected in the outline: `vcm_editable`.
+- Conversation-mined v2 packet reviewed locally from `sources/inbox/conversation_mining_v2/`; it is used only as author-intent, terminology, lineage, deduplication, and recovery context.
 - Authenticated or recovery gaps still requiring durable source notes before source-derived claims: `moecot`, `moecot_md`, `road_to_agi`, `coilmoecot`, and `talos_md` variant.
 - The `talos` primary source is readable, so the unusable `talos_md` variant is not a blocker for execution-layer outlining.
 
@@ -47,10 +48,12 @@ The starter scaffold had the correct architecture layers but packed several dist
 
 ## Source Handling Notes
 
+- The v2 conversation-mining packet strengthens the architecture framing around raw LLMs as semantic-compression engines, planning as a three-horizon control layer, Virtual Context Memory adequacy states, SCF lifecycle governance, evidence bundles, negative-result retention, and the book itself as a governed artifact pipeline. It does not promote any claim to source-derived status.
 - `coherence_exchange` is useful for verified epistemic units, verification markets, RAIV-style cost/risk accounting, fork/exit/audit rights, constitutional kernels, Sentinel nodes, and Digital SCIF governance. It also contains explicitly speculative metaphysical language and draft tabs with internal dates after 2026-06-24; treat those as source-text metadata, not verified publication dates.
 - `vcm_editable` adds the strongest context architecture refinements: Virtual Context ABI, typed pages/cells, representation certificates, authority non-escalation, protected context compilation, CMMU, snapshots, mounts, taint, deletion closure, and VCM-Bench directions.
 - `moecot` remains a must-load authenticated source before implementation-reference claims move beyond argument level. The outline includes a MoECOT chapter so the future writing goal has a precise place to mine it.
 - Handoff-only recovery items such as Field of God AI Constitution, Circle Calculus, Genesis Engine/Foundry, and SymLiquid FEP-Net are listed in the outline as recovery queue items, not as existing evidence.
+- Conversation-derived author intent should be routed through `appendices/H_author_intent_and_lineage.qmd` and `docs/conversation_context_ingestion_report.md`, not copied verbatim into chapters.
 
 ## Evidence Discipline
 

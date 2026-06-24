@@ -12,6 +12,7 @@ primary_sources:
   - "spinoza"
   - "uat"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,9 +47,9 @@ Powerful AI infrastructure needs rights and mechanisms that prevent governance l
 
 Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
 
-## Core claim
+## Core Claim
 
-[governance-rights-fork-exit-and-audit.core, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
+[governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
 ## Mechanism
 

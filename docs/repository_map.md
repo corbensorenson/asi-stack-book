@@ -8,14 +8,15 @@ This repository is organized around the living book and its validation loop.
 | `_quarto.yml` | Generated Quarto configuration. | tracked; do not hand-edit |
 | `index.qmd`, `preface.qmd` | Front matter for the rendered book. | tracked |
 | `chapters/` | Chapter source files. | tracked |
-| `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, bibliography. | tracked |
+| `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, bibliography, and author-intent lineage. | tracked |
 | `docs/book_outline.md` | Full-book drafting outline, source loading queues, and Lean proof target source of truth. | tracked |
 | `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
+| `docs/conversation_context_ingestion_report.md` | Public-safe synthesis of conversation-mined author intent and recovery tasks. | tracked |
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |
 | `sources/raw/` | Local raw source exports. | ignored |
-| `sources/inbox/` | Local source drop area. | ignored except README |
+| `sources/inbox/` | Local source drop area, including private or conversation-mined packets before public-safe synthesis. | ignored except README |
 | `sources/source_notes/` | Public-safe notes created after source text is actually read. | tracked when notes are added |
 | `proofs/` | Proof plans and generated proof target manifest. | tracked |
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
@@ -41,3 +42,4 @@ This repository is organized around the living book and its validation loop.
 - No Lean `.lake/` build output is tracked.
 - No claim support state is promoted without a recorded basis.
 - No proof or test result is reported unless the command was run and the result is recorded.
+- Conversation-mined context is treated as author intent and lineage, not as external evidence or quotable source text.

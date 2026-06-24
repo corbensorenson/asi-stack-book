@@ -18,6 +18,7 @@ primary_sources:
   - "road_to_agi"
   - "coherence_exchange"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -35,6 +36,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -51,9 +53,9 @@ The architecture needs a build sequence that does not introduce agency or self-i
 
 A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.
 
-## Core claim
+## Core Claim
 
-[prototype-roadmap.core, support: argument] The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.
+[prototype-roadmap.core, label: Design rationale, support: argument] The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.
 
 ## Mechanism
 

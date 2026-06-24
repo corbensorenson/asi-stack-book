@@ -1,0 +1,58 @@
+# Author Intent and Architecture Lineage
+
+This appendix records public-safe author intent and architecture lineage recovered from local conversation-mined context. It is not a transcript archive, not external literature, and not empirical evidence. Claims in the book should not be promoted to `source-derived` from this appendix alone.
+
+## Status
+
+| Field | Value |
+|---|---|
+| Context class | Author intent, terminology, lineage, deduplication, recovery guidance |
+| Evidence role | Planning context only |
+| Publication rule | Do not quote private conversation wording verbatim without explicit approval |
+| Current support effect | No claim support state is promoted |
+
+## Recovered Architecture Intent
+
+- ASI should be treated as a governed stack, not a single model, benchmark ladder, or agent loop.
+- A raw LLM is best framed as a compressed generative engine inside a larger system that supplies planning, memory, routing, verification, execution, governance, and residual correction.
+- Planning is a first-class control layer with strategic, tactical, and runtime horizons.
+- Memory is durable infrastructure; active context is a compiled, task-relative packet with adequacy and authority labels.
+- Stable meaning can survive mutable machinery only when capability boundaries, authority ceilings, qualification evidence, and rollback paths are explicit.
+- The book itself should behave like the architecture: source inventory as memory, outline/issues as planning, Quarto as execution, claim labels and tests as verification, changelog as release history, and deduplication as compression.
+
+## Lineage Map
+
+| Lineage | Book role |
+|---|---|
+| TreeLLM / semantic lattice | Knowledge substrate, semantic tokens, uncertainty, and navigation. |
+| PlanForge / cognitive compilation | Goal-to-plan compilation, DAGs, semantic IR, and target lowering. |
+| VCM / context engineering | Durable memory, context ABI, context adequacy, and source-to-context supply chain. |
+| Talos / Genesis / command contracts | Typed labor, artifacts, audit, replay, runtime adapters, and executable provenance. |
+| Spinoza / UAT / Aletheia | Claim ledgers, adversarial review, proof-carrying claims, and epistemic revision. |
+| SCF / MoECOT / Octopus / RMI | Stable capability fields, manifest runtime, routing, readiness gates, and governed replacement. |
+| CGS / RankFold / BBVCA / TreeLLM | Compression, generate-verify-repair, residual honesty, and compact representation. |
+| Alignment field / constitution lineage | Agency, dignity, care, authority limits, refusal, corrigibility, and self-modification constraints. |
+
+## Drafting Annotations
+
+Future private drafting notes may use these labels:
+
+| Annotation | Meaning |
+|---|---|
+| `[SOURCE]` | Backed by an actually loaded source text or source note. |
+| `[AUTHOR INTENT]` | Recovered author preference, terminology, or lineage context. |
+| `[SYNTHESIS]` | New architectural synthesis across sources. |
+| `[EXPERIMENT]` | Backed by a recorded run, proof check, or benchmark artifact. |
+| `[OPEN]` | Unresolved source, test, proof, or design question. |
+
+## Recovery Queue
+
+- Recover or recreate the AI Constitution only after locating the relevant source material or explicitly drafting a new appendix.
+- Recover Circle Calculus and coil-family material before deciding whether it belongs in a chapter, appendix, or separate research track.
+- Locate Genesis Engine / Genesis Foundry sources if the book needs stronger executable-reality-compiler lineage.
+- Locate SymLiquid FEP-Net and fuller BBVCA details before making compression-lineage claims beyond the current source inventory.
+- Resolve Spinoza, VCM review conflicts, and any private empirical results with durable source notes or recorded artifacts before claim promotion.
+
+## Writing Guardrail
+
+Use this appendix to preserve the shape of the architecture and the author's intent. Use primary sources, source notes, proofs, prototypes, and recorded tests to support claims.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-24 - Conversation-mined lineage ingestion
+
+- Moved the raw v2 conversation-mining handoff packet into the ignored local source inbox under `sources/inbox/conversation_mining_v2/`.
+- Added a public-safe conversation context ingestion report and Appendix H for author intent and architecture lineage.
+- Updated the source-of-truth outline with conversation-mined refinements for the compression loop, planning output contract, VCM adequacy states, SCF lifecycle, execution subfunctions, evidence bundles, and negative-result retention.
+- Split claim classification into claim labels plus support states in the scaffold generator, claim matrix, schema, runbooks, and ASI Stack skill.
+- Kept all claim support states at `argument`; no source-derived or test-backed promotion happened in this pass.
+
 ## 2026-06-24 - Expanded source-mined outline
 
 - Expanded the source-of-truth structure from the 16-chapter starter scaffold to 46 precise chapters across the same three book parts.

@@ -15,6 +15,7 @@ primary_sources:
   - "vcm_editable"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -32,6 +33,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -48,9 +50,9 @@ The book needs an explicit failure model before it can make governance, reliabil
 
 High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.
 
-## Core claim
+## Core Claim
 
-[failure-modes-of-ungoverned-intelligence.core, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
+[failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
 ## Mechanism
 

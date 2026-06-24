@@ -44,6 +44,27 @@ TEST_SPECS = {
     "Benchmark ratchets": ["Saturation detection", "Hidden benchmark transfer", "Regression generation", "Anti-Goodhart checks", "Residual backlog integrity"],
 }
 
+CLAIM_LABELS = [
+    ("Demonstrated", "Shown by a recorded artifact, derivation, implementation, or source-backed example in scope."),
+    ("Measured", "Quantified by a recorded measurement or benchmark result."),
+    ("Mechanized", "Expressed as runnable code, an executable schema, or a formal proof target."),
+    ("Hypothesized", "Proposed as a testable claim that still needs evidence."),
+    ("Design rationale", "An architectural choice supported by reasoning and constraints."),
+    ("Speculative", "Exploratory or conjectural; do not use as a deployed system guarantee."),
+]
+
+SUPPORT_STATES = [
+    ("unsupported", "Not yet supported; likely remove or mark as speculative."),
+    ("argument", "Supported by reasoning only."),
+    ("source-derived", "Derived from supplied source papers."),
+    ("prototype-backed", "Implemented in a prototype but not robustly tested."),
+    ("synthetic-test-backed", "Supported by controlled synthetic tests."),
+    ("empirical-test-backed", "Supported by external or realistic tests."),
+    ("external-literature-backed", "Supported by third-party literature."),
+    ("deprecated", "Superseded, merged, or retired; retained for lineage and review."),
+    ("refuted", "Contradicted by later evidence or tests; retained to preserve negative results."),
+]
+
 
 def read_json(path: Path) -> object:
     with path.open(encoding="utf-8") as f:
@@ -184,6 +205,7 @@ status: "{chapter.get('status', 'conceptual')}"
 last_updated: "{TODAY}"
 primary_sources:{yaml_list(source_ids)}
 evidence_level: "{chapter.get('evidence_level', 'argument')}"
+claim_label: "{chapter.get('claim_label', 'Design rationale')}"
 open_evidence_gaps:{yaml_list(gaps)}
 ---
 
@@ -198,6 +220,7 @@ open_evidence_gaps:{yaml_list(gaps)}
 | Status | {qmd_escape(chapter.get('status', 'conceptual'))} |
 | Last updated | {TODAY} |
 | Primary source records | {source_label} |
+| Claim label | {qmd_escape(chapter.get('claim_label', 'Design rationale'))} |
 | Evidence level | {qmd_escape(chapter.get('evidence_level', 'argument'))} |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -214,9 +237,9 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 {chapter.get('insufficient', 'TBD.')}
 
-## Core claim
+## Core Claim
 
-[{claim_id}, support: {chapter.get('evidence_level', 'argument')}] {chapter.get('core_claim', 'TBD.')}
+[{claim_id}, label: {chapter.get('claim_label', 'Design rationale')}, support: {chapter.get('evidence_level', 'argument')}] {chapter.get('core_claim', 'TBD.')}
 
 ## Mechanism
 
@@ -364,30 +387,35 @@ def write_claim_matrix(structure: dict) -> None:
     for chapter in flatten_chapters(structure):
         source_label = ", ".join(f"`{source_id}`" for source_id in source_ids_for(chapter)) or "TBD"
         claim_id = f"{chapter['id']}.core"
+        claim_label = chapter.get("claim_label", "Design rationale")
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'TBD'))} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | Outline-level architecture claim only. | Ingest sources; define and run tests before raising support state. |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'TBD'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | Outline-level architecture claim only. | Ingest sources; define and run tests before raising support state. |"
         )
+    label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
+    support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
     text = f"""# Claim/Evidence Matrix
 
 This initial matrix contains one core placeholder claim per dynamic chapter.
 
-No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. Those labels require source ingestion, prototype inspection, or actual test execution.
+Each claim has two separate classifications: a claim label that describes what kind of statement it is, and a support state that describes what currently supports it.
 
-| Claim ID | Chapter ID | Claim | Current support state | Assigned sources | Current evidence | Open gap |
-|---|---|---|---|---|---|---|
+No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. Those support states require source ingestion, prototype inspection, or actual test execution.
+
+| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Open gap |
+|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
+
+## Claim Labels
+
+| Label | Meaning |
+|---|---|
+{label_rows}
 
 ## Support States
 
 | State | Meaning |
 |---|---|
-| unsupported | Not yet supported; likely remove or mark as speculative. |
-| argument | Supported by reasoning only. |
-| source-derived | Derived from supplied source papers. |
-| prototype-backed | Implemented in a prototype but not robustly tested. |
-| synthetic-test-backed | Supported by controlled synthetic tests. |
-| empirical-test-backed | Supported by external or realistic tests. |
-| external-literature-backed | Supported by third-party literature. |
+{support_rows}
 """
     (ROOT / "appendices" / "C_claim_evidence_matrix.qmd").write_text(text, encoding="utf-8")
 

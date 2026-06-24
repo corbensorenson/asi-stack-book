@@ -11,6 +11,7 @@ primary_sources:
   - "talos"
   - "verification_bandwidth"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `uat`, `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ Complex claims and artifacts need adversarial review that is more structured tha
 
 Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
 
-## Core claim
+## Core Claim
 
-[unified-adaptive-tribunal-and-adversarial-review.core, support: argument] A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
+[unified-adaptive-tribunal-and-adversarial-review.core, label: Design rationale, support: argument] A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
 
 ## Mechanism
 

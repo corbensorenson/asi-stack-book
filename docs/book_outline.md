@@ -16,6 +16,9 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 - Use the chapter-level source queue to load only the relevant papers for the chapter in scope.
 - Treat primary sources as the first mining pass, supporting sources as synthesis/context, variants as version checks, and connector/recovery sources as blockers until actually loaded.
 - Do not mark a claim `source-derived` until the actual source text has been read and a source note or equivalent mined record exists.
+- Treat conversation-mined material as author intent, terminology, architecture lineage, deduplication help, and recovery guidance. It is not external evidence and should not be quoted verbatim unless explicitly approved.
+- Keep claim labels separate from support states. A chapter may contain `Design rationale + argument`, `Hypothesized + source-derived`, or `Measured + synthetic-test-backed` claims, but those dimensions should not be collapsed.
+- Use drafting annotations in private notes when helpful: `[SOURCE]`, `[AUTHOR INTENT]`, `[SYNTHESIS]`, `[EXPERIMENT]`, and `[OPEN]`.
 - Keep chapter IDs and filenames stable; Quarto handles displayed chapter numbering.
 
 ## Reader Promise
@@ -31,10 +34,10 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 
 1. Define the stack, its boundaries, and why model scale alone is not an architecture.
 2. Establish efficiency as governed selectivity across routing, compression, memory reuse, and verification effort.
-3. Define the failure model and evidence discipline before making layer claims.
+3. Define the failure model and two-dimensional evidence discipline before making layer claims.
 4. Specify the constitutional and governance substrate that bounds every layer.
 5. Specify planning, memory, reasoning, and execution as separate operational layers.
-6. Specify routing, compression, benchmarks, and self-improvement as governed growth mechanisms.
+6. Specify routing, compression, benchmarks, and self-improvement as governed growth mechanisms, including the seed/router/search/generator/verifier/residual loop.
 7. Integrate the layers into a reference architecture, prototype roadmap, living workflow, and bibliography plan.
 
 ## Lean Proof Target Format
@@ -59,6 +62,10 @@ Purpose: give readers a current-state dashboard for the living book: thesis, arc
 ### Preface
 
 Purpose: explain why the source papers are being synthesized into one architecture, how to read support states, how speculative material is labeled, and why Quarto/GitHub Pages make the book living.
+
+### Author Intent and Architecture Lineage Appendix
+
+Purpose: preserve public-safe author intent, terminology, deduplication decisions, and architecture lineage recovered from conversation-mined context while keeping that context separate from source-derived evidence.
 
 ## Part I - Foundations, Alignment, and Governance
 
@@ -93,6 +100,7 @@ Draft arc:
 - Problem: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 - Insufficiency: A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
 - Mechanism: Define each layer by responsibility, interface, artifact, invariant, and failure mode.
+- Mechanism: Frame the raw LLM as a semantic-compression and generation component inside the larger governed system, not as the whole agent.
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
 - Interface: Alignment and governance constrain every downstream layer.
@@ -147,6 +155,7 @@ Draft arc:
 - Insufficiency: Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.
 - Mechanism: Use minimum viable intelligence for subtasks.
 - Mechanism: Turn repeated cognition into durable artifacts, tools, or procedural memory.
+- Mechanism: Model efficiency through the seed/router/search/generator/verifier/residual loop plus memory and governance.
 - Mechanism: Expose residual burden when routing or compression is incomplete.
 - Interface: Planning requests capability profiles.
 - Interface: Routing selects specialists.
@@ -291,9 +300,9 @@ Lean proof targets:
 
 Stable ID: `evidence-states-and-claim-discipline`
 
-Chapter job: The living book needs a shared language for when a claim is only argued, source-derived, prototype-backed, or test-backed.
+Chapter job: The living book needs a shared language for what kind of claim is being made and what currently supports it.
 
-Core claim: Every major claim should carry a support state and move only when source ingestion, prototype inspection, or actual tests justify the transition.
+Core claim: Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
 Source loading queue:
 
@@ -304,11 +313,12 @@ Source loading queue:
 
 Draft arc:
 
-- Problem: The living book needs a shared language for when a claim is only argued, source-derived, prototype-backed, or test-backed.
+- Problem: The living book needs a shared language for what kind of claim is being made and what currently supports it.
 - Insufficiency: Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
 - Mechanism: Use Appendix C as the claim ledger.
+- Mechanism: Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Mechanism: Require source notes before promoting claims to source-derived.
-- Mechanism: Require executed tests before test-backed labels.
+- Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
 - Interface: Changelog records evidence movement.
@@ -327,9 +337,10 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A claim record schema, support-state transition table, and validation check.
+- A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
 - Planned Codex test: Support-state transition test.
 - Planned Codex test: Claim ledger completeness test.
+- Planned Codex test: Evidence bundle completeness test.
 - Planned Codex test: Changelog consistency audit.
 
 Lean proof targets:
@@ -621,6 +632,8 @@ Draft arc:
 - Insufficiency: Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
 - Mechanism: Separate field identity from implementation.
 - Mechanism: Bind qualification claims to exact artifacts.
+- Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
+- Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
 - Mechanism: Require route validity and evaluator integrity before promotion.
 - Interface: Planning requests field capabilities.
 - Interface: Execution invokes authorized routes.
@@ -630,6 +643,7 @@ Primary invariants:
 
 - Replacement cannot expand authority by default.
 - Evaluator integrity is protected.
+- Qualification context is explicit and time-bound.
 - Rollback remains available after failed mutation.
 
 Failure modes to cover:
@@ -640,7 +654,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- An SCF record schema with field identity, implementations, evidence, route validity, and rollback metadata.
+- An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.
 - Planned Codex test: Qualification predicate test.
 - Planned Codex test: Route validity test.
 - Planned Codex test: Authority non-escalation test.
@@ -948,8 +962,8 @@ Draft arc:
 
 - Problem: Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
 - Insufficiency: Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
-- Mechanism: Compile goals into strategic and tactical plans.
-- Mechanism: Represent dependencies, constraints, context requests, and replanning triggers.
+- Mechanism: Compile goals into strategic, tactical, and runtime plans.
+- Mechanism: Represent assumptions, task graph, dependency graph, required context, required tools, worker requirements, authority requirements, risk budget, compute budget, verification plan, replanning policy, stopping conditions, and failure behavior.
 - Mechanism: Delegate execution through typed contracts.
 - Interface: Alignment filters goals.
 - Interface: VCM supplies context packets.
@@ -973,6 +987,7 @@ Draft deliverables:
 - A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
 - Planned Codex test: Decomposition accuracy test.
 - Planned Codex test: Dependency ordering test.
+- Planned Codex test: Context-demand prediction test.
 - Planned Codex test: Runtime replanning test.
 
 Lean proof targets:
@@ -1109,6 +1124,7 @@ Draft arc:
 - Insufficiency: Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
 - Mechanism: Separate durable memory from active context.
 - Mechanism: Compile task-relative context packets through an ABI.
+- Mechanism: Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
 - Mechanism: Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
 - Interface: Planning requests context.
 - Interface: VCM compiles packets.
@@ -1131,6 +1147,7 @@ Draft deliverables:
 - A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
 - Planned Codex test: Address/version stability test.
 - Planned Codex test: Admission vs adequacy test.
+- Planned Codex test: Conflict adequacy classification test.
 - Planned Codex test: Context fault behavior test.
 
 Lean proof targets:
@@ -1477,6 +1494,7 @@ Draft arc:
 - Problem: Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
 - Insufficiency: Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
 - Mechanism: Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
+- Mechanism: Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.
 - Mechanism: Isolate tools and runtime adapters.
 - Mechanism: Record job lifecycle and evidence artifacts.
 - Interface: Planning dispatches jobs.
@@ -1595,6 +1613,7 @@ Draft arc:
 - Problem: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
 - Insufficiency: Tool calling without a permission and approval model turns reasoning errors into side effects.
 - Mechanism: Map jobs to runtime adapters with declared capabilities.
+- Mechanism: Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.
 - Mechanism: Require permission checks and approval gates for high-impact actions.
 - Mechanism: Record deployment evidence and rollback handles.
 - Interface: Execution owns adapters.
@@ -1860,6 +1879,8 @@ Draft arc:
 - Problem: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
 - Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
 - Mechanism: Define compact generative cores and their residuals.
+- Mechanism: Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.
+- Mechanism: Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.
 - Mechanism: Separate lawful generation from exact remainder.
 - Mechanism: Record where compactness fails.
 - Interface: Compression feeds memory and routing.
@@ -1880,7 +1901,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A compactness ledger with generative core, exact remainder, verification, and residual fields.
+- A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
+- Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Planned Codex test: Residual burden test.
 - Planned Codex test: Downstream utility test.
 - Planned Codex test: Fallback behavior test.
@@ -2280,6 +2302,7 @@ Draft arc:
 - Mechanism: Track benchmark mastery thresholds and saturation.
 - Mechanism: Generate regressions and hidden checks.
 - Mechanism: Move residual failures into escrow and new frontier tasks.
+- Mechanism: Record negative and inconclusive results as evidence, not cleanup.
 - Interface: Routing and SCFs use readiness gates.
 - Interface: Evidence matrix records support movement.
 - Interface: Changelog records evidence changes.
@@ -2331,6 +2354,7 @@ Draft arc:
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 - Insufficiency: Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 - Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.
+- Mechanism: Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.
 - Mechanism: Show which artifact each layer emits.
 - Mechanism: Identify where authority can stop or reroute the process.
 - Interface: All stack layers participate.
@@ -2438,6 +2462,8 @@ Draft arc:
 - Insufficiency: Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
 - Mechanism: Use `book_structure.json` for order and dynamic chapters.
 - Mechanism: Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
+- Mechanism: Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
+- Mechanism: Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
 - Mechanism: Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
@@ -2459,6 +2485,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.
+- A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.
@@ -2491,7 +2518,7 @@ Draft arc:
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 - Mechanism: Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Mechanism: Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, and SymLiquid if found.
+- Mechanism: Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.
 - Mechanism: Use triage rules to update chapters or add precise new ones.
 - Interface: Appendix G lists corpus and external literature queue.
 - Interface: Source notes support chapter drafting.
@@ -2527,6 +2554,10 @@ Lean proof targets:
 
 Appendix G is the generated bibliography and source-corpus map. It should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should be added only when bibliographic metadata is recorded and the source is actually used.
 
+## Author Intent and Architecture Lineage
+
+Appendix H is the curated, public-safe home for conversation-mined author intent, architecture lineage, terminology decisions, and recovery tasks. It should not quote private conversation wording verbatim and should not promote claims to source-derived support state.
+
 ## Missing or Recovery Source Queue
 
 | Item | Current handling |
@@ -2540,3 +2571,7 @@ Appendix G is the generated bibliography and source-corpus map. It should remain
 | Circle Calculus full paper set | Search by exact title/folder later; use CoilMoECOT/Temporal Coil material only for AI-relevant subset until recovered. |
 | Genesis Engine / Genesis Foundry | Search Drive later; current proxies are GenesisCode, VIEA, Cognitive Compilation, and MoECOT-related docs. |
 | SymLiquid FEP-Net | Currently surfaced inside Compact Generative Systems; add a standalone source only if found. |
+| BBVCA detailed lineage | Current outline uses `bbvca_v9` and `bbvca_main`; recover detailed conversation/source context before making priority or empirical claims. |
+| Spinoza development details | Current outline has the Spinoza architecture slot; recover fuller development notes before source-derived reasoning/verification claims. |
+| VCM review conflicts | Resolve against the latest public VCM paper or durable source note before changing VCM claims. |
+| Private empirical results | Do not include or cite until the exact artifact, command, environment, and publication permission are recorded. |

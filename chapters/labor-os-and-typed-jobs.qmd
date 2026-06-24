@@ -12,6 +12,7 @@ primary_sources:
   - "talos_md"
   - "moecot"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -29,6 +30,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -45,13 +47,14 @@ Intelligence must become typed work with lifecycle, permissions, artifacts, logs
 
 Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
 
-## Core claim
+## Core Claim
 
-[labor-os-and-typed-jobs.core, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
+[labor-os-and-typed-jobs.core, label: Design rationale, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
 ## Mechanism
 
 - Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
+- Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.
 - Isolate tools and runtime adapters.
 - Record job lifecycle and evidence artifacts.
 

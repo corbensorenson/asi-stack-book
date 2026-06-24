@@ -11,6 +11,7 @@ primary_sources:
   - "cognitive_compilation"
   - "talos"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ A governed stack must start from human intent without letting natural-language a
 
 Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.
 
-## Core claim
+## Core Claim
 
-[human-intent-as-a-formal-input.core, support: argument] Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.
+[human-intent-as-a-formal-input.core, label: Design rationale, support: argument] Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.
 
 ## Mechanism
 

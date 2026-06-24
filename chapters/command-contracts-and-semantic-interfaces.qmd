@@ -11,6 +11,7 @@ primary_sources:
   - "cognitive_compilation"
   - "talos"
 evidence_level: "argument"
+claim_label: "Design rationale"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
   - "No Codex tests have been implemented or run."
@@ -28,6 +29,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
+| Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,9 +46,9 @@ The stack needs compact command language that is expressive enough for AI cooper
 
 Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
 
-## Core claim
+## Core Claim
 
-[command-contracts-and-semantic-interfaces.core, support: argument] Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
+[command-contracts-and-semantic-interfaces.core, label: Design rationale, support: argument] Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
 
 ## Mechanism
 
