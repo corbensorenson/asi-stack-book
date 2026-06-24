@@ -16,8 +16,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The semantic_node_record fixture validates schema/example consistency only; no TreeLLM implementation, semantic-token benchmark, grounding evaluation, or hierarchy-revision harness has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `treellm`; supporting: `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Source loading state | source notes: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope`; raw cache: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `semantic_node_record.valid.json` and repository-level semantic fixtures pass protocol validation; grounding, hierarchy-revision, and representation-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -134,7 +134,7 @@ Brittleness should trigger residuals and versioning. False explainability should
 
 ## Minimal implementation
 
-The smallest useful implementation is a semantic node schema and fixture. It records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
+The smallest useful implementation is a semantic node schema and fixture. The current fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 
 Passing the fixture does not prove a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
 
@@ -142,11 +142,12 @@ Passing the fixture does not prove a semantic graph works. It gives the book a s
 
 | Test | Purpose | Status |
 |---|---|---|
+| Semantic node record fixture validation | Validate that a semantic node records provenance, hierarchy, relations, tokenization contract, grounding state, versioning, residual uncertainty, permitted uses, and evaluation references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Grounding fidelity test | Check that grounded nodes have provenance and that task-relevant constraints are preserved. | planned; not run |
 | Hierarchy revision test | Check that hierarchy updates preserve prior references or record supersession. | planned; not run |
 | Representation utility benchmark | Compare semantic-node representations against neural-only or plain-text baselines on a bounded task. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require a grounded domain, update operations, baselines, and task metrics; they are not reported results. When a semantic-representation test is implemented, the chapter should link to the command, fixture, environment notes, source domain, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -155,7 +156,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | planned |
 | `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The schema can require provenance and supersession fields, but it does not prove that a graph is grounded, unbiased, or useful. The first mechanized target should stay at the record level: a node marked grounded must carry provenance, and an update must preserve or supersede references.
 
 ## Source crosswalk
 
@@ -169,7 +170,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 | `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk prevents semantic representation from becoming a free-floating ontology claim. `treellm` supplies the graph/token proposal, `verification_bandwidth` explains why compressed semantic units must expose lost constraints, `cognitive_compilation` supplies typed IR pressure, `spinoza` supplies proof-carrying claim discipline, and the compact/cyclic sources mark optional representation substrates. The chapter remains at `argument` until grounding and utility checks exist.
 
 ## Summary
 

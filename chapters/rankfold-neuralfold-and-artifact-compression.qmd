@@ -14,8 +14,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation; compression-ratio, probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -128,7 +128,7 @@ Probe failure should route to the full artifact. Rare-case damage should become 
 
 ## Minimal implementation
 
-The smallest useful implementation is a compressed artifact schema and fixture. It validates that a record names method, reconstruction contract, ratio claim state, codec parameters, residual coding, probe plan, fallback, decode determinism, utility tests, and non-claims.
+The smallest useful implementation is a compressed artifact schema and fixture. The current fixture validates that a record names method, reconstruction contract, ratio claim state, codec parameters, residual coding, probe plan, fallback, decode determinism, utility tests, and non-claims.
 
 Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
 
@@ -136,11 +136,12 @@ Passing the fixture does not prove a compressor works. It proves the public book
 
 | Test | Purpose | Status |
 |---|---|---|
+| Compressed artifact record fixture validation | Validate that an artifact-compression record names method, contract, ratio state, codec parameters, residuals, probes, fallback, decode determinism, utility tests, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Compression ratio test | Check that reported ratios include metadata, parameters, seeds, manifests, and residuals. | planned; not run |
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -149,7 +150,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | planned |
 | `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The current schema can require residual and fallback metadata, but it does not mechanize the route decision or prove that a compressed artifact is useful for a task. A first proof should model the finite probe-or-fallback predicate, not a compression-performance claim.
 
 ## Source crosswalk
 
@@ -161,7 +162,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
 | `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold` supplies the mature artifact-archive framing, `rankfold_compressor` preserves low-rank/tensor lineage, `bbvca_v9` supplies reconstruction and rate-accounting discipline, `cgs` supplies residual honesty, and `bugbrain` keeps edge-resource constraints visible. The chapter should not use any of them to report ratios until a decoder and benchmark harness exist.
 
 ## Summary
 

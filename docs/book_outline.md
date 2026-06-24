@@ -1922,6 +1922,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
+- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape only; utility and residual-burden behavior remain planned tests.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Planned Codex test: Residual burden test.
 - Planned Codex test: Downstream utility test.
@@ -1975,6 +1976,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A compression record with generator, verification result, repair residual, and fallback threshold.
+- Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt fields only; no codec, reconstruction benchmark, or rate experiment exists yet.
 - Planned Codex test: Reconstruction quality test.
 - Planned Codex test: Repair-cost accounting test.
 - Planned Codex test: Bounded-search failure test.
@@ -2027,6 +2029,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A compressed artifact record with ratio, residual, probe, fallback, and utility fields.
+- Implemented repository-level fixture: `compressed_artifact_record.valid.json` validates the artifact-compression record shape only; no decoder, corpus benchmark, or downstream utility probe exists yet.
 - Planned Codex test: Compression ratio test.
 - Planned Codex test: Probe-route fallback test.
 - Planned Codex test: Downstream utility preservation test.
@@ -2079,6 +2082,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic-node schema and evaluation plan for one grounded domain.
+- Implemented repository-level fixture: `semantic_node_record.valid.json` validates the semantic-node record shape only; no TreeLLM implementation, grounding benchmark, or hierarchy-revision harness exists yet.
 - Planned Codex test: Grounding fidelity test.
 - Planned Codex test: Hierarchy revision test.
 - Planned Codex test: Representation utility benchmark.
@@ -2131,6 +2135,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A resource ledger with budget, risk, cost, quality, and verification tax fields.
+- Implemented repository-level fixture: `resource_budget_record.valid.json` validates the budget-record shape only; no TokenMana simulation, PlanForge scheduler benchmark, or welfare/load study exists yet.
 - Planned Codex test: Budget allocation test.
 - Planned Codex test: Risk-adjusted verification test.
 - Planned Codex test: Load stability scenario.

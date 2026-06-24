@@ -13,8 +13,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The compression_receipt fixture validates schema/example consistency only; no codec, bounded-search harness, exact reconstruction benchmark, or rate experiment has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,11 +34,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `bbvca_v9`, `bbvca_main`; supporting: `cgs`, `rankfold_neuralfold` |
 | Source loading state | source notes: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold`; raw cache: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `compression_receipt.valid.json` passes repository-level protocol fixture validation; reconstruction-quality, repair-cost, and bounded-search tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses BBVCA v9 as the primary discipline for contract-relative generate-verify-repair compression. It does not claim that this repository contains a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture only validates the public record shape.
 
 ## Problem
 
@@ -135,17 +135,18 @@ A compression record with generator, verification result, repair residual, and f
 
 The smallest useful implementation is not a new universal codec. It is a tiny receipt schema and a toy deterministic generator over small arrays or text blocks. The test should show three cases: generated output matches directly, generated output requires an exact repair stream, and repair/fallback makes the compressed form larger than the literal baseline.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current fixture covers only the receipt side of that implementation: reconstruction contract, public law family, seed, generated regions, verification result, repair residual, fallback threshold, rate accounting, and non-claims. A prototype claim remains unpromoted until code, command, environment, corpus, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Compression receipt fixture validation | Validate that a receipt records reconstruction contract, law family, seed, generated regions, verification result, repair residual, fallback threshold, rate accounting, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Reconstruction quality test | Probe whether the chapter claim holds under the relevant Generate-Verify-Repair Compression boundary. | planned; not run |
 | Repair-cost accounting test | Probe whether the chapter claim holds under the relevant Generate-Verify-Repair Compression boundary. | planned; not run |
 | Bounded-search failure test | Probe whether the chapter claim holds under the relevant Generate-Verify-Repair Compression boundary. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require a real generator, verifier, repair stream, fallback criterion, and rate comparison; they are not reported results. When a codec test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -154,7 +155,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | planned |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The receipt schema can constrain what a compression claim must record, but it does not prove equality between decoded output and target data. The proof path should start with a finite toy reconstruction relation before attempting any broader compression theorem.
 
 ## Source crosswalk
 
@@ -165,7 +166,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
 | `rankfold_neuralfold` | RankFold + NeuralFold | compression_representation | Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk is intentionally version-sensitive. `bbvca_v9` is the preferred source for final generate-verify-repair wording because it names proxy-rate discipline, repair streams, bounded local verification, and anti-universality constraints. `bbvca_main` remains lineage. `cgs` and `rankfold_neuralfold` connect the same residual-honesty idea to compact systems and artifact compression. None of these assignments is a local compression result.
 
 ## Summary
 

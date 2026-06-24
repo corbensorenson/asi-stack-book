@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The compact_generative_record fixture validates schema/example consistency only; CGS utility, residual burden, fallback behavior, and downstream tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
 | Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; raw cache: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation; chapter-specific CGS utility and residual-burden tests remain planned. |
 
 ## Drafting guardrail
 
@@ -133,18 +133,19 @@ False lossless claims should be downgraded. Hidden residuals should be escrowed.
 
 The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, residuals, verification, governance, leverage, hidden complexity, fallback, and evidence references.
 
-The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
+The current fixture validates that this public contract can be represented consistently. The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Compact generative record fixture validation | Validate that the public record contract includes target, seed, rules, memory, residuals, verification, governance, fallback, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | S/R/Q/G/V/E loop consistency test | Check that seed, route/index, query/search, generator, verifier, and exact/residual fields are all present. | planned; not run |
 | Residual burden test | Check that lossy or partial generation cannot omit residual records. | planned; not run |
 | Downstream utility test | Check whether a compact core preserves task utility against a full or baseline representation. | planned; not run |
 | Fallback behavior test | Check that failed generation routes to fallback or residual pressure. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows are acceptance targets for future CGS experiments; they are not reported benchmark results. When a behavioral test is implemented, this chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -153,7 +154,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | planned |
 | `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks are still planned. The validated JSON fixture is a protocol contract, not a mechanized proof that compact representations preserve utility or block promotion under all conditions. The first proof candidate should be limited to a finite record predicate such as "unresolved obligations imply a nonempty residual field."
 
 ## Source crosswalk
 
@@ -166,7 +167,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk gives this chapter a compactness lineage: `cgs` supplies the seed/rule/memory/residual/governance tuple, `rgs` supplies promotion pressure through residual escrow and regression gates, and the supporting sources keep edge efficiency, physical feasibility, ratcheting, and report-first implementation visible. Availability of notes and raw cache lowers the drafting barrier; it does not by itself show that a compact core works.
 
 ## Summary
 
