@@ -1,14 +1,13 @@
 ---
-title: "Planning and Control"
-chapter_id: "planning-and-control"
-part_id: "stack-layers"
+title: "Planning as a Control Layer"
+chapter_id: "planning-as-a-control-layer"
+part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
   - "planforge"
-  - "planforge_compiler_arch"
-  - "cognitive_compilation"
   - "viea"
+  - "cognitive_compilation"
   - "software_magic_grimoire"
   - "moecot"
 evidence_level: "argument"
@@ -18,17 +17,17 @@ open_evidence_gaps:
   - "Chapter prose is a scaffold, not a completed manuscript draft."
 ---
 
-# Planning and Control
+# Planning as a Control Layer
 
 ## Chapter status
 
 | Field | Value |
 |---|---|
-| Chapter ID | `planning-and-control` |
-| Part | Part II - The Layers of the ASI Stack |
+| Chapter ID | `planning-as-a-control-layer` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `viea`, `software_magic_grimoire`, `moecot` |
+| Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -39,7 +38,7 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-Goals need to become governed task graphs with dependencies, budgets, risk limits, tool choices, and stopping conditions.
+Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
 
 ## Why existing approaches are insufficient
 
@@ -47,36 +46,36 @@ Planning cannot be collapsed into memory, reasoning, or execution because each l
 
 ## Core claim
 
-[planning-and-control.core, support: argument] Planning is a separate control layer that converts goals into governed action without owning memory, reasoning, or side effects.
+[planning-as-a-control-layer.core, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
 
 ## Mechanism
 
 - Compile goals into strategic and tactical plans.
-- Represent dependencies, constraints, context requests, and runtime replanning triggers.
-- Delegate execution through governed contracts.
+- Represent dependencies, constraints, context requests, and replanning triggers.
+- Delegate execution through typed contracts.
 
 ## Interfaces
 
 - Alignment filters goals.
 - VCM supplies context packets.
-- Routers select specialists.
-- Talos-like execution systems run typed jobs.
+- Routing selects specialists.
+- Execution runs typed jobs.
 
 ## Invariants
 
-- Plans expose constraints and stopping conditions.
-- Runtime replanning preserves original authority limits.
+- Plans expose constraints and stop conditions.
+- Runtime replanning preserves authority limits.
 - Tool selection is justified by task requirements.
 
 ## Failure modes
 
 - Scope creep.
 - Planning without replanning.
-- Tool selection that exceeds authority or budget.
+- Tool choice exceeds authority or budget.
 
 ## Minimal implementation
 
-A task graph format with dependencies, constraints, context requests, risk budgets, and stop conditions.
+A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
 
 ## Codex test plan
 
@@ -84,20 +83,15 @@ A task graph format with dependencies, constraints, context requests, risk budge
 |---|---|---|
 | Decomposition accuracy test | Support or falsify this chapter's layer claim. | planned; not run |
 | Dependency ordering test | Support or falsify this chapter's layer claim. | planned; not run |
-| Constraint preservation test | Support or falsify this chapter's layer claim. | planned; not run |
 | Runtime replanning test | Support or falsify this chapter's layer claim. | planned; not run |
-| Tool selection test | Support or falsify this chapter's layer claim. | planned; not run |
-| Budget and risk allocation test | Support or falsify this chapter's layer claim. | planned; not run |
-| Scope creep prevention test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
 | `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/manifest: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
-| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
 | `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 

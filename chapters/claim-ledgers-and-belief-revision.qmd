@@ -1,0 +1,99 @@
+---
+title: "Claim Ledgers and Belief Revision"
+chapter_id: "claim-ledgers-and-belief-revision"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "spinoza"
+  - "viea"
+  - "coherence_exchange"
+  - "aletheia"
+  - "uat"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Claim Ledgers and Belief Revision
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `claim-ledgers-and-belief-revision` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
+
+## Why existing approaches are insufficient
+
+A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
+
+## Core claim
+
+[claim-ledgers-and-belief-revision.core, support: argument] Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.
+
+## Mechanism
+
+- Extract claims into structured records.
+- Attach evidence tier, provenance, and uncertainty.
+- Revise beliefs when contradictions or stronger evidence appear.
+
+## Interfaces
+
+- VCM supplies source context.
+- Spinoza verifies claims.
+- Evidence matrix records book-level claims.
+
+## Invariants
+
+- Claims are separable from prose.
+- Contradictions remain linked.
+- Revision history is not overwritten.
+
+## Failure modes
+
+- Untracked assumptions.
+- Belief inertia.
+- Contradiction deletion.
+
+## Minimal implementation
+
+A claim-record schema and belief-revision transition example.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Claim extraction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Contradiction detection test | Support or falsify this chapter's layer claim. | planned; not run |
+| Belief revision test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `aletheia` | Aletheia Foundry | Planned use from inventory/manifest: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

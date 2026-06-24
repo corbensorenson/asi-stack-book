@@ -1,0 +1,121 @@
+---
+title: "Open Research Agenda and Bibliography Plan"
+chapter_id: "open-research-agenda-and-bibliography-plan"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "verification_bandwidth"
+  - "benchmaxxing"
+  - "alignment_field"
+  - "scf"
+  - "planforge"
+  - "vcm_public"
+  - "spinoza"
+  - "talos"
+  - "rmi"
+  - "cgs"
+  - "genesiscode"
+  - "simulation_scaling"
+  - "moecot"
+  - "coilmoecot"
+  - "road_to_agi"
+  - "vcm_editable"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Open Research Agenda and Bibliography Plan
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `open-research-agenda-and-bibliography-plan` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
+
+## Why existing approaches are insufficient
+
+A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
+
+## Core claim
+
+[open-research-agenda-and-bibliography-plan.core, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
+
+## Mechanism
+
+- Maintain source inventory, source notes, bibliography, and source-loading queues.
+- Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, and SymLiquid if found.
+- Use triage rules to update chapters or add precise new ones.
+
+## Interfaces
+
+- Appendix G lists corpus and external literature queue.
+- Source notes support chapter drafting.
+- Book outline tells future agents what to mine.
+
+## Invariants
+
+- Do not cite unread sources as support.
+- Do not infer bibliographic metadata.
+- New papers update inventory before chapter claims.
+
+## Failure modes
+
+- Citation drift.
+- Duplicate chapter creation for overlapping ideas.
+- Missing sources treated as evidence.
+
+## Minimal implementation
+
+A bibliography plan with external literature areas, source-note backlog, and insertion/merge rules.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Source inventory validation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Source-note backlog audit | Support or falsify this chapter's layer claim. | planned; not run |
+| New-paper triage scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | Planned use from inventory/manifest: Prime-temporal coil networks as governed specialist cores in MoECOT runtime. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

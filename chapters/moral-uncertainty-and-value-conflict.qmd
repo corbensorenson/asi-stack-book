@@ -1,0 +1,99 @@
+---
+title: "Moral Uncertainty and Value Conflict"
+chapter_id: "moral-uncertainty-and-value-conflict"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "ethica_mechanica"
+  - "alignment_field"
+  - "coherence_exchange"
+  - "uat"
+  - "spinoza"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Moral Uncertainty and Value Conflict
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `moral-uncertainty-and-value-conflict` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.
+
+## Why existing approaches are insufficient
+
+Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.
+
+## Core claim
+
+[moral-uncertainty-and-value-conflict.core, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
+
+## Mechanism
+
+- Classify conflicts by value type, stakeholder, reversibility, and evidence requirement.
+- Escalate unresolved conflicts to tribunal or human review.
+- Record decisions and residual moral uncertainty.
+
+## Interfaces
+
+- Alignment produces conflict records.
+- Planning uses conflict constraints.
+- Evidence records review outcomes.
+
+## Invariants
+
+- Unresolved conflicts remain visible.
+- High-stakes conflicts require stronger review.
+- Speculative moral theory cannot silently authorize action.
+
+## Failure modes
+
+- Value flattening.
+- False consensus.
+- Review theater without decision records.
+
+## Minimal implementation
+
+A value-conflict record schema and scenario library.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Value conflict classification test | Support or falsify this chapter's layer claim. | planned; not run |
+| Review escalation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Residual uncertainty preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,101 @@
+---
+title: "Capability Replacement and Rollback"
+chapter_id: "capability-replacement-and-rollback"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "scf"
+  - "rmi"
+  - "benchmaxxing"
+  - "cognitive_loop_closure"
+  - "talos"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Capability Replacement and Rollback
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `capability-replacement-and-rollback` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
+
+## Why existing approaches are insufficient
+
+Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
+
+## Core claim
+
+[capability-replacement-and-rollback.core, support: argument] Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
+
+## Mechanism
+
+- Define replacement proposals as artifacts.
+- Run qualification, regression, and authority checks.
+- Commit only after evidence gates pass and rollback remains available.
+
+## Interfaces
+
+- SCF defines the field.
+- Benchmarks test behavior.
+- Evidence and changelog record the transition.
+
+## Invariants
+
+- No replacement without prior and posterior artifacts.
+- Regressions stay attached.
+- Rollback metadata is required before promotion.
+
+## Failure modes
+
+- Regression deletion.
+- Rollback impossible after deployment.
+- Self-judged replacement.
+
+## Minimal implementation
+
+A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Replacement transaction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Regression preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Rollback execution dry run | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

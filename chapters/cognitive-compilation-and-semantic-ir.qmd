@@ -1,0 +1,99 @@
+---
+title: "Cognitive Compilation and Semantic IR"
+chapter_id: "cognitive-compilation-and-semantic-ir"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "cognitive_compilation"
+  - "planforge_compiler_arch"
+  - "genesiscode"
+  - "treellm"
+  - "viea"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Cognitive Compilation and Semantic IR
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `cognitive-compilation-and-semantic-ir` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
+
+## Why existing approaches are insufficient
+
+Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
+
+## Core claim
+
+[cognitive-compilation-and-semantic-ir.core, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
+
+## Mechanism
+
+- Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.
+- Perform incremental repair over IR rather than re-prompting from scratch.
+- Compile IR into jobs, code, schemas, or documents.
+
+## Interfaces
+
+- Planning produces or consumes IR.
+- Execution receives target-specific artifacts.
+- Verification checks IR-to-output preservation.
+
+## Invariants
+
+- IR preserves declared requirements.
+- Repair changes are localized and auditable.
+- Target compilation records assumptions.
+
+## Failure modes
+
+- IR drift.
+- Compiler hallucination.
+- Repair that breaks earlier requirements.
+
+## Minimal implementation
+
+A semantic IR sketch and compile/verify/repair loop for one artifact type.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Requirement preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Incremental repair regression test | Support or falsify this chapter's layer claim. | planned; not run |
+| Target compilation audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/manifest: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

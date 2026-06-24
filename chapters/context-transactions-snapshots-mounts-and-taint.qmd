@@ -1,0 +1,99 @@
+---
+title: "Context Transactions, Snapshots, Mounts, and Taint"
+chapter_id: "context-transactions-snapshots-mounts-and-taint"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "vcm_public"
+  - "ladon_manhattan"
+  - "context_engineer"
+  - "black_hole_context_manager"
+  - "vcm_editable"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Context Transactions, Snapshots, Mounts, and Taint
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `context-transactions-snapshots-mounts-and-taint` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
+
+## Why existing approaches are insufficient
+
+A retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself.
+
+## Core claim
+
+[context-transactions-snapshots-mounts-and-taint.core, support: argument] VCM should use transactional memory semantics: immutable events, versioned pages, snapshots, mounts, taint, temporal validity, and deletion closure.
+
+## Mechanism
+
+- Record immutable memory events.
+- Compile task snapshots with mounts and copy-on-write branches.
+- Propagate taint and deletion obligations through derived context.
+
+## Interfaces
+
+- Planning receives consistent views.
+- Security labels sensitive mounts.
+- Evidence records contradictions and supersession.
+
+## Invariants
+
+- Snapshots are consistent.
+- Taint propagates to derivatives.
+- Deletion closure is enforced or faulted.
+
+## Failure modes
+
+- Memory poisoning.
+- Stale or contradictory reads.
+- Deleted data reappearing in derived summaries.
+
+## Minimal implementation
+
+A transaction model for context reads, writes, branches, and deletion closure.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Read-your-writes snapshot test | Support or falsify this chapter's layer claim. | planned; not run |
+| Taint propagation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Deletion closure test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
+| `black_hole_context_manager` | Black Hole Context Manager | Planned use from inventory/manifest: Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

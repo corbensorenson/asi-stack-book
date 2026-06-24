@@ -1,0 +1,101 @@
+---
+title: "PlanForge DAGs and Intelligence Arbitrage"
+chapter_id: "planforge-dags-and-intelligence-arbitrage"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "planforge"
+  - "planforge_compiler_arch"
+  - "coherence_exchange"
+  - "cognitive_compilation"
+  - "tokenmana"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# PlanForge DAGs and Intelligence Arbitrage
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `planforge-dags-and-intelligence-arbitrage` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
+
+## Why existing approaches are insufficient
+
+Uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation.
+
+## Core claim
+
+[planforge-dags-and-intelligence-arbitrage.core, support: argument] PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
+
+## Mechanism
+
+- Decompose goals into DAGs.
+- Annotate nodes with capability tier, budget, context request, risk, and verification requirement.
+- Merge redundant branches and escalate only when predicates fail.
+
+## Interfaces
+
+- Routing consumes capability annotations.
+- VCM consumes context requests.
+- Evidence records cost/quality results.
+
+## Invariants
+
+- Dependency order is respected.
+- Cost savings do not remove required verification.
+- Escalation paths are explicit.
+
+## Failure modes
+
+- Wrong tier selection.
+- Dependency cycles.
+- Economic optimization overriding safety.
+
+## Minimal implementation
+
+A DAG schema with node-level capability and verification annotations.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| DAG acyclicity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Capability tier assignment test | Support or falsify this chapter's layer claim. | planned; not run |
+| Escalation trigger test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/manifest: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

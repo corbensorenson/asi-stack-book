@@ -1,0 +1,99 @@
+---
+title: "Security Kernel and Digital SCIFs"
+chapter_id: "security-kernel-and-digital-scifs"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "ladon_manhattan"
+  - "context_engineer"
+  - "talos"
+  - "alignment_field"
+  - "coherence_exchange"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Security Kernel and Digital SCIFs
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `security-kernel-and-digital-scifs` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
+
+## Why existing approaches are insufficient
+
+Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
+
+## Core claim
+
+[security-kernel-and-digital-scifs.core, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
+
+## Mechanism
+
+- Use handles rather than exposing secrets.
+- Separate model-visible context from privileged substitution.
+- Run high-risk tasks inside compartmentalized context containers.
+
+## Interfaces
+
+- VCM supplies least-privilege context.
+- Execution checks tool permissions.
+- Governance audits sensitive transitions.
+
+## Invariants
+
+- Secrets are not directly model-visible.
+- SCIF context is purpose-limited.
+- Privilege substitution is auditable.
+
+## Failure modes
+
+- Prompt injection extracting secrets.
+- Privilege leakage through summaries.
+- SCIF bypass.
+
+## Minimal implementation
+
+A secure-handle workflow and SCIF lifecycle diagram.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Secret-handle substitution test | Support or falsify this chapter's layer claim. | planned; not run |
+| SCIF least-privilege test | Support or falsify this chapter's layer claim. | planned; not run |
+| Prompt-injection containment scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

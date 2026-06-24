@@ -1,12 +1,11 @@
 ---
 title: "The Efficient ASI Hypothesis"
 chapter_id: "the-efficient-asi-hypothesis"
-part_id: "stack-from-above"
+part_id: "foundations-alignment-governance"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
   - "viea"
-  - "moecot"
   - "rmi"
   - "cgs"
   - "rankfold_neuralfold"
@@ -15,6 +14,7 @@ primary_sources:
   - "beastbrain"
   - "beastbrain_timeless"
   - "aletheia"
+  - "moecot"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -29,10 +29,10 @@ open_evidence_gaps:
 | Field | Value |
 |---|---|
 | Chapter ID | `the-efficient-asi-hypothesis` |
-| Part | Part I - The Stack from Above |
+| Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `viea`, `moecot`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia` |
+| Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -43,58 +43,57 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-The book needs a non-scale-only theory for why a governed ASI stack could become more capable without requiring every task to use maximal cognition.
+The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.
 
 ## Why existing approaches are insufficient
 
-Parameter count does not by itself explain routing, context selectivity, procedural memory, compression, verification, or runtime targeting.
+Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.
 
 ## Core claim
 
-[the-efficient-asi-hypothesis.core, support: argument] Efficient ASI is a design hypothesis: capability improves when cognition is routed, compressed, reused, governed, and tested.
+[the-efficient-asi-hypothesis.core, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
 
 ## Mechanism
 
-- Route subtasks to the smallest adequate specialist.
-- Preserve reusable work as artifacts, tools, and procedural memory.
-- Track residual burden when compression or routing leaves unresolved work.
+- Use minimum viable intelligence for subtasks.
+- Turn repeated cognition into durable artifacts, tools, or procedural memory.
+- Expose residual burden when routing or compression is incomplete.
 
 ## Interfaces
 
-- Planning requests minimum viable intelligence.
-- Routing selects specialists and tools.
-- Evidence layers decide whether efficiency claims are supported.
+- Planning requests capability profiles.
+- Routing selects specialists.
+- Evidence decides whether efficiency claims survived quality and cost tests.
 
 ## Invariants
 
-- Efficiency claims require measured task quality and cost.
-- Compression must expose residuals instead of hiding them.
-- Fallback paths remain available when lightweight routes fail.
+- Efficiency claims include quality and cost.
+- Compression exposes residuals.
+- Fallback routes remain available.
 
 ## Failure modes
 
-- Treating cheap inference as sufficient evidence of intelligence.
-- Compressing away critical context.
-- Optimizing benchmark scores while increasing hidden residual burden.
+- Cheap inference mistaken for intelligence.
+- Critical context compressed away.
+- Benchmark gains that increase hidden residual burden.
 
 ## Minimal implementation
 
-A costed task-routing model with explicit fallback, residual accounting, and benchmark gates.
+A costed route ledger with quality predicates, residual accounting, and fallback criteria.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Minimum viable intelligence routing test | Support or falsify this chapter's layer claim. | planned; not run |
+| Minimum viable route test | Support or falsify this chapter's layer claim. | planned; not run |
 | Residual burden accounting test | Support or falsify this chapter's layer claim. | planned; not run |
-| Compression utility preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Utility-preserving compression test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 | `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
 | `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
 | `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/manifest: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
@@ -103,6 +102,7 @@ A costed task-routing model with explicit fallback, residual accounting, and ben
 | `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
 | `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | Planned use from inventory/manifest: Definitive standalone master plan variant. |
 | `aletheia` | Aletheia Foundry | Planned use from inventory/manifest: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 
 ## Summary
 

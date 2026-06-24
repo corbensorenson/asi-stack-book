@@ -1,0 +1,99 @@
+---
+title: "Unified Adaptive Tribunal and Adversarial Review"
+chapter_id: "unified-adaptive-tribunal-and-adversarial-review"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "uat"
+  - "spinoza"
+  - "coherence_exchange"
+  - "talos"
+  - "verification_bandwidth"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Unified Adaptive Tribunal and Adversarial Review
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `unified-adaptive-tribunal-and-adversarial-review` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `uat`, `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Complex claims and artifacts need adversarial review that is more structured than one model critique.
+
+## Why existing approaches are insufficient
+
+Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
+
+## Core claim
+
+[unified-adaptive-tribunal-and-adversarial-review.core, support: argument] A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
+
+## Mechanism
+
+- Assign reviewer roles and critique objectives.
+- Use adversarial checks for high-risk claims.
+- Record dissent, unresolved issues, and human-adjudication points.
+
+## Interfaces
+
+- Spinoza consumes tribunal results.
+- Planning escalates risky nodes to tribunal.
+- Evidence records reviewer outcomes.
+
+## Invariants
+
+- Dissent is preserved.
+- Consensus requires evidence.
+- High-risk reviews are reproducible enough to audit.
+
+## Failure modes
+
+- Reviewer collusion.
+- Consensus theater.
+- Critique without action.
+
+## Minimal implementation
+
+A tribunal protocol for claim/artifact review with reviewer roles and output schema.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Adversarial review coverage test | Support or falsify this chapter's layer claim. | planned; not run |
+| Dissent preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Consensus evidence test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

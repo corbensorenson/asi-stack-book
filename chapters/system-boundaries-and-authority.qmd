@@ -1,0 +1,101 @@
+---
+title: "System Boundaries and Authority"
+chapter_id: "system-boundaries-and-authority"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "viea"
+  - "scf"
+  - "talos"
+  - "ladon_manhattan"
+  - "genesiscode"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# System Boundaries and Authority
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `system-boundaries-and-authority` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.
+
+## Why existing approaches are insufficient
+
+Informal ownership boundaries let planning authority, memory access, tool use, and deployment authority blur into each other.
+
+## Core claim
+
+[system-boundaries-and-authority.core, support: argument] Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals.
+
+## Mechanism
+
+- Define principals, authorities, ceilings, grants, revocations, and handoff contracts.
+- Separate knowledge access from action authority.
+- Represent missing authority as a detectable failure rather than implicit permission.
+
+## Interfaces
+
+- Governance issues ceilings.
+- Execution checks permissions.
+- Evidence records authority-related failures.
+
+## Invariants
+
+- Authority never expands silently.
+- Read permission is not write permission.
+- Tool execution requires an explicit grant.
+
+## Failure modes
+
+- Authority creep.
+- Confused-deputy tool calls.
+- Memory access treated as action approval.
+
+## Minimal implementation
+
+A small authority schema and transition table used by chapter examples and future Lean proofs.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Authority ceiling preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Permission separation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Confused-deputy scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

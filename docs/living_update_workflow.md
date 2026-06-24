@@ -21,9 +21,9 @@ python3 scripts/validate_book.py
 
 ```bash
 python3 scripts/add_chapter.py \
-  --part stack-layers \
+  --part planning-memory-reasoning-execution \
   --title "New AI Topic" \
-  --after planning-and-control
+  --after planning-as-a-control-layer
 
 python3 scripts/sync_scaffold.py
 python3 scripts/validate_book.py

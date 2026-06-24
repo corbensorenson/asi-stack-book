@@ -407,16 +407,22 @@ def ensure_protocol_schemas() -> None:
     path.write_text("# Protocol Schemas\n\nDraft protocol schema placeholders go here.\n", encoding="utf-8")
 
 
-def ensure_test_specs() -> None:
+def write_test_specs(structure: dict) -> None:
     path = ROOT / "appendices" / "E_codex_test_specs.qmd"
-    if path.exists():
-        return
     rows = []
-    for layer, tests in TEST_SPECS.items():
+    for chapter in flatten_chapters(structure):
+        tests = chapter.get("codex_tests") or []
+        if not tests:
+            rows.append(
+                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | TBD | planned | not run |"
+            )
+            continue
         for test in tests:
-            rows.append(f"| {qmd_escape(layer)} | {qmd_escape(test)} | planned | not run |")
+            rows.append(
+                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | {qmd_escape(test)} | planned | not run |"
+            )
     path.write_text(
-        f"# Codex Test Specs\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Layer | Test spec | Implementation status | Result status |\n|---|---|---|---|\n{chr(10).join(rows)}\n",
+        f"# Codex Test Specs\n\nThis appendix is generated from chapter-level `codex_tests` in `book_structure.json`.\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Chapter ID | Chapter | Test spec | Implementation status | Result status |\n|---|---|---|---|---|\n{chr(10).join(rows)}\n",
         encoding="utf-8",
     )
 
@@ -435,7 +441,7 @@ def main() -> None:
     write_claim_matrix(structure)
     ensure_glossary()
     ensure_protocol_schemas()
-    ensure_test_specs()
+    write_test_specs(structure)
     print(f"Synchronized book structure: {len(flatten_chapters(structure))} chapters, {written} chapter files written.")
 
 

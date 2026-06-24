@@ -1,0 +1,99 @@
+---
+title: "Intent-to-Execution Contracts"
+chapter_id: "intent-to-execution-contracts"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "viea"
+  - "talos"
+  - "software_magic_grimoire"
+  - "genesiscode"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Intent-to-Execution Contracts
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `intent-to-execution-contracts` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
+
+## Why existing approaches are insufficient
+
+A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
+
+## Core claim
+
+[intent-to-execution-contracts.core, support: argument] The stack should transform intent into execution contracts before any tool or runtime action occurs.
+
+## Mechanism
+
+- Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.
+- Route contracts through planning, memory, verification, and execution layers.
+- Attach result artifacts back to the claim and evidence ledger.
+
+## Interfaces
+
+- Intent contracts feed planning.
+- Execution consumes typed jobs derived from contracts.
+- Evidence records contract satisfaction.
+
+## Invariants
+
+- Contract constraints survive compilation.
+- Side effects require explicit execution authority.
+- Artifacts remain linked to source intent.
+
+## Failure modes
+
+- Response mistaken for completed work.
+- Artifact identity lost.
+- Approval bypass.
+
+## Minimal implementation
+
+A command-contract schema and one end-to-end intent-to-artifact trace.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract field completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Constraint preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Artifact traceability test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

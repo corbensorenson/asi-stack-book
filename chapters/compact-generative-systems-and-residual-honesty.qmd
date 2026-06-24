@@ -1,0 +1,99 @@
+---
+title: "Compact Generative Systems and Residual Honesty"
+chapter_id: "compact-generative-systems-and-residual-honesty"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "cgs"
+  - "rgs"
+  - "bugbrain"
+  - "simulation_scaling"
+  - "rmi"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Compact Generative Systems and Residual Honesty
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `compact-generative-systems-and-residual-honesty` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
+
+## Why existing approaches are insufficient
+
+Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
+
+## Core claim
+
+[compact-generative-systems-and-residual-honesty.core, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
+
+## Mechanism
+
+- Define compact generative cores and their residuals.
+- Separate lawful generation from exact remainder.
+- Record where compactness fails.
+
+## Interfaces
+
+- Compression feeds memory and routing.
+- Evidence tests downstream utility.
+- Procedural memory turns repeated generation into tools.
+
+## Invariants
+
+- Lossy claims are labeled.
+- Residual burden is visible.
+- Fallback exists when compact generation fails.
+
+## Failure modes
+
+- False lossless claims.
+- Hidden residual complexity.
+- Compactness that damages utility.
+
+## Minimal implementation
+
+A compactness ledger with generative core, exact remainder, verification, and residual fields.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Residual burden test | Support or falsify this chapter's layer claim. | planned; not run |
+| Downstream utility test | Support or falsify this chapter's layer claim. | planned; not run |
+| Fallback behavior test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rgs` | Ratcheting Generative Systems | Planned use from inventory/manifest: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

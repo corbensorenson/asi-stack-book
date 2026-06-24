@@ -6,7 +6,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 ## Summary
 
-- `cached_existing`: 42
+- `cached_auth_gate`: 4
+- `cached_existing`: 38
 - `connector_required`: 3
 
 ## Records
@@ -19,13 +20,13 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | `cached_existing` | 18745 | sources/raw/google_docs/planforge_compiler_arch.txt |  |
 | `cognitive_compilation` | Cognitive Compilation | `cached_existing` | 112425 | sources/raw/google_docs/cognitive_compilation.txt |  |
 | `talos` | Talos Protocol | `cached_existing` | 440468 | sources/raw/google_docs/talos.txt |  |
-| `talos_md` | Talos_Protocol_v1.0.md | `cached_existing` | 947861 | sources/raw/google_docs/talos_md.bin |  |
+| `talos_md` | Talos_Protocol_v1.0.md | `cached_auth_gate` | 947861 | sources/raw/google_docs/talos_md.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
 | `vcm_public` | Virtual_Context_Memory_v1 | `cached_existing` | 235401 | sources/raw/google_docs/vcm_public.txt |  |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | `cached_existing` | 209889 | sources/raw/google_docs/spinoza.txt |  |
 | `spinoza_composer` | Spinoza Composer / Spinoza Trinity | `cached_existing` | 113517 | sources/raw/google_docs/spinoza_composer.txt |  |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
-| `moecot_md` | moecot_agent_whitepaper.md | `cached_existing` | 947532 | sources/raw/google_docs/moecot_md.bin |  |
+| `moecot_md` | moecot_agent_whitepaper.md | `cached_auth_gate` | 947532 | sources/raw/google_docs/moecot_md.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
 | `octopus_router` | Octopus Router Architecture | `cached_existing` | 49310 | sources/raw/google_docs/octopus_router.txt |  |
 | `rmi` | Ratcheting Modular Intelligence | `cached_existing` | 49750 | sources/raw/google_docs/rmi.txt |  |
 | `cognitive_loop_closure` | Cognitive Loop Closure | `cached_existing` | 77845 | sources/raw/google_docs/cognitive_loop_closure.txt |  |
@@ -52,9 +53,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `uat` | Unified Adaptive Tribunal | `cached_existing` | 40830 | sources/raw/google_docs/uat.txt |  |
 | `treellm` | TreeLLM | `cached_existing` | 550184 | sources/raw/google_docs/treellm.txt |  |
 | `software_magic_grimoire` | Software Magic Grimoire | `cached_existing` | 407939 | sources/raw/google_docs/software_magic_grimoire.txt |  |
-| `road_to_agi` | Road To AGI | `cached_existing` | 947750 | sources/raw/google_docs/road_to_agi.bin |  |
+| `road_to_agi` | Road To AGI | `cached_auth_gate` | 947750 | sources/raw/google_docs/road_to_agi.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
 | `simulation_scaling` | Simulation Scaling Law | `cached_existing` | 136055 | sources/raw/google_docs/simulation_scaling.txt |  |
 | `tokenmana` | TokenMana | `cached_existing` | 60285 | sources/raw/google_docs/tokenmana.txt |  |
-| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | `cached_existing` | 947737 | sources/raw/google_docs/coilmoecot.bin |  |
+| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | `cached_auth_gate` | 947737 | sources/raw/google_docs/coilmoecot.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
 | `temporal_coil_research` | Temporal Coil Research | `cached_existing` | 11522 | sources/raw/google_docs/temporal_coil_research.bin |  |
 | `bugbrain` | BugBrain | `cached_existing` | 313058 | sources/raw/google_docs/bugbrain.txt |  |

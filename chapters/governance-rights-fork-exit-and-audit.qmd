@@ -1,0 +1,101 @@
+---
+title: "Governance Rights: Fork, Exit, and Audit"
+chapter_id: "governance-rights-fork-exit-and-audit"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "ethica_mechanica"
+  - "coherence_exchange"
+  - "alignment_field"
+  - "ladon_manhattan"
+  - "spinoza"
+  - "uat"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Governance Rights: Fork, Exit, and Audit
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governance-rights-fork-exit-and-audit` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
+
+## Why existing approaches are insufficient
+
+Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
+
+## Core claim
+
+[governance-rights-fork-exit-and-audit.core, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
+
+## Mechanism
+
+- Represent rights as capabilities and required interfaces.
+- Attach audit artifacts to governance decisions.
+- Treat fork/exit as preserved escape hatches against lock-in.
+
+## Interfaces
+
+- Governance issues rights.
+- SCFs preserve rights across replacement.
+- Execution logs evidence for audit.
+
+## Invariants
+
+- Audit records cannot be silently deleted.
+- Exit paths remain materially usable.
+- Fork rights do not bypass safety constraints.
+
+## Failure modes
+
+- Governance capture.
+- Data hostage-taking.
+- Opaque automated policy updates.
+
+## Minimal implementation
+
+A governance-rights table with required artifacts, authorities, and failure tests.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Audit-record availability test | Support or falsify this chapter's layer claim. | planned; not run |
+| Exit-path preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Fork-right safety test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -9,7 +9,8 @@ This repository is organized around the living book and its validation loop.
 | `index.qmd`, `preface.qmd` | Front matter for the rendered book. | tracked |
 | `chapters/` | Chapter source files. | tracked |
 | `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, bibliography. | tracked |
-| `docs/book_outline.md` | Full-book drafting outline and Lean proof target source of truth. | tracked |
+| `docs/book_outline.md` | Full-book drafting outline, source loading queues, and Lean proof target source of truth. | tracked |
+| `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |

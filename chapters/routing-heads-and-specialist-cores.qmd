@@ -1,0 +1,101 @@
+---
+title: "Routing Heads and Specialist Cores"
+chapter_id: "routing-heads-and-specialist-cores"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "octopus_router"
+  - "rmi"
+  - "beastbrain"
+  - "cognitive_loop_closure"
+  - "rgs"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Routing Heads and Specialist Cores
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `routing-heads-and-specialist-cores` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs to allocate cognition across specialists rather than force one system to do every task.
+
+## Why existing approaches are insufficient
+
+Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.
+
+## Core claim
+
+[routing-heads-and-specialist-cores.core, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
+
+## Mechanism
+
+- Register specialists with capabilities, costs, readiness, authority, and memories.
+- Route tasks to the smallest adequate specialist.
+- Fallback or escalate when confidence and readiness are insufficient.
+
+## Interfaces
+
+- Planning requests capabilities.
+- Governance bounds specialists.
+- Evidence updates readiness.
+
+## Invariants
+
+- Specialist authority is local.
+- Routing decisions are logged.
+- Fallback paths remain available.
+
+## Failure modes
+
+- Wrong specialist selection.
+- Router overconfidence.
+- Specialist authority leak.
+
+## Minimal implementation
+
+A router registry with capability metadata, cost, authority, and fallback rules.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Specialist routing accuracy test | Support or falsify this chapter's layer claim. | planned; not run |
+| Authority-bounded routing test | Support or falsify this chapter's layer claim. | planned; not run |
+| Fallback route test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `octopus_router` | Octopus Router Architecture | Planned use from inventory/manifest: Lightweight head/router with dynamically loaded specialist arms and local boundaries. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `rgs` | Ratcheting Generative Systems | Planned use from inventory/manifest: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

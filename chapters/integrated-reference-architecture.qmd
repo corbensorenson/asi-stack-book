@@ -1,21 +1,24 @@
 ---
 title: "Integrated Reference Architecture"
 chapter_id: "integrated-reference-architecture"
-part_id: "integration-implementation"
+part_id: "routing-compression-evidence-implementation"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
   - "viea"
-  - "moecot"
   - "scf"
   - "vcm_public"
   - "planforge"
   - "talos"
   - "spinoza"
-  - "alignment_field"
   - "octopus_router"
   - "rmi"
   - "benchmaxxing"
+  - "alignment_field"
+  - "cgs"
+  - "cognitive_loop_closure"
+  - "moecot"
+  - "vcm_editable"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -30,10 +33,10 @@ open_evidence_gaps:
 | Field | Value |
 |---|---|
 | Chapter ID | `integrated-reference-architecture` |
-| Part | Part III - Integration and Implementation |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `viea`, `moecot`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `alignment_field`, `octopus_router`, `rmi`, `benchmaxxing` |
+| Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,19 +47,19 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-Readers need to see the whole machine from user intent to governed action and evidence-updated self-improvement.
+Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 
 ## Why existing approaches are insufficient
 
-Layer descriptions can still feel disconnected unless the book walks through the complete control flow.
+Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 
 ## Core claim
 
-[integrated-reference-architecture.core, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs between layers.
+[integrated-reference-architecture.core, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
 
 ## Mechanism
 
-- Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement gates.
+- Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.
 - Show which artifact each layer emits.
 - Identify where authority can stop or reroute the process.
 
@@ -64,11 +67,11 @@ Layer descriptions can still feel disconnected unless the book walks through the
 
 - All stack layers participate.
 - Artifacts and evidence ledgers provide continuity.
-- SCF-style gates control improvement.
+- SCF gates control improvement.
 
 ## Invariants
 
-- No layer silently bypasses governance.
+- No layer bypasses governance.
 - Artifacts remain traceable.
 - Self-improvement follows evidence and authority gates.
 
@@ -89,23 +92,25 @@ A reference flow diagram, interface table, and end-to-end trace example marked c
 | End-to-end intent trace test | Support or falsify this chapter's layer claim. | planned; not run |
 | Artifact continuity audit | Support or falsify this chapter's layer claim. | planned; not run |
 | Authority stop-condition test | Support or falsify this chapter's layer claim. | planned; not run |
-| Evidence-ledger update test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 | `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
 | `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
 | `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
 | `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
-| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
 | `octopus_router` | Octopus Router Architecture | Planned use from inventory/manifest: Lightweight head/router with dynamically loaded specialist arms and local boundaries. |
 | `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
 
 ## Summary
 

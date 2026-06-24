@@ -7,9 +7,10 @@ This is the operating runbook for turning the scaffold into the full living book
 1. Read `prompts/MASTER_CODEX_PROMPT.md`.
 2. Read `skills/asi-stack-book/SKILL.md`.
 3. Read `book_structure.json`.
-4. Read `sources/cache/cache_manifest.json`.
-5. Read the chapter files in scope.
-6. Read source notes and raw cache files only for the sources in scope.
+4. Read `docs/book_outline.md`, including the part-level and chapter-level source loading queues.
+5. Read `sources/cache/cache_manifest.json` and `docs/source_readiness_report.md`.
+6. Read the chapter files in scope.
+7. Read source notes and raw cache files only for the sources in scope.
 
 ## Source Hierarchy
 
@@ -19,6 +20,13 @@ Use source material in this order:
 2. Google Drive connector export/fetch when the local cache is missing or stale.
 3. `sources/source_inventory.json` metadata when source text is unavailable.
 4. Handoff notes only as planning/context, not as source-derived evidence.
+
+Use the source queue in `docs/book_outline.md` to decide what is in scope:
+
+- Primary sources are loaded first for chapter claims and mechanisms.
+- Supporting sources are loaded after primary sources for synthesis, variants, failure modes, and cross-layer context.
+- Variant sources are used to compare versions or recover missing details.
+- Connector or recovery sources must be loaded through Google Drive or kept as explicit blockers before source-derived claims.
 
 Do not mark a claim as `source-derived` unless the actual source text was read.
 

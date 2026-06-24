@@ -1,0 +1,105 @@
+---
+title: "Benchmark Ratchets and Anti-Goodhart Evidence"
+chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "benchmaxxing"
+  - "rmi"
+  - "cognitive_loop_closure"
+  - "uat"
+  - "coherence_exchange"
+  - "tokenmana"
+  - "moecot"
+  - "road_to_agi"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Benchmark Ratchets and Anti-Goodhart Evidence
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `benchmark-ratchets-and-anti-goodhart-evidence` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
+
+## Why existing approaches are insufficient
+
+Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
+
+## Core claim
+
+[benchmark-ratchets-and-anti-goodhart-evidence.core, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
+
+## Mechanism
+
+- Track benchmark mastery thresholds and saturation.
+- Generate regressions and hidden checks.
+- Move residual failures into escrow and new frontier tasks.
+
+## Interfaces
+
+- Routing and SCFs use readiness gates.
+- Evidence matrix records support movement.
+- Changelog records evidence changes.
+
+## Invariants
+
+- No test success is claimed without execution.
+- Synthetic and empirical evidence remain distinct.
+- Regressions are preserved.
+
+## Failure modes
+
+- Benchmark overfitting.
+- Hidden regression deletion.
+- Claim support inflation.
+
+## Minimal implementation
+
+A benchmark ratchet record with frontier, mastery, residuals, regressions, and anti-Goodhart checks.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Saturation detection test | Support or falsify this chapter's layer claim. | planned; not run |
+| Hidden benchmark transfer test | Support or falsify this chapter's layer claim. | planned; not run |
+| Regression preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,97 @@
+---
+title: "Generate-Verify-Repair Compression"
+chapter_id: "generate-verify-repair-compression"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "bbvca_v9"
+  - "bbvca_main"
+  - "cgs"
+  - "rankfold_neuralfold"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Generate-Verify-Repair Compression
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `generate-verify-repair-compression` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
+
+## Why existing approaches are insufficient
+
+Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
+
+## Core claim
+
+[generate-verify-repair-compression.core, support: argument] Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
+
+## Mechanism
+
+- Generate from seeded local laws.
+- Verify against target.
+- Repair mismatches with exact residual mechanisms and record rate discipline.
+
+## Interfaces
+
+- Evidence measures reconstruction and utility.
+- Routing chooses compressed or full representation.
+- VCM uses summaries with loss contracts.
+
+## Invariants
+
+- Verification precedes exactness claims.
+- Repair cost is counted.
+- Search bounds are explicit.
+
+## Failure modes
+
+- Unbounded search.
+- Verification skipped.
+- Repair larger than original data.
+
+## Minimal implementation
+
+A compression record with generator, verification result, repair residual, and fallback threshold.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Reconstruction quality test | Support or falsify this chapter's layer claim. | planned; not run |
+| Repair-cost accounting test | Support or falsify this chapter's layer claim. | planned; not run |
+| Bounded-search failure test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/manifest: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
+| `bbvca_main` | Big Bang Volumetric Compression Architecture | Planned use from inventory/manifest: Earlier/main BBVCA family doc. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/manifest: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

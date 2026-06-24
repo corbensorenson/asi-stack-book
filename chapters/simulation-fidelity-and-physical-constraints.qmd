@@ -1,0 +1,99 @@
+---
+title: "Simulation Fidelity and Physical Constraints"
+chapter_id: "simulation-fidelity-and-physical-constraints"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "simulation_scaling"
+  - "cgs"
+  - "rankfold_neuralfold"
+  - "tokenmana"
+  - "alignment_field"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Simulation Fidelity and Physical Constraints
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `simulation-fidelity-and-physical-constraints` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs a realism check on simulations, nested worlds, fidelity, clockspeed, and compute constraints.
+
+## Why existing approaches are insufficient
+
+Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit.
+
+## Core claim
+
+[simulation-fidelity-and-physical-constraints.core, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
+
+## Mechanism
+
+- Define scope, clockspeed, fidelity, and resource demand.
+- Use simulation limits to constrain roadmap and benchmark claims.
+- Record liberties or approximations explicitly.
+
+## Interfaces
+
+- Efficiency theory uses resource constraints.
+- Benchmarks record fidelity limits.
+- Alignment scenarios avoid unbounded simulation claims.
+
+## Invariants
+
+- Fidelity is declared.
+- Resource bounds are explicit.
+- Speculative simulation metaphysics stays separated from engineering claims.
+
+## Failure modes
+
+- Overclaiming nested simulation feasibility.
+- Ignoring resource ceilings.
+- Treating approximate simulations as ground truth.
+
+## Minimal implementation
+
+A simulation-fidelity checklist and cost/fidelity table for experiment design.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Fidelity declaration test | Support or falsify this chapter's layer claim. | planned; not run |
+| Resource-bound sanity check | Support or falsify this chapter's layer claim. | planned; not run |
+| Simulation approximation audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/manifest: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

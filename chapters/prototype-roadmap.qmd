@@ -1,21 +1,22 @@
 ---
 title: "Prototype Roadmap"
 chapter_id: "prototype-roadmap"
-part_id: "integration-implementation"
+part_id: "routing-compression-evidence-implementation"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
-  - "moecot"
   - "viea"
-  - "road_to_agi"
   - "benchmaxxing"
   - "scf"
   - "vcm_public"
   - "planforge"
   - "beastbrain"
-  - "moecot_md"
-  - "coherence_exchange"
   - "beastbrain_timeless"
+  - "bugbrain"
+  - "moecot"
+  - "moecot_md"
+  - "road_to_agi"
+  - "coherence_exchange"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -30,10 +31,10 @@ open_evidence_gaps:
 | Field | Value |
 |---|---|
 | Chapter ID | `prototype-roadmap` |
-| Part | Part III - Integration and Implementation |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `moecot`, `viea`, `road_to_agi`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `moecot_md`, `coherence_exchange`, `beastbrain_timeless` |
+| Primary source records | `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -44,43 +45,43 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-The architecture needs a build sequence that prevents self-improvement features from arriving before evaluator and governance integrity.
+The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
 
 ## Why existing approaches are insufficient
 
-A roadmap that jumps straight to autonomous improvement would skip artifact memory, tests, claim ledgers, and authority controls.
+A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.
 
 ## Core claim
 
-[prototype-roadmap.core, support: argument] The prototype should grow in staged increments from artifact graph to governed capability replacement.
+[prototype-roadmap.core, support: argument] The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.
 
 ## Mechanism
 
-- Begin with source matrix, artifact graph, and claim ledger.
+- Start with source inventory, claim ledger, artifact graph, and validation.
 - Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order.
-- Delay recursive self-improvement until evaluator and governance checks are credible.
+- Delay recursive self-improvement until evaluator and governance integrity are credible.
 
 ## Interfaces
 
 - Each phase unlocks a later layer.
 - Evidence gates decide promotion.
-- Changelog and release tags document progress.
+- Changelog and releases document progress.
 
 ## Invariants
 
-- Roadmap phases have acceptance criteria.
-- Self-improvement is gated by evaluator integrity.
-- Compression and procedural memory are optimized after correctness scaffolds exist.
+- Phases have acceptance criteria.
+- Self-improvement is gated.
+- Roadmap milestones are not test results.
 
 ## Failure modes
 
 - Building agency before auditability.
-- Skipping verification because prototypes appear useful.
-- Treating roadmap milestones as test results.
+- Skipping verification because prototypes feel useful.
+- Treating roadmap as evidence.
 
 ## Minimal implementation
 
-A phase table with deliverables, acceptance gates, and blocked dependencies.
+A phase table with deliverables, gates, blockers, and acceptance criteria.
 
 ## Codex test plan
 
@@ -89,23 +90,23 @@ A phase table with deliverables, acceptance gates, and blocked dependencies.
 | Phase acceptance checklist | Support or falsify this chapter's layer claim. | planned; not run |
 | Dependency gate review | Support or falsify this chapter's layer claim. | planned; not run |
 | Prototype evidence-state audit | Support or falsify this chapter's layer claim. | planned; not run |
-| Rollback readiness review | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
 | `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
 | `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
 | `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
 | `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
-| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
 | `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | Planned use from inventory/manifest: Definitive standalone master plan variant. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
 
 ## Summary
 

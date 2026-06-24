@@ -1,0 +1,103 @@
+---
+title: "Recursive Self-Improvement Boundaries"
+chapter_id: "recursive-self-improvement-boundaries"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "scf"
+  - "benchmaxxing"
+  - "rmi"
+  - "alignment_field"
+  - "viea"
+  - "talos"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Recursive Self-Improvement Boundaries
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `recursive-self-improvement-boundaries` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
+
+## Why existing approaches are insufficient
+
+Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
+
+## Core claim
+
+[recursive-self-improvement-boundaries.core, support: argument] Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
+
+## Mechanism
+
+- Define improvement proposals, protected invariants, and evidence gates.
+- Separate proposing, evaluating, approving, committing, and monitoring.
+- Delay autonomous replacement until evaluators and governance are credible.
+
+## Interfaces
+
+- SCFs define replaceable units.
+- Evidence ratchets provide gates.
+- Alignment supplies protected constraints.
+
+## Invariants
+
+- Self-improvement cannot weaken protected invariants.
+- Evaluator independence is required.
+- Every accepted change remains auditable.
+
+## Failure modes
+
+- Recursive evaluator capture.
+- Constitutional weakening.
+- Irreversible flawed upgrades.
+
+## Minimal implementation
+
+A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Protected-invariant preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Evaluator independence test | Support or falsify this chapter's layer claim. | planned; not run |
+| Self-improvement rollback scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

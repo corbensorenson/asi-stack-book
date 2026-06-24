@@ -1,0 +1,99 @@
+---
+title: "Semantic Representation and Tree-Structured Models"
+chapter_id: "semantic-representation-and-tree-structured-models"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "treellm"
+  - "spinoza"
+  - "verification_bandwidth"
+  - "cognitive_compilation"
+  - "cgs"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Semantic Representation and Tree-Structured Models
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `semantic-representation-and-tree-structured-models` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.
+
+## Why existing approaches are insufficient
+
+Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.
+
+## Core claim
+
+[semantic-representation-and-tree-structured-models.core, support: argument] Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability.
+
+## Mechanism
+
+- Represent concepts hierarchically.
+- Attach semantic tokens to provenance and use constraints.
+- Compare tree structures against neural-only baselines.
+
+## Interfaces
+
+- Spinoza uses semantic claims.
+- VCM stores semantic pages.
+- Compression tests representation efficiency.
+
+## Invariants
+
+- Semantic nodes are grounded or labeled speculative.
+- Hierarchy changes are versioned.
+- Representation claims require tests.
+
+## Failure modes
+
+- Hand-built ontology brittleness.
+- False explainability.
+- Hierarchy drift.
+
+## Minimal implementation
+
+A semantic-node schema and evaluation plan for one grounded domain.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Grounding fidelity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Hierarchy revision test | Support or falsify this chapter's layer claim. | planned; not run |
+| Representation utility benchmark | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

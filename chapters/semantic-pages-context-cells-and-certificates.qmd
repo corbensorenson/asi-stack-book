@@ -1,0 +1,99 @@
+---
+title: "Semantic Pages, Context Cells, and Certificates"
+chapter_id: "semantic-pages-context-cells-and-certificates"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "vcm_public"
+  - "verification_bandwidth"
+  - "spinoza"
+  - "context_engineer"
+  - "vcm_editable"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Semantic Pages, Context Cells, and Certificates
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `semantic-pages-context-cells-and-certificates` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
+
+## Why existing approaches are insufficient
+
+Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
+
+## Core claim
+
+[semantic-pages-context-cells-and-certificates.core, support: argument] VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
+
+## Mechanism
+
+- Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.
+- Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.
+- Use task-relative representation graphs instead of one linear compression ladder.
+
+## Interfaces
+
+- Spinoza consumes claim/evidence cells.
+- Planning consumes constraints and decisions.
+- Execution receives only permitted representations.
+
+## Invariants
+
+- Authority labels survive summarization.
+- Loss contracts are explicit.
+- A derived cell points back to source bindings.
+
+## Failure modes
+
+- Summary overconfidence.
+- Provenance loss.
+- Authority escalation via compression.
+
+## Minimal implementation
+
+A semantic-page schema with certificate fields and example source-to-summary derivation.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Certificate completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Authority preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Summary fidelity test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

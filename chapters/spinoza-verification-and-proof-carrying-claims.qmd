@@ -1,0 +1,99 @@
+---
+title: "Spinoza Verification and Proof-Carrying Claims"
+chapter_id: "spinoza-verification-and-proof-carrying-claims"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "spinoza"
+  - "genesiscode"
+  - "coherence_exchange"
+  - "verification_bandwidth"
+  - "treellm"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Spinoza Verification and Proof-Carrying Claims
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `spinoza-verification-and-proof-carrying-claims` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
+
+## Why existing approaches are insufficient
+
+Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.
+
+## Core claim
+
+[spinoza-verification-and-proof-carrying-claims.core, support: argument] Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers.
+
+## Mechanism
+
+- Separate heuristic proposal from symbolic or structured interrogation.
+- Attach formal interpretation mappings, proof bundles, or citation-backed dossiers.
+- Downgrade or escalate claims that cannot meet their required tier.
+
+## Interfaces
+
+- Claim ledger stores proof status.
+- GenesisCode and Lean provide formal hooks.
+- UAT provides adversarial review.
+
+## Invariants
+
+- Proof tier is explicit.
+- A justification artifact is required for promoted claims.
+- Unsupported claims remain marked speculative or blocked.
+
+## Failure modes
+
+- Certified delusion.
+- Invalid formalization.
+- Justification artifact missing.
+
+## Minimal implementation
+
+A tiered proof-carrying claim schema with one non-philosophical invariant example.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Proof artifact presence test | Support or falsify this chapter's layer claim. | planned; not run |
+| Tier assignment test | Support or falsify this chapter's layer claim. | planned; not run |
+| Formalization mismatch review | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,99 @@
+---
+title: "Human Intent as a Formal Input"
+chapter_id: "human-intent-as-a-formal-input"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "viea"
+  - "software_magic_grimoire"
+  - "planforge"
+  - "cognitive_compilation"
+  - "talos"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Human Intent as a Formal Input
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `human-intent-as-a-formal-input` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
+
+## Why existing approaches are insufficient
+
+Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.
+
+## Core claim
+
+[human-intent-as-a-formal-input.core, support: argument] Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.
+
+## Mechanism
+
+- Parse intent into command contracts.
+- Separate desired outcome from allowed means.
+- Attach acceptance criteria and escalation conditions.
+
+## Interfaces
+
+- Alignment filters intent.
+- Planning compiles accepted contracts.
+- Execution consumes only authorized task contracts.
+
+## Invariants
+
+- Ambiguity triggers clarification or bounded defaults.
+- Intent contracts expose authority limits.
+- Stop conditions remain attached to the plan.
+
+## Failure modes
+
+- Goal misbinding.
+- Scope creep.
+- Implicit permission to act.
+
+## Minimal implementation
+
+An intent-contract schema and example transformations from request to governed task.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Intent parsing ambiguity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Authority extraction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Stop-condition preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,107 @@
+---
+title: "MoECOT Runtime and Multi-Core Orchestration"
+chapter_id: "moecot-runtime-and-multi-core-orchestration"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "octopus_router"
+  - "rmi"
+  - "benchmaxxing"
+  - "beastbrain"
+  - "viea"
+  - "scf"
+  - "talos"
+  - "moecot_md"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# MoECOT Runtime and Multi-Core Orchestration
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `moecot-runtime-and-multi-core-orchestration` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.
+
+## Why existing approaches are insufficient
+
+A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
+
+## Core claim
+
+[moecot-runtime-and-multi-core-orchestration.core, support: argument] MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
+
+## Mechanism
+
+- Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts.
+- Keep direct MoECOT claims conservative until the primary source is ingested.
+- Map MoECOT mechanisms to other stack layers rather than making it a separate silo.
+
+## Interfaces
+
+- Routing selects cores.
+- SCFs govern replacement.
+- Evidence and replay ledgers evaluate runtime changes.
+
+## Invariants
+
+- MoECOT claims stay at argument level until source notes exist.
+- Implementation evidence is separated from design argument.
+- Runtime promotion follows readiness gates.
+
+## Failure modes
+
+- Overclaiming unavailable source content.
+- Treating implementation branding as architecture proof.
+- Losing cross-layer traceability.
+
+## Minimal implementation
+
+A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| MoECOT source-ingestion gate | Support or falsify this chapter's layer claim. | planned; not run |
+| Runtime crosswalk completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Readiness/replay mapping review | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `octopus_router` | Octopus Router Architecture | Planned use from inventory/manifest: Lightweight head/router with dynamically loaded specialist arms and local boundaries. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

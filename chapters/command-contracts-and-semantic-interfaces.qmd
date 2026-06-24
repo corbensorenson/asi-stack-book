@@ -1,0 +1,99 @@
+---
+title: "Command Contracts and Semantic Interfaces"
+chapter_id: "command-contracts-and-semantic-interfaces"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "software_magic_grimoire"
+  - "viea"
+  - "genesiscode"
+  - "cognitive_compilation"
+  - "talos"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Command Contracts and Semantic Interfaces
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `command-contracts-and-semantic-interfaces` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
+
+## Why existing approaches are insufficient
+
+Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
+
+## Core claim
+
+[command-contracts-and-semantic-interfaces.core, support: argument] Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
+
+## Mechanism
+
+- Turn recurring command patterns into reusable templates.
+- Treat software words as coordination primitives.
+- Bind semantic interfaces to schemas and tests.
+
+## Interfaces
+
+- Planning consumes structured commands.
+- Execution enforces output contracts.
+- Verification checks stated failure behavior.
+
+## Invariants
+
+- A command exposes output and verification requirements.
+- Failure behavior is declared.
+- Implicit instructions do not override explicit constraints.
+
+## Failure modes
+
+- Semantic ambiguity.
+- Prompt injection through context.
+- Unspecified output contract.
+
+## Minimal implementation
+
+A canonical command-contract template used by future chapter drafting and experiment prompts.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Command schema validation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Failure-behavior declaration test | Support or falsify this chapter's layer claim. | planned; not run |
+| Prompt override scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,103 @@
+---
+title: "Artifact Graphs, Audit Logs, and Replay"
+chapter_id: "artifact-graphs-audit-logs-and-replay"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "talos"
+  - "viea"
+  - "cognitive_compilation"
+  - "spinoza_composer"
+  - "genesiscode"
+  - "cognitive_loop_closure"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Artifact Graphs, Audit Logs, and Replay
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `artifact-graphs-audit-logs-and-replay` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
+
+## Why existing approaches are insufficient
+
+If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
+
+## Core claim
+
+[artifact-graphs-audit-logs-and-replay.core, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
+
+## Mechanism
+
+- Record artifacts as nodes with source, job, context, tool, and evidence links.
+- Capture replay metadata and environment assumptions.
+- Use artifacts as memory and improvement substrate.
+
+## Interfaces
+
+- VCM references artifacts.
+- Evidence consumes logs.
+- Procedural memory mines repeated traces.
+
+## Invariants
+
+- Artifacts have stable identities.
+- Audit logs are append-only or versioned.
+- Replay limits are declared.
+
+## Failure modes
+
+- Untraceable output.
+- Non-replayable workflow.
+- Provenance gaps.
+
+## Minimal implementation
+
+An artifact graph schema with job, source, context, and evidence edges.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Artifact traceability test | Support or falsify this chapter's layer claim. | planned; not run |
+| Audit reconstruction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Replay metadata completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/manifest: Narrative/compliance operating system variant. Use as applied Spinoza. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

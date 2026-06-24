@@ -1,16 +1,17 @@
 ---
 title: "Living Book Methodology"
 chapter_id: "living-book-methodology"
-part_id: "integration-implementation"
+part_id: "routing-compression-evidence-implementation"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
-  - "road_to_agi"
   - "benchmaxxing"
   - "viea"
+  - "bugbrain"
+  - "cognitive_loop_closure"
   - "moecot"
   - "moecot_md"
-  - "bugbrain"
+  - "road_to_agi"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -25,10 +26,10 @@ open_evidence_gaps:
 | Field | Value |
 |---|---|
 | Chapter ID | `living-book-methodology` |
-| Part | Part III - Integration and Implementation |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `road_to_agi`, `benchmaxxing`, `viea`, `moecot`, `moecot_md`, `bugbrain` |
+| Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -39,64 +40,64 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-The book itself must stay current while preserving source traceability, claim states, tests, release history, and reader orientation.
+The book itself must remain a living technical system rather than a static anthology.
 
 ## Why existing approaches are insufficient
 
-A static anthology cannot show evidence movement, deprecations, source updates, or reproducible renders.
+Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
 
 ## Core claim
 
-[living-book-methodology.core, support: argument] The living book should model the ASI stack discipline through Quarto source, inventories, evidence matrices, tests, changelogs, and releases.
+[living-book-methodology.core, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
 
 ## Mechanism
 
-- Use Quarto as the canonical source of truth.
-- Use a public static site for rendered reading.
-- Require every meaningful update to touch the relevant chapter, source matrix, evidence matrix, and changelog.
+- Use `book_structure.json` for order and dynamic chapters.
+- Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
+- Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 
 ## Interfaces
 
 - Source ingestion feeds source notes.
 - Drafting feeds claim matrices.
-- Tests feed evidence-state changes.
-- Releases feed the public site and changelog.
+- Tests feed support states.
+- Releases feed GitHub Pages.
 
 ## Invariants
 
 - No fabricated source content.
 - No fabricated test results.
-- Deprecated claims remain visible with reasons.
+- Deprecated claims remain visible.
 
 ## Failure modes
 
 - Public site diverges from Quarto source.
-- Changelog omits evidence-state changes.
+- Outline and manifest drift.
 - Readers cannot tell which claims are speculative.
 
 ## Minimal implementation
 
-A Quarto repo, GitHub Pages workflow, source inventory, claim/evidence matrix, validation script, and release checklist.
+A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Quarto render check | Support or falsify this chapter's layer claim. | planned; not run |
-| Validation script check | Support or falsify this chapter's layer claim. | planned; not run |
-| Claim/evidence consistency check | Support or falsify this chapter's layer claim. | planned; not run |
+| Manifest/outline consistency check | Support or falsify this chapter's layer claim. | planned; not run |
 | Changelog update check | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 | `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
-| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
 
 ## Summary
 

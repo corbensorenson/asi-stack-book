@@ -1,0 +1,99 @@
+---
+title: "Executable Specifications and Lean Proof Envelope"
+chapter_id: "executable-specifications-and-lean-proof-envelope"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "genesiscode"
+  - "spinoza"
+  - "scf"
+  - "talos"
+  - "viea"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Executable Specifications and Lean Proof Envelope
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `executable-specifications-and-lean-proof-envelope` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs to decide which architecture claims should become executable specs or Lean proofs.
+
+## Why existing approaches are insufficient
+
+Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
+
+## Core claim
+
+[executable-specifications-and-lean-proof-envelope.core, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
+
+## Mechanism
+
+- Translate mechanisms into predicates and transition rules.
+- Keep proof manifest generated from the outline.
+- Distinguish scaffolded, implemented, blocked, and retired proof targets.
+
+## Interfaces
+
+- Outline defines proof scope.
+- Lean modules implement selected invariants.
+- Validation checks proof-manifest consistency.
+
+## Invariants
+
+- No theorem is claimed proven without `lake build`.
+- Proof tags remain stable.
+- Broad claims are decomposed before formalization.
+
+## Failure modes
+
+- Formalization theater.
+- Unstable proof target names.
+- Claiming proof from prose.
+
+## Minimal implementation
+
+A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Proof manifest sync test | Support or falsify this chapter's layer claim. | planned; not run |
+| Lake build smoke test | Support or falsify this chapter's layer claim. | planned; not run |
+| Proof target coverage audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,59 +1,148 @@
 # Codex Test Specs
 
-This appendix initializes the test backlog from the handoff evidence plan.
+This appendix is generated from chapter-level `codex_tests` in `book_structure.json`.
 
 No result is recorded here unless a test has actually been implemented and run.
 
-| Layer | Test spec | Implementation status | Result status |
-|---|---|---|---|
-| Alignment | Constitutional consistency | planned | not run |
-| Alignment | Value conflict classification | planned | not run |
-| Alignment | Self-modification ethics scenario | planned | not run |
-| Alignment | Power-seeking / agency-dominance scenario | planned | not run |
-| SCF | Qualification predicates | planned | not run |
-| SCF | Route validity | planned | not run |
-| SCF | Mutation | planned | not run |
-| SCF | Authority non-escalation | planned | not run |
-| SCF | Rollback and recovery | planned | not run |
-| Planning | Decomposition accuracy | planned | not run |
-| Planning | Dependency ordering | planned | not run |
-| Planning | Constraint preservation | planned | not run |
-| Planning | Runtime replanning | planned | not run |
-| Planning | Tool selection | planned | not run |
-| Planning | Budget and risk allocation | planned | not run |
-| Planning | Scope creep prevention | planned | not run |
-| VCM | Context packet adequacy | planned | not run |
-| VCM | Distractor resistance | planned | not run |
-| VCM | Authority label preservation | planned | not run |
-| VCM | Proof-carrying summary fidelity | planned | not run |
-| VCM | Planner-guided prefetch accuracy | planned | not run |
-| VCM | Privacy / behavioral authority checks | planned | not run |
-| Talos / execution | Typed job lifecycle | planned | not run |
-| Talos / execution | Tool permission enforcement | planned | not run |
-| Talos / execution | Audit log reconstruction | planned | not run |
-| Talos / execution | Replay determinism | planned | not run |
-| Talos / execution | Human approval gates | planned | not run |
-| Talos / execution | Adversarial job injection | planned | not run |
-| Spinoza / verification | Claim extraction | planned | not run |
-| Spinoza / verification | Contradiction detection | planned | not run |
-| Spinoza / verification | Belief revision | planned | not run |
-| Spinoza / verification | Evidence tier assignment | planned | not run |
-| Spinoza / verification | Uncertainty calibration | planned | not run |
-| Spinoza / verification | Refusal or silence when evidence is insufficient | planned | not run |
-| Routing / modularity | Specialist routing accuracy | planned | not run |
-| Routing / modularity | Readiness gate enforcement | planned | not run |
-| Routing / modularity | Benchmark promotion | planned | not run |
-| Routing / modularity | Quarantine | planned | not run |
-| Routing / modularity | Regression preservation | planned | not run |
-| Routing / modularity | Residual escrow | planned | not run |
-| Compression | Reconstruction quality | planned | not run |
-| Compression | Residual burden | planned | not run |
-| Compression | Probe-and-route fallback | planned | not run |
-| Compression | Compression ratio | planned | not run |
-| Compression | Latency cost | planned | not run |
-| Compression | Downstream utility preservation | planned | not run |
-| Benchmark ratchets | Saturation detection | planned | not run |
-| Benchmark ratchets | Hidden benchmark transfer | planned | not run |
-| Benchmark ratchets | Regression generation | planned | not run |
-| Benchmark ratchets | Anti-Goodhart checks | planned | not run |
-| Benchmark ratchets | Residual backlog integrity | planned | not run |
+| Chapter ID | Chapter | Test spec | Implementation status | Result status |
+|---|---|---|---|---|
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-boundary audit | planned | not run |
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Source-to-layer traceability review | planned | not run |
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Claim-support label audit | planned | not run |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Minimum viable route test | planned | not run |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Residual burden accounting test | planned | not run |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Utility-preserving compression test | planned | not run |
+| `system-boundaries-and-authority` | System Boundaries and Authority | Authority ceiling preservation test | planned | not run |
+| `system-boundaries-and-authority` | System Boundaries and Authority | Permission separation test | planned | not run |
+| `system-boundaries-and-authority` | System Boundaries and Authority | Confused-deputy scenario | planned | not run |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Authority creep scenario | planned | not run |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Context pollution scenario | planned | not run |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Evaluator drift scenario | planned | not run |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | planned | not run |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | planned | not run |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness test | planned | not run |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Changelog consistency audit | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent parsing ambiguity test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Authority extraction test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | planned | not run |
+| `constitutional-alignment-substrate` | Constitutional Alignment Substrate | Constitutional consistency test | planned | not run |
+| `constitutional-alignment-substrate` | Constitutional Alignment Substrate | Self-modification ethics scenario | planned | not run |
+| `constitutional-alignment-substrate` | Constitutional Alignment Substrate | Power-without-care scenario | planned | not run |
+| `agency-dignity-and-corrigibility` | Agency, Dignity, and Corrigibility | Agency-preservation scenario | planned | not run |
+| `agency-dignity-and-corrigibility` | Agency, Dignity, and Corrigibility | Corrigibility pathway test | planned | not run |
+| `agency-dignity-and-corrigibility` | Agency, Dignity, and Corrigibility | High-impact approval test | planned | not run |
+| `moral-uncertainty-and-value-conflict` | Moral Uncertainty and Value Conflict | Value conflict classification test | planned | not run |
+| `moral-uncertainty-and-value-conflict` | Moral Uncertainty and Value Conflict | Review escalation test | planned | not run |
+| `moral-uncertainty-and-value-conflict` | Moral Uncertainty and Value Conflict | Residual uncertainty preservation test | planned | not run |
+| `governance-rights-fork-exit-and-audit` | Governance Rights: Fork, Exit, and Audit | Audit-record availability test | planned | not run |
+| `governance-rights-fork-exit-and-audit` | Governance Rights: Fork, Exit, and Audit | Exit-path preservation test | planned | not run |
+| `governance-rights-fork-exit-and-audit` | Governance Rights: Fork, Exit, and Audit | Fork-right safety test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Qualification predicate test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Route validity test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Authority non-escalation test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Rollback readiness test | planned | not run |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction test | planned | not run |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | planned | not run |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | planned | not run |
+| `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Secret-handle substitution test | planned | not run |
+| `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | SCIF least-privilege test | planned | not run |
+| `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Prompt-injection containment scenario | planned | not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | planned | not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | planned | not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | planned | not run |
+| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Contract field completeness test | planned | not run |
+| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Constraint preservation test | planned | not run |
+| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Artifact traceability test | planned | not run |
+| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Command schema validation test | planned | not run |
+| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Failure-behavior declaration test | planned | not run |
+| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Prompt override scenario | planned | not run |
+| `planning-as-a-control-layer` | Planning as a Control Layer | Decomposition accuracy test | planned | not run |
+| `planning-as-a-control-layer` | Planning as a Control Layer | Dependency ordering test | planned | not run |
+| `planning-as-a-control-layer` | Planning as a Control Layer | Runtime replanning test | planned | not run |
+| `planforge-dags-and-intelligence-arbitrage` | PlanForge DAGs and Intelligence Arbitrage | DAG acyclicity test | planned | not run |
+| `planforge-dags-and-intelligence-arbitrage` | PlanForge DAGs and Intelligence Arbitrage | Capability tier assignment test | planned | not run |
+| `planforge-dags-and-intelligence-arbitrage` | PlanForge DAGs and Intelligence Arbitrage | Escalation trigger test | planned | not run |
+| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Requirement preservation test | planned | not run |
+| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | planned | not run |
+| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Target compilation audit | planned | not run |
+| `virtual-context-abi` | Virtual Context ABI | Address/version stability test | planned | not run |
+| `virtual-context-abi` | Virtual Context ABI | Admission vs adequacy test | planned | not run |
+| `virtual-context-abi` | Virtual Context ABI | Context fault behavior test | planned | not run |
+| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Certificate completeness test | planned | not run |
+| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Authority preservation test | planned | not run |
+| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Summary fidelity test | planned | not run |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Read-your-writes snapshot test | planned | not run |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation test | planned | not run |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Deletion closure test | planned | not run |
+| `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Distractor resistance test | planned | not run |
+| `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Adequacy labeling test | planned | not run |
+| `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Verification escalation test | planned | not run |
+| `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Claim extraction test | planned | not run |
+| `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Contradiction detection test | planned | not run |
+| `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Belief revision test | planned | not run |
+| `spinoza-verification-and-proof-carrying-claims` | Spinoza Verification and Proof-Carrying Claims | Proof artifact presence test | planned | not run |
+| `spinoza-verification-and-proof-carrying-claims` | Spinoza Verification and Proof-Carrying Claims | Tier assignment test | planned | not run |
+| `spinoza-verification-and-proof-carrying-claims` | Spinoza Verification and Proof-Carrying Claims | Formalization mismatch review | planned | not run |
+| `unified-adaptive-tribunal-and-adversarial-review` | Unified Adaptive Tribunal and Adversarial Review | Adversarial review coverage test | planned | not run |
+| `unified-adaptive-tribunal-and-adversarial-review` | Unified Adaptive Tribunal and Adversarial Review | Dissent preservation test | planned | not run |
+| `unified-adaptive-tribunal-and-adversarial-review` | Unified Adaptive Tribunal and Adversarial Review | Consensus evidence test | planned | not run |
+| `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job lifecycle test | planned | not run |
+| `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |
+| `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Human approval gate test | planned | not run |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | planned | not run |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | planned | not run |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | planned | not run |
+| `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Adapter permission test | planned | not run |
+| `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Approval gate enforcement test | planned | not run |
+| `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Rollback handle capture test | planned | not run |
+| `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Loop detection test | planned | not run |
+| `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | planned | not run |
+| `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Specialist routing accuracy test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Authority-bounded routing test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Fallback route test | planned | not run |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate enforcement test | planned | not run |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Residual escrow integrity test | planned | not run |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine behavior test | planned | not run |
+| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | MoECOT source-ingestion gate | planned | not run |
+| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Runtime crosswalk completeness test | planned | not run |
+| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | Residual burden test | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | Downstream utility test | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | Fallback behavior test | planned | not run |
+| `generate-verify-repair-compression` | Generate-Verify-Repair Compression | Reconstruction quality test | planned | not run |
+| `generate-verify-repair-compression` | Generate-Verify-Repair Compression | Repair-cost accounting test | planned | not run |
+| `generate-verify-repair-compression` | Generate-Verify-Repair Compression | Bounded-search failure test | planned | not run |
+| `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Compression ratio test | planned | not run |
+| `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Probe-route fallback test | planned | not run |
+| `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Downstream utility preservation test | planned | not run |
+| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Grounding fidelity test | planned | not run |
+| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Hierarchy revision test | planned | not run |
+| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Representation utility benchmark | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Load stability scenario | planned | not run |
+| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Fidelity declaration test | planned | not run |
+| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Resource-bound sanity check | planned | not run |
+| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Simulation approximation audit | planned | not run |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Baseline comparison test | planned | not run |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Representation efficiency test | planned | not run |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Falsification review | planned | not run |
+| `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Proof manifest sync test | planned | not run |
+| `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Lake build smoke test | planned | not run |
+| `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Proof target coverage audit | planned | not run |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Saturation detection test | planned | not run |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Hidden benchmark transfer test | planned | not run |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Regression preservation test | planned | not run |
+| `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | planned | not run |
+| `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | planned | not run |
+| `integrated-reference-architecture` | Integrated Reference Architecture | Authority stop-condition test | planned | not run |
+| `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | planned | not run |
+| `prototype-roadmap` | Prototype Roadmap | Dependency gate review | planned | not run |
+| `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | planned | not run |
+| `living-book-methodology` | Living Book Methodology | Quarto render check | planned | not run |
+| `living-book-methodology` | Living Book Methodology | Manifest/outline consistency check | planned | not run |
+| `living-book-methodology` | Living Book Methodology | Changelog update check | planned | not run |
+| `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source inventory validation test | planned | not run |
+| `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-note backlog audit | planned | not run |
+| `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | New-paper triage scenario | planned | not run |

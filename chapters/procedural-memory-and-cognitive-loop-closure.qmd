@@ -1,0 +1,101 @@
+---
+title: "Procedural Memory and Cognitive Loop Closure"
+chapter_id: "procedural-memory-and-cognitive-loop-closure"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "cognitive_loop_closure"
+  - "rmi"
+  - "rgs"
+  - "benchmaxxing"
+  - "talos"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Procedural Memory and Cognitive Loop Closure
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `procedural-memory-and-cognitive-loop-closure` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
+
+## Why existing approaches are insufficient
+
+Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
+
+## Core claim
+
+[procedural-memory-and-cognitive-loop-closure.core, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
+
+## Mechanism
+
+- Log safe execution traces.
+- Detect recurring loops.
+- Abstract invariant structure, discover parameters, verify, and publish tools.
+
+## Interfaces
+
+- Artifact graph supplies traces.
+- Routing selects new tools.
+- Evidence tests utility and regressions.
+
+## Invariants
+
+- Only verified loops become tools.
+- Parameters and assumptions are explicit.
+- Tool promotion records residuals and regressions.
+
+## Failure modes
+
+- Premature toolification.
+- Hidden assumptions.
+- Procedural memory poisoning.
+
+## Minimal implementation
+
+A loop closure pipeline from trace detection to verified tool record.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Loop detection test | Support or falsify this chapter's layer claim. | planned; not run |
+| Tool abstraction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Verified tool regression test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `rgs` | Ratcheting Generative Systems | Planned use from inventory/manifest: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

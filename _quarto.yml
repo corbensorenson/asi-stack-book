@@ -15,28 +15,58 @@ book:
   chapters:
     - index.qmd
     - preface.qmd
-    - part: "Part I - The Stack from Above"
+    - part: "Part I - Foundations, Alignment, and Governance"
       chapters:
         - chapters/asi-is-a-stack-not-a-model.qmd
         - chapters/the-efficient-asi-hypothesis.qmd
+        - chapters/system-boundaries-and-authority.qmd
         - chapters/failure-modes-of-ungoverned-intelligence.qmd
-    - part: "Part II - The Layers of the ASI Stack"
+        - chapters/evidence-states-and-claim-discipline.qmd
+        - chapters/human-intent-as-a-formal-input.qmd
+        - chapters/constitutional-alignment-substrate.qmd
+        - chapters/agency-dignity-and-corrigibility.qmd
+        - chapters/moral-uncertainty-and-value-conflict.qmd
+        - chapters/governance-rights-fork-exit-and-audit.qmd
+        - chapters/stable-capability-fields.qmd
+        - chapters/capability-replacement-and-rollback.qmd
+        - chapters/security-kernel-and-digital-scifs.qmd
+        - chapters/recursive-self-improvement-boundaries.qmd
+    - part: "Part II - Planning, Memory, Reasoning, and Execution"
       chapters:
-        - chapters/alignment-and-constitution.qmd
-        - chapters/governance-and-stable-capability-fields.qmd
-        - chapters/planning-and-control.qmd
-        - chapters/virtual-context-memory.qmd
-        - chapters/labor-and-execution-os.qmd
-        - chapters/reasoning-verification-and-epistemology.qmd
-        - chapters/routing-and-modular-intelligence.qmd
-        - chapters/compression-and-representation.qmd
+        - chapters/intent-to-execution-contracts.qmd
+        - chapters/command-contracts-and-semantic-interfaces.qmd
+        - chapters/planning-as-a-control-layer.qmd
+        - chapters/planforge-dags-and-intelligence-arbitrage.qmd
+        - chapters/cognitive-compilation-and-semantic-ir.qmd
+        - chapters/virtual-context-abi.qmd
+        - chapters/semantic-pages-context-cells-and-certificates.qmd
+        - chapters/context-transactions-snapshots-mounts-and-taint.qmd
+        - chapters/verification-bandwidth-and-context-adequacy.qmd
+        - chapters/claim-ledgers-and-belief-revision.qmd
+        - chapters/spinoza-verification-and-proof-carrying-claims.qmd
+        - chapters/unified-adaptive-tribunal-and-adversarial-review.qmd
+        - chapters/labor-os-and-typed-jobs.qmd
+        - chapters/artifact-graphs-audit-logs-and-replay.qmd
+    - part: "Part III - Routing, Compression, Evidence, and Implementation"
+      chapters:
+        - chapters/runtime-adapters-tool-permissions-and-human-approval.qmd
+        - chapters/procedural-memory-and-cognitive-loop-closure.qmd
+        - chapters/routing-heads-and-specialist-cores.qmd
+        - chapters/readiness-gates-residual-escrow-and-quarantine.qmd
+        - chapters/moecot-runtime-and-multi-core-orchestration.qmd
+        - chapters/compact-generative-systems-and-residual-honesty.qmd
+        - chapters/generate-verify-repair-compression.qmd
+        - chapters/rankfold-neuralfold-and-artifact-compression.qmd
+        - chapters/semantic-representation-and-tree-structured-models.qmd
+        - chapters/resource-economics-and-token-budgets.qmd
+        - chapters/simulation-fidelity-and-physical-constraints.qmd
         - chapters/mathematical-and-search-substrates.qmd
-        - chapters/evidence-benchmarks-and-ratchets.qmd
-    - part: "Part III - Integration and Implementation"
-      chapters:
+        - chapters/executable-specifications-and-lean-proof-envelope.qmd
+        - chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd
         - chapters/integrated-reference-architecture.qmd
         - chapters/prototype-roadmap.qmd
         - chapters/living-book-methodology.qmd
+        - chapters/open-research-agenda-and-bibliography-plan.qmd
   appendices:
     - appendices/A_source_matrix.qmd
     - appendices/B_glossary.qmd

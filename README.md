@@ -13,8 +13,8 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 The project is ready for manuscript drafting, but it is not yet a completed book.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 16 outline chapters exist as guarded stubs.
-- `docs/book_outline.md` is the source of truth for the full-book drafting plan and Lean proof scope.
+- All 46 outline chapters exist as guarded stubs across three manifest-driven parts.
+- `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
@@ -70,7 +70,7 @@ Useful helpers:
 
 ```bash
 python3 scripts/add_part.py --title "Part IV - New Research Track"
-python3 scripts/add_chapter.py --part stack-layers --title "New AI Topic" --after planning-and-control
+python3 scripts/add_chapter.py --part planning-memory-reasoning-execution --title "New AI Topic" --after planning-as-a-control-layer
 ```
 
 Quarto generates displayed chapter numbers at render time, so chapters can be inserted, moved, merged, or removed without renumbering files.
@@ -90,7 +90,7 @@ Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-bac
 
 ## Proof Discipline
 
-`docs/book_outline.md` is the source of truth for Lean proof scope. Every chapter has `lean:*` proof tags under `Lean proof targets`.
+`docs/book_outline.md` is the source of truth for Lean proof scope. Every chapter has `lean:*` proof tags under `Lean proof targets`, plus source queues that tell future writing runs what to load first.
 
 Generate the machine-readable proof manifest from the outline:
 

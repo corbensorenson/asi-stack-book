@@ -1,19 +1,16 @@
 ---
-title: "Labor and Execution OS"
-chapter_id: "labor-and-execution-os"
-part_id: "stack-layers"
+title: "Labor OS and Typed Jobs"
+chapter_id: "labor-os-and-typed-jobs"
+part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
   - "talos"
-  - "talos_md"
   - "viea"
   - "genesiscode"
   - "software_magic_grimoire"
-  - "cognitive_loop_closure"
+  - "talos_md"
   - "moecot"
-  - "spinoza_composer"
-  - "ladon_manhattan"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -21,17 +18,17 @@ open_evidence_gaps:
   - "Chapter prose is a scaffold, not a completed manuscript draft."
 ---
 
-# Labor and Execution OS
+# Labor OS and Typed Jobs
 
 ## Chapter status
 
 | Field | Value |
 |---|---|
-| Chapter ID | `labor-and-execution-os` |
-| Part | Part II - The Layers of the ASI Stack |
+| Chapter ID | `labor-os-and-typed-jobs` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `talos`, `talos_md`, `viea`, `genesiscode`, `software_magic_grimoire`, `cognitive_loop_closure`, `moecot`, `spinoza_composer`, `ladon_manhattan` |
+| Primary source records | `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -42,43 +39,43 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-Reasoning must become typed work with artifacts, permissions, audit logs, and governed side effects.
+Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
 
 ## Why existing approaches are insufficient
 
-A generic agent loop does not provide typed job lifecycle, replay, artifact graph discipline, or human approval gates.
+Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
 
 ## Core claim
 
-[labor-and-execution-os.core, support: argument] The execution layer should convert plans into typed jobs and artifacts through a governed labor operating system.
+[labor-os-and-typed-jobs.core, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
 ## Mechanism
 
-- Compile command contracts into jobs.
-- Run jobs through adapters with permissions and audit logs.
-- Promote repeated workflows into verified tools when evidence supports it.
+- Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
+- Isolate tools and runtime adapters.
+- Record job lifecycle and evidence artifacts.
 
 ## Interfaces
 
-- Planning emits job contracts.
-- Governance enforces authority and approvals.
-- Evidence layers reconstruct audit trails and replay results.
+- Planning dispatches jobs.
+- Security mediates permissions.
+- Artifact graph receives outputs.
 
 ## Invariants
 
-- Side effects pass through explicit authorization.
-- Artifacts are addressable and auditable.
-- Human approval gates remain enforceable.
+- Every job has type and lifecycle state.
+- Tool permissions are explicit.
+- Human approval gates block high-impact jobs.
 
 ## Failure modes
 
-- Tool misuse.
+- Tool overreach.
 - Unlogged side effects.
-- Workflow-to-tool promotion without evidence.
+- Infinite or chaotic agent swarms.
 
 ## Minimal implementation
 
-A typed job schema, artifact graph, permission model, audit log, and replay protocol.
+A typed-job schema with lifecycle states and permission checks.
 
 ## Codex test plan
 
@@ -86,24 +83,18 @@ A typed job schema, artifact graph, permission model, audit log, and replay prot
 |---|---|---|
 | Typed job lifecycle test | Support or falsify this chapter's layer claim. | planned; not run |
 | Tool permission enforcement test | Support or falsify this chapter's layer claim. | planned; not run |
-| Audit log reconstruction test | Support or falsify this chapter's layer claim. | planned; not run |
-| Replay determinism test | Support or falsify this chapter's layer claim. | planned; not run |
 | Human approval gate test | Support or falsify this chapter's layer claim. | planned; not run |
-| Adversarial job injection test | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
 |---|---|---|
 | `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
-| `talos_md` | Talos_Protocol_v1.0.md | Planned use from inventory/manifest: Markdown/public release version. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
 | `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
 | `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
-| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `talos_md` | Talos_Protocol_v1.0.md | Planned use from inventory/manifest: Markdown/public release version. |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/manifest: Narrative/compliance operating system variant. Use as applied Spinoza. |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
 
 ## Summary
 

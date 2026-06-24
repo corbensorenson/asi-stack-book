@@ -1,0 +1,101 @@
+---
+title: "Readiness Gates, Residual Escrow, and Quarantine"
+chapter_id: "readiness-gates-residual-escrow-and-quarantine"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "rmi"
+  - "benchmaxxing"
+  - "scf"
+  - "octopus_router"
+  - "cognitive_loop_closure"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Readiness Gates, Residual Escrow, and Quarantine
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `readiness-gates-residual-escrow-and-quarantine` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
+
+## Why existing approaches are insufficient
+
+A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
+
+## Core claim
+
+[readiness-gates-residual-escrow-and-quarantine.core, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
+
+## Mechanism
+
+- Maintain readiness states and promotion gates.
+- Record residual failures in escrow.
+- Quarantine modules with safety, regression, or scope failures.
+
+## Interfaces
+
+- Routing reads readiness.
+- Benchmarks update gates.
+- SCFs govern replacement.
+
+## Invariants
+
+- Promotion requires gate evidence.
+- Residuals are not deleted on promotion.
+- Quarantine blocks ordinary routing.
+
+## Failure modes
+
+- Premature promotion.
+- Residual hiding.
+- Untracked regression after merge.
+
+## Minimal implementation
+
+A module lifecycle state machine and residual escrow ledger.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Readiness gate enforcement test | Support or falsify this chapter's layer claim. | planned; not run |
+| Residual escrow integrity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Quarantine behavior test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `octopus_router` | Octopus Router Architecture | Planned use from inventory/manifest: Lightweight head/router with dynamically loaded specialist arms and local boundaries. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

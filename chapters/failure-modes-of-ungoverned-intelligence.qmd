@@ -1,7 +1,7 @@
 ---
 title: "Failure Modes of Ungoverned Intelligence"
 chapter_id: "failure-modes-of-ungoverned-intelligence"
-part_id: "stack-from-above"
+part_id: "foundations-alignment-governance"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -12,6 +12,8 @@ primary_sources:
   - "field_of_god"
   - "viea"
   - "simulation_scaling"
+  - "vcm_editable"
+  - "moecot"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -26,10 +28,10 @@ open_evidence_gaps:
 | Field | Value |
 |---|---|
 | Chapter ID | `failure-modes-of-ungoverned-intelligence` |
-| Part | Part I - The Stack from Above |
+| Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling` |
+| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -40,45 +42,45 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-The architecture needs an explicit failure model before it can claim governance, reliability, or safe improvement.
+The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.
 
 ## Why existing approaches are insufficient
 
-High-level safety language misses earlier engineering failures such as goal misbinding, context corruption, authority creep, evaluator drift, and unverified claims.
+High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.
 
 ## Core claim
 
-[failure-modes-of-ungoverned-intelligence.core, support: argument] Ungoverned intelligence fails through stack-level breakdowns before any dramatic science-fiction failure mode is needed.
+[failure-modes-of-ungoverned-intelligence.core, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
 ## Mechanism
 
 - Classify failures by layer.
-- Map each failure to an invariant and a planned falsification test.
-- Use failures to constrain later architecture choices.
+- Map every failure to an invariant and a planned falsification test.
+- Use failures to motivate boundaries in later chapters.
 
 ## Interfaces
 
 - Governance limits authority creep.
 - VCM limits context pollution.
 - Verification limits false certainty.
-- Execution layers limit side effects.
+- Execution limits side effects.
 
 ## Invariants
 
-- Authority must be explicit and bounded.
-- Evidence records must be auditable.
-- Self-modification cannot bypass identity and evaluator checks.
+- Every risk maps to at least one boundary.
+- Evaluator integrity is protected.
+- Negative evidence stays visible.
 
 ## Failure modes
 
-- Evaluator capture or drift.
-- Memory poisoning and context pollution.
+- Evaluator capture.
+- Memory poisoning.
 - Tool/action overreach.
 - Compression that hides residual complexity.
 
 ## Minimal implementation
 
-A failure taxonomy tied to chapter-specific invariants and planned tests.
+A layered failure taxonomy tied to invariants, source queues, and future tests.
 
 ## Codex test plan
 
@@ -100,6 +102,8 @@ A failure taxonomy tied to chapter-specific invariants and planned tests.
 | `field_of_god` | The Field of God | Planned use from inventory/manifest: Field of God source/outline/material. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
 | `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 
 ## Summary
 

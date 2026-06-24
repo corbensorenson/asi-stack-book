@@ -1,7 +1,7 @@
 ---
-title: "Alignment and Constitution"
-chapter_id: "alignment-and-constitution"
-part_id: "stack-layers"
+title: "Constitutional Alignment Substrate"
+chapter_id: "constitutional-alignment-substrate"
+part_id: "foundations-alignment-governance"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -10,6 +10,7 @@ primary_sources:
   - "ethica_mechanica"
   - "eternal_code"
   - "coherence_exchange"
+  - "spinoza"
 evidence_level: "argument"
 open_evidence_gaps:
   - "Assigned source texts have not yet been ingested or summarized."
@@ -17,17 +18,17 @@ open_evidence_gaps:
   - "Chapter prose is a scaffold, not a completed manuscript draft."
 ---
 
-# Alignment and Constitution
+# Constitutional Alignment Substrate
 
 ## Chapter status
 
 | Field | Value |
 |---|---|
-| Chapter ID | `alignment-and-constitution` |
-| Part | Part II - The Layers of the ASI Stack |
+| Chapter ID | `constitutional-alignment-substrate` |
+| Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange` |
+| Primary source records | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `spinoza` |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
 | Test state | Planned only; no tests have been run. |
@@ -38,52 +39,51 @@ This stub is derived from `book_structure.json` and the source inventory only. I
 
 ## Problem
 
-A self-improving system needs a stable moral and interpretive substrate before planning and execution can be trusted.
+The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
 
 ## Why existing approaches are insufficient
 
-Reactive refusal rules do not define value continuity, corrigibility, moral uncertainty, anti-domination, or self-modification ethics.
+Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
 
 ## Core claim
 
-[alignment-and-constitution.core, support: argument] The alignment layer should act as a constitutional substrate that constrains goals, plans, and self-modification.
+[constitutional-alignment-substrate.core, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
 
 ## Mechanism
 
-- Represent constitutional commitments as constraints on planning and execution.
-- Track unresolved moral uncertainty instead of hiding it.
-- Keep philosophical claims engineering-compatible and explicitly labeled.
+- Translate philosophical commitments into operational predicates where possible.
+- Keep metaphysical claims labeled as interpretation unless separately supported.
+- Attach constitutional constraints to planning and replacement gates.
 
 ## Interfaces
 
 - Planning receives admissible-goal constraints.
-- Governance receives authority and dignity constraints.
-- Verification checks whether claims exceed the constitutional evidence state.
+- Governance receives protected constraints.
+- Verification checks whether normative claims exceed evidence.
 
 ## Invariants
 
-- Human dignity and agency preservation remain visible requirements.
-- Corrigibility cannot be optimized away by self-improvement.
-- Speculative metaphysical material remains labeled as speculative.
+- Dignity and agency constraints remain visible.
+- Corrigibility cannot be optimized away.
+- Speculative metaphysics stays labeled.
 
 ## Failure modes
 
-- Power without care.
 - Mystical framing replacing technical constraints.
-- Self-modification that weakens constitutional commitments.
+- Power without care.
+- Self-modification weakening protected commitments.
 
 ## Minimal implementation
 
-A compact constitution appendix, conflict taxonomy, and planned scenario tests.
+A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Constitutional consistency test | Support or falsify this chapter's layer claim. | planned; not run |
-| Value conflict classification test | Support or falsify this chapter's layer claim. | planned; not run |
 | Self-modification ethics scenario | Support or falsify this chapter's layer claim. | planned; not run |
-| Power-seeking and agency-dominance scenario | Support or falsify this chapter's layer claim. | planned; not run |
+| Power-without-care scenario | Support or falsify this chapter's layer claim. | planned; not run |
 
 ## Source crosswalk
 
@@ -94,6 +94,7 @@ A compact constitution appendix, conflict taxonomy, and planned scenario tests.
 | `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
 | `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | Planned use from inventory/manifest: Computational metaphysics and alignment synthesis. |
 | `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
 
 ## Summary
 

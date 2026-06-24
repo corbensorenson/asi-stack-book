@@ -1,0 +1,101 @@
+---
+title: "Virtual Context ABI"
+chapter_id: "virtual-context-abi"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "vcm_public"
+  - "context_engineer"
+  - "verification_bandwidth"
+  - "viea"
+  - "vcm_editable"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Virtual Context ABI
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `virtual-context-abi` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Long-horizon agents need a stable interface between durable memory and model-visible working context.
+
+## Why existing approaches are insufficient
+
+Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
+
+## Core claim
+
+[virtual-context-abi.core, support: argument] Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
+
+## Mechanism
+
+- Separate durable memory from active context.
+- Compile task-relative context packets through an ABI.
+- Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
+
+## Interfaces
+
+- Planning requests context.
+- VCM compiles packets.
+- Execution receives authority-appropriate context.
+
+## Invariants
+
+- Addresses and versions are stable.
+- Context adequacy is distinct from admission.
+- Faults are typed and visible.
+
+## Failure modes
+
+- Flat transcript memory.
+- Stale context.
+- Silent unsafe fit.
+
+## Minimal implementation
+
+A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Address/version stability test | Support or falsify this chapter's layer claim. | planned; not run |
+| Admission vs adequacy test | Support or falsify this chapter's layer claim. | planned; not run |
+| Context fault behavior test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,99 @@
+---
+title: "Verification Bandwidth and Context Adequacy"
+chapter_id: "verification-bandwidth-and-context-adequacy"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "verification_bandwidth"
+  - "vcm_public"
+  - "spinoza"
+  - "treellm"
+  - "vcm_editable"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Verification Bandwidth and Context Adequacy
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `verification-bandwidth-and-context-adequacy` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Long context does not automatically provide long-range reasoning or enough verification capacity.
+
+## Why existing approaches are insufficient
+
+Adding tokens can increase distractors, attention interference, and unverified summary burden.
+
+## Core claim
+
+[verification-bandwidth-and-context-adequacy.core, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
+
+## Mechanism
+
+- Model verification as bounded by mutual information, representation quality, and attention budget.
+- Require adequacy labels for context packets.
+- Route high-risk claims to stronger verification instead of more context alone.
+
+## Interfaces
+
+- VCM declares adequacy.
+- Spinoza checks claims.
+- Planning decides escalation when adequacy is insufficient.
+
+## Invariants
+
+- Adequacy is explicit.
+- More context is not treated as proof.
+- High-risk claims pay verification tax.
+
+## Failure modes
+
+- Attention interference.
+- False confidence from large context.
+- Verification skipped for cost reasons.
+
+## Minimal implementation
+
+A context adequacy rubric and verification-bandwidth warning states.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Distractor resistance test | Support or falsify this chapter's layer claim. | planned; not run |
+| Adequacy labeling test | Support or falsify this chapter's layer claim. | planned; not run |
+| Verification escalation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

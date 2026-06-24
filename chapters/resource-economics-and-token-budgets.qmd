@@ -1,0 +1,99 @@
+---
+title: "Resource Economics and Token Budgets"
+chapter_id: "resource-economics-and-token-budgets"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "tokenmana"
+  - "planforge"
+  - "coherence_exchange"
+  - "simulation_scaling"
+  - "viea"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Resource Economics and Token Budgets
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `resource-economics-and-token-budgets` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.
+
+## Why existing approaches are insufficient
+
+Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.
+
+## Core claim
+
+[resource-economics-and-token-budgets.core, support: argument] The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value.
+
+## Mechanism
+
+- Track task value, uncertainty, cost of error, and inference cost.
+- Use regenerative or budgeted capacity mechanisms where useful.
+- Escalate verification when risk justifies the cost.
+
+## Interfaces
+
+- Planning allocates budgets.
+- Routing chooses costed specialists.
+- Evidence measures cost-quality tradeoffs.
+
+## Invariants
+
+- Budgets do not override protected safety gates.
+- High-risk tasks pay verification cost.
+- Cost savings are recorded with quality results.
+
+## Failure modes
+
+- Cost-cutting verification away.
+- Load-synchronized degradation.
+- Resource hoarding by low-value tasks.
+
+## Minimal implementation
+
+A resource ledger with budget, risk, cost, quality, and verification tax fields.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Budget allocation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Risk-adjusted verification test | Support or falsify this chapter's layer claim. | planned; not run |
+| Load stability scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

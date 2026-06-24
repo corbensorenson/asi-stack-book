@@ -9,6 +9,7 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 
 - Treat Quarto as the source of truth and GitHub Pages as a rendered publication target.
 - Treat `book_structure.json` as the only ordering source of truth for parts, chapters, chapter IDs, and chapter file paths.
+- Treat `docs/book_outline.md` as the drafting source of truth for chapter jobs, part-level and chapter-level source loading queues, and Lean proof targets.
 - Do not hand-edit `_quarto.yml`; regenerate it with `python3 scripts/sync_scaffold.py`.
 - Do not use numbered chapter filenames. Use stable slug filenames and stable `chapter_id` values.
 - Do not fabricate source content, citations, summaries, benchmark results, or test results.
@@ -21,17 +22,18 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `docs/book_outline.md`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
 2. Read `docs/source_readiness_report.md` if source ingestion or drafting depends on source availability.
 3. Read `appendices/G_bibliography.qmd` when drafting citations, source-corpus references, or external-literature placeholders.
-4. Inspect the relevant chapters and appendices before editing.
-5. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
+4. Use the source loading queues in `docs/book_outline.md` to decide which primary, supporting, variant, connector, or recovery sources are in scope.
+5. Inspect the relevant chapters and appendices before editing.
+6. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
    - `python3 scripts/add_part.py --title "..."`
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
-6. Run `python3 scripts/sync_scaffold.py` after manifest changes.
-7. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
-8. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
-9. Update Appendix C when a claim changes or its support state changes.
-10. Run `python3 scripts/validate_publication.py` for public-surface changes.
-11. Run `python3 scripts/validate_book.py`.
-12. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+7. Run `python3 scripts/sync_scaffold.py` after manifest changes.
+8. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
+9. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
+10. Update Appendix C when a claim changes or its support state changes.
+11. Run `python3 scripts/validate_publication.py` for public-surface changes.
+12. Run `python3 scripts/validate_book.py`.
+13. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -55,6 +57,7 @@ Read `references/triage.md` when deciding whether to update an existing chapter 
 - Prefer systems language: boundary, authority, invariant, interface, artifact, evidence state, route, ledger, regression, residual.
 - Avoid unscoped safety claims and hype.
 - Treat `docs/book_outline.md` as the source of truth for full-book drafting and Lean proof scope.
+- Follow the outline's source queues before drafting: primary sources first, supporting sources second, variants for version comparison, connector/recovery sources as explicit blockers until loaded.
 - Keep `proofs/proof_manifest.json` generated from outline `lean:*` proof tags.
 - Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, source crosswalk, and summary.
 

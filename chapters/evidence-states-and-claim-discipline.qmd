@@ -1,0 +1,101 @@
+---
+title: "Evidence States and Claim Discipline"
+chapter_id: "evidence-states-and-claim-discipline"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "benchmaxxing"
+  - "spinoza"
+  - "viea"
+  - "uat"
+  - "coherence_exchange"
+  - "verification_bandwidth"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Evidence States and Claim Discipline
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `evidence-states-and-claim-discipline` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The living book needs a shared language for when a claim is only argued, source-derived, prototype-backed, or test-backed.
+
+## Why existing approaches are insufficient
+
+Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
+
+## Core claim
+
+[evidence-states-and-claim-discipline.core, support: argument] Every major claim should carry a support state and move only when source ingestion, prototype inspection, or actual tests justify the transition.
+
+## Mechanism
+
+- Use Appendix C as the claim ledger.
+- Require source notes before promoting claims to source-derived.
+- Require executed tests before test-backed labels.
+
+## Interfaces
+
+- Drafting updates claims.
+- Experiments update evidence.
+- Changelog records evidence movement.
+
+## Invariants
+
+- No fabricated source support.
+- No fabricated test results.
+- Negative and inconclusive results remain visible.
+
+## Failure modes
+
+- Support-state inflation.
+- Citation laundering.
+- Silent removal of failed claims.
+
+## Minimal implementation
+
+A claim record schema, support-state transition table, and validation check.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Support-state transition test | Support or falsify this chapter's layer claim. | planned; not run |
+| Claim ledger completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Changelog consistency audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

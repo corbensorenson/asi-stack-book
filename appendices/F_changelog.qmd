@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-24 - Expanded source-mined outline
+
+- Expanded the source-of-truth structure from the 16-chapter starter scaffold to 46 precise chapters across the same three book parts.
+- Rebuilt `docs/book_outline.md` with part-level and chapter-level source loading queues so future writing runs know which papers to mine for each chapter.
+- Added `docs/source_mining_synthesis.md` to record the source-mining coverage, architecture clusters, chapter split rationale, and remaining source-access gaps.
+- Regenerated `_quarto.yml`, chapter stubs, Appendix A, Appendix C, Appendix G, and `proofs/proof_manifest.json` from the new manifest and outline.
+- Updated source readiness reporting to distinguish usable cached source exports from Google sign-in/auth-gate placeholder files.
+- Removed obsolete broad chapter stubs that were superseded by the expanded precise chapter set.
+- Kept all new chapter core claims at `argument` support state; no source-derived or test-backed claim promotion happened in this pass.
+
 ## 2026-06-24 - Public repository readiness
 
 - Reworked `README.md` as a public entry point with status, links, validation, source discipline, proof discipline, and rights notes.

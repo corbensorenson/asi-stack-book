@@ -1,0 +1,99 @@
+---
+title: "Agency, Dignity, and Corrigibility"
+chapter_id: "agency-dignity-and-corrigibility"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "alignment_field"
+  - "ethica_mechanica"
+  - "field_of_god"
+  - "eternal_code"
+  - "coherence_exchange"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Agency, Dignity, and Corrigibility
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `agency-dignity-and-corrigibility` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `coherence_exchange` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a precise account of how human agency and dignity constrain powerful optimization.
+
+## Why existing approaches are insufficient
+
+Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.
+
+## Core claim
+
+[agency-dignity-and-corrigibility.core, support: argument] A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements.
+
+## Mechanism
+
+- Represent agency constraints as limits on delegation and manipulation.
+- Define corrigibility as preserved update and shutdown pathways.
+- Use contestability and audit rights as governance mechanisms.
+
+## Interfaces
+
+- Alignment defines agency predicates.
+- Governance enforces rights.
+- Execution requires approvals for irreversible effects.
+
+## Invariants
+
+- Users retain meaningful refusal and review channels.
+- Delegation does not erase accountability.
+- Irreversible actions require stronger authorization.
+
+## Failure modes
+
+- Dependency lock-in.
+- Covert manipulation.
+- Corrigibility collapse.
+
+## Minimal implementation
+
+A rights-and-corrigibility checklist attached to high-impact plans.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Agency-preservation scenario | Support or falsify this chapter's layer claim. | planned; not run |
+| Corrigibility pathway test | Support or falsify this chapter's layer claim. | planned; not run |
+| High-impact approval test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
+| `field_of_god` | The Field of God | Planned use from inventory/manifest: Field of God source/outline/material. |
+| `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | Planned use from inventory/manifest: Computational metaphysics and alignment synthesis. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

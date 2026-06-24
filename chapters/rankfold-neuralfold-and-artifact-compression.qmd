@@ -1,0 +1,99 @@
+---
+title: "RankFold, NeuralFold, and Artifact Compression"
+chapter_id: "rankfold-neuralfold-and-artifact-compression"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "rankfold_neuralfold"
+  - "rankfold_compressor"
+  - "bbvca_v9"
+  - "cgs"
+  - "bugbrain"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# RankFold, NeuralFold, and Artifact Compression
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `rankfold-neuralfold-and-artifact-compression` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
+
+## Why existing approaches are insufficient
+
+Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
+
+## Core claim
+
+[rankfold-neuralfold-and-artifact-compression.core, support: argument] RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
+
+## Mechanism
+
+- Use low-rank residual coding or functional preprocessing where appropriate.
+- Probe compressed artifacts before use.
+- Route to full artifacts when probes fail.
+
+## Interfaces
+
+- Artifact graph stores compressed and full references.
+- Routing selects representation by task.
+- Evidence records latency, ratio, and utility.
+
+## Invariants
+
+- Fallback path is known.
+- Residual coding is measured.
+- Downstream utility is tested.
+
+## Failure modes
+
+- Compression damaging rare critical cases.
+- Probe not representative.
+- Latency gains erased by fallback.
+
+## Minimal implementation
+
+A compressed artifact record with ratio, residual, probe, fallback, and utility fields.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Compression ratio test | Support or falsify this chapter's layer claim. | planned; not run |
+| Probe-route fallback test | Support or falsify this chapter's layer claim. | planned; not run |
+| Downstream utility preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/manifest: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+| `rankfold_compressor` | rankFold compressor | Planned use from inventory/manifest: Alternate RankFold/NeuralFold source. |
+| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/manifest: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

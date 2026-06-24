@@ -1,0 +1,101 @@
+---
+title: "Runtime Adapters, Tool Permissions, and Human Approval"
+chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "talos"
+  - "viea"
+  - "ladon_manhattan"
+  - "software_magic_grimoire"
+  - "genesiscode"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Runtime Adapters, Tool Permissions, and Human Approval
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `runtime-adapters-tool-permissions-and-human-approval` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
+
+## Why existing approaches are insufficient
+
+Tool calling without a permission and approval model turns reasoning errors into side effects.
+
+## Core claim
+
+[runtime-adapters-tool-permissions-and-human-approval.core, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
+
+## Mechanism
+
+- Map jobs to runtime adapters with declared capabilities.
+- Require permission checks and approval gates for high-impact actions.
+- Record deployment evidence and rollback handles.
+
+## Interfaces
+
+- Execution owns adapters.
+- Security mediates secrets.
+- Evidence records deployment outcomes.
+
+## Invariants
+
+- No adapter executes beyond granted scope.
+- High-impact actions require approval.
+- Rollback handles are captured when available.
+
+## Failure modes
+
+- Tool overreach.
+- Approval bypass.
+- Irreversible deployment without rollback.
+
+## Minimal implementation
+
+A runtime-adapter contract with permissions, approval requirements, and result evidence.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Adapter permission test | Support or falsify this chapter's layer claim. | planned; not run |
+| Approval gate enforcement test | Support or falsify this chapter's layer claim. | planned; not run |
+| Rollback handle capture test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
