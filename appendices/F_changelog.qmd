@@ -47,6 +47,8 @@
 - Hardened the GitHub Pages workflow for long improvement runs by cancelling superseded publish jobs and extending the Pages deployment timeout.
 - Replaced the remaining generic chapter test-plan purposes with concrete acceptance targets and updated the v0.2 regeneration script so future baseline drafts preserve current evidence-boundary wording.
 - Added a `validate_book.py` regression check that fails on stale generated manuscript phrases in chapters or chapter-generation scripts.
+- Marked the landing page and Preface as unnumbered so Part I begins the numbered chapter sequence instead of treating front matter as chapters.
+- Tightened the landing-page hero image sizing so the first desktop viewport leaves a visible path into the current-status section while mobile remains free of horizontal overflow.
 
 ## 2026-06-24 - v0.2 manuscript baseline
 
