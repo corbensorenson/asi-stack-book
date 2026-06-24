@@ -2,6 +2,18 @@
 
 The book should include lean proofs, executable specs, or tests where doing so clarifies the architecture.
 
+## Source of Truth
+
+`docs/book_outline.md` is the source of truth for Lean proof scope. Each chapter has a `Lean proof targets` table with stable `lean:*` tags, intended Lean modules, formal targets, and status.
+
+Run this after changing outline proof tags:
+
+```bash
+python3 scripts/sync_proof_manifest.py
+```
+
+The generated machine-readable manifest is `proofs/proof_manifest.json`.
+
 ## What Belongs in Proofs
 
 Good proof candidates:

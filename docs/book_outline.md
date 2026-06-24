@@ -29,6 +29,26 @@ By the end of the book, a technical reader should understand:
 5. Integrate the layers into an intent-to-execution reference architecture.
 6. Convert the architecture into a staged prototype and living evidence process.
 
+## Lean Proof Target Format
+
+The outline is the source of truth for proof scope. Every chapter with a `Stable ID` must include a `Lean proof targets` table. These rows tell future drafting agents which claims should become executable Lean work, which module should contain them, and whether the target is only planned or already implemented.
+
+Proof rows use this format:
+
+| Field | Meaning |
+|---|---|
+| Tag | Stable proof identifier. Must start with `lean:` and remain stable across edits. |
+| Lean module | Intended module under `lean/AsiStackProofs/`. |
+| Formal target | The operational invariant, relation, transition rule, or schema property to formalize. |
+| Status | `planned`, `scaffolded`, `implemented`, `blocked`, or `retired`. |
+
+Rules:
+
+- Do not tag broad philosophical claims as Lean targets until they are translated into operational predicates.
+- Do not describe a target as proven unless the corresponding Lean module exists and `lake build` passes.
+- Prefer small invariants over grand architecture theorems.
+- If a chapter changes its mechanism, update its proof tags in this outline before drafting proof prose.
+
 ## Front Matter
 
 ### Landing Page
@@ -93,6 +113,13 @@ Draft deliverables:
 - Layer-boundary table.
 - Book vocabulary table for artifact, authority, evidence, route, residual, field, and ratchet.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:stack.layer_authority_separation` | `AsiStackProofs.StackBoundaries` | A layer without execution authority cannot produce an external action except through an authorized handoff. | planned |
+| `lean:stack.handoff_preserves_authority_ceiling` | `AsiStackProofs.StackBoundaries` | Typed handoffs preserve or reduce the caller's authority ceiling. | planned |
+
 ### The Efficient ASI Hypothesis
 
 Stable ID: `the-efficient-asi-hypothesis`
@@ -125,6 +152,13 @@ Draft deliverables:
 - Minimum-viable-intelligence decision table.
 - Residual-burden examples.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:efficiency.minimum_viable_route_order` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | planned |
+| `lean:efficiency.residual_record_required` | `AsiStackProofs.Efficiency` | Any compressed or routed result with unresolved obligations must carry a residual record. | planned |
+
 ### Failure Modes of Ungoverned Intelligence
 
 Stable ID: `failure-modes-of-ungoverned-intelligence`
@@ -156,6 +190,13 @@ Draft deliverables:
 - Layered failure taxonomy.
 - Threat-to-invariant mapping.
 - Scenario set for future Codex tests.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:failure.invariant_violation_blocks_promotion` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted to a higher support or readiness state. | planned |
+| `lean:failure.unbounded_authority_detected` | `AsiStackProofs.FailureModes` | Missing authority ceilings are represented as a detectable governance failure, not as an implicit permission. | planned |
 
 ## Part II - The Layers of the ASI Stack
 
@@ -191,6 +232,13 @@ Draft deliverables:
 - Value-conflict taxonomy.
 - Self-modification ethics scenarios.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:alignment.constraint_filter_soundness` | `AsiStackProofs.Alignment` | A plan admitted by the alignment filter satisfies every active constitutional constraint predicate. | planned |
+| `lean:alignment.self_modification_preserves_constitution` | `AsiStackProofs.Alignment` | An accepted self-modification cannot remove or weaken protected constitutional constraints. | planned |
+
 ### Governance and Stable Capability Fields
 
 Stable ID: `governance-and-stable-capability-fields`
@@ -221,6 +269,14 @@ Draft deliverables:
 - Stable capability field schema.
 - Promotion/rollback lifecycle.
 - Authority non-escalation proof target.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:scf.authority_non_escalation` | `AsiStackProofs.StableCapabilityFields` | Replacing an implementation inside a stable capability field cannot increase the field's authority ceiling. | planned |
+| `lean:scf.replacement_preserves_field_identity` | `AsiStackProofs.StableCapabilityFields` | Qualified replacement preserves field identity when interface, semantics, and authority predicates remain satisfied. | planned |
+| `lean:scf.rollback_after_failed_qualification` | `AsiStackProofs.StableCapabilityFields` | A failed qualification check leaves a rollback path to the previous qualified implementation. | planned |
 
 ### Planning and Control
 
@@ -253,6 +309,14 @@ Draft deliverables:
 - Dependency and constraint examples.
 - Replanning triggers and stop conditions.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:planning.decomposition_preserves_authority` | `AsiStackProofs.Planning` | Every subtask produced by decomposition has an authority ceiling no greater than the parent plan. | planned |
+| `lean:planning.replanning_preserves_constraints` | `AsiStackProofs.Planning` | Runtime replanning preserves required constraints and stop conditions from the active plan. | planned |
+| `lean:planning.dependencies_before_execution` | `AsiStackProofs.Planning` | A typed job cannot become executable until its declared dependencies are satisfied. | planned |
+
 ### Virtual Context Memory
 
 Stable ID: `virtual-context-memory`
@@ -282,6 +346,14 @@ Draft deliverables:
 - Context packet schema.
 - Adequacy rubric.
 - Summary fidelity and distractor-resistance tests.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:vcm.admission_not_adequacy` | `AsiStackProofs.VirtualContextMemory` | Context admission and context adequacy are separate predicates; admission alone does not imply adequacy. | planned |
+| `lean:vcm.summary_preserves_authority_labels` | `AsiStackProofs.VirtualContextMemory` | A valid summary packet preserves every source authority label required by its inputs. | planned |
+| `lean:vcm.execution_context_within_authority` | `AsiStackProofs.VirtualContextMemory` | Execution receives only context whose authority labels are permitted by the job authority ceiling. | planned |
 
 ### Labor and Execution OS
 
@@ -314,6 +386,14 @@ Draft deliverables:
 - Artifact graph lifecycle.
 - Replay and audit requirements.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:talos.job_lifecycle_order` | `AsiStackProofs.ExecutionOS` | Typed job state transitions respect the required lifecycle order from request through completion or rollback. | planned |
+| `lean:talos.execution_requires_permission` | `AsiStackProofs.ExecutionOS` | A job can execute a tool only when the tool permission is present in the active job contract. | planned |
+| `lean:talos.audit_log_append_only` | `AsiStackProofs.ExecutionOS` | Audit records are append-only across valid execution transitions. | planned |
+
 ### Reasoning, Verification, and Epistemology
 
 Stable ID: `reasoning-verification-and-epistemology`
@@ -344,6 +424,14 @@ Draft deliverables:
 - Claim record schema.
 - Contradiction-handling examples.
 - Belief revision and uncertainty tests.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:evidence.no_self_promotion` | `AsiStackProofs.SupportStates` | A claim cannot promote itself from a support state to the same support state. | implemented |
+| `lean:evidence.promotion_requires_witness` | `AsiStackProofs.SupportStates` | Promotion to a stronger support state requires an evidence witness of the required kind. | planned |
+| `lean:evidence.contradiction_blocks_source_derived` | `AsiStackProofs.ClaimLedger` | An unresolved contradiction blocks promotion to `source-derived` or stronger support states. | planned |
 
 ### Routing and Modular Intelligence
 
@@ -376,6 +464,14 @@ Draft deliverables:
 - Readiness gate table.
 - Quarantine and fallback process.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:routing.route_validity_requires_qualification` | `AsiStackProofs.Routing` | A route is valid only if the selected specialist satisfies the requested capability qualification. | planned |
+| `lean:routing.fallback_preserves_authority` | `AsiStackProofs.Routing` | Fallback routing cannot increase authority beyond the original route request. | planned |
+| `lean:routing.quarantine_blocks_selection` | `AsiStackProofs.Routing` | A quarantined specialist cannot be selected by a valid route. | planned |
+
 ### Compression and Representation
 
 Stable ID: `compression-and-representation`
@@ -405,6 +501,14 @@ Draft deliverables:
 - Compression utility rubric.
 - Residual burden ledger.
 - Reconstruction and downstream utility tests.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:compression.residual_burden_required` | `AsiStackProofs.Compression` | A lossy compression with unmet reconstruction obligations must expose a residual burden record. | planned |
+| `lean:compression.fallback_when_probe_fails` | `AsiStackProofs.Compression` | Failed utility probes trigger an explicit fallback route instead of silent acceptance. | planned |
+| `lean:compression.utility_preorder` | `AsiStackProofs.Compression` | Compression utility can be modeled as a preorder over downstream task adequacy and cost. | planned |
 
 ### Mathematical and Search Substrates
 
@@ -436,6 +540,13 @@ Draft deliverables:
 - Formalization candidates for Lean.
 - Evidence threshold rubric.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:substrate.interface_refinement` | `AsiStackProofs.Substrates` | A substrate-specific implementation refines the required stack interface before it can be routed to. | planned |
+| `lean:substrate.proof_artifact_scope` | `AsiStackProofs.Substrates` | A proof artifact promotes only the formal claim it actually states, not adjacent informal claims. | planned |
+
 ### Evidence, Benchmarks, and Ratchets
 
 Stable ID: `evidence-benchmarks-and-ratchets`
@@ -466,6 +577,14 @@ Draft deliverables:
 - Test-result record schema.
 - Release gate checklist.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:ratchet.support_state_monotonic_with_evidence` | `AsiStackProofs.EvidenceRatchets` | Support-state promotion is monotonic only when the required evidence witness is present. | planned |
+| `lean:ratchet.regression_preserves_failure_record` | `AsiStackProofs.EvidenceRatchets` | A regression event preserves its failure record in the evidence history. | planned |
+| `lean:ratchet.no_result_without_run_record` | `AsiStackProofs.EvidenceRatchets` | A test result cannot be recorded without a corresponding run record. | planned |
+
 ## Part III - Integration and Implementation
 
 Part job: assemble the layers into a reference architecture, then show how to build and maintain it incrementally.
@@ -494,6 +613,13 @@ Draft deliverables:
 - Interface inventory.
 - Stack trace example.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:integration.end_to_end_authority_ceiling` | `AsiStackProofs.Integration` | In an end-to-end trace, no layer handoff exceeds the initial authorized ceiling without an explicit approval event. | planned |
+| `lean:integration.trace_completeness` | `AsiStackProofs.Integration` | A complete stack trace includes intent, constraints, plan, context, route, job, artifact, and evidence records. | planned |
+
 ### Prototype Roadmap
 
 Stable ID: `prototype-roadmap`
@@ -518,6 +644,13 @@ Draft deliverables:
 - Prototype evaluation table.
 - Open implementation backlog.
 
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:roadmap.stage_prerequisites` | `AsiStackProofs.PrototypeRoadmap` | A prototype stage cannot start until its declared prerequisite stages are complete or explicitly waived. | planned |
+| `lean:roadmap.no_replacement_before_scf` | `AsiStackProofs.PrototypeRoadmap` | Capability replacement cannot enter the roadmap before the stable capability field schema exists. | planned |
+
 ### Living Book Methodology
 
 Stable ID: `living-book-methodology`
@@ -541,6 +674,14 @@ Draft deliverables:
 - Living update protocol.
 - New-paper triage checklist.
 - Release checklist.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:method.source_note_required_for_source_derived` | `AsiStackProofs.LivingBook` | A claim cannot be marked `source-derived` unless a source note exists for the cited source. | planned |
+| `lean:method.no_test_result_without_record` | `AsiStackProofs.LivingBook` | The book cannot report a test result unless a public-safe result record exists. | planned |
+| `lean:method.changelog_required_for_support_change` | `AsiStackProofs.LivingBook` | A support-state change requires a changelog entry in the same release set. | planned |
 
 ## Bibliography and Source Corpus
 
@@ -578,8 +719,9 @@ The current 16-chapter structure is sufficient for a first full-book drafting go
 2. Draft Part II in interface order: Alignment, Governance, Planning, VCM, Execution, Reasoning, Routing, Compression, Mathematical Substrates, Evidence.
 3. Draft Part III after the layer chapters so the integrated architecture can reuse their exact interfaces.
 4. Build source notes alongside chapters; do not promote claim support states before source notes exist.
-5. Add diagrams and schemas only when they clarify a boundary, invariant, or handoff.
-6. Run validation and render after each structural or chapter batch.
+5. Generate or validate `proofs/proof_manifest.json` from the proof tags in this outline before implementing Lean modules.
+6. Add diagrams and schemas only when they clarify a boundary, invariant, proof target, or handoff.
+7. Run validation and render after each structural or chapter batch.
 
 ## Definition of a Ready Full Draft
 
@@ -589,5 +731,7 @@ A first complete manuscript draft is ready when:
 - Every assigned source has either a source note or an explicit blocker.
 - Every core claim appears in Appendix C with the correct support state.
 - No test result is reported unless the test was implemented and run.
+- Every `lean:*` proof target is either implemented with passing `lake build` output or has an explicit blocker.
+- `proofs/proof_manifest.json` is current with the proof tags in this outline.
 - Appendix G reflects the current source corpus and any verified external literature.
 - The site renders cleanly from `main`.

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,10 @@ REQUIRED = [
     "sources/source_inventory.json",
     "sources/source_inventory.md",
     "scripts/sync_scaffold.py",
+    "scripts/sync_proof_manifest.py",
     "scripts/build_source_matrix.py",
+    "docs/book_outline.md",
+    "proofs/proof_manifest.json",
     "appendices/A_source_matrix.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "appendices/E_codex_test_specs.qmd",
@@ -187,6 +191,19 @@ def validate_claim_states() -> None:
         fail(f"Claim/evidence matrix is missing support-state definitions: {sorted(missing)}")
 
 
+def validate_proof_manifest() -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "sync_proof_manifest.py"), "--check"],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        print(result.stdout.strip())
+        sys.exit(result.returncode)
+
+
 def main() -> None:
     validate_required_files()
     source_ids = validate_inventory()
@@ -195,6 +212,7 @@ def main() -> None:
     validate_chapter_frontmatter(chapters)
     validate_overclaims()
     validate_claim_states()
+    validate_proof_manifest()
     print("Book validation passed.")
 
 

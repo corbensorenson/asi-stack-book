@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-06-24 - Outline proof tags
+
+- Added stable `lean:*` proof targets to every chapter section in `docs/book_outline.md`.
+- Added `scripts/sync_proof_manifest.py` to generate `proofs/proof_manifest.json` from the outline.
+- Added proof-manifest checking to `scripts/validate_book.py`.
+- Updated proof docs, README, and the ASI Stack skill so future drafting runs treat the outline as the proof source of truth.
+
 ## 2026-06-24 - Cohesive outline and bibliography
 
 - Replaced the handoff-level outline with a full-book cohesive drafting outline in `docs/book_outline.md`.

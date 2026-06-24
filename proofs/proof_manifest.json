@@ -1,0 +1,439 @@
+{
+  "generated_from": "docs/book_outline.md",
+  "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
+  "proof_target_count": 41,
+  "status_counts": {
+    "implemented": 1,
+    "planned": 40
+  },
+  "chapter_counts": {
+    "alignment-and-constitution": 2,
+    "asi-is-a-stack-not-a-model": 2,
+    "compression-and-representation": 3,
+    "evidence-benchmarks-and-ratchets": 3,
+    "failure-modes-of-ungoverned-intelligence": 2,
+    "governance-and-stable-capability-fields": 3,
+    "integrated-reference-architecture": 2,
+    "labor-and-execution-os": 3,
+    "living-book-methodology": 3,
+    "mathematical-and-search-substrates": 2,
+    "planning-and-control": 3,
+    "prototype-roadmap": 2,
+    "reasoning-verification-and-epistemology": 3,
+    "routing-and-modular-intelligence": 3,
+    "the-efficient-asi-hypothesis": 2,
+    "virtual-context-memory": 3
+  },
+  "records": [
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "chapter_title": "ASI Is a Stack, Not a Model",
+      "tag": "lean:stack.layer_authority_separation",
+      "module": "AsiStackProofs.StackBoundaries",
+      "formal_target": "A layer without execution authority cannot produce an external action except through an authorized handoff.",
+      "status": "planned",
+      "outline_line": 120,
+      "module_path": "lean/AsiStackProofs/StackBoundaries.lean"
+    },
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "chapter_title": "ASI Is a Stack, Not a Model",
+      "tag": "lean:stack.handoff_preserves_authority_ceiling",
+      "module": "AsiStackProofs.StackBoundaries",
+      "formal_target": "Typed handoffs preserve or reduce the caller's authority ceiling.",
+      "status": "planned",
+      "outline_line": 121,
+      "module_path": "lean/AsiStackProofs/StackBoundaries.lean"
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "chapter_title": "The Efficient ASI Hypothesis",
+      "tag": "lean:efficiency.minimum_viable_route_order",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
+      "status": "planned",
+      "outline_line": 159,
+      "module_path": "lean/AsiStackProofs/Efficiency.lean"
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "chapter_title": "The Efficient ASI Hypothesis",
+      "tag": "lean:efficiency.residual_record_required",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "Any compressed or routed result with unresolved obligations must carry a residual record.",
+      "status": "planned",
+      "outline_line": 160,
+      "module_path": "lean/AsiStackProofs/Efficiency.lean"
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "chapter_title": "Failure Modes of Ungoverned Intelligence",
+      "tag": "lean:failure.invariant_violation_blocks_promotion",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "A component with a failed required invariant cannot be promoted to a higher support or readiness state.",
+      "status": "planned",
+      "outline_line": 198,
+      "module_path": "lean/AsiStackProofs/FailureModes.lean"
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "chapter_title": "Failure Modes of Ungoverned Intelligence",
+      "tag": "lean:failure.unbounded_authority_detected",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "Missing authority ceilings are represented as a detectable governance failure, not as an implicit permission.",
+      "status": "planned",
+      "outline_line": 199,
+      "module_path": "lean/AsiStackProofs/FailureModes.lean"
+    },
+    {
+      "chapter_id": "alignment-and-constitution",
+      "chapter_title": "Alignment and Constitution",
+      "tag": "lean:alignment.constraint_filter_soundness",
+      "module": "AsiStackProofs.Alignment",
+      "formal_target": "A plan admitted by the alignment filter satisfies every active constitutional constraint predicate.",
+      "status": "planned",
+      "outline_line": 239,
+      "module_path": "lean/AsiStackProofs/Alignment.lean"
+    },
+    {
+      "chapter_id": "alignment-and-constitution",
+      "chapter_title": "Alignment and Constitution",
+      "tag": "lean:alignment.self_modification_preserves_constitution",
+      "module": "AsiStackProofs.Alignment",
+      "formal_target": "An accepted self-modification cannot remove or weaken protected constitutional constraints.",
+      "status": "planned",
+      "outline_line": 240,
+      "module_path": "lean/AsiStackProofs/Alignment.lean"
+    },
+    {
+      "chapter_id": "governance-and-stable-capability-fields",
+      "chapter_title": "Governance and Stable Capability Fields",
+      "tag": "lean:scf.authority_non_escalation",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "Replacing an implementation inside a stable capability field cannot increase the field's authority ceiling.",
+      "status": "planned",
+      "outline_line": 277,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean"
+    },
+    {
+      "chapter_id": "governance-and-stable-capability-fields",
+      "chapter_title": "Governance and Stable Capability Fields",
+      "tag": "lean:scf.replacement_preserves_field_identity",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "Qualified replacement preserves field identity when interface, semantics, and authority predicates remain satisfied.",
+      "status": "planned",
+      "outline_line": 278,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean"
+    },
+    {
+      "chapter_id": "governance-and-stable-capability-fields",
+      "chapter_title": "Governance and Stable Capability Fields",
+      "tag": "lean:scf.rollback_after_failed_qualification",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "A failed qualification check leaves a rollback path to the previous qualified implementation.",
+      "status": "planned",
+      "outline_line": 279,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean"
+    },
+    {
+      "chapter_id": "planning-and-control",
+      "chapter_title": "Planning and Control",
+      "tag": "lean:planning.decomposition_preserves_authority",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "Every subtask produced by decomposition has an authority ceiling no greater than the parent plan.",
+      "status": "planned",
+      "outline_line": 316,
+      "module_path": "lean/AsiStackProofs/Planning.lean"
+    },
+    {
+      "chapter_id": "planning-and-control",
+      "chapter_title": "Planning and Control",
+      "tag": "lean:planning.replanning_preserves_constraints",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "Runtime replanning preserves required constraints and stop conditions from the active plan.",
+      "status": "planned",
+      "outline_line": 317,
+      "module_path": "lean/AsiStackProofs/Planning.lean"
+    },
+    {
+      "chapter_id": "planning-and-control",
+      "chapter_title": "Planning and Control",
+      "tag": "lean:planning.dependencies_before_execution",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "A typed job cannot become executable until its declared dependencies are satisfied.",
+      "status": "planned",
+      "outline_line": 318,
+      "module_path": "lean/AsiStackProofs/Planning.lean"
+    },
+    {
+      "chapter_id": "virtual-context-memory",
+      "chapter_title": "Virtual Context Memory",
+      "tag": "lean:vcm.admission_not_adequacy",
+      "module": "AsiStackProofs.VirtualContextMemory",
+      "formal_target": "Context admission and context adequacy are separate predicates; admission alone does not imply adequacy.",
+      "status": "planned",
+      "outline_line": 354,
+      "module_path": "lean/AsiStackProofs/VirtualContextMemory.lean"
+    },
+    {
+      "chapter_id": "virtual-context-memory",
+      "chapter_title": "Virtual Context Memory",
+      "tag": "lean:vcm.summary_preserves_authority_labels",
+      "module": "AsiStackProofs.VirtualContextMemory",
+      "formal_target": "A valid summary packet preserves every source authority label required by its inputs.",
+      "status": "planned",
+      "outline_line": 355,
+      "module_path": "lean/AsiStackProofs/VirtualContextMemory.lean"
+    },
+    {
+      "chapter_id": "virtual-context-memory",
+      "chapter_title": "Virtual Context Memory",
+      "tag": "lean:vcm.execution_context_within_authority",
+      "module": "AsiStackProofs.VirtualContextMemory",
+      "formal_target": "Execution receives only context whose authority labels are permitted by the job authority ceiling.",
+      "status": "planned",
+      "outline_line": 356,
+      "module_path": "lean/AsiStackProofs/VirtualContextMemory.lean"
+    },
+    {
+      "chapter_id": "labor-and-execution-os",
+      "chapter_title": "Labor and Execution OS",
+      "tag": "lean:talos.job_lifecycle_order",
+      "module": "AsiStackProofs.ExecutionOS",
+      "formal_target": "Typed job state transitions respect the required lifecycle order from request through completion or rollback.",
+      "status": "planned",
+      "outline_line": 393,
+      "module_path": "lean/AsiStackProofs/ExecutionOS.lean"
+    },
+    {
+      "chapter_id": "labor-and-execution-os",
+      "chapter_title": "Labor and Execution OS",
+      "tag": "lean:talos.execution_requires_permission",
+      "module": "AsiStackProofs.ExecutionOS",
+      "formal_target": "A job can execute a tool only when the tool permission is present in the active job contract.",
+      "status": "planned",
+      "outline_line": 394,
+      "module_path": "lean/AsiStackProofs/ExecutionOS.lean"
+    },
+    {
+      "chapter_id": "labor-and-execution-os",
+      "chapter_title": "Labor and Execution OS",
+      "tag": "lean:talos.audit_log_append_only",
+      "module": "AsiStackProofs.ExecutionOS",
+      "formal_target": "Audit records are append-only across valid execution transitions.",
+      "status": "planned",
+      "outline_line": 395,
+      "module_path": "lean/AsiStackProofs/ExecutionOS.lean"
+    },
+    {
+      "chapter_id": "reasoning-verification-and-epistemology",
+      "chapter_title": "Reasoning, Verification, and Epistemology",
+      "tag": "lean:evidence.no_self_promotion",
+      "module": "AsiStackProofs.SupportStates",
+      "formal_target": "A claim cannot promote itself from a support state to the same support state.",
+      "status": "implemented",
+      "outline_line": 432,
+      "module_path": "lean/AsiStackProofs/SupportStates.lean"
+    },
+    {
+      "chapter_id": "reasoning-verification-and-epistemology",
+      "chapter_title": "Reasoning, Verification, and Epistemology",
+      "tag": "lean:evidence.promotion_requires_witness",
+      "module": "AsiStackProofs.SupportStates",
+      "formal_target": "Promotion to a stronger support state requires an evidence witness of the required kind.",
+      "status": "planned",
+      "outline_line": 433,
+      "module_path": "lean/AsiStackProofs/SupportStates.lean"
+    },
+    {
+      "chapter_id": "reasoning-verification-and-epistemology",
+      "chapter_title": "Reasoning, Verification, and Epistemology",
+      "tag": "lean:evidence.contradiction_blocks_source_derived",
+      "module": "AsiStackProofs.ClaimLedger",
+      "formal_target": "An unresolved contradiction blocks promotion to `source-derived` or stronger support states.",
+      "status": "planned",
+      "outline_line": 434,
+      "module_path": "lean/AsiStackProofs/ClaimLedger.lean"
+    },
+    {
+      "chapter_id": "routing-and-modular-intelligence",
+      "chapter_title": "Routing and Modular Intelligence",
+      "tag": "lean:routing.route_validity_requires_qualification",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "A route is valid only if the selected specialist satisfies the requested capability qualification.",
+      "status": "planned",
+      "outline_line": 471,
+      "module_path": "lean/AsiStackProofs/Routing.lean"
+    },
+    {
+      "chapter_id": "routing-and-modular-intelligence",
+      "chapter_title": "Routing and Modular Intelligence",
+      "tag": "lean:routing.fallback_preserves_authority",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "Fallback routing cannot increase authority beyond the original route request.",
+      "status": "planned",
+      "outline_line": 472,
+      "module_path": "lean/AsiStackProofs/Routing.lean"
+    },
+    {
+      "chapter_id": "routing-and-modular-intelligence",
+      "chapter_title": "Routing and Modular Intelligence",
+      "tag": "lean:routing.quarantine_blocks_selection",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "A quarantined specialist cannot be selected by a valid route.",
+      "status": "planned",
+      "outline_line": 473,
+      "module_path": "lean/AsiStackProofs/Routing.lean"
+    },
+    {
+      "chapter_id": "compression-and-representation",
+      "chapter_title": "Compression and Representation",
+      "tag": "lean:compression.residual_burden_required",
+      "module": "AsiStackProofs.Compression",
+      "formal_target": "A lossy compression with unmet reconstruction obligations must expose a residual burden record.",
+      "status": "planned",
+      "outline_line": 509,
+      "module_path": "lean/AsiStackProofs/Compression.lean"
+    },
+    {
+      "chapter_id": "compression-and-representation",
+      "chapter_title": "Compression and Representation",
+      "tag": "lean:compression.fallback_when_probe_fails",
+      "module": "AsiStackProofs.Compression",
+      "formal_target": "Failed utility probes trigger an explicit fallback route instead of silent acceptance.",
+      "status": "planned",
+      "outline_line": 510,
+      "module_path": "lean/AsiStackProofs/Compression.lean"
+    },
+    {
+      "chapter_id": "compression-and-representation",
+      "chapter_title": "Compression and Representation",
+      "tag": "lean:compression.utility_preorder",
+      "module": "AsiStackProofs.Compression",
+      "formal_target": "Compression utility can be modeled as a preorder over downstream task adequacy and cost.",
+      "status": "planned",
+      "outline_line": 511,
+      "module_path": "lean/AsiStackProofs/Compression.lean"
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "chapter_title": "Mathematical and Search Substrates",
+      "tag": "lean:substrate.interface_refinement",
+      "module": "AsiStackProofs.Substrates",
+      "formal_target": "A substrate-specific implementation refines the required stack interface before it can be routed to.",
+      "status": "planned",
+      "outline_line": 547,
+      "module_path": "lean/AsiStackProofs/Substrates.lean"
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "chapter_title": "Mathematical and Search Substrates",
+      "tag": "lean:substrate.proof_artifact_scope",
+      "module": "AsiStackProofs.Substrates",
+      "formal_target": "A proof artifact promotes only the formal claim it actually states, not adjacent informal claims.",
+      "status": "planned",
+      "outline_line": 548,
+      "module_path": "lean/AsiStackProofs/Substrates.lean"
+    },
+    {
+      "chapter_id": "evidence-benchmarks-and-ratchets",
+      "chapter_title": "Evidence, Benchmarks, and Ratchets",
+      "tag": "lean:ratchet.support_state_monotonic_with_evidence",
+      "module": "AsiStackProofs.EvidenceRatchets",
+      "formal_target": "Support-state promotion is monotonic only when the required evidence witness is present.",
+      "status": "planned",
+      "outline_line": 584,
+      "module_path": "lean/AsiStackProofs/EvidenceRatchets.lean"
+    },
+    {
+      "chapter_id": "evidence-benchmarks-and-ratchets",
+      "chapter_title": "Evidence, Benchmarks, and Ratchets",
+      "tag": "lean:ratchet.regression_preserves_failure_record",
+      "module": "AsiStackProofs.EvidenceRatchets",
+      "formal_target": "A regression event preserves its failure record in the evidence history.",
+      "status": "planned",
+      "outline_line": 585,
+      "module_path": "lean/AsiStackProofs/EvidenceRatchets.lean"
+    },
+    {
+      "chapter_id": "evidence-benchmarks-and-ratchets",
+      "chapter_title": "Evidence, Benchmarks, and Ratchets",
+      "tag": "lean:ratchet.no_result_without_run_record",
+      "module": "AsiStackProofs.EvidenceRatchets",
+      "formal_target": "A test result cannot be recorded without a corresponding run record.",
+      "status": "planned",
+      "outline_line": 586,
+      "module_path": "lean/AsiStackProofs/EvidenceRatchets.lean"
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "chapter_title": "Integrated Reference Architecture",
+      "tag": "lean:integration.end_to_end_authority_ceiling",
+      "module": "AsiStackProofs.Integration",
+      "formal_target": "In an end-to-end trace, no layer handoff exceeds the initial authorized ceiling without an explicit approval event.",
+      "status": "planned",
+      "outline_line": 620,
+      "module_path": "lean/AsiStackProofs/Integration.lean"
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "chapter_title": "Integrated Reference Architecture",
+      "tag": "lean:integration.trace_completeness",
+      "module": "AsiStackProofs.Integration",
+      "formal_target": "A complete stack trace includes intent, constraints, plan, context, route, job, artifact, and evidence records.",
+      "status": "planned",
+      "outline_line": 621,
+      "module_path": "lean/AsiStackProofs/Integration.lean"
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "chapter_title": "Prototype Roadmap",
+      "tag": "lean:roadmap.stage_prerequisites",
+      "module": "AsiStackProofs.PrototypeRoadmap",
+      "formal_target": "A prototype stage cannot start until its declared prerequisite stages are complete or explicitly waived.",
+      "status": "planned",
+      "outline_line": 651,
+      "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "chapter_title": "Prototype Roadmap",
+      "tag": "lean:roadmap.no_replacement_before_scf",
+      "module": "AsiStackProofs.PrototypeRoadmap",
+      "formal_target": "Capability replacement cannot enter the roadmap before the stable capability field schema exists.",
+      "status": "planned",
+      "outline_line": 652,
+      "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "chapter_title": "Living Book Methodology",
+      "tag": "lean:method.source_note_required_for_source_derived",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "A claim cannot be marked `source-derived` unless a source note exists for the cited source.",
+      "status": "planned",
+      "outline_line": 682,
+      "module_path": "lean/AsiStackProofs/LivingBook.lean"
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "chapter_title": "Living Book Methodology",
+      "tag": "lean:method.no_test_result_without_record",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "The book cannot report a test result unless a public-safe result record exists.",
+      "status": "planned",
+      "outline_line": 683,
+      "module_path": "lean/AsiStackProofs/LivingBook.lean"
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "chapter_title": "Living Book Methodology",
+      "tag": "lean:method.changelog_required_for_support_change",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "A support-state change requires a changelog entry in the same release set.",
+      "status": "planned",
+      "outline_line": 684,
+      "module_path": "lean/AsiStackProofs/LivingBook.lean"
+    }
+  ]
+}

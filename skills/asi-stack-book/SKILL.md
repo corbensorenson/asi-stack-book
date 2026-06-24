@@ -26,10 +26,11 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
    - `python3 scripts/add_part.py --title "..."`
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
 6. Run `python3 scripts/sync_scaffold.py` after manifest changes.
-7. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
-8. Update Appendix C when a claim changes or its support state changes.
-9. Run `python3 scripts/validate_book.py`.
-10. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+7. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
+8. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
+9. Update Appendix C when a claim changes or its support state changes.
+10. Run `python3 scripts/validate_book.py`.
+11. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -52,6 +53,8 @@ Read `references/triage.md` when deciding whether to update an existing chapter 
 - Keep planning, memory, reasoning, execution, routing, compression, governance, and evidence as separate layers unless the text is explicitly describing an interface.
 - Prefer systems language: boundary, authority, invariant, interface, artifact, evidence state, route, ledger, regression, residual.
 - Avoid unscoped safety claims and hype.
+- Treat `docs/book_outline.md` as the source of truth for full-book drafting and Lean proof scope.
+- Keep `proofs/proof_manifest.json` generated from outline `lean:*` proof tags.
 - Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, source crosswalk, and summary.
 
 ## Validation
@@ -60,6 +63,7 @@ Use these commands before reporting completion:
 
 ```bash
 python3 scripts/sync_scaffold.py
+python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_book.py
 quarto render --to html
 ```
