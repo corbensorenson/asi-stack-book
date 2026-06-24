@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` |
-| Source loading state | pending source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
+| Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -73,6 +73,26 @@ The mechanism turns the core claim into a working contract. First, treat reports
 - Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.
 - Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
 - Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
+
+The implementation-reference view is two coupled loops: the Theseus report loop that turns pressure into governed structure, and the Circle transfer lane that can supply deterministic contract fixtures without becoming model-quality evidence.
+
+```{mermaid}
+flowchart LR
+  Goal["Goal, benchmark, or operator task"] --> Plan["Plan compiler contract and semantic IR"]
+  Plan --> Route["Octopus router and bounded arms"]
+  Route --> Work["SymLiquid, tools, Hive task kinds"]
+  Work --> Reports["Reports, ledgers, traces, work board"]
+  Reports --> Gate["Architecture, resource, promotion, and safety gates"]
+  Gate --> Residual["Residual escrow and intervention ladder"]
+  Residual --> Structure["Tool, adapter, checkpoint, or smallest source change"]
+  Structure --> Goal
+
+  Circle["Circle finite contract pack"] --> Transfer["Theseus Circle transfer lane"]
+  Transfer --> Fixtures["Private workload design and structural smokes"]
+  Fixtures --> Boundary["Claim-boundary ledger"]
+  Boundary --> Gate
+  Boundary -. blocks .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
+```
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
 
@@ -149,12 +169,12 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
-| `theseus_plan_compiler` | Theseus Plan Compiler | planning_control | Goal-to-contract compiler with semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, and replay traces. | source note pending |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
-| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note pending |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
+| `theseus_plan_compiler` | Theseus Plan Compiler | planning_control | Goal-to-contract compiler with semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, and replay traces. | source note available |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available |
+| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

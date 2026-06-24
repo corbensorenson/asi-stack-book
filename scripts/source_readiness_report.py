@@ -10,6 +10,7 @@ MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
 CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
 REPORT = ROOT / "docs" / "source_readiness_report.md"
+SOURCE_NOTES = ROOT / "sources" / "source_notes"
 
 AUTH_GATE_MARKERS = [
     "Google Drive: Sign-in",
@@ -63,11 +64,18 @@ def main() -> None:
     counts = Counter()
     for source in inventory_records:
         source_id = source.get("id", "")
+        has_note = (SOURCE_NOTES / f"{source_id}.md").exists()
         connector_record = connector_records.get(source_id)
         record = cache_records.get(source_id)
         if record is None:
             url = str(source.get("url", ""))
-            if connector_record:
+            if has_note and "github.com/" in url:
+                display_status = "source_note_available_public_project"
+                note = "source note available from inspected public project source; not part of Google Drive cache manifest"
+            elif has_note:
+                display_status = "source_note_available_uncached"
+                note = "source note available; source inventory record is not present in the cache manifest"
+            elif connector_record:
                 display_status = str(connector_record.get("status", "connector_readable"))
                 note = str(connector_record.get("note", "available through authenticated connector; raw text not committed"))
             elif "github.com/" in url:
@@ -94,6 +102,8 @@ def main() -> None:
             display_status = str(connector_record.get("status", "connector_readable"))
             connector_note = str(connector_record.get("note", "available through authenticated connector; raw text not committed"))
             note = connector_note if not note else f"{connector_note.rstrip('.')}; local cache note: {note}"
+        if has_note:
+            note = "source note available" if not note else f"source note available; {note}"
         counts[display_status] += 1
         rows.append(
             "| `{id}` | {title} | `{status}` | {bytes} | {path} | {error} |".format(

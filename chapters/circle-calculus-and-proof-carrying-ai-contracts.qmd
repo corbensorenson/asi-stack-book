@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`; supporting: `proof_carrying_circular_computation`, `circle_ai_architectures` |
-| Source loading state | pending source notes: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
+| Source loading state | source notes: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -70,6 +70,24 @@ The mechanism turns the core claim into a working contract. First, model an engi
 - Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.
 - Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.
 - Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+
+The receipt boundary is the main artifact. It lets the book say "this finite structural fact is proof-linked" without smuggling in claims about model behavior.
+
+```{mermaid}
+flowchart LR
+  Object["Engineering object"] --> Finite["Finite address, window, phase, or schedule"]
+  Finite --> Theorems["Lean theorem ids and proof status"]
+  Finite --> Fields["Deterministic certificate fields"]
+  Theorems --> Receipt["Proof-carrying receipt"]
+  Fields --> Receipt
+  Receipt --> Consumer["Consumer gate and replay check"]
+  Consumer --> Structural["Structural claim"]
+  Consumer --> Nonclaims["Explicit non-claims"]
+  Structural --> Workload["Optional downstream workload"]
+  Workload --> Metrics["Baselines, controls, metrics, reports"]
+  Metrics --> Promotion["Possible support-state promotion"]
+  Nonclaims -. block .-> Overreach["Quality, speed, context, safety, or ASI claim"]
+```
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
 
@@ -142,11 +160,11 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note pending |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note pending |
-| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note pending |
-| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note pending |
+| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note available |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note available |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
+| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

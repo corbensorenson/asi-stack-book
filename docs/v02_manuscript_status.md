@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 96,051 chapter words, averaging 1,921 words per chapter.
+Current scale: 50 chapter files, 97,623 chapter words, averaging 1,952 words per chapter.
 
 ## Completed in v0.2
 
@@ -14,13 +14,14 @@ Current scale: 50 chapter files, 96,051 chapter words, averaging 1,921 words per
 - Every chapter exposes formalization hooks from the existing proof targets.
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.
 - The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
-- Source notes now exist for RMI, Benchmaxxing, CGS, Octopus Router, and Cognitive Loop Closure in addition to the original backbone notes.
+- Source notes now exist for 35 source records, including the original backbone notes, RMI, Benchmaxxing, CGS, Octopus Router, Cognitive Loop Closure, Project Theseus public-project records, Circle Calculus public-project records, and the Field of God AI Constitution.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
+- The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 
 ## Still Missing for v1.0
 
-- Most source-to-claim mappings still need explicit source notes or equivalent ingestion artifacts.
-- Project Theseus, Circle Calculus, and several technical substrate records need source notes before they can support source-derived claims.
+- Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
+- Several cached Google Docs records still need source notes before they can support source-derived claims.
 - Most Lean proof targets remain planned or triaged as schema/process/research targets.
 - Codex tests are planned but not implemented or run.
 - External literature remains queued rather than citation-normalized.

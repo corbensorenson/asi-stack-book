@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`; supporting: `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` |
-| Source loading state | source notes: `alignment_field`, `coherence_exchange`, `spinoza`; raw cache: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`; pending source notes: `field_of_god`, `ethica_mechanica`, `eternal_code`, `field_of_god_ai_constitution`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: `alignment_field`, `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`; pending source notes: `field_of_god`, `ethica_mechanica`, `eternal_code`; connector/recovery: `coherence_exchange` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -146,7 +146,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | alignment_constitution | Computational metaphysics and alignment synthesis. | local raw cache available |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

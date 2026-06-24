@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `treellm`; supporting: `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
-| Source loading state | source notes: `spinoza`, `cgs`; raw cache: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`; pending source notes: `treellm`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
+| Source loading state | source notes: `spinoza`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope`; raw cache: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`; pending source notes: `treellm`, `verification_bandwidth`, `cognitive_compilation` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -145,8 +145,8 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | local raw cache available |
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | local raw cache available |
 | `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
-| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note pending |
-| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note pending |
+| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

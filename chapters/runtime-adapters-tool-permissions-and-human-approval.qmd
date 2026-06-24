@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
-| Source loading state | source notes: `talos`, `viea`, `moecot`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; pending source notes: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
+| Source loading state | source notes: `talos`, `viea`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; pending source notes: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -148,8 +148,8 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | local raw cache available |
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note pending |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

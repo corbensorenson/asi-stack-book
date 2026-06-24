@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
-| Source loading state | pending source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
+| Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -143,11 +143,11 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note pending |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note pending |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
-| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note pending |
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note available |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note available |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
+| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

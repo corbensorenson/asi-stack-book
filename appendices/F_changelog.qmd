@@ -8,6 +8,9 @@
 - Removed exact repeated generated connective paragraphs across all 50 chapters and replaced them with chapter-specific prose derived from each chapter contract.
 - Hand-revised the opening thesis chapter and the integrated reference architecture chapter, including stack-map and end-to-end trace diagrams.
 - Added source notes for RMI, Benchmaxxing, CGS, Octopus Router, and Cognitive Loop Closure, then refreshed source readiness in chapter crosswalks and generated source appendices.
+- Added 14 public-safe source notes for the Field of God AI Constitution, Project Theseus implementation references, Circle Calculus core, Circle AI contracts, coil attention/memory, CoilRA/MultiCoil RoPE, the RoPE position certifier, and proof-carrying circular computation.
+- Added `scripts/update_chapter_source_status.py` so existing hand-edited chapters can refresh source loading and crosswalk readiness without rewriting manuscript prose.
+- Added source-backed Mermaid diagrams for the Project Theseus report-first implementation loop and the Circle proof-carrying receipt boundary.
 - Implemented the first stack-boundary Lean module for external-action handoff authorization and authority-ceiling rejection.
 - Hand-revised the living-book methodology chapter with an operating-loop diagram and clearer artifact discipline.
 - Documented visual-asset and diagram rules under `assets/diagrams/`.

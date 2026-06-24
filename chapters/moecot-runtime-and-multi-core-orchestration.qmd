@@ -41,7 +41,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
-| Source loading state | source notes: `octopus_router`, `rmi`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`; raw cache: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`; pending source notes: `beastbrain`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; connector/recovery: `moecot` |
+| Source loading state | source notes: `octopus_router`, `rmi`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; raw cache: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`; pending source notes: `beastbrain`; connector/recovery: `moecot` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -154,9 +154,9 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 | `moecot_md` | moecot_agent_whitepaper.md | implementation_reference | Markdown export/source version. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note pending |
-| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
+| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

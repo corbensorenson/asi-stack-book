@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
-| Source loading state | source notes: `spinoza`, `scf`, `talos`, `viea`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`; pending source notes: `genesiscode`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
+| Source loading state | source notes: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`; pending source notes: `genesiscode` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -147,10 +147,10 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note pending |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note pending |
-| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note pending |
-| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note pending |
+| `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note available |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. | source note available |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

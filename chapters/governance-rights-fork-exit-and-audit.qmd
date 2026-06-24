@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `coherence_exchange`; supporting: `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
-| Source loading state | source notes: `coherence_exchange`, `alignment_field`, `spinoza`; raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; pending source notes: `ethica_mechanica`, `ladon_manhattan`, `uat`, `field_of_god_ai_constitution`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: `coherence_exchange`, `alignment_field`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; pending source notes: `ethica_mechanica`, `ladon_manhattan`, `uat`; connector/recovery: `coherence_exchange` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -146,7 +146,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | local raw cache available |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
 | `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | local raw cache available |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
