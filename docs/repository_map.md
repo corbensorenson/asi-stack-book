@@ -22,7 +22,7 @@ This repository is organized around the living book and its validation loop.
 | `proofs/` | Proof plans and generated proof target manifest. | tracked |
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
 | `schemas/` | JSON Schemas for protocol records. | tracked |
-| `experiments/` | Synthetic experiment and benchmark harness placeholders. | tracked |
+| `experiments/` | Synthetic experiment and benchmark harness workspace. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |
 | `.github/` | GitHub Pages workflow, issue templates, and PR template. | tracked |

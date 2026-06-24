@@ -24,6 +24,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The Lean toolchain is pinned and CI builds the Lean workspace.
 - Generated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, and bibliography/source corpus.
 - JSON schemas, protocol example fixtures, and the Lean workspace have local validation commands.
+- A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
 
 ## Known Blockers Before v1.0 Evidence Release

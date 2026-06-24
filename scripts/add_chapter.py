@@ -72,15 +72,15 @@ def main() -> None:
         "status": "conceptual",
         "evidence_level": "argument",
         "source_ids": list(dict.fromkeys(args.source)),
-        "problem": "TBD.",
-        "insufficient": "TBD.",
-        "core_claim": "TBD.",
+        "problem": "No manifest problem statement declared yet.",
+        "insufficient": "No manifest insufficiency statement declared yet.",
+        "core_claim": "No manifest core claim declared yet.",
         "mechanism": [],
         "interfaces": [],
         "invariants": [],
         "failure_modes": [],
-        "minimal_implementation": "TBD.",
-        "codex_tests": ["TBD"],
+        "minimal_implementation": "No manifest minimal implementation statement declared yet.",
+        "codex_tests": ["Layer claim falsification test"],
     }
     chapters.insert(insert_at, chapter)
 

@@ -134,7 +134,7 @@ The first failure is especially dangerous for a living book: a chapter can be dr
 
 A command-contract schema and one end-to-end intent-to-artifact trace.
 
-The smallest useful implementation is a `command_contract` schema plus an `intent_execution_trace` fixture that links an intent contract, plan graph placeholder, typed job, authority transition, artifact, verification record, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
+The smallest useful implementation is a `command_contract` schema plus an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, artifact, verification record, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
 
 Those two records are implemented only as public protocol artifacts. They can validate that the trace names the required links; they cannot show that the links were executed, authorized, accepted, or useful.
 

@@ -145,7 +145,7 @@ def yaml_list(items: list[str]) -> str:
 
 
 def bullet_list(items: list[str]) -> str:
-    return "\n".join(f"- {item}" for item in items) if items else "- TBD"
+    return "\n".join(f"- {item}" for item in items) if items else "- No manifest items declared yet."
 
 
 def write_quarto(structure: dict) -> None:
@@ -208,8 +208,8 @@ def write_chapter_stub(chapter: dict, records: list[dict], rewrite: bool = False
     source_ids = [source_id for source_id in source_ids_for(chapter) if source_id in by_id]
     source_label = ", ".join(f"`{source_id}`" for source_id in source_ids) or "None assigned yet"
     gaps = [
-        "Chapter is a generated starting point; v1.0 still needs source-note substantiation for all assigned sources.",
-        "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E.",
+        "Chapter is a generated starting point; source-note coverage and claim-level mapping must be checked before support-state promotion.",
+        "No chapter-level Codex tests have been implemented or run unless separately recorded in Appendix E.",
         "No support-state promotion is implied by this generated chapter.",
     ]
     crosswalk_rows = []
@@ -219,9 +219,9 @@ def write_chapter_stub(chapter: dict, records: list[dict], rewrite: bool = False
             f"| `{source_id}` | {qmd_escape(source['title'])} | Planned use from inventory/manifest: {qmd_escape(source.get('notes', ''))} |"
         )
     if not crosswalk_rows:
-        crosswalk_rows.append("| TBD | TBD | No source assigned yet. |")
+        crosswalk_rows.append("| None assigned yet | None assigned yet | Add source records before using this chapter for source-derived claims. |")
 
-    tests = chapter.get("codex_tests") or ["TBD"]
+    tests = chapter.get("codex_tests") or ["No chapter-level test declared yet"]
     test_rows = "\n".join(f"| {qmd_escape(test)} | Support or falsify this chapter's layer claim. | planned; not run |" for test in tests)
     claim_id = f"{chapter['id']}.core"
     text = f"""---
@@ -259,15 +259,15 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 ## Problem
 
-{chapter.get('problem', 'TBD.')}
+{chapter.get('problem', 'No manifest problem statement declared yet.')}
 
 ## Why existing approaches are insufficient
 
-{chapter.get('insufficient', 'TBD.')}
+{chapter.get('insufficient', 'No manifest insufficiency statement declared yet.')}
 
 ## Core Claim
 
-[{claim_id}, label: {chapter.get('claim_label', 'Design rationale')}, support: {chapter.get('evidence_level', 'argument')}] {chapter.get('core_claim', 'TBD.')}
+[{claim_id}, label: {chapter.get('claim_label', 'Design rationale')}, support: {chapter.get('evidence_level', 'argument')}] {chapter.get('core_claim', 'No manifest core claim declared yet.')}
 
 ## Mechanism
 
@@ -287,7 +287,7 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 ## Minimal implementation
 
-{chapter.get('minimal_implementation', 'TBD.')}
+{chapter.get('minimal_implementation', 'No manifest minimal implementation statement declared yet.')}
 
 ## Codex test plan
 
@@ -456,7 +456,7 @@ def write_claim_matrix(structure: dict) -> None:
     rows = []
     for chapter in flatten_chapters(structure):
         chapter_source_ids = source_ids_for(chapter)
-        source_label = ", ".join(f"`{source_id}`" for source_id in chapter_source_ids) or "TBD"
+        source_label = ", ".join(f"`{source_id}`" for source_id in chapter_source_ids) or "None assigned yet"
         noted_sources = [source_id for source_id in chapter_source_ids if source_id in source_note_ids]
         missing_notes = [source_id for source_id in chapter_source_ids if source_id not in source_note_ids]
         if not chapter_source_ids:
@@ -478,7 +478,7 @@ def write_claim_matrix(structure: dict) -> None:
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'TBD'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(open_gap)} |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(open_gap)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
@@ -521,7 +521,10 @@ def ensure_protocol_schemas() -> None:
     path = ROOT / "appendices" / "D_protocol_schemas.qmd"
     if path.exists():
         return
-    path.write_text("# Protocol Schemas\n\nDraft protocol schema placeholders go here.\n", encoding="utf-8")
+    path.write_text(
+        "# Protocol Schemas\n\nProtocol schema records are added here when concrete schema files exist under `schemas/`.\n",
+        encoding="utf-8",
+    )
 
 
 def write_test_specs(structure: dict) -> None:
@@ -531,7 +534,7 @@ def write_test_specs(structure: dict) -> None:
         tests = chapter.get("codex_tests") or []
         if not tests:
             rows.append(
-                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | TBD | planned | not run |"
+                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | No chapter-level test declared yet | planned | not run |"
             )
             continue
         for test in tests:
