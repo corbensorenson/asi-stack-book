@@ -15,6 +15,9 @@ This file tracks whether the public repository is ready for the next major phase
 - The Project Theseus and Circle Calculus mining report exists at `docs/local_project_mining_theseus_circle.md`.
 - The fast-generation context ingestion report exists at `docs/fast_generation_context_ingestion_report.md`.
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
+- The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
+- Audience-specific release profiles exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - Source metadata is tracked without publishing raw source exports.
@@ -26,7 +29,7 @@ This file tracks whether the public repository is ready for the next major phase
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
-- Generated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, and bibliography/source corpus.
+- Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, bibliography/source corpus, lineage, and release editions.
 - JSON schemas, protocol example fixtures, public release records, and the Lean workspace have local validation commands.
 - A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
@@ -40,6 +43,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized or source-noted.
 - The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.
+- Reader, research, PDF, EPUB, DOCX, and audio editions are planned and scaffolded, but no human-reader major-version artifact or audiobook should be reported until the corresponding generated manuscript, render, review, and release record exist.
 
 ## Manuscript Maintenance Checklist
 
@@ -48,6 +52,8 @@ Before claiming the public book is current:
 - Run `python3 scripts/sync_scaffold.py`.
 - Run `python3 scripts/sync_proof_manifest.py`.
 - Run `python3 scripts/validate_publication.py`.
+- Run `python3 scripts/validate_release_profiles.py`.
+- Run `python3 scripts/build_reader_edition.py --check`.
 - Run `python3 scripts/validate_book.py`.
 - Run `python3 scripts/validate_visual_coverage.py`.
 - Run `python3 scripts/validate_schemas.py`.
@@ -66,4 +72,5 @@ The public repository is presentable when:
 - GitHub Pages workflow passes.
 - Rendered site links are live.
 - Validation scripts pass locally.
+- Edition profiles validate and the reader-edition derivation check passes.
 - The working tree is clean after commit and push.

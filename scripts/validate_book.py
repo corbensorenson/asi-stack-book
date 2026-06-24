@@ -18,13 +18,17 @@ REQUIRED = [
     "scripts/sync_scaffold.py",
     "scripts/sync_proof_manifest.py",
     "scripts/validate_publication.py",
+    "scripts/validate_release_profiles.py",
+    "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
     "docs/book_outline.md",
+    "editions/release_profiles.json",
     "proofs/proof_manifest.json",
     "appendices/A_source_matrix.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "appendices/E_codex_test_specs.qmd",
     "appendices/F_changelog.qmd",
+    "appendices/I_release_editions.qmd",
 ]
 
 BAD_PHRASES = [
@@ -294,7 +298,18 @@ def main() -> None:
     validate_stale_generated_language()
     validate_claim_states()
     validate_proof_manifest()
+    run_validator("validate_release_profiles.py")
     validate_publication_surface()
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "build_reader_edition.py"), "--check"],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        print(result.stdout.strip())
+        sys.exit(result.returncode)
     run_validator("validate_chapter_dod.py")
     run_validator("validate_visual_coverage.py")
     run_validator("validate_repeated_prose.py")

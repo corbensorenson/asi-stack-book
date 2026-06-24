@@ -13,10 +13,12 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0 evidence release.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 50 outline chapters exist as v0.2 manuscript drafts across four manifest-driven parts.
+- All 52 outline chapters exist as v0.2 manuscript drafts across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
+- `editions/release_profiles.json` defines live, research, reader, and audio release profiles for the three-audience publication model.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree under ignored `build/`.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -35,12 +37,15 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 | [docs/full_book_writing_goal.md](docs/full_book_writing_goal.md) | Suggested wording for the full-book writing goal. |
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Current v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
+| [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
+| [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
 | [appendices/G_bibliography.qmd](appendices/G_bibliography.qmd) | Generated bibliography and source-corpus appendix. |
 | [appendices/H_author_intent_and_lineage.qmd](appendices/H_author_intent_and_lineage.qmd) | Public-safe author-intent and architecture-lineage appendix. |
+| [appendices/I_release_editions.qmd](appendices/I_release_editions.qmd) | Live-book explanation of reader, research, and audio edition paths. |
 | [proofs/proof_manifest.json](proofs/proof_manifest.json) | Generated Lean proof target manifest. |
 | [docs/repository_map.md](docs/repository_map.md) | Repository layout and ownership map. |
 | [docs/publication_readiness.md](docs/publication_readiness.md) | Public-readiness checklist and known blockers. |
@@ -54,6 +59,7 @@ python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/source_readiness_report.py
 python3 scripts/validate_publication.py
+python3 scripts/validate_release_profiles.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
@@ -69,6 +75,25 @@ lake build
 ```
 
 The rendered HTML is written to `_site/`, which is ignored by git.
+
+## Release Editions
+
+The live book is optimized for AIs and human researchers. Major versions can also produce cleaned human-reader editions and audio editions from the same source.
+
+Tracked release profile source:
+
+```bash
+python3 scripts/validate_release_profiles.py
+```
+
+Generate or check a local reader-edition Quarto source tree:
+
+```bash
+python3 scripts/build_reader_edition.py --check
+python3 scripts/build_reader_edition.py
+```
+
+Generated edition builds are written under `build/` and ignored by git. Do not claim EPUB, PDF, DOCX, or audio artifacts unless those specific render or generation commands have actually succeeded and a release record says so.
 
 ## Dynamic Book Structure
 

@@ -78,3 +78,35 @@ Do not mark claims as source-derived or test-backed until the source has actuall
 4. Update `docs/book_outline.md`, `book_structure.json`, appendices, or docs only when the mined context changes the future writing plan.
 5. Do not quote private conversation wording verbatim or mark claims as source-derived from conversation context.
 6. Record a public-safe ingestion report under `docs/` and update the changelog.
+
+## Prepare a Major-Version Reader Edition
+
+The live book remains the canonical source. Reader, research, and audio editions are derived from a tagged live-book state.
+
+1. Confirm the live-book gate passes:
+
+```bash
+python3 scripts/sync_scaffold.py
+python3 scripts/sync_proof_manifest.py --check
+python3 scripts/validate_release_profiles.py
+python3 scripts/validate_book.py
+quarto render --to html
+```
+
+2. Check the reader-edition derivation:
+
+```bash
+python3 scripts/build_reader_edition.py --check
+```
+
+3. Generate the local reader manuscript source:
+
+```bash
+python3 scripts/build_reader_edition.py
+```
+
+4. Review the generated manuscript for continuity before rendering EPUB, DOCX, PDF, or HTML from `build/reader_edition/`.
+5. Record only the formats that actually render successfully.
+6. For audio, create and review a narration script from the reader edition before producing MP3, M4B, or audio-embedded EPUB artifacts.
+
+Do not report an ebook, PDF, DOCX, or audiobook as complete just because the profile lists it as a target.

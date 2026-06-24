@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1",
+  "source_of_truth": {
+    "structure": "book_structure.json",
+    "outline": "docs/book_outline.md",
+    "live_quarto_config": "_quarto.yml"
+  },
+  "audiences": [
+    {
+      "id": "ai_agents",
+      "label": "AIs and writing agents",
+      "needs": [
+        "stable chapter ids and manifest ordering",
+        "source queues and source crosswalks",
+        "claim/evidence state separation",
+        "proof, schema, and test hooks",
+        "guardrail notes that prevent accidental overclaiming"
+      ]
+    },
+    {
+      "id": "human_researchers",
+      "label": "Human researchers",
+      "needs": [
+        "complete technical argument",
+        "source and claim traceability",
+        "appendices for audit, reproduction, and contribution",
+        "known residuals and blocked evidence transitions"
+      ]
+    },
+    {
+      "id": "interested_humans",
+      "label": "Interested human readers",
+      "needs": [
+        "coherent narrative manuscript",
+        "clean typography for e-readers and bedtime reading",
+        "images and diagrams that explain the architecture",
+        "bibliography and further reading without live-workflow clutter",
+        "no repeated source matrix, guardrail, or test-plan scaffolding in every chapter"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "id": "live_book",
+      "label": "Live Book",
+      "primary_audiences": ["ai_agents", "human_researchers"],
+      "purpose": "Canonical public Quarto site for the living architecture, source mapping, evidence discipline, proof hooks, schemas, validation records, and research workflow.",
+      "source_policy": "All tracked book source remains in the main repo. Raw source exports stay local/private unless explicitly approved for publication.",
+      "publication_formats": ["html"],
+      "include_appendices": [
+        "appendices/A_source_matrix.qmd",
+        "appendices/B_glossary.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/D_protocol_schemas.qmd",
+        "appendices/E_codex_test_specs.qmd",
+        "appendices/F_changelog.qmd",
+        "appendices/G_bibliography.qmd",
+        "appendices/H_author_intent_and_lineage.qmd",
+        "appendices/I_release_editions.qmd"
+      ],
+      "strip_headings": [],
+      "release_gate": [
+        "python3 scripts/sync_scaffold.py",
+        "python3 scripts/sync_proof_manifest.py --check",
+        "python3 scripts/validate_release_profiles.py",
+        "python3 scripts/validate_publication.py",
+        "python3 scripts/validate_book.py",
+        "python3 scripts/validate_visual_coverage.py",
+        "python3 scripts/validate_schemas.py",
+        "python3 scripts/validate_protocol_examples.py",
+        "python3 scripts/validate_repeated_prose.py",
+        "cd lean && lake build",
+        "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html"
+      ],
+      "non_claims": [
+        "The live book is not automatically final-draft prose.",
+        "The live book does not claim a proof, benchmark, source-derived support state, or audiobook unless the artifact exists and the validation result is recorded."
+      ]
+    },
+    {
+      "id": "research_release",
+      "label": "Research Release",
+      "primary_audiences": ["human_researchers", "ai_agents"],
+      "purpose": "Frozen major-version snapshot for review, audit, citation, and replication work while preserving the live evidence and source machinery.",
+      "source_policy": "Derived from a tagged commit. Keeps matrices, evidence appendices, schema/proof appendices, release records, and known residuals.",
+      "publication_formats": ["html", "pdf"],
+      "include_appendices": [
+        "appendices/A_source_matrix.qmd",
+        "appendices/B_glossary.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/D_protocol_schemas.qmd",
+        "appendices/E_codex_test_specs.qmd",
+        "appendices/F_changelog.qmd",
+        "appendices/G_bibliography.qmd",
+        "appendices/H_author_intent_and_lineage.qmd",
+        "appendices/I_release_editions.qmd"
+      ],
+      "strip_headings": [],
+      "release_gate": [
+        "major version tag exists",
+        "live_book gate passes at the tagged commit",
+        "release record lists residuals and non-claims",
+        "PDF render is attempted only when local PDF dependencies are available"
+      ],
+      "non_claims": [
+        "A research release is a frozen review artifact, not a promise that all claims are source-derived or empirically proved.",
+        "PDF output must not be reported unless Quarto actually renders it."
+      ]
+    },
+    {
+      "id": "reader_release",
+      "label": "Reader Release",
+      "primary_audiences": ["interested_humans"],
+      "purpose": "Major-version human manuscript for e-readers and relaxed reading, derived from the living book while removing AI/research workflow scaffolding.",
+      "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, and bibliography path.",
+      "publication_formats": ["html", "epub", "pdf", "docx"],
+      "include_appendices": [
+        "appendices/B_glossary.qmd",
+        "appendices/G_bibliography.qmd"
+      ],
+      "strip_headings": [
+        { "level": 2, "title": "Chapter status" },
+        { "level": 2, "title": "Drafting guardrail" },
+        { "level": 2, "title": "Codex test plan" },
+        { "level": 2, "title": "External literature queue" },
+        { "level": 2, "title": "Source crosswalk" },
+        { "level": 2, "title": "Claim labels" },
+        { "level": 2, "title": "Why Codex tests matter" },
+        { "level": 2, "title": "Formalization hooks" },
+        { "level": 3, "title": "Claim-source mapping status" },
+        { "level": 3, "title": "Formalization hooks" }
+      ],
+      "release_gate": [
+        "python3 scripts/build_reader_edition.py --check",
+        "reader manuscript is manually reviewed for narrative continuity",
+        "EPUB render passes",
+        "DOCX render passes",
+        "PDF render passes only when PDF dependencies are available",
+        "reader release record states which formats were actually rendered"
+      ],
+      "non_claims": [
+        "The reader edition is not the source of truth for evidence state, proof scope, or source queues.",
+        "The reader edition should not contain raw source exports, private notes, or unreconciled guardrail scaffolding.",
+        "Audiobook output is a separate audio release artifact, not implied by EPUB or DOCX generation."
+      ]
+    },
+    {
+      "id": "audio_release",
+      "label": "Audio Release",
+      "primary_audiences": ["interested_humans"],
+      "purpose": "Narration-ready version of a major reader release, optimized for listening rather than table-heavy technical audit.",
+      "source_policy": "Derived from the reader release after human manuscript review. Tables, schemas, code blocks, proof hooks, and dense crosswalks are converted to concise narration or moved to companion notes.",
+      "publication_formats": ["mp3", "m4b", "audio-embedded-epub"],
+      "include_appendices": [],
+      "strip_headings": [
+        { "level": 2, "title": "Chapter status" },
+        { "level": 2, "title": "Drafting guardrail" },
+        { "level": 2, "title": "Codex test plan" },
+        { "level": 2, "title": "External literature queue" },
+        { "level": 2, "title": "Source crosswalk" },
+        { "level": 2, "title": "Minimal implementation" },
+        { "level": 2, "title": "Formalization hooks" },
+        { "level": 3, "title": "Claim-source mapping status" },
+        { "level": 3, "title": "Formalization hooks" }
+      ],
+      "narration_rules": [
+        "Replace tables with short spoken summaries unless the table is central to the argument.",
+        "Read diagrams as verbal descriptions only when they add understanding.",
+        "Move citations and source caveats to chapter-end notes rather than interrupting the argument.",
+        "Maintain a pronunciation glossary for ASI Stack terms and source IDs.",
+        "Do not synthesize or publish audio unless the exact script has been reviewed for human consumption."
+      ],
+      "release_gate": [
+        "reader_release gate passes for the same major version",
+        "narration script exists and is reviewed",
+        "audio files are generated and spot-checked",
+        "chapter markers and metadata are verified",
+        "embedded EPUB audio is reported only if the EPUB artifact actually includes the audio"
+      ],
+      "non_claims": [
+        "The audio release is not an evidence ledger.",
+        "Audio narration must not silently omit uncertainty that changes the meaning of a claim."
+      ]
+    }
+  ]
+}

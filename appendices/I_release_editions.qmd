@@ -1,0 +1,72 @@
+# Release Editions and Audience Profiles
+
+The living book has three audiences:
+
+- **AIs and writing agents** need stable ids, source queues, claim/evidence states, proof hooks, schemas, validation results, and guardrail notes.
+- **Human researchers** need the full technical argument plus enough evidence machinery to audit, reproduce, challenge, and extend it.
+- **Interested human readers** need a coherent manuscript that reads well on an e-reader, in PDF/DOCX, or as audio, without the live workflow scaffolding repeated in every chapter.
+
+The public GitHub Pages book remains the canonical live artifact. Major versions can produce additional editions, but those editions are derived from the live source rather than maintained as independent books.
+
+## Edition Profiles
+
+The tracked profile source is `editions/release_profiles.json`.
+
+| Profile | Primary audience | Purpose | Default formats |
+|---|---|---|---|
+| `live_book` | AIs and human researchers | Current Quarto/GitHub Pages book with matrices, source crosswalks, proof hooks, schemas, release records, and guardrails. | HTML |
+| `research_release` | Human researchers and AIs | Frozen major-version snapshot that keeps the evidence machinery intact for audit and citation. | HTML, PDF when rendered |
+| `reader_release` | Interested human readers | Clean human manuscript derived from the live source while removing per-chapter workflow scaffolding. | HTML, EPUB, PDF, DOCX when rendered |
+| `audio_release` | Interested human listeners | Narration-ready script and audio package derived from the reviewed reader release. | MP3, M4B, audio-embedded EPUB when produced |
+
+None of these profiles claims an artifact exists by naming it. A format exists only after the corresponding render, audio generation, and release-record checks have run.
+
+## Reader Release Boundary
+
+The reader release strips live-only sections by heading name:
+
+- chapter status tables
+- drafting guardrails
+- Codex test plans
+- formalization hooks
+- claim-source mapping status blocks
+- external-literature queues
+- source crosswalks
+- preface sections that explain Codex-test machinery
+
+It keeps the main argument, diagrams, problem statements, mechanisms, interfaces, invariants, failure modes, minimal implementation discussion, summaries, glossary, and bibliography path. The result should read as a book while still preserving uncertainty in the prose itself.
+
+The generator is:
+
+```bash
+python3 scripts/build_reader_edition.py --check
+python3 scripts/build_reader_edition.py
+```
+
+It writes derived Quarto source under `build/reader_edition/`, which is ignored by git. The generated manuscript is a candidate for human review, not the canonical source of truth.
+
+## Audio Release Boundary
+
+Audio should be generated only from a reviewed reader-release script. Dense tables, schema blocks, code, and proof hooks should become concise spoken summaries or companion notes. The audio release needs:
+
+- chapter markers and metadata
+- a pronunciation glossary for ASI Stack terms and source IDs
+- spot checks against the reviewed script
+- explicit records for which audio formats were actually produced
+- no silent removal of uncertainty that changes a claim's meaning
+
+Embedding audio into an EPUB is a future release target, not a current claim.
+
+## Major Version Gate
+
+A major version should have a release record that says exactly what was validated and produced. For a reader release, the minimum gate is:
+
+- live-book validation passed at the source commit
+- reader-edition generation check passed
+- human manuscript review recorded remaining residuals
+- EPUB render passed if EPUB is listed as produced
+- DOCX render passed if DOCX is listed as produced
+- PDF render passed only when local PDF dependencies are available and the render actually succeeded
+- audio release is separate unless narration files and metadata are generated and checked
+
+This keeps the live book useful for AI and research work while giving human readers clean editions that do not ask them to wade through every internal evidence scaffold.
