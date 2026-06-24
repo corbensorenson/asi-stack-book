@@ -36,10 +36,13 @@ Road To AGI is a strategic remaining-work and status source for the MoECOT track
 - Prototype Roadmap
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Integrated Reference Architecture
+- Living Book Methodology
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Add roadmap blockers and remaining-work constraints to the prototype roadmap chapter.
+- Use Road To AGI to keep the living book and research agenda honest about source-reported status, remaining work, promotion blockers, and unreproduced benchmarks.
 - Keep benchmark support states conservative until logs/artifacts are present.
 
 ## Open Questions

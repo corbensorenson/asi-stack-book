@@ -33,16 +33,36 @@ MoECOT is an implementation-reference architecture for governed, skill-native, l
 
 ## Book Chapters Supported
 
+- ASI Is a Stack, Not a Model
+- The Efficient ASI Hypothesis
+- System Boundaries and Authority
+- Failure Modes of Ungoverned Intelligence
+- Stable Capability Fields
+- Capability Replacement and Rollback
+- Recursive Self-Improvement Boundaries
+- Intent-to-Execution Contracts
+- Planning as a Control Layer
+- PlanForge DAGs and Intelligence Arbitrage
+- Virtual Context ABI
+- Labor OS and Typed Jobs
+- Artifact Graphs, Audit Logs, and Replay
+- Runtime Adapters, Tool Permissions, and Human Approval
+- Procedural Memory and Cognitive Loop Closure
 - MoECOT Runtime and Multi-Core Orchestration
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
+- Benchmark Ratchets and Anti-Goodhart Evidence
 - Policy Optimization and Learning from Feedback
 - Integrated Reference Architecture
 - Prototype Roadmap
+- Living Book Methodology
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use MoECOT as the concrete runtime/reference implementation lane.
+- Use MoECOT as implementation-reference context for compact orchestration, specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, and promotion blockers.
+- Use MoECOT to connect planner handoff, labor execution, artifact logs, runtime adapters, procedural reuse, and benchmark gates as runtime-reference context only until concrete artifacts are inspected.
 - Use MoECOT to frame policy optimization as a runtime-adjacent update path for specialist routing and orchestration that still requires readiness, regression, replay, and ledger evidence.
 - Keep runtime and benchmark claims visibly bounded until artifacts are available.
 - Tie MoECOT promotion to readiness, regression, replay, and ledger evidence.

@@ -33,15 +33,18 @@ The editable VCM source sharpens VCM as an evidence-carrying, planner-guided con
 
 ## Book Chapters Supported
 
+- Failure Modes of Ungoverned Intelligence
 - Virtual Context ABI
 - Semantic Pages, Context Cells, and Certificates
 - Context Transactions, Snapshots, Mounts, and Taint
 - Verification Bandwidth and Context Adequacy
-- External Literature Queue
+- Integrated Reference Architecture
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use this source to refine VCM terminology around ABI, mounts, transactions, and planner-guided paging.
+- Use this source as a richer VCM variant for source-loading and external-literature triage, while keeping model-facing VCM results unclaimed until tests or artifacts exist.
 - Add external-literature candidates only after bibliographic metadata is recorded.
 
 ## Open Questions

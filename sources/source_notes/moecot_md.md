@@ -34,10 +34,12 @@ The Markdown MoECOT file is a variant/source export of the MoECOT whitepaper. It
 - MoECOT Runtime and Multi-Core Orchestration
 - Integrated Reference Architecture
 - Prototype Roadmap
+- Living Book Methodology
 
 ## Claims To Add Or Update
 
 - Use as a variant source when drafting MoECOT chapters.
+- Use as a terminology-normalization and release-wording check for living-book updates, not as independent evidence beyond the primary MoECOT source.
 - Prefer primary artifact/log evidence for any implemented or measured claims.
 
 ## Open Questions

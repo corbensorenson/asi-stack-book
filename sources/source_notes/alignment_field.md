@@ -38,11 +38,17 @@ The Alignment Field source family supplies the book's philosophical and normativ
 - Agency, Dignity, and Corrigibility
 - Moral Uncertainty and Value Conflict
 - Governance Rights: Fork, Exit, and Audit
+- Security Kernel and Digital SCIFs
 - Recursive Self-Improvement Boundaries
+- Simulation Fidelity and Physical Constraints
+- Integrated Reference Architecture
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Preserve the alignment-field ideas as design hypotheses and normative constraints.
+- Use alignment-field material to keep integrated architecture and research-agenda discussions explicit about normative assumptions, speculative status, rights, and value-conflict boundaries.
+- Use this source in security and simulation chapters only for normative boundary conditions around agency, dignity, confinement, and speculative metaphysical assumptions; it is not technical security or physics evidence.
 - Mark consciousness and moral-status claims as `Speculative` or `Hypothesized` unless externally supported.
 - Convert rights/fork/exit/audit ideas into operational governance interfaces.
 

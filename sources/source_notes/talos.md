@@ -34,17 +34,34 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 
 ## Book Chapters Supported
 
+- ASI Is a Stack, Not a Model
+- System Boundaries and Authority
+- Failure Modes of Ungoverned Intelligence
+- Stable Capability Fields
+- Capability Replacement and Rollback
+- Recursive Self-Improvement Boundaries
+- Human Intent as a Formal Input
+- Intent-to-Execution Contracts
+- Command Contracts and Semantic Interfaces
+- Unified Adaptive Tribunal and Adversarial Review
 - Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
+- Procedural Memory and Cognitive Loop Closure
+- MoECOT Runtime and Multi-Core Orchestration
 - Security Kernel and Digital SCIFs
+- Executable Specifications and Lean Proof Envelope
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Fast Generation Architectures
 - Policy Optimization and Learning from Feedback
+- Integrated Reference Architecture
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use Talos as the primary execution/labor OS source.
+- Use Talos to connect stack boundaries to typed jobs, deterministic control planes, audit logs, replay, approval gates, delivery evidence, and residual feedback.
+- Use Talos for human-intent, review, and procedural-memory chapters only where typed jobs, adjudication, delivery, feedback, audit, replay, and promotion controls are in scope.
 - Use Talos to require fast-generation outputs to become typed artifacts with provenance, approval state, evidence records, replay, and failure residuals before delivery.
 - Use Talos to ground execution-policy feedback in typed jobs, artifact evidence, approval gates, audit logs, replay, and residuals rather than informal agent success.
 - Keep all synthetic benchmark and security claims at `argument` or source-reported status until artifacts are ingested.

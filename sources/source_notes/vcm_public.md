@@ -34,17 +34,24 @@ VCM treats the context window as a compiled working cache over a larger versione
 
 ## Book Chapters Supported
 
+- Failure Modes of Ungoverned Intelligence
 - Virtual Context ABI
 - Semantic Pages, Context Cells, and Certificates
 - Context Transactions, Snapshots, Mounts, and Taint
 - Verification Bandwidth and Context Adequacy
 - Claim Ledgers and Belief Revision
 - Fast Generation Architectures
+- Coil Attention, Cyclic Memory, and Recurrence Contracts
 - Policy Optimization and Learning from Feedback
+- Integrated Reference Architecture
+- Prototype Roadmap
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use VCM as the governed memory/context layer.
+- Use VCM to surface memory/context failure modes: hidden authority, stale or revoked context, taint leakage, future-answer leakage, deferred admission, and unrecorded adequacy gaps.
+- Use VCM in cyclic-memory chapters only for addressability, taint, versioning, revocation, adequacy, and certificate boundaries; do not use it as evidence for recurrence quality.
 - Use VCM to require fast-generation routes to name context packets, authority, taint, revocation, and adequacy boundaries before measuring speed.
 - Use VCM to define context-policy rewards around source binding, adequacy/admission separation, taint, revocation, and non-success states rather than retrieval volume alone.
 - Keep VCM evidence claims bounded to control-plane properties unless external or local tests are recorded.

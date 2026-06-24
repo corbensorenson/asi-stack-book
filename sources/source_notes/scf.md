@@ -34,17 +34,25 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 
 ## Book Chapters Supported
 
+- ASI Is a Stack, Not a Model
+- System Boundaries and Authority
+- Failure Modes of Ungoverned Intelligence
 - Stable Capability Fields
 - Capability Replacement and Rollback
 - Recursive Self-Improvement Boundaries
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
+- MoECOT Runtime and Multi-Core Orchestration
+- Executable Specifications and Lean Proof Envelope
 - Policy Optimization and Learning from Feedback
+- Integrated Reference Architecture
 - Prototype Roadmap
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use SCF as the core governed self-improvement substrate.
+- Use SCF to define capability identity, authority ceilings, evaluator boundaries, and rollback constraints wherever the book discusses stack-level safety or replacement.
 - Use SCF to govern whether policy updates are promoted, quarantined, rolled back, or kept experimental, especially when an update could affect authority, evaluator policy, or lifecycle state.
 - Distinguish implementation updates from contract/evaluator/governance updates.
 - Formalize exact identity binding, qualification, route validation, lifecycle ordering, and authority non-escalation as priority Lean/code targets.

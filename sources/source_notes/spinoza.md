@@ -36,16 +36,27 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 ## Book Chapters Supported
 
 - Claim Ledgers and Belief Revision
+- Semantic Pages, Context Cells, and Certificates
+- Verification Bandwidth and Context Adequacy
 - Spinoza Verification and Proof-Carrying Claims
 - Unified Adaptive Tribunal and Adversarial Review
+- Failure Modes of Ungoverned Intelligence
+- Constitutional Alignment Substrate
+- Moral Uncertainty and Value Conflict
+- Governance Rights: Fork, Exit, and Audit
 - Fast Generation Architectures
+- Semantic Representation and Tree-Structured Models
 - Policy Optimization and Learning from Feedback
 - Evidence States and Claim Discipline
 - Executable Specifications and Lean Proof Envelope
+- Integrated Reference Architecture
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Use Spinoza for the proof-carrying claim and downgrade discipline.
+- Use Spinoza to identify failure modes around unsupported claims, failed verification, contradiction handling, protected axioms, and self-authorizing changes.
+- Use Spinoza to route semantic/context representation claims through explicit provenance, justification artifacts, contradiction handling, and verifier-scope limits.
 - Use Spinoza to keep fast-generation acceptance predicates separate from truth, proof, and source support; accepted drafts still need claim-tier evidence.
 - Use Spinoza to keep reward signals, verifier outputs, and preference labels separate from proof, evidence, and admissible belief updates.
 - Treat all proof-carrying claims as bounded by formalization scope and verifier result.

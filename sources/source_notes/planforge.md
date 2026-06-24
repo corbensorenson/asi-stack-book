@@ -34,6 +34,7 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 
 ## Book Chapters Supported
 
+- Human Intent as a Formal Input
 - Planning as a Control Layer
 - PlanForge DAGs and Intelligence Arbitrage
 - Intent-to-Execution Contracts
@@ -41,10 +42,13 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 - Fast Generation Architectures
 - Policy Optimization and Learning from Feedback
 - Integrated Reference Architecture
+- Prototype Roadmap
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Treat planning as a control layer that emits typed, dependency-aware work rather than prose.
+- Use PlanForge to connect structured human intent to decomposed tasks, dependencies, tiering, scheduling, replanning, prototype phases, and future planning experiments.
 - Use PlanForge to route generation modes by task risk, dependency structure, latency budget, fallback need, and verification burden.
 - Use PlanForge to define planner-policy rewards for decomposition quality, dependency preservation, tier routing, failure-driven replanning, and stopping conditions.
 - Use PlanForge for the MVI/tier-routing vocabulary, while keeping execution authority outside the planner.

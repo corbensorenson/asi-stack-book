@@ -36,16 +36,34 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 ## Book Chapters Supported
 
 - ASI Is a Stack, Not a Model
+- The Efficient ASI Hypothesis
+- System Boundaries and Authority
+- Failure Modes of Ungoverned Intelligence
+- Evidence States and Claim Discipline
+- Stable Capability Fields
+- Recursive Self-Improvement Boundaries
 - Human Intent as a Formal Input
 - Intent-to-Execution Contracts
 - Command Contracts and Semantic Interfaces
+- Planning as a Control Layer
+- Cognitive Compilation and Semantic IR
+- Virtual Context ABI
+- Claim Ledgers and Belief Revision
+- Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
+- Resource Economics and Token Budgets
+- Executable Specifications and Lean Proof Envelope
+- MoECOT Runtime and Multi-Core Orchestration
 - Integrated Reference Architecture
+- Prototype Roadmap
+- Living Book Methodology
 
 ## Claims To Add Or Update
 
 - Use VIEA as the main execution spine connecting intent, artifacts, routing, verification, runtime adapters, and feedback.
+- Use VIEA to ground the book's stack thesis in durable artifacts, support states, residuals, regression coverage, and intent-to-execution handoff boundaries.
+- Use VIEA as connective architecture for planning, context handoff, claim ledgers, labor execution, runtime adapters, resource accounting, and executable-spec priorities without claiming those subsystems are implemented here.
 - Keep any VIEA-derived claim at `source-derived` only after the specific source passage is mapped in Appendix C.
 - Treat implementation and benchmark claims as unproven until matching artifacts exist in `experiments/`, `test_results/`, or inspected external repos.
 

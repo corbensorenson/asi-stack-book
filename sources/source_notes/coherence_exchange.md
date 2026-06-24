@@ -33,10 +33,19 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 
 ## Book Chapters Supported
 
+- Constitutional Alignment Substrate
+- Agency, Dignity, and Corrigibility
+- Moral Uncertainty and Value Conflict
 - Evidence States and Claim Discipline
 - Governance Rights: Fork, Exit, and Audit
+- Security Kernel and Digital SCIFs
+- PlanForge DAGs and Intelligence Arbitrage
 - Claim Ledgers and Belief Revision
+- Spinoza Verification and Proof-Carrying Claims
 - Unified Adaptive Tribunal and Adversarial Review
+- Resource Economics and Token Budgets
+- Benchmark Ratchets and Anti-Goodhart Evidence
+- Prototype Roadmap
 - Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
@@ -44,6 +53,7 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - Use Verified Epistemic Units as a candidate term only if it helps the evidence chapter.
 - Keep the exchange/economic framing optional unless the book defines executable records.
 - Mine fork/exit/audit language for governance interfaces.
+- Use this source for coherence, contestability, value/accounting, review-market, and governance-interface framing only; do not treat the epistemic-liquidity metaphor as implemented economics or security.
 
 ## Open Questions
 

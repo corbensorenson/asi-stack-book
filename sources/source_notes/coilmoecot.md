@@ -32,14 +32,18 @@ CoilMoECOT combines the MoECOT runtime substrate with a coil/specialist-core fam
 
 ## Book Chapters Supported
 
+- Mathematical and Search Substrates
 - MoECOT Runtime and Multi-Core Orchestration
 - Coil Attention, Cyclic Memory, and Recurrence Contracts
 - CoilRA, MultiCoil RoPE, and Cyclic Mixers
 - Prototype Roadmap
+- Open Research Agenda and Bibliography Plan
 
 ## Claims To Add Or Update
 
 - Keep coil mechanisms optional/specialist unless tests and baselines justify promotion.
+- Use CoilMoECOT as routed-substrate context for mathematical/search substrate chapters without treating coil lanes as proven superior search mechanisms.
+- Use CoilMoECOT in the research agenda as an optional routed-substrate lane whose adoption depends on baselines, readiness gates, and residual evidence.
 - Tie any coil claim to structural invariants, residuals, and ordinary benchmark tradeoff metrics.
 
 ## Open Questions
