@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "title": "The ASI Stack",
+  "subtitle": "A Systems Architecture for Governed, Efficient, Self-Improving AI",
+  "author": "Corben Sorenson",
+  "site_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "repo_url": "https://github.com/corbensorenson/asi-stack-book",
+  "front_matter": [
+    "index.qmd",
+    "preface.qmd"
+  ],
+  "parts": [
+    {
+      "id": "stack-from-above",
+      "title": "Part I - The Stack from Above",
+      "chapters": [
+        {
+          "id": "asi-is-a-stack-not-a-model",
+          "title": "ASI Is a Stack, Not a Model",
+          "file": "chapters/asi-is-a-stack-not-a-model.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "viea",
+            "beastbrain",
+            "aletheia",
+            "moecot",
+            "talos"
+          ],
+          "problem": "The book needs a single architecture frame for AI systems that must plan, remember, verify, act, route work, and improve without collapsing into one opaque model.",
+          "insufficient": "A larger model alone does not define authority boundaries, memory governance, evidence ledgers, tool permissions, or safe replacement rules.",
+          "core_claim": "Efficient ASI should be modeled as a governed stack of cooperating layers rather than as a single undifferentiated model.",
+          "mechanism": [
+            "Name each layer of the stack and its responsibility.",
+            "Treat boundaries, interfaces, and evidence states as first-class design objects.",
+            "Use the rest of the book to refine each layer into testable mechanisms."
+          ],
+          "interfaces": [
+            "Alignment constrains admissible goals.",
+            "Governance bounds authority and self-modification.",
+            "Planning, memory, reasoning, execution, routing, compression, and evidence layers exchange typed artifacts."
+          ],
+          "invariants": [
+            "Layer boundaries remain explicit.",
+            "Claims carry support states.",
+            "Execution authority is not implied by reasoning ability."
+          ],
+          "failure_modes": [
+            "Anthology drift: source papers remain isolated instead of becoming one architecture.",
+            "Monolith drift: layer responsibilities are folded back into model scale.",
+            "Evidence drift: conceptual claims are presented as tested claims."
+          ],
+          "minimal_implementation": "A diagrammed stack, chapter map, source crosswalk, and claim/evidence matrix that keep responsibilities separable.",
+          "codex_tests": [
+            "Full-stack traceability review",
+            "Layer-boundary audit",
+            "Claim-support label audit"
+          ],
+          "legacy_order": 1
+        },
+        {
+          "id": "the-efficient-asi-hypothesis",
+          "title": "The Efficient ASI Hypothesis",
+          "file": "chapters/the-efficient-asi-hypothesis.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "viea",
+            "moecot",
+            "rmi",
+            "cgs",
+            "rankfold_neuralfold",
+            "bbvca_v9",
+            "simulation_scaling",
+            "beastbrain",
+            "beastbrain_timeless",
+            "aletheia"
+          ],
+          "problem": "The book needs a non-scale-only theory for why a governed ASI stack could become more capable without requiring every task to use maximal cognition.",
+          "insufficient": "Parameter count does not by itself explain routing, context selectivity, procedural memory, compression, verification, or runtime targeting.",
+          "core_claim": "Efficient ASI is a design hypothesis: capability improves when cognition is routed, compressed, reused, governed, and tested.",
+          "mechanism": [
+            "Route subtasks to the smallest adequate specialist.",
+            "Preserve reusable work as artifacts, tools, and procedural memory.",
+            "Track residual burden when compression or routing leaves unresolved work."
+          ],
+          "interfaces": [
+            "Planning requests minimum viable intelligence.",
+            "Routing selects specialists and tools.",
+            "Evidence layers decide whether efficiency claims are supported."
+          ],
+          "invariants": [
+            "Efficiency claims require measured task quality and cost.",
+            "Compression must expose residuals instead of hiding them.",
+            "Fallback paths remain available when lightweight routes fail."
+          ],
+          "failure_modes": [
+            "Treating cheap inference as sufficient evidence of intelligence.",
+            "Compressing away critical context.",
+            "Optimizing benchmark scores while increasing hidden residual burden."
+          ],
+          "minimal_implementation": "A costed task-routing model with explicit fallback, residual accounting, and benchmark gates.",
+          "codex_tests": [
+            "Minimum viable intelligence routing test",
+            "Residual burden accounting test",
+            "Compression utility preservation test"
+          ],
+          "legacy_order": 2
+        },
+        {
+          "id": "failure-modes-of-ungoverned-intelligence",
+          "title": "Failure Modes of Ungoverned Intelligence",
+          "file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "scf",
+            "vcm_public",
+            "talos",
+            "spinoza",
+            "field_of_god",
+            "viea",
+            "simulation_scaling"
+          ],
+          "problem": "The architecture needs an explicit failure model before it can claim governance, reliability, or safe improvement.",
+          "insufficient": "High-level safety language misses earlier engineering failures such as goal misbinding, context corruption, authority creep, evaluator drift, and unverified claims.",
+          "core_claim": "Ungoverned intelligence fails through stack-level breakdowns before any dramatic science-fiction failure mode is needed.",
+          "mechanism": [
+            "Classify failures by layer.",
+            "Map each failure to an invariant and a planned falsification test.",
+            "Use failures to constrain later architecture choices."
+          ],
+          "interfaces": [
+            "Governance limits authority creep.",
+            "VCM limits context pollution.",
+            "Verification limits false certainty.",
+            "Execution layers limit side effects."
+          ],
+          "invariants": [
+            "Authority must be explicit and bounded.",
+            "Evidence records must be auditable.",
+            "Self-modification cannot bypass identity and evaluator checks."
+          ],
+          "failure_modes": [
+            "Evaluator capture or drift.",
+            "Memory poisoning and context pollution.",
+            "Tool/action overreach.",
+            "Compression that hides residual complexity."
+          ],
+          "minimal_implementation": "A failure taxonomy tied to chapter-specific invariants and planned tests.",
+          "codex_tests": [
+            "Authority creep scenario",
+            "Context pollution scenario",
+            "Evaluator drift scenario",
+            "Unverified-claim scenario"
+          ],
+          "legacy_order": 3
+        }
+      ]
+    },
+    {
+      "id": "stack-layers",
+      "title": "Part II - The Layers of the ASI Stack",
+      "chapters": [
+        {
+          "id": "alignment-and-constitution",
+          "title": "Alignment and Constitution",
+          "file": "chapters/alignment-and-constitution.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "alignment_field",
+            "field_of_god",
+            "ethica_mechanica",
+            "eternal_code",
+            "coherence_exchange"
+          ],
+          "problem": "A self-improving system needs a stable moral and interpretive substrate before planning and execution can be trusted.",
+          "insufficient": "Reactive refusal rules do not define value continuity, corrigibility, moral uncertainty, anti-domination, or self-modification ethics.",
+          "core_claim": "The alignment layer should act as a constitutional substrate that constrains goals, plans, and self-modification.",
+          "mechanism": [
+            "Represent constitutional commitments as constraints on planning and execution.",
+            "Track unresolved moral uncertainty instead of hiding it.",
+            "Keep philosophical claims engineering-compatible and explicitly labeled."
+          ],
+          "interfaces": [
+            "Planning receives admissible-goal constraints.",
+            "Governance receives authority and dignity constraints.",
+            "Verification checks whether claims exceed the constitutional evidence state."
+          ],
+          "invariants": [
+            "Human dignity and agency preservation remain visible requirements.",
+            "Corrigibility cannot be optimized away by self-improvement.",
+            "Speculative metaphysical material remains labeled as speculative."
+          ],
+          "failure_modes": [
+            "Power without care.",
+            "Mystical framing replacing technical constraints.",
+            "Self-modification that weakens constitutional commitments."
+          ],
+          "minimal_implementation": "A compact constitution appendix, conflict taxonomy, and planned scenario tests.",
+          "codex_tests": [
+            "Constitutional consistency test",
+            "Value conflict classification test",
+            "Self-modification ethics scenario",
+            "Power-seeking and agency-dominance scenario"
+          ],
+          "legacy_order": 4
+        },
+        {
+          "id": "governance-and-stable-capability-fields",
+          "title": "Governance and Stable Capability Fields",
+          "file": "chapters/governance-and-stable-capability-fields.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "scf",
+            "talos",
+            "ladon_manhattan",
+            "viea",
+            "moecot"
+          ],
+          "problem": "The stack needs a way to improve components while preserving identity, bounded authority, route validity, and evaluator integrity.",
+          "insufficient": "Ordinary plugin replacement does not define qualified implementation replacement, authority ceilings, mutation tests, or rollback.",
+          "core_claim": "Governed self-improvement requires stable capability fields: stable semantic boundaries with replaceable implementations and bounded authority.",
+          "mechanism": [
+            "Define field identity separately from implementation.",
+            "Require qualification evidence before replacement.",
+            "Track route validity, authority ceilings, and rollback conditions."
+          ],
+          "interfaces": [
+            "Planning may request field capabilities.",
+            "Execution may invoke only authorized routes.",
+            "Evidence layers record qualification and regression results."
+          ],
+          "invariants": [
+            "Implementation replacement cannot expand authority by default.",
+            "Evaluator integrity must be protected from the field being evaluated.",
+            "Rollback remains available after failed mutation."
+          ],
+          "failure_modes": [
+            "Authority escalation during replacement.",
+            "Evaluator capture.",
+            "Field identity drift."
+          ],
+          "minimal_implementation": "A field schema with qualification predicates, route validity checks, authority ceilings, and rollback metadata.",
+          "codex_tests": [
+            "Qualification predicate test",
+            "Route validity test",
+            "Authority non-escalation test",
+            "Mutation test",
+            "Rollback and recovery test"
+          ],
+          "legacy_order": 5
+        },
+        {
+          "id": "planning-and-control",
+          "title": "Planning and Control",
+          "file": "chapters/planning-and-control.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "planforge",
+            "planforge_compiler_arch",
+            "cognitive_compilation",
+            "viea",
+            "software_magic_grimoire",
+            "moecot"
+          ],
+          "problem": "Goals need to become governed task graphs with dependencies, budgets, risk limits, tool choices, and stopping conditions.",
+          "insufficient": "Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.",
+          "core_claim": "Planning is a separate control layer that converts goals into governed action without owning memory, reasoning, or side effects.",
+          "mechanism": [
+            "Compile goals into strategic and tactical plans.",
+            "Represent dependencies, constraints, context requests, and runtime replanning triggers.",
+            "Delegate execution through governed contracts."
+          ],
+          "interfaces": [
+            "Alignment filters goals.",
+            "VCM supplies context packets.",
+            "Routers select specialists.",
+            "Talos-like execution systems run typed jobs."
+          ],
+          "invariants": [
+            "Plans expose constraints and stopping conditions.",
+            "Runtime replanning preserves original authority limits.",
+            "Tool selection is justified by task requirements."
+          ],
+          "failure_modes": [
+            "Scope creep.",
+            "Planning without replanning.",
+            "Tool selection that exceeds authority or budget."
+          ],
+          "minimal_implementation": "A task graph format with dependencies, constraints, context requests, risk budgets, and stop conditions.",
+          "codex_tests": [
+            "Decomposition accuracy test",
+            "Dependency ordering test",
+            "Constraint preservation test",
+            "Runtime replanning test",
+            "Tool selection test",
+            "Budget and risk allocation test",
+            "Scope creep prevention test"
+          ],
+          "legacy_order": 6
+        },
+        {
+          "id": "virtual-context-memory",
+          "title": "Virtual Context Memory",
+          "file": "chapters/virtual-context-memory.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "vcm_public",
+            "vcm_editable",
+            "context_engineer",
+            "black_hole_context_manager",
+            "verification_bandwidth",
+            "moecot",
+            "viea"
+          ],
+          "problem": "Long-horizon agents need selected, governed, evidence-carrying context rather than a flat transcript.",
+          "insufficient": "Long context windows and ordinary retrieval do not automatically preserve authority labels, source fidelity, adequacy, or planner-guided relevance.",
+          "core_claim": "Virtual Context Memory should compile active context packets from durable memory using evidence, authority labels, and planner requests.",
+          "mechanism": [
+            "Separate durable memory from active context.",
+            "Build context packets with summaries, handles, provenance, and adequacy status.",
+            "Expose unsafe, unknown, or unsatisfied context states."
+          ],
+          "interfaces": [
+            "Planning requests context.",
+            "Verification checks source and summary fidelity.",
+            "Execution receives only context appropriate to its authority."
+          ],
+          "invariants": [
+            "Authority labels survive summarization.",
+            "Context adequacy is distinct from context admission.",
+            "Summaries carry provenance and open uncertainty."
+          ],
+          "failure_modes": [
+            "Context pollution.",
+            "Summary overconfidence.",
+            "Privacy or behavioral authority leakage."
+          ],
+          "minimal_implementation": "A context packet schema with source handles, authority labels, summary proofs, adequacy status, and planned fidelity tests.",
+          "codex_tests": [
+            "Context packet adequacy test",
+            "Distractor resistance test",
+            "Authority label preservation test",
+            "Proof-carrying summary fidelity test",
+            "Planner-guided prefetch accuracy test",
+            "Privacy and behavioral authority check"
+          ],
+          "legacy_order": 7
+        },
+        {
+          "id": "labor-and-execution-os",
+          "title": "Labor and Execution OS",
+          "file": "chapters/labor-and-execution-os.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "talos",
+            "talos_md",
+            "viea",
+            "genesiscode",
+            "software_magic_grimoire",
+            "cognitive_loop_closure",
+            "moecot",
+            "spinoza_composer",
+            "ladon_manhattan"
+          ],
+          "problem": "Reasoning must become typed work with artifacts, permissions, audit logs, and governed side effects.",
+          "insufficient": "A generic agent loop does not provide typed job lifecycle, replay, artifact graph discipline, or human approval gates.",
+          "core_claim": "The execution layer should convert plans into typed jobs and artifacts through a governed labor operating system.",
+          "mechanism": [
+            "Compile command contracts into jobs.",
+            "Run jobs through adapters with permissions and audit logs.",
+            "Promote repeated workflows into verified tools when evidence supports it."
+          ],
+          "interfaces": [
+            "Planning emits job contracts.",
+            "Governance enforces authority and approvals.",
+            "Evidence layers reconstruct audit trails and replay results."
+          ],
+          "invariants": [
+            "Side effects pass through explicit authorization.",
+            "Artifacts are addressable and auditable.",
+            "Human approval gates remain enforceable."
+          ],
+          "failure_modes": [
+            "Tool misuse.",
+            "Unlogged side effects.",
+            "Workflow-to-tool promotion without evidence."
+          ],
+          "minimal_implementation": "A typed job schema, artifact graph, permission model, audit log, and replay protocol.",
+          "codex_tests": [
+            "Typed job lifecycle test",
+            "Tool permission enforcement test",
+            "Audit log reconstruction test",
+            "Replay determinism test",
+            "Human approval gate test",
+            "Adversarial job injection test"
+          ],
+          "legacy_order": 8
+        },
+        {
+          "id": "reasoning-verification-and-epistemology",
+          "title": "Reasoning, Verification, and Epistemology",
+          "file": "chapters/reasoning-verification-and-epistemology.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "spinoza",
+            "uat",
+            "coherence_exchange",
+            "verification_bandwidth",
+            "treellm",
+            "viea",
+            "spinoza_composer",
+            "aletheia"
+          ],
+          "problem": "The stack needs explicit claim states, belief revision, uncertainty, and verification loops rather than fluent generation alone.",
+          "insufficient": "Generated text can be coherent without being grounded, checked, calibrated, or fit for high-risk action.",
+          "core_claim": "Reasoning and verification should maintain claim records with evidence tiers, contradiction handling, and calibrated uncertainty.",
+          "mechanism": [
+            "Extract claims from plans, context, and outputs.",
+            "Assign support states and evidence tiers.",
+            "Revise beliefs when contradiction or stronger evidence appears."
+          ],
+          "interfaces": [
+            "VCM supplies provenance.",
+            "Planning and execution request verification before high-risk steps.",
+            "Evidence matrices expose support state to readers and systems."
+          ],
+          "invariants": [
+            "Unsupported claims remain labeled.",
+            "Contradictions are tracked instead of silently overwritten.",
+            "High-risk domains pay a verification tax."
+          ],
+          "failure_modes": [
+            "False verification.",
+            "Silence failure when evidence is insufficient.",
+            "Evaluator or citation drift."
+          ],
+          "minimal_implementation": "A claim ledger with support states, source handles, uncertainty, contradiction links, and review status.",
+          "codex_tests": [
+            "Claim extraction test",
+            "Contradiction detection test",
+            "Belief revision test",
+            "Evidence tier assignment test",
+            "Uncertainty calibration test",
+            "Insufficient-evidence silence test"
+          ],
+          "legacy_order": 9
+        },
+        {
+          "id": "routing-and-modular-intelligence",
+          "title": "Routing and Modular Intelligence",
+          "file": "chapters/routing-and-modular-intelligence.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "octopus_router",
+            "rmi",
+            "moecot",
+            "beastbrain",
+            "cognitive_loop_closure",
+            "benchmaxxing",
+            "moecot_md",
+            "rgs"
+          ],
+          "problem": "The stack needs to assign work across bounded specialists while preserving permissions, readiness, and regression history.",
+          "insufficient": "One undifferentiated system cannot cleanly express specialist capability, local memory, readiness gates, quarantine, or residual escrow.",
+          "core_claim": "ASI scales by routing across bounded specialist modules with explicit readiness gates and benchmark-driven promotion.",
+          "mechanism": [
+            "Use lightweight routing heads to select specialist cores.",
+            "Track residuals, benchmark frontiers, and regression suites.",
+            "Split, merge, retire, or quarantine modules based on evidence."
+          ],
+          "interfaces": [
+            "Planning asks for capability.",
+            "Governance bounds route authority.",
+            "Evidence layers decide readiness and promotion."
+          ],
+          "invariants": [
+            "Specialist authority is local and explicit.",
+            "Promotion requires benchmark and regression evidence.",
+            "Residuals are recorded instead of hidden."
+          ],
+          "failure_modes": [
+            "Wrong specialist selection.",
+            "Premature promotion.",
+            "Regression loss after module replacement."
+          ],
+          "minimal_implementation": "A router registry with capability metadata, readiness gates, residual escrow, and regression preservation hooks.",
+          "codex_tests": [
+            "Specialist routing accuracy test",
+            "Readiness gate enforcement test",
+            "Benchmark promotion test",
+            "Quarantine behavior test",
+            "Regression preservation test",
+            "Residual escrow integrity test"
+          ],
+          "legacy_order": 10
+        },
+        {
+          "id": "compression-and-representation",
+          "title": "Compression and Representation",
+          "file": "chapters/compression-and-representation.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "cgs",
+            "rgs",
+            "rankfold_neuralfold",
+            "rankfold_compressor",
+            "bbvca_v9",
+            "bbvca_main",
+            "bugbrain",
+            "simulation_scaling",
+            "treellm"
+          ],
+          "problem": "The architecture needs ways to preserve useful generative structure while reducing surface detail, cost, and memory burden.",
+          "insufficient": "Compression can appear efficient while discarding critical semantics, increasing residual burden, or harming downstream utility.",
+          "core_claim": "Compression is a first-class stack layer only when it exposes residual burden, fallback paths, and downstream utility tests.",
+          "mechanism": [
+            "Separate semantic, model, memory, artifact, and representation compression.",
+            "Use generate-verify-repair loops where reconstruction matters.",
+            "Route to fallback systems when probes show compression is inadequate."
+          ],
+          "interfaces": [
+            "VCM compresses context with evidence.",
+            "Routing selects compressed or full specialists.",
+            "Evidence tests reconstruction quality and utility."
+          ],
+          "invariants": [
+            "Lossy claims remain labeled.",
+            "Residual burden is visible.",
+            "Fallback is available when compressed representations fail."
+          ],
+          "failure_modes": [
+            "Hidden residual complexity.",
+            "False lossless claims.",
+            "Latency or utility regressions after compression."
+          ],
+          "minimal_implementation": "A compression ledger with description cost, residual burden, reconstruction checks, and fallback criteria.",
+          "codex_tests": [
+            "Reconstruction quality test",
+            "Residual burden test",
+            "Probe-and-route fallback test",
+            "Compression ratio test",
+            "Latency cost test",
+            "Downstream utility preservation test"
+          ],
+          "legacy_order": 11
+        },
+        {
+          "id": "mathematical-and-search-substrates",
+          "title": "Mathematical and Search Substrates",
+          "file": "chapters/mathematical-and-search-substrates.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "coilmoecot",
+            "temporal_coil_research",
+            "cognitive_compilation",
+            "genesiscode",
+            "viea"
+          ],
+          "problem": "Exploratory representations may improve search, routing, or compression, but the book needs to keep these hypotheses falsifiable.",
+          "insufficient": "Novel mathematical substrates can become overclaimed if they are not tied to tests, baselines, and failure criteria.",
+          "core_claim": "Alternative substrates belong in the stack only as testable implementation hypotheses until evidence supports them.",
+          "mechanism": [
+            "Frame coil, calculus, and geometric representations as optional specialist substrates.",
+            "Define what they would need to improve.",
+            "Specify falsification tests before adoption into core architecture."
+          ],
+          "interfaces": [
+            "Routing can treat a substrate as a specialist core.",
+            "Compression can test representation efficiency.",
+            "Evidence layers compare against baselines."
+          ],
+          "invariants": [
+            "Exploratory claims stay exploratory.",
+            "Performance claims require measured baselines.",
+            "Failed hypotheses remain recorded."
+          ],
+          "failure_modes": [
+            "Overclaiming performance.",
+            "Using opaque math as authority.",
+            "Adopting a substrate without regression tests."
+          ],
+          "minimal_implementation": "A technical appendix and experiment plan with baseline comparisons and adoption gates.",
+          "codex_tests": [
+            "Baseline search comparison",
+            "Representation efficiency test",
+            "GPU parallelization feasibility test",
+            "Failure-case and falsification review"
+          ],
+          "legacy_order": 12
+        },
+        {
+          "id": "evidence-benchmarks-and-ratchets",
+          "title": "Evidence, Benchmarks, and Ratchets",
+          "file": "chapters/evidence-benchmarks-and-ratchets.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "benchmaxxing",
+            "moecot",
+            "rmi",
+            "cognitive_loop_closure",
+            "road_to_agi",
+            "viea",
+            "tokenmana",
+            "coherence_exchange",
+            "uat"
+          ],
+          "problem": "A living architecture needs a way to move claims from speculative to tested without Goodharting or losing regressions.",
+          "insufficient": "Benchmarks alone can be saturated, gamed, or disconnected from source claims and real-world requirements.",
+          "core_claim": "The book should maintain evidence ratchets that connect claims, tests, residuals, regressions, and release history.",
+          "mechanism": [
+            "Track benchmark frontiers and mastery thresholds.",
+            "Create residual escrow when tests reveal incomplete capability.",
+            "Preserve regressions and hidden checks to reduce Goodhart pressure."
+          ],
+          "interfaces": [
+            "Every chapter contributes claims.",
+            "Experiments produce evidence records.",
+            "Changelog entries record evidence-state movement."
+          ],
+          "invariants": [
+            "No test success is claimed without execution.",
+            "Synthetic and empirical evidence remain distinct.",
+            "Negative or inconclusive results remain visible."
+          ],
+          "failure_modes": [
+            "Benchmark overfitting.",
+            "Regression deletion.",
+            "Claim support inflation."
+          ],
+          "minimal_implementation": "A claim/evidence matrix, test spec appendix, and release checklist.",
+          "codex_tests": [
+            "Saturation detection test",
+            "Hidden benchmark transfer test",
+            "Regression generation test",
+            "Anti-Goodhart check",
+            "Residual backlog integrity test"
+          ],
+          "legacy_order": 13
+        }
+      ]
+    },
+    {
+      "id": "integration-implementation",
+      "title": "Part III - Integration and Implementation",
+      "chapters": [
+        {
+          "id": "integrated-reference-architecture",
+          "title": "Integrated Reference Architecture",
+          "file": "chapters/integrated-reference-architecture.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "viea",
+            "moecot",
+            "scf",
+            "vcm_public",
+            "planforge",
+            "talos",
+            "spinoza",
+            "alignment_field",
+            "octopus_router",
+            "rmi",
+            "benchmaxxing"
+          ],
+          "problem": "Readers need to see the whole machine from user intent to governed action and evidence-updated self-improvement.",
+          "insufficient": "Layer descriptions can still feel disconnected unless the book walks through the complete control flow.",
+          "core_claim": "The stack can be specified as an integrated reference architecture with typed handoffs between layers.",
+          "mechanism": [
+            "Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement gates.",
+            "Show which artifact each layer emits.",
+            "Identify where authority can stop or reroute the process."
+          ],
+          "interfaces": [
+            "All stack layers participate.",
+            "Artifacts and evidence ledgers provide continuity.",
+            "SCF-style gates control improvement."
+          ],
+          "invariants": [
+            "No layer silently bypasses governance.",
+            "Artifacts remain traceable.",
+            "Self-improvement follows evidence and authority gates."
+          ],
+          "failure_modes": [
+            "Untraceable handoffs.",
+            "Planning/execution collapse.",
+            "Self-improvement without evaluator integrity."
+          ],
+          "minimal_implementation": "A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.",
+          "codex_tests": [
+            "End-to-end intent trace test",
+            "Artifact continuity audit",
+            "Authority stop-condition test",
+            "Evidence-ledger update test"
+          ],
+          "legacy_order": 14
+        },
+        {
+          "id": "prototype-roadmap",
+          "title": "Prototype Roadmap",
+          "file": "chapters/prototype-roadmap.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "moecot",
+            "viea",
+            "road_to_agi",
+            "benchmaxxing",
+            "scf",
+            "vcm_public",
+            "planforge",
+            "beastbrain",
+            "moecot_md",
+            "coherence_exchange",
+            "beastbrain_timeless"
+          ],
+          "problem": "The architecture needs a build sequence that prevents self-improvement features from arriving before evaluator and governance integrity.",
+          "insufficient": "A roadmap that jumps straight to autonomous improvement would skip artifact memory, tests, claim ledgers, and authority controls.",
+          "core_claim": "The prototype should grow in staged increments from artifact graph to governed capability replacement.",
+          "mechanism": [
+            "Begin with source matrix, artifact graph, and claim ledger.",
+            "Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order.",
+            "Delay recursive self-improvement until evaluator and governance checks are credible."
+          ],
+          "interfaces": [
+            "Each phase unlocks a later layer.",
+            "Evidence gates decide promotion.",
+            "Changelog and release tags document progress."
+          ],
+          "invariants": [
+            "Roadmap phases have acceptance criteria.",
+            "Self-improvement is gated by evaluator integrity.",
+            "Compression and procedural memory are optimized after correctness scaffolds exist."
+          ],
+          "failure_modes": [
+            "Building agency before auditability.",
+            "Skipping verification because prototypes appear useful.",
+            "Treating roadmap milestones as test results."
+          ],
+          "minimal_implementation": "A phase table with deliverables, acceptance gates, and blocked dependencies.",
+          "codex_tests": [
+            "Phase acceptance checklist",
+            "Dependency gate review",
+            "Prototype evidence-state audit",
+            "Rollback readiness review"
+          ],
+          "legacy_order": 15
+        },
+        {
+          "id": "living-book-methodology",
+          "title": "Living Book Methodology",
+          "file": "chapters/living-book-methodology.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "road_to_agi",
+            "benchmaxxing",
+            "viea",
+            "moecot",
+            "moecot_md",
+            "bugbrain"
+          ],
+          "problem": "The book itself must stay current while preserving source traceability, claim states, tests, release history, and reader orientation.",
+          "insufficient": "A static anthology cannot show evidence movement, deprecations, source updates, or reproducible renders.",
+          "core_claim": "The living book should model the ASI stack discipline through Quarto source, inventories, evidence matrices, tests, changelogs, and releases.",
+          "mechanism": [
+            "Use Quarto as the canonical source of truth.",
+            "Use a public static site for rendered reading.",
+            "Require every meaningful update to touch the relevant chapter, source matrix, evidence matrix, and changelog."
+          ],
+          "interfaces": [
+            "Source ingestion feeds source notes.",
+            "Drafting feeds claim matrices.",
+            "Tests feed evidence-state changes.",
+            "Releases feed the public site and changelog."
+          ],
+          "invariants": [
+            "No fabricated source content.",
+            "No fabricated test results.",
+            "Deprecated claims remain visible with reasons."
+          ],
+          "failure_modes": [
+            "Public site diverges from Quarto source.",
+            "Changelog omits evidence-state changes.",
+            "Readers cannot tell which claims are speculative."
+          ],
+          "minimal_implementation": "A Quarto repo, GitHub Pages workflow, source inventory, claim/evidence matrix, validation script, and release checklist.",
+          "codex_tests": [
+            "Quarto render check",
+            "Validation script check",
+            "Claim/evidence consistency check",
+            "Changelog update check"
+          ],
+          "legacy_order": 16
+        }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "id": "source-matrix",
+      "title": "Source Matrix",
+      "file": "appendices/A_source_matrix.qmd"
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "file": "appendices/B_glossary.qmd"
+    },
+    {
+      "id": "claim-evidence-matrix",
+      "title": "Claim/Evidence Matrix",
+      "file": "appendices/C_claim_evidence_matrix.qmd"
+    },
+    {
+      "id": "protocol-schemas",
+      "title": "Protocol Schemas",
+      "file": "appendices/D_protocol_schemas.qmd"
+    },
+    {
+      "id": "codex-test-specs",
+      "title": "Codex Test Specs",
+      "file": "appendices/E_codex_test_specs.qmd"
+    },
+    {
+      "id": "changelog",
+      "title": "Changelog",
+      "file": "appendices/F_changelog.qmd"
+    }
+  ]
+}

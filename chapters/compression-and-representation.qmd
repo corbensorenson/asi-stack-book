@@ -1,5 +1,7 @@
 ---
 title: "Compression and Representation"
+chapter_id: "compression-and-representation"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -25,6 +27,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `compression-and-representation` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `bugbrain`, `simulation_scaling`, `treellm` |
@@ -34,7 +38,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -46,7 +50,7 @@ Compression can appear efficient while discarding critical semantics, increasing
 
 ## Core claim
 
-[11-core, support: argument] Compression is a first-class stack layer only when it exposes residual burden, fallback paths, and downstream utility tests.
+[compression-and-representation.core, support: argument] Compression is a first-class stack layer only when it exposes residual burden, fallback paths, and downstream utility tests.
 
 ## Mechanism
 
@@ -91,16 +95,16 @@ A compression ledger with description cost, residual burden, reconstruction chec
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `cgs` | Compact Generative Systems | Planned use from inventory/handoff: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
-| `rgs` | Ratcheting Generative Systems | Planned use from inventory/handoff: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
-| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/handoff: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
-| `rankfold_compressor` | rankFold compressor | Planned use from inventory/handoff: Alternate RankFold/NeuralFold source. |
-| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/handoff: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
-| `bbvca_main` | Big Bang Volumetric Compression Architecture | Planned use from inventory/handoff: Earlier/main BBVCA family doc. |
-| `bugbrain` | BugBrain | Planned use from inventory/handoff: Edge/resource-aware implementation context. |
-| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/handoff: Resource constraints on scope, clockspeed, and fidelity in simulations. |
-| `treellm` | TreeLLM | Planned use from inventory/handoff: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rgs` | Ratcheting Generative Systems | Planned use from inventory/manifest: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/manifest: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+| `rankfold_compressor` | rankFold compressor | Planned use from inventory/manifest: Alternate RankFold/NeuralFold source. |
+| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/manifest: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
+| `bbvca_main` | Big Bang Volumetric Compression Architecture | Planned use from inventory/manifest: Earlier/main BBVCA family doc. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/manifest: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

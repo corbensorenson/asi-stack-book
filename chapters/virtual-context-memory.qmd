@@ -1,5 +1,7 @@
 ---
 title: "Virtual Context Memory"
+chapter_id: "virtual-context-memory"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -23,6 +25,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `virtual-context-memory` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `vcm_public`, `vcm_editable`, `context_engineer`, `black_hole_context_manager`, `verification_bandwidth`, `moecot`, `viea` |
@@ -32,7 +36,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -44,7 +48,7 @@ Long context windows and ordinary retrieval do not automatically preserve author
 
 ## Core claim
 
-[07-core, support: argument] Virtual Context Memory should compile active context packets from durable memory using evidence, authority labels, and planner requests.
+[virtual-context-memory.core, support: argument] Virtual Context Memory should compile active context packets from durable memory using evidence, authority labels, and planner requests.
 
 ## Mechanism
 
@@ -89,14 +93,14 @@ A context packet schema with source handles, authority labels, summary proofs, a
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/handoff: Public VCM release. Governed protocol for compiled working context. |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/handoff: Editable version with evidence-carrying planner-guided context compiler framing. |
-| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/handoff: Context as supply chain; compartmentalized information logistics. |
-| `black_hole_context_manager` | Black Hole Context Manager | Planned use from inventory/handoff: Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/handoff: Generation vs verification; long context is not automatically long-range reasoning. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+| `context_engineer` | Context Engineer / Manhattan Protocol | Planned use from inventory/manifest: Context as supply chain; compartmentalized information logistics. |
+| `black_hole_context_manager` | Black Hole Context Manager | Planned use from inventory/manifest: Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

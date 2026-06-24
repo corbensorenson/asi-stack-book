@@ -10,6 +10,7 @@ This is a v0.1 scaffold seed.
 
 - Quarto book structure is initialized.
 - All 16 outline chapters have stubs.
+- Parts and chapters are controlled by `book_structure.json`; `_quarto.yml` is generated.
 - The source matrix is generated from `sources/source_inventory.json`.
 - The claim/evidence matrix is initialized with `argument`-level placeholders.
 - Source documents have not yet been ingested into this repo.
@@ -25,6 +26,33 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
 ```
 
 The rendered HTML is written to `_site/`. The full render also writes `_site/The-ASI-Stack.pdf`.
+
+## Dynamic Structure
+
+Do not hand-edit `_quarto.yml` or number chapter filenames. Edit `book_structure.json`, then run:
+
+```bash
+python3 scripts/sync_scaffold.py
+```
+
+Useful helpers:
+
+```bash
+python3 scripts/add_part.py --title "Part IV - New Research Track"
+python3 scripts/add_chapter.py --part stack-layers --title "New AI Topic" --after planning-and-control
+```
+
+The helpers update the manifest. The sync script updates Quarto, generated matrices, and missing chapter stubs.
+
+## Codex Skill
+
+The project-specific writing/maintenance skill lives at `skills/asi-stack-book/` and has also been installed locally to `~/.codex/skills/asi-stack-book`.
+
+To reinstall from the repo copy:
+
+```bash
+rsync -a --exclude='.DS_Store' skills/asi-stack-book/ ~/.codex/skills/asi-stack-book/
+```
 
 ## Public Site
 

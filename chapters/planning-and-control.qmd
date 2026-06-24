@@ -1,5 +1,7 @@
 ---
 title: "Planning and Control"
+chapter_id: "planning-and-control"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -22,6 +24,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `planning-and-control` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `viea`, `software_magic_grimoire`, `moecot` |
@@ -31,7 +35,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -43,7 +47,7 @@ Planning cannot be collapsed into memory, reasoning, or execution because each l
 
 ## Core claim
 
-[06-core, support: argument] Planning is a separate control layer that converts goals into governed action without owning memory, reasoning, or side effects.
+[planning-and-control.core, support: argument] Planning is a separate control layer that converts goals into governed action without owning memory, reasoning, or side effects.
 
 ## Mechanism
 
@@ -90,13 +94,13 @@ A task graph format with dependencies, constraints, context requests, risk budge
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `planforge` | PlanForge | Planned use from inventory/handoff: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/handoff: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
-| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/handoff: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/handoff: Structured command contracts and semantic density of software words. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/manifest: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

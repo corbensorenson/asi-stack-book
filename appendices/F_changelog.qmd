@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-24 - Dynamic structure update
+
+- Added `book_structure.json` as the source of truth for front matter, parts, chapter order, chapter IDs, chapter file paths, and appendices.
+- Regenerated `_quarto.yml` from the manifest with explicit Quarto parts.
+- Replaced numbered chapter filenames with stable slug filenames so chapters can be inserted, moved, merged, or removed without renumbering files.
+- Added `scripts/add_part.py` and `scripts/add_chapter.py` helper scripts.
+- Updated generated source and claim matrices to use stable chapter IDs.
+- Added `docs/living_update_workflow.md`.
+- Added the versioned `skills/asi-stack-book` Codex skill and installed it locally for future ASI Stack book maintenance.
+
 ## 2026-06-24 - v0.1 scaffold seed
 
 - Created the canonical Quarto living-book scaffold at the repository root.

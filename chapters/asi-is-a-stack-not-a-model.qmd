@@ -1,5 +1,7 @@
 ---
 title: "ASI Is a Stack, Not a Model"
+chapter_id: "asi-is-a-stack-not-a-model"
+part_id: "stack-from-above"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -21,6 +23,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `asi-is-a-stack-not-a-model` |
+| Part | Part I - The Stack from Above |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `moecot`, `talos` |
@@ -30,7 +34,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -42,7 +46,7 @@ A larger model alone does not define authority boundaries, memory governance, ev
 
 ## Core claim
 
-[01-core, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as a single undifferentiated model.
+[asi-is-a-stack-not-a-model.core, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as a single undifferentiated model.
 
 ## Mechanism
 
@@ -84,12 +88,12 @@ A diagrammed stack, chapter map, source crosswalk, and claim/evidence matrix tha
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/handoff: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
-| `aletheia` | Aletheia Foundry | Planned use from inventory/handoff: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `aletheia` | Aletheia Foundry | Planned use from inventory/manifest: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

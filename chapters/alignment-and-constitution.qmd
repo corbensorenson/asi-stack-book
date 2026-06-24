@@ -1,5 +1,7 @@
 ---
 title: "Alignment and Constitution"
+chapter_id: "alignment-and-constitution"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -21,6 +23,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `alignment-and-constitution` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange` |
@@ -30,7 +34,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -42,7 +46,7 @@ Reactive refusal rules do not define value continuity, corrigibility, moral unce
 
 ## Core claim
 
-[04-core, support: argument] The alignment layer should act as a constitutional substrate that constrains goals, plans, and self-modification.
+[alignment-and-constitution.core, support: argument] The alignment layer should act as a constitutional substrate that constrains goals, plans, and self-modification.
 
 ## Mechanism
 
@@ -85,12 +89,12 @@ A compact constitution appendix, conflict taxonomy, and planned scenario tests.
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/handoff: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
-| `field_of_god` | The Field of God | Planned use from inventory/handoff: Field of God source/outline/material. |
-| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/handoff: Geometric-order philosophical/constitutional source. |
-| `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | Planned use from inventory/handoff: Computational metaphysics and alignment synthesis. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/handoff: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `alignment_field` | Field of God / Alignment Field family | Planned use from inventory/manifest: Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. |
+| `field_of_god` | The Field of God | Planned use from inventory/manifest: Field of God source/outline/material. |
+| `ethica_mechanica` | Ethica Mechanica | Planned use from inventory/manifest: Geometric-order philosophical/constitutional source. |
+| `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | Planned use from inventory/manifest: Computational metaphysics and alignment synthesis. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

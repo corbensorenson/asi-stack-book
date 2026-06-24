@@ -1,5 +1,7 @@
 ---
 title: "Governance and Stable Capability Fields"
+chapter_id: "governance-and-stable-capability-fields"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -21,6 +23,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `governance-and-stable-capability-fields` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `scf`, `talos`, `ladon_manhattan`, `viea`, `moecot` |
@@ -30,7 +34,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -42,7 +46,7 @@ Ordinary plugin replacement does not define qualified implementation replacement
 
 ## Core claim
 
-[05-core, support: argument] Governed self-improvement requires stable capability fields: stable semantic boundaries with replaceable implementations and bounded authority.
+[governance-and-stable-capability-fields.core, support: argument] Governed self-improvement requires stable capability fields: stable semantic boundaries with replaceable implementations and bounded authority.
 
 ## Mechanism
 
@@ -86,12 +90,12 @@ A field schema with qualification predicates, route validity checks, authority c
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `scf` | Stable Capability Fields | Planned use from inventory/handoff: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
-| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/handoff: Kernel-level security architecture for high-agency AI. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,5 +1,7 @@
 ---
 title: "Evidence, Benchmarks, and Ratchets"
+chapter_id: "evidence-benchmarks-and-ratchets"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -25,6 +27,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `evidence-benchmarks-and-ratchets` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `benchmaxxing`, `moecot`, `rmi`, `cognitive_loop_closure`, `road_to_agi`, `viea`, `tokenmana`, `coherence_exchange`, `uat` |
@@ -34,7 +38,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -46,7 +50,7 @@ Benchmarks alone can be saturated, gamed, or disconnected from source claims and
 
 ## Core claim
 
-[13-core, support: argument] The book should maintain evidence ratchets that connect claims, tests, residuals, regressions, and release history.
+[evidence-benchmarks-and-ratchets.core, support: argument] The book should maintain evidence ratchets that connect claims, tests, residuals, regressions, and release history.
 
 ## Mechanism
 
@@ -90,16 +94,16 @@ A claim/evidence matrix, test spec appendix, and release checklist.
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/handoff: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/handoff: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
-| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/handoff: Repeated cognition should become procedural memory / verified tools. |
-| `road_to_agi` | Road To AGI | Planned use from inventory/handoff: Remaining work / roadmap context. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `tokenmana` | TokenMana | Planned use from inventory/handoff: Regenerative capacity mechanisms for load-stable token pricing. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/handoff: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
-| `uat` | Unified Adaptive Tribunal | Planned use from inventory/handoff: Multi-AI collaborative refinement/evaluation protocol. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/manifest: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `tokenmana` | TokenMana | Planned use from inventory/manifest: Regenerative capacity mechanisms for load-stable token pricing. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

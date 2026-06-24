@@ -8,5 +8,9 @@ _site/
 asi_stack_living_book_handoff/
 asi_stack_living_book_handoff_packet.zip
 
+# Local source drops need explicit publication review before tracking.
+sources/inbox/*
+!sources/inbox/README.md
+
 /.quarto/
 **/*.quarto_ipynb

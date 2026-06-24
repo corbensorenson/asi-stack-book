@@ -1,5 +1,7 @@
 ---
 title: "Prototype Roadmap"
+chapter_id: "prototype-roadmap"
+part_id: "integration-implementation"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -27,6 +29,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `prototype-roadmap` |
+| Part | Part III - Integration and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `moecot`, `viea`, `road_to_agi`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `moecot_md`, `coherence_exchange`, `beastbrain_timeless` |
@@ -36,7 +40,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -48,7 +52,7 @@ A roadmap that jumps straight to autonomous improvement would skip artifact memo
 
 ## Core claim
 
-[15-core, support: argument] The prototype should grow in staged increments from artifact graph to governed capability replacement.
+[prototype-roadmap.core, support: argument] The prototype should grow in staged increments from artifact graph to governed capability replacement.
 
 ## Mechanism
 
@@ -91,18 +95,18 @@ A phase table with deliverables, acceptance gates, and blocked dependencies.
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `road_to_agi` | Road To AGI | Planned use from inventory/handoff: Remaining work / roadmap context. |
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/handoff: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
-| `scf` | Stable Capability Fields | Planned use from inventory/handoff: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
-| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/handoff: Public VCM release. Governed protocol for compiled working context. |
-| `planforge` | PlanForge | Planned use from inventory/handoff: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
-| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/handoff: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
-| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/handoff: Markdown export/source version. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/handoff: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
-| `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | Planned use from inventory/handoff: Definitive standalone master plan variant. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+| `planforge` | PlanForge | Planned use from inventory/manifest: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/manifest: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | Planned use from inventory/manifest: Definitive standalone master plan variant. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

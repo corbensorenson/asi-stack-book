@@ -1,5 +1,7 @@
 ---
 title: "Living Book Methodology"
+chapter_id: "living-book-methodology"
+part_id: "integration-implementation"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -22,6 +24,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `living-book-methodology` |
+| Part | Part III - Integration and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `road_to_agi`, `benchmaxxing`, `viea`, `moecot`, `moecot_md`, `bugbrain` |
@@ -31,7 +35,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -43,7 +47,7 @@ A static anthology cannot show evidence movement, deprecations, source updates, 
 
 ## Core claim
 
-[16-core, support: argument] The living book should model the ASI stack discipline through Quarto source, inventories, evidence matrices, tests, changelogs, and releases.
+[living-book-methodology.core, support: argument] The living book should model the ASI stack discipline through Quarto source, inventories, evidence matrices, tests, changelogs, and releases.
 
 ## Mechanism
 
@@ -87,13 +91,13 @@ A Quarto repo, GitHub Pages workflow, source inventory, claim/evidence matrix, v
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `road_to_agi` | Road To AGI | Planned use from inventory/handoff: Remaining work / roadmap context. |
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/handoff: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/handoff: Markdown export/source version. |
-| `bugbrain` | BugBrain | Planned use from inventory/handoff: Edge/resource-aware implementation context. |
+| `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
+| `bugbrain` | BugBrain | Planned use from inventory/manifest: Edge/resource-aware implementation context. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,5 +1,7 @@
 ---
 title: "Reasoning, Verification, and Epistemology"
+chapter_id: "reasoning-verification-and-epistemology"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -24,6 +26,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `reasoning-verification-and-epistemology` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `spinoza`, `uat`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `viea`, `spinoza_composer`, `aletheia` |
@@ -33,7 +37,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -45,7 +49,7 @@ Generated text can be coherent without being grounded, checked, calibrated, or f
 
 ## Core claim
 
-[09-core, support: argument] Reasoning and verification should maintain claim records with evidence tiers, contradiction handling, and calibrated uncertainty.
+[reasoning-verification-and-epistemology.core, support: argument] Reasoning and verification should maintain claim records with evidence tiers, contradiction handling, and calibrated uncertainty.
 
 ## Mechanism
 
@@ -90,15 +94,15 @@ A claim ledger with support states, source handles, uncertainty, contradiction l
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/handoff: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
-| `uat` | Unified Adaptive Tribunal | Planned use from inventory/handoff: Multi-AI collaborative refinement/evaluation protocol. |
-| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/handoff: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/handoff: Generation vs verification; long context is not automatically long-range reasoning. |
-| `treellm` | TreeLLM | Planned use from inventory/handoff: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/handoff: Narrative/compliance operating system variant. Use as applied Spinoza. |
-| `aletheia` | Aletheia Foundry | Planned use from inventory/handoff: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/manifest: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `uat` | Unified Adaptive Tribunal | Planned use from inventory/manifest: Multi-AI collaborative refinement/evaluation protocol. |
+| `coherence_exchange` | The Coherence Exchange | Planned use from inventory/manifest: Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
+| `treellm` | TreeLLM | Planned use from inventory/manifest: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/manifest: Narrative/compliance operating system variant. Use as applied Spinoza. |
+| `aletheia` | Aletheia Foundry | Planned use from inventory/manifest: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

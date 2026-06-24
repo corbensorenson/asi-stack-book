@@ -1,5 +1,7 @@
 ---
 title: "Labor and Execution OS"
+chapter_id: "labor-and-execution-os"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -25,6 +27,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `labor-and-execution-os` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `talos`, `talos_md`, `viea`, `genesiscode`, `software_magic_grimoire`, `cognitive_loop_closure`, `moecot`, `spinoza_composer`, `ladon_manhattan` |
@@ -34,7 +38,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -46,7 +50,7 @@ A generic agent loop does not provide typed job lifecycle, replay, artifact grap
 
 ## Core claim
 
-[08-core, support: argument] The execution layer should convert plans into typed jobs and artifacts through a governed labor operating system.
+[labor-and-execution-os.core, support: argument] The execution layer should convert plans into typed jobs and artifacts through a governed labor operating system.
 
 ## Mechanism
 
@@ -91,16 +95,16 @@ A typed job schema, artifact graph, permission model, audit log, and replay prot
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
-| `talos_md` | Talos_Protocol_v1.0.md | Planned use from inventory/handoff: Markdown/public release version. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
-| `genesiscode` | GenesisCode | Planned use from inventory/handoff: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
-| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/handoff: Structured command contracts and semantic density of software words. |
-| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/handoff: Repeated cognition should become procedural memory / verified tools. |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
-| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/handoff: Narrative/compliance operating system variant. Use as applied Spinoza. |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/handoff: Kernel-level security architecture for high-agency AI. |
+| `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `talos_md` | Talos_Protocol_v1.0.md | Planned use from inventory/manifest: Markdown/public release version. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/manifest: Structured command contracts and semantic density of software words. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/manifest: Repeated cognition should become procedural memory / verified tools. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/manifest: Narrative/compliance operating system variant. Use as applied Spinoza. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/manifest: Kernel-level security architecture for high-agency AI. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

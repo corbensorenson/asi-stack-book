@@ -1,5 +1,7 @@
 ---
 title: "Mathematical and Search Substrates"
+chapter_id: "mathematical-and-search-substrates"
+part_id: "stack-layers"
 status: "conceptual"
 last_updated: "2026-06-24"
 primary_sources:
@@ -21,6 +23,8 @@ open_evidence_gaps:
 
 | Field | Value |
 |---|---|
+| Chapter ID | `mathematical-and-search-substrates` |
+| Part | Part II - The Layers of the ASI Stack |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
 | Primary source records | `coilmoecot`, `temporal_coil_research`, `cognitive_compilation`, `genesiscode`, `viea` |
@@ -30,7 +34,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
 
 ## Problem
 
@@ -42,7 +46,7 @@ Novel mathematical substrates can become overclaimed if they are not tied to tes
 
 ## Core claim
 
-[12-core, support: argument] Alternative substrates belong in the stack only as testable implementation hypotheses until evidence supports them.
+[mathematical-and-search-substrates.core, support: argument] Alternative substrates belong in the stack only as testable implementation hypotheses until evidence supports them.
 
 ## Mechanism
 
@@ -85,12 +89,12 @@ A technical appendix and experiment plan with baseline comparisons and adoption 
 
 | Source ID | Title | Planned use |
 |---|---|---|
-| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | Planned use from inventory/handoff: Prime-temporal coil networks as governed specialist cores in MoECOT runtime. |
-| `temporal_coil_research` | Temporal Coil Research | Planned use from inventory/handoff: Manifest-driven A/B process for temporal-coil integration in language model training. |
-| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/handoff: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
-| `genesiscode` | GenesisCode | Planned use from inventory/handoff: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
-| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | Planned use from inventory/manifest: Prime-temporal coil networks as governed specialist cores in MoECOT runtime. |
+| `temporal_coil_research` | Temporal Coil Research | Planned use from inventory/manifest: Manifest-driven A/B process for temporal-coil integration in language model training. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `genesiscode` | GenesisCode | Planned use from inventory/manifest: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
 
 ## Summary
 
-This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

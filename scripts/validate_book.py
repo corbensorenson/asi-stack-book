@@ -9,15 +9,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED = [
     "_quarto.yml",
+    "book_structure.json",
     "index.qmd",
     "preface.qmd",
     "sources/source_inventory.json",
     "sources/source_inventory.md",
     "scripts/sync_scaffold.py",
     "scripts/build_source_matrix.py",
-    "chapters/01_asi_is_a_stack.qmd",
-    "chapters/06_planning_and_control.qmd",
-    "chapters/16_living_book_methodology.qmd",
     "appendices/A_source_matrix.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "appendices/E_codex_test_specs.qmd",
@@ -48,6 +46,19 @@ def fail(message: str) -> None:
     sys.exit(1)
 
 
+def read_json(path: Path) -> object:
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def flatten_chapters(structure: dict) -> list[dict]:
+    chapters = []
+    for part in structure.get("parts", []):
+        for chapter in part.get("chapters", []):
+            chapters.append(chapter)
+    return chapters
+
+
 def validate_required_files() -> None:
     missing = [path for path in REQUIRED if not (ROOT / path).exists()]
     if missing:
@@ -57,10 +68,8 @@ def validate_required_files() -> None:
         sys.exit(1)
 
 
-def validate_inventory() -> None:
-    inventory_path = ROOT / "sources" / "source_inventory.json"
-    with inventory_path.open(encoding="utf-8") as f:
-        records = json.load(f)
+def validate_inventory() -> set[str]:
+    records = read_json(ROOT / "sources" / "source_inventory.json")
     if not isinstance(records, list):
         fail("sources/source_inventory.json must contain a list.")
     required_keys = {"id", "title", "priority", "layer", "chapter_targets", "url", "notes"}
@@ -79,24 +88,81 @@ def validate_inventory() -> None:
         fail(f"Source inventory records missing required keys: {bad_records}")
     if duplicates:
         fail(f"Duplicate source IDs: {sorted(duplicates)}")
+    return seen
 
 
-def validate_chapter_frontmatter() -> None:
-    chapters = sorted((ROOT / "chapters").glob("*.qmd"))
-    if len(chapters) != 16:
-        fail(f"Expected 16 chapter files, found {len(chapters)}.")
-    stale = []
+def validate_structure(source_ids: set[str]) -> list[dict]:
+    structure = read_json(ROOT / "book_structure.json")
+    if not isinstance(structure, dict):
+        fail("book_structure.json must contain an object.")
+    chapters = flatten_chapters(structure)
+    if not chapters:
+        fail("book_structure.json has no chapters.")
+
+    ids = set()
+    files = set()
+    duplicate_ids = set()
+    duplicate_files = set()
+    unknown_sources = []
+    missing_files = []
+
     for chapter in chapters:
-        text = chapter.read_text(encoding="utf-8", errors="ignore")
-        if 'last_updated: "YYYY-MM-DD"' in text:
-            stale.append(chapter.relative_to(ROOT))
-        if "Source records assigned; source texts not yet ingested." not in text:
-            stale.append(chapter.relative_to(ROOT))
-    if stale:
-        print("Chapter files need scaffold status updates:")
-        for path in stale:
+        chapter_id = chapter.get("id")
+        file_path = chapter.get("file")
+        if not chapter_id or not file_path:
+            fail(f"Chapter entry missing id or file: {chapter}")
+        if chapter_id in ids:
+            duplicate_ids.add(chapter_id)
+        ids.add(chapter_id)
+        if file_path in files:
+            duplicate_files.add(file_path)
+        files.add(file_path)
+        if not (ROOT / file_path).exists():
+            missing_files.append(file_path)
+        for source_id in chapter.get("source_ids", []):
+            if source_id not in source_ids:
+                unknown_sources.append((chapter_id, source_id))
+
+    if duplicate_ids:
+        fail(f"Duplicate chapter IDs in book_structure.json: {sorted(duplicate_ids)}")
+    if duplicate_files:
+        fail(f"Duplicate chapter files in book_structure.json: {sorted(duplicate_files)}")
+    if missing_files:
+        print("Chapter files listed in book_structure.json are missing:")
+        for path in missing_files:
             print(f" - {path}")
         sys.exit(1)
+    if unknown_sources:
+        print("Unknown source IDs in book_structure.json:")
+        for chapter_id, source_id in unknown_sources:
+            print(f" - {chapter_id}: {source_id}")
+        sys.exit(1)
+
+    return chapters
+
+
+def validate_chapter_frontmatter(chapters: list[dict]) -> None:
+    stale = []
+    for chapter in chapters:
+        path = ROOT / chapter["file"]
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if 'last_updated: "YYYY-MM-DD"' in text:
+            stale.append(path.relative_to(ROOT))
+        if f'chapter_id: "{chapter["id"]}"' not in text:
+            stale.append(path.relative_to(ROOT))
+        if "Source records assigned; source texts not yet ingested." not in text:
+            stale.append(path.relative_to(ROOT))
+    if stale:
+        print("Chapter files need dynamic scaffold status updates:")
+        for path in sorted(set(stale)):
+            print(f" - {path}")
+        sys.exit(1)
+
+
+def validate_quarto_generated() -> None:
+    text = (ROOT / "_quarto.yml").read_text(encoding="utf-8", errors="ignore")
+    if "generated by scripts/sync_scaffold.py" not in text:
+        fail("_quarto.yml should be generated by scripts/sync_scaffold.py.")
 
 
 def validate_overclaims() -> None:
@@ -123,8 +189,10 @@ def validate_claim_states() -> None:
 
 def main() -> None:
     validate_required_files()
-    validate_inventory()
-    validate_chapter_frontmatter()
+    source_ids = validate_inventory()
+    chapters = validate_structure(source_ids)
+    validate_quarto_generated()
+    validate_chapter_frontmatter(chapters)
     validate_overclaims()
     validate_claim_states()
     print("Book validation passed.")
