@@ -435,20 +435,20 @@
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactions",
       "formal_target": "A snapshot read sees the committed events in its declared view.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite event/snapshot predicate: valid snapshot reads expose committed events in the declared view."
     },
     {
       "tag": "lean:vcm.transactions.failure_blocks_promotion",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactions",
       "formal_target": "A tainted source produces tainted derived context unless declassification is authorized.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite taint predicate: tainted sources taint derivatives unless declassification is authorized."
     },
     {
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",

@@ -1264,16 +1264,17 @@ Draft deliverables:
 
 - A transaction model for context reads, writes, branches, and deletion closure.
 - Implemented protocol validation: `context_transaction_record` fixture validates public record shape only.
-- Planned Codex test: Read-your-writes snapshot test.
-- Planned Codex test: Taint propagation test.
+- Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
+- Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Planned Codex test: Deletion closure test.
+- Planned Codex test: memory-store conformance test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | planned |
-| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | planned |
+| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | implemented |
+| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | implemented |
 
 ### Verification Bandwidth and Context Adequacy
 

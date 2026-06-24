@@ -16,6 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
   - "Only protocol schema/fixture validation is implemented; no transactional memory-store tests have been run for this chapter."
+  - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
-| Test state | Context transaction fixture validation implemented; memory-store tests remain planned. |
+| Test state | Context transaction fixture validation and `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats context transactions as a required runtime contract, not as an implemented database. The repo validates a transaction record fixture, but it does not yet implement snapshots, mounts, taint propagation, deletion closure, or copy-on-write branches.
+This chapter treats context transactions as a required runtime contract, not as an implemented database. The repo validates a transaction record fixture and implements narrow finite-record Lean predicates for committed-event snapshot reads and taint propagation without declassification. It does not yet implement a memory store, mounts, branch isolation, deletion closure, or copy-on-write branches.
 
 ## Problem
 
@@ -138,29 +139,30 @@ Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale
 
 A transaction model for context reads, writes, branches, and deletion closure.
 
-The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, contradiction refs, closure state, faults, and audit refs. It does not implement a memory store.
+The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, contradiction refs, closure state, faults, and audit refs. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
 
-The fixture validates only the record surface. It does not prove read consistency, branch isolation, taint propagation, deletion closure, or poisoning resistance.
+The fixture validates only the record surface. The Lean predicates do not prove read-your-writes consistency across a store, branch isolation, deletion closure, or poisoning resistance.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares operation, snapshot, mounts, read/write sets, branch policy, taint, deletion obligations, contradictions, closure state, faults, and audits. | implemented by protocol validation; run in this pass |
-| Read-your-writes snapshot test | Check that a snapshot read sees committed events in its declared view. | planned; not run |
-| Taint propagation test | Check that tainted source context produces tainted derived context unless declassification is authorized. | planned; not run |
+| Snapshot read predicate | Check that a valid finite snapshot read sees a committed event in its declared view. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
+| Taint propagation predicate | Check that tainted source context produces tainted derived context unless declassification is authorized. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Deletion closure test | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | planned; not run |
+| Memory-store conformance test | Check read-your-writes, branch isolation, mount visibility, and committed-event replay in an executable store harness. | planned; not run |
 
-Only the fixture-shape check is implemented. The planned tests require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
+The fixture-shape check and finite-record proof predicates are implemented. Store consistency, branch isolation, and deletion closure require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | planned |
-| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | planned |
+| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | implemented |
+| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | implemented |
 
-These proof hooks remain planned. Snapshot and taint properties need either a formal event model or a deterministic store harness before they can move beyond schema checks.
+These proof hooks are implemented only over finite Lean event/snapshot and taint records. `AsiStackProofs.ContextTransactions` checks that valid snapshot reads expose committed events in their declared view, and that tainted sources taint derived context unless declassification is authorized. The proof does not implement a transactional memory store, branch isolation, mount visibility, deletion closure, or poisoning resistance.
 
 ## Source crosswalk
 
