@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 77,282 chapter words, averaging 1,546 words per chapter.
+Current scale: 50 chapter files, 77,371 chapter words, averaging 1,547 words per chapter.
 
 ## Completed in v0.2
 
@@ -17,6 +17,7 @@ Current scale: 50 chapter files, 77,282 chapter words, averaging 1,546 words per
 - Source notes now exist for all 59 source records currently assigned to chapters, including the original backbone notes, RMI, Benchmaxxing, CGS, Octopus Router, Cognitive Loop Closure, Project Theseus public-project records, Circle Calculus public-project records, the Field of God AI Constitution, GenesisCode, Verification Bandwidth, Cognitive Compilation, Simulation Scaling, UAT, Ladon/Manhattan, Ratcheting Generative Systems, TokenMana, BeastBrain, TreeLLM, BBVCA, RankFold/NeuralFold, Aletheia, Context Engineer, BugBrain, and the philosophical alignment lineage sources.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The authority-ceiling Lean proof targets are implemented in `AsiStackProofs.Authority` as narrow finite-record predicates for no-grant ceiling preservation and missing-grant denial.
+- The failure-mode Lean proof targets are implemented in `AsiStackProofs.FailureModes` as narrow finite-record predicates for failed-invariant promotion blocking and unbounded-authority failure detection.
 - The Digital SCIF/security-kernel authorization and clearance predicates are implemented in `AsiStackProofs.SecurityKernel` as narrow finite-record proofs.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
@@ -40,7 +41,7 @@ Current scale: 50 chapter files, 77,282 chapter words, averaging 1,546 words per
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
-- Most Lean proof targets remain planned or triaged as schema/process/research targets; 8 of 100 proof targets are currently marked implemented.
+- Most Lean proof targets remain planned or triaged as schema/process/research targets; 10 of 100 proof targets are currently marked implemented.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented and remains limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.

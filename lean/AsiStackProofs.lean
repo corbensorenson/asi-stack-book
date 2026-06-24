@@ -1,4 +1,5 @@
 import AsiStackProofs.Authority
 import AsiStackProofs.EvidenceStates
+import AsiStackProofs.FailureModes
 import AsiStackProofs.SecurityKernel
 import AsiStackProofs.StackBoundaries

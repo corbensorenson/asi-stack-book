@@ -20,6 +20,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
   - "The failure_boundary_map fixture validates schema/example consistency only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain unimplemented."
+  - "The implemented FailureModes Lean predicates cover finite-record invariant failure and unbounded-authority detection only; they do not prove deployed failure detection or containment."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot`; raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
-| Test state | `failure_boundary_map.valid.json` passes protocol fixture validation; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain planned. |
+| Test state | `failure_boundary_map.valid.json` passes protocol fixture validation, and `AsiStackProofs.FailureModes` builds locally; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain planned. |
 
 ## Drafting guardrail
 
@@ -147,6 +148,7 @@ The smallest useful implementation is a `failure_boundary_map` schema plus a sma
 | Test | Purpose | Status |
 |---|---|---|
 | Failure boundary map validation | Check that the failure fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Invariant-failure finite-record proof | Check that a modeled component with a failed required invariant cannot be promoted. | implemented in `AsiStackProofs.FailureModes`; runtime promotion gate not run |
 | Authority creep scenario | Check that a proposed action exceeding the requester ceiling is denied or escalated with an audit record. | planned; not run |
 | Context pollution scenario | Check that quoted or retrieved content cannot become behavioral control without an authority grant. | planned; not run |
 | Evaluator drift scenario | Check that a component cannot silently modify the evaluator or gate that judges its promotion. | planned; not run |
@@ -156,10 +158,10 @@ The smallest useful implementation is a `failure_boundary_map` schema plus a sma
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | planned |
-| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | planned |
+| `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
+| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
 
-These proof targets remain planned. The current executable support is the failure-boundary record shape; promotion-blocking behavior still needs a concrete test harness or Lean predicate.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, and that an unbounded authority field is represented as a governance failure. They do not prove scenario coverage, evaluator independence, context-pollution containment, or deployed failure detection; those remain planned tests and implementation obligations.
 
 ## Source crosswalk
 
