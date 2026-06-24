@@ -2879,13 +2879,13 @@
               "tag": "lean:fast_generation.mode_selection.operational_invariant",
               "module": "AsiStackProofs.FastGeneration",
               "target": "A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:fast_generation.verified_speed.failure_blocks_promotion",
               "module": "AsiStackProofs.FastGeneration",
               "target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

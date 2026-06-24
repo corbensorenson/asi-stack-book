@@ -715,20 +715,20 @@
       "chapter_id": "fast-generation-architectures",
       "module": "AsiStackProofs.FastGeneration",
       "formal_target": "A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "This target needs a generation-mode record schema before Lean can check more than the prose requirement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite route-record predicate: promotion requires generation mode, verifier, acceptance predicate, risk tier, and fallback fields."
     },
     {
       "tag": "lean:fast_generation.verified_speed.failure_blocks_promotion",
       "chapter_id": "fast-generation-architectures",
       "module": "AsiStackProofs.FastGeneration",
       "formal_target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "This target should first be captured in a typed evidence record with baseline, accepted-output, task-success, and promotion-decision fields."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite speed-evidence predicate: raw token-speed claims cannot promote when accepted-output, task-success, or baseline evidence is missing."
     },
     {
       "tag": "lean:compression.artifacts.operational_invariant",

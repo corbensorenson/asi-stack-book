@@ -80,9 +80,10 @@
 - Added a source-note chapter-mapping column to the generated claim/evidence matrix in Appendix C, exposing 367 assigned source/chapter pairs, 273 explicit source-note chapter listings by stable ID or exact title, and remaining chapter-listing gaps without promoting any claim support state.
 - Added `Fast Generation Architectures` as a manifest-driven Part III chapter after Generate-Verify-Repair Compression, with source queues, a Mermaid generation-mode lifecycle, planned speed-quality benchmarks, and two schema-first Lean proof targets.
 - Added `generation_mode_record.schema.json` and `generation_mode_record.valid.json` so fast-generation routes can record mode, verifier, acceptance predicate, accepted-output accounting, metric definitions, fallback, promotion decision, and non-claims without reporting unrun benchmarks.
+- Implemented `AsiStackProofs.FastGeneration` for finite route-promotion-field and raw-token-speed promotion-blocking predicates, then updated the outline, chapter, proof manifest, triage file, and status report without claiming any decoding benchmark result.
 - Moved the raw fast-generation browser-GPT planning note into the ignored local inbox at `sources/inbox/fast_generation_browser_note_2026-06-24/` and added a public-safe ingestion report at `docs/fast_generation_context_ingestion_report.md`.
 - Added fast generation, decoding substrates, and serving acceleration to the external-literature queue while keeping all MTP, speculative decoding, diffusion, early-exit, state-space, and KV-cache claims unpromoted until source notes or tests exist.
-- Regenerated the scaffold and proof manifest so Appendix E now covers 102 proof targets, with 44 implemented and 58 planned, and Appendix C now exposes 377 assigned source/chapter pairs with 273 explicit source-note chapter listings.
+- Regenerated the scaffold and proof manifest so Appendix E now covers 102 proof targets, with 46 implemented and 56 planned, and Appendix C now exposes 377 assigned source/chapter pairs with 273 explicit source-note chapter listings.
 - Extended protocol fixture validation to include public living-book release records under `release_records/` against `schemas/living_book_release_record.schema.json`.
 
 ## 2026-06-24 - v0.2 manuscript baseline

@@ -2085,8 +2085,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | planned |
-| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | planned |
+| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | implemented |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | implemented |
 
 ### RankFold, NeuralFold, and Artifact Compression
 

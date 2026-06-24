@@ -47,9 +47,9 @@ The packet suggested these external literature families for future source-note w
 |---|---|
 | Third-party bibliography | Add citation-normalized external records to `sources/source_inventory.json`. |
 | External source notes | Read the primary sources and create source notes under `sources/source_notes/`. |
-| Generation-mode implementation | The JSON Schema fixture exists; typed code, route execution, accepted-output accounting, and benchmark artifacts are still missing. |
+| Generation-mode implementation | The JSON Schema fixture and finite Lean predicates exist; executable route code, accepted-output accounting, and benchmark artifacts are still missing. |
 | Benchmarks | Implement and run at least one baseline and one acceleration-mode test with accepted-output accounting. |
-| Lean module | Implement `AsiStackProofs.FastGeneration` only after the finite record is concrete. |
+| Lean expansion | Extend `AsiStackProofs.FastGeneration` only after additional route semantics or benchmark records are concrete. |
 
 ## Validation Requirement
 

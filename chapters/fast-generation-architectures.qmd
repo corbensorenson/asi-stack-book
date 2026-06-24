@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` |
 | Source loading state | source notes exist for assigned internal sources; external acceleration literature is queued and unmined; browser-GPT packet is local-only author-intent context. |
-| Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
+| Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.FastGeneration` implements two finite-record promotion predicates; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
 
 ## Drafting guardrail
 
@@ -226,10 +226,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | planned |
-| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | planned |
+| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | implemented |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | implemented |
 
-These proof targets are schema-first. They should become meaningful only after the generation-mode record is specified as JSON Schema, typed code, or a small Lean finite record. Until then, a Lean theorem would mostly restate the prose.
+These Lean hooks are implemented as finite-record predicates over promotion fields and speed-evidence fields. They prove that a promoted route must expose its governing fields and that raw token-speed claims cannot promote when verified-output, task-success, or baseline evidence is missing. They do not prove that any decoder is faster, that any verifier preserves quality, or that any external literature claim has been reproduced.
 
 ## Source crosswalk
 

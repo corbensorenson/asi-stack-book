@@ -5,6 +5,7 @@ import AsiStackProofs.CompactGenerativeSystems
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
 import AsiStackProofs.EvidenceStates
+import AsiStackProofs.FastGeneration
 import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.Planning
