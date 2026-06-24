@@ -35,20 +35,20 @@
       "chapter_id": "the-efficient-asi-hypothesis",
       "module": "AsiStackProofs.Efficiency",
       "formal_target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Efficiency as a finite route-comparison predicate: a minimum-viable route excludes listed lower-cost authorized candidates that satisfy the declared quality predicate."
     },
     {
       "tag": "lean:efficiency.minimum_viable.failure_blocks_promotion",
       "chapter_id": "the-efficient-asi-hypothesis",
       "module": "AsiStackProofs.Efficiency",
       "formal_target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Efficiency as a finite residual-promotion predicate: promoted work with open obligations must include a residual record."
     },
     {
       "tag": "lean:authority.ceiling.operational_invariant",
@@ -115,20 +115,20 @@
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",
       "formal_target": "A compiled intent contract preserves declared constraints and stop conditions.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite compilation-review predicate: declared constraints and stop conditions are preserved by valid compilation."
     },
     {
       "tag": "lean:intent.contract.failure_blocks_promotion",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",
       "formal_target": "A contract missing required authority cannot compile to an executable job.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite authority-compilation predicate: missing required authority blocks executable-job compilation."
     },
     {
       "tag": "lean:alignment.constitution.operational_invariant",

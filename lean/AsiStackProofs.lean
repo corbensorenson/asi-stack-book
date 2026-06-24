@@ -5,10 +5,12 @@ import AsiStackProofs.ClaimLedger
 import AsiStackProofs.CompactGenerativeSystems
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
+import AsiStackProofs.Efficiency
 import AsiStackProofs.EvidenceStates
 import AsiStackProofs.FastGeneration
 import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
+import AsiStackProofs.IntentContracts
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
 import AsiStackProofs.ProofEnvelope

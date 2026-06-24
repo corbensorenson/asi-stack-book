@@ -191,13 +191,13 @@
               "tag": "lean:efficiency.minimum_viable.operational_invariant",
               "module": "AsiStackProofs.Efficiency",
               "target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:efficiency.minimum_viable.failure_blocks_promotion",
               "module": "AsiStackProofs.Efficiency",
               "target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -498,13 +498,13 @@
               "tag": "lean:intent.contract.operational_invariant",
               "module": "AsiStackProofs.IntentContracts",
               "target": "A compiled intent contract preserves declared constraints and stop conditions.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:intent.contract.failure_blocks_promotion",
               "module": "AsiStackProofs.IntentContracts",
               "target": "A contract missing required authority cannot compile to an executable job.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

@@ -20,7 +20,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The costed_route_record fixture validates schema/example consistency only; minimum-viable routing, residual burden, and utility-preserving compression tests remain unimplemented."
+  - "The costed_route_record fixture validates schema/example consistency only; record-level Lean predicates exist, but route-search completeness, residual-burden measurement, and utility-preserving compression tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
-| Test state | `costed_route_record.valid.json` passes protocol fixture validation; minimum viable route, residual burden, and utility-preserving compression tests remain planned. |
+| Test state | `costed_route_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Efficiency` implements finite route-comparison and residual-promotion predicates; route-search, residual-burden, and utility-preserving compression tests remain planned. |
 
 ## Drafting guardrail
 
@@ -155,10 +155,10 @@ The smallest useful implementation is a `costed_route_record` schema plus one va
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | planned |
-| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | planned |
+| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | implemented |
+| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | implemented |
 
-The proof targets remain planned. The near-term executable surface is the route record schema; a later Lean target should formalize "minimum viable" only after route ordering, authority, and quality predicates are precise.
+These Lean hooks are implemented as finite-record predicates over route-comparison reviews and residual-promotion reviews. They prove only the record-level gates: a route marked minimum viable excludes listed lower-cost authorized candidates that satisfy the declared quality predicate, and a promoted result with open obligations requires a residual record. They do not prove route-search completeness, cost-estimate accuracy, quality evaluation, measured efficiency, or compression utility.
 
 ## Source crosswalk
 

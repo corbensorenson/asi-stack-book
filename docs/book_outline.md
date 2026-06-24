@@ -185,8 +185,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | planned |
-| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | planned |
+| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | implemented |
+| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | implemented |
 
 ### System Boundaries and Authority
 
@@ -400,8 +400,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | planned |
-| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | planned |
+| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
+| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
 
 ### Constitutional Alignment Substrate
 
@@ -2581,9 +2581,9 @@ Failure modes to cover:
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
-- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; most targets still need Lean/schema/process/research triage.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; many planned targets still need their next Lean, schema, policy-model, or research artifact.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming full proof-target coverage.
-- Implemented generated audit: Appendix E summarizes all 100 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: Appendix E summarizes all 102 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Artifact-by-artifact target audit.

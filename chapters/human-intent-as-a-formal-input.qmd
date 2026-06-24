@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The intent_contract fixture validates schema/example consistency only; ambiguity parsing, authority extraction, and stop-condition preservation tests remain unimplemented."
+  - "The intent_contract fixture validates schema/example consistency only; record-level Lean predicates exist, but ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`; supporting: `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
 | Source loading state | source notes: `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos`; raw cache: `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
-| Test state | `intent_contract.valid.json` passes protocol fixture validation; ambiguity parsing, authority extraction, and stop-condition preservation tests remain planned. |
+| Test state | `intent_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentContracts` implements finite preservation and missing-authority predicates; ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain planned. |
 
 ## Drafting guardrail
 
@@ -146,10 +146,10 @@ The smallest useful implementation is an `intent_contract` schema plus examples 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | planned |
-| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | planned |
+| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
+| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
 
-These proof targets remain planned. The current executable surface is the intent contract schema and fixture; compiling intent into jobs still needs tests or formal predicates.
+These Lean hooks are implemented as finite-record predicates over intent-compilation and authority-compilation reviews. They prove only the record-level gates: declared constraints and stop conditions are preserved by a valid compilation review, and a contract missing required authority cannot compile to an executable job. They do not solve natural-language parsing, infer hidden authority, resolve ambiguity, or test end-to-end lowering into plans, semantic atoms, or typed jobs.
 
 ## Source crosswalk
 
