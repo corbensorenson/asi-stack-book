@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The replacement_transaction fixture validates schema/example consistency only; replacement transaction, regression preservation, and rollback dry-run tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `replacement_transaction.valid.json` passes protocol fixture validation; replacement transaction, regression preservation, and rollback dry-run tests remain planned. |
 
 ## Drafting guardrail
 

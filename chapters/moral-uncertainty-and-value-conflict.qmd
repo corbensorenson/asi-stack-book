@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The value_conflict_record fixture validates schema/example consistency only; value-conflict classification, review escalation, and residual-uncertainty tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; value-conflict classification, review escalation, and residual-uncertainty preservation tests remain planned. |
 
 ## Drafting guardrail
 

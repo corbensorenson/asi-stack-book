@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The evidence_transition_record fixture and evidence-state Lean proofs validate narrow transition surfaces only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `spinoza`, `viea`; supporting: `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Source loading state | source notes: `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth`; raw cache: `benchmaxxing`, `spinoza`, `viea`, `uat`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `evidence_transition_record.valid.json` passes protocol fixture validation and evidence-state Lean hooks build locally; claim-ledger completeness, evidence bundle completeness, and changelog consistency audits remain planned. |
 
 ## Drafting guardrail
 

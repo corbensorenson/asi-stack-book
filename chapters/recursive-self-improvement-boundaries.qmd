@@ -19,8 +19,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The self_improvement_transition fixture validates schema/example consistency only; protected-invariant, evaluator-independence, and rollback scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `self_improvement_transition.valid.json` passes protocol fixture validation; protected-invariant, evaluator-independence, and rollback scenarios remain planned. |
 
 ## Drafting guardrail
 

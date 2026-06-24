@@ -19,8 +19,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The costed_route_record fixture validates schema/example consistency only; minimum-viable routing, residual burden, and utility-preserving compression tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `costed_route_record.valid.json` passes protocol fixture validation; minimum viable route, residual burden, and utility-preserving compression tests remain planned. |
 
 ## Drafting guardrail
 

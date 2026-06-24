@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The agency_rights_checklist fixture validates schema/example consistency only; agency-preservation, corrigibility-pathway, and high-impact approval scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `ethica_mechanica`; supporting: `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution`; raw cache: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; agency-preservation, corrigibility-pathway, and high-impact approval tests remain planned. |
 
 ## Drafting guardrail
 

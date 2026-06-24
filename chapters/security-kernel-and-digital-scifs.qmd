@@ -14,8 +14,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The authority_use_receipt fixture validates schema/example consistency only; secret-handle substitution, SCIF least-privilege, and prompt-injection containment scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange` |
 | Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation; secret-handle substitution, SCIF least-privilege, and prompt-injection containment tests remain planned. |
 
 ## Drafting guardrail
 
