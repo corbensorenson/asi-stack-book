@@ -2188,6 +2188,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A simulation-fidelity checklist and cost/fidelity table for experiment design.
+- Implemented repository-level fixture: `simulation_contract_record.valid.json` validates the simulation-contract record shape only; no feasibility calculator, simulation benchmark, or external physical-computation audit exists yet.
 - Planned Codex test: Fidelity declaration test.
 - Planned Codex test: Resource-bound sanity check.
 - Planned Codex test: Simulation approximation audit.
@@ -2241,6 +2242,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A technical-substrate appendix plan with experiment matrix and adoption gates.
+- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates the substrate-adoption record shape only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
@@ -2296,6 +2298,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack exists yet.
 - Planned Codex test: Contract schema validation test
 - Planned Codex test: Theorem-id resolution test
 - Planned Codex test: Non-claim preservation test
@@ -2353,6 +2356,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
+- Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-memory workload exists yet.
 - Planned Codex test: Cyclic alias visibility test
 - Planned Codex test: Sparse coverage gap test
 - Planned Codex test: Recurrence budget and exit test
@@ -2410,6 +2414,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
+- Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
 - Planned Codex test: RoPE receipt boundary test
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic

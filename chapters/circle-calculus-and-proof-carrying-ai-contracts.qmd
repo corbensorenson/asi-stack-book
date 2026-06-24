@@ -14,8 +14,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The proof_target_record fixture validates proof-record schema/example consistency only; no Circle Lean build, theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,33 +35,29 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`; supporting: `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Source loading state | source notes: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `proof_target_record.valid.json` passes repository-level protocol fixture validation; theorem-id resolution, contract replay, fingerprint, and non-claim preservation checks remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses the Circle Calculus source family as proof-boundary context for finite structural AI contracts. It does not claim that this ASI Stack repo has built Circle, resolved external theorem IDs, replayed receipt packs, or validated downstream model behavior. A passing proof-record fixture is a schema check, not proof ownership.
 
 ## Problem
 
-The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
+The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Mathematical and Search Substrates, and makes that pressure operational in a narrower boundary. It hands its output to Coil Attention, Cyclic Memory, and Recurrence Contracts, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The hard problem is authority transfer. A finite cyclic-address proof can be valid and still say nothing about language-model quality, runtime, memory, context length, deployment safety, or ASI capability. The ASI Stack therefore needs a contract boundary that lets downstream systems consume structural facts while preserving the limits of those facts.
 
 ## Why existing approaches are insufficient
 
-Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.
+Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims. Without those fields, a reader cannot tell whether a claim is a Lean theorem, a Python fixture, a generated report, a model benchmark, or a design hypothesis.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims. If `circle-calculus-and-proof-carrying-ai-contracts` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The key insufficiency is theorem laundering: a finite structural result gets repeated as if it were evidence for quality or deployment behavior. This chapter blocks that move by requiring each proof-carrying contract to carry its own consumer gate and non-claim boundary.
 
 ## Core Claim
 
 [circle-calculus-and-proof-carrying-ai-contracts.core, label: Design rationale, support: argument] Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Circle Calculus, Circle Calculus AI Contract Suite, Proof-Carrying RoPE Position Distinguishability, Proof-Carrying Circular Computation, and Circle AI Architectures - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support discussion of theorem-linked contract families, proof-status discipline, receipt fields, exact/discretized RoPE boundaries, cyclic address proofs, CLI reports, and explicit non-claims. They do not show that this repository has replayed those contracts or that any downstream model behavior improves.
 
 ## Mechanism
 
@@ -89,22 +85,16 @@ flowchart LR
   Nonclaims -. block .-> Overreach["Quality, speed, context, safety, or ASI claim"]
 ```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant theorem references, validation commands, deterministic fields, receipt fingerprints, unsupported axes, and failure conditions.
 
 ## Interfaces
-
-The interface for Circle Calculus and Proof-Carrying AI Contracts is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
 
 - Lean and proof manifests supply theorem status.
 - Python or CLI tools emit receipts and validation reports.
 - Theseus-style private experiments consume contracts without importing private results into public claims.
 - The evidence matrix records claim boundaries and support states.
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
-
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+The interface lets adjacent layers compose without absorbing each other's authority. Coil memory can consume a freshness or coverage receipt as a structural guardrail. Cyclic mixers can consume a phase-bank or collision receipt as a diagnostic. Evidence ledgers should still demand workloads, baselines, metrics, and run artifacts before quality or runtime claims move.
 
 ## Invariants
 
@@ -115,37 +105,34 @@ The invariants are the conditions that must remain true even when the implementa
 - Consumer readiness is not downstream success.
 - Non-claims survive transfer into later chapters.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is non-claim preservation. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Theorem laundering into quality claims.
 - Stale or failed theorem IDs.
 - Missing baseline or negative-control experiments.
 - Exact finite models mistaken for real-valued deployment behavior.
 
-For Circle Calculus and Proof-Carrying AI Contracts, mitigation starts by turning each listed failure into a named reviewable artifact. When `Theorem laundering into quality claims` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Theorem laundering should block support-state promotion. Stale theorem IDs should remain residuals until a resolver or external build confirms them. Missing baselines should prevent downstream adoption. Exact finite models should stay distinct from numerical diagnostics and real-valued deployment behavior.
 
 ## Minimal implementation
 
-A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
+The smallest useful implementation is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.
 
-The smallest useful implementation is deliberately narrow: A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current `proof_target_record` fixture validates only the record shape for proof targets. A Circle-specific contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Proof target record fixture validation | Validate that a proof target record names chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Contract schema validation test | Probe whether the chapter claim holds under the relevant Circle Calculus and Proof-Carrying AI Contracts boundary. | planned; not run |
 | Theorem-id resolution test | Probe whether the chapter claim holds under the relevant Circle Calculus and Proof-Carrying AI Contracts boundary. | planned; not run |
 | Non-claim preservation test | Probe whether the chapter claim holds under the relevant Circle Calculus and Proof-Carrying AI Contracts boundary. | planned; not run |
 | Receipt replay and fingerprint test | Probe whether the chapter claim holds under the relevant Circle Calculus and Proof-Carrying AI Contracts boundary. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require Circle contract artifacts or a local surrogate with theorem IDs, receipts, fingerprints, replay commands, and explicit non-claims; they are not reported results. When a contract test is implemented, this chapter should link to the command, fixture, environment notes, artifact pack, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -154,7 +141,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | planned |
 | `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The fixture can record proof targets, but it does not prove the Circle contracts or validate external theorem IDs. A first mechanized target should be a local finite-record predicate: downstream promotion is blocked when the contract lacks a non-claim boundary or workload evidence.
 
 ## Source crosswalk
 
@@ -166,10 +153,10 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
 | `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk preserves external proof authority. `circle_calculus_core` supplies proof-status discipline, `circle_ai_contract_suite` supplies contract families and consumer fields, `rope_position_certifier` supplies the exact/discretized RoPE boundary, `proof_carrying_circular_computation` supplies cyclic-address compute lineage, and `circle_ai_architectures` supplies the anti-overclaim rule. None of these source notes converts structural proof into model-quality evidence.
 
 ## Summary
 
-Circle Calculus and Proof-Carrying AI Contracts defines one boundary in the ASI Stack: Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims. Its job is to make a capability more governable, not merely more impressive.
+Circle Calculus and proof-carrying AI contracts are valuable because they let finite structural facts travel with theorem IDs, receipts, fingerprints, validation commands, and non-claims. Their job is boundary preservation.
 
-In v0.2, this chapter gives Circle Calculus and Proof-Carrying AI Contracts a complete architectural boundary: the stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Its next maturity step is to substantiate the boundary through `Lean and proof manifests supply theorem status`, preserve `Proof status is not a model-quality claim`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The ASI Stack should consume those contracts as structural guardrails, not as model-quality evidence. Downstream promotion still requires workloads, ordinary baselines, negative controls, metrics, and replayable result artifacts.

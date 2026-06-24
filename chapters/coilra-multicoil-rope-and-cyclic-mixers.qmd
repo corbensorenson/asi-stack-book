@@ -14,8 +14,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency only; no RoPE certifier run, cyclic mixer benchmark, MLX experiment, hardware-kernel test, or downstream quality evaluation has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
 
 ## Drafting guardrail
 
@@ -129,7 +129,7 @@ Each failure should block adoption beyond structural use. The substrate can rema
 
 ## Minimal implementation
 
-The smallest useful implementation is a cyclic mixer evaluation schema and fixture. It records structural invariant, proof or receipt boundary, alias and load diagnostics, parameter accounting, hardware notes, baselines, required metrics, adoption state, non-claims, and evidence references.
+The smallest useful implementation is a cyclic mixer evaluation schema and fixture. The current fixture records structural invariant, proof or receipt boundary, alias and load diagnostics, parameter accounting, hardware notes, baselines, required metrics, adoption state, non-claims, and evidence references.
 
 Passing the fixture does not prove a mixer works. It proves the book can represent the adoption boundary without laundering structural facts into performance claims.
 
@@ -137,12 +137,13 @@ Passing the fixture does not prove a mixer works. It proves the book can represe
 
 | Test | Purpose | Status |
 |---|---|---|
+| Cyclic mixer evaluation record fixture validation | Validate that a cyclic-substrate evaluation records structural invariant, proof/receipt boundary, alias/load diagnostics, parameter accounting, hardware notes, baselines, required metrics, adoption state, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | RoPE receipt boundary test | Check that exact/discretized receipts are separated from real-valued and model-quality claims. | planned; not run |
 | Cyclic mixer baseline matrix test | Check that dense, LoRA, RoPE, learned, recurrent, or state-space baselines are named before adoption. | planned; not run |
 | Residue/winding alias diagnostic | Check that alias diagnostics include winding when residue is insufficient. | planned; not run |
 | Parameter-quality-runtime separation test | Check that parameter count, quality, runtime, and memory claims are recorded separately. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require certifier output or model experiments with baselines, controls, metrics, hardware notes, and failure cases; they are not reported quality, runtime, memory, or context-length results. When a cyclic-substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -151,7 +152,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The schema can require structural and metric separation, but it does not prove CoilRA, RoPE, or cyclic mixers improve a model. A first proof should target the record boundary: structural invariants cannot be recorded as quality, runtime, memory, or parameter claims without separate evidence.
 
 ## Source crosswalk
 
@@ -163,7 +164,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 | `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps cyclic mixer evidence partitioned. `coilra_multicoil_rope` supplies cyclic adapter/mixer and parameter-accounting language, `rope_position_certifier` supplies exact/discretized RoPE receipt boundaries, `circle_ai_contract_suite` supplies contract-family fields, `theseus_circle_transfer` supplies transfer non-claims, and `circle_ai_architectures` supplies the rule that cyclic structure matters only when the workload actually has it.
 
 ## Summary
 

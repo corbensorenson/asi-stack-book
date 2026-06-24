@@ -19,8 +19,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; connector/recovery: `coilmoecot` |
 | Source loading state | source notes: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; raw cache: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation; baseline comparison, representation-efficiency, and falsification tests remain planned. |
 
 ## Drafting guardrail
 
@@ -136,7 +136,7 @@ Each failure should produce a downgrade, residual, or blocked promotion. Negativ
 
 ## Minimal implementation
 
-The smallest useful implementation is a substrate adoption schema and fixture. It records the candidate, intended use, advantage, baselines, negative controls, proof boundary, experiment requirements, falsification condition, adoption state, residuals, and evidence references.
+The smallest useful implementation is a substrate adoption schema and fixture. The current fixture records the candidate, intended use, advantage, baselines, negative controls, proof boundary, experiment requirements, falsification condition, adoption state, residuals, and evidence references.
 
 Passing the fixture does not prove a substrate. It prevents the book from describing adoption without the fields that adoption requires.
 
@@ -144,11 +144,12 @@ Passing the fixture does not prove a substrate. It prevents the book from descri
 
 | Test | Purpose | Status |
 |---|---|---|
+| Substrate adoption record fixture validation | Validate that a candidate substrate records intended use, expected advantage, baselines, negative controls, proof boundary, experiment requirements, falsification condition, adoption state, residuals, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require concrete workloads, baselines, negative controls, and run artifacts; they are not reported substrate results. When a substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -157,7 +158,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | planned |
 | `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The schema can require adoption evidence fields, but it does not prove a substrate improves search, routing, compression, or representation. The first proof target should model the promotion gate: without passing evidence, a substrate remains non-core.
 
 ## Source crosswalk
 
@@ -174,7 +175,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps optional substrates optional. `genesiscode` supplies small-kernel and obligation discipline, `temporal_coil_research` supplies manifest-driven A/B discipline, `coilmoecot` stays a readable design source rather than benchmark evidence, and the Circle sources supply proof-boundary language. None of the assigned sources promotes a substrate without baselines, controls, and adoption evidence.
 
 ## Summary
 

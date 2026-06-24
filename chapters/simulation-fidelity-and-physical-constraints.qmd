@@ -14,8 +14,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, or external literature review has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `simulation_scaling`; supporting: `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
 | Source loading state | source notes: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; raw cache: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation; fidelity, resource-bound, and approximation-audit tests remain planned. |
 
 ## Drafting guardrail
 
@@ -131,7 +131,7 @@ Each failure should create a residual or downgrade. The correct response to a we
 
 ## Minimal implementation
 
-The smallest useful implementation is a simulation contract schema and fixture. It records scope, fidelity, time semantics, demand, bottlenecks, approximations, supported claim boundary, residuals, and evidence references.
+The smallest useful implementation is a simulation contract schema and fixture. The current fixture records scope, fidelity, time semantics, demand, bottlenecks, approximations, supported claim boundary, residuals, and evidence references.
 
 Passing the fixture does not show feasibility. It makes the feasibility claim inspectable.
 
@@ -139,11 +139,12 @@ Passing the fixture does not show feasibility. It makes the feasibility claim in
 
 | Test | Purpose | Status |
 |---|---|---|
+| Simulation contract record fixture validation | Validate that a simulation claim records scope, fidelity, temporal semantics, demand, bottlenecks, approximation liberties, supported boundary, residual risks, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Fidelity declaration test | Check that every simulation claim declares scope, fidelity, and temporal semantics. | planned; not run |
 | Resource-bound sanity check | Check that demand and capacity bottlenecks are named before feasibility is claimed. | planned; not run |
 | Simulation approximation audit | Check that conclusions do not exceed approximation and fidelity boundaries. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require simulation claims, resource estimates, and a review harness; they are not reported feasibility results. When a simulation-audit test is implemented, this chapter should link to the command, fixture, assumptions, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -152,7 +153,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | planned |
 | `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The schema can require fidelity and resource fields, but it does not prove physical feasibility or validate external physics assumptions. A useful first proof should stay at the claim-boundary level: a result cannot support a claim outside its declared simulation contract.
 
 ## Source crosswalk
 
@@ -164,7 +165,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache available |
 | `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps simulation language engineering-bound. `simulation_scaling` supplies contract-relative feasibility, while `cgs`, `rankfold_neuralfold`, and `tokenmana` make hidden generation, storage, and resource costs visible. `alignment_field` is included only as alignment-scenario context; it should not turn speculative simulation metaphysics into an engineering claim.
 
 ## Summary
 

@@ -13,8 +13,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The cyclic_memory_contract fixture validates schema/example consistency only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-model memory test has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `coil_attention_memory`, `circle_ai_contract_suite`; supporting: `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` |
 | Source loading state | source notes: `coil_attention_memory`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `vcm_public`; raw cache: `vcm_public` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `cyclic_memory_contract.valid.json` passes repository-level protocol fixture validation; alias, sparse-coverage, recurrence-exit, and freshness tests remain planned. |
 
 ## Drafting guardrail
 
@@ -130,7 +130,7 @@ Alias hiding should block or mark residual risk. Recurrence loops should hit an 
 
 ## Minimal implementation
 
-The smallest useful implementation is a cyclic memory contract schema and fixture. It records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback, non-claims, and evidence references.
+The smallest useful implementation is a cyclic memory contract schema and fixture. The current fixture records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback, non-claims, and evidence references.
 
 Passing the fixture does not prove a memory system works. It proves the book can represent the structural claim without blurring it into model quality.
 
@@ -138,12 +138,13 @@ Passing the fixture does not prove a memory system works. It proves the book can
 
 | Test | Purpose | Status |
 |---|---|---|
+| Cyclic memory contract fixture validation | Validate that a memory contract records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback attention, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Cyclic alias visibility test | Check that reused slots record winding or provenance. | planned; not run |
 | Sparse coverage gap test | Check that uncovered lags are recorded and routed to fallback. | planned; not run |
 | Recurrence budget and exit test | Check that recurrence schedules include active work limits and exit conditions. | planned; not run |
 | Freshness stale-read rejection test | Check that stale reads fail closed or enter residual escrow. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require concrete memory traces, stale-read cases, sparse-coverage cases, or recurrence schedules; they are not retrieval-quality or long-context results. When a memory-contract test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -152,7 +153,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | planned |
 | `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The schema can require alias and freshness fields, but it does not prove a memory system retrieves useful content. A first proof should stay structural: reused cyclic slots must carry winding/provenance or visible alias residuals.
 
 ## Source crosswalk
 
@@ -163,7 +164,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps memory claims structural. `coil_attention_memory` supplies alias, freshness, sparse-coverage, and recurrence-budget contracts; `circle_ai_contract_suite` supplies theorem-linked contract family context; `theseus_circle_transfer` supplies the report-only transfer boundary; and `vcm_public` ties these records back to governed context adequacy. None of them supports learned retrieval or reasoning quality in this repo.
 
 ## Summary
 
