@@ -880,6 +880,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A command-contract schema and one end-to-end intent-to-artifact trace.
+- Implemented protocol validation: `command_contract` and `intent_execution_trace` fixtures validate public record shape only.
 - Planned Codex test: Contract field completeness test.
 - Planned Codex test: Constraint preservation test.
 - Planned Codex test: Artifact traceability test.
@@ -932,6 +933,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A canonical command-contract template used by future chapter drafting and experiment prompts.
+- Implemented protocol validation: `command_contract` fixture validates public record shape only.
 - Planned Codex test: Command schema validation test.
 - Planned Codex test: Failure-behavior declaration test.
 - Planned Codex test: Prompt override scenario.
@@ -986,6 +988,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
+- Implemented protocol validation: `plan_graph` fixture validates public record shape only.
 - Planned Codex test: Decomposition accuracy test.
 - Planned Codex test: Dependency ordering test.
 - Planned Codex test: Context-demand prediction test.
@@ -1040,6 +1043,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A DAG schema with node-level capability and verification annotations.
+- Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
 - Planned Codex test: DAG acyclicity test.
 - Planned Codex test: Capability tier assignment test.
 - Planned Codex test: Escalation trigger test.
@@ -1092,6 +1096,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic IR sketch and compile/verify/repair loop for one artifact type.
+- Implemented protocol validation: `semantic_atom` fixture validates public record shape only.
 - Planned Codex test: Requirement preservation test.
 - Planned Codex test: Incremental repair regression test.
 - Planned Codex test: Target compilation audit.

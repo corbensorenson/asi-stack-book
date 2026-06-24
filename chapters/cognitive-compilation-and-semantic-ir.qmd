@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Source loading state | source notes: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats cognitive compilation as an architectural boundary and prototype target. The repo validates a semantic-atom fixture, but it does not yet contain a compiler, localized repair benchmark, target-lowering harness, or measured quality comparison against direct generation.
 
 ## Problem
 
@@ -61,7 +61,7 @@ A prompt can still be the input surface. It should not be the internal build art
 
 [cognitive-compilation-and-semantic-ir.core, label: Design rationale, support: argument] Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Cognitive Compilation, PlanForge: A Compiler Architecture for AI Task Orchestration, GenesisCode, TreeLLM, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Cognitive Compilation supplies the compiler pipeline and semantic-atom vocabulary; PlanForge compiler architecture supplies scheduling and tier-routing pressure; GenesisCode supplies provenance, obligation, and effect-boundary discipline; TreeLLM supplies the external semantic-substrate intuition; VIEA supplies the intent-to-artifact ledger that the compiler must feed.
 
 ## Mechanism
 
@@ -111,8 +111,6 @@ The planner owns graph formation and scheduling. The compiler owns preservation 
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - IR preserves declared requirements.
 - Repair changes are localized and auditable.
 - Target compilation records assumptions.
@@ -120,8 +118,6 @@ The invariants are the conditions that must remain true even when the implementa
 The invariant is not that the compiler always succeeds. The invariant is that failure has an address. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - IR drift.
 - Compiler hallucination.
@@ -135,17 +131,18 @@ A semantic IR sketch and compile/verify/repair loop for one artifact type.
 
 The smallest useful implementation is a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current schema records one semantic atom shape. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Requirement preservation test | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
-| Incremental repair regression test | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
-| Target compilation audit | Probe whether the chapter claim holds under the relevant Cognitive Compilation and Semantic IR boundary. | planned; not run |
+| Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares intent, inputs, outputs, constraints, dependencies, authority, validator, target, and repair scope. | implemented by protocol validation; run in this pass |
+| Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | planned; not run |
+| Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | planned; not run |
+| Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. The remaining tests require a source-plan parser or hand-authored trace, a target artifact, and validators that can reject missing requirements.
 
 ### Formalization hooks
 
@@ -154,7 +151,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | planned |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. Obligation preservation may become mechanizable once the IR has a transition relation; repair acceptance likely needs both schema checks and artifact-level validators.
 
 ## Source crosswalk
 
@@ -166,7 +163,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for compiler framing, semantic representation, provenance, and artifact-ledger integration. It does not claim that a cognitive compiler has been implemented here.
 
 ## Summary
 

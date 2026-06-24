@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `planforge_compiler_arch`; supporting: `coherence_exchange`, `cognitive_compilation`, `tokenmana`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot`; raw cache: `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats PlanForge as a scheduler architecture and research target. The repo validates a draft PlanForge DAG fixture, but it does not yet prove acyclicity, measure cost savings, measure quality retention, or implement a tier-routing scheduler.
 
 ## Problem
 
@@ -62,7 +62,7 @@ The opposite failure is under-routing: a weak worker handles a node whose qualit
 
 [planforge-dags-and-intelligence-arbitrage.core, label: Design rationale, support: argument] PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - PlanForge, PlanForge: A Compiler Architecture for AI Task Orchestration, The Coherence Exchange, Cognitive Compilation, and TokenMana - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. PlanForge and its compiler-architecture variant supply decomposition, primitive typing, MVI routing, and scheduling vocabulary. Cognitive Compilation supplies the IR and repair-locality connection. TokenMana motivates budgets as load, latency, review, and cognitive-friction constraints. The Coherence Exchange remains speculative connector context, not benchmark evidence.
 
 ## Mechanism
 
@@ -119,8 +119,6 @@ Routing consumes capability annotations. VCM consumes context requests. Evidence
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Dependency order is respected.
 - Cost savings do not remove required verification.
 - Escalation paths are explicit.
@@ -128,8 +126,6 @@ The invariants are the conditions that must remain true even when the implementa
 The efficiency invariant is bounded by verification: cost savings do not count if they delete required checks. A low-tier route can be correct only if the node's quality predicate and escalation policy remain intact.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Wrong tier selection.
 - Dependency cycles.
@@ -143,17 +139,18 @@ A DAG schema with node-level capability and verification annotations.
 
 The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, capability tiers, quality predicates, verification requirements, budget limits, route assignments, escalation policy, residuals, and a cost-quality ledger. It does not prove acyclicity; that remains a planned test/proof target.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+That fixture establishes the fields that a later scheduler must fill. It does not prove the graph is acyclic, that the selected tier is adequate, or that a cheaper route preserves quality.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| PlanForge DAG fixture validation | Check that the DAG fixture matches the public schema and includes nodes, edges, capability tiers, quality predicates, verification requirements, budgets, routes, escalation, residuals, and cost-quality ledger entries. | implemented by protocol validation; run in this pass |
 | DAG acyclicity test | Check that all dispatchable graphs are acyclic and dependencies precede dependents. | planned; not run |
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
 | Escalation trigger test | Check that failed quality predicates escalate or emit residuals instead of being treated as complete. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. Scheduler claims require graph algorithms, route-selection traces, quality predicates, and cost-quality results that can be reproduced.
 
 ### Formalization hooks
 
@@ -162,7 +159,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | planned |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. Acyclicity is a good candidate for either a deterministic validator or a small Lean relation; MVI adequacy and cost-quality dominance likely require empirical traces.
 
 ## Source crosswalk
 
@@ -175,7 +172,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for DAG orchestration, intelligence arbitrage, and resource governance. Numerical savings and quality claims remain unpromoted until this repo records reproducible scheduler runs.
 
 ## Summary
 

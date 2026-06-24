@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`; supporting: `cognitive_compilation`, `software_magic_grimoire`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`; raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats planning as a bounded control artifact. The repo validates a draft plan-graph fixture, but it does not yet validate plan quality, dependency soundness, authority preservation under replanning, or successful execution.
 
 ## Problem
 
@@ -61,7 +61,7 @@ Planning also needs to be separate from final answers because plans are cheap to
 
 [planning-as-a-control-layer.core, label: Design rationale, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - PlanForge, Verified Intent-to-Execution Architecture, Cognitive Compilation, Software Magic Grimoire, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. PlanForge supplies decomposition, dependency, tier, and scheduler vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; MoECOT remains an implementation-reference route rather than local evidence for this chapter.
 
 ## Mechanism
 
@@ -122,8 +122,6 @@ Alignment filters goals before planning. VCM supplies context packets. Routing c
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Plans expose constraints and stop conditions.
 - Runtime replanning preserves authority limits.
 - Tool selection is justified by task requirements.
@@ -131,8 +129,6 @@ The invariants are the conditions that must remain true even when the implementa
 A plan node inherits the parent command's authority ceiling unless governance narrows or explicitly changes it. Runtime replanning may change order, route, or decomposition, but it cannot broaden the authority boundary by calling itself adaptation.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Scope creep.
 - Planning without replanning.
@@ -146,18 +142,19 @@ A plan graph format with assumptions, task graph, dependencies, context and tool
 
 The smallest useful implementation is a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, and dispatch state. It does not prove the plan is good.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The schema and fixture make the planning surface explicit. They do not prove that a graph is acyclic, optimal, complete, or safe to dispatch.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority, budgets, verification, replanning, stop conditions, and dispatch state. | implemented by protocol validation; run in this pass |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
 | Dependency ordering test | Check whether dependencies precede dependents before dispatch. | planned; not run |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
 | Runtime replanning test | Check whether replanning preserves authority, stop conditions, and residual history. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. The planned tests require a planner harness, dependency checker, context-demand oracle, or replay trace before the support state can move.
 
 ### Formalization hooks
 
@@ -166,7 +163,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | planned |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The schema can require an authority field; it cannot yet prove inheritance or dispatch rejection without a formal transition relation.
 
 ## Source crosswalk
 
@@ -178,7 +175,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for the planning/control boundary. It does not treat source-note availability as proof that this repo contains a working planner.
 
 ## Summary
 

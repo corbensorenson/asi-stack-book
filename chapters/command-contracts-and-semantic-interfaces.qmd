@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `software_magic_grimoire`, `viea`; supporting: `genesiscode`, `cognitive_compilation`, `talos` |
 | Source loading state | source notes: `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`; raw cache: `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats prompt language as an operational interface only when it is bounded by explicit fields. The repository validates a command-contract fixture, but that validation proves shape only; it does not prove that a prompt is secure, complete, injection-proof, or empirically better than an unstructured prompt.
 
 ## Problem
 
@@ -61,7 +61,7 @@ GenesisCode adds a useful analogy from software: privileged effects and control 
 
 [command-contracts-and-semantic-interfaces.core, label: Design rationale, support: argument] Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Software Magic Grimoire, Verified Intent-to-Execution Architecture, GenesisCode, Cognitive Compilation, and Talos Protocol - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Software Magic Grimoire supplies the semantic-density and bounded-command vocabulary; VIEA supplies the role/objective/context/constraint/output/verification envelope; GenesisCode supplies privileged effect and protocol-shape discipline; Cognitive Compilation and Talos show why the contract must lower cleanly into IR, typed jobs, and evidence records.
 
 ## Mechanism
 
@@ -119,8 +119,6 @@ Planning consumes the structured command. Execution enforces allowed means and o
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - A command exposes output and verification requirements.
 - Failure behavior is declared.
 - Implicit instructions do not override explicit constraints.
@@ -128,8 +126,6 @@ The invariants are the conditions that must remain true even when the implementa
 The override rule is central: context can inform a command, but it cannot silently replace explicit constraints. If a source, tool, user message, or retrieved note conflicts with the command contract, the system should emit a conflict residual instead of choosing the most fluent interpretation.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Semantic ambiguity.
 - Prompt injection through context.
@@ -143,17 +139,18 @@ A canonical command-contract template used by future chapter drafting and experi
 
 The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate constraints, output, verification, approvals, and failure behavior without claiming the command has been executed.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Command contract fixture validation | Check that the command-contract fixture contains objective, constraints, output, verification, authority, approvals, artifacts, and failure behavior required by the schema. | implemented by protocol validation; run in this pass |
 | Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | planned; not run |
 | Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | planned; not run |
 | Prompt override scenario | Check that hidden or conflicting context instructions cannot override explicit constraints. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only the fixture-shape check is implemented. The override and dispatch-blocking tests need a parser, conflict rule, or harness that can compare explicit fields against retrieved context and hidden instructions.
 
 ### Formalization hooks
 
@@ -162,7 +159,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | planned |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The first hook is close to schema-level validation; the second needs a formal precedence rule for explicit constraints versus contextual instructions.
 
 ## Source crosswalk
 
@@ -174,7 +171,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache available |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for the command-envelope vocabulary and lowering pressure. It does not claim empirical prompt-safety or productivity results.
 
 ## Summary
 
