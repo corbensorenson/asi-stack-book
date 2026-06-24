@@ -1,6 +1,7 @@
 import AsiStackProofs.Authority
 import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.ClaimLedger
+import AsiStackProofs.CompactGenerativeSystems
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
 import AsiStackProofs.EvidenceStates

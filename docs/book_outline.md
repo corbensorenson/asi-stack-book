@@ -1935,7 +1935,9 @@ Draft deliverables:
 - A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
 - Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape only; utility and residual-burden behavior remain planned tests.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
-- Planned Codex test: Residual burden test.
+- Implemented Lean predicate: unresolved obligations require residual records.
+- Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
+- Planned Codex test: Residual burden behavior test.
 - Planned Codex test: Downstream utility test.
 - Planned Codex test: Fallback behavior test.
 
@@ -1943,8 +1945,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | planned |
-| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | planned |
+| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
+| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
 
 ### Generate-Verify-Repair Compression
 

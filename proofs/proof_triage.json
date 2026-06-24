@@ -675,20 +675,20 @@
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.CompactGenerativeSystems",
       "formal_target": "A compact representation with unresolved obligations carries residual records.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite residual-honesty predicate: unresolved obligations require residual records."
     },
     {
       "tag": "lean:compression.cgs.failure_blocks_promotion",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.CompactGenerativeSystems",
       "formal_target": "A lossy representation cannot be marked exact without verification evidence.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite exactness predicate: lossy representations without verification evidence cannot be marked exact."
     },
     {
       "tag": "lean:compression.gvr.operational_invariant",

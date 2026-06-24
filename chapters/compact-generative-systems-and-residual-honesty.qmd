@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The compact_generative_record fixture validates schema/example consistency only; CGS utility, residual burden, fallback behavior, and downstream tests remain unimplemented."
+  - "The compact_generative_record fixture and narrow Lean residual/exactness predicates are implemented; CGS utility, residual-burden behavior, fallback behavior, and downstream tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
 | Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; raw cache: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi` |
-| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation; chapter-specific CGS utility and residual-burden tests remain planned. |
+| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation; finite residual/exactness predicates implemented in `AsiStackProofs.CompactGenerativeSystems`; chapter-specific CGS utility, fallback, and downstream tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses Compact Generative Systems and Ratcheting Generative Systems as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, or that any local CGS implementation exists in this repository.
+This chapter uses Compact Generative Systems and Ratcheting Generative Systems as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, or that any local CGS implementation exists in this repository. The repo now proves two finite Lean predicates over compact-generative records, but those predicates do not measure compression utility.
 
 ## Problem
 
@@ -135,13 +135,17 @@ The smallest useful implementation is a compact generative record and fixture. I
 
 The current fixture validates that this public contract can be represented consistently. The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
+`AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, plus a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence. These proofs do not implement a codec, generator, verifier, downstream utility test, or fallback harness.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Compact generative record fixture validation | Validate that the public record contract includes target, seed, rules, memory, residuals, verification, governance, fallback, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | S/R/Q/G/V/E loop consistency test | Check that seed, route/index, query/search, generator, verifier, and exact/residual fields are all present. | planned; not run |
-| Residual burden test | Check that lossy or partial generation cannot omit residual records. | planned; not run |
+| Residual honesty predicate | Check that unresolved obligations carry residual records. | implemented in `AsiStackProofs.CompactGenerativeSystems`; checked by Lean build |
+| Lossy exactness predicate | Check that a lossy representation cannot be marked exact without verification evidence. | implemented in `AsiStackProofs.CompactGenerativeSystems`; checked by Lean build |
+| Residual burden behavior test | Check that lossy or partial generation cannot omit residual records in an executable harness. | planned; not run |
 | Downstream utility test | Check whether a compact core preserves task utility against a full or baseline representation. | planned; not run |
 | Fallback behavior test | Check that failed generation routes to fallback or residual pressure. | planned; not run |
 
@@ -151,10 +155,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | planned |
-| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | planned |
+| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
+| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
 
-These Lean hooks are still planned. The validated JSON fixture is a protocol contract, not a mechanized proof that compact representations preserve utility or block promotion under all conditions. The first proof candidate should be limited to a finite record predicate such as "unresolved obligations imply a nonempty residual field."
+These Lean hooks are implemented as finite-record predicates. The validated JSON fixture and Lean predicates do not prove that compact representations preserve utility, reduce cost, or block promotion under all executable conditions.
 
 ## Source crosswalk
 
