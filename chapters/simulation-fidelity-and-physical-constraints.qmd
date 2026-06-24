@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `simulation_scaling`; supporting: `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
-| Source loading state | source notes: `alignment_field`; raw cache: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; pending source notes: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana` |
+| Source loading state | source notes: `cgs`, `alignment_field`; raw cache: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; pending source notes: `simulation_scaling`, `rankfold_neuralfold`, `tokenmana` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -138,11 +138,11 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | local raw cache available |
-| `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | local raw cache available |
-| `rankfold_neuralfold` | RankFold + NeuralFold | compression_representation | Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. | local raw cache available |
-| `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | local raw cache available |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
+|  `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | local raw cache available |
+|  `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
+|  `rankfold_neuralfold` | RankFold + NeuralFold | compression_representation | Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. | local raw cache available |
+|  `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | local raw cache available |
+|  `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

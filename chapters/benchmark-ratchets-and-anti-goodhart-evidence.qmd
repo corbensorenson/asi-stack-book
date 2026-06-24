@@ -41,7 +41,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
-| Source loading state | source notes: `coherence_exchange`, `moecot`, `road_to_agi`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; pending source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `coherence_exchange`, `moecot` |
+| Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `coherence_exchange`, `moecot`, `road_to_agi`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; pending source notes: `uat`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `coherence_exchange`, `moecot` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -146,18 +146,18 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | local raw cache available |
-| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | local raw cache available |
-| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | local raw cache available |
-| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
-| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
-| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
+|  `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
+|  `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
+|  `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
+|  `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | local raw cache available |
+|  `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
+|  `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | local raw cache available |
+|  `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+|  `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
+|  `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
+|  `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
+|  `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
+|  `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note pending |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
-| Source loading state | source notes: `scf`, `alignment_field`, `viea`, `talos`, `moecot`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; pending source notes: `benchmaxxing`, `rmi`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
+| Source loading state | source notes: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; pending source notes: `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -143,16 +143,16 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | local raw cache available |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
-| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
+|  `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+|  `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
+|  `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
+|  `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
+|  `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+|  `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
+|  `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+|  `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note pending |
+|  `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note pending |
+|  `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note pending |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

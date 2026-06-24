@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
-| Source loading state | source notes: `moecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; pending source notes: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
+| Source loading state | source notes: `octopus_router`, `rmi`, `cognitive_loop_closure`, `moecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; pending source notes: `beastbrain`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -141,14 +141,14 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Lightweight head/router with dynamically loaded specialist arms and local boundaries. | local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | local raw cache available |
-| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | local raw cache available |
-| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | local raw cache available |
-| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note pending |
+|  `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Lightweight head/router with dynamically loaded specialist arms and local boundaries. | source note available; local raw cache available |
+|  `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
+|  `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | local raw cache available |
+|  `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
+|  `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | local raw cache available |
+|  `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+|  `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
+|  `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note pending |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

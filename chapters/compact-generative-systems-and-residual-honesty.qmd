@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
-| Source loading state | raw cache: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`; pending source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
+| Source loading state | source notes: `cgs`, `rmi`; raw cache: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`; pending source notes: `rgs`, `bugbrain`, `simulation_scaling`, `project_theseus_whitepaper` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -142,12 +142,12 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | local raw cache available |
-| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | local raw cache available |
-| `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | local raw cache available |
-| `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | local raw cache available |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
+|  `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
+|  `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | local raw cache available |
+|  `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | local raw cache available |
+|  `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | local raw cache available |
+|  `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
+|  `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note pending |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 

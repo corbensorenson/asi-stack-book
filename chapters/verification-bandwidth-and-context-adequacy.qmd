@@ -138,11 +138,11 @@ The table records proof and contract hooks for future work. Planned hooks should
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | local raw cache available |
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | local raw cache available |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
+|  `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | local raw cache available |
+|  `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
+|  `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
+|  `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | local raw cache available |
+|  `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
 
