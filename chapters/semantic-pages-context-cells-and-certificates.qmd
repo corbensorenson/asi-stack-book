@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The ABI says how context is requested and materialized. This chapter says what the materialized units are. VCM should not treat every context object as interchangeable text. It should distinguish claims, constraints, decisions, corrections, events, artifacts, source excerpts, summaries, and derived cells.
 
-It inherits pressure from the previous chapter, Virtual Context ABI, and makes that pressure operational in a narrower boundary. It hands its output to Context Transactions, Snapshots, Mounts, and Taint, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+Each derived representation needs a certificate: where it came from, what it omits, what authority labels survived, what it can be used for, and what kind of verification it can support. Without that certificate, a summary becomes a trust-me blob.
 
 ## Why existing approaches are insufficient
 
 Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits. If `semantic-pages-context-cells-and-certificates` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Summarization is not neutral. It can compress away dissent, uncertainty, chronology, exact wording, revocation state, or the fact that a source was only usable under a narrow authority label. Verification Bandwidth adds the reason this matters: a compact summary can make generation easier while making joint verification harder because the lost constraints are no longer available.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The fix is not to ban summaries. It is to make representation loss visible. A summary can be useful for planning, unsafe for citation, inadequate for proof, and forbidden for execution all at the same time.
 
 ## Core Claim
 
@@ -65,27 +65,53 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells. Second, attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses. Third, use task-relative representation graphs instead of one linear compression ladder.
+The mechanism is a Semantic Page Certificate.
+
+```{mermaid}
+flowchart LR
+  A["Source cells"] --> B["Derived page / cell"]
+  B --> C["Cell type"]
+  C --> D["Source bindings"]
+  D --> E["Omissions + loss contract"]
+  E --> F["Authority ceiling"]
+  F --> G["Permitted uses"]
+  G --> H{"Verification adequate?"}
+  H -- "yes" --> I["Context packet"]
+  H -- "no" --> J["Residual / stronger representation"]
+```
 
 - Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.
 - Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.
 - Use task-relative representation graphs instead of one linear compression ladder.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Task-relative representation graphs are better than one ladder from raw text to summary. The same source can produce a terse planning brief, a quotation-preserving evidence cell, a redacted execution packet, and a contradiction-checking pair. The certificate tells downstream layers which representation they are holding.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Spinoza consumes claim/evidence cells; planning consumes constraints and decisions; execution receives only permitted representations. The same cell should not silently change role when moved between layers.
 
 ## Interfaces
 
-The interface for Semantic Pages, Context Cells, and Certificates is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Semantic Page Certificate.
 
 - Spinoza consumes claim/evidence cells.
 - Planning consumes constraints and decisions.
 - Execution receives only permitted representations.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `page_id`
+- `cell_type`
+- `source_bindings`
+- `derived_from`
+- `representation_kind`
+- `loss_contract`
+- `omissions`
+- `authority_ceiling`
+- `permitted_uses`
+- `validity_window`
+- `verification_state`
+- `residual_risks`
+
+The certificate is what lets a compact cell remain honest. It says what the cell is, which sources bind it, what was lost, which authority ceiling survived, which uses are permitted, whether verification is adequate, and what residual risks remain.
 
 ## Invariants
 
@@ -95,7 +121,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Loss contracts are explicit.
 - A derived cell points back to source bindings.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+Authority cannot increase through summarization. A derived cell cannot become more citable, more executable, more secret-cleared, or more verified than the source material and certificate permit. If the certificate is missing, the cell is not eligible for support-state promotion.
 
 ## Failure modes
 
@@ -105,13 +131,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Provenance loss.
 - Authority escalation via compression.
 
-For Semantic Pages, Context Cells, and Certificates, mitigation starts by turning each listed failure into a named reviewable artifact. When `Summary overconfidence` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Summary overconfidence happens when fluent compression hides the actual loss contract. Provenance loss breaks source-to-claim mapping. Authority escalation via compression happens when a summary strips labels and then looks safe to use elsewhere. Each failure should block the representation from being used as evidence.
 
 ## Minimal implementation
 
 A semantic-page schema with certificate fields and example source-to-summary derivation.
 
-The smallest useful implementation is deliberately narrow: A semantic-page schema with certificate fields and example source-to-summary derivation. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `semantic_page_certificate` schema and fixture. It should validate source bindings, derivation, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +145,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Certificate completeness test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
-| Authority preservation test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
-| Summary fidelity test | Probe whether the chapter claim holds under the relevant Semantic Pages, Context Cells, and Certificates boundary. | planned; not run |
+| Certificate completeness test | Check that derived cells carry source bindings, loss contract, permitted uses, and residual risks. | planned; not run |
+| Authority preservation test | Check that summaries cannot increase the authority ceiling of source cells. | planned; not run |
+| Summary fidelity test | Check that omissions and exactness limits remain visible before evidence use. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +174,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Semantic Pages, Context Cells, and Certificates defines one boundary in the ASI Stack: VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates. Its job is to make a capability more governable, not merely more impressive.
+Semantic Pages, Context Cells, and Certificates makes context units typed and evidence-carrying. The system can compress and adapt context, but it must keep provenance, loss, authority, permitted use, verification state, and residual risks attached.
 
-In v0.2, this chapter gives Semantic Pages, Context Cells, and Certificates a complete architectural boundary: compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts. Its next maturity step is to substantiate the boundary through `Spinoza consumes claim/evidence cells`, preserve `Authority labels survive summarization`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter is the antidote to overconfident summaries. A representation can be small, useful, and still honest about what it is not allowed to prove.

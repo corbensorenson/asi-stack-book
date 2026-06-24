@@ -1,0 +1,14 @@
+{
+  "page_id": "semantic-page-demo-001",
+  "cell_type": "summary",
+  "source_bindings": ["sources/source_notes/vcm_public.md"],
+  "derived_from": ["vcm://book/source-notes/vcm_public"],
+  "representation_kind": "public-safe source-note summary",
+  "loss_contract": "omits raw source text and does not preserve exact quotation",
+  "omissions": ["raw private source text", "unmapped claim-level citations"],
+  "authority_ceiling": "drafting_context_only",
+  "permitted_uses": ["chapter drafting", "source queue routing"],
+  "validity_window": "until source note is superseded",
+  "verification_state": "adequate_for_drafting",
+  "residual_risks": ["not adequate for support-state promotion without claim-to-source mapping"]
+}

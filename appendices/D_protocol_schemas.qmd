@@ -11,8 +11,10 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/compression_receipt.schema.json`
 - `schemas/costed_route_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
+- `schemas/context_abi_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
 - `schemas/context_packet.schema.json`
+- `schemas/context_transaction_record.schema.json`
 - `schemas/failure_boundary_map.schema.json`
 - `schemas/governance_right_record.schema.json`
 - `schemas/agency_rights_checklist.schema.json`
@@ -23,6 +25,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/replacement_transaction.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
+- `schemas/semantic_page_certificate.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/value_conflict_record.schema.json`
@@ -147,6 +150,48 @@ context_packet:
   open_uncertainties: []
 ```
 
+## Context ABI Record
+
+```yaml
+context_abi_record:
+  request_id: string
+  task_id: string
+  semantic_address: string
+  version: string
+  mount: string
+  snapshot_id: string
+  representation_contract: string
+  authority_labels: []
+  admission_state: admitted
+  adequacy_state: adequate
+  fault_state: none
+  materialization_ref: string
+  audit_refs: []
+```
+
+This record is the stable ABI between planning, durable memory, context compilation, execution, and audit. It distinguishes admission from adequacy and makes typed faults visible.
+
+## Context Transaction Record
+
+```yaml
+context_transaction_record:
+  transaction_id: string
+  operation: derive
+  snapshot_id: string
+  mounts: []
+  read_set: []
+  write_set: []
+  branch_policy: string
+  taint_labels: []
+  deletion_obligations: []
+  contradiction_refs: []
+  closure_state: satisfied
+  faults: []
+  audit_refs: []
+```
+
+This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, deletion closure, taint propagation, contradictions, faults, and audit.
+
 ## Costed Route Record
 
 ```yaml
@@ -202,6 +247,26 @@ semantic_atom:
 ```
 
 This record is the small unit of cognitive compilation: one preserved intent fragment with inputs, outputs, constraints, dependencies, authority requirements, a validator, and a bounded repair target.
+
+## Semantic Page Certificate
+
+```yaml
+semantic_page_certificate:
+  page_id: string
+  cell_type: summary
+  source_bindings: []
+  derived_from: []
+  representation_kind: string
+  loss_contract: string
+  omissions: []
+  authority_ceiling: string
+  permitted_uses: []
+  validity_window: string
+  verification_state: adequate_for_drafting
+  residual_risks: []
+```
+
+This record keeps derived context cells honest by preserving provenance, representation loss, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks.
 
 ## Compression Receipt
 

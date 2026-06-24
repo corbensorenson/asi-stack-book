@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/context_transaction_record.schema.json",
+  "title": "Context Transaction Record",
+  "type": "object",
+  "required": [
+    "transaction_id",
+    "operation",
+    "snapshot_id",
+    "mounts",
+    "read_set",
+    "write_set",
+    "branch_policy",
+    "taint_labels",
+    "deletion_obligations",
+    "contradiction_refs",
+    "closure_state",
+    "faults",
+    "audit_refs"
+  ],
+  "properties": {
+    "transaction_id": { "type": "string", "minLength": 1 },
+    "operation": {
+      "type": "string",
+      "enum": ["read", "write", "derive", "branch", "commit", "delete", "declassify"]
+    },
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "mounts": { "type": "array", "items": { "type": "string" } },
+    "read_set": { "type": "array", "items": { "type": "string" } },
+    "write_set": { "type": "array", "items": { "type": "string" } },
+    "branch_policy": { "type": "string", "minLength": 1 },
+    "taint_labels": { "type": "array", "items": { "type": "string" } },
+    "deletion_obligations": { "type": "array", "items": { "type": "string" } },
+    "contradiction_refs": { "type": "array", "items": { "type": "string" } },
+    "closure_state": {
+      "type": "string",
+      "enum": ["satisfied", "faulted", "unknown", "not_applicable"]
+    },
+    "faults": { "type": "array", "items": { "type": "string" } },
+    "audit_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

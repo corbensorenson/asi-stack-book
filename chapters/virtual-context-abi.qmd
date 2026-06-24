@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Long-horizon agents need a stable interface between durable memory and model-visible working context.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The planning chapters define what work needs context. VCM defines how that context is addressed, compiled, represented, admitted, checked, faulted, and audited. The central distinction is durable memory versus model-visible working context: the model should receive a task-relative materialization, not a raw dump of everything the system knows.
 
-It inherits pressure from the previous chapter, Cognitive Compilation and Semantic IR, and makes that pressure operational in a narrower boundary. It hands its output to Semantic Pages, Context Cells, and Certificates, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+VCM is therefore an ABI: a stable contract between planners, memory stores, context compilers, verifiers, execution adapters, and auditors. It must expose addresses, versions, mounts, snapshots, representation contracts, adequacy states, authority labels, and typed faults.
 
 ## Why existing approaches are insufficient
 
 Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior. If `virtual-context-abi` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Long context is capacity, not governance. A retrieved passage may be stale, revoked, unauthenticated, infeasible to use, unsafe for the current worker, or inadequate for the claim being checked. A bigger window can also hide conflicts by making the model generate across text it cannot jointly verify.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Ordinary retrieval usually answers "what looks relevant?" VCM must also answer "which version, under which mount, for which task, under which authority, with which representation losses, and what happens if the context is missing, conflicting, unsafe, unknown, or unsatisfiable?"
 
 ## Core Claim
 
@@ -66,28 +66,57 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, separate durable memory from active context. Second, compile task-relative context packets through an ABI. Third, report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable. Fourth, expose unsafe, unknown, or unsatisfied context states rather than hiding them.
+The mechanism is a Context ABI Record.
+
+```{mermaid}
+flowchart LR
+  A["Plan context request"] --> B["Semantic address"]
+  B --> C["Version + mount"]
+  C --> D["Snapshot"]
+  D --> E["Representation contract"]
+  E --> F{"Admission allowed?"}
+  F -- "yes" --> G{"Adequate for target?"}
+  F -- "no" --> H["Typed fault"]
+  G -- "yes" --> I["Context packet / materialization"]
+  G -- "no" --> H
+  I --> J["Audit + evidence refs"]
+  H --> J
+```
 
 - Separate durable memory from active context.
 - Compile task-relative context packets through an ABI.
 - Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
 - Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Admission and adequacy are separate. A packet can be admitted for drafting but inadequate for verification. A source can be known but not authorized. A representation can be useful for planning but too lossy for citation or proof. These distinctions need states, not vibes.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Typed non-success states are part of the design: unknown, deferred, infeasible, unsafe, ask, abstain, deny, retry, and residual. A VCM layer that always returns "best effort context" is not a governed context layer.
 
 ## Interfaces
 
-The interface for Virtual Context ABI is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Context ABI Record.
 
 - Planning requests context.
 - VCM compiles packets.
 - Execution receives authority-appropriate context.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `request_id`
+- `task_id`
+- `semantic_address`
+- `version`
+- `mount`
+- `snapshot_id`
+- `representation_contract`
+- `authority_labels`
+- `admission_state`
+- `adequacy_state`
+- `fault_state`
+- `materialization_ref`
+- `audit_refs`
+
+Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
 
 ## Invariants
 
@@ -97,7 +126,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Context adequacy is distinct from admission.
 - Faults are typed and visible.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+Address stability is what makes later verification possible: a claim should not depend on "whatever retrieval returned at the time." Snapshot validity is what makes context replay possible. Typed faults are what prevent missing context from being laundered into confident output.
 
 ## Failure modes
 
@@ -107,13 +136,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Stale context.
 - Silent unsafe fit.
 
-For Virtual Context ABI, mitigation starts by turning each listed failure into a named reviewable artifact. When `Flat transcript memory` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Flat transcript memory loses addresses, versions, and authority labels. Stale context makes a correct old answer look current. Silent unsafe fit is worse than denial because it feeds a worker context it should not see or use. Each should produce a typed fault or residual before the packet is used.
 
 ## Minimal implementation
 
 A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
 
-The smallest useful implementation is deliberately narrow: A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. It does not prove a real context compiler exists.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,10 +150,10 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Address/version stability test | Probe whether the chapter claim holds under the relevant Virtual Context ABI boundary. | planned; not run |
-| Admission vs adequacy test | Probe whether the chapter claim holds under the relevant Virtual Context ABI boundary. | planned; not run |
-| Conflict adequacy classification test | Probe whether the chapter claim holds under the relevant Virtual Context ABI boundary. | planned; not run |
-| Context fault behavior test | Probe whether the chapter claim holds under the relevant Virtual Context ABI boundary. | planned; not run |
+| Address/version stability test | Check that context references resolve only against valid addresses and versions for the snapshot. | planned; not run |
+| Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
+| Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |
+| Context fault behavior test | Check that mandatory misses produce typed faults instead of best-effort packets. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +181,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Virtual Context ABI defines one boundary in the ASI Stack: Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations. Its job is to make a capability more governable, not merely more impressive.
+Virtual Context ABI is the stack's memory/context contract. It keeps durable memory separate from working context while making addresses, versions, mounts, snapshots, representation contracts, authority, adequacy, faults, materializations, and audits explicit.
 
-In v0.2, this chapter gives Virtual Context ABI a complete architectural boundary: long-horizon agents need a stable interface between durable memory and model-visible working context. Its next maturity step is to substantiate the boundary through `Planning requests context`, preserve `Addresses and versions are stable`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's rule is simple: context that cannot be addressed, versioned, authorized, represented, and faulted should not be silently treated as usable memory.

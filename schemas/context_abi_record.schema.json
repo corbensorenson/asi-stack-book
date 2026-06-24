@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/context_abi_record.schema.json",
+  "title": "Context ABI Record",
+  "type": "object",
+  "required": [
+    "request_id",
+    "task_id",
+    "semantic_address",
+    "version",
+    "mount",
+    "snapshot_id",
+    "representation_contract",
+    "authority_labels",
+    "admission_state",
+    "adequacy_state",
+    "fault_state",
+    "materialization_ref",
+    "audit_refs"
+  ],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "semantic_address": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "mount": { "type": "string", "minLength": 1 },
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "representation_contract": { "type": "string", "minLength": 1 },
+    "authority_labels": { "type": "array", "items": { "type": "string" } },
+    "admission_state": {
+      "type": "string",
+      "enum": ["admitted", "deferred", "denied", "ask", "retry"]
+    },
+    "adequacy_state": {
+      "type": "string",
+      "enum": ["adequate", "missing", "conflicting", "unsafe", "unknown", "unsatisfiable", "inadequate"]
+    },
+    "fault_state": {
+      "type": "string",
+      "enum": ["none", "typed_fault", "residual", "quarantine"]
+    },
+    "materialization_ref": { "type": "string", "minLength": 1 },
+    "audit_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

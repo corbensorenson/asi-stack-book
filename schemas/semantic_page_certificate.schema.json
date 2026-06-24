@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/semantic_page_certificate.schema.json",
+  "title": "Semantic Page Certificate",
+  "type": "object",
+  "required": [
+    "page_id",
+    "cell_type",
+    "source_bindings",
+    "derived_from",
+    "representation_kind",
+    "loss_contract",
+    "omissions",
+    "authority_ceiling",
+    "permitted_uses",
+    "validity_window",
+    "verification_state",
+    "residual_risks"
+  ],
+  "properties": {
+    "page_id": { "type": "string", "minLength": 1 },
+    "cell_type": {
+      "type": "string",
+      "enum": ["claim", "constraint", "decision", "correction", "event", "artifact", "source_excerpt", "summary", "derived"]
+    },
+    "source_bindings": { "type": "array", "items": { "type": "string" } },
+    "derived_from": { "type": "array", "items": { "type": "string" } },
+    "representation_kind": { "type": "string", "minLength": 1 },
+    "loss_contract": { "type": "string", "minLength": 1 },
+    "omissions": { "type": "array", "items": { "type": "string" } },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "permitted_uses": { "type": "array", "items": { "type": "string" } },
+    "validity_window": { "type": "string", "minLength": 1 },
+    "verification_state": {
+      "type": "string",
+      "enum": ["unchecked", "adequate_for_drafting", "adequate_for_local_check", "inadequate_for_verification", "verified"]
+    },
+    "residual_risks": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

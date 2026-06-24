@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter gave context representations certificates. This chapter gives the memory system runtime semantics. Long-horizon work needs snapshots that are coherent enough to replay, mounts that define what memory is visible, branches that support experiments, taint that follows sensitive or suspect sources, and deletion closure that prevents derived summaries from resurrecting removed data.
 
-It inherits pressure from the previous chapter, Semantic Pages, Context Cells, and Certificates, and makes that pressure operational in a narrower boundary. It hands its output to Verification Bandwidth and Context Adequacy, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+VCM supplies the transaction model. Context Engineer and Ladon add need-to-know and sensitive-mount pressure. Black Hole Context Manager adds practical memory-budget machinery: chunks, drift, mass, freezing, eviction, and critical context preservation.
 
 ## Why existing approaches are insufficient
 
 A retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself. If `context-transactions-snapshots-mounts-and-taint` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Retrieval can return plausible neighbors, but it does not by itself define consistency. A worker may read a mixture of old and new facts, see a source after revocation, miss a contradiction, or consume a summary derived from deleted data. Security labels can also evaporate when context is copied, summarized, embedded, logged, or sent to a tool.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The stack needs database-like discipline without pretending memory is a database table. Context objects are semantic, versioned, compressed, mounted, and task-relative. That makes transaction semantics more important, not less.
 
 ## Core Claim
 
@@ -65,27 +65,58 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, record immutable memory events. Second, compile task snapshots with mounts and copy-on-write branches. Third, propagate taint and deletion obligations through derived context.
+The mechanism is a Context Transaction Record.
+
+```{mermaid}
+flowchart LR
+  A["Immutable memory event"] --> B["Versioned page"]
+  B --> C["Mount policy"]
+  C --> D["Snapshot"]
+  D --> E["Read / write / derive"]
+  E --> F{"Branch or commit?"}
+  F -- "branch" --> G["Copy-on-write branch"]
+  F -- "commit" --> H["Committed event"]
+  E --> I["Taint + deletion closure"]
+  G --> I
+  H --> I
+  I --> J{"Closure satisfied?"}
+  J -- "yes" --> K["Materializable view"]
+  J -- "no" --> L["Fault / quarantine"]
+```
 
 - Record immutable memory events.
 - Compile task snapshots with mounts and copy-on-write branches.
 - Propagate taint and deletion obligations through derived context.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Immutable events make audit and replay possible. Versioned pages make supersession explicit. Snapshots give a task a coherent read view. Mounts define what can be seen and written. Copy-on-write branches let the system test alternate summaries, repairs, or plans without mutating the committed memory space.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Taint should propagate through derived cells unless authorized declassification occurs. Deletion should close over derivatives or fault when closure cannot be proven. Contradictions should become evidence records, not overwritten memory.
 
 ## Interfaces
 
-The interface for Context Transactions, Snapshots, Mounts, and Taint is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Context Transaction Record.
 
 - Planning receives consistent views.
 - Security labels sensitive mounts.
 - Evidence records contradictions and supersession.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `transaction_id`
+- `operation`
+- `snapshot_id`
+- `mounts`
+- `read_set`
+- `write_set`
+- `branch_policy`
+- `taint_labels`
+- `deletion_obligations`
+- `contradiction_refs`
+- `closure_state`
+- `faults`
+- `audit_refs`
+
+Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, and faults.
 
 ## Invariants
 
@@ -95,7 +126,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Taint propagates to derivatives.
 - Deletion closure is enforced or faulted.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
 
 ## Failure modes
 
@@ -105,13 +136,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Stale or contradictory reads.
 - Deleted data reappearing in derived summaries.
 
-For Context Transactions, Snapshots, Mounts, and Taint, mitigation starts by turning each listed failure into a named reviewable artifact. When `Memory poisoning` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale or contradictory reads produce incoherent plans. Deleted data reappearing in summaries creates legal, privacy, and trust failures. These are transaction faults, not mere retrieval imperfections.
 
 ## Minimal implementation
 
 A transaction model for context reads, writes, branches, and deletion closure.
 
-The smallest useful implementation is deliberately narrow: A transaction model for context reads, writes, branches, and deletion closure. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, contradiction refs, closure state, faults, and audit refs. It does not implement a memory store.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +150,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Read-your-writes snapshot test | Probe whether the chapter claim holds under the relevant Context Transactions, Snapshots, Mounts, and Taint boundary. | planned; not run |
-| Taint propagation test | Probe whether the chapter claim holds under the relevant Context Transactions, Snapshots, Mounts, and Taint boundary. | planned; not run |
-| Deletion closure test | Probe whether the chapter claim holds under the relevant Context Transactions, Snapshots, Mounts, and Taint boundary. | planned; not run |
+| Read-your-writes snapshot test | Check that a snapshot read sees committed events in its declared view. | planned; not run |
+| Taint propagation test | Check that tainted source context produces tainted derived context unless declassification is authorized. | planned; not run |
+| Deletion closure test | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +179,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Context Transactions, Snapshots, Mounts, and Taint defines one boundary in the ASI Stack: VCM should use transactional memory semantics: immutable events, versioned pages, snapshots, mounts, taint, temporal validity, and deletion closure. Its job is to make a capability more governable, not merely more impressive.
+Context Transactions, Snapshots, Mounts, and Taint gives VCM runtime semantics. It treats memory as immutable events, versioned pages, coherent snapshots, mounted views, copy-on-write branches, tainted derivatives, deletion obligations, contradiction records, and auditable faults.
 
-In v0.2, this chapter gives Context Transactions, Snapshots, Mounts, and Taint a complete architectural boundary: memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint. Its next maturity step is to substantiate the boundary through `Planning receives consistent views`, preserve `Snapshots are consistent`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The rule is that memory operations must leave a reviewable trace. If a context view cannot satisfy consistency, taint, or deletion closure, it should fault before becoming working context.

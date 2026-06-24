@@ -1,0 +1,15 @@
+{
+  "transaction_id": "context-transaction-demo-001",
+  "operation": "derive",
+  "snapshot_id": "snapshot-demo-001",
+  "mounts": ["public-safe-source-notes"],
+  "read_set": ["sources/source_notes/vcm_public.md"],
+  "write_set": ["semantic-page-demo-001"],
+  "branch_policy": "copy-on-write for drafting representations",
+  "taint_labels": ["no-raw-private-source"],
+  "deletion_obligations": ["remove derived page if source note is withdrawn"],
+  "contradiction_refs": [],
+  "closure_state": "satisfied",
+  "faults": [],
+  "audit_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"]
+}
