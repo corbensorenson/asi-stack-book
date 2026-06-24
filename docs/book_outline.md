@@ -1209,16 +1209,17 @@ Draft deliverables:
 
 - A semantic-page schema with certificate fields and example source-to-summary derivation.
 - Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape only.
-- Planned Codex test: Certificate completeness test.
-- Planned Codex test: Authority preservation test.
+- Implemented Lean proof target: valid derived cells carry source bindings, loss contracts, and permitted-use declarations.
+- Implemented Lean proof target: summaries respecting source cells cannot increase source authority ceilings.
 - Planned Codex test: Summary fidelity test.
+- Planned Codex test: certificate truthfulness test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | planned |
-| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | planned |
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
 
 ### Context Transactions, Snapshots, Mounts, and Taint
 

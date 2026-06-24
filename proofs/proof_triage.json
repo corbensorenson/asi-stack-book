@@ -415,20 +415,20 @@
       "chapter_id": "semantic-pages-context-cells-and-certificates",
       "module": "AsiStackProofs.ContextCertificates",
       "formal_target": "A derived context cell carries source bindings and a declared loss/use contract.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ContextCertificates as a finite certificate predicate: valid derived cells declare source bindings, loss contracts, and permitted uses."
     },
     {
       "tag": "lean:vcm.certificates.failure_blocks_promotion",
       "chapter_id": "semantic-pages-context-cells-and-certificates",
       "module": "AsiStackProofs.ContextCertificates",
       "formal_target": "A summary cannot increase the authority ceiling of its source cells.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ContextCertificates as a finite authority predicate: summaries respecting source cells cannot exceed source authority ceilings."
     },
     {
       "tag": "lean:vcm.transactions.operational_invariant",

@@ -16,6 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
   - "Only protocol schema/fixture validation is implemented; no summary-fidelity or authority-preservation tests have been run for this chapter."
+  - "Lean coverage is limited to finite certificate and source/summary authority records; summary fidelity and truthful-certificate checks remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable`; raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
-| Test state | Semantic page certificate fixture validation implemented; summary-fidelity tests remain planned. |
+| Test state | Semantic page certificate fixture validation and `AsiStackProofs.ContextCertificates` finite-record proofs are implemented; summary-fidelity tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats summaries and context cells as evidence-bounded representations. The repo validates a semantic page certificate fixture, but it does not yet test summary fidelity, authority preservation, omission detection, or support-state promotion from certificates.
+This chapter treats summaries and context cells as evidence-bounded representations. The repo validates a semantic page certificate fixture and implements narrow finite-record Lean predicates for derived-cell certificate completeness and source-to-summary authority non-escalation. It does not yet test summary fidelity, omission detection, certificate truthfulness, or support-state promotion from certificates.
 
 ## Problem
 
@@ -133,29 +134,30 @@ Summary overconfidence happens when fluent compression hides the actual loss con
 
 A semantic-page schema with certificate fields and example source-to-summary derivation.
 
-The smallest useful implementation is a `semantic_page_certificate` schema and fixture. It should validate source bindings, derivation, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks.
+The smallest useful implementation is a `semantic_page_certificate` schema and fixture. It should validate source bindings, derivation, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks. The accompanying Lean module is intentionally narrower than a summary evaluator: it models finite certificate records, source cells, and summary cells; a valid derived cell must declare source bindings, a loss contract, and permitted uses; and a summary that respects its source cells cannot raise its authority ceiling above any source.
 
-That validation proves only that the certificate names source bindings, loss, permitted use, and residual risk. It does not prove that the summary preserved the right facts or that the certificate is truthful.
+That validation proves only that the certificate names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Semantic page certificate fixture validation | Check that the certificate fixture matches the public schema and declares bindings, derivation, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, and residual risks. | implemented by protocol validation; run in this pass |
-| Certificate completeness test | Check that derived cells carry source bindings, loss contract, permitted uses, and residual risks. | planned; not run |
-| Authority preservation test | Check that summaries cannot increase the authority ceiling of source cells. | planned; not run |
+| Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
+| Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Summary fidelity test | Check that omissions and exactness limits remain visible before evidence use. | planned; not run |
+| Certificate truthfulness test | Check that certificate declarations match paired source and derived cells. | planned; not run |
 
-Only the fixture-shape check is implemented. Fidelity and authority tests require paired source/derived cells and an evaluator that can reject unsupported or over-authorized representations.
+The fixture-shape check and finite-record proof predicates are implemented. Fidelity, omission completeness, and certificate truthfulness require paired source/derived cells and an evaluator that can reject unsupported representations.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | planned |
-| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | planned |
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
 
-These proof hooks remain planned. Authority non-escalation is a good formal target once source and derived cell relations are represented explicitly.
+These proof hooks are implemented only over finite Lean certificate and authority records. `AsiStackProofs.ContextCertificates` checks that valid derived cells declare source bindings plus loss/use contracts, and that a summary respecting source authority cannot exceed any source ceiling. The proof does not evaluate summary fidelity, omission completeness, or certificate truthfulness.
 
 ## Source crosswalk
 
