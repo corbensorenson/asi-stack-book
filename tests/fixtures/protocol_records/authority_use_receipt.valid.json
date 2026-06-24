@@ -1,0 +1,13 @@
+{
+  "handle_id": "handle://demo-secret",
+  "principal": "planner-demo",
+  "purpose": "Sign a simulated request in a fake-secret fixture.",
+  "destination": "local-simulated-executor",
+  "allowed_action": "substitute_fake_secret",
+  "clearance": "demo-only",
+  "approval_record": "approval://demo-001",
+  "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"],
+  "sanitized_output": "simulated result without secret bytes",
+  "residual_leak_risk": ["This fixture does not model side channels."],
+  "revocation_path": "delete handle mapping from fake vault"
+}

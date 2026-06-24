@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/authority_use_receipt.schema.json",
+  "title": "Authority Use Receipt",
+  "type": "object",
+  "required": [
+    "handle_id",
+    "principal",
+    "purpose",
+    "destination",
+    "allowed_action",
+    "clearance",
+    "approval_record",
+    "scif_lifecycle",
+    "sanitized_output",
+    "residual_leak_risk",
+    "revocation_path"
+  ],
+  "properties": {
+    "handle_id": { "type": "string", "minLength": 1 },
+    "principal": { "type": "string", "minLength": 1 },
+    "purpose": { "type": "string", "minLength": 1 },
+    "destination": { "type": "string", "minLength": 1 },
+    "allowed_action": { "type": "string", "minLength": 1 },
+    "clearance": { "type": "string", "minLength": 1 },
+    "approval_record": { "type": "string", "minLength": 1 },
+    "scif_lifecycle": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"]
+      }
+    },
+    "sanitized_output": { "type": "string" },
+    "residual_leak_risk": { "type": "array", "items": { "type": "string" } },
+    "revocation_path": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

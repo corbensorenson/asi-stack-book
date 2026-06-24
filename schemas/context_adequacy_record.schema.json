@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/context_adequacy_record.schema.json",
+  "title": "Context Adequacy Record",
+  "type": "object",
+  "required": [
+    "target_claim_id",
+    "semantic_units",
+    "compression_path",
+    "verification_mode",
+    "adequacy_state",
+    "residual_risks",
+    "required_escalation"
+  ],
+  "properties": {
+    "target_claim_id": { "type": "string", "minLength": 1 },
+    "semantic_units": { "type": "array", "items": { "type": "string" } },
+    "compression_path": { "type": "array", "items": { "type": "string" } },
+    "verification_mode": {
+      "type": "string",
+      "enum": ["none", "drafting", "local_consistency", "pairwise_grinding", "tribunal", "formal"]
+    },
+    "adequacy_state": {
+      "type": "string",
+      "enum": ["unknown", "adequate_for_drafting", "adequate_for_local_check", "inadequate_for_verification", "escalated"]
+    },
+    "residual_risks": { "type": "array", "items": { "type": "string" } },
+    "required_escalation": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Long context does not automatically provide long-range reasoning or enough verification capacity.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The central distinction is between **generation capacity** and **verification bandwidth**. A model may have enough context to mention two documents, summarize them, or weave them into plausible prose while still lacking enough active workspace to compare the relevant semantic units in detail. In this chapter, context is adequate only relative to a target claim, a set of semantic units, a verification task, and a declared risk level.
 
-It inherits pressure from the previous chapter, Context Transactions, Snapshots, Mounts, and Taint, and makes that pressure operational in a narrower boundary. It hands its output to Claim Ledgers and Belief Revision, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The layer receives context packets from VCM, claims from the reasoning layer, and risk labels from governance. It emits an adequacy state: sufficient for drafting, sufficient for local consistency checks, insufficient for verification, or escalated to tribunal/proof review. The output is not more prose. The output is a decision about whether the currently loaded context can support the kind of claim the system is about to make.
 
 ## Why existing approaches are insufficient
 
 Adding tokens can increase distractors, attention interference, and unverified summary burden.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: adding tokens can increase distractors, attention interference, and unverified summary burden. If `verification-bandwidth-and-context-adequacy` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+The `verification_bandwidth` source frames this as a two-body problem: rigorous comparison requires enough effective workspace to hold the compared units together. If one document, codebase, or specification dominates the active workspace, it can suppress the ability to check another. If consistency is checked only through a chain of local summaries, non-adjacent contradictions can survive by transitive decay.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+RAG and long context are therefore necessary infrastructure, not proof. They help place material near the model, but they do not certify that the model jointly verified all relevant constraints. Tree-structured representation, VCM pages, and Spinoza-style claim ledgers are useful only if they expose what was compared, what was summarized, what was left as residual, and what claim class the packet is allowed to support.
 
 ## Core Claim
 
@@ -65,27 +65,45 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, model verification as bounded by mutual information, representation quality, and attention budget. Second, require adequacy labels for context packets. Third, route high-risk claims to stronger verification instead of more context alone.
+The mechanism turns context loading into an explicit adequacy contract. A context packet should identify the semantic units it claims to cover, the target claim or task, the compression path used to fit them, the loss or residual warnings, and the verification mode that was actually applied.
+
+```{mermaid}
+flowchart LR
+  A["Source units"] --> B["VCM packet"]
+  B --> C["Semantic-unit inventory"]
+  C --> D{"Joint verification possible?"}
+  D -- "yes" --> E["Adequate for target claim"]
+  D -- "no" --> F["Inadequate or summary-only"]
+  F --> G["Escalate: retrieve, split, tribunal, proof, or human review"]
+  E --> H["Claim ledger support remains bounded by declared mode"]
+  G --> H
+```
 
 - Model verification as bounded by mutual information, representation quality, and attention budget.
 - Require adequacy labels for context packets.
 - Route high-risk claims to stronger verification instead of more context alone.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The practical rule is simple: if the system cannot name the semantic units that must be jointly checked, it cannot claim verification. If the units are too large for joint checking, the system may still draft, summarize, or propose a claim, but the claim ledger must mark the verification state as inadequate, summary-derived, or escalated.
 
 ## Interfaces
 
-The interface for Verification Bandwidth and Context Adequacy is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface for this chapter is a compact adequacy record that travels with the context packet and the claim it supports.
 
 - VCM declares adequacy.
 - Spinoza checks claims.
 - Planning decides escalation when adequacy is insufficient.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `target_claim_id`
+- `semantic_units`
+- `compression_path`
+- `verification_mode`
+- `adequacy_state`
+- `residual_risks`
+- `required_escalation`
+
+Planning consumes the adequacy state before assigning review effort. VCM uses it to decide whether retrieval, summarization, or splitting is required. Spinoza-style claim ledgers use it to block support-state promotion when the context packet is adequate for drafting but not for verification.
 
 ## Invariants
 
@@ -95,7 +113,7 @@ The invariants are the conditions that must remain true even when the implementa
 - More context is not treated as proof.
 - High-risk claims pay verification tax.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+These invariants are deliberately weaker than a theorem about model cognition. The book does not claim to know a model's true internal workspace. It claims that a governed stack should expose the boundary conditions under which a claim was produced, and should refuse to treat context length as evidence when the comparison task was not actually performed.
 
 ## Failure modes
 
@@ -105,13 +123,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - False confidence from large context.
 - Verification skipped for cost reasons.
 
-For Verification Bandwidth and Context Adequacy, mitigation starts by turning each listed failure into a named reviewable artifact. When `Attention interference` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Each failure should emit a residual record, not merely a lower confidence score.
 
 ## Minimal implementation
 
 A context adequacy rubric and verification-bandwidth warning states.
 
-The smallest useful implementation is deliberately narrow: A context adequacy rubric and verification-bandwidth warning states. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -150,4 +168,4 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Verification Bandwidth and Context Adequacy defines one boundary in the ASI Stack: Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate. Its job is to make a capability more governable, not merely more impressive.
 
-In v0.2, this chapter gives Verification Bandwidth and Context Adequacy a complete architectural boundary: long context does not automatically provide long-range reasoning or enough verification capacity. Its next maturity step is to substantiate the boundary through `VCM declares adequacy`, preserve `Adequacy is explicit`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The design principle is conservative: context can be present, relevant, and still inadequate for the claim being made. A living ASI stack should therefore record adequacy as a first-class state, route high-risk claims to stronger verification, and treat missed contradictions as residuals that improve the next context compiler.

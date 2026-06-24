@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/compression_receipt.schema.json",
+  "title": "Compression Receipt",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "reconstruction_contract",
+    "public_law_family",
+    "seed",
+    "generated_regions",
+    "verification_result",
+    "repair_residual",
+    "fallback_threshold",
+    "rate_accounting",
+    "non_claims"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "reconstruction_contract": { "type": "string", "minLength": 1 },
+    "public_law_family": { "type": "string", "minLength": 1 },
+    "seed": { "type": "string" },
+    "generated_regions": { "type": "array", "items": { "type": "string" } },
+    "verification_result": {
+      "type": "string",
+      "enum": ["not_run", "pass", "fail", "partial"]
+    },
+    "repair_residual": { "type": "string" },
+    "fallback_threshold": { "type": "string", "minLength": 1 },
+    "rate_accounting": {
+      "type": "object",
+      "required": ["proxy_bits", "final_bits", "literal_bits", "proxy_gap"],
+      "properties": {
+        "proxy_bits": { "type": "number" },
+        "final_bits": { "type": "number" },
+        "literal_bits": { "type": "number" },
+        "proxy_gap": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -539,7 +539,7 @@ def write_test_specs(structure: dict) -> None:
                 f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | {qmd_escape(test)} | planned | not run |"
             )
     path.write_text(
-        f"# Codex Test Specs\n\nThis appendix is generated from chapter-level `codex_tests` in `book_structure.json`.\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Chapter ID | Chapter | Test spec | Implementation status | Result status |\n|---|---|---|---|---|\n{chr(10).join(rows)}\n",
+        f"# Codex Test Specs\n\nThis appendix is generated from chapter-level `codex_tests` in `book_structure.json`.\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Chapter ID | Chapter | Test spec | Implementation status | Result status |\n|---|---|---|---|---|\n{chr(10).join(rows)}\n\n## Repository-Level Implemented Checks\n\n| Check | Command | Scope | Result policy |\n|---|---|---|---|\n| Protocol schema fixture validation | `python3 scripts/validate_protocol_examples.py` | Validates example records in `tests/fixtures/protocol_records/` against matching schemas in `schemas/`. | Passing this check proves fixture/schema consistency only; it does not promote chapter claims or replace the chapter-level tests above. |\n",
         encoding="utf-8",
     )
 

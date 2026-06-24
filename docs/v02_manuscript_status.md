@@ -17,13 +17,15 @@ Current scale: 50 chapter files, 97,623 chapter words, averaging 1,952 words per
 - Source notes now exist for all 59 source records currently assigned to chapters, including the original backbone notes, RMI, Benchmaxxing, CGS, Octopus Router, Cognitive Loop Closure, Project Theseus public-project records, Circle Calculus public-project records, the Field of God AI Constitution, GenesisCode, Verification Bandwidth, Cognitive Compilation, Simulation Scaling, UAT, Ladon/Manhattan, Ratcheting Generative Systems, TokenMana, BeastBrain, TreeLLM, BBVCA, RankFold/NeuralFold, Aletheia, Context Engineer, BugBrain, and the philosophical alignment lineage sources.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
+- Four central mechanism chapters now have source-specific hand revisions and Mermaid diagrams for verification bandwidth, cognitive compilation, generate-verify-repair compression, and Digital SCIF authority flow.
+- Executable schema drafts now cover context adequacy records, semantic atoms, compression receipts, and authority-use receipts, with valid example fixtures checked by `scripts/validate_protocol_examples.py`.
 
 ## Still Missing for v1.0
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
 - Most Lean proof targets remain planned or triaged as schema/process/research targets.
-- Codex tests are planned but not implemented or run.
+- Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented and remains limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized.
 - The manuscript needs hand revision after deeper source mining so chapters can become less template-shaped and more source-specific without losing the stack contract.
 
@@ -52,6 +54,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
 ```

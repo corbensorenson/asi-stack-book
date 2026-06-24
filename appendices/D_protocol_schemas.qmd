@@ -1,13 +1,19 @@
 # Protocol Schemas
 
-These are draft schema placeholders for later source-derived protocol work. They are intentionally minimal and should not be treated as final API contracts.
+These are draft executable protocol schemas for the living book. They are intentionally small and should not be treated as final API contracts or as evidence that a full implementation exists. A schema records the current operational shape of a record the book can validate, test, or later formalize.
 
 Executable schema drafts are tracked in `schemas/`:
 
+- `schemas/authority_use_receipt.schema.json`
 - `schemas/claim_record.schema.json`
+- `schemas/compression_receipt.schema.json`
+- `schemas/context_adequacy_record.schema.json`
 - `schemas/context_packet.schema.json`
+- `schemas/semantic_atom.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/typed_job.schema.json`
+
+Example fixtures for implemented schema checks are tracked in `tests/fixtures/protocol_records/` and validated by `python3 scripts/validate_protocol_examples.py`.
 
 ## Command Contract
 
@@ -33,6 +39,80 @@ context_packet:
   adequacy_state: unknown
   open_uncertainties: []
 ```
+
+## Context Adequacy Record
+
+```yaml
+context_adequacy_record:
+  target_claim_id: string
+  semantic_units: []
+  compression_path: []
+  verification_mode: pairwise_grinding
+  adequacy_state: adequate_for_local_check
+  residual_risks: []
+  required_escalation: []
+```
+
+This record distinguishes context admission from context adequacy. It can say a packet is usable for drafting or local consistency checks without claiming it is adequate for support-state promotion.
+
+## Semantic Atom
+
+```yaml
+semantic_atom:
+  atom_id: string
+  intent: string
+  inputs: []
+  outputs: []
+  constraints: []
+  dependencies: []
+  authority_required: []
+  validator: string
+  target: string
+  repair_scope: same_atom
+```
+
+This record is the small unit of cognitive compilation: one preserved intent fragment with inputs, outputs, constraints, dependencies, authority requirements, a validator, and a bounded repair target.
+
+## Compression Receipt
+
+```yaml
+compression_receipt:
+  artifact_id: string
+  reconstruction_contract: string
+  public_law_family: string
+  seed: string
+  generated_regions: []
+  verification_result: partial
+  repair_residual: string
+  fallback_threshold: string
+  rate_accounting:
+    proxy_bits: 0
+    final_bits: 0
+    literal_bits: 0
+    proxy_gap: 0
+  non_claims: []
+```
+
+This record keeps generate-verify-repair compression honest by separating proxy compression claims from final serialized size, repair burden, and explicit non-claims.
+
+## Authority Use Receipt
+
+```yaml
+authority_use_receipt:
+  handle_id: string
+  principal: string
+  purpose: string
+  destination: string
+  allowed_action: string
+  clearance: string
+  approval_record: string
+  scif_lifecycle: []
+  sanitized_output: string
+  residual_leak_risk: []
+  revocation_path: string
+```
+
+This record captures handle-mediated authority use for Digital SCIF workflows. It is meant to support least-privilege review, audit, revocation, and leak-risk accounting without exposing secret bytes in the public book.
 
 ## Stable Capability Field
 

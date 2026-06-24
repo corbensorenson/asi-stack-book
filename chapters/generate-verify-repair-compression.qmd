@@ -44,17 +44,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The compression chapters sit where the efficient-ASI thesis becomes concrete. If the system can store a compact generator plus a small exact remainder, it can reuse structure instead of carrying every detail at full cost. But compression rhetoric is dangerous: a compact story is not a compressor, and a generated approximation is not exact reconstruction.
 
-It inherits pressure from the previous chapter, Compact Generative Systems and Residual Honesty, and makes that pressure operational in a narrower boundary. It hands its output to RankFold, NeuralFold, and Artifact Compression, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter defines the contract that keeps the idea honest. A compressed artifact must name what is public, what is transmitted, what the generator produces, what verification checked, what repair residuals restore, what the fallback is, and what rate accounting was used. Without those fields, the stack has not compressed anything governable; it has only renamed loss.
 
 ## Why existing approaches are insufficient
 
 Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria. If `generate-verify-repair-compression` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+BBVCA v9 is useful because it hardens the intuition. It rejects the fantasy that an arbitrary larger artifact can be recovered from a smaller private seed alone. The useful form is shared-law compression: a public law family carries repeatable structure, an artifact-specific seed selects local behavior, verification compares generated output to the target, and exact repair streams pay for what the generator missed.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The hardest practical issue is rate honesty. A search-time proxy can guide a dynamic program, but it is not the final encoded length. The source therefore separates proxy scoring from final serialization and requires calibration, anti-pruning margins, and refresh when realized rates diverge.
 
 ## Core Claim
 
@@ -64,27 +64,50 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, generate from seeded local laws. Second, verify against target. Third, repair mismatches with exact residual mechanisms and record rate discipline.
+The mechanism is generate -> verify -> repair, wrapped in a reconstruction contract.
+
+```{mermaid}
+flowchart LR
+  A["Reconstruction contract"] --> B["Public law family"]
+  A --> C["Artifact-specific seed"]
+  B --> D["Generate candidate"]
+  C --> D
+  D --> E{"Local verification"}
+  E -- "match" --> F["Accept generated region"]
+  E -- "mismatch" --> G["Exact repair residual"]
+  F --> H["Final serialized stream"]
+  G --> H
+  H --> I["Decode: replay generator + repairs"]
+```
 
 - Generate from seeded local laws.
 - Verify against target.
 - Repair mismatches with exact residual mechanisms and record rate discipline.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The compression record should include the reconstruction contract, law-family id, seed payload, verification region, repair stream, literal fallback, interface costs, search bound, proxy model, final entropy model, and proxy gap. That record is the bridge from a beautiful compression idea to an auditable ASI substrate.
 
 ## Interfaces
 
-The interface for Generate-Verify-Repair Compression is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Compression Receipt.
 
 - Evidence measures reconstruction and utility.
 - Routing chooses compressed or full representation.
 - VCM uses summaries with loss contracts.
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `artifact_id`
+- `reconstruction_contract`
+- `public_law_family`
+- `seed`
+- `generated_regions`
+- `verification_result`
+- `repair_residual`
+- `fallback_threshold`
+- `rate_accounting`
+- `non_claims`
+
+VCM can consume lossy summaries only when loss is declared. Routing can choose a full artifact instead of a compressed one when repair cost or verification failure crosses a threshold. Evidence ledgers can reject exactness claims when the receipt lacks verification or residual accounting.
 
 ## Invariants
 
@@ -94,7 +117,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Repair cost is counted.
 - Search bounds are explicit.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The exactness invariant is the important one: decoded generator output plus exact repair must equal the target under the stated contract. If the contract permits loss, the loss must be named and cannot support a lossless claim. If the repair stream is larger than the original, the system should record a negative result, not hide the failed compression behind a successful decode.
 
 ## Failure modes
 
@@ -104,13 +127,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Verification skipped.
 - Repair larger than original data.
 
-For Generate-Verify-Repair Compression, mitigation starts by turning each listed failure into a named reviewable artifact. When `Unbounded search` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The most common failure is side-information laundering: moving data into law IDs, parameters, boundaries, or repair streams and then celebrating the seed as small. A second failure is proxy dishonesty: optimizing a cheap proxy objective and never checking the final serialized rate. A third is domain mismatch: forcing volumetric or lawful structure onto data that does not have enough exploitable locality.
 
 ## Minimal implementation
 
 A compression record with generator, verification result, repair residual, and fallback threshold.
 
-The smallest useful implementation is deliberately narrow: A compression record with generator, verification result, repair residual, and fallback threshold. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is not a new universal codec. It is a tiny receipt schema and a toy deterministic generator over small arrays or text blocks. The test should show three cases: generated output matches directly, generated output requires an exact repair stream, and repair/fallback makes the compressed form larger than the literal baseline.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -148,4 +171,4 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Generate-Verify-Repair Compression defines one boundary in the ASI Stack: Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails. Its job is to make a capability more governable, not merely more impressive.
 
-In v0.2, this chapter gives Generate-Verify-Repair Compression a complete architectural boundary: some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this. Its next maturity step is to substantiate the boundary through `Evidence measures reconstruction and utility`, preserve `Verification precedes exactness claims`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's discipline is residual honesty. A generator is useful only when the stack pays for what it fails to generate, checks the result against a declared reconstruction contract, and records when literal storage was better. That principle later generalizes beyond compression: any compact representation in the ASI stack must expose its repair burden.

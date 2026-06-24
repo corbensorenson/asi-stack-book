@@ -1,14 +1,14 @@
 # Full Book Writing Goal Template
 
-Use this when starting the long-running goal to draft the whole book.
+Use this when starting or resuming a long-running goal to improve the whole book toward a v1.0 candidate.
 
 ## Recommended Goal
 
-Write the complete v0.2 manuscript draft of **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** from the current Quarto scaffold.
+Run an extended end-to-end improvement pass on **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** to turn the current v0.2 manuscript baseline into a final-draft-quality v1.0 candidate.
 
 Treat `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs. Treat `book_structure.json` as the source of truth for part/chapter order and stable chapter IDs. Use the `asi-stack-book` skill and follow the living-book workflow.
 
-For every chapter, produce cohesive systems-architecture prose rather than a paper-by-paper anthology. Preserve the required chapter contract: problem, insufficiency of existing approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, Codex test plan, source crosswalk, and summary. Mine the assigned source notes and available raw/cache/connector sources before making source-derived claims. Create missing source notes when a chapter depends on a source that has not yet been mined.
+For every chapter in scope, produce cohesive systems-architecture prose rather than a paper-by-paper anthology. Preserve the required chapter contract: problem, insufficiency of existing approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, Codex test plan, source crosswalk, and summary. Mine the assigned source notes and available raw/cache/connector sources before making source-derived claims. Create missing source notes when a chapter depends on a source that has not yet been mined.
 
 Do not fabricate citations, source content, benchmark results, test results, proofs, or implementation status. Keep all claims at the support state justified by recorded artifacts. Use `source-derived` only after a source note or equivalent ingested-source artifact is mapped to the claim. Use `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` only when the relevant code, run record, external source, or evidence artifact exists. Keep speculative/metaphysical material visibly speculative.
 
@@ -23,8 +23,9 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
 ```
 
-Final deliverable: a rendered, public-safe, complete v0.2 living-book manuscript draft with an honest report of completed chapters, support-state promotions, implemented proofs/tests, missing evidence, unresolved source gaps, and remaining v1.0 work.
+Final deliverable: a rendered, public-safe v1.0-candidate living-book manuscript with an honest report of completed chapter improvements, added visuals, support-state promotions, implemented proofs/tests, missing evidence, unresolved source gaps, and remaining release risks.

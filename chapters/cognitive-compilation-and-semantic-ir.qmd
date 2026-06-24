@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Direct generation asks one model turn to hold the user's intent, infer missing constraints, choose an architecture, write the artifact, preserve prior decisions, and repair failures. That collapses several compiler jobs into one opaque act. Cognitive compilation splits those jobs apart: source plan, semantic IR, target lowering, execution, validation, and localized repair.
 
-It inherits pressure from the previous chapter, PlanForge DAGs and Intelligence Arbitrage, and makes that pressure operational in a narrower boundary. It hands its output to Virtual Context ABI, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The layer receives accepted goals and command contracts from planning. It emits typed semantic atoms with dependencies, constraints, validators, target hints, and repair surfaces. The output should be boring in the best sense: a downstream worker can inspect what must be preserved without rereading the entire conversation.
 
 ## Why existing approaches are insufficient
 
 Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile. If `cognitive-compilation-and-semantic-ir` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+The `cognitive_compilation` source identifies the recurring failure pattern: requirement and implementation entangle, independent work is serialized, expensive models are overused, and repairs become global regeneration. PlanForge contributes the scheduling side of the answer; GenesisCode contributes the evidence/provenance side; TreeLLM contributes the representation-side intuition that the model should navigate explicit structure rather than memorize everything internally.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+A prompt can still be the input surface. It should not be the internal build artifact.
 
 ## Core Claim
 
@@ -65,27 +65,49 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent requirements, semantics, dependencies, artifacts, and target constraints explicitly. Second, perform incremental repair over IR rather than re-prompting from scratch. Third, compile IR into jobs, code, schemas, or documents.
+The mechanism is a small compiler pipeline.
+
+```{mermaid}
+flowchart LR
+  A["Human goal + command contract"] --> B["Source plan"]
+  B --> C["Semantic IR DAG"]
+  C --> D["Compiler passes: normalize, type, lint, schedule"]
+  D --> E["Target IR or job graph"]
+  E --> F["Artifact"]
+  F --> G{"Validator pass?"}
+  G -- "yes" --> H["Artifact graph + claim ledger"]
+  G -- "no" --> I["Localized repair on failed IR nodes"]
+  I --> D
+```
 
 - Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.
 - Perform incremental repair over IR rather than re-prompting from scratch.
 - Compile IR into jobs, code, schemas, or documents.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The key object is the semantic atom. A useful atom names its purpose, inputs, outputs, constraints, dependencies, authority requirements, validator, target artifact, and repair policy. A collection of atoms becomes a DAG. The DAG is what planning schedules, VCM loads context for, execution turns into jobs, and the artifact graph audits.
 
 ## Interfaces
 
-The interface for Cognitive Compilation and Semantic IR is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface for Cognitive Compilation and Semantic IR is a typed DAG, not a prose plan.
 
 - Planning produces or consumes IR.
 - Execution receives target-specific artifacts.
 - Verification checks IR-to-output preservation.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum semantic-atom fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `atom_id`
+- `intent`
+- `inputs`
+- `outputs`
+- `constraints`
+- `dependencies`
+- `authority_required`
+- `validator`
+- `target`
+- `repair_scope`
+
+The planner owns graph formation and scheduling. The compiler owns preservation of obligations across lowering. The executor owns side effects. The verifier owns acceptance or rejection. Keeping those roles separate is what prevents an impressive generated artifact from silently overwriting its own requirements.
 
 ## Invariants
 
@@ -95,7 +117,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Repair changes are localized and auditable.
 - Target compilation records assumptions.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is not that the compiler always succeeds. The invariant is that failure has an address. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
 
 ## Failure modes
 
@@ -105,13 +127,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Compiler hallucination.
 - Repair that breaks earlier requirements.
 
-For Cognitive Compilation and Semantic IR, mitigation starts by turning each listed failure into a named reviewable artifact. When `IR drift` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The hardest failure is semantic under-specification: a graph can be perfectly typed and still omit the thing the human cared about. The second failure is validator scarcity: prose, diagrams, and policy documents often lack executable checks. The third is overhead: for small tasks, the compiler can cost more than direct generation. The stack should therefore route only tasks whose risk, complexity, reuse, or repair burden justifies compilation.
 
 ## Minimal implementation
 
 A semantic IR sketch and compile/verify/repair loop for one artifact type.
 
-The smallest useful implementation is deliberately narrow: A semantic IR sketch and compile/verify/repair loop for one artifact type. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -150,4 +172,4 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Cognitive Compilation and Semantic IR defines one boundary in the ASI Stack: Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted. Its job is to make a capability more governable, not merely more impressive.
 
-In v0.2, this chapter gives Cognitive Compilation and Semantic IR a complete architectural boundary: lLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes. Its next maturity step is to substantiate the boundary through `Planning produces or consumes IR`, preserve `IR preserves declared requirements`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's practical claim is modest: the stack needs an artifact between intent and execution. That artifact should be typed enough to schedule, validate, repair, replay, and audit. Until a prototype exists, this remains design rationale; once a small semantic-atom schema and repair fixture exist, individual implementation claims can begin moving through the evidence ledger.

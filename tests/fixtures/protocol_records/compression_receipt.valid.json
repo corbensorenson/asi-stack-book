@@ -1,0 +1,17 @@
+{
+  "artifact_id": "toy-array-001",
+  "reconstruction_contract": "Exact byte-for-byte reconstruction under integer arithmetic.",
+  "public_law_family": "run-length-demo-v0",
+  "seed": "A4B3C2",
+  "generated_regions": ["region-0"],
+  "verification_result": "partial",
+  "repair_residual": "literal tail: D",
+  "fallback_threshold": "Use literal storage if final_bits >= literal_bits.",
+  "rate_accounting": {
+    "proxy_bits": 18,
+    "final_bits": 26,
+    "literal_bits": 32,
+    "proxy_gap": 8
+  },
+  "non_claims": ["This receipt is not a compression benchmark."]
+}

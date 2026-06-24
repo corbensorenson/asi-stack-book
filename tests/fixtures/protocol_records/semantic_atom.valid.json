@@ -1,0 +1,12 @@
+{
+  "atom_id": "chapter-section-001",
+  "intent": "Draft a source-bounded mechanism section for cognitive compilation.",
+  "inputs": ["command contract", "source notes"],
+  "outputs": ["mechanism prose", "mermaid diagram"],
+  "constraints": ["Do not promote support state.", "Preserve source boundaries."],
+  "dependencies": ["chapter-claim"],
+  "authority_required": ["write_repo_file"],
+  "validator": "quarto render --to html",
+  "target": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+  "repair_scope": "same_atom"
+}

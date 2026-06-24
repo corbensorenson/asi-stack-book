@@ -39,7 +39,7 @@ Good code candidates:
 
 - source ingestion and cache tools,
 - claim/evidence matrix validators,
-- schema validators for context packets, typed jobs, and SCF records,
+- schema validators for context packets, typed jobs, SCF records, context adequacy records, semantic atoms, compression receipts, and authority-use receipts,
 - toy tests for routing, residual escrow, and benchmark ratchets,
 - small synthetic experiments for VCM, planning, Talos, Spinoza, compression, and RMI.
 

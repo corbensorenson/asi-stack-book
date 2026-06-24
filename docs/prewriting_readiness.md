@@ -14,6 +14,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 - The per-chapter Definition of Done is machine-checked by `scripts/validate_chapter_dod.py`.
 - Required backbone source notes are machine-checked by `scripts/validate_source_notes.py`.
 - Proof target triage is machine-checked by `scripts/validate_proof_readiness.py`.
+- Protocol schema examples are machine-checked by `scripts/validate_protocol_examples.py`.
 - The Lean toolchain is pinned and the implemented evidence-state proofs are wired to the outline/manifest.
 - CI is configured to run validation, render Quarto, and build the Lean workspace.
 - Stale local handoff trees are quarantined under ignored `_archive/local_context/`.
@@ -22,7 +23,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 - Most chapter claims have not been mapped from source notes into Appendix C.
 - Most Lean targets remain planned or triaged as schema/process/research work.
-- Codex tests are planned but not implemented or run.
+- Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.
 - External literature has a queue and stance, but not a citation-normalized bibliography.
 
@@ -37,6 +38,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
 ```

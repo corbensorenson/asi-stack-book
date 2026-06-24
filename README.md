@@ -19,10 +19,10 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
-- Backbone source notes and connector-readiness metadata exist for the main pre-drafting sources.
+- Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
 - Claims remain `argument` level unless source notes, prototypes, tests, proofs, or external literature justify promotion.
-- Codex tests are planned; test results are not recorded unless they have actually been run.
+- A protocol schema fixture check is implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
 
 ## Start Here
@@ -56,6 +56,7 @@ python3 scripts/source_readiness_report.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
 quarto render --to html
 ```
 

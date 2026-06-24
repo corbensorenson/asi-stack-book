@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The agency paradox is straightforward: useful AI systems need to act through credentials, tools, files, networks, and privileged context, but the model context is the wrong place to put secrets or broad authority. If a model can see a credential, a prompt injection can ask for it. If a low-tier worker receives a whole memory dump, it can leak, misuse, or overfit to irrelevant privileged information.
 
-It inherits pressure from the previous chapter, Capability Replacement and Rollback, and makes that pressure operational in a narrower boundary. It hands its output to Recursive Self-Improvement Boundaries, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter therefore treats security as a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
 
 ## Why existing approaches are insufficient
 
 Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion. If `security-kernel-and-digital-scifs` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+The `ladon_manhattan` source gives the credential pattern: use blind handles, keep secrets in a vault or enclave, and inject them only at the authorized execution boundary. The `context_engineer` source gives the context pattern: treat context as a supply chain, compile mission briefs, enforce clearance, run sensitive work in an ephemeral compartment, then commit only sanitized outputs.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Neither pattern is a complete security proof. Software compartments can leak through logs, traces, screenshots, side channels, summaries, or overly broad handle permissions. The book's claim is narrower: credential bytes and privileged context should not be casually placed in model-visible text when a handle-mediated boundary can do the job.
 
 ## Core Claim
 
@@ -65,27 +65,54 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, use handles rather than exposing secrets. Second, separate model-visible context from privileged substitution. Third, run high-risk tasks inside compartmentalized context containers.
+The mechanism is a handle-mediated execution path.
+
+```{mermaid}
+sequenceDiagram
+  participant U as User / governance
+  participant P as Planner
+  participant K as Security kernel
+  participant S as Secret vault
+  participant C as Digital SCIF
+  participant L as Audit ledger
+  U->>K: authorize policy and scope
+  P->>K: request use of handle
+  K->>K: check clearance, destination, purpose
+  K->>C: spawn isolated context
+  S->>C: inject secret only inside boundary
+  C->>K: return sanitized result
+  K->>L: record handle use, policy, result, residuals
+```
 
 - Use handles rather than exposing secrets.
 - Separate model-visible context from privileged substitution.
 - Run high-risk tasks inside compartmentalized context containers.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Handles are not magic. A handle must carry scope: permitted destination, action type, time window, spending or rate limit, user approval state, logging rule, and revocation path. A SCIF must carry lifecycle: spawn, inject, execute, sanitize, zeroize, commit, and audit.
 
 ## Interfaces
 
-The interface for Security Kernel and Digital SCIFs is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is an Authority Use Receipt, not a prompt convention.
 
 - VCM supplies least-privilege context.
 - Execution checks tool permissions.
 - Governance audits sensitive transitions.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `handle_id`
+- `principal`
+- `purpose`
+- `destination`
+- `allowed_action`
+- `clearance`
+- `approval_record`
+- `scif_lifecycle`
+- `sanitized_output`
+- `residual_leak_risk`
+- `revocation_path`
+
+The planner can request a capability, but the security kernel decides whether the request is authorized. The executor can complete the action, but only inside the approved boundary. The claim ledger can later see that the action happened without needing the raw secret.
 
 ## Invariants
 
@@ -95,7 +122,7 @@ The invariants are the conditions that must remain true even when the implementa
 - SCIF context is purpose-limited.
 - Privilege substitution is auditable.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is ignorance: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
 
 ## Failure modes
 
@@ -105,13 +132,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Privilege leakage through summaries.
 - SCIF bypass.
 
-For Security Kernel and Digital SCIFs, mitigation starts by turning each listed failure into a named reviewable artifact. When `Prompt injection extracting secrets` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The common trap is treating handles as safe while granting them unbounded use. A second trap is committing too much of the SCIF transcript back into ordinary memory. A third is assuming software isolation defeats hardware, browser, clipboard, screenshot, logging, and timing channels. Each trap should be visible in the threat model and residual risk field.
 
 ## Minimal implementation
 
 A secure-handle workflow and SCIF lifecycle diagram.
 
-The smallest useful implementation is deliberately narrow: A secure-handle workflow and SCIF lifecycle diagram. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -150,4 +177,4 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Security Kernel and Digital SCIFs defines one boundary in the ASI Stack: Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs. Its job is to make a capability more governable, not merely more impressive.
 
-In v0.2, this chapter gives Security Kernel and Digital SCIFs a complete architectural boundary: high-agency systems need security boundaries for secrets, context, permissions, and tool calls. Its next maturity step is to substantiate the boundary through `VCM supplies least-privilege context`, preserve `Secrets are not directly model-visible`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The next maturity step is a toy handle-substitution fixture, then a stricter threat model for logs, summaries, and side channels.

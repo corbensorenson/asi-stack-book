@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/semantic_atom.schema.json",
+  "title": "Semantic Atom",
+  "type": "object",
+  "required": [
+    "atom_id",
+    "intent",
+    "inputs",
+    "outputs",
+    "constraints",
+    "dependencies",
+    "authority_required",
+    "validator",
+    "target",
+    "repair_scope"
+  ],
+  "properties": {
+    "atom_id": { "type": "string", "minLength": 1 },
+    "intent": { "type": "string", "minLength": 1 },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "authority_required": { "type": "array", "items": { "type": "string" } },
+    "validator": { "type": "string", "minLength": 1 },
+    "target": { "type": "string", "minLength": 1 },
+    "repair_scope": {
+      "type": "string",
+      "enum": ["same_atom", "dependent_atoms", "whole_graph", "human_review"]
+    }
+  },
+  "additionalProperties": false
+}

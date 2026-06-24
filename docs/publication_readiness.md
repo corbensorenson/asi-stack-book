@@ -17,22 +17,22 @@ This file tracks whether the public repository is ready for the next major phase
 - `proofs/proof_manifest.json` is generated from the outline.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.
-- Backbone source notes and connector-readiness metadata exist for the main pre-drafting sources.
+- Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - All 50 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, and proof-readiness validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
 - Generated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, and bibliography/source corpus.
-- JSON schemas and Lean workspace both have local validation commands.
+- JSON schemas, protocol example fixtures, and the Lean workspace have local validation commands.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
 
 ## Known Blockers Before v1.0 Evidence Release
 
-- Source-derived claims require source notes before support-state promotion.
-- Project Theseus, Circle Calculus, and Field of God AI Constitution source records still need source notes before being used as source-derived support.
+- Source-derived claims require claim-level mapping from source notes before support-state promotion.
+- Newly added or previously unassigned sources still require source notes before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - Most Lean proof targets are planned or triaged as schema/process/research targets, not implemented.
-- Codex tests are planned, not implemented or run.
+- Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture validation is implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, but not citation-normalized.
 - The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.
 
@@ -45,6 +45,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_book.py`.
 - Run `python3 scripts/validate_schemas.py`.
+- Run `python3 scripts/validate_protocol_examples.py`.
 - Run `(cd lean && lake build)`.
 - Run `quarto render --to html`.
 - Confirm no raw source exports are staged.

@@ -166,3 +166,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source inventory validation test | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-note backlog audit | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | New-paper triage scenario | planned | not run |
+
+## Repository-Level Implemented Checks
+
+| Check | Command | Scope | Result policy |
+|---|---|---|---|
+| Protocol schema fixture validation | `python3 scripts/validate_protocol_examples.py` | Validates example records in `tests/fixtures/protocol_records/` against matching schemas in `schemas/`. | Passing this check proves fixture/schema consistency only; it does not promote chapter claims or replace the chapter-level tests above. |
