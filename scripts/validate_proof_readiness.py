@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
+ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
 
 ALLOWED_TRIAGE = {
     "formal-invariant",
@@ -41,6 +42,15 @@ def module_for_path(path: Path) -> str:
     return "AsiStackProofs." + ".".join(rel.with_suffix("").parts[1:])
 
 
+def root_imports() -> set[str]:
+    imports = set()
+    for line in ROOT_LEAN_MODULE.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if stripped.startswith("import "):
+            imports.add(stripped.removeprefix("import ").strip())
+    return imports
+
+
 def main() -> None:
     manifest = read_json(MANIFEST)
     triage = read_json(TRIAGE)
@@ -52,6 +62,7 @@ def main() -> None:
     if not isinstance(records, list) or not isinstance(triage_records, list):
         raise SystemExit("proof manifest and proof triage records must be lists.")
 
+    imported_modules = root_imports()
     by_tag = {record.get("tag"): record for record in triage_records if isinstance(record, dict)}
     manifest_by_tag = {record.get("tag"): record for record in records if isinstance(record, dict)}
     manifest_tags = set(manifest_by_tag)
@@ -117,6 +128,11 @@ def main() -> None:
             module_path = ROOT / str(record.get("module_path"))
             if not module_path.exists():
                 errors.append(f"{record.get('tag')}: implemented target missing {record.get('module_path')}")
+            module = record.get("module")
+            if module != "AsiStackProofs" and module not in imported_modules:
+                errors.append(
+                    f"{record.get('tag')}: implemented module {module} is not imported by lean/AsiStackProofs.lean"
+                )
 
     lean_files = sorted((ROOT / "lean").glob("AsiStackProofs*.lean")) + sorted((ROOT / "lean" / "AsiStackProofs").glob("*.lean"))
     for path in lean_files:

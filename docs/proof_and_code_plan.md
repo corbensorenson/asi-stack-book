@@ -15,7 +15,7 @@ python3 scripts/validate_proof_readiness.py
 
 The generated machine-readable manifest is `proofs/proof_manifest.json`.
 
-The proof triage file is `proofs/proof_triage.json`. It classifies each outline target as a near-term formal invariant, schema contract, process contract, or research-agenda item. Use it to avoid turning every chapter's conceptual claim into ceremonial Lean. The readiness validator cross-checks triage tags, chapter IDs, modules, formal targets, and target statuses against `proofs/proof_manifest.json`.
+The proof triage file is `proofs/proof_triage.json`. It classifies each outline target as a near-term formal invariant, schema contract, process contract, or research-agenda item. Use it to avoid turning every chapter's conceptual claim into ceremonial Lean. The readiness validator cross-checks triage tags, chapter IDs, modules, root imports, formal targets, and target statuses against `proofs/proof_manifest.json`.
 
 ## What Belongs in Proofs
 
