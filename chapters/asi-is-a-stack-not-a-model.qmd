@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter sets the unit of analysis for the book. It is an architecture argument, not a claim that any one implementation already achieves ASI, safety, or empirical efficiency. Source notes shape the vocabulary; Appendix C still controls support-state movement.
 
 ## Problem
 
@@ -62,9 +62,9 @@ The ASI Stack treats those missing contracts as first-class design objects. It d
 
 [asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verified Intent-to-Execution Architecture, BeastBrain Cognitive Architecture, Aletheia Foundry, Talos Protocol, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence.
 
-The argument is that decomposition is not only a safety device. It is also an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
+The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
 
 ## Stack Map
 
@@ -104,11 +104,11 @@ The diagram is intentionally circular at the end. Self-improvement is not outsid
 
 ## Mechanism
 
-The mechanism is a layer contract. A chapter is mature only when it can answer five questions.
+The mechanism is a layer contract. The concrete artifact is a Layer Boundary Record. A chapter is mature only when it can answer five questions.
 
 First, what responsibility does the layer own? Second, what artifact does it emit? Third, what authority does it have and what authority does it lack? Fourth, what invariant must remain true across implementation changes? Fifth, what evidence would justify promoting the layer, replacing it, or rolling it back?
 
-- Define each layer by responsibility, interface, artifact, invariant, and failure mode.
+- Define each layer by responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim.
 - Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.
 - Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Use source queues and evidence states to keep future writing runs context-loaded and honest.
@@ -119,11 +119,20 @@ The living-book workflow mirrors the architecture. Source queues prevent context
 
 ## Interfaces
 
-The interface for ASI Is a Stack, Not a Model is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Layer Boundary Record.
 
-- Alignment and governance constrain every downstream layer.
-- Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
-- Recursive improvement is a governed transition, not an ambient property of intelligence.
+Minimum fields:
+
+- `layer_id`
+- `responsibility`
+- `input_artifacts`
+- `output_artifacts`
+- `authority_ceiling`
+- `owned_invariants`
+- `failure_modes`
+- `evidence_gates`
+- `downstream_interfaces`
+- `non_claims`
 
 The upstream interface accepts human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints. If an adjacent layer cannot identify its input artifact or authority ceiling, the right behavior is not improvisation. It is a missing-contract record.
 
@@ -131,41 +140,29 @@ This interface also makes chapter insertion and reordering safer. A new chapter 
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Layer boundaries remain explicit.
 - Claims carry support states.
 - Reasoning ability never implies execution authority.
-
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+- Improvement routes back through governance instead of bypassing it.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Anthology drift.
 - Monolith drift.
 - Evidence inflation before source notes or tests exist.
-
-For ASI Is a Stack, Not a Model, mitigation starts by turning each listed failure into a named reviewable artifact. When `Anthology drift` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+- Authority and evidence becoming ambient properties of "the model."
 
 ## Minimal implementation
 
-A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
-
-The smallest useful implementation is deliberately narrow: A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The smallest useful implementation is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which responsibility, artifact, authority ceiling, invariant, and non-claim.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Layer-boundary audit | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
-| Source-to-layer traceability review | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
-| Claim-support label audit | Probe whether the chapter claim holds under the relevant ASI Is a Stack, Not a Model boundary. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+| Layer-boundary record validation | Check that the layer boundary fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | planned; not run |
+| Claim-support label audit | Check that chapter claims have labels, support states, and gaps. | planned; not run |
 
 ### Formalization hooks
 
@@ -174,7 +171,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | A layer without external-action authority can only produce an action through an authorized handoff. | implemented |
 | `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | A handoff that exceeds the caller authority ceiling is rejected. | implemented |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These two stack-boundary hooks are implemented in the local Lean workspace. They support only the handoff and authority-ceiling predicates named here; they do not prove whole-system safety or capability.
 
 ## Source crosswalk
 
@@ -187,7 +184,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk is a loading map for future drafting. It does not promote the chapter claim until exact claim-to-source mappings or validated artifacts are recorded.
 
 ## Summary
 

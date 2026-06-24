@@ -1,0 +1,14 @@
+{
+  "transition_id": "evidence-transition-demo-001",
+  "claim_id": "claim://demo/no-promotion",
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_reason": "Record shape validation only; no claim is promoted by this fixture.",
+  "required_artifacts": ["claim-specific source map or validated proof/test before promotion"],
+  "artifact_refs": ["schemas/evidence_transition_record.schema.json"],
+  "verification_command": "python3 scripts/validate_protocol_examples.py",
+  "verification_result": "pass",
+  "negative_results": [],
+  "limitations": ["fixture validation is not evidence for a substantive claim"],
+  "review_status": "open"
+}

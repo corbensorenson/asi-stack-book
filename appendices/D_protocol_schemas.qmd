@@ -17,6 +17,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/costed_route_record.schema.json`
 - `schemas/cyclic_memory_contract.schema.json`
 - `schemas/cyclic_mixer_evaluation_record.schema.json`
+- `schemas/evidence_transition_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
 - `schemas/context_abi_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
@@ -27,6 +28,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/agency_rights_checklist.schema.json`
 - `schemas/intent_contract.schema.json`
 - `schemas/intent_execution_trace.schema.json`
+- `schemas/layer_boundary_record.schema.json`
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
@@ -116,6 +118,24 @@ intent_execution_trace:
 ```
 
 This record preserves the chain from intent to command, plan, job, authority transition, artifact, verification, delivery, feedback, and residuals.
+
+## Layer Boundary Record
+
+```yaml
+layer_boundary_record:
+  layer_id: string
+  responsibility: string
+  input_artifacts: []
+  output_artifacts: []
+  authority_ceiling: string
+  owned_invariants: []
+  failure_modes: []
+  evidence_gates: []
+  downstream_interfaces: []
+  non_claims: []
+```
+
+This record gives each stack layer a bounded responsibility, input/output surface, authority ceiling, invariant set, failure model, evidence gate, downstream interface, and explicit non-claims.
 
 ## Plan Graph
 
@@ -887,6 +907,26 @@ claim_record:
 ```
 
 Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
+
+## Evidence Transition Record
+
+```yaml
+evidence_transition_record:
+  transition_id: string
+  claim_id: string
+  old_support_state: argument
+  new_support_state: argument
+  transition_reason: string
+  required_artifacts: []
+  artifact_refs: []
+  verification_command: string
+  verification_result: not_run
+  negative_results: []
+  limitations: []
+  review_status: open
+```
+
+This record makes support-state movement reviewable. It names the claim, prior and candidate support states, required artifacts, verifier command/result, negative results, limitations, and review state before a claim can move.
 
 ## Belief Revision Record
 

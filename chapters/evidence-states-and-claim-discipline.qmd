@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter governs how claims move. It does not promote a claim because prose became clearer, a source note exists nearby, or a validator passed an unrelated fixture.
 
 ## Problem
 
@@ -62,7 +62,7 @@ The missing object is the evidence transition. If a claim moves from `argument` 
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Benchmaxxing: The Performance Ratchet, Proof of Belief / The Spinoza Architecture, Verified Intent-to-Execution Architecture, Unified Adaptive Tribunal, and The Coherence Exchange - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Benchmaxxing supplies benchmark lifecycle discipline, Spinoza supplies downgrade and proof-carrying claim discipline, VIEA supplies artifact and claim ledgers, UAT supplies bounded adversarial review, and Verification Bandwidth warns that loaded context is not the same as verified context.
 
 ## Mechanism
 
@@ -75,7 +75,7 @@ flowchart LR
   C --> D{"Exact source-note mapping?"}
   D -- "yes" --> E["source-derived"]
   C --> F{"Validated schema / proof / test artifact?"}
-  F -- "Lean build" --> G["mechanized / proof-backed scope"]
+  F -- "Lean build" --> G["Mechanized claim label within formal scope"]
   F -- "fixture or experiment" --> H["synthetic-test-backed or empirical-test-backed"]
   D -- "no" --> I["remain argument"]
   F -- "fail / inconclusive" --> J["negative result / residual"]
@@ -90,13 +90,13 @@ flowchart LR
 - Require source notes before promoting claims to source-derived.
 - Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 
-The gate separates two axes. Claim labels describe what kind of assertion is being made: design rationale, hypothesis, measurement, mechanism, demonstration, or speculation. Support states describe what artifact currently backs it: argument, source-derived mapping, prototype inspection, synthetic test, empirical test, mechanized proof, external literature, refutation, or deprecation. Mixing these axes creates evidence inflation.
+The gate separates two axes. Claim labels describe what kind of assertion is being made: design rationale, hypothesis, measurement, mechanism, demonstration, mechanized invariant, or speculation. Support states describe what artifact currently backs it: argument, source-derived mapping, prototype inspection, synthetic test, empirical test, external literature, refutation, or deprecation. Mixing these axes creates evidence inflation.
 
 The layer also preserves negative information. A failed proof attempt, benchmark wall, contradiction, missing source, or invalid fixture is not clutter. It is the information that prevents the stack from ratcheting in the wrong direction.
 
 ## Interfaces
 
-The interface is the claim record and evidence bundle.
+The interface is the Evidence Transition Record plus the Claim Record.
 
 - Drafting updates claims.
 - Experiments update evidence.
@@ -104,15 +104,15 @@ The interface is the claim record and evidence bundle.
 
 Minimum evidence transition fields:
 
+- `transition_id`
 - `claim_id`
 - `old_support_state`
 - `new_support_state`
 - `transition_reason`
-- `source_handles`
-- `proof_refs`
-- `test_command`
-- `environment_manifest`
-- `raw_logs`
+- `required_artifacts`
+- `artifact_refs`
+- `verification_command`
+- `verification_result`
 - `negative_results`
 - `limitations`
 - `review_status`
@@ -120,8 +120,6 @@ Minimum evidence transition fields:
 Drafting updates claim text and labels. Source ingestion adds source notes and source-to-claim mappings. Proof and code work adds commands, fixtures, modules, and results. The changelog records meaningful evidence movement. Appendix C remains the public ledger that keeps those transitions visible.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - No fabricated source support.
 - No fabricated test results.
@@ -131,8 +129,6 @@ The strongest invariant is asymmetric: support can move up only when the require
 
 ## Failure modes
 
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
-
 - Support-state inflation.
 - Citation laundering.
 - Silent removal of failed claims.
@@ -141,22 +137,17 @@ Citation laundering is the common failure: a nearby source is used to make an un
 
 ## Minimal implementation
 
-A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
-
-The smallest useful implementation already exists in this repo: `schemas/claim_record.schema.json`, Appendix C, and the Lean evidence-state proof module. The next implementation step is an evidence-transition fixture that validates a support-state change from `argument` only when the required source mapping, proof reference, or test result is present. Until that fixture exists, the broader chapter-level tests remain planned.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The smallest useful implementation is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid transition fixture, and the Lean evidence-state proof module. The schema validates transition shape. The Lean module proves the narrow support-state invariant in this repository. Neither artifact promotes any chapter claim without claim-specific evidence.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Evidence transition record validation | Check that the transition fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Support-state transition test | Check that a claim cannot move upward without the artifact required by the target support state. | planned; not run |
 | Claim ledger completeness test | Check that every major chapter claim appears in Appendix C with label, support state, and open gap. | planned; not run |
 | Evidence bundle completeness test | Check that test-backed claims include command, environment, logs, metrics, limitations, and negative results. | planned; not run |
 | Changelog consistency audit | Check that meaningful support-state, proof, schema, source, or publication changes are recorded. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -165,7 +156,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | implemented |
 | `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | implemented |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These two evidence-state hooks are implemented in the local Lean workspace. Their scope is narrow: they check transition discipline, not the truth of any source-derived or benchmark-backed claim.
 
 ## Source crosswalk
 
@@ -178,7 +169,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk names the evidence vocabulary loaded for this chapter. Support movement still requires an exact transition record, source mapping, proof, test, or external-literature citation.
 
 ## Summary
 

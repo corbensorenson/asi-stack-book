@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/evidence_transition_record.schema.json",
+  "title": "Evidence Transition Record",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "claim_id",
+    "old_support_state",
+    "new_support_state",
+    "transition_reason",
+    "required_artifacts",
+    "artifact_refs",
+    "verification_command",
+    "verification_result",
+    "negative_results",
+    "limitations",
+    "review_status"
+  ],
+  "properties": {
+    "transition_id": { "type": "string", "minLength": 1 },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "old_support_state": {
+      "type": "string",
+      "enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]
+    },
+    "new_support_state": {
+      "type": "string",
+      "enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]
+    },
+    "transition_reason": { "type": "string", "minLength": 1 },
+    "required_artifacts": { "type": "array", "items": { "type": "string" } },
+    "artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "verification_command": { "type": "string", "minLength": 1 },
+    "verification_result": {
+      "type": "string",
+      "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
+    },
+    "negative_results": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "review_status": {
+      "type": "string",
+      "enum": ["open", "accepted", "rejected", "needs_review"]
+    }
+  },
+  "additionalProperties": false
+}

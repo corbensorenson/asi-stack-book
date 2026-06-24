@@ -1,0 +1,12 @@
+{
+  "layer_id": "layer://evidence-discipline",
+  "responsibility": "Keep claim labels, support states, evidence artifacts, and promotion gates separate.",
+  "input_artifacts": ["source notes", "proof outputs", "test results", "chapter drafts"],
+  "output_artifacts": ["claim records", "evidence transition records", "changelog entries"],
+  "authority_ceiling": "may record support state; may not promote without required artifact",
+  "owned_invariants": ["no fabricated source support", "no fabricated test results", "negative results remain visible"],
+  "failure_modes": ["citation laundering", "support-state inflation", "silent deletion of failed claims"],
+  "evidence_gates": ["source mapping", "proof verifier", "test command", "review status"],
+  "downstream_interfaces": ["appendices/C_claim_evidence_matrix.qmd", "schemas/evidence_transition_record.schema.json"],
+  "non_claims": ["does not prove a claim true", "does not measure ASI capability"]
+}

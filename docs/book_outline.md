@@ -100,7 +100,7 @@ Draft arc:
 
 - Problem: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 - Insufficiency: A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
-- Mechanism: Define each layer by responsibility, interface, artifact, invariant, and failure mode.
+- Mechanism: Define each layer by responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim.
 - Mechanism: Frame the raw LLM as a semantic-compression and generation component inside the larger governed system, not as the whole agent.
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
@@ -122,7 +122,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
+- A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
 - Planned Codex test: Layer-boundary audit.
 - Planned Codex test: Source-to-layer traceability review.
 - Planned Codex test: Claim-support label audit.
@@ -317,7 +317,7 @@ Draft arc:
 - Problem: The living book needs a shared language for what kind of claim is being made and what currently supports it.
 - Insufficiency: Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
 - Mechanism: Use Appendix C as the claim ledger.
-- Mechanism: Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
+- Mechanism: Separate claim label from support state with evidence transition records so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Mechanism: Require source notes before promoting claims to source-derived.
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 - Interface: Drafting updates claims.
@@ -338,7 +338,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
+- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
 - Planned Codex test: Support-state transition test.
 - Planned Codex test: Claim ledger completeness test.
 - Planned Codex test: Evidence bundle completeness test.

@@ -44,7 +44,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter argues for a cost/quality/accounting discipline. It does not claim that small models are sufficient for ASI, that scale is unnecessary, or that the repository has measured efficiency gains.
 
 ## Problem
 
@@ -66,7 +66,7 @@ The stack needs a route ledger for the same reason it needs a claim ledger: with
 
 [the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verified Intent-to-Execution Architecture, Ratcheting Modular Intelligence, Compact Generative Systems, RankFold + NeuralFold, and BBVCA_v9_final_public_release - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. RMI supports residual escrow and ratcheting, CGS supports smallest-adequate-structure reasoning, BBVCA and RankFold/NeuralFold support compression vocabulary, and Simulation Scaling keeps feasibility tied to scope and fidelity. None of those source notes is a reproduced efficiency benchmark in this repository.
 
 ## Mechanism
 
@@ -124,8 +124,6 @@ Planning supplies the task contract and quality predicate. Routing proposes cand
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Efficiency claims include quality and cost.
 - Compression exposes residuals.
 - Fallback routes remain available.
@@ -133,8 +131,6 @@ The invariants are the conditions that must remain true even when the implementa
 The strongest invariant is comparative: a route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so. If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Cheap inference mistaken for intelligence.
 - Critical context compressed away.
@@ -144,21 +140,16 @@ The failure pattern is not only wasting compute. It is misaccounting. Cheap infe
 
 ## Minimal implementation
 
-A costed route ledger with quality predicates, residual accounting, and fallback criteria.
-
 The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, predicate, route choices, cost accounting, verification result, residual obligations, and fallback.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Costed route record validation | Check that the route fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Minimum viable route test | Check whether a lower-cost authorized route fails the declared quality predicate before a higher-cost route is selected. | planned; not run |
 | Residual burden accounting test | Check that unresolved obligations remain attached to the route record instead of being hidden inside a success label. | planned; not run |
 | Utility-preserving compression test | Check whether a compressed or generated representation preserves the downstream task utility claimed for it. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -167,7 +158,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | planned |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+The proof targets remain planned. The near-term executable surface is the route record schema; a later Lean target should formalize "minimum viable" only after route ordering, authority, and quality predicates are precise.
 
 ## Source crosswalk
 
@@ -184,7 +175,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps efficiency claims honest: sources supply design language, while measured support requires route runs, baselines, costs, residuals, and negative results.
 
 ## Summary
 
