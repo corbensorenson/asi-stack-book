@@ -3,14 +3,37 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/typed_job.schema.json",
   "title": "Typed Job",
   "type": "object",
-  "required": ["job_id", "contract_id", "runtime_adapter", "inputs", "outputs", "permissions", "audit_events", "replay_status"],
+  "required": [
+    "job_id",
+    "contract_id",
+    "job_type",
+    "lifecycle_state",
+    "runtime_adapter",
+    "inputs",
+    "outputs",
+    "permissions",
+    "approval_state",
+    "failure_behavior",
+    "audit_events",
+    "replay_status"
+  ],
   "properties": {
     "job_id": { "type": "string", "minLength": 1 },
     "contract_id": { "type": "string", "minLength": 1 },
+    "job_type": { "type": "string", "minLength": 1 },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["draft", "locked", "awaiting_approval", "dispatchable", "running", "adjudicating", "delivered", "failed", "blocked", "replayed", "retired"]
+    },
     "runtime_adapter": { "type": "string", "minLength": 1 },
     "inputs": { "type": "array", "items": { "type": "string" } },
     "outputs": { "type": "array", "items": { "type": "string" } },
     "permissions": { "type": "array", "items": { "type": "string" } },
+    "approval_state": {
+      "type": "string",
+      "enum": ["not_required", "required", "approved", "denied", "expired"]
+    },
+    "failure_behavior": { "type": "array", "items": { "type": "string" } },
     "audit_events": { "type": "array", "items": { "type": "string" } },
     "replay_status": { "type": "string", "enum": ["not_run", "replayed", "non_deterministic", "blocked"] }
   },

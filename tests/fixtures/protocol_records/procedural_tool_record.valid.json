@@ -1,0 +1,16 @@
+{
+  "tool_id": "tool-demo-validate-render",
+  "source_traces": ["trace-demo-001", "artifact-demo-001"],
+  "invariant_structure": "validate source, render site, record output without promoting unrun tests",
+  "parameters": ["validation command list", "render target"],
+  "preconditions": ["repository root is available", "required tools are installed"],
+  "postconditions": ["validation results are recorded", "render output state is known"],
+  "verification_result": "not_run",
+  "risk_tier": "low",
+  "runtime_tier": "local-build",
+  "monitoring_plan": "record failures as residuals and do not claim success",
+  "residuals": ["candidate tool fixture only"],
+  "regressions": [],
+  "lifecycle_state": "candidate",
+  "retirement_criteria": ["validation command set changes", "fixture no longer reflects book workflow"]
+}

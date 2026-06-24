@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/procedural_tool_record.schema.json",
+  "title": "Procedural Tool Record",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "source_traces",
+    "invariant_structure",
+    "parameters",
+    "preconditions",
+    "postconditions",
+    "verification_result",
+    "risk_tier",
+    "runtime_tier",
+    "monitoring_plan",
+    "residuals",
+    "regressions",
+    "lifecycle_state",
+    "retirement_criteria"
+  ],
+  "properties": {
+    "tool_id": { "type": "string", "minLength": 1 },
+    "source_traces": { "type": "array", "items": { "type": "string" } },
+    "invariant_structure": { "type": "string", "minLength": 1 },
+    "parameters": { "type": "array", "items": { "type": "string" } },
+    "preconditions": { "type": "array", "items": { "type": "string" } },
+    "postconditions": { "type": "array", "items": { "type": "string" } },
+    "verification_result": {
+      "type": "string",
+      "enum": ["not_run", "pass", "fail", "partial", "blocked"]
+    },
+    "risk_tier": { "type": "string", "minLength": 1 },
+    "runtime_tier": { "type": "string", "minLength": 1 },
+    "monitoring_plan": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "regressions": { "type": "array", "items": { "type": "string" } },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["draft", "candidate", "verified", "routable", "quarantined", "retired"]
+    },
+    "retirement_criteria": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

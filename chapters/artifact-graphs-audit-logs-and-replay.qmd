@@ -47,17 +47,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Typed jobs produce outputs. The stack needs those outputs to become artifacts with stable identities, provenance, audit events, replay metadata, claim/test links, and known replay limits. Otherwise every result is an isolated file or chat answer with no reliable path back to its causes.
 
-It inherits pressure from the previous chapter, Labor OS and Typed Jobs, and makes that pressure operational in a narrower boundary. It hands its output to Runtime Adapters, Tool Permissions, and Human Approval, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+Talos treats evidence, logs, and replay as execution primitives. GenesisCode adds effect logs, semantic patches, provenance hashes, and obligation artifacts. Cognitive Loop Closure uses repeated artifact traces as the substrate for future tools.
 
 ## Why existing approaches are insufficient
 
 If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: if outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened. If `artifact-graphs-audit-logs-and-replay` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Untraceable output cannot support promoted claims. Non-replayable workflows cannot be debugged or improved. Provenance gaps make it impossible to tell whether an artifact came from a source, a tool, a model guess, a human edit, or a stale context packet.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The artifact graph is the system's memory of work. It does not guarantee truth, but it makes verification possible by preserving what happened.
 
 ## Core Claim
 
@@ -67,27 +67,55 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, record artifacts as nodes with source, job, context, tool, and evidence links. Second, capture replay metadata and environment assumptions. Third, use artifacts as memory and improvement substrate.
+The mechanism is an Artifact Graph Record.
+
+```{mermaid}
+flowchart LR
+  A["Typed job"] --> B["Artifact node"]
+  B --> C["Source refs"]
+  B --> D["Context refs"]
+  B --> E["Tool / adapter refs"]
+  B --> F["Audit events"]
+  B --> G["Replay metadata"]
+  B --> H["Claim + test links"]
+  F --> I["Evidence ledger"]
+  G --> I
+  H --> I
+```
 
 - Record artifacts as nodes with source, job, context, tool, and evidence links.
 - Capture replay metadata and environment assumptions.
 - Use artifacts as memory and improvement substrate.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Artifacts should have stable IDs and versioned revisions. Audit logs should be append-only or versioned. Replay metadata should declare what can be replayed, what cannot, and which environment assumptions matter.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The graph is also an improvement substrate. Repeated traces can become procedural memory. Failed traces can become residuals. Verified artifacts can become regression coverage.
 
 ## Interfaces
 
-The interface for Artifact Graphs, Audit Logs, and Replay is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Artifact Graph Record.
 
 - VCM references artifacts.
 - Evidence consumes logs.
 - Procedural memory mines repeated traces.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `artifact_id`
+- `artifact_type`
+- `parent_job`
+- `source_refs`
+- `context_refs`
+- `tool_refs`
+- `claim_refs`
+- `test_refs`
+- `audit_events`
+- `replay_metadata`
+- `environment_assumptions`
+- `provenance_status`
+- `replay_limits`
+
+VCM references artifacts as context cells. Evidence consumes logs and test links. Procedural memory mines repeated traces. Claim ledgers decide whether an artifact can support a claim.
 
 ## Invariants
 
@@ -97,7 +125,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Audit logs are append-only or versioned.
 - Replay limits are declared.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+An artifact with missing required provenance cannot support a promoted claim. It can still exist, but it should be labeled as incomplete, not evidence-ready.
 
 ## Failure modes
 
@@ -107,13 +135,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Non-replayable workflow.
 - Provenance gaps.
 
-For Artifact Graphs, Audit Logs, and Replay, mitigation starts by turning each listed failure into a named reviewable artifact. When `Untraceable output` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Untraceable output becomes a residual. Non-replayable workflows must declare replay limits. Provenance gaps block evidence promotion until repaired or explicitly bounded.
 
 ## Minimal implementation
 
 An artifact graph schema with job, source, context, and evidence edges.
 
-The smallest useful implementation is deliberately narrow: An artifact graph schema with job, source, context, and evidence edges. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is an `artifact_graph_record` schema and fixture. It validates parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,9 +149,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Artifact traceability test | Probe whether the chapter claim holds under the relevant Artifact Graphs, Audit Logs, and Replay boundary. | planned; not run |
-| Audit reconstruction test | Probe whether the chapter claim holds under the relevant Artifact Graphs, Audit Logs, and Replay boundary. | planned; not run |
-| Replay metadata completeness test | Probe whether the chapter claim holds under the relevant Artifact Graphs, Audit Logs, and Replay boundary. | planned; not run |
+| Artifact traceability test | Check that produced artifacts record parent job and source/context references. | planned; not run |
+| Audit reconstruction test | Check that audit events are sufficient to reconstruct the execution path. | planned; not run |
+| Replay metadata completeness test | Check that replay limits and environment assumptions are declared. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +180,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Artifact Graphs, Audit Logs, and Replay defines one boundary in the ASI Stack: Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests. Its job is to make a capability more governable, not merely more impressive.
+Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products. Each artifact should carry identity, parent job, source/context/tool links, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 
-In v0.2, this chapter gives Artifact Graphs, Audit Logs, and Replay a complete architectural boundary: the stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved. Its next maturity step is to substantiate the boundary through `VCM references artifacts`, preserve `Artifacts have stable identities`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain.

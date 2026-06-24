@@ -49,17 +49,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The execution layer produces traces. Cognitive loop closure asks which repeated traces should become procedural memory. The source's key point is that repeated reasoning should not remain a bespoke conversation forever: the system should detect recurring trajectories, abstract invariant structure, discover parameters, synthesize tools, verify them, register them, monitor them, and retire or revise them when they fail.
 
-It inherits pressure from the previous chapter, Runtime Adapters, Tool Permissions, and Human Approval, and makes that pressure operational in a narrower boundary. It closes this part by making the remaining handoff to the next part explicit. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter closes Part II because procedural memory is the handoff to routing and readiness. Once a loop becomes a tool, the router can select it, readiness gates can govern it, and benchmark ratchets can preserve its floor.
 
 ## Why existing approaches are insufficient
 
 Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch. If `procedural-memory-and-cognitive-loop-closure` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Repeated improvisation wastes tokens, time, and reviewer attention. It also creates drift: the same task is solved differently each time, with different hidden assumptions and different failure modes. But the opposite failure is premature toolification: turning one lucky trace into a routable tool before preconditions, parameters, risks, and regressions are known.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The efficient stack needs three modes: interpretation for novel work, compiled-tool mode for verified recurring procedures, and failsafe/reflex mode for safety-critical responses. Moving between modes requires evidence.
 
 ## Core Claim
 
@@ -69,27 +69,56 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, log safe execution traces. Second, detect recurring loops. Third, abstract invariant structure, discover parameters, verify, and publish tools.
+The mechanism is a Procedural Tool Record.
+
+```{mermaid}
+flowchart LR
+  A["Artifact traces"] --> B["Loop detector"]
+  B --> C["Invariant abstraction"]
+  C --> D["Parameter discovery"]
+  D --> E["Tool synthesis"]
+  E --> F["Verification + regressions"]
+  F --> G{"Promote?"}
+  G -- "yes" --> H["Tool registry"]
+  G -- "no" --> I["Residual / retire"]
+  H --> J["Routing + monitoring"]
+  I --> J
+```
 
 - Log safe execution traces.
 - Detect recurring loops.
 - Abstract invariant structure, discover parameters, verify, and publish tools.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Loop closure is reasoning compression. It turns many successful trajectories into one parameterized procedure, but only when the verification burden has been paid.
 
 ## Interfaces
 
-The interface for Procedural Memory and Cognitive Loop Closure is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Procedural Tool Record.
 
 - Artifact graph supplies traces.
 - Routing selects new tools.
 - Evidence tests utility and regressions.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `tool_id`
+- `source_traces`
+- `invariant_structure`
+- `parameters`
+- `preconditions`
+- `postconditions`
+- `verification_result`
+- `risk_tier`
+- `runtime_tier`
+- `monitoring_plan`
+- `residuals`
+- `regressions`
+- `lifecycle_state`
+- `retirement_criteria`
+
+Artifact graphs supply traces. Routing selects verified tools. Evidence tests utility and regressions. Readiness gates decide promotion, quarantine, revision, or retirement.
 
 ## Invariants
 
@@ -99,7 +128,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Parameters and assumptions are explicit.
 - Tool promotion records residuals and regressions.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
 
 ## Failure modes
 
@@ -109,13 +138,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Hidden assumptions.
 - Procedural memory poisoning.
 
-For Procedural Memory and Cognitive Loop Closure, mitigation starts by turning each listed failure into a named reviewable artifact. When `Premature toolification` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Each failure should keep the tool in draft, residual, quarantine, or retired state.
 
 ## Minimal implementation
 
 A loop closure pipeline from trace detection to verified tool record.
 
-The smallest useful implementation is deliberately narrow: A loop closure pipeline from trace detection to verified tool record. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -123,9 +152,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Loop detection test | Probe whether the chapter claim holds under the relevant Procedural Memory and Cognitive Loop Closure boundary. | planned; not run |
-| Tool abstraction test | Probe whether the chapter claim holds under the relevant Procedural Memory and Cognitive Loop Closure boundary. | planned; not run |
-| Verified tool regression test | Probe whether the chapter claim holds under the relevant Procedural Memory and Cognitive Loop Closure boundary. | planned; not run |
+| Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | planned; not run |
+| Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | planned; not run |
+| Verified tool regression test | Check that failed regression blocks routable promotion. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -156,6 +185,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Procedural Memory and Cognitive Loop Closure defines one boundary in the ASI Stack: Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory. Its job is to make a capability more governable, not merely more impressive.
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail.
 
-In v0.2, this chapter gives Procedural Memory and Cognitive Loop Closure a complete architectural boundary: repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools. Its next maturity step is to substantiate the boundary through `Artifact graph supplies traces`, preserve `Only verified loops become tools`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used.

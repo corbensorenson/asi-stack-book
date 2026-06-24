@@ -6,6 +6,7 @@ Executable schema drafts are tracked in `schemas/`:
 
 - `schemas/authority_use_receipt.schema.json`
 - `schemas/authority_transition_record.schema.json`
+- `schemas/artifact_graph_record.schema.json`
 - `schemas/belief_revision_record.schema.json`
 - `schemas/claim_record.schema.json`
 - `schemas/command_contract.schema.json`
@@ -24,7 +25,9 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
+- `schemas/procedural_tool_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
+- `schemas/runtime_adapter_invocation.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/semantic_page_certificate.schema.json`
@@ -491,13 +494,84 @@ This record keeps recursive self-improvement bounded by explicit residuals, prot
 typed_job:
   job_id: string
   contract_id: string
+  job_type: string
+  lifecycle_state: dispatchable
   runtime_adapter: string
   inputs: []
   outputs: []
   permissions: []
+  approval_state: not_required
+  failure_behavior: []
   audit_events: []
   replay_status: not_run
 ```
+
+This record is the executable unit of the Labor OS. It carries contract, type, lifecycle, adapter, permissions, approval state, failure behavior, audit events, and replay status.
+
+## Artifact Graph Record
+
+```yaml
+artifact_graph_record:
+  artifact_id: string
+  artifact_type: string
+  parent_job: string
+  source_refs: []
+  context_refs: []
+  tool_refs: []
+  claim_refs: []
+  test_refs: []
+  audit_events: []
+  replay_metadata: string
+  environment_assumptions: []
+  provenance_status: partial
+  replay_limits: []
+```
+
+This record turns outputs into durable artifacts with provenance, audit, replay, claim, and test links.
+
+## Runtime Adapter Invocation
+
+```yaml
+runtime_adapter_invocation:
+  invocation_id: string
+  job_id: string
+  adapter_id: string
+  target_type: string
+  capability: string
+  permission_required: string
+  sandbox_mode: string
+  approval_required: false
+  approval_record: string
+  authority_handle: string
+  inputs: []
+  effect_receipt: string
+  rollback_handle: string
+  residuals: []
+```
+
+This record is the effects boundary: it records adapter capability, permissions, sandboxing, approval, authority handles, inputs, effect receipt, rollback, and residuals.
+
+## Procedural Tool Record
+
+```yaml
+procedural_tool_record:
+  tool_id: string
+  source_traces: []
+  invariant_structure: string
+  parameters: []
+  preconditions: []
+  postconditions: []
+  verification_result: not_run
+  risk_tier: string
+  runtime_tier: string
+  monitoring_plan: string
+  residuals: []
+  regressions: []
+  lifecycle_state: candidate
+  retirement_criteria: []
+```
+
+This record governs cognitive loop closure from repeated traces into parameterized tools, keeping preconditions, postconditions, verification, risk, monitoring, regressions, lifecycle, and retirement visible.
 
 ## Claim Record
 

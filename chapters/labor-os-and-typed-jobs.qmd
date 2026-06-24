@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapters decide what should be believed and reviewed. Execution begins when accepted plans become work. Talos supplies the right frame: an AI labor operating system turns plans into typed jobs with contract locks, permissions, isolated workspaces, adjudication, delivery, feedback, audit, and replay.
 
-It inherits pressure from the previous chapter, Unified Adaptive Tribunal and Adversarial Review, and makes that pressure operational in a narrower boundary. It hands its output to Artifact Graphs, Audit Logs, and Replay, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+A job is the unit that keeps agency bounded. It carries a contract, lifecycle state, inputs, outputs, permissions, approval state, runtime adapter, failure behavior, audit events, and replay status.
 
 ## Why existing approaches are insufficient
 
 Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing. If `labor-os-and-typed-jobs` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
 
 ## Core Claim
 
@@ -66,28 +66,56 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior. Second, separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions. Third, isolate tools and runtime adapters. Fourth, record job lifecycle and evidence artifacts.
+The mechanism is a Typed Job lifecycle.
+
+```{mermaid}
+flowchart LR
+  A["Plan node"] --> B["Typed job"]
+  B --> C["Contract lock"]
+  C --> D["Permission check"]
+  D --> E{"Approval required?"}
+  E -- "yes" --> F["Approval gate"]
+  E -- "no" --> G["Dispatch"]
+  F --> G
+  G --> H["Runtime adapter"]
+  H --> I["Artifact + audit events"]
+  I --> J["Adjudication / delivery"]
+  J --> K["Feedback + replay status"]
+```
 
 - Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
 - Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.
 - Isolate tools and runtime adapters.
 - Record job lifecycle and evidence artifacts.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The lifecycle should be explicit enough to reject invalid transitions. A job can be drafted, locked, awaiting approval, dispatchable, running, adjudicating, delivered, failed, blocked, replayed, or retired. High-impact work should stop at the approval gate until the required record exists.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The execution layer should not merge all subfunctions into one agent. Orchestration, secure workspace setup, access control, adapter invocation, artifact capture, adjudication, delivery, feedback, and replay are different boundaries.
 
 ## Interfaces
 
-The interface for Labor OS and Typed Jobs is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Typed Job.
 
 - Planning dispatches jobs.
 - Security mediates permissions.
 - Artifact graph receives outputs.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `job_id`
+- `contract_id`
+- `job_type`
+- `lifecycle_state`
+- `runtime_adapter`
+- `inputs`
+- `outputs`
+- `permissions`
+- `approval_state`
+- `failure_behavior`
+- `audit_events`
+- `replay_status`
+
+Planning dispatches jobs. Security mediates permissions. Runtime adapters perform effects. Artifact graphs receive outputs, logs, and replay metadata.
 
 ## Invariants
 
@@ -97,7 +125,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Tool permissions are explicit.
 - Human approval gates block high-impact jobs.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The approval invariant is non-negotiable: a job requiring approval cannot execute because a planner or model predicts approval would be granted. The approval record is part of the job state.
 
 ## Failure modes
 
@@ -107,13 +135,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Unlogged side effects.
 - Infinite or chaotic agent swarms.
 
-For Labor OS and Typed Jobs, mitigation starts by turning each listed failure into a named reviewable artifact. When `Tool overreach` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Tool overreach is a permission failure. Unlogged side effects are audit failures. Chaotic agent swarms are lifecycle failures: work escapes the job boundary and becomes unreviewable. Each should block dispatch or force quarantine.
 
 ## Minimal implementation
 
 A typed-job schema with lifecycle states and permission checks.
 
-The smallest useful implementation is deliberately narrow: A typed-job schema with lifecycle states and permission checks. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is the expanded `typed_job` schema and fixture. It validates lifecycle, approval, failure behavior, permissions, audit events, and replay status without claiming a real job was executed.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,9 +149,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Typed job lifecycle test | Probe whether the chapter claim holds under the relevant Labor OS and Typed Jobs boundary. | planned; not run |
-| Tool permission enforcement test | Probe whether the chapter claim holds under the relevant Labor OS and Typed Jobs boundary. | planned; not run |
-| Human approval gate test | Probe whether the chapter claim holds under the relevant Labor OS and Typed Jobs boundary. | planned; not run |
+| Typed job lifecycle test | Check that jobs transition only through valid lifecycle states. | planned; not run |
+| Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
+| Human approval gate test | Check that high-impact jobs cannot run before approval is recorded. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -151,6 +179,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Labor OS and Typed Jobs defines one boundary in the ASI Stack: The execution layer should convert plans into typed jobs managed by a governed labor operating system. Its job is to make a capability more governable, not merely more impressive.
+Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status.
 
-In v0.2, this chapter gives Labor OS and Typed Jobs a complete architectural boundary: intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals. Its next maturity step is to substantiate the boundary through `Planning dispatches jobs`, preserve `Every job has type and lifecycle state`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved.

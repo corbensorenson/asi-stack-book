@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/runtime_adapter_invocation.schema.json",
+  "title": "Runtime Adapter Invocation",
+  "type": "object",
+  "required": [
+    "invocation_id",
+    "job_id",
+    "adapter_id",
+    "target_type",
+    "capability",
+    "permission_required",
+    "sandbox_mode",
+    "approval_required",
+    "approval_record",
+    "authority_handle",
+    "inputs",
+    "effect_receipt",
+    "rollback_handle",
+    "residuals"
+  ],
+  "properties": {
+    "invocation_id": { "type": "string", "minLength": 1 },
+    "job_id": { "type": "string", "minLength": 1 },
+    "adapter_id": { "type": "string", "minLength": 1 },
+    "target_type": { "type": "string", "minLength": 1 },
+    "capability": { "type": "string", "minLength": 1 },
+    "permission_required": { "type": "string", "minLength": 1 },
+    "sandbox_mode": { "type": "string", "minLength": 1 },
+    "approval_required": { "type": "boolean" },
+    "approval_record": { "type": "string" },
+    "authority_handle": { "type": "string" },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "effect_receipt": { "type": "string", "minLength": 1 },
+    "rollback_handle": { "type": "string" },
+    "residuals": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -48,17 +48,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
 
-Within the ASI Stack, this is an operational cognition layer problem. The layer receives governed goals, command contracts, memory packets, beliefs, work orders, and tool requests and must turn them into typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Typed jobs are still inert until a runtime adapter performs an effect. This chapter defines the boundary where work touches tools, APIs, filesystems, services, hardware, fabrication targets, organizational workflows, or deployment environments. The adapter is where permissions, sandboxing, approvals, secrets, result evidence, and rollback handles must be enforced.
 
-It inherits pressure from the previous chapter, Artifact Graphs, Audit Logs, and Replay, and makes that pressure operational in a narrower boundary. It hands its output to Procedural Memory and Cognitive Loop Closure, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+Talos supplies the controlled runtime and approval discipline. Ladon supplies handle-mediated authority and secret isolation. GenesisCode supplies capability boundaries and effect logs. Theseus Operator OS adds the operator-surface requirement: mutating actions should be visible, bounded, and revocable.
 
 ## Why existing approaches are insufficient
 
 Tool calling without a permission and approval model turns reasoning errors into side effects.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: tool calling without a permission and approval model turns reasoning errors into side effects. If `runtime-adapters-tool-permissions-and-human-approval` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+A tool call is not just cognition. It can delete a file, spend money, send a message, deploy code, move a robot, leak a secret, or change an institutional state. If approval and permission are implicit, every planning error can become a real-world action.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The right boundary is not "never call tools." It is "call tools through adapters whose capabilities, approval requirements, authority handles, result evidence, and rollback options are explicit."
 
 ## Core Claim
 
@@ -68,28 +68,57 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, map jobs to runtime adapters with declared capabilities. Second, cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists. Third, require permission checks and approval gates for high-impact actions. Fourth, record deployment evidence and rollback handles.
+The mechanism is a Runtime Adapter Invocation.
+
+```{mermaid}
+flowchart LR
+  A["Typed job"] --> B["Adapter contract"]
+  B --> C["Capability check"]
+  C --> D["Authority / secret handle"]
+  D --> E{"Approval required?"}
+  E -- "yes" --> F["Human approval record"]
+  E -- "no" --> G["Sandboxed invocation"]
+  F --> G
+  G --> H["Effect receipt"]
+  H --> I["Rollback handle / residual"]
+  I --> J["Artifact graph"]
+```
 
 - Map jobs to runtime adapters with declared capabilities.
 - Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.
 - Require permission checks and approval gates for high-impact actions.
 - Record deployment evidence and rollback handles.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Adapters should declare target type, capability, permission required, sandbox mode, approval requirement, input/output contract, authority handles, expected evidence, rollback handle, and post-action audit events. The tool itself is not the policy boundary; the adapter is.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+High-impact actions include irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional actions. These should fail closed without approval.
 
 ## Interfaces
 
-The interface for Runtime Adapters, Tool Permissions, and Human Approval is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Runtime Adapter Invocation.
 
 - Execution owns adapters.
 - Security mediates secrets.
 - Evidence records deployment outcomes.
 
-The upstream interface accepts the part-level inputs: governed goals, command contracts, memory packets, beliefs, work orders, and tool requests. The downstream interface emits typed plans, context selections, claims, jobs, artifacts, approvals, and replayable execution records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `invocation_id`
+- `job_id`
+- `adapter_id`
+- `target_type`
+- `capability`
+- `permission_required`
+- `sandbox_mode`
+- `approval_required`
+- `approval_record`
+- `authority_handle`
+- `inputs`
+- `effect_receipt`
+- `rollback_handle`
+- `residuals`
+
+Execution owns adapters. Security mediates secrets and authority handles. Evidence records effect receipts, rollback handles, residuals, and deployment outcomes.
 
 ## Invariants
 
@@ -99,7 +128,7 @@ The invariants are the conditions that must remain true even when the implementa
 - High-impact actions require approval.
 - Rollback handles are captured when available.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
 ## Failure modes
 
@@ -109,13 +138,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Approval bypass.
 - Irreversible deployment without rollback.
 
-For Runtime Adapters, Tool Permissions, and Human Approval, mitigation starts by turning each listed failure into a named reviewable artifact. When `Tool overreach` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
 ## Minimal implementation
 
 A runtime-adapter contract with permissions, approval requirements, and result evidence.
 
-The smallest useful implementation is deliberately narrow: A runtime-adapter contract with permissions, approval requirements, and result evidence. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, capability, permission, sandbox, approval, authority handle, effect receipt, rollback handle, and residual fields. It does not execute a tool.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -123,9 +152,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Adapter permission test | Probe whether the chapter claim holds under the relevant Runtime Adapters, Tool Permissions, and Human Approval boundary. | planned; not run |
-| Approval gate enforcement test | Probe whether the chapter claim holds under the relevant Runtime Adapters, Tool Permissions, and Human Approval boundary. | planned; not run |
-| Rollback handle capture test | Probe whether the chapter claim holds under the relevant Runtime Adapters, Tool Permissions, and Human Approval boundary. | planned; not run |
+| Adapter permission test | Check that adapter capability is included in the parent job's permissions. | planned; not run |
+| Approval gate enforcement test | Check that high-impact adapter calls are rejected without approval. | planned; not run |
+| Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -155,6 +184,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Runtime Adapters, Tool Permissions, and Human Approval defines one boundary in the ASI Stack: Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture. Its job is to make a capability more governable, not merely more impressive.
+Runtime Adapters, Tool Permissions, and Human Approval is the effects boundary. It maps jobs to adapters, checks permissions, mediates authority handles, enforces approval gates, invokes tools in bounded modes, records effect receipts, and captures rollback or residuals.
 
-In v0.2, this chapter gives Runtime Adapters, Tool Permissions, and Human Approval a complete architectural boundary: plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates. Its next maturity step is to substantiate the boundary through `Execution owns adapters`, preserve `No adapter executes beyond granted scope`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it.

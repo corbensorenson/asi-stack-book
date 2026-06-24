@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/artifact_graph_record.schema.json",
+  "title": "Artifact Graph Record",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "parent_job",
+    "source_refs",
+    "context_refs",
+    "tool_refs",
+    "claim_refs",
+    "test_refs",
+    "audit_events",
+    "replay_metadata",
+    "environment_assumptions",
+    "provenance_status",
+    "replay_limits"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "artifact_type": { "type": "string", "minLength": 1 },
+    "parent_job": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "context_refs": { "type": "array", "items": { "type": "string" } },
+    "tool_refs": { "type": "array", "items": { "type": "string" } },
+    "claim_refs": { "type": "array", "items": { "type": "string" } },
+    "test_refs": { "type": "array", "items": { "type": "string" } },
+    "audit_events": { "type": "array", "items": { "type": "string" } },
+    "replay_metadata": { "type": "string", "minLength": 1 },
+    "environment_assumptions": { "type": "array", "items": { "type": "string" } },
+    "provenance_status": {
+      "type": "string",
+      "enum": ["complete", "partial", "missing", "blocked"]
+    },
+    "replay_limits": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

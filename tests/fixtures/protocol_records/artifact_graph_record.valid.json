@@ -1,0 +1,15 @@
+{
+  "artifact_id": "artifact-demo-001",
+  "artifact_type": "render-output",
+  "parent_job": "job-demo-001",
+  "source_refs": ["chapters/labor-os-and-typed-jobs.qmd"],
+  "context_refs": ["book_structure.json"],
+  "tool_refs": ["quarto"],
+  "claim_refs": ["claim-demo-001"],
+  "test_refs": ["quarto render --to html"],
+  "audit_events": ["render requested", "render output path recorded"],
+  "replay_metadata": "Run Quarto from repository root with UTF-8 locale.",
+  "environment_assumptions": ["Quarto is installed", "book source is present"],
+  "provenance_status": "partial",
+  "replay_limits": ["fixture does not prove render was run"]
+}
