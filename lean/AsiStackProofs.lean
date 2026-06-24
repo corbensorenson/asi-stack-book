@@ -3,3 +3,4 @@ import AsiStackProofs.EvidenceStates
 import AsiStackProofs.FailureModes
 import AsiStackProofs.SecurityKernel
 import AsiStackProofs.StackBoundaries
+import AsiStackProofs.StableCapabilityFields

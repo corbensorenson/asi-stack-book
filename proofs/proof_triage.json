@@ -215,7 +215,7 @@
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
       "formal_target": "An implementation can replace another only if it satisfies the field qualification predicate.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
@@ -225,7 +225,7 @@
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
       "formal_target": "A replacement that expands authority without a governance grant is rejected.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."

@@ -58,6 +58,7 @@
 - Extended proof-readiness validation to require implemented Lean modules to be imported by the package root before proof status can pass the local gate.
 - Implemented `AsiStackProofs.Authority` for narrow authority-ceiling preservation and missing-grant denial predicates, then updated the outline, chapter, proof manifest, triage file, and status report without promoting the chapter claim beyond `argument`.
 - Implemented `AsiStackProofs.FailureModes` for narrow failed-invariant promotion blocking and unbounded-authority failure detection predicates, then updated the outline, chapter, proof manifest, triage file, and status report without promoting the chapter claim beyond `argument`.
+- Implemented `AsiStackProofs.StableCapabilityFields` for narrow qualification-required replacement and no-grant authority-expansion rejection predicates, then updated the outline, chapter, proof manifest, triage file, and status report without promoting the chapter claim beyond `argument`.
 
 ## 2026-06-24 - v0.2 manuscript baseline
 

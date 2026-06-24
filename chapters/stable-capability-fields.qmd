@@ -15,7 +15,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The stable_capability_field fixture validates schema/example consistency only; qualification predicate, route validity, authority non-escalation, and rollback readiness tests remain unimplemented."
+  - "The stable_capability_field fixture validates schema/example consistency only; route validity and rollback readiness tests remain unimplemented."
+  - "The implemented StableCapabilityFields Lean predicates cover finite replacement records only; they do not prove deployed route validation, evaluator integrity, or rollback readiness."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`; raw cache: `scf`, `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot` |
-| Test state | `stable_capability_field.valid.json` passes protocol fixture validation; qualification predicate, route validity, authority non-escalation, and rollback readiness tests remain planned. |
+| Test state | `stable_capability_field.valid.json` passes protocol fixture validation, and `AsiStackProofs.StableCapabilityFields` builds locally; route validity and rollback readiness tests remain planned. |
 
 ## Drafting guardrail
 
@@ -144,19 +145,19 @@ The smallest useful implementation is the existing `stable_capability_field` sch
 | Test | Purpose | Status |
 |---|---|---|
 | Stable capability field fixture validation | Check that the SCF fixture matches the public schema. | implemented by protocol validation; run in this pass |
-| Qualification predicate test | Check that a candidate cannot enter `qualified` without satisfying the field's declared predicates in context. | planned; not run |
+| Qualification predicate finite-record proof | Check that a replacement record is allowed only when the candidate satisfies the field qualification predicate. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime qualification test not run |
 | Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | planned; not run |
-| Authority non-escalation test | Check that candidate power does not expand the field authority ceiling by default. | planned; not run |
+| Authority non-escalation finite-record proof | Check that authority-expanding replacement is rejected when no governance grant is present. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime route enforcement not run |
 | Rollback readiness test | Check that recovery and state-migration paths exist before default promotion. | planned; not run |
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | planned |
-| `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | planned |
+| `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | implemented |
+| `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
 
-These proof targets remain planned. The existing schema is the executable boundary today; promotion and authority properties still need tests or Lean predicates.
+These proof targets are implemented only over finite Lean replacement records in `AsiStackProofs.StableCapabilityFields`. They prove that an allowed replacement record carries the field qualification predicate, and that a replacement requesting authority above the field ceiling is rejected when no governance grant is present. They do not prove route validity, evaluator integrity, rollback readiness, or deployed lifecycle enforcement.
 
 ## Source crosswalk
 
