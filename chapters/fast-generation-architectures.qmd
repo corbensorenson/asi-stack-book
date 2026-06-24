@@ -1,0 +1,255 @@
+---
+title: "Fast Generation Architectures"
+chapter_id: "fast-generation-architectures"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
+last_updated: "2026-06-24"
+primary_sources:
+  - "cgs"
+  - "cognitive_loop_closure"
+  - "benchmaxxing"
+  - "planforge"
+  - "verification_bandwidth"
+  - "tokenmana"
+  - "talos"
+  - "vcm_public"
+  - "spinoza"
+  - "rmi"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
+  - "External papers on MTP, speculative decoding, Medusa/EAGLE, diffusion LLMs, early exit, state-space models, and KV-cache serving have not yet been source-noted in this repository."
+  - "No local decoding, diffusion, acceptance-rate, KV-cache, or useful-solution-per-second benchmark has been implemented or run."
+---
+
+# Fast Generation Architectures
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `fast-generation-architectures` |
+| Part | Part III - Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
+| Last updated | 2026-06-24 |
+| Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` |
+| Source loading state | source notes exist for assigned internal sources; external acceleration literature is queued and unmined; browser-GPT packet is local-only author-intent context. |
+| Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
+
+## Drafting guardrail
+
+This chapter records a missing stack layer: the generation substrate that determines how much planning, verification, tool use, reflection, and routing can fit inside a fixed latency and compute budget. It does not report measured speedups, reproduce third-party benchmark results, or claim that the repository contains a fast decoding implementation.
+
+The browser-GPT note that motivated this chapter is treated as author-intent and literature-queue context. Specific external papers, model names, and speed claims from that note must be mined from primary sources before this chapter can use them as `external-literature-backed` support. Until then, the chapter's support state remains `argument`.
+
+## Problem
+
+The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
+
+Autoregressive language models make one high-value promise and one expensive tradeoff. They can condition each next token on the committed past, but the ordinary inference path is serial: produce a token, append it, run another step, and repeat. That is not merely an implementation detail. In a governed ASI stack, every second spent emitting text competes with planning, retrieval, verification, tool execution, artifact construction, benchmark replay, and human review.
+
+Fast generation therefore belongs in the architecture. It is the layer that asks which parts of output must be generated left to right, which parts can be drafted in parallel, which drafts can be verified cheaply, which uncertain spans should be repaired, and which tasks require slower modes because the risk of accepting bad output is too high.
+
+## Why existing approaches are insufficient
+
+Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.
+
+The failure is conceptual before it is technical. A model can emit many tokens quickly and still produce less useful cognition per second if more tokens are rejected, repaired, rerun, or audited. A serving system can improve aggregate throughput while leaving single-request latency unchanged. A speculative or diffusion system can look fast when proposed tokens are counted, then lose the advantage when accepted tokens, verifier cost, memory pressure, retries, and task success are counted.
+
+The ASI Stack needs a stricter unit of accounting:
+
+```text
+effective_verified_tokens_per_second =
+    accepted_or_verified_correct_tokens / wall_clock_time
+
+useful_solution_per_second =
+    pass_rate_or_verified_success / wall_clock_time
+```
+
+Those metrics are not enough by themselves, but they point in the right direction. The system cares about useful, accepted, governed output under a declared task and risk model, not just surface text velocity.
+
+## Core Claim
+
+[fast-generation-architectures.core, label: Design rationale, support: argument] Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden.
+
+The claim is architectural. It does not say that one acceleration family wins everywhere. It says the generation layer should expose multiple modes behind a policy interface, measure them with accepted-output and task-success metrics, and promote them only when the evidence shows that they improve useful output without hiding verification, memory, or repair costs.
+
+## Mechanism
+
+The mechanism is mode selection around a draft-verify-accept loop.
+
+```{mermaid}
+flowchart LR
+  A["Goal and risk tier"] --> B["PlanForge mode selector"]
+  C["VCM context packet"] --> B
+  D["Latency, compute, memory budget"] --> B
+  B --> E{"Generation mode"}
+  E --> F["Autoregressive baseline"]
+  E --> G["Speculative or MTP draft"]
+  E --> H["Diffusion or sketch-first pass"]
+  E --> I["Early-exit, state-space, or KV-cache optimized path"]
+  E --> J["Hybrid route"]
+  F --> K["Draft tokens or artifact span"]
+  G --> K
+  H --> K
+  I --> K
+  J --> K
+  K --> L["Verifier and acceptance predicate"]
+  L --> M["Accepted verified output"]
+  L --> N["Fallback, repair, or slower mode"]
+  M --> O["Talos artifact"]
+  O --> P["Benchmaxxing speed-quality record"]
+  P --> Q["SCF promotion gate"]
+```
+
+- Separate raw generation speed from effective verified tokens per second and useful solution per second.
+- Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
+- Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
+- Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
+- Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist.
+
+This makes speed a governed policy choice. A low-risk autocomplete can use a cheap accelerated path. A code patch with tests can use a draft model if the test harness is strong enough. A high-risk claim, authority escalation, or irreversible action can force slower verification-heavy generation even when a faster path exists.
+
+## Generation-mode taxonomy
+
+| Mode family | Architectural role | Verification burden | Current book status |
+|---|---|---|---|
+| Autoregressive baseline | The fallback and measurement baseline for left-to-right generation. | Verify final output, citations, tests, and artifacts according to task risk. | Planned baseline; not run |
+| Multi-token prediction | Draft several future tokens or short continuations from one state. | Count accepted tokens separately from proposed tokens; fallback on rejection. | Queued external literature; no source note |
+| Speculative decoding | Cheap model proposes candidate tokens that a stronger verifier accepts or rejects. | Preserve correctness relative to acceptance predicate and count rejected work. | Queued external literature; no source note |
+| Multi-head internal drafting | Extra heads propose future tokens or branches without a separate draft model. | Verify branch acceptance and watch backbone/head drift. | Queued external literature; no source note |
+| Feature-level or latent drafting | Propose future internal states rather than surface tokens. | Verify that latent proposals preserve output distribution and task success. | Queued external literature; no source note |
+| Lookahead and trie retrieval | Retrieve or branch likely continuations from prior patterns. | Verify branches and prevent stale procedural-memory shortcuts. | Queued external literature; no source note |
+| Diffusion language modeling | Sketch or denoise many positions in parallel rather than strict left-to-right decoding. | Verify span commitments, uncertainty repair, and final task success. | Queued external literature; no source note |
+| Multi-seed diffusion | Run multiple denoising trajectories and select, merge, or repair candidates. | Prove useful solution per second improves after verifier and parallel compute costs. | Speculative research direction |
+| Hybrid AR, MTP, and diffusion | Combine left-to-right drafting, parallel repair, and verifier-guided refinement. | Record route, mode transitions, fallback, and accepted-output accounting. | Speculative research direction |
+| Early exit and self-speculative inference | Use intermediate layers as cheap drafts and deeper layers as verifiers. | Check when early outputs are reliable and when later layers must correct. | Queued external literature; no source note |
+| State-space or recurrent alternatives | Reduce sequence-processing cost through different sequence substrate. | Separate cheaper long-context processing from multi-token acceptance. | Queued external literature; no source note |
+| KV-cache and serving-layer accelerators | Improve memory layout, batching, and throughput around generation. | Separate aggregate serving throughput from single-request verified output. | Queued external literature; no source note |
+
+The taxonomy is deliberately plural. The stack should not collapse all speed work into one bucket. A decoding trick, a training objective, a serving memory system, and a sequence-model substrate solve different bottlenecks. They can be combined, but their evidence records must stay separate.
+
+## Interfaces
+
+The chapter's interface is a generation-mode record.
+
+- PlanForge chooses the generation mode.
+- VCM supplies the bounded context packet.
+- The generator emits draft tokens, sketches, spans, or candidates.
+- Spinoza or a verifier checks acceptance predicates.
+- Talos turns accepted output into artifacts.
+- Benchmaxxing records speed-quality evidence.
+- SCF governs whether a mode is promoted, quarantined, or left experimental.
+
+Minimum fields:
+
+- `task_id`
+- `risk_tier`
+- `latency_budget`
+- `compute_budget`
+- `memory_budget`
+- `context_packet_id`
+- `generation_mode`
+- `draft_source`
+- `verifier`
+- `acceptance_predicate`
+- `proposed_tokens_or_spans`
+- `accepted_tokens_or_spans`
+- `wall_clock_time`
+- `quality_or_pass_result`
+- `repair_or_fallback`
+- `promotion_decision`
+- `non_claims`
+
+The record should be boring by design. It prevents a fast-generation chapter from becoming a pile of impressive methods without a route, verifier, fallback, or promotion rule.
+
+## Invariants
+
+The invariants bind speed to governance.
+
+- No fast generation mode is promoted on raw tokens per second alone.
+- Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.
+- Accepted output is counted separately from proposed output.
+- High-risk tasks can require slower verified generation even when a faster mode exists.
+- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion.
+
+These invariants are intentionally conservative. They do not forbid fast decoding. They prevent fast decoding from laundering unverified output into the stack as if it were a proven capability.
+
+## Failure modes
+
+Fast generation fails when speed is measured at the wrong boundary.
+
+- Speed hides lower answer quality or higher repair cost.
+- The verifier becomes the true bottleneck.
+- Draft heads, diffusion sketches, or cached continuations drift out of distribution.
+- Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains.
+- Multi-seed generation increases sample count without improving useful solution per second.
+- Fallback is omitted after rejection or uncertainty.
+
+The multi-seed case is especially important for this book. Multiple candidate trajectories can improve robustness only if selection, verification, and parallel hardware costs are cheap enough to beat a single stronger route. Otherwise, multi-seed generation is just a more expensive way to produce more candidates. The book should keep it as an original research direction, not as an established capability.
+
+## Minimal implementation
+
+A minimal implementation is a generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.
+
+The first executable version should not attempt to implement every acceleration family. It starts with a generation-mode record, then runs a plain autoregressive baseline and one verifier-preserving acceleration path on a small task suite. The result should record proposed output, accepted output, wall-clock time, verifier cost, memory notes, task success, and fallback rate. A negative result is useful if it shows that a faster mode produced less useful output per second after verification.
+
+The current `generation_mode_record` fixture validates only the record shape: task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, output accounting fields, promotion decision, measurement status, metric definitions, evidence references, and non-claims. It intentionally records `not_run`, `not measured`, and `not_evaluated` for the demo route.
+
+The registry should allow experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair`, but those entries must remain unroutable or experimental until source notes and tests exist.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Generation-mode record fixture validation | Validate that a route record names task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, accounting fields, metric definitions, evidence refs, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Autoregressive baseline speed-quality test | Establish the baseline wall-clock, accepted-output, and task-success measurements. | planned; not run |
+| Speculative decoding acceptance test | Measure proposed tokens, accepted tokens, rejected work, verifier cost, and output correctness under an explicit acceptance predicate. | planned; not run |
+| Multi-token draft-head acceptance test | Test whether k-token proposals improve accepted output per second after rejection and fallback are counted. | planned; not run |
+| Medusa-style internal-head comparison test | Compare internal multi-head proposals against external draft-model proposals under the same verifier. | planned; not run |
+| Diffusion small-model speed-quality curve | Measure whether parallel denoising improves final task success per wall-clock second. | planned; not run |
+| Multi-seed diffusion useful-solution-per-second test | Test whether multiple denoising trajectories improve pass rate or verified success after parallel compute and selection costs. | planned; not run |
+| Hybrid AR-to-diffusion repair test | Test whether generating a left-to-right draft and repairing spans beats full regeneration. | planned; not run |
+| Planner-selected generation-mode routing test | Compare task-aware mode selection against one fixed decoding mode. | planned; not run |
+| Risk-tiered decoding enforcement test | Ensure high-risk tasks route to slower verified modes when policy requires it. | planned; not run |
+| KV-cache throughput accounting test | Separate aggregate serving throughput, memory pressure, and single-request verified output. | planned; not run |
+
+The implemented row validates fixture/schema consistency only. The remaining rows are a backlog for turning the chapter from design rationale into prototype-backed or external-literature-backed claims.
+
+## Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | planned |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | planned |
+
+These proof targets are schema-first. They should become meaningful only after the generation-mode record is specified as JSON Schema, typed code, or a small Lean finite record. Until then, a Lean theorem would mostly restate the prose.
+
+## Source crosswalk
+
+| Source ID | Planned use | Readiness |
+|---|---|---|
+| `cgs` | Connect fast generation to compact generative systems, residual burden, and the generator/verifier loop. | source note available; claim-level mapping still needed |
+| `cognitive_loop_closure` | Frame MTP-like chunking and repeated generation as procedural-memory pressure. | source note available; claim-level mapping still needed |
+| `benchmaxxing` | Define the measurement discipline for useful output, regression, and promotion. | source note available; claim-level mapping still needed |
+| `planforge` | Route generation mode selection through planning and task constraints. | source note available; claim-level mapping still needed |
+| `verification_bandwidth` | Keep verifier capacity visible as the possible bottleneck. | source note available; claim-level mapping still needed |
+| `tokenmana` | Account for token, compute, memory, and latency budgets. | source note available; claim-level mapping still needed |
+| `talos` | Turn accepted generated output into artifacts rather than loose text. | source note available; claim-level mapping still needed |
+| `vcm_public` | Supply bounded context packets and context-loss contracts to the selected generation mode. | source note available; claim-level mapping still needed |
+| `spinoza` | Verify, critique, repair, or reject generated claims and candidates. | source note available; claim-level mapping still needed |
+| `rmi` | Connect generation modes to modular routing, readiness, and fallback. | source note available; claim-level mapping still needed |
+
+The external literature queue belongs in the outline and bibliography until source notes exist. It should eventually include primary-source treatment of multi-token prediction, speculative decoding, internal draft heads, feature-level drafting, diffusion language models, arbitrary-order generation, early exit, state-space alternatives, KV-cache memory architecture, and serving accelerators. This chapter should not cite or summarize their reported speedups until those sources are actually mined.
+
+## Summary
+
+Fast Generation Architectures defines the ASI Stack's generation substrate. Its thesis is not "make tokens faster." Its thesis is that generation speed becomes useful only when the stack can select a mode, verify accepted output, count repair and fallback cost, and promote the mode through evidence rather than excitement.
+
+That makes the chapter a bridge between compression, routing, execution, and evidence. PlanForge selects the route, VCM supplies context, the generator drafts, Spinoza verifies, Talos artifactizes, Benchmaxxing measures, and SCF decides whether the capability is ready. Multi-seed diffusion and hybrid AR/MTP/diffusion systems are promising research directions, but the book should keep them speculative until the work earns stronger support.

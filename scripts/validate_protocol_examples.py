@@ -14,6 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_DIR = ROOT / "schemas"
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "protocol_records"
+RELEASE_RECORD_DIR = ROOT / "release_records"
 
 
 def load_json(path: Path) -> Any:
@@ -84,12 +85,25 @@ def main() -> None:
         value = load_json(fixture)
         errors.extend(validate_value(value, schema, str(fixture.relative_to(ROOT))))
 
+    release_records = sorted(RELEASE_RECORD_DIR.glob("*.json")) if RELEASE_RECORD_DIR.exists() else []
+    release_schema_path = SCHEMA_DIR / "living_book_release_record.schema.json"
+    if release_records and not release_schema_path.exists():
+        errors.append(f"{RELEASE_RECORD_DIR.relative_to(ROOT)}: missing schema {release_schema_path.relative_to(ROOT)}")
+    elif release_records:
+        release_schema = load_json(release_schema_path)
+        for record_path in release_records:
+            value = load_json(record_path)
+            errors.extend(validate_value(value, release_schema, str(record_path.relative_to(ROOT))))
+
     if errors:
         for error in errors:
             print(error)
         raise SystemExit(1)
 
-    print(f"Protocol example validation passed for {len(fixtures)} fixtures.")
+    print(
+        "Protocol example validation passed for "
+        f"{len(fixtures)} fixtures and {len(release_records)} release records."
+    )
 
 
 if __name__ == "__main__":

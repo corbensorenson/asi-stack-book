@@ -1,0 +1,32 @@
+{
+  "task_id": "task://fast-generation-design-demo",
+  "risk_tier": "medium",
+  "latency_budget": "planned budget field; no latency measurement has been run",
+  "compute_budget": "planned compute accounting field; no accelerator benchmark has been run",
+  "memory_budget": "planned memory accounting field; no KV-cache benchmark has been run",
+  "context_packet_id": "vcm://demo-context-packet",
+  "generation_mode": "hybrid",
+  "draft_source": "proposed AR-to-diffusion repair route",
+  "verifier": "Spinoza or task-specific verifier; not implemented in this fixture",
+  "acceptance_predicate": "accept only spans that pass the verifier and task tests",
+  "proposed_output_accounting": "not measured",
+  "accepted_output_accounting": "not measured",
+  "wall_clock_time": "not measured",
+  "quality_or_pass_result": "not measured",
+  "repair_or_fallback": "fallback to slower verified autoregressive mode if acceptance fails",
+  "promotion_decision": "not_evaluated",
+  "measurement_status": "not_run",
+  "metric_definitions": [
+    "effective_verified_tokens_per_second = accepted_or_verified_correct_tokens / wall_clock_time",
+    "useful_solution_per_second = pass_rate_or_verified_success / wall_clock_time"
+  ],
+  "evidence_refs": [
+    "chapters/fast-generation-architectures.qmd",
+    "docs/fast_generation_context_ingestion_report.md"
+  ],
+  "non_claims": [
+    "This fixture is not a decoding benchmark.",
+    "This fixture does not report a speedup.",
+    "This fixture does not validate a diffusion or speculative decoding implementation."
+  ]
+}

@@ -24,6 +24,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/context_packet.schema.json`
 - `schemas/context_transaction_record.schema.json`
 - `schemas/failure_boundary_map.schema.json`
+- `schemas/generation_mode_record.schema.json`
 - `schemas/governance_right_record.schema.json`
 - `schemas/agency_rights_checklist.schema.json`
 - `schemas/intent_contract.schema.json`
@@ -280,6 +281,34 @@ resource_budget_record:
 ```
 
 This record turns budget pressure into a governed decision. It ties value, risk, capacity, cost, verification tax, quality predicates, safety gates, dispatch or escalation, residuals, and evidence into one auditable artifact.
+
+## Generation Mode Record
+
+```yaml
+generation_mode_record:
+  task_id: string
+  risk_tier: medium
+  latency_budget: string
+  compute_budget: string
+  memory_budget: string
+  context_packet_id: string
+  generation_mode: hybrid
+  draft_source: string
+  verifier: string
+  acceptance_predicate: string
+  proposed_output_accounting: string
+  accepted_output_accounting: string
+  wall_clock_time: string
+  quality_or_pass_result: string
+  repair_or_fallback: string
+  promotion_decision: not_evaluated
+  measurement_status: not_run
+  metric_definitions: []
+  evidence_refs: []
+  non_claims: []
+```
+
+This record makes fast-generation mode selection auditable. It separates proposed output from accepted output, forces verifier and fallback fields to be named, and allows a route to record `not_run` without implying a benchmark result.
 
 ## Simulation Contract Record
 

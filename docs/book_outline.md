@@ -2003,6 +2003,91 @@ Lean proof targets:
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 
+### Fast Generation Architectures
+
+Stable ID: `fast-generation-architectures`
+
+Chapter job: The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
+
+Core claim: Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `cgs`, `cognitive_loop_closure`, `benchmaxxing` | Read first for the compact-generation loop, procedural chunking intuition, and measurement discipline. |
+| Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. |
+| Handoff or recovery notes | `sources/inbox/fast_generation_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
+
+External literature queue:
+
+| Area | Expected role | Status |
+|---|---|---|
+| Multi-token prediction and future-token heads | Compare MTP as a draft/proposal mechanism for breaking strict one-token-per-step generation. | queued; no source note yet |
+| Speculative decoding and speculative sampling | Compare draft-model proposal plus target-model verification to the stack's generate-verify-repair pattern. | queued; no source note yet |
+| Multi-head decoding and feature-level drafting | Compare Medusa/EAGLE-style internal drafting and latent-state proposal mechanisms. | queued; no source note yet |
+| Lookahead, trie retrieval, and branch verification | Compare cached branch proposal, retrieval, and verification as procedural-memory acceleration. | queued; no source note yet |
+| Diffusion language models and arbitrary-order generation | Compare parallel denoising, infilling, sketch-first decoding, and quality-speed controls. | queued; no source note yet |
+| Early exit and self-speculative inference | Compare cheap intermediate exits with later-layer verification. | queued; no source note yet |
+| State-space and recurrent sequence models | Compare sequence-processing efficiency as a different speed axis from multi-token acceptance. | queued; no source note yet |
+| KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | queued; no source note yet |
+
+Draft arc:
+
+- Problem: The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
+- Insufficiency: Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.
+- Mechanism: Separate raw generation speed from effective verified tokens per second and useful solution per second.
+- Mechanism: Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
+- Mechanism: Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
+- Mechanism: Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
+- Mechanism: Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist.
+- Interface: PlanForge chooses the generation mode.
+- Interface: VCM supplies the bounded context packet.
+- Interface: The generator emits draft tokens, sketches, spans, or candidates.
+- Interface: Spinoza or a verifier checks acceptance predicates.
+- Interface: Talos turns accepted output into artifacts.
+- Interface: Benchmaxxing records speed-quality evidence.
+- Interface: SCF governs whether a mode is promoted, quarantined, or left experimental.
+
+Primary invariants:
+
+- No fast generation mode is promoted on raw tokens per second alone.
+- Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.
+- Accepted output is counted separately from proposed output.
+- High-risk tasks can require slower verified generation even when a faster mode exists.
+- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion.
+
+Failure modes to cover:
+
+- Speed hides lower answer quality or higher repair cost.
+- The verifier becomes the true bottleneck.
+- Draft heads, diffusion sketches, or cached continuations drift out of distribution.
+- Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains.
+- Multi-seed generation increases sample count without improving useful solution per second.
+- Fallback is omitted after rejection or uncertainty.
+
+Draft deliverables:
+
+- A generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.
+- Implemented repository-level fixture: `generation_mode_record.valid.json` validates generation-mode record shape only; no decoding benchmark, acceptance-rate test, or serving experiment has been run.
+- Planned Codex test: Autoregressive baseline speed-quality test.
+- Planned Codex test: Speculative decoding acceptance test.
+- Planned Codex test: Multi-token draft-head acceptance test.
+- Planned Codex test: Medusa-style internal-head comparison test.
+- Planned Codex test: Diffusion small-model speed-quality curve.
+- Planned Codex test: Multi-seed diffusion useful-solution-per-second test.
+- Planned Codex test: Hybrid AR-to-diffusion repair test.
+- Planned Codex test: Planner-selected generation-mode routing test.
+- Planned Codex test: Risk-tiered decoding enforcement test.
+- Planned Codex test: KV-cache throughput accounting test.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | planned |
+| `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | planned |
+
 ### RankFold, NeuralFold, and Artifact Compression
 
 Stable ID: `rankfold-neuralfold-and-artifact-compression`
@@ -2782,9 +2867,9 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.
+- A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and public release records.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
-- Implemented repository-level fixture: `living_book_release_record.valid.json` validates release-record shape only; render and validation checks prove publication hygiene, not manuscript quality or claim truth.
+- Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape only; render and validation checks prove publication hygiene, not manuscript quality or claim truth.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.

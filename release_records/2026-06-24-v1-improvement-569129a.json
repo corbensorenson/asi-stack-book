@@ -1,0 +1,42 @@
+{
+  "release_id": "2026-06-24-v1-improvement-569129a",
+  "source_commit": "569129a",
+  "rendered_site": "_site/index.html and GitHub Pages deployment for commit 569129a",
+  "scaffold_sync": "python3 scripts/sync_scaffold.py (pass)",
+  "proof_manifest_sync": "python3 scripts/sync_proof_manifest.py --check (pass)",
+  "validation_commands": [
+    "python3 scripts/sync_scaffold.py",
+    "python3 scripts/sync_proof_manifest.py --check",
+    "python3 scripts/validate_proof_readiness.py",
+    "python3 scripts/validate_publication.py",
+    "python3 scripts/validate_book.py",
+    "python3 scripts/validate_visual_coverage.py",
+    "python3 scripts/validate_schemas.py",
+    "python3 scripts/validate_protocol_examples.py",
+    "python3 scripts/validate_repeated_prose.py",
+    "git diff --check",
+    "cd lean && lake build",
+    "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
+    "gh run watch 28127365423 --exit-status",
+    "curl -fsSL https://corbensorenson.github.io/asi-stack-book/appendices/C_claim_evidence_matrix.html?v=569129a",
+    "curl -fsSL https://corbensorenson.github.io/asi-stack-book/appendices/F_changelog.html?v=569129a"
+  ],
+  "validation_status": "pass",
+  "changelog_refs": [
+    "appendices/F_changelog.qmd"
+  ],
+  "public_url": "https://corbensorenson.github.io/asi-stack-book/?v=569129a",
+  "residuals": [
+    "Chapter core claims remain at argument support unless separately promoted by source-to-claim mapping, prototype evidence, tests, or external literature.",
+    "Fifty-six proof targets remain planned across schema, process, and research routes.",
+    "Ninety-four assigned source/chapter pairs still need explicit source-note chapter listings after stable-ID/title matching.",
+    "External literature remains queued rather than citation-normalized.",
+    "The GitHub Actions workflow reports a non-blocking Node.js 20 deprecation annotation for upstream actions forced onto Node.js 24."
+  ],
+  "non_claims": [
+    "does not prove manuscript finality",
+    "does not promote any chapter claim above its recorded support state",
+    "does not reproduce external benchmark or runtime claims",
+    "does not validate source interpretation beyond the recorded source notes and public-safe matrices"
+  ]
+}

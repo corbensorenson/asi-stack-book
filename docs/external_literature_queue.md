@@ -20,6 +20,7 @@ This book currently treats Corben Sorenson's AI papers, local projects, and conv
 | Formal methods and proof assistants | Ground Lean, proof-carrying claims, runtime assurance, and contract verification. | Add sources for Lean/proof assistant methods and runtime assurance. |
 | Modular systems and routing | Compare MoECOT, Octopus, RMI, and specialist routing to MoE/routing/modular-agent literature. | Add external records before claiming novelty beyond this research program. |
 | Compression and representation learning | Ground CGS, RankFold/NeuralFold, BBVCA, semantic trees, and residual accounting. | Distinguish mathematical analogy, prototype claim, and benchmarked compression. |
+| Fast generation and decoding substrates | Ground MTP, speculative decoding, multi-head drafting, diffusion LLMs, early exit, state-space alternatives, KV-cache serving, and useful-solution-per-second metrics. | Create citation-normalized source records and source notes before promoting any speed-quality claim. |
 | Benchmarks and anti-Goodhart methods | Ground benchmark ratchets, hidden tests, saturation, residual preservation, and eval gaming. | Add references before raising evidence claims in benchmark chapters. |
 
 ## Import Rule

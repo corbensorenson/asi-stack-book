@@ -2788,6 +2788,108 @@
           ]
         },
         {
+          "id": "fast-generation-architectures",
+          "title": "Fast Generation Architectures",
+          "file": "chapters/fast-generation-architectures.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "cgs",
+            "cognitive_loop_closure",
+            "benchmaxxing",
+            "planforge",
+            "verification_bandwidth",
+            "tokenmana",
+            "talos",
+            "vcm_public",
+            "spinoza",
+            "rmi"
+          ],
+          "source_queue": {
+            "primary": [
+              "cgs",
+              "cognitive_loop_closure",
+              "benchmaxxing"
+            ],
+            "supporting": [
+              "planforge",
+              "verification_bandwidth",
+              "tokenmana",
+              "talos",
+              "vcm_public",
+              "spinoza",
+              "rmi"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "2026-06-24 browser-GPT fast-generation planning note; use as author-intent and literature-queue context only."
+            ]
+          },
+          "problem": "The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.",
+          "insufficient": "Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.",
+          "core_claim": "Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden.",
+          "mechanism": [
+            "Separate raw generation speed from effective verified tokens per second and useful solution per second.",
+            "Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.",
+            "Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.",
+            "Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.",
+            "Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist."
+          ],
+          "interfaces": [
+            "PlanForge chooses the generation mode.",
+            "VCM supplies the bounded context packet.",
+            "The generator emits draft tokens, sketches, spans, or candidates.",
+            "Spinoza or a verifier checks acceptance predicates.",
+            "Talos turns accepted output into artifacts.",
+            "Benchmaxxing records speed-quality evidence.",
+            "SCF governs whether a mode is promoted, quarantined, or left experimental."
+          ],
+          "invariants": [
+            "No fast generation mode is promoted on raw tokens per second alone.",
+            "Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.",
+            "Accepted output is counted separately from proposed output.",
+            "High-risk tasks can require slower verified generation even when a faster mode exists.",
+            "Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion."
+          ],
+          "failure_modes": [
+            "Speed hides lower answer quality or higher repair cost.",
+            "The verifier becomes the true bottleneck.",
+            "Draft heads, diffusion sketches, or cached continuations drift out of distribution.",
+            "Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains.",
+            "Multi-seed generation increases sample count without improving useful solution per second.",
+            "Fallback is omitted after rejection or uncertainty."
+          ],
+          "minimal_implementation": "A generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.",
+          "codex_tests": [
+            "Autoregressive baseline speed-quality test",
+            "Speculative decoding acceptance test",
+            "Multi-token draft-head acceptance test",
+            "Medusa-style internal-head comparison test",
+            "Diffusion small-model speed-quality curve",
+            "Multi-seed diffusion useful-solution-per-second test",
+            "Hybrid AR-to-diffusion repair test",
+            "Planner-selected generation-mode routing test",
+            "Risk-tiered decoding enforcement test",
+            "KV-cache throughput accounting test"
+          ],
+          "lean_module": "AsiStackProofs.FastGeneration",
+          "proof_targets": [
+            {
+              "tag": "lean:fast_generation.mode_selection.operational_invariant",
+              "module": "AsiStackProofs.FastGeneration",
+              "target": "A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:fast_generation.verified_speed.failure_blocks_promotion",
+              "module": "AsiStackProofs.FastGeneration",
+              "target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "rankfold-neuralfold-and-artifact-compression",
           "title": "RankFold, NeuralFold, and Artifact Compression",
           "file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",

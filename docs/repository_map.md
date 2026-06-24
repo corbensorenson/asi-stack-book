@@ -13,6 +13,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
 | `docs/local_project_mining_theseus_circle.md` | Public-safe local mining report for Project Theseus and Circle Calculus. | tracked |
 | `docs/conversation_context_ingestion_report.md` | Public-safe synthesis of conversation-mined author intent and recovery tasks. | tracked |
+| `docs/fast_generation_context_ingestion_report.md` | Public-safe synthesis of the fast-generation browser-GPT planning note and evidence boundaries. | tracked |
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |
@@ -22,6 +23,7 @@ This repository is organized around the living book and its validation loop.
 | `proofs/` | Proof plans and generated proof target manifest. | tracked |
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
 | `schemas/` | JSON Schemas for protocol records. | tracked |
+| `release_records/` | Public-safe living-book release validation records checked against `schemas/living_book_release_record.schema.json`. | tracked |
 | `experiments/` | Synthetic experiment and benchmark harness workspace. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |

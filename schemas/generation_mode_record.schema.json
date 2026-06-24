@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/generation_mode_record.schema.json",
+  "title": "Generation Mode Record",
+  "type": "object",
+  "required": [
+    "task_id",
+    "risk_tier",
+    "latency_budget",
+    "compute_budget",
+    "memory_budget",
+    "context_packet_id",
+    "generation_mode",
+    "draft_source",
+    "verifier",
+    "acceptance_predicate",
+    "proposed_output_accounting",
+    "accepted_output_accounting",
+    "wall_clock_time",
+    "quality_or_pass_result",
+    "repair_or_fallback",
+    "promotion_decision",
+    "measurement_status",
+    "metric_definitions",
+    "evidence_refs",
+    "non_claims"
+  ],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "risk_tier": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "latency_budget": { "type": "string", "minLength": 1 },
+    "compute_budget": { "type": "string", "minLength": 1 },
+    "memory_budget": { "type": "string", "minLength": 1 },
+    "context_packet_id": { "type": "string", "minLength": 1 },
+    "generation_mode": {
+      "type": "string",
+      "enum": [
+        "autoregressive",
+        "speculative",
+        "multi_token_prediction",
+        "multi_head_internal",
+        "feature_draft",
+        "lookahead_retrieval",
+        "diffusion",
+        "multi_seed_diffusion",
+        "hybrid",
+        "early_exit",
+        "state_space",
+        "kv_cache_serving"
+      ]
+    },
+    "draft_source": { "type": "string", "minLength": 1 },
+    "verifier": { "type": "string", "minLength": 1 },
+    "acceptance_predicate": { "type": "string", "minLength": 1 },
+    "proposed_output_accounting": { "type": "string", "minLength": 1 },
+    "accepted_output_accounting": { "type": "string", "minLength": 1 },
+    "wall_clock_time": { "type": "string", "minLength": 1 },
+    "quality_or_pass_result": { "type": "string", "minLength": 1 },
+    "repair_or_fallback": { "type": "string", "minLength": 1 },
+    "promotion_decision": {
+      "type": "string",
+      "enum": ["promote", "keep_experimental", "quarantine", "fallback_only", "reject", "not_evaluated"]
+    },
+    "measurement_status": { "type": "string", "enum": ["not_run", "planned", "run"] },
+    "metric_definitions": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

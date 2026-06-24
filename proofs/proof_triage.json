@@ -711,6 +711,26 @@
       "rationale": "Implemented in AsiStackProofs.GenerateVerifyRepair as a finite verification predicate: failed verification blocks exactness promotion."
     },
     {
+      "tag": "lean:fast_generation.mode_selection.operational_invariant",
+      "chapter_id": "fast-generation-architectures",
+      "module": "AsiStackProofs.FastGeneration",
+      "formal_target": "A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "This target needs a generation-mode record schema before Lean can check more than the prose requirement."
+    },
+    {
+      "tag": "lean:fast_generation.verified_speed.failure_blocks_promotion",
+      "chapter_id": "fast-generation-architectures",
+      "module": "AsiStackProofs.FastGeneration",
+      "formal_target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "This target should first be captured in a typed evidence record with baseline, accepted-output, task-success, and promotion-decision fields."
+    },
+    {
       "tag": "lean:compression.artifacts.operational_invariant",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",

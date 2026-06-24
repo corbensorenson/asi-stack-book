@@ -4,11 +4,11 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 79,660 chapter words, averaging 1,593 words per chapter.
+Current scale: 51 chapter files, 82,507 chapter words, averaging 1,618 words per chapter.
 
 ## Completed in v0.2
 
-- All 50 manifest-driven chapters now have end-to-end manuscript prose.
+- All 51 manifest-driven chapters now have end-to-end manuscript prose.
 - Every chapter retains the required contract: status, drafting guardrail, problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, Codex test plan, source crosswalk, and summary.
 - Every chapter lists source loading state from the source notes, local raw cache, and connector/recovery records currently visible to the repo.
 - Every chapter exposes formalization hooks from the existing proof targets.
@@ -34,6 +34,7 @@ Current scale: 50 chapter files, 79,660 chapter words, averaging 1,593 words per
 - The readiness-gate Lean proof targets are implemented in `AsiStackProofs.ReadinessGates` as narrow finite-record predicates for all-gates-pass promotion and quarantine ordinary-route blocking.
 - The Compact Generative Systems Lean proof targets are implemented in `AsiStackProofs.CompactGenerativeSystems` as narrow finite-record predicates for unresolved-obligation residuals and lossy-exactness blocking without verification evidence.
 - The generate-verify-repair Lean proof targets are implemented in `AsiStackProofs.GenerateVerifyRepair` as narrow finite-record predicates for exact reconstruction equality and failed-verification exactness blocking.
+- The Fast Generation Architectures chapter now exists as a Part III generation-substrate chapter with source queues, external-literature backlog, Mermaid lifecycle, planned benchmarks, and planned schema-first proof targets while preserving `argument` support.
 - The proof-carrying contract Lean proof targets are implemented in `AsiStackProofs.ProofCarryingContracts` as narrow finite-record predicates for receipt-boundary completeness and downstream consumer-gate evidence.
 - The proof-envelope Lean proof targets are implemented in `AsiStackProofs.ProofEnvelope` as narrow finite-record predicates for implemented-target build/module requirements and non-operational target routing.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
@@ -50,21 +51,21 @@ Current scale: 50 chapter files, 79,660 chapter words, averaging 1,593 words per
 - The compactness/compression/semantic-resource chapters now distinguish compact generative records, compression receipts, compressed artifact records, semantic node records, and resource budget fixtures from unimplemented codecs, utility probes, grounding benchmarks, load simulations, scheduler runs, and Lean proofs.
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, and model-quality evaluations.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
-- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 100 proof targets are covered by triage, 44 are implemented formal-invariant Lean candidates, and 56 remain planned across schema, process, and research routes.
-- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 367 assigned source/chapter pairs have source notes, and 273 of those pairs are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are chapter-listing and exact claim-to-mechanism mapping work, not support-state promotions.
+- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 44 are implemented formal-invariant Lean candidates, and 58 remain planned across schema, process, and research routes.
+- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 377 assigned source/chapter pairs have source notes, and 273 of those pairs are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are chapter-listing and exact claim-to-mechanism mapping work, not support-state promotions.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
-- Executable schema drafts now cover context ABI records, context adequacy records, context transaction records, layer boundary records, semantic atoms, semantic node records, semantic page certificates, compact generative records, compression receipts, compressed artifact records, authority-use receipts, costed route records, resource budget records, simulation contract records, substrate adoption records, cyclic memory contracts, cyclic mixer evaluation records, specialist registry records, routing decision records, readiness gate records, benchmark ratchet records, MoECOT orchestration records, authority transition records, failure boundary maps, intent contracts, command contracts, intent-to-execution traces, plan graphs, PlanForge DAGs, typed jobs, artifact graph records, runtime adapter invocations, procedural tool records, proof target records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, research backlog records, claim records, evidence transition records, belief revision records, proof-carrying claims, tribunal reviews, constitutional predicates, agency rights checklists, value conflict records, governance rights records, stable capability fields, replacement transactions, and self-improvement transitions, with valid example fixtures checked by `scripts/validate_protocol_examples.py`.
+- Executable schema drafts now cover context ABI records, context adequacy records, context transaction records, layer boundary records, semantic atoms, semantic node records, semantic page certificates, compact generative records, compression receipts, compressed artifact records, authority-use receipts, costed route records, resource budget records, generation-mode records, simulation contract records, substrate adoption records, cyclic memory contracts, cyclic mixer evaluation records, specialist registry records, routing decision records, readiness gate records, benchmark ratchet records, MoECOT orchestration records, authority transition records, failure boundary maps, intent contracts, command contracts, intent-to-execution traces, plan graphs, PlanForge DAGs, typed jobs, artifact graph records, runtime adapter invocations, procedural tool records, proof target records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, research backlog records, claim records, evidence transition records, belief revision records, proof-carrying claims, tribunal reviews, constitutional predicates, agency rights checklists, value conflict records, governance rights records, stable capability fields, replacement transactions, and self-improvement transitions, with valid example fixtures checked by `scripts/validate_protocol_examples.py`.
 
 ## Still Missing for v1.0
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-note chapter-listing gaps, source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
-- Most Lean proof targets remain planned or triaged as schema/process/research targets; 44 of 100 proof targets are currently marked implemented.
+- Most Lean proof targets remain planned or triaged as schema/process/research targets; 44 of 102 proof targets are currently marked implemented.
 - Artifact-by-artifact audits for the remaining planned proof targets still need to identify the next schema, policy-model, research, or Lean artifact for each target.
-- Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented and remains limited to schema/example consistency.
-- External literature remains queued rather than citation-normalized.
+- Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
+- External literature remains queued rather than citation-normalized, including the new fast-generation and decoding-substrate queue.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.
 
 ## Regeneration
@@ -89,13 +90,17 @@ Passed on 2026-06-24:
 python3 scripts/source_readiness_report.py
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/sync_proof_manifest.py --check
+python3 scripts/validate_proof_readiness.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
+python3 scripts/validate_repeated_prose.py
+git diff --check
 (cd lean && lake build)
-quarto render --to html
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html
 ```
 
-Quarto rendered 60 inputs and wrote `_site/index.html`.
+Quarto rendered 61 inputs and wrote `_site/index.html`.
