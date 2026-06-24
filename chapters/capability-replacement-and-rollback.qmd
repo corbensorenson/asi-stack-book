@@ -16,7 +16,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The replacement_transaction fixture validates schema/example consistency only; replacement transaction, regression preservation, and rollback dry-run tests remain unimplemented."
+  - "The replacement_transaction fixture validates schema/example consistency only; regression preservation and rollback dry-run tests remain unimplemented."
+  - "The implemented Replacement Lean predicates cover finite commit records only; they do not prove deployed replacement execution, monitor-window behavior, or rollback execution."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
-| Test state | `replacement_transaction.valid.json` passes protocol fixture validation; replacement transaction, regression preservation, and rollback dry-run tests remain planned. |
+| Test state | `replacement_transaction.valid.json` passes protocol fixture validation, and `AsiStackProofs.Replacement` builds locally; regression preservation and rollback dry-run tests remain planned. |
 
 ## Drafting guardrail
 
@@ -145,7 +146,8 @@ The smallest useful implementation is a `replacement_transaction` schema and val
 | Test | Purpose | Status |
 |---|---|---|
 | Replacement transaction fixture validation | Check that the replacement fixture matches the public schema. | implemented by protocol validation; run in this pass |
-| Replacement transaction test | Check that a commit cannot occur without precheck, qualification, regression, approval, and rollback records. | planned; not run |
+| Replacement commit finite-record proof | Check that a modeled replacement promotion requires qualification evidence and rollback metadata. | implemented in `AsiStackProofs.Replacement`; runtime replacement test not run |
+| Failed-regression finite-record proof | Check that a modeled replacement with a failed regression cannot be promoted. | implemented in `AsiStackProofs.Replacement`; regression-suite coverage test not run |
 | Regression preservation test | Check that known regressions remain attached to the candidate decision. | planned; not run |
 | Rollback execution dry run | Check that rollback metadata exists before default promotion. | planned; not run |
 
@@ -153,10 +155,10 @@ The smallest useful implementation is a `replacement_transaction` schema and val
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:replacement.transaction.operational_invariant` | `AsiStackProofs.Replacement` | A replacement commit requires qualification evidence and rollback metadata. | planned |
-| `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | planned |
+| `lean:replacement.transaction.operational_invariant` | `AsiStackProofs.Replacement` | A replacement commit requires qualification evidence and rollback metadata. | implemented |
+| `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | implemented |
 
-These proof targets remain planned. The replacement record is validated today; commit/rollback behavior still needs a test harness.
+These proof targets are implemented only over finite Lean replacement-commit records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, and that a failed regression blocks promotion in the model. They do not prove deployed replacement execution, regression-suite coverage, monitor-window behavior, or rollback execution.
 
 ## Source crosswalk
 

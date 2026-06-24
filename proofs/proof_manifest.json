@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 100,
   "status_counts": {
-    "implemented": 12,
-    "planned": 88
+    "implemented": 14,
+    "planned": 86
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -285,7 +285,7 @@
       "tag": "lean:replacement.transaction.operational_invariant",
       "module": "AsiStackProofs.Replacement",
       "formal_target": "A replacement commit requires qualification evidence and rollback metadata.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 721,
       "module_path": "lean/AsiStackProofs/Replacement.lean"
     },
@@ -295,7 +295,7 @@
       "tag": "lean:replacement.transaction.failure_blocks_promotion",
       "module": "AsiStackProofs.Replacement",
       "formal_target": "A failed regression blocks promotion of the replacement.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 722,
       "module_path": "lean/AsiStackProofs/Replacement.lean"
     },
