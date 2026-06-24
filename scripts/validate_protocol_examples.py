@@ -69,6 +69,12 @@ def validate_value(value: Any, schema: dict[str, Any], path: str) -> list[str]:
     return errors
 
 
+def release_schema_for(value: Any) -> Path:
+    if isinstance(value, dict) and value.get("record_type") == "edition_release":
+        return SCHEMA_DIR / "edition_release_record.schema.json"
+    return SCHEMA_DIR / "living_book_release_record.schema.json"
+
+
 def main() -> None:
     errors: list[str] = []
     fixtures = sorted(FIXTURE_DIR.glob("*.valid.json"))
@@ -86,14 +92,14 @@ def main() -> None:
         errors.extend(validate_value(value, schema, str(fixture.relative_to(ROOT))))
 
     release_records = sorted(RELEASE_RECORD_DIR.glob("*.json")) if RELEASE_RECORD_DIR.exists() else []
-    release_schema_path = SCHEMA_DIR / "living_book_release_record.schema.json"
-    if release_records and not release_schema_path.exists():
-        errors.append(f"{RELEASE_RECORD_DIR.relative_to(ROOT)}: missing schema {release_schema_path.relative_to(ROOT)}")
-    elif release_records:
+    for record_path in release_records:
+        value = load_json(record_path)
+        release_schema_path = release_schema_for(value)
+        if not release_schema_path.exists():
+            errors.append(f"{record_path.relative_to(ROOT)}: missing schema {release_schema_path.relative_to(ROOT)}")
+            continue
         release_schema = load_json(release_schema_path)
-        for record_path in release_records:
-            value = load_json(record_path)
-            errors.extend(validate_value(value, release_schema, str(record_path.relative_to(ROOT))))
+        errors.extend(validate_value(value, release_schema, str(record_path.relative_to(ROOT))))
 
     if errors:
         for error in errors:

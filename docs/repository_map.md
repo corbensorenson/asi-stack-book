@@ -25,7 +25,7 @@ This repository is organized around the living book and its validation loop.
 | `proofs/` | Proof plans and generated proof target manifest. | tracked |
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
 | `schemas/` | JSON Schemas for protocol records. | tracked |
-| `release_records/` | Public-safe living-book release validation records checked against `schemas/living_book_release_record.schema.json`. | tracked |
+| `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `experiments/` | Synthetic experiment and benchmark harness workspace. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source and output trees. | ignored |
@@ -39,7 +39,7 @@ This repository is organized around the living book and its validation loop.
 - Edit `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`.
 - Edit public source metadata in `sources/source_inventory.json`; keep raw source text out of git unless publication is explicitly approved.
 - Update `appendices/F_changelog.qmd` for meaningful changes.
-- Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py` and `python3 scripts/build_reader_edition.py --check`.
+- Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py`, `python3 scripts/build_reader_edition.py --check`, and `python3 scripts/build_audio_script.py --check` when the audio path is affected.
 
 ## Public Readiness Invariants
 

@@ -5,6 +5,56 @@
     "outline": "docs/book_outline.md",
     "live_quarto_config": "_quarto.yml"
   },
+  "major_version_policy": {
+    "canonical_source_profile": "live_book",
+    "release_record_directory": "release_records",
+    "living_release_record_schema": "schemas/living_book_release_record.schema.json",
+    "edition_release_record_schema": "schemas/edition_release_record.schema.json",
+    "version_rule": "Every major-version research, reader, or audio release is derived from a tagged live-book commit and recorded in a public-safe release record.",
+    "artifact_policy": [
+      "A profile format is a target, not a produced artifact.",
+      "A release record must list only formats that were actually rendered, generated, reviewed, or explicitly marked not attempted.",
+      "Generated manuscripts and media builds belong under build/ or another ignored release workspace unless a specific public artifact is intentionally attached elsewhere.",
+      "The live book remains the source of truth after a reader or audio release is produced."
+    ]
+  },
+  "reader_manuscript_policy": {
+    "reader_facing_source": "Chapter prose outside strip_headings is the human-readable spine used to derive reader editions.",
+    "retain_section_intent": [
+      "problem statements",
+      "insufficiency analysis",
+      "core claim prose with uncertainty preserved",
+      "mechanisms",
+      "interfaces",
+      "invariants",
+      "failure modes",
+      "minimal implementation discussion",
+      "technical diagrams and images",
+      "chapter summaries",
+      "glossary and bibliography"
+    ],
+    "continuity_requirements": [
+      "Do not put a caveat that changes claim meaning only inside a stripped live-only section.",
+      "Avoid repeating source crosswalk or guardrail language in the reader-facing spine.",
+      "Before a major reader release, review the generated manuscript for chapter-to-chapter continuity, duplicate explanation, missing transitions, and e-reader typography."
+    ],
+    "optional_downstream_formats": [
+      "markdown",
+      "plain text",
+      "mobi or azw3 converted from a reviewed EPUB with an external tool"
+    ]
+  },
+  "audio_manuscript_policy": {
+    "derived_from_profile": "reader_release",
+    "generated_script_directory": "build/audio_script",
+    "audio_in_epub_rule": "An audio-embedded EPUB is a produced artifact only after the EPUB actually contains the reviewed audio files and the release record says so.",
+    "review_requirements": [
+      "Generate or write a narration script from the reviewed reader edition.",
+      "Convert tables, schemas, code, and diagrams into spoken summaries or companion-note references.",
+      "Maintain a pronunciation glossary for ASI Stack terms, source IDs, and invented architecture labels.",
+      "Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced."
+    ]
+  },
   "audiences": [
     {
       "id": "ai_agents",
@@ -114,6 +164,8 @@
       "purpose": "Major-version human manuscript for e-readers and relaxed reading, derived from the living book while removing AI/research workflow scaffolding.",
       "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, and bibliography path.",
       "publication_formats": ["html", "epub", "pdf", "docx"],
+      "generated_source_dir": "build/reader_edition",
+      "reader_review_required": true,
       "include_appendices": [
         "appendices/B_glossary.qmd",
         "appendices/G_bibliography.qmd"
@@ -170,8 +222,11 @@
         "Maintain a pronunciation glossary for ASI Stack terms and source IDs.",
         "Do not synthesize or publish audio unless the exact script has been reviewed for human consumption."
       ],
+      "generated_script_dir": "build/audio_script",
+      "reader_profile_dependency": "reader_release",
       "release_gate": [
         "reader_release gate passes for the same major version",
+        "python3 scripts/build_audio_script.py --check",
         "narration script exists and is reviewed",
         "audio files are generated and spot-checked",
         "chapter markers and metadata are verified",

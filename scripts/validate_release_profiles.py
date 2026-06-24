@@ -12,6 +12,11 @@ PROFILES_PATH = ROOT / "editions" / "release_profiles.json"
 
 REQUIRED_AUDIENCES = {"ai_agents", "human_researchers", "interested_humans"}
 REQUIRED_PROFILES = {"live_book", "research_release", "reader_release", "audio_release"}
+REQUIRED_TOP_LEVEL_POLICIES = {
+    "major_version_policy",
+    "reader_manuscript_policy",
+    "audio_manuscript_policy",
+}
 READER_REQUIRED_STRIPS = {
     (2, "chapter status"),
     (2, "drafting guardrail"),
@@ -58,6 +63,15 @@ def validate_path_list(profile_id: str, key: str, values: object, errors: list[s
             errors.append(f"{profile_id}: referenced appendix does not exist: {value}")
 
 
+def validate_string_list(owner: str, key: str, values: object, errors: list[str]) -> None:
+    if not isinstance(values, list) or not values:
+        errors.append(f"{owner}: {key} must be a non-empty list.")
+        return
+    for value in values:
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{owner}: {key} entries must be non-empty strings.")
+
+
 def main() -> None:
     errors: list[str] = []
     data = load_json(PROFILES_PATH)
@@ -66,6 +80,48 @@ def main() -> None:
 
     if data.get("schema_version") != "0.1":
         errors.append("release profile schema_version must be 0.1.")
+
+    for key in REQUIRED_TOP_LEVEL_POLICIES:
+        if not isinstance(data.get(key), dict):
+            errors.append(f"Missing required top-level policy object: {key}")
+
+    major_policy = data.get("major_version_policy")
+    if isinstance(major_policy, dict):
+        if major_policy.get("canonical_source_profile") != "live_book":
+            errors.append("major_version_policy.canonical_source_profile must be live_book.")
+        for path_key in ("living_release_record_schema", "edition_release_record_schema"):
+            value = major_policy.get(path_key)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"major_version_policy.{path_key} must be a non-empty string.")
+            elif not (ROOT / value).exists():
+                errors.append(f"major_version_policy.{path_key} does not exist: {value}")
+        validate_string_list("major_version_policy", "artifact_policy", major_policy.get("artifact_policy"), errors)
+
+    reader_policy = data.get("reader_manuscript_policy")
+    if isinstance(reader_policy, dict):
+        validate_string_list(
+            "reader_manuscript_policy",
+            "retain_section_intent",
+            reader_policy.get("retain_section_intent"),
+            errors,
+        )
+        validate_string_list(
+            "reader_manuscript_policy",
+            "continuity_requirements",
+            reader_policy.get("continuity_requirements"),
+            errors,
+        )
+
+    audio_policy = data.get("audio_manuscript_policy")
+    if isinstance(audio_policy, dict):
+        if audio_policy.get("derived_from_profile") != "reader_release":
+            errors.append("audio_manuscript_policy.derived_from_profile must be reader_release.")
+        validate_string_list(
+            "audio_manuscript_policy",
+            "review_requirements",
+            audio_policy.get("review_requirements"),
+            errors,
+        )
 
     audiences = data.get("audiences")
     if not isinstance(audiences, list):
@@ -141,6 +197,10 @@ def main() -> None:
     }
     reader = profiles_by_id.get("reader_release")
     if reader:
+        if reader.get("generated_source_dir") != "build/reader_edition":
+            errors.append("reader_release.generated_source_dir must be build/reader_edition.")
+        if reader.get("reader_review_required") is not True:
+            errors.append("reader_release.reader_review_required must be true.")
         reader_strips = normalized_strip_set(reader)
         missing_strips = READER_REQUIRED_STRIPS - reader_strips
         if missing_strips:
@@ -153,6 +213,11 @@ def main() -> None:
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):
         errors.append("audio_release must define narration_rules.")
+    if audio:
+        if audio.get("reader_profile_dependency") != "reader_release":
+            errors.append("audio_release.reader_profile_dependency must be reader_release.")
+        if audio.get("generated_script_dir") != "build/audio_script":
+            errors.append("audio_release.generated_script_dir must be build/audio_script.")
 
     if errors:
         fail(errors)

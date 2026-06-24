@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/edition_release_record.schema.json",
+  "title": "Edition Release Record",
+  "type": "object",
+  "required": [
+    "record_type",
+    "release_id",
+    "major_version",
+    "source_commit",
+    "source_tag",
+    "edition_profile",
+    "primary_audiences",
+    "derivation_source",
+    "artifact_formats",
+    "validation_commands",
+    "validation_status",
+    "review_status",
+    "release_notes",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "record_type": {
+      "type": "string",
+      "enum": ["edition_release"]
+    },
+    "release_id": { "type": "string", "minLength": 1 },
+    "major_version": { "type": "string", "minLength": 1 },
+    "source_commit": { "type": "string", "minLength": 1 },
+    "source_tag": { "type": "string", "minLength": 1 },
+    "edition_profile": {
+      "type": "string",
+      "enum": ["research_release", "reader_release", "audio_release"]
+    },
+    "primary_audiences": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["ai_agents", "human_researchers", "interested_humans"]
+      }
+    },
+    "derivation_source": { "type": "string", "minLength": 1 },
+    "artifact_formats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["format", "status", "command_or_tool", "path_or_uri", "notes"],
+        "properties": {
+          "format": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_attempted",
+              "pending",
+              "rendered",
+              "generated",
+              "reviewed",
+              "published",
+              "failed",
+              "not_applicable"
+            ]
+          },
+          "command_or_tool": { "type": "string", "minLength": 1 },
+          "path_or_uri": { "type": "string" },
+          "notes": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": ["pass", "fail", "partial", "pending"]
+    },
+    "review_status": {
+      "type": "object",
+      "required": [
+        "reader_continuity_review",
+        "source_scaffold_removed",
+        "audio_script_review",
+        "notes"
+      ],
+      "properties": {
+        "reader_continuity_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "source_scaffold_removed": {
+          "type": "string",
+          "enum": ["not_required", "not_checked", "pass", "fail"]
+        },
+        "audio_script_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "reader_manuscript": {
+      "type": "object",
+      "required": ["source_dir", "status", "review_notes"],
+      "properties": {
+        "source_dir": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["not_required", "generated", "reviewed", "published", "failed"]
+        },
+        "review_notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "audio_package": {
+      "type": "object",
+      "required": ["script_dir", "status", "review_notes"],
+      "properties": {
+        "script_dir": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["not_required", "script_generated", "reviewed", "audio_generated", "published", "failed"]
+        },
+        "review_notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "release_notes": { "type": "string", "minLength": 1 },
+    "residuals": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "non_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

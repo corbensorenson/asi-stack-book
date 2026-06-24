@@ -24,4 +24,11 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/build_reader_edition.py
 ```
 
-The generated reader edition is a publication candidate scaffold. It does not prove that EPUB, PDF, DOCX, or audio artifacts have been rendered until those commands actually run and a release record says so.
+Create or check a derived audio-script review workspace with:
+
+```bash
+python3 scripts/build_audio_script.py --check
+python3 scripts/build_audio_script.py
+```
+
+The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts have been rendered or generated until those commands actually run and a release record says so.

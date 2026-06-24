@@ -45,6 +45,8 @@ python3 scripts/build_reader_edition.py
 
 It writes derived Quarto source under `build/reader_edition/`, which is ignored by git. The generated manuscript is a candidate for human review, not the canonical source of truth.
 
+The reader-facing spine is the ordinary chapter prose outside the stripped headings. Any uncertainty that changes the meaning of a claim belongs in that spine, not only in a guardrail, source crosswalk, proof hook, or test-plan section that a reader edition removes.
+
 ## Audio Release Boundary
 
 Audio should be generated only from a reviewed reader-release script. Dense tables, schema blocks, code, and proof hooks should become concise spoken summaries or companion notes. The audio release needs:
@@ -56,6 +58,15 @@ Audio should be generated only from a reviewed reader-release script. Dense tabl
 - no silent removal of uncertainty that changes a claim's meaning
 
 Embedding audio into an EPUB is a future release target, not a current claim.
+
+The script-preparation tool is:
+
+```bash
+python3 scripts/build_audio_script.py --check
+python3 scripts/build_audio_script.py
+```
+
+It creates `build/audio_script/` and a pronunciation glossary for review. It does not synthesize audio and does not produce MP3, M4B, or audio-embedded EPUB artifacts.
 
 ## Major Version Gate
 

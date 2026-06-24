@@ -110,3 +110,22 @@ python3 scripts/build_reader_edition.py
 6. For audio, create and review a narration script from the reader edition before producing MP3, M4B, or audio-embedded EPUB artifacts.
 
 Do not report an ebook, PDF, DOCX, or audiobook as complete just because the profile lists it as a target.
+
+## Prepare a Major-Version Audio Script
+
+Audio is downstream of the reader edition, not the live book directly.
+
+1. Confirm the reader release candidate was generated and reviewed for human continuity.
+2. Generate or check the narration-script workspace:
+
+```bash
+python3 scripts/build_audio_script.py --check
+python3 scripts/build_audio_script.py
+```
+
+3. Review `build/audio_script/` and replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
+4. Keep the pronunciation glossary current.
+5. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.
+6. Add an `edition_release` record under `release_records/` that lists exactly which audio artifacts were produced and checked.
+
+The generated audio script is not an audiobook and does not imply that any audio artifact exists.

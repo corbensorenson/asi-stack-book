@@ -19,6 +19,7 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles for the three-audience publication model.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree under ignored `build/`.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace and pronunciation glossary under ignored `build/`.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -91,6 +92,13 @@ Generate or check a local reader-edition Quarto source tree:
 ```bash
 python3 scripts/build_reader_edition.py --check
 python3 scripts/build_reader_edition.py
+```
+
+Generate or check a narration-script candidate after the reader manuscript is ready for review:
+
+```bash
+python3 scripts/build_audio_script.py --check
+python3 scripts/build_audio_script.py
 ```
 
 Generated edition builds are written under `build/` and ignored by git. Do not claim EPUB, PDF, DOCX, or audio artifacts unless those specific render or generation commands have actually succeeded and a release record says so.

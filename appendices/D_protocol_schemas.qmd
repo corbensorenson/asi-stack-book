@@ -31,6 +31,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/intent_execution_trace.schema.json`
 - `schemas/layer_boundary_record.schema.json`
 - `schemas/living_book_release_record.schema.json`
+- `schemas/edition_release_record.schema.json`
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
@@ -1093,6 +1094,41 @@ living_book_release_record:
 ```
 
 This record separates publication hygiene from claim truth. It records commit, render target, scaffold/proof sync, validation commands/status, changelog refs, public URL, residuals, and non-claims for a living-book release.
+
+## Edition Release Record
+
+```yaml
+edition_release_record:
+  record_type: edition_release
+  release_id: string
+  major_version: string
+  source_commit: string
+  source_tag: string
+  edition_profile: reader_release
+  primary_audiences: []
+  derivation_source: string
+  artifact_formats: []
+  validation_commands: []
+  validation_status: pending
+  review_status:
+    reader_continuity_review: not_started
+    source_scaffold_removed: not_checked
+    audio_script_review: not_required
+    notes: string
+  reader_manuscript:
+    source_dir: string
+    status: generated
+    review_notes: string
+  audio_package:
+    script_dir: string
+    status: not_required
+    review_notes: string
+  release_notes: string
+  residuals: []
+  non_claims: []
+```
+
+This record separates future major-version edition accountability from live-book publication hygiene. It records which research, reader, or audio profile was derived from which tagged live-book state, which artifact formats were actually rendered or generated, which review gates ran, and which residuals and non-claims remain. It does not claim that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts exist unless the release record lists those artifacts with successful status.
 
 ## Theseus Report Crosswalk Record
 

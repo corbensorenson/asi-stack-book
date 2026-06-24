@@ -47,6 +47,16 @@ For each chapter:
 9. Update `appendices/F_changelog.qmd`.
 10. Run validation and render.
 
+## Three-Audience Writing Rule
+
+Write every chapter for three audiences without maintaining three separate books:
+
+- AIs and writing agents use the live-only scaffolding: status tables, drafting guardrails, source queues, claim/evidence states, proof hooks, schemas, and test plans.
+- Human researchers use the complete live book, including matrices, source crosswalks, residuals, and appendices.
+- Interested human readers use generated reader and audio editions derived from the same source after live-only scaffolding is stripped.
+
+The reader-facing spine is the prose outside the headings listed in `editions/release_profiles.json` under `reader_release.strip_headings`. Do not put a caveat that changes the meaning of a claim only inside `Drafting guardrail`, `Source crosswalk`, `Codex test plan`, `Formalization hooks`, or `Claim-source mapping status`, because those sections are removed from reader and audio editions. Keep essential uncertainty in the main prose.
+
 ## Per-Chapter Definition of Done
 
 Each chapter must maintain these sections:
@@ -115,5 +125,22 @@ For release or PDF checks:
 ```bash
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
 ```
+
+For a major-version reader release candidate:
+
+```bash
+python3 scripts/validate_release_profiles.py
+python3 scripts/build_reader_edition.py --check
+python3 scripts/build_reader_edition.py
+```
+
+For an audio-script candidate after the reader manuscript is reviewed:
+
+```bash
+python3 scripts/build_audio_script.py --check
+python3 scripts/build_audio_script.py
+```
+
+These commands generate source workspaces only. Do not claim EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts until the specific render or audio-generation command succeeds and a release record under `release_records/` states the result.
 
 Then commit and push only tracked source, metadata, notes, scripts, and public-safe artifacts.

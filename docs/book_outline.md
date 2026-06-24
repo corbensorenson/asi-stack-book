@@ -2924,11 +2924,12 @@ Draft arc:
 - Mechanism: Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
 - Mechanism: Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
 - Mechanism: Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
+- Mechanism: Maintain three audience surfaces from one source: live AI/research scaffolding, frozen research releases, and stripped reader/audio editions for interested human readers.
 - Mechanism: Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
 - Interface: Tests feed support states.
-- Interface: Releases feed GitHub Pages.
+- Interface: Releases feed GitHub Pages, major-version edition records, reader manuscripts, and audio-script candidates.
 
 Primary invariants:
 
@@ -2941,12 +2942,14 @@ Failure modes to cover:
 - Public site diverges from Quarto source.
 - Outline and manifest drift.
 - Readers cannot tell which claims are speculative.
+- Reader or audio releases accidentally imply that target formats exist before render, review, or audio production.
 
 Draft deliverables:
 
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and public release records.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
 - Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape only; render and validation checks prove publication hygiene, not manuscript quality or claim truth.
+- A three-audience edition profile with live, research, reader, and audio paths; a reader-edition source generator; an audio-script generator; and an edition-release record schema for future EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB accountability.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.
