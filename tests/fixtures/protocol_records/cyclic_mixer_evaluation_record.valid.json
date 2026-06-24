@@ -1,0 +1,15 @@
+{
+  "evaluation_id": "cyclic-mixer-demo-001",
+  "substrate_id": "substrate://multicoil-rope-demo",
+  "structural_invariant": "phase-bank or block-cyclic structure is recorded separately from quality",
+  "proof_or_receipt_boundary": "external proof-linked source note only; no local Circle build",
+  "alias_diagnostics": ["residue and winding must be preserved when needed"],
+  "load_diagnostics": ["record parameter and route-load assumptions"],
+  "parameter_accounting": "parameter count is a separate field from quality and runtime",
+  "hardware_kernel_notes": ["hardware-friendly sizes and kernel costs remain residuals"],
+  "baseline_refs": ["standard RoPE", "learned positions", "wrong-period control"],
+  "metrics_required": ["quality", "runtime", "memory", "failure cases"],
+  "adoption_state": "structural_only",
+  "non_claims": ["no context-length claim", "no model-quality claim", "no runtime claim"],
+  "evidence_refs": ["sources/source_notes/coilra_multicoil_rope.md", "sources/source_notes/rope_position_certifier.md"]
+}

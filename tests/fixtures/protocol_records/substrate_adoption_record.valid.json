@@ -1,0 +1,14 @@
+{
+  "substrate_id": "substrate://temporal-coil-demo",
+  "substrate_kind": "cyclic-search-specialist",
+  "intended_use": "Candidate feature family for future A/B tests",
+  "expected_advantage": "May expose periodic structure when the workload actually contains it",
+  "baseline_refs": ["coil off", "ordinary dense or learned baseline"],
+  "negative_controls": ["wrong-period control", "nonperiodic control"],
+  "proof_boundary": "no local proof or benchmark has been run",
+  "experiment_requirements": ["multiseed readout", "isolated component variants", "promotion metrics"],
+  "falsification_condition": "No improvement against baselines or confounded wins after controls",
+  "adoption_state": "exploratory",
+  "residuals": ["no temporal-coil A/B artifacts imported"],
+  "evidence_refs": ["sources/source_notes/temporal_coil_research.md"]
+}

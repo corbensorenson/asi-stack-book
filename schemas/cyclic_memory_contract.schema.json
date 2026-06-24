@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/cyclic_memory_contract.schema.json",
+  "title": "Cyclic Memory Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "memory_target",
+    "slot_count",
+    "residue_policy",
+    "winding_policy",
+    "freshness_window",
+    "coverage_claim",
+    "recurrence_schedule",
+    "loop_exit_condition",
+    "fallback_attention",
+    "non_claims",
+    "evidence_refs"
+  ],
+  "properties": {
+    "contract_id": { "type": "string", "minLength": 1 },
+    "memory_target": { "type": "string", "minLength": 1 },
+    "slot_count": { "type": "number" },
+    "residue_policy": { "type": "string", "minLength": 1 },
+    "winding_policy": { "type": "string", "minLength": 1 },
+    "freshness_window": { "type": "string", "minLength": 1 },
+    "coverage_claim": { "type": "string", "minLength": 1 },
+    "recurrence_schedule": { "type": "string", "minLength": 1 },
+    "loop_exit_condition": { "type": "string", "minLength": 1 },
+    "fallback_attention": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

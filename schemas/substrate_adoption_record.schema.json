@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/substrate_adoption_record.schema.json",
+  "title": "Substrate Adoption Record",
+  "type": "object",
+  "required": [
+    "substrate_id",
+    "substrate_kind",
+    "intended_use",
+    "expected_advantage",
+    "baseline_refs",
+    "negative_controls",
+    "proof_boundary",
+    "experiment_requirements",
+    "falsification_condition",
+    "adoption_state",
+    "residuals",
+    "evidence_refs"
+  ],
+  "properties": {
+    "substrate_id": { "type": "string", "minLength": 1 },
+    "substrate_kind": { "type": "string", "minLength": 1 },
+    "intended_use": { "type": "string", "minLength": 1 },
+    "expected_advantage": { "type": "string", "minLength": 1 },
+    "baseline_refs": { "type": "array", "items": { "type": "string" } },
+    "negative_controls": { "type": "array", "items": { "type": "string" } },
+    "proof_boundary": { "type": "string", "minLength": 1 },
+    "experiment_requirements": { "type": "array", "items": { "type": "string" } },
+    "falsification_condition": { "type": "string", "minLength": 1 },
+    "adoption_state": {
+      "type": "string",
+      "enum": ["exploratory", "blocked", "canary", "qualified", "retired", "refuted"]
+    },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

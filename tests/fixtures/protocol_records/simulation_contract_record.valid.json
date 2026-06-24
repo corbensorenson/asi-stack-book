@@ -1,0 +1,13 @@
+{
+  "simulation_id": "simulation-contract-demo-001",
+  "claim_id": "simulation-fidelity-and-physical-constraints.core",
+  "scope": "toy contract for checking that simulated evidence has declared boundaries",
+  "fidelity_standard": "conceptual fidelity only; no physical simulation is run",
+  "temporal_semantics": "offline review",
+  "demand_estimate": ["local validation time", "no external compute benchmark"],
+  "capacity_bottlenecks": ["human review", "Quarto render time"],
+  "approximation_liberties": ["uses schema fixture instead of a simulator"],
+  "supported_claim_boundary": "record-shape validation only; no simulation feasibility result",
+  "residual_risks": ["external physical-computation references remain queued"],
+  "evidence_refs": ["sources/source_notes/simulation_scaling.md"]
+}

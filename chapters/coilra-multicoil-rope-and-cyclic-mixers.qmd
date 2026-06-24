@@ -39,58 +39,75 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats cyclic adapters, phase banks, RoPE certifiers, and cyclic mixers as optional substrate candidates. It does not claim better perplexity, longer context, faster runtime, lower memory, training stability, or deployment readiness.
 
 ## Problem
 
-Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
+Position encodings, adapters, route heads, and mixers can contain real cyclic or block-cyclic structure. When they do, proofs and structural diagnostics can prevent confusion about residues, winding, collisions, load, parameter counts, and shift-equivariance. But those structural facts are not model-quality facts.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Coil Attention, Cyclic Memory, and Recurrence Contracts, and makes that pressure operational in a narrower boundary. It closes this part by making the remaining handoff to the next part explicit. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The book needs a place for CoilRA, MultiCoil RoPE, RoPE position distinguishability, circulant mixers, and block-cyclic adapters that neither dismisses them nor overpromotes them.
 
 ## Why existing approaches are insufficient
 
-Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.
+Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated. A passing RoPE certifier is not a context-length result. A circulant mixer law is not a speed result. A lower parameter count is not an adoption proof. Prime or coprime elegance can conflict with hardware-friendly shapes.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated. If `coilra-multicoil-rope-and-cyclic-mixers` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Circle AI Architectures gives the right rule: use cyclic structure where the data, model, or computation really has phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic structure, or geometry-aware structure. Otherwise use ordinary baselines.
 
 ## Core Claim
 
 [coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - CoilRA and MultiCoil RoPE, Proof-Carrying RoPE Position Distinguishability, Circle Calculus AI Contract Suite, Theseus Circle Calculus Transfer Lane, and Circle AI Architectures - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support discussion of cyclic adapter/mixer contracts, exact/discretized phase-bank receipts, residue/winding diagnostics, parameter accounting, baselines, controls, and non-claims. They do not support model improvement claims here.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts. Second, attach alias, load, and parameter-accounting diagnostics before interpreting model behavior. Third, measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
+The mechanism is a Cyclic Mixer Evaluation Record.
 
-- Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.
-- Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.
-- Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
+```{mermaid}
+flowchart LR
+  A["Cyclic substrate candidate"] --> B["Structural invariant"]
+  B --> C["Proof or receipt boundary"]
+  C --> D["Alias / load / parameter diagnostics"]
+  D --> E["Ordinary baselines + controls"]
+  E --> F{"Tradeoff measured?"}
+  F -- "yes" --> G["Canary adoption candidate"]
+  F -- "no" --> H["Structural-only record"]
+  G --> I["Readiness gate"]
+  H --> I
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The record should separate:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- Structural invariant: phase bank, residue/winding, circulant law, block-cyclic route, or relative-position law.
+- Proof or receipt boundary: theorem ids, exact/discretized model, numerical diagnostic, or not run.
+- Diagnostics: alias, load, parameter, hardware shape, kernel cost, and non-default config assumptions.
+- Baselines: dense, LoRA, standard RoPE, learned position, recurrent memory, state-space, wrong-period, and nonperiodic controls where relevant.
+- Metrics: quality, runtime, memory, parameter count, transfer, and failure cases.
+- Adoption state and non-claims.
 
 ## Interfaces
 
-The interface for CoilRA, MultiCoil RoPE, and Cyclic Mixers is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Cyclic Mixer Evaluation Record.
 
-- Semantic representation chapters define when cyclic structure is actually present.
-- Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
-- Resource-economics chapters account for parameters, kernels, memory, and latency.
-- Proof contracts and prototype experiments keep structural facts separate from performance results.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `evaluation_id`
+- `substrate_id`
+- `structural_invariant`
+- `proof_or_receipt_boundary`
+- `alias_diagnostics`
+- `load_diagnostics`
+- `parameter_accounting`
+- `hardware_kernel_notes`
+- `baseline_refs`
+- `metrics_required`
+- `adoption_state`
+- `non_claims`
+- `evidence_refs`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Semantic representation chapters define when cyclic structure is actually present. Routing heads may consume cyclic features only inside declared authority and evidence boundaries. Resource economics accounts for parameters, kernels, memory, and latency. Proof contracts and prototype experiments keep structural facts separate from performance results.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Equivariance is not model quality.
 - Parameter reduction is not an adoption proof.
@@ -98,35 +115,32 @@ The invariants are the conditions that must remain true even when the implementa
 - Hardware-friendly sizes and kernel costs are recorded.
 - Real-valued RoPE claims are separated from exact integer phase-bank claims.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is boundary preservation. A structural receipt can be valuable even when no quality claim is made; it becomes dangerous only when readers mistake it for a broader result.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Mathematical elegance outruns kernels and baselines.
 - Exact finite proofs are overclaimed for real-valued RoPE deployments.
 - Lower parameter count comes with worse quality or runtime.
 - Phase aliases are hidden by residue-only diagnostics.
+- Wrong-period and nonperiodic controls are omitted.
 
-For CoilRA, MultiCoil RoPE, and Cyclic Mixers, mitigation starts by turning each listed failure into a named reviewable artifact. When `Mathematical elegance outruns kernels and baselines` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Each failure should block adoption beyond structural use. The substrate can remain a candidate, but it should not become a default route until ordinary baselines and tradeoff metrics exist.
 
 ## Minimal implementation
 
-A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
+The smallest useful implementation is a cyclic mixer evaluation schema and fixture. It records structural invariant, proof or receipt boundary, alias and load diagnostics, parameter accounting, hardware notes, baselines, required metrics, adoption state, non-claims, and evidence references.
 
-The smallest useful implementation is deliberately narrow: A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+Passing the fixture does not prove a mixer works. It proves the book can represent the adoption boundary without laundering structural facts into performance claims.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| RoPE receipt boundary test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
-| Cyclic mixer baseline matrix test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
-| Residue/winding alias diagnostic | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
-| Parameter-quality-runtime separation test | Probe whether the chapter claim holds under the relevant CoilRA, MultiCoil RoPE, and Cyclic Mixers boundary. | planned; not run |
+| RoPE receipt boundary test | Check that exact/discretized receipts are separated from real-valued and model-quality claims. | planned; not run |
+| Cyclic mixer baseline matrix test | Check that dense, LoRA, RoPE, learned, recurrent, or state-space baselines are named before adoption. | planned; not run |
+| Residue/winding alias diagnostic | Check that alias diagnostics include winding when residue is insufficient. | planned; not run |
+| Parameter-quality-runtime separation test | Check that parameter count, quality, runtime, and memory claims are recorded separately. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -153,6 +167,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-CoilRA, MultiCoil RoPE, and Cyclic Mixers defines one boundary in the ASI Stack: CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption. Its job is to make a capability more governable, not merely more impressive.
+Cyclic structure can be an excellent substrate when the workload actually contains cyclic structure and the evidence boundary is preserved. It is not a general magic advantage.
 
-In v0.2, this chapter gives CoilRA, MultiCoil RoPE, and Cyclic Mixers a complete architectural boundary: position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims. Its next maturity step is to substantiate the boundary through `Semantic representation chapters define when cyclic structure is actually present`, preserve `Equivariance is not model quality`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+CoilRA, MultiCoil RoPE, and cyclic mixers therefore remain optional specialist substrates until structural receipts, baselines, diagnostics, metrics, and failure cases justify adoption.

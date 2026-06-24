@@ -1,0 +1,14 @@
+{
+  "contract_id": "cyclic-memory-demo-001",
+  "memory_target": "toy cyclic memory contract for alias visibility",
+  "slot_count": 8,
+  "residue_policy": "record slot index modulo slot_count",
+  "winding_policy": "record wrap count or provenance when slots are reused",
+  "freshness_window": "fixture only; no KV cache tested",
+  "coverage_claim": "structural coverage is not semantic coverage",
+  "recurrence_schedule": "bounded fixture schedule",
+  "loop_exit_condition": "stop after declared budget or route to residual",
+  "fallback_attention": "ordinary local or content-gated attention",
+  "non_claims": ["no retrieval quality claim", "no speed or memory claim"],
+  "evidence_refs": ["sources/source_notes/coil_attention_memory.md"]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/simulation_contract_record.schema.json",
+  "title": "Simulation Contract Record",
+  "type": "object",
+  "required": [
+    "simulation_id",
+    "claim_id",
+    "scope",
+    "fidelity_standard",
+    "temporal_semantics",
+    "demand_estimate",
+    "capacity_bottlenecks",
+    "approximation_liberties",
+    "supported_claim_boundary",
+    "residual_risks",
+    "evidence_refs"
+  ],
+  "properties": {
+    "simulation_id": { "type": "string", "minLength": 1 },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "scope": { "type": "string", "minLength": 1 },
+    "fidelity_standard": { "type": "string", "minLength": 1 },
+    "temporal_semantics": { "type": "string", "minLength": 1 },
+    "demand_estimate": { "type": "array", "items": { "type": "string" } },
+    "capacity_bottlenecks": { "type": "array", "items": { "type": "string" } },
+    "approximation_liberties": { "type": "array", "items": { "type": "string" } },
+    "supported_claim_boundary": { "type": "string", "minLength": 1 },
+    "residual_risks": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

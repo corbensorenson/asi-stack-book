@@ -38,69 +38,87 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats cyclic memory, sparse coverage, KV freshness, and recurrence schedules as structural contracts. It does not claim retrieval quality, reasoning quality, longer usable context, speed, memory reduction, or model improvement.
 
 ## Problem
 
-Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
+Long context and recurrence can fail in quiet ways: stale reads, duplicate requests, uncovered lags, alias collisions, non-terminating loops, overthinking, or hidden work. Coil Attention and Memory contributes a useful frame: finite cyclic structures can make some of these hazards visible, but visibility is not the same thing as quality.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Circle Calculus and Proof-Carrying AI Contracts, and makes that pressure operational in a narrower boundary. It hands its output to CoilRA, MultiCoil RoPE, and Cyclic Mixers, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The ASI Stack needs memory and attention records that distinguish structural facts from semantic success. A ring buffer can say which slots are live. It cannot prove that the retrieved content is useful. A sparse orbit can say which lags are covered. It cannot prove that arbitrary dependencies were captured.
 
 ## Why existing approaches are insufficient
 
-Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.
+Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work. A residue-only memory slot can hide how many times the address wrapped. A recurrence schedule can reduce active tokens while creating a loop that never exits. A freshness certificate can become false evidence if the task needs semantic coverage rather than slot coverage.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work. If `coil-attention-cyclic-memory-and-recurrence-contracts` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+VCM and Verification Bandwidth reinforce the boundary: context admission, context adequacy, freshness, and verification capacity are different things.
 
 ## Core Claim
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Coil Attention and Memory, Circle Calculus AI Contract Suite, Theseus Circle Calculus Transfer Lane, and Virtual_Context_Memory_v1 - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support source-derived discussion of cyclic memory slots, winding/provenance, KV freshness, sparse coverage, recurrence schedules, loop exits, and explicit non-claims. They do not support learned model-quality improvements in this repository.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures. Second, expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs. Third, compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
+The mechanism is a Cyclic Memory Contract.
 
-- Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures.
-- Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs.
-- Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
+```{mermaid}
+flowchart LR
+  A["Memory or attention request"] --> B["Slot / residue mapping"]
+  B --> C["Winding and provenance"]
+  C --> D["Coverage and freshness checks"]
+  D --> E["Recurrence work budget"]
+  E --> F{"Structural contract passes?"}
+  F -- "yes" --> G["Admit as diagnostic guardrail"]
+  F -- "no" --> H["Residual / fallback attention"]
+  G --> I["Non-claim boundary"]
+  H --> I
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The contract should record:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- Residue and winding, not residue alone.
+- Provenance for reused slots.
+- Freshness and stale-read policy.
+- Sparse coverage and uncovered lags.
+- Recurrence depth, active work, loop exits, and overthinking boundary.
+- Fallback to ordinary, local, global, or content-gated attention.
+- Non-claims about retrieval, reasoning, speed, and quality.
+
+This makes cyclic structure useful as a diagnostic and governance layer without asking it to carry unsupported semantic claims.
 
 ## Interfaces
 
-The interface for Coil Attention, Cyclic Memory, and Recurrence Contracts is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Cyclic Memory Contract.
 
-- VCM context traces expose context adequacy and authority labels.
-- Attention and memory modules consume contract fields as diagnostic guardrails.
-- Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
-- Proof contracts define the finite boundary of the claim.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `contract_id`
+- `memory_target`
+- `slot_count`
+- `residue_policy`
+- `winding_policy`
+- `freshness_window`
+- `coverage_claim`
+- `recurrence_schedule`
+- `loop_exit_condition`
+- `fallback_attention`
+- `non_claims`
+- `evidence_refs`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+VCM context traces expose adequacy and authority labels. Attention and memory modules consume contract fields as guardrails. Benchmark adapters and Theseus transfer lanes decide whether structural facts survive workloads. Proof contracts define only the finite boundary they actually prove.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Residue-only aliasing remains visible.
 - Full structural coverage is not semantic coverage.
 - Recurrence budgets include exits and guardrails.
 - Stale reads fail closed or enter residual escrow.
+- Contract readiness is not downstream task success.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is alias honesty: if a slot can refer to more than one historical item, the record must preserve winding or provenance instead of pretending the residue alone is enough.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Alias hiding.
 - Overthinking or non-terminating recurrence loops.
@@ -108,24 +126,22 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Freshness facts treated as retrieval-quality evidence.
 - No ordinary baseline controls.
 
-For Coil Attention, Cyclic Memory, and Recurrence Contracts, mitigation starts by turning each listed failure into a named reviewable artifact. When `Alias hiding` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Alias hiding should block or mark residual risk. Recurrence loops should hit an exit. Sparse gaps should route to local or content-gated repair. Freshness should remain a structural fact, not a semantic success claim. Missing baselines should block quality promotion.
 
 ## Minimal implementation
 
-A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
+The smallest useful implementation is a cyclic memory contract schema and fixture. It records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback, non-claims, and evidence references.
 
-The smallest useful implementation is deliberately narrow: A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+Passing the fixture does not prove a memory system works. It proves the book can represent the structural claim without blurring it into model quality.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Cyclic alias visibility test | Probe whether the chapter claim holds under the relevant Coil Attention, Cyclic Memory, and Recurrence Contracts boundary. | planned; not run |
-| Sparse coverage gap test | Probe whether the chapter claim holds under the relevant Coil Attention, Cyclic Memory, and Recurrence Contracts boundary. | planned; not run |
-| Recurrence budget and exit test | Probe whether the chapter claim holds under the relevant Coil Attention, Cyclic Memory, and Recurrence Contracts boundary. | planned; not run |
-| Freshness stale-read rejection test | Probe whether the chapter claim holds under the relevant Coil Attention, Cyclic Memory, and Recurrence Contracts boundary. | planned; not run |
+| Cyclic alias visibility test | Check that reused slots record winding or provenance. | planned; not run |
+| Sparse coverage gap test | Check that uncovered lags are recorded and routed to fallback. | planned; not run |
+| Recurrence budget and exit test | Check that recurrence schedules include active work limits and exit conditions. | planned; not run |
+| Freshness stale-read rejection test | Check that stale reads fail closed or enter residual escrow. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -151,6 +167,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Coil Attention, Cyclic Memory, and Recurrence Contracts defines one boundary in the ASI Stack: Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality. Its job is to make a capability more governable, not merely more impressive.
+Cyclic memory contracts make structural facts visible: residue, winding, freshness, coverage, recurrence depth, loop exits, and fallback. They do not prove retrieval or reasoning quality.
 
-In v0.2, this chapter gives Coil Attention, Cyclic Memory, and Recurrence Contracts a complete architectural boundary: memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries. Its next maturity step is to substantiate the boundary through `VCM context traces expose context adequacy and authority labels`, preserve `Residue-only aliasing remains visible`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved.

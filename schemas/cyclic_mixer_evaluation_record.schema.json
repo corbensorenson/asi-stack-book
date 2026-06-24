@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/cyclic_mixer_evaluation_record.schema.json",
+  "title": "Cyclic Mixer Evaluation Record",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "substrate_id",
+    "structural_invariant",
+    "proof_or_receipt_boundary",
+    "alias_diagnostics",
+    "load_diagnostics",
+    "parameter_accounting",
+    "hardware_kernel_notes",
+    "baseline_refs",
+    "metrics_required",
+    "adoption_state",
+    "non_claims",
+    "evidence_refs"
+  ],
+  "properties": {
+    "evaluation_id": { "type": "string", "minLength": 1 },
+    "substrate_id": { "type": "string", "minLength": 1 },
+    "structural_invariant": { "type": "string", "minLength": 1 },
+    "proof_or_receipt_boundary": { "type": "string", "minLength": 1 },
+    "alias_diagnostics": { "type": "array", "items": { "type": "string" } },
+    "load_diagnostics": { "type": "array", "items": { "type": "string" } },
+    "parameter_accounting": { "type": "string", "minLength": 1 },
+    "hardware_kernel_notes": { "type": "array", "items": { "type": "string" } },
+    "baseline_refs": { "type": "array", "items": { "type": "string" } },
+    "metrics_required": { "type": "array", "items": { "type": "string" } },
+    "adoption_state": {
+      "type": "string",
+      "enum": ["structural_only", "exploratory", "canary", "qualified", "retired", "refuted"]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

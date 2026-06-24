@@ -14,6 +14,8 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/compressed_artifact_record.schema.json`
 - `schemas/compression_receipt.schema.json`
 - `schemas/costed_route_record.schema.json`
+- `schemas/cyclic_memory_contract.schema.json`
+- `schemas/cyclic_mixer_evaluation_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
 - `schemas/context_abi_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
@@ -37,8 +39,10 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/semantic_atom.schema.json`
 - `schemas/semantic_node_record.schema.json`
 - `schemas/semantic_page_certificate.schema.json`
+- `schemas/simulation_contract_record.schema.json`
 - `schemas/specialist_registry_record.schema.json`
 - `schemas/stable_capability_field.schema.json`
+- `schemas/substrate_adoption_record.schema.json`
 - `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/moecot_orchestration_record.schema.json`
@@ -249,6 +253,86 @@ resource_budget_record:
 ```
 
 This record turns budget pressure into a governed decision. It ties value, risk, capacity, cost, verification tax, quality predicates, safety gates, dispatch or escalation, residuals, and evidence into one auditable artifact.
+
+## Simulation Contract Record
+
+```yaml
+simulation_contract_record:
+  simulation_id: string
+  claim_id: string
+  scope: string
+  fidelity_standard: string
+  temporal_semantics: string
+  demand_estimate: []
+  capacity_bottlenecks: []
+  approximation_liberties: []
+  supported_claim_boundary: string
+  residual_risks: []
+  evidence_refs: []
+```
+
+This record bounds simulation claims by scope, fidelity, temporal semantics, demand, bottlenecks, approximations, supported claim boundary, residual risks, and evidence references.
+
+## Substrate Adoption Record
+
+```yaml
+substrate_adoption_record:
+  substrate_id: string
+  substrate_kind: string
+  intended_use: string
+  expected_advantage: string
+  baseline_refs: []
+  negative_controls: []
+  proof_boundary: string
+  experiment_requirements: []
+  falsification_condition: string
+  adoption_state: exploratory
+  residuals: []
+  evidence_refs: []
+```
+
+This record keeps optional mathematical, search, cyclic, and representation substrates from becoming core architecture before baselines, controls, proof boundaries, experiment requirements, falsification conditions, evidence, and residuals are visible.
+
+## Cyclic Memory Contract
+
+```yaml
+cyclic_memory_contract:
+  contract_id: string
+  memory_target: string
+  slot_count: 0
+  residue_policy: string
+  winding_policy: string
+  freshness_window: string
+  coverage_claim: string
+  recurrence_schedule: string
+  loop_exit_condition: string
+  fallback_attention: string
+  non_claims: []
+  evidence_refs: []
+```
+
+This record captures finite cyclic-memory, sparse-coverage, freshness, and recurrence facts without converting them into retrieval, reasoning, speed, memory, or quality claims.
+
+## Cyclic Mixer Evaluation Record
+
+```yaml
+cyclic_mixer_evaluation_record:
+  evaluation_id: string
+  substrate_id: string
+  structural_invariant: string
+  proof_or_receipt_boundary: string
+  alias_diagnostics: []
+  load_diagnostics: []
+  parameter_accounting: string
+  hardware_kernel_notes: []
+  baseline_refs: []
+  metrics_required: []
+  adoption_state: structural_only
+  non_claims: []
+  evidence_refs: []
+```
+
+This record separates cyclic adapter, RoPE, phase-bank, and mixer structural facts from quality, runtime, memory, context-length, and deployment claims, while requiring baselines and tradeoff metrics before adoption.
 
 ## Specialist Registry Record
 
