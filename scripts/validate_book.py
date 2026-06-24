@@ -146,6 +146,16 @@ def validate_structure(source_ids: set[str]) -> list[dict]:
         for source_id in chapter.get("source_ids", []):
             if source_id not in source_ids:
                 unknown_sources.append((chapter_id, source_id))
+        chapter_source_ids = set(chapter.get("source_ids", []))
+        for index, mapping in enumerate(chapter.get("claim_source_mappings", [])):
+            if not isinstance(mapping, dict):
+                fail(f"{chapter_id}: claim_source_mappings[{index}] must be an object.")
+            mapping_source = mapping.get("source_id")
+            if mapping_source not in chapter_source_ids:
+                fail(f"{chapter_id}: claim_source_mappings[{index}] uses unassigned source {mapping_source!r}.")
+            for field in ("mapped_support", "limits"):
+                if not isinstance(mapping.get(field), str) or not mapping[field].strip():
+                    fail(f"{chapter_id}: claim_source_mappings[{index}] missing non-empty {field}.")
 
     if duplicate_ids:
         fail(f"Duplicate chapter IDs in book_structure.json: {sorted(duplicate_ids)}")

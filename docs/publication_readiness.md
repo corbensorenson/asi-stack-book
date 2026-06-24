@@ -21,6 +21,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, so chapter-level loading queues are now complete even though claim-level mapping remains incomplete.
+- Appendix C now supports exact claim-source mappings and records the first mapped claim for the evidence-discipline chapter without promoting support state.
 - All 52 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.

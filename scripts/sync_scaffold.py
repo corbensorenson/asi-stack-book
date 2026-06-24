@@ -214,6 +214,19 @@ def source_ids_for(chapter: dict) -> list[str]:
     return list(dict.fromkeys(chapter.get("source_ids", [])))
 
 
+def claim_source_mapping_text(chapter: dict) -> str:
+    mappings = chapter.get("claim_source_mappings", [])
+    if not mappings:
+        return "No exact claim-level source-note mapping recorded yet."
+    parts = []
+    for mapping in mappings:
+        source_id = mapping.get("source_id", "")
+        support = mapping.get("mapped_support", "")
+        limits = mapping.get("limits", "")
+        parts.append(f"`{source_id}`: {support} Limits: {limits}")
+    return "; ".join(parts)
+
+
 def write_chapter_stub(chapter: dict, records: list[dict], rewrite: bool = False) -> bool:
     path = ROOT / chapter["file"]
     if path.exists() and not rewrite:
@@ -503,9 +516,15 @@ def write_claim_matrix(structure: dict) -> None:
             )
             open_gap = "Create missing source notes, then map exact claim support and tests before raising support state."
         else:
+            claim_mappings = chapter.get("claim_source_mappings", [])
             current_evidence = (
                 f"Source notes available for all {len(chapter_source_ids)} assigned sources; "
-                "support remains `argument` until exact claim-to-source mapping or tests justify promotion."
+                + (
+                    f"{len(claim_mappings)} exact claim-level source-note mappings recorded; "
+                    if claim_mappings
+                    else ""
+                )
+                + "support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement."
             )
             if len(chapter_mapped_sources) == len(chapter_source_ids):
                 source_mapping = (
@@ -520,11 +539,15 @@ def write_claim_matrix(structure: dict) -> None:
                     f"{len(chapter_mapped_sources)} of {len(chapter_source_ids)} assigned source notes explicitly list this chapter; "
                     f"chapter-listing gap for {', '.join(f'`{source_id}`' for source_id in missing_mapping)}."
                 )
-            open_gap = "Map the exact claim text to specific source-note mechanisms/evidence and define or run tests before raising support state."
+            if claim_mappings:
+                open_gap = "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state."
+            else:
+                open_gap = "Map the exact claim text to specific source-note mechanisms/evidence and define or run tests before raising support state."
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
+        claim_mapping = claim_source_mapping_text(chapter)
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(open_gap)} |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(claim_mapping)} | {qmd_escape(open_gap)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
@@ -536,8 +559,8 @@ Each claim has two separate classifications: a claim label that describes what k
 
 No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
-| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Open gap |
-|---|---|---|---|---|---|---|---|---|
+| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap |
+|---|---|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
 
 ## Claim Labels

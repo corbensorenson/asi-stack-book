@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records a claim-level source-note map for this chapter's core claim, but the support state remains argument until an evidence transition is accepted."
   - "The evidence_transition_record fixture and evidence-state Lean proofs validate narrow transition surfaces only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,7 +62,16 @@ The missing object is the evidence transition. If a claim moves from `argument` 
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
-The claim remains at `argument` support. Benchmaxxing supplies benchmark lifecycle discipline, Spinoza supplies downgrade and proof-carrying claim discipline, VIEA supplies artifact and claim ledgers, UAT supplies bounded adversarial review, and Verification Bandwidth warns that loaded context is not the same as verified context.
+The claim remains at `argument` support. Appendix C now records a claim-level source-note map for the support this chapter draws from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. That map makes the evidence bridge explicit, but it does not by itself promote the claim. Promotion still requires an accepted evidence transition, source-passage review, or executed test/proof artifact with declared scope.
+
+| Source | Claim-level contribution | Limit |
+|---|---|---|
+| `benchmaxxing` | Benchmark lifecycle, ledgers, anti-Goodhart safeguards, regression duties, and residual accounting show why benchmark evidence must be scoped before moving a claim. | No local benchmark result or permanent intelligence metric is proven. |
+| `spinoza` | Claim tiers, belief revision, contradiction handling, and downgrade/block behavior support explicit support states and failed-verification demotion. | Open-domain autoformalization and arbitrary theorem validity are not proven. |
+| `viea` | Artifact graphs, claim/verification ledgers, residuals, feedback, benchmarks, and durability rules support durable claim/evidence records. | No completed VIEA deployment or runtime benchmark is proven. |
+| `uat` | Retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and sign-off support review-aware proposition states. | UAT is not treated as a validated truth-discovery system. |
+| `coherence_exchange` | Verified Epistemic Units, verification supply chains, contestability, fork, exit, and audit support structured claim/evidence objects. | Speculative epistemic-liquidity framing is not implementation evidence. |
+| `verification_bandwidth` | The gap between context length and verification workspace supports the rule that source ingestion or context loading is not claim verification. | Contradiction-rate tests and proposed theory remain unrun here. |
 
 ## Mechanism
 

@@ -392,6 +392,38 @@
           "problem": "The living book needs a shared language for what kind of claim is being made and what currently supports it.",
           "insufficient": "Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.",
           "core_claim": "Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.",
+          "claim_source_mappings": [
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Benchmark lifecycle, ledgers, anti-Goodhart safeguards, wall diagnosis, regression duties, and residual accounting support the rule that benchmark evidence must be scoped before it moves a claim.",
+              "limits": "Does not prove any benchmark result in this repository or justify treating a benchmark score as permanent intelligence evidence."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Proof/citation/procedure-carrying claim tiers, belief revision, contradiction handling, and downgrade/block behavior support explicit claim labels, support states, and failed-verification demotion.",
+              "limits": "Does not prove open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Artifact graphs, claim and verification ledgers, residuals, feedback, benchmarks, and the rule of durability support keeping claims, evidence, failures, and regression coverage as durable records.",
+              "limits": "Does not prove a completed VIEA deployment or any benchmark/runtime result in this repository."
+            },
+            {
+              "source_id": "uat",
+              "mapped_support": "Retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and final sign-off support the distinction between verified, inferred, unsupported, and review-required propositions.",
+              "limits": "Does not prove the UAT protocol discovers novel truth or that its thresholds are validated here."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Verified Epistemic Units, verification supply chains, contestability, fork, exit, and audit language support structured claim/evidence objects and governance-visible review paths.",
+              "limits": "Speculative economic or epistemic-liquidity framing is not treated as implemented economics or external corroboration."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "The distinction between context length and verification workspace supports the rule that source ingestion or large context does not itself verify a claim without adequacy, contradiction, and coverage checks.",
+              "limits": "Does not prove the proposed verification-bandwidth tests or contradiction-rate claims have been run here."
+            }
+          ],
           "mechanism": [
             "Use Appendix C as the claim ledger.",
             "Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.",

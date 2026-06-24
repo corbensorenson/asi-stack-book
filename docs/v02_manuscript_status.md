@@ -76,6 +76,7 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
 - Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage, 100 are implemented formal-invariant Lean candidates, and 4 remain planned across research routes.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 389 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are exact source-to-claim and claim-to-mechanism mapping work, not support-state promotions.
+- Appendix C now includes a generated claim-source mapping column, with the first exact source-note map recorded for `evidence-states-and-claim-discipline.core`; the claim remains at `argument` support until an accepted evidence transition, passage review, or executed test/proof artifact justifies promotion.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -83,7 +84,7 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 
 ## Still Missing for v1.0
 
-- Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
+- Most source-to-claim mappings still need explicit claim-level mapping from the source notes before support states can be promoted; the evidence-discipline core claim is the first mapped example.
 - Source-note coverage and chapter-listing coverage are no longer the main blockers for assigned sources; exact source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
 - Some Lean proof targets remain planned or triaged as research targets; 100 of 104 proof targets are currently marked implemented.
 - Artifact-by-artifact audits for the remaining planned proof targets still need to identify the next research, schema, or Lean artifact for each target.
@@ -126,4 +127,4 @@ git diff --check
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html
 ```
 
-Quarto rendered 61 inputs and wrote `_site/index.html`.
+Quarto rendered 62 inputs and wrote `_site/index.html`.
