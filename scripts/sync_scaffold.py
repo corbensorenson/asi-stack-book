@@ -482,6 +482,8 @@ def write_claim_matrix(structure: dict) -> None:
             source_id
             for source_id in noted_sources
             if f"`{chapter['id']}`" in source_note_texts.get(source_id, "")
+            or chapter["id"] in source_note_texts.get(source_id, "")
+            or chapter["title"] in source_note_texts.get(source_id, "")
         ]
         if not chapter_source_ids:
             current_evidence = "No assigned source records yet."
