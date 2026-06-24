@@ -17,6 +17,9 @@ TODAY = "2026-06-24"
 
 STRUCTURE_PATH = ROOT / "book_structure.json"
 SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
+SOURCE_NOTES = ROOT / "sources" / "source_notes"
+CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
+CACHE_MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
 
 
 GLOSSARY = [
@@ -76,6 +79,30 @@ def read_inventory() -> list[dict]:
     if not isinstance(records, list):
         raise TypeError("sources/source_inventory.json must contain a list")
     return records
+
+
+def read_optional_json(path: Path, default: object) -> object:
+    if not path.exists():
+        return default
+    return read_json(path)
+
+
+def read_connector_records() -> dict[str, dict]:
+    data = read_optional_json(CONNECTOR_READINESS, {"records": {}})
+    if not isinstance(data, dict):
+        return {}
+    records = data.get("records", {})
+    return records if isinstance(records, dict) else {}
+
+
+def read_cache_records() -> dict[str, dict]:
+    data = read_optional_json(CACHE_MANIFEST, {"records": []})
+    if not isinstance(data, dict):
+        return {}
+    records = data.get("records", [])
+    if not isinstance(records, list):
+        return {}
+    return {str(record.get("id", "")): record for record in records if isinstance(record, dict)}
 
 
 def read_structure() -> dict:
@@ -299,14 +326,46 @@ def chapter_assignments(structure: dict) -> dict[str, list[str]]:
     return assignments
 
 
+def source_status(record: dict, connector_records: dict[str, dict], cache_records: dict[str, dict]) -> str:
+    source_id = str(record.get("id", ""))
+    has_note = (SOURCE_NOTES / f"{source_id}.md").exists()
+    connector = source_id in connector_records
+    cache_status = str(cache_records.get(source_id, {}).get("status", ""))
+    url = str(record.get("url", ""))
+
+    if has_note and connector:
+        return "source note available; connector-readable; raw text not published"
+    if has_note:
+        return "source note available; raw/cache text not published"
+    if connector:
+        return "connector-readable; source note pending"
+    if "github.com/" in url:
+        return "public project source; source note pending"
+    if cache_status == "cached_existing":
+        return "local raw cache available; source note pending"
+    if cache_status == "connector_required":
+        return "connector required; source note pending"
+    return "inventory-recorded; source note pending"
+
+
+def bibliography_status(record: dict, connector_records: dict[str, dict], cache_records: dict[str, dict]) -> str:
+    status = source_status(record, connector_records, cache_records)
+    if status.startswith("source note available"):
+        return "source note available; citation not normalized"
+    return f"{status}; citation not normalized"
+
+
 def write_source_matrix(records: list[dict], structure: dict) -> None:
     assignments = chapter_assignments(structure)
+    connector_records = read_connector_records()
+    cache_records = read_cache_records()
     rows = []
     for record in records:
         original_targets = ", ".join(str(target).zfill(2) for target in record.get("chapter_targets", []))
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
+        status = source_status(record, connector_records, cache_records)
         rows.append(
-            "| `{id}` | {title} | `{priority}` | `{layer}` | {current_targets} | {original_targets} | [source]({url}) | inventory-recorded; text not ingested | {notes} |".format(
+            "| `{id}` | {title} | `{priority}` | `{layer}` | {current_targets} | {original_targets} | [source]({url}) | {status} | {notes} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 priority=qmd_escape(record.get("priority", "")),
@@ -314,6 +373,7 @@ def write_source_matrix(records: list[dict], structure: dict) -> None:
                 current_targets=qmd_escape(current_targets),
                 original_targets=qmd_escape(original_targets),
                 url=qmd_escape(record.get("url", "")),
+                status=qmd_escape(status),
                 notes=qmd_escape(record.get("notes", "")),
             )
         )
@@ -321,7 +381,7 @@ def write_source_matrix(records: list[dict], structure: dict) -> None:
 
 This matrix is generated from `sources/source_inventory.json` and dynamic chapter assignments in `book_structure.json`.
 
-Source text status is deliberately conservative: the records are inventoried, but the source documents themselves have not yet been exported, ingested, summarized, or verified in this repository.
+Source status is deliberately conservative. A source note means the source has been mined for drafting context; it does not by itself promote any chapter claim above `argument`.
 
 | ID | Title | Priority | Layer | Current dynamic assignments | Original packet targets | URL | Current status | Notes |
 |---|---|---|---|---|---|---|---|---|
@@ -332,17 +392,21 @@ Source text status is deliberately conservative: the records are inventoried, bu
 
 def write_bibliography(records: list[dict], structure: dict) -> None:
     assignments = chapter_assignments(structure)
+    connector_records = read_connector_records()
+    cache_records = read_cache_records()
     rows = []
     for record in records:
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
+        status = bibliography_status(record, connector_records, cache_records)
         rows.append(
-            "| `{id}` | {title} | `{priority}` | `{layer}` | [source]({url}) | {current_targets} | inventory-recorded; not yet citation-normalized |".format(
+            "| `{id}` | {title} | `{priority}` | `{layer}` | [source]({url}) | {current_targets} | {status} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 priority=qmd_escape(record.get("priority", "")),
                 layer=qmd_escape(record.get("layer", "")),
                 url=qmd_escape(record.get("url", "")),
                 current_targets=qmd_escape(current_targets),
+                status=qmd_escape(status),
             )
         )
     text = f"""# Bibliography and Source Corpus

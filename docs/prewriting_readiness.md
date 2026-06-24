@@ -4,6 +4,8 @@ Last updated: 2026-06-24
 
 This file records the repo changes needed before starting a goal to draft the full book.
 
+The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
+
 ## Completed Readiness Work
 
 - Backbone source notes now exist for VIEA, SCF, PlanForge, Talos, VCM, Spinoza, Alignment Field, MoECOT, and connector-resolved variants.

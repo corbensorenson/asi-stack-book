@@ -2807,11 +2807,11 @@ Appendix H is the curated, public-safe home for conversation-mined author intent
 
 | Item | Current handling |
 |---|---|
-| `moecot` | Must-load authenticated source before MoECOT-specific source-derived claims. Local `moecot_md.bin` is an auth-gate placeholder, not usable source text. |
-| `vcm_editable` | Connector text was available in the working session; create a durable source note or cache-safe mined summary before promoting claims. |
-| `coherence_exchange` | Connector fetched in this pass; treat as speculative synthesis and create source note before claim promotion. |
-| `road_to_agi` | Local cache is an auth-gate placeholder; use Drive connector or keep roadmap claims at argument level. |
-| `coilmoecot` | Local cache is an auth-gate placeholder; use Temporal Coil Research plus connector access until source text is available. |
+| `moecot` | Authenticated connector access and a source note exist; MoECOT-specific claims still need explicit Appendix C mapping before support-state promotion. |
+| `vcm_editable` | Authenticated connector access and a source note exist; mine for VCM terminology and external-literature candidates without treating references as cited until recorded. |
+| `coherence_exchange` | Authenticated connector access and a source note exist; treat speculative synthesis as bounded design context unless claims are separately supported. |
+| `road_to_agi` | Authenticated connector access and a source note exist; benchmark claims remain source-reported until artifacts are independently ingested or reproduced. |
+| `coilmoecot` | Authenticated connector access and a source note exist; treat as design/spec context, not performance evidence. |
 | Field of God AI Constitution | Recovered as `field_of_god_ai_constitution` in the local/public Theseus repository; create a source note before promoting claims beyond `argument`. |
 | Circle Calculus full paper set | Recovered in `/Users/corbensorenson/Documents/circle math` and public `circle-calculus`; source records now route proof contracts, RoPE, coil memory, cyclic mixers, and proof-carrying computation into precise chapters. |
 | Genesis Engine / Genesis Foundry | Search Drive later; current proxies are GenesisCode, VIEA, Cognitive Compilation, and MoECOT-related docs. |

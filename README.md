@@ -31,6 +31,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 | [Live book](https://corbensorenson.github.io/asi-stack-book/) | Rendered public site. |
 | [docs/book_outline.md](docs/book_outline.md) | Cohesive full-book outline and proof target source of truth. |
 | [docs/prewriting_readiness.md](docs/prewriting_readiness.md) | Launch gate for a full-book drafting goal. |
+| [docs/full_book_writing_goal.md](docs/full_book_writing_goal.md) | Suggested wording for the full-book writing goal. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
