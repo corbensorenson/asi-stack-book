@@ -46,89 +46,100 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+MoECOT is treated here as implementation-reference context, not as reproduced runtime evidence. Connector access and source notes establish that the whitepaper is readable and relevant. They do not establish local benchmark results, production safety, or current implementation readiness.
 
 ## Problem
 
-The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.
+The book needs at least one concrete runtime shape for the architecture it describes. Otherwise the stack can become a set of persuasive layers without a believable operational surface. A governed ASI stack needs a compact orchestrator, specialist lanes, control-plane gates, ledgers, replay, handoff, and readiness boundaries that line up with the rest of the book.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Readiness Gates, Residual Escrow, and Quarantine, and makes that pressure operational in a narrower boundary. It hands its output to Compact Generative Systems and Residual Honesty, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+MoECOT is the current implementation-reference lane for that shape. Its source note describes a governed, skill-native, low-parameter orchestration architecture with a compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, and explicit limitations.
 
 ## Why existing approaches are insufficient
 
-A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
+A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts. A named implementation can fail in the opposite direction: branding can stand in for evidence, source-reported benchmarks can be mistaken for reproduced tests, and runtime mechanisms can drift away from the architectural invariants they were meant to instantiate.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts. If `moecot-runtime-and-multi-core-orchestration` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+This chapter holds the middle position. MoECOT should be mapped to the stack as a crosswalk of runtime records and open evidence gaps. It should not be used as a shortcut around claim discipline.
 
 ## Core Claim
 
 [moecot-runtime-and-multi-core-orchestration.core, label: Design rationale, support: argument] MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Octopus Router Architecture, Ratcheting Modular Intelligence, Benchmaxxing: The Performance Ratchet, BeastBrain Cognitive Architecture, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The MoECOT source note supports implementation-reference discussion of compact orchestration, specialist lanes, control-plane ledgers, readiness gates, replay, and handoff. It does not promote benchmark, safety, or deployment claims without inspected artifacts or reproduced runs.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts. Second, keep direct MoECOT claims conservative until the primary source is ingested. Third, map MoECOT mechanisms to other stack layers rather than making it a separate silo.
+The mechanism is a MoECOT Orchestration Record that binds a run to its compact orchestrator, route head, specialist cores, control-plane gates, ledgers, replay references, handoff state, and residuals.
 
-- Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts.
-- Keep direct MoECOT claims conservative until the primary source is ingested.
-- Map MoECOT mechanisms to other stack layers rather than making it a separate silo.
+```{mermaid}
+flowchart LR
+  A["Command or task"] --> B["Compact orchestrator"]
+  B --> C["Route head"]
+  C --> D["Specialist cores"]
+  D --> E["Control-plane gates"]
+  E --> F["Run, task, and replay ledgers"]
+  F --> G["Handoff or delivery"]
+  G --> H["Residuals and readiness updates"]
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The runtime should not be one all-powerful agent. The compact orchestrator coordinates; the route head selects; specialist lanes do bounded work; control-plane gates fail closed; ledgers preserve evidence; replay tests the path; handoff makes ownership explicit; readiness records decide whether future routes should trust the same lane.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+MoECOT also supplies a useful negative pattern for the book: an implementation-reference source must not be treated as proof merely because it is concrete. It can point to the records the book needs, identify missing artifacts, and motivate prototypes, while support states remain conservative until evidence is imported or reproduced.
 
 ## Interfaces
 
-The interface for MoECOT Runtime and Multi-Core Orchestration is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the MoECOT Orchestration Record.
 
-- Routing selects cores.
-- SCFs govern replacement.
-- Evidence and replay ledgers evaluate runtime changes.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `run_id`
+- `command_ref`
+- `orchestrator_id`
+- `route_head`
+- `specialist_cores`
+- `control_plane_gates`
+- `ledger_refs`
+- `readiness_gate_refs`
+- `replay_refs`
+- `handoff_refs`
+- `promotion_blockers`
+- `residuals`
+- `source_claim_state`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Planning emits the command or task. Routing selects specialist cores. Execution runs typed jobs and adapters. Evidence and replay ledgers evaluate runtime changes. SCFs govern whether a runtime lane can become a default route or replacement implementation. Claim discipline decides whether a MoECOT statement is source-reported, locally reproduced, or still a design argument.
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
-- MoECOT claims stay at argument level until source notes exist.
+- MoECOT claims stay at `argument` unless artifacts justify promotion.
 - Implementation evidence is separated from design argument.
 - Runtime promotion follows readiness gates.
+- Control-plane gates fail closed when evidence, authority, or replay is missing.
+- A source-reported benchmark artifact is not a reproduced book result.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The key invariant is traceability across layers. A runtime route must be traceable to a command, specialist selection, authority envelope, readiness decision, ledger, replay status, and residual set. Without that trace, the runtime is not serving the stack; it is bypassing it.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Overclaiming unavailable source content.
 - Treating implementation branding as architecture proof.
 - Losing cross-layer traceability.
+- Specialist lanes mutating authority without control-plane approval.
+- Replaying happy paths while residual paths are ignored.
 
-For MoECOT Runtime and Multi-Core Orchestration, mitigation starts by turning each listed failure into a named reviewable artifact. When `Overclaiming unavailable source content` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Overclaiming is contained by claim labels and support states. Branding is contained by schemas, fixtures, and reproducible commands. Traceability loss is contained by orchestration records. Authority mutation is contained by control-plane gates and SCF replacement transactions. Replay bias is contained by residual escrow and regression suites.
 
 ## Minimal implementation
 
-A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables.
+The smallest useful implementation is an orchestration schema and fixture that records the runtime crosswalk without pretending a runtime was executed.
 
-The smallest useful implementation is deliberately narrow: A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, command reference, orchestrator, route head, cores, gates, ledgers, readiness gates, replay, handoff, blockers, residuals, and source-claim state. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| MoECOT source-ingestion gate | Probe whether the chapter claim holds under the relevant MoECOT Runtime and Multi-Core Orchestration boundary. | planned; not run |
-| Runtime crosswalk completeness test | Probe whether the chapter claim holds under the relevant MoECOT Runtime and Multi-Core Orchestration boundary. | planned; not run |
-| Readiness/replay mapping review | Probe whether the chapter claim holds under the relevant MoECOT Runtime and Multi-Core Orchestration boundary. | planned; not run |
+| MoECOT source-ingestion gate | Check that MoECOT-specific claims cite inspected source notes or imported artifacts before promotion. | planned; not run |
+| Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
+| Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -162,6 +173,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-MoECOT Runtime and Multi-Core Orchestration defines one boundary in the ASI Stack: MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined. Its job is to make a capability more governable, not merely more impressive.
+MoECOT gives the book a runtime reference without letting runtime specificity dilute evidence discipline. It shows how a compact orchestrator, route head, specialist cores, fail-closed gates, ledgers, replay, and handoff can fit the stack.
 
-In v0.2, this chapter gives MoECOT Runtime and Multi-Core Orchestration a complete architectural boundary: the book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion. Its next maturity step is to substantiate the boundary through `Routing selects cores`, preserve `MoECOT claims stay at argument level until source notes exist`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter's job is to make that implementation lane useful and honest: concrete enough to guide prototypes, bounded enough to avoid source overclaiming, and structured enough for future artifacts to promote claims only when they earn it.

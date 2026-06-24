@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/readiness_gate_record.schema.json",
+  "title": "Readiness Gate Record",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "target_id",
+    "target_kind",
+    "current_state",
+    "candidate_state",
+    "gate_evidence",
+    "regression_results",
+    "residual_escrow",
+    "authority_scope",
+    "promotion_blockers",
+    "quarantine_conditions",
+    "decision",
+    "review_refs",
+    "next_review_trigger"
+  ],
+  "properties": {
+    "gate_id": { "type": "string", "minLength": 1 },
+    "target_id": { "type": "string", "minLength": 1 },
+    "target_kind": {
+      "type": "string",
+      "enum": ["specialist", "tool", "field_implementation", "runtime_lane", "benchmark", "workflow"]
+    },
+    "current_state": {
+      "type": "string",
+      "enum": ["candidate", "shadow", "canary", "qualified", "default", "quarantined", "retired"]
+    },
+    "candidate_state": {
+      "type": "string",
+      "enum": ["shadow", "canary", "qualified", "default", "quarantined", "retired"]
+    },
+    "gate_evidence": { "type": "array", "items": { "type": "string" } },
+    "regression_results": { "type": "array", "items": { "type": "string" } },
+    "residual_escrow": { "type": "array", "items": { "type": "string" } },
+    "authority_scope": { "type": "string", "minLength": 1 },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+    "quarantine_conditions": { "type": "array", "items": { "type": "string" } },
+    "decision": {
+      "type": "string",
+      "enum": ["reject", "quarantine", "shadow", "canary", "qualify", "default", "retire", "rerun"]
+    },
+    "review_refs": { "type": "array", "items": { "type": "string" } },
+    "next_review_trigger": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

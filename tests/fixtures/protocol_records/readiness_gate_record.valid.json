@@ -1,0 +1,16 @@
+{
+  "gate_id": "readiness-gate-demo-001",
+  "target_id": "specialist://source-routing-demo",
+  "target_kind": "specialist",
+  "current_state": "shadow",
+  "candidate_state": "canary",
+  "gate_evidence": ["schema fixture exists", "source-note boundaries are named"],
+  "regression_results": ["support-state promotion remains blocked without evidence"],
+  "residual_escrow": ["no local routing benchmark has been run"],
+  "authority_scope": "read_public_book_sources_only",
+  "promotion_blockers": ["no implemented routing accuracy test"],
+  "quarantine_conditions": ["attempts external action without approval", "promotes source-reported claims as reproduced results"],
+  "decision": "canary",
+  "review_refs": ["chapters/readiness-gates-residual-escrow-and-quarantine.qmd"],
+  "next_review_trigger": "Implement routing and residual escrow tests before stronger promotion."
+}

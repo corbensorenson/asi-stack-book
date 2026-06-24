@@ -1,0 +1,14 @@
+{
+  "decision_id": "route-demo-001",
+  "task_id": "task://draft-routing-chapter",
+  "capability_request": "Map routing-source notes into a public-safe chapter mechanism.",
+  "candidate_specialists": ["specialist://source-routing-demo", "specialist://general-drafting-demo"],
+  "selected_specialist": "specialist://source-routing-demo",
+  "route_shape": "single",
+  "authority_check": "passed",
+  "readiness_check": "ready",
+  "cost_quality_reason": "The selected specialist is bounded to source-note lookup and preserves support-state discipline.",
+  "fallback_route": "residual://manual-source-crosswalk-review",
+  "residuals": ["fixture does not execute a learned router"],
+  "ledger_refs": ["tests/fixtures/protocol_records/specialist_registry_record.valid.json"]
+}

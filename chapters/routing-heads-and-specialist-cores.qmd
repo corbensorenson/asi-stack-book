@@ -42,89 +42,126 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter is architecture argument grounded in the available source notes. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus and MoECOT supply implementation-reference pressure; no local specialist-routing benchmark or runtime reproduction has been run in this repository for this chapter.
 
 ## Problem
 
-The architecture needs to allocate cognition across specialists rather than force one system to do every task.
+The stack cannot route every task to one general cognitive core and still claim local authority, local memory, readiness-aware selection, or clean rollback. The more tasks the system accepts, the more it needs a way to say which bounded capability should act, what it is allowed to see, what tools it may use, what evidence qualifies it, and where the result should go if the route fails.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to Readiness Gates, Residual Escrow, and Quarantine, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The Octopus Router source frames this as a resident head/router with dynamically selected specialist arms. RMI adds the ratchet: specialist attempts, logs, residuals, benchmark pressure, regression preservation, and lifecycle discipline. In the ASI Stack, the same idea becomes the routing boundary between planning and capability execution.
 
 ## Why existing approaches are insufficient
 
-Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.
+Monolithic scaling hides the route. Static tool lists hide the capability boundary. Prompt-only orchestration can choose a tool, but it rarely records why that tool was adequate, which authority envelope applied, which local memory was in scope, how readiness was checked, or what fallback will be used when the result is inadequate.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing. If `routing-heads-and-specialist-cores` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+This matters because routing is not just a performance problem. It is also a governance problem. A specialist that can read a private memory, call a tool, mutate an artifact, or advise a high-impact decision is exercising authority. The router therefore needs a registry and a decision record, not just a confidence score.
 
 ## Core Claim
 
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Octopus Router Architecture, Ratcheting Modular Intelligence, BeastBrain Cognitive Architecture, Cognitive Loop Closure, and Ratcheting Generative Systems - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes justify source-derived discussion of router heads, specialist arms, permission envelopes, memory routing, residual-aware routing, and arm lifecycle, but they do not by themselves prove that a particular router is safe or empirically superior.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, register specialists with capabilities, costs, readiness, authority, and memories. Second, route tasks to the smallest adequate specialist. Third, fallback or escalate when confidence and readiness are insufficient.
+The mechanism is a two-record boundary: a Specialist Registry Record describes what a specialist is allowed to do, and a Routing Decision Record records why the router selected it for a task.
 
-- Register specialists with capabilities, costs, readiness, authority, and memories.
-- Route tasks to the smallest adequate specialist.
-- Fallback or escalate when confidence and readiness are insufficient.
+```{mermaid}
+flowchart LR
+  A["Plan node"] --> B["Capability request"]
+  B --> C["Specialist registry"]
+  C --> D["Authority envelope check"]
+  D --> E["Readiness state check"]
+  E --> F["Cost and quality predicate"]
+  F --> G{"Adequate route?"}
+  G -- "yes" --> H["Selected specialist core"]
+  G -- "no" --> I["Fallback, escalation, or residual"]
+  H --> J["Routing decision ledger"]
+  I --> J
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The routing head should stay small. Its job is to select, load, coordinate, verify, and log. Specialist cores carry bounded local capability: tools, local memory, benchmarks, residuals, permissions, runtime tier, and verification contracts. A core can be a model, tool stack, proof checker, planning compiler, retrieval lane, mathematical substrate, human review lane, or composite worker, but it should be registered through the same boundary.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The router should support several route shapes:
+
+- Single-specialist routing for narrow tasks.
+- Sequential routing when one specialist prepares inputs for another.
+- Parallel routing when independent specialists can produce comparable outputs.
+- Debate or adjudication routing when disagreement is useful evidence.
+- Verification routing when one core checks another.
+- Reflex or failsafe routing for known safety-critical cases.
+
+Each route shape still needs the same discipline: capability match, authority match, readiness check, cost-quality rationale, fallback, and residual recording.
 
 ## Interfaces
 
-The interface for Routing Heads and Specialist Cores is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the pair of records emitted around each route.
 
-- Planning requests capabilities.
-- Governance bounds specialists.
-- Evidence updates readiness.
+Specialist Registry Record fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `specialist_id`
+- `capabilities`
+- `authority_scope`
+- `memory_refs`
+- `tool_permissions`
+- `runtime_tier`
+- `cost_profile`
+- `readiness_state`
+- `quality_predicates`
+- `fallback_routes`
+- `residual_refs`
+- `evidence_refs`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Routing Decision Record fields:
+
+- `decision_id`
+- `task_id`
+- `capability_request`
+- `candidate_specialists`
+- `selected_specialist`
+- `route_shape`
+- `authority_check`
+- `readiness_check`
+- `cost_quality_reason`
+- `fallback_route`
+- `residuals`
+- `ledger_refs`
+
+Planning requests capabilities, not personalities. Governance bounds authority. Evidence updates readiness. Execution receives the selected specialist and the authority envelope. Artifact graphs receive the route decision so downstream claims can be traced back to the capability that produced them.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Specialist authority is local.
 - Routing decisions are logged.
 - Fallback paths remain available.
+- Readiness failures route to fallback, escalation, quarantine, or residual, not silent execution.
+- Router confidence cannot override an authority ceiling.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The important invariant is that selection and authorization are different predicates. A specialist can be the best semantic match and still be disallowed because its authority scope, readiness state, or evidence state is inadequate for the task.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Wrong specialist selection.
 - Router overconfidence.
 - Specialist authority leak.
+- Specialist proliferation without lifecycle review.
+- Composition hallucination after multiple arms respond.
 
-For Routing Heads and Specialist Cores, mitigation starts by turning each listed failure into a named reviewable artifact. When `Wrong specialist selection` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Wrong selection should become a residual and a benchmark candidate. Overconfidence should become a route-quality defect. Authority leak should become a governance incident. Specialist bloat should trigger split, merge, retirement, or quarantine review. Composition hallucination should be routed through verification or tribunal review rather than hidden behind a fluent final answer.
 
 ## Minimal implementation
 
-A router registry with capability metadata, cost, authority, and fallback rules.
+The smallest useful implementation is not a learned router. It is a registry schema, a routing decision schema, and valid fixtures that make route decisions inspectable.
 
-The smallest useful implementation is deliberately narrow: A router registry with capability metadata, cost, authority, and fallback rules. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, selected route, route shape, authority check, readiness check, cost-quality reason, fallback, residuals, and ledger references. Passing these fixtures proves only that the records are structurally valid; it does not prove routing accuracy.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Specialist routing accuracy test | Probe whether the chapter claim holds under the relevant Routing Heads and Specialist Cores boundary. | planned; not run |
-| Authority-bounded routing test | Probe whether the chapter claim holds under the relevant Routing Heads and Specialist Cores boundary. | planned; not run |
-| Fallback route test | Probe whether the chapter claim holds under the relevant Routing Heads and Specialist Cores boundary. | planned; not run |
+| Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
+| Authority-bounded routing test | Check that a specialist outside the authority envelope is rejected even if semantically suitable. | planned; not run |
+| Fallback route test | Check that failed readiness or quality predicates emit fallback or residual records. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -154,6 +191,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Routing Heads and Specialist Cores defines one boundary in the ASI Stack: ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority. Its job is to make a capability more governable, not merely more impressive.
+Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure.
 
-In v0.2, this chapter gives Routing Heads and Specialist Cores a complete architectural boundary: the architecture needs to allocate cognition across specialists rather than force one system to do every task. Its next maturity step is to substantiate the boundary through `Planning requests capabilities`, preserve `Specialist authority is local`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter therefore turns the router from a clever dispatcher into a control surface for capability, authority, memory, cost, fallback, and lifecycle.

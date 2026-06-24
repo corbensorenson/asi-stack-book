@@ -1,0 +1,14 @@
+{
+  "specialist_id": "specialist://source-routing-demo",
+  "capabilities": ["source-note lookup", "chapter-to-source routing"],
+  "authority_scope": "read_public_book_sources_only",
+  "memory_refs": ["sources/source_notes"],
+  "tool_permissions": ["read repository files"],
+  "runtime_tier": "local-analysis",
+  "cost_profile": "low-latency local lookup; no external action",
+  "readiness_state": "canary",
+  "quality_predicates": ["must preserve source IDs", "must not promote support state without evidence"],
+  "fallback_routes": ["human review", "residual record"],
+  "residual_refs": ["residual://routing-demo-no-live-benchmark"],
+  "evidence_refs": ["sources/source_notes/octopus_router.md", "sources/source_notes/rmi.md"]
+}

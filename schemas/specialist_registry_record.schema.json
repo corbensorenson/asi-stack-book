@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/specialist_registry_record.schema.json",
+  "title": "Specialist Registry Record",
+  "type": "object",
+  "required": [
+    "specialist_id",
+    "capabilities",
+    "authority_scope",
+    "memory_refs",
+    "tool_permissions",
+    "runtime_tier",
+    "cost_profile",
+    "readiness_state",
+    "quality_predicates",
+    "fallback_routes",
+    "residual_refs",
+    "evidence_refs"
+  ],
+  "properties": {
+    "specialist_id": { "type": "string", "minLength": 1 },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "authority_scope": { "type": "string", "minLength": 1 },
+    "memory_refs": { "type": "array", "items": { "type": "string" } },
+    "tool_permissions": { "type": "array", "items": { "type": "string" } },
+    "runtime_tier": { "type": "string", "minLength": 1 },
+    "cost_profile": { "type": "string", "minLength": 1 },
+    "readiness_state": {
+      "type": "string",
+      "enum": ["unregistered", "candidate", "shadow", "canary", "qualified", "default", "quarantined", "retired"]
+    },
+    "quality_predicates": { "type": "array", "items": { "type": "string" } },
+    "fallback_routes": { "type": "array", "items": { "type": "string" } },
+    "residual_refs": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

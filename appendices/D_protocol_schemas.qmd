@@ -26,14 +26,18 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
 - `schemas/procedural_tool_record.schema.json`
+- `schemas/readiness_gate_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
+- `schemas/routing_decision_record.schema.json`
 - `schemas/runtime_adapter_invocation.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/semantic_page_certificate.schema.json`
+- `schemas/specialist_registry_record.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
+- `schemas/moecot_orchestration_record.schema.json`
 - `schemas/value_conflict_record.schema.json`
 
 Example fixtures for implemented schema checks are tracked in `tests/fixtures/protocol_records/` and validated by `python3 scripts/validate_protocol_examples.py`.
@@ -220,6 +224,89 @@ costed_route_record:
 ```
 
 This record keeps efficiency claims tied to route choice, quality predicates, cost accounting, residual obligations, and fallback behavior.
+
+## Specialist Registry Record
+
+```yaml
+specialist_registry_record:
+  specialist_id: string
+  capabilities: []
+  authority_scope: string
+  memory_refs: []
+  tool_permissions: []
+  runtime_tier: string
+  cost_profile: string
+  readiness_state: canary
+  quality_predicates: []
+  fallback_routes: []
+  residual_refs: []
+  evidence_refs: []
+```
+
+This record describes a bounded specialist core before it can be routed to. It makes capability, authority, memory, tools, runtime tier, cost, readiness, quality predicates, fallback, residuals, and evidence visible.
+
+## Routing Decision Record
+
+```yaml
+routing_decision_record:
+  decision_id: string
+  task_id: string
+  capability_request: string
+  candidate_specialists: []
+  selected_specialist: string
+  route_shape: single
+  authority_check: passed
+  readiness_check: ready
+  cost_quality_reason: string
+  fallback_route: string
+  residuals: []
+  ledger_refs: []
+```
+
+This record turns router selection into an auditable decision. It separates candidate discovery, selection, route shape, authority check, readiness check, cost-quality reasoning, fallback, residuals, and ledger references.
+
+## Readiness Gate Record
+
+```yaml
+readiness_gate_record:
+  gate_id: string
+  target_id: string
+  target_kind: specialist
+  current_state: shadow
+  candidate_state: canary
+  gate_evidence: []
+  regression_results: []
+  residual_escrow: []
+  authority_scope: string
+  promotion_blockers: []
+  quarantine_conditions: []
+  decision: canary
+  review_refs: []
+  next_review_trigger: string
+```
+
+This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to evidence, regressions, residual escrow, authority, blockers, quarantine conditions, review, and stale-gate triggers.
+
+## MoECOT Orchestration Record
+
+```yaml
+moecot_orchestration_record:
+  run_id: string
+  command_ref: string
+  orchestrator_id: string
+  route_head: string
+  specialist_cores: []
+  control_plane_gates: []
+  ledger_refs: []
+  readiness_gate_refs: []
+  replay_refs: []
+  handoff_refs: []
+  promotion_blockers: []
+  residuals: []
+  source_claim_state: argument
+```
+
+This record gives the MoECOT implementation-reference lane a conservative runtime crosswalk: command, compact orchestrator, route head, specialist cores, control-plane gates, ledgers, readiness gates, replay, handoff, blockers, residuals, and source-claim state.
 
 ## Context Adequacy Record
 

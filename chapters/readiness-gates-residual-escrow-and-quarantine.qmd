@@ -43,89 +43,107 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses source notes for RMI, Benchmaxxing, SCF, Octopus Router, Project Theseus, and MoECOT as architecture context. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted.
 
 ## Problem
 
-Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
+A specialist can be useful without being ready. It can pass a narrow benchmark and still hide residual failures. It can improve on the frontier and regress on the floor. It can be safe in canary and unsafe as default. The stack therefore needs lifecycle states that are stricter than "available" and richer than a single score.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Routing Heads and Specialist Cores, and makes that pressure operational in a narrower boundary. It hands its output to MoECOT Runtime and Multi-Core Orchestration, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+Readiness is the bridge between routing and self-improvement. The router needs to know whether a specialist can be selected. Stable Capability Fields need to know whether an implementation can replace another. Benchmark ratchets need to know whether a result belongs to frontier exploration, regression preservation, or quarantine.
 
 ## Why existing approaches are insufficient
 
-A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
+A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden. Benchmaxxing treats benchmarks as temporary pressure surfaces, not permanent definitions of intelligence. RMI treats residual escrow as a visible tail of unsolved cases. SCF treats qualification as scoped, defeasible, expiring, and tied to a field boundary.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden. If `readiness-gates-residual-escrow-and-quarantine` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Without readiness gates, the architecture confuses motion with progress. A module can improve one visible metric while weakening a hidden invariant. Without residual escrow, promotion erases the cases that should shape the next frontier. Without quarantine, failed or stale modules remain routable through habit.
 
 ## Core Claim
 
 [readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Ratcheting Modular Intelligence, Benchmaxxing: The Performance Ratchet, Stable Capability Fields, Octopus Router Architecture, and Cognitive Loop Closure - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but this chapter does not claim that any particular module currently passes those gates.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, maintain readiness states and promotion gates. Second, record residual failures in escrow. Third, quarantine modules with safety, regression, or scope failures.
+The mechanism is a Readiness Gate Record attached to each module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted.
 
-- Maintain readiness states and promotion gates.
-- Record residual failures in escrow.
-- Quarantine modules with safety, regression, or scope failures.
+```{mermaid}
+flowchart LR
+  A["Module or specialist"] --> B["Gate evidence"]
+  B --> C["Regression suite"]
+  C --> D["Residual escrow"]
+  D --> E["Authority and scope check"]
+  E --> F{"Promotion allowed?"}
+  F -- "yes" --> G["Shadow / canary / qualified / default"]
+  F -- "no" --> H["Quarantine / revise / split / retire"]
+  G --> I["Lifecycle ledger"]
+  H --> I
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Readiness has three inputs:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- Gate evidence: source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision.
+- Regression preservation: a floor that should not be lost while the frontier moves.
+- Residual escrow: named failures, edge cases, uncertainties, and blocked obligations that survive promotion.
+
+Quarantine is not deletion. It is a routing state. A quarantined module can remain available for diagnosis, replay, repair, or restricted review while ordinary routes are blocked. This distinction is what lets the architecture learn from failures without letting failures remain live in the control path.
 
 ## Interfaces
 
-The interface for Readiness Gates, Residual Escrow, and Quarantine is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Readiness Gate Record.
 
-- Routing reads readiness.
-- Benchmarks update gates.
-- SCFs govern replacement.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `gate_id`
+- `target_id`
+- `target_kind`
+- `current_state`
+- `candidate_state`
+- `gate_evidence`
+- `regression_results`
+- `residual_escrow`
+- `authority_scope`
+- `promotion_blockers`
+- `quarantine_conditions`
+- `decision`
+- `review_refs`
+- `next_review_trigger`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Routing reads `current_state`, `authority_scope`, and `promotion_blockers`. Benchmark ratchets update `gate_evidence`, `regression_results`, and `residual_escrow`. SCF replacement transactions use the record as part of qualification and rollback. Artifact graphs preserve the ledger references so future decisions can distinguish "not tested" from "tested and failed" from "tested in a narrower context."
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Promotion requires gate evidence.
 - Residuals are not deleted on promotion.
 - Quarantine blocks ordinary routing.
+- A saturated benchmark cannot be the sole basis for higher readiness.
+- A stale gate must be rerun after architecture, frontier, authority, or lifecycle changes.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Premature promotion.
 - Residual hiding.
 - Untracked regression after merge.
+- Stale gate reuse after architecture change.
+- Over-quarantine that prevents useful diagnosis.
 
-For Readiness Gates, Residual Escrow, and Quarantine, mitigation starts by turning each listed failure into a named reviewable artifact. When `Premature promotion` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Premature promotion should create a rollback or quarantine transaction. Residual hiding should create a belief-revision or tribunal-review issue. Regression after merge should preserve the old floor as a regression benchmark. Stale gate reuse should block promotion until the relevant checks are rerun. Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.
 
 ## Minimal implementation
 
-A module lifecycle state machine and residual escrow ledger.
+The smallest useful implementation is a readiness gate schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
 
-The smallest useful implementation is deliberately narrow: A module lifecycle state machine and residual escrow ledger. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The `readiness_gate_record` schema validates the shape of that record. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Readiness gate enforcement test | Probe whether the chapter claim holds under the relevant Readiness Gates, Residual Escrow, and Quarantine boundary. | planned; not run |
-| Residual escrow integrity test | Probe whether the chapter claim holds under the relevant Readiness Gates, Residual Escrow, and Quarantine boundary. | planned; not run |
-| Quarantine behavior test | Probe whether the chapter claim holds under the relevant Readiness Gates, Residual Escrow, and Quarantine boundary. | planned; not run |
+| Readiness gate enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it. | planned; not run |
+| Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | planned; not run |
+| Quarantine behavior test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -156,6 +174,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Readiness Gates, Residual Escrow, and Quarantine defines one boundary in the ASI Stack: Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained. Its job is to make a capability more governable, not merely more impressive.
+Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.
 
-In v0.2, this chapter gives Readiness Gates, Residual Escrow, and Quarantine a complete architectural boundary: modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking. Its next maturity step is to substantiate the boundary through `Routing reads readiness`, preserve `Promotion requires gate evidence`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The result is a lifecycle discipline for modular intelligence: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution.

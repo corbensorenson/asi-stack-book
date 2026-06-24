@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/moecot_orchestration_record.schema.json",
+  "title": "MoECOT Orchestration Record",
+  "type": "object",
+  "required": [
+    "run_id",
+    "command_ref",
+    "orchestrator_id",
+    "route_head",
+    "specialist_cores",
+    "control_plane_gates",
+    "ledger_refs",
+    "readiness_gate_refs",
+    "replay_refs",
+    "handoff_refs",
+    "promotion_blockers",
+    "residuals",
+    "source_claim_state"
+  ],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1 },
+    "command_ref": { "type": "string", "minLength": 1 },
+    "orchestrator_id": { "type": "string", "minLength": 1 },
+    "route_head": { "type": "string", "minLength": 1 },
+    "specialist_cores": { "type": "array", "items": { "type": "string" } },
+    "control_plane_gates": { "type": "array", "items": { "type": "string" } },
+    "ledger_refs": { "type": "array", "items": { "type": "string" } },
+    "readiness_gate_refs": { "type": "array", "items": { "type": "string" } },
+    "replay_refs": { "type": "array", "items": { "type": "string" } },
+    "handoff_refs": { "type": "array", "items": { "type": "string" } },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "source_claim_state": {
+      "type": "string",
+      "enum": ["argument", "source_reported", "imported_artifact", "locally_reproduced", "blocked"]
+    }
+  },
+  "additionalProperties": false
+}

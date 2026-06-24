@@ -1,0 +1,15 @@
+{
+  "run_id": "moecot-run-demo-001",
+  "command_ref": "command://draft-moecot-crosswalk",
+  "orchestrator_id": "orchestrator://compact-demo",
+  "route_head": "route-head://demo",
+  "specialist_cores": ["specialist://source-routing-demo", "specialist://readiness-gate-demo"],
+  "control_plane_gates": ["authority check", "readiness check", "source-claim-state check"],
+  "ledger_refs": ["routing_decision_record.valid.json", "readiness_gate_record.valid.json"],
+  "readiness_gate_refs": ["readiness-gate-demo-001"],
+  "replay_refs": ["not-run: fixture only"],
+  "handoff_refs": ["chapters/moecot-runtime-and-multi-core-orchestration.qmd"],
+  "promotion_blockers": ["MoECOT runtime artifacts have not been imported or reproduced"],
+  "residuals": ["fixture records crosswalk shape only"],
+  "source_claim_state": "argument"
+}
