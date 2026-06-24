@@ -335,7 +335,7 @@
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.Planning",
       "formal_target": "A plan node inherits the authority ceiling of its parent contract unless governance lowers it.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
@@ -345,7 +345,7 @@
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.Planning",
       "formal_target": "A plan with unsatisfied required constraints cannot be dispatched.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."

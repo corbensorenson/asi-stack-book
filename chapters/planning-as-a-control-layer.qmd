@@ -15,7 +15,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
+  - "The plan_graph fixture validates schema/example consistency only; decomposition, dependency ordering, context-demand, and runtime replanning tests remain unimplemented."
+  - "The implemented Planning Lean predicates cover finite plan-node records only; they do not prove planner quality, graph completeness, dependency soundness, or deployed replanning behavior."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`; supporting: `cognitive_compilation`, `software_magic_grimoire`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`; raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`; connector/recovery: `moecot` |
-| Test state | Protocol fixture validation implemented; behavioral execution tests remain planned. |
+| Test state | `plan_graph.valid.json` passes protocol fixture validation, and `AsiStackProofs.Planning` builds locally; decomposition, dependency ordering, context-demand, and runtime replanning tests remain planned. |
 
 ## Drafting guardrail
 
@@ -149,6 +150,8 @@ The schema and fixture make the planning surface explicit. They do not prove tha
 | Test | Purpose | Status |
 |---|---|---|
 | Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority, budgets, verification, replanning, stop conditions, and dispatch state. | implemented by protocol validation; run in this pass |
+| Authority inheritance finite-record proof | Check that a modeled plan node inherits the parent contract authority ceiling unless governance lowers it. | implemented in `AsiStackProofs.Planning`; runtime replanning test not run |
+| Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; planner harness not run |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
 | Dependency ordering test | Check whether dependencies precede dependents before dispatch. | planned; not run |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
@@ -160,10 +163,10 @@ Only the fixture-shape check is implemented. The planned tests require a planner
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | planned |
-| `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | planned |
+| `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
+| `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
 
-These proof hooks remain planned. The schema can require an authority field; it cannot yet prove inheritance or dispatch rejection without a formal transition relation.
+These proof hooks are implemented only over finite Lean plan-node records in `AsiStackProofs.Planning`. They prove that a modeled node inherits the parent authority ceiling when no governance lowering is present, and that a modeled node with unsatisfied required constraints is not dispatchable. They do not prove plan quality, acyclicity, dependency ordering, context-demand prediction, route choice, or deployed replanning behavior.
 
 ## Source crosswalk
 
