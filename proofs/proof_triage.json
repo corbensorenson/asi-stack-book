@@ -875,20 +875,20 @@
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target marked implemented has an existing module and passes the build.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as a local finite-record Lean predicate requiring module-existence and build-passed fields for implemented proof-target status; repository filesystem checks remain in validation scripts."
     },
     {
       "tag": "lean:proofs.envelope.failure_blocks_promotion",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as a local finite-record Lean predicate routing non-operational proof targets to planned or blocked status rather than implemented status."
     },
     {
       "tag": "lean:benchmarks.ratchet.operational_invariant",
