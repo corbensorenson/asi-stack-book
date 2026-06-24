@@ -6,6 +6,7 @@ import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
 import AsiStackProofs.EvidenceStates
 import AsiStackProofs.FailureModes
+import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
 import AsiStackProofs.ReadinessGates

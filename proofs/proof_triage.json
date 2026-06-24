@@ -695,20 +695,20 @@
       "chapter_id": "generate-verify-repair-compression",
       "module": "AsiStackProofs.GenerateVerifyRepair",
       "formal_target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.GenerateVerifyRepair as a finite reconstruction predicate: exact claims require generator output plus repair residual to equal the target."
     },
     {
       "tag": "lean:compression.gvr.failure_blocks_promotion",
       "chapter_id": "generate-verify-repair-compression",
       "module": "AsiStackProofs.GenerateVerifyRepair",
       "formal_target": "A failed verification blocks exactness promotion.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.GenerateVerifyRepair as a finite verification predicate: failed verification blocks exactness promotion."
     },
     {
       "tag": "lean:compression.artifacts.operational_invariant",

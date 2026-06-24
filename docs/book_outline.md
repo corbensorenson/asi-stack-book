@@ -1990,6 +1990,8 @@ Draft deliverables:
 
 - A compression record with generator, verification result, repair residual, and fallback threshold.
 - Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt fields only; no codec, reconstruction benchmark, or rate experiment exists yet.
+- Implemented Lean predicate: exact reconstruction claims require generator output plus repair residual to equal the target in a finite record.
+- Implemented Lean predicate: failed verification blocks exactness promotion.
 - Planned Codex test: Reconstruction quality test.
 - Planned Codex test: Repair-cost accounting test.
 - Planned Codex test: Bounded-search failure test.
@@ -1998,8 +2000,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | planned |
-| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | planned |
+| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
+| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 
 ### RankFold, NeuralFold, and Artifact Compression
 

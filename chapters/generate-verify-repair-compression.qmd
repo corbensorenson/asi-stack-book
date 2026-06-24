@@ -14,7 +14,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "The compression_receipt fixture validates schema/example consistency only; no codec, bounded-search harness, exact reconstruction benchmark, or rate experiment has been run."
+  - "The compression_receipt fixture and narrow Lean reconstruction/verification predicates are implemented; no codec, bounded-search harness, exact reconstruction benchmark, repair-cost benchmark, or rate experiment has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,11 +34,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `bbvca_v9`, `bbvca_main`; supporting: `cgs`, `rankfold_neuralfold` |
 | Source loading state | source notes: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold`; raw cache: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
-| Test state | `compression_receipt.valid.json` passes repository-level protocol fixture validation; reconstruction-quality, repair-cost, and bounded-search tests remain planned. |
+| Test state | `compression_receipt.valid.json` passes repository-level protocol fixture validation; finite reconstruction/verification predicates implemented in `AsiStackProofs.GenerateVerifyRepair`; reconstruction-quality, repair-cost, bounded-search, and rate tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses BBVCA v9 as the primary discipline for contract-relative generate-verify-repair compression. It does not claim that this repository contains a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture only validates the public record shape.
+This chapter uses BBVCA v9 as the primary discipline for contract-relative generate-verify-repair compression. It does not claim that this repository contains a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture validates the public record shape, and the Lean module proves only two finite reconstruction/verification predicates.
 
 ## Problem
 
@@ -137,11 +137,15 @@ The smallest useful implementation is not a new universal codec. It is a tiny re
 
 The current fixture covers only the receipt side of that implementation: reconstruction contract, public law family, seed, generated regions, verification result, repair residual, fallback threshold, rate accounting, and non-claims. A prototype claim remains unpromoted until code, command, environment, corpus, and result are recorded.
 
+`AsiStackProofs.GenerateVerifyRepair` adds a bounded reconstruction predicate requiring an exact claim to satisfy `generator output + repair residual = target`, plus a bounded failed-verification predicate blocking exactness promotion. These proofs do not implement a codec, verifier, search procedure, repair stream, rate accounting experiment, or corpus result.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Compression receipt fixture validation | Validate that a receipt records reconstruction contract, law family, seed, generated regions, verification result, repair residual, fallback threshold, rate accounting, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Exact reconstruction predicate | Check that an exact claim requires generator output plus repair residual to equal the target in a finite record. | implemented in `AsiStackProofs.GenerateVerifyRepair`; checked by Lean build |
+| Failed verification promotion predicate | Check that failed verification blocks exactness promotion. | implemented in `AsiStackProofs.GenerateVerifyRepair`; checked by Lean build |
 | Reconstruction quality test | Run a generator and verifier against a declared target and check exact reconstruction when the receipt claims exactness; lossy contracts must name the loss. | planned; not run |
 | Repair-cost accounting test | Compare seed, law ID, repair residual, and metadata against a literal baseline and record a negative result when the repaired form is larger. | planned; not run |
 | Bounded-search failure test | Force the generator past its declared search budget and check that the result falls back, quarantines, or stays unpromoted. | planned; not run |
@@ -152,10 +156,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | planned |
-| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | planned |
+| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
+| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 
-These Lean hooks remain planned. The receipt schema can constrain what a compression claim must record, but it does not prove equality between decoded output and target data. The proof path should start with a finite toy reconstruction relation before attempting any broader compression theorem.
+These Lean hooks are implemented as finite-record predicates. The receipt schema and Lean predicates do not prove equality between decoded output and real target data, codec correctness, or compression efficiency.
 
 ## Source crosswalk
 
