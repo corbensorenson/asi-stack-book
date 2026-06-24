@@ -454,6 +454,7 @@ Third-party references should be added only when bibliographic metadata is recor
 | Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | queued; no citation recorded |
 | Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | queued; no citation recorded |
 | Fast generation, decoding substrates, and serving acceleration | External comparison for MTP, speculative decoding, internal draft heads, diffusion LLMs, early exit, state-space alternatives, KV-cache memory, and useful-solution-per-second metrics. | queued; no citation recorded |
+| Policy optimization and learning from feedback | External comparison for PPO/RLHF, GRPO/RLVR, DPO-style preference optimization, verifier rewards, reward hacking, reasoning-budget RL, and control-policy RL for planners, routers, VCM, execution, and generation modes. | queued; no citation recorded |
 | Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | queued; no citation recorded |
 
 ## Citation Policy

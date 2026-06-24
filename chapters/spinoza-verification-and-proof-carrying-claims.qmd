@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
 | Source loading state | source notes: `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`; raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`; connector/recovery: `coherence_exchange` |
-| Test state | Proof-carrying claim fixture validation implemented; verifier and formalization tests remain planned. |
+| Test state | Proof-carrying claim fixture validation implemented; `AsiStackProofs.ProofCarryingClaims` implements finite artifact-reference and failed-verifier promotion gates; verifier and formalization behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -152,10 +152,10 @@ Only fixture-shape validation is implemented. The remaining tests need actual ve
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | planned |
-| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | planned |
+| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | implemented |
+| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
 
-These proof hooks remain planned. The current local Lean modules prove selected stack/evidence invariants elsewhere; this chapter has no implemented proof-carrying-claim theorem yet.
+These Lean hooks are implemented as finite-record predicates over formal-tier claim reviews and failed-verifier promotion reviews. They prove only the record-level gates: a formal support tier requires a valid justification artifact reference, and a failed verifier result requires downgrade/block status while preventing promotion. They do not prove open-domain autoformalization, semantic equivalence between prose and formal target, theorem validity, citation accuracy, or verifier quality.
 
 ## Source crosswalk
 

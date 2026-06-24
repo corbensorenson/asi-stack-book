@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; connector/recovery: `moecot` |
-| Test state | Procedural tool fixture validation implemented; loop-detection and regression tests remain planned. |
+| Test state | Procedural tool fixture validation implemented; `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates; loop-detection and regression behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -159,10 +159,10 @@ Only fixture-shape validation is implemented. The remaining tests need repeated 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | planned |
-| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | planned |
+| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | implemented |
+| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | implemented |
 
-These proof hooks remain planned. A failed-regression promotion block is a good first target once tool lifecycle transitions are executable.
+These Lean hooks are implemented as finite-record predicates over generated-tool records and regression-promotion reviews. They prove only the record-level gates: a generated tool records source traces, parameters, and a verification result, and a failed regression blocks routable-status promotion. They do not prove loop detection, invariant abstraction, parameter discovery, synthesized tool correctness, monitoring quality, or retirement automation.
 
 ## Source crosswalk
 

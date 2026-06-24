@@ -124,7 +124,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. It does not prove the target.
 
-The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 102 proof targets are covered by triage, 86 are implemented formal-invariant Lean candidates, and 16 remain planned across process and research routes. The deeper artifact-by-artifact audit remains a separate planned check.
+The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage, 100 are implemented formal-invariant Lean candidates, and 4 remain planned across research routes. The deeper artifact-by-artifact audit remains a separate planned check.
 
 ## Codex test plan
 

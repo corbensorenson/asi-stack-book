@@ -1435,8 +1435,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | planned |
-| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | planned |
+| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | implemented |
+| `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
 
 ### Unified Adaptive Tribunal and Adversarial Review
 
@@ -1488,8 +1488,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | planned |
-| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | planned |
+| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
+| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
 
 ### Labor OS and Typed Jobs
 
@@ -1708,8 +1708,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | planned |
-| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | planned |
+| `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | implemented |
+| `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | implemented |
 
 ## Part III - Routing, Compression, Representation, and Substrates
 
@@ -1887,8 +1887,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | planned |
-| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | planned |
+| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
+| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
 ### Compact Generative Systems and Residual Honesty
 
@@ -2583,7 +2583,7 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; many planned targets still need their next Lean, schema, policy-model, or research artifact.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming full proof-target coverage.
-- Implemented generated audit: Appendix E summarizes all 102 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: Appendix E summarizes all 104 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Artifact-by-artifact target audit.
@@ -2647,8 +2647,74 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | planned |
-| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | planned |
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
+
+### Policy Optimization and Learning from Feedback
+
+Stable ID: `policy-optimization-and-learning-from-feedback`
+
+Chapter job: A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.
+
+Core claim: Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `benchmaxxing`, `rmi` | Read first for benchmark pressure, residual escrow, capability ratchets, and regression floors. |
+| Supporting | `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure` | Mine after primary sources for verifier rewards, context adequacy, execution artifacts, planner/router policies, governance gates, cost signals, and procedural loop closure. |
+| Connector or recovery required | `moecot` | Use only as implementation-reference context unless artifacts are imported or reproduced. |
+| Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
+
+Draft arc:
+
+- Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
+- Insufficiency: RLHF, preference optimization, and verifier rewards are often framed as model fine-tuning recipes rather than stack-wide update mechanisms.
+- Mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
+- Mechanism: Record the feedback source, reward/preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
+- Mechanism: Keep PPO, GRPO, DPO, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
+- Interface: Benchmarks and verifiers produce reward or preference signals.
+- Interface: VCM and artifact graphs preserve training/evaluation context and evidence references.
+- Interface: Talos records training, tool, and evaluation artifacts.
+- Interface: Spinoza and UAT audit reward meaning, failed verifiers, and reward-hacking probes.
+- Interface: SCF gates decide promotion, quarantine, rollback, or continued experiment status.
+
+Primary invariants:
+
+- Reward is not evidence unless the verifier and evaluation boundary are recorded.
+- Policy updates cannot expand authority by training side effect.
+- A faster or shorter policy is not promoted unless task success and regressions are preserved.
+- Reward-hacking probes are part of the update record, not optional commentary.
+- Rollback remains available for promoted updates.
+
+Failure modes to cover:
+
+- Reward hacking or verifier gaming.
+- Over-optimization for preference style rather than truth or task success.
+- Planner, router, or context policies learning hidden shortcuts.
+- Latency rewards suppressing needed verification.
+- Policy drift crossing SCF authority or readiness boundaries.
+
+Draft deliverables:
+
+- A policy optimization record schema with target layer, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
+- Implemented repository-level fixture: `policy_optimization_record.valid.json` validates policy-update record shape only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
+- Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
+- External literature queue: TRPO, PPO/RLHF, ReMax, GRPO, DeepSeek-R1, DAPO, GSPO, DPO, ORPO, KTO, SimPO, LongRLVR, S-GRPO, and RLHF limitation work require source records/source notes before support promotion.
+- Planned Codex test: Reward-source admissibility test.
+- Planned Codex test: Reward hacking probe test.
+- Planned Codex test: Router policy toy RL test.
+- Planned Codex test: Context-policy grounding reward test.
+- Planned Codex test: Reasoning-budget penalty test.
+- Planned Codex test: Rollback and promotion gate test.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
+| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
 
 ### Integrated Reference Architecture
 
@@ -2765,8 +2831,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | planned |
-| `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | planned |
+| `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | implemented |
+| `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | implemented |
 
 ### Prototype Roadmap
 

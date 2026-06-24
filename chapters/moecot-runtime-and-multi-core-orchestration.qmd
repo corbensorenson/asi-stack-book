@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | source notes: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; raw cache: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`; connector/recovery: `moecot` |
-| Test state | MoECOT orchestration fixture validation implemented; runtime replay and benchmark checks remain planned. |
+| Test state | MoECOT orchestration fixture validation implemented; `AsiStackProofs.MoECOTRuntime` implements finite runtime-core evidence-reference and unavailable-source promotion gates; runtime replay and benchmark checks remain planned. |
 
 ## Drafting guardrail
 
@@ -148,10 +148,10 @@ Only fixture-shape validation is implemented. Runtime claims require imported Mo
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | planned |
-| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | planned |
+| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
+| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
-These proof hooks remain planned. The current orchestration record names the required references; it does not prove promotion readiness or source-claim admissibility.
+These Lean hooks are implemented as finite-record predicates over runtime-core promotion reviews and runtime-claim source reviews. They prove only the record-level gates: runtime core promotion requires readiness, regression, and replay evidence references, and claims sourced only from unavailable text cannot promote above `argument`. They do not prove MoECOT runtime behavior, replay correctness, benchmark results, specialist-core quality, deployment readiness, or source-reported performance.
 
 ## Source crosswalk
 

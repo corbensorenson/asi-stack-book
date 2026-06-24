@@ -495,40 +495,40 @@
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.ProofCarryingClaims",
       "formal_target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProofCarryingClaims as a finite tier predicate: formal support tiers require a valid justification artifact reference."
     },
     {
       "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.ProofCarryingClaims",
       "formal_target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProofCarryingClaims as a finite verifier-result predicate: failed verifier results require downgrade/block status and prevent promotion."
     },
     {
       "tag": "lean:tribunal.review.operational_invariant",
       "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
       "module": "AsiStackProofs.Tribunal",
       "formal_target": "A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Tribunal as a finite verdict predicate: tribunal verdicts require reviewer roles, evidence references, and unresolved dissent records."
     },
     {
       "tag": "lean:tribunal.review.failure_blocks_promotion",
       "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
       "module": "AsiStackProofs.Tribunal",
       "formal_target": "A high-risk artifact cannot be accepted when required tribunal review is absent.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Tribunal as a finite high-risk acceptance predicate: high-risk artifacts missing required tribunal review cannot be accepted."
     },
     {
       "tag": "lean:jobs.lifecycle.operational_invariant",
@@ -595,20 +595,20 @@
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemory",
       "formal_target": "A generated tool records its source traces, parameters, and verification result.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProceduralMemory as a finite generated-tool predicate: generated tools require source traces, parameters, and verification-result records."
     },
     {
       "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemory",
       "formal_target": "A tool with failed regression cannot be promoted to routable status.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProceduralMemory as a finite regression predicate: tools with failed regressions cannot be promoted to routable status."
     },
     {
       "tag": "lean:routing.specialists.operational_invariant",
@@ -655,20 +655,20 @@
       "chapter_id": "moecot-runtime-and-multi-core-orchestration",
       "module": "AsiStackProofs.MoECOTRuntime",
       "formal_target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.MoECOTRuntime as a finite runtime-core predicate: runtime core promotion requires readiness, regression, and replay evidence references."
     },
     {
       "tag": "lean:moecot.runtime.failure_blocks_promotion",
       "chapter_id": "moecot-runtime-and-multi-core-orchestration",
       "module": "AsiStackProofs.MoECOTRuntime",
       "formal_target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.MoECOTRuntime as a finite source-boundary predicate: runtime claims sourced only from unavailable text cannot be promoted above argument state."
     },
     {
       "tag": "lean:compression.cgs.operational_invariant",
@@ -915,20 +915,40 @@
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A capability promotion requires benchmark evidence and preserved regression records.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite capability-promotion predicate: promotion requires benchmark evidence and preserved regression records."
     },
     {
       "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite saturation predicate: a saturated benchmark alone cannot promote higher readiness."
+    },
+    {
+      "tag": "lean:policy_optimization.update.operational_invariant",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "module": "AsiStackProofs.PolicyOptimization",
+      "formal_target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite policy-update predicate: admitted policy updates require target-layer, reward-signal, update-constraint, evaluation, governance-gate, and rollback fields."
+    },
+    {
+      "tag": "lean:policy_optimization.reward_boundary.failure_blocks_promotion",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "module": "AsiStackProofs.PolicyOptimization",
+      "formal_target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite reward/governance predicate: unverified reward or missing governance gate blocks policy-update promotion."
     },
     {
       "tag": "lean:reference_architecture.trace.operational_invariant",
@@ -955,20 +975,20 @@
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite implementation-reference predicate: reference claims require report, config, or tool surfaces and cannot rely on dashboard prose alone."
     },
     {
       "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite gate predicate: capability or self-evolution promotion is blocked without present passing gate reports."
     },
     {
       "tag": "lean:roadmap.phases.operational_invariant",

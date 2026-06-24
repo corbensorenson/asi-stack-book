@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; saturation, transfer, and regression-preservation tests remain planned. |
+| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence and saturated-benchmark higher-readiness gates; saturation, transfer, and regression-preservation behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -140,8 +140,10 @@ The smallest useful implementation is a benchmark ratchet schema and fixture. Th
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | planned |
-| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | planned |
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
+
+These Lean hooks are implemented as finite-record predicates over capability-promotion reviews and saturated-benchmark promotion reviews. They prove only the record-level gates: capability promotion requires benchmark evidence plus preserved regression records, and a saturated benchmark alone cannot promote higher readiness. They do not prove benchmark success, transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, or empirical capability gains.
 
 ## Source crosswalk
 

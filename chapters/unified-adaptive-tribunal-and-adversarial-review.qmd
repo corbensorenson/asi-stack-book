@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `uat`; supporting: `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` |
 | Source loading state | source notes: `uat`, `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth`; raw cache: `uat`, `spinoza`, `talos`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
-| Test state | Tribunal review fixture validation implemented; adversarial review runs remain planned. |
+| Test state | Tribunal review fixture validation implemented; `AsiStackProofs.Tribunal` implements finite verdict-artifact and high-risk missing-review acceptance gates; adversarial review runs remain planned. |
 
 ## Drafting guardrail
 
@@ -154,10 +154,10 @@ Only fixture-shape validation is implemented. Review quality needs a reproducibl
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | planned |
-| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | planned |
+| `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
+| `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
 
-These proof hooks remain planned. The schema can require fields for dissent and evidence refs; it cannot yet prove that high-risk artifacts were correctly routed to review.
+These Lean hooks are implemented as finite-record predicates over tribunal verdict reviews and high-risk artifact acceptance reviews. They prove only the record-level gates: issued verdicts include reviewer roles, evidence references, and unresolved dissent records, and high-risk artifacts missing required tribunal review cannot be accepted. They do not prove reviewer independence, adversarial probe quality, verdict correctness, consensus quality, or human adjudication quality.
 
 ## Source crosswalk
 

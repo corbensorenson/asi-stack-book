@@ -3,6 +3,7 @@ import AsiStackProofs.Authority
 import AsiStackProofs.ArtifactCompression
 import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.BibliographyPlan
+import AsiStackProofs.BenchmarkRatchets
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.CognitiveCompilation
 import AsiStackProofs.CommandContracts
@@ -21,10 +22,14 @@ import AsiStackProofs.GovernanceRights
 import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentToExecution
 import AsiStackProofs.LivingBook
+import AsiStackProofs.MoECOTRuntime
+import AsiStackProofs.PolicyOptimization
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
 import AsiStackProofs.ProofEnvelope
 import AsiStackProofs.ProofCarryingContracts
+import AsiStackProofs.ProofCarryingClaims
+import AsiStackProofs.ProceduralMemory
 import AsiStackProofs.ReadinessGates
 import AsiStackProofs.ReferenceArchitecture
 import AsiStackProofs.Replacement
@@ -37,6 +42,8 @@ import AsiStackProofs.SelfImprovement
 import AsiStackProofs.SimulationFidelity
 import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
+import AsiStackProofs.TheseusReference
+import AsiStackProofs.Tribunal
 import AsiStackProofs.TypedJobs
 import AsiStackProofs.ValueConflict
 import AsiStackProofs.VerificationBandwidth

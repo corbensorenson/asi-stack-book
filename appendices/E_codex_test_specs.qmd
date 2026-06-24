@@ -160,6 +160,12 @@ No result is recorded here unless a test has actually been implemented and run.
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Saturation detection test | planned | not run |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Hidden benchmark transfer test | planned | not run |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Regression preservation test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reward-source admissibility test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reward hacking probe test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Router policy toy RL test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Context-policy grounding reward test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reasoning-budget penalty test | planned | not run |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Rollback and promotion gate test | planned | not run |
 | `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | planned | not run |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | planned | not run |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Authority stop-condition test | planned | not run |
@@ -195,19 +201,18 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 102 |
+| Proof targets covered by triage | 104 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 86 |
-| planned | 16 |
+| implemented | 100 |
+| planned | 4 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 86 |
-| planned | process-contract | policy-model-first | 12 |
+| implemented | formal-invariant | lean-candidate | 100 |
 | planned | research-agenda | defer-until-narrowed | 4 |

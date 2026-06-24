@@ -1947,13 +1947,13 @@
               "tag": "lean:spinoza.proof_carrying.operational_invariant",
               "module": "AsiStackProofs.ProofCarryingClaims",
               "target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
               "module": "AsiStackProofs.ProofCarryingClaims",
               "target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -2019,13 +2019,13 @@
               "tag": "lean:tribunal.review.operational_invariant",
               "module": "AsiStackProofs.Tribunal",
               "target": "A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:tribunal.review.failure_blocks_promotion",
               "module": "AsiStackProofs.Tribunal",
               "target": "A high-risk artifact cannot be accepted when required tribunal review is absent.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -2334,13 +2334,13 @@
               "tag": "lean:procedural.loop_closure.operational_invariant",
               "module": "AsiStackProofs.ProceduralMemory",
               "target": "A generated tool records its source traces, parameters, and verification result.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
               "module": "AsiStackProofs.ProceduralMemory",
               "target": "A tool with failed regression cannot be promoted to routable status.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         }
@@ -2630,13 +2630,13 @@
               "tag": "lean:moecot.runtime.operational_invariant",
               "module": "AsiStackProofs.MoECOTRuntime",
               "target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:moecot.runtime.failure_blocks_promotion",
               "module": "AsiStackProofs.MoECOTRuntime",
               "target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3693,13 +3693,112 @@
               "tag": "lean:benchmarks.ratchet.operational_invariant",
               "module": "AsiStackProofs.BenchmarkRatchets",
               "target": "A capability promotion requires benchmark evidence and preserved regression records.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
               "module": "AsiStackProofs.BenchmarkRatchets",
               "target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ]
+        },
+        {
+          "id": "policy-optimization-and-learning-from-feedback",
+          "title": "Policy Optimization and Learning from Feedback",
+          "file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "benchmaxxing",
+            "rmi",
+            "spinoza",
+            "verification_bandwidth",
+            "talos",
+            "vcm_public",
+            "planforge",
+            "octopus_router",
+            "scf",
+            "tokenmana",
+            "cognitive_loop_closure",
+            "moecot"
+          ],
+          "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
+          "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
+          "core_claim": "Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.",
+          "mechanism": [
+            "Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, or generation mode.",
+            "Record the feedback source: human preference, verifier reward, benchmark result, tool result, context-grounding check, governance check, or latency/resource signal.",
+            "Constrain the update with drift bounds, evidence gates, rollback plans, and residual accounting.",
+            "Evaluate for task success, regressions, reward hacking, authority compliance, and cost before promotion."
+          ],
+          "interfaces": [
+            "Benchmarks and verifiers produce reward or preference signals.",
+            "VCM and artifact graphs preserve the training/evaluation context and evidence references.",
+            "Talos records training, tool, and evaluation artifacts.",
+            "Spinoza and UAT audit reward meaning, verifier failures, and reward-hacking probes.",
+            "SCF gates decide promotion, quarantine, rollback, or continued experiment status."
+          ],
+          "invariants": [
+            "Reward is not evidence unless the verifier and evaluation boundary are recorded.",
+            "Policy updates cannot expand authority by training side effect.",
+            "A faster or shorter policy is not promoted unless task success and regressions are preserved.",
+            "Reward hacking probes are part of the update record, not optional commentary.",
+            "Rollback remains available for promoted updates."
+          ],
+          "failure_modes": [
+            "Reward hacking or verifier gaming.",
+            "Over-optimization for preference style rather than truth or task success.",
+            "Planner/router/context policies learning hidden shortcuts.",
+            "Latency rewards suppressing needed verification.",
+            "Policy drift crossing SCF authority or readiness boundaries."
+          ],
+          "minimal_implementation": "A policy optimization record schema, fixture, and finite Lean predicates that separate feedback, update constraints, evaluation, governance gates, rollback, and non-claims from unrun training results.",
+          "codex_tests": [
+            "Reward-source admissibility test",
+            "Reward hacking probe test",
+            "Router policy toy RL test",
+            "Context-policy grounding reward test",
+            "Reasoning-budget penalty test",
+            "Rollback and promotion gate test"
+          ],
+          "source_queue": {
+            "primary": [
+              "benchmaxxing",
+              "rmi"
+            ],
+            "supporting": [
+              "spinoza",
+              "verification_bandwidth",
+              "talos",
+              "vcm_public",
+              "planforge",
+              "octopus_router",
+              "scf",
+              "tokenmana",
+              "cognitive_loop_closure"
+            ],
+            "variants": [],
+            "connector_or_recovery": [
+              "moecot"
+            ],
+            "handoff_or_recovery_notes": [
+              "sources/inbox/policy_optimization_browser_note_2026-06-24/"
+            ]
+          },
+          "lean_module": "AsiStackProofs.PolicyOptimization",
+          "proof_targets": [
+            {
+              "tag": "lean:policy_optimization.update.operational_invariant",
+              "module": "AsiStackProofs.PolicyOptimization",
+              "target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:policy_optimization.reward_boundary.failure_blocks_promotion",
+              "module": "AsiStackProofs.PolicyOptimization",
+              "target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
+              "status": "implemented"
             }
           ]
         },
@@ -3889,13 +3988,13 @@
               "tag": "lean:theseus.reference.report_contract.operational_invariant",
               "module": "AsiStackProofs.TheseusReference",
               "target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

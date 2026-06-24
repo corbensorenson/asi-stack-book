@@ -1,0 +1,227 @@
+---
+title: "Policy Optimization and Learning from Feedback"
+chapter_id: "policy-optimization-and-learning-from-feedback"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.2 manuscript draft"
+last_updated: "2026-06-24"
+primary_sources:
+  - "benchmaxxing"
+  - "rmi"
+  - "spinoza"
+  - "verification_bandwidth"
+  - "talos"
+  - "vcm_public"
+  - "planforge"
+  - "octopus_router"
+  - "scf"
+  - "tokenmana"
+  - "cognitive_loop_closure"
+  - "moecot"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
+  - "External policy-optimization papers named here are verified candidates, but this repository has not yet created source notes for them."
+  - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
+---
+
+# Policy Optimization and Learning from Feedback
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `policy-optimization-and-learning-from-feedback` |
+| Part | Part IV - Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Manuscript maturity | v0.2 manuscript draft |
+| Last updated | 2026-06-24 |
+| Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
+| Source loading state | source notes: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot` |
+| Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates; no policy optimization experiment has been run. |
+
+## Drafting guardrail
+
+This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. External RL papers named here are candidates for future source notes, not support-state promotions.
+
+## Problem
+
+Benchmarks, verifiers, human preferences, tool results, context-grounding checks, and governance violations all produce feedback. A living ASI stack needs a disciplined way to turn that feedback into future behavior. Without that layer, the book can explain how to measure, review, and gate capabilities, but not how the system learns which behaviors to repeat, suppress, shorten, route, verify, or retire.
+
+The hard part is not saying "use reinforcement learning." The hard part is deciding what policy is being updated, what feedback is admissible, how far the update may move, what evidence is required before promotion, and how rollback works when the reward was wrong.
+
+## Why existing approaches are insufficient
+
+RLHF, preference optimization, and verifier-reward training are often discussed as model fine-tuning recipes. That framing is too narrow for this architecture. The ASI Stack has many policies: planner decomposition, VCM context selection, router expert choice, generation-mode choice, verifier escalation, execution/tool policy, benchmark admission, and SCF promotion decisions.
+
+A reward signal can also become a failure channel. Human preference can reward persuasive wrongness. A verifier can be gamed. A benchmark can become a target instead of a pressure surface. A latency reward can suppress needed verification. A router reward can learn cheap shortcuts that pass local tests while damaging cross-layer traceability.
+
+The stack therefore needs policy optimization to be governed by the same evidence discipline as every other layer.
+
+## Core Claim
+
+[policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
+
+The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. External RL literature candidates are listed as a queue, but no external-literature-backed support state is claimed yet.
+
+## Mechanism
+
+The mechanism is a Policy Optimization Record.
+
+```{mermaid}
+flowchart LR
+  A["Feedback source"] --> B["Target policy"]
+  B --> C["Reward or preference signal"]
+  C --> D["Update constraint / drift bound"]
+  D --> E["Evaluation and reward-hacking probes"]
+  E --> F["Governance gate"]
+  F --> G{"Promote update?"}
+  G -- "yes" --> H["SCF promotion + rollback handle"]
+  G -- "no" --> I["Quarantine, rollback, or residual"]
+  H --> J["Claim/evidence ledger"]
+  I --> J
+```
+
+The record should separate:
+
+- Target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
+- Training mode: SFT, policy gradient, PPO-like online RL, group-relative RL, offline preference optimization, RLVR, process reward, or control-policy RL.
+- Feedback source: human preference, exact verifier, process verifier, tool result, context-grounding check, governance check, benchmark result, latency/cost signal, or residual.
+- Update constraint: KL, clipping, group-relative comparison, sequence-level bound, route-change bound, SCF boundary, or another explicit drift limit.
+- Evaluation refs: holdouts, baselines, regressions, reward-hacking probes, contamination checks, residual accounting, and negative results.
+- Governance refs: authority limits, high-impact review, rollback plan, and promotion decision.
+
+The core rule is simple: policy optimization may learn from feedback, but the book should never let a reward signal silently become evidence, authority, or readiness.
+
+## Method families
+
+The external literature named in the browser packet is best organized by what the update is trying to do.
+
+| Family | Role in the stack | Current repository status |
+|---|---|---|
+| Foundational policy gradients | Minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, ReMax-like critic-free simplifications. | External source notes pending |
+| Trust-region and clipped online RL | Bounded online exploration with update-size control: TRPO, PPO, PPO-RLHF, GRPO, and descendants. | External source notes pending |
+| Offline preference optimization | Stable updates from static preference or binary feedback data: DPO, IPO, ORPO, KTO, SimPO. | External source notes pending |
+| Verifier-based RL / RLVR | Learn from exact, process, tool, context, governance, or efficiency verifiers. | External source notes pending |
+| Reasoning-budget and latency-aware RL | Learn when to think, stop, retrieve, verify, use tools, or switch generation modes. | External source notes pending |
+| Control-policy RL | Train planner, router, VCM, execution, and generation-mode policies rather than only answer style. | Planned ASI Stack experiments |
+
+This chapter should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
+
+## Interfaces
+
+```{mermaid}
+flowchart TD
+  Bench["Benchmarks and residuals"] --> Reward["Reward / preference signal"]
+  Verify["Spinoza, tests, VCM adequacy, Talos artifacts"] --> Reward
+  Reward --> Update["Policy optimization"]
+  Update --> Eval["Holdouts, regressions, reward-hacking probes"]
+  Eval --> Gate["SCF and governance gates"]
+  Gate --> Promote["Promote with rollback handle"]
+  Gate --> Block["Quarantine / rollback / residual"]
+  Promote --> Ledger["Claim and evidence ledger"]
+  Block --> Ledger
+```
+
+Policy optimization connects to nearly every layer:
+
+- Planner policy: reward task success, constraint preservation, fewer wasted steps, and correct stopping.
+- VCM policy: reward evidence-grounded retrieval, context adequacy, lower context bloat, and fewer unsupported claims.
+- Router policy: reward correct specialist choice, authority fit, readiness fit, latency, and cost.
+- Generator policy: reward verified answer quality, concise reasoning when sufficient, and repairable uncertainty.
+- Verifier policy: reward critique accuracy, evidence judgment, contradiction detection, and calibrated abstention.
+- Execution policy: reward artifact success, safe tool use, approval compliance, and replayable logs.
+- Governance policy: reward promotion decisions that preserve regression floors, rollback, rights, and auditability.
+- Generation-mode policy: reward verified output quality per wall-clock cost while preserving fallback.
+
+## Invariants
+
+- Reward is not evidence unless the verifier and evaluation boundary are recorded.
+- Policy updates cannot expand authority by training side effect.
+- A faster or shorter policy is not promoted unless task success and regressions are preserved.
+- Reward-hacking probes are part of the update record, not optional commentary.
+- Rollback remains available for promoted updates.
+
+The most important invariant is authority conservation. A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.
+
+## Failure modes
+
+- Reward hacking or verifier gaming.
+- Over-optimization for preference style rather than truth or task success.
+- Planner, router, or context policies learning hidden shortcuts.
+- Latency rewards suppressing needed verification.
+- Policy drift crossing SCF authority or readiness boundaries.
+
+Each failure should block promotion or force rollback. If the reward is ambiguous, the update remains experimental. If the verifier can be gamed, the verifier enters residual escrow. If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.
+
+## Minimal implementation
+
+The smallest useful implementation is `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
+
+The fixture records target layer, policy ref, training mode, feedback source, reward or preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gate refs, rollback plan, promotion decision, measurement status, residuals, and non-claims. It validates the record shape only. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Policy optimization record fixture validation | Validate that a policy update records target layer, policy ref, training mode, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Reward-source admissibility test | Check that unverified reward sources cannot promote a policy update without evaluation and governance refs. | planned; not run |
+| Reward hacking probe test | Check whether a candidate reward can be exploited without real task success. | planned; not run |
+| Router policy toy RL test | Train or simulate a small router-policy update with holdouts, baseline, latency, and authority constraints. | planned; not run |
+| Context-policy grounding reward test | Check whether reward design improves source-grounded context selection without context bloat. | planned; not run |
+| Reasoning-budget penalty test | Check whether shorter reasoning preserves correctness and verification adequacy. | planned; not run |
+| Rollback and promotion gate test | Check that failed evaluation or governance gates produce rollback/quarantine rather than promotion. | planned; not run |
+
+Only fixture-shape validation and finite record predicates are implemented. The remaining tests require executable training or simulation harnesses.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
+| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
+
+These Lean hooks are implemented as finite-record predicates over policy-update reviews and reward/governance promotion reviews. They prove only the record-level gates: an admitted policy update exposes reward, evaluation, governance, and rollback fields, and an update with unverified reward or missing governance gate cannot be promoted. They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, or resistance to all reward-hacking strategies.
+
+## External literature queue
+
+The following primary-source candidates were verified as real public records during ingestion, but this repository has not yet source-noted them. They should be mined before any external-literature-backed claim is made.
+
+| Area | Candidate sources | Use after source-note work |
+|---|---|---|
+| Trust-region updates | TRPO, PPO-family references | Explain update constraints, KL/drift boundaries, and why bounded updates matter. |
+| Critic-free and group-relative RL | ReMax, DeepSeek-R1/GRPO, DAPO, GSPO, S-GRPO | Compare critic-free reward learning, group-relative advantages, sequence-level rewards, and reasoning-budget penalties. |
+| Offline preference optimization | DPO, ORPO, KTO, SimPO | Explain when static preferences or binary feedback are cheaper than online rollout. |
+| Verifier reward and long context | RLVR and LongRLVR-style context rewards | Connect VCM grounding, verifier rewards, and context-selection policies. |
+| RLHF limitations | RLHF limitation surveys and evaluator-gaming work | Feed reward-hacking probes, governance gates, and disclosure/audit requirements. |
+
+Verified candidate links: [TRPO](https://arxiv.org/abs/1502.05477), [ReMax](https://arxiv.org/abs/2310.10505), [DPO](https://arxiv.org/abs/2305.18290), [ORPO](https://arxiv.org/abs/2403.07691), [KTO](https://arxiv.org/abs/2402.01306), [SimPO](https://arxiv.org/abs/2405.14734), [DeepSeek-R1](https://arxiv.org/abs/2501.12948), [DAPO](https://arxiv.org/abs/2503.14476), [GSPO](https://arxiv.org/abs/2507.18071), [S-GRPO](https://arxiv.org/abs/2505.07686), [LongRLVR](https://arxiv.org/abs/2603.02146), and [Open Problems and Fundamental Limitations of RLHF](https://arxiv.org/abs/2307.15217).
+
+## Source crosswalk
+
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmark pressure, saturation, residual escrow, anti-Goodhart boundaries, and regression floors that become reward/evaluation inputs. | source note available; local raw cache available |
+| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Capability ratchet framing for turning pressure into modular improvement without erasing residuals. | source note available; local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Verification and claim-tier discipline for reward meaning, proof-like claims, and failed verifier consequences. | source note available; local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Boundary between more context, adequate context, verification capacity, and reward design. | source note available; local raw cache available |
+| `talos` | Talos Protocol | labor_execution_os | Execution ledgers, typed jobs, tool results, and audit logs as feedback/evaluation artifacts. | source note available; local raw cache available |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Context-packet and grounding policy boundary for context-selection rewards. | source note available; local raw cache available |
+| `planforge` | PlanForge | planning_control | Planner policy, decomposition rewards, tool-choice rewards, and stopping-condition feedback. | source note available; local raw cache available |
+| `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Router-policy and specialist-choice reward interface. | source note available; local raw cache available |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Promotion, rollback, authority, and replacement gates for policy updates. | source note available; local raw cache available |
+| `tokenmana` | TokenMana | resource_economics | Token, latency, load, and resource reward components without collapsing them into quality claims. | source note available; local raw cache available |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Toolification and procedural-memory feedback loops for repeated successful trajectories. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Multi-core routing and runtime implementation-reference context; not reproduced here. | source note available; connector or recovery required |
+
+The crosswalk keeps the chapter grounded in the supplied ASI Stack sources while the third-party RL literature remains a separate source-note backlog.
+
+## Summary
+
+Policy optimization is the book's learning actuator. Benchmarks and verifiers create pressure, policy optimization proposes behavior changes, and SCF governance decides whether those changes survive.
+
+The chapter's boundary is strict: a reward signal is not a truth signal, a training run is not a governance grant, and a benchmark improvement is not a deployment right. The system may learn from feedback only through recorded reward sources, update constraints, evaluations, residuals, rollback, and governance gates.

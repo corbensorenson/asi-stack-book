@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/policy_optimization_record.schema.json",
+  "title": "Policy Optimization Record",
+  "type": "object",
+  "required": [
+    "update_id",
+    "target_layer",
+    "policy_ref",
+    "training_mode",
+    "feedback_source",
+    "reward_or_preference_signal",
+    "verifier_refs",
+    "update_constraint",
+    "drift_bound",
+    "evaluation_refs",
+    "governance_gate_refs",
+    "rollback_plan",
+    "promotion_decision",
+    "measurement_status",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "update_id": { "type": "string", "minLength": 1 },
+    "target_layer": {
+      "type": "string",
+      "enum": [
+        "planner",
+        "vcm",
+        "router",
+        "generator",
+        "verifier",
+        "execution",
+        "governance",
+        "generation_mode",
+        "whole_stack"
+      ]
+    },
+    "policy_ref": { "type": "string", "minLength": 1 },
+    "training_mode": {
+      "type": "string",
+      "enum": [
+        "sft",
+        "policy_gradient",
+        "ppo",
+        "grpo_or_group_relative",
+        "offline_preference",
+        "rlvr",
+        "process_reward",
+        "control_policy_rl",
+        "not_run"
+      ]
+    },
+    "feedback_source": { "type": "string", "minLength": 1 },
+    "reward_or_preference_signal": { "type": "string", "minLength": 1 },
+    "verifier_refs": { "type": "array", "items": { "type": "string" } },
+    "update_constraint": { "type": "string", "minLength": 1 },
+    "drift_bound": { "type": "string", "minLength": 1 },
+    "evaluation_refs": { "type": "array", "items": { "type": "string" } },
+    "governance_gate_refs": { "type": "array", "items": { "type": "string" } },
+    "rollback_plan": { "type": "string", "minLength": 1 },
+    "promotion_decision": {
+      "type": "string",
+      "enum": ["promote", "keep_experimental", "quarantine", "rollback", "reject", "not_evaluated"]
+    },
+    "measurement_status": { "type": "string", "enum": ["not_run", "planned", "run"] },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

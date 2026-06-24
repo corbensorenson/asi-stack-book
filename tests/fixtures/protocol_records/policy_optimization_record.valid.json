@@ -1,0 +1,36 @@
+{
+  "update_id": "policy-update-demo-001",
+  "target_layer": "router",
+  "policy_ref": "policy://demo-router-selection",
+  "training_mode": "not_run",
+  "feedback_source": "planned benchmark, verifier, and governance feedback; no training run has occurred",
+  "reward_or_preference_signal": "planned reward = task success + verified evidence use - cost - unsupported claims - authority violations",
+  "verifier_refs": [
+    "planned: benchmark ratchet record",
+    "planned: Spinoza verifier",
+    "planned: Talos artifact validation"
+  ],
+  "update_constraint": "policy update must preserve authority, evidence, and rollback boundaries",
+  "drift_bound": "not measured; would require KL, capability-field, or route-change bound before promotion",
+  "evaluation_refs": [
+    "planned: holdout tasks",
+    "planned: regression suite",
+    "planned: reward-hacking probes"
+  ],
+  "governance_gate_refs": [
+    "planned: SCF promotion gate",
+    "planned: human review for high-impact update"
+  ],
+  "rollback_plan": "rollback to previous router policy if evaluation, governance, or regression gates fail",
+  "promotion_decision": "not_evaluated",
+  "measurement_status": "not_run",
+  "residuals": [
+    "no policy optimization experiment has been run",
+    "external RL literature has not been source-noted into this repo"
+  ],
+  "non_claims": [
+    "This fixture is not a PPO, DPO, GRPO, or RLVR result.",
+    "This fixture does not prove reward quality.",
+    "This fixture does not prove that a router policy improved."
+  ]
+}

@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` |
 | Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
-| Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; report crosswalk, architecture-gate mapping, work-board, and self-evolution ladder audits remain planned. |
+| Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.TheseusReference` implements finite implementation-reference artifact-surface and gate-before-promotion predicates; report crosswalk, architecture-gate mapping, work-board, and self-evolution ladder audits remain planned. |
 
 ## Drafting guardrail
 
@@ -147,10 +147,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | planned |
-| `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | planned |
+| `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | implemented |
+| `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | implemented |
 
-These Lean hooks remain planned. The crosswalk schema can require report refs and missing-artifact fields, but it does not prove any Theseus gate passed. A first proof should model the gate-before-promotion predicate over a finite report record.
+These Lean hooks are implemented as finite-record predicates over implementation-reference claim reviews and gate-before-promotion reviews. They prove only the record-level gates: implementation-reference claims require a report, config, or tool surface rather than dashboard prose alone, and capability or self-evolution promotion is blocked without present passing gate reports. They do not prove any Theseus gate passed, import private Theseus reports, rerun benchmarks, verify dashboard state, or establish self-evolution safety.
 
 ## Source crosswalk
 
