@@ -34,7 +34,9 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 10. Update Appendix C when a claim changes, its claim label changes, or its support state changes.
 11. Run `python3 scripts/validate_publication.py` for public-surface changes.
 12. Run `python3 scripts/validate_book.py`.
-13. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+13. Run `python3 scripts/validate_visual_coverage.py` after visual, chapter, or site changes.
+14. Run schema and fixture validators when protocol artifacts change: `python3 scripts/validate_schemas.py` and `python3 scripts/validate_protocol_examples.py`.
+15. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -62,6 +64,7 @@ Read `references/triage.md` when deciding whether to update an existing chapter 
 - Use conversation-derived context to preserve architecture intent and deduplicate concepts, but keep it out of source-derived support unless the corresponding source text is actually loaded.
 - Keep `proofs/proof_manifest.json` generated from outline `lean:*` proof tags.
 - Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, source crosswalk, and summary.
+- Every chapter should contain at least one Mermaid diagram that explains an interface, lifecycle, evidence flow, state transition, or boundary. Keep diagrams technical and do not use them to imply unrecorded proof, benchmark, or implementation status.
 
 ## Validation
 
@@ -72,6 +75,10 @@ python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
+python3 scripts/validate_visual_coverage.py
+python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
+(cd lean && lake build)
 quarto render --to html
 ```
 
