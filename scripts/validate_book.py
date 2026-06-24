@@ -232,6 +232,19 @@ def validate_publication_surface() -> None:
         sys.exit(result.returncode)
 
 
+def run_validator(script_name: str) -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / script_name)],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        print(result.stdout.strip())
+        sys.exit(result.returncode)
+
+
 def main() -> None:
     validate_required_files()
     source_ids = validate_inventory()
@@ -242,6 +255,9 @@ def main() -> None:
     validate_claim_states()
     validate_proof_manifest()
     validate_publication_surface()
+    run_validator("validate_chapter_dod.py")
+    run_validator("validate_source_notes.py")
+    run_validator("validate_proof_readiness.py")
     print("Book validation passed.")
 
 

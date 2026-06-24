@@ -426,13 +426,13 @@
               "tag": "lean:evidence.support_state.operational_invariant",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "Support-state transitions require the corresponding evidence artifact.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:evidence.support_state.failure_blocks_promotion",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "A claim cannot be promoted when required evidence is absent.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -1119,7 +1119,7 @@
     {
       "id": "planning-memory-reasoning-execution",
       "title": "Part II - Planning, Memory, Reasoning, and Execution",
-      "part_job": "Specify the operational middle of the stack: intent contracts, planning/control, semantic compilation, memory/context, verification, tribunals, typed work, artifact production, audit, and replay.",
+      "part_job": "Specify the operational middle of the stack: intent contracts, planning/control, semantic compilation, memory/context, verification, tribunals, typed work, artifact production, runtime adapters, procedural memory, audit, and replay.",
       "source_queue": {
         "core": [
           "viea",
@@ -1130,7 +1130,8 @@
           "spinoza",
           "uat",
           "talos",
-          "genesiscode"
+          "genesiscode",
+          "cognitive_loop_closure"
         ],
         "supporting": [
           "software_magic_grimoire",
@@ -1139,8 +1140,8 @@
           "verification_bandwidth",
           "treellm",
           "spinoza_composer",
-          "cognitive_loop_closure",
-          "ladon_manhattan"
+          "ladon_manhattan",
+          "theseus_operator_os"
         ],
         "connector_or_recovery": [
           "vcm_editable",
@@ -2181,64 +2182,7 @@
               "status": "planned"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "routing-compression-evidence-implementation",
-      "title": "Part III - Routing, Compression, Evidence, and Implementation",
-      "part_job": "Define how the stack scales and improves: runtime adapters, procedural memory, modular routing, readiness gates, compression, representation, resource limits, executable specifications, benchmark ratchets, integration, prototype sequencing, living updates, and bibliography discipline.",
-      "source_queue": {
-        "core": [
-          "octopus_router",
-          "rmi",
-          "cognitive_loop_closure",
-          "benchmaxxing",
-          "cgs",
-          "rgs",
-          "rankfold_neuralfold",
-          "bbvca_v9",
-          "treellm",
-          "tokenmana",
-          "simulation_scaling",
-          "genesiscode",
-          "project_theseus_whitepaper",
-          "circle_calculus_core",
-          "circle_ai_contract_suite",
-          "coil_attention_memory",
-          "coilra_multicoil_rope",
-          "rope_position_certifier"
-        ],
-        "supporting": [
-          "rankfold_compressor",
-          "bbvca_main",
-          "bugbrain",
-          "temporal_coil_research",
-          "road_to_agi",
-          "beastbrain",
-          "viea",
-          "scf",
-          "vcm_public",
-          "planforge",
-          "talos",
-          "spinoza",
-          "theseus_plan_compiler",
-          "theseus_self_evolution_system",
-          "theseus_architecture_gate",
-          "theseus_operator_os",
-          "theseus_circle_transfer",
-          "proof_carrying_circular_computation",
-          "circle_ai_architectures",
-          "field_of_god_ai_constitution"
-        ],
-        "connector_or_recovery": [
-          "moecot",
-          "moecot_md",
-          "coilmoecot",
-          "road_to_agi"
-        ]
-      },
-      "chapters": [
+        },
         {
           "id": "runtime-adapters-tool-permissions-and-human-approval",
           "title": "Runtime Adapters, Tool Permissions, and Human Approval",
@@ -2399,7 +2343,55 @@
               "status": "planned"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "routing-compression-representation-substrates",
+      "title": "Part III - Routing, Compression, Representation, and Substrates",
+      "part_job": "Define how the stack scales capability through modular routing, readiness gates, specialist cores, compression, semantic representation, resource budgets, simulation boundaries, mathematical substrates, and optional cyclic/coil lanes.",
+      "source_queue": {
+        "core": [
+          "octopus_router",
+          "rmi",
+          "benchmaxxing",
+          "cgs",
+          "rgs",
+          "rankfold_neuralfold",
+          "bbvca_v9",
+          "treellm",
+          "tokenmana",
+          "simulation_scaling",
+          "genesiscode",
+          "circle_calculus_core",
+          "circle_ai_contract_suite",
+          "coil_attention_memory",
+          "coilra_multicoil_rope",
+          "rope_position_certifier"
+        ],
+        "supporting": [
+          "rankfold_compressor",
+          "bbvca_main",
+          "bugbrain",
+          "temporal_coil_research",
+          "project_theseus_whitepaper",
+          "theseus_circle_transfer",
+          "proof_carrying_circular_computation",
+          "circle_ai_architectures",
+          "viea",
+          "scf",
+          "vcm_public",
+          "planforge",
+          "talos",
+          "spinoza"
+        ],
+        "connector_or_recovery": [
+          "moecot",
+          "moecot_md",
+          "coilmoecot"
+        ]
+      },
+      "chapters": [
         {
           "id": "routing-heads-and-specialist-cores",
           "title": "Routing Heads and Specialist Cores",
@@ -3405,7 +3397,42 @@
               "status": "planned"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "evidence-implementation-living-book",
+      "title": "Part IV - Evidence, Implementation, and the Living Book",
+      "part_job": "Turn the architecture into an accountable research program: executable specifications, Lean proof envelopes, benchmark ratchets, reference traces, implementation roadmap, living-book method, and bibliography discipline.",
+      "source_queue": {
+        "core": [
+          "benchmaxxing",
+          "genesiscode",
+          "project_theseus_whitepaper",
+          "theseus_plan_compiler",
+          "theseus_self_evolution_system",
+          "theseus_architecture_gate",
+          "theseus_operator_os"
+        ],
+        "supporting": [
+          "road_to_agi",
+          "moecot",
+          "moecot_md",
+          "viea",
+          "scf",
+          "vcm_public",
+          "planforge",
+          "talos",
+          "spinoza",
+          "coherence_exchange"
+        ],
+        "connector_or_recovery": [
+          "road_to_agi",
+          "moecot",
+          "moecot_md"
+        ]
+      },
+      "chapters": [
         {
           "id": "executable-specifications-and-lean-proof-envelope",
           "title": "Executable Specifications and Lean Proof Envelope",

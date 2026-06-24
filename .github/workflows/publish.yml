@@ -24,12 +24,20 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install Lean
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain "$(cat lean/lean-toolchain)"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
       - name: Validate book source
         run: |
           python3 scripts/sync_proof_manifest.py --check
           python3 scripts/validate_publication.py
           python3 scripts/validate_book.py
           python3 scripts/validate_schemas.py
+
+      - name: Build Lean proofs
+        run: cd lean && lake build
 
       - name: Render HTML
         run: quarto render --to html

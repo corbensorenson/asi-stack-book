@@ -1,14 +1,13 @@
 # Source Readiness Report
 
-Generated from `sources/source_inventory.json` and `sources/cache/cache_manifest.json`.
+Generated from `sources/source_inventory.json`, `sources/cache/cache_manifest.json`, and authenticated connector-readiness overrides when present.
 
 Raw source exports are local-only and ignored by git. This report tracks readiness without publishing the raw source text.
 
 ## Summary
 
-- `cached_auth_gate`: 4
 - `cached_existing`: 38
-- `connector_required`: 3
+- `connector_readable`: 7
 - `not_cached_public_project`: 14
 
 ## Records
@@ -21,13 +20,13 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | `cached_existing` | 18745 | sources/raw/google_docs/planforge_compiler_arch.txt |  |
 | `cognitive_compilation` | Cognitive Compilation | `cached_existing` | 112425 | sources/raw/google_docs/cognitive_compilation.txt |  |
 | `talos` | Talos Protocol | `cached_existing` | 440468 | sources/raw/google_docs/talos.txt |  |
-| `talos_md` | Talos_Protocol_v1.0.md | `cached_auth_gate` | 947861 | sources/raw/google_docs/talos_md.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
+| `talos_md` | Talos_Protocol_v1.0.md | `connector_readable` | 947861 | sources/raw/google_docs/talos_md.bin | Authenticated connector fetch succeeded for the public Markdown Talos release; local cache is an auth-gate placeholder; local cache note: local cache is a Google sign-in/auth-gate page, not usable source text |
 | `vcm_public` | Virtual_Context_Memory_v1 | `cached_existing` | 235401 | sources/raw/google_docs/vcm_public.txt |  |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
+| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | `connector_readable` |  |  | Authenticated connector fetch succeeded for the editable VCM paper; local curl cache is not authoritative; local cache note: curl: (56) The requested URL returned error: 401 |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | `cached_existing` | 209889 | sources/raw/google_docs/spinoza.txt |  |
 | `spinoza_composer` | Spinoza Composer / Spinoza Trinity | `cached_existing` | 113517 | sources/raw/google_docs/spinoza_composer.txt |  |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
-| `moecot_md` | moecot_agent_whitepaper.md | `cached_auth_gate` | 947532 | sources/raw/google_docs/moecot_md.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | `connector_readable` |  |  | Authenticated connector fetch succeeded for the MoECOT-Agent Architecture Whitepaper; use the source note before source-derived claims; local cache note: curl: (56) The requested URL returned error: 401 |
+| `moecot_md` | moecot_agent_whitepaper.md | `connector_readable` | 947532 | sources/raw/google_docs/moecot_md.bin | Authenticated connector fetch succeeded for the Markdown MoECOT whitepaper; local cache is an auth-gate placeholder; local cache note: local cache is a Google sign-in/auth-gate page, not usable source text |
 | `octopus_router` | Octopus Router Architecture | `cached_existing` | 49310 | sources/raw/google_docs/octopus_router.txt |  |
 | `rmi` | Ratcheting Modular Intelligence | `cached_existing` | 49750 | sources/raw/google_docs/rmi.txt |  |
 | `cognitive_loop_closure` | Cognitive Loop Closure | `cached_existing` | 77845 | sources/raw/google_docs/cognitive_loop_closure.txt |  |
@@ -44,7 +43,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `field_of_god_ai_constitution` | Field of God AI Constitution | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
 | `ethica_mechanica` | Ethica Mechanica | `cached_existing` | 15708 | sources/raw/google_docs/ethica_mechanica.txt |  |
 | `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | `cached_existing` | 92385 | sources/raw/google_docs/eternal_code.txt |  |
-| `coherence_exchange` | The Coherence Exchange | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
+| `coherence_exchange` | The Coherence Exchange | `connector_readable` |  |  | Authenticated connector fetch succeeded; speculative/metaphysical material must remain explicitly bounded; local cache note: curl: (56) The requested URL returned error: 401 |
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | `cached_existing` | 10913 | sources/raw/google_docs/verification_bandwidth.txt |  |
 | `beastbrain` | BeastBrain Cognitive Architecture | `cached_existing` | 571911 | sources/raw/google_docs/beastbrain.txt |  |
 | `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | `cached_existing` | 26911 | sources/raw/google_docs/beastbrain_timeless.txt |  |
@@ -55,10 +54,10 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `uat` | Unified Adaptive Tribunal | `cached_existing` | 40830 | sources/raw/google_docs/uat.txt |  |
 | `treellm` | TreeLLM | `cached_existing` | 550184 | sources/raw/google_docs/treellm.txt |  |
 | `software_magic_grimoire` | Software Magic Grimoire | `cached_existing` | 407939 | sources/raw/google_docs/software_magic_grimoire.txt |  |
-| `road_to_agi` | Road To AGI | `cached_auth_gate` | 947750 | sources/raw/google_docs/road_to_agi.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
+| `road_to_agi` | Road To AGI | `connector_readable` | 947750 | sources/raw/google_docs/road_to_agi.bin | Authenticated connector fetch succeeded; reported benchmark claims remain source-reported until artifacts are independently ingested and verified; local cache note: local cache is a Google sign-in/auth-gate page, not usable source text |
 | `simulation_scaling` | Simulation Scaling Law | `cached_existing` | 136055 | sources/raw/google_docs/simulation_scaling.txt |  |
 | `tokenmana` | TokenMana | `cached_existing` | 60285 | sources/raw/google_docs/tokenmana.txt |  |
-| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | `cached_auth_gate` | 947737 | sources/raw/google_docs/coilmoecot.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
+| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | `connector_readable` | 947737 | sources/raw/google_docs/coilmoecot.bin | Authenticated connector fetch succeeded for the CoilMoECOT design/spec source; do not treat it as performance evidence; local cache note: local cache is a Google sign-in/auth-gate page, not usable source text |
 | `temporal_coil_research` | Temporal Coil Research | `cached_existing` | 11522 | sources/raw/google_docs/temporal_coil_research.bin |  |
 | `bugbrain` | BugBrain | `cached_existing` | 313058 | sources/raw/google_docs/bugbrain.txt |  |
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
+CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
 REPORT = ROOT / "docs" / "source_readiness_report.md"
 
 AUTH_GATE_MARKERS = [
@@ -41,20 +42,35 @@ def cache_note(record: dict) -> tuple[str, str]:
     return status, note
 
 
+def connector_overrides() -> dict[str, dict]:
+    if not CONNECTOR_READINESS.exists():
+        return {}
+    data = json.loads(CONNECTOR_READINESS.read_text(encoding="utf-8"))
+    records = data.get("records", {})
+    if not isinstance(records, dict):
+        raise TypeError("sources/connector_readiness.json records must be an object keyed by source ID")
+    return records
+
+
 def main() -> None:
     if not MANIFEST.exists():
         raise SystemExit("Missing sources/cache/cache_manifest.json. Run scripts/cache_drive_sources.py first.")
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     cache_records = {record.get("id", ""): record for record in data.get("records", [])}
     inventory_records = json.loads(INVENTORY.read_text(encoding="utf-8"))
+    connector_records = connector_overrides()
     rows = []
     counts = Counter()
     for source in inventory_records:
         source_id = source.get("id", "")
+        connector_record = connector_records.get(source_id)
         record = cache_records.get(source_id)
         if record is None:
             url = str(source.get("url", ""))
-            if "github.com/" in url:
+            if connector_record:
+                display_status = str(connector_record.get("status", "connector_readable"))
+                note = str(connector_record.get("note", "available through authenticated connector; raw text not committed"))
+            elif "github.com/" in url:
                 display_status = "not_cached_public_project"
                 note = "public project source record; not part of Google Drive cache manifest"
             else:
@@ -74,6 +90,10 @@ def main() -> None:
             continue
 
         display_status, note = cache_note(record)
+        if connector_record:
+            display_status = str(connector_record.get("status", "connector_readable"))
+            connector_note = str(connector_record.get("note", "available through authenticated connector; raw text not committed"))
+            note = connector_note if not note else f"{connector_note.rstrip('.')}; local cache note: {note}"
         counts[display_status] += 1
         rows.append(
             "| `{id}` | {title} | `{status}` | {bytes} | {path} | {error} |".format(
@@ -88,7 +108,7 @@ def main() -> None:
     summary = "\n".join(f"- `{status}`: {count}" for status, count in sorted(counts.items()))
     text = f"""# Source Readiness Report
 
-Generated from `sources/source_inventory.json` and `sources/cache/cache_manifest.json`.
+Generated from `sources/source_inventory.json`, `sources/cache/cache_manifest.json`, and authenticated connector-readiness overrides when present.
 
 Raw source exports are local-only and ignored by git. This report tracks readiness without publishing the raw source text.
 

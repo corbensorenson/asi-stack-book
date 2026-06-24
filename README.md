@@ -13,11 +13,13 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 The project is ready for manuscript drafting, but it is not yet a completed book.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 50 outline chapters exist as guarded stubs across three manifest-driven parts.
+- All 50 outline chapters exist as guarded stubs across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
+- `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
+- Backbone source notes and connector-readiness metadata exist for the main pre-drafting sources.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
 - Claims remain `argument` level unless source notes, prototypes, tests, proofs, or external literature justify promotion.
 - Codex tests are planned; test results are not recorded unless they have actually been run.
@@ -28,6 +30,8 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 |---|---|
 | [Live book](https://corbensorenson.github.io/asi-stack-book/) | Rendered public site. |
 | [docs/book_outline.md](docs/book_outline.md) | Cohesive full-book outline and proof target source of truth. |
+| [docs/prewriting_readiness.md](docs/prewriting_readiness.md) | Launch gate for a full-book drafting goal. |
+| [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
@@ -45,6 +49,7 @@ Run this before committing structural, source, proof, or publication changes:
 ```bash
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/source_readiness_report.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
@@ -100,7 +105,7 @@ Generate the machine-readable proof manifest from the outline:
 python3 scripts/sync_proof_manifest.py
 ```
 
-Do not report a theorem as proven unless the corresponding Lean module exists and `lake build` passes.
+Do not report a theorem as proven unless the corresponding Lean module exists, the target is marked implemented in the outline, and `lake build` passes. Use `proofs/proof_triage.json` to keep schema/process/research targets from becoming ceremonial Lean.
 
 ## Contributing
 

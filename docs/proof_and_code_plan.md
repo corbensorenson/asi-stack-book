@@ -14,6 +14,8 @@ python3 scripts/sync_proof_manifest.py
 
 The generated machine-readable manifest is `proofs/proof_manifest.json`.
 
+The proof triage file is `proofs/proof_triage.json`. It classifies each outline target as a near-term formal invariant, schema contract, process contract, or research-agenda item. Use it to avoid turning every chapter's conceptual claim into ceremonial Lean.
+
 ## What Belongs in Proofs
 
 Good proof candidates:
@@ -28,6 +30,8 @@ Good proof candidates:
 - context packet admission vs adequacy separation.
 
 Avoid formalizing vague philosophical claims before they are translated into operational predicates.
+
+Targets marked `schema-contract`, `process-contract`, or `research-agenda` should not be marked implemented merely because prose exists. They need an executable schema, policy model, test harness, or better formal statement first.
 
 ## What Belongs in Code
 

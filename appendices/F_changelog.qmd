@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-24 - Pre-writing readiness hardening
+
+- Addressed the pre-writing review by adding backbone source notes, connector-readiness metadata, source-note validation, chapter DoD validation, and proof-readiness validation.
+- Split the overloaded third part into four manifest-driven parts and moved runtime adapters plus procedural memory next to the execution OS cluster.
+- Pinned Lean to `leanprover/lean4:v4.31.0`, renamed the evidence proof module to match the outline, and marked the two evidence-state proof targets as implemented.
+- Added proof-target triage so Lean, schema, process, and research-agenda targets are tracked separately before full-book drafting.
+- Added an explicit external-literature stance and prewriting launch gate while keeping all chapter support states at `argument`.
+- Updated the GitHub Pages workflow to install Lean and run `lake build` before rendering/publishing the site.
+- Quarantined stale local handoff trees under ignored `_archive/local_context/` and removed stray `.DS_Store` files from the working tree.
+
 ## 2026-06-24 - Project Theseus and Circle Calculus mining
 
 - Reviewed the local Project Theseus / SymLiquid RMI and Circle Calculus projects and added a public-safe mining report.

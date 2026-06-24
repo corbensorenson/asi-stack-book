@@ -1,0 +1,1014 @@
+{
+  "schema_version": 1,
+  "updated": "2026-06-24",
+  "generated_from": "proofs/proof_manifest.json",
+  "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
+  "triage_classes": {
+    "formal-invariant": "Near-term Lean or executable-model candidate after definitions are introduced.",
+    "schema-contract": "Define JSON Schema or typed records first; proof comes after the contract exists.",
+    "process-contract": "Requires governance/policy/event semantics or tests before proof is meaningful.",
+    "research-agenda": "Tracked as an agenda item until narrowed into an operational predicate."
+  },
+  "records": [
+    {
+      "tag": "lean:stack.layer_boundaries.operational_invariant",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "module": "AsiStackProofs.StackBoundaries",
+      "formal_target": "A layer without external-action authority can only produce an action through an authorized handoff.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "module": "AsiStackProofs.StackBoundaries",
+      "formal_target": "A handoff that exceeds the caller authority ceiling is rejected.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:efficiency.minimum_viable.operational_invariant",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:efficiency.minimum_viable.failure_blocks_promotion",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:authority.ceiling.operational_invariant",
+      "chapter_id": "system-boundaries-and-authority",
+      "module": "AsiStackProofs.Authority",
+      "formal_target": "Every transition preserves or lowers the active authority ceiling unless a governance grant is present.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:authority.ceiling.failure_blocks_promotion",
+      "chapter_id": "system-boundaries-and-authority",
+      "module": "AsiStackProofs.Authority",
+      "formal_target": "A missing grant blocks execution rather than becoming default authorization.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:failure.invariant_violation.operational_invariant",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "A component with a failed required invariant cannot be promoted.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:failure.invariant_violation.failure_blocks_promotion",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "An unbounded authority field is detected as a governance failure.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:evidence.support_state.operational_invariant",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "Support-state transitions require the corresponding evidence artifact.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:evidence.support_state.failure_blocks_promotion",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "A claim cannot be promoted when required evidence is absent.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:intent.contract.operational_invariant",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "module": "AsiStackProofs.IntentContracts",
+      "formal_target": "A compiled intent contract preserves declared constraints and stop conditions.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:intent.contract.failure_blocks_promotion",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "module": "AsiStackProofs.IntentContracts",
+      "formal_target": "A contract missing required authority cannot compile to an executable job.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:alignment.constitution.operational_invariant",
+      "chapter_id": "constitutional-alignment-substrate",
+      "module": "AsiStackProofs.Alignment",
+      "formal_target": "An admitted plan satisfies every active constitutional predicate.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:alignment.constitution.failure_blocks_promotion",
+      "chapter_id": "constitutional-alignment-substrate",
+      "module": "AsiStackProofs.Alignment",
+      "formal_target": "A self-modification that weakens a protected predicate is rejected.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:corrigibility.agency.operational_invariant",
+      "chapter_id": "agency-dignity-and-corrigibility",
+      "module": "AsiStackProofs.Corrigibility",
+      "formal_target": "Protected agency rights remain available after an accepted transition.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:corrigibility.agency.failure_blocks_promotion",
+      "chapter_id": "agency-dignity-and-corrigibility",
+      "module": "AsiStackProofs.Corrigibility",
+      "formal_target": "A transition that removes a required correction pathway is rejected.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:values.conflict.operational_invariant",
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "module": "AsiStackProofs.ValueConflict",
+      "formal_target": "A decision with unresolved protected conflicts carries a residual conflict record.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:values.conflict.failure_blocks_promotion",
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "module": "AsiStackProofs.ValueConflict",
+      "formal_target": "A high-stakes conflict cannot bypass the required review predicate.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:governance.rights.operational_invariant",
+      "chapter_id": "governance-rights-fork-exit-and-audit",
+      "module": "AsiStackProofs.GovernanceRights",
+      "formal_target": "A governance transition preserves required audit and exit capabilities.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:governance.rights.failure_blocks_promotion",
+      "chapter_id": "governance-rights-fork-exit-and-audit",
+      "module": "AsiStackProofs.GovernanceRights",
+      "formal_target": "A transition that removes a protected right is rejected or marked invalid.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:scf.field_identity.operational_invariant",
+      "chapter_id": "stable-capability-fields",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "An implementation can replace another only if it satisfies the field qualification predicate.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:scf.field_identity.failure_blocks_promotion",
+      "chapter_id": "stable-capability-fields",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "A replacement that expands authority without a governance grant is rejected.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:replacement.transaction.operational_invariant",
+      "chapter_id": "capability-replacement-and-rollback",
+      "module": "AsiStackProofs.Replacement",
+      "formal_target": "A replacement commit requires qualification evidence and rollback metadata.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:replacement.transaction.failure_blocks_promotion",
+      "chapter_id": "capability-replacement-and-rollback",
+      "module": "AsiStackProofs.Replacement",
+      "formal_target": "A failed regression blocks promotion of the replacement.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:security.scif.operational_invariant",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "module": "AsiStackProofs.SecurityKernel",
+      "formal_target": "A secret handle can be substituted only inside an authorized execution boundary.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:security.scif.failure_blocks_promotion",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "module": "AsiStackProofs.SecurityKernel",
+      "formal_target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:self_improvement.boundary.operational_invariant",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "module": "AsiStackProofs.SelfImprovement",
+      "formal_target": "An improvement transition preserves all protected invariants.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "module": "AsiStackProofs.SelfImprovement",
+      "formal_target": "A proposal evaluated only by the component being replaced cannot be promoted.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:intent_execution.contracts.operational_invariant",
+      "chapter_id": "intent-to-execution-contracts",
+      "module": "AsiStackProofs.IntentToExecution",
+      "formal_target": "A compiled execution job preserves the parent contract constraints.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:intent_execution.contracts.failure_blocks_promotion",
+      "chapter_id": "intent-to-execution-contracts",
+      "module": "AsiStackProofs.IntentToExecution",
+      "formal_target": "An execution job without required approval cannot transition to running.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:command.semantic_interface.operational_invariant",
+      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "module": "AsiStackProofs.CommandContracts",
+      "formal_target": "A valid command contract contains objective, constraints, output contract, verification, and failure behavior.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:command.semantic_interface.failure_blocks_promotion",
+      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "module": "AsiStackProofs.CommandContracts",
+      "formal_target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:planning.control_layer.operational_invariant",
+      "chapter_id": "planning-as-a-control-layer",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "A plan node inherits the authority ceiling of its parent contract unless governance lowers it.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:planning.control_layer.failure_blocks_promotion",
+      "chapter_id": "planning-as-a-control-layer",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "A plan with unsatisfied required constraints cannot be dispatched.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:planforge.dag.operational_invariant",
+      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "module": "AsiStackProofs.PlanForge",
+      "formal_target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:planforge.dag.failure_blocks_promotion",
+      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "module": "AsiStackProofs.PlanForge",
+      "formal_target": "A node whose quality predicate fails must escalate or emit a residual.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:cognitive_compilation.ir.operational_invariant",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "module": "AsiStackProofs.CognitiveCompilation",
+      "formal_target": "A compiled artifact preserves all required IR obligations.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:cognitive_compilation.ir.failure_blocks_promotion",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "module": "AsiStackProofs.CognitiveCompilation",
+      "formal_target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:vcm.abi.operational_invariant",
+      "chapter_id": "virtual-context-abi",
+      "module": "AsiStackProofs.VirtualContextABI",
+      "formal_target": "A context reference resolves only when the requested address and version are valid for the snapshot.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:vcm.abi.failure_blocks_promotion",
+      "chapter_id": "virtual-context-abi",
+      "module": "AsiStackProofs.VirtualContextABI",
+      "formal_target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:vcm.certificates.operational_invariant",
+      "chapter_id": "semantic-pages-context-cells-and-certificates",
+      "module": "AsiStackProofs.ContextCertificates",
+      "formal_target": "A derived context cell carries source bindings and a declared loss/use contract.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:vcm.certificates.failure_blocks_promotion",
+      "chapter_id": "semantic-pages-context-cells-and-certificates",
+      "module": "AsiStackProofs.ContextCertificates",
+      "formal_target": "A summary cannot increase the authority ceiling of its source cells.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:vcm.transactions.operational_invariant",
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "module": "AsiStackProofs.ContextTransactions",
+      "formal_target": "A snapshot read sees the committed events in its declared view.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:vcm.transactions.failure_blocks_promotion",
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "module": "AsiStackProofs.ContextTransactions",
+      "formal_target": "A tainted source produces tainted derived context unless declassification is authorized.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "module": "AsiStackProofs.VerificationBandwidth",
+      "formal_target": "A context packet admitted for use may still be marked inadequate for a target claim.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:verification_bandwidth.adequacy.failure_blocks_promotion",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "module": "AsiStackProofs.VerificationBandwidth",
+      "formal_target": "A high-risk claim with inadequate context cannot receive a verified support label.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:claims.ledger.operational_invariant",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "module": "AsiStackProofs.ClaimLedger",
+      "formal_target": "A claim update preserves prior evidence and revision history.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:claims.ledger.failure_blocks_promotion",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "module": "AsiStackProofs.ClaimLedger",
+      "formal_target": "A contradiction prevents promotion until resolved, bounded, or recorded as residual.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:spinoza.proof_carrying.operational_invariant",
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "module": "AsiStackProofs.ProofCarryingClaims",
+      "formal_target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "module": "AsiStackProofs.ProofCarryingClaims",
+      "formal_target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:tribunal.review.operational_invariant",
+      "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
+      "module": "AsiStackProofs.Tribunal",
+      "formal_target": "A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:tribunal.review.failure_blocks_promotion",
+      "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
+      "module": "AsiStackProofs.Tribunal",
+      "formal_target": "A high-risk artifact cannot be accepted when required tribunal review is absent.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:jobs.lifecycle.operational_invariant",
+      "chapter_id": "labor-os-and-typed-jobs",
+      "module": "AsiStackProofs.TypedJobs",
+      "formal_target": "A job transitions only through valid lifecycle states.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:jobs.lifecycle.failure_blocks_promotion",
+      "chapter_id": "labor-os-and-typed-jobs",
+      "module": "AsiStackProofs.TypedJobs",
+      "formal_target": "A job requiring approval cannot execute before approval is recorded.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:artifacts.graph.operational_invariant",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "Every produced artifact records its parent job and source/context references.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:artifacts.graph.failure_blocks_promotion",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "An artifact with missing required provenance cannot support a promoted claim.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:runtime.adapters.operational_invariant",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "module": "AsiStackProofs.RuntimeAdapters",
+      "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:runtime.adapters.failure_blocks_promotion",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "module": "AsiStackProofs.RuntimeAdapters",
+      "formal_target": "A high-impact adapter call without approval is rejected.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:procedural.loop_closure.operational_invariant",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "module": "AsiStackProofs.ProceduralMemory",
+      "formal_target": "A generated tool records its source traces, parameters, and verification result.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "module": "AsiStackProofs.ProceduralMemory",
+      "formal_target": "A tool with failed regression cannot be promoted to routable status.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:routing.specialists.operational_invariant",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "A router may select only specialists whose authority and readiness satisfy the task requirement.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:routing.specialists.failure_blocks_promotion",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "A failed readiness predicate routes to fallback or residual, not promotion.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:readiness.gates.operational_invariant",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "module": "AsiStackProofs.ReadinessGates",
+      "formal_target": "A module can enter promoted state only after all required gates pass.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:readiness.gates.failure_blocks_promotion",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "module": "AsiStackProofs.ReadinessGates",
+      "formal_target": "A quarantined module cannot be selected for ordinary execution routes.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:moecot.runtime.operational_invariant",
+      "chapter_id": "moecot-runtime-and-multi-core-orchestration",
+      "module": "AsiStackProofs.MoECOTRuntime",
+      "formal_target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:moecot.runtime.failure_blocks_promotion",
+      "chapter_id": "moecot-runtime-and-multi-core-orchestration",
+      "module": "AsiStackProofs.MoECOTRuntime",
+      "formal_target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:compression.cgs.operational_invariant",
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "module": "AsiStackProofs.CompactGenerativeSystems",
+      "formal_target": "A compact representation with unresolved obligations carries residual records.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:compression.cgs.failure_blocks_promotion",
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "module": "AsiStackProofs.CompactGenerativeSystems",
+      "formal_target": "A lossy representation cannot be marked exact without verification evidence.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:compression.gvr.operational_invariant",
+      "chapter_id": "generate-verify-repair-compression",
+      "module": "AsiStackProofs.GenerateVerifyRepair",
+      "formal_target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:compression.gvr.failure_blocks_promotion",
+      "chapter_id": "generate-verify-repair-compression",
+      "module": "AsiStackProofs.GenerateVerifyRepair",
+      "formal_target": "A failed verification blocks exactness promotion.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:compression.artifacts.operational_invariant",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "module": "AsiStackProofs.ArtifactCompression",
+      "formal_target": "A compressed artifact used for a task must pass that task probe or route to fallback.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:compression.artifacts.failure_blocks_promotion",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "module": "AsiStackProofs.ArtifactCompression",
+      "formal_target": "A compression record cannot omit residual or fallback metadata.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:representation.semantic_tree.operational_invariant",
+      "chapter_id": "semantic-representation-and-tree-structured-models",
+      "module": "AsiStackProofs.SemanticRepresentation",
+      "formal_target": "A semantic node marked grounded has at least one provenance link.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
+      "chapter_id": "semantic-representation-and-tree-structured-models",
+      "module": "AsiStackProofs.SemanticRepresentation",
+      "formal_target": "A hierarchy update preserves prior node references or records supersession.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:resources.budgets.operational_invariant",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "A task budget cannot disable required safety or verification gates.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:resources.budgets.failure_blocks_promotion",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "A high-risk task with insufficient verification budget is blocked or escalated.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:simulation.fidelity.operational_invariant",
+      "chapter_id": "simulation-fidelity-and-physical-constraints",
+      "module": "AsiStackProofs.SimulationFidelity",
+      "formal_target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:simulation.fidelity.failure_blocks_promotion",
+      "chapter_id": "simulation-fidelity-and-physical-constraints",
+      "module": "AsiStackProofs.SimulationFidelity",
+      "formal_target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:substrates.search.operational_invariant",
+      "chapter_id": "mathematical-and-search-substrates",
+      "module": "AsiStackProofs.SearchSubstrates",
+      "formal_target": "A substrate adoption record includes baseline, measured target, and falsification criterion.",
+      "target_status": "planned",
+      "triage": "research-agenda",
+      "recommended_route": "defer-until-narrowed",
+      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+    },
+    {
+      "tag": "lean:substrates.search.failure_blocks_promotion",
+      "chapter_id": "mathematical-and-search-substrates",
+      "module": "AsiStackProofs.SearchSubstrates",
+      "formal_target": "A substrate without passing evidence remains non-core.",
+      "target_status": "planned",
+      "triage": "research-agenda",
+      "recommended_route": "defer-until-narrowed",
+      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+    },
+    {
+      "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "module": "AsiStackProofs.ProofCarryingContracts",
+      "formal_target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:circle_contracts.consumer_gate.failure_blocks_promotion",
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "module": "AsiStackProofs.ProofCarryingContracts",
+      "formal_target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:coil_memory.alias_boundary.operational_invariant",
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "module": "AsiStackProofs.CoilAttentionMemory",
+      "formal_target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "module": "AsiStackProofs.CoilAttentionMemory",
+      "formal_target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "module": "AsiStackProofs.CyclicMixers",
+      "formal_target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "module": "AsiStackProofs.CyclicMixers",
+      "formal_target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:proofs.envelope.operational_invariant",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "module": "AsiStackProofs.ProofEnvelope",
+      "formal_target": "A proof target marked implemented has an existing module and passes the build.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:proofs.envelope.failure_blocks_promotion",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "module": "AsiStackProofs.ProofEnvelope",
+      "formal_target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+    },
+    {
+      "tag": "lean:benchmarks.ratchet.operational_invariant",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "module": "AsiStackProofs.BenchmarkRatchets",
+      "formal_target": "A capability promotion requires benchmark evidence and preserved regression records.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "module": "AsiStackProofs.BenchmarkRatchets",
+      "formal_target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:reference_architecture.trace.operational_invariant",
+      "chapter_id": "integrated-reference-architecture",
+      "module": "AsiStackProofs.ReferenceArchitecture",
+      "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
+      "chapter_id": "integrated-reference-architecture",
+      "module": "AsiStackProofs.ReferenceArchitecture",
+      "formal_target": "A trace with a missing governance gate cannot be marked valid.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:theseus.reference.report_contract.operational_invariant",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Initial triage: this target is governance or workflow logic; formalization should start with policy/event semantics and tests, then narrow proof obligations."
+    },
+    {
+      "tag": "lean:roadmap.phases.operational_invariant",
+      "chapter_id": "prototype-roadmap",
+      "module": "AsiStackProofs.PrototypeRoadmap",
+      "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
+      "target_status": "planned",
+      "triage": "research-agenda",
+      "recommended_route": "defer-until-narrowed",
+      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+    },
+    {
+      "tag": "lean:roadmap.phases.failure_blocks_promotion",
+      "chapter_id": "prototype-roadmap",
+      "module": "AsiStackProofs.PrototypeRoadmap",
+      "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
+      "target_status": "planned",
+      "triage": "research-agenda",
+      "recommended_route": "defer-until-narrowed",
+      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+    },
+    {
+      "tag": "lean:living_book.methodology.operational_invariant",
+      "chapter_id": "living-book-methodology",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:living_book.methodology.failure_blocks_promotion",
+      "chapter_id": "living-book-methodology",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:bibliography.plan.operational_invariant",
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "module": "AsiStackProofs.BibliographyPlan",
+      "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    },
+    {
+      "tag": "lean:bibliography.plan.failure_blocks_promotion",
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "module": "AsiStackProofs.BibliographyPlan",
+      "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+    }
+  ]
+}

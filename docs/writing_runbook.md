@@ -11,6 +11,7 @@ This is the operating runbook for turning the scaffold into the full living book
 5. Read `sources/cache/cache_manifest.json` and `docs/source_readiness_report.md`.
 6. Read the chapter files in scope.
 7. Read source notes and raw cache files only for the sources in scope.
+8. Read `docs/prewriting_readiness.md` and `docs/external_literature_queue.md` when starting a full-book or part-level writing run.
 
 ## Source Hierarchy
 
@@ -45,6 +46,26 @@ For each chapter:
 8. Add planned proof/code hooks when a mechanism can be formalized or tested.
 9. Update `appendices/F_changelog.qmd`.
 10. Run validation and render.
+
+## Per-Chapter Definition of Done
+
+Each chapter must maintain these sections:
+
+- Chapter status
+- Drafting guardrail
+- Problem
+- Why existing approaches are insufficient
+- Core Claim
+- Mechanism
+- Interfaces
+- Invariants
+- Failure modes
+- Minimal implementation
+- Codex test plan
+- Source crosswalk
+- Summary
+
+The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist.
 
 ## Claim Labels
 
@@ -83,6 +104,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_schemas.py
+(cd lean && lake build)
 quarto render --to html
 ```
 

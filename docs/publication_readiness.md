@@ -17,6 +17,9 @@ This file tracks whether the public repository is ready for the next major phase
 - `proofs/proof_manifest.json` is generated from the outline.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.
+- Backbone source notes and connector-readiness metadata exist for the main pre-drafting sources.
+- Per-chapter DoD, source-note, and proof-readiness validators are wired into `scripts/validate_book.py`.
+- The Lean toolchain is pinned and CI builds the Lean workspace.
 - Generated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, and bibliography/source corpus.
 - JSON schemas and Lean workspace both have local validation commands.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
@@ -26,11 +29,10 @@ This file tracks whether the public repository is ready for the next major phase
 - Chapters are currently guarded stubs, not manuscript chapters.
 - Source-derived claims require source notes before support-state promotion.
 - Project Theseus, Circle Calculus, and Field of God AI Constitution source records still need source notes before being used as source-derived support.
-- Three source records currently require authenticated connector export for durable cache/source-note work: `vcm_editable`, `moecot`, and `coherence_exchange`.
-- Four cached Drive-file records are auth-gate placeholders, not usable source text: `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`.
-- Most Lean proof targets are planned, not implemented.
+- Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
+- Most Lean proof targets are planned or triaged as schema/process/research targets, not implemented.
 - Codex tests are planned, not implemented or run.
-- External literature queue is not citation-normalized.
+- External literature queue is explicit in `docs/external_literature_queue.md`, but not citation-normalized.
 
 ## Pre-Drafting Checklist
 
@@ -41,8 +43,8 @@ Before starting a goal to write the whole book:
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_book.py`.
 - Run `python3 scripts/validate_schemas.py`.
+- Run `(cd lean && lake build)`.
 - Run `quarto render --to html`.
-- Run `lake build` from `lean/` if proof files changed.
 - Confirm no raw source exports are staged.
 
 ## Definition of Presentable Public State

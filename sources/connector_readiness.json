@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "updated": "2026-06-24",
+  "note": "Authenticated Google Drive connector reads succeeded in the Codex session. Raw source text remains local/private and is not committed.",
+  "records": {
+    "moecot": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded for the MoECOT-Agent Architecture Whitepaper; use the source note before source-derived claims."
+    },
+    "vcm_editable": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded for the editable VCM paper; local curl cache is not authoritative."
+    },
+    "coherence_exchange": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded; speculative/metaphysical material must remain explicitly bounded."
+    },
+    "talos_md": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded for the public Markdown Talos release; local cache is an auth-gate placeholder."
+    },
+    "moecot_md": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded for the Markdown MoECOT whitepaper; local cache is an auth-gate placeholder."
+    },
+    "road_to_agi": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded; reported benchmark claims remain source-reported until artifacts are independently ingested and verified."
+    },
+    "coilmoecot": {
+      "status": "connector_readable",
+      "method": "Google Drive connector fetch",
+      "checked": "2026-06-24",
+      "note": "Authenticated connector fetch succeeded for the CoilMoECOT design/spec source; do not treat it as performance evidence."
+    }
+  }
+}

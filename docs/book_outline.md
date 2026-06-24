@@ -348,8 +348,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | planned |
-| `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | planned |
+| `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | implemented |
+| `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | implemented |
 
 ### Human Intent as a Formal Input
 
@@ -828,14 +828,14 @@ Lean proof targets:
 
 ## Part II - Planning, Memory, Reasoning, and Execution
 
-Part job: Specify the operational middle of the stack: intent contracts, planning/control, semantic compilation, memory/context, verification, tribunals, typed work, artifact production, audit, and replay.
+Part job: Specify the operational middle of the stack: intent contracts, planning/control, semantic compilation, memory/context, verification, tribunals, typed work, artifact production, runtime adapters, procedural memory, audit, and replay.
 
 Part source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Core | `viea`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `vcm_public`, `spinoza`, `uat`, `talos`, `genesiscode` | Load these before drafting or reorganizing this part. |
-| Supporting | `software_magic_grimoire`, `context_engineer`, `black_hole_context_manager`, `verification_bandwidth`, `treellm`, `spinoza_composer`, `cognitive_loop_closure`, `ladon_manhattan` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
+| Core | `viea`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `vcm_public`, `spinoza`, `uat`, `talos`, `genesiscode`, `cognitive_loop_closure` | Load these before drafting or reorganizing this part. |
+| Supporting | `software_magic_grimoire`, `context_engineer`, `black_hole_context_manager`, `verification_bandwidth`, `treellm`, `spinoza_composer`, `ladon_manhattan`, `theseus_operator_os` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
 | Connector or recovery required | `vcm_editable`, `moecot`, `talos_md` | Use Google Drive connector or mark blocked before source-derived claims. |
 
 ### Intent-to-Execution Contracts
@@ -1581,18 +1581,6 @@ Lean proof targets:
 | `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | planned |
 | `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | planned |
 
-## Part III - Routing, Compression, Evidence, and Implementation
-
-Part job: Define how the stack scales and improves: runtime adapters, procedural memory, modular routing, readiness gates, compression, representation, resource limits, executable specifications, benchmark ratchets, integration, prototype sequencing, living updates, and bibliography discipline.
-
-Part source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Core | `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `bbvca_v9`, `treellm`, `tokenmana`, `simulation_scaling`, `genesiscode`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `coil_attention_memory`, `coilra_multicoil_rope`, `rope_position_certifier` | Load these before drafting or reorganizing this part. |
-| Supporting | `rankfold_compressor`, `bbvca_main`, `bugbrain`, `temporal_coil_research`, `road_to_agi`, `beastbrain`, `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `proof_carrying_circular_computation`, `circle_ai_architectures`, `field_of_god_ai_constitution` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
-| Connector or recovery required | `moecot`, `moecot_md`, `coilmoecot`, `road_to_agi` | Use Google Drive connector or mark blocked before source-derived claims. |
-
 ### Runtime Adapters, Tool Permissions, and Human Approval
 
 Stable ID: `runtime-adapters-tool-permissions-and-human-approval`
@@ -1699,6 +1687,18 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | planned |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | planned |
+
+## Part III - Routing, Compression, Representation, and Substrates
+
+Part job: Define how the stack scales capability through modular routing, readiness gates, specialist cores, compression, semantic representation, resource budgets, simulation boundaries, mathematical substrates, and optional cyclic/coil lanes.
+
+Part source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Core | `octopus_router`, `rmi`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `bbvca_v9`, `treellm`, `tokenmana`, `simulation_scaling`, `genesiscode`, `circle_calculus_core`, `circle_ai_contract_suite`, `coil_attention_memory`, `coilra_multicoil_rope`, `rope_position_certifier` | Load these before drafting or reorganizing this part. |
+| Supporting | `rankfold_compressor`, `bbvca_main`, `bugbrain`, `temporal_coil_research`, `project_theseus_whitepaper`, `theseus_circle_transfer`, `proof_carrying_circular_computation`, `circle_ai_architectures`, `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
+| Connector or recovery required | `moecot`, `moecot_md`, `coilmoecot` | Use Google Drive connector or mark blocked before source-derived claims. |
 
 ### Routing Heads and Specialist Cores
 
@@ -2398,6 +2398,17 @@ Lean proof targets:
 | `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
 
+## Part IV - Evidence, Implementation, and the Living Book
+
+Part job: Turn the architecture into an accountable research program: executable specifications, Lean proof envelopes, benchmark ratchets, reference traces, implementation roadmap, living-book method, and bibliography discipline.
+
+Part source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Core | `benchmaxxing`, `genesiscode`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os` | Load these before drafting or reorganizing this part. |
+| Supporting | `road_to_agi`, `moecot`, `moecot_md`, `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `coherence_exchange` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
+| Connector or recovery required | `road_to_agi`, `moecot`, `moecot_md` | Use Google Drive connector or mark blocked before source-derived claims. |
 
 ### Executable Specifications and Lean Proof Envelope
 
@@ -2620,7 +2631,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | planned |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | planned |
-
 
 ### Prototype Roadmap
 

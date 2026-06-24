@@ -6,6 +6,7 @@ The book should read like a serious systems architecture text.
 
 - The book must explain one architecture, not collect isolated papers.
 - Each chapter must state the layer's problem, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, and source crosswalk.
+- Each chapter must satisfy the machine-checked scaffold DoD in `scripts/validate_chapter_dod.py`.
 - Philosophical material must be translated into engineering-compatible constraints, claims, and failure modes.
 - Speculative material must remain visibly speculative.
 - Claims must not outrun support states.
@@ -16,6 +17,7 @@ The book should read like a serious systems architecture text.
 - No fabricated citations.
 - No fabricated test results.
 - No source-derived label without source text.
+- No source-derived label without a source note or equivalent ingested-source artifact.
 - No prototype-backed label without inspected prototype/code.
 - No test-backed label without an actual run record.
 - Negative, inconclusive, or failed results stay visible.
@@ -32,5 +34,6 @@ The book should read like a serious systems architecture text.
 
 - Any runnable test, proof, or benchmark must live in a reproducible folder.
 - Proofs and code examples must be linked from chapters only after they exist.
+- Proof targets must stay aligned with `proofs/proof_triage.json`; schema/process/research targets need executable contracts or clearer predicates before they become implemented Lean.
 - Experimental results must include command, date, environment, and result summary.
 - Validation scripts should fail on structural drift rather than silently tolerating it.
