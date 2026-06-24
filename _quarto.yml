@@ -50,8 +50,9 @@ format:
     toc: true
     number-sections: true
     code-fold: true
-    theme: cosmo
-    css: assets/styles.scss
+    theme:
+      - cosmo
+      - assets/styles.scss
     link-external-newwindow: true
 
 execute:
