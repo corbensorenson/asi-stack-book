@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 79,586 chapter words, averaging 1,592 words per chapter.
+Current scale: 50 chapter files, 79,660 chapter words, averaging 1,593 words per chapter.
 
 ## Completed in v0.2
 
@@ -49,7 +49,8 @@ Current scale: 50 chapter files, 79,586 chapter words, averaging 1,592 words per
 - The routing/readiness/MoECOT chapters now distinguish specialist registry, routing decision, readiness gate, and orchestration fixture validation from unimplemented routing benchmarks, lifecycle-transition enforcement, quarantine routing, imported MoECOT artifacts, replay records, and reproduced runtime benchmarks.
 - The compactness/compression/semantic-resource chapters now distinguish compact generative records, compression receipts, compressed artifact records, semantic node records, and resource budget fixtures from unimplemented codecs, utility probes, grounding benchmarks, load simulations, scheduler runs, and Lean proofs.
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, and model-quality evaluations.
-- The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented proof-target coverage audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
+- The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
+- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 100 proof targets are covered by triage, 44 are implemented formal-invariant Lean candidates, and 56 remain planned across schema, process, and research routes.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -60,6 +61,7 @@ Current scale: 50 chapter files, 79,586 chapter words, averaging 1,592 words per
 - Most source-to-claim mappings still need explicit claim-level mapping from the new source notes before support states can be promoted.
 - Source-note coverage is no longer the main blocker for assigned sources; source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
 - Most Lean proof targets remain planned or triaged as schema/process/research targets; 44 of 100 proof targets are currently marked implemented.
+- Artifact-by-artifact audits for the remaining planned proof targets still need to identify the next schema, policy-model, research, or Lean artifact for each target.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented and remains limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.

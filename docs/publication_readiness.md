@@ -32,7 +32,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source-derived claims require claim-level mapping from source notes before support-state promotion.
 - Newly added or previously unassigned sources still require source notes before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
-- Most Lean proof targets are planned or triaged as schema/process/research targets, not implemented.
+- Most Lean proof targets are planned or triaged as schema/process/research targets, not implemented; Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture validation is implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, but not citation-normalized.
 - The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.

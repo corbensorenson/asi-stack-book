@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,7 @@ SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
 SOURCE_NOTES = ROOT / "sources" / "source_notes"
 CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
 CACHE_MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
+PROOF_TRIAGE = ROOT / "proofs" / "proof_triage.json"
 
 
 GLOSSARY = [
@@ -543,6 +545,63 @@ def ensure_protocol_schemas() -> None:
     )
 
 
+def proof_target_coverage_markdown() -> str:
+    if not PROOF_TRIAGE.exists():
+        return (
+            "## Proof Target Coverage Audit\n\n"
+            "`proofs/proof_triage.json` is not present, so no generated proof-target coverage summary is available.\n"
+        )
+
+    data = read_json(PROOF_TRIAGE)
+    if not isinstance(data, dict):
+        raise TypeError("proofs/proof_triage.json must contain an object")
+    records = data.get("records", [])
+    if not isinstance(records, list):
+        raise TypeError("proofs/proof_triage.json records must contain a list")
+    proof_records = [record for record in records if isinstance(record, dict)]
+
+    status_counts = Counter(str(record.get("target_status", "missing")) for record in proof_records)
+    triage_counts = Counter(
+        (
+            str(record.get("target_status", "missing")),
+            str(record.get("triage", "missing")),
+            str(record.get("recommended_route", "missing")),
+        )
+        for record in proof_records
+    )
+
+    status_rows = "\n".join(
+        f"| {qmd_escape(status)} | {count} |" for status, count in sorted(status_counts.items())
+    )
+    triage_rows = "\n".join(
+        f"| {qmd_escape(status)} | {qmd_escape(triage)} | {qmd_escape(route)} | {count} |"
+        for (status, triage, route), count in sorted(triage_counts.items())
+    )
+
+    return f"""## Proof Target Coverage Audit
+
+This section is generated from `proofs/proof_triage.json`. It records coverage and routing state only: it does not claim that planned schema, process, or research targets have their final artifacts.
+
+`python3 scripts/validate_proof_readiness.py` checks that these triage records stay aligned with `proofs/proof_manifest.json`, imported Lean modules, and implemented target statuses.
+
+| Metric | Count |
+|---|---:|
+| Proof targets covered by triage | {len(proof_records)} |
+
+### Coverage by Status
+
+| Target status | Count |
+|---|---:|
+{status_rows}
+
+### Coverage by Route
+
+| Target status | Triage class | Recommended route | Count |
+|---|---|---|---:|
+{triage_rows}
+"""
+
+
 def write_test_specs(structure: dict) -> None:
     path = ROOT / "appendices" / "E_codex_test_specs.qmd"
     rows = []
@@ -557,8 +616,9 @@ def write_test_specs(structure: dict) -> None:
             rows.append(
                 f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | {qmd_escape(test)} | planned | not run |"
             )
+    proof_coverage = proof_target_coverage_markdown()
     path.write_text(
-        f"# Codex Test Specs\n\nThis appendix is generated from chapter-level `codex_tests` in `book_structure.json`.\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Chapter ID | Chapter | Test spec | Implementation status | Result status |\n|---|---|---|---|---|\n{chr(10).join(rows)}\n\n## Repository-Level Implemented Checks\n\n| Check | Command | Scope | Result policy |\n|---|---|---|---|\n| Protocol schema fixture validation | `python3 scripts/validate_protocol_examples.py` | Validates example records in `tests/fixtures/protocol_records/` against matching schemas in `schemas/`. | Passing this check proves fixture/schema consistency only; it does not promote chapter claims or replace the chapter-level tests above. |\n| Proof-readiness validation | `python3 scripts/validate_proof_readiness.py` | Checks that proof triage tags, modules, root imports, formal targets, and target statuses stay aligned with the generated proof manifest. | Passing this check proves manifest/triage/import consistency only; theorem status still requires implemented Lean modules and a passing Lean build. |\n| Repeated prose validation | `python3 scripts/validate_repeated_prose.py` | Checks chapter files for exact repeated long prose paragraphs that indicate template-shaped drafting. | Passing this check proves only that exact repeated long paragraphs are absent; it is not a full editorial review. |\n| Visual coverage validation | `python3 scripts/validate_visual_coverage.py` | Checks that every chapter has at least one Mermaid diagram and that the landing page references the hero image asset. | Passing this check proves visual coverage only; it does not prove the diagrams are complete or promote chapter claims. |\n",
+        f"# Codex Test Specs\n\nThis appendix is generated from chapter-level `codex_tests` in `book_structure.json`.\n\nNo result is recorded here unless a test has actually been implemented and run.\n\n| Chapter ID | Chapter | Test spec | Implementation status | Result status |\n|---|---|---|---|---|\n{chr(10).join(rows)}\n\n## Repository-Level Implemented Checks\n\n| Check | Command | Scope | Result policy |\n|---|---|---|---|\n| Protocol schema fixture validation | `python3 scripts/validate_protocol_examples.py` | Validates example records in `tests/fixtures/protocol_records/` against matching schemas in `schemas/`. | Passing this check proves fixture/schema consistency only; it does not promote chapter claims or replace the chapter-level tests above. |\n| Proof-readiness validation | `python3 scripts/validate_proof_readiness.py` | Checks that proof triage tags, modules, root imports, formal targets, and target statuses stay aligned with the generated proof manifest. | Passing this check proves manifest/triage/import consistency only; theorem status still requires implemented Lean modules and a passing Lean build. |\n| Proof target coverage summary | Generated by `python3 scripts/sync_scaffold.py` from `proofs/proof_triage.json`; checked by `python3 scripts/validate_proof_readiness.py`. | Publishes the current count of proof targets by status, triage class, and recommended route. | Passing the validator proves coverage/accounting consistency only; it does not implement planned schema, process, research, or Lean targets. |\n| Repeated prose validation | `python3 scripts/validate_repeated_prose.py` | Checks chapter files for exact repeated long prose paragraphs that indicate template-shaped drafting. | Passing this check proves only that exact repeated long paragraphs are absent; it is not a full editorial review. |\n| Visual coverage validation | `python3 scripts/validate_visual_coverage.py` | Checks that every chapter has at least one Mermaid diagram and that the landing page references the hero image asset. | Passing this check proves visual coverage only; it does not prove the diagrams are complete or promote chapter claims. |\n\n{proof_coverage.rstrip()}\n",
         encoding="utf-8",
     )
 

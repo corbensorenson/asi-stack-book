@@ -2498,9 +2498,10 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; most targets still need Lean/schema/process/research triage.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming full proof-target coverage.
+- Implemented generated audit: Appendix E summarizes all 100 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
-- Planned Codex test: Proof target coverage audit.
+- Planned Codex test: Artifact-by-artifact target audit.
 
 Lean proof targets:
 
