@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no proof verifier or formalization-mismatch tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
 | Source loading state | source notes: `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`; raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Proof-carrying claim fixture validation implemented; verifier and formalization tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats proof-carrying claims as a verification envelope, not as proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture, but the fixture's verifier result is not a passed theorem or empirical validation.
 
 ## Problem
 
@@ -61,7 +61,7 @@ GenesisCode contributes the obligation-envelope view: accepted artifacts should 
 
 [spinoza-verification-and-proof-carrying-claims.core, label: Design rationale, support: argument] Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Proof of Belief / The Spinoza Architecture, GenesisCode, The Coherence Exchange, Verification Bandwidth in Bounded Contexts, and TreeLLM - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Spinoza supplies tiered proof/citation/procedure-carrying claim discipline and downgrade paths. GenesisCode supplies obligation artifacts and provenance pressure. Verification Bandwidth explains why high-risk claims may need stronger checks than more context. TreeLLM supplies representation pressure. Coherence Exchange remains speculative synthesis rather than verifier evidence.
 
 ## Mechanism
 
@@ -115,8 +115,6 @@ The claim ledger stores proof status. GenesisCode and Lean provide formal hooks 
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Proof tier is explicit.
 - A justification artifact is required for promoted claims.
 - Unsupported claims remain marked speculative or blocked.
@@ -124,8 +122,6 @@ The invariants are the conditions that must remain true even when the implementa
 The tier invariant is strict: a claim cannot occupy a formal or verified tier merely because a proof was attempted. It needs a justification artifact appropriate to the tier and a recorded verifier result.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Certified delusion.
 - Invalid formalization.
@@ -139,17 +135,18 @@ A tiered proof-carrying claim schema with one non-philosophical invariant exampl
 
 The smallest useful implementation is a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The fixture validates the envelope: tier, mapping, artifact ref, verifier name, verifier result field, limitations, downgrade rule, tribunal ref, and ledger update. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Proof-carrying claim fixture validation | Check that the proof-carrying claim fixture matches the public schema and records tier, interpretation mapping, artifact ref, verifier, result field, limitations, downgrade rule, tribunal ref, and ledger update. | implemented by protocol validation; run in this pass |
 | Proof artifact presence test | Check that promoted formal or verified claims carry an appropriate artifact reference. | planned; not run |
 | Tier assignment test | Check that support tiers match verifier result and limitations. | planned; not run |
 | Formalization mismatch review | Check that claims with uncertain interpretation mapping route to residual or tribunal review. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The remaining tests need actual verifier outputs, interpretation-mapping examples, and failed or mismatched cases.
 
 ### Formalization hooks
 
@@ -158,7 +155,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | planned |
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The current local Lean modules prove selected stack/evidence invariants elsewhere; this chapter has no implemented proof-carrying-claim theorem yet.
 
 ## Source crosswalk
 
@@ -170,7 +167,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for proof-carrying and justification-carrying claim discipline. It does not claim that Spinoza verification, GenesisCode obligations, or TreeLLM representations are implemented here.
 
 ## Summary
 

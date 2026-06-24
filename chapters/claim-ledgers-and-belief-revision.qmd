@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no claim-extraction or contradiction-detection tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat` |
 | Source loading state | source notes: `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat`; raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Claim and belief-revision fixture validation implemented; extraction and contradiction tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures, but it does not yet run a claim extractor, contradiction detector, or automated belief-revision engine.
 
 ## Problem
 
@@ -61,7 +61,7 @@ Aletheia and UAT both push against this failure by decomposing outputs into prop
 
 [claim-ledgers-and-belief-revision.core, label: Design rationale, support: argument] Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Proof of Belief / The Spinoza Architecture, Verified Intent-to-Execution Architecture, The Coherence Exchange, Aletheia Foundry, and Unified Adaptive Tribunal - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Spinoza supplies proposer/verifier separation, claim graphs, defeaters, and downgrade discipline. VIEA supplies artifact and claim-ledger pressure. Coherence Exchange is useful speculative synthesis, not external corroboration. Aletheia and UAT supply proposition-tiering, uncertainty preservation, and review routes.
 
 ## Mechanism
 
@@ -114,8 +114,6 @@ VCM supplies source context. Spinoza verifies or downgrades claims. UAT can revi
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Claims are separable from prose.
 - Contradictions remain linked.
 - Revision history is not overwritten.
@@ -123,8 +121,6 @@ The invariants are the conditions that must remain true even when the implementa
 The non-overwrite invariant is central. New evidence can change the current state, but it cannot erase the fact that a prior state existed, which evidence supported it, and why it changed.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Untracked assumptions.
 - Belief inertia.
@@ -138,17 +134,18 @@ A claim-record schema and belief-revision transition example.
 
 The smallest useful implementation is the existing `claim_record` schema plus a `belief_revision_record` schema and fixture. The fixture should demonstrate conservative support-state handling without claiming that an actual contested claim has been resolved.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+Those fixtures demonstrate record shape and conservative support-state handling. They do not show that prose claims were extracted correctly, contradictions were detected, or a substantive belief was revised.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Claim and belief-revision fixture validation | Check that claim and belief-revision fixtures match their public schemas and preserve support state, evidence refs, defeaters, uncertainty, review status, and history refs. | implemented by protocol validation; run in this pass |
 | Claim extraction test | Check that prose claims can be represented separately from prose with labels, support states, and provenance. | planned; not run |
 | Contradiction detection test | Check that contradiction refs remain linked instead of being overwritten. | planned; not run |
 | Belief revision test | Check that support-state updates preserve prior evidence and revision history. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The planned tests require a claim extractor, contradiction fixtures, and a transition checker that can reject unsupported promotion.
 
 ### Formalization hooks
 
@@ -157,7 +154,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | planned |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. Revision-history preservation is a promising finite-state target once the ledger transition relation is explicit.
 
 ## Source crosswalk
 
@@ -169,7 +166,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | source note available; local raw cache available |
 | `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for claim-ledger and belief-revision discipline. It does not promote any chapter claim merely because the repo has claim-record schemas.
 
 ## Summary
 

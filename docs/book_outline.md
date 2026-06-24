@@ -1367,6 +1367,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A claim-record schema and belief-revision transition example.
+- Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
 - Planned Codex test: Contradiction detection test.
 - Planned Codex test: Belief revision test.
@@ -1419,6 +1420,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A tiered proof-carrying claim schema with one non-philosophical invariant example.
+- Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape only.
 - Planned Codex test: Proof artifact presence test.
 - Planned Codex test: Tier assignment test.
 - Planned Codex test: Formalization mismatch review.
@@ -1471,6 +1473,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A tribunal protocol for claim/artifact review with reviewer roles and output schema.
+- Implemented protocol validation: `tribunal_review_record` fixture validates public record shape only.
 - Planned Codex test: Adversarial review coverage test.
 - Planned Codex test: Dissent preservation test.
 - Planned Codex test: Consensus evidence test.

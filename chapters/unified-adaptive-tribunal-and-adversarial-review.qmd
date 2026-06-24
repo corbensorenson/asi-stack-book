@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no multi-reviewer tribunal run has been executed for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,11 +35,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `uat`; supporting: `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` |
 | Source loading state | source notes: `uat`, `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth`; raw cache: `uat`, `spinoza`, `talos`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Tribunal review fixture validation implemented; adversarial review runs remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats tribunal review as a bounded escalation protocol. The repo validates a tribunal-review record fixture, but it has not run a multi-reviewer UAT pipeline, measured reviewer independence, or validated consensus thresholds.
 
 ## Problem
 
@@ -61,7 +61,7 @@ The point is targeted escalation. Most claims should not pay tribunal cost. High
 
 [unified-adaptive-tribunal-and-adversarial-review.core, label: Design rationale, support: argument] A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Unified Adaptive Tribunal, Proof of Belief / The Spinoza Architecture, The Coherence Exchange, Talos Protocol, and Verification Bandwidth in Bounded Contexts - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. UAT supplies retrieval-bounded proposition review, adversarial siege, role separation, hard cycle caps, and human checkpoints. Spinoza supplies tier and downgrade consequences. Talos supplies execution/audit pressure for review artifacts. Verification Bandwidth explains why tribunal escalation is sometimes the right response to inadequate context. Coherence Exchange remains speculative connective tissue.
 
 ## Mechanism
 
@@ -117,8 +117,6 @@ Spinoza consumes tribunal results for tier decisions. Planning escalates risky n
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Dissent is preserved.
 - Consensus requires evidence.
 - High-risk reviews are reproducible enough to audit.
@@ -126,8 +124,6 @@ The invariants are the conditions that must remain true even when the implementa
 Dissent preservation matters because the future system may later receive evidence that makes the minority view correct. Consensus requires evidence refs, not just agreement. Reproducibility requires the review dossier, roles, probes, and hard stop conditions to be visible enough to audit.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Reviewer collusion.
 - Consensus theater.
@@ -141,17 +137,18 @@ A tribunal protocol for claim/artifact review with reviewer roles and output sch
 
 The smallest useful implementation is a `tribunal_review_record` schema and fixture. It should show reviewer roles, dossier refs, adversarial probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human-adjudication state.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+That fixture validates the review envelope. It does not prove that reviewers were independent, that adversarial probes found the right issues, or that a verdict was correct.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Tribunal review fixture validation | Check that the tribunal fixture matches the public schema and records target, risk class, dossier, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human adjudication. | implemented by protocol validation; run in this pass |
 | Adversarial review coverage test | Check that required reviewer roles and probes exist for high-risk reviews. | planned; not run |
 | Dissent preservation test | Check that minority objections remain attached to the review record. | planned; not run |
 | Consensus evidence test | Check that consensus verdicts cite evidence refs and required actions. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. Review quality needs a reproducible dossier, independent reviewer routes, adversarial probes, and logged verdict transitions.
 
 ### Formalization hooks
 
@@ -160,7 +157,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | planned |
 | `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The schema can require fields for dissent and evidence refs; it cannot yet prove that high-risk artifacts were correctly routed to review.
 
 ## Source crosswalk
 
@@ -172,7 +169,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for tribunal review, tier consequences, audit pressure, and context-adequacy escalation. It does not claim a tribunal pipeline has been implemented or benchmarked.
 
 ## Summary
 
