@@ -1529,6 +1529,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A typed-job schema with lifecycle states and permission checks.
+- Implemented protocol validation: `typed_job` fixture validates public record shape only.
 - Planned Codex test: Typed job lifecycle test.
 - Planned Codex test: Tool permission enforcement test.
 - Planned Codex test: Human approval gate test.
@@ -1582,6 +1583,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An artifact graph schema with job, source, context, and evidence edges.
+- Implemented protocol validation: `artifact_graph_record` fixture validates public record shape only.
 - Planned Codex test: Artifact traceability test.
 - Planned Codex test: Audit reconstruction test.
 - Planned Codex test: Replay metadata completeness test.
@@ -1636,6 +1638,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A runtime-adapter contract with permissions, approval requirements, and result evidence.
+- Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape only.
 - Planned Codex test: Adapter permission test.
 - Planned Codex test: Approval gate enforcement test.
 - Planned Codex test: Rollback handle capture test.
@@ -1689,6 +1692,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A loop closure pipeline from trace detection to verified tool record.
+- Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Planned Codex test: Loop detection test.
 - Planned Codex test: Tool abstraction test.
 - Planned Codex test: Verified tool regression test.

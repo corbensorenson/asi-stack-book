@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, or regression harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,11 +39,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Procedural tool fixture validation implemented; loop-detection and regression tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats procedural memory as a governed promotion path from traces to tools. The repo validates a procedural-tool fixture, but it does not yet run loop detection, tool synthesis, active parameter discovery, regression testing, routing, monitoring, or retirement automation.
 
 ## Problem
 
@@ -65,7 +65,7 @@ The efficient stack needs three modes: interpretation for novel work, compiled-t
 
 [procedural-memory-and-cognitive-loop-closure.core, label: Design rationale, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Cognitive Loop Closure, Ratcheting Modular Intelligence, Ratcheting Generative Systems, Benchmaxxing: The Performance Ratchet, and Talos Protocol - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution.
 
 ## Mechanism
 
@@ -122,8 +122,6 @@ Artifact graphs supply traces. Routing selects verified tools. Evidence tests ut
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Only verified loops become tools.
 - Parameters and assumptions are explicit.
 - Tool promotion records residuals and regressions.
@@ -131,8 +129,6 @@ The invariants are the conditions that must remain true even when the implementa
 The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Premature toolification.
 - Hidden assumptions.
@@ -146,17 +142,18 @@ A loop closure pipeline from trace detection to verified tool record.
 
 The smallest useful implementation is a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The fixture validates only a candidate tool-card shape. It does not prove repeated traces exist, that invariant abstraction is correct, that the tool works, or that regression checks passed.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Procedural tool fixture validation | Check that the procedural-tool fixture matches the public schema and declares source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring, residuals, regressions, lifecycle, and retirement criteria. | implemented by protocol validation; run in this pass |
 | Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | planned; not run |
 | Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | planned; not run |
 | Verified tool regression test | Check that failed regression blocks routable promotion. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The remaining tests need repeated traces, synthesized tool candidates, regression cases, and routing/retirement decisions.
 
 ### Formalization hooks
 
@@ -165,7 +162,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | planned |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. A failed-regression promotion block is a good first target once tool lifecycle transitions are executable.
 
 ## Source crosswalk
 
@@ -181,7 +178,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for loop closure, procedural memory, ratchets, regressions, and operator-visible tool governance. It does not claim the book has a working loop-closure pipeline.
 
 ## Summary
 

@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no job lifecycle or permission-enforcement harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,11 +36,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot`; raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Typed job fixture validation implemented; lifecycle and permission tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats typed jobs as the execution contract for work, not as proof that a labor OS is implemented. The repo validates a typed-job fixture, but it has not run a job scheduler, permission harness, approval gate, or replay system for this chapter.
 
 ## Problem
 
@@ -62,7 +62,7 @@ GenesisCode reinforces the distinction: proposals and effects are different thin
 
 [labor-os-and-typed-jobs.core, label: Design rationale, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Talos Protocol, Verified Intent-to-Execution Architecture, GenesisCode, Software Magic Grimoire, and Talos_Protocol_v1.0.md - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Talos supplies the labor-OS and job-lifecycle vocabulary; VIEA supplies the intent-to-artifact trace; GenesisCode supplies effect-boundary and replay-log discipline; Software Magic Grimoire supplies workflow guard vocabulary; the Markdown Talos release is a terminology variant, not independent benchmark evidence.
 
 ## Mechanism
 
@@ -119,8 +119,6 @@ Planning dispatches jobs. Security mediates permissions. Runtime adapters perfor
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Every job has type and lifecycle state.
 - Tool permissions are explicit.
 - Human approval gates block high-impact jobs.
@@ -128,8 +126,6 @@ The invariants are the conditions that must remain true even when the implementa
 The approval invariant is non-negotiable: a job requiring approval cannot execute because a planner or model predicts approval would be granted. The approval record is part of the job state.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Tool overreach.
 - Unlogged side effects.
@@ -143,17 +139,18 @@ A typed-job schema with lifecycle states and permission checks.
 
 The smallest useful implementation is the expanded `typed_job` schema and fixture. It validates lifecycle, approval, failure behavior, permissions, audit events, and replay status without claiming a real job was executed.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The fixture validates the job record surface. It does not prove a transition relation, adapter permission check, approval gate, or replay result.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; run in this pass |
 | Typed job lifecycle test | Check that jobs transition only through valid lifecycle states. | planned; not run |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
 | Human approval gate test | Check that high-impact jobs cannot run before approval is recorded. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The remaining tests require a lifecycle checker or job runner that can reject invalid transitions and missing approvals.
 
 ### Formalization hooks
 
@@ -162,7 +159,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | planned |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The schema can require lifecycle and approval fields; it cannot yet prove transition validity.
 
 ## Source crosswalk
 
@@ -175,7 +172,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `talos_md` | Talos_Protocol_v1.0.md | labor_execution_os | Markdown/public release version. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for labor-OS execution discipline. It does not claim a Talos or MoECOT labor runtime has been executed in this repo.
 
 ## Summary
 

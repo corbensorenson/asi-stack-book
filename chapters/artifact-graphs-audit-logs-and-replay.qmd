@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no artifact-graph replay or audit reconstruction harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot`; raw cache: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Artifact graph fixture validation implemented; replay and audit-reconstruction tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats artifacts as provenance-bearing work products, not as automatic evidence. The repo validates an artifact-graph fixture, but it has not run a replay engine, audit reconstruction harness, or provenance completeness checker for this chapter.
 
 ## Problem
 
@@ -63,7 +63,7 @@ The artifact graph is the system's memory of work. It does not guarantee truth, 
 
 [artifact-graphs-audit-logs-and-replay.core, label: Design rationale, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Talos Protocol, Verified Intent-to-Execution Architecture, Cognitive Compilation, Spinoza Composer / Spinoza Trinity, and GenesisCode - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Talos supplies execution evidence and replay pressure; VIEA supplies artifact and feedback ledgers; Cognitive Compilation supplies build-graph and repair-locality pressure; Spinoza Composer supplies state/history preservation patterns; GenesisCode supplies effect logs, provenance hashes, and obligations; Cognitive Loop Closure explains why traces become procedural memory.
 
 ## Mechanism
 
@@ -119,8 +119,6 @@ VCM references artifacts as context cells. Evidence consumes logs and test links
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Artifacts have stable identities.
 - Audit logs are append-only or versioned.
 - Replay limits are declared.
@@ -128,8 +126,6 @@ The invariants are the conditions that must remain true even when the implementa
 An artifact with missing required provenance cannot support a promoted claim. It can still exist, but it should be labeled as incomplete, not evidence-ready.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Untraceable output.
 - Non-replayable workflow.
@@ -143,17 +139,18 @@ An artifact graph schema with job, source, context, and evidence edges.
 
 The smallest useful implementation is an `artifact_graph_record` schema and fixture. It validates parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+That fixture validates the shape of an artifact node. It does not prove the referenced render, replay, audit path, or provenance completeness.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Artifact graph fixture validation | Check that the artifact fixture matches the public schema and declares parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits. | implemented by protocol validation; run in this pass |
 | Artifact traceability test | Check that produced artifacts record parent job and source/context references. | planned; not run |
 | Audit reconstruction test | Check that audit events are sufficient to reconstruct the execution path. | planned; not run |
 | Replay metadata completeness test | Check that replay limits and environment assumptions are declared. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The remaining tests require produced artifacts, audit logs, and replay attempts that can be inspected.
 
 ### Formalization hooks
 
@@ -162,7 +159,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | planned |
 | `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. Provenance completeness can become a validator target once artifact requirements are made explicit per artifact type.
 
 ## Source crosswalk
 
@@ -176,7 +173,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for artifact provenance, audit, replay, and loop-closure discipline. It does not claim local replayability until a replay record exists.
 
 ## Summary
 

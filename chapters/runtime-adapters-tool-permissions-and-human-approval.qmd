@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no adapter execution or approval-gate harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -38,11 +38,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Runtime adapter fixture validation implemented; adapter execution and approval-gate tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture, but the fixture does not call a tool, inject a secret, enforce approval, or produce a real rollback handle.
 
 ## Problem
 
@@ -64,7 +64,7 @@ The right boundary is not "never call tools." It is "call tools through adapters
 
 [runtime-adapters-tool-permissions-and-human-approval.core, label: Design rationale, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Talos Protocol, Verified Intent-to-Execution Architecture, Ladon & The Manhattan Protocol, Software Magic Grimoire, and GenesisCode - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Talos supplies adapter and approval discipline; VIEA supplies intent-to-runtime and feedback boundaries; Ladon/Manhattan supplies handle-mediated secret use; GenesisCode supplies capability-mediated effects and replay logs; Software Magic Grimoire and Theseus Operator OS supply workflow and operator-surface pressure. MoECOT remains a connector implementation-reference route, not local execution evidence.
 
 ## Mechanism
 
@@ -122,8 +122,6 @@ Execution owns adapters. Security mediates secrets and authority handles. Eviden
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - No adapter executes beyond granted scope.
 - High-impact actions require approval.
 - Rollback handles are captured when available.
@@ -131,8 +129,6 @@ The invariants are the conditions that must remain true even when the implementa
 No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Tool overreach.
 - Approval bypass.
@@ -146,17 +142,18 @@ A runtime-adapter contract with permissions, approval requirements, and result e
 
 The smallest useful implementation is a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, capability, permission, sandbox, approval, authority handle, effect receipt, rollback handle, and residual fields. It does not execute a tool.
 
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The fixture validates the invocation envelope. It does not demonstrate permission enforcement, sandbox isolation, human approval, secret-handle safety, effect receipt validity, or rollback.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, approval, authority handle, inputs, effect receipt, rollback handle, and residuals. | implemented by protocol validation; run in this pass |
 | Adapter permission test | Check that adapter capability is included in the parent job's permissions. | planned; not run |
 | Approval gate enforcement test | Check that high-impact adapter calls are rejected without approval. | planned; not run |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The remaining tests require an adapter harness, parent job permission lookup, high-impact classification, and logged approval decisions.
 
 ### Formalization hooks
 
@@ -165,7 +162,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | planned |
 | `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. Permission inclusion and approval rejection are good validator or Lean targets once adapter invocation is linked to typed-job records.
 
 ## Source crosswalk
 
@@ -180,7 +177,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for effects, authority handles, approval gates, and operator-visible control surfaces. It does not claim safe tool execution has been demonstrated here.
 
 ## Summary
 
