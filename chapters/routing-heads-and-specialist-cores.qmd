@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no specialist-routing benchmark or learned-router harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean routing/readiness predicates are implemented; no specialist-routing benchmark, learned-router harness, runtime route, or authority-enforcement test has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -38,11 +38,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; connector/recovery: `moecot` |
-| Test state | Specialist registry and routing decision fixture validation implemented; routing accuracy tests remain planned. |
+| Test state | Specialist registry and routing decision fixture validation implemented; finite routing/readiness predicates implemented in `AsiStackProofs.Routing`; routing accuracy, learned-router, runtime-route, and authority-enforcement tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is architecture argument grounded in the available source notes. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus and MoECOT supply implementation-reference pressure; no local specialist-routing benchmark or runtime reproduction has been run in this repository for this chapter.
+This chapter is architecture argument grounded in the available source notes. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus and MoECOT supply implementation-reference pressure; the repo now proves two finite Lean predicates over route records, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, or runtime reproduction has been run in this repository for this chapter.
 
 ## Problem
 
@@ -155,25 +155,29 @@ The smallest useful implementation is not a learned router. It is a registry sch
 
 The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, selected route, route shape, authority check, readiness check, cost-quality reason, fallback, residuals, and ledger references. Passing these fixtures proves only that the records are structurally valid; it does not prove routing accuracy.
 
+`AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. These proofs do not implement a router, select a specialist, or measure routing quality.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; run in this pass |
 | Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
-| Authority-bounded routing test | Check that a specialist outside the authority envelope is rejected even if semantically suitable. | planned; not run |
-| Fallback route test | Check that failed readiness or quality predicates emit fallback or residual records. | planned; not run |
+| Authority/readiness route predicate | Check that a selected route satisfies authority and readiness. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
+| Failed-readiness fallback predicate | Check that failed readiness routes to fallback or residual rather than promotion. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
+| Runtime authority enforcement test | Check that an executable router rejects a specialist outside the authority envelope even if semantically suitable. | planned; not run |
+| Fallback route execution test | Check that a live route with failed readiness emits fallback or residual records. | planned; not run |
 
-Only fixture-shape validation is implemented. The planned tests require synthetic routing tasks, candidate specialists, authority envelopes, readiness states, and logged route outcomes.
+Fixture-shape validation and two bounded Lean predicates are implemented. The planned tests still require synthetic routing tasks, candidate specialists, authority envelopes, readiness states, learned-router or policy-router code, and logged route outcomes.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | planned |
-| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | planned |
+| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
+| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
 
-These proof hooks remain planned. The current schemas expose authority and readiness fields; they do not yet prove route admissibility.
+These proof hooks are implemented as finite-record predicates. They do not prove routing accuracy, specialist quality, learned-router behavior, or runtime enforcement.
 
 ## Source crosswalk
 

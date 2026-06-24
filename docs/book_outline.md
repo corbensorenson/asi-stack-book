@@ -1767,15 +1767,17 @@ Draft deliverables:
 - A router registry with capability metadata, cost, authority, and fallback rules.
 - Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
 - Planned Codex test: Specialist routing accuracy test.
-- Planned Codex test: Authority-bounded routing test.
-- Planned Codex test: Fallback route test.
+- Implemented Lean predicate: selected routes satisfy authority and readiness.
+- Implemented Lean predicate: failed readiness routes to fallback or residual rather than promotion.
+- Planned Codex test: Runtime authority enforcement test.
+- Planned Codex test: Fallback route execution test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | planned |
-| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | planned |
+| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
+| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
 
 ### Readiness Gates, Residual Escrow, and Quarantine
 

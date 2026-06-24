@@ -615,20 +615,20 @@
       "chapter_id": "routing-heads-and-specialist-cores",
       "module": "AsiStackProofs.Routing",
       "formal_target": "A router may select only specialists whose authority and readiness satisfy the task requirement.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.Routing as a finite route-selection predicate: selected routes satisfy authority and readiness."
     },
     {
       "tag": "lean:routing.specialists.failure_blocks_promotion",
       "chapter_id": "routing-heads-and-specialist-cores",
       "module": "AsiStackProofs.Routing",
       "formal_target": "A failed readiness predicate routes to fallback or residual, not promotion.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.Routing as a finite readiness-failure predicate: failed readiness routes to fallback or residual and is not promoted."
     },
     {
       "tag": "lean:readiness.gates.operational_invariant",
