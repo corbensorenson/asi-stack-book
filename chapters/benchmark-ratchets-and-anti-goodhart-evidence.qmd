@@ -21,8 +21,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The benchmark_ratchet_record fixture validates schema/example consistency only; no benchmark run, contamination audit, regression preservation test, or hidden-transfer test has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; saturation, transfer, and regression-preservation tests remain planned. |
 
 ## Drafting guardrail
 
@@ -125,12 +125,13 @@ Each failure blocks promotion or downgrades support state until the evidence bou
 
 ## Minimal implementation
 
-The smallest useful implementation is a benchmark ratchet schema and fixture. It records the shape of a benchmark-evidence decision without pretending any benchmark has been run.
+The smallest useful implementation is a benchmark ratchet schema and fixture. The current fixture records the shape of a benchmark-evidence decision without pretending any benchmark has been run.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Benchmark ratchet record fixture validation | Validate that a ratchet record names benchmark state, run refs, baselines, saturation, residual escrow, anti-Goodhart checks, promotion decision, support effect, and negative results. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Saturation detection test | Check that saturated benchmarks move to regression rather than broad promotion. | planned; not run |
 | Hidden benchmark transfer test | Check that transfer and contamination fields exist before support promotion. | planned; not run |
 | Regression preservation test | Check that promoted capabilities keep prior regression refs. | planned; not run |

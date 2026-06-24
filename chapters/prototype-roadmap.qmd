@@ -28,8 +28,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The prototype_phase_record fixture validates schema/example consistency only; no phase has been completed, accepted, or used to promote a capability claim."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -49,7 +49,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`; supporting: `beastbrain_timeless`, `bugbrain`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` |
 | Source loading state | source notes: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; raw cache: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot_md`, `road_to_agi`; connector/recovery: `moecot`, `coherence_exchange` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `prototype_phase_record.valid.json` passes repository-level protocol fixture validation; phase acceptance, dependency-gate, and evidence-state audits remain planned. |
 
 ## Drafting guardrail
 
@@ -134,12 +134,13 @@ Each phase unlocks later layers only after acceptance gates pass. Changelogs and
 
 ## Minimal implementation
 
-The smallest useful implementation is a prototype phase schema and fixture. It records deliverables, gates, blockers, commands, evidence references, non-claims, and status.
+The smallest useful implementation is a prototype phase schema and fixture. The current fixture records deliverables, gates, blockers, commands, evidence references, non-claims, and status. It does not mean the named phase is complete or that dependent prototypes are unlocked.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Prototype phase record fixture validation | Validate that a phase record names unlocks, required artifacts, acceptance gates, blockers, validation commands, evidence refs, non-claims, and status. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Phase acceptance checklist | Check that dependent phases have gates and artifacts. | planned; not run |
 | Dependency gate review | Check that self-improvement depends on evidence, rollback, and evaluator integrity. | planned; not run |
 | Prototype evidence-state audit | Check that roadmap milestones do not promote claims by themselves. | planned; not run |

@@ -29,6 +29,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/intent_contract.schema.json`
 - `schemas/intent_execution_trace.schema.json`
 - `schemas/layer_boundary_record.schema.json`
+- `schemas/living_book_release_record.schema.json`
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
@@ -36,6 +37,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/procedural_tool_record.schema.json`
 - `schemas/prototype_phase_record.schema.json`
 - `schemas/readiness_gate_record.schema.json`
+- `schemas/reference_trace_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
 - `schemas/research_backlog_record.schema.json`
 - `schemas/resource_budget_record.schema.json`
@@ -52,6 +54,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/moecot_orchestration_record.schema.json`
+- `schemas/theseus_report_crosswalk_record.schema.json`
 - `schemas/value_conflict_record.schema.json`
 
 Example fixtures for implemented schema checks are tracked in `tests/fixtures/protocol_records/` and validated by `python3 scripts/validate_protocol_examples.py`.
@@ -985,6 +988,25 @@ proof_target_record:
 
 This record separates Lean proofs, executable specs, schema contracts, process contracts, and research targets. It keeps verifier status, artifact references, support-state impact, limitations, and non-claims visible before prose can imply formal support.
 
+## Reference Trace Record
+
+```yaml
+reference_trace_record:
+  trace_id: string
+  intent_ref: string
+  authority_chain: []
+  layer_handoffs: []
+  artifacts: []
+  evidence_updates: []
+  stop_conditions: []
+  missing_contracts: []
+  validation_commands: []
+  support_state_effect: string
+  non_claims: []
+```
+
+This record makes an end-to-end architecture trace inspectable without claiming the full runtime exists. It records authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims.
+
 ## Tribunal Review Record
 
 ```yaml
@@ -1023,6 +1045,44 @@ prototype_phase_record:
 ```
 
 This record keeps the prototype roadmap evidence-aware by linking each phase to deliverables, acceptance gates, blockers, validation commands, evidence references, non-claims, and lifecycle status.
+
+## Living Book Release Record
+
+```yaml
+living_book_release_record:
+  release_id: string
+  source_commit: string
+  rendered_site: string
+  scaffold_sync: string
+  proof_manifest_sync: string
+  validation_commands: []
+  validation_status: pass
+  changelog_refs: []
+  public_url: string
+  residuals: []
+  non_claims: []
+```
+
+This record separates publication hygiene from claim truth. It records commit, render target, scaffold/proof sync, validation commands/status, changelog refs, public URL, residuals, and non-claims for a living-book release.
+
+## Theseus Report Crosswalk Record
+
+```yaml
+theseus_report_crosswalk_record:
+  crosswalk_id: string
+  stack_layer: string
+  source_reports: []
+  config_or_tool_refs: []
+  gate_refs: []
+  residual_refs: []
+  public_claim_boundary: string
+  verification_status: source_note_only
+  missing_artifacts: []
+  non_claims: []
+  evidence_refs: []
+```
+
+This record keeps Project Theseus references public-safe by separating source notes, reports, configs, gates, residuals, public claim boundaries, verification status, missing artifacts, non-claims, and evidence refs.
 
 ## Research Backlog Record
 

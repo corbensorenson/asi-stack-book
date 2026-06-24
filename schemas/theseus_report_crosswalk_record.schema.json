@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/theseus_report_crosswalk_record.schema.json",
+  "title": "Theseus Report Crosswalk Record",
+  "type": "object",
+  "required": [
+    "crosswalk_id",
+    "stack_layer",
+    "source_reports",
+    "config_or_tool_refs",
+    "gate_refs",
+    "residual_refs",
+    "public_claim_boundary",
+    "verification_status",
+    "missing_artifacts",
+    "non_claims",
+    "evidence_refs"
+  ],
+  "properties": {
+    "crosswalk_id": { "type": "string", "minLength": 1 },
+    "stack_layer": { "type": "string", "minLength": 1 },
+    "source_reports": { "type": "array", "items": { "type": "string" } },
+    "config_or_tool_refs": { "type": "array", "items": { "type": "string" } },
+    "gate_refs": { "type": "array", "items": { "type": "string" } },
+    "residual_refs": { "type": "array", "items": { "type": "string" } },
+    "public_claim_boundary": { "type": "string", "minLength": 1 },
+    "verification_status": {
+      "type": "string",
+      "enum": ["source_note_only", "fixture_validated", "imported_report", "reproduced_run", "blocked"]
+    },
+    "missing_artifacts": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

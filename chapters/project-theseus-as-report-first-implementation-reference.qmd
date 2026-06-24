@@ -15,8 +15,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The theseus_report_crosswalk_record fixture validates schema/example consistency only; no live Theseus report bundle, replay command, benchmark environment, or current gate output has been imported or rerun."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,33 +36,29 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` |
 | Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; report crosswalk, architecture-gate mapping, work-board, and self-evolution ladder audits remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses Project Theseus sources as report-first implementation references. It does not import private project artifacts, rerun benchmarks, verify current dashboards, or promote source-reported implementation state into public empirical evidence.
 
 ## Problem
 
-The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
+The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. Project Theseus is useful because its source notes describe pressure loops, plan compiler contracts, architecture gates, work boards, residual escrow, and self-evolution controls as reportable machinery.
 
-Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Integrated Reference Architecture, and makes that pressure operational in a narrower boundary. It hands its output to Prototype Roadmap, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The boundary is just as important as the reference. A report-first architecture can guide this book, but the public repo cannot claim current Theseus benchmark performance, training readiness, or self-evolution safety unless the relevant reports, commands, environment notes, and publication permissions are present here.
 
 ## Why existing approaches are insufficient
 
-A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.
+A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system. Dashboards and summaries are especially risky because they can hide the run record that should carry the claim.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: a prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system. If `project-theseus-as-report-first-implementation-reference` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+This chapter therefore treats reports, ledgers, configs, and work-board entries as the authority surface. Dashboard prose is a view over those artifacts, not a substitute for them.
 
 ## Core Claim
 
 [project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Project Theseus Whitepaper, Theseus Plan Compiler, Theseus Self-Evolution System, Theseus Architecture Gate, and Hive Operator OS and Work Board - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support report-first implementation discussion, but they do not give this repository reproduced benchmark runs, current gate outputs, or public-safe private workload artifacts.
 
 ## Mechanism
 
@@ -94,22 +90,16 @@ flowchart LR
   Boundary -. blocks .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
 ```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
-
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
 
 ## Interfaces
-
-The interface for Project Theseus as Report-First Implementation Reference is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
 
 - The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
 - Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
 - Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
 - Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
 
-The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
-
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+The interface is the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
 
 ## Invariants
 
@@ -122,11 +112,9 @@ The invariants are the conditions that must remain true even when the implementa
 - Unknown task kinds are blocked rather than guessed.
 - Architecture changes follow the intervention ladder.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is report primacy: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Latest-file report overwrites history.
 - Benchmark overfit becomes capability evidence.
@@ -135,26 +123,25 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Remote work proceeds without allowlists, TTLs, or kill switches.
 - Local prototype results are overclaimed as public evidence.
 
-For Project Theseus as Report-First Implementation Reference, mitigation starts by turning each listed failure into a named reviewable artifact. When `Latest-file report overwrites history` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Each failure should produce a residual, blocked promotion, or missing-artifact row. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
 
 ## Minimal implementation
 
-An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+The smallest useful implementation is a Theseus report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
 
-The smallest useful implementation is deliberately narrow: An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current fixture validates only that public-safe crosswalk shape. It does not import a current Theseus report bundle or reproduce a benchmark.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Theseus report crosswalk fixture validation | Validate that a report-first reference row names source reports, config/tool refs, gates, residuals, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Theseus report crosswalk completeness test | Probe whether the chapter claim holds under the relevant Project Theseus as Report-First Implementation Reference boundary. | planned; not run |
 | Architecture gate mapping test | Probe whether the chapter claim holds under the relevant Project Theseus as Report-First Implementation Reference boundary. | planned; not run |
 | Work-board improvement contract test | Probe whether the chapter claim holds under the relevant Project Theseus as Report-First Implementation Reference boundary. | planned; not run |
 | Self-evolution intervention ladder audit | Probe whether the chapter claim holds under the relevant Project Theseus as Report-First Implementation Reference boundary. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require imported or reproduced Theseus report artifacts; they are not reported benchmark or readiness results. When a Theseus audit is implemented, this chapter should link to the command, fixture, report bundle, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -163,7 +150,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | planned |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The crosswalk schema can require report refs and missing-artifact fields, but it does not prove any Theseus gate passed. A first proof should model the gate-before-promotion predicate over a finite report record.
 
 ## Source crosswalk
 
@@ -176,10 +163,10 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk keeps the reference public-safe. The whitepaper supplies the RMI/report-first frame, the plan compiler supplies goal-to-contract machinery, the self-evolution source supplies intervention-gate discipline, the architecture gate supplies readiness boundaries, the operator OS supplies work-board and node-control surfaces, and the Circle transfer source supplies structural fixture non-claims. None of those source notes is a reproduced public benchmark run.
 
 ## Summary
 
-Project Theseus as Report-First Implementation Reference defines one boundary in the ASI Stack: Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims. Its job is to make a capability more governable, not merely more impressive.
+Project Theseus gives the book a concrete report-first implementation reference: pressure, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance.
 
-In v0.2, this chapter gives Project Theseus as Report-First Implementation Reference a complete architectural boundary: the book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. Its next maturity step is to substantiate the boundary through `The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces`, preserve `The frontier moves while the regression floor holds`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The public boundary is strict. Until current reports, commands, environments, and permissioned artifacts are imported or reproduced, Theseus remains a design/reference source for the ASI Stack rather than public empirical proof of capability.

@@ -30,8 +30,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The research_backlog_record fixture validates schema/example consistency only; external literature normalization, direct citation checks, and new-paper triage rehearsals remain incomplete."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -51,7 +51,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `coilmoecot`, `road_to_agi`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; new-paper triage scenario remains planned. |
 
 ## Drafting guardrail
 
@@ -127,12 +127,13 @@ Appendix G lists the corpus and external literature queue. Source notes support 
 
 ## Minimal implementation
 
-The smallest useful implementation is a research backlog schema and fixture. It makes future source ingestion and chapter insertion reviewable.
+The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, but it does not normalize external literature or complete claim-to-source mapping.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Research backlog record fixture validation | Validate that a backlog record names source/gap, access state, assigned chapters, source-note state, claim mapping state, external-literature need, proof/test backlog, insertion decision, residuals, and next action. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
 | Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes currently exist for assigned sources; claim mapping remains incomplete |
 | New-paper triage scenario | Check whether a new paper updates an existing chapter or creates a new boundary. | planned; not run |

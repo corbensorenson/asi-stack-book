@@ -18,8 +18,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The proof_target_record fixture validates schema/example consistency only; most proof targets remain planned or triaged as schema, process, or research targets."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
 | Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Proof manifest sync, local Lean build, and `proof_target_record.valid.json` protocol fixture validation pass in the current validation gate; proof target coverage audit remains planned. |
 
 ## Drafting guardrail
 
@@ -120,7 +120,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 ## Minimal implementation
 
-The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The schema gives future writing runs a public contract for saying what is planned, implemented, blocked, retired, or out of scope.
+The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. It does not prove the target.
 
 The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository.
 
@@ -128,6 +128,7 @@ The current local verification gate includes `cd lean && lake build`; passing it
 
 | Test | Purpose | Status |
 |---|---|---|
+| Proof target record fixture validation | Check that proof target records expose verifier command/result, limitations, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Proof manifest sync test | Check that outline proof tags and `proofs/proof_manifest.json` agree. | implemented by validation; run in this pass |
 | Lake build smoke test | Check that local Lean modules build. | run in this pass |
 | Proof target coverage audit | Classify proof targets as Lean, schema, process, or research work. | planned; not run |

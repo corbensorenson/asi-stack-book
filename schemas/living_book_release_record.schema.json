@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/living_book_release_record.schema.json",
+  "title": "Living Book Release Record",
+  "type": "object",
+  "required": [
+    "release_id",
+    "source_commit",
+    "rendered_site",
+    "scaffold_sync",
+    "proof_manifest_sync",
+    "validation_commands",
+    "validation_status",
+    "changelog_refs",
+    "public_url",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "release_id": { "type": "string", "minLength": 1 },
+    "source_commit": { "type": "string", "minLength": 1 },
+    "rendered_site": { "type": "string", "minLength": 1 },
+    "scaffold_sync": { "type": "string", "minLength": 1 },
+    "proof_manifest_sync": { "type": "string", "minLength": 1 },
+    "validation_commands": { "type": "array", "items": { "type": "string" } },
+    "validation_status": {
+      "type": "string",
+      "enum": ["pass", "fail", "partial", "pending"]
+    },
+    "changelog_refs": { "type": "array", "items": { "type": "string" } },
+    "public_url": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

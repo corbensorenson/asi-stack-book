@@ -29,8 +29,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The reference_trace_record fixture validates schema/example consistency only; no end-to-end runtime trace harness, authority stop-condition checker, or artifact continuity audit has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -50,11 +50,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter synthesizes the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository.
 
 ## Problem
 
@@ -74,7 +74,7 @@ The integrated reference architecture therefore has to be explicit about handoff
 
 [integrated-reference-architecture.core, label: Design rationale, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verified Intent-to-Execution Architecture, Stable Capability Fields, Virtual_Context_Memory_v1, PlanForge, and Talos Protocol - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. They do not show a completed integrated stack run here.
 
 ## Mechanism
 
@@ -115,15 +115,11 @@ The important feature is that every participant emits something durable enough f
 
 ## Interfaces
 
-The interface for Integrated Reference Architecture is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
-
 - All stack layers participate.
 - Artifacts and evidence ledgers provide continuity.
 - SCF gates control improvement.
 
-The upstream interface accepts the whole architecture: chapter claims, proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits implementation targets: schemas, traces, tests, proof modules, changelog entries, and public releases. When any handoff is ambiguous, the integrated architecture should fail closed by producing a missing-contract, missing-evidence, or missing-authority record.
-
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+The interface is the Reference Trace Record: a finite public record of intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
 ## Invariants
 
@@ -133,35 +129,30 @@ The invariants are the conditions that must remain true even when the implementa
 - Artifacts remain traceable.
 - Self-improvement follows evidence and authority gates.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is continuity under authority. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Untraceable handoffs.
 - Planning/execution collapse.
 - Self-improvement without evaluator integrity.
 
-For Integrated Reference Architecture, mitigation starts by turning each listed failure into a named reviewable artifact. When `Untraceable handoffs` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Untraceable handoffs should create missing-contract records. Planning/execution collapse should preserve the failed plan, runtime artifact, and residual. Self-improvement without evaluator integrity should stop at the SCF gate.
 
 ## Minimal implementation
 
-A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
-
-The smallest useful implementation is deliberately narrow: A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Reference trace record fixture validation | Validate that an end-to-end trace record names intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | End-to-end intent trace test | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
 | Artifact continuity audit | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
 | Authority stop-condition test | Probe whether the chapter claim holds under the relevant Integrated Reference Architecture boundary. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require an actual trace harness or replayable demo with typed artifacts across layers; they are not reported runtime results. When an integration test is implemented, this chapter should link to the command, fixture, environment notes, trace artifacts, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -170,7 +161,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | planned |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The reference trace schema can require handoff fields, but it does not prove that governance gates are enforced. A first proof should model a finite trace predicate: a trace missing a governance gate cannot be marked valid.
 
 ## Source crosswalk
 
@@ -197,7 +188,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow, SCF supplies bounded replacement, VCM supplies governed context, PlanForge and Talos supply planning/execution contracts, Spinoza supplies proof-carrying claims, Octopus/RMI/Benchmaxxing supply routing and ratchets, and Project Theseus supplies report-first implementation context. Connector-readable MoECOT and VCM-editable sources remain planning context until artifacts are imported or rerun.
 
 ## Summary
 

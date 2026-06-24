@@ -926,7 +926,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target marked implemented has an existing module and passes the build.",
       "status": "planned",
-      "outline_line": 2491,
+      "outline_line": 2492,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -936,7 +936,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
       "status": "planned",
-      "outline_line": 2492,
+      "outline_line": 2493,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -946,7 +946,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A capability promotion requires benchmark evidence and preserved regression records.",
       "status": "planned",
-      "outline_line": 2545,
+      "outline_line": 2547,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -956,7 +956,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
       "status": "planned",
-      "outline_line": 2546,
+      "outline_line": 2548,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -966,7 +966,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
       "status": "planned",
-      "outline_line": 2599,
+      "outline_line": 2602,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -976,7 +976,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
       "status": "planned",
-      "outline_line": 2600,
+      "outline_line": 2603,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -986,7 +986,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
       "status": "planned",
-      "outline_line": 2661,
+      "outline_line": 2665,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -996,7 +996,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "planned",
-      "outline_line": 2662,
+      "outline_line": 2666,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1006,7 +1006,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
       "status": "planned",
-      "outline_line": 2715,
+      "outline_line": 2720,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1016,7 +1016,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
       "status": "planned",
-      "outline_line": 2716,
+      "outline_line": 2721,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1026,7 +1026,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "planned",
-      "outline_line": 2772,
+      "outline_line": 2778,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1036,7 +1036,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "planned",
-      "outline_line": 2773,
+      "outline_line": 2779,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1046,7 +1046,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "planned",
-      "outline_line": 2825,
+      "outline_line": 2832,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -1056,7 +1056,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "planned",
-      "outline_line": 2826,
+      "outline_line": 2833,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

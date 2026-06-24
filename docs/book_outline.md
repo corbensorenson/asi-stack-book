@@ -2480,6 +2480,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; most targets still need Lean/schema/process/research triage.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Proof target coverage audit.
@@ -2534,6 +2535,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A benchmark ratchet record schema with frontier, mastery, residuals, regressions, promotion decisions, and anti-Goodhart checks.
+- Implemented repository-level fixture: `benchmark_ratchet_record.valid.json` validates benchmark-ratchet record shape only; no benchmark run, contamination audit, hidden-transfer test, or regression-preservation test exists yet.
 - Planned Codex test: Saturation detection test.
 - Planned Codex test: Hidden benchmark transfer test.
 - Planned Codex test: Regression preservation test.
@@ -2588,6 +2590,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
+- Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape only; no integrated runtime trace harness, artifact continuity audit, or authority stop-condition checker exists yet.
 - Planned Codex test: End-to-end intent trace test.
 - Planned Codex test: Artifact continuity audit.
 - Planned Codex test: Authority stop-condition test.
@@ -2649,6 +2652,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+- Implemented repository-level fixture: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only; no live Theseus report bundle, replay command, benchmark environment, or current gate output has been imported or rerun.
 - Planned Codex test: Theseus report crosswalk completeness test
 - Planned Codex test: Architecture gate mapping test
 - Planned Codex test: Work-board improvement contract test
@@ -2704,6 +2708,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A prototype phase record schema with deliverables, gates, blockers, validation commands, evidence refs, and acceptance criteria.
+- Implemented repository-level fixture: `prototype_phase_record.valid.json` validates prototype-phase record shape only; no phase completion or capability unlock is implied.
 - Planned Codex test: Phase acceptance checklist.
 - Planned Codex test: Dependency gate review.
 - Planned Codex test: Prototype evidence-state audit.
@@ -2761,6 +2766,7 @@ Draft deliverables:
 
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
+- Implemented repository-level fixture: `living_book_release_record.valid.json` validates release-record shape only; render and validation checks prove publication hygiene, not manuscript quality or claim truth.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.
@@ -2814,6 +2820,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A research backlog record schema with external literature areas, source-note state, claim-mapping state, proof/test backlog, and insertion/merge rules.
+- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape only; external-literature normalization, direct citation checks, and new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
 - Planned Codex test: New-paper triage scenario.

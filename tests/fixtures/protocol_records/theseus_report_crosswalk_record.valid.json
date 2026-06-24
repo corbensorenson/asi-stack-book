@@ -1,0 +1,38 @@
+{
+  "crosswalk_id": "theseus-crosswalk-demo-001",
+  "stack_layer": "report-first implementation reference",
+  "source_reports": [
+    "sources/source_notes/project_theseus_whitepaper.md",
+    "sources/source_notes/theseus_architecture_gate.md",
+    "sources/source_notes/theseus_self_evolution_system.md"
+  ],
+  "config_or_tool_refs": [
+    "source-note-only: plan compiler",
+    "source-note-only: operator work board"
+  ],
+  "gate_refs": [
+    "architecture gate",
+    "self-evolution intervention ladder",
+    "external-inference-zero evidence gate"
+  ],
+  "residual_refs": [
+    "no live Theseus report imported",
+    "no benchmark ledger rerun from this repo"
+  ],
+  "public_claim_boundary": "implementation-reference crosswalk only; no reproduced Theseus capability result",
+  "verification_status": "fixture_validated",
+  "missing_artifacts": [
+    "machine-readable current report bundle",
+    "replay command",
+    "benchmark environment notes"
+  ],
+  "non_claims": [
+    "does not claim Project Theseus benchmark performance",
+    "does not claim public-compute readiness",
+    "does not import private workload data"
+  ],
+  "evidence_refs": [
+    "sources/source_notes/project_theseus_whitepaper.md",
+    "sources/source_notes/theseus_circle_transfer.md"
+  ]
+}

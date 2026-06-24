@@ -16,8 +16,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The living_book_release_record fixture validates schema/example consistency only; release checks do not prove manuscript quality or promote chapter claims."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot_md`, `road_to_agi`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Quarto render, manifest/proof sync, changelog updates, and `living_book_release_record.valid.json` protocol fixture validation run in the current publication gate; claim-quality review remains human/editorial. |
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter describes the repository's operating method. It can claim that local validators and Quarto renders pass only when they have actually been run; it cannot use release hygiene as evidence that architecture claims are true.
 
 ## Problem
 
@@ -63,7 +63,7 @@ The living book needs all four properties at once: readable prose, versioned sou
 
 [living-book-methodology.core, label: Design rationale, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Benchmaxxing: The Performance Ratchet, Verified Intent-to-Execution Architecture, BugBrain, Cognitive Loop Closure, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The repository demonstrates the method in part through generated scaffolds, validators, proof manifests, schema fixtures, changelog entries, commits, and GitHub Pages renders. Those artifacts support release discipline, not the truth of every chapter claim.
 
 ## Mechanism
 
@@ -102,16 +102,12 @@ This loop is the book's own version of benchmark ratcheting and cognitive loop c
 
 ## Interfaces
 
-The interface for Living Book Methodology is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
-
 - Source ingestion feeds source notes.
 - Drafting feeds claim matrices.
 - Tests feed support states.
 - Releases feed GitHub Pages.
 
-The upstream interface accepts new sources, chapter goals, prototype findings, proof opportunities, and reader-visible gaps. The downstream interface emits synchronized scaffolds, updated chapters, source notes, claim rows, proof manifests, schemas, validation logs, changelog entries, commits, and public renders. If any one of those artifacts is missing, the book should say so instead of smoothing over the gap.
-
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+The interface is the Living Book Release Record: source commit, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark.
 
 ## Invariants
 
@@ -121,35 +117,32 @@ The invariants are the conditions that must remain true even when the implementa
 - No fabricated test results.
 - Deprecated claims remain visible.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is evidence separation. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Public site diverges from Quarto source.
 - Outline and manifest drift.
 - Readers cannot tell which claims are speculative.
 
-For Living Book Methodology, mitigation starts by turning each listed failure into a named reviewable artifact. When `Public site diverges from Quarto source` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Public-site divergence should block release. Outline/manifest drift should be caught by scaffold and proof-manifest sync. Speculation ambiguity should be fixed in Appendix C, chapter guardrails, and changelog entries rather than smoothed over in prose.
 
 ## Minimal implementation
 
-A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.
+The smallest useful implementation is the current public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and a living-book release fixture.
 
-The smallest useful implementation is deliberately narrow: A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The current fixture validates release-record shape only. A release record does not prove manuscript completeness, source accuracy, or claim truth.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Quarto render check | Probe whether the chapter claim holds under the relevant Living Book Methodology boundary. | planned; not run |
-| Manifest/outline consistency check | Probe whether the chapter claim holds under the relevant Living Book Methodology boundary. | planned; not run |
-| Changelog update check | Probe whether the chapter claim holds under the relevant Living Book Methodology boundary. | planned; not run |
+| Living book release record fixture validation | Validate that a release record names commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Quarto render check | Check that the public book renders locally to HTML. | implemented; run in this pass |
+| Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; run in this pass |
+| Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually in this pass |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+These checks validate release discipline. They do not validate every chapter claim, source interpretation, or editorial quality judgment.
 
 ### Formalization hooks
 
@@ -158,7 +151,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | planned |
 | `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These Lean hooks remain planned. The release fixture can require sync/render fields, but it does not mechanize the book methodology. A first proof should target a small manifest predicate, not the full editorial workflow.
 
 ## Source crosswalk
 
@@ -172,7 +165,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `moecot_md` | moecot_agent_whitepaper.md | implementation_reference | Markdown export/source version. | source note available; local raw cache available |
 | `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk connects the book's method to the stack's method: Benchmaxxing supplies ratchet discipline, VIEA supplies artifact durability, BugBrain supplies resource-aware implementation lineage, Cognitive Loop Closure supplies toolification pressure, and MoECOT/Road To AGI supply roadmap context. These sources guide the method; local validation artifacts show repository hygiene.
 
 ## Summary
 

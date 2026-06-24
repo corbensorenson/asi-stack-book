@@ -1,0 +1,41 @@
+{
+  "trace_id": "reference-trace-demo-001",
+  "intent_ref": "intent://living-book-fixture-boundary-pass",
+  "authority_chain": [
+    "human goal authorizes book maintenance",
+    "publication validation gates public-surface changes",
+    "support-state discipline blocks unsupported promotion"
+  ],
+  "layer_handoffs": [
+    "intent contract -> chapter revision",
+    "chapter revision -> claim/evidence boundary",
+    "schema fixture -> validation command",
+    "render -> public site"
+  ],
+  "artifacts": [
+    "book_structure.json",
+    "docs/book_outline.md",
+    "appendices/F_changelog.qmd"
+  ],
+  "evidence_updates": [
+    "fixture validation records shape only",
+    "Quarto render records publication viability"
+  ],
+  "stop_conditions": [
+    "validation failure",
+    "missing source note for a source-derived claim",
+    "attempted support-state promotion without evidence"
+  ],
+  "missing_contracts": [
+    "no implemented end-to-end runtime trace harness"
+  ],
+  "validation_commands": [
+    "python3 scripts/validate_protocol_examples.py",
+    "quarto render --to html"
+  ],
+  "support_state_effect": "keeps integrated architecture support at argument until trace harnesses exist",
+  "non_claims": [
+    "does not prove the full ASI Stack is implemented",
+    "does not report runtime deployment results"
+  ]
+}

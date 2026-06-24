@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/reference_trace_record.schema.json",
+  "title": "Reference Trace Record",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "intent_ref",
+    "authority_chain",
+    "layer_handoffs",
+    "artifacts",
+    "evidence_updates",
+    "stop_conditions",
+    "missing_contracts",
+    "validation_commands",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "trace_id": { "type": "string", "minLength": 1 },
+    "intent_ref": { "type": "string", "minLength": 1 },
+    "authority_chain": { "type": "array", "items": { "type": "string" } },
+    "layer_handoffs": { "type": "array", "items": { "type": "string" } },
+    "artifacts": { "type": "array", "items": { "type": "string" } },
+    "evidence_updates": { "type": "array", "items": { "type": "string" } },
+    "stop_conditions": { "type": "array", "items": { "type": "string" } },
+    "missing_contracts": { "type": "array", "items": { "type": "string" } },
+    "validation_commands": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
