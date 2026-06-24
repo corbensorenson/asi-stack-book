@@ -2467,8 +2467,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | planned |
-| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | planned |
+| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | implemented |
+| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | implemented |
 
 ### CoilRA, MultiCoil RoPE, and Cyclic Mixers
 
@@ -2525,8 +2525,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
-| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | implemented |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
 
 ## Part IV - Evidence, Implementation, and the Living Book
 
@@ -2702,8 +2702,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | planned |
-| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | planned |
+| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
+| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
 
 ### Project Theseus as Report-First Implementation Reference
 
@@ -2878,8 +2878,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | planned |
-| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | planned |
+| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | implemented |
+| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | implemented |
 
 ### Open Research Agenda and Bibliography Plan
 
@@ -2932,8 +2932,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | planned |
-| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | planned |
+| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
+| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
 
 ## Bibliography and Source Corpus
 

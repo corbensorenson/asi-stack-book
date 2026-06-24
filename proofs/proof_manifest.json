@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 102,
   "status_counts": {
-    "implemented": 76,
-    "planned": 26
+    "implemented": 86,
+    "planned": 16
   },
   "chapter_counts": {
     "agency-dignity-and-corrigibility": 2,
@@ -906,7 +906,7 @@
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2470,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
@@ -916,7 +916,7 @@
       "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2471,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
@@ -926,7 +926,7 @@
       "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2528,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
@@ -936,7 +936,7 @@
       "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2529,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
@@ -986,7 +986,7 @@
       "tag": "lean:reference_architecture.trace.operational_invariant",
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2705,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
@@ -996,7 +996,7 @@
       "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2706,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
@@ -1046,7 +1046,7 @@
       "tag": "lean:living_book.methodology.operational_invariant",
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2881,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
@@ -1056,7 +1056,7 @@
       "tag": "lean:living_book.methodology.failure_blocks_promotion",
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2882,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
@@ -1066,7 +1066,7 @@
       "tag": "lean:bibliography.plan.operational_invariant",
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2935,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
@@ -1076,7 +1076,7 @@
       "tag": "lean:bibliography.plan.failure_blocks_promotion",
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
-      "status": "planned",
+      "status": "implemented",
       "outline_line": 2936,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }

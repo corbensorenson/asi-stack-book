@@ -3412,13 +3412,13 @@
               "tag": "lean:coil_memory.alias_boundary.operational_invariant",
               "module": "AsiStackProofs.CoilAttentionMemory",
               "target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
               "module": "AsiStackProofs.CoilAttentionMemory",
               "target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3490,13 +3490,13 @@
               "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
               "module": "AsiStackProofs.CyclicMixers",
               "target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
               "module": "AsiStackProofs.CyclicMixers",
               "target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         }
@@ -3797,13 +3797,13 @@
               "tag": "lean:reference_architecture.trace.operational_invariant",
               "module": "AsiStackProofs.ReferenceArchitecture",
               "target": "An end-to-end trace contains required artifacts for each layer handoff.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
               "module": "AsiStackProofs.ReferenceArchitecture",
               "target": "A trace with a missing governance gate cannot be marked valid.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -4070,13 +4070,13 @@
               "tag": "lean:living_book.methodology.operational_invariant",
               "module": "AsiStackProofs.LivingBook",
               "target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:living_book.methodology.failure_blocks_promotion",
               "module": "AsiStackProofs.LivingBook",
               "target": "A structural update without regenerated scaffold/proof manifest is invalid.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -4175,13 +4175,13 @@
               "tag": "lean:bibliography.plan.operational_invariant",
               "module": "AsiStackProofs.BibliographyPlan",
               "target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:bibliography.plan.failure_blocks_promotion",
               "module": "AsiStackProofs.BibliographyPlan",
               "target": "A new source cannot be assigned to a non-existent chapter id.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         }

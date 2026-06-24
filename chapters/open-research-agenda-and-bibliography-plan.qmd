@@ -51,7 +51,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `coilmoecot`, `road_to_agi`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; new-paper triage scenario remains planned. |
+| Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates; new-paper triage scenario remains planned. |
 
 ## Drafting guardrail
 
@@ -142,8 +142,10 @@ The smallest useful implementation is a research backlog schema and fixture. The
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | planned |
-| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | planned |
+| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
+| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
+
+These Lean hooks are implemented as finite-record predicates over source-derived claim and new-source assignment reviews. They prove only the record-level gates: a source-derived claim requires a source note or equivalent ingested-source artifact, and an accepted new-source assignment requires an existing chapter id. They do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, or new-paper triage quality.
 
 ## Source crosswalk
 

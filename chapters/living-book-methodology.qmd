@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot_md`, `road_to_agi`; connector/recovery: `moecot` |
-| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, and public release-record validation run in the current publication gate; claim-quality review remains human/editorial. |
+| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; claim-quality review remains human/editorial. |
 
 ## Drafting guardrail
 
@@ -148,10 +148,10 @@ These checks validate release discipline. They do not validate every chapter cla
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | planned |
-| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | planned |
+| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | implemented |
+| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | implemented |
 
-These Lean hooks remain planned. The release fixture can require sync/render fields, but it does not mechanize the book methodology. A first proof should target a small manifest predicate, not the full editorial workflow.
+These Lean hooks are implemented as finite-record predicates over chapter-manifest and structural-update reviews. They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, and a structural update marked valid requires regenerated scaffold and proof manifest. They do not prove manuscript quality, source-to-claim completeness, editorial judgment, or GitHub Pages availability.
 
 ## Source crosswalk
 

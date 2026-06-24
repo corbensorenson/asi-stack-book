@@ -50,7 +50,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
+| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
 
 ## Drafting guardrail
 
@@ -158,10 +158,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | planned |
-| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | planned |
+| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
+| `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
 
-These Lean hooks remain planned. The reference trace schema can require handoff fields, but it does not prove that governance gates are enforced. A first proof should model a finite trace predicate: a trace missing a governance gate cannot be marked valid.
+These Lean hooks are implemented as finite-record predicates over layer-handoff and governance-gate trace reviews. They prove only the record-level gates: a declared handoff has its required artifact, and a trace missing a required governance gate cannot be marked valid. They do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, or authority stop-condition behavior.
 
 ## Source crosswalk
 

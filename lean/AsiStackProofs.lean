@@ -2,6 +2,7 @@ import AsiStackProofs.Alignment
 import AsiStackProofs.Authority
 import AsiStackProofs.ArtifactCompression
 import AsiStackProofs.ArtifactGraph
+import AsiStackProofs.BibliographyPlan
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.CognitiveCompilation
 import AsiStackProofs.CommandContracts
@@ -9,6 +10,8 @@ import AsiStackProofs.CompactGenerativeSystems
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions
 import AsiStackProofs.Corrigibility
+import AsiStackProofs.CoilAttentionMemory
+import AsiStackProofs.CyclicMixers
 import AsiStackProofs.Efficiency
 import AsiStackProofs.EvidenceStates
 import AsiStackProofs.FastGeneration
@@ -17,11 +20,13 @@ import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
 import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentToExecution
+import AsiStackProofs.LivingBook
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge
 import AsiStackProofs.ProofEnvelope
 import AsiStackProofs.ProofCarryingContracts
 import AsiStackProofs.ReadinessGates
+import AsiStackProofs.ReferenceArchitecture
 import AsiStackProofs.Replacement
 import AsiStackProofs.ResourceEconomics
 import AsiStackProofs.RuntimeAdapters

@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
-| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
+| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff promotion gates; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
 
 ## Drafting guardrail
 
@@ -149,10 +149,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
-| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | implemented |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
 
-These Lean hooks remain planned. The schema can require structural and metric separation, but it does not prove CoilRA, RoPE, or cyclic mixers improve a model. A first proof should target the record boundary: structural invariants cannot be recorded as quality, runtime, memory, or parameter claims without separate evidence.
+These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics. They do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, or parameter efficiency.
 
 ## Source crosswalk
 

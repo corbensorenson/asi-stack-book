@@ -855,40 +855,40 @@
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a finite alias-boundary predicate: reused cyclic slots require residue/winding records or visible alias residuals."
     },
     {
       "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a finite retrieval-quality predicate: sparse coverage and freshness facts without semantic-quality evidence cannot promote retrieval quality."
     },
     {
       "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a finite claim-separation predicate: structural invariants are separated from quality, runtime, memory, and parameter claims."
     },
     {
       "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a finite promotion predicate: promoted cyclic substrates require baseline references and tradeoff metrics."
     },
     {
       "tag": "lean:proofs.envelope.operational_invariant",
@@ -935,20 +935,20 @@
       "chapter_id": "integrated-reference-architecture",
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ReferenceArchitecture as a finite handoff predicate: declared layer handoffs require associated artifacts."
     },
     {
       "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
       "chapter_id": "integrated-reference-architecture",
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ReferenceArchitecture as a finite governance-gate predicate: traces missing required governance gates cannot be marked valid."
     },
     {
       "tag": "lean:theseus.reference.report_contract.operational_invariant",
@@ -995,40 +995,40 @@
       "chapter_id": "living-book-methodology",
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.LivingBook as a finite chapter-manifest predicate: manifest chapters require outline proof targets and generated claim placeholders."
     },
     {
       "tag": "lean:living_book.methodology.failure_blocks_promotion",
       "chapter_id": "living-book-methodology",
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.LivingBook as a finite structural-update predicate: valid structural updates require regenerated scaffold and proof manifest."
     },
     {
       "tag": "lean:bibliography.plan.operational_invariant",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-ingestion predicate: source-derived claims require a source note or equivalent ingested source artifact."
     },
     {
       "tag": "lean:bibliography.plan.failure_blocks_promotion",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
-      "target_status": "planned",
-      "triage": "schema-contract",
-      "recommended_route": "schema-first",
-      "rationale": "Initial triage: this target needs a concrete JSON/schema/typed record before a Lean theorem would be more than a restatement."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-assignment predicate: accepted new-source assignments require an existing chapter id."
     }
   ]
 }
