@@ -22,7 +22,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | source notes: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; raw cache: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | MoECOT orchestration fixture validation implemented; runtime replay and benchmark checks remain planned. |
 
 ## Drafting guardrail
 
@@ -137,11 +137,12 @@ The `moecot_orchestration_record` schema is intentionally conservative. It recor
 
 | Test | Purpose | Status |
 |---|---|---|
+| MoECOT orchestration fixture validation | Check that the orchestration fixture matches the public schema and declares run, command, orchestrator, route head, specialist cores, gates, ledgers, readiness refs, replay refs, handoff refs, blockers, residuals, and source-claim state. | implemented by protocol validation; run in this pass |
 | MoECOT source-ingestion gate | Check that MoECOT-specific claims cite inspected source notes or imported artifacts before promotion. | planned; not run |
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
 | Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. Runtime claims require imported MoECOT artifacts, replay records, benchmark records, or reproduced local runs.
 
 ### Formalization hooks
 
@@ -150,7 +151,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | planned |
 | `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The current orchestration record names the required references; it does not prove promotion readiness or source-claim admissibility.
 
 ## Source crosswalk
 
@@ -169,7 +170,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies implementation-reference and routing/readiness sources. It does not treat MoECOT branding, source-reported benchmarks, or stale gate snapshots as reproduced evidence.
 
 ## Summary
 

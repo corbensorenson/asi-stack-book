@@ -1758,6 +1758,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A router registry with capability metadata, cost, authority, and fallback rules.
+- Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
 - Planned Codex test: Specialist routing accuracy test.
 - Planned Codex test: Authority-bounded routing test.
 - Planned Codex test: Fallback route test.
@@ -1811,6 +1812,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A module lifecycle state machine and residual escrow ledger.
+- Implemented protocol validation: `readiness_gate_record` fixture validates public record shape only.
 - Planned Codex test: Readiness gate enforcement test.
 - Planned Codex test: Residual escrow integrity test.
 - Planned Codex test: Quarantine behavior test.
@@ -1865,6 +1867,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables.
+- Implemented protocol validation: `moecot_orchestration_record` fixture validates public record shape only.
 - Planned Codex test: MoECOT source-ingestion gate.
 - Planned Codex test: Runtime crosswalk completeness test.
 - Planned Codex test: Readiness/replay mapping review.

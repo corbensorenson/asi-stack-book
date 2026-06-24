@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no readiness-transition or quarantine-routing harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/recovery: `moecot` |
 | Source loading state | source notes: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Readiness gate fixture validation implemented; readiness-transition and quarantine tests remain planned. |
 
 ## Drafting guardrail
 
@@ -141,11 +141,12 @@ The `readiness_gate_record` schema validates the shape of that record. Passing v
 
 | Test | Purpose | Status |
 |---|---|---|
+| Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, lifecycle states, evidence, regression results, residual escrow, authority, blockers, quarantine conditions, decision, reviews, and next trigger. | implemented by protocol validation; run in this pass |
 | Readiness gate enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it. | planned; not run |
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | planned; not run |
 | Quarantine behavior test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The planned tests require a lifecycle transition checker, residual ledger, and routing harness that respects quarantine state.
 
 ### Formalization hooks
 
@@ -154,7 +155,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | planned |
 | `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The current schema names the lifecycle states and blockers; it does not yet enforce state-transition rules.
 
 ## Source crosswalk
 
@@ -170,7 +171,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for readiness gates, residual escrow, regression preservation, and quarantine. It does not claim that current Theseus, MoECOT, or book modules pass readiness gates unless current artifacts are rerun or inspected.
 
 ## Summary
 

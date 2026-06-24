@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Chapter is a v0.2 manuscript draft; v1.0 still needs source-note substantiation for all assigned sources."
-  - "No Codex tests have been implemented or run for this chapter unless separately recorded in Appendix E."
+  - "Only protocol schema/fixture validation is implemented; no specialist-routing benchmark or learned-router harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; connector/recovery: `moecot` |
-| Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
+| Test state | Specialist registry and routing decision fixture validation implemented; routing accuracy tests remain planned. |
 
 ## Drafting guardrail
 
@@ -159,11 +159,12 @@ The `specialist_registry_record` schema describes a bounded specialist core. The
 
 | Test | Purpose | Status |
 |---|---|---|
+| Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; run in this pass |
 | Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
 | Authority-bounded routing test | Check that a specialist outside the authority envelope is rejected even if semantically suitable. | planned; not run |
 | Fallback route test | Check that failed readiness or quality predicates emit fallback or residual records. | planned; not run |
 
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+Only fixture-shape validation is implemented. The planned tests require synthetic routing tasks, candidate specialists, authority envelopes, readiness states, and logged route outcomes.
 
 ### Formalization hooks
 
@@ -172,7 +173,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | planned |
 | `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof hooks remain planned. The current schemas expose authority and readiness fields; they do not yet prove route admissibility.
 
 ## Source crosswalk
 
@@ -187,7 +188,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies sources for routed specialists, lifecycle, residual-aware routing, and operator-visible control. It does not claim local routing accuracy or safety has been demonstrated.
 
 ## Summary
 
