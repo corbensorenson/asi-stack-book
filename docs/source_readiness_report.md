@@ -1,6 +1,6 @@
 # Source Readiness Report
 
-Generated from `sources/cache/cache_manifest.json`.
+Generated from `sources/source_inventory.json` and `sources/cache/cache_manifest.json`.
 
 Raw source exports are local-only and ignored by git. This report tracks readiness without publishing the raw source text.
 
@@ -9,6 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_auth_gate`: 4
 - `cached_existing`: 38
 - `connector_required`: 3
+- `not_cached_public_project`: 14
 
 ## Records
 
@@ -40,6 +41,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `genesiscode` | GenesisCode | `cached_existing` | 60187 | sources/raw/google_docs/genesiscode.txt |  |
 | `alignment_field` | Field of God / Alignment Field family | `cached_existing` | 458438 | sources/raw/google_docs/alignment_field.txt |  |
 | `field_of_god` | The Field of God | `cached_existing` | 246511 | sources/raw/google_docs/field_of_god.txt |  |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
 | `ethica_mechanica` | Ethica Mechanica | `cached_existing` | 15708 | sources/raw/google_docs/ethica_mechanica.txt |  |
 | `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | `cached_existing` | 92385 | sources/raw/google_docs/eternal_code.txt |  |
 | `coherence_exchange` | The Coherence Exchange | `connector_required` |  |  | curl: (56) The requested URL returned error: 401 |
@@ -59,3 +61,16 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `coilmoecot` | CoilMoECOT Whitepaper v2.0 | `cached_auth_gate` | 947737 | sources/raw/google_docs/coilmoecot.bin | local cache is a Google sign-in/auth-gate page, not usable source text |
 | `temporal_coil_research` | Temporal Coil Research | `cached_existing` | 11522 | sources/raw/google_docs/temporal_coil_research.bin |  |
 | `bugbrain` | BugBrain | `cached_existing` | 313058 | sources/raw/google_docs/bugbrain.txt |  |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `theseus_plan_compiler` | Theseus Plan Compiler | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `theseus_architecture_gate` | Theseus Architecture Gate | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `theseus_operator_os` | Hive Operator OS and Work Board | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `circle_calculus_core` | Circle Calculus | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `circle_ai_architectures` | Circle AI Architectures | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `coil_attention_memory` | Coil Attention and Memory | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | `not_cached_public_project` |  |  | public project source record; not part of Google Drive cache manifest |

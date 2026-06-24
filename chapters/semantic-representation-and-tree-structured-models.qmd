@@ -10,6 +10,8 @@ primary_sources:
   - "verification_bandwidth"
   - "cognitive_compilation"
   - "cgs"
+  - "circle_ai_architectures"
+  - "coilra_multicoil_rope"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -28,7 +30,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` |
+| Primary source records | `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
@@ -95,6 +97,8 @@ A semantic-node schema and evaluation plan for one grounded domain.
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Planned use from inventory/manifest: Generation vs verification; long context is not automatically long-range reasoning. |
 | `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/manifest: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
 | `cgs` | Compact Generative Systems | Planned use from inventory/manifest: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `circle_ai_architectures` | Circle AI Architectures | Planned use from inventory/manifest: Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. |
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | Planned use from inventory/manifest: Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. |
 
 ## Summary
 

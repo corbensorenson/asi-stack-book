@@ -1,0 +1,104 @@
+---
+title: "Coil Attention, Cyclic Memory, and Recurrence Contracts"
+chapter_id: "coil-attention-cyclic-memory-and-recurrence-contracts"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "coil_attention_memory"
+  - "circle_ai_contract_suite"
+  - "theseus_circle_transfer"
+  - "vcm_public"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Coil Attention, Cyclic Memory, and Recurrence Contracts
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `coil-attention-cyclic-memory-and-recurrence-contracts` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `coil_attention_memory`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `vcm_public` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
+
+## Why existing approaches are insufficient
+
+Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.
+
+## Core Claim
+
+[coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
+
+## Mechanism
+
+- Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures.
+- Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs.
+- Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
+
+## Interfaces
+
+- VCM context traces expose context adequacy and authority labels.
+- Attention and memory modules consume contract fields as diagnostic guardrails.
+- Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
+- Proof contracts define the finite boundary of the claim.
+
+## Invariants
+
+- Residue-only aliasing remains visible.
+- Full structural coverage is not semantic coverage.
+- Recurrence budgets include exits and guardrails.
+- Stale reads fail closed or enter residual escrow.
+
+## Failure modes
+
+- Alias hiding.
+- Overthinking or non-terminating recurrence loops.
+- Uncovered sparse-attention lags.
+- Freshness facts treated as retrieval-quality evidence.
+- No ordinary baseline controls.
+
+## Minimal implementation
+
+A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Cyclic alias visibility test | Support or falsify this chapter's layer claim. | planned; not run |
+| Sparse coverage gap test | Support or falsify this chapter's layer claim. | planned; not run |
+| Recurrence budget and exit test | Support or falsify this chapter's layer claim. | planned; not run |
+| Freshness stale-read rejection test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `coil_attention_memory` | Coil Attention and Memory | Planned use from inventory/manifest: Proof-linked cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop-exit certificates, work budgets, and alias diagnostics. |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/manifest: Public VCM release. Governed protocol for compiled working context. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -12,6 +12,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The book order is manifest-driven by `book_structure.json`.
 - The cohesive outline exists at `docs/book_outline.md`.
 - The source-mining synthesis exists at `docs/source_mining_synthesis.md`.
+- The Project Theseus and Circle Calculus mining report exists at `docs/local_project_mining_theseus_circle.md`.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - Source metadata is tracked without publishing raw source exports.
@@ -24,6 +25,7 @@ This file tracks whether the public repository is ready for the next major phase
 
 - Chapters are currently guarded stubs, not manuscript chapters.
 - Source-derived claims require source notes before support-state promotion.
+- Project Theseus, Circle Calculus, and Field of God AI Constitution source records still need source notes before being used as source-derived support.
 - Three source records currently require authenticated connector export for durable cache/source-note work: `vcm_editable`, `moecot`, and `coherence_exchange`.
 - Four cached Drive-file records are auth-gate placeholders, not usable source text: `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`.
 - Most Lean proof targets are planned, not implemented.

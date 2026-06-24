@@ -1,0 +1,106 @@
+---
+title: "CoilRA, MultiCoil RoPE, and Cyclic Mixers"
+chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "coilra_multicoil_rope"
+  - "rope_position_certifier"
+  - "circle_ai_contract_suite"
+  - "theseus_circle_transfer"
+  - "circle_ai_architectures"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# CoilRA, MultiCoil RoPE, and Cyclic Mixers
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `coilra-multicoil-rope-and-cyclic-mixers` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
+
+## Why existing approaches are insufficient
+
+Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.
+
+## Core Claim
+
+[coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
+
+## Mechanism
+
+- Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.
+- Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.
+- Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
+
+## Interfaces
+
+- Semantic representation chapters define when cyclic structure is actually present.
+- Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
+- Resource-economics chapters account for parameters, kernels, memory, and latency.
+- Proof contracts and prototype experiments keep structural facts separate from performance results.
+
+## Invariants
+
+- Equivariance is not model quality.
+- Parameter reduction is not an adoption proof.
+- Winding is not discarded when it is required to avoid aliasing.
+- Hardware-friendly sizes and kernel costs are recorded.
+- Real-valued RoPE claims are separated from exact integer phase-bank claims.
+
+## Failure modes
+
+- Mathematical elegance outruns kernels and baselines.
+- Exact finite proofs are overclaimed for real-valued RoPE deployments.
+- Lower parameter count comes with worse quality or runtime.
+- Phase aliases are hidden by residue-only diagnostics.
+
+## Minimal implementation
+
+A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| RoPE receipt boundary test | Support or falsify this chapter's layer claim. | planned; not run |
+| Cyclic mixer baseline matrix test | Support or falsify this chapter's layer claim. | planned; not run |
+| Residue/winding alias diagnostic | Support or falsify this chapter's layer claim. | planned; not run |
+| Parameter-quality-runtime separation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | Planned use from inventory/manifest: Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | Planned use from inventory/manifest: Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
+| `circle_ai_architectures` | Circle AI Architectures | Planned use from inventory/manifest: Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

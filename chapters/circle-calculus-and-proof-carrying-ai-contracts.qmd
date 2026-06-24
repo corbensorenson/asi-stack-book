@@ -1,0 +1,105 @@
+---
+title: "Circle Calculus and Proof-Carrying AI Contracts"
+chapter_id: "circle-calculus-and-proof-carrying-ai-contracts"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "circle_calculus_core"
+  - "circle_ai_contract_suite"
+  - "rope_position_certifier"
+  - "proof_carrying_circular_computation"
+  - "circle_ai_architectures"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Circle Calculus and Proof-Carrying AI Contracts
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `circle-calculus-and-proof-carrying-ai-contracts` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
+
+## Why existing approaches are insufficient
+
+Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.
+
+## Core Claim
+
+[circle-calculus-and-proof-carrying-ai-contracts.core, label: Design rationale, support: argument] Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.
+
+## Mechanism
+
+- Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.
+- Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.
+- Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+
+## Interfaces
+
+- Lean and proof manifests supply theorem status.
+- Python or CLI tools emit receipts and validation reports.
+- Theseus-style private experiments consume contracts without importing private results into public claims.
+- The evidence matrix records claim boundaries and support states.
+
+## Invariants
+
+- Proof status is not a model-quality claim.
+- Python tests and diagrams are evidence, not formal proof.
+- Consumer readiness is not downstream success.
+- Non-claims survive transfer into later chapters.
+
+## Failure modes
+
+- Theorem laundering into quality claims.
+- Stale or failed theorem IDs.
+- Missing baseline or negative-control experiments.
+- Exact finite models mistaken for real-valued deployment behavior.
+
+## Minimal implementation
+
+A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract schema validation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Theorem-id resolution test | Support or falsify this chapter's layer claim. | planned; not run |
+| Non-claim preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Receipt replay and fingerprint test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `circle_calculus_core` | Circle Calculus | Planned use from inventory/manifest: Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | Planned use from inventory/manifest: Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | Planned use from inventory/manifest: CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. |
+| `circle_ai_architectures` | Circle AI Architectures | Planned use from inventory/manifest: Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

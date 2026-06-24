@@ -14,6 +14,9 @@ primary_sources:
   - "talos"
   - "moecot_md"
   - "moecot"
+  - "project_theseus_whitepaper"
+  - "theseus_operator_os"
+  - "theseus_architecture_gate"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -32,7 +35,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot` |
+| Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
@@ -103,6 +106,9 @@ A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-int
 | `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
 | `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/manifest: Markdown export/source version. |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | Planned use from inventory/manifest: Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. |
+| `theseus_operator_os` | Hive Operator OS and Work Board | Planned use from inventory/manifest: Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. |
+| `theseus_architecture_gate` | Theseus Architecture Gate | Planned use from inventory/manifest: Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. |
 
 ## Summary
 

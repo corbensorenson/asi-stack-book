@@ -20,6 +20,7 @@
           "scf",
           "alignment_field",
           "field_of_god",
+          "field_of_god_ai_constitution",
           "ethica_mechanica",
           "eternal_code",
           "coherence_exchange",
@@ -519,7 +520,8 @@
             "ethica_mechanica",
             "eternal_code",
             "coherence_exchange",
-            "spinoza"
+            "spinoza",
+            "field_of_god_ai_constitution"
           ],
           "source_queue": {
             "primary": [
@@ -530,7 +532,8 @@
             ],
             "supporting": [
               "coherence_exchange",
-              "spinoza"
+              "spinoza",
+              "field_of_god_ai_constitution"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -592,7 +595,8 @@
             "ethica_mechanica",
             "field_of_god",
             "eternal_code",
-            "coherence_exchange"
+            "coherence_exchange",
+            "field_of_god_ai_constitution"
           ],
           "source_queue": {
             "primary": [
@@ -602,7 +606,8 @@
             "supporting": [
               "field_of_god",
               "eternal_code",
-              "coherence_exchange"
+              "coherence_exchange",
+              "field_of_god_ai_constitution"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -664,7 +669,8 @@
             "alignment_field",
             "coherence_exchange",
             "uat",
-            "spinoza"
+            "spinoza",
+            "field_of_god_ai_constitution"
           ],
           "source_queue": {
             "primary": [
@@ -674,7 +680,8 @@
             "supporting": [
               "coherence_exchange",
               "uat",
-              "spinoza"
+              "spinoza",
+              "field_of_god_ai_constitution"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -737,7 +744,8 @@
             "alignment_field",
             "ladon_manhattan",
             "spinoza",
-            "uat"
+            "uat",
+            "field_of_god_ai_constitution"
           ],
           "source_queue": {
             "primary": [
@@ -748,7 +756,8 @@
               "alignment_field",
               "ladon_manhattan",
               "spinoza",
-              "uat"
+              "uat",
+              "field_of_god_ai_constitution"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -1035,7 +1044,10 @@
             "alignment_field",
             "viea",
             "talos",
-            "moecot"
+            "moecot",
+            "field_of_god_ai_constitution",
+            "theseus_self_evolution_system",
+            "theseus_architecture_gate"
           ],
           "source_queue": {
             "primary": [
@@ -1046,7 +1058,10 @@
             "supporting": [
               "alignment_field",
               "viea",
-              "talos"
+              "talos",
+              "field_of_god_ai_constitution",
+              "theseus_self_evolution_system",
+              "theseus_architecture_gate"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -2186,7 +2201,13 @@
           "treellm",
           "tokenmana",
           "simulation_scaling",
-          "genesiscode"
+          "genesiscode",
+          "project_theseus_whitepaper",
+          "circle_calculus_core",
+          "circle_ai_contract_suite",
+          "coil_attention_memory",
+          "coilra_multicoil_rope",
+          "rope_position_certifier"
         ],
         "supporting": [
           "rankfold_compressor",
@@ -2200,7 +2221,15 @@
           "vcm_public",
           "planforge",
           "talos",
-          "spinoza"
+          "spinoza",
+          "theseus_plan_compiler",
+          "theseus_self_evolution_system",
+          "theseus_architecture_gate",
+          "theseus_operator_os",
+          "theseus_circle_transfer",
+          "proof_carrying_circular_computation",
+          "circle_ai_architectures",
+          "field_of_god_ai_constitution"
         ],
         "connector_or_recovery": [
           "moecot",
@@ -2222,7 +2251,9 @@
             "ladon_manhattan",
             "software_magic_grimoire",
             "genesiscode",
-            "moecot"
+            "moecot",
+            "field_of_god_ai_constitution",
+            "theseus_operator_os"
           ],
           "source_queue": {
             "primary": [
@@ -2232,7 +2263,9 @@
             "supporting": [
               "ladon_manhattan",
               "software_magic_grimoire",
-              "genesiscode"
+              "genesiscode",
+              "field_of_god_ai_constitution",
+              "theseus_operator_os"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -2298,7 +2331,10 @@
             "rgs",
             "benchmaxxing",
             "talos",
-            "moecot"
+            "moecot",
+            "project_theseus_whitepaper",
+            "theseus_self_evolution_system",
+            "theseus_operator_os"
           ],
           "source_queue": {
             "primary": [
@@ -2308,7 +2344,10 @@
               "rmi",
               "rgs",
               "benchmaxxing",
-              "talos"
+              "talos",
+              "project_theseus_whitepaper",
+              "theseus_self_evolution_system",
+              "theseus_operator_os"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -2373,7 +2412,9 @@
             "beastbrain",
             "cognitive_loop_closure",
             "rgs",
-            "moecot"
+            "moecot",
+            "project_theseus_whitepaper",
+            "theseus_operator_os"
           ],
           "source_queue": {
             "primary": [
@@ -2383,7 +2424,9 @@
             "supporting": [
               "beastbrain",
               "cognitive_loop_closure",
-              "rgs"
+              "rgs",
+              "project_theseus_whitepaper",
+              "theseus_operator_os"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -2448,7 +2491,10 @@
             "scf",
             "octopus_router",
             "cognitive_loop_closure",
-            "moecot"
+            "moecot",
+            "project_theseus_whitepaper",
+            "theseus_architecture_gate",
+            "theseus_self_evolution_system"
           ],
           "source_queue": {
             "primary": [
@@ -2458,7 +2504,10 @@
             ],
             "supporting": [
               "octopus_router",
-              "cognitive_loop_closure"
+              "cognitive_loop_closure",
+              "project_theseus_whitepaper",
+              "theseus_architecture_gate",
+              "theseus_self_evolution_system"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -2526,7 +2575,10 @@
             "scf",
             "talos",
             "moecot_md",
-            "moecot"
+            "moecot",
+            "project_theseus_whitepaper",
+            "theseus_operator_os",
+            "theseus_architecture_gate"
           ],
           "source_queue": {
             "primary": [
@@ -2538,7 +2590,10 @@
               "beastbrain",
               "viea",
               "scf",
-              "talos"
+              "talos",
+              "project_theseus_whitepaper",
+              "theseus_operator_os",
+              "theseus_architecture_gate"
             ],
             "variants": [
               "moecot_md"
@@ -2604,7 +2659,8 @@
             "rgs",
             "bugbrain",
             "simulation_scaling",
-            "rmi"
+            "rmi",
+            "project_theseus_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -2614,7 +2670,8 @@
             "supporting": [
               "bugbrain",
               "simulation_scaling",
-              "rmi"
+              "rmi",
+              "project_theseus_whitepaper"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -2821,7 +2878,9 @@
             "spinoza",
             "verification_bandwidth",
             "cognitive_compilation",
-            "cgs"
+            "cgs",
+            "circle_ai_architectures",
+            "coilra_multicoil_rope"
           ],
           "source_queue": {
             "primary": [
@@ -2831,7 +2890,9 @@
               "spinoza",
               "verification_bandwidth",
               "cognitive_compilation",
-              "cgs"
+              "cgs",
+              "circle_ai_architectures",
+              "coilra_multicoil_rope"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -2893,7 +2954,9 @@
             "planforge",
             "coherence_exchange",
             "simulation_scaling",
-            "viea"
+            "viea",
+            "project_theseus_whitepaper",
+            "coilra_multicoil_rope"
           ],
           "source_queue": {
             "primary": [
@@ -2903,7 +2966,9 @@
             "supporting": [
               "coherence_exchange",
               "simulation_scaling",
-              "viea"
+              "viea",
+              "project_theseus_whitepaper",
+              "coilra_multicoil_rope"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -3038,7 +3103,11 @@
             "cognitive_compilation",
             "treellm",
             "simulation_scaling",
-            "coilmoecot"
+            "coilmoecot",
+            "circle_calculus_core",
+            "circle_ai_architectures",
+            "proof_carrying_circular_computation",
+            "theseus_circle_transfer"
           ],
           "source_queue": {
             "primary": [
@@ -3048,7 +3117,11 @@
             "supporting": [
               "cognitive_compilation",
               "treellm",
-              "simulation_scaling"
+              "simulation_scaling",
+              "circle_calculus_core",
+              "circle_ai_architectures",
+              "proof_carrying_circular_computation",
+              "theseus_circle_transfer"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3102,6 +3175,238 @@
           ]
         },
         {
+          "id": "circle-calculus-and-proof-carrying-ai-contracts",
+          "title": "Circle Calculus and Proof-Carrying AI Contracts",
+          "file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "circle_calculus_core",
+            "circle_ai_contract_suite",
+            "rope_position_certifier",
+            "proof_carrying_circular_computation",
+            "circle_ai_architectures"
+          ],
+          "problem": "The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.",
+          "insufficient": "Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.",
+          "core_claim": "Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.",
+          "mechanism": [
+            "Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.",
+            "Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.",
+            "Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted."
+          ],
+          "interfaces": [
+            "Lean and proof manifests supply theorem status.",
+            "Python or CLI tools emit receipts and validation reports.",
+            "Theseus-style private experiments consume contracts without importing private results into public claims.",
+            "The evidence matrix records claim boundaries and support states."
+          ],
+          "invariants": [
+            "Proof status is not a model-quality claim.",
+            "Python tests and diagrams are evidence, not formal proof.",
+            "Consumer readiness is not downstream success.",
+            "Non-claims survive transfer into later chapters."
+          ],
+          "failure_modes": [
+            "Theorem laundering into quality claims.",
+            "Stale or failed theorem IDs.",
+            "Missing baseline or negative-control experiments.",
+            "Exact finite models mistaken for real-valued deployment behavior."
+          ],
+          "minimal_implementation": "A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.",
+          "codex_tests": [
+            "Contract schema validation test",
+            "Theorem-id resolution test",
+            "Non-claim preservation test",
+            "Receipt replay and fingerprint test"
+          ],
+          "claim_label": "Design rationale",
+          "source_queue": {
+            "primary": [
+              "circle_calculus_core",
+              "circle_ai_contract_suite",
+              "rope_position_certifier"
+            ],
+            "supporting": [
+              "proof_carrying_circular_computation",
+              "circle_ai_architectures"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "lean_module": "AsiStackProofs.ProofCarryingContracts",
+          "proof_targets": [
+            {
+              "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
+              "module": "AsiStackProofs.ProofCarryingContracts",
+              "target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:circle_contracts.consumer_gate.failure_blocks_promotion",
+              "module": "AsiStackProofs.ProofCarryingContracts",
+              "target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+          "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+          "file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "coil_attention_memory",
+            "circle_ai_contract_suite",
+            "theseus_circle_transfer",
+            "vcm_public"
+          ],
+          "problem": "Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.",
+          "insufficient": "Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.",
+          "core_claim": "Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.",
+          "mechanism": [
+            "Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures.",
+            "Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs.",
+            "Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims."
+          ],
+          "interfaces": [
+            "VCM context traces expose context adequacy and authority labels.",
+            "Attention and memory modules consume contract fields as diagnostic guardrails.",
+            "Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.",
+            "Proof contracts define the finite boundary of the claim."
+          ],
+          "invariants": [
+            "Residue-only aliasing remains visible.",
+            "Full structural coverage is not semantic coverage.",
+            "Recurrence budgets include exits and guardrails.",
+            "Stale reads fail closed or enter residual escrow."
+          ],
+          "failure_modes": [
+            "Alias hiding.",
+            "Overthinking or non-terminating recurrence loops.",
+            "Uncovered sparse-attention lags.",
+            "Freshness facts treated as retrieval-quality evidence.",
+            "No ordinary baseline controls."
+          ],
+          "minimal_implementation": "A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.",
+          "codex_tests": [
+            "Cyclic alias visibility test",
+            "Sparse coverage gap test",
+            "Recurrence budget and exit test",
+            "Freshness stale-read rejection test"
+          ],
+          "claim_label": "Design rationale",
+          "source_queue": {
+            "primary": [
+              "coil_attention_memory",
+              "circle_ai_contract_suite"
+            ],
+            "supporting": [
+              "theseus_circle_transfer",
+              "vcm_public",
+              "verification_bandwidth"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "lean_module": "AsiStackProofs.CoilAttentionMemory",
+          "proof_targets": [
+            {
+              "tag": "lean:coil_memory.alias_boundary.operational_invariant",
+              "module": "AsiStackProofs.CoilAttentionMemory",
+              "target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
+              "module": "AsiStackProofs.CoilAttentionMemory",
+              "target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "coilra-multicoil-rope-and-cyclic-mixers",
+          "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+          "file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "coilra_multicoil_rope",
+            "rope_position_certifier",
+            "circle_ai_contract_suite",
+            "theseus_circle_transfer",
+            "circle_ai_architectures"
+          ],
+          "problem": "Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.",
+          "insufficient": "Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.",
+          "core_claim": "CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.",
+          "mechanism": [
+            "Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.",
+            "Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.",
+            "Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate."
+          ],
+          "interfaces": [
+            "Semantic representation chapters define when cyclic structure is actually present.",
+            "Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.",
+            "Resource-economics chapters account for parameters, kernels, memory, and latency.",
+            "Proof contracts and prototype experiments keep structural facts separate from performance results."
+          ],
+          "invariants": [
+            "Equivariance is not model quality.",
+            "Parameter reduction is not an adoption proof.",
+            "Winding is not discarded when it is required to avoid aliasing.",
+            "Hardware-friendly sizes and kernel costs are recorded.",
+            "Real-valued RoPE claims are separated from exact integer phase-bank claims."
+          ],
+          "failure_modes": [
+            "Mathematical elegance outruns kernels and baselines.",
+            "Exact finite proofs are overclaimed for real-valued RoPE deployments.",
+            "Lower parameter count comes with worse quality or runtime.",
+            "Phase aliases are hidden by residue-only diagnostics."
+          ],
+          "minimal_implementation": "A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.",
+          "codex_tests": [
+            "RoPE receipt boundary test",
+            "Cyclic mixer baseline matrix test",
+            "Residue/winding alias diagnostic",
+            "Parameter-quality-runtime separation test"
+          ],
+          "claim_label": "Design rationale",
+          "source_queue": {
+            "primary": [
+              "coilra_multicoil_rope",
+              "rope_position_certifier"
+            ],
+            "supporting": [
+              "circle_ai_contract_suite",
+              "theseus_circle_transfer",
+              "circle_ai_architectures"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "lean_module": "AsiStackProofs.CyclicMixers",
+          "proof_targets": [
+            {
+              "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
+              "module": "AsiStackProofs.CyclicMixers",
+              "target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
+              "module": "AsiStackProofs.CyclicMixers",
+              "target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "executable-specifications-and-lean-proof-envelope",
           "title": "Executable Specifications and Lean Proof Envelope",
           "file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
@@ -3112,7 +3417,11 @@
             "spinoza",
             "scf",
             "talos",
-            "viea"
+            "viea",
+            "circle_calculus_core",
+            "circle_ai_contract_suite",
+            "rope_position_certifier",
+            "proof_carrying_circular_computation"
           ],
           "source_queue": {
             "primary": [
@@ -3122,7 +3431,11 @@
               "spinoza",
               "scf",
               "talos",
-              "viea"
+              "viea",
+              "circle_calculus_core",
+              "circle_ai_contract_suite",
+              "rope_position_certifier",
+              "proof_carrying_circular_computation"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -3187,7 +3500,11 @@
             "coherence_exchange",
             "tokenmana",
             "moecot",
-            "road_to_agi"
+            "road_to_agi",
+            "project_theseus_whitepaper",
+            "theseus_architecture_gate",
+            "theseus_self_evolution_system",
+            "theseus_circle_transfer"
           ],
           "source_queue": {
             "primary": [
@@ -3198,7 +3515,11 @@
               "cognitive_loop_closure",
               "uat",
               "coherence_exchange",
-              "tokenmana"
+              "tokenmana",
+              "project_theseus_whitepaper",
+              "theseus_architecture_gate",
+              "theseus_self_evolution_system",
+              "theseus_circle_transfer"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3273,7 +3594,13 @@
             "cgs",
             "cognitive_loop_closure",
             "moecot",
-            "vcm_editable"
+            "vcm_editable",
+            "project_theseus_whitepaper",
+            "theseus_plan_compiler",
+            "theseus_self_evolution_system",
+            "theseus_architecture_gate",
+            "theseus_operator_os",
+            "theseus_circle_transfer"
           ],
           "source_queue": {
             "primary": [
@@ -3290,7 +3617,13 @@
             "supporting": [
               "alignment_field",
               "cgs",
-              "cognitive_loop_closure"
+              "cognitive_loop_closure",
+              "project_theseus_whitepaper",
+              "theseus_plan_compiler",
+              "theseus_self_evolution_system",
+              "theseus_architecture_gate",
+              "theseus_operator_os",
+              "theseus_circle_transfer"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3346,6 +3679,98 @@
           ]
         },
         {
+          "id": "project-theseus-as-report-first-implementation-reference",
+          "title": "Project Theseus as Report-First Implementation Reference",
+          "file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "source_ids": [
+            "project_theseus_whitepaper",
+            "theseus_plan_compiler",
+            "theseus_self_evolution_system",
+            "theseus_architecture_gate",
+            "theseus_operator_os",
+            "theseus_circle_transfer"
+          ],
+          "problem": "The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.",
+          "insufficient": "A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.",
+          "core_claim": "Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.",
+          "mechanism": [
+            "Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts.",
+            "Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline.",
+            "Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.",
+            "Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.",
+            "Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review."
+          ],
+          "interfaces": [
+            "The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.",
+            "Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.",
+            "Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.",
+            "Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof."
+          ],
+          "invariants": [
+            "The frontier moves while the regression floor holds.",
+            "Promotion uses external-inference-zero evidence where the local gate requires it.",
+            "Reports survive the run and are not replaced by dashboard prose.",
+            "Private experiments and public calibration remain separated.",
+            "Unknown task kinds are blocked rather than guessed.",
+            "Architecture changes follow the intervention ladder."
+          ],
+          "failure_modes": [
+            "Latest-file report overwrites history.",
+            "Benchmark overfit becomes capability evidence.",
+            "Teacher dependence replaces local evidence.",
+            "Architecture churn outruns residual diagnosis.",
+            "Remote work proceeds without allowlists, TTLs, or kill switches.",
+            "Local prototype results are overclaimed as public evidence."
+          ],
+          "minimal_implementation": "An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.",
+          "codex_tests": [
+            "Theseus report crosswalk completeness test",
+            "Architecture gate mapping test",
+            "Work-board improvement contract test",
+            "Self-evolution intervention ladder audit"
+          ],
+          "claim_label": "Design rationale",
+          "source_queue": {
+            "primary": [
+              "project_theseus_whitepaper",
+              "theseus_plan_compiler",
+              "theseus_self_evolution_system"
+            ],
+            "supporting": [
+              "theseus_architecture_gate",
+              "theseus_operator_os",
+              "theseus_circle_transfer",
+              "rmi",
+              "cgs",
+              "benchmaxxing",
+              "cognitive_loop_closure",
+              "viea",
+              "vcm_public",
+              "scf"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "lean_module": "AsiStackProofs.TheseusReference",
+          "proof_targets": [
+            {
+              "tag": "lean:theseus.reference.report_contract.operational_invariant",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "prototype-roadmap",
           "title": "Prototype Roadmap",
           "file": "chapters/prototype-roadmap.qmd",
@@ -3363,7 +3788,14 @@
             "moecot",
             "moecot_md",
             "road_to_agi",
-            "coherence_exchange"
+            "coherence_exchange",
+            "project_theseus_whitepaper",
+            "theseus_plan_compiler",
+            "theseus_self_evolution_system",
+            "theseus_architecture_gate",
+            "theseus_operator_os",
+            "theseus_circle_transfer",
+            "circle_ai_contract_suite"
           ],
           "source_queue": {
             "primary": [
@@ -3376,7 +3808,14 @@
             ],
             "supporting": [
               "beastbrain_timeless",
-              "bugbrain"
+              "bugbrain",
+              "project_theseus_whitepaper",
+              "theseus_plan_compiler",
+              "theseus_self_evolution_system",
+              "theseus_architecture_gate",
+              "theseus_operator_os",
+              "theseus_circle_transfer",
+              "circle_ai_contract_suite"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3534,7 +3973,12 @@
             "moecot",
             "coilmoecot",
             "road_to_agi",
-            "vcm_editable"
+            "vcm_editable",
+            "field_of_god_ai_constitution",
+            "project_theseus_whitepaper",
+            "circle_calculus_core",
+            "circle_ai_contract_suite",
+            "theseus_circle_transfer"
           ],
           "source_queue": {
             "primary": [
@@ -3551,7 +3995,12 @@
               "rmi",
               "cgs",
               "genesiscode",
-              "simulation_scaling"
+              "simulation_scaling",
+              "field_of_god_ai_constitution",
+              "project_theseus_whitepaper",
+              "circle_calculus_core",
+              "circle_ai_contract_suite",
+              "theseus_circle_transfer"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3567,7 +4016,7 @@
           "core_claim": "The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.",
           "mechanism": [
             "Maintain source inventory, source notes, bibliography, and source-loading queues.",
-            "Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.",
+            "Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.",
             "Use triage rules to update chapters or add precise new ones."
           ],
           "interfaces": [

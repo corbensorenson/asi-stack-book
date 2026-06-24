@@ -2,7 +2,7 @@
 
 Working title: **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI**
 
-Status: expanded source-of-truth drafting outline, updated 2026-06-24. `book_structure.json` remains the ordering source of truth; Quarto generates displayed chapter numbers from the manifest.
+Status: expanded source-of-truth drafting outline, updated 2026-06-24 after local Project Theseus and Circle Calculus mining. `book_structure.json` remains the ordering source of truth; Quarto generates displayed chapter numbers from the manifest.
 
 ## Drafting Thesis
 
@@ -17,6 +17,7 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 - Treat primary sources as the first mining pass, supporting sources as synthesis/context, variants as version checks, and connector/recovery sources as blockers until actually loaded.
 - Do not mark a claim `source-derived` until the actual source text has been read and a source note or equivalent mined record exists.
 - Treat conversation-mined material as author intent, terminology, architecture lineage, deduplication help, and recovery guidance. It is not external evidence and should not be quoted verbatim unless explicitly approved.
+- Treat local project mining from Theseus/Circle as source-discovery and architecture triage until a source note, proof build, or recorded test promotes the relevant claim boundary.
 - Keep claim labels separate from support states. A chapter may contain `Design rationale + argument`, `Hypothesized + source-derived`, or `Measured + synthetic-test-backed` claims, but those dimensions should not be collapsed.
 - Use drafting annotations in private notes when helpful: `[SOURCE]`, `[AUTHOR INTENT]`, `[SYNTHESIS]`, `[EXPERIMENT]`, and `[OPEN]`.
 - Keep chapter IDs and filenames stable; Quarto handles displayed chapter numbering.
@@ -75,7 +76,7 @@ Part source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Core | `viea`, `scf`, `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `ladon_manhattan` | Load these before drafting or reorganizing this part. |
+| Core | `viea`, `scf`, `alignment_field`, `field_of_god`, `field_of_god_ai_constitution`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `ladon_manhattan` | Load these before drafting or reorganizing this part. |
 | Supporting | `beastbrain`, `beastbrain_timeless`, `aletheia`, `talos`, `spinoza`, `simulation_scaling` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
 | Connector or recovery required | `moecot`, `vcm_editable` | Use Google Drive connector or mark blocked before source-derived claims. |
 
@@ -415,7 +416,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `spinoza` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -467,7 +468,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `alignment_field`, `ethica_mechanica` | Read first for chapter claims and mechanisms. |
-| Supporting | `field_of_god`, `eternal_code`, `coherence_exchange` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -519,7 +520,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ethica_mechanica`, `alignment_field` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `uat`, `spinoza` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -571,7 +572,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ethica_mechanica`, `coherence_exchange` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `ladon_manhattan`, `spinoza`, `uat` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -785,7 +786,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `scf`, `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `viea`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1588,8 +1589,8 @@ Part source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Core | `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `bbvca_v9`, `treellm`, `tokenmana`, `simulation_scaling`, `genesiscode` | Load these before drafting or reorganizing this part. |
-| Supporting | `rankfold_compressor`, `bbvca_main`, `bugbrain`, `temporal_coil_research`, `road_to_agi`, `beastbrain`, `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
+| Core | `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `bbvca_v9`, `treellm`, `tokenmana`, `simulation_scaling`, `genesiscode`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `coil_attention_memory`, `coilra_multicoil_rope`, `rope_position_certifier` | Load these before drafting or reorganizing this part. |
+| Supporting | `rankfold_compressor`, `bbvca_main`, `bugbrain`, `temporal_coil_research`, `road_to_agi`, `beastbrain`, `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `proof_carrying_circular_computation`, `circle_ai_architectures`, `field_of_god_ai_constitution` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
 | Connector or recovery required | `moecot`, `moecot_md`, `coilmoecot`, `road_to_agi` | Use Google Drive connector or mark blocked before source-derived claims. |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
@@ -1605,7 +1606,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `talos`, `viea` | Read first for chapter claims and mechanisms. |
-| Supporting | `ladon_manhattan`, `software_magic_grimoire`, `genesiscode` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1659,7 +1660,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `cognitive_loop_closure` | Read first for chapter claims and mechanisms. |
-| Supporting | `rmi`, `rgs`, `benchmaxxing`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1712,7 +1713,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `octopus_router`, `rmi` | Read first for chapter claims and mechanisms. |
-| Supporting | `beastbrain`, `cognitive_loop_closure`, `rgs` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1765,7 +1766,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `rmi`, `benchmaxxing`, `scf` | Read first for chapter claims and mechanisms. |
-| Supporting | `octopus_router`, `cognitive_loop_closure` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1818,7 +1819,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `beastbrain`, `viea`, `scf`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Variants / alternate releases | `moecot_md` | Use only to compare versions or recover missing detail. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
@@ -1872,7 +1873,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `cgs`, `rgs` | Read first for chapter claims and mechanisms. |
-| Supporting | `bugbrain`, `simulation_scaling`, `rmi` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -2031,7 +2032,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `treellm` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -2083,7 +2084,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `tokenmana`, `planforge` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `simulation_scaling`, `viea` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -2187,7 +2188,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `genesiscode`, `temporal_coil_research` | Read first for chapter claims and mechanisms. |
-| Supporting | `cognitive_compilation`, `treellm`, `simulation_scaling` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `coilmoecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2227,6 +2228,177 @@ Lean proof targets:
 | `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | planned |
 | `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | planned |
 
+### Circle Calculus and Proof-Carrying AI Contracts
+
+Stable ID: `circle-calculus-and-proof-carrying-ai-contracts`
+
+Chapter job: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
+
+Core claim: Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier` | Read first for chapter claims and mechanisms. |
+| Supporting | `proof_carrying_circular_computation`, `circle_ai_architectures` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+
+Draft arc:
+
+- Problem: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
+- Insufficiency: Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.
+- Mechanism: Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.
+- Mechanism: Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.
+- Mechanism: Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+- Interface: Lean and proof manifests supply theorem status.
+- Interface: Python or CLI tools emit receipts and validation reports.
+- Interface: Theseus-style private experiments consume contracts without importing private results into public claims.
+- Interface: The evidence matrix records claim boundaries and support states.
+
+Primary invariants:
+
+- Proof status is not a model-quality claim.
+- Python tests and diagrams are evidence, not formal proof.
+- Consumer readiness is not downstream success.
+- Non-claims survive transfer into later chapters.
+
+Failure modes to cover:
+
+- Theorem laundering into quality claims.
+- Stale or failed theorem IDs.
+- Missing baseline or negative-control experiments.
+- Exact finite models mistaken for real-valued deployment behavior.
+
+Draft deliverables:
+
+- A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
+- Planned Codex test: Contract schema validation test
+- Planned Codex test: Theorem-id resolution test
+- Planned Codex test: Non-claim preservation test
+- Planned Codex test: Receipt replay and fingerprint test
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | planned |
+| `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | planned |
+
+### Coil Attention, Cyclic Memory, and Recurrence Contracts
+
+Stable ID: `coil-attention-cyclic-memory-and-recurrence-contracts`
+
+Chapter job: Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
+
+Core claim: Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `coil_attention_memory`, `circle_ai_contract_suite` | Read first for chapter claims and mechanisms. |
+| Supporting | `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+
+Draft arc:
+
+- Problem: Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
+- Insufficiency: Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.
+- Mechanism: Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures.
+- Mechanism: Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs.
+- Mechanism: Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
+- Interface: VCM context traces expose context adequacy and authority labels.
+- Interface: Attention and memory modules consume contract fields as diagnostic guardrails.
+- Interface: Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
+- Interface: Proof contracts define the finite boundary of the claim.
+
+Primary invariants:
+
+- Residue-only aliasing remains visible.
+- Full structural coverage is not semantic coverage.
+- Recurrence budgets include exits and guardrails.
+- Stale reads fail closed or enter residual escrow.
+
+Failure modes to cover:
+
+- Alias hiding.
+- Overthinking or non-terminating recurrence loops.
+- Uncovered sparse-attention lags.
+- Freshness facts treated as retrieval-quality evidence.
+- No ordinary baseline controls.
+
+Draft deliverables:
+
+- A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
+- Planned Codex test: Cyclic alias visibility test
+- Planned Codex test: Sparse coverage gap test
+- Planned Codex test: Recurrence budget and exit test
+- Planned Codex test: Freshness stale-read rejection test
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | planned |
+| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | planned |
+
+### CoilRA, MultiCoil RoPE, and Cyclic Mixers
+
+Stable ID: `coilra-multicoil-rope-and-cyclic-mixers`
+
+Chapter job: Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
+
+Core claim: CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `coilra_multicoil_rope`, `rope_position_certifier` | Read first for chapter claims and mechanisms. |
+| Supporting | `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+
+Draft arc:
+
+- Problem: Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
+- Insufficiency: Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.
+- Mechanism: Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.
+- Mechanism: Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.
+- Mechanism: Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
+- Interface: Semantic representation chapters define when cyclic structure is actually present.
+- Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
+- Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.
+- Interface: Proof contracts and prototype experiments keep structural facts separate from performance results.
+
+Primary invariants:
+
+- Equivariance is not model quality.
+- Parameter reduction is not an adoption proof.
+- Winding is not discarded when it is required to avoid aliasing.
+- Hardware-friendly sizes and kernel costs are recorded.
+- Real-valued RoPE claims are separated from exact integer phase-bank claims.
+
+Failure modes to cover:
+
+- Mathematical elegance outruns kernels and baselines.
+- Exact finite proofs are overclaimed for real-valued RoPE deployments.
+- Lower parameter count comes with worse quality or runtime.
+- Phase aliases are hidden by residue-only diagnostics.
+
+Draft deliverables:
+
+- A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
+- Planned Codex test: RoPE receipt boundary test
+- Planned Codex test: Cyclic mixer baseline matrix test
+- Planned Codex test: Residue/winding alias diagnostic
+- Planned Codex test: Parameter-quality-runtime separation test
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | planned |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | planned |
+
+
 ### Executable Specifications and Lean Proof Envelope
 
 Stable ID: `executable-specifications-and-lean-proof-envelope`
@@ -2240,7 +2412,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `genesiscode` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `scf`, `talos`, `viea` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 
 Draft arc:
 
@@ -2292,7 +2464,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
-| Supporting | `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `road_to_agi` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2346,7 +2518,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `cgs`, `cognitive_loop_closure` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2387,6 +2559,69 @@ Lean proof targets:
 | `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | planned |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | planned |
 
+### Project Theseus as Report-First Implementation Reference
+
+Stable ID: `project-theseus-as-report-first-implementation-reference`
+
+Chapter job: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
+
+Core claim: Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system` | Read first for chapter claims and mechanisms. |
+| Supporting | `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+
+Draft arc:
+
+- Problem: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
+- Insufficiency: A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.
+- Mechanism: Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts.
+- Mechanism: Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline.
+- Mechanism: Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.
+- Mechanism: Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
+- Mechanism: Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
+- Interface: The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
+- Interface: Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
+- Interface: Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
+- Interface: Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
+
+Primary invariants:
+
+- The frontier moves while the regression floor holds.
+- Promotion uses external-inference-zero evidence where the local gate requires it.
+- Reports survive the run and are not replaced by dashboard prose.
+- Private experiments and public calibration remain separated.
+- Unknown task kinds are blocked rather than guessed.
+- Architecture changes follow the intervention ladder.
+
+Failure modes to cover:
+
+- Latest-file report overwrites history.
+- Benchmark overfit becomes capability evidence.
+- Teacher dependence replaces local evidence.
+- Architecture churn outruns residual diagnosis.
+- Remote work proceeds without allowlists, TTLs, or kill switches.
+- Local prototype results are overclaimed as public evidence.
+
+Draft deliverables:
+
+- An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+- Planned Codex test: Theseus report crosswalk completeness test
+- Planned Codex test: Architecture gate mapping test
+- Planned Codex test: Work-board improvement contract test
+- Planned Codex test: Self-evolution intervention ladder audit
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | planned |
+| `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | planned |
+
+
 ### Prototype Roadmap
 
 Stable ID: `prototype-roadmap`
@@ -2400,7 +2635,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain` | Read first for chapter claims and mechanisms. |
-| Supporting | `beastbrain_timeless`, `bugbrain` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `beastbrain_timeless`, `bugbrain`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2510,7 +2745,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `verification_bandwidth`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2518,7 +2753,7 @@ Draft arc:
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 - Mechanism: Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Mechanism: Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.
+- Mechanism: Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.
 - Mechanism: Use triage rules to update chapters or add precise new ones.
 - Interface: Appendix G lists corpus and external literature queue.
 - Interface: Source notes support chapter drafting.
@@ -2567,10 +2802,10 @@ Appendix H is the curated, public-safe home for conversation-mined author intent
 | `coherence_exchange` | Connector fetched in this pass; treat as speculative synthesis and create source note before claim promotion. |
 | `road_to_agi` | Local cache is an auth-gate placeholder; use Drive connector or keep roadmap claims at argument level. |
 | `coilmoecot` | Local cache is an auth-gate placeholder; use Temporal Coil Research plus connector access until source text is available. |
-| Field of God AI Constitution | Recover from prior chats or recreate as a formal constitutional appendix; do not treat as an existing source until recovered. |
-| Circle Calculus full paper set | Search by exact title/folder later; use CoilMoECOT/Temporal Coil material only for AI-relevant subset until recovered. |
+| Field of God AI Constitution | Recovered as `field_of_god_ai_constitution` in the local/public Theseus repository; create a source note before promoting claims beyond `argument`. |
+| Circle Calculus full paper set | Recovered in `/Users/corbensorenson/Documents/circle math` and public `circle-calculus`; source records now route proof contracts, RoPE, coil memory, cyclic mixers, and proof-carrying computation into precise chapters. |
 | Genesis Engine / Genesis Foundry | Search Drive later; current proxies are GenesisCode, VIEA, Cognitive Compilation, and MoECOT-related docs. |
-| SymLiquid FEP-Net | Currently surfaced inside Compact Generative Systems; add a standalone source only if found. |
+| SymLiquid / Project Theseus | Recovered in `/Users/corbensorenson/Documents/Theseus-Hive` and public `symliquid-rmi`; use the Project Theseus implementation-reference chapter while keeping public capability claims at `argument` until source notes/tests exist. |
 | BBVCA detailed lineage | Current outline uses `bbvca_v9` and `bbvca_main`; recover detailed conversation/source context before making priority or empirical claims. |
 | Spinoza development details | Current outline has the Spinoza architecture slot; recover fuller development notes before source-derived reasoning/verification claims. |
 | VCM review conflicts | Resolve against the latest public VCM paper or durable source note before changing VCM claims. |

@@ -11,6 +11,9 @@ primary_sources:
   - "benchmaxxing"
   - "talos"
   - "moecot"
+  - "project_theseus_whitepaper"
+  - "theseus_self_evolution_system"
+  - "theseus_operator_os"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -29,7 +32,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot` |
+| Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
@@ -97,6 +100,9 @@ A loop closure pipeline from trace detection to verified tool record.
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/manifest: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
 | `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/manifest: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | Planned use from inventory/manifest: Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | Planned use from inventory/manifest: Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. |
+| `theseus_operator_os` | Hive Operator OS and Work Board | Planned use from inventory/manifest: Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. |
 
 ## Summary
 

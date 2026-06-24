@@ -10,6 +10,10 @@ primary_sources:
   - "scf"
   - "talos"
   - "viea"
+  - "circle_calculus_core"
+  - "circle_ai_contract_suite"
+  - "rope_position_certifier"
+  - "proof_carrying_circular_computation"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -28,7 +32,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
+| Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
@@ -95,6 +99,10 @@ A proof manifest, Lean workspace, and first invariant modules for support-state 
 | `scf` | Stable Capability Fields | Planned use from inventory/manifest: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
 | `talos` | Talos Protocol | Planned use from inventory/manifest: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
 | `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/manifest: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `circle_calculus_core` | Circle Calculus | Planned use from inventory/manifest: Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
+| `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | Planned use from inventory/manifest: Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims. |
+| `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | Planned use from inventory/manifest: CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. |
 
 ## Summary
 

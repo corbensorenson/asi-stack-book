@@ -21,6 +21,11 @@ primary_sources:
   - "coilmoecot"
   - "road_to_agi"
   - "vcm_editable"
+  - "field_of_god_ai_constitution"
+  - "project_theseus_whitepaper"
+  - "circle_calculus_core"
+  - "circle_ai_contract_suite"
+  - "theseus_circle_transfer"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -39,7 +44,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Evidence, and Implementation |
 | Status | conceptual |
 | Last updated | 2026-06-24 |
-| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
+| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source ingestion state | Source records assigned; source texts not yet ingested. |
@@ -64,7 +69,7 @@ A pile of sources or ad hoc citations does not tell future writing agents what t
 ## Mechanism
 
 - Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Track missing/recovery items such as AI Constitution, Circle Calculus, Genesis Engine, Genesis Foundry, SymLiquid, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results if found.
+- Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.
 - Use triage rules to update chapters or add precise new ones.
 
 ## Interfaces
@@ -117,6 +122,11 @@ A bibliography plan with external literature areas, source-note backlog, and ins
 | `coilmoecot` | CoilMoECOT Whitepaper v2.0 | Planned use from inventory/manifest: Prime-temporal coil networks as governed specialist cores in MoECOT runtime. |
 | `road_to_agi` | Road To AGI | Planned use from inventory/manifest: Remaining work / roadmap context. |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | Planned use from inventory/manifest: Editable version with evidence-carrying planner-guided context compiler framing. |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | Planned use from inventory/manifest: Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | Planned use from inventory/manifest: Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. |
+| `circle_calculus_core` | Circle Calculus | Planned use from inventory/manifest: Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | Planned use from inventory/manifest: Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
 
 ## Summary
 

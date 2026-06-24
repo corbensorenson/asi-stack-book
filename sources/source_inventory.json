@@ -299,6 +299,21 @@
     "notes": "Field of God source/outline/material."
   },
   {
+    "id": "field_of_god_ai_constitution",
+    "title": "Field of God AI Constitution",
+    "priority": "core_alignment_source",
+    "layer": "constitutional_alignment_runtime_governance",
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "agency-dignity-and-corrigibility",
+      "moral-uncertainty-and-value-conflict",
+      "recursive-self-improvement-boundaries",
+      "runtime-adapters"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/personality-documents/field_of_god_ai_constitution_v1.md",
+    "notes": "Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence."
+  },
+  {
     "id": "ethica_mechanica",
     "title": "Ethica Mechanica",
     "priority": "must_use_variant",
@@ -524,5 +539,172 @@
     ],
     "url": "https://docs.google.com/document/d/1XR716XCo-WmvOpvGTGDmh9zbv44oiyjfcVDVQ1YibIc",
     "notes": "Edge/resource-aware implementation context."
+  },
+  {
+    "id": "project_theseus_whitepaper",
+    "title": "Project Theseus Whitepaper",
+    "priority": "implementation_reference",
+    "layer": "report_first_rmi_prototype",
+    "chapter_targets": [
+      "implementation",
+      "prototype",
+      "appendix"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/PROJECT_THESEUS_WHITEPAPER.md",
+    "notes": "Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability."
+  },
+  {
+    "id": "theseus_plan_compiler",
+    "title": "Theseus Plan Compiler",
+    "priority": "implementation_reference",
+    "layer": "planning_control",
+    "chapter_targets": [
+      "planning",
+      "execution",
+      "prototype"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/THESEUS_PLAN_COMPILER.md",
+    "notes": "Goal-to-contract compiler with semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, and replay traces."
+  },
+  {
+    "id": "theseus_self_evolution_system",
+    "title": "Theseus Self-Evolution System",
+    "priority": "implementation_reference",
+    "layer": "recursive_self_improvement_governance",
+    "chapter_targets": [
+      "self-improvement",
+      "benchmarking",
+      "prototype"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/SELF_EVOLUTION_SYSTEM.md",
+    "notes": "Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger."
+  },
+  {
+    "id": "theseus_architecture_gate",
+    "title": "Theseus Architecture Gate",
+    "priority": "implementation_reference",
+    "layer": "readiness_gate_governance",
+    "chapter_targets": [
+      "governance",
+      "benchmarking",
+      "prototype"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/ARCHITECTURE_GATE.md",
+    "notes": "Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero."
+  },
+  {
+    "id": "theseus_operator_os",
+    "title": "Hive Operator OS and Work Board",
+    "priority": "implementation_reference",
+    "layer": "labor_os_operator_surface",
+    "chapter_targets": [
+      "execution",
+      "runtime",
+      "prototype"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/HIVE_OPERATOR_OS.md",
+    "notes": "Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface."
+  },
+  {
+    "id": "theseus_circle_transfer",
+    "title": "Theseus Circle Calculus Transfer Lane",
+    "priority": "implementation_reference",
+    "layer": "proof_contract_transfer",
+    "chapter_targets": [
+      "math-substrates",
+      "proof-contracts",
+      "prototype"
+    ],
+    "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/CIRCLE_CALCULUS_TRANSFER.md",
+    "notes": "Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries."
+  },
+  {
+    "id": "circle_calculus_core",
+    "title": "Circle Calculus",
+    "priority": "core_technical_source",
+    "layer": "proof_carrying_mathematical_substrate",
+    "chapter_targets": [
+      "math-substrates",
+      "proofs",
+      "appendix"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus",
+    "notes": "Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book."
+  },
+  {
+    "id": "circle_ai_contract_suite",
+    "title": "Circle Calculus AI Contract Suite",
+    "priority": "core_technical_source",
+    "layer": "proof_carrying_ai_contracts",
+    "chapter_targets": [
+      "proof-contracts",
+      "attention-memory",
+      "appendix"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/docs/AI_CONTRACT_SUITE.md",
+    "notes": "Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration."
+  },
+  {
+    "id": "circle_ai_architectures",
+    "title": "Circle AI Architectures",
+    "priority": "core_technical_source",
+    "layer": "cyclic_ai_architecture",
+    "chapter_targets": [
+      "math-substrates",
+      "semantic-representation"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md",
+    "notes": "Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it."
+  },
+  {
+    "id": "coil_attention_memory",
+    "title": "Coil Attention and Memory",
+    "priority": "core_technical_source",
+    "layer": "cyclic_attention_memory",
+    "chapter_targets": [
+      "memory",
+      "attention",
+      "recurrence"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md",
+    "notes": "Proof-linked cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop-exit certificates, work budgets, and alias diagnostics."
+  },
+  {
+    "id": "coilra_multicoil_rope",
+    "title": "CoilRA and MultiCoil RoPE",
+    "priority": "core_technical_source",
+    "layer": "cyclic_mixers_position_encoding",
+    "chapter_targets": [
+      "representation",
+      "routing",
+      "resource-economics"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md",
+    "notes": "Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims."
+  },
+  {
+    "id": "rope_position_certifier",
+    "title": "Proof-Carrying RoPE Position Distinguishability",
+    "priority": "core_technical_source",
+    "layer": "proof_carrying_position_contract",
+    "chapter_targets": [
+      "proof-contracts",
+      "representation"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md",
+    "notes": "Externally usable RoPE position-distinguishability certifier with theorem-linked exact collision reports, bounded real-phase frontier, machine-readable receipts, and explicit non-claims."
+  },
+  {
+    "id": "proof_carrying_circular_computation",
+    "title": "Proof-Carrying Circular Computation",
+    "priority": "supporting_technical_source",
+    "layer": "proof_carrying_compute_substrate",
+    "chapter_targets": [
+      "proofs",
+      "runtime",
+      "math-substrates"
+    ],
+    "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md",
+    "notes": "CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation."
   }
 ]

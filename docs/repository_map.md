@@ -11,6 +11,7 @@ This repository is organized around the living book and its validation loop.
 | `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, bibliography, and author-intent lineage. | tracked |
 | `docs/book_outline.md` | Full-book drafting outline, source loading queues, and Lean proof target source of truth. | tracked |
 | `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
+| `docs/local_project_mining_theseus_circle.md` | Public-safe local mining report for Project Theseus and Circle Calculus. | tracked |
 | `docs/conversation_context_ingestion_report.md` | Public-safe synthesis of conversation-mined author intent and recovery tasks. | tracked |
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |

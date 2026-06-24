@@ -13,7 +13,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 The project is ready for manuscript drafting, but it is not yet a completed book.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 46 outline chapters exist as guarded stubs across three manifest-driven parts.
+- All 50 outline chapters exist as guarded stubs across three manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
@@ -28,6 +28,7 @@ The project is ready for manuscript drafting, but it is not yet a completed book
 |---|---|
 | [Live book](https://corbensorenson.github.io/asi-stack-book/) | Rendered public site. |
 | [docs/book_outline.md](docs/book_outline.md) | Cohesive full-book outline and proof target source of truth. |
+| [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |

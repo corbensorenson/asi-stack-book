@@ -1,0 +1,113 @@
+---
+title: "Project Theseus as Report-First Implementation Reference"
+chapter_id: "project-theseus-as-report-first-implementation-reference"
+part_id: "routing-compression-evidence-implementation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "project_theseus_whitepaper"
+  - "theseus_plan_compiler"
+  - "theseus_self_evolution_system"
+  - "theseus_architecture_gate"
+  - "theseus_operator_os"
+  - "theseus_circle_transfer"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Project Theseus as Report-First Implementation Reference
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `project-theseus-as-report-first-implementation-reference` |
+| Part | Part III - Routing, Compression, Evidence, and Implementation |
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from `book_structure.json` and the source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
+
+## Why existing approaches are insufficient
+
+A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.
+
+## Core Claim
+
+[project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
+
+## Mechanism
+
+- Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts.
+- Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline.
+- Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.
+- Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
+- Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
+
+## Interfaces
+
+- The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
+- Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
+- Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
+- Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
+
+## Invariants
+
+- The frontier moves while the regression floor holds.
+- Promotion uses external-inference-zero evidence where the local gate requires it.
+- Reports survive the run and are not replaced by dashboard prose.
+- Private experiments and public calibration remain separated.
+- Unknown task kinds are blocked rather than guessed.
+- Architecture changes follow the intervention ladder.
+
+## Failure modes
+
+- Latest-file report overwrites history.
+- Benchmark overfit becomes capability evidence.
+- Teacher dependence replaces local evidence.
+- Architecture churn outruns residual diagnosis.
+- Remote work proceeds without allowlists, TTLs, or kill switches.
+- Local prototype results are overclaimed as public evidence.
+
+## Minimal implementation
+
+An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Theseus report crosswalk completeness test | Support or falsify this chapter's layer claim. | planned; not run |
+| Architecture gate mapping test | Support or falsify this chapter's layer claim. | planned; not run |
+| Work-board improvement contract test | Support or falsify this chapter's layer claim. | planned; not run |
+| Self-evolution intervention ladder audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | Planned use from inventory/manifest: Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. |
+| `theseus_plan_compiler` | Theseus Plan Compiler | Planned use from inventory/manifest: Goal-to-contract compiler with semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, and replay traces. |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | Planned use from inventory/manifest: Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. |
+| `theseus_architecture_gate` | Theseus Architecture Gate | Planned use from inventory/manifest: Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. |
+| `theseus_operator_os` | Hive Operator OS and Work Board | Planned use from inventory/manifest: Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. |
+| `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | Planned use from inventory/manifest: Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
