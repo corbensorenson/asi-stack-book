@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/governance_right_record.schema.json",
+  "title": "Governance Right Record",
+  "type": "object",
+  "required": [
+    "right_id",
+    "right_type",
+    "holder",
+    "scope",
+    "required_artifacts",
+    "safety_constraints",
+    "access_path",
+    "denial_or_redaction_reason",
+    "preservation_rule",
+    "test_hook"
+  ],
+  "properties": {
+    "right_id": { "type": "string", "minLength": 1 },
+    "right_type": {
+      "type": "string",
+      "enum": ["audit", "exit", "fork", "appeal", "dissent"]
+    },
+    "holder": { "type": "string", "minLength": 1 },
+    "scope": { "type": "string", "minLength": 1 },
+    "required_artifacts": { "type": "array", "items": { "type": "string" } },
+    "safety_constraints": { "type": "array", "items": { "type": "string" } },
+    "access_path": { "type": "string", "minLength": 1 },
+    "denial_or_redaction_reason": { "type": "string" },
+    "preservation_rule": { "type": "string", "minLength": 1 },
+    "test_hook": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

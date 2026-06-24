@@ -47,17 +47,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter preserves value conflict. This chapter gives affected people and institutions technical rights when governance itself becomes the risk. A system that can update policies, route evidence, manage memory, and execute actions should not require trust in a single opaque control point.
 
-It inherits pressure from the previous chapter, Moral Uncertainty and Value Conflict, and makes that pressure operational in a narrower boundary. It hands its output to Stable Capability Fields, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+Ethica Mechanica frames governance as contestable recursive correction rather than fixed sovereign authority. The Coherence Exchange contributes fork, exit, audit, and contestability as epistemic-governance concepts. Ladon/Manhattan adds the security lesson: rights are weak if secret authority and logs are hidden from the user. The stack translates those ideas into interfaces.
 
 ## Why existing approaches are insufficient
 
 Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice. If `governance-rights-fork-exit-and-audit` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Transparency is not the same as auditability. A user can be shown an explanation while still lacking logs, source records, appeal routes, export paths, or meaningful alternatives. Exit is not real if data, tools, identity, or institutional dependency are held hostage. Fork is not safe if it bypasses source obligations, privacy constraints, or safety gates.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The rights have to be technical. They need artifacts, permissions, retention rules, redaction rules, and failure tests.
 
 ## Core Claim
 
@@ -67,27 +67,38 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent rights as capabilities and required interfaces. Second, attach audit artifacts to governance decisions. Third, treat fork/exit as preserved escape hatches against lock-in.
+The mechanism is a Governance Right Record.
 
 - Represent rights as capabilities and required interfaces.
 - Attach audit artifacts to governance decisions.
 - Treat fork/exit as preserved escape hatches against lock-in.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+Each right is represented as a capability with an owner, scope, artifact requirement, safety constraint, and test. Audit requires durable records. Exit requires export and revocation paths. Fork requires a reproducible boundary that preserves obligations. Dissent requires a channel that cannot be silently deleted by the authority being challenged.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+SCFs later depend on this chapter: capability replacement must preserve protected governance rights across implementation changes.
 
 ## Interfaces
 
-The interface for Governance Rights: Fork, Exit, and Audit is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Governance Right Record.
 
 - Governance issues rights.
 - SCFs preserve rights across replacement.
 - Execution logs evidence for audit.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `right_id`
+- `right_type`
+- `holder`
+- `scope`
+- `required_artifacts`
+- `safety_constraints`
+- `access_path`
+- `denial_or_redaction_reason`
+- `preservation_rule`
+- `test_hook`
+
+Governance issues rights. SCFs preserve rights across replacement. Execution and memory systems produce audit artifacts. Evidence checks whether the right was materially usable rather than merely declared.
 
 ## Invariants
 
@@ -97,7 +108,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Exit paths remain materially usable.
 - Fork rights do not bypass safety constraints.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is practical availability. A right that cannot be exercised under realistic conditions is not preserved. A right that bypasses safety constraints is not a right; it is an authority leak.
 
 ## Failure modes
 
@@ -107,13 +118,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Data hostage-taking.
 - Opaque automated policy updates.
 
-For Governance Rights: Fork, Exit, and Audit, mitigation starts by turning each listed failure into a named reviewable artifact. When `Governance capture` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Governance capture occurs when the same authority controls policy, logs, appeal, and revision. Data hostage-taking converts dependency into control. Opaque policy updates turn governance into a moving target. Each failure should produce a rights record violation, not merely a complaint.
 
 ## Minimal implementation
 
 A governance-rights table with required artifacts, authorities, and failure tests.
 
-The smallest useful implementation is deliberately narrow: A governance-rights table with required artifacts, authorities, and failure tests. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts and an access path.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,9 +132,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Audit-record availability test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
-| Exit-path preservation test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
-| Fork-right safety test | Probe whether the chapter claim holds under the relevant Governance Rights: Fork, Exit, and Audit boundary. | planned; not run |
+| Audit-record availability test | Check that required audit artifacts exist and can be accessed or redacted with a reason. | planned; not run |
+| Exit-path preservation test | Check that export, revocation, and continuity paths remain materially usable. | planned; not run |
+| Fork-right safety test | Check that forking preserves source, privacy, and safety obligations instead of bypassing them. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +163,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Governance Rights: Fork, Exit, and Audit defines one boundary in the ASI Stack: Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals. Its job is to make a capability more governable, not merely more impressive.
+Governance Rights: Fork, Exit, and Audit turns contestability into interfaces. The point is not to decorate governance with ideals; it is to make audit, appeal, exit, fork, and dissent survive contact with runtime systems, memory, security, and capability replacement.
 
-In v0.2, this chapter gives Governance Rights: Fork, Exit, and Audit a complete architectural boundary: powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control. Its next maturity step is to substantiate the boundary through `Governance issues rights`, preserve `Audit records cannot be silently deleted`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter prepares the move into Stable Capability Fields: if a capability can be replaced, the user's rights must not depend on the old implementation staying in place.

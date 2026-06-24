@@ -1,0 +1,13 @@
+{
+  "plan_id": "agency-demo-001",
+  "affected_parties": ["book maintainer"],
+  "delegation_scope": "drafting and validation only",
+  "manipulation_risk": "low in this fixture",
+  "reversibility": "git history preserves rollback path",
+  "review_channel": "pull request or direct file review",
+  "appeal_channel": "user instruction overrides future drafting",
+  "shutdown_or_rollback_path": "stop goal or revert committed change by explicit request",
+  "accountable_principal": "book maintainer",
+  "residual_dependency_risk": ["The fixture does not model real institutional dependency."],
+  "approval_required": false
+}

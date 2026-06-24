@@ -45,17 +45,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+Human intent enters the stack as language, but the system cannot treat language as direct execution. A request can contain a goal, preference, hidden ambiguity, implied authority, risk tolerance, source constraints, emotional context, and unstated stop conditions in the same sentence. If the stack passes that sentence directly to planning or tools, ambiguity becomes action.
 
-It inherits pressure from the previous chapter, Evidence States and Claim Discipline, and makes that pressure operational in a narrower boundary. It hands its output to Constitutional Alignment Substrate, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+VIEA frames the corrective move: intent becomes a command contract before it becomes work. Software Magic Grimoire adds the language discipline: operative words should carry role, objective, context, constraints, procedure, output, verification, and failure behavior. PlanForge and Cognitive Compilation then consume that contract as source material for plans and semantic IR. Talos consumes only the authorized job form, not the user's raw wish.
 
 ## Why existing approaches are insufficient
 
 Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria. If `human-intent-as-a-formal-input` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Prompt-only workflows encourage helpfulness to fill gaps. That is useful for conversation and dangerous for execution. "Build this," "fix it," "publish it," and "make it amazing" are not contracts by themselves. They need scope, allowed means, source boundaries, authority ceilings, acceptance criteria, evidence requirements, and stop conditions. Otherwise the next layer cannot tell whether it should clarify, draft, implement, ask for approval, abstain, or stop.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The failure is goal misbinding. The system satisfies an interpretation that was never actually authorized. A subtler failure is scope accretion: each helpful step adds a plausible means until the action surface is larger than the grant. The stack treats both as contract failures.
 
 ## Core Claim
 
@@ -65,27 +65,53 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, parse intent into command contracts. Second, separate desired outcome from allowed means. Third, attach acceptance criteria and escalation conditions.
+The mechanism is an Intent Contract.
+
+```{mermaid}
+flowchart LR
+  A["Natural-language request"] --> B["Intent parse"]
+  B --> C{"Ambiguous or high-risk?"}
+  C -- "yes" --> D["Clarify / bounded default / abstain"]
+  C -- "no" --> E["Intent Contract"]
+  E --> F["Alignment filter"]
+  F --> G["Planning source plan"]
+  G --> H["Authorized job contract"]
+  H --> I["Execution / artifact"]
+  I --> J["Evidence and feedback"]
+```
 
 - Parse intent into command contracts.
 - Separate desired outcome from allowed means.
 - Attach acceptance criteria and escalation conditions.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The contract separates desired outcome from allowed means. It captures what the user wants, what the system may do, what it must not do, what evidence is required before completion, which authority grants exist, and when to stop. The raw request remains useful as context, but it is not the artifact consumed by execution.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
 
 ## Interfaces
 
-The interface for Human Intent as a Formal Input is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is an Intent Contract.
 
 - Alignment filters intent.
 - Planning compiles accepted contracts.
 - Execution consumes only authorized task contracts.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `intent_id`
+- `request_summary`
+- `desired_outcome`
+- `allowed_means`
+- `forbidden_means`
+- `authority_ceiling`
+- `source_boundaries`
+- `acceptance_criteria`
+- `evidence_requirements`
+- `escalation_conditions`
+- `stop_conditions`
+- `open_ambiguities`
+
+Alignment filters the contract before planning. Planning lowers accepted contracts into source plans, DAGs, semantic atoms, or typed jobs. Execution consumes only authorized job contracts. Evidence compares the delivered artifact against the acceptance criteria and unresolved ambiguities.
 
 ## Invariants
 
@@ -95,7 +121,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Intent contracts expose authority limits.
 - Stop conditions remain attached to the plan.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The important invariant is preservation: downstream plans may refine the contract, but they may not drop constraints, stop conditions, or authority ceilings. If a planner cannot satisfy the contract without changing it, that is a re-contracting event, not a silent optimization.
 
 ## Failure modes
 
@@ -105,13 +131,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Scope creep.
 - Implicit permission to act.
 
-For Human Intent as a Formal Input, mitigation starts by turning each listed failure into a named reviewable artifact. When `Goal misbinding` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Goal misbinding happens when the system optimizes the wrong interpretation. Scope creep happens when the system turns an open-ended wish into unbounded work. Implicit permission happens when the system treats a desired outcome as approval for any convenient means. All three should produce a visible residual or clarification path before execution.
 
 ## Minimal implementation
 
 An intent-contract schema and example transformations from request to governed task.
 
-The smallest useful implementation is deliberately narrow: An intent-contract schema and example transformations from request to governed task. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -119,9 +145,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Intent parsing ambiguity test | Probe whether the chapter claim holds under the relevant Human Intent as a Formal Input boundary. | planned; not run |
-| Authority extraction test | Probe whether the chapter claim holds under the relevant Human Intent as a Formal Input boundary. | planned; not run |
-| Stop-condition preservation test | Probe whether the chapter claim holds under the relevant Human Intent as a Formal Input boundary. | planned; not run |
+| Intent parsing ambiguity test | Check that ambiguous requests produce open ambiguities, clarification, or bounded defaults rather than executable certainty. | planned; not run |
+| Authority extraction test | Check that desired outcomes and allowed means are separated and authority ceilings are explicit. | planned; not run |
+| Stop-condition preservation test | Check that stop conditions survive lowering into plans, semantic atoms, and jobs. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +174,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Human Intent as a Formal Input defines one boundary in the ASI Stack: Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions. Its job is to make a capability more governable, not merely more impressive.
+Human Intent as a Formal Input is the stack's entry adapter. It turns natural-language purpose into a bounded artifact that planning, alignment, execution, and evidence can inspect.
 
-In v0.2, this chapter gives Human Intent as a Formal Input a complete architectural boundary: a governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority. Its next maturity step is to substantiate the boundary through `Alignment filters intent`, preserve `Ambiguity triggers clarification or bounded defaults`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The core discipline is separation: wanted outcome is not allowed means, context is not authority, helpfulness is not permission, and ambiguity is not consent. Everything downstream depends on that boundary.

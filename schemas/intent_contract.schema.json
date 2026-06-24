@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/intent_contract.schema.json",
+  "title": "Intent Contract",
+  "type": "object",
+  "required": [
+    "intent_id",
+    "request_summary",
+    "desired_outcome",
+    "allowed_means",
+    "forbidden_means",
+    "authority_ceiling",
+    "source_boundaries",
+    "acceptance_criteria",
+    "evidence_requirements",
+    "escalation_conditions",
+    "stop_conditions",
+    "open_ambiguities"
+  ],
+  "properties": {
+    "intent_id": { "type": "string", "minLength": 1 },
+    "request_summary": { "type": "string", "minLength": 1 },
+    "desired_outcome": { "type": "string", "minLength": 1 },
+    "allowed_means": { "type": "array", "items": { "type": "string" } },
+    "forbidden_means": { "type": "array", "items": { "type": "string" } },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "source_boundaries": { "type": "array", "items": { "type": "string" } },
+    "acceptance_criteria": { "type": "array", "items": { "type": "string" } },
+    "evidence_requirements": { "type": "array", "items": { "type": "string" } },
+    "escalation_conditions": { "type": "array", "items": { "type": "string" } },
+    "stop_conditions": { "type": "array", "items": { "type": "string" } },
+    "open_ambiguities": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

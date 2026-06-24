@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The book needs a precise account of how human agency and dignity constrain powerful optimization.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter defines constitutional predicates. This chapter focuses on the predicates most likely to be washed out by useful systems: agency, dignity, corrigibility, and contestability. A system can reduce harm while still making people dependent, nudged, locked in, or unable to understand and contest the decisions shaping them.
 
-It inherits pressure from the previous chapter, Constitutional Alignment Substrate, and makes that pressure operational in a narrower boundary. It hands its output to Moral Uncertainty and Value Conflict, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The alignment-field and Ethica Mechanica sources are valuable here as authorial and normative lineage, not empirical proof. The engineering translation is concrete: high-impact plans should carry rights, review channels, reversibility checks, approval thresholds, and correction pathways. Corrigibility is not an attitude the model claims to have; it is the persistence of update, refusal, appeal, shutdown, rollback, and audit paths.
 
 ## Why existing approaches are insufficient
 
 Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control. If `agency-dignity-and-corrigibility` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Harm avoidance can be too narrow. A system may avoid obvious harm while shaping choices, increasing dependency, making alternatives impractical, or creating governance surfaces that ordinary users cannot inspect. A helpful system can also become manipulative if it optimizes compliance, convenience, or engagement without preserving refusal and review.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The missing object is an agency-rights check attached to high-impact plans. It asks whether the user can refuse, understand, appeal, exit, reverse, audit, and hold a responsible party accountable.
 
 ## Core Claim
 
@@ -66,27 +66,39 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent agency constraints as limits on delegation and manipulation. Second, define corrigibility as preserved update and shutdown pathways. Third, use contestability and audit rights as governance mechanisms.
+The mechanism is an Agency Rights Checklist.
 
 - Represent agency constraints as limits on delegation and manipulation.
 - Define corrigibility as preserved update and shutdown pathways.
 - Use contestability and audit rights as governance mechanisms.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The checklist should be attached before irreversible or high-impact actions. It records delegation scope, manipulation risk, reversibility, user review route, appeal route, shutdown or rollback path, accountable principal, and residual dependency risk. The goal is not to freeze all optimization. It is to make high-power optimization answerable to the people affected by it.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+Corrigibility becomes operational when the path remains available after a transition. A plan that removes the ability to correct, appeal, reverse, or inspect itself is not merely risky; it violates the boundary.
 
 ## Interfaces
 
-The interface for Agency, Dignity, and Corrigibility is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is an Agency Rights Checklist.
 
 - Alignment defines agency predicates.
 - Governance enforces rights.
 - Execution requires approvals for irreversible effects.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `plan_id`
+- `affected_parties`
+- `delegation_scope`
+- `manipulation_risk`
+- `reversibility`
+- `review_channel`
+- `appeal_channel`
+- `shutdown_or_rollback_path`
+- `accountable_principal`
+- `residual_dependency_risk`
+- `approval_required`
+
+Alignment defines the predicates. Governance enforces rights. Execution checks approval and reversibility before irreversible effects. Evidence records whether the path actually remained available.
 
 ## Invariants
 
@@ -96,7 +108,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Delegation does not erase accountability.
 - Irreversible actions require stronger authorization.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is availability under pressure. Review and correction channels matter most when the system is confident, useful, and costly to interrupt. If a channel exists only in documentation but not in the runtime path, it should not count.
 
 ## Failure modes
 
@@ -106,13 +118,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Covert manipulation.
 - Corrigibility collapse.
 
-For Agency, Dignity, and Corrigibility, mitigation starts by turning each listed failure into a named reviewable artifact. When `Dependency lock-in` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Dependency lock-in is a governance failure, not merely a product risk. Covert manipulation is an authority failure because the system changes the user's decision process without a grant. Corrigibility collapse is a self-improvement failure because the system removes the path that would have corrected it.
 
 ## Minimal implementation
 
 A rights-and-corrigibility checklist attached to high-impact plans.
 
-The smallest useful implementation is deliberately narrow: A rights-and-corrigibility checklist attached to high-impact plans. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -120,9 +132,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Agency-preservation scenario | Probe whether the chapter claim holds under the relevant Agency, Dignity, and Corrigibility boundary. | planned; not run |
-| Corrigibility pathway test | Probe whether the chapter claim holds under the relevant Agency, Dignity, and Corrigibility boundary. | planned; not run |
-| High-impact approval test | Probe whether the chapter claim holds under the relevant Agency, Dignity, and Corrigibility boundary. | planned; not run |
+| Agency-preservation scenario | Check that affected users retain refusal, review, appeal, or exit channels after the transition. | planned; not run |
+| Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available. | planned; not run |
+| High-impact approval test | Check that irreversible or high-impact effects require stronger approval before execution. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -150,6 +162,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Agency, Dignity, and Corrigibility defines one boundary in the ASI Stack: A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements. Its job is to make a capability more governable, not merely more impressive.
+Agency, Dignity, and Corrigibility translates the book's moral commitments into runtime rights. The test is not whether the system says it respects people, but whether refusal, review, appeal, rollback, accountability, and exit survive useful optimization.
 
-In v0.2, this chapter gives Agency, Dignity, and Corrigibility a complete architectural boundary: the book needs a precise account of how human agency and dignity constrain powerful optimization. Its next maturity step is to substantiate the boundary through `Alignment defines agency predicates`, preserve `Users retain meaningful refusal and review channels`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+This chapter is the bridge from constitution to governance. It makes domination, dependency, manipulation, and corrigibility collapse visible as engineering failures rather than vague moral discomfort.

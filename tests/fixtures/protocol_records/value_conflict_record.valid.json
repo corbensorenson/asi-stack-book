@@ -1,0 +1,12 @@
+{
+  "conflict_id": "privacy-audit-demo",
+  "value_axes": ["auditability", "privacy"],
+  "stakeholders": ["user", "maintainer"],
+  "stakes": "public repository governance",
+  "reversibility": "redaction can remove public details but not all copies",
+  "evidence_required": ["audit log need", "privacy risk review"],
+  "review_route": "human review before publishing sensitive logs",
+  "decision": "publish public-safe summaries only",
+  "residual_uncertainty": ["Exact redaction sufficiency is context dependent."],
+  "expiry_or_revisit_condition": "revisit when publishing raw artifacts"
+}

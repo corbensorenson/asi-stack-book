@@ -1,0 +1,14 @@
+{
+  "intent_id": "intent-demo-001",
+  "request_summary": "Prepare a public-safe chapter revision.",
+  "desired_outcome": "Improve source-specific prose without promoting evidence state.",
+  "allowed_means": ["edit tracked Quarto files", "add public-safe schemas"],
+  "forbidden_means": ["publish raw private source exports", "fabricate test results"],
+  "authority_ceiling": "write_public_book_only",
+  "source_boundaries": ["use source notes before source-derived claims"],
+  "acceptance_criteria": ["quarto render passes", "support states remain conservative"],
+  "evidence_requirements": ["record validation commands"],
+  "escalation_conditions": ["missing source text for a source-derived claim"],
+  "stop_conditions": ["validation failure that cannot be resolved locally"],
+  "open_ambiguities": ["none for this fixture"]
+}

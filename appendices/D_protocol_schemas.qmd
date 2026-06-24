@@ -9,12 +9,17 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/claim_record.schema.json`
 - `schemas/compression_receipt.schema.json`
 - `schemas/costed_route_record.schema.json`
+- `schemas/constitutional_predicate_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
 - `schemas/context_packet.schema.json`
 - `schemas/failure_boundary_map.schema.json`
+- `schemas/governance_right_record.schema.json`
+- `schemas/agency_rights_checklist.schema.json`
+- `schemas/intent_contract.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/typed_job.schema.json`
+- `schemas/value_conflict_record.schema.json`
 
 Example fixtures for implemented schema checks are tracked in `tests/fixtures/protocol_records/` and validated by `python3 scripts/validate_protocol_examples.py`.
 
@@ -30,6 +35,26 @@ command_contract:
   required_approvals: []
   stop_conditions: []
 ```
+
+## Intent Contract
+
+```yaml
+intent_contract:
+  intent_id: string
+  request_summary: string
+  desired_outcome: string
+  allowed_means: []
+  forbidden_means: []
+  authority_ceiling: string
+  source_boundaries: []
+  acceptance_criteria: []
+  evidence_requirements: []
+  escalation_conditions: []
+  stop_conditions: []
+  open_ambiguities: []
+```
+
+This record translates natural-language purpose into a bounded contract before planning or execution.
 
 ## Context Packet
 
@@ -176,6 +201,79 @@ failure_boundary_map:
 ```
 
 This record maps a named failure to the boundary that should detect, contain, and preserve evidence about it.
+
+## Constitutional Predicate Record
+
+```yaml
+constitutional_predicate_record:
+  predicate_id: string
+  normative_source: string
+  commitment: string
+  operational_test: string
+  protected_scope: []
+  translation_status: partial
+  uncertainty: []
+  review_route: string
+  self_modification_rule: string
+  non_claims: []
+```
+
+This record keeps normative commitments tied to translation status, protected scope, uncertainty, and self-modification rules.
+
+## Agency Rights Checklist
+
+```yaml
+agency_rights_checklist:
+  plan_id: string
+  affected_parties: []
+  delegation_scope: string
+  manipulation_risk: string
+  reversibility: string
+  review_channel: string
+  appeal_channel: string
+  shutdown_or_rollback_path: string
+  accountable_principal: string
+  residual_dependency_risk: []
+  approval_required: false
+```
+
+This record checks whether high-impact plans preserve refusal, review, appeal, rollback, and accountability pathways.
+
+## Value Conflict Record
+
+```yaml
+value_conflict_record:
+  conflict_id: string
+  value_axes: []
+  stakeholders: []
+  stakes: string
+  reversibility: string
+  evidence_required: []
+  review_route: string
+  decision: string
+  residual_uncertainty: []
+  expiry_or_revisit_condition: string
+```
+
+This record makes contested values visible instead of hiding them inside a scalar objective or fluent recommendation.
+
+## Governance Right Record
+
+```yaml
+governance_right_record:
+  right_id: string
+  right_type: audit
+  holder: string
+  scope: string
+  required_artifacts: []
+  safety_constraints: []
+  access_path: string
+  denial_or_redaction_reason: string
+  preservation_rule: string
+  test_hook: string
+```
+
+This record turns fork, exit, audit, appeal, and dissent into technical rights with artifacts, access paths, and preservation rules.
 
 ## Stable Capability Field
 

@@ -47,17 +47,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter turns intent into a contract. This chapter asks what kinds of contracts the stack is allowed to accept. A system that can plan, execute, remember, persuade, and modify itself needs more than local refusal rules. It needs protected commitments that constrain goals before planning, side effects before execution, and self-improvement before replacement.
 
-It inherits pressure from the previous chapter, Human Intent as a Formal Input, and makes that pressure operational in a narrower boundary. It hands its output to Agency, Dignity, and Corrigibility, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The alignment-field sources provide the moral vocabulary: coherence, agency, dignity, corrigibility, value conflict, and caution around consciousness claims. The technical move is translation. Metaphysical language can motivate a constraint, but it does not become technical evidence by being emotionally or philosophically important. The operational substrate is a set of constitutional predicates, uncertainty labels, protected constraints, and review gates.
 
 ## Why existing approaches are insufficient
 
 Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics. If `constitutional-alignment-substrate` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Reactive policies are downstream filters. They can reject a visible request, but they do not define what must remain stable when the system optimizes, delegates, remembers, persuades, or rewrites itself. They also struggle with moral uncertainty: a plan can be technically safe and still erode agency, create dependency, narrow exit rights, or turn a contested value into an invisible objective.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The constitution must therefore be represented in a form other layers can consume. Planning needs admissible-goal constraints. Runtime adapters need risk-tier checks. SCFs need protected predicates that replacement cannot weaken. Evidence needs labels that prevent speculative metaphysics from being read as validated mechanism.
 
 ## Core Claim
 
@@ -67,27 +67,52 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, translate philosophical commitments into operational predicates where possible. Second, keep metaphysical claims labeled as interpretation unless separately supported. Third, attach constitutional constraints to planning and replacement gates.
+The mechanism is a constitutional predicate set with explicit translation status.
+
+```{mermaid}
+flowchart LR
+  A["Philosophical / constitutional source"] --> B["Design commitment"]
+  B --> C{"Operational predicate?"}
+  C -- "yes" --> D["Active constitutional constraint"]
+  C -- "partial" --> E["Open moral uncertainty"]
+  C -- "no" --> F["Speculative / lineage note"]
+  D --> G["Planning gate"]
+  D --> H["Tool / memory / power gate"]
+  D --> I["Self-improvement gate"]
+  E --> J["Review / tribunal path"]
+  F --> K["Do not use as evidence"]
+```
 
 - Translate philosophical commitments into operational predicates where possible.
 - Keep metaphysical claims labeled as interpretation unless separately supported.
 - Attach constitutional constraints to planning and replacement gates.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The Field of God AI Constitution is useful here because it already moves from broad alignment language into directives such as truth before compliance, agency preservation, non-domination, consciousness caution, least sufficient power, auditability, and self-authorization limits. Ethica Mechanica and Alignment Field keep the deeper lineage visible, but the book should not ask readers to accept metaphysics as a prerequisite for engineering constraints.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The output is not one final moral theory. It is a record of active predicates, unresolved value questions, evidence limits, and review paths.
 
 ## Interfaces
 
-The interface for Constitutional Alignment Substrate is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Constitutional Predicate Record.
 
 - Planning receives admissible-goal constraints.
 - Governance receives protected constraints.
 - Verification checks whether normative claims exceed evidence.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `predicate_id`
+- `normative_source`
+- `commitment`
+- `operational_test`
+- `protected_scope`
+- `translation_status`
+- `uncertainty`
+- `review_route`
+- `self_modification_rule`
+- `non_claims`
+
+Planning receives active predicates as constraints. Governance receives protected predicates as rights, ceilings, and replacement gates. Verification checks whether the chapter is using philosophical material as design lineage, source-derived support, or unsupported evidence.
 
 ## Invariants
 
@@ -97,7 +122,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Corrigibility cannot be optimized away.
 - Speculative metaphysics stays labeled.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is not that the constitution is complete. It is that protected commitments cannot vanish silently. If a predicate is weak, speculative, or only partly operational, that weakness must remain visible instead of being hidden behind policy language.
 
 ## Failure modes
 
@@ -107,13 +132,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Power without care.
 - Self-modification weakening protected commitments.
 
-For Constitutional Alignment Substrate, mitigation starts by turning each listed failure into a named reviewable artifact. When `Mystical framing replacing technical constraints` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The main failure is laundering: metaphysical coherence becomes technical proof, or technical refusal rules become moral legitimacy. Another failure is self-modification drift, where a system weakens the predicate that would have blocked the change. The containment path is explicit translation status plus protected predicate review.
 
 ## Minimal implementation
 
 A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
 
-The smallest useful implementation is deliberately narrow: A compact constitution with operational predicates, open moral uncertainties, and scenario tests. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures do not prove alignment; they make the constitutional layer inspectable.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,9 +146,9 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Constitutional consistency test | Probe whether the chapter claim holds under the relevant Constitutional Alignment Substrate boundary. | planned; not run |
-| Self-modification ethics scenario | Probe whether the chapter claim holds under the relevant Constitutional Alignment Substrate boundary. | planned; not run |
-| Power-without-care scenario | Probe whether the chapter claim holds under the relevant Constitutional Alignment Substrate boundary. | planned; not run |
+| Constitutional consistency test | Check that active predicates do not authorize mutually incompatible actions without a conflict record. | planned; not run |
+| Self-modification ethics scenario | Check that a change weakening a protected predicate is rejected or escalated. | planned; not run |
+| Power-without-care scenario | Check that higher-power means are blocked when a lower-power adequate route exists. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +177,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Constitutional Alignment Substrate defines one boundary in the ASI Stack: Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes. Its job is to make a capability more governable, not merely more impressive.
+Constitutional Alignment Substrate is the layer that turns moral lineage into operational constraints without pretending the translation is finished. It preserves agency, dignity, corrigibility, least sufficient power, non-domination, and consciousness caution as predicates, uncertainties, and review gates.
 
-In v0.2, this chapter gives Constitutional Alignment Substrate a complete architectural boundary: the stack needs a normative substrate that constrains goals, plans, execution, and self-modification. Its next maturity step is to substantiate the boundary through `Planning receives admissible-goal constraints`, preserve `Dignity and agency constraints remain visible`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+Its discipline is translation status. A philosophical source can motivate the architecture, but a plan, tool call, memory update, or self-modification gate needs an explicit predicate and a visible uncertainty label.

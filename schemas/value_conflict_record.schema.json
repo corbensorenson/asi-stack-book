@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/value_conflict_record.schema.json",
+  "title": "Value Conflict Record",
+  "type": "object",
+  "required": [
+    "conflict_id",
+    "value_axes",
+    "stakeholders",
+    "stakes",
+    "reversibility",
+    "evidence_required",
+    "review_route",
+    "decision",
+    "residual_uncertainty",
+    "expiry_or_revisit_condition"
+  ],
+  "properties": {
+    "conflict_id": { "type": "string", "minLength": 1 },
+    "value_axes": { "type": "array", "items": { "type": "string" } },
+    "stakeholders": { "type": "array", "items": { "type": "string" } },
+    "stakes": { "type": "string", "minLength": 1 },
+    "reversibility": { "type": "string", "minLength": 1 },
+    "evidence_required": { "type": "array", "items": { "type": "string" } },
+    "review_route": { "type": "string", "minLength": 1 },
+    "decision": { "type": "string", "minLength": 1 },
+    "residual_uncertainty": { "type": "array", "items": { "type": "string" } },
+    "expiry_or_revisit_condition": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
