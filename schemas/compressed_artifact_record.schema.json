@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/compressed_artifact_record.schema.json",
+  "title": "Compressed Artifact Record",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "source_artifact",
+    "compression_method",
+    "reconstruction_contract",
+    "ratio_claim_state",
+    "codec_parameters",
+    "residual_coding",
+    "probe_plan",
+    "fallback_artifact",
+    "decode_determinism",
+    "utility_tests",
+    "non_claims"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "source_artifact": { "type": "string", "minLength": 1 },
+    "compression_method": { "type": "string", "minLength": 1 },
+    "reconstruction_contract": { "type": "string", "minLength": 1 },
+    "ratio_claim_state": {
+      "type": "string",
+      "enum": ["not_measured", "source_proposed", "synthetic_test", "empirical_test"]
+    },
+    "codec_parameters": { "type": "array", "items": { "type": "string" } },
+    "residual_coding": { "type": "array", "items": { "type": "string" } },
+    "probe_plan": { "type": "array", "items": { "type": "string" } },
+    "fallback_artifact": { "type": "string", "minLength": 1 },
+    "decode_determinism": { "type": "string", "minLength": 1 },
+    "utility_tests": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

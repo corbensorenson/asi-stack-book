@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/compact_generative_record.schema.json",
+  "title": "Compact Generative Record",
+  "type": "object",
+  "required": [
+    "system_id",
+    "target_system",
+    "compact_seed",
+    "rule_system",
+    "memory_state",
+    "residual_channel",
+    "verification_contract",
+    "governance_interface",
+    "generative_leverage",
+    "hidden_complexity_risks",
+    "fallback_path",
+    "evidence_refs"
+  ],
+  "properties": {
+    "system_id": { "type": "string", "minLength": 1 },
+    "target_system": { "type": "string", "minLength": 1 },
+    "compact_seed": { "type": "string", "minLength": 1 },
+    "rule_system": { "type": "string", "minLength": 1 },
+    "memory_state": { "type": "string", "minLength": 1 },
+    "residual_channel": { "type": "array", "items": { "type": "string" } },
+    "verification_contract": { "type": "string", "minLength": 1 },
+    "governance_interface": { "type": "string", "minLength": 1 },
+    "generative_leverage": { "type": "string", "minLength": 1 },
+    "hidden_complexity_risks": { "type": "array", "items": { "type": "string" } },
+    "fallback_path": { "type": "string", "minLength": 1 },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

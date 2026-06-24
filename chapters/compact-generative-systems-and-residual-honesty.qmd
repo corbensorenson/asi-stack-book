@@ -40,92 +40,109 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses Compact Generative Systems and Ratcheting Generative Systems as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, or that any local CGS implementation exists in this repository.
 
 ## Problem
 
-The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
+The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, or human review. A small seed that requires unbounded search is not efficient. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, MoECOT Runtime and Multi-Core Orchestration, and makes that pressure operational in a narrower boundary. It hands its output to Generate-Verify-Repair Compression, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+CGS gives the book a vocabulary for this problem: seed, rule system, memory/state, residual/error, verification, and governance/generation interface. RGS adds the improvement loop: repeated successful behavior can become verified structure, but failures must stay in residual escrow and regressions must remain protected.
 
 ## Why existing approaches are insufficient
 
-Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
+Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work. If `compact-generative-systems-and-residual-honesty` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Compactness also does not imply interpretability or safety. A compressed rule can be opaque. A generated output can be plausible but unverified. A local embedded system can be resource-aware but untested. A simulation can be definable but physically infeasible. The stack therefore treats compactness as a contract with residuals, not as an achievement by itself.
 
 ## Core Claim
 
 [compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Compact Generative Systems, Ratcheting Generative Systems, BugBrain, Simulation Scaling Law, and Ratcheting Modular Intelligence - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support source-derived discussion of compact seeds, residual burden, verification cost, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, proof, or implementation has been run here.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, define compact generative cores and their residuals. Second, use the seed/router/search/generator/verifier/residual loop as the default compression-control model. Third, treat the raw LLM as a compressed generative engine, not as the entire intelligent system. Fourth, separate lawful generation from exact remainder. Fifth, record where compactness fails.
+The mechanism is a Compact Generative Record that names what is compact, what is generated, how it is verified, what residuals remain, and who is allowed to use or promote it.
 
-- Define compact generative cores and their residuals.
-- Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.
-- Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.
-- Separate lawful generation from exact remainder.
-- Record where compactness fails.
+```{mermaid}
+flowchart LR
+  A["Target system or task family"] --> B["Compact seed"]
+  B --> C["Rule system + memory state"]
+  C --> D["Generator / decoder / controller"]
+  D --> E["Verifier or critic"]
+  E --> F{"Adequate for use?"}
+  F -- "yes" --> G["Governed interface"]
+  F -- "no" --> H["Residual channel + correction"]
+  H --> I["Fallback or ratchet pressure"]
+  G --> J["Evidence + cost ledger"]
+  I --> J
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+A compact generative system should answer five questions:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- What target is the compact core supposed to generate, control, predict, or govern?
+- What seed, rule system, and memory/state are doing the work?
+- What verification contract decides whether the generated result is adequate?
+- What residual channel preserves failures, omissions, and correction burden?
+- What governance interface decides permitted use, fallback, promotion, and retirement?
+
+The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
 
 ## Interfaces
 
-The interface for Compact Generative Systems and Residual Honesty is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Compact Generative Record.
 
-- Compression feeds memory and routing.
-- Evidence tests downstream utility.
-- Procedural memory turns repeated generation into tools.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `system_id`
+- `target_system`
+- `compact_seed`
+- `rule_system`
+- `memory_state`
+- `residual_channel`
+- `verification_contract`
+- `governance_interface`
+- `generative_leverage`
+- `hidden_complexity_risks`
+- `fallback_path`
+- `evidence_refs`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Routing uses the record to decide whether a compact core is adequate for a task. VCM and semantic pages use it to mark loss and omissions. Evidence layers use it to check downstream utility. Procedural memory uses it to decide whether repeated generated behavior should become a verified tool.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Lossy claims are labeled.
 - Residual burden is visible.
 - Fallback exists when compact generation fails.
+- Verification cost is counted as part of the representation.
+- Compactness does not promote support state without evidence.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The invariant is not "small is good." It is "small is accountable." A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - False lossless claims.
 - Hidden residual complexity.
 - Compactness that damages utility.
+- Degenerate governance where the compact core evaluates its own adequacy.
+- Recursive instability when compact structures modify the system that defines their success.
 
-For Compact Generative Systems and Residual Honesty, mitigation starts by turning each listed failure into a named reviewable artifact. When `False lossless claims` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+False lossless claims should be downgraded. Hidden residuals should be escrowed. Utility damage should trigger fallback or quarantine. Self-evaluation should be blocked when evaluator independence matters. Recursive modification should be routed through SCF replacement and readiness gates.
 
 ## Minimal implementation
 
-A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
+The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, residuals, verification, governance, leverage, hidden complexity, fallback, and evidence references.
 
-The smallest useful implementation is deliberately narrow: A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| S/R/Q/G/V/E loop consistency test | Probe whether the chapter claim holds under the relevant Compact Generative Systems and Residual Honesty boundary. | planned; not run |
-| Residual burden test | Probe whether the chapter claim holds under the relevant Compact Generative Systems and Residual Honesty boundary. | planned; not run |
-| Downstream utility test | Probe whether the chapter claim holds under the relevant Compact Generative Systems and Residual Honesty boundary. | planned; not run |
-| Fallback behavior test | Probe whether the chapter claim holds under the relevant Compact Generative Systems and Residual Honesty boundary. | planned; not run |
+| S/R/Q/G/V/E loop consistency test | Check that seed, route/index, query/search, generator, verifier, and exact/residual fields are all present. | planned; not run |
+| Residual burden test | Check that lossy or partial generation cannot omit residual records. | planned; not run |
+| Downstream utility test | Check whether a compact core preserves task utility against a full or baseline representation. | planned; not run |
+| Fallback behavior test | Check that failed generation routes to fallback or residual pressure. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -153,6 +170,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Compact Generative Systems and Residual Honesty defines one boundary in the ASI Stack: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit. Its job is to make a capability more governable, not merely more impressive.
+Compact systems are useful when they generate more value than their hidden burdens cost. The stack should therefore account for seed, rule system, memory, generation, verification, residuals, governance, fallback, and evidence together.
 
-In v0.2, this chapter gives Compact Generative Systems and Residual Honesty a complete architectural boundary: the architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity. Its next maturity step is to substantiate the boundary through `Compression feeds memory and routing`, preserve `Lossy claims are labeled`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task.

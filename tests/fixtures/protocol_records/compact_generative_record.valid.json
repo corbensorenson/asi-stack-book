@@ -1,0 +1,14 @@
+{
+  "system_id": "cgs-demo-001",
+  "target_system": "Draft a source-grounded chapter mechanism from a compact source note set.",
+  "compact_seed": "source note IDs plus outline contract",
+  "rule_system": "preserve support-state discipline, cite source IDs, and record residuals",
+  "memory_state": "public source notes and chapter outline only",
+  "residual_channel": ["no benchmark proves generated prose quality", "source-to-claim mapping remains incomplete"],
+  "verification_contract": "local validators and human review can inspect source IDs and non-claims",
+  "governance_interface": "support state remains argument until evidence changes",
+  "generative_leverage": "small source-note set guides a longer chapter draft",
+  "hidden_complexity_risks": ["human review burden", "unmeasured downstream utility"],
+  "fallback_path": "retain full source notes and mark unresolved claims as residuals",
+  "evidence_refs": ["sources/source_notes/cgs.md", "sources/source_notes/rgs.md"]
+}

@@ -41,89 +41,110 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats TreeLLM as a representation proposal, not a proven model-size, reasoning, or benchmark improvement. The repository has no TreeLLM implementation, semantic-token benchmark, or graph-grounding evaluation.
 
 ## Problem
 
-The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.
+The ASI Stack needs representations that are easier to inspect, update, route, and verify than opaque token continuations alone. A model can generate fluent claims while hiding which concepts, sources, relations, and assumptions it used. Tree-structured or graph-structured representations are attractive because they can expose paths, provenance, hierarchy, and residual attributes.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, RankFold, NeuralFold, and Artifact Compression, and makes that pressure operational in a narrower boundary. It hands its output to Resource Economics and Token Budgets, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+But explicit structure can also become false confidence. A semantic graph can be incomplete, biased, brittle, stale, or treated as an unreviewed authority source. The problem is to use semantic structure as an optional substrate with tests, not as a substitute for grounding.
 
 ## Why existing approaches are insufficient
 
-Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.
+Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths. Yet hand-built ontologies and semantic graphs do not automatically solve grounding either. They can make a system look explainable while encoding the same uncertainties in a different form.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths. If `semantic-representation-and-tree-structured-models` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+Verification Bandwidth adds a second pressure: a representation must be adequate for the checks it is asked to support. A short semantic token may help routing or retrieval, but it can also lose the constraints needed for verification. Cognitive Compilation adds the operational view: semantic atoms and IR are useful only when typed, validated, and repairable.
 
 ## Core Claim
 
 [semantic-representation-and-tree-structured-models.core, label: Design rationale, support: argument] Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - TreeLLM, Proof of Belief / The Spinoza Architecture, Verification Bandwidth in Bounded Contexts, Cognitive Compilation, and Compact Generative Systems - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support discussion of semantic graphs, path-derived tokens, graph updates, provenance, traversal explanations, verification limits, and typed semantic IR. They do not support claims that TreeLLM achieves model-size reduction, reasoning gains, or lossless semantic adequacy here.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, represent concepts hierarchically. Second, attach semantic tokens to provenance and use constraints. Third, compare tree structures against neural-only baselines.
+The mechanism is a Semantic Node Record that can be embedded in semantic pages, claim graphs, or compiler IR without pretending the node is final truth.
 
-- Represent concepts hierarchically.
-- Attach semantic tokens to provenance and use constraints.
-- Compare tree structures against neural-only baselines.
+```{mermaid}
+flowchart LR
+  A["Source or task evidence"] --> B["Semantic node"]
+  B --> C["Parent / child / relation refs"]
+  B --> D["Provenance refs"]
+  B --> E["Tokenization contract"]
+  E --> F{"Grounded enough for use?"}
+  F -- "yes" --> G["VCM page / claim graph / IR atom"]
+  F -- "no" --> H["Speculative label + residual"]
+  G --> I["Versioned hierarchy"]
+  H --> I
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+A semantic representation should preserve:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- Concept identity and label.
+- Provenance and permitted-use constraints.
+- Parent, child, and relation references.
+- Tokenization or traversal contract.
+- Grounding state and residual uncertainty.
+- Version and supersession links.
+- Evaluation references for utility and fidelity.
+
+This lets the stack use tree or graph structure for retrieval, analogy, explanation, compilation, and verification while keeping hierarchy changes auditable.
 
 ## Interfaces
 
-The interface for Semantic Representation and Tree-Structured Models is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Semantic Node Record.
 
-- Spinoza uses semantic claims.
-- VCM stores semantic pages.
-- Compression tests representation efficiency.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `node_id`
+- `concept_label`
+- `provenance_refs`
+- `parent_refs`
+- `child_refs`
+- `relation_refs`
+- `tokenization_contract`
+- `grounding_state`
+- `version`
+- `supersedes`
+- `residual_uncertainty`
+- `permitted_uses`
+- `evaluation_refs`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+VCM stores semantic pages. Spinoza consumes semantic claims only with evidence and downgrade paths. Cognitive Compilation lowers goals into semantic atoms. Compression layers measure whether semantic tokens preserve enough information for target tasks. Routing treats a representation substrate as optional until tests justify using it.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Semantic nodes are grounded or labeled speculative.
 - Hierarchy changes are versioned.
 - Representation claims require tests.
+- A fixed-size semantic token is not automatically adequate for all tasks.
+- Graph updates preserve prior references or record supersession.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is provenance: a grounded node must say what grounds it. If no provenance exists, the node can still be useful as a hypothesis or planning construct, but it must not masquerade as verified knowledge.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Hand-built ontology brittleness.
 - False explainability.
 - Hierarchy drift.
+- Canonical graph capture, where the graph becomes an unreviewed authority source.
+- Token compression that drops constraints needed for verification.
 
-For Semantic Representation and Tree-Structured Models, mitigation starts by turning each listed failure into a named reviewable artifact. When `Hand-built ontology brittleness` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Brittleness should trigger residuals and versioning. False explainability should downgrade claims. Hierarchy drift should preserve supersession links. Canonical graph capture should route through governance and audit. Verification loss should be recorded as a context-adequacy failure.
 
 ## Minimal implementation
 
-A semantic-node schema and evaluation plan for one grounded domain.
+The smallest useful implementation is a semantic node schema and fixture. It records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 
-The smallest useful implementation is deliberately narrow: A semantic-node schema and evaluation plan for one grounded domain. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+Passing the fixture does not prove a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Grounding fidelity test | Probe whether the chapter claim holds under the relevant Semantic Representation and Tree-Structured Models boundary. | planned; not run |
-| Hierarchy revision test | Probe whether the chapter claim holds under the relevant Semantic Representation and Tree-Structured Models boundary. | planned; not run |
-| Representation utility benchmark | Probe whether the chapter claim holds under the relevant Semantic Representation and Tree-Structured Models boundary. | planned; not run |
+| Grounding fidelity test | Check that grounded nodes have provenance and that task-relevant constraints are preserved. | planned; not run |
+| Hierarchy revision test | Check that hierarchy updates preserve prior references or record supersession. | planned; not run |
+| Representation utility benchmark | Compare semantic-node representations against neural-only or plain-text baselines on a bounded task. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +173,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Semantic Representation and Tree-Structured Models defines one boundary in the ASI Stack: Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability. Its job is to make a capability more governable, not merely more impressive.
+Semantic structure is useful when it makes concepts, paths, provenance, versions, and uncertainty easier to inspect. It is harmful when it becomes an ontology-shaped authority claim without grounding or tests.
 
-In v0.2, this chapter gives Semantic Representation and Tree-Structured Models a complete architectural boundary: the book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning. Its next maturity step is to substantiate the boundary through `Spinoza uses semantic claims`, preserve `Semantic nodes are grounded or labeled speculative`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated.

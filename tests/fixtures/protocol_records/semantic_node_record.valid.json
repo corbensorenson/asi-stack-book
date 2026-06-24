@@ -1,0 +1,15 @@
+{
+  "node_id": "semantic-node-demo-001",
+  "concept_label": "Residual honesty",
+  "provenance_refs": ["sources/source_notes/cgs.md", "sources/source_notes/rgs.md"],
+  "parent_refs": ["concept://compact-generative-systems"],
+  "child_refs": ["concept://residual-escrow", "concept://verification-contract"],
+  "relation_refs": ["supports:compact_generative_record"],
+  "tokenization_contract": "human-readable concept node; no fixed semantic-token benchmark",
+  "grounding_state": "partially_grounded",
+  "version": "0.1",
+  "supersedes": [],
+  "residual_uncertainty": ["no TreeLLM implementation validates this tokenization"],
+  "permitted_uses": ["drafting", "source crosswalk", "future schema tests"],
+  "evaluation_refs": ["planned grounding fidelity test"]
+}

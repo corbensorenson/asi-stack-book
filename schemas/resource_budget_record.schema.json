@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/resource_budget_record.schema.json",
+  "title": "Resource Budget Record",
+  "type": "object",
+  "required": [
+    "budget_id",
+    "task_id",
+    "value_hypothesis",
+    "risk_class",
+    "capacity_pool",
+    "cost_estimate",
+    "verification_tax",
+    "quality_predicate",
+    "safety_gates",
+    "budget_decision",
+    "escalation_rule",
+    "residuals",
+    "evidence_refs"
+  ],
+  "properties": {
+    "budget_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "value_hypothesis": { "type": "string", "minLength": 1 },
+    "risk_class": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "capacity_pool": { "type": "string", "minLength": 1 },
+    "cost_estimate": { "type": "array", "items": { "type": "string" } },
+    "verification_tax": { "type": "array", "items": { "type": "string" } },
+    "quality_predicate": { "type": "string", "minLength": 1 },
+    "safety_gates": { "type": "array", "items": { "type": "string" } },
+    "budget_decision": {
+      "type": "string",
+      "enum": ["dispatch", "escalate", "defer", "shrink_scope", "reject", "residual"]
+    },
+    "escalation_rule": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -10,6 +10,8 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/belief_revision_record.schema.json`
 - `schemas/claim_record.schema.json`
 - `schemas/command_contract.schema.json`
+- `schemas/compact_generative_record.schema.json`
+- `schemas/compressed_artifact_record.schema.json`
 - `schemas/compression_receipt.schema.json`
 - `schemas/costed_route_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
@@ -28,10 +30,12 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/procedural_tool_record.schema.json`
 - `schemas/readiness_gate_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
+- `schemas/resource_budget_record.schema.json`
 - `schemas/routing_decision_record.schema.json`
 - `schemas/runtime_adapter_invocation.schema.json`
 - `schemas/self_improvement_transition.schema.json`
 - `schemas/semantic_atom.schema.json`
+- `schemas/semantic_node_record.schema.json`
 - `schemas/semantic_page_certificate.schema.json`
 - `schemas/specialist_registry_record.schema.json`
 - `schemas/stable_capability_field.schema.json`
@@ -225,6 +229,27 @@ costed_route_record:
 
 This record keeps efficiency claims tied to route choice, quality predicates, cost accounting, residual obligations, and fallback behavior.
 
+## Resource Budget Record
+
+```yaml
+resource_budget_record:
+  budget_id: string
+  task_id: string
+  value_hypothesis: string
+  risk_class: medium
+  capacity_pool: string
+  cost_estimate: []
+  verification_tax: []
+  quality_predicate: string
+  safety_gates: []
+  budget_decision: dispatch
+  escalation_rule: string
+  residuals: []
+  evidence_refs: []
+```
+
+This record turns budget pressure into a governed decision. It ties value, risk, capacity, cost, verification tax, quality predicates, safety gates, dispatch or escalation, residuals, and evidence into one auditable artifact.
+
 ## Specialist Registry Record
 
 ```yaml
@@ -341,6 +366,27 @@ semantic_atom:
 
 This record is the small unit of cognitive compilation: one preserved intent fragment with inputs, outputs, constraints, dependencies, authority requirements, a validator, and a bounded repair target.
 
+## Semantic Node Record
+
+```yaml
+semantic_node_record:
+  node_id: string
+  concept_label: string
+  provenance_refs: []
+  parent_refs: []
+  child_refs: []
+  relation_refs: []
+  tokenization_contract: string
+  grounding_state: partially_grounded
+  version: string
+  supersedes: []
+  residual_uncertainty: []
+  permitted_uses: []
+  evaluation_refs: []
+```
+
+This record keeps explicit semantic representations grounded, versioned, and bounded by permitted uses. It separates semantic structure from proof of utility or lossless adequacy.
+
 ## Semantic Page Certificate
 
 ```yaml
@@ -382,6 +428,46 @@ compression_receipt:
 ```
 
 This record keeps generate-verify-repair compression honest by separating proxy compression claims from final serialized size, repair burden, and explicit non-claims.
+
+## Compact Generative Record
+
+```yaml
+compact_generative_record:
+  system_id: string
+  target_system: string
+  compact_seed: string
+  rule_system: string
+  memory_state: string
+  residual_channel: []
+  verification_contract: string
+  governance_interface: string
+  generative_leverage: string
+  hidden_complexity_risks: []
+  fallback_path: string
+  evidence_refs: []
+```
+
+This record describes a compact generative core without hiding the work it exports to generation, verification, governance, fallback, human review, or residual correction.
+
+## Compressed Artifact Record
+
+```yaml
+compressed_artifact_record:
+  artifact_id: string
+  source_artifact: string
+  compression_method: string
+  reconstruction_contract: string
+  ratio_claim_state: not_measured
+  codec_parameters: []
+  residual_coding: []
+  probe_plan: []
+  fallback_artifact: string
+  decode_determinism: string
+  utility_tests: []
+  non_claims: []
+```
+
+This record separates representation, reconstruction, compression, and utility claims for compressed artifacts, while preserving residuals, probes, fallback, decode assumptions, and explicit non-claims.
 
 ## Authority Use Receipt
 

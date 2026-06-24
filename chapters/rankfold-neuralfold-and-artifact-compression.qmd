@@ -39,89 +39,106 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter uses RankFold/NeuralFold and RankFold Compressor as compression-architecture sources. It does not report compression ratios, lossless reconstruction, or implementation performance because this repository has not run a compressor, decoder, or benchmark corpus.
 
 ## Problem
 
-The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
+The stack will store source documents, artifacts, logs, benchmark traces, models, simulations, and generated outputs. Storage and transfer cost matter, but artifact compression is dangerous when it damages semantics, loses decoder determinism, hides residual coding cost, or makes fallback so common that the apparent savings disappear.
 
-Within the ASI Stack, this is a capability substrate layer problem. The layer receives tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts and must turn them into routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Generate-Verify-Repair Compression, and makes that pressure operational in a narrower boundary. It hands its output to Semantic Representation and Tree-Structured Models, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+RankFold/NeuralFold is useful here because it treats artifacts as candidates for tensor-centric archival structure while preserving manifest, codec, residual, and reconstruction obligations. BBVCA v9 adds the discipline that exactness requires a reconstruction contract and repair accounting.
 
 ## Why existing approaches are insufficient
 
-Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
+Storage savings are not enough. A compressed artifact must be useful for the task that wants it. A low-rank transform can optimize reconstruction error while increasing encoded residual cost. A tensor representation can be elegant while losing exact file reconstruction. A write-once archive can amortize expensive encoding, but that assumption fails for hot artifacts that must be rewritten or queried constantly.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often. If `rankfold-neuralfold-and-artifact-compression` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
-
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The book therefore treats artifact compression as a routed representation choice. A task can use a compressed artifact only after the relevant probe passes; otherwise it routes to the full artifact or records a residual.
 
 ## Core Claim
 
 [rankfold-neuralfold-and-artifact-compression.core, label: Design rationale, support: argument] RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - RankFold + NeuralFold, rankFold compressor, BBVCA_v9_final_public_release, Compact Generative Systems, and BugBrain - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The source notes support architecture discussion of low-rank residual transforms, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, reconstruction checks, and deterministic decode obligations. They do not support measured compression-performance claims in this repo.
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, use low-rank residual coding or functional preprocessing where appropriate. Second, probe compressed artifacts before use. Third, route to full artifacts when probes fail.
+The mechanism is a Compressed Artifact Record with explicit reconstruction, residual, probe, fallback, and utility fields.
 
-- Use low-rank residual coding or functional preprocessing where appropriate.
-- Probe compressed artifacts before use.
-- Route to full artifacts when probes fail.
+```{mermaid}
+flowchart LR
+  A["Source artifact"] --> B["Compression method"]
+  B --> C["Codec parameters + manifest"]
+  C --> D["Residual coding"]
+  D --> E["Decode / reconstruction check"]
+  E --> F{"Task probe passes?"}
+  F -- "yes" --> G["Use compressed artifact"]
+  F -- "no" --> H["Route to full artifact"]
+  G --> I["Cost, utility, and non-claim ledger"]
+  H --> I
+```
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The record should distinguish four claims that are often collapsed:
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+- Representation claim: the artifact can be mapped into the chosen form.
+- Reconstruction claim: decoding reproduces the required target under a contract.
+- Compression claim: serialized size improves against a baseline after metadata and residuals.
+- Utility claim: downstream tasks still work at acceptable quality and latency.
+
+Each claim can fail separately. The architecture should preserve that separation instead of letting a good ratio imply task utility or a useful lossy representation imply exact reconstruction.
 
 ## Interfaces
 
-The interface for RankFold, NeuralFold, and Artifact Compression is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the Compressed Artifact Record.
 
-- Artifact graph stores compressed and full references.
-- Routing selects representation by task.
-- Evidence records latency, ratio, and utility.
+Minimum fields:
 
-The upstream interface accepts the part-level inputs: tasks, residuals, benchmarks, specialist capabilities, resource budgets, representation constraints, and mathematical contracts. The downstream interface emits routes, compressed artifacts, specialist modules, recurrence contracts, benchmark frontiers, and residual records. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+- `artifact_id`
+- `source_artifact`
+- `compression_method`
+- `reconstruction_contract`
+- `ratio_claim_state`
+- `codec_parameters`
+- `residual_coding`
+- `probe_plan`
+- `fallback_artifact`
+- `decode_determinism`
+- `utility_tests`
+- `non_claims`
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+Artifact graphs store compressed and full references. Routing selects the representation by task and probe. Evidence records ratio, latency, residual size, decoder determinism, utility, and fallback frequency. Resource economics decides whether encoding cost is justified by the access pattern.
 
 ## Invariants
-
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
 
 - Fallback path is known.
 - Residual coding is measured.
 - Downstream utility is tested.
+- Compression ratios include metadata, parameters, seeds, manifests, and residuals.
+- Lossless claims require a reconstruction contract and decode check.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is decode accountability: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Compression damaging rare critical cases.
 - Probe not representative.
 - Latency gains erased by fallback.
+- Encoder cost hidden behind write-once assumptions.
+- Floating-point or dependency drift breaking deterministic decode.
 
-For RankFold, NeuralFold, and Artifact Compression, mitigation starts by turning each listed failure into a named reviewable artifact. When `Compression damaging rare critical cases` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Probe failure should route to the full artifact. Rare-case damage should become a regression. Hidden encoder cost should move into resource accounting. Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.
 
 ## Minimal implementation
 
-A compressed artifact record with ratio, residual, probe, fallback, and utility fields.
+The smallest useful implementation is a compressed artifact schema and fixture. It validates that a record names method, reconstruction contract, ratio claim state, codec parameters, residual coding, probe plan, fallback, decode determinism, utility tests, and non-claims.
 
-The smallest useful implementation is deliberately narrow: A compressed artifact record with ratio, residual, probe, fallback, and utility fields. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
+Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Compression ratio test | Probe whether the chapter claim holds under the relevant RankFold, NeuralFold, and Artifact Compression boundary. | planned; not run |
-| Probe-route fallback test | Probe whether the chapter claim holds under the relevant RankFold, NeuralFold, and Artifact Compression boundary. | planned; not run |
-| Downstream utility preservation test | Probe whether the chapter claim holds under the relevant RankFold, NeuralFold, and Artifact Compression boundary. | planned; not run |
+| Compression ratio test | Check that reported ratios include metadata, parameters, seeds, manifests, and residuals. | planned; not run |
+| Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
+| Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -148,6 +165,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-RankFold, NeuralFold, and Artifact Compression defines one boundary in the ASI Stack: RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding. Its job is to make a capability more governable, not merely more impressive.
+Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.
 
-In v0.2, this chapter gives RankFold, NeuralFold, and Artifact Compression a complete architectural boundary: the stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility. Its next maturity step is to substantiate the boundary through `Artifact graph stores compressed and full references`, preserve `Fallback path is known`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks.

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/semantic_node_record.schema.json",
+  "title": "Semantic Node Record",
+  "type": "object",
+  "required": [
+    "node_id",
+    "concept_label",
+    "provenance_refs",
+    "parent_refs",
+    "child_refs",
+    "relation_refs",
+    "tokenization_contract",
+    "grounding_state",
+    "version",
+    "supersedes",
+    "residual_uncertainty",
+    "permitted_uses",
+    "evaluation_refs"
+  ],
+  "properties": {
+    "node_id": { "type": "string", "minLength": 1 },
+    "concept_label": { "type": "string", "minLength": 1 },
+    "provenance_refs": { "type": "array", "items": { "type": "string" } },
+    "parent_refs": { "type": "array", "items": { "type": "string" } },
+    "child_refs": { "type": "array", "items": { "type": "string" } },
+    "relation_refs": { "type": "array", "items": { "type": "string" } },
+    "tokenization_contract": { "type": "string", "minLength": 1 },
+    "grounding_state": {
+      "type": "string",
+      "enum": ["grounded", "partially_grounded", "speculative", "deprecated", "superseded"]
+    },
+    "version": { "type": "string", "minLength": 1 },
+    "supersedes": { "type": "array", "items": { "type": "string" } },
+    "residual_uncertainty": { "type": "array", "items": { "type": "string" } },
+    "permitted_uses": { "type": "array", "items": { "type": "string" } },
+    "evaluation_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

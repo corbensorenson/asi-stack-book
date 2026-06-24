@@ -1,0 +1,14 @@
+{
+  "artifact_id": "compressed-artifact-demo-001",
+  "source_artifact": "artifact://full-source-note-set",
+  "compression_method": "semantic summary plus residual refs",
+  "reconstruction_contract": "adequate for drafting context only, not exact source reconstruction",
+  "ratio_claim_state": "not_measured",
+  "codec_parameters": ["summary length limit", "source ID preservation"],
+  "residual_coding": ["full source notes remain authoritative", "missing exact quotes are not reconstructed"],
+  "probe_plan": ["check source IDs", "check non-claims", "check fallback path"],
+  "fallback_artifact": "sources/source_notes/",
+  "decode_determinism": "not an executable decoder; fixture records a draft contract only",
+  "utility_tests": ["planned downstream utility comparison"],
+  "non_claims": ["no compression ratio measured", "no lossless reconstruction claimed"]
+}
