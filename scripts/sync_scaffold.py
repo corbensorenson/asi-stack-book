@@ -307,6 +307,58 @@ Source text status is deliberately conservative: the records are inventoried, bu
     (ROOT / "appendices" / "A_source_matrix.qmd").write_text(text, encoding="utf-8")
 
 
+def write_bibliography(records: list[dict], structure: dict) -> None:
+    assignments = chapter_assignments(structure)
+    rows = []
+    for record in records:
+        current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
+        rows.append(
+            "| `{id}` | {title} | `{priority}` | `{layer}` | [source]({url}) | {current_targets} | inventory-recorded; not yet citation-normalized |".format(
+                id=qmd_escape(record.get("id", "")),
+                title=qmd_escape(record.get("title", "")),
+                priority=qmd_escape(record.get("priority", "")),
+                layer=qmd_escape(record.get("layer", "")),
+                url=qmd_escape(record.get("url", "")),
+                current_targets=qmd_escape(current_targets),
+            )
+        )
+    text = f"""# Bibliography and Source Corpus
+
+This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
+
+It is a working bibliography for the supplied ASI Stack source corpus. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+
+## Primary ASI Stack Source Corpus
+
+| Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
+|---|---|---|---|---|---|---|
+{chr(10).join(rows)}
+
+## External Literature Queue
+
+Third-party references should be added only when bibliographic metadata is recorded and the source is actually used.
+
+| Area | Expected role | Status |
+|---|---|---|
+| AI alignment and corrigibility | External comparison for the alignment and constitution layer. | queued; no citation recorded |
+| AI governance, evals, and deployment policy | External comparison for authority ceilings, readiness gates, and release governance. | queued; no citation recorded |
+| Planning, task decomposition, and agent control | External comparison for PlanForge-style planning/control. | queued; no citation recorded |
+| Retrieval, memory, and context engineering | External comparison for VCM and context-packet discipline. | queued; no citation recorded |
+| Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | queued; no citation recorded |
+| Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | queued; no citation recorded |
+| Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | queued; no citation recorded |
+| Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | queued; no citation recorded |
+
+## Citation Policy
+
+- Use stable source IDs for supplied corpus references until full citation metadata exists.
+- Do not infer authors, dates, venues, versions, or publication status from titles alone.
+- Do not cite a source as supporting a claim until its text has been ingested and a source note exists.
+- Keep speculative or design-synthesis claims labeled as `argument` until source, prototype, or test evidence justifies promotion.
+"""
+    (ROOT / "appendices" / "G_bibliography.qmd").write_text(text, encoding="utf-8")
+
+
 def write_claim_matrix(structure: dict) -> None:
     rows = []
     for chapter in flatten_chapters(structure):
@@ -379,6 +431,7 @@ def main() -> None:
     write_quarto(structure)
     written = write_chapters(structure, records, rewrite=args.rewrite_chapters)
     write_source_matrix(records, structure)
+    write_bibliography(records, structure)
     write_claim_matrix(structure)
     ensure_glossary()
     ensure_protocol_schemas()

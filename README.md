@@ -10,10 +10,12 @@ This is a v0.1 scaffold seed.
 
 - Quarto book structure is initialized.
 - All 16 outline chapters have stubs.
+- `docs/book_outline.md` contains the cohesive full-book drafting outline.
 - Parts and chapters are controlled by `book_structure.json`; `_quarto.yml` is generated.
 - The source matrix is generated from `sources/source_inventory.json`.
+- The bibliography/source-corpus appendix is generated from `sources/source_inventory.json`.
 - The claim/evidence matrix is initialized with `argument`-level placeholders.
-- Source documents have not yet been ingested into this repo.
+- Source documents are cached locally when available, but source-derived claims require source notes before support-state promotion.
 - Codex tests are planned but not implemented or run.
 
 ## Local Commands
@@ -26,7 +28,7 @@ quarto render --to html
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
 ```
 
-The rendered HTML is written to `_site/`. The full render also writes `_site/The-ASI-Stack.pdf`.
+The rendered HTML is written to `_site/`.
 
 ## Dynamic Structure
 

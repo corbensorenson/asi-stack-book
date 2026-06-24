@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-24 - Cohesive outline and bibliography
+
+- Replaced the handoff-level outline with a full-book cohesive drafting outline in `docs/book_outline.md`.
+- Added Appendix G, `appendices/G_bibliography.qmd`, as a generated bibliography and source-corpus appendix.
+- Updated `scripts/sync_scaffold.py` so the bibliography appendix is regenerated from the source inventory and dynamic chapter assignments.
+- Added the bibliography appendix to `book_structure.json`.
+- Updated README status language for the outline, generated bibliography, local source cache, and HTML-first rendering.
+
 ## 2026-06-24 - Writing readiness workspace
 
 - Added local-only source cache tooling with `scripts/cache_drive_sources.py`.

@@ -18,17 +18,18 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 
 ## Standard Workflow
 
-1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
+1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `docs/book_outline.md`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
 2. Read `docs/source_readiness_report.md` if source ingestion or drafting depends on source availability.
-3. Inspect the relevant chapters and appendices before editing.
-4. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
+3. Read `appendices/G_bibliography.qmd` when drafting citations, source-corpus references, or external-literature placeholders.
+4. Inspect the relevant chapters and appendices before editing.
+5. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
    - `python3 scripts/add_part.py --title "..."`
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
-5. Run `python3 scripts/sync_scaffold.py` after manifest changes.
-6. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
-7. Update Appendix C when a claim changes or its support state changes.
-8. Run `python3 scripts/validate_book.py`.
-9. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+6. Run `python3 scripts/sync_scaffold.py` after manifest changes.
+7. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
+8. Update Appendix C when a claim changes or its support state changes.
+9. Run `python3 scripts/validate_book.py`.
+10. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -63,7 +64,7 @@ python3 scripts/validate_book.py
 quarto render --to html
 ```
 
-If PDF output matters, also run:
+The book is HTML-first by default. Do not report a PDF artifact unless PDF output has been explicitly configured and rendered. If PDF output matters, add or verify a `pdf` format in `_quarto.yml` through the scaffold generator before running:
 
 ```bash
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
