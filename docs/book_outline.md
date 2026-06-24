@@ -1646,16 +1646,16 @@ Draft deliverables:
 
 - A runtime-adapter contract with permissions, approval requirements, and result evidence.
 - Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape only.
-- Planned Codex test: Adapter permission test.
-- Planned Codex test: Approval gate enforcement test.
+- Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
+- Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
 - Planned Codex test: Rollback handle capture test.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | planned |
-| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | planned |
+| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | implemented |
+| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 

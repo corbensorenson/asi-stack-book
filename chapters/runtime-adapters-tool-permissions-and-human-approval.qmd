@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no adapter execution or approval-gate harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean permission/approval predicates are implemented; no adapter execution, sandbox, approval-service, rollback, or secret-handle harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -38,11 +38,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
-| Test state | Runtime adapter fixture validation implemented; adapter execution and approval-gate tests remain planned. |
+| Test state | Runtime adapter fixture validation implemented; finite permission and approval predicates implemented in `AsiStackProofs.RuntimeAdapters`; adapter execution, sandbox, approval-service, rollback, and secret-handle tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture, but the fixture does not call a tool, inject a secret, enforce approval, or produce a real rollback handle.
+This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite Lean predicates over permission and approval records, but the fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
 
 ## Problem
 
@@ -142,27 +142,27 @@ A runtime-adapter contract with permissions, approval requirements, and result e
 
 The smallest useful implementation is a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, capability, permission, sandbox, approval, authority handle, effect receipt, rollback handle, and residual fields. It does not execute a tool.
 
-The fixture validates the invocation envelope. It does not demonstrate permission enforcement, sandbox isolation, human approval, secret-handle safety, effect receipt validity, or rollback.
+The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. This does not demonstrate tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity, or rollback.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, approval, authority handle, inputs, effect receipt, rollback handle, and residuals. | implemented by protocol validation; run in this pass |
-| Adapter permission test | Check that adapter capability is included in the parent job's permissions. | planned; not run |
-| Approval gate enforcement test | Check that high-impact adapter calls are rejected without approval. | planned; not run |
+| Adapter permission predicate | Check that adapter capability is included in the parent job's permissions. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
+| Approval gate rejection predicate | Check that high-impact adapter calls without approval are rejected. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |
 
-Only fixture-shape validation is implemented. The remaining tests require an adapter harness, parent job permission lookup, high-impact classification, and logged approval decisions.
+Fixture-shape validation and two bounded Lean predicates are implemented. The remaining tests require an adapter harness, sandbox, parent job permission lookup against real jobs, high-impact classification, logged approval decisions, and effect receipts.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | planned |
-| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | planned |
+| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | implemented |
+| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | implemented |
 
-These proof hooks remain planned. Permission inclusion and approval rejection are good validator or Lean targets once adapter invocation is linked to typed-job records.
+These proof hooks are implemented as finite-record predicates. They do not prove sandboxing, authority-handle mediation, actual tool invocation, effect receipt validity, or rollback behavior.
 
 ## Source crosswalk
 
