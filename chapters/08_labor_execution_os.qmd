@@ -1,0 +1,106 @@
+---
+title: "Labor and Execution OS"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "talos"
+  - "talos_md"
+  - "viea"
+  - "genesiscode"
+  - "software_magic_grimoire"
+  - "cognitive_loop_closure"
+  - "moecot"
+  - "spinoza_composer"
+  - "ladon_manhattan"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Labor and Execution OS
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `talos`, `talos_md`, `viea`, `genesiscode`, `software_magic_grimoire`, `cognitive_loop_closure`, `moecot`, `spinoza_composer`, `ladon_manhattan` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Reasoning must become typed work with artifacts, permissions, audit logs, and governed side effects.
+
+## Why existing approaches are insufficient
+
+A generic agent loop does not provide typed job lifecycle, replay, artifact graph discipline, or human approval gates.
+
+## Core claim
+
+[08-core, support: argument] The execution layer should convert plans into typed jobs and artifacts through a governed labor operating system.
+
+## Mechanism
+
+- Compile command contracts into jobs.
+- Run jobs through adapters with permissions and audit logs.
+- Promote repeated workflows into verified tools when evidence supports it.
+
+## Interfaces
+
+- Planning emits job contracts.
+- Governance enforces authority and approvals.
+- Evidence layers reconstruct audit trails and replay results.
+
+## Invariants
+
+- Side effects pass through explicit authorization.
+- Artifacts are addressable and auditable.
+- Human approval gates remain enforceable.
+
+## Failure modes
+
+- Tool misuse.
+- Unlogged side effects.
+- Workflow-to-tool promotion without evidence.
+
+## Minimal implementation
+
+A typed job schema, artifact graph, permission model, audit log, and replay protocol.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Typed job lifecycle test | Support or falsify this chapter's layer claim. | planned; not run |
+| Tool permission enforcement test | Support or falsify this chapter's layer claim. | planned; not run |
+| Audit log reconstruction test | Support or falsify this chapter's layer claim. | planned; not run |
+| Replay determinism test | Support or falsify this chapter's layer claim. | planned; not run |
+| Human approval gate test | Support or falsify this chapter's layer claim. | planned; not run |
+| Adversarial job injection test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `talos_md` | Talos_Protocol_v1.0.md | Planned use from inventory/handoff: Markdown/public release version. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `genesiscode` | GenesisCode | Planned use from inventory/handoff: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/handoff: Structured command contracts and semantic density of software words. |
+| `cognitive_loop_closure` | Cognitive Loop Closure | Planned use from inventory/handoff: Repeated cognition should become procedural memory / verified tools. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | Planned use from inventory/handoff: Narrative/compliance operating system variant. Use as applied Spinoza. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/handoff: Kernel-level security architecture for high-agency AI. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,97 @@
+---
+title: "Governance and Stable Capability Fields"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "scf"
+  - "talos"
+  - "ladon_manhattan"
+  - "viea"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Governance and Stable Capability Fields
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `scf`, `talos`, `ladon_manhattan`, `viea`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The stack needs a way to improve components while preserving identity, bounded authority, route validity, and evaluator integrity.
+
+## Why existing approaches are insufficient
+
+Ordinary plugin replacement does not define qualified implementation replacement, authority ceilings, mutation tests, or rollback.
+
+## Core claim
+
+[05-core, support: argument] Governed self-improvement requires stable capability fields: stable semantic boundaries with replaceable implementations and bounded authority.
+
+## Mechanism
+
+- Define field identity separately from implementation.
+- Require qualification evidence before replacement.
+- Track route validity, authority ceilings, and rollback conditions.
+
+## Interfaces
+
+- Planning may request field capabilities.
+- Execution may invoke only authorized routes.
+- Evidence layers record qualification and regression results.
+
+## Invariants
+
+- Implementation replacement cannot expand authority by default.
+- Evaluator integrity must be protected from the field being evaluated.
+- Rollback remains available after failed mutation.
+
+## Failure modes
+
+- Authority escalation during replacement.
+- Evaluator capture.
+- Field identity drift.
+
+## Minimal implementation
+
+A field schema with qualification predicates, route validity checks, authority ceilings, and rollback metadata.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Qualification predicate test | Support or falsify this chapter's layer claim. | planned; not run |
+| Route validity test | Support or falsify this chapter's layer claim. | planned; not run |
+| Authority non-escalation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Mutation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Rollback and recovery test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `scf` | Stable Capability Fields | Planned use from inventory/handoff: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | Planned use from inventory/handoff: Kernel-level security architecture for high-agency AI. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

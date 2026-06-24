@@ -1,0 +1,74 @@
+# Book Outline
+
+Working title: **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI**
+
+## Front matter
+
+- Title page
+- Preface
+- How to read this living book
+- Claim/evidence labels
+- Source and version policy
+
+## Part I — The Stack from Above
+
+### Chapter 1 — ASI Is a Stack, Not a Model
+The architecture argument. Efficient ASI is not one opaque model; it is a governed cognitive stack.
+
+### Chapter 2 — The Efficient ASI Hypothesis
+ASI becomes practical through organization: routing, compression, procedural memory, governed execution, and evidence ratchets.
+
+### Chapter 3 — Failure Modes of Ungoverned Intelligence
+Why memory, planning, authority, verification, and self-modification fail without stack discipline.
+
+## Part II — The Layers of the ASI Stack
+
+### Chapter 4 — Alignment and Constitution
+The ethical and constitutional substrate: values, agency preservation, corrigibility, moral uncertainty, and power-with-care.
+
+### Chapter 5 — Governance and Stable Capability Fields
+Stable semantic boundaries, replaceable implementations, bounded authority, route validity, qualification evidence, and safe self-improvement.
+
+### Chapter 6 — Planning and Control
+Strategic planning, tactical task planning, runtime replanning, dependency graphs, tool selection, risk budgets, and stopping conditions.
+
+### Chapter 7 — Virtual Context Memory
+Evidence-carrying, planner-guided context compilation for long-horizon agents.
+
+### Chapter 8 — Labor and Execution OS
+Typed jobs, artifact graphs, runtime adapters, tool permissions, audit logs, and workflow-to-tool compilation.
+
+### Chapter 9 — Reasoning, Verification, and Epistemology
+Neurosymbolic verification, claim states, belief revision, evidence tiers, adversarial review, and uncertainty calibration.
+
+### Chapter 10 — Routing and Modular Intelligence
+Lightweight router, specialist cores, readiness gates, benchmark promotion, residual escrow, and regression preservation.
+
+### Chapter 11 — Compression and Representation
+Compact generative systems, RankFold, BBVCA, generate-verify-repair, residual burden, and representation efficiency.
+
+### Chapter 12 — Mathematical and Search Substrates
+CoilMoECOT, temporal coils, Circle Calculus context, geometric search, and exploratory representations.
+
+### Chapter 13 — Evidence, Benchmarks, and Ratchets
+Benchmaxxing, evidence matrices, residuals, regressions, hidden tests, and Codex-run validation.
+
+## Part III — Integration and Implementation
+
+### Chapter 14 — Integrated Reference Architecture
+Walk through the full machine from user intent to governed action and self-improvement.
+
+### Chapter 15 — Prototype Roadmap
+A staged implementation path from minimal artifact graph to governed self-improvement.
+
+### Chapter 16 — Living Book Methodology
+Quarto, Google Sites hub, source matrix, changelog, claim states, update governance, and release process.
+
+## Appendices
+
+- Appendix A — Source Matrix
+- Appendix B — Glossary
+- Appendix C — Claim/Evidence Matrix
+- Appendix D — Protocol Schemas
+- Appendix E — Codex Test Specs
+- Appendix F — Changelog

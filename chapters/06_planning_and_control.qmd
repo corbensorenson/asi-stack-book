@@ -1,0 +1,102 @@
+---
+title: "Planning and Control"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "planforge"
+  - "planforge_compiler_arch"
+  - "cognitive_compilation"
+  - "viea"
+  - "software_magic_grimoire"
+  - "moecot"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Planning and Control
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `viea`, `software_magic_grimoire`, `moecot` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Goals need to become governed task graphs with dependencies, budgets, risk limits, tool choices, and stopping conditions.
+
+## Why existing approaches are insufficient
+
+Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
+
+## Core claim
+
+[06-core, support: argument] Planning is a separate control layer that converts goals into governed action without owning memory, reasoning, or side effects.
+
+## Mechanism
+
+- Compile goals into strategic and tactical plans.
+- Represent dependencies, constraints, context requests, and runtime replanning triggers.
+- Delegate execution through governed contracts.
+
+## Interfaces
+
+- Alignment filters goals.
+- VCM supplies context packets.
+- Routers select specialists.
+- Talos-like execution systems run typed jobs.
+
+## Invariants
+
+- Plans expose constraints and stopping conditions.
+- Runtime replanning preserves original authority limits.
+- Tool selection is justified by task requirements.
+
+## Failure modes
+
+- Scope creep.
+- Planning without replanning.
+- Tool selection that exceeds authority or budget.
+
+## Minimal implementation
+
+A task graph format with dependencies, constraints, context requests, risk budgets, and stop conditions.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Decomposition accuracy test | Support or falsify this chapter's layer claim. | planned; not run |
+| Dependency ordering test | Support or falsify this chapter's layer claim. | planned; not run |
+| Constraint preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Runtime replanning test | Support or falsify this chapter's layer claim. | planned; not run |
+| Tool selection test | Support or falsify this chapter's layer claim. | planned; not run |
+| Budget and risk allocation test | Support or falsify this chapter's layer claim. | planned; not run |
+| Scope creep prevention test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `planforge` | PlanForge | Planned use from inventory/handoff: Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | Planned use from inventory/handoff: Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/handoff: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `software_magic_grimoire` | Software Magic Grimoire | Planned use from inventory/handoff: Structured command contracts and semantic density of software words. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

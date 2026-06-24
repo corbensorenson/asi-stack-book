@@ -1,0 +1,96 @@
+---
+title: "Mathematical and Search Substrates"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "coilmoecot"
+  - "temporal_coil_research"
+  - "cognitive_compilation"
+  - "genesiscode"
+  - "viea"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Mathematical and Search Substrates
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `coilmoecot`, `temporal_coil_research`, `cognitive_compilation`, `genesiscode`, `viea` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+Exploratory representations may improve search, routing, or compression, but the book needs to keep these hypotheses falsifiable.
+
+## Why existing approaches are insufficient
+
+Novel mathematical substrates can become overclaimed if they are not tied to tests, baselines, and failure criteria.
+
+## Core claim
+
+[12-core, support: argument] Alternative substrates belong in the stack only as testable implementation hypotheses until evidence supports them.
+
+## Mechanism
+
+- Frame coil, calculus, and geometric representations as optional specialist substrates.
+- Define what they would need to improve.
+- Specify falsification tests before adoption into core architecture.
+
+## Interfaces
+
+- Routing can treat a substrate as a specialist core.
+- Compression can test representation efficiency.
+- Evidence layers compare against baselines.
+
+## Invariants
+
+- Exploratory claims stay exploratory.
+- Performance claims require measured baselines.
+- Failed hypotheses remain recorded.
+
+## Failure modes
+
+- Overclaiming performance.
+- Using opaque math as authority.
+- Adopting a substrate without regression tests.
+
+## Minimal implementation
+
+A technical appendix and experiment plan with baseline comparisons and adoption gates.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Baseline search comparison | Support or falsify this chapter's layer claim. | planned; not run |
+| Representation efficiency test | Support or falsify this chapter's layer claim. | planned; not run |
+| GPU parallelization feasibility test | Support or falsify this chapter's layer claim. | planned; not run |
+| Failure-case and falsification review | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `coilmoecot` | CoilMoECOT Whitepaper v2.0 | Planned use from inventory/handoff: Prime-temporal coil networks as governed specialist cores in MoECOT runtime. |
+| `temporal_coil_research` | Temporal Coil Research | Planned use from inventory/handoff: Manifest-driven A/B process for temporal-coil integration in language model training. |
+| `cognitive_compilation` | Cognitive Compilation | Planned use from inventory/handoff: Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. |
+| `genesiscode` | GenesisCode | Planned use from inventory/handoff: Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

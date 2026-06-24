@@ -1,0 +1,106 @@
+---
+title: "Compression and Representation"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "cgs"
+  - "rgs"
+  - "rankfold_neuralfold"
+  - "rankfold_compressor"
+  - "bbvca_v9"
+  - "bbvca_main"
+  - "bugbrain"
+  - "simulation_scaling"
+  - "treellm"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Compression and Representation
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `bugbrain`, `simulation_scaling`, `treellm` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs ways to preserve useful generative structure while reducing surface detail, cost, and memory burden.
+
+## Why existing approaches are insufficient
+
+Compression can appear efficient while discarding critical semantics, increasing residual burden, or harming downstream utility.
+
+## Core claim
+
+[11-core, support: argument] Compression is a first-class stack layer only when it exposes residual burden, fallback paths, and downstream utility tests.
+
+## Mechanism
+
+- Separate semantic, model, memory, artifact, and representation compression.
+- Use generate-verify-repair loops where reconstruction matters.
+- Route to fallback systems when probes show compression is inadequate.
+
+## Interfaces
+
+- VCM compresses context with evidence.
+- Routing selects compressed or full specialists.
+- Evidence tests reconstruction quality and utility.
+
+## Invariants
+
+- Lossy claims remain labeled.
+- Residual burden is visible.
+- Fallback is available when compressed representations fail.
+
+## Failure modes
+
+- Hidden residual complexity.
+- False lossless claims.
+- Latency or utility regressions after compression.
+
+## Minimal implementation
+
+A compression ledger with description cost, residual burden, reconstruction checks, and fallback criteria.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Reconstruction quality test | Support or falsify this chapter's layer claim. | planned; not run |
+| Residual burden test | Support or falsify this chapter's layer claim. | planned; not run |
+| Probe-and-route fallback test | Support or falsify this chapter's layer claim. | planned; not run |
+| Compression ratio test | Support or falsify this chapter's layer claim. | planned; not run |
+| Latency cost test | Support or falsify this chapter's layer claim. | planned; not run |
+| Downstream utility preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `cgs` | Compact Generative Systems | Planned use from inventory/handoff: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rgs` | Ratcheting Generative Systems | Planned use from inventory/handoff: Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. |
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/handoff: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+| `rankfold_compressor` | rankFold compressor | Planned use from inventory/handoff: Alternate RankFold/NeuralFold source. |
+| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/handoff: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
+| `bbvca_main` | Big Bang Volumetric Compression Architecture | Planned use from inventory/handoff: Earlier/main BBVCA family doc. |
+| `bugbrain` | BugBrain | Planned use from inventory/handoff: Edge/resource-aware implementation context. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/handoff: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `treellm` | TreeLLM | Planned use from inventory/handoff: Hierarchical semantic token system for grounded, efficient, explainable language modeling. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

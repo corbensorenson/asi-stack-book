@@ -1,0 +1,102 @@
+---
+title: "Failure Modes of Ungoverned Intelligence"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "scf"
+  - "vcm_public"
+  - "talos"
+  - "spinoza"
+  - "field_of_god"
+  - "viea"
+  - "simulation_scaling"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Failure Modes of Ungoverned Intelligence
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The architecture needs an explicit failure model before it can claim governance, reliability, or safe improvement.
+
+## Why existing approaches are insufficient
+
+High-level safety language misses earlier engineering failures such as goal misbinding, context corruption, authority creep, evaluator drift, and unverified claims.
+
+## Core claim
+
+[03-core, support: argument] Ungoverned intelligence fails through stack-level breakdowns before any dramatic science-fiction failure mode is needed.
+
+## Mechanism
+
+- Classify failures by layer.
+- Map each failure to an invariant and a planned falsification test.
+- Use failures to constrain later architecture choices.
+
+## Interfaces
+
+- Governance limits authority creep.
+- VCM limits context pollution.
+- Verification limits false certainty.
+- Execution layers limit side effects.
+
+## Invariants
+
+- Authority must be explicit and bounded.
+- Evidence records must be auditable.
+- Self-modification cannot bypass identity and evaluator checks.
+
+## Failure modes
+
+- Evaluator capture or drift.
+- Memory poisoning and context pollution.
+- Tool/action overreach.
+- Compression that hides residual complexity.
+
+## Minimal implementation
+
+A failure taxonomy tied to chapter-specific invariants and planned tests.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Authority creep scenario | Support or falsify this chapter's layer claim. | planned; not run |
+| Context pollution scenario | Support or falsify this chapter's layer claim. | planned; not run |
+| Evaluator drift scenario | Support or falsify this chapter's layer claim. | planned; not run |
+| Unverified-claim scenario | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `scf` | Stable Capability Fields | Planned use from inventory/handoff: Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. |
+| `vcm_public` | Virtual_Context_Memory_v1 | Planned use from inventory/handoff: Public VCM release. Governed protocol for compiled working context. |
+| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | Planned use from inventory/handoff: Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. |
+| `field_of_god` | The Field of God | Planned use from inventory/handoff: Field of God source/outline/material. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/handoff: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

@@ -1,0 +1,19 @@
+# Preface
+
+This book is a unification pass across AI architecture papers and prototypes. It is not intended to be a pasted anthology. The goal is to treat the papers as fragments of one proposed architecture for governed, efficient, self-improving AI.
+
+## What this book is
+
+It is a living technical book organized around stack layers: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive improvement.
+
+## What this book is not
+
+It is not a claim that the architecture is complete, proven, or safe in every domain. It is not a benchmark report unless tests are explicitly recorded as run. It is not a replacement for source documents.
+
+## Claim labels
+
+Claims use explicit support states: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, and `external-literature-backed`.
+
+## Why Codex tests matter
+
+The living format is meant to support evidence ratchets. Codex test specs identify what would support or falsify claims, but no test result should be recorded until the test has actually run.

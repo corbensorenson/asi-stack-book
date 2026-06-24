@@ -1,0 +1,68 @@
+# Protocol Schemas
+
+These are draft schema placeholders for later source-derived protocol work. They are intentionally minimal and should not be treated as final API contracts.
+
+## Command Contract
+
+```yaml
+command_contract:
+  intent: string
+  requester: string
+  authority_ceiling: string
+  constraints: []
+  expected_artifacts: []
+  required_approvals: []
+  stop_conditions: []
+```
+
+## Context Packet
+
+```yaml
+context_packet:
+  task_id: string
+  source_handles: []
+  summaries: []
+  authority_labels: []
+  adequacy_state: unknown
+  open_uncertainties: []
+```
+
+## Stable Capability Field
+
+```yaml
+stable_capability_field:
+  field_id: string
+  semantic_boundary: string
+  authority_ceiling: string
+  implementations: []
+  qualification_predicates: []
+  regression_suite: []
+  rollback_plan: string
+```
+
+## Typed Job
+
+```yaml
+typed_job:
+  job_id: string
+  contract_id: string
+  runtime_adapter: string
+  inputs: []
+  outputs: []
+  permissions: []
+  audit_events: []
+  replay_status: not_run
+```
+
+## Claim Record
+
+```yaml
+claim_record:
+  claim_id: string
+  text: string
+  support_state: argument
+  source_handles: []
+  tests: []
+  contradictions: []
+  review_status: open
+```

@@ -1,0 +1,95 @@
+---
+title: "ASI Is a Stack, Not a Model"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "viea"
+  - "beastbrain"
+  - "aletheia"
+  - "moecot"
+  - "talos"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# ASI Is a Stack, Not a Model
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `viea`, `beastbrain`, `aletheia`, `moecot`, `talos` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a single architecture frame for AI systems that must plan, remember, verify, act, route work, and improve without collapsing into one opaque model.
+
+## Why existing approaches are insufficient
+
+A larger model alone does not define authority boundaries, memory governance, evidence ledgers, tool permissions, or safe replacement rules.
+
+## Core claim
+
+[01-core, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as a single undifferentiated model.
+
+## Mechanism
+
+- Name each layer of the stack and its responsibility.
+- Treat boundaries, interfaces, and evidence states as first-class design objects.
+- Use the rest of the book to refine each layer into testable mechanisms.
+
+## Interfaces
+
+- Alignment constrains admissible goals.
+- Governance bounds authority and self-modification.
+- Planning, memory, reasoning, execution, routing, compression, and evidence layers exchange typed artifacts.
+
+## Invariants
+
+- Layer boundaries remain explicit.
+- Claims carry support states.
+- Execution authority is not implied by reasoning ability.
+
+## Failure modes
+
+- Anthology drift: source papers remain isolated instead of becoming one architecture.
+- Monolith drift: layer responsibilities are folded back into model scale.
+- Evidence drift: conceptual claims are presented as tested claims.
+
+## Minimal implementation
+
+A diagrammed stack, chapter map, source crosswalk, and claim/evidence matrix that keep responsibilities separable.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Full-stack traceability review | Support or falsify this chapter's layer claim. | planned; not run |
+| Layer-boundary audit | Support or falsify this chapter's layer claim. | planned; not run |
+| Claim-support label audit | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/handoff: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `aletheia` | Aletheia Foundry | Planned use from inventory/handoff: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `talos` | Talos Protocol | Planned use from inventory/handoff: AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

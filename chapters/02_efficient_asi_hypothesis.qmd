@@ -1,0 +1,105 @@
+---
+title: "The Efficient ASI Hypothesis"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "viea"
+  - "moecot"
+  - "rmi"
+  - "cgs"
+  - "rankfold_neuralfold"
+  - "bbvca_v9"
+  - "simulation_scaling"
+  - "beastbrain"
+  - "beastbrain_timeless"
+  - "aletheia"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# The Efficient ASI Hypothesis
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `viea`, `moecot`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book needs a non-scale-only theory for why a governed ASI stack could become more capable without requiring every task to use maximal cognition.
+
+## Why existing approaches are insufficient
+
+Parameter count does not by itself explain routing, context selectivity, procedural memory, compression, verification, or runtime targeting.
+
+## Core claim
+
+[02-core, support: argument] Efficient ASI is a design hypothesis: capability improves when cognition is routed, compressed, reused, governed, and tested.
+
+## Mechanism
+
+- Route subtasks to the smallest adequate specialist.
+- Preserve reusable work as artifacts, tools, and procedural memory.
+- Track residual burden when compression or routing leaves unresolved work.
+
+## Interfaces
+
+- Planning requests minimum viable intelligence.
+- Routing selects specialists and tools.
+- Evidence layers decide whether efficiency claims are supported.
+
+## Invariants
+
+- Efficiency claims require measured task quality and cost.
+- Compression must expose residuals instead of hiding them.
+- Fallback paths remain available when lightweight routes fail.
+
+## Failure modes
+
+- Treating cheap inference as sufficient evidence of intelligence.
+- Compressing away critical context.
+- Optimizing benchmark scores while increasing hidden residual burden.
+
+## Minimal implementation
+
+A costed task-routing model with explicit fallback, residual accounting, and benchmark gates.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Minimum viable intelligence routing test | Support or falsify this chapter's layer claim. | planned; not run |
+| Residual burden accounting test | Support or falsify this chapter's layer claim. | planned; not run |
+| Compression utility preservation test | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `rmi` | Ratcheting Modular Intelligence | Planned use from inventory/handoff: Benchmark pressure, residual escrow, verified modular capability, regression preservation. |
+| `cgs` | Compact Generative Systems | Planned use from inventory/handoff: Smallest adequate structure that can generate/govern target without hiding residual complexity. |
+| `rankfold_neuralfold` | RankFold + NeuralFold | Planned use from inventory/handoff: Tensor/artifact compression. Low-rank residual coding plus functional preprocessing and probe-route fallback. |
+| `bbvca_v9` | BBVCA_v9_final_public_release | Planned use from inventory/handoff: Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. |
+| `simulation_scaling` | Simulation Scaling Law | Planned use from inventory/handoff: Resource constraints on scope, clockspeed, and fidelity in simulations. |
+| `beastbrain` | BeastBrain Cognitive Architecture | Planned use from inventory/handoff: Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. |
+| `beastbrain_timeless` | BeastBrain Architecture: Timeless Edition | Planned use from inventory/handoff: Definitive standalone master plan variant. |
+| `aletheia` | Aletheia Foundry | Planned use from inventory/handoff: Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.

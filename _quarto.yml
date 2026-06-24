@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: _site
+
+book:
+  title: "The ASI Stack"
+  subtitle: "A Systems Architecture for Governed, Efficient, Self-Improving AI"
+  author: "Corben Sorenson"
+  site-url: "https://corbensorenson.github.io/asi-stack-book/"
+  repo-url: "https://github.com/corbensorenson/asi-stack-book"
+  repo-actions: [issue, source]
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - chapters/01_asi_is_a_stack.qmd
+    - chapters/02_efficient_asi_hypothesis.qmd
+    - chapters/03_failure_modes.qmd
+    - chapters/04_alignment_constitution.qmd
+    - chapters/05_governance_and_scf.qmd
+    - chapters/06_planning_and_control.qmd
+    - chapters/07_virtual_context_memory.qmd
+    - chapters/08_labor_execution_os.qmd
+    - chapters/09_reasoning_verification.qmd
+    - chapters/10_routing_modular_intelligence.qmd
+    - chapters/11_compression_representation.qmd
+    - chapters/12_mathematical_search_substrates.qmd
+    - chapters/13_evidence_benchmarks.qmd
+    - chapters/14_integrated_reference_architecture.qmd
+    - chapters/15_prototype_roadmap.qmd
+    - chapters/16_living_book_methodology.qmd
+  appendices:
+    - appendices/A_source_matrix.qmd
+    - appendices/B_glossary.qmd
+    - appendices/C_claim_evidence_matrix.qmd
+    - appendices/D_protocol_schemas.qmd
+    - appendices/E_codex_test_specs.qmd
+    - appendices/F_changelog.qmd
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+    link-external-newwindow: true
+  pdf:
+    toc: true
+    number-sections: true
+
+execute:
+  freeze: auto

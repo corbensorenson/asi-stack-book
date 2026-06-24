@@ -1,0 +1,99 @@
+---
+title: "Living Book Methodology"
+status: "conceptual"
+last_updated: "2026-06-24"
+primary_sources:
+  - "road_to_agi"
+  - "benchmaxxing"
+  - "viea"
+  - "moecot"
+  - "moecot_md"
+  - "bugbrain"
+evidence_level: "argument"
+open_evidence_gaps:
+  - "Assigned source texts have not yet been ingested or summarized."
+  - "No Codex tests have been implemented or run."
+  - "Chapter prose is a scaffold, not a completed manuscript draft."
+---
+
+# Living Book Methodology
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Status | conceptual |
+| Last updated | 2026-06-24 |
+| Primary source records | `road_to_agi`, `benchmaxxing`, `viea`, `moecot`, `moecot_md`, `bugbrain` |
+| Evidence level | argument |
+| Source ingestion state | Source records assigned; source texts not yet ingested. |
+| Test state | Planned only; no tests have been run. |
+
+## Drafting guardrail
+
+This stub is derived from the handoff outline and source inventory only. It does not claim that the listed source documents have been ingested, summarized, or independently verified.
+
+## Problem
+
+The book itself must stay current while preserving source traceability, claim states, tests, release history, and reader orientation.
+
+## Why existing approaches are insufficient
+
+A static anthology cannot show evidence movement, deprecations, source updates, or reproducible renders.
+
+## Core claim
+
+[16-core, support: argument] The living book should model the ASI stack discipline through Quarto source, inventories, evidence matrices, tests, changelogs, and releases.
+
+## Mechanism
+
+- Use Quarto as the canonical source of truth.
+- Use a public static site for rendered reading.
+- Require every meaningful update to touch the relevant chapter, source matrix, evidence matrix, and changelog.
+
+## Interfaces
+
+- Source ingestion feeds source notes.
+- Drafting feeds claim matrices.
+- Tests feed evidence-state changes.
+- Releases feed the public site and changelog.
+
+## Invariants
+
+- No fabricated source content.
+- No fabricated test results.
+- Deprecated claims remain visible with reasons.
+
+## Failure modes
+
+- Public site diverges from Quarto source.
+- Changelog omits evidence-state changes.
+- Readers cannot tell which claims are speculative.
+
+## Minimal implementation
+
+A Quarto repo, GitHub Pages workflow, source inventory, claim/evidence matrix, validation script, and release checklist.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Quarto render check | Support or falsify this chapter's layer claim. | planned; not run |
+| Validation script check | Support or falsify this chapter's layer claim. | planned; not run |
+| Claim/evidence consistency check | Support or falsify this chapter's layer claim. | planned; not run |
+| Changelog update check | Support or falsify this chapter's layer claim. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `road_to_agi` | Road To AGI | Planned use from inventory/handoff: Remaining work / roadmap context. |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Planned use from inventory/handoff: Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. |
+| `viea` | Verified Intent-to-Execution Architecture | Planned use from inventory/handoff: Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | Planned use from inventory/handoff: Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. |
+| `moecot_md` | moecot_agent_whitepaper.md | Planned use from inventory/handoff: Markdown export/source version. |
+| `bugbrain` | BugBrain | Planned use from inventory/handoff: Edge/resource-aware implementation context. |
+
+## Summary
+
+This chapter currently establishes the structural slot for this layer of the ASI stack. The next drafting pass should ingest the assigned sources, separate source-derived claims from design hypotheses, and update Appendix C when support states change.
