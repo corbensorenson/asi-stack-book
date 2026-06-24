@@ -431,6 +431,53 @@
           "problem": "The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.",
           "insufficient": "High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.",
           "core_claim": "Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.",
+          "claim_source_mappings": [
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports stack-level failure analysis through authority laundering, contract drift, evaluator capture, state migration insolvency, dependency drift, bad reliance annotations, recovery failure, and procedural self-ratification.",
+              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or actual recovery behavior."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports context and memory failure modes: summaries self-promoting into evidence or authority, hostile quoted text becoming behavioral control, stale/revoked context admission, taint leakage, and unrecorded adequacy gaps.",
+              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority or broad neighboring-system result is claimed."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports execution failure modes around tool calls bypassing contract locks or approvals, secrets entering model context, missing provenance, non-replayable jobs, unverifiable evidence, forgotten failures, and overclaimed security or benchmarks.",
+              "limits": "Execution-security and benchmark behavior are not reproduced here."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports verification failure modes: failed or timed-out verification treated as success, unsupported claims, contradiction mishandling, protected-axiom self-authorization, and open-domain autoformalization overclaiming.",
+              "limits": "Does not prove natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "field_of_god",
+              "mapped_support": "Supports the governance motivation that power can damage agency, dignity, plurality, consent, and coherence if metaphysical or normative language is not translated into operational boundaries.",
+              "limits": "Philosophical lineage only; not empirical evidence for consciousness, physics, morality, or AI safety mechanisms."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports early engineering failures such as generated text mistaken for execution, lost artifacts, lost constraints, lost source evidence, forgotten residuals, missing deployment feedback, repeated uncompiled workflows, and claim support inflation.",
+              "limits": "Architecture proposal only; no deployed failure detector or benchmark/runtime result is proven here."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports resource and simulation failure modes: unstated scope/fidelity/temporal contracts, computability mistaken for feasible execution, ignored memory/heat/bandwidth bottlenecks, and vague simulation arguments used as capability evidence.",
+              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, or independent literature audit was run here."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Supports long-horizon context-compiler failures where planner hints become access authority, compiled context hides missing evidence or revocation, and source-derived references drift into unsourced third-party citations.",
+              "limits": "Connector-readable variant; no VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime failure modes where source-reported benchmark claims are treated as book-verified, unavailable runtime claims are overpromoted, or specialist lanes mutate/escalate authority without control-plane approval and evidence.",
+              "limits": "Implementation-reference context only until code, logs, release artifacts, or benchmark records are inspected or reproduced."
+            }
+          ],
           "mechanism": [
             "Classify failures by layer.",
             "Map every failure to an invariant and a planned falsification test.",
@@ -466,13 +513,13 @@
               "tag": "lean:failure.invariant_violation.operational_invariant",
               "module": "AsiStackProofs.FailureModes",
               "target": "A component with a failed required invariant cannot be promoted.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:failure.invariant_violation.failure_blocks_promotion",
               "module": "AsiStackProofs.FailureModes",
               "target": "An unbounded authority field is detected as a governance failure.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -614,6 +661,33 @@
           "problem": "A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.",
           "insufficient": "Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.",
           "core_claim": "Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports converting human intent into structured command contracts with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, routing, runtime execution, feedback, residuals, and regressions.",
+              "limits": "Does not prove automated intent parsing, hidden-authority inference, or deployed intent-to-execution behavior."
+            },
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports treating instructions as bounded operational language with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
+              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result or local test is present."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports compiling natural-language goals into decomposed, dependency-aware, tier-annotated plans with primitive schemas, scheduling, fallback requirements, and failure-driven replanning.",
+              "limits": "Conceptual design only here; no verified implementation, scheduler run, or benchmark result is present in this project."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports lowering goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, target instructions, validators, DAGs, and repairable artifacts.",
+              "limits": "Architecture and evaluation-plan source only; no local compiler, task trace suite, or empirical ablation validates the pipeline."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports the execution boundary by lowering only authorized work into typed jobs with contract locks, adjudication, delivery, feedback, audit, replay, residuals, approval gates, and controlled runtime adapters.",
+              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, or benchmark/security claims."
+            }
+          ],
           "mechanism": [
             "Parse intent into command contracts.",
             "Separate desired outcome from allowed means.",

@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; scenario coverage and failure-detector evidence remain incomplete."
   - "The failure_boundary_map fixture validates schema/example consistency only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain unimplemented."
   - "The implemented FailureModes Lean predicates cover finite-record invariant failure and unbounded-authority detection only; they do not prove deployed failure detection or containment."
   - "No support-state promotion is implied by this drafting pass."
@@ -67,6 +67,22 @@ The ASI Stack therefore treats failure modes as first-class architectural object
 [failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
 The claim remains at `argument` support. SCF contributes lifecycle and evaluator-capture risks, VCM contributes context and taint failures, Talos contributes execution and tool-control failures, Spinoza contributes verification and downgrade failures, and the Field of God lineage contributes governance and agency risks. This chapter uses those sources as architecture vocabulary, not as empirical incident evidence.
+
+### Claim-source mapping status
+
+Appendix C now maps this core failure claim to every assigned source note. The mappings support the obligation map for failure boundaries, not a claim that the stack already detects or prevents the failures.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `scf` | Authority laundering, contract drift, evaluator capture, state migration insolvency, dependency drift, bad reliance annotations, recovery failure, and procedural self-ratification. | Does not prove production safety, global alignment, strategic-deception resistance, or actual recovery behavior. |
+| `vcm_public` | Context and memory failures: summary self-promotion, hostile quoted text as control, stale/revoked context admission, taint leakage, and adequacy gaps. | Evidence remains bounded to control-plane properties; no broad model superiority result is claimed. |
+| `talos` | Tool calls bypassing locks or approvals, secrets entering model context, missing provenance, non-replayable jobs, unverifiable evidence, forgotten failures, and overclaimed security. | Execution-security and benchmark behavior are not reproduced here. |
+| `spinoza` | Failed or timed-out verification treated as success, unsupported claims, contradiction failures, protected-axiom self-authorization, and autoformalization overclaiming. | Does not prove arbitrary natural-language formalization or whole-system epistemic correctness. |
+| `field_of_god` | Governance risks around power, agency, dignity, plurality, consent, and coherence when normative language is not operationalized. | Philosophical lineage only, not empirical safety evidence. |
+| `viea` | Generated text mistaken for execution; lost artifacts, constraints, evidence, residuals, and deployment feedback; repeated uncompiled workflows; claim-support inflation. | No deployed failure detector or benchmark/runtime result is proven. |
+| `simulation_scaling` | Resource and simulation failures from unstated scope, fidelity, temporal contracts, bottlenecks, or vague simulation arguments used as capability evidence. | Theoretical synthesis only; no physical experiment or simulation benchmark. |
+| `vcm_editable` | Planner hints becoming access authority, compiled context hiding missing evidence or revocation, and source references drifting into uncited third-party claims. | Connector-readable variant; no VCM-Bench or model-facing result is recorded. |
+| `moecot` | Runtime overpromotion, source-reported benchmark claims treated as verified, and specialist lanes escalating authority without control-plane evidence. | Implementation-reference context only until artifacts are inspected or reproduced. |
 
 ## Mechanism
 

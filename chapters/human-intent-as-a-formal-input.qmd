@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; natural-language parsing and end-to-end lowering evidence remain incomplete."
   - "The intent_contract fixture validates schema/example consistency only; record-level Lean predicates exist, but ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ The failure is goal misbinding. The system satisfies an interpretation that was 
 [human-intent-as-a-formal-input.core, label: Design rationale, support: argument] Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.
 
 The claim remains at `argument` support. VIEA supplies the intent-to-execution contract spine; Software Magic Grimoire, PlanForge, Cognitive Compilation, and Talos supply command, plan, semantic-IR, and job-lowering vocabulary. None of that source context authorizes hidden execution or proves natural-language intent parsing is solved.
+
+### Claim-source mapping status
+
+Appendix C now maps this core intent claim to all assigned source notes. The mappings support the contract boundary for intent, not a solved parser or autonomous execution permission.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `viea` | Human intent becomes structured command contracts with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, routing, runtime execution, feedback, residuals, and regressions. | Does not prove automated intent parsing, hidden-authority inference, or deployed behavior. |
+| `software_magic_grimoire` | Instructions as bounded operational language with roles, objectives, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths. | Vocabulary and promptcraft framework only; no empirical prompt-performance result or local test. |
+| `planforge` | Natural-language goals compiled into decomposed, dependency-aware, tier-annotated plans with primitive schemas, scheduling, fallback, and failure-driven replanning. | No verified implementation, scheduler run, or benchmark result is present. |
+| `cognitive_compilation` | Goals, constraints, interfaces, resources, and quality gates lowered into source plans, typed semantic atoms, target instructions, validators, DAGs, and repairable artifacts. | No local compiler, task trace suite, or empirical ablation validates the pipeline. |
+| `talos` | Only authorized work lowers into typed jobs with contract locks, adjudication, delivery, feedback, audit, replay, residuals, approval gates, and controlled runtime adapters. | Does not prove tool-effect enforcement, approval behavior, or benchmark/security claims. |
 
 ## Mechanism
 

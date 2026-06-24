@@ -21,7 +21,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, so chapter-level loading queues are now complete even though claim-level mapping remains incomplete.
-- Appendix C now supports exact claim-source mappings and records the first foundation-cluster core claims plus the evidence-discipline core claim without promoting support states.
+- Appendix C now supports exact claim-source mappings and records the opening foundation/intent core claims plus the evidence-discipline core claim without promoting support states.
 - All 52 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
@@ -33,7 +33,7 @@ This file tracks whether the public repository is ready for the next major phase
 
 ## Known Blockers Before v1.0 Evidence Release
 
-- Source-derived claims require exact claim-level mapping from source notes before support-state promotion; the first foundation-cluster core claims and the evidence-discipline core claim are mapped examples, not promotion precedents.
+- Source-derived claims require exact claim-level mapping from source notes before support-state promotion; the opening foundation/intent core claims and the evidence-discipline core claim are mapped examples, not promotion precedents.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - Most Lean proof targets now have finite-record implementations; Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`, with the remaining planned targets kept as research agenda items.

@@ -288,6 +288,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A layered failure taxonomy tied to invariants, source queues, and future tests.
+- Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; support remains `argument` pending scenario tests or deployed detector evidence.
 - Planned Codex test: Authority creep scenario.
 - Planned Codex test: Context pollution scenario.
 - Planned Codex test: Evaluator drift scenario.
@@ -395,6 +396,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An intent-contract schema and example transformations from request to governed task.
+- Exact Appendix C claim-source mappings for the core claim across `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, and `talos`; support remains `argument` pending parser, authority-extraction, stop-condition, or lowering tests.
 - Planned Codex test: Intent parsing ambiguity test.
 - Planned Codex test: Authority extraction test.
 - Planned Codex test: Stop-condition preservation test.
