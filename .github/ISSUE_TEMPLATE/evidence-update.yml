@@ -1,0 +1,38 @@
+name: Evidence update
+description: Track a claim support-state change.
+title: "[evidence] "
+labels: ["evidence"]
+body:
+  - type: input
+    id: claim_id
+    attributes:
+      label: Claim ID
+  - type: dropdown
+    id: old_state
+    attributes:
+      label: Old support state
+      options:
+        - unsupported
+        - argument
+        - source-derived
+        - prototype-backed
+        - synthetic-test-backed
+        - empirical-test-backed
+        - external-literature-backed
+  - type: dropdown
+    id: new_state
+    attributes:
+      label: New support state
+      options:
+        - unsupported
+        - argument
+        - source-derived
+        - prototype-backed
+        - synthetic-test-backed
+        - empirical-test-backed
+        - external-literature-backed
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence basis
+      description: Source text, prototype inspection, test command, result file, or reason for downgrade.

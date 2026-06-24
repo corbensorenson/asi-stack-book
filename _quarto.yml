@@ -51,10 +51,8 @@ format:
     number-sections: true
     code-fold: true
     theme: cosmo
+    css: assets/styles.scss
     link-external-newwindow: true
-  pdf:
-    toc: true
-    number-sections: true
 
 execute:
   freeze: auto

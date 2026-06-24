@@ -1,6 +1,8 @@
 .DS_Store
 .quarto/
 _site/
+/*.html
+/site_libs/
 /.Rproj.user/
 *.zip
 
@@ -11,6 +13,18 @@ asi_stack_living_book_handoff_packet.zip
 # Local source drops need explicit publication review before tracking.
 sources/inbox/*
 !sources/inbox/README.md
+
+# Private/local source cache. Keep raw Google Doc/PDF exports out of the public repo.
+sources/raw/*
+!sources/raw/README.md
+sources/cache/*
+!sources/cache/README.md
+!sources/cache/status/
+!sources/cache/status/.gitkeep
+!sources/cache/cache_manifest.json
+
+# Lean build output.
+lean/.lake/
 
 /.quarto/
 **/*.quarto_ipynb

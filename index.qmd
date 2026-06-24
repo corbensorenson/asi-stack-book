@@ -1,24 +1,61 @@
 # The ASI Stack
 
-A living technical book by Corben Sorenson.
+**The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** is a living technical book by Corben Sorenson.
+
+## Current status
+
+::: {.living-dashboard}
+<div>
+<strong>Book state</strong>
+<span>Scaffold ready for drafting</span>
+</div>
+<div>
+<strong>Sources</strong>
+<span>Inventoried; cache status tracked</span>
+</div>
+<div>
+<strong>Claims</strong>
+<span>Argument-level until evidence moves</span>
+</div>
+<div>
+<strong>Tests</strong>
+<span>Planned; not yet run</span>
+</div>
+:::
 
 ## Core thesis
 
-Efficient ASI should be treated as a governed cognitive stack rather than a monolithic model.
+Efficient ASI should not be treated as one giant opaque model. It should be treated as a governed cognitive stack: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement cooperating through typed boundaries, verification, artifact memory, and bounded authority.
 
-The proposed stack has ten cooperating concerns:
+## Architecture at a glance
 
-1. Alignment and constitution
-2. Governance and stable capability fields
-3. Planning and control
-4. Virtual context memory
-5. Reasoning and verification
-6. Labor and execution
-7. Routing and modular intelligence
-8. Compression and representation
-9. Evidence and benchmark ratchets
-10. Recursive self-improvement
+```{mermaid}
+flowchart TD
+  A[Human intent] --> B[Alignment and constitution]
+  B --> C[Governance and authority]
+  C --> D[Planning and control]
+  D --> E[Virtual context memory]
+  E --> F[Routing and modular intelligence]
+  F --> G[Reasoning and verification]
+  G --> H[Labor and execution OS]
+  H --> I[Artifacts and runtime outputs]
+  I --> J[Evidence and benchmark ratchets]
+  J --> K[Governed self-improvement]
+  K --> C
+```
 
-## Reading status
+## How to read
 
-This v0.1 scaffold is structural. Source records are inventoried, but the source texts have not yet been ingested into this repository. Chapter claims are labeled `argument` until source ingestion, prototype inspection, or actual tests justify a stronger support state.
+Start with Part I for the architecture thesis and failure model. Then read Part II as the layer-by-layer specification. Part III explains how the layers integrate, how to prototype them, and how the book itself stays alive.
+
+The appendices are part of the architecture:
+
+- Appendix A tracks source assignments.
+- Appendix C tracks claim support states.
+- Appendix D tracks protocol schemas.
+- Appendix E tracks planned Codex tests.
+- Appendix F tracks living updates.
+
+## Evidence discipline
+
+Every major claim should carry a support state. The default state is `argument`. Claims move only when sources are actually read, prototypes are inspected, or tests are actually run. This book should never pretend that source ingestion or test evidence exists before it does.

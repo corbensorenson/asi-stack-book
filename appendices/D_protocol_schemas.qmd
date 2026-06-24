@@ -2,6 +2,13 @@
 
 These are draft schema placeholders for later source-derived protocol work. They are intentionally minimal and should not be treated as final API contracts.
 
+Executable schema drafts are tracked in `schemas/`:
+
+- `schemas/claim_record.schema.json`
+- `schemas/context_packet.schema.json`
+- `schemas/stable_capability_field.schema.json`
+- `schemas/typed_job.schema.json`
+
 ## Command Contract
 
 ```yaml

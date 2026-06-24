@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/context_packet.schema.json",
+  "title": "Context Packet",
+  "type": "object",
+  "required": ["task_id", "source_handles", "summaries", "authority_labels", "adequacy_state", "open_uncertainties"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "source_handles": { "type": "array", "items": { "type": "string" } },
+    "summaries": { "type": "array", "items": { "type": "string" } },
+    "authority_labels": { "type": "array", "items": { "type": "string" } },
+    "adequacy_state": { "type": "string", "enum": ["unknown", "adequate", "inadequate", "unsafe", "unsatisfied"] },
+    "open_uncertainties": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

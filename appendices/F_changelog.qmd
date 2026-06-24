@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-06-24 - Writing readiness workspace
+
+- Added local-only source cache tooling with `scripts/cache_drive_sources.py`.
+- Cached public URL exports for the accessible inventoried sources and added `docs/source_readiness_report.md`.
+- Added writing, site-quality, book-quality, and proof/code runbooks.
+- Added JSON Schema drafts for claim records, context packets, stable capability fields, and typed jobs.
+- Added `scripts/validate_schemas.py`.
+- Added a minimal Lean 4 proof workspace under `lean/` and a proof plan under `proofs/`.
+- Added GitHub issue templates for source ingestion, chapter drafting, proof/code work, site quality, and evidence updates.
+- Improved the landing page and added custom Quarto styling.
+
 ## 2026-06-24 - Dynamic structure update
 
 - Added `book_structure.json` as the source of truth for front matter, parts, chapter order, chapter IDs, chapter file paths, and appendices.

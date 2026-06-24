@@ -21,6 +21,7 @@ This is a v0.1 scaffold seed.
 ```bash
 python3 scripts/sync_scaffold.py
 python3 scripts/validate_book.py
+python3 scripts/validate_schemas.py
 quarto render --to html
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
 ```
@@ -43,6 +44,17 @@ python3 scripts/add_chapter.py --part stack-layers --title "New AI Topic" --afte
 ```
 
 The helpers update the manifest. The sync script updates Quarto, generated matrices, and missing chapter stubs.
+
+## Source Cache
+
+Raw source exports are private/local and ignored by git.
+
+```bash
+python3 scripts/cache_drive_sources.py
+python3 scripts/source_readiness_report.py
+```
+
+The tracked readiness report is `docs/source_readiness_report.md`. Raw exports stay under `sources/raw/`.
 
 ## Codex Skill
 

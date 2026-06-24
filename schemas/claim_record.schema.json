@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/claim_record.schema.json",
+  "title": "Claim Record",
+  "type": "object",
+  "required": ["claim_id", "text", "support_state", "source_handles", "tests", "review_status"],
+  "properties": {
+    "claim_id": { "type": "string", "minLength": 1 },
+    "text": { "type": "string", "minLength": 1 },
+    "support_state": {
+      "type": "string",
+      "enum": [
+        "unsupported",
+        "argument",
+        "source-derived",
+        "prototype-backed",
+        "synthetic-test-backed",
+        "empirical-test-backed",
+        "external-literature-backed"
+      ]
+    },
+    "source_handles": { "type": "array", "items": { "type": "string" } },
+    "tests": { "type": "array", "items": { "type": "string" } },
+    "contradictions": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "review_status": { "type": "string", "enum": ["open", "reviewed", "blocked", "deprecated"] }
+  },
+  "additionalProperties": false
+}

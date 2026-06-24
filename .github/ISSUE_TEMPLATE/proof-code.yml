@@ -1,0 +1,34 @@
+name: Proof or code artifact
+description: Track Lean proofs, schema validators, experiments, or benchmark code.
+title: "[proof/code] "
+labels: ["proof-code"]
+body:
+  - type: dropdown
+    id: artifact_type
+    attributes:
+      label: Artifact type
+      options:
+        - Lean proof
+        - JSON schema
+        - Validator
+        - Synthetic experiment
+        - Benchmark harness
+        - Other
+  - type: input
+    id: linked_claim
+    attributes:
+      label: Linked claim ID
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Completion checklist
+      options:
+        - label: Artifact is runnable or explicitly marked as a plan.
+        - label: Commands are documented.
+        - label: Results are recorded only if actually run.
+        - label: Chapter text links to the artifact only if it exists.
+        - label: Claim/evidence state was updated only if justified.

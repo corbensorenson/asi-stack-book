@@ -1,0 +1,27 @@
+name: Chapter draft
+description: Track drafting or revision of one chapter.
+title: "[chapter] "
+labels: ["chapter-draft"]
+body:
+  - type: input
+    id: chapter_id
+    attributes:
+      label: Chapter ID
+      description: Stable chapter ID from book_structure.json.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Drafting goal
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Completion checklist
+      options:
+        - label: Assigned sources were read or marked unavailable.
+        - label: Source-derived claims are separated from design hypotheses.
+        - label: Interfaces, invariants, and failure modes are explicit.
+        - label: Test/proof hooks were added where relevant.
+        - label: Appendix C was updated.
+        - label: Glossary was updated for new terms.
+        - label: Changelog was updated.
+        - label: Validation and HTML render passed.

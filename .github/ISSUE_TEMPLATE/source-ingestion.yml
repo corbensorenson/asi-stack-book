@@ -1,0 +1,30 @@
+name: Source ingestion
+description: Track ingestion of a paper, Google Doc, Drive file, or related source.
+title: "[source] "
+labels: ["source-ingestion"]
+body:
+  - type: input
+    id: source_id
+    attributes:
+      label: Source ID
+      description: Stable source ID from sources/source_inventory.json.
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What chapters or stack layers might this source affect?
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Source metadata is in sources/source_inventory.json.
+        - label: Raw source cache status is recorded.
+        - label: Source note was created after source text was actually read.
+        - label: book_structure.json source assignments were updated.
+        - label: Appendix C was updated if claim support changed.
+        - label: Changelog was updated.

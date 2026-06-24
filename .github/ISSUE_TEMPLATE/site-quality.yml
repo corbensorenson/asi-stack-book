@@ -1,0 +1,19 @@
+name: Site quality
+description: Track public site improvements and release-readiness issues.
+title: "[site] "
+labels: ["site"]
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: Site issue or improvement
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - label: HTML render passed.
+        - label: Representative chapter page checked.
+        - label: Appendix A checked.
+        - label: Appendix C checked.
+        - label: GitHub Pages workflow passed.

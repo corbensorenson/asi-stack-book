@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/stable_capability_field.schema.json",
+  "title": "Stable Capability Field",
+  "type": "object",
+  "required": ["field_id", "semantic_boundary", "authority_ceiling", "implementations", "qualification_predicates", "regression_suite", "rollback_plan"],
+  "properties": {
+    "field_id": { "type": "string", "minLength": 1 },
+    "semantic_boundary": { "type": "string", "minLength": 1 },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "implementations": { "type": "array", "items": { "type": "string" } },
+    "qualification_predicates": { "type": "array", "items": { "type": "string" } },
+    "regression_suite": { "type": "array", "items": { "type": "string" } },
+    "rollback_plan": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

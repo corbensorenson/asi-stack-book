@@ -19,15 +19,16 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 ## Standard Workflow
 
 1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
-2. Inspect the relevant chapters and appendices before editing.
-3. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
+2. Read `docs/source_readiness_report.md` if source ingestion or drafting depends on source availability.
+3. Inspect the relevant chapters and appendices before editing.
+4. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
    - `python3 scripts/add_part.py --title "..."`
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
-4. Run `python3 scripts/sync_scaffold.py` after manifest changes.
-5. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
-6. Update Appendix C when a claim changes or its support state changes.
-7. Run `python3 scripts/validate_book.py`.
-8. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+5. Run `python3 scripts/sync_scaffold.py` after manifest changes.
+6. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
+7. Update Appendix C when a claim changes or its support state changes.
+8. Run `python3 scripts/validate_book.py`.
+9. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -35,11 +36,12 @@ When the user brings a new AI-related paper:
 
 1. Create or update a record in `sources/source_inventory.json` with a stable source ID.
 2. Do not place private or restricted source text in the public repo unless the user explicitly approves.
-3. If the source text is available, create `sources/source_notes/<source-id>.md` with thesis, mechanisms, evidence, failure modes, supported chapters, and open questions.
-4. Decide whether the source updates an existing chapter, needs a new chapter, belongs in an appendix, or should remain unassigned.
-5. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
-6. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
-7. Keep the claim/evidence state at `argument` unless source ingestion or tests justify a stronger state.
+3. Use `python3 scripts/cache_drive_sources.py` and `python3 scripts/source_readiness_report.py` to refresh local cache status when appropriate.
+4. If the source text is available, create `sources/source_notes/<source-id>.md` with thesis, mechanisms, evidence, failure modes, supported chapters, and open questions.
+5. Decide whether the source updates an existing chapter, needs a new chapter, belongs in an appendix, or should remain unassigned.
+6. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
+7. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
+8. Keep the claim/evidence state at `argument` unless source ingestion or tests justify a stronger state.
 
 Read `references/triage.md` when deciding whether to update an existing chapter or create a new one.
 
