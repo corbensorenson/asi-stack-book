@@ -46,17 +46,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The living book needs a shared language for what kind of claim is being made and what currently supports it.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter names failure modes. This chapter gives the book a way to keep those failures from turning into confident prose. A living technical book is dangerous if every revision makes claims sound cleaner while their support state stays invisible. The same problem appears in AI systems: hypotheses, design rationales, source-derived statements, proofs, tests, and measurements get blended into a single fluent surface.
 
-It inherits pressure from the previous chapter, Failure Modes of Ungoverned Intelligence, and makes that pressure operational in a narrower boundary. It hands its output to Human Intent as a Formal Input, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The book therefore treats evidence discipline as an architectural layer, not as editorial housekeeping. Each important claim must say what kind of claim it is and what currently supports it. A source note may justify a source-derived discussion. A Lean module may justify a mechanized invariant. A synthetic fixture may justify a narrow test-backed claim. None of those automatically proves the others.
 
 ## Why existing approaches are insufficient
 
 Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: without explicit support states, conceptual architecture prose can accidentally read like empirical proof. If `evidence-states-and-claim-discipline` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Citation lists are not enough. A citation can show lineage, motivation, terminology, contradiction, or external context; it does not automatically support the exact claim being made. Benchmarks are not enough either. Benchmaxxing treats benchmarks as pressure surfaces with lifecycle states, wall diagnoses, anti-Goodhart safeguards, and regression duties, not as permanent definitions of intelligence. Spinoza adds the claim graph and downgrade discipline: failed verification must block or lower confidence. UAT adds adversarial review and proposition tiering under a bounded dossier. Verification Bandwidth adds a further warning: even a large context may not support joint verification of everything inside it.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The missing object is the evidence transition. If a claim moves from `argument` to `source-derived`, the transition should name the source note and the mapped claim. If it moves to `synthetic-test-backed`, it should name the fixture, command, environment, and result. If a test fails, the failure should remain visible rather than disappearing into the next draft.
 
 ## Core Claim
 
@@ -66,28 +66,58 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, use Appendix C as the claim ledger. Second, separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed. Third, require source notes before promoting claims to source-derived. Fourth, require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
+The mechanism is a support-state transition gate.
+
+```{mermaid}
+flowchart LR
+  A["Claim drafted"] --> B["Claim label"]
+  A --> C["Support state: argument"]
+  C --> D{"Exact source-note mapping?"}
+  D -- "yes" --> E["source-derived"]
+  C --> F{"Validated schema / proof / test artifact?"}
+  F -- "Lean build" --> G["mechanized / proof-backed scope"]
+  F -- "fixture or experiment" --> H["synthetic-test-backed or empirical-test-backed"]
+  D -- "no" --> I["remain argument"]
+  F -- "fail / inconclusive" --> J["negative result / residual"]
+  E --> K["Appendix C + changelog"]
+  G --> K
+  H --> K
+  J --> K
+```
 
 - Use Appendix C as the claim ledger.
 - Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Require source notes before promoting claims to source-derived.
 - Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The gate separates two axes. Claim labels describe what kind of assertion is being made: design rationale, hypothesis, measurement, mechanism, demonstration, or speculation. Support states describe what artifact currently backs it: argument, source-derived mapping, prototype inspection, synthetic test, empirical test, mechanized proof, external literature, refutation, or deprecation. Mixing these axes creates evidence inflation.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The layer also preserves negative information. A failed proof attempt, benchmark wall, contradiction, missing source, or invalid fixture is not clutter. It is the information that prevents the stack from ratcheting in the wrong direction.
 
 ## Interfaces
 
-The interface for Evidence States and Claim Discipline is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is the claim record and evidence bundle.
 
 - Drafting updates claims.
 - Experiments update evidence.
 - Changelog records evidence movement.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum evidence transition fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `claim_id`
+- `old_support_state`
+- `new_support_state`
+- `transition_reason`
+- `source_handles`
+- `proof_refs`
+- `test_command`
+- `environment_manifest`
+- `raw_logs`
+- `negative_results`
+- `limitations`
+- `review_status`
+
+Drafting updates claim text and labels. Source ingestion adds source notes and source-to-claim mappings. Proof and code work adds commands, fixtures, modules, and results. The changelog records meaningful evidence movement. Appendix C remains the public ledger that keeps those transitions visible.
 
 ## Invariants
 
@@ -97,7 +127,7 @@ The invariants are the conditions that must remain true even when the implementa
 - No fabricated test results.
 - Negative and inconclusive results remain visible.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The strongest invariant is asymmetric: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found. This is why Appendix C deliberately remains conservative after source-note coverage improves. Source notes are necessary context, not automatic claim promotion.
 
 ## Failure modes
 
@@ -107,13 +137,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Citation laundering.
 - Silent removal of failed claims.
 
-For Evidence States and Claim Discipline, mitigation starts by turning each listed failure into a named reviewable artifact. When `Support-state inflation` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+Citation laundering is the common failure: a nearby source is used to make an unsupported claim feel sourced. Benchmark laundering is the analogous measurement failure: a run result is generalized beyond its scope. Proof laundering happens when a small formal invariant is rhetorically expanded into a whole-system guarantee. The correction is scope discipline. The evidence artifact says exactly what it supports and exactly what it does not support.
 
 ## Minimal implementation
 
 A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
 
-The smallest useful implementation is deliberately narrow: A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation already exists in this repo: `schemas/claim_record.schema.json`, Appendix C, and the Lean evidence-state proof module. The next implementation step is an evidence-transition fixture that validates a support-state change from `argument` only when the required source mapping, proof reference, or test result is present. Until that fixture exists, the broader chapter-level tests remain planned.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -121,10 +151,10 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Support-state transition test | Probe whether the chapter claim holds under the relevant Evidence States and Claim Discipline boundary. | planned; not run |
-| Claim ledger completeness test | Probe whether the chapter claim holds under the relevant Evidence States and Claim Discipline boundary. | planned; not run |
-| Evidence bundle completeness test | Probe whether the chapter claim holds under the relevant Evidence States and Claim Discipline boundary. | planned; not run |
-| Changelog consistency audit | Probe whether the chapter claim holds under the relevant Evidence States and Claim Discipline boundary. | planned; not run |
+| Support-state transition test | Check that a claim cannot move upward without the artifact required by the target support state. | planned; not run |
+| Claim ledger completeness test | Check that every major chapter claim appears in Appendix C with label, support state, and open gap. | planned; not run |
+| Evidence bundle completeness test | Check that test-backed claims include command, environment, logs, metrics, limitations, and negative results. | planned; not run |
+| Changelog consistency audit | Check that meaningful support-state, proof, schema, source, or publication changes are recorded. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -152,6 +182,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Evidence States and Claim Discipline defines one boundary in the ASI Stack: Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition. Its job is to make a capability more governable, not merely more impressive.
+Evidence States and Claim Discipline is the book's anti-inflation layer. It lets the manuscript be ambitious without pretending that design rationales, source notes, schemas, Lean proofs, benchmarks, and empirical results are the same thing.
 
-In v0.2, this chapter gives Evidence States and Claim Discipline a complete architectural boundary: the living book needs a shared language for what kind of claim is being made and what currently supports it. Its next maturity step is to substantiate the boundary through `Drafting updates claims`, preserve `No fabricated source support`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The layer is deliberately conservative. Source-note coverage improves drafting readiness, but claim support rises only after exact mappings or artifacts exist. That discipline is what allows the living book to keep improving all night without quietly manufacturing evidence along the way.

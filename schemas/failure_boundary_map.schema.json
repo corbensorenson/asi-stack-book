@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/failure_boundary_map.schema.json",
+  "title": "Failure Boundary Map",
+  "type": "object",
+  "required": [
+    "failure_id",
+    "layer",
+    "trigger",
+    "protected_invariant",
+    "detection_route",
+    "containment_action",
+    "evidence_record",
+    "downstream_owner",
+    "residual_risk"
+  ],
+  "properties": {
+    "failure_id": { "type": "string", "minLength": 1 },
+    "layer": { "type": "string", "minLength": 1 },
+    "trigger": { "type": "string", "minLength": 1 },
+    "protected_invariant": { "type": "string", "minLength": 1 },
+    "detection_route": { "type": "string", "minLength": 1 },
+    "containment_action": { "type": "string", "minLength": 1 },
+    "evidence_record": { "type": "string", "minLength": 1 },
+    "downstream_owner": { "type": "string", "minLength": 1 },
+    "residual_risk": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

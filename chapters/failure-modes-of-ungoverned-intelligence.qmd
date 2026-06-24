@@ -49,17 +49,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The previous chapter defines authority boundaries. This chapter explains why those boundaries are not optional. Ungoverned intelligence does not have to fail first as a cinematic catastrophe. It can fail earlier and more quietly through goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, or self-improvement loops that ratify their own evidence.
 
-It inherits pressure from the previous chapter, System Boundaries and Authority, and makes that pressure operational in a narrower boundary. It hands its output to Evidence States and Claim Discipline, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+The point of a failure taxonomy is not pessimism. It is interface design. Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit.
 
 ## Why existing approaches are insufficient
 
 High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.
 
-In this chapter, the failure is more specific than bad prompting or weak model choice: high-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding. If `failure-modes-of-ungoverned-intelligence` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
+Broad terms such as "alignment failure" and "unsafe autonomy" are too large to test directly. They can hide the smaller event that actually broke the system: a stale context packet was admitted, a route bypassed its authority ceiling, a verifier was trained on the same signal it was meant to judge, a residual was deleted, or a benchmark became the target rather than the pressure surface.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The ASI Stack therefore treats failure modes as first-class architectural objects. A failure should map to an invariant, a detector, an evidence record, and a containment path. If it cannot be mapped, the right conclusion is not that the failure is impossible; it is that the stack is missing a boundary.
 
 ## Core Claim
 
@@ -69,28 +69,57 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, classify failures by layer. Second, map every failure to an invariant and a planned falsification test. Third, use failures to motivate boundaries in later chapters.
+The mechanism is a failure-boundary map.
+
+```{mermaid}
+flowchart TB
+  A["Human intent"] --> B["Goal binding failure"]
+  B --> C["Authority creep"]
+  C --> D["Context pollution"]
+  D --> E["Evaluator drift"]
+  E --> F["Tool / action overreach"]
+  F --> G["Residual hiding"]
+  G --> H["Unsupported promotion"]
+
+  B -. "intent contracts" .-> I["Boundary"]
+  C -. "authority transition" .-> I
+  D -. "VCM admission / adequacy" .-> I
+  E -. "independent evaluator" .-> I
+  F -. "typed job + permission check" .-> I
+  G -. "residual escrow" .-> I
+  H -. "claim support state" .-> I
+```
 
 - Classify failures by layer.
 - Map every failure to an invariant and a planned falsification test.
 - Use failures to motivate boundaries in later chapters.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The map is deliberately layered. SCF identifies replacement and evaluator-capture risks when implementations, contracts, or governance procedures mutate. VCM identifies context admission, authority binding, taint, revocation, and summary self-promotion risks. Talos identifies tool isolation, typed-job, approval-gate, and replay failures. Spinoza identifies false certainty, failed verification, contradiction, and belief-revision failures. The Field of God source is not used here as empirical safety evidence; it preserves the deeper governance concern that power should not erase agency, dignity, plurality, and contestability.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The failure map should be boring enough to test. Every row needs a trigger, protected invariant, detection route, containment action, evidence record, and downstream chapter that owns the fix.
 
 ## Interfaces
 
-The interface for Failure Modes of Ungoverned Intelligence is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
+The interface is a Failure Boundary Map.
 
 - Governance limits authority creep.
 - VCM limits context pollution.
 - Verification limits false certainty.
 - Execution limits side effects.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+Minimum fields:
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+- `failure_id`
+- `layer`
+- `trigger`
+- `protected_invariant`
+- `detection_route`
+- `containment_action`
+- `evidence_record`
+- `downstream_owner`
+- `residual_risk`
+
+This interface lets later chapters prove that their machinery is not decorative. A VCM chapter should be able to point back to context-pollution failures. A Talos chapter should point back to tool/action overreach. A benchmark-ratchet chapter should point back to evaluator drift and residual hiding. The failure map is the obligation list.
 
 ## Invariants
 
@@ -100,7 +129,7 @@ The invariants are the conditions that must remain true even when the implementa
 - Evaluator integrity is protected.
 - Negative evidence stays visible.
 
-If an invariant cannot be checked directly, the living-book version of the stack should at least record a proxy check and a residual. A weak proxy is acceptable in v0.2 when it is visible; it becomes dangerous only when the manuscript treats it as a completed proof.
+The first invariant is coverage: no named high-level risk should remain without an owning boundary. The second is independence: an evaluator, verifier, or governance process should not be silently modified by the component it is judging. The third is memory: failed attempts, negative results, denials, and residuals stay visible because future self-improvement depends on them.
 
 ## Failure modes
 
@@ -111,13 +140,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Tool/action overreach.
 - Compression that hides residual complexity.
 
-For Failure Modes of Ungoverned Intelligence, mitigation starts by turning each listed failure into a named reviewable artifact. When `Evaluator capture` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
+The taxonomy is recursive: the failure map can itself fail. It can become too broad to test, too narrow to catch novel risks, too stale to reflect new architecture, or too ceremonial to affect routing and promotion. That is why the evidence chapter follows immediately. A failure mode matters only if it can block promotion, force review, create residual escrow, or change the design.
 
 ## Minimal implementation
 
 A layered failure taxonomy tied to invariants, source queues, and future tests.
 
-The smallest useful implementation is deliberately narrow: A layered failure taxonomy tied to invariants, source queues, and future tests. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
+The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure, its protected invariant, and the boundary that owns containment.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -125,10 +154,10 @@ The implementation should be promoted only when its evidence exists. A planned t
 
 | Test | Purpose | Status |
 |---|---|---|
-| Authority creep scenario | Probe whether the chapter claim holds under the relevant Failure Modes of Ungoverned Intelligence boundary. | planned; not run |
-| Context pollution scenario | Probe whether the chapter claim holds under the relevant Failure Modes of Ungoverned Intelligence boundary. | planned; not run |
-| Evaluator drift scenario | Probe whether the chapter claim holds under the relevant Failure Modes of Ungoverned Intelligence boundary. | planned; not run |
-| Unverified-claim scenario | Probe whether the chapter claim holds under the relevant Failure Modes of Ungoverned Intelligence boundary. | planned; not run |
+| Authority creep scenario | Check that a proposed action exceeding the requester ceiling is denied or escalated with an audit record. | planned; not run |
+| Context pollution scenario | Check that quoted or retrieved content cannot become behavioral control without an authority grant. | planned; not run |
+| Evaluator drift scenario | Check that a component cannot silently modify the evaluator or gate that judges its promotion. | planned; not run |
+| Unverified-claim scenario | Check that a claim with failed or missing verification remains blocked, downgraded, or residualized. | planned; not run |
 
 These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -159,6 +188,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-Failure Modes of Ungoverned Intelligence defines one boundary in the ASI Stack: Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed. Its job is to make a capability more governable, not merely more impressive.
+Failure Modes of Ungoverned Intelligence gives the stack its obligation map. Each failure names a boundary that must detect, contain, and preserve evidence: authority for overreach, VCM for polluted context, verification for false certainty, execution controls for side effects, and evidence ledgers for residuals and negative results.
 
-In v0.2, this chapter gives Failure Modes of Ungoverned Intelligence a complete architectural boundary: the book needs an explicit failure model before it can make governance, reliability, or self-improvement claims. Its next maturity step is to substantiate the boundary through `Governance limits authority creep`, preserve `Every risk maps to at least one boundary`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.
+The chapter is intentionally early because the rest of the book should read like a response to this taxonomy. If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative.

@@ -5,10 +5,13 @@ These are draft executable protocol schemas for the living book. They are intent
 Executable schema drafts are tracked in `schemas/`:
 
 - `schemas/authority_use_receipt.schema.json`
+- `schemas/authority_transition_record.schema.json`
 - `schemas/claim_record.schema.json`
 - `schemas/compression_receipt.schema.json`
+- `schemas/costed_route_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
 - `schemas/context_packet.schema.json`
+- `schemas/failure_boundary_map.schema.json`
 - `schemas/semantic_atom.schema.json`
 - `schemas/stable_capability_field.schema.json`
 - `schemas/typed_job.schema.json`
@@ -39,6 +42,29 @@ context_packet:
   adequacy_state: unknown
   open_uncertainties: []
 ```
+
+## Costed Route Record
+
+```yaml
+costed_route_record:
+  task_id: string
+  quality_predicate: string
+  authority_ceiling: string
+  candidate_routes: []
+  selected_route: string
+  rejected_lower_cost_routes: []
+  verification_result: partial
+  cost_accounting:
+    estimated_tokens: 0
+    estimated_time_seconds: 0
+    tool_cost_units: 0
+  residual_obligations: []
+  fallback_route: string
+  promotion_candidate: false
+  non_claims: []
+```
+
+This record keeps efficiency claims tied to route choice, quality predicates, cost accounting, residual obligations, and fallback behavior.
 
 ## Context Adequacy Record
 
@@ -113,6 +139,43 @@ authority_use_receipt:
 ```
 
 This record captures handle-mediated authority use for Digital SCIF workflows. It is meant to support least-privilege review, audit, revocation, and leak-risk accounting without exposing secret bytes in the public book.
+
+## Authority Transition Record
+
+```yaml
+authority_transition_record:
+  transition_id: string
+  principal: string
+  source_layer: string
+  target_boundary: string
+  requested_operation: string
+  authority_ceiling: string
+  grant_id: string
+  revocation_epoch: string
+  decision: allow
+  denial_reason: string
+  effect_receipt: string
+  audit_refs: []
+```
+
+This record makes boundary crossings explicit. It distinguishes a request from an authorization and gives denials, grants, effect receipts, and audit references a durable shape.
+
+## Failure Boundary Map
+
+```yaml
+failure_boundary_map:
+  failure_id: string
+  layer: string
+  trigger: string
+  protected_invariant: string
+  detection_route: string
+  containment_action: string
+  evidence_record: string
+  downstream_owner: string
+  residual_risk: []
+```
+
+This record maps a named failure to the boundary that should detect, contain, and preserve evidence about it.
 
 ## Stable Capability Field
 

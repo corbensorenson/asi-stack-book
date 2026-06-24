@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/costed_route_record.schema.json",
+  "title": "Costed Route Record",
+  "type": "object",
+  "required": [
+    "task_id",
+    "quality_predicate",
+    "authority_ceiling",
+    "candidate_routes",
+    "selected_route",
+    "rejected_lower_cost_routes",
+    "verification_result",
+    "cost_accounting",
+    "residual_obligations",
+    "fallback_route",
+    "promotion_candidate",
+    "non_claims"
+  ],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "quality_predicate": { "type": "string", "minLength": 1 },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "candidate_routes": { "type": "array", "items": { "type": "string" } },
+    "selected_route": { "type": "string", "minLength": 1 },
+    "rejected_lower_cost_routes": { "type": "array", "items": { "type": "string" } },
+    "verification_result": {
+      "type": "string",
+      "enum": ["not_run", "pass", "fail", "partial"]
+    },
+    "cost_accounting": {
+      "type": "object",
+      "required": ["estimated_tokens", "estimated_time_seconds", "tool_cost_units"],
+      "properties": {
+        "estimated_tokens": { "type": "number" },
+        "estimated_time_seconds": { "type": "number" },
+        "tool_cost_units": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "residual_obligations": { "type": "array", "items": { "type": "string" } },
+    "fallback_route": { "type": "string", "minLength": 1 },
+    "promotion_candidate": { "type": "boolean" },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

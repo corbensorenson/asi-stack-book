@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/authority_transition_record.schema.json",
+  "title": "Authority Transition Record",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "principal",
+    "source_layer",
+    "target_boundary",
+    "requested_operation",
+    "authority_ceiling",
+    "grant_id",
+    "revocation_epoch",
+    "decision",
+    "denial_reason",
+    "effect_receipt",
+    "audit_refs"
+  ],
+  "properties": {
+    "transition_id": { "type": "string", "minLength": 1 },
+    "principal": { "type": "string", "minLength": 1 },
+    "source_layer": { "type": "string", "minLength": 1 },
+    "target_boundary": { "type": "string", "minLength": 1 },
+    "requested_operation": { "type": "string", "minLength": 1 },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "grant_id": { "type": "string", "minLength": 1 },
+    "revocation_epoch": { "type": "string", "minLength": 1 },
+    "decision": {
+      "type": "string",
+      "enum": ["allow", "deny", "escalate"]
+    },
+    "denial_reason": { "type": "string" },
+    "effect_receipt": { "type": "string" },
+    "audit_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

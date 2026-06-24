@@ -1,0 +1,18 @@
+{
+  "task_id": "route-demo-001",
+  "quality_predicate": "Draft must preserve listed constraints and pass local review.",
+  "authority_ceiling": "write_public_book_only",
+  "candidate_routes": ["small-editor", "source-loaded-editor", "human-review"],
+  "selected_route": "source-loaded-editor",
+  "rejected_lower_cost_routes": ["small-editor: lacked source-note context"],
+  "verification_result": "partial",
+  "cost_accounting": {
+    "estimated_tokens": 4000,
+    "estimated_time_seconds": 120,
+    "tool_cost_units": 1
+  },
+  "residual_obligations": ["Run full chapter-level test before promotion."],
+  "fallback_route": "human-review",
+  "promotion_candidate": false,
+  "non_claims": ["This fixture is not an efficiency benchmark."]
+}

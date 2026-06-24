@@ -1,0 +1,14 @@
+{
+  "transition_id": "authority-demo-001",
+  "principal": "planner-demo",
+  "source_layer": "planning",
+  "target_boundary": "repository-file-write",
+  "requested_operation": "edit public chapter source",
+  "authority_ceiling": "write_public_book_only",
+  "grant_id": "grant://demo-write-book",
+  "revocation_epoch": "not_revoked",
+  "decision": "allow",
+  "denial_reason": "",
+  "effect_receipt": "receipt://chapter-edit-demo",
+  "audit_refs": ["git://working-tree-demo"]
+}

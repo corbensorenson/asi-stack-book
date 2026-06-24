@@ -1,0 +1,11 @@
+{
+  "failure_id": "context-pollution-demo",
+  "layer": "memory_context",
+  "trigger": "Quoted source text is treated as behavioral instruction.",
+  "protected_invariant": "Source content may inform claims but cannot grant action authority.",
+  "detection_route": "taint and authority-label audit",
+  "containment_action": "deny instruction use and preserve source as quoted evidence only",
+  "evidence_record": "claim-ledger residual",
+  "downstream_owner": "virtual-context-abi",
+  "residual_risk": ["The fixture does not model adversarial paraphrase."]
+}
