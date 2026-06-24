@@ -5,7 +5,7 @@
 | Source ID | `alignment_field` |
 | Source title | Field of God / Alignment Field family |
 | Ingestion date | 2026-06-24 |
-| Source version / URL | Local cached source family; https://docs.google.com/document/d/1RS15qfUaLmrYsCzU6blBva1j0vEYYlzyKE0iSdEBpp8 |
+| Source version / URL | Local cached source family; https://docs.google.com/document/d/1CCiBBlOEGB2huRDSwGm4P1JkVBkfmaUxJt9AwG23Kzw |
 | Ingestion basis | Local raw cache inspected at `sources/raw/google_docs/alignment_field.txt`; raw text is not published. |
 
 ## Thesis

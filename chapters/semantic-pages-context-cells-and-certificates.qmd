@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
-| Source loading state | source notes: `vcm_public`, `spinoza`, `vcm_editable`; raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; pending source notes: `verification_bandwidth`, `context_engineer`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable`; raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
 | Test state | Planned only; no tests have been run for this chapter in this drafting pass. |
 
 ## Drafting guardrail
@@ -139,9 +139,9 @@ The table records proof and contract hooks for future work. Planned hooks should
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | local raw cache available |
+| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache available |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
 The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.

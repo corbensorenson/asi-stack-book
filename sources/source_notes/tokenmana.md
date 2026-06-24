@@ -1,0 +1,57 @@
+# Source Note: TokenMana
+
+| Field | Value |
+|---|---|
+| Source ID | `tokenmana` |
+| Source title | TokenMana |
+| Ingestion date | 2026-06-24 |
+| Source version / URL | Google Docs source in inventory: https://docs.google.com/document/d/1dGOlGPZi6byTwRUbHQt40OSErBnQ4j6G_BZvA-oJRM8 |
+| Ingestion basis | Local raw cache inspected at `sources/raw/google_docs/tokenmana.txt`; raw text is not published. |
+
+## Thesis
+
+TokenMana proposes regenerative capacity mechanisms for AI usage pricing and resource governance. Instead of hard quota resets that synchronize bursts, users accumulate bounded usage capacity continuously, with pricing and burst controls shaped to reduce load variance and cognitive friction.
+
+## Mechanisms
+
+- Model each user as holding a regenerating capacity stock with a bounded pool.
+- Allow bounded burst or compression multipliers while preventing unbounded demand spikes.
+- Adjust prices or access conditions from aggregate load signals.
+- Compare regenerative capacity with hard quota systems under convex infrastructure costs.
+- Measure system outcomes with load variance, renewal clustering, nocturnal usage, and token-normalized cognitive friction.
+- Use staggered rollout, renewal-boundary discontinuity, and opt-in sleep or productivity measures as proposed empirical strategies.
+- Include privacy, opt-in, separation from employer, deletion, and export as study constraints.
+
+## Evidence
+
+- The source includes an economic model, formal claims as reported by the source, numerical or empirical design ideas, and a human-centered study protocol.
+- The repository has not reproduced the formal results, run simulations, or collected empirical data.
+- Treat the mechanism as a resource-governance design and research plan, not as verified pricing performance.
+
+## Failure Modes
+
+- Replacing hard resets with a regenerative scheme but still allowing synchronized external deadlines to dominate load.
+- Optimizing infrastructure load while ignoring user sleep, friction, or task quality.
+- Using burst multipliers that recreate quota cliffs.
+- Overclaiming welfare or productivity benefits without controlled studies.
+- Mishandling privacy when measuring usage, sleep, or cognitive-friction signals.
+- Treating token spend as the only scarce resource.
+
+## Book Chapters Supported
+
+- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
+- `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+
+## Claims To Add Or Update
+
+- Use TokenMana to motivate regenerative budgets for models, humans, tools, and review capacity.
+- Tie resource economics to load variance, latency, sleep/cognitive cost, and quality rather than tokens alone.
+- Keep claims about equilibrium, profit dominance, and human outcomes at source-proposed status until reproduced.
+
+## Open Questions
+
+- Should the book include a regenerative-budget schema for PlanForge schedulers?
+- Which TokenMana claims are suitable for Lean-like formalization versus simulation?
+- What toy load simulator would be sufficient to support a prototype-backed discussion?
