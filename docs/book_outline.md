@@ -1590,7 +1590,8 @@ Draft deliverables:
 
 - An artifact graph schema with job, source, context, and evidence edges.
 - Implemented protocol validation: `artifact_graph_record` fixture validates public record shape only.
-- Planned Codex test: Artifact traceability test.
+- Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
+- Implemented Lean predicate: missing required provenance blocks promoted-claim support.
 - Planned Codex test: Audit reconstruction test.
 - Planned Codex test: Replay metadata completeness test.
 
@@ -1598,8 +1599,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | planned |
-| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | planned |
+| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | implemented |
+| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
 

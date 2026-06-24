@@ -555,20 +555,20 @@
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
       "formal_target": "Every produced artifact records its parent job and source/context references.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite provenance predicate: produced artifact records expose parent-job and source/context references."
     },
     {
       "tag": "lean:artifacts.graph.failure_blocks_promotion",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
       "formal_target": "An artifact with missing required provenance cannot support a promoted claim.",
-      "target_status": "planned",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite promotion predicate: missing required provenance blocks promoted-claim support."
     },
     {
       "tag": "lean:runtime.adapters.operational_invariant",

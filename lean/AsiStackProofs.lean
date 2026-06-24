@@ -1,4 +1,5 @@
 import AsiStackProofs.Authority
+import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.ContextCertificates
 import AsiStackProofs.ContextTransactions

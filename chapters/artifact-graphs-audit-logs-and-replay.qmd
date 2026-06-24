@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
-  - "Only protocol schema/fixture validation is implemented; no artifact-graph replay or audit reconstruction harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean provenance predicates are implemented; no artifact-graph replay, audit reconstruction, or produced-artifact completeness harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot` |
 | Source loading state | source notes: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot`; raw cache: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot` |
-| Test state | Artifact graph fixture validation implemented; replay and audit-reconstruction tests remain planned. |
+| Test state | Artifact graph fixture validation implemented; finite provenance predicates implemented in `AsiStackProofs.ArtifactGraph`; replay, audit-reconstruction, and produced-artifact tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats artifacts as provenance-bearing work products, not as automatic evidence. The repo validates an artifact-graph fixture, but it has not run a replay engine, audit reconstruction harness, or provenance completeness checker for this chapter.
+This chapter treats artifacts as provenance-bearing work products, not as automatic evidence. The repo validates an artifact-graph fixture and now proves two finite Lean predicates over provenance records, but it has not run a replay engine, audit reconstruction harness, produced-artifact checker, or provenance completeness service for this chapter.
 
 ## Problem
 
@@ -139,27 +139,28 @@ An artifact graph schema with job, source, context, and evidence edges.
 
 The smallest useful implementation is an `artifact_graph_record` schema and fixture. It validates parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 
-That fixture validates the shape of an artifact node. It does not prove the referenced render, replay, audit path, or provenance completeness.
+That fixture validates the shape of an artifact node. `AsiStackProofs.ArtifactGraph` adds a bounded predicate requiring produced artifacts to carry parent-job and source/context references, plus a bounded promotion-blocking predicate for missing required provenance. This does not prove the referenced render, replay, audit path, or provenance completeness of any produced artifact.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Artifact graph fixture validation | Check that the artifact fixture matches the public schema and declares parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits. | implemented by protocol validation; run in this pass |
-| Artifact traceability test | Check that produced artifacts record parent job and source/context references. | planned; not run |
+| Artifact traceability predicate | Check that produced artifact records expose parent job and source/context references. | implemented in `AsiStackProofs.ArtifactGraph`; checked by Lean build |
+| Missing provenance promotion predicate | Check that missing required provenance blocks promoted-claim support. | implemented in `AsiStackProofs.ArtifactGraph`; checked by Lean build |
 | Audit reconstruction test | Check that audit events are sufficient to reconstruct the execution path. | planned; not run |
 | Replay metadata completeness test | Check that replay limits and environment assumptions are declared. | planned; not run |
 
-Only fixture-shape validation is implemented. The remaining tests require produced artifacts, audit logs, and replay attempts that can be inspected.
+Fixture-shape validation and two bounded Lean predicates are implemented. The remaining tests require produced artifacts, audit logs, and replay attempts that can be inspected.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | planned |
-| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | planned |
+| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | implemented |
+| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
 
-These proof hooks remain planned. Provenance completeness can become a validator target once artifact requirements are made explicit per artifact type.
+These proof hooks are implemented as finite-record predicates. They do not prove replayability, audit reconstruction, or artifact-type-specific completeness.
 
 ## Source crosswalk
 
