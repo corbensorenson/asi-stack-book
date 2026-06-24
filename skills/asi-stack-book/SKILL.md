@@ -29,8 +29,9 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 7. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
 8. Update chapter prose and source notes only from available source text or clearly labeled design reasoning.
 9. Update Appendix C when a claim changes or its support state changes.
-10. Run `python3 scripts/validate_book.py`.
-11. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+10. Run `python3 scripts/validate_publication.py` for public-surface changes.
+11. Run `python3 scripts/validate_book.py`.
+12. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -64,6 +65,7 @@ Use these commands before reporting completion:
 ```bash
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 quarto render --to html
 ```

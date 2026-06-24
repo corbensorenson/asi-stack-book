@@ -17,6 +17,7 @@ REQUIRED = [
     "sources/source_inventory.md",
     "scripts/sync_scaffold.py",
     "scripts/sync_proof_manifest.py",
+    "scripts/validate_publication.py",
     "scripts/build_source_matrix.py",
     "docs/book_outline.md",
     "proofs/proof_manifest.json",
@@ -204,6 +205,19 @@ def validate_proof_manifest() -> None:
         sys.exit(result.returncode)
 
 
+def validate_publication_surface() -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "validate_publication.py")],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        print(result.stdout.strip())
+        sys.exit(result.returncode)
+
+
 def main() -> None:
     validate_required_files()
     source_ids = validate_inventory()
@@ -213,6 +227,7 @@ def main() -> None:
     validate_overclaims()
     validate_claim_states()
     validate_proof_manifest()
+    validate_publication_surface()
     print("Book validation passed.")
 
 
