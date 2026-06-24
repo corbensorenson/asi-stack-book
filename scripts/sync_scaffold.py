@@ -448,23 +448,47 @@ Third-party references should be added only when bibliographic metadata is recor
 
 
 def write_claim_matrix(structure: dict) -> None:
+    source_note_ids = {
+        path.stem
+        for path in SOURCE_NOTES.glob("*.md")
+        if path.name not in {"README.md", "_template.md"}
+    }
     rows = []
     for chapter in flatten_chapters(structure):
-        source_label = ", ".join(f"`{source_id}`" for source_id in source_ids_for(chapter)) or "TBD"
+        chapter_source_ids = source_ids_for(chapter)
+        source_label = ", ".join(f"`{source_id}`" for source_id in chapter_source_ids) or "TBD"
+        noted_sources = [source_id for source_id in chapter_source_ids if source_id in source_note_ids]
+        missing_notes = [source_id for source_id in chapter_source_ids if source_id not in source_note_ids]
+        if not chapter_source_ids:
+            current_evidence = "No assigned source records yet."
+            open_gap = "Assign source records, create source notes, then map exact claim support before raising support state."
+        elif missing_notes:
+            current_evidence = (
+                "Partial source-note coverage: "
+                f"{len(noted_sources)} of {len(chapter_source_ids)} assigned sources have notes; "
+                f"missing notes for {', '.join(f'`{source_id}`' for source_id in missing_notes)}."
+            )
+            open_gap = "Create missing source notes, then map exact claim support and tests before raising support state."
+        else:
+            current_evidence = (
+                f"Source notes available for all {len(chapter_source_ids)} assigned sources; "
+                "support remains `argument` until exact claim-to-source mapping or tests justify promotion."
+            )
+            open_gap = "Map the claim to specific source-note mechanisms/evidence and define or run tests before raising support state."
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'TBD'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | Outline-level architecture claim only. | Ingest sources; define and run tests before raising support state. |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'TBD'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(open_gap)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
     text = f"""# Claim/Evidence Matrix
 
-This initial matrix contains one core placeholder claim per dynamic chapter.
+This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript.
 
 Each claim has two separate classifications: a claim label that describes what kind of statement it is, and a support state that describes what currently supports it.
 
-No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. Those support states require source ingestion, prototype inspection, or actual test execution.
+No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Open gap |
 |---|---|---|---|---|---|---|---|
