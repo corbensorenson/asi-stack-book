@@ -20,7 +20,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - All 50 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
-- Per-chapter DoD, source-note, and proof-readiness validators are wired into `scripts/validate_book.py`.
+- Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
 - Generated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, and bibliography/source corpus.
 - JSON schemas, protocol example fixtures, and the Lean workspace have local validation commands.
