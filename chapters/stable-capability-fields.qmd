@@ -39,7 +39,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter treats Stable Capability Fields as a governed substitution boundary. It does not claim that SCF safety properties are implemented here beyond the schema fixture and any explicitly built proofs.
 
 ## Problem
 
@@ -61,7 +61,7 @@ SCF makes the upgrade question testable: does this candidate satisfy the same fi
 
 [stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Stable Capability Fields, Verified Intent-to-Execution Architecture, Talos Protocol, Ladon & The Manhattan Protocol, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. The SCF source supplies the field/implementation/evaluator vocabulary; VIEA and Talos supply artifact and execution context; Ladon/Manhattan supplies authority-handle pressure. The chapter does not treat the source's reported executable fragments as locally verified.
 
 ## Mechanism
 
@@ -120,8 +120,6 @@ Planning requests a field by semantic boundary and capability profile. Execution
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Replacement cannot expand authority by default.
 - Evaluator integrity is protected.
 - Qualification context is explicit and time-bound.
@@ -131,8 +129,6 @@ The strongest invariant is identity binding: replacing an implementation must no
 
 ## Failure modes
 
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
-
 - Field identity drift.
 - Evaluator capture.
 - Authority expansion during replacement.
@@ -141,22 +137,17 @@ Field identity drift happens when the name stays stable while the behavior chang
 
 ## Minimal implementation
 
-An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.
-
 The smallest useful implementation is the existing `stable_capability_field` schema expanded with lifecycle, qualification context, evaluator policy, route validity, evidence references, state migration, and rollback metadata. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Stable capability field fixture validation | Check that the SCF fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Qualification predicate test | Check that a candidate cannot enter `qualified` without satisfying the field's declared predicates in context. | planned; not run |
 | Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | planned; not run |
 | Authority non-escalation test | Check that candidate power does not expand the field authority ceiling by default. | planned; not run |
 | Rollback readiness test | Check that recovery and state-migration paths exist before default promotion. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -165,7 +156,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | planned |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The existing schema is the executable boundary today; promotion and authority properties still need tests or Lean predicates.
 
 ## Source crosswalk
 
@@ -177,7 +168,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk identifies the sources for field identity and lifecycle vocabulary. It does not promote SCF safety claims without local artifacts or exact source-to-claim mapping.
 
 ## Summary
 

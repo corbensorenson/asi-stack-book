@@ -39,7 +39,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter narrows security claims to handle-mediated authority and compartment discipline. It does not claim kernel-level security, side-channel safety, or leak prevention without a local fixture or threat-model-specific test.
 
 ## Problem
 
@@ -61,7 +61,7 @@ Neither pattern is a complete security proof. Software compartments can leak thr
 
 [security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Ladon & The Manhattan Protocol, Context Engineer / Manhattan Protocol, Talos Protocol, Field of God / Alignment Field family, and The Coherence Exchange - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Ladon/Manhattan supplies the blind-handle pattern, Context Engineer supplies Digital SCIF and context-supply-chain vocabulary, and Talos supplies execution/audit context. The source-reported security and benchmark claims remain unpromoted.
 
 ## Mechanism
 
@@ -116,8 +116,6 @@ The planner can request a capability, but the security kernel decides whether th
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Secrets are not directly model-visible.
 - SCIF context is purpose-limited.
 - Privilege substitution is auditable.
@@ -125,8 +123,6 @@ The invariants are the conditions that must remain true even when the implementa
 The strongest invariant is ignorance: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Prompt injection extracting secrets.
 - Privilege leakage through summaries.
@@ -136,21 +132,16 @@ The common trap is treating handles as safe while granting them unbounded use. A
 
 ## Minimal implementation
 
-A secure-handle workflow and SCIF lifecycle diagram.
-
 The smallest useful implementation is a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Secret-handle substitution test | Probe whether the chapter claim holds under the relevant Security Kernel and Digital SCIFs boundary. | planned; not run |
-| SCIF least-privilege test | Probe whether the chapter claim holds under the relevant Security Kernel and Digital SCIFs boundary. | planned; not run |
-| Prompt-injection containment scenario | Probe whether the chapter claim holds under the relevant Security Kernel and Digital SCIFs boundary. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+| Authority use receipt fixture validation | Check that the authority-use receipt fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Secret-handle substitution test | Check that model-visible logs contain only a handle while substitution happens outside the transcript. | planned; not run |
+| SCIF least-privilege test | Check that a SCIF receives only purpose-limited context, tools, and authority. | planned; not run |
+| Prompt-injection containment scenario | Check that injected instructions cannot disclose a secret value absent an authorized boundary. | planned; not run |
 
 ### Formalization hooks
 
@@ -159,7 +150,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | planned |
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The current executable support is the authority-use receipt fixture; real security claims require a toy handle-substitution test and an explicit threat model.
 
 ## Source crosswalk
 
@@ -171,10 +162,8 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk names the security/context sources. It does not claim that Ladon, Digital SCIFs, or side-channel defenses have been implemented or audited here.
 
 ## Summary
 
-Security Kernel and Digital SCIFs defines one boundary in the ASI Stack: Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs. Its job is to make a capability more governable, not merely more impressive.
-
-The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The next maturity step is a toy handle-substitution fixture, then a stricter threat model for logs, summaries, and side channels.
+Security Kernel and Digital SCIFs is the stack's least-exposure boundary for secrets and privileged context. The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The next maturity step is a toy handle-substitution fixture, then a stricter threat model for logs, summaries, and side channels.

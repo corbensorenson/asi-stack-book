@@ -44,7 +44,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter defines the boundary for self-improvement. It does not report autonomous improvement success, teacher independence, or current readiness unless the corresponding gate artifacts are inspected or reproduced.
 
 ## Problem
 
@@ -66,7 +66,7 @@ The boundary is therefore not "never self-improve." It is "self-improve only thr
 
 [recursive-self-improvement-boundaries.core, label: Design rationale, support: argument] Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Stable Capability Fields, Benchmaxxing: The Performance Ratchet, Ratcheting Modular Intelligence, Field of God / Alignment Field family, and Verified Intent-to-Execution Architecture - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. SCF, Benchmaxxing, and RMI provide the bounded replacement and ratchet vocabulary; the Field of God AI Constitution provides protected-invariant pressure; Theseus supplies a source-reported self-evolution lane and architecture gate that were not rerun in this repo.
 
 ## Mechanism
 
@@ -125,8 +125,6 @@ SCFs define replaceable units. Evidence ratchets and readiness gates decide whet
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Self-improvement cannot weaken protected invariants.
 - Evaluator independence is required.
 - Every accepted change remains auditable.
@@ -134,8 +132,6 @@ The invariants are the conditions that must remain true even when the implementa
 The decisive invariant is non-self-ratification: the candidate may not be the sole judge of whether it should replace the current component. If independent evaluation is unavailable, the transition can still be researched, but it cannot be promoted as governed self-improvement.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Recursive evaluator capture.
 - Constitutional weakening.
@@ -145,21 +141,16 @@ Recursive evaluator capture is the core failure: the system improves its ability
 
 ## Minimal implementation
 
-A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.
-
 The smallest useful implementation is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Self-improvement transition fixture validation | Check that the transition fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Protected-invariant preservation test | Check that proposals weakening active constitutional or authority invariants are rejected or escalated. | planned; not run |
 | Evaluator independence test | Check that a candidate cannot be promoted when it is the only evaluator of its own replacement. | planned; not run |
 | Self-improvement rollback scenario | Check that canary failure or invariant breach has a recorded rollback path. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -168,7 +159,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | planned |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The current executable support is the transition record shape; a governed self-improvement claim requires independent gate/evaluator artifacts.
 
 ## Source crosswalk
 
@@ -185,7 +176,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available |
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk distinguishes source-reported readiness and self-evolution design from local validation. Theseus reports are planning context here, not reproduced evidence.
 
 ## Summary
 
