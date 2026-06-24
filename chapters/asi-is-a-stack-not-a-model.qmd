@@ -44,19 +44,19 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 ## Problem
 
-The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
+The book needs one architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. Without that frame, every paper in the source corpus can sound like a separate invention. With it, the papers become fragments of a single machine.
 
-Within the ASI Stack, this is a constitutional and boundary layer problem. The layer receives human purposes, institutional constraints, safety requirements, and explicit authority grants and must turn them into stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
+The first boundary is conceptual. An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress. Those are components and measurements. The architecture is the set of contracts that decides how intent becomes work, how memory becomes context, how reasoning becomes claims, how claims become authority, how authority becomes execution, and how execution becomes evidence for future change.
 
-It opens this part by establishing the boundary conditions that later chapters depend on. It hands its output to The Efficient ASI Hypothesis, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter therefore opens the book by fixing the unit of analysis. The unit is not "the model." The unit is a governed stack of cooperating layers. Each layer has a responsibility, an interface, a durable artifact, an invariant, a failure mode, and a promotion rule. Later chapters can add details only because this chapter says what it means for the details to compose.
 
 ## Why existing approaches are insufficient
 
 A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
 
-The common failure is to treat fluent output as if it already contained the missing system contract. In practice, authority can leak from persuasive reasoning into action, replacement, or deployment before the stack has earned that authority. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+The missing piece is not intelligence in the narrow sense. It is system accountability. A fluent model can propose a plan without owning the authority to execute it. A retrieval system can surface a source without proving that the source is current, permitted, or sufficient for the task. A router can choose a specialist without preserving the residual burden created by that choice. A benchmark can improve while hiding new failure cases. None of these failures is fixed by adding more parameters unless the surrounding system records what changed and why it was allowed.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The ASI Stack treats those missing contracts as first-class design objects. It does not reject powerful models; it puts them in the right place. A model may be a generator, compressor, critic, planner, router, simulator, or verifier. It should not silently become the constitution, the memory authority, the deployment authority, and the evidence registry at the same time.
 
 ## Core Claim
 
@@ -64,28 +64,68 @@ This does not mean that every layer must be heavyweight. The stack is efficient 
 
 The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Verified Intent-to-Execution Architecture, BeastBrain Cognitive Architecture, Aletheia Foundry, Talos Protocol, and MoECOT-Agent Architecture Whitepaper - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
 
+The argument is that decomposition is not only a safety device. It is also an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
+
+## Stack Map
+
+```{mermaid}
+flowchart TB
+  Constitution["Alignment and constitution"]
+  Governance["Governance and authority"]
+  Intent["Intent and command contracts"]
+  Planning["Planning and semantic IR"]
+  Memory["Virtual context memory"]
+  Reasoning["Claims, belief revision, and verification"]
+  Execution["Labor OS, tools, and runtime adapters"]
+  Routing["Routing and specialist capability fields"]
+  Compression["Compression, representation, and residuals"]
+  Evidence["Evidence, tests, proofs, and benchmarks"]
+  Improvement["Governed self-improvement"]
+
+  Constitution --> Governance
+  Governance --> Intent
+  Intent --> Planning
+  Planning --> Memory
+  Memory --> Reasoning
+  Reasoning --> Execution
+  Planning --> Routing
+  Routing --> Compression
+  Execution --> Evidence
+  Compression --> Evidence
+  Evidence --> Improvement
+  Improvement --> Governance
+
+  Governance -. "authority ceilings" .-> Execution
+  Evidence -. "qualification and rollback" .-> Routing
+  Memory -. "source-bound context" .-> Reasoning
+```
+
+The diagram is intentionally circular at the end. Self-improvement is not outside the stack. It returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.
+
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, define each layer by responsibility, interface, artifact, invariant, and failure mode. Second, frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system. Third, treat the whole book as a reference architecture rather than a collection of standalone papers. Fourth, use source queues and evidence states to keep future writing runs context-loaded and honest.
+The mechanism is a layer contract. A chapter is mature only when it can answer five questions.
+
+First, what responsibility does the layer own? Second, what artifact does it emit? Third, what authority does it have and what authority does it lack? Fourth, what invariant must remain true across implementation changes? Fifth, what evidence would justify promoting the layer, replacing it, or rolling it back?
 
 - Define each layer by responsibility, interface, artifact, invariant, and failure mode.
 - Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.
 - Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Use source queues and evidence states to keep future writing runs context-loaded and honest.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The raw LLM sits inside that contract as a powerful semantic machine. It can compress, expand, draft, classify, translate, route, critique, and propose repairs. The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+The living-book workflow mirrors the architecture. Source queues prevent context drift. Claim states prevent evidence inflation. Proof targets prevent vague formalism. Render and validation gates prevent the public book from drifting away from the repository that defines it.
 
 ## Interfaces
 
-Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
+The interface for ASI Is a Stack, Not a Model is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
 
 - Alignment and governance constrain every downstream layer.
 - Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
 - Recursive improvement is a governed transition, not an ambient property of intelligence.
 
-The upstream interface accepts the part-level inputs: human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints for every downstream layer. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+The upstream interface accepts human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints. If an adjacent layer cannot identify its input artifact or authority ceiling, the right behavior is not improvisation. It is a missing-contract record.
 
 This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
 
@@ -107,13 +147,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Monolith drift.
 - Evidence inflation before source notes or tests exist.
 
-The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+For ASI Is a Stack, Not a Model, mitigation starts by turning each listed failure into a named reviewable artifact. When `Anthology drift` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
 
 ## Minimal implementation
 
 A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
 
-For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+The smallest useful implementation is deliberately narrow: A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -151,6 +191,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 ## Summary
 
-ASI Is a Stack, Not a Model defines one boundary in the ASI Stack: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model. Its job is to make a capability more governable, not merely more impressive.
+ASI Is a Stack, Not a Model defines the book's central stance. Advanced AI becomes governable when its cognition is decomposed into layers with typed artifacts, explicit authority, visible evidence, and reversible improvement paths. The goal is not to make the system bureaucratic. The goal is to make each unit of intelligence legible enough that it can be routed, tested, replaced, compressed, or stopped.
 
-The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.
+The next chapter turns this stance into the efficiency hypothesis: capability should grow not by spending maximum cognition everywhere, but by routing, reusing, compressing, and verifying cognition at the right boundary.

@@ -2,6 +2,8 @@
 
 **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** is a living technical book by Corben Sorenson.
 
+![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}
+
 ## Current status
 
 ::: {.living-dashboard}
@@ -27,22 +29,40 @@
 
 Efficient ASI should not be treated as one giant opaque model. It should be treated as a governed cognitive stack: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement cooperating through typed boundaries, verification, artifact memory, and bounded authority.
 
+The central design move is simple: never let intelligence, authority, memory, evidence, and execution collapse into one undifferentiated loop. A capable system can generate, plan, retrieve, reason, route, and act; a governed system also records which layer had permission to do each thing, which artifact carried the decision, which evidence justified it, and which rollback path remains available.
+
 ## Architecture at a glance
 
 ```{mermaid}
-flowchart TD
-  A[Human intent] --> B[Alignment and constitution]
-  B --> C[Governance and authority]
-  C --> D[Planning and control]
-  D --> E[Virtual context memory]
-  E --> F[Routing and modular intelligence]
-  F --> G[Reasoning and verification]
-  G --> H[Labor and execution OS]
-  H --> I[Artifacts and runtime outputs]
-  I --> J[Evidence and benchmark ratchets]
-  J --> K[Governed self-improvement]
-  K --> C
+flowchart LR
+  Intent["Human intent"] --> Constitution["Alignment and constitution"]
+  Constitution --> Authority["Governance and authority"]
+  Authority --> Plan["Planning and semantic IR"]
+  Plan --> Memory["Virtual context memory"]
+  Memory --> Route["Routing and specialist cores"]
+  Route --> Reason["Reasoning, claims, and verification"]
+  Reason --> Execute["Labor OS and runtime adapters"]
+  Execute --> Artifacts["Artifacts, audit logs, and replay"]
+  Artifacts --> Evidence["Evidence states and benchmark ratchets"]
+  Evidence --> Improve["Governed self-improvement"]
+  Improve --> Authority
+
+  Authority -. "permission ceilings" .-> Execute
+  Memory -. "source-bound packets" .-> Reason
+  Evidence -. "promotion or rollback" .-> Route
+  Evidence -. "qualification records" .-> Improve
 ```
+
+Every arrow is meant to become an interface, not just a metaphor. The book is organized so each chapter owns one boundary: what enters it, what artifact it emits, what invariants must hold, what can fail, and what evidence would justify stronger claims.
+
+## Reading path
+
+The shortest path through the book is:
+
+1. **Why a stack:** ASI must be decomposed into governed layers before it can be made efficient, testable, or corrigible.
+2. **How work moves:** human intent becomes command contracts, plans, context packets, claims, jobs, artifacts, and evidence records.
+3. **How capability grows:** routing, compression, procedural memory, benchmarks, and stable capability fields let the system improve without erasing its safety boundary.
+4. **How the book stays alive:** claims, proofs, schemas, tests, source notes, and public renders form the book's own evidence ratchet.
 
 ## How to read
 

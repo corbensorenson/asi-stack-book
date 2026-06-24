@@ -58,19 +58,17 @@ This chapter is a v0.2 living-book draft. It synthesizes the architecture manife
 
 ## Problem
 
-Readers need to see how the layers operate as one machine from intent to governed action and improvement.
+Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
 
-Within the ASI Stack, this is an implementation and evidence layer problem. The layer receives the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow and must turn them into executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. The hard part is not naming the capability; it is making the boundary explicit enough that a later layer can test, replay, reject, or replace it without guessing what authority was assumed.
-
-It inherits pressure from the previous chapter, Benchmark Ratchets and Anti-Goodhart Evidence, and makes that pressure operational in a narrower boundary. It hands its output to Project Theseus as Report-First Implementation Reference, where the next layer tightens or implements the same constraint. That is why the chapter is written as part of a single stack rather than as a standalone paper summary.
+This chapter is the end-to-end integration point. It receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. Its job is to show how those pieces compose without pretending that composition is already implemented or proven.
 
 ## Why existing approaches are insufficient
 
 Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 
-The common failure is to treat fluent output as if it already contained the missing system contract. In practice, the book can read as finished before the architecture has been implemented, tested, or falsified at the right boundaries. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+The failure mode is architectural fragmentation. A planner can produce tasks, a memory system can supply context, a verifier can score claims, an execution OS can run tools, and a benchmark harness can report improvement, while no one can answer whether the original authority grant still covers the final action. That is not a minor documentation gap. It is the difference between a collection of useful mechanisms and a governed system.
 
-This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
+The integrated reference architecture therefore has to be explicit about handoffs. The output of one layer is not "more context" or "a better answer." It is a typed artifact: a command contract, plan DAG, context packet, claim record, work order, route decision, proof obligation, audit log, benchmark result, or capability-field transition.
 
 ## Core Claim
 
@@ -87,19 +85,43 @@ The mechanism turns the core claim into a working contract. First, trace user in
 - Show which artifact each layer emits.
 - Identify where authority can stop or reroute the process.
 
-Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant inputs, constraints, residuals, authority grants, and failure conditions. That artifact discipline is what lets the stack improve without making the improvement path opaque.
+The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation.
 
-For implementation, the mechanism should be kept small at first: a schema, a ledger entry, a route decision, a context packet, a proof obligation, or a replayable job record. Only after that minimal form is testable should the layer absorb richer heuristics, learned routing, larger memory, or autonomous repair.
+```{mermaid}
+sequenceDiagram
+  participant H as Human
+  participant G as Governance
+  participant P as Planner
+  participant M as VCM
+  participant R as Router
+  participant V as Verifier
+  participant E as Execution OS
+  participant L as Evidence Ledger
+  participant S as SCF Gate
+
+  H->>G: intent plus authority request
+  G->>P: approved command contract
+  P->>M: context obligations and plan needs
+  M->>P: source-bound context packet
+  P->>R: typed plan DAG with capability requirements
+  R->>V: candidate route and residuals
+  V->>E: verified work order or rejection
+  E->>L: artifact, audit log, and runtime result
+  L->>S: evidence update and regression status
+  S->>G: promote, rollback, quarantine, or require review
+```
+
+The important feature is that every participant emits something durable enough for another participant to inspect. If the planner fails, the plan DAG should show where. If memory fails, the context packet should expose stale, missing, or unauthorized material. If routing fails, the residual record should survive. If execution fails, the audit log should make the failure replayable. If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.
 
 ## Interfaces
 
-Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
+The interface for Integrated Reference Architecture is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
 
 - All stack layers participate.
 - Artifacts and evidence ledgers provide continuity.
 - SCF gates control improvement.
 
-The upstream interface accepts the part-level inputs: the whole architecture, its proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits executable specifications, implementation roadmaps, run records, changelog entries, and public living-book releases. When either side is ambiguous, the layer should fail closed by producing a missing-contract, missing-evidence, or missing-authority record instead of silently continuing.
+The upstream interface accepts the whole architecture: chapter claims, proof targets, source notes, tests, prototypes, benchmarks, and publication workflow. The downstream interface emits implementation targets: schemas, traces, tests, proof modules, changelog entries, and public releases. When any handoff is ambiguous, the integrated architecture should fail closed by producing a missing-contract, missing-evidence, or missing-authority record.
 
 This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
 
@@ -121,13 +143,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Planning/execution collapse.
 - Self-improvement without evaluator integrity.
 
-The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+For Integrated Reference Architecture, mitigation starts by turning each listed failure into a named reviewable artifact. When `Untraceable handoffs` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
 
 ## Minimal implementation
 
 A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
 
-For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+The smallest useful implementation is deliberately narrow: A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -181,4 +203,6 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Integrated Reference Architecture defines one boundary in the ASI Stack: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. Its job is to make a capability more governable, not merely more impressive.
 
-The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.
+The architecture is coherent only if a reader can follow a request from human intent to evidence-backed change. This chapter gives that trace a shape: governance approves the command, planning compiles it, memory bounds the working context, routing selects capability, verification checks claims and residuals, execution produces artifacts, evidence records outcomes, and SCF gates decide whether improvement is allowed.
+
+The next chapter narrows the integration claim into an implementation reference: Project Theseus as a report-first way to build, observe, and govern pieces of this stack without claiming that the whole system already exists.

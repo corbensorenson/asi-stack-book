@@ -13,6 +13,7 @@ Current scale: 50 chapter files, 96,051 chapter words, averaging 1,921 words per
 - Every chapter lists source loading state from the source notes, local raw cache, and connector/recovery records currently visible to the repo.
 - Every chapter exposes formalization hooks from the existing proof targets.
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.
+- The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
 
 ## Still Missing for v1.0
 

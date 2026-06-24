@@ -54,7 +54,7 @@ It inherits pressure from the previous chapter, MoECOT Runtime and Multi-Core Or
 
 Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
 
-The common failure is to treat fluent output as if it already contained the missing system contract. In practice, capability growth can become a hidden monolith if routing, compression, representation, and residual accounting are not explicit. A living ASI architecture needs the opposite discipline: every layer should say what it may read, what it may decide, what it may cause, what evidence it owes, and what must happen when its conditions fail.
+In this chapter, the failure is more specific than bad prompting or weak model choice: compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work. If `compact-generative-systems-and-residual-honesty` is left implicit, downstream layers inherit a capability whose authority, evidence burden, and rollback conditions are unclear. The stack therefore treats the missing contract as the defect, not merely the local model behavior.
 
 This does not mean that every layer must be heavyweight. The stack is efficient precisely because small, typed artifacts can carry constraints forward while large models, tools, humans, or specialist modules are invoked only where the current boundary demands them.
 
@@ -80,7 +80,7 @@ For implementation, the mechanism should be kept small at first: a schema, a led
 
 ## Interfaces
 
-Interfaces are the main protection against anthology drift. They force each idea to declare what it gives to the rest of the stack and what it refuses to decide.
+The interface for Compact Generative Systems and Residual Honesty is the contract that lets adjacent layers compose without absorbing each other's authority. It should make the chapter's output legible to planning, memory, reasoning, execution, evidence, and improvement layers while preserving the boundary described by the core claim.
 
 - Compression feeds memory and routing.
 - Evidence tests downstream utility.
@@ -108,13 +108,13 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Hidden residual complexity.
 - Compactness that damages utility.
 
-The mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. The stack should prefer visible incompleteness over invisible confidence.
+For Compact Generative Systems and Residual Honesty, mitigation starts by turning each listed failure into a named reviewable artifact. When `False lossless claims` appears, the system should emit a residual, rejection, quarantine, regression, or human-review record rather than allowing the failure to disappear into later fluent output.
 
 ## Minimal implementation
 
 A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
 
-For a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. That artifact can be a JSON schema, a Lean predicate, a deterministic test fixture, a trace table, a source-note map, or a replayable command.
+The smallest useful implementation is deliberately narrow: A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields. It should be easy to validate, easy to render in the book, and easy for a later coding run to convert into a schema, Lean predicate, deterministic fixture, trace table, or replayable command.
 
 The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
@@ -155,4 +155,4 @@ The crosswalk describes why each source is assigned to the chapter and what is c
 
 Compact Generative Systems and Residual Honesty defines one boundary in the ASI Stack: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit. Its job is to make a capability more governable, not merely more impressive.
 
-The chapter's v0.2 contribution is a complete architectural pass: it names the problem, states the mechanism, exposes interfaces and invariants, records failure modes, identifies minimal implementation work, and keeps source and proof obligations visible. The v1.0 work is to mine the remaining sources, promote only the claims that earn promotion, and replace planned tests with executed artifacts.
+In v0.2, this chapter gives Compact Generative Systems and Residual Honesty a complete architectural boundary: the architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity. Its next maturity step is to substantiate the boundary through `Compression feeds memory and routing`, preserve `Lossy claims are labeled`, and replace planned proof/test hooks with validated artifacts. Claims should move only when source notes, code, proofs, or run records justify the movement.

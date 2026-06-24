@@ -12,6 +12,7 @@ $toc-color: #4a5563;
   --asi-ink: #18202a;
   --asi-muted: #5a6675;
   --asi-accent: #245f73;
+  --asi-copper: #a86f45;
   --asi-soft: #f2f6f8;
 }
 
@@ -20,7 +21,7 @@ body {
 }
 
 .quarto-title-banner {
-  background: #f2f6f8;
+  background: linear-gradient(180deg, #f4f8fa 0%, #ffffff 100%);
   border-bottom: 1px solid var(--asi-border);
 }
 
@@ -43,7 +44,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 0.75rem;
-  margin: 1rem 0 1.25rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .living-dashboard div {
@@ -58,6 +59,26 @@ h3 {
 
 .living-dashboard span {
   color: var(--asi-muted);
+}
+
+#fig-asi-stack-hero {
+  margin: 1rem 0 1.5rem;
+}
+
+#fig-asi-stack-hero img {
+  width: 100%;
+  border: 1px solid var(--asi-border);
+  border-radius: 8px;
+  background: #f8fafb;
+}
+
+.cell-output-display .mermaid {
+  margin: 1rem 0 1.5rem;
+}
+
+blockquote {
+  border-left: 3px solid var(--asi-copper);
+  color: #344150;
 }
 
 table {
