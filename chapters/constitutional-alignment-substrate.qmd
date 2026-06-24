@@ -41,7 +41,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter translates normative lineage into operational predicates. It does not treat metaphysical, moral, or constitutional language as empirical proof, deployed policy, or validated alignment.
 
 ## Problem
 
@@ -63,7 +63,7 @@ The constitution must therefore be represented in a form other layers can consum
 
 [constitutional-alignment-substrate.core, label: Design rationale, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Field of God / Alignment Field family, The Field of God, Ethica Mechanica, The Eternal Code / unified God, reality, conscious, alignment, and The Coherence Exchange - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Alignment Field and Ethica Mechanica provide authorial and philosophical lineage; the Field of God AI Constitution provides an operational constitutional vocabulary. The chapter uses those sources to define predicates and uncertainty labels, not to claim that a deployed system is aligned.
 
 ## Mechanism
 
@@ -116,8 +116,6 @@ Planning receives active predicates as constraints. Governance receives protecte
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Dignity and agency constraints remain visible.
 - Corrigibility cannot be optimized away.
 - Speculative metaphysics stays labeled.
@@ -125,8 +123,6 @@ The invariants are the conditions that must remain true even when the implementa
 The invariant is not that the constitution is complete. It is that protected commitments cannot vanish silently. If a predicate is weak, speculative, or only partly operational, that weakness must remain visible instead of being hidden behind policy language.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Mystical framing replacing technical constraints.
 - Power without care.
@@ -136,21 +132,16 @@ The main failure is laundering: metaphysical coherence becomes technical proof, 
 
 ## Minimal implementation
 
-A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
-
 The smallest useful implementation is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures do not prove alignment; they make the constitutional layer inspectable.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Constitutional predicate fixture validation | Check that the predicate fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Constitutional consistency test | Check that active predicates do not authorize mutually incompatible actions without a conflict record. | planned; not run |
 | Self-modification ethics scenario | Check that a change weakening a protected predicate is rejected or escalated. | planned; not run |
 | Power-without-care scenario | Check that higher-power means are blocked when a lower-power adequate route exists. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -159,7 +150,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | planned |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The near-term executable work is predicate fixtures and scenario tests; Lean should wait until predicate semantics are precise.
 
 ## Source crosswalk
 
@@ -173,7 +164,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
 | `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk separates lineage and source-derived vocabulary from evidence. Constitutional text becomes load-bearing only when translated into explicit predicates, tests, or review gates.
 
 ## Summary
 

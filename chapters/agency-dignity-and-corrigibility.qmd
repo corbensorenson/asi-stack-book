@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a v0.2 living-book draft. It synthesizes the architecture manifest, the current outline, the source inventory, available source notes, and local raw-source readiness. It does not by itself promote any claim beyond the support state shown in the chapter metadata and Appendix C. Where the chapter uses design reasoning, it is written as architecture argument rather than as reported empirical fact.
+This chapter converts agency, dignity, and corrigibility into runtime rights and checks. It does not claim that those social rights are solved by a schema or that any deployed system already preserves them.
 
 ## Problem
 
@@ -62,7 +62,7 @@ The missing object is an agency-rights check attached to high-impact plans. It a
 
 [agency-dignity-and-corrigibility.core, label: Design rationale, support: argument] A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - Field of God / Alignment Field family, Ethica Mechanica, The Field of God, The Eternal Code / unified God, reality, conscious, alignment, and The Coherence Exchange - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim remains at `argument` support. Alignment Field, Ethica Mechanica, and the Field of God AI Constitution supply the rights language; the book's contribution is to route that language into review, appeal, rollback, refusal, and accountability artifacts.
 
 ## Mechanism
 
@@ -102,8 +102,6 @@ Alignment defines the predicates. Governance enforces rights. Execution checks a
 
 ## Invariants
 
-The invariants are the conditions that must remain true even when the implementation changes, the source set grows, or later chapters introduce stronger mechanisms.
-
 - Users retain meaningful refusal and review channels.
 - Delegation does not erase accountability.
 - Irreversible actions require stronger authorization.
@@ -111,8 +109,6 @@ The invariants are the conditions that must remain true even when the implementa
 The invariant is availability under pressure. Review and correction channels matter most when the system is confident, useful, and costly to interrupt. If a channel exists only in documentation but not in the runtime path, it should not count.
 
 ## Failure modes
-
-The failure model is part of the design, not an afterthought. This layer is expected to fail in ways that can be detected, quarantined, and used to improve the architecture.
 
 - Dependency lock-in.
 - Covert manipulation.
@@ -122,21 +118,16 @@ Dependency lock-in is a governance failure, not merely a product risk. Covert ma
 
 ## Minimal implementation
 
-A rights-and-corrigibility checklist attached to high-impact plans.
-
 The smallest useful implementation is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
-
-The implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
+| Agency rights checklist validation | Check that the rights fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Agency-preservation scenario | Check that affected users retain refusal, review, appeal, or exit channels after the transition. | planned; not run |
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available. | planned; not run |
 | High-impact approval test | Check that irreversible or high-impact effects require stronger approval before execution. | planned; not run |
-
-These tests are acceptance targets for later implementation work. They are not reported results. When a test is implemented, the chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -145,7 +136,7 @@ These tests are acceptance targets for later implementation work. They are not r
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | planned |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | planned |
 
-The table records proof and contract hooks for future work. Planned hooks should become Lean proofs only when the predicate is precise enough to mechanize; otherwise they should become schemas, process contracts, or research-agenda items.
+These proof targets remain planned. The current executable support is the checklist record; proving corrigibility requires a defined transition model and runtime pathway.
 
 ## Source crosswalk
 
@@ -158,7 +149,7 @@ The table records proof and contract hooks for future work. Planned hooks should
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
 | `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 
-The crosswalk describes why each source is assigned to the chapter and what is currently available in the repo. A local raw cache or source note makes future mining easier, but this draft still keeps the support state conservative until the specific claim-to-source mapping is recorded.
+The crosswalk names the normative sources for rights language. It does not make social or moral preservation claims without scenario tests and runtime evidence.
 
 ## Summary
 

@@ -4,7 +4,7 @@ Last updated: 2026-06-24
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 50 chapter files, 82,015 chapter words, averaging 1,640 words per chapter.
+Current scale: 50 chapter files, 80,839 chapter words, averaging 1,617 words per chapter.
 
 ## Completed in v0.2
 
