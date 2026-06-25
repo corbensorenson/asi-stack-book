@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter treats VCM as a control-plane interface, not as a completed memory product. The repo validates a context ABI record shape and implements narrow finite-record Lean predicates for snapshot-bound reference resolution and mandatory-miss fault behavior. It does not yet contain a resolver, planner-guided context compiler, snapshot service, adequacy classifier, or conformance run.
 
+It follows cognitive compilation because semantic atoms need source context, but they should receive a governed materialization rather than an accidental slice of transcript or retrieval output.
+
 ## Problem
 
 Long-horizon agents need a stable interface between durable memory and model-visible working context.
@@ -99,10 +101,7 @@ flowchart LR
   H --> J
 ```
 
-- Separate durable memory from active context.
-- Compile task-relative context packets through an ABI.
-- Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
-- Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
+The ABI separates durable memory from active context and compiles task-relative packets through stable addresses, versions, mounts, snapshots, representation contracts, authority labels, admission states, adequacy states, and typed faults. Adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, and unsatisfiable are first-class outputs, not comments appended after a best-effort retrieval.
 
 Admission and adequacy are separate. A packet can be admitted for drafting but inadequate for verification. A source can be known but not authorized. A representation can be useful for planning but too lossy for citation or proof. These distinctions need states, not vibes.
 

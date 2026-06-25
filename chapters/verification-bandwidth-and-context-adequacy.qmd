@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats verification bandwidth as a claim-control boundary, not as a measured model law. The repo validates a context adequacy record, but it has not run the proposed contradiction-rate experiment, measured attention interference, or formalized the two-body verification limit.
 
+It follows transactions because a coherent, authorized context view can still be inadequate for the claim at hand. Memory correctness and verification adequacy are different gates.
+
 ## Problem
 
 Long context does not automatically provide long-range reasoning or enough verification capacity.
@@ -91,9 +93,7 @@ flowchart LR
   G --> H
 ```
 
-- Model verification as bounded by mutual information, representation quality, and attention budget.
-- Require adequacy labels for context packets.
-- Route high-risk claims to stronger verification instead of more context alone.
+The adequacy record models verification as constrained by semantic-unit coverage, representation quality, compression path, attention budget, and the actual comparison mode applied. Every context packet should carry an adequacy label for the target claim or task. High-risk claims route to stronger verification, split context, retrieval, tribunal review, proof work, or human review instead of receiving more context and a stronger-sounding answer.
 
 The practical rule is simple: if the system cannot name the semantic units that must be jointly checked, it cannot claim verification. If the units are too large for joint checking, the system may still draft, summarize, or propose a claim, but the claim ledger must mark the verification state as inadequate, summary-derived, or escalated.
 
