@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 31 |
+| Passage-reviewed mappings recorded | 36 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -38,7 +38,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 7 | argument | passage review required before source-derived promotion |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
@@ -237,11 +237,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
-| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | not passage-reviewed |
-| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
-| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
+| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
+| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god` | mapped | note present | chapter listed | not passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ethica_mechanica` | mapped | note present | chapter listed | not passage-reviewed |

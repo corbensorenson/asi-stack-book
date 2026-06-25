@@ -412,7 +412,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An intent-contract schema and example transformations from request to governed task.
-- Exact Appendix C claim-source mappings for the core claim across `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, and `talos`; support remains `argument` pending parser, authority-extraction, stop-condition, or lowering tests.
+- Exact Appendix C claim-source mappings for the core claim across `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, and `talos`; all five local mappings now have reviewed raw-cache passage references. Support remains `argument` pending parser, authority-extraction, stop-condition, or lowering tests.
 - Planned Codex test: Intent parsing ambiguity test.
 - Planned Codex test: Authority extraction test.
 - Planned Codex test: Stop-condition preservation test.

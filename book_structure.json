@@ -964,27 +964,79 @@
             {
               "source_id": "viea",
               "mapped_support": "Supports converting human intent into structured command contracts with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, routing, runtime execution, feedback, residuals, and regressions.",
-              "limits": "Does not prove automated intent parsing, hidden-authority inference, or deployed intent-to-execution behavior."
+              "limits": "Does not prove automated intent parsing, hidden-authority inference, or deployed intent-to-execution behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:13-17",
+                "sources/raw/google_docs/viea.txt:40-45",
+                "sources/raw/google_docs/viea.txt:117-124",
+                "sources/raw/google_docs/viea.txt:181-190",
+                "sources/raw/google_docs/viea.txt:356-397",
+                "sources/raw/google_docs/viea.txt:401-416",
+                "sources/raw/google_docs/viea.txt:1042-1050",
+                "sources/raw/google_docs/viea.txt:1316-1365"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution framing, structured command contracts, command levels by risk, parser/MVP components, and non-claims around automatic execution and ambiguity; no parser, hidden-authority inference, or deployed behavior claim promoted."
             },
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports treating instructions as bounded operational language with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
-              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result or local test is present."
+              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result or local test is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:29-38",
+                "sources/raw/google_docs/software_magic_grimoire.txt:68-82",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-138",
+                "sources/raw/google_docs/software_magic_grimoire.txt:161-172",
+                "sources/raw/google_docs/software_magic_grimoire.txt:233-240"
+              ],
+              "passage_review_note": "Reviewed local raw cache for operative engineering language, bounded instruction artifacts, eight-limb spell fields, ambiguity reduction, output/verification/failure behavior, and canonicalization limits; no prompt-performance result or local behavioral test promoted."
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports compiling natural-language goals into decomposed, dependency-aware, tier-annotated plans with primitive schemas, scheduling, fallback requirements, and failure-driven replanning.",
-              "limits": "Conceptual design only here; no verified implementation, scheduler run, or benchmark result is present in this project."
+              "limits": "Conceptual design only here; no verified implementation, scheduler run, or benchmark result is present in this project.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-33",
+                "sources/raw/google_docs/planforge.txt:52-76",
+                "sources/raw/google_docs/planforge.txt:85-130",
+                "sources/raw/google_docs/planforge.txt:160-163",
+                "sources/raw/google_docs/planforge.txt:188-194",
+                "sources/raw/google_docs/planforge.txt:240-243",
+                "sources/raw/google_docs/planforge.txt:353-361",
+                "sources/raw/google_docs/planforge.txt:376-376"
+              ],
+              "passage_review_note": "Reviewed local raw cache for natural-language goal decomposition, primitive schemas, optimization/verification, dependency scheduling, fallback escalation, safety gates, and explicit limitations around decomposer hallucination and tier calibration; no scheduler run or benchmark result promoted."
             },
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports lowering goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, target instructions, validators, DAGs, and repairable artifacts.",
-              "limits": "Architecture and evaluation-plan source only; no local compiler, task trace suite, or empirical ablation validates the pipeline."
+              "limits": "Architecture and evaluation-plan source only; no local compiler, task trace suite, or empirical ablation validates the pipeline.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:1-4",
+                "sources/raw/google_docs/cognitive_compilation.txt:32-38",
+                "sources/raw/google_docs/cognitive_compilation.txt:65-74",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-188",
+                "sources/raw/google_docs/cognitive_compilation.txt:289-309",
+                "sources/raw/google_docs/cognitive_compilation.txt:417-429"
+              ],
+              "passage_review_note": "Reviewed local raw cache for source-plan fields, semantic IR/atom structure, constraint and ambiguity linting, verification/trace/repair loops, and uncertainty limits; no local compiler, trace suite, or empirical ablation promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports the execution boundary by lowering only authorized work into typed jobs with contract locks, adjudication, delivery, feedback, audit, replay, residuals, approval gates, and controlled runtime adapters.",
-              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, or benchmark/security claims."
+              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, or benchmark/security claims.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:30-65",
+                "sources/raw/google_docs/talos.txt:192-220",
+                "sources/raw/google_docs/talos.txt:241-246",
+                "sources/raw/google_docs/talos.txt:444-444",
+                "sources/raw/google_docs/talos.txt:1931-1959"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-not-executed-immediately framing, contract locks, ambiguity/risk gating, execution graph compilation, adjudication against the contract, human promotion gates, clearance definition, context slicing, and permission-checked secret mediation; no tool-effect enforcement, approval behavior, benchmark, or security claim promoted."
             }
           ],
           "mechanism": [
