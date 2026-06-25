@@ -58,6 +58,10 @@ Single-objective optimization is attractive because it gives the planner a total
 
 The failure is false consensus: the system acts as if a contested value question has been settled because the plan needs a next step. The stack should instead produce a conflict record with stakeholders, value axes, reversibility, review requirement, decision, and residual uncertainty.
 
+Moral residuals are not embarrassing leftovers. They are part of the safety interface. If a plan helps one stakeholder while burdening another, trades truthfulness against privacy, or reduces short-term harm while creating dependency, the unresolved part belongs in the artifact trail. A system that can keep residuals visible can choose smaller actions, preserve appeal paths, or revisit the decision when new evidence arrives. A system that hides them turns uncertainty into invisible optimization pressure.
+
+The chapter therefore treats moral disagreement as an input to control, not as a rhetorical defect. A conflict record can narrow authority, require a reversible action, set an expiry, request tribunal review, or prevent self-modification from weakening a protected commitment. The point is not to paralyze the stack. It is to let the stack act only at the level of authority the conflict record can justify.
+
 ## Core Claim
 
 [moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
@@ -84,6 +88,8 @@ The value-conflict layer prevents the constitution from pretending that every pr
 The conflict record classifies the conflict by value type, stakeholder, reversibility, stakes, authority or consent boundary, evidence requirement, review route, decision, and residual uncertainty. Low-stakes or reversible conflicts may produce bounded decisions. High-stakes or unresolved conflicts route to tribunal or human review. Either way, the residual remains visible to evidence, governance, and future review instead of being flattened into a reward value.
 
 The tribunal path is not automatic consensus. It is a way to preserve disagreement, expose unsupported premises, and decide whether the system has enough authority to act.
+
+Bounded decisions are the practical middle state. They say: the system may do this much, under these constraints, for this duration, with these parties notified, while preserving these dissenting premises and revisit conditions. That is different from declaring the values reconciled. It is also different from refusing all action. The record lets the system make a limited move while preserving the unresolved obligation that caused the conflict.
 
 ```{mermaid}
 flowchart LR
@@ -126,6 +132,8 @@ Minimum fields:
 - `expiry_or_revisit_condition`
 
 Alignment emits conflict records. Planning uses them as constraints. Evidence records review outcomes, unsupported premises, and residual uncertainty.
+
+Those interfaces matter downstream. Governance rights need the conflict record so affected parties can audit or contest the decision. Replacement and self-improvement need it so a future version cannot quietly delete the unresolved obligation. Benchmark and policy-learning chapters need it so reward pressure does not convert a temporary bounded choice into a permanent value claim.
 
 ## Invariants
 

@@ -60,6 +60,10 @@ A tool call is not just cognition. It can delete a file, spend money, send a mes
 
 The right boundary is not "never call tools." It is "call tools through adapters whose capabilities, approval requirements, authority handles, result evidence, and rollback options are explicit."
 
+This chapter is where intention stops being enough. A typed job can describe what should happen, and a plan can explain why it should happen, but neither one should receive ambient authority. The adapter grants a narrow effect lease: this capability, for this target, under this sandbox, with this approval state, producing this evidence and these residuals. Anything outside that lease is a denial, escalation, or new request.
+
+Human approval should also be treated as a structured artifact, not a vague blessing. The record should say what was approved, by whom or by which role, under what scope, for which risk tier, and with what expiration or revocation path. Otherwise approval becomes a ritual that hides responsibility instead of a control surface that can be audited.
+
 ## Core Claim
 
 [runtime-adapters-tool-permissions-and-human-approval.core, label: Design rationale, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
@@ -107,6 +111,8 @@ Adapters should declare target type, capability, permission required, sandbox mo
 
 High-impact actions include irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional actions. These should fail closed without approval.
 
+The adapter's evidence is as important as the effect. A successful call should leave enough receipt material for replay, review, or incident response. A failed call should leave the denied capability, policy reason, residual, and recovery path. A partially reversible call should say which part can be rolled back and which part becomes an external residual. That discipline lets procedural-memory chapters later learn from tool use without turning every successful-looking action into a reusable procedure.
+
 ## Interfaces
 
 The interface is the Runtime Adapter Invocation.
@@ -133,6 +139,8 @@ Minimum fields:
 - `residuals`
 
 Execution owns adapters. Security mediates secrets and authority handles. Evidence records effect receipts, rollback handles, residuals, and deployment outcomes.
+
+The adapter interface is also the point where human control stays attached to automation. A planner may request a high-impact action, but the adapter must know whether approval is missing, stale, insufficiently scoped, or contradicted by a newer policy. A security kernel may provide an opaque handle, but the adapter must not expose the secret bytes back into model context. The artifact graph may store the result, but it should store the permission and approval boundary with it.
 
 ## Invariants
 

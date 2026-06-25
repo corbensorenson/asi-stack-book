@@ -556,6 +556,7 @@ Draft arc:
 - Mechanism: Classify conflicts by value type, stakeholder, reversibility, authority/consent boundary, stakes, and evidence requirement.
 - Mechanism: Escalate high-stakes or unresolved conflicts to tribunal or human review while preserving dissent and unsupported premises.
 - Mechanism: Record bounded decisions, revisit conditions, and residual moral uncertainty.
+- Mechanism: Treat moral residuals as control inputs that can narrow authority, require reversible action, set expiry, preserve dissent, or trigger review instead of being optimized away.
 - Interface: Alignment produces conflict records.
 - Interface: Planning carries conflict constraints with the plan.
 - Interface: Governance decides review routes and authority boundaries.
@@ -724,6 +725,7 @@ Draft arc:
 - Mechanism: Turn each proposed improvement into a replacement transaction with wall diagnosis, evidence packet, prechecks, gates, canary, residual escrow, monitor window, and rollback obligation.
 - Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
 - Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
+- Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence, and rollback obligation as separate transaction states.
 - Interface: SCF ledger defines the field identity to preserve.
 - Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
 - Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
@@ -1675,6 +1677,7 @@ Draft arc:
 - Insufficiency: Tool calling without a permission and approval model turns reasoning errors into side effects.
 - Mechanism: Map typed jobs to runtime adapters with declared target type, capability, permission requirement, sandbox mode, authority handle, approval state, input/output contract, and effect receipt.
 - Mechanism: Fail closed for high-impact actions without approval and return rollback handles or residuals for the artifact graph.
+- Mechanism: Treat approval as a scoped, expiring, reviewable artifact and adapter execution as a narrow effect lease rather than ambient tool authority.
 - Handoff: Repeated adapter traces and repair patterns become candidates for procedural memory only after evidence and regression checks exist.
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.

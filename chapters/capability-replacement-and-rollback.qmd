@@ -60,6 +60,10 @@ An ad hoc upgrade can pass a visible benchmark and still delete a regression, ch
 
 Replacement needs transaction semantics because partial success can be worse than failure. The system should know whether it is in precheck, gate, canary, commit, monitor, rollback, quarantine, or retirement.
 
+The key reader-facing distinction is candidate improvement versus accepted replacement. A candidate can be promising, cheaper, faster, or cleaner without becoming the default. Accepted replacement means the stack has preserved field identity, checked authority boundaries, retained regression floors, recorded residuals, and kept a recovery path. Until that happens, the candidate belongs in shadow, canary, or quarantine state, not in the ordinary route.
+
+Rollback also has to be more specific than nostalgia for the prior version. The prior artifact must still exist, the old state must be readable or compensated, external effects must be accounted for, and the monitor window must say when rollback is triggered. If any of those pieces is missing, the transaction can still record a partial recovery plan, but it should not claim reversible improvement.
+
 ## Core Claim
 
 [capability-replacement-and-rollback.core, label: Design rationale, support: argument] Capability replacement should be an evidence-gated transaction with preconditions, regression checks, residual records, and rollback.
@@ -107,6 +111,8 @@ The replacement proposal is itself an artifact. It cannot become a commit merely
 
 The transaction names the field, prior implementation, candidate, gates, evidence refs, regression suite, residual escrow, rollback command or plan, approval record, monitor window, and final decision. Failed gates become residuals rather than disappearing.
 
+A good transaction preserves both sides of the change. It records why the candidate exists and why the prior implementation mattered. It keeps the regression suite attached so a future reviewer can see whether the floor was preserved. It keeps canary and monitor evidence separate from default promotion. It keeps rollback as an obligation, not a vague assurance. That is what turns recursive improvement from a mutation story into a governed state transition.
+
 The passage review sharpens one boundary: rollback is not just "run the old version." A state migration can be replayable, loss-bounded, dual-read, or non-solvent. If the old state cannot be interpreted, or if external effects remain unresolved, the transaction should record a fork, compensation obligation, or residual effect rather than claiming full recovery.
 
 Benchmarks are used as evidence surfaces, not permission slips. If a benchmark saturates, becomes gamed, or fails to transfer, that diagnosis belongs in the transaction.
@@ -136,6 +142,8 @@ Minimum fields:
 - `decision`
 
 SCF defines the field. Benchmark ratchets and regression suites test behavior. Evidence and changelog records preserve the transition. Governance approves authority changes and high-impact commits.
+
+The interface also protects later chapters. Security checks whether the replacement crosses a secret or permission boundary. Runtime adapters check whether the replacement changes effect authority. Policy optimization checks whether learning pressure is trying to ratify its own evaluator. The transaction gives each layer a concrete artifact to inspect rather than asking them to trust the word "upgrade."
 
 ## Invariants
 
