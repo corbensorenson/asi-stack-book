@@ -138,7 +138,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for a compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, and handoff.",
-              "limits": "Connector-readable source reports architecture state and artifacts, but this repository has not ingested or reproduced MoECOT code, logs, benchmark artifacts, or runtime claims."
+              "limits": "Connector-readable source reports architecture state and artifacts, but this repository has not ingested or reproduced MoECOT code, logs, benchmark artifacts, or runtime claims.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "scf",
@@ -375,7 +382,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports compact orchestration, specialist lanes, readiness gates, promotion blockers, residual tracking, ledgers, replay, and handoff as implementation-reference context for efficient routing.",
-              "limits": "Source-reported runtime and benchmark artifacts have not been ingested or reproduced here."
+              "limits": "Source-reported runtime and benchmark artifacts have not been ingested or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -541,7 +555,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports fail-closed runtime authority through compact orchestration, specialist lanes, control-plane ledgers, readiness gates, promotion blockers, replay, and handoff.",
-              "limits": "Runtime and benchmark claims remain implementation-reference context until artifacts are imported, inspected, or reproduced."
+              "limits": "Runtime and benchmark claims remain implementation-reference context until artifacts are imported, inspected, or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -732,12 +753,27 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Supports long-horizon context-compiler failures where planner hints become access authority, compiled context hides missing evidence or revocation, and source-derived references drift into unsourced third-party citations.",
-              "limits": "Connector-readable variant; no VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here."
+              "limits": "Connector-readable variant; no VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime failure modes where source-reported benchmark claims are treated as book-verified, unavailable runtime claims are overpromoted, or specialist lanes mutate/escalate authority without control-plane approval and evidence.",
-              "limits": "Implementation-reference context only until code, logs, release artifacts, or benchmark records are inspected or reproduced."
+              "limits": "Implementation-reference context only until code, logs, release artifacts, or benchmark records are inspected or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -870,7 +906,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Verified Epistemic Units, verification supply chains, contestability, fork, exit, and audit language support structured claim/evidence objects and governance-visible review paths.",
-              "limits": "Speculative economic or epistemic-liquidity framing is not treated as implemented economics or external corroboration."
+              "limits": "Speculative economic or epistemic-liquidity framing is not treated as implemented economics or external corroboration.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "verification_bandwidth",
@@ -1217,7 +1260,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Adds coherence, contestability, verification supply-chain, and governance-interface framing for translating commitments into reviewable units.",
-              "limits": "Speculative synthesis; not an implemented economic, governance, or security mechanism."
+              "limits": "Speculative synthesis; not an implemented economic, governance, or security mechanism.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "spinoza",
@@ -1396,7 +1446,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports fork, exit, audit, contestability, value/accounting, and review-market framing relevant to corrigibility and user contestation.",
-              "limits": "Does not show the epistemic-liquidity or governance mechanism has been implemented or validated."
+              "limits": "Does not show the epistemic-liquidity or governance mechanism has been implemented or validated.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "field_of_god_ai_constitution",
@@ -1529,7 +1586,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Adds contestable claim/evidence units, verification supply-chain framing, fork/exit/audit concepts, and coherence/liquidity language for reviewable disagreement.",
-              "limits": "Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence."
+              "limits": "Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "uat",
@@ -1680,7 +1744,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Provides fork, exit, audit, contestability, verification supply-chain, value/accounting, and governance-interface framing.",
-              "limits": "Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed."
+              "limits": "Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "alignment_field",
@@ -1887,7 +1958,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Provides implementation-reference context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, and promotion blockers around routed capabilities.",
-              "limits": "Connector-readable implementation-reference context only; source-reported runtime and benchmark claims are not reproduced or inspected here."
+              "limits": "Connector-readable implementation-reference context only; source-reported runtime and benchmark claims are not reproduced or inspected here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -2043,7 +2121,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports readiness gates, control-plane ledgers, replay, promotion blockers, and residual tracking as runtime-reference context for replacement decisions.",
-              "limits": "Source-reported runtime context only until code, logs, release artifacts, or benchmark records are inspected or reproduced."
+              "limits": "Source-reported runtime context only until code, logs, release artifacts, or benchmark records are inspected or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -2176,7 +2261,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports verification supply-chain, audit, contestability, and governance-interface framing for sensitive claims and authority use.",
-              "limits": "Speculative synthesis; not an implemented security, economics, or institutional-governance mechanism."
+              "limits": "Speculative synthesis; not an implemented security, economics, or institutional-governance mechanism.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -2358,22 +2450,56 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports compact orchestration, specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, residual tracking, and promotion blockers as runtime-reference context.",
-              "limits": "Source-reported runtime and benchmark claims remain unverified until artifacts are inspected or reproduced."
+              "limits": "Source-reported runtime and benchmark claims remain unverified until artifacts are inspected or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports self-improvement freezes, no self-authorization of sovereignty, least sufficient power, auditability, reversibility, consent, and protected constitutional constraints.",
-              "limits": "Constitutional specification only; no policy engine, red-team suite, or runtime self-improvement evaluation is claimed."
+              "limits": "Constitutional specification only; no policy engine, red-team suite, or runtime self-improvement evaluation is claimed.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:48-56",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:85-91",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:165-201",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:232-241"
+              ],
+              "passage_review_note": "Reviewed tracked local-project constitution for non-executable specification status, alignment tensor, agency/consent/power definitions, non-domination, least sufficient power, reversibility, audit, memory/tool/self-improvement governance, and constitutional constraints; no runtime policy engine or moral-correctness proof is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_self_evolution_system",
               "mapped_support": "Supports self-evolution as an evidence-first lane with an intervention ladder, self-evolution governor, guarded teacher edits, ATTD repo-health states, branch isolation, checks, outcome ledgers, and loop closure.",
-              "limits": "No Theseus scripts, ATTD reports, teacher runner, branch flow, or dashboard endpoints were executed from this repo."
+              "limits": "No Theseus scripts, ATTD reports, teacher runner, branch flow, or dashboard endpoints were executed from this repo.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:5-22",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:24-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:84-102",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:104-131",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:148-171",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:204-226"
+              ],
+              "passage_review_note": "Reviewed pinned local self-evolution note for intervention ladder, self-evolution governor, guarded teacher edits, ATTD gate, architecture experiment governance, outcome ledgers, lifecycle governance, loop closure, and machine-readable report surfaces; no self-evolution run or autonomous-improvement success is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_architecture_gate",
               "mapped_support": "Supports readiness gates as pre-training controls that check ratchet completion, safety ledgers, regression suites, residual escrow, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
-              "limits": "The reported green gate snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON here."
+              "limits": "The reported green gate snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON here.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-28",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:30-58"
+              ],
+              "passage_review_note": "Reviewed pinned local architecture-gate note for pre-training gate purpose, direct and compiled-ratchet commands, source-reported snapshot, failed-gate residuals, rerun triggers, necessary-not-sufficient caveat, and stale-gate risks; no current gate report or readiness result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         }
@@ -2552,7 +2678,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for compact orchestration, specialist lanes, fail-closed control planes, run/task/control-plane ledgers, readiness gates, replay, and handoff.",
-              "limits": "Connector-readable runtime reference only; code, logs, release artifacts, and benchmark results have not been imported, inspected, or reproduced here."
+              "limits": "Connector-readable runtime reference only; code, logs, release artifacts, and benchmark results have not been imported, inspected, or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -2861,7 +2994,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for a compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff.",
-              "limits": "Runtime and benchmark claims remain source-reported context until code, logs, release artifacts, or reproduced benchmarks are available."
+              "limits": "Runtime and benchmark claims remain source-reported context until code, logs, release artifacts, or reproduced benchmarks are available.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -2970,7 +3110,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports the intelligence-arbitrage and coherence/liquidity framing by connecting PlanForge-style orchestration to verification supply chains, reviewable knowledge units, value/accounting mechanisms, and governance-visible movement of knowledge between agents or tools.",
-              "limits": "Speculative synthesis and connector-readable context only; economic, epistemic-liquidity, security, and institutional claims are not implemented or externally corroborated here."
+              "limits": "Speculative synthesis and connector-readable context only; economic, epistemic-liquidity, security, and institutional claims are not implemented or externally corroborated here.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cognitive_compilation",
@@ -3006,7 +3153,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for routed specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff around multi-core orchestration.",
-              "limits": "Source-reported runtime and benchmark artifacts have not been ingested, inspected, or reproduced; this mapping is not scheduler evidence."
+              "limits": "Source-reported runtime and benchmark artifacts have not been ingested, inspected, or reproduced; this mapping is not scheduler evidence.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -3287,12 +3441,27 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Refines VCM terminology around a virtual context ABI with stable addresses, mounts, snapshots, materializations, task-relative representation graphs, evidence-carrying certificates, protected compilation, authority non-escalation, planner-guided semantic paging, transactional memory, and a benchmark agenda.",
-              "limits": "Connector-readable refinement source only; no local VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here."
+              "limits": "Connector-readable refinement source only; no local VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for governed orchestration with specialist lanes, fail-closed control-plane ledgers, run/task ledgers, replay, handoff, readiness gates, promotion blockers, and residual tracking.",
-              "limits": "Runtime and benchmark artifacts have not been imported, inspected, or reproduced; this mapping is not evidence of a deployed context ABI."
+              "limits": "Runtime and benchmark artifacts have not been imported, inspected, or reproduced; this mapping is not evidence of a deployed context ABI.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -3440,7 +3609,15 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Supports task-relative representation graphs and evidence-carrying certificates for planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations.",
-              "limits": "Connector-readable terminology refinement only; no VCM-Bench, certificate checker, or model-facing result has been run in this repo."
+              "limits": "Connector-readable terminology refinement only; no VCM-Bench, certificate checker, or model-facing result has been run in this repo.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -3585,7 +3762,15 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Refines the transaction vocabulary with stable addresses, mounts, snapshots, materializations, planner-guided semantic paging, protected compilation, authority non-escalation, and transactional/governed memory.",
-              "limits": "Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists here."
+              "limits": "Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists here.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -3728,7 +3913,15 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Supports evidence-carrying, planner-guided context compilation with virtual context ABI, representation graphs, certificates, authority non-escalation, transactional memory, and a benchmark agenda.",
-              "limits": "Connector-readable refinement source only; no VCM-Bench, contradiction benchmark, or citation-normalized external-literature support is recorded here."
+              "limits": "Connector-readable refinement source only; no VCM-Bench, contradiction benchmark, or citation-normalized external-literature support is recorded here.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -3795,7 +3988,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports structured claim/evidence units, verification supply chains, contestability, and fork/exit/audit governance framing for epistemic objects.",
-              "limits": "Epistemic-liquidity and economic metaphors remain speculative synthesis, not implemented economics or external corroboration."
+              "limits": "Epistemic-liquidity and economic metaphors remain speculative synthesis, not implemented economics or external corroboration.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "aletheia",
@@ -3938,7 +4138,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports a verification supply chain connecting PlanForge, Spinoza, tribunals, audit, and structured epistemic units.",
-              "limits": "Speculative synthesis only; it does not implement or externally validate the verification supply chain."
+              "limits": "Speculative synthesis only; it does not implement or externally validate the verification supply chain.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "verification_bandwidth",
@@ -4073,7 +4280,14 @@
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports governance-visible review paths through verification supply chains, contestability, fork, exit, audit, and review-market framing.",
-              "limits": "Speculative governance and exchange language is not treated as tested institutional design or implementation evidence."
+              "limits": "Speculative governance and exchange language is not treated as tested institutional design or implementation evidence.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "talos",
@@ -4244,12 +4458,27 @@
             {
               "source_id": "talos_md",
               "mapped_support": "Supports public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase job lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIF boundaries.",
-              "limits": "Variant/canonicalization aid only; reported benchmark or security claims remain unverified."
+              "limits": "Variant/canonicalization aid only; reported benchmark or security claims remain unverified.",
+              "passage_refs": [
+                "sources/source_notes/talos_md.md:11-24",
+                "sources/source_notes/talos_md.md:26-30",
+                "sources/source_notes/talos_md.md:32-39",
+                "sources/source_notes/talos_md.md:46-50"
+              ],
+              "passage_review_note": "Reviewed source note only for Talos Markdown public-release variant: labor-OS terminology, typed AI labor, deterministic manufacturing, evidence, isolation, auditability, job lifecycle, ledgers, blind handles, and Digital SCIF boundaries; no benchmark, security, or deployment result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime-reference context for governed orchestration with a compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking.",
-              "limits": "Connector-readable implementation-reference source only; runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here."
+              "limits": "Connector-readable implementation-reference source only; runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -4417,7 +4646,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime-reference ledgers, replay, handoff, readiness gates, benchmark artifacts, promotion blockers, and residual tracking as implementation-context for artifact and audit surfaces.",
-              "limits": "Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here."
+              "limits": "Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -4573,7 +4809,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference context for specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration.",
-              "limits": "Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced in this book repo."
+              "limits": "Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced in this book repo.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "field_of_god_ai_constitution",
@@ -4761,7 +5004,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime-reference context for procedural reuse through specialist lanes, readiness gates, ledgers, replay, handoff, promotion blockers, residual tracking, and current limitation reporting.",
-              "limits": "MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced."
+              "limits": "MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "project_theseus_whitepaper",
@@ -5021,7 +5271,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports implementation-reference routing through compact orchestration, routed specialist lanes, fail-closed control planes, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking.",
-              "limits": "Connector-readable implementation-reference source only; runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced here."
+              "limits": "Connector-readable implementation-reference source only; runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "project_theseus_whitepaper",
@@ -5220,7 +5477,14 @@
             {
               "source_id": "moecot",
               "mapped_support": "Supports readiness gates, benchmark artifacts, promotion blockers, residual tracking, replay, handoff, fail-closed control-plane ledgers, and explicit current limitations as runtime-reference context.",
-              "limits": "Runtime readiness artifacts, code, logs, benchmark records, and replay records have not been imported, inspected, or reproduced here."
+              "limits": "Runtime readiness artifacts, code, logs, benchmark records, and replay records have not been imported, inspected, or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "project_theseus_whitepaper",

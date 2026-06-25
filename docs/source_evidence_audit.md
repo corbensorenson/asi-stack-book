@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 425 |
+| Passage-reviewed mappings recorded | 461 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -33,38 +33,38 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Chapter ID | Assigned pairs | Claim-source mappings | Source notes present | Source notes listing chapter | Passage-reviewed mappings | Support state | Next action |
 |---|---:|---:|---:|---:|---:|---|---|
-| `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
-| `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 7 | argument | passage review required before source-derived promotion |
-| `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
+| `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
+| `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
+| `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `stable-capability-fields` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 6 | argument | passage review required before source-derived promotion |
-| `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
+| `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
+| `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
+| `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `virtual-context-abi` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
-| `semantic-pages-context-cells-and-certificates` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `claim-ledgers-and-belief-revision` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `unified-adaptive-tribunal-and-adversarial-review` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
-| `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
-| `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
-| `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
-| `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
+| `virtual-context-abi` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `semantic-pages-context-cells-and-certificates` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `claim-ledgers-and-belief-revision` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `unified-adaptive-tribunal-and-adversarial-review` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
+| `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
@@ -204,7 +204,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `aletheia` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
@@ -215,13 +215,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `beastbrain_timeless` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `aletheia` | mapped | note present | chapter listed | passage-reviewed |
-| `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `talos` | mapped | note present | chapter listed | passage-reviewed |
@@ -229,13 +229,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `uat` | mapped | note present | chapter listed | passage-reviewed |
-| `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
@@ -246,23 +246,23 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `eternal_code` | mapped | note present | chapter listed | passage-reviewed |
-| `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `eternal_code` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
@@ -272,33 +272,33 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `stable-capability-fields.core` | `stable-capability-fields` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
-| `stable-capability-fields.core` | `stable-capability-fields` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `stable-capability-fields.core` | `stable-capability-fields` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
-| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
-| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |
-| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
-| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
@@ -308,13 +308,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
-| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
@@ -324,57 +324,57 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `virtual-context-abi.core` | `virtual-context-abi` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `viea` | mapped | note present | chapter listed | passage-reviewed |
-| `virtual-context-abi.core` | `virtual-context-abi` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
-| `virtual-context-abi.core` | `virtual-context-abi` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
+| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `black_hole_context_manager` | mapped | note present | chapter listed | passage-reviewed |
-| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
-| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `viea` | mapped | note present | chapter listed | passage-reviewed |
-| `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `aletheia` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
-| `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
 | `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
+| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
-| `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `talos_md` | mapped | note present | chapter listed | not passage-reviewed |
-| `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `talos_md` | mapped | note present | chapter listed | passage-reviewed |
+| `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `spinoza_composer` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
-| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
@@ -382,7 +382,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
@@ -391,7 +391,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
@@ -399,7 +399,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
