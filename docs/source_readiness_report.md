@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 14
-- `source_note_available_uncached`: 10
+- `source_note_available_uncached`: 25
 
 ## Records
 
@@ -84,3 +84,18 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mamba_2023` | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_llada_2025` | Large Language Diffusion Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_scaling_dllms_2026` | Scaling Beyond Masked Diffusion Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_trpo_2015` | Trust Region Policy Optimization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ppo_2017` | Proximal Policy Optimization Algorithms | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_remax_2023` | ReMax: A Simple, Effective, and Efficient Reinforcement Learning Method for Aligning Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dpo_2023` | Direct Preference Optimization: Your Language Model is Secretly a Reward Model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ipo_preference_2023` | A General Theoretical Paradigm to Understand Learning from Human Preferences | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_orpo_2024` | ORPO: Monolithic Preference Optimization without Reference Model | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_kto_2024` | KTO: Model Alignment as Prospect Theoretic Optimization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_simpo_2024` | SimPO: Simple Preference Optimization with a Reference-Free Reward | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_reinforce_style_rlhf_2024` | Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_deepseek_r1_2025` | DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dapo_2025` | DAPO: An Open-Source LLM Reinforcement Learning System at Scale | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gspo_2025` | Group Sequence Policy Optimization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_longrlvr_2026` | LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_rlhf_limitations_2023` | Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

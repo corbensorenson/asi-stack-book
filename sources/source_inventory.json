@@ -716,7 +716,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2211.17192",
-    "notes": "Primary external paper for speculative decoding: a draft model proposes multiple tokens and a target model verifies them, giving an exact-distribution acceleration path under its assumptions."
+    "notes": "Primary external paper for speculative decoding: a draft model proposes multiple tokens and a target model verifies them, giving an exact-distribution acceleration path under its assumptions.",
+    "arxiv_id": "2211.17192",
+    "published": "2022-11-30",
+    "updated": "2023-05-18",
+    "citation_label": "Leviathan et al. (2022), Fast Inference from Transformers via Speculative Decoding",
+    "doi": "10.48550/arXiv.2211.17192",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_multi_token_prediction_2024",
@@ -727,7 +733,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2404.19737",
-    "notes": "Primary external paper for multi-token prediction as an auxiliary training objective and inference-time multi-token proposal mechanism."
+    "notes": "Primary external paper for multi-token prediction as an auxiliary training objective and inference-time multi-token proposal mechanism.",
+    "arxiv_id": "2404.19737",
+    "published": "2024-04-30",
+    "updated": "2024-04-30",
+    "citation_label": "Gloeckle et al. (2024), Better & Faster Large Language Models via Multi-token Prediction",
+    "doi": "10.48550/arXiv.2404.19737",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_medusa_2024",
@@ -738,7 +750,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2401.10774",
-    "notes": "Primary external paper for adding multiple decoding heads to an LLM and verifying tree-structured candidate continuations in parallel."
+    "notes": "Primary external paper for adding multiple decoding heads to an LLM and verifying tree-structured candidate continuations in parallel.",
+    "arxiv_id": "2401.10774",
+    "published": "2024-01-19",
+    "updated": "2024-06-14",
+    "citation_label": "Cai et al. (2024), Medusa",
+    "doi": "10.48550/arXiv.2401.10774",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_eagle_2024",
@@ -749,7 +767,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2401.15077",
-    "notes": "Primary external paper for feature-level speculative drafting and target-model verification as an acceleration mechanism."
+    "notes": "Primary external paper for feature-level speculative drafting and target-model verification as an acceleration mechanism.",
+    "arxiv_id": "2401.15077",
+    "published": "2024-01-26",
+    "updated": "2025-03-04",
+    "citation_label": "Li et al. (2024), EAGLE",
+    "doi": "10.48550/arXiv.2401.15077",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_lookahead_decoding_2024",
@@ -760,7 +784,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2402.02057",
-    "notes": "Primary external paper for lookahead decoding: a parallel exact decoding algorithm that reduces serial decoding steps without an auxiliary draft model."
+    "notes": "Primary external paper for lookahead decoding: a parallel exact decoding algorithm that reduces serial decoding steps without an auxiliary draft model.",
+    "arxiv_id": "2402.02057",
+    "published": "2024-02-03",
+    "updated": "2024-02-03",
+    "citation_label": "Fu et al. (2024), Lookahead Decoding",
+    "doi": "10.48550/arXiv.2402.02057",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_layerskip_2024",
@@ -771,7 +801,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2404.16710",
-    "notes": "Primary external paper for early-exit inference and self-speculative decoding where early layers draft and later layers verify."
+    "notes": "Primary external paper for early-exit inference and self-speculative decoding where early layers draft and later layers verify.",
+    "arxiv_id": "2404.16710",
+    "published": "2024-04-25",
+    "updated": "2024-10-18",
+    "citation_label": "Elhoushi et al. (2024), LayerSkip",
+    "doi": "10.18653/v1/2024.acl-long.681",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_pagedattention_vllm_2023",
@@ -783,7 +819,13 @@
       "resource-economics"
     ],
     "url": "https://arxiv.org/abs/2309.06180",
-    "notes": "Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis."
+    "notes": "Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis.",
+    "arxiv_id": "2309.06180",
+    "published": "2023-09-12",
+    "updated": "2023-09-12",
+    "citation_label": "Kwon et al. (2023), Efficient Memory Management for LLM Serving with PagedAttention",
+    "doi": "10.48550/arXiv.2309.06180",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_mamba_2023",
@@ -795,7 +837,13 @@
       "math-substrates"
     ],
     "url": "https://arxiv.org/abs/2312.00752",
-    "notes": "Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks."
+    "notes": "Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks.",
+    "arxiv_id": "2312.00752",
+    "published": "2023-12-01",
+    "updated": "2024-05-31",
+    "citation_label": "Gu and Dao (2023), Mamba",
+    "doi": "10.48550/arXiv.2312.00752",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_llada_2025",
@@ -806,7 +854,13 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2502.09992",
-    "notes": "Primary external paper for LLaDA, a large masked-diffusion language model trained with pretraining and supervised fine-tuning rather than left-to-right autoregression."
+    "notes": "Primary external paper for LLaDA, a large masked-diffusion language model trained with pretraining and supervised fine-tuning rather than left-to-right autoregression.",
+    "arxiv_id": "2502.09992",
+    "published": "2025-02-14",
+    "updated": "2025-10-18",
+    "citation_label": "Nie et al. (2025), Large Language Diffusion Models",
+    "doi": "10.48550/arXiv.2502.09992",
+    "source_type": "arxiv"
   },
   {
     "id": "ext_scaling_dllms_2026",
@@ -817,6 +871,238 @@
       "fast-generation"
     ],
     "url": "https://arxiv.org/abs/2602.15014",
-    "notes": "Primary external paper for comparing diffusion language-model families by speed-quality tradeoffs rather than perplexity alone."
+    "notes": "Primary external paper for comparing diffusion language-model families by speed-quality tradeoffs rather than perplexity alone.",
+    "arxiv_id": "2602.15014",
+    "published": "2026-02-16",
+    "updated": "2026-02-16",
+    "citation_label": "Sahoo et al. (2026), Scaling Beyond Masked Diffusion Language Models",
+    "doi": "10.48550/arXiv.2602.15014",
+    "source_type": "arxiv"
+  },
+  {
+    "id": "ext_trpo_2015",
+    "title": "Trust Region Policy Optimization",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/1502.05477",
+    "notes": "Primary external source for trust-region policy-gradient updates and bounded update-size discipline.",
+    "source_type": "arxiv",
+    "arxiv_id": "1502.05477",
+    "published": "2015-02-19",
+    "updated": "2017-04-20",
+    "citation_label": "Schulman et al. (2015), Trust Region Policy Optimization",
+    "doi": "10.48550/arXiv.1502.05477"
+  },
+  {
+    "id": "ext_ppo_2017",
+    "title": "Proximal Policy Optimization Algorithms",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/1707.06347",
+    "notes": "Primary external source for PPO-style online policy-gradient updates and proximal surrogate objectives.",
+    "source_type": "arxiv",
+    "arxiv_id": "1707.06347",
+    "published": "2017-07-20",
+    "updated": "2017-08-28",
+    "citation_label": "Schulman et al. (2017), Proximal Policy Optimization Algorithms",
+    "doi": "10.48550/arXiv.1707.06347"
+  },
+  {
+    "id": "ext_remax_2023",
+    "title": "ReMax: A Simple, Effective, and Efficient Reinforcement Learning Method for Aligning Large Language Models",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2310.10505",
+    "notes": "Primary external source for simpler RLHF-oriented policy-gradient updates relative to PPO-style machinery.",
+    "source_type": "arxiv",
+    "arxiv_id": "2310.10505",
+    "published": "2023-10-16",
+    "updated": "2024-05-16",
+    "citation_label": "Li et al. (2023), ReMax",
+    "doi": "10.48550/arXiv.2310.10505"
+  },
+  {
+    "id": "ext_dpo_2023",
+    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2305.18290",
+    "notes": "Primary external source for DPO-style offline preference optimization without a separate online RL loop.",
+    "source_type": "arxiv",
+    "arxiv_id": "2305.18290",
+    "published": "2023-05-29",
+    "updated": "2024-07-29",
+    "citation_label": "Rafailov et al. (2023), Direct Preference Optimization",
+    "doi": "10.48550/arXiv.2305.18290"
+  },
+  {
+    "id": "ext_ipo_preference_2023",
+    "title": "A General Theoretical Paradigm to Understand Learning from Human Preferences",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2310.12036",
+    "notes": "External source for theoretical comparison of preference-learning objectives, including IPO/DPO-style framing.",
+    "source_type": "arxiv",
+    "arxiv_id": "2310.12036",
+    "published": "2023-10-18",
+    "updated": "2023-11-22",
+    "citation_label": "Azar et al. (2023), Learning from Human Preferences paradigm",
+    "doi": "10.48550/arXiv.2310.12036"
+  },
+  {
+    "id": "ext_orpo_2024",
+    "title": "ORPO: Monolithic Preference Optimization without Reference Model",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2403.07691",
+    "notes": "External source for reference-model-free monolithic preference optimization.",
+    "source_type": "arxiv",
+    "arxiv_id": "2403.07691",
+    "published": "2024-03-12",
+    "updated": "2024-03-14",
+    "citation_label": "Hong et al. (2024), ORPO",
+    "doi": "10.48550/arXiv.2403.07691"
+  },
+  {
+    "id": "ext_kto_2024",
+    "title": "KTO: Model Alignment as Prospect Theoretic Optimization",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2402.01306",
+    "notes": "External source for prospect-theoretic model alignment and human-aware loss framing.",
+    "source_type": "arxiv",
+    "arxiv_id": "2402.01306",
+    "published": "2024-02-02",
+    "updated": "2024-11-19",
+    "citation_label": "Ethayarajh et al. (2024), KTO",
+    "doi": "10.48550/arXiv.2402.01306"
+  },
+  {
+    "id": "ext_simpo_2024",
+    "title": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2405.14734",
+    "notes": "External source for simple reference-free preference optimization using sequence-level reward framing.",
+    "source_type": "arxiv",
+    "arxiv_id": "2405.14734",
+    "published": "2024-05-23",
+    "updated": "2024-11-01",
+    "citation_label": "Meng et al. (2024), SimPO",
+    "doi": "10.48550/arXiv.2405.14734"
+  },
+  {
+    "id": "ext_reinforce_style_rlhf_2024",
+    "title": "Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2402.14740",
+    "notes": "External source for revisiting simpler REINFORCE-style optimization as an RLHF baseline.",
+    "source_type": "arxiv",
+    "arxiv_id": "2402.14740",
+    "published": "2024-02-22",
+    "updated": "2024-02-26",
+    "citation_label": "Ahmadian et al. (2024), REINFORCE-style RLHF revisiting",
+    "doi": "10.48550/arXiv.2402.14740"
+  },
+  {
+    "id": "ext_deepseek_r1_2025",
+    "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2501.12948",
+    "notes": "External source for reinforcement-learning pressure on reasoning behavior in large language models.",
+    "source_type": "arxiv",
+    "arxiv_id": "2501.12948",
+    "published": "2025-01-22",
+    "updated": "2026-01-04",
+    "citation_label": "DeepSeek-AI et al. (2025), DeepSeek-R1",
+    "doi": "10.1038/s41586-025-09422-z",
+    "venue": "Nature volume 645, pages 633-638 (2025)"
+  },
+  {
+    "id": "ext_dapo_2025",
+    "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2503.14476",
+    "notes": "External source for open-source large-scale LLM RL system details and DAPO-style update design.",
+    "source_type": "arxiv",
+    "arxiv_id": "2503.14476",
+    "published": "2025-03-18",
+    "updated": "2025-05-20",
+    "citation_label": "Yu et al. (2025), DAPO",
+    "doi": "10.48550/arXiv.2503.14476"
+  },
+  {
+    "id": "ext_gspo_2025",
+    "title": "Group Sequence Policy Optimization",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2507.18071",
+    "notes": "External source for sequence-level group policy optimization in LLM reinforcement learning.",
+    "source_type": "arxiv",
+    "arxiv_id": "2507.18071",
+    "published": "2025-07-24",
+    "updated": "2025-07-28",
+    "citation_label": "Zheng et al. (2025), Group Sequence Policy Optimization",
+    "doi": "10.48550/arXiv.2507.18071"
+  },
+  {
+    "id": "ext_s_grpo_2025",
+    "title": "S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2505.07686",
+    "notes": "External source for early-exit reinforcement learning and overthinking control in reasoning models.",
+    "source_type": "arxiv",
+    "arxiv_id": "2505.07686",
+    "published": "2025-05-12",
+    "updated": "2025-05-17",
+    "citation_label": "Dai et al. (2025), S-GRPO",
+    "doi": "10.48550/arXiv.2505.07686"
+  },
+  {
+    "id": "ext_longrlvr_2026",
+    "title": "LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2603.02146",
+    "notes": "External source for long-context RLVR and verifiable context-grounding rewards.",
+    "source_type": "arxiv",
+    "arxiv_id": "2603.02146",
+    "published": "2026-03-02",
+    "updated": "2026-03-02",
+    "citation_label": "Chen et al. (2026), LongRLVR",
+    "doi": "10.48550/arXiv.2603.02146"
+  },
+  {
+    "id": "ext_rlhf_limitations_2023",
+    "title": "Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback",
+    "priority": "external_literature",
+    "layer": "policy_optimization",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2307.15217",
+    "notes": "External survey source for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards.",
+    "source_type": "arxiv",
+    "arxiv_id": "2307.15217",
+    "published": "2023-07-27",
+    "updated": "2023-09-11",
+    "citation_label": "Casper et al. (2023), Open Problems and Fundamental Limitations of RLHF",
+    "doi": "10.48550/arXiv.2307.15217"
   }
 ]

@@ -412,9 +412,41 @@ def source_status(record: dict, connector_records: dict[str, dict], cache_record
 
 def bibliography_status(record: dict, connector_records: dict[str, dict], cache_records: dict[str, dict]) -> str:
     status = source_status(record, connector_records, cache_records)
+    if record.get("citation_label") and record.get("arxiv_id"):
+        if status.startswith("source note available"):
+            return "source note available; citation metadata recorded from primary arXiv record"
+        return f"{status}; citation metadata recorded from primary arXiv record"
     if status.startswith("source note available"):
         return "source note available; citation not normalized"
     return f"{status}; citation not normalized"
+
+
+def external_citation_rows(records: list[dict], structure: dict) -> list[str]:
+    assignments = chapter_assignments(structure)
+    rows = []
+    for record in records:
+        if record.get("priority") != "external_literature":
+            continue
+        citation = record.get("citation_label")
+        arxiv_id = record.get("arxiv_id")
+        if not citation or not arxiv_id:
+            continue
+        current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
+        doi = record.get("doi", "")
+        link = f"[arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+        if doi:
+            link = f"{link}; DOI `{qmd_escape(doi)}`"
+        note_status = "source note available" if (SOURCE_NOTES / f"{record['id']}.md").exists() else "source note pending"
+        rows.append(
+            "| `{id}` | {citation} | {link} | {targets} | {note_status} |".format(
+                id=qmd_escape(record.get("id", "")),
+                citation=qmd_escape(citation),
+                link=link,
+                targets=qmd_escape(current_targets),
+                note_status=qmd_escape(note_status),
+            )
+        )
+    return rows
 
 
 def write_source_matrix(records: list[dict], structure: dict) -> None:
@@ -471,6 +503,18 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
                 status=qmd_escape(status),
             )
         )
+    external_rows = external_citation_rows(records, structure)
+    external_section = ""
+    if external_rows:
+        external_section = f"""
+## Source-Noted External Literature Records
+
+These records have stable source IDs and primary arXiv metadata. This section does not claim reproduced experiments, local benchmark results, or support-state promotion.
+
+| Source ID | Citation label | Primary record | Current use | Source-note state |
+|---|---|---|---|---|
+{chr(10).join(external_rows)}
+"""
     text = f"""# Bibliography and Source Corpus
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
@@ -482,6 +526,7 @@ It is a working bibliography for the supplied ASI Stack source corpus. It is not
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|
 {chr(10).join(rows)}
+{external_section}
 
 ## External Literature Queue
 
@@ -496,8 +541,8 @@ Third-party references should be added only when bibliographic metadata is recor
 | Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | queued; no citation recorded |
 | Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | queued; no citation recorded |
 | Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | queued; no citation recorded |
-| Fast generation, decoding substrates, and serving acceleration | External comparison for MTP, speculative decoding, internal draft heads, diffusion LLMs, early exit, state-space alternatives, KV-cache memory, and useful-solution-per-second metrics. | queued; no citation recorded |
-| Policy optimization and learning from feedback | External comparison for PPO/RLHF, GRPO/RLVR, DPO-style preference optimization, verifier rewards, reward hacking, reasoning-budget RL, and control-policy RL for planners, routers, VCM, execution, and generation modes. | queued; no citation recorded |
+| Fast generation, decoding substrates, and serving acceleration | External comparison for MTP, speculative decoding, internal draft heads, diffusion LLMs, early exit, state-space alternatives, KV-cache memory, and useful-solution-per-second metrics. | initial source records and source notes added; no local reproduction or support-state promotion |
+| Policy optimization and learning from feedback | External comparison for PPO/RLHF, GRPO/RLVR, DPO-style preference optimization, verifier rewards, reward hacking, reasoning-budget RL, and control-policy RL for planners, routers, VCM, execution, and generation modes. | initial source records and source notes added; no local reproduction or support-state promotion |
 | Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | queued; no citation recorded |
 
 ## Citation Policy

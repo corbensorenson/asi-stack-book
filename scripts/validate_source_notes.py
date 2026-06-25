@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTES_DIR = ROOT / "sources" / "source_notes"
 MANIFEST = NOTES_DIR / "backbone_manifest.json"
 STRUCTURE = ROOT / "book_structure.json"
+SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
 
 REQUIRED_SECTIONS = [
     "## Thesis",
@@ -48,6 +49,24 @@ def flatten_chapters(structure: dict) -> list[dict]:
     return chapters
 
 
+def assigned_source_ids(structure: dict) -> set[str]:
+    source_ids: set[str] = set()
+    for chapter in flatten_chapters(structure):
+        for source_id in chapter.get("source_ids", []):
+            if isinstance(source_id, str):
+                source_ids.add(source_id)
+    return source_ids
+
+
+def inventory_source_ids() -> set[str]:
+    if not SOURCE_INVENTORY.exists():
+        return set()
+    inventory = read_json(SOURCE_INVENTORY)
+    if not isinstance(inventory, list):
+        return set()
+    return {str(record.get("id", "")) for record in inventory if isinstance(record, dict) and record.get("id")}
+
+
 def validate_note(source_id: str, errors: list[str]) -> None:
     path = NOTES_DIR / f"{source_id}.md"
     if not path.exists():
@@ -77,13 +96,28 @@ def main() -> None:
     if not isinstance(required, list) or not all(isinstance(item, str) for item in required):
         raise SystemExit("note_required_for must be a list of source IDs.")
 
-    errors: list[str] = []
-    for source_id in required:
-        validate_note(source_id, errors)
-
     structure = read_json(STRUCTURE)
     if not isinstance(structure, dict):
         raise SystemExit("book_structure.json must contain an object.")
+
+    assigned = assigned_source_ids(structure)
+    inventory_ids = inventory_source_ids()
+    required_set = set(required)
+    notes_to_validate = required_set | assigned
+
+    errors: list[str] = []
+    missing_inventory = sorted(source_id for source_id in assigned if source_id not in inventory_ids)
+    for source_id in missing_inventory:
+        errors.append(f"`{source_id}`: assigned in book_structure.json but missing from sources/source_inventory.json")
+
+    for source_id in sorted(notes_to_validate):
+        validate_note(source_id, errors)
+
+    for path in sorted(NOTES_DIR.glob("*.md")):
+        if path.name in {"README.md", "_template.md"}:
+            continue
+        validate_note(path.stem, errors)
+
     for chapter in flatten_chapters(structure):
         if chapter.get("evidence_level") in SUPPORT_REQUIRING_NOTES:
             missing = [source_id for source_id in chapter.get("source_ids", []) if not (NOTES_DIR / f"{source_id}.md").exists()]
@@ -98,7 +132,15 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
 
-    print(f"Source-note validation passed: {len(required)} required backbone notes.")
+    checked = len(
+        {
+            path.stem
+            for path in NOTES_DIR.glob("*.md")
+            if path.name not in {"README.md", "_template.md"}
+        }
+        | notes_to_validate
+    )
+    print(f"Source-note validation passed: {len(required)} required backbone notes, {len(assigned)} assigned source notes, {checked} total notes checked.")
 
 
 if __name__ == "__main__":

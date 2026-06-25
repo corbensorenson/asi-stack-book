@@ -2777,6 +2777,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `benchmaxxing`, `rmi` | Read first for benchmark pressure, residual escrow, capability ratchets, and regression floors. |
 | Supporting | `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure` | Mine after primary sources for verifier rewards, context adequacy, execution artifacts, planner/router policies, governance gates, cost signals, and procedural loop closure. |
+| External variants | `ext_trpo_2015`, `ext_ppo_2017`, `ext_remax_2023`, `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024`, `ext_reinforce_style_rlhf_2024`, `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025`, `ext_longrlvr_2026`, `ext_rlhf_limitations_2023` | Source-noted external method-family context for policy gradients, PPO/TRPO, preference optimization, reasoning RL, context rewards, and RLHF limitations; do not treat as local reproduction. |
 | Connector or recovery required | `moecot` | Use only as implementation-reference context unless artifacts are imported or reproduced. |
 | Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
@@ -2815,7 +2816,7 @@ Draft deliverables:
 - A policy optimization record schema with target layer, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
 - Implemented repository-level fixture: `policy_optimization_record.valid.json` validates policy-update record shape only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
-- External literature queue: REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO/RLHF, GRPO, DeepSeek-R1, DAPO, GSPO, DPO, IPO, ORPO, KTO, SimPO, LongRLVR, S-GRPO, process-reward work, and RLHF limitation work require source records/source notes before support promotion.
+- External literature queue: initial source records and conservative source notes now exist for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitation work; process-reward work beyond LongRLVR remains queued.
 - Planned Codex test: DPO/offline preference baseline test.
 - Planned Codex test: PPO online RL baseline test.
 - Planned Codex test: GRPO/RLOO toy math reward test.

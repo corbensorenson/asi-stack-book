@@ -5599,7 +5599,22 @@
             "scf",
             "tokenmana",
             "cognitive_loop_closure",
-            "moecot"
+            "moecot",
+            "ext_trpo_2015",
+            "ext_ppo_2017",
+            "ext_remax_2023",
+            "ext_dpo_2023",
+            "ext_ipo_preference_2023",
+            "ext_orpo_2024",
+            "ext_kto_2024",
+            "ext_simpo_2024",
+            "ext_reinforce_style_rlhf_2024",
+            "ext_deepseek_r1_2025",
+            "ext_dapo_2025",
+            "ext_gspo_2025",
+            "ext_s_grpo_2025",
+            "ext_longrlvr_2026",
+            "ext_rlhf_limitations_2023"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -5664,6 +5679,81 @@
               "source_id": "moecot",
               "mapped_support": "Supports runtime-adjacent policy updates for specialist routing and orchestration while requiring readiness gates, regression floors, replay, ledgers, promotion blockers, and residual tracking.",
               "limits": "Implementation-reference context only; runtime artifacts, benchmark artifacts, logs, and policy-update results have not been imported or reproduced."
+            },
+            {
+              "source_id": "ext_trpo_2015",
+              "mapped_support": "Supports the external method-family comparison for trust-region bounded policy updates and drift constraints.",
+              "limits": "Does not support the ASI Stack governance claim by itself and does not report local planner/router/context-policy training."
+            },
+            {
+              "source_id": "ext_ppo_2017",
+              "mapped_support": "Supports the external method-family comparison for PPO-style online policy-gradient updates and proximal surrogate objectives.",
+              "limits": "Does not validate reward quality, local PPO runs, or deployment readiness."
+            },
+            {
+              "source_id": "ext_remax_2023",
+              "mapped_support": "Supports the external method-family comparison for simpler RLHF-oriented policy-gradient updates relative to PPO complexity.",
+              "limits": "Does not prove local RLHF efficiency or stack-policy improvement."
+            },
+            {
+              "source_id": "ext_dpo_2023",
+              "mapped_support": "Supports the external method-family comparison for offline preference optimization from pairwise preference data.",
+              "limits": "Does not validate local preference data, DPO training, or governance-safe behavior."
+            },
+            {
+              "source_id": "ext_ipo_preference_2023",
+              "mapped_support": "Supports external framing of preference-learning assumptions, including pairwise preferences, pointwise reward approximations, and policy-distribution shift.",
+              "limits": "Theoretical comparison only; no local preference-learning theorem or experiment is recorded."
+            },
+            {
+              "source_id": "ext_orpo_2024",
+              "mapped_support": "Supports the external method-family comparison for reference-model-free monolithic preference optimization.",
+              "limits": "Does not prove local ORPO training or alignment improvement."
+            },
+            {
+              "source_id": "ext_kto_2024",
+              "mapped_support": "Supports the external method-family comparison for prospect-theoretic or human-aware loss objectives and binary feedback framing.",
+              "limits": "Does not prove a correct human model, reward validity, or local policy safety."
+            },
+            {
+              "source_id": "ext_simpo_2024",
+              "mapped_support": "Supports the external method-family comparison for simple reference-free sequence-level preference optimization.",
+              "limits": "Does not prove local SimPO performance or preference-quality robustness."
+            },
+            {
+              "source_id": "ext_reinforce_style_rlhf_2024",
+              "mapped_support": "Supports the external method-family comparison for simpler REINFORCE-style RLHF baselines and PPO-cost/tuning cautions.",
+              "limits": "Does not show that the repo has implemented REINFORCE, RLOO, or RLHF training."
+            },
+            {
+              "source_id": "ext_deepseek_r1_2025",
+              "mapped_support": "Supports external comparison for reasoning-RL pressure and the distinction between reasoning behavior, reward design, and benchmark reporting.",
+              "limits": "Does not import or reproduce DeepSeek-R1 models, training artifacts, evaluations, or governance claims."
+            },
+            {
+              "source_id": "ext_dapo_2025",
+              "mapped_support": "Supports external comparison for open-source reasoning-RL systems, decoupled clipping, dynamic sampling, and reproducibility pressure.",
+              "limits": "Does not mean DAPO has been run, audited, or reproduced in this repository."
+            },
+            {
+              "source_id": "ext_gspo_2025",
+              "mapped_support": "Supports external comparison for sequence-level group policy optimization and sequence-level clipping/reward design.",
+              "limits": "Does not validate local sequence-level RL or model-quality improvements."
+            },
+            {
+              "source_id": "ext_s_grpo_2025",
+              "mapped_support": "Supports external comparison for early-exit/reasoning-budget RL and overthinking control.",
+              "limits": "Does not prove shorter reasoning is better or that local reasoning-budget policies exist."
+            },
+            {
+              "source_id": "ext_longrlvr_2026",
+              "mapped_support": "Supports external comparison for long-context RLVR and verifiable context-grounding rewards relevant to VCM policy learning.",
+              "limits": "Does not reproduce LongRLVR or prove VCM context-policy reward quality."
+            },
+            {
+              "source_id": "ext_rlhf_limitations_2023",
+              "mapped_support": "Supports external risk framing for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards.",
+              "limits": "Survey framing only; not proof of any local mitigation or reward-process safety."
             }
           ],
           "mechanism": [
@@ -5724,7 +5814,23 @@
               "tokenmana",
               "cognitive_loop_closure"
             ],
-            "variants": [],
+            "variants": [
+              "ext_trpo_2015",
+              "ext_ppo_2017",
+              "ext_remax_2023",
+              "ext_dpo_2023",
+              "ext_ipo_preference_2023",
+              "ext_orpo_2024",
+              "ext_kto_2024",
+              "ext_simpo_2024",
+              "ext_reinforce_style_rlhf_2024",
+              "ext_deepseek_r1_2025",
+              "ext_dapo_2025",
+              "ext_gspo_2025",
+              "ext_s_grpo_2025",
+              "ext_longrlvr_2026",
+              "ext_rlhf_limitations_2023"
+            ],
             "connector_or_recovery": [
               "moecot"
             ],

@@ -62,7 +62,8 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - The policy-optimization Lean proof targets are implemented in `AsiStackProofs.PolicyOptimization` as narrow finite-record predicates for governed policy-update records and unverified-reward/missing-governance promotion blocking.
 - The artifact-steward Lean proof targets are implemented in `AsiStackProofs.ArtifactStewardAgents` as narrow finite-record predicates for dispatched work-contract boundaries and protected-action approval blocking.
 - The prototype-roadmap Lean proof targets are implemented in `AsiStackProofs.PrototypeRoadmap` as narrow finite-record predicates for phase-unlock acceptance gates and evidence-required claim-promotion blocking.
-- `Policy Optimization and Learning from Feedback` is a manifest-driven Part IV chapter after Benchmark Ratchets, with a public-safe browser-note ingestion report, method-family taxonomy, stack-policy target map, external-literature queue, policy-update schema, fixture, diagram, test backlog, and explicit no-training-run/non-claim boundary.
+- `Policy Optimization and Learning from Feedback` is a manifest-driven Part IV chapter after Benchmark Ratchets, with a public-safe browser-note ingestion report, method-family taxonomy, stack-policy target map, source-noted external-literature records for the initial policy/RL queue, policy-update schema, fixture, diagram, test backlog, and explicit no-training-run/non-claim boundary.
+- Primary arXiv citation metadata is recorded for the current fast-generation external literature set and the initial policy-optimization/RL set; no external result has been reproduced or promoted to a stronger support state.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
 - `scripts/validate_visual_coverage.py` checks that chapter diagram coverage and the landing-page hero asset remain present.
@@ -91,7 +92,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Artifact-by-artifact audits for the implemented proof targets still need to confirm that each finite-record predicate remains aligned with its intended operational boundary, limitations, and non-claims.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
-- External literature remains queued rather than citation-normalized, including fast-generation, decoding-substrate, and policy-optimization/RL feedback queues.
+- External literature remains incomplete outside the source-noted fast-generation and initial policy-optimization/RL sets; alignment, governance/evals, planning, memory/RAG, formal methods, modular routing, compression, benchmark science, broader process-reward work, RLOO/REINFORCE++ variants, and evaluator-gaming work still need citation-normalized records and source notes.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.
 
 ## Regeneration

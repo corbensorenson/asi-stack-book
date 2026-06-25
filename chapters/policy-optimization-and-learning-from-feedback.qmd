@@ -40,15 +40,13 @@ open_evidence_gaps:
 | Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
-| Source loading state | source notes: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot` |
+| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
+| Source loading state | source notes: all assigned ASI Stack sources plus 15 external policy/RL records; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; external literature: primary arXiv metadata and source notes recorded, no local reproduction |
 | Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates; no policy optimization experiment has been run. |
 
 ## Drafting guardrail
 
-This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. External RL papers named here are candidates for future source notes, not support-state promotions.
-
-The public arXiv records linked in the external-literature queue have been checked only as candidate records and title-level anchors. They still need citation-normalized source records and source notes before they can support manuscript claims.
+This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. The external RL papers named here now have stable source records, primary arXiv metadata, and conservative source notes; they support method-family context only, not support-state promotion or local training claims.
 
 ## Problem
 
@@ -68,7 +66,7 @@ The stack therefore needs policy optimization to be governed by the same evidenc
 
 [policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
 
-The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. External RL literature candidates are listed as a queue, but no external-literature-backed support state is claimed yet.
+The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. The external RL literature records source-note method families and failure cautions, but no external-literature-backed support state is claimed yet.
 
 ## Mechanism
 
@@ -106,11 +104,11 @@ The external literature named in the browser packet is best organized by what th
 
 | Family | Role in the stack | Current repository status |
 |---|---|---|
-| Foundational policy gradients | Minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, ReMax-like critic-free simplifications. | External source notes pending |
-| Trust-region and clipped online RL | Bounded online exploration with update-size control: TRPO, PPO, PPO-RLHF, GRPO, and descendants. | External source notes pending |
-| Offline preference optimization | Stable updates from static preference or binary feedback data: DPO, IPO, ORPO, KTO, SimPO. | External source notes pending |
-| Verifier-based RL / RLVR | Learn from exact, process, tool, context, governance, or efficiency verifiers. | External source notes pending |
-| Reasoning-budget and latency-aware RL | Learn when to think, stop, retrieve, verify, use tools, or switch generation modes. | External source notes pending |
+| Foundational policy gradients | Minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, ReMax-like critic-free simplifications. | Source-noted via `ext_reinforce_style_rlhf_2024` and `ext_remax_2023`; no local trainer |
+| Trust-region and clipped online RL | Bounded online exploration with update-size control: TRPO, PPO, PPO-RLHF, GRPO, and descendants. | Source-noted via `ext_trpo_2015`, `ext_ppo_2017`, `ext_dapo_2025`, and `ext_gspo_2025`; no local online RL run |
+| Offline preference optimization | Stable updates from static preference or binary feedback data: DPO, IPO, ORPO, KTO, SimPO. | Source-noted via `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, and `ext_simpo_2024`; no local preference baseline |
+| Verifier-based RL / RLVR | Learn from exact, process, tool, context, governance, or efficiency verifiers. | Source-noted via `ext_longrlvr_2026`; process-reward sources beyond this remain queued |
+| Reasoning-budget and latency-aware RL | Learn when to think, stop, retrieve, verify, use tools, or switch generation modes. | Source-noted via `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, and `ext_rlhf_limitations_2023`; no local reasoning-budget run |
 | Control-policy RL | Train planner, router, VCM, execution, and generation-mode policies rather than only answer style. | Planned ASI Stack experiments |
 
 This chapter should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
@@ -220,20 +218,18 @@ Only fixture-shape validation and finite record predicates are implemented. The 
 
 These Lean hooks are implemented as finite-record predicates over policy-update reviews and reward/governance promotion reviews. They prove only the record-level gates: an admitted policy update exposes reward, evaluation, governance, and rollback fields, and an update with unverified reward or missing governance gate cannot be promoted. They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, or resistance to all reward-hacking strategies.
 
-## External literature queue
+## Source-noted external literature
 
-The following primary-source candidates were verified as real public records during ingestion, but this repository has not yet source-noted them. They should be mined before any external-literature-backed claim is made.
+The following sources were added as stable external-literature records with primary arXiv metadata and conservative source notes. They remain method-family context. They do not promote this chapter above `argument`, and none of their reported training results has been reproduced here.
 
-| Area | Candidate sources | Use after source-note work |
+| Area | Source records | Current use |
 |---|---|---|
-| Foundational policy gradients | REINFORCE-style methods, RLOO, ReMax, REINFORCE++-style work | Explain minimal reward-learning substrates and critic-free simplifications. |
-| Trust-region updates | TRPO, PPO, PPO/RLHF-family references | Explain update constraints, KL/drift boundaries, and why bounded updates matter. |
-| Critic-free, group-relative, and sequence-level RL | ReMax, DeepSeek-R1/GRPO, DAPO, GSPO, S-GRPO | Compare critic-free reward learning, group-relative advantages, sequence-level rewards, and reasoning-budget penalties. |
-| Offline preference optimization | DPO, IPO, ORPO, KTO, SimPO | Explain when static preferences or binary feedback are cheaper than online rollout. |
-| Verifier reward and long context | RLVR, process-reward, and LongRLVR-style context rewards | Connect VCM grounding, verifier rewards, and context-selection policies. |
-| RLHF limitations | RLHF limitation surveys and evaluator-gaming work | Feed reward-hacking probes, governance gates, and disclosure/audit requirements. |
-
-Checked candidate links: [TRPO](https://arxiv.org/abs/1502.05477), [PPO](https://arxiv.org/abs/1707.06347), [ReMax](https://arxiv.org/abs/2310.10505), [DPO](https://arxiv.org/abs/2305.18290), [IPO / preference-learning paradigm](https://arxiv.org/abs/2310.12036), [ORPO](https://arxiv.org/abs/2403.07691), [KTO](https://arxiv.org/abs/2402.01306), [SimPO](https://arxiv.org/abs/2405.14734), [REINFORCE-style RLHF revisiting](https://arxiv.org/abs/2402.14740), [DeepSeek-R1](https://arxiv.org/abs/2501.12948), [DAPO](https://arxiv.org/abs/2503.14476), [GSPO](https://arxiv.org/abs/2507.18071), [S-GRPO](https://arxiv.org/abs/2505.07686), [LongRLVR](https://arxiv.org/abs/2603.02146), and [Open Problems and Fundamental Limitations of RLHF](https://arxiv.org/abs/2307.15217).
+| Trust-region / online RL | `ext_trpo_2015`, `ext_ppo_2017` | Explain bounded update-size discipline, proximal objectives, and why online rollout needs drift accounting. |
+| Simpler or critic-light RLHF | `ext_remax_2023`, `ext_reinforce_style_rlhf_2024` | Compare PPO-heavy pipelines with simpler RLHF policy-gradient baselines. |
+| Offline preference optimization | `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024` | Explain preference, binary-feedback, reference-model, and sequence-reward assumptions. |
+| Reasoning RL and sequence-level variants | `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025` | Compare reasoning-RL, reproducibility pressure, sequence-level objectives, and overthinking control. |
+| Verifier reward and long context | `ext_longrlvr_2026` | Connect long-context reward design to VCM grounding and context adequacy. |
+| RLHF limitations | `ext_rlhf_limitations_2023` | Feed reward-hacking probes, evaluator-limit warnings, and disclosure/audit requirements. |
 
 ## Source crosswalk
 
@@ -252,7 +248,7 @@ Checked candidate links: [TRPO](https://arxiv.org/abs/1502.05477), [PPO](https:/
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Toolification and procedural-memory feedback loops for repeated successful trajectories. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Multi-core routing and runtime implementation-reference context; not reproduced here. | source note available; connector or recovery required |
 
-The crosswalk keeps the chapter grounded in the supplied ASI Stack sources while the third-party RL literature remains a separate source-note backlog.
+External method-family notes now cover the initial policy-optimization literature queue. They are intentionally separate from local evidence: source-note coverage does not imply a trainer, reward model, preference dataset, RLVR benchmark, reasoning-budget study, or policy update exists in this repository.
 
 ## Summary
 
