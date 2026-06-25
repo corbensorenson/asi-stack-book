@@ -5474,14 +5474,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -7460,28 +7460,100 @@
             {
               "source_id": "simulation_scaling",
               "mapped_support": "Supports the simulation-fidelity claim through contract-relative feasibility: declared scope, clockspeed, fidelity, temporal semantics, demand estimates, available capacity, and bottlenecks such as compute, memory, heat, bandwidth, and latency.",
-              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit was run here."
+              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit was run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/simulation_scaling.txt:9-19",
+                "sources/raw/google_docs/simulation_scaling.txt:28-41",
+                "sources/raw/google_docs/simulation_scaling.txt:44-57",
+                "sources/raw/google_docs/simulation_scaling.txt:145-150",
+                "sources/raw/google_docs/simulation_scaling.txt:191-216",
+                "sources/raw/google_docs/simulation_scaling.txt:220-239",
+                "sources/raw/google_docs/simulation_scaling.txt:245-266",
+                "sources/raw/google_docs/simulation_scaling.txt:445-467",
+                "sources/raw/google_docs/simulation_scaling.txt:470-483",
+                "sources/raw/google_docs/simulation_scaling.txt:486-512",
+                "sources/raw/google_docs/simulation_scaling.txt:540-564"
+              ],
+              "passage_review_note": "Reviewed local raw cache for contract-relative simulation demand, declared scope, clockspeed, fidelity/efficiency, temporal semantics, capacity as memory/rate/dissipation bottlenecks, approximation liberties, same-physics feasibility limits, and tradeoff geometry; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit is promoted."
             },
             {
               "source_id": "cgs",
               "mapped_support": "Supports the warning that compact simulators and generators can hide residual complexity unless residual burden, verification cost, governance interface, and hidden complexity debt are explicit.",
-              "limits": "Conceptual framework only; no local CGS benchmark or simulator adequacy test has been run."
+              "limits": "Conceptual framework only; no local CGS benchmark or simulator adequacy test has been run.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cgs.txt:121-135",
+                "sources/raw/google_docs/cgs.txt:139-175",
+                "sources/raw/google_docs/cgs.txt:688-718",
+                "sources/raw/google_docs/cgs.txt:722-740",
+                "sources/raw/google_docs/cgs.txt:788-803",
+                "sources/raw/google_docs/cgs.txt:825-838"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compact seeds/rules/memory, residual and error channels, verification, governance interface, residual honesty, full cost accounting, verification cost, and hidden-complexity debt; no simulator adequacy benchmark or CGS benchmark is promoted."
             },
             {
               "source_id": "rankfold_neuralfold",
               "mapped_support": "Supports simulation/storage cost awareness through artifact manifests, deterministic reconstruction checks, residual coding, WORM assumptions, and archive-backend obligations.",
-              "limits": "Architecture and implementation-plan source only; no local artifact compressor, trace-store benchmark, deterministic decoder, or reproduced ratio exists here."
+              "limits": "Architecture and implementation-plan source only; no local artifact compressor, trace-store benchmark, deterministic decoder, or reproduced ratio exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rankfold_neuralfold.txt:13-17",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:21-35",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:39-61",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:178-188",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:205-224",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:264-294",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:320-330",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:334-350",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:378-382",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:446-490",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:494-495"
+              ],
+              "passage_review_note": "Reviewed local raw cache for WORM archival scope, artifact and simulation-field streams, manifests/container routing, deterministic decode/evaluation requirements, residual coding, full byte accounting, fallback, and decode-cost limits; no artifact compressor, trace-store benchmark, deterministic decoder, or reproduced compression ratio is promoted."
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports treating simulation as a scarce-resource choice through bounded capacity, burst controls, load variance, cognitive friction, and quality/cost measurement ideas.",
-              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here."
+              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:9-12",
+                "sources/raw/google_docs/tokenmana.txt:19-28",
+                "sources/raw/google_docs/tokenmana.txt:37-55",
+                "sources/raw/google_docs/tokenmana.txt:67-75",
+                "sources/raw/google_docs/tokenmana.txt:156-188",
+                "sources/raw/google_docs/tokenmana.txt:227-239",
+                "sources/raw/google_docs/tokenmana.txt:267-280",
+                "sources/raw/google_docs/tokenmana.txt:305-319",
+                "sources/raw/google_docs/tokenmana.txt:380-424",
+                "sources/raw/google_docs/tokenmana.txt:458-483"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst pools, load variance, renewal clustering, convex infrastructure cost, temporal elasticity, quality/cognitive-friction measurement, and empirical-study design; no TokenMana simulation, pricing experiment, human study, welfare result, or load-stability result is promoted."
             },
             {
               "source_id": "alignment_field",
               "mapped_support": "Supports using simulation scenarios only with visible normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions.",
-              "limits": "Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative."
+              "limits": "Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:148-160",
+                "sources/raw/google_docs/alignment_field.txt:240-285",
+                "sources/raw/google_docs/alignment_field.txt:327-355",
+                "sources/raw/google_docs/alignment_field.txt:369-391",
+                "sources/raw/google_docs/alignment_field.txt:449-454",
+                "sources/raw/google_docs/alignment_field.txt:705-735"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the distinction between behavioral simulation and interiority, recursive self-modeling, relational bandwidth, isolation/confinement harms, machine-consciousness threshold language, explicit model limitations, and metaphysical boundary material; used only as normative/speculative guardrail, not physics or simulation evidence."
             }
+          ],
+          "draft_maturity": "v0.2 manuscript draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all five assigned simulation-fidelity sources; support remains at argument until a physical-computation audit, simulation benchmark, feasibility calculator, independent external literature review, or accepted evidence transition exists.",
+            "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, resource-bound sanity check, approximation audit, or external literature review has been run.",
+            "Simulation Scaling is treated as internal theoretical synthesis and design framing, not as reproduced physics evidence or an independent literature audit.",
+            "Alignment Field is used only for normative/speculative boundary handling around simulation scenarios; it is not physics or simulation evidence, and consciousness/metaphysical claims remain speculative.",
+            "No support-state promotion, raw source publication, physical feasibility result, simulator result, or benchmark-transfer result is implied by this drafting pass."
           ]
         },
         {

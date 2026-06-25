@@ -14,9 +14,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this simulation-fidelity claim to all assigned source notes; support remains argument until a physical-computation audit, simulation benchmark, feasibility calculator, or external literature review exists."
-  - "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, or external literature review has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all five assigned simulation-fidelity sources; support remains at argument until a physical-computation audit, simulation benchmark, feasibility calculator, independent external literature review, or accepted evidence transition exists."
+  - "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, resource-bound sanity check, approximation audit, or external literature review has been run."
+  - "Simulation Scaling is treated as internal theoretical synthesis and design framing, not as reproduced physics evidence or an independent literature audit."
+  - "Alignment Field is used only for normative/speculative boundary handling around simulation scenarios; it is not physics or simulation evidence, and consciousness/metaphysical claims remain speculative."
+  - "No support-state promotion, raw source publication, physical feasibility result, simulator result, or benchmark-transfer result is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -32,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `simulation_scaling`; supporting: `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
-| Source loading state | source notes: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; raw cache: `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; raw source text is not published. |
 | Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.SimulationFidelity` implements finite claim-field and fidelity-support predicates; fidelity, resource-bound, approximation-audit, and feasibility tests remain planned. |
 
 ## Drafting guardrail
@@ -55,11 +57,11 @@ Resource economics matters here because simulation consumes capacity. Compact ge
 
 [simulation-fidelity-and-physical-constraints.core, label: Design rationale, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
 
-The claim remains at `argument` support. The source note supports discussion of contract-relative simulation demand and bottlenecks, but this chapter does not claim independent physical validation or simulation performance.
+The claim remains at `argument` support. The passage-reviewed mappings support discussion of contract-relative simulation demand and bottlenecks, but this chapter does not claim independent physical validation, feasibility calculation, or simulation performance.
 
 ### Claim-source mapping status
 
-Appendix C now maps this simulation-fidelity claim to all assigned source notes. The mappings support contract-relative scope, fidelity, resource costs, bottlenecks, hidden simulation burden, trace/storage cost, load pressure, and normative boundaries, not a demonstrated simulator or physical-computation result.
+Appendix C now records passage-reviewed mappings for all five assigned sources. The mappings support contract-relative scope, fidelity, resource costs, bottlenecks, hidden simulation burden, trace/storage cost, load pressure, and normative/speculative boundary handling, not a demonstrated simulator, physical-computation result, benchmark-transfer result, or consciousness claim. `alignment_field` is used only as a guardrail around agency, dignity, confinement, and speculative metaphysical assumptions.
 
 | Source | What it supports | Limit |
 |---|---|---|

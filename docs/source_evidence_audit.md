@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 274 |
+| Passage-reviewed mappings recorded | 279 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -73,7 +73,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
-| `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 0 | argument | passage review required before source-derived promotion |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
@@ -487,11 +487,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `coilra_multicoil_rope` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_pagedattention_vllm_2023` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `simulation_scaling` | mapped | note present | chapter listed | not passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `rankfold_neuralfold` | mapped | note present | chapter listed | not passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `tokenmana` | mapped | note present | chapter listed | not passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
+| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
+| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
+| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
+| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `temporal_coil_research` | mapped | note present | chapter listed | not passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
