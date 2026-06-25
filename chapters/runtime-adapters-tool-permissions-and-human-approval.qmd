@@ -17,7 +17,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until adapter execution, sandbox, approval-service, rollback, or secret-handle harnesses exist."
+  - "Appendix C now records exact claim-source mappings with passage-reviewed references for five local raw-cache sources plus two local public-project sources; `moecot` remains connector/source-note mapped."
   - "Protocol schema/fixture validation and narrow Lean permission/approval predicates are implemented; no adapter execution, sandbox, approval-service, rollback, or secret-handle harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -35,12 +35,12 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
-| Source loading state | source notes: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
+| Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; passage-reviewed local public-project source: `field_of_god_ai_constitution`, `theseus_operator_os`; connector/source-note mapped: `moecot` |
 | Test state | Runtime adapter fixture validation implemented; finite permission and approval predicates implemented in `AsiStackProofs.RuntimeAdapters`; adapter execution, sandbox, approval-service, rollback, and secret-handle tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite Lean predicates over permission and approval records, but the fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
+This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite Lean predicates over permission and approval records. Seven assigned source mappings have passage-reviewed refs, while `moecot` remains connector/source-note mapped. The fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
 
 ## Problem
 
@@ -66,18 +66,18 @@ The claim remains at `argument` support. Talos supplies adapter and approval dis
 
 ### Claim-source mapping status
 
-Appendix C now maps this runtime-adapter claim to all assigned source notes. The mappings support typed permissions, sandbox and approval boundaries, handle-mediated authority, least-power governance, operator visibility, and post-action evidence capture, not safe tool execution in this repository.
+Appendix C now maps this runtime-adapter claim to all assigned source notes, including passage-reviewed references for seven durable local sources. The mappings support typed permissions, sandbox and approval boundaries, handle-mediated authority, least-power governance, operator visibility, and post-action evidence capture, not safe tool execution in this repository.
 
-| Source | What it supports | Limit |
-|---|---|---|
-| `talos` | Typed jobs, tool isolation, contract locks, human approval, blind handles, Digital SCIFs, evidence records, audit logs, replay, tests, residuals, and regressions. | No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced. |
-| `viea` | Structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage. | No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists here. |
-| `ladon_manhattan` | Hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions. | Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here. |
-| `software_magic_grimoire` | Guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, evidence-advancing loops, and scoped recursion. | Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety. |
-| `genesiscode` | Capability-mediated effects for I/O, time, randomness, networking, model calls, deterministic effect logs, and protocol seals. | No local capability runtime, sandbox, effect log verifier, or security proof exists. |
-| `moecot` | Specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration. | Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced. |
-| `field_of_god_ai_constitution` | Governed tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization. | Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here. |
-| `theseus_operator_os` | Shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation. | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository. |
+| Source | What it supports | Review state | Limit |
+|---|---|---|---|
+| `talos` | Typed jobs, tool isolation, contract locks, human approval, blind handles, Digital SCIFs, evidence records, audit logs, replay, tests, residuals, and regressions. | passage-reviewed local raw cache | No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced. |
+| `viea` | Structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage. | passage-reviewed local raw cache | No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists here. |
+| `ladon_manhattan` | Hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions. | passage-reviewed local raw cache | Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here. |
+| `software_magic_grimoire` | Guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, evidence-advancing loops, and scoped recursion. | passage-reviewed local raw cache | Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety. |
+| `genesiscode` | Capability-mediated effects for I/O, time, randomness, networking, model calls, deterministic effect logs, and protocol seals. | passage-reviewed local raw cache | No local capability runtime, sandbox, effect log verifier, or security proof exists. |
+| `moecot` | Specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration. | connector/source-note mapped only | Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced. |
+| `field_of_god_ai_constitution` | Governed tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization. | passage-reviewed local public-project source | Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here. |
+| `theseus_operator_os` | Shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation. | passage-reviewed local public-project source | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository. |
 
 ## Mechanism
 
@@ -192,10 +192,10 @@ These proof hooks are implemented as finite-record predicates. They do not prove
 | `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 
-The crosswalk identifies sources for effects, authority handles, approval gates, and operator-visible control surfaces. It does not claim safe tool execution has been demonstrated here.
+The crosswalk identifies sources for effects, authority handles, approval gates, and operator-visible control surfaces. Five Google Docs raw-cache sources and two local public-project sources now have passage-reviewed Appendix C mappings. `moecot` remains connector/source-note mapped until runtime artifacts, approval traces, sandbox records, benchmark/replay logs, or external corroboration are imported and inspected. The crosswalk does not claim safe tool execution has been demonstrated here.
 
 ## Summary
 
 Runtime Adapters, Tool Permissions, and Human Approval is the effects boundary. It maps jobs to adapters, checks permissions, mediates authority handles, enforces approval gates, invokes tools in bounded modes, records effect receipts, and captures rollback or residuals.
 
-The chapter's rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. Once those effect traces accumulate, the next chapter asks which recurring patterns deserve to become procedural memory.
+The chapter's rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. This pass tightened the evidence crosswalk but did not run an adapter. Once real effect traces accumulate, the next chapter asks which recurring patterns deserve to become procedural memory.

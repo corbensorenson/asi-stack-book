@@ -1696,6 +1696,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A runtime-adapter contract with permissions, approval requirements, and result evidence.
+- Exact Appendix C claim-source mappings for `runtime-adapters-tool-permissions-and-human-approval.core` across Talos, VIEA, Ladon/Manhattan, Software Magic Grimoire, GenesisCode, MoECOT, Field of God AI Constitution, and Theseus Operator OS; five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped.
 - Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape only.
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.

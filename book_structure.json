@@ -4503,27 +4503,72 @@
             {
               "source_id": "talos",
               "mapped_support": "Supports controlled runtime adapters through typed jobs, tool isolation, contract locks, human approval, blind secret handles, Digital SCIFs, evidence records, audit logs, replay, and promotion through tests/residuals/regressions.",
-              "limits": "No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced here."
+              "limits": "No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:2163-2219",
+                "sources/raw/google_docs/talos.txt:4402-4459",
+                "sources/raw/google_docs/talos.txt:4470-4482",
+                "sources/raw/google_docs/talos.txt:4990-5004",
+                "sources/raw/google_docs/talos.txt:6208-6241"
+              ],
+              "passage_review_note": "Reviewed local raw cache for contract locks, clearance checks, context slicing, blind handle use, sidecar permission checks, Digital SCIF isolation/wipe, security audit, rollback-as-negative-constraint, handle maps, RBAC policies, audit logs, immutable/auditable artifacts, proof bundles, replay, re-verification, and evidence audit. No live adapter runner, approval service, sandbox, handle broker, security result, replay result, or runtime execution is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports intent-to-runtime boundaries through structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists in this repository."
+              "limits": "No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:80-95",
+                "sources/raw/google_docs/viea.txt:356-416",
+                "sources/raw/google_docs/viea.txt:790-815",
+                "sources/raw/google_docs/viea.txt:819-837",
+                "sources/raw/google_docs/viea.txt:940-969",
+                "sources/raw/google_docs/viea.txt:1185-1192"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution framing, command-contract fields, risk-scaled command completeness, runtime adapter targets, target-specific verification, deployment gates with approval/rollback/monitoring, permission envelopes, least privilege, controlled external execution, benchmark runs, and feedback collection. No deployed adapter, feedback loop, runtime trace, or benchmark result is promoted."
             },
             {
               "source_id": "ladon_manhattan",
               "mapped_support": "Supports handle-mediated authority through hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions.",
-              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here."
+              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:14-20",
+                "sources/raw/google_docs/ladon_manhattan.txt:24-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:45-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:89-93",
+                "sources/raw/google_docs/ladon_manhattan.txt:97-125"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the right-to-use-not-know thesis, kernel/enclave secret storage, opaque handles, trusted user input, kernel-boundary interception, permission-table checks, authorized injection, AI memory retaining only handles, Digital SCIF lifecycle, zeroization, side-channel assumptions, reference implementation sketch, and theorem-style source claims. No Ladon implementation, kernel enforcement, side-channel validation, credential-safety test, or security audit is promoted."
             },
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports adapter workflow discipline through guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, loops that advance on evidence, and scoped recursion.",
-              "limits": "Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety."
+              "limits": "Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:68-88",
+                "sources/raw/google_docs/software_magic_grimoire.txt:128-152",
+                "sources/raw/google_docs/software_magic_grimoire.txt:232-240",
+                "sources/raw/google_docs/software_magic_grimoire.txt:570-579"
+              ],
+              "passage_review_note": "Reviewed local raw cache for bounded instruction artifacts, explicit artifact/objective/constraint/output/verification/failure fields, risk-scaled full forms, artifact boundaries, invariants, bounded search, output shapes, verification, safe failure behavior, high-impact proof requirements, and rollback language. No adapter enforcement, approval quality, tool-safety behavior, or runtime execution is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports capability-mediated effects by keeping nondeterminism, I/O, time, randomness, networking, and model calls behind capability boundaries with deterministic effect logs and protocol seals.",
-              "limits": "No local capability runtime, sandbox, effect log verifier, or security proof has been implemented from GenesisCode."
+              "limits": "No local capability runtime, sandbox, effect log verifier, or security proof has been implemented from GenesisCode.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-26",
+                "sources/raw/google_docs/genesiscode.txt:164-211",
+                "sources/raw/google_docs/genesiscode.txt:218-245",
+                "sources/raw/google_docs/genesiscode.txt:493-502",
+                "sources/raw/google_docs/genesiscode.txt:641-668"
+              ],
+              "passage_review_note": "Reviewed local raw cache for untrusted-by-default AI output, explicit effect boundaries, unforgeable protocol seals, sealed effect requests, host-provided capabilities, deny-by-default runners, deterministic effect logs, replay semantics, auditable LLM calls, obligations, evidence artifacts, package-acceptance policy, content-addressed artifacts, and replay checking. No local capability runtime, sandbox, effect-log verifier, supply-chain gate, or security proof is promoted."
             },
             {
               "source_id": "moecot",
@@ -4533,12 +4578,30 @@
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports governing tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization of sovereignty.",
-              "limits": "Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here."
+              "limits": "Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:121-135",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:183-205",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:523-562",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:713-726",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
+              ],
+              "passage_review_note": "Reviewed local public-project source for consent around privacy/identity/financial/irreversible/tool actions, power as tool use/code execution/deployment/surveillance, stricter oversight with higher power, scope before power, reversibility/auditability, least sufficient power, no self-authorization, tool-risk tiers, user confirmation/reversibility, strict review/logging/oversight, prohibited tool behaviors, runtime decision procedure, risk classifier, memory governance, audit logs, human oversight, red-team evaluations, and version control. No runtime policy engine, red-team suite, system-prompt evaluation, or proof is promoted."
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports operator-visible runtime control through shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation.",
-              "limits": "No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository."
+              "limits": "No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-30",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:32-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:54-74",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:99-107",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:116-146"
+              ],
+              "passage_review_note": "Reviewed local public-project source for shared command vocabulary, durable SQLite work board, background/watch/wake/phone-delivery contracts, persistent goal visibility, skill packs, before/after tool-hook contracts, live hook ledger, command-channel proof path, rollback/checkpoint/worktree/TTL/kill-switch/signed update/personality safety contracts, feedback routing, report surfaces, skill permissions, board-task execution, node assignment, hook ledger entries, run evidence, operator panels, node registry, and visible autonomy gates. No Hive board, SQLite database, node registry, command channel, hook ledger, dashboard, or distributed runtime was run from this repository."
             }
           ],
           "mechanism": [
