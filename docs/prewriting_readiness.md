@@ -23,7 +23,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 ## Still Missing Before Claims Can Rise Above Argument
 
-- Chapter claims now have exact source-note mappings in Appendix C, but only 36 of the 461 current claim-source mappings have recorded passage-level review.
+- Chapter claims now have exact source-note mappings in Appendix C, but only 42 of the 461 current claim-source mappings have recorded passage-level review.
 - Lean targets are implemented as finite-record predicates and traceability-audited, but semantic proof adequacy review remains planned.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.

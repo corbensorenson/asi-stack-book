@@ -467,6 +467,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
+- Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending constitutional consistency, self-modification ethics, power-without-care, runtime policy, or red-team evidence.
 - Planned Codex test: Constitutional consistency test.
 - Planned Codex test: Self-modification ethics scenario.
 - Planned Codex test: Power-without-care scenario.
