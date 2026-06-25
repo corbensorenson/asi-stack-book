@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `coil_attention_memory`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `vcm_public` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -71,7 +71,9 @@ Appendix C now maps this coil-attention and cyclic-memory claim to all assigned 
 
 ## Mechanism
 
-The mechanism is a Cyclic Memory Contract.
+Cyclic memory becomes useful when it exposes mistakes that ordinary long-context language hides. `coil_attention_memory` supplies the structural contract family: residue plus winding, freshness windows, sparse-coverage gaps, recurrence budgets, loop exits, and alias diagnostics. The Circle contract suite supplies theorem-linked receipt language, Theseus transfer keeps structural smoke checks separate from learned-model claims, and VCM keeps context adequacy, authority, taint, invalidation, and admission separate from memory success.
+
+A Cyclic Memory Contract records the finite facts that can be checked while preserving the non-claim that those facts do not prove retrieval, reasoning, speed, memory reduction, or longer usable context.
 
 ```{mermaid}
 flowchart LR
@@ -181,4 +183,4 @@ The crosswalk keeps memory claims structural. `coil_attention_memory` supplies a
 
 Cyclic memory contracts make structural facts visible: residue, winding, freshness, coverage, recurrence depth, loop exits, and fallback. They do not prove retrieval or reasoning quality.
 
-This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved.
+This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved. The next chapter applies the same boundary to adapters, RoPE-style phase banks, and cyclic mixers, where parameter counts and exact phase facts are easy to overread.

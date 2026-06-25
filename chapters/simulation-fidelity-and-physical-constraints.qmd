@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -73,7 +73,9 @@ Appendix C now maps this simulation-fidelity claim to all assigned source notes.
 
 ## Mechanism
 
-The mechanism is a Simulation Contract Record.
+Simulation is a substrate only after it becomes an instrument with a declared contract. `simulation_scaling` supplies the feasibility frame: scope, clockspeed, fidelity, temporal semantics, efficiency, and bottlenecks have to be named before a result can mean anything. CGS and RankFold/NeuralFold add the hidden-burden warning: a compact simulator or stored trace can hide complexity in residuals, manifests, reconstruction checks, or storage costs. TokenMana adds the budget pressure, and `alignment_field` keeps speculative agency and metaphysical claims from becoming engineering evidence.
+
+A Simulation Contract Record makes that boundary inspectable. It records the simulated target, the fidelity promise, the resource bill, the approximation liberties, and the exact claim boundary the simulation is allowed to support.
 
 ```{mermaid}
 flowchart LR
@@ -183,4 +185,4 @@ The crosswalk keeps simulation language engineering-bound. `simulation_scaling` 
 
 Simulation is not a magic substrate. It is a contract with scope, fidelity, clockspeed, cost, bottlenecks, approximations, and claim boundaries.
 
-The ASI Stack can use simulations aggressively, but only when they are treated as bounded instruments whose conclusions cannot outrun their fidelity and resource assumptions.
+The ASI Stack can use simulations aggressively, but only when they are treated as bounded instruments whose conclusions cannot outrun their fidelity and resource assumptions. The next chapter generalizes that rule from simulators to mathematical and search substrates: no substrate becomes core merely because it is elegant.

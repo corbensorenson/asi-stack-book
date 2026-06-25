@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -73,11 +73,9 @@ Appendix C now maps this proof-carrying contract claim to all assigned source no
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful. Second, attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims. Third, require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+Proof-carrying contracts sit one layer below substrate adoption. They do not decide whether a substrate is useful; they decide whether a finite structural fact can travel without losing its theorem status, deterministic fields, fingerprints, replay requirements, and non-claim boundary. The Circle source family supplies the pattern: theorem manifests and proof policy from the core project, consumer fields and receipt gates from the AI contract suite, exact/discretized phase-bank boundaries from the RoPE certifier, cyclic-address and backend-separation discipline from circular computation, and baseline discipline from Circle AI Architectures.
 
-- Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.
-- Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.
-- Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+The working mechanism has three gates. First, model an engineering object as a finite circular address, schedule, window, or phase structure only when that model is faithful. Second, attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims. Third, require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
 
 The receipt boundary is the main artifact. It lets the book say "this finite structural fact is proof-linked" without smuggling in claims about model behavior.
 
@@ -175,4 +173,4 @@ The crosswalk preserves external proof authority. `circle_calculus_core` supplie
 
 Circle Calculus and proof-carrying AI contracts are valuable because they let finite structural facts travel with theorem IDs, receipts, fingerprints, validation commands, and non-claims. Their job is boundary preservation.
 
-The ASI Stack should consume those contracts as structural guardrails, not as model-quality evidence. Downstream promotion still requires workloads, ordinary baselines, negative controls, metrics, and replayable result artifacts.
+The ASI Stack should consume those contracts as structural guardrails, not as model-quality evidence. Downstream promotion still requires workloads, ordinary baselines, negative controls, metrics, and replayable result artifacts. The next chapter applies that receipt boundary to memory and recurrence, where the central risk is mistaking slot coverage for semantic adequacy.

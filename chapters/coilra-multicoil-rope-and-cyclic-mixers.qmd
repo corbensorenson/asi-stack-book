@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -73,7 +73,9 @@ Appendix C now maps this cyclic-mixer claim to all assigned source notes. The ma
 
 ## Mechanism
 
-The mechanism is a Cyclic Mixer Evaluation Record.
+Cyclic mixer adoption is where structural proof, parameter accounting, and hardware reality meet. `coilra_multicoil_rope` supplies the adapter, phase, RoPE, circulant, block-cyclic, and parameter-accounting frame. The RoPE certifier supplies exact/discretized position-bookkeeping receipts. The Circle contract suite supplies consumer fields and non-claims. Theseus transfer requires workload, baseline, negative-control, metric, script, and report boundaries. Circle AI Architectures supplies the anti-fashion rule: use cyclic structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic structure, or geometry-aware structure is actually present.
+
+A Cyclic Mixer Evaluation Record keeps those layers separated. It can report a structural invariant, receipt boundary, alias/load diagnostics, parameter accounting, and hardware notes while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
 
 ```{mermaid}
 flowchart LR
@@ -182,4 +184,4 @@ The crosswalk keeps cyclic mixer evidence partitioned. `coilra_multicoil_rope` s
 
 Cyclic structure can be an excellent substrate when the workload actually contains cyclic structure and the evidence boundary is preserved. It is not a general magic advantage.
 
-CoilRA, MultiCoil RoPE, and cyclic mixers therefore remain optional specialist substrates until structural receipts, baselines, diagnostics, metrics, and failure cases justify adoption.
+CoilRA, MultiCoil RoPE, and cyclic mixers therefore remain optional specialist substrates until structural receipts, baselines, diagnostics, metrics, and failure cases justify adoption. With Part III's routing, compression, representation, simulation, and substrate boundaries in place, the book can turn to the proof and evidence envelope that decides which claims are allowed to harden.
