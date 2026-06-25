@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until contradiction-rate, distractor-resistance, adequacy-labeling, or escalation-harness tests exist."
+  - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped. Support remains argument until contradiction-rate, distractor-resistance, adequacy-labeling, or escalation-harness tests exist."
   - "Only protocol schema/fixture validation is implemented; no contradiction-rate or adequacy benchmark has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
-| Source loading state | source notes: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`; raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
+| Source loading state | passage-reviewed local raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/source-note mapped: `vcm_editable` |
 | Test state | `context_adequacy_record.valid.json` passes protocol fixture validation; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; contradiction-rate, distractor-resistance, and escalation-harness tests remain planned. |
 
 ## Drafting guardrail
@@ -61,23 +61,23 @@ RAG and long context are therefore necessary infrastructure, not proof. They hel
 
 [verification-bandwidth-and-context-adequacy.core, label: Design rationale, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
 
-The claim remains at `argument` support. Verification Bandwidth supplies the generation-versus-verification distinction, semantic-unit comparison frame, transitive-decay risk, and proposed contradiction-rate test. VCM supplies adequacy/admission states and context packet vocabulary. Spinoza supplies claim-ledger consequences. TreeLLM supplies a representation route for explicit semantic units. Editable VCM remains a refinement source, not a local benchmark.
+The claim remains at `argument` support. Verification Bandwidth supplies the generation-versus-verification distinction, semantic-unit comparison frame, transitive-decay risk, and proposed contradiction-rate test. VCM supplies adequacy/admission states, use-relative certificates, exact-decode versus semantic-materialization boundaries, and non-success vocabulary. Spinoza supplies claim-ledger consequences. TreeLLM supplies a representation route for explicit semantic units. Editable VCM remains a connector/source-note refinement source, not a local benchmark.
 
 ### Claim-source mapping status
 
-Appendix C now maps this verification-bandwidth claim to all assigned source notes. The mappings support the distinction between generation capacity and verification adequacy, not an empirical law about model cognition or a completed contradiction benchmark.
+Appendix C now maps this verification-bandwidth claim to all assigned source notes, and four local raw-cache mappings carry passage-reviewed references. The mappings support the distinction between generation capacity and verification adequacy, not an empirical law about model cognition or a completed contradiction benchmark.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `verification_bandwidth` | Distinguishes context length from effective verification workspace, semantic units, constraint satisfaction, pairwise grinding, two-body verification limits, dominant-unit crowd-out, transitive decay, summary tradeoffs, and proposed contradiction-rate testing. | Contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here. |
-| `vcm_public` | Adequacy/admission separation, protected compilation, source/authority binding, typed non-success states, and visible adequacy gaps. | No end-to-end model superiority, adequacy-classifier correctness, resolver, or model-facing packet result exists. |
-| `spinoza` | Claim ledgers can consume adequacy results through verifier separation, proof/citation/procedure tiers, belief revision, contradiction detection, defeaters, downgrade/block behavior, and verifier timeouts. | Does not solve open-domain autoformalization, arbitrary theorem validity, or whole-system epistemic correctness. |
-| `treellm` | Explicit semantic-unit representation through concept graphs, path-derived semantic tokens, residual attributes, graph operations, and updateable external semantic substrates. | No implementation, reasoning benchmark, fixed-token adequacy validation, or graph coverage result exists here. |
+| `verification_bandwidth` | Passage-reviewed: generation-versus-verification distinction, semantic units, effective verification workspace, coherence as constraint satisfaction, pairwise grinding, two-body verification limit, dominant-component suppression, transitive decay, interface-verification tradeoff, hierarchical summary fidelity tradeoff, proposed constraint-satisfaction/LCR test, and context window as verification bound. | Contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here. |
+| `vcm_public` | Passage-reviewed: object/version/representation/validation/packet/materialization identities, role-indexed operation contracts, adequacy/admission separation, strict SATISFIED/UNKNOWN/UNSATISFIED mapping, protected joint compilation, feasibility and semantic-fault outcomes, conservative recovery options, use-relative representation certificates, no-universal-strict-summary limitation, authority non-escalation, and evidence/authority separation. | No end-to-end model superiority, adequacy-classifier correctness, resolver, VCM-Bench result, or model-facing packet result exists. |
+| `spinoza` | Passage-reviewed: proposer/verifier/maintainer separation, explicit formal-scope limits, structured unsupported states, verifier proof/refute/unknown outcomes, tier labels, proof budgets, solver status and counterexample/unsat-core reporting, contradiction-triggered belief revision, dependency tracing, entrenchment, retraction and re-verification, proof-carrying graph metadata, object-level tiering, proof invalidation, and reproducible-procedure support tiers. | Does not solve open-domain autoformalization, arbitrary theorem validity, verifier quality, or whole-system epistemic correctness. |
+| `treellm` | Passage-reviewed: explicit traversable probabilistic graph/DAG proposal, concept/question/relation nodes, weighted edges, multi-entry roots, convergent paths, fixed semantic-token formats, path IDs, residual attributes, self-tokenizing bootstrap, reconstruction/alignment objectives, shared external DAG, incremental updates, explicit knowledge storage, memory-mapped lattice variants, and residual fingerprints. | No implementation, reasoning benchmark, fixed-token adequacy validation, graph coverage result, perfect-grounding claim, or model-size/performance claim exists here. |
 | `vcm_editable` | Evidence-carrying planner-guided context compilation with virtual context ABI, representation graphs, certificates, authority non-escalation, transactional memory, and benchmark agenda. | Connector-readable refinement only; no VCM-Bench, contradiction benchmark, or citation-normalized external-literature support is recorded. |
 
 ## Mechanism
 
-After ABI resolution, certificates, and transaction semantics produce an authorized context packet, Verification Bandwidth asks whether that packet can support the target claim. The Verification Bandwidth source supplies the generation-versus-verification distinction, semantic-unit comparison frame, two-body verification limit, crowd-out risk, and contradiction-rate test agenda. VCM supplies adequacy/admission separation and typed non-success states. Spinoza supplies claim-ledger consequences, TreeLLM supplies an explicit semantic-unit representation route, and editable VCM supplies the planner-guided context-compiler agenda.
+After ABI resolution, certificates, and transaction semantics produce an authorized context packet, Verification Bandwidth asks whether that packet can support the target claim. The Verification Bandwidth source supplies the generation-versus-verification distinction, semantic-unit comparison frame, two-body verification limit, crowd-out risk, transitive-decay risk, and contradiction-rate test agenda. VCM supplies adequacy/admission separation, use-relative sufficiency, non-success states, and the rule that a summary cannot recover omitted information without consulting a stronger source. Spinoza supplies claim-ledger consequences when verification is unknown or contradicted. TreeLLM supplies an explicit semantic-unit representation route, with the usual warning that representation format is not proof of adequacy. Editable VCM supplies the planner-guided context-compiler agenda as connector/source-note context only.
 
 The mechanism turns context loading into an explicit adequacy contract. A context packet should identify the semantic units it claims to cover, the target claim or task, the compression path used to fit them, the loss or residual warnings, and the verification mode that was actually applied.
 
@@ -167,16 +167,16 @@ These Lean hooks are implemented as finite-record predicates over context-packet
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache passage-reviewed |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache passage-reviewed |
+| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for context adequacy and verification-capacity vocabulary. It does not claim the proposed contradiction-rate experiment has been run.
+The crosswalk identifies sources for context adequacy and verification-capacity vocabulary. Four local mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped. The crosswalk does not claim the proposed contradiction-rate experiment has been run.
 
 ## Summary
 
 Verification Bandwidth and Context Adequacy defines one boundary in the ASI Stack: Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate. Its job is to make a capability more governable, not merely more impressive.
 
-The design principle is conservative: context can be present, relevant, and still inadequate for the claim being made. A living ASI stack should therefore record adequacy as a first-class state, route high-risk claims to stronger verification, and treat missed contradictions as residuals that improve the next context compiler. This closes the context substrate and hands the book to the claim-ledger chapters, where adequacy records become belief-revision inputs rather than background notes.
+The design principle is conservative: context can be present, relevant, and still inadequate for the claim being made. A living ASI stack should therefore record adequacy as a first-class state, route high-risk claims to stronger verification, and treat missed contradictions as residuals that improve the next context compiler. The passage-reviewed sources justify that control boundary; they do not prove a measured verification-bandwidth law. This closes the context substrate and hands the book to the claim-ledger chapters, where adequacy records become belief-revision inputs rather than background notes.

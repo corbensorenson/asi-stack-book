@@ -1363,6 +1363,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A context adequacy rubric and verification-bandwidth warning states.
+- Exact Appendix C claim-source mappings for `verification-bandwidth-and-context-adequacy.core` across Verification Bandwidth, VCM public v1, Spinoza, TreeLLM, and editable VCM; four local raw-cache mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped.
 - Implemented protocol validation: `context_adequacy_record` fixture validates public record shape only.
 - Planned Codex test: Distractor resistance test.
 - Planned Codex test: Adequacy labeling test.

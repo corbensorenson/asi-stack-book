@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 111 |
+| Passage-reviewed mappings recorded | 115 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -55,7 +55,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `virtual-context-abi` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
 | `semantic-pages-context-cells-and-certificates` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
-| `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `claim-ledgers-and-belief-revision` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `unified-adaptive-tribunal-and-adversarial-review` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -336,10 +336,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `black_hole_context_manager` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
-| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
-| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `treellm` | mapped | note present | chapter listed | not passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `viea` | mapped | note present | chapter listed | not passage-reviewed |

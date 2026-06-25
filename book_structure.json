@@ -3665,22 +3665,65 @@
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Defines the core distinction between context length and effective verification workspace, semantic units, constraint satisfaction, pairwise grinding, two-body verification limits, dominant-unit crowd-out, transitive decay, hierarchical summary tradeoffs, and proposed contradiction-rate testing.",
-              "limits": "Conceptual/theoretical source only; contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here."
+              "limits": "Conceptual/theoretical source only; contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:5-13",
+                "sources/raw/google_docs/verification_bandwidth.txt:17-30",
+                "sources/raw/google_docs/verification_bandwidth.txt:33-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:43-61",
+                "sources/raw/google_docs/verification_bandwidth.txt:62-72",
+                "sources/raw/google_docs/verification_bandwidth.txt:74-85",
+                "sources/raw/google_docs/verification_bandwidth.txt:87-92"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the generation-versus-verification distinction, semantic units, effective verification workspace, coherence as constraint satisfaction, pairwise grinding, two-body verification limit, dominant-component suppression, transitive decay, interface-verification tradeoff, hierarchical summary fidelity tradeoff, proposed constraint-satisfaction/LCR test, RAG-as-engineering-compromise framing, and context window as maximum rigorous verification scope; no contradiction-rate experiment, distractor-resistance result, adequacy-labeling benchmark, or mechanized theorem is promoted."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports adequacy/admission separation, protected compilation, source and authority binding, typed non-success states such as unknown/deferred/infeasible/ask/abstain/deny/retry, and visible adequacy gaps.",
-              "limits": "Does not establish end-to-end model superiority or adequacy-classifier correctness; no local VCM resolver or model-facing packet result exists."
+              "limits": "Does not establish end-to-end model superiority or adequacy-classifier correctness; no local VCM resolver or model-facing packet result exists.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:203-235",
+                "sources/raw/google_docs/vcm_public.txt:265-304",
+                "sources/raw/google_docs/vcm_public.txt:337-351",
+                "sources/raw/google_docs/vcm_public.txt:832-851",
+                "sources/raw/google_docs/vcm_public.txt:866-870"
+              ],
+              "passage_review_note": "Reviewed local raw cache for object/version/representation/validation/packet/materialization identities, role-indexed operation contracts, adequacy/admission separation, strict SATISFIED/UNKNOWN/UNSATISFIED mapping, protected joint compilation, feasibility and semantic-fault outcomes, conservative recovery options, conformance/evidence boundaries, use-relative representation certificates, exact decode versus semantic materialization, no-universal-strict-summary limitation, authority non-escalation, and evidence/authority separation; no adequacy classifier, resolver, VCM-Bench result, model-facing superiority claim, or local packet outcome is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports routing adequacy results into claim ledgers through verifier separation, proof/citation/procedure-carrying claim tiers, belief revision, contradiction detection, defeaters, downgrade/block behavior, and verifier timeouts.",
-              "limits": "Does not solve open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+              "limits": "Does not solve open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:347-365",
+                "sources/raw/google_docs/spinoza.txt:378-398",
+                "sources/raw/google_docs/spinoza.txt:402-445",
+                "sources/raw/google_docs/spinoza.txt:694-718",
+                "sources/raw/google_docs/spinoza.txt:757-799",
+                "sources/raw/google_docs/spinoza.txt:1013-1023"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proposer/verifier/maintainer separation, explicit formal-scope limits, structured unsupported states, verifier proof/refute/unknown outcomes, tier labels, proof budgets, solver status and counterexample/unsat-core reporting, contradiction-triggered belief revision, dependency tracing, entrenchment, retraction and re-verification, proof-carrying hypergraph metadata, object-level tiering, proof invalidation, and reproducible-procedure support tiers; no open-domain autoformalization, arbitrary theorem validity, verifier quality result, or whole-system epistemic correctness claim is promoted."
             },
             {
               "source_id": "treellm",
               "mapped_support": "Supports explicit semantic-unit representation via traversable concept graphs, path-derived semantic tokens, residual attributes, graph operations, and updateable external semantic substrates.",
-              "limits": "No implementation, benchmarked reasoning gain, fixed-token adequacy validation, or graph coverage result exists in this repository."
+              "limits": "No implementation, benchmarked reasoning gain, fixed-token adequacy validation, or graph coverage result exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/treellm.txt:7-19",
+                "sources/raw/google_docs/treellm.txt:25-44",
+                "sources/raw/google_docs/treellm.txt:47-72",
+                "sources/raw/google_docs/treellm.txt:75-90",
+                "sources/raw/google_docs/treellm.txt:93-110",
+                "sources/raw/google_docs/treellm.txt:143-189",
+                "sources/raw/google_docs/treellm.txt:448-493",
+                "sources/raw/google_docs/treellm.txt:615-640"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the explicit traversable probabilistic graph/DAG proposal, concept/question/relation nodes, weighted edges, multi-entry roots, convergent paths, fixed semantic-token formats, path IDs, residual attributes, self-tokenizing bootstrap, reconstruction/alignment objectives, shared external DAG, incremental updates, explicit knowledge storage, updateable graph framing, root-question/path token variants, memory-mapped lattice file format, and residual fingerprints; no TreeLLM implementation, benchmarked reasoning gain, fixed-token adequacy validation, graph coverage result, perfect-grounding claim, or model-size/performance claim is promoted."
             },
             {
               "source_id": "vcm_editable",
