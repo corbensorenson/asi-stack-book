@@ -4,7 +4,7 @@ chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now maps this compact-generative claim to all assigned source notes; support remains argument until utility, residual-burden, fallback, or downstream behavior tests exist."
   - "The compact_generative_record fixture and narrow Lean residual/exactness predicates are implemented; CGS utility, residual-burden behavior, fallback behavior, and downstream tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -59,6 +59,19 @@ Compactness also does not imply interpretability or safety. A compressed rule ca
 [compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
 
 The claim remains at `argument` support. The source notes support source-derived discussion of compact seeds, residual burden, verification cost, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, proof, or implementation has been run here.
+
+### Claim-source mapping status
+
+Appendix C now maps this compact-generative claim to all assigned source notes. The mappings support compact seeds, rule systems, residual channels, verification contracts, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `cgs` | Seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics. | Conceptual framework only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run. |
+| `rgs` | Attempt logging, success/failure classification, verified-tool promotion, residual escrow, regression suites, and benchmark/model/tool/residual ledgers. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
+| `bugbrain` | Resource-constrained local cognition, microkernel design pressure, adaptive mechanisms, user feedback, storage paging, and build/flash/test workflow pressure. | Speculative prototype-lineage source; this repo has not built, flashed, emulated, benchmarked, or validated BugBrain. |
+| `simulation_scaling` | Scope, clockspeed, fidelity, efficiency, physical capacity, and bottleneck accounting for making compactness resource-explicit. | Theoretical scaling framework only; no physical experiment, simulation benchmark, or independent literature audit was run. |
+| `rmi` | Benchmark frontier pressure, routed specialist attempts, residual escrow, loop closure, independent arm/router improvement, regression preservation, and lifecycle discipline. | No independent reproduction, benchmark run, prototype inspection, or empirical modular-intelligence result exists here. |
+| `project_theseus_whitepaper` | SymLiquid, SparkStream, Octopus routing, bounded specialist arms, benchmark/residual ledgers, checkpoints, trusted Hive nodes, observability, and evidence-before-growth discipline. | Source-reported implementation narrative only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
 
 ## Mechanism
 

@@ -4,7 +4,7 @@ chapter_id: "generate-verify-repair-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "bbvca_v9"
   - "bbvca_main"
@@ -13,7 +13,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now maps this generate-verify-repair claim to all assigned source notes; support remains argument until a codec, bounded-search harness, reconstruction benchmark, repair-cost benchmark, or rate experiment exists."
   - "The compression_receipt fixture and narrow Lean reconstruction/verification predicates are implemented; no codec, bounded-search harness, exact reconstruction benchmark, repair-cost benchmark, or rate experiment has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -61,6 +61,17 @@ The hardest practical issue is rate honesty. A search-time proxy can guide a dyn
 [generate-verify-repair-compression.core, label: Design rationale, support: argument] Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
 
 The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - BBVCA_v9_final_public_release, Big Bang Volumetric Compression Architecture, Compact Generative Systems, and RankFold + NeuralFold - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+
+### Claim-source mapping status
+
+Appendix C now maps this generate-verify-repair claim to all assigned source notes. The mappings support reconstruction contracts, shared-law generation, exact repair streams, bounded verification, rate honesty, residual accounting, and artifact-compression comparison points, not a working compressor.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `bbvca_v9` | Reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints. | BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here. |
+| `bbvca_main` | Hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks as lineage for the stricter v9 formulation. | Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists. |
+| `cgs` | Compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt around compressed generation. | Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo. |
+| `rankfold_neuralfold` | Low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks as comparison points. | Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present. |
 
 ## Mechanism
 

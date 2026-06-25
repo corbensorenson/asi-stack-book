@@ -3848,13 +3848,45 @@
               "tag": "lean:compression.cgs.operational_invariant",
               "module": "AsiStackProofs.CompactGenerativeSystems",
               "target": "A compact representation with unresolved obligations carries residual records.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:compression.cgs.failure_blocks_promotion",
               "module": "AsiStackProofs.CompactGenerativeSystems",
               "target": "A lossy representation cannot be marked exact without verification evidence.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports the compact-generative core claim through the seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics.",
+              "limits": "Conceptual framework and research program only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run here."
+            },
+            {
+              "source_id": "rgs",
+              "mapped_support": "Supports residual honesty inside growth loops through attempt logging, success/failure classification, verified-tool promotion, residual escrow, regression suites, and benchmark/model/tool/residual ledgers.",
+              "limits": "Conceptual methodology only; no local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present."
+            },
+            {
+              "source_id": "bugbrain",
+              "mapped_support": "Supports edge-efficiency and tiny-local-cognition lineage through resource-constrained microkernel design, fractal/spiking adaptive mechanisms, user feedback, storage paging, and build/flash/test workflow pressure.",
+              "limits": "Speculative prototype-lineage source; this repo has not built, flashed, emulated, benchmarked, or validated BugBrain, and consciousness/AGI claims are not used."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports making compactness resource-explicit through contract-relative scope, clockspeed, fidelity, efficiency, physical capacity, and bottleneck accounting.",
+              "limits": "Theoretical scaling framework only; no physical experiment, simulation benchmark, or independent literature audit was run here."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports compactness as part of modular ratcheting through benchmark frontier pressure, routed specialist attempts, residual escrow, loop closure, independent arm/router improvement, regression preservation, and lifecycle discipline.",
+              "limits": "Architecture proposal only; no independent reproduction, benchmark run, prototype inspection, or empirical modular-intelligence result exists here."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports report-first compact implementation framing through SymLiquid, SparkStream, Octopus routing, bounded specialist arms, benchmark/residual ledgers, checkpoints, trusted Hive nodes, observability, and evidence-before-growth discipline.",
+              "limits": "Source-reported implementation narrative only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo."
             }
           ]
         },
@@ -3918,13 +3950,35 @@
               "tag": "lean:compression.gvr.operational_invariant",
               "module": "AsiStackProofs.GenerateVerifyRepair",
               "target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:compression.gvr.failure_blocks_promotion",
               "module": "AsiStackProofs.GenerateVerifyRepair",
               "target": "A failed verification blocks exactness promotion.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "bbvca_v9",
+              "mapped_support": "Supports the generate-verify-repair claim through reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints.",
+              "limits": "Primary conceptual compression source, not reproduced evidence; BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here."
+            },
+            {
+              "source_id": "bbvca_main",
+              "mapped_support": "Supports the lineage from hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks into the stricter v9 formulation.",
+              "limits": "Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports residual accounting and governance around compressed generation through compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt.",
+              "limits": "Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo."
+            },
+            {
+              "source_id": "rankfold_neuralfold",
+              "mapped_support": "Supports artifact-compression comparison points through low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks.",
+              "limits": "Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present."
             }
           ]
         },
@@ -4028,6 +4082,58 @@
               "target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports treating fast generation as compact generative leverage only when residual burden, verification cost, fallback, and governance interface are visible.",
+              "limits": "Does not provide local decoding-speed, accepted-token, or useful-solution-per-second evidence."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports repeated-generation shortcuts as procedural-memory pressure through trajectory logging, loop detection, parameterized tool synthesis, verification, tool registry, routing, runtime monitoring, and retirement discipline.",
+              "limits": "No local loop detector, tool synthesis run, fast-path cache, or procedural generation shortcut has been executed here."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports speed-quality promotion discipline through benchmark lifecycle, wall diagnosis, benchmark/model ledgers, regression preservation, anti-Goodhart safeguards, transfer checks, and architecture-change criteria.",
+              "limits": "No local benchmark harness, mutation, holdout, acceptance-rate test, or reproduced performance run exists here."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports planner-selected generation modes through hierarchical decomposition, primitive schemas, minimum viable intelligence tiers, dependency scheduling, fallback requirements, and failure-driven replanning.",
+              "limits": "Planning whitepaper only; no PlanForge scheduler, mode selector, or benchmark trace has been implemented in this repo."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports separating raw generation speed from verified cognition by making verifier workspace, semantic units, pairwise constraint checks, summaries, and contradiction pressure explicit.",
+              "limits": "Conceptual framework only; the proposed contradiction-rate or constraint-satisfaction tests have not been run here."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports token/compute/memory/latency/load/cognitive-friction accounting through regenerative capacity, bounded pools, burst controls, load signals, and quality/human-friction measurement ideas.",
+              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports requiring accepted generated output to become typed artifacts with contracts, evidence records, audit logs, replay, approval gates, isolation, residuals, and delivery discipline.",
+              "limits": "Design source only; no Talos runtime, generated-artifact replay, approval-gate test, or security result has been reproduced."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports generation-mode context boundaries through bounded context packets, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states.",
+              "limits": "VCM control-plane source only; it does not prove fast generation quality, speed, or end-to-end model superiority."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports keeping accepted drafts separate from truth by routing generated claims through proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, downgrades, and protected axioms.",
+              "limits": "Reasoning architecture source only; open-domain autoformalization, verifier completeness, and fast-generation acceptance quality are not solved or reproduced here."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports treating generation modes as routable modular capabilities governed by specialist lifecycle, residual escrow, regression floors, readiness, fallback, and promotion discipline.",
+              "limits": "Architecture proposal only; no empirical fast-generation result, modular-route run, or readiness transition has been reproduced here."
+            }
           ]
         },
         {
@@ -4099,6 +4205,33 @@
               "module": "AsiStackProofs.ArtifactCompression",
               "target": "A compression record cannot omit residual or fallback metadata.",
               "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "rankfold_neuralfold",
+              "mapped_support": "Supports the artifact-compression claim through tensor-centric archival structure, per-artifact optimization, low-rank residual transforms, residual-coder cost alignment, WORM assumptions, manifests, codec parameters, deterministic decode, fuzz/integration tests, and reconstruction checks.",
+              "limits": "No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here."
+            },
+            {
+              "source_id": "rankfold_compressor",
+              "mapped_support": "Supports low-rank/tensor compression lineage through vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness, determinism, metrics, and CLI plans.",
+              "limits": "Lineage source with broad claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run."
+            },
+            {
+              "source_id": "bbvca_v9",
+              "mapped_support": "Supports reconstruction and rate-accounting discipline for artifact compression through explicit contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation.",
+              "limits": "Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness in this repo."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports residual-honesty framing for compressed artifacts through compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting.",
+              "limits": "Does not prove that any compressed artifact preserves downstream utility or cost advantage."
+            },
+            {
+              "source_id": "bugbrain",
+              "mapped_support": "Supports resource-constrained implementation pressure through tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible.",
+              "limits": "Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated here."
             }
           ]
         },
@@ -4176,6 +4309,43 @@
               "target": "A hierarchy update preserves prior node references or records supersession.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "treellm",
+              "mapped_support": "Supports the semantic-representation claim through traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, and editable external knowledge.",
+              "limits": "Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports routing semantic representations into evidence discipline through proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits.",
+              "limits": "Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy in this repo."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports treating semantic units as verification objects by distinguishing context length from verification workspace, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure.",
+              "limits": "Conceptual framework only; no grounding, context-adequacy, or contradiction-reduction benchmark has been run here."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports typed semantic IR through source plans, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation requirements, localized repair, and target lowering.",
+              "limits": "Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists in this repository."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports compact semantic substrates only when compression, generation, residuals, verification, governance, hidden complexity, and permitted use remain explicit.",
+              "limits": "Does not prove fixed semantic tokens are adequate, grounded, or utility-preserving for any task."
+            },
+            {
+              "source_id": "circle_ai_architectures",
+              "mapped_support": "Supports optional representation-substrate discipline by requiring cyclic/coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist.",
+              "limits": "No universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run here."
+            },
+            {
+              "source_id": "coilra_multicoil_rope",
+              "mapped_support": "Supports cyclic adapter/mixer and position-encoding contracts through adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims.",
+              "limits": "Structural/parameter-accounting source only; no quality, speed, memory, training-stability, or context-length improvement has been shown here."
+            }
           ]
         },
         {
@@ -4251,6 +4421,43 @@
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "A high-risk task with insufficient verification budget is blocked or escalated.",
               "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports resource-economics framing through regenerative bounded capacity, burst controls, load signals, convex infrastructure-cost comparisons, load variance, renewal clustering, nocturnal usage, cognitive friction, and privacy/opt-in study constraints.",
+              "limits": "Design and research-plan source only; formal results, simulations, human outcomes, profit effects, and productivity claims have not been reproduced."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports typed budget allocation through hierarchical decomposition, minimum viable intelligence tiers, dependency scheduling, cost/capability routing, fallback, replanning, and execution handoff.",
+              "limits": "Planning whitepaper only; no scheduler benchmark, cost-quality trace, or verified implementation exists in this repo."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports speculative value/accounting and governance framing through verified epistemic units, verification supply chains, intelligence arbitrage, coherence/liquidity language, fork, exit, audit, and contestability.",
+              "limits": "Speculative connector source; economic/liquidity metaphors are not implemented mechanisms or external corroboration."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports physical resource contracts through scope, clockspeed, fidelity, resource fraction, efficiency, memory, heat, bandwidth, latency, and capacity bottleneck accounting.",
+              "limits": "Theoretical synthesis only; no simulation benchmark, physical experiment, or independent literature audit was run here."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports resource accounting as part of the intent-to-execution spine through command contracts, artifacts, specialist-routed work, verification, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only; no completed deployment, runtime trace, budget scheduler, or verified execution result exists here."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports report-first resource discipline through small-until-evidence growth, compact substrate, autonomy control loop, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability.",
+              "limits": "Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here."
+            },
+            {
+              "source_id": "coilra_multicoil_rope",
+              "mapped_support": "Supports parameter-accounting and hardware/baseline discipline for cyclic mixers and adapters by separating dense, low-rank, block-cyclic, block-circulant, and circulant parameter counts from quality/runtime claims.",
+              "limits": "No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support."
             }
           ]
         },

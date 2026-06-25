@@ -4,7 +4,7 @@ chapter_id: "semantic-representation-and-tree-structured-models"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "treellm"
   - "spinoza"
@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now maps this semantic-representation claim to all assigned source notes; support remains argument until grounding, hierarchy-revision, representation-utility, or model-quality tests exist."
   - "The semantic_node_record fixture validates schema/example consistency only; no TreeLLM implementation, semantic-token benchmark, grounding evaluation, or hierarchy-revision harness has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -60,6 +60,20 @@ Verification Bandwidth adds a second pressure: a representation must be adequate
 [semantic-representation-and-tree-structured-models.core, label: Design rationale, support: argument] Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability.
 
 The claim remains at `argument` support. The source notes support discussion of semantic graphs, path-derived tokens, graph updates, provenance, traversal explanations, verification limits, and typed semantic IR. They do not support claims that TreeLLM achieves model-size reduction, reasoning gains, or lossless semantic adequacy here.
+
+### Claim-source mapping status
+
+Appendix C now maps this semantic-representation claim to all assigned source notes. The mappings support optional semantic and cyclic representation substrates with provenance, grounding, typed IR, verification limits, and baseline discipline, not proven model-size, reasoning, or quality gains.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `treellm` | Traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, and editable external knowledge. | No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here. |
+| `spinoza` | Proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits. | Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy here. |
+| `verification_bandwidth` | Semantic units as verification objects, verification workspace limits, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure. | No grounding, context-adequacy, or contradiction-reduction benchmark has been run. |
+| `cognitive_compilation` | Typed semantic IR, source plans, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation requirements, localized repair, and target lowering. | No working cognitive compiler, trace suite, or empirical ablation exists in this repository. |
+| `cgs` | Compact semantic substrates with compression, generation, residuals, verification, governance, hidden complexity, and permitted use visible. | Does not prove fixed semantic tokens are adequate, grounded, or utility-preserving for any task. |
+| `circle_ai_architectures` | Optional representation-substrate discipline for phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure with baselines and negative controls. | No universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run here. |
+| `coilra_multicoil_rope` | Adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims. | Structural/parameter-accounting source only; no quality, speed, memory, training-stability, or context-length improvement has been shown. |
 
 ## Mechanism
 
