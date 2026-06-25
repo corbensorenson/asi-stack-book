@@ -10,6 +10,7 @@
     "assigned_chapters",
     "source_note_state",
     "claim_mapping_state",
+    "passage_review_state",
     "external_literature_need",
     "proof_or_test_backlog",
     "insertion_decision",
@@ -29,6 +30,10 @@
       "enum": ["none", "planned", "available", "needs_update"]
     },
     "claim_mapping_state": {
+      "type": "string",
+      "enum": ["none", "partial", "complete", "blocked"]
+    },
+    "passage_review_state": {
       "type": "string",
       "enum": ["none", "partial", "complete", "blocked"]
     },

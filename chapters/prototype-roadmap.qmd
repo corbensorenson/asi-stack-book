@@ -73,7 +73,9 @@ The claim remains at `argument` support. The source notes support a staged build
 
 ## Mechanism
 
-The mechanism is a Prototype Phase Record.
+The roadmap is a sequence of gated records, not a promise that the later stages already work. VIEA argues for durable artifacts before execution, Benchmaxxing argues for regression floors before frontier claims, VCM argues for source-bound context before memory-heavy work, PlanForge argues for typed plans before dispatch, and SCF argues for governed replacement before improvement. The Project Theseus sources add a report-first implementation discipline: every phase should leave enough reports, gates, residuals, and work-board state for the next phase to inspect.
+
+Each Prototype Phase Record therefore answers four questions: what becomes possible, which artifacts must exist first, which checks can block promotion, and which non-claims prevent a roadmap milestone from masquerading as evidence.
 
 ```{mermaid}
 flowchart LR
@@ -95,7 +97,7 @@ Recommended phase order:
 - Routing heads, specialist registry, readiness gates, and benchmark ratchets.
 - Stable capability fields, replacement transactions, rollback, and bounded self-improvement.
 
-Self-improvement comes late because it depends on evaluator integrity, rollback, governance rights, and evidence ledgers.
+Self-improvement comes late because it depends on evaluator integrity, rollback, governance rights, evidence ledgers, and a demonstrated ability to preserve residuals instead of hiding them.
 
 ## Interfaces
 
@@ -177,3 +179,5 @@ These Lean hooks are implemented as finite-record predicates over phase unlock a
 ## Summary
 
 The prototype should grow as evidence infrastructure grows: source matrix, claim ledger, artifact graph, schemas, plans, context, typed jobs, runtime adapters, routing, readiness, benchmarks, SCFs, and only then bounded self-improvement.
+
+That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The next chapter applies the same rule to the manuscript itself.

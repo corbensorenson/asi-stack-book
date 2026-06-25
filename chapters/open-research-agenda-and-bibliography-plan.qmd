@@ -69,11 +69,13 @@ A pile of sources or ad hoc citations does not tell future writing agents what t
 
 [open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
 
-The claim remains at `argument` support. The repository has source inventory and source notes, but external literature normalization and claim-to-source mapping remain incomplete.
+The claim remains at `argument` support. The repository now has source inventory, source notes, chapter listings, and exact core-claim source-note mappings, but passage-level review, external literature normalization, and claim-to-mechanism reconciliation remain incomplete.
 
 ## Mechanism
 
-The mechanism is a Research Backlog Record.
+The research agenda is a queue with admission rules. Verification Bandwidth supplies context-adequacy and contradiction-rate test ideas. Benchmaxxing supplies benchmark lifecycle and anti-Goodhart backlog structure. SCF, VCM, PlanForge, Talos, Spinoza, RMI, CGS, GenesisCode, Simulation Scaling, Circle, Theseus, MoECOT, and the constitutional sources each name future artifacts that could strengthen the book only after source notes, direct citation checks, proof/test routes, and non-claim boundaries are recorded.
+
+The Research Backlog Record keeps those future moves from becoming loose intentions.
 
 ```{mermaid}
 flowchart LR
@@ -87,7 +89,7 @@ flowchart LR
   G --> H["Proof/test/backlog item"]
 ```
 
-The record should track source id, access state, assigned chapters, source-note state, claim-mapping state, external-literature need, proof/test backlog, insertion decision, and residuals.
+The record should track source id, access state, assigned chapters, source-note state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, insertion decision, and residuals.
 
 ## Interfaces
 
@@ -101,6 +103,7 @@ Minimum fields:
 - `assigned_chapters`
 - `source_note_state`
 - `claim_mapping_state`
+- `passage_review_state`
 - `external_literature_need`
 - `proof_or_test_backlog`
 - `insertion_decision`
@@ -127,7 +130,7 @@ Appendix G lists the corpus and external literature queue. Source notes support 
 
 ## Minimal implementation
 
-The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, but it does not normalize external literature or complete claim-to-source mapping.
+The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, but it does not normalize external literature, perform direct citation checks, or promote mapped claims to stronger support states.
 
 ## Codex test plan
 
@@ -153,7 +156,7 @@ This chapter intentionally keeps a broad source set because it governs the backl
 
 Priority backlog:
 
-- Claim-to-source mapping for Appendix C.
+- Passage-level review for mapped core claims and claim-to-mechanism reconciliation.
 - External literature normalization and direct citation checks.
 - Reproduction or import of any benchmark artifacts before support promotion.
 - Lean triage for proof targets that are currently schema or process contracts.
@@ -168,3 +171,5 @@ Recovery boundaries:
 ## Summary
 
 The research agenda is the book's backlog discipline. It keeps source ingestion, bibliography, proof targets, experiments, missing evidence, and chapter insertion rules visible so the living book can grow without losing evidence control.
+
+After the exact core-claim mappings, the next bottleneck is no longer knowing which sources belong to which claims. It is doing the slower work: passage review, external citation normalization, artifact import or reproduction, and source-specific chapter revision without collapsing design rationale into unsupported evidence.

@@ -2,6 +2,7 @@
 
 ## 2026-06-25 - v1.0 improvement goal source mining
 
+- Hand-revised the final Part IV integration, Theseus-reference, prototype-roadmap, living-methodology, and research-agenda chapters to replace generator-shaped mechanism prose with source-specific transitions, current mapping boundaries, and the three-audience release-edition discipline; added `passage_review_state` to the research backlog schema, fixture, and protocol appendix. No support state, proof claim, benchmark result, ebook, PDF, DOCX, or audio artifact was promoted or claimed.
 - Completed exact source-note claim mappings for the remaining Part IV integration, Theseus-reference, prototype-roadmap, living-methodology, and research-agenda chapters, so Appendix C now has exact source-note mappings for all 52 core claims. No support state was promoted.
 - Added `scripts/validate_reader_spine.py` and wired it into release profiles, validation, runbooks, and the Pages workflow so major-version reader/audio releases preserve a substantial human-readable spine while stripping live-only AI/research scaffolding. No ebook, PDF, DOCX, or audio artifact is claimed.
 - Added selected external-literature source records and public source notes for the fast-generation chapter covering speculative decoding, multi-token prediction, Medusa, EAGLE, lookahead decoding, LayerSkip, vLLM/PagedAttention, Mamba, LLaDA, and diffusion-LLM scaling.

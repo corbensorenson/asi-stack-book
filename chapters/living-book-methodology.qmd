@@ -79,6 +79,8 @@ The key artifact split is deliberate. `book_structure.json` controls order and s
 
 Conversation-mined material has a bounded role: it can preserve author intent, terminology, lineage, and recovery tasks, but it is not external evidence. Raw sources stay private unless publication is approved. Public claims move only when the evidence artifact exists.
 
+The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. Major reader and audio editions are downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
+
 ## Operating loop
 
 ```{mermaid}
@@ -171,4 +173,4 @@ The crosswalk connects the book's method to the stack's method: Benchmaxxing sup
 
 Living Book Methodology defines how this project improves without losing its memory. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
 
-This matters because the book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, and releases, then it has not earned the right to describe governed recursive improvement. The next chapter turns that humility into an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.
+This matters because the book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, reader editions, audio derivatives, and releases, then it has not earned the right to describe governed recursive improvement. The next chapter turns that humility into an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.

@@ -1159,6 +1159,7 @@ research_backlog_record:
   assigned_chapters: []
   source_note_state: available
   claim_mapping_state: partial
+  passage_review_state: partial
   external_literature_need: []
   proof_or_test_backlog: []
   insertion_decision: update_existing_chapter
@@ -1166,4 +1167,4 @@ research_backlog_record:
   next_action: string
 ```
 
-This record turns future-source and missing-evidence management into a reviewable backlog item. It records access state, source-note state, claim mapping, external literature work, proof/test backlog, insertion decision, residuals, and next action.
+This record turns future-source and missing-evidence management into a reviewable backlog item. It records access state, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, insertion decision, residuals, and next action.

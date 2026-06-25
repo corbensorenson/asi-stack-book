@@ -78,12 +78,11 @@ The claim remains at `argument` support. The source notes support architecture s
 
 ## Mechanism
 
-The mechanism turns the core claim into a working contract. First, trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement. Second, show the compression loop embedded inside the broader governance, memory, routing, and verification stack. Third, show which artifact each layer emits. Fourth, identify where authority can stop or reroute the process.
+The reference architecture is a trace contract. A request enters through human intent and constitutional authority, then passes through planning, context compilation, routing, verification, execution, evidence update, and capability governance. At each boundary the next layer receives a typed artifact rather than an informal summary: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, or SCF transition.
 
-- Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.
-- Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.
-- Show which artifact each layer emits.
-- Identify where authority can stop or reroute the process.
+This is where the earlier layers compose. VIEA supplies the intent-to-execution spine, VCM supplies source-bound working memory, PlanForge and Talos supply planning and work contracts, Spinoza supplies claim discipline, Octopus/RMI/Benchmaxxing supply routing and ratchet pressure, CGS and loop closure supply compression pressure, and SCF supplies the replacement gate. Project Theseus and MoECOT remain implementation-reference context until their artifacts are imported or rerun here.
+
+The control question at every step is simple: what artifact was received, what authority did it carry, what evidence changed, and what stop condition could still block progress?
 
 The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation.
 
@@ -196,4 +195,4 @@ Integrated Reference Architecture defines one boundary in the ASI Stack: The sta
 
 The architecture is coherent only if a reader can follow a request from human intent to evidence-backed change. This chapter gives that trace a shape: governance approves the command, planning compiles it, memory bounds the working context, routing selects capability, verification checks claims and residuals, execution produces artifacts, evidence records outcomes, and SCF gates decide whether improvement is allowed.
 
-The next chapter narrows the integration claim into an implementation reference: Project Theseus as a report-first way to build, observe, and govern pieces of this stack without claiming that the whole system already exists.
+The next chapter narrows the integration claim into an implementation reference. Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.
