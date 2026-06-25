@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until paired source/derived cells, summary-fidelity tests, or certificate truthfulness checks exist."
   - "Only protocol schema/fixture validation is implemented; no summary-fidelity or authority-preservation tests have been run for this chapter."
   - "Lean coverage is limited to finite certificate and source/summary authority records; summary fidelity and truthful-certificate checks remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -63,6 +63,18 @@ The fix is not to ban summaries. It is to make representation loss visible. A su
 [semantic-pages-context-cells-and-certificates.core, label: Design rationale, support: argument] VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
 
 The claim remains at `argument` support. VCM public v1 supplies semantic objects, representations, validations, packets, materializations, and authority binding. Verification Bandwidth explains why compression loss must be visible. Spinoza supplies claim/evidence cell pressure. Context Engineer supplies mission-brief and need-to-know context pressure. The editable VCM source is a terminology refinement route, not a local certificate system.
+
+### Claim-source mapping status
+
+Appendix C now maps this semantic-page claim to all assigned source notes. The mappings support typed context cells and certificate fields, not summary fidelity, omission completeness, certificate truthfulness, or support-state promotion from certificates.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `vcm_public` | Semantic objects, representations, validations, packets, materializations, source/authority binding, protected compilation, adequacy/admission separation, revocation, invalidation, and audit records. | No end-to-end model superiority, summary-fidelity test, or certificate truthfulness run exists here. |
+| `verification_bandwidth` | Representation loss must be visible through semantic units, verification workspace limits, pairwise comparison, summary fidelity tradeoffs, transitive decay, contradiction-rate pressure, and residual accounting. | The proposed verification and contradiction-rate tests have not been run. |
+| `spinoza` | Claim/evidence cells need proof-, citation-, and procedure-carrying graph records, support tiers, contradiction detection, dependency tracing, defeaters, downgrade/block behavior, and verifier-scope limits. | Does not prove open-domain formalization, arbitrary theorem validity, or whole-system epistemic correctness. |
+| `context_engineer` | Mission briefs and structured context objects should carry need-to-know constraints, clearance levels, context shards, memory masks, ephemeral sensitive context, sanitized outputs, and information-flow controls. | Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced. |
+| `vcm_editable` | Task-relative representation graphs and evidence-carrying certificates refine planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations. | Connector-readable refinement only; no VCM-Bench, certificate checker, or model-facing result has been run here. |
 
 ## Mechanism
 

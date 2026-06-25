@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until contradiction-rate, distractor-resistance, adequacy-labeling, or escalation-harness tests exist."
   - "Only protocol schema/fixture validation is implemented; no contradiction-rate or adequacy benchmark has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ RAG and long context are therefore necessary infrastructure, not proof. They hel
 [verification-bandwidth-and-context-adequacy.core, label: Design rationale, support: argument] Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate.
 
 The claim remains at `argument` support. Verification Bandwidth supplies the generation-versus-verification distinction, semantic-unit comparison frame, transitive-decay risk, and proposed contradiction-rate test. VCM supplies adequacy/admission states and context packet vocabulary. Spinoza supplies claim-ledger consequences. TreeLLM supplies a representation route for explicit semantic units. Editable VCM remains a refinement source, not a local benchmark.
+
+### Claim-source mapping status
+
+Appendix C now maps this verification-bandwidth claim to all assigned source notes. The mappings support the distinction between generation capacity and verification adequacy, not an empirical law about model cognition or a completed contradiction benchmark.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `verification_bandwidth` | Distinguishes context length from effective verification workspace, semantic units, constraint satisfaction, pairwise grinding, two-body verification limits, dominant-unit crowd-out, transitive decay, summary tradeoffs, and proposed contradiction-rate testing. | Contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here. |
+| `vcm_public` | Adequacy/admission separation, protected compilation, source/authority binding, typed non-success states, and visible adequacy gaps. | No end-to-end model superiority, adequacy-classifier correctness, resolver, or model-facing packet result exists. |
+| `spinoza` | Claim ledgers can consume adequacy results through verifier separation, proof/citation/procedure tiers, belief revision, contradiction detection, defeaters, downgrade/block behavior, and verifier timeouts. | Does not solve open-domain autoformalization, arbitrary theorem validity, or whole-system epistemic correctness. |
+| `treellm` | Explicit semantic-unit representation through concept graphs, path-derived semantic tokens, residual attributes, graph operations, and updateable external semantic substrates. | No implementation, reasoning benchmark, fixed-token adequacy validation, or graph coverage result exists here. |
+| `vcm_editable` | Evidence-carrying planner-guided context compilation with virtual context ABI, representation graphs, certificates, authority non-escalation, transactional memory, and benchmark agenda. | Connector-readable refinement only; no VCM-Bench, contradiction benchmark, or citation-normalized external-literature support is recorded. |
 
 ## Mechanism
 

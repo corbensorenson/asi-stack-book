@@ -2126,6 +2126,33 @@
               "target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports reframing complex generative work as a compiler pipeline that separates source planning, semantic compilation, target compilation, execution, repair, typed semantic atoms, dependencies, validation requirements, compiler passes, DAG scheduling, localized repair, and validator-backed artifacts.",
+              "limits": "Architecture and evaluation-plan source only; no local compiler, benchmark result, working trace suite, target-lowering harness, or empirical ablation validates compiler quality."
+            },
+            {
+              "source_id": "planforge_compiler_arch",
+              "mapped_support": "Supports the planner/compiler analogy with task graphs or intermediate representations, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, parallel independent nodes, critical-path scheduling, and cost/latency profiles.",
+              "limits": "Market and cost comparisons are motivating estimates only; cost, time, routing quality, and artifact quality numbers have not been reproduced here."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports evidence-carrying IR discipline through canonical intermediate forms, stable provenance hashes, semantic patches, obligations, deterministic replay logs, capability boundaries, compiler-equivalence checks, and protocol seals.",
+              "limits": "No GenesisCode implementation, replay checker, proof module, benchmark result, translation-validation artifact, or security audit is present in this repository."
+            },
+            {
+              "source_id": "treellm",
+              "mapped_support": "Supports explicit semantic-substrate intuition through traversable concept graphs, path-derived semantic tokens, residual attributes, graph updates, and model navigation over an external semantic operating system.",
+              "limits": "No local TreeLLM implementation, token format validation, measured compression ratio, benchmarked reasoning gain, or graph-coverage result exists here."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports connecting compiled IR to the larger intent-to-artifact spine through workflow-to-tool compilation, artifact graphs, claim and verification ledgers, residuals, feedback loops, benchmarks, tools, and regression coverage.",
+              "limits": "Architecture proposal only; no completed deployment, working cognitive compiler, execution log, or reproduced benchmark is proven here."
+            }
           ]
         },
         {
@@ -2195,13 +2222,45 @@
               "tag": "lean:vcm.abi.operational_invariant",
               "module": "AsiStackProofs.VirtualContextABI",
               "target": "A context reference resolves only when the requested address and version are valid for the snapshot.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:vcm.abi.failure_blocks_promotion",
               "module": "AsiStackProofs.VirtualContextABI",
               "target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Defines the core VCM control-plane frame: context as a compiled working cache over a versioned semantic address space with semantic objects, immutable content versions, representations, validations, packets, materializations, source and authority binding, adequacy/admission separation, snapshot coherence, revocation, invalidation, audit records, and typed non-success states.",
+              "limits": "Does not establish end-to-end superiority on frozen pretrained models, natural histories, or neighboring systems; no local resolver, context compiler, or VCM-Bench run exists here."
+            },
+            {
+              "source_id": "context_engineer",
+              "mapped_support": "Supports context as an information supply chain with a governor between planner and worker, layered memory, briefer agents, structured mission briefs, clearance levels, context shards, memory masks, allowed-tool lists, Digital SCIFs, ephemeral context, zeroization, sanitized commits, and information-flow controls.",
+              "limits": "Reported hallucination, leak, cost, and latency benchmark claims are source-reported only; no harness, raw runs, or independent reproduction is present."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports separating context admission from verification adequacy by distinguishing total context length from effective verification workspace, semantic-unit comparison, attention budget, transitive decay, summary loss, and contradiction-rate testing.",
+              "limits": "Conceptual/theoretical framework only here; the proposed contradiction-rate or adequacy tests have not been run or mechanized in this repository."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports routing context materializations into the broader intent-to-execution system through artifacts, claim/verification ledgers, residuals, runtime adapters, feedback, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only; no deployed context handoff, runtime adapter, or verified VIEA execution trace exists in this repo."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Refines VCM terminology around a virtual context ABI with stable addresses, mounts, snapshots, materializations, task-relative representation graphs, evidence-carrying certificates, protected compilation, authority non-escalation, planner-guided semantic paging, transactional memory, and a benchmark agenda.",
+              "limits": "Connector-readable refinement source only; no local VCM-Bench, model-facing result, or citation-normalized external-literature support is recorded here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for governed orchestration with specialist lanes, fail-closed control-plane ledgers, run/task ledgers, replay, handoff, readiness gates, promotion blockers, and residual tracking.",
+              "limits": "Runtime and benchmark artifacts have not been imported, inspected, or reproduced; this mapping is not evidence of a deployed context ABI."
             }
           ]
         },
@@ -2268,13 +2327,40 @@
               "tag": "lean:vcm.certificates.operational_invariant",
               "module": "AsiStackProofs.ContextCertificates",
               "target": "A derived context cell carries source bindings and a declared loss/use contract.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:vcm.certificates.failure_blocks_promotion",
               "module": "AsiStackProofs.ContextCertificates",
               "target": "A summary cannot increase the authority ceiling of its source cells.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports typed context units through semantic objects, representations, validations, packets, materializations, source and authority binding, protected compilation, adequacy/admission separation, revocation, invalidation, and audit records.",
+              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority, summary fidelity test, or certificate truthfulness run exists here."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports making representation loss visible by distinguishing semantic units, verification workspace, pairwise grinding, summary fidelity tradeoffs, transitive decay, and contradiction-rate/residual accounting.",
+              "limits": "The proposed verification and contradiction-rate tests have not been run; source-proposed theoretical claims remain unpromoted."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports claim/evidence cells through proof-, citation-, and procedure-carrying claim graphs, support tiers, contradiction detection, dependency tracing, defeaters, downgrade/block behavior, and explicit verifier-scope limits.",
+              "limits": "Does not prove open-domain natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "context_engineer",
+              "mapped_support": "Supports mission briefs and structured context objects under need-to-know constraints, clearance levels, context shards, memory masks, ephemeral sensitive context, sanitized outputs, and information-flow controls.",
+              "limits": "Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced here."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Supports task-relative representation graphs and evidence-carrying certificates for planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations.",
+              "limits": "Connector-readable terminology refinement only; no VCM-Bench, certificate checker, or model-facing result has been run in this repo."
             }
           ]
         },
@@ -2341,13 +2427,40 @@
               "tag": "lean:vcm.transactions.operational_invariant",
               "module": "AsiStackProofs.ContextTransactions",
               "target": "A snapshot read sees the committed events in its declared view.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:vcm.transactions.failure_blocks_promotion",
               "module": "AsiStackProofs.ContextTransactions",
               "target": "A tainted source produces tainted derived context unless declassification is authorized.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports transactional context semantics through immutable content versions, semantic objects, source and authority binding, protected compilation, snapshot coherence, revocation, invalidation, audit records, and visible non-success states.",
+              "limits": "No local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is present."
+            },
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supports sensitive context boundaries with opaque credential handles, policy-mediated secret injection, hardened managers, ephemeral isolated compartments, zeroization, compartment lifecycle, audit considerations, and side-channel assumptions.",
+              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here."
+            },
+            {
+              "source_id": "context_engineer",
+              "mapped_support": "Supports layered memory, context shards, clearance labels, memory masks, allowed-tool lists, Digital SCIFs, ephemeral context injection, zeroization, sanitized commits, outgoing secret scans, and read/write policies.",
+              "limits": "No benchmark harness or runtime enforcement test for clearance, taint, leak prevention, cost, or latency is reproduced here."
+            },
+            {
+              "source_id": "black_hole_context_manager",
+              "mapped_support": "Supports concrete memory-budget patterns with chunks, embeddings, entropy, mass, timestamps, goal-drift scoring, lazy recomputation, freezing, eviction, cluster management, critical-context preservation, sanitization, and rate limits.",
+              "limits": "Design/specification source only; no package, local test run, freeze/evict fixture, or benchmark demonstrates production behavior."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Refines the transaction vocabulary with stable addresses, mounts, snapshots, materializations, planner-guided semantic paging, protected compilation, authority non-escalation, and transactional/governed memory.",
+              "limits": "Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists here."
             }
           ]
         },
@@ -2421,6 +2534,33 @@
               "module": "AsiStackProofs.VerificationBandwidth",
               "target": "A high-risk claim with inadequate context cannot receive a verified support label.",
               "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Defines the core distinction between context length and effective verification workspace, semantic units, constraint satisfaction, pairwise grinding, two-body verification limits, dominant-unit crowd-out, transitive decay, hierarchical summary tradeoffs, and proposed contradiction-rate testing.",
+              "limits": "Conceptual/theoretical source only; contradiction-rate, distractor-resistance, and adequacy-labeling experiments have not been run or mechanized here."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports adequacy/admission separation, protected compilation, source and authority binding, typed non-success states such as unknown/deferred/infeasible/ask/abstain/deny/retry, and visible adequacy gaps.",
+              "limits": "Does not establish end-to-end model superiority or adequacy-classifier correctness; no local VCM resolver or model-facing packet result exists."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports routing adequacy results into claim ledgers through verifier separation, proof/citation/procedure-carrying claim tiers, belief revision, contradiction detection, defeaters, downgrade/block behavior, and verifier timeouts.",
+              "limits": "Does not solve open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "treellm",
+              "mapped_support": "Supports explicit semantic-unit representation via traversable concept graphs, path-derived semantic tokens, residual attributes, graph operations, and updateable external semantic substrates.",
+              "limits": "No implementation, benchmarked reasoning gain, fixed-token adequacy validation, or graph coverage result exists in this repository."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Supports evidence-carrying, planner-guided context compilation with virtual context ABI, representation graphs, certificates, authority non-escalation, transactional memory, and a benchmark agenda.",
+              "limits": "Connector-readable refinement source only; no VCM-Bench, contradiction benchmark, or citation-normalized external-literature support is recorded here."
             }
           ]
         },
