@@ -1751,6 +1751,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A loop closure pipeline from trace detection to verified tool record.
+- Exact Appendix C claim-source mappings for procedural memory: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Planned Codex test: Loop detection test.
 - Planned Codex test: Tool abstraction test.

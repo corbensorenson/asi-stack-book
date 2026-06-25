@@ -4690,27 +4690,73 @@
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports the core loop-closure mechanism through trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance.",
-              "limits": "No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed."
+              "limits": "No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:10-24",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:25-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-219",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:232-333"
+              ],
+              "passage_review_note": "Reviewed local raw cache for repeated trajectory logging, loop detection, invariant abstraction, parameter discovery, synthesis, verification, registry/routing/monitoring, three execution modes, procedural-memory framing, governed tool-card fields, and retirement conditions; no local loop detector, synthesis run, routing monitor, or retirement automation is promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports ratcheted procedural memory through benchmark pressure, routed specialist attempts, logs, loop closure, residual escrow, regression preservation, arm/router lifecycle, and interpreter/compiled-tool/reflex modes.",
-              "limits": "Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven here."
+              "limits": "Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:14-45",
+                "sources/raw/google_docs/rmi.txt:68-88",
+                "sources/raw/google_docs/rmi.txt:95-105",
+                "sources/raw/google_docs/rmi.txt:214-245",
+                "sources/raw/google_docs/rmi.txt:369-385"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark pressure, specialist routing, trajectory logs, repeated-success tool closure, residual escrow, regression preservation, tool registry, and interpreter/compiled-tool/reflex modes; no reproduced benchmark, prototype run, or ASI behavior is promoted."
             },
             {
               "source_id": "rgs",
               "mapped_support": "Supports promoting repeated successful procedures into verified tools while preserving residuals, using regression suites, and keeping ledgers for benchmarks, models, tools, residuals, calibration, safety, routing, and interventions.",
-              "limits": "No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present."
+              "limits": "No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rgs.txt:11-48",
+                "sources/raw/google_docs/rgs.txt:74-87",
+                "sources/raw/google_docs/rgs.txt:95-106",
+                "sources/raw/google_docs/rgs.txt:211-226",
+                "sources/raw/google_docs/rgs.txt:363-417",
+                "sources/raw/google_docs/rgs.txt:557-604"
+              ],
+              "passage_review_note": "Reviewed local raw cache for ratcheting systems, repeated-success tool promotion, tool registries, residual maps/escrow, benchmark ledgers, regression suites, verification governance, and residual recurrence handling; no local benchmark run, tool-promotion trace, or implemented ratchet is promoted."
             },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports regression and promotion discipline through benchmark lifecycle states, wall diagnosis, benchmark/model ledgers, anti-Goodhart safeguards, residual accounting, and architecture-change discipline.",
-              "limits": "No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here."
+              "limits": "No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:20-29",
+                "sources/raw/google_docs/benchmaxxing.txt:50-68",
+                "sources/raw/google_docs/benchmaxxing.txt:96-110",
+                "sources/raw/google_docs/benchmaxxing.txt:131-168",
+                "sources/raw/google_docs/benchmaxxing.txt:269-335",
+                "sources/raw/google_docs/benchmaxxing.txt:492-535"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark frontier pressure, saturated-benchmark regression promotion, wall diagnosis, residual reporting, anti-Goodhart safeguards, holdouts/mutation/transfer checks, and benchmark lifecycle states; no harness, mutation, holdout, empirical run, or model/prototype result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports procedural memory as typed, audited execution work through job lifecycles, adjudication, delivery, feedback/autopoiesis, audit logs, replay, tests, residuals, and regression coverage.",
-              "limits": "No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced in this repository."
+              "limits": "No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:2188-2194",
+                "sources/raw/google_docs/talos.txt:4460-4467",
+                "sources/raw/google_docs/talos.txt:5315-5320",
+                "sources/raw/google_docs/talos.txt:6209-6235",
+                "sources/raw/google_docs/talos.txt:6484-6508"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Nocturne/autopoiesis trace analysis, failed-plan resimulation, primitive-chain consolidation into compound tools, semantic log compression, proof bundles, replay, audit, forensic analysis, and verification-cost tradeoffs; no Talos loop-closure pipeline, scheduler, replay log, or benchmark result is promoted."
             },
             {
               "source_id": "moecot",
@@ -4720,17 +4766,45 @@
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports report-first loop closure through repeated trajectory closure into verified tools after parameters, preconditions, postconditions, verification, risk, and retirement criteria are recorded.",
-              "limits": "Source-reported implementation state only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo."
+              "limits": "Source-reported implementation state only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:124-145",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:251-289",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:369-399",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:487-505",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:710-710",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:754-762"
+              ],
+              "passage_review_note": "Reviewed local public-project source for report-first RMI layers, Octopus router arms, tool registry/residual ledgers, loop-closure pipeline, candidate-tool metadata, teacher-trace distillation, intervention ladder, and tool-bloat/teacher-dependence failures; no Theseus reports, ledgers, code paths, or command outputs are promoted."
             },
             {
               "source_id": "theseus_self_evolution_system",
               "mapped_support": "Supports evidence-gated procedural improvement through intervention ladders, loop closure into local verified tools, outcome ledgers, lifecycle-governed cells, branch isolation, local checks, and trace ledgers.",
-              "limits": "No Theseus scripts, ATTD reports, branch-creation flow, teacher runner, outcome ledger, or dashboard endpoint was executed here."
+              "limits": "No Theseus scripts, ATTD reports, branch-creation flow, teacher runner, outcome ledger, or dashboard endpoint was executed here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:5-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:28-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:47-63",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:84-131",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:171-183",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:190-218"
+              ],
+              "passage_review_note": "Reviewed local public-project source for evidence-gated self-evolution, intervention ladders, guarded teacher branches, local checks, ATTD repo-health gates, lifecycle-governed cells, loop-closure harvesting, trace ledgers, and machine-readable report truth; no Theseus scripts, reports, branch flow, teacher runner, or dashboard endpoint is promoted."
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports procedural-memory operations through durable work-board state, goals with budgets/judges/steps/stop conditions/dependencies/events, skill registry, tool hooks, feedback routing, and safety-visible operator surfaces.",
-              "limits": "No Hive board, node registry, command channel, database, or dashboard was run from this repository."
+              "limits": "No Hive board, node registry, command channel, database, or dashboard was run from this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:15-29",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:39-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:78-96",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:123-152"
+              ],
+              "passage_review_note": "Reviewed local public-project source for command vocabulary, durable SQLite work board, persistent goals, skill registry, tool hooks, feedback routing, dependencies/events, node registry, and safety-visible operator surfaces; no Hive board, node registry, command channel, database, or dashboard run is promoted."
             }
           ],
           "mechanism": [

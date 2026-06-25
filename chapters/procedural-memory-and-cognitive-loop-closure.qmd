@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
+  - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only, and support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
   - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, or regression harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -36,12 +36,12 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
-| Source loading state | source notes: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; connector/recovery: `moecot` |
+| Source loading state | passage-reviewed local raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/source-note mapped only: `moecot` |
 | Test state | Procedural tool fixture validation implemented; `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates; loop-detection and regression behavior tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats procedural memory as a governed promotion path from traces to tools. The repo validates a procedural-tool fixture, but it does not yet run loop detection, tool synthesis, active parameter discovery, regression testing, routing, monitoring, or retirement automation.
+This chapter treats procedural memory as a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture, but it does not yet run loop detection, tool synthesis, active parameter discovery, regression testing, routing, monitoring, or retirement automation.
 
 ## Problem
 
@@ -63,23 +63,23 @@ The efficient stack needs three modes: interpretation for novel work, compiled-t
 
 [procedural-memory-and-cognitive-loop-closure.core, label: Design rationale, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
 
-The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution.
+The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution. `moecot` supplies connector/source-note context only until its usable source text or runtime artifacts are imported.
 
 ### Claim-source mapping status
 
-Appendix C now maps this procedural-memory claim to all assigned source notes. The mappings support loop closure as a governed promotion path from repeated traces into verified parameterized tools, not a working loop detector, tool synthesizer, or autonomous self-improvement result.
+Appendix C now maps this procedural-memory claim to all assigned source notes and records passage-reviewed support for eight mappings. The mappings support loop closure as a governed promotion path from repeated traces into verified parameterized tools, not a working loop detector, tool synthesizer, or autonomous self-improvement result.
 
-| Source | What it supports | Limit |
-|---|---|---|
-| `cognitive_loop_closure` | Trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance. | No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed. |
-| `rmi` | Benchmark pressure, routed specialist attempts, logs, loop closure, residual escrow, regression preservation, arm/router lifecycle, and interpreter/compiled-tool/reflex modes. | Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven. |
-| `rgs` | Verified tool promotion, residual preservation, regression suites, and ledgers for benchmarks, models, tools, residuals, calibration, safety, routing, and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
-| `benchmaxxing` | Benchmark lifecycle, wall diagnosis, ledgers, anti-Goodhart safeguards, residual accounting, and architecture-change discipline. | No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here. |
-| `talos` | Job lifecycles, adjudication, delivery, feedback/autopoiesis, audit logs, replay, tests, residuals, and regression coverage. | No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced. |
-| `moecot` | Specialist lanes, readiness gates, ledgers, replay, handoff, promotion blockers, residual tracking, and limitation reporting. | MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced. |
-| `project_theseus_whitepaper` | Report-first loop closure into verified tools after parameters, preconditions, postconditions, verification, risk, and retirement criteria are recorded. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
-| `theseus_self_evolution_system` | Evidence-gated improvement through intervention ladders, local verified tools, outcome ledgers, lifecycle-governed cells, branch isolation, checks, and trace ledgers. | No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, or dashboard endpoint was executed here. |
-| `theseus_operator_os` | Durable work-board state, goals with budgets/judges/steps/stop conditions/dependencies/events, skill registry, tool hooks, feedback routing, and safety-visible operator surfaces. | No Hive board, node registry, command channel, database, or dashboard was run from this repository. |
+| Source | Review state | What it supports | Limit |
+|---|---|---|---|
+| `cognitive_loop_closure` | passage-reviewed local raw cache | Trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance. | No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed. |
+| `rmi` | passage-reviewed local raw cache | Benchmark pressure, routed specialist attempts, logs, loop closure, residual escrow, regression preservation, arm/router lifecycle, and interpreter/compiled-tool/reflex modes. | Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven. |
+| `rgs` | passage-reviewed local raw cache | Verified tool promotion, residual preservation, regression suites, and ledgers for benchmarks, models, tools, residuals, calibration, safety, routing, and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
+| `benchmaxxing` | passage-reviewed local raw cache | Benchmark lifecycle, wall diagnosis, ledgers, anti-Goodhart safeguards, residual accounting, and architecture-change discipline. | No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here. |
+| `talos` | passage-reviewed local raw cache | Job lifecycles, adjudication, delivery, feedback/autopoiesis, audit logs, replay, tests, residuals, and regression coverage. | No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced. |
+| `moecot` | connector/source-note mapped only | Specialist lanes, readiness gates, ledgers, replay, handoff, promotion blockers, residual tracking, and limitation reporting. | MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced. |
+| `project_theseus_whitepaper` | passage-reviewed local public-project source | Report-first loop closure into verified tools after parameters, preconditions, postconditions, verification, risk, and retirement criteria are recorded. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
+| `theseus_self_evolution_system` | passage-reviewed local public-project source | Evidence-gated improvement through intervention ladders, local verified tools, outcome ledgers, lifecycle-governed cells, branch isolation, checks, and trace ledgers. | No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, or dashboard endpoint was executed here. |
+| `theseus_operator_os` | passage-reviewed local public-project source | Durable work-board state, goals with budgets/judges/steps/stop conditions/dependencies/events, skill registry, tool hooks, feedback routing, and safety-visible operator surfaces. | No Hive board, node registry, command channel, database, or dashboard was run from this repository. |
 
 ## Mechanism
 
@@ -185,20 +185,20 @@ These Lean hooks are implemented as finite-record predicates over generated-tool
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
-| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | source note available; local raw cache available |
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; passage-reviewed local raw cache |
+| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; passage-reviewed local raw cache |
+| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | source note available; passage-reviewed local raw cache |
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; passage-reviewed local raw cache |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; passage-reviewed local raw cache |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector/source-note mapped only |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available; passage-reviewed local public-project source |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | source note available; passage-reviewed local public-project source |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available; passage-reviewed local public-project source |
 
-The crosswalk identifies sources for loop closure, procedural memory, ratchets, regressions, and operator-visible tool governance. It does not claim the book has a working loop-closure pipeline.
+The crosswalk identifies sources for loop closure, procedural memory, ratchets, regressions, and operator-visible tool governance. This pass tightened eight mappings against exact passages and left `moecot` connector/source-note mapped only. It does not claim the book has a working loop-closure pipeline.
 
 ## Summary
 
-Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail.
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. This pass tightened the source crosswalk, but it did not generate a tool or run the loop-closure pipeline.
 
 The chapter's discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
