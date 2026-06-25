@@ -10323,33 +10323,101 @@
           "claim_source_mappings": [
             {
               "source_id": "project_theseus_whitepaper",
-              "mapped_support": "Supports mining Project Theseus as a report-first RMI implementation reference with pressure loops, residual escrow, bounded specialist arms, benchmark floors, sparse teacher governance, checkpoints, Hive nodes, and trusted-node task boundaries.",
-              "limits": "Does not provide independently verified benchmark performance, ASI capability, deployment safety, or public-compute readiness in this repository."
+              "mapped_support": "Supports mining Project Theseus as a report-first RMI implementation reference with current-state caveats, pressure loops, residual escrow, benchmark floors, bounded specialist routing, sparse teacher governance, checkpoints, Hive nodes, safety boundaries, and machine-readable reports as the contract surface.",
+              "limits": "Does not provide independently verified benchmark performance, ASI capability, deployment safety, public-compute readiness, current report state, or public-safe replay evidence in this repository.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:11-15",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:19-38",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:40-46",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:71-76",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:84-105",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:107-126",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:300-341",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:343-364",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:387-400",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:549-580",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:582-629",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:664-690",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:692-716",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:718-745"
+              ],
+              "passage_review_note": "Reviewed pinned local whitepaper for current-state caveats, local-first report-driven RMI framing, non-claims, pressure/residual/diagnosis loop, benchmark lifecycle, residual escrow, tool closure, performance/resource reports, Hive registered-task boundary, safety/quarantine, report-first observability, and ephemeral implementation snapshot warnings; no current report state or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_plan_compiler",
               "mapped_support": "Supports the plan/report interface through typed goal contracts, semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, bounded execution packets, and replay traces.",
-              "limits": "The source-reported GREEN execute-mode proof was not rerun or independently verified here."
+              "limits": "The source-reported GREEN execute-mode proof was not rerun or independently verified here; no compiler command, report bundle, private execute proof, or replay trace is promoted.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:1-15",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:16-35",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:37-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:44-78"
+              ],
+              "passage_review_note": "Reviewed pinned local compiler note for goal-to-contract compilation, private execute-mode boundary, expected report outputs, public-benchmark calibration limits, semantic IR node fields, contract hashes, VCM slices, routes, claim/evidence targets, and source-reported execute-mode proof; no command, report bundle, or replay trace was rerun here.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_self_evolution_system",
               "mapped_support": "Supports Theseus self-evolution as an evidence-first governance lane using an intervention ladder, guarded teacher edits, ATTD repo-health gates, architecture experiment governance, outcome ledgers, and loop closure.",
-              "limits": "Does not prove autonomous improvement success, safety, teacher independence, or current dashboard state."
+              "limits": "Does not prove autonomous improvement success, safety, teacher independence, current dashboard state, ATTD report state, architecture-experiment result, or outcome-ledger success.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:5-22",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:24-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:44-64",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:84-102",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:104-131",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:148-171",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:173-188",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:204-226"
+              ],
+              "passage_review_note": "Reviewed pinned local self-evolution note for intervention ladder, self-evolution machinery, lifecycle/anti-bloat controls, ATTD source-growth gate, guarded teacher branch/check flow, deterministic rule substrate, architecture experiment governance, compact outcome ledgers, loop closure, current expected behavior, and machine-readable source-of-truth reports; no scripts, dashboard, or outcome ledger were executed here.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_architecture_gate",
               "mapped_support": "Supports gate-first implementation claims through pre-training checks for ratchet completion, routing, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, arm lifecycle governance, and external-inference zero.",
-              "limits": "The current gate snapshot is source-reported only and was not regenerated or inspected as a live report artifact here."
+              "limits": "The current gate snapshot is source-reported only and was not regenerated or inspected as a live report artifact here; it is not current readiness, deployment, safety, or training evidence.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-28",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:30-58"
+              ],
+              "passage_review_note": "Reviewed pinned local architecture-gate note for pre-training gate purpose, direct and compiled-ratchet commands, source-reported ready snapshot, required check list, failed-gate residual rule, rerun triggers, and necessary-not-sufficient warning; no current gate report or command was inspected or regenerated.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports the operator work-board and control-surface portion with durable task state, shared command vocabulary, node registry, feedback routing, hooks, TTLs, kill switches, signed updates, and isolation surfaces.",
-              "limits": "No Hive work board, command channel, SQLite state, node registry, or unattended-safety check has been run here."
+              "limits": "No Hive work board, command channel, SQLite state, node registry, dashboard, board-executor step, or unattended-safety check has been run here.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-30",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:32-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:54-63",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:76-107",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:123-146",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:148-155",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:1-8",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:28-45",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:75-100",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:111-120"
+              ],
+              "passage_review_note": "Reviewed pinned local Operator OS and work-board executor notes for shared command vocabulary, durable SQLite board, report surfaces, channel parity, command adapters, node registry split, safety gates, dashboard surfaces, task-to-ledger evidence flow, report-evidence store, improvement contract, no-progress blockers, and benchmark-answer restrictions; no operator surface or board step is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports the claim-boundary discipline for importing Circle finite fixtures into private Theseus experiment design while separating structural smoke checks from model-quality or promotion evidence.",
-              "limits": "Does not prove quality, runtime, memory, transfer, or capability improvements."
+              "limits": "Does not prove quality, runtime, memory, transfer, capability improvements, ASI progress, public transfer, or model promotion evidence.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:1-17",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:18-68",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:70-108",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:110-133",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:135-142"
+              ],
+              "passage_review_note": "Reviewed pinned local transfer-lane note for report-only status, finite contract fixtures, consumer and self-test commands, structural smoke and deterministic proxy outputs, contract families, claim-axis separation, named structural smokes, benchmark-design-only proxy boundary, allowed structural claim, disallowed quality/runtime/context/progress claims, and next private attachment requirements; no consumer, smoke, proxy benchmark, or model result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [

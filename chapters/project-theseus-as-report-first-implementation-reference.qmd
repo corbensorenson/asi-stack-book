@@ -15,9 +15,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument until current Theseus reports, replay commands, benchmark environments, or accepted evidence transitions justify promotion."
-  - "The theseus_report_crosswalk_record fixture validates schema/example consistency only; no live Theseus report bundle, replay command, benchmark environment, or current gate output has been imported or rerun."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all six assigned Theseus sources using pinned local project-file references; support remains argument until current reports, replay commands, benchmark environments, public-safe artifacts, or accepted evidence transitions justify promotion."
+  - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates only; no live Theseus report bundle, replay command, benchmark environment, current gate output, work-board step, or transfer-lane consumer has been imported or rerun."
+  - "Theseus implementation references are report-first context only; source-reported snapshots, dashboards, compiler status, gate state, self-evolution machinery, board state, and transfer-lane reports are not promoted without current artifacts."
+  - "No support-state promotion, benchmark result, model-quality result, deployment readiness, public-compute readiness, autonomous-improvement success, or raw source publication is implied."
 ---
 
 ## Chapter status
@@ -57,6 +58,19 @@ This chapter therefore treats reports, ledgers, configs, and work-board entries 
 [project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.
 
 The claim remains at `argument` support. The source notes support report-first implementation discussion, but they do not give this repository reproduced benchmark runs, current gate outputs, or public-safe private workload artifacts.
+
+### Claim-source mapping status
+
+Appendix C now records six passage-reviewed mappings for this chapter. The review makes the Theseus references traceable enough for drafting and later support review, but it does not move the chapter above `argument` support. It also does not convert source-reported status, current-state notes, dashboards, schemas, fixtures, or finite Lean predicates into public empirical evidence.
+
+| Mapping group | Reviewed support | Boundary |
+|---|---|---|
+| Theseus whitepaper | Report-first RMI implementation framing, current-state caveats, pressure/residual/diagnosis loop, benchmark lifecycle, residual escrow, tool closure, Hive task boundaries, safety constraints, and machine-readable reports as the contract surface. | No live operations ledger, current report bundle, current benchmark result, broad capability claim, deployment safety result, public-compute readiness, or replay evidence is imported here. |
+| Plan compiler | Typed goal contracts, hard constraint capsules, semantic IR DAGs, VCM slices, executor routes, claim/evidence targets, contract hashes, public-benchmark calibration boundary, expected reports, and source-reported execute-mode fields. | No compiler command, report bundle, private execute proof, replay trace, or execute-mode result was rerun or independently verified here. |
+| Self-evolution and architecture gate | Intervention ladder, guarded teacher branch/check flow, ATTD gate, architecture experiment governance, compact outcome ledger, loop closure, pre-training gate checks, failed-gate residuals, rerun triggers, and necessary-not-sufficient gate language. | No self-evolution scripts, ATTD reports, teacher runner, architecture experiment reports, dashboard endpoints, current gate report, or training-readiness result was run or inspected here. |
+| Operator surface and work board | Shared command vocabulary, durable SQLite board, node registry split, safety-visible controls, dashboard surfaces, task-to-ledger evidence flow, report-evidence store, improvement contract, no-progress blockers, and feedback routing. | No board step, command channel, SQLite state, node registry, dashboard, remote-control surface, or unattended-safety proof was run here. |
+| Circle transfer lane | Report-only bridge from deterministic Circle fixtures into private experiment configuration, structural smoke names, deterministic proxy benchmark design, claim-axis separation, and explicit disallowed quality/runtime/context/progress claims. | No consumer, smoke workload, proxy benchmark, private workload attachment, learned-model evaluation, transfer result, or model-promotion evidence was run here. |
+| Formal and fixture artifacts | `theseus_report_crosswalk_record.valid.json` and finite Lean predicates define record-level implementation-reference and gate-before-promotion expectations. | They prove public record-shape gates only, not Theseus runtime behavior, report truth, current readiness, self-evolution safety, or capability improvement. |
 
 ## Mechanism
 
