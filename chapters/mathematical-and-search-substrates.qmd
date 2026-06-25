@@ -20,9 +20,12 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this mathematical/search substrate claim to all assigned source notes, including Mamba as an external sequence-substrate source; support remains argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, local Circle builds, or sequence-substrate comparisons exist."
-  - "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, or local Circle build has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all eleven assigned mathematical/search-substrate sources; support remains at argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, local Circle builds, Mamba comparisons, or accepted evidence transitions exist."
+  - "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, local Circle build, Circle sidecar run, or Theseus transfer consumer run has been executed from this repo."
+  - "Temporal Coil, Circle, and Theseus references include source-reported or local-project process/fixture context, but this repo did not rerun or import their artifacts as validated book evidence."
+  - "TreeLLM and CoilLattice claims are treated as speculative representation-substrate proposals until a verified token format, implementation, compression result, reasoning benchmark, or grounding benchmark exists."
+  - "Mamba is used only as external sequence-substrate context from the public arXiv abstract/metadata; no local Mamba training, serving, benchmark, routing, or downstream-quality result is implied."
+  - "No support-state promotion, raw source publication, model-quality claim, performance claim, adoption decision, transfer result, or substrate-core promotion is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -38,7 +41,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`; connector/recovery: `coilmoecot` |
-| Source loading state | source notes: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023`; raw cache: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`; uncached external note: `ext_mamba_2023` |
+| Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; local raw-cache mappings exist for `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, and `simulation_scaling`; `coilmoecot` is connector/source-note reviewed because its raw cache is an auth-gate placeholder; Circle and Theseus mappings use pinned local-project references; `ext_mamba_2023` uses public arXiv abstract/metadata and a local source note; raw private source text is not published. |
 | Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
 
 ## Drafting guardrail
@@ -61,11 +64,11 @@ GenesisCode supplies the small-kernel and obligation discipline. Temporal Coil R
 
 [mathematical-and-search-substrates.core, label: Design rationale, support: argument] Coils, calculi, and geometric search belong in the stack as optional specialist substrates until tests show where they improve search, routing, or compression.
 
-The claim remains at `argument` support. The assigned sources support discussion of substrate candidates, proof boundaries, manifests, A/B variants, and adoption discipline. They do not promote any substrate to core architecture.
+The claim remains at `argument` support. The passage-reviewed mappings support discussion of substrate candidates, proof boundaries, manifests, A/B variants, sequence-substrate context, and adoption discipline. They do not promote any substrate to core architecture.
 
 ### Claim-source mapping status
 
-Appendix C now maps this mathematical/search substrate claim to all assigned source notes. The mappings support optional substrate candidates, proof boundaries, manifests, A/B discipline, semantic IR, graph substrates, cyclic contracts, transfer boundaries, state-space sequence substrate context, and adoption gates, not a promoted core substrate.
+Appendix C now records passage-reviewed mappings for all eleven assigned sources. The mappings support optional substrate candidates, proof boundaries, manifests, A/B discipline, semantic IR, graph substrates, cyclic contracts, transfer boundaries, state-space sequence substrate context, and adoption gates, not a promoted core substrate, model-quality result, performance result, local Circle proof ownership claim, or Theseus transfer result.
 
 | Source | What it supports | Limit |
 |---|---|---|

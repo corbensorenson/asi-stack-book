@@ -7650,58 +7650,173 @@
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports optional substrate discipline through a tiny deterministic calculus, effect boundaries, semantic patches, replayable logs, obligation artifacts, provenance hashes, and capability-mediated execution.",
-              "limits": "Specification source only; no local GenesisCode implementation, proof artifact, replay checker, benchmark, or security audit exists here."
+              "limits": "Specification source only; no local GenesisCode implementation, proof artifact, replay checker, benchmark, or security audit exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-25",
+                "sources/raw/google_docs/genesiscode.txt:30-41",
+                "sources/raw/google_docs/genesiscode.txt:165-205",
+                "sources/raw/google_docs/genesiscode.txt:218-245",
+                "sources/raw/google_docs/genesiscode.txt:249-260",
+                "sources/raw/google_docs/genesiscode.txt:354-360",
+                "sources/raw/google_docs/genesiscode.txt:366-406",
+                "sources/raw/google_docs/genesiscode.txt:423-436"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the small pure calculus, explicit capability boundary, sealed effect requests, deterministic effect logs, replay semantics, obligation artifacts, semantic patch acceptance, provenance, and roadmap; no GenesisCode implementation, proof artifact, replay checker, benchmark, or security audit is promoted."
             },
             {
               "source_id": "temporal_coil_research",
               "mapped_support": "Supports manifest-driven A/B discipline for temporal-coil mechanisms through component variants, placement variants, progressive modes, multiseed readouts, and update logs.",
-              "limits": "Experiment process note only; no temporal-coil A/B run or result artifact was imported or validated here."
+              "limits": "Experiment process note only; no temporal-coil A/B run or result artifact was imported or validated here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/temporal_coil_research.bin:5-31",
+                "sources/raw/google_docs/temporal_coil_research.bin:33-75",
+                "sources/raw/google_docs/temporal_coil_research.bin:77-87",
+                "sources/raw/google_docs/temporal_coil_research.bin:89-105",
+                "sources/raw/google_docs/temporal_coil_research.bin:122-126",
+                "sources/raw/google_docs/temporal_coil_research.bin:128-160",
+                "sources/raw/google_docs/temporal_coil_research.bin:162-175"
+              ],
+              "passage_review_note": "Reviewed local raw cache for manifest-driven temporal-coil A/B setup, component/progressive/placement variants, scoring metrics, integration hypotheses, source-reported multiseed/smoke readouts, and next experimental pass requirements; source-reported telemetry is not reproduced or imported as validated book evidence, so no temporal-coil benefit is promoted."
             },
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports treating substrates as compiler/IR options through source plans, typed semantic atoms, dependency analysis, validation requirements, target lowering, localized repair, and evaluator-backed artifacts.",
-              "limits": "Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists here."
+              "limits": "Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:4-5",
+                "sources/raw/google_docs/cognitive_compilation.txt:8-27",
+                "sources/raw/google_docs/cognitive_compilation.txt:31-58",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-140",
+                "sources/raw/google_docs/cognitive_compilation.txt:243-306",
+                "sources/raw/google_docs/cognitive_compilation.txt:410-433",
+                "sources/raw/google_docs/cognitive_compilation.txt:740-802"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compiler-style source plans, typed semantic atoms, dependency DAGs, capability routing, localized repair, trace bundles, benchmarks, baselines, metrics, ablations, and limitations; no cognitive compiler, trace suite, or empirical ablation is promoted."
             },
             {
               "source_id": "treellm",
               "mapped_support": "Supports semantic-graph and path-token substrates as optional representation/search candidates with traversal, residual attributes, editable graph updates, and shared semantic operating-system framing.",
-              "limits": "Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, reasoning benchmark, or verified token format exists here."
+              "limits": "Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, reasoning benchmark, or verified token format exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/treellm.txt:7-19",
+                "sources/raw/google_docs/treellm.txt:25-44",
+                "sources/raw/google_docs/treellm.txt:47-55",
+                "sources/raw/google_docs/treellm.txt:75-90",
+                "sources/raw/google_docs/treellm.txt:93-110",
+                "sources/raw/google_docs/treellm.txt:300-305",
+                "sources/raw/google_docs/treellm.txt:894-912",
+                "sources/raw/google_docs/treellm.txt:1200-1213"
+              ],
+              "passage_review_note": "Reviewed local raw cache for traversable semantic DAGs, fixed-size path/residual tokens, self-tokenizing bootstrap, shared DAG updates, multi-agent graph access, TreeLLM/CoilLattice variants, and strong source claims that must remain speculative; no TreeLLM implementation, verified token format, compression ratio, reasoning benchmark, or model-size result is promoted."
             },
             {
               "source_id": "simulation_scaling",
               "mapped_support": "Supports resource-bounded substrate adoption by requiring scope, fidelity, temporal semantics, demand, capacity, and bottleneck assumptions before feasibility claims.",
-              "limits": "Theoretical synthesis only; no simulation benchmark, feasibility calculator, or independent literature audit was run."
+              "limits": "Theoretical synthesis only; no simulation benchmark, feasibility calculator, or independent literature audit was run.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/simulation_scaling.txt:191-216",
+                "sources/raw/google_docs/simulation_scaling.txt:220-239",
+                "sources/raw/google_docs/simulation_scaling.txt:235-266",
+                "sources/raw/google_docs/simulation_scaling.txt:486-512",
+                "sources/raw/google_docs/simulation_scaling.txt:540-564"
+              ],
+              "passage_review_note": "Reviewed local raw cache for simulation contracts, scope/fidelity/temporal semantics, normalized demand, capacity bottlenecks, efficiency factors, and same-contract feasibility boundaries as adoption constraints; no substrate simulation benchmark, feasibility calculator, or independent literature audit is promoted."
             },
             {
               "source_id": "coilmoecot",
               "mapped_support": "Supports routed cyclic/specialist lanes as optional MoECOT substrate candidates governed by deterministic/fail-closed controls, readiness gates, benchmarks, approvals, and residual handling.",
-              "limits": "Connector-readable design/spec source only; no CoilMoECOT benchmark, route run, or performance evidence has been reproduced here."
+              "limits": "Connector-readable design/spec source only; no CoilMoECOT benchmark, route run, or performance evidence has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/coilmoecot.md:8-25",
+                "sources/source_notes/coilmoecot.md:27-31",
+                "sources/source_notes/coilmoecot.md:33-47"
+              ],
+              "passage_review_note": "Reviewed connector-derived public source note only because the raw local cache is an authentication placeholder and not published. The note supports governed routed coil/specialist-lane framing, readiness gates, benchmark/approval/residual requirements, and optional-substrate treatment; no CoilMoECOT benchmark, route run, or performance evidence is promoted."
             },
             {
               "source_id": "circle_calculus_core",
               "mapped_support": "Supports proof-boundary discipline for cyclic addressing, phase, recurrence, coverage, and contract receipts through Lean declarations, theorem manifests, Python/Rust evidence layers, and explicit non-claims.",
-              "limits": "External Circle repository was not built or tested from this repo; use as proof-boundary context, not local proof ownership or model-quality evidence."
+              "limits": "External Circle repository was not built or tested from this repo; use as proof-boundary context, not local proof ownership or model-quality evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:README.md:6-30",
+                "local-project:circle-math@63b0f511:README.md:43-72",
+                "local-project:circle-math@63b0f511:README.md:88-122",
+                "local-project:circle-math@63b0f511:README.md:124-140"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle project README for proof-carrying cyclic mathematics, stable APIs, verification commands, proof-boundary policy, theorem manifests, and explicit non-claims; the external Circle repository was not built or tested from this ASI Stack repo and no model-quality, speed, memory, context-length, deployment-safety, physics, or compression result is promoted."
             },
             {
               "source_id": "circle_ai_architectures",
               "mapped_support": "Supports optional cyclic-substrate adoption only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist.",
-              "limits": "No sidecar tests, Lean builds, MLX experiments, benchmark fixtures, or model-quality results were run here."
+              "limits": "No sidecar tests, Lean builds, MLX experiments, benchmark fixtures, or model-quality results were run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:1-29",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:41-55",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:75-89",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:91-104",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:105-117",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:126-135",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:149-165"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI architecture paper for disciplined cyclic/coil applicability, finite-indexing versus ML-relevant proof tiers, deterministic benchmark fixtures, ordinary baselines, negative controls, Theseus transfer boundaries, and guardrails; no sidecar tests, Lean builds, MLX experiments, real-sequence benchmark, or model-quality result was run from this repo."
             },
             {
               "source_id": "proof_carrying_circular_computation",
               "mapped_support": "Supports cyclic compute as a proof-plus-benchmark program: cyclic address primitives, stride coverage, Lean-proved rewrite/address transformations, backend selection, and baseline benchmarking requirements.",
-              "limits": "No Circle sidecar examples, Lean builds, CoilIR backend, or backend benchmarks were run from this repo."
+              "limits": "No Circle sidecar examples, Lean builds, CoilIR backend, or backend benchmarks were run from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:1-24",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:26-32",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:34-48",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:50-76",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:78-96"
+              ],
+              "passage_review_note": "Reviewed pinned local proof-carrying circular computation paper for cyclic address primitives, theorem spine, proof-versus-benchmark split, backend program, candidate backends, and required dense/direct/standard-library baselines; no Circle sidecar examples, Lean build, CoilIR backend, or backend benchmark was run from this repo."
             },
             {
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports strict transfer boundaries for deterministic Circle fixtures into private Theseus benchmark design, with workload, baseline, negative-control, metric, script, report, and non-claim requirements.",
-              "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed here."
+              "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:1-17",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:70-96",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:97-121",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:123-133",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:135-142"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus transfer note for report-only Circle fixture consumption, contract families, claim axes, structural smoke workloads, deterministic proxy benchmark naming, allowed claim boundary, and private benchmark attachment requirements; no Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed from this repo."
             },
             {
               "source_id": "ext_mamba_2023",
               "mapped_support": "Supports treating selective state-space and recurrent sequence models as optional sequence substrates whose efficiency claims must be separated from decoding tricks, verifier adequacy, and downstream task quality.",
-              "limits": "External paper only; no Mamba model was trained, served, benchmarked, routed through governance gates, or compared against local baselines here."
+              "limits": "External paper only; no Mamba model was trained, served, benchmarked, routed through governance gates, or compared against local baselines here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2312.00752:abstract lines 34-46 / selective state-space parameters / hardware-aware recurrent-mode algorithm / fast inference and linear sequence scaling / source-reported language and modality benchmarks",
+                "sources/source_notes/ext_mamba_2023.md:8-27",
+                "sources/source_notes/ext_mamba_2023.md:29-46"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and the local external-literature source note for selective state-space sequence modeling, hardware-aware recurrent-mode computation, source-reported throughput/scaling, and taxonomy separation from decoding tricks; no Mamba model, training run, serving comparison, governance route, or local baseline comparison is reproduced."
             }
+          ],
+          "draft_maturity": "v0.2 manuscript draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all eleven assigned mathematical/search-substrate sources; support remains at argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, local Circle builds, Mamba comparisons, or accepted evidence transitions exist.",
+            "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, local Circle build, Circle sidecar run, or Theseus transfer consumer run has been executed from this repo.",
+            "Temporal Coil, Circle, and Theseus references include source-reported or local-project process/fixture context, but this repo did not rerun or import their artifacts as validated book evidence.",
+            "TreeLLM and CoilLattice claims are treated as speculative representation-substrate proposals until a verified token format, implementation, compression result, reasoning benchmark, or grounding benchmark exists.",
+            "Mamba is used only as external sequence-substrate context from the public arXiv abstract/metadata; no local Mamba training, serving, benchmark, routing, or downstream-quality result is implied.",
+            "No support-state promotion, raw source publication, model-quality claim, performance claim, adoption decision, transfer result, or substrate-core promotion is implied by this drafting pass."
           ]
         },
         {
