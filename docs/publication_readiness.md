@@ -2,7 +2,7 @@
 
 Last audited: 2026-06-25
 
-This file tracks whether the public repository is ready for the next major phase: source-substantiating, testing, and improving the v0.2 manuscript draft.
+This file tracks whether the public repository is ready for the next major phase: finalizing and evidence-gating the v1.0 candidate. The current snapshot is summarized in `docs/v1_0_candidate_status.md`.
 
 ## Ready
 
@@ -17,6 +17,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
 - The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
 - The major-version release ladder exists at `docs/major_version_release_runbook.md` so live/research, reader, e-reader/document, and audio artifacts have an explicit sequence.
+- The current v1.0 candidate snapshot exists at `docs/v1_0_candidate_status.md`.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, and `companion_notes.md` under ignored `build/`; `scripts/validate_release_profiles.py` validates profile definitions; and `scripts/validate_reader_spine.py` checks that the generated human-reader spine remains substantial after live-only scaffolding is stripped.
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
@@ -26,7 +27,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - `docs/proof_artifact_audit.md` records the current proof artifact traceability audit across all 112 proof targets.
-- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 461 assigned source/chapter pairs, 461 exact claim-source mappings, complete source-note/chapter-listing coverage, and 131 passage-reviewed mappings recorded.
+- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 461 assigned source/chapter pairs, 461 exact claim-source mappings, complete source-note/chapter-listing coverage, and 461 passage-reviewed mappings recorded.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
@@ -43,13 +44,13 @@ This file tracks whether the public repository is ready for the next major phase
 
 ## Known Blockers Before v1.0 Evidence Release
 
-- Source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and an accepted evidence transition; the source evidence audit confirms mapping coverage and records the first 131 passage-reviewed mappings, but exact source-note mapping alone remains insufficient for support-state promotion.
+- Source-derived support still requires claim-to-mechanism reconciliation and an accepted evidence transition after passage review; complete passage-reviewed mapping coverage alone remains insufficient for support-state promotion.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - The manifest now tracks 112 proof targets, all implemented as finite-record Lean targets after adding Personal Compute Hives approval/federation predicates and Artifact Steward Agents release/sunset predicates. Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`, and `docs/proof_artifact_audit.md` records traceability coverage. Semantic proof adequacy review remains planned, and the finite-record modules do not prove broad system behavior.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`; the current fast-generation set and initial policy-optimization/RL set now have source records, source notes, and primary arXiv citation metadata. Other external areas remain queued before source-derived or external-literature-backed use.
-- The v0.2 chapters are coherent architecture drafts, but several still need source-specific prose, direct passage review, claim-to-mechanism reconciliation, and hand revision before v1.0 publication quality.
+- The chapters have received broad coherence and transition passes, but the book still needs final reader-facing editorial review, claim-to-mechanism support review, and accepted evidence transitions before v1.0 evidence-release quality.
 - Reader, research, PDF, EPUB, DOCX, AZW3, MOBI, and audio editions are planned and scaffolded, but no human-reader major-version artifact or audiobook should be reported until the corresponding generated manuscript, render or conversion, review, and release record exist.
 
 ## Manuscript Maintenance Checklist

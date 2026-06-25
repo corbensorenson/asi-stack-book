@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-25
 
-This file records the repo changes that made the full-book v0.2 drafting goal safe to start. The launch phase is complete; the current manuscript status is tracked in `docs/v02_manuscript_status.md`.
+This file records the repo changes that made the full-book v0.2 drafting goal safe to start. The launch phase is complete; current v1.0 candidate status is tracked in `docs/v1_0_candidate_status.md`.
 
 The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
@@ -23,7 +23,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 ## Still Missing Before Claims Can Rise Above Argument
 
-- Chapter claims now have exact source-note mappings in Appendix C, but only 77 of the 461 current claim-source mappings have recorded passage-level review.
+- Chapter claims now have exact source-note mappings and passage-reviewed mapping records for all 461 current claim-source mappings, but support-state promotion still requires claim-to-mechanism reconciliation and accepted evidence transitions.
 - Lean targets are implemented as finite-record predicates and traceability-audited, but semantic proof adequacy review remains planned.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.

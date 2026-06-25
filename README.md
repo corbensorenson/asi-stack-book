@@ -10,7 +10,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 ## Current Status
 
-The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0 evidence release.
+The project has moved beyond the initial v0.2 manuscript baseline into an extended v1.0 candidate hardening pass, but it is not yet a final v1.0 evidence release.
 
 - Quarto book structure is initialized and renders to HTML.
 - All 54 outline chapters exist as manuscript drafts across four manifest-driven parts.
@@ -27,7 +27,7 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
-- Claims remain `argument` level unless source notes, prototypes, tests, proofs, or external literature justify promotion.
+- Current source-note coverage, exact claim-source mappings, and passage-reviewed mappings are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted evidence transitions justify promotion.
 - A protocol schema fixture check is implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
 
@@ -39,7 +39,8 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 | [docs/book_outline.md](docs/book_outline.md) | Cohesive full-book outline and proof target source of truth. |
 | [docs/prewriting_readiness.md](docs/prewriting_readiness.md) | Launch gate for a full-book drafting goal. |
 | [docs/full_book_writing_goal.md](docs/full_book_writing_goal.md) | Suggested wording for the full-book writing goal. |
-| [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Current v0.2 manuscript completion, gaps, and validation status. |
+| [docs/v1_0_candidate_status.md](docs/v1_0_candidate_status.md) | Current v1.0 candidate snapshot, remaining evidence gaps, and release gate. |
+| [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Historical v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
 | [docs/major_version_release_runbook.md](docs/major_version_release_runbook.md) | Operational ladder for tagged live, reader, e-reader/document, and audio releases. |

@@ -4,7 +4,9 @@ Last updated: 2026-06-25
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words per chapter.
+Current v1.0 candidate readiness is tracked in `docs/v1_0_candidate_status.md`. This file remains a historical status document for the v0.2 baseline and early improvement pass.
+
+Current repository scale after the v1.0 candidate improvement pass: 54 chapter files, 112,603 chapter words excluding YAML front matter, and 119,341 raw chapter-file words including metadata and live scaffolding.
 
 ## Completed in v0.2
 
@@ -14,7 +16,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - Every chapter exposes formalization hooks from the existing proof targets.
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.
 - The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
-- Source notes now exist for all 59 source records currently assigned to chapters, including the original backbone notes, RMI, Benchmaxxing, CGS, Octopus Router, Cognitive Loop Closure, Project Theseus public-project records, Circle Calculus public-project records, the Field of God AI Constitution, GenesisCode, Verification Bandwidth, Cognitive Compilation, Simulation Scaling, UAT, Ladon/Manhattan, Ratcheting Generative Systems, TokenMana, BeastBrain, TreeLLM, BBVCA, RankFold/NeuralFold, Aletheia, Context Engineer, BugBrain, and the philosophical alignment lineage sources.
+- Source notes now exist for all 101 public-safe source records currently used by the book, including the original backbone notes, internal Google Docs sources, public/local Project Theseus records, Circle Calculus records, Field of God constitution records, external literature records, and official documentation records.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The efficiency/minimum-viable-route Lean proof targets are implemented in `AsiStackProofs.Efficiency` as narrow finite-record predicates for listed lower-cost route exclusion and residual-record requirements.
 - The authority-ceiling Lean proof targets are implemented in `AsiStackProofs.Authority` as narrow finite-record predicates for no-grant ceiling preservation and missing-grant denial.
@@ -82,7 +84,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - `docs/proof_artifact_audit.md` now records a proof artifact traceability audit for all 112 targets, checking manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E wiring without claiming semantic proof adequacy or broad system behavior.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 461 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
 - Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 54 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
-- `docs/source_evidence_audit.md` now records the public-safe source evidence audit: all 461 assigned source/chapter pairs have source notes, chapter listings, and exact claim-source mappings, while 131 mappings have recorded passage-level review.
+- `docs/source_evidence_audit.md` now records the public-safe source evidence audit: all 461 assigned source/chapter pairs have source notes, chapter listings, exact claim-source mappings, and passage-reviewed mapping records.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -90,7 +92,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 
 ## Still Missing for v1.0
 
-- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 131 passage-reviewed mappings.
+- No core claim is missing an exact source-note mapping or passage-reviewed mapping record, but source-derived support still requires claim-to-mechanism reconciliation and accepted evidence transitions.
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Semantic proof adequacy audits for the implemented proof targets still need to confirm that each finite-record predicate is the right formalization of its intended operational boundary. The current traceability audit checks wiring and limitation coverage only.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
