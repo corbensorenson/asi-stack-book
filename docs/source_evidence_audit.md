@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 259 |
+| Passage-reviewed mappings recorded | 266 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -71,7 +71,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
+| `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
 | `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 0 | argument | passage review required before source-derived promotion |
@@ -472,13 +472,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `treellm` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `circle_ai_architectures` | mapped | note present | chapter listed | not passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `coilra_multicoil_rope` | mapped | note present | chapter listed | not passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `circle_ai_architectures` | mapped | note present | chapter listed | passage-reviewed |
+| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `coilra_multicoil_rope` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `tokenmana` | mapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |

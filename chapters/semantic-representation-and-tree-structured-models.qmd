@@ -16,9 +16,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this semantic-representation claim to all assigned source notes; support remains argument until grounding, hierarchy-revision, representation-utility, or model-quality tests exist."
-  - "The semantic_node_record fixture validates schema/example consistency only; no TreeLLM implementation, semantic-token benchmark, grounding evaluation, or hierarchy-revision harness has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all seven assigned semantic-representation sources; support remains at argument until grounding, hierarchy-revision, representation-utility, model-quality, or interoperability tests exist."
+  - "The semantic_node_record fixture validates schema/example consistency only; no TreeLLM implementation, semantic-token benchmark, grounding evaluation, hierarchy-revision harness, cyclic-substrate experiment, or model-quality benchmark has been run."
+  - "TreeLLM source-reported model-size, grounding, reasoning, benchmark, superiority, smartphone-scale, and final-architecture claims are not reproduced here and are treated only as source-reported representation-proposal context."
+  - "Circle/Coil mappings are passage-reviewed against public source notes only because raw local project text is not copied into this repo; they support optional-substrate guardrails, not quality or performance claims."
+  - "No support-state promotion, raw source publication, semantic graph adequacy result, or cyclic-model advantage is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -34,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `treellm`; supporting: `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
-| Source loading state | source notes: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope`; raw cache: `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs` |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, and `cgs`; `circle_ai_architectures` and `coilra_multicoil_rope` are passage-reviewed against public source notes only because raw local project text is not copied into this repo. |
 | Test state | `semantic_node_record.valid.json` and repository-level semantic fixtures pass protocol validation; `AsiStackProofs.SemanticRepresentation` implements finite grounded-provenance and hierarchy-update predicates; grounding, hierarchy-revision, and representation-utility tests remain planned. |
 
 ## Drafting guardrail
@@ -61,17 +63,17 @@ The claim remains at `argument` support. The source notes support discussion of 
 
 ### Claim-source mapping status
 
-Appendix C now maps this semantic-representation claim to all assigned source notes. The mappings support optional semantic and cyclic representation substrates with provenance, grounding, typed IR, verification limits, and baseline discipline, not proven model-size, reasoning, or quality gains.
+Appendix C now carries passage-reviewed mappings for all seven assigned sources. The mappings support optional semantic and cyclic representation substrates with provenance, grounding requirements, typed IR, verification limits, traceability, baseline discipline, and negative-control discipline. They do not support proven TreeLLM model-size reduction, reasoning gain, lossless semantic adequacy, cyclic-model advantage, quality improvement, speed improvement, or context-length improvement in this repository.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `treellm` | Traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, and editable external knowledge. | No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here. |
+| `treellm` | Traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, explanation traces, and editable external knowledge. | No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, verified token format, or final-architecture claim exists here. |
 | `spinoza` | Proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits. | Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy here. |
 | `verification_bandwidth` | Semantic units as verification objects, verification workspace limits, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure. | No grounding, context-adequacy, or contradiction-reduction benchmark has been run. |
 | `cognitive_compilation` | Typed semantic IR, source plans, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation requirements, localized repair, and target lowering. | No working cognitive compiler, trace suite, or empirical ablation exists in this repository. |
 | `cgs` | Compact semantic substrates with compression, generation, residuals, verification, governance, hidden complexity, and permitted use visible. | Does not prove fixed semantic tokens are adequate, grounded, or utility-preserving for any task. |
-| `circle_ai_architectures` | Optional representation-substrate discipline for phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure with baselines and negative controls. | No universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run here. |
-| `coilra_multicoil_rope` | Adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims. | Structural/parameter-accounting source only; no quality, speed, memory, training-stability, or context-length improvement has been shown. |
+| `circle_ai_architectures` | Source-note-only optional representation-substrate discipline for phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure with baselines and negative controls. | Raw local project text is not copied here; no universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run. |
+| `coilra_multicoil_rope` | Source-note-only adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, wrong-period controls, and explicit non-claims. | Raw local project text is not copied here; no quality, speed, memory, training-stability, or context-length improvement has been shown. |
 
 ## Mechanism
 
