@@ -16,9 +16,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
-  - "The living_book_release_record fixture validates schema/example consistency only; release checks do not prove manuscript quality or promote chapter claims."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all seven assigned sources, including source-note-only MoECOT/Road To AGI context; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
+  - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, manifest linkage, and structural-update sync predicates only; they do not prove manuscript quality, source interpretation quality, editorial completeness, or GitHub Pages availability."
+  - "BugBrain is used only as cautionary implementation-lineage context; no build, emulation, flash, bridge, hardware, AGI, or consciousness claim is promoted."
+  - "No support-state promotion, manuscript-quality result, rendered-site quality result, reader/audio artifact, MoECOT runtime artifact, benchmark result, autonomous loop-closure implementation, or raw source publication is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -34,8 +35,8 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
-| Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot_md`, `road_to_agi`; connector/recovery: `moecot` |
-| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; claim-quality review remains human/editorial. |
+| Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`; source-note-only or connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
+| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
 
 ## Drafting guardrail
 
@@ -62,6 +63,17 @@ The living book needs all four properties at once: readable prose, versioned sou
 [living-book-methodology.core, label: Design rationale, support: argument] The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.
 
 The claim remains at `argument` support. The repository demonstrates the method in part through generated scaffolds, validators, proof manifests, schema fixtures, changelog entries, commits, and GitHub Pages renders. Those artifacts support release discipline, not the truth of every chapter claim.
+
+### Claim-source mapping status
+
+Appendix C now records seven passage-reviewed mappings for this claim. The review grounds the chapter's maintenance discipline without turning release hygiene into evidence for the book's architecture claims.
+
+| Source group | Reviewed support | Boundary |
+|---|---|---|
+| Ratchet and artifact-discipline sources: `benchmaxxing`, `viea` | Benchmark lifecycle, residual reporting, ledgers, regression preservation, anti-Goodhart safeguards, durable artifacts, claim support states, release manifests, feedback records, and workflow-to-tool pressure. | No manuscript-quality, editorial-completeness, source-interpretation-quality, rendered-site-quality, VIEA-runtime, benchmark-validity, or chapter-truth claim. |
+| Procedural and implementation-lineage sources: `cognitive_loop_closure`, `bugbrain` | Repeated workflow proceduralization, tool cards, verification, routing, monitoring, retirement, and explicit build/test/bridge/training documentation discipline. | No autonomous loop-closure implementation, trajectory-mining run, tool-synthesis harness, book-maintenance router, BugBrain build, emulation, flash, bridge, hardware result, AGI result, or consciousness result. |
+| Connector/recovery runtime context: `moecot`, `moecot_md`, `road_to_agi` | Runtime-reference ledgers, readiness gates, replay, promotion blockers, terminology normalization, remaining-work categories, and unreproduced source-reported status boundaries. | Source-note-only or variant use; no MoECOT runtime artifact, reproduced command, benchmark result, readiness result, independent corroboration, or raw source publication. |
+| Local release/proof artifacts: `living_book_release_record.valid.json`, `AsiStackProofs.LivingBook`, validation commands, changelog entries, GitHub Pages deployment | Release-record shape, manifest/proof/scaffold sync discipline, public release records, and finite record-level structural predicates. | No manuscript-quality proof, source-correctness proof, editorial judgment proof, live-site availability proof beyond observed checks, or reader/audio artifact. |
 
 ## Mechanism
 
@@ -161,11 +173,11 @@ These Lean hooks are implemented as finite-record predicates over chapter-manife
 |---|---|---|---|---|
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | source note available; local raw cache available |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | source note available; local raw cache available |
+| `bugbrain` | BugBrain | edge_efficiency_lineage | Cautionary explicit build/test/bridge/training documentation lineage; speculative implementation and consciousness claims not promoted. | source note available; local raw cache available |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `moecot_md` | moecot_agent_whitepaper.md | implementation_reference | Markdown export/source version. | source note available; local raw cache available |
-| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining work / roadmap context. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Runtime-reference context for ledgers, replay, readiness gates, residuals, handoff, and promotion blockers. | source note available; connector/recovery required |
+| `moecot_md` | moecot_agent_whitepaper.md | implementation_reference_variant | Markdown export/source version for terminology normalization and variant comparison only. | source note available; source-note-only variant |
+| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining-work, source-reported status, unreproduced benchmark, and promotion-blocker context. | source note available; auth-gate/source-note-only placeholder |
 
 The crosswalk connects the book's method to the stack's method: Benchmaxxing supplies ratchet discipline, VIEA supplies artifact durability, BugBrain supplies resource-aware implementation lineage, Cognitive Loop Closure supplies toolification pressure, and MoECOT/Road To AGI supply roadmap context. These sources guide the method; local validation artifacts show repository hygiene.
 

@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 397 |
+| Passage-reviewed mappings recorded | 404 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -85,7 +85,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 19 | argument | eligible for support review |
-| `living-book-methodology` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
+| `living-book-methodology` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `open-research-agenda-and-bibliography-plan` | 21 | 21 | 21 | 21 | 0 | argument | passage review required before source-derived promotion |
 
 ## Source Load Priority
@@ -633,13 +633,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `prototype-roadmap.core` | `prototype-roadmap` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `prototype-roadmap.core` | `prototype-roadmap` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
 | `prototype-roadmap.core` | `prototype-roadmap` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `moecot_md` | mapped | note present | chapter listed | not passage-reviewed |
-| `living-book-methodology.core` | `living-book-methodology` | `road_to_agi` | mapped | note present | chapter listed | not passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
+| `living-book-methodology.core` | `living-book-methodology` | `road_to_agi` | mapped | note present | chapter listed | passage-reviewed |
 | `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
 | `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
 | `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |

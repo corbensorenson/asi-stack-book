@@ -10933,37 +10933,111 @@
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports treating book improvement as a ratchet with lifecycle states, wall diagnosis, ledgers, residuals, regression preservation, anti-Goodhart safeguards, and architecture-change discipline.",
-              "limits": "Does not prove manuscript quality, benchmark validity, or any chapter claim."
+              "limits": "Does not prove manuscript quality, benchmark validity, editorial completeness, rendered-site quality, or any chapter claim.",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:20-29",
+                "sources/raw/google_docs/benchmaxxing.txt:64-70",
+                "sources/raw/google_docs/benchmaxxing.txt:100-110",
+                "sources/raw/google_docs/benchmaxxing.txt:269-285",
+                "sources/raw/google_docs/benchmaxxing.txt:301-315",
+                "sources/raw/google_docs/benchmaxxing.txt:329-357",
+                "sources/raw/google_docs/benchmaxxing.txt:912-960",
+                "sources/raw/google_docs/benchmaxxing.txt:1230-1286",
+                "sources/raw/google_docs/benchmaxxing.txt:1446-1446"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark lifecycle, frontier-to-regression ratcheting, residual reporting, benchmark/model ledgers, anti-Goodhart safeguards, architecture-change discipline, and implementation phases; useful as living-book improvement discipline, not as manuscript-quality evidence.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports the living-book method through durable artifacts, claim support states, residuals, verified outputs, feedback, tools, benchmarks, and regression coverage.",
-              "limits": "Does not make the book itself an implemented VIEA runtime or prove its architecture claims."
+              "limits": "Does not make the book itself an implemented VIEA runtime, prove the architecture claims, prove source interpretation quality, or validate reader/audio editions.",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:47-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:110-129",
+                "sources/raw/google_docs/viea.txt:506-525",
+                "sources/raw/google_docs/viea.txt:651-669",
+                "sources/raw/google_docs/viea.txt:1394-1401",
+                "sources/raw/google_docs/viea.txt:4872-4898",
+                "sources/raw/google_docs/viea.txt:5423-5447"
+              ],
+              "passage_review_note": "Reviewed local raw cache for artifact graph, claim/support-state ledger, workflow-to-tool compiler, residuals, regression coverage, release manifest, feedback records, low-friction sidecar artifact/claim files, and non-overclaiming implementation roadmap; no VIEA runtime or book-claim truth is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "bugbrain",
               "mapped_support": "Supports the value of explicit build, test, bridge, training, and resource-constrained workflows as a cautionary prototype-lineage example for living technical documentation.",
-              "limits": "Speculative and unbuilt in this repo; no BugBrain implementation or consciousness claim is validated."
+              "limits": "Speculative and unbuilt in this repo; no BugBrain implementation, build, emulation, flash, bridge, benchmark, hardware result, AGI claim, or consciousness claim is validated.",
+              "passage_refs": [
+                "sources/raw/google_docs/bugbrain.txt:6-13",
+                "sources/raw/google_docs/bugbrain.txt:21-24",
+                "sources/raw/google_docs/bugbrain.txt:30-46",
+                "sources/raw/google_docs/bugbrain.txt:310-359",
+                "sources/raw/google_docs/bugbrain.txt:360-431",
+                "sources/raw/google_docs/bugbrain.txt:1384-1401",
+                "sources/raw/google_docs/bugbrain.txt:3683-3695",
+                "sources/raw/google_docs/bugbrain.txt:6033-6066"
+              ],
+              "passage_review_note": "Reviewed local raw cache for explicit build commands, pretraining/emulation, flashing, bridge interaction, training/testing workflow, resource constraints, and speculative consciousness/AGI framing; only the documentation-discipline lesson is used here.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports proceduralizing repeated book-maintenance workflows through trajectory logging, loop detection, tool synthesis, verification, routing, monitoring, and retirement discipline.",
-              "limits": "No autonomous loop-closure system or tool-synthesis harness has been run; book workflow reuse remains process discipline."
+              "limits": "No autonomous loop-closure system, trajectory-mining run, tool-synthesis harness, automated book-maintenance router, runtime monitor, or retirement workflow has been run; book workflow reuse remains process discipline.",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:11-24",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:29-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:48-58",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-194",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:280-305",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:532-563",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:581-607",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:964-1038",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1206-1222",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1407-1535",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:2008-2095",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:2204-2214"
+              ],
+              "passage_review_note": "Reviewed local raw cache for repeated trajectory logging, loop detection, parameter discovery, tool synthesis, verification contracts, registry fields, routing, monitoring, lifecycle/retirement, and phase roadmap; the book uses this as process discipline, not proof of an autonomous loop-closure implementation.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports using runtime-reference ledgers, replay, readiness gates, residuals, handoff, and promotion blockers as analogues for living-book release and evidence discipline.",
-              "limits": "MoECOT reports and benchmarks are not reproduced here and do not prove book quality."
+              "limits": "Reviewed source note only because authenticated connector text is not published here; MoECOT reports, runtime artifacts, ledgers, replay, readiness gates, and benchmarks are not reproduced here and do not prove book quality.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-26",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, promotion blockers, and source-reported limitations; no MoECOT artifact or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot_md",
               "mapped_support": "Supports terminology normalization and variant comparison for MoECOT-related living-book updates.",
-              "limits": "Variant source only; not independent evidence or a reproduced artifact."
+              "limits": "Variant source only; not independent evidence, not a reproduced artifact, and not a separate support-state basis.",
+              "passage_refs": [
+                "sources/source_notes/moecot_md.md:11-18",
+                "sources/source_notes/moecot_md.md:20-24",
+                "sources/source_notes/moecot_md.md:39-43"
+              ],
+              "passage_review_note": "Reviewed source note only for Markdown export status, terminology normalization, section recovery, and variant comparison; it is not counted as independent corroboration beyond the primary MoECOT source.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "road_to_agi",
               "mapped_support": "Supports keeping the living book honest about source-reported status, remaining work, unreproduced benchmarks, promotion blockers, and implementation sequencing.",
-              "limits": "Roadmap/status context only; reported commands or benchmark results are not locally reproduced."
+              "limits": "Reviewed source note only because the local cache is an auth-gate placeholder; roadmap/status context only, and reported commands, benchmark results, readiness state, and implementation status are not locally reproduced.",
+              "passage_refs": [
+                "sources/source_notes/road_to_agi.md:11-19",
+                "sources/source_notes/road_to_agi.md:21-25",
+                "sources/source_notes/road_to_agi.md:42-46"
+              ],
+              "passage_review_note": "Reviewed source note only for remaining-work/status context, source-reported commands/results caveat, promotion blockers, implementation sequencing, and conservative support-state rule; no reported result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
