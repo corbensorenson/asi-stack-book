@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter uses RankFold/NeuralFold and RankFold Compressor as compression-architecture sources. It does not report compression ratios, lossless reconstruction, or implementation performance because this repository has not run a compressor, decoder, or benchmark corpus.
 
+After fast generation, the compression question returns to stored artifacts. A cheaper representation is not a cheaper source of truth; it is a routed candidate that must preserve full-artifact fallback, probe results, residual coding, and utility boundaries for each task.
+
 ## Problem
 
 The stack will store source documents, artifacts, logs, benchmark traces, models, simulations, and generated outputs. Storage and transfer cost matter, but artifact compression is dangerous when it damages semantics, loses decoder determinism, hides residual coding cost, or makes fallback so common that the apparent savings disappear.

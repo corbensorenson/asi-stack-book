@@ -2044,11 +2044,9 @@ Draft arc:
 
 - Problem: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
 - Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
-- Mechanism: Define compact generative cores and their residuals.
-- Mechanism: Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.
-- Mechanism: Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.
-- Mechanism: Separate lawful generation from exact remainder.
-- Mechanism: Record where compactness fails.
+- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, verifier, residual channel, fallback path, governance interface, and evidence/cost ledger.
+- Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
+- Handoff: Exact reconstruction claims flow to generate-verify-repair receipts, while time-domain acceleration claims flow to fast-generation records.
 - Interface: Compression feeds memory and routing.
 - Interface: Evidence tests downstream utility.
 - Interface: Procedural memory turns repeated generation into tools.
@@ -2102,9 +2100,9 @@ Draft arc:
 
 - Problem: Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
 - Insufficiency: Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
-- Mechanism: Generate from seeded local laws.
-- Mechanism: Verify against target.
-- Mechanism: Repair mismatches with exact residual mechanisms and record rate discipline.
+- Mechanism: Record a compression receipt with reconstruction contract, public law family, seed, generated regions, verification result, exact repair residual, fallback threshold, rate accounting, and non-claims.
+- Mechanism: Separate proxy/search-rate estimates from final serialized costs, and record literal fallback or negative results when repair and metadata erase the saving.
+- Handoff: The same draft/verify/repair accounting becomes accepted-output and verifier-cost accounting in fast generation.
 - Interface: Evidence measures reconstruction and utility.
 - Interface: Routing chooses compressed or full representation.
 - Interface: VCM uses summaries with loss contracts.
@@ -2172,11 +2170,9 @@ Draft arc:
 
 - Problem: The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
 - Insufficiency: Standard autoregressive decoding, raw throughput benchmarks, and isolated serving optimizations do not specify when a faster generation mode is acceptable, how it is verified, or how its failures block promotion.
-- Mechanism: Separate raw generation speed from effective verified tokens per second and useful solution per second.
-- Mechanism: Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
-- Mechanism: Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
-- Mechanism: Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
-- Mechanism: Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
+- Mechanism: Treat fast generation as a governed mode route selected by PlanForge from task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability.
+- Mechanism: Count proposed output separately from accepted output, include verifier cost, repair/fallback, useful solution per second, and promotion decision, and keep external method families source-reported until reproduced or promoted by evidence transition.
+- Handoff: Accepted generation outputs become artifacts or compressed candidates; rejected work and serving/KV pressure flow to artifact and resource ledgers.
 - Interface: PlanForge chooses the generation mode.
 - Interface: VCM supplies the bounded context packet.
 - Interface: The generator emits draft tokens, sketches, spans, or candidates.
@@ -2243,9 +2239,9 @@ Draft arc:
 
 - Problem: The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
 - Insufficiency: Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
-- Mechanism: Use low-rank residual coding or functional preprocessing where appropriate.
-- Mechanism: Probe compressed artifacts before use.
-- Mechanism: Route to full artifacts when probes fail.
+- Mechanism: Treat compressed artifacts as routed representation candidates with preserved full-artifact fallback, reconstruction contract, codec parameters, residual coding, probe plan, decode determinism, utility tests, and non-claims.
+- Mechanism: Separate representation, reconstruction, compression-ratio, and downstream-utility claims so one passing property cannot promote the others.
+- Handoff: Semantic representation inherits the same probe discipline, but the risk shifts from bit-level reconstruction to grounding and hierarchy drift.
 - Interface: Artifact graph stores compressed and full references.
 - Interface: Routing selects representation by task.
 - Interface: Evidence records latency, ratio, and utility.
@@ -2296,9 +2292,9 @@ Draft arc:
 
 - Problem: The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.
 - Insufficiency: Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.
-- Mechanism: Represent concepts hierarchically.
-- Mechanism: Attach semantic tokens to provenance and use constraints.
-- Mechanism: Compare tree structures against neural-only baselines.
+- Mechanism: Treat semantic nodes as scoped representation leases with concept labels, provenance, hierarchy/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, versioning, and evaluation refs.
+- Mechanism: Use tree or graph structure for retrieval, planning, compilation, and explanation only where grounding, adequacy, interoperability, and baseline comparisons justify the route.
+- Handoff: Resource economics decides when semantic compression is actually cheaper after verification burden, repair, and downstream failures are counted.
 - Interface: Spinoza uses semantic claims.
 - Interface: VCM stores semantic pages.
 - Interface: Compression tests representation efficiency.
@@ -2350,10 +2346,9 @@ Draft arc:
 
 - Problem: Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.
 - Insufficiency: Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.
-- Mechanism: Track task value, uncertainty, cost of error, and inference cost.
-- Mechanism: Use regenerative or budgeted capacity mechanisms where useful.
-- Mechanism: Escalate verification when risk justifies the cost.
-- Mechanism: Separate aggregate serving throughput and memory pressure from single-request verified-output value.
+- Mechanism: Record value hypothesis, risk class, capacity pool, cost estimate, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence refs.
+- Mechanism: Let budgets choose dispatch, escalation, deferral, scope reduction, rejection, or residual accounting without disabling protected verification or safety gates.
+- Handoff: Simulation, mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.
 - Interface: Planning allocates budgets.
 - Interface: Routing chooses costed specialists.
 - Interface: Evidence measures cost-quality tradeoffs.

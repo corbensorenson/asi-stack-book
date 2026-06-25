@@ -57,6 +57,8 @@ This chapter records a missing stack layer: the generation substrate that determ
 
 The browser-GPT note that motivated this chapter is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The chapter's support state remains `argument` until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
 
+Coming after generate-verify-repair, fast generation is the time-domain version of the same discipline. A faster path is valuable only when accepted output, verifier cost, repair cost, fallback, memory pressure, and task success improve after the whole route is counted.
+
 ## Problem
 
 The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
@@ -150,11 +152,7 @@ flowchart LR
   R --> Q["SCF promotion gate"]
 ```
 
-- Separate raw generation speed from effective verified tokens per second and useful solution per second.
-- Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
-- Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
-- Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
-- Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
+The mode selector chooses among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid routes by task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability. The route records proposed output separately from accepted output, sends the VCM packet into the selected generator, routes accepted spans through Spinoza, Talos, Benchmaxxing, and SCF gates, and keeps multi-seed diffusion or hybrid AR/MTP/diffusion ideas as research hypotheses until source-specific experiments or stronger evidence transitions exist.
 
 This makes speed a governed policy choice. A low-risk autocomplete can use a cheap accelerated path. A code patch with tests can use a draft model if the test harness is strong enough. A high-risk claim, authority escalation, or irreversible action can force slower verification-heavy generation even when a faster path exists.
 

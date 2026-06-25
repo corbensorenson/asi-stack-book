@@ -38,6 +38,8 @@ open_evidence_gaps:
 
 This chapter uses BBVCA v9 as the primary discipline for contract-relative generate-verify-repair compression. It does not claim that this repository contains a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture validates the public record shape, and the Lean module proves only two finite reconstruction/verification predicates.
 
+Following compact generative systems, this chapter handles the stricter case where compressed generation claims reconstruction. If a generator fails to carry the whole target, the exact remainder must be paid as repair, fallback, or negative rate evidence rather than hidden inside a success story.
+
 ## Problem
 
 Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
@@ -95,9 +97,7 @@ flowchart LR
   K --> L
 ```
 
-- Generate from seeded local laws.
-- Verify against target.
-- Repair mismatches with exact residual mechanisms and record rate discipline.
+The process is contract-relative: a public law family and artifact-specific seed generate candidate regions; verification compares those regions to the declared target; mismatches become exact repair residuals or literal fallback; and rate accounting includes law IDs, seeds, interfaces, repairs, metadata, and proxy/final-rate gaps. Exactness is a property of the full receipt, not the generator alone.
 
 The compression record should include the reconstruction contract, law-family id, seed payload, verification region, repair stream, literal fallback, interface costs, search bound, proxy model, final entropy model, and proxy gap. That record is the bridge from a beautiful compression idea to an auditable ASI substrate.
 

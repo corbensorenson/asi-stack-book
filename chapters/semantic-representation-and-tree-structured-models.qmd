@@ -43,6 +43,8 @@ open_evidence_gaps:
 
 This chapter treats TreeLLM as a representation proposal, not a proven model-size, reasoning, or benchmark improvement. The repository has no TreeLLM implementation, semantic-token benchmark, or graph-grounding evaluation.
 
+Following artifact compression, semantic representation shifts the compression question from bytes to meaning. A tree or graph can make concepts easier to route and inspect, but only if provenance, permitted use, adequacy limits, hierarchy changes, and residual uncertainty remain attached.
+
 ## Problem
 
 The ASI Stack needs representations that are easier to inspect, update, route, and verify than opaque token continuations alone. A model can generate fluent claims while hiding which concepts, sources, relations, and assumptions it used. Tree-structured or graph-structured representations are attractive because they can expose paths, provenance, hierarchy, and residual attributes.
