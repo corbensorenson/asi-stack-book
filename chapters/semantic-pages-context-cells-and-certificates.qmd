@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until paired source/derived cells, summary-fidelity tests, or certificate truthfulness checks exist."
+  - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until paired source/derived cells, summary-fidelity tests, or certificate truthfulness checks exist."
   - "Only protocol schema/fixture validation is implemented; no summary-fidelity or authority-preservation tests have been run for this chapter."
   - "Lean coverage is limited to finite certificate and source/summary authority records; summary fidelity and truthful-certificate checks remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
-| Source loading state | source notes: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable`; raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; connector/source-note only: `vcm_editable` |
 | Test state | Semantic page certificate fixture validation and `AsiStackProofs.ContextCertificates` finite-record proofs are implemented; summary-fidelity tests remain planned. |
 
 ## Drafting guardrail
@@ -66,21 +66,23 @@ The claim remains at `argument` support. VCM public v1 supplies semantic objects
 
 ### Claim-source mapping status
 
-Appendix C now maps this semantic-page claim to all assigned source notes. The mappings support typed context cells and certificate fields, not summary fidelity, omission completeness, certificate truthfulness, or support-state promotion from certificates.
+Appendix C maps this semantic-page claim to all assigned source notes. Four local raw-cache mappings are now passage-reviewed. The mappings support typed context cells, representation certificates, proof/citation/procedure-carrying claim records, and structured mission briefs, not summary fidelity, omission completeness, certificate truthfulness, open-domain formalization, or support-state promotion from certificates. `vcm_editable` remains connector/source-note mapped until durable raw text, conformance artifacts, certificate checker results, benchmark records, or external corroboration are imported or inspected.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `vcm_public` | Semantic objects, representations, validations, packets, materializations, source/authority binding, protected compilation, adequacy/admission separation, revocation, invalidation, and audit records. | No end-to-end model superiority, summary-fidelity test, or certificate truthfulness run exists here. |
-| `verification_bandwidth` | Representation loss must be visible through semantic units, verification workspace limits, pairwise comparison, summary fidelity tradeoffs, transitive decay, contradiction-rate pressure, and residual accounting. | The proposed verification and contradiction-rate tests have not been run. |
-| `spinoza` | Claim/evidence cells need proof-, citation-, and procedure-carrying graph records, support tiers, contradiction detection, dependency tracing, defeaters, downgrade/block behavior, and verifier-scope limits. | Does not prove open-domain formalization, arbitrary theorem validity, or whole-system epistemic correctness. |
-| `context_engineer` | Mission briefs and structured context objects should carry need-to-know constraints, clearance levels, context shards, memory masks, ephemeral sensitive context, sanitized outputs, and information-flow controls. | Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced. |
-| `vcm_editable` | Task-relative representation graphs and evidence-carrying certificates refine planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations. | Connector-readable refinement only; no VCM-Bench, certificate checker, or model-facing result has been run here. |
+| `vcm_public` | Passage-reviewed: context cells, semantic pages, stable logical addresses, page state fields, task-relative representation graphs, representation certificates, exact-decode versus semantic-materialization boundaries, future-query/strict-summary limits, use-relative sufficiency, authority non-escalation, and evidence/authority separation. | No end-to-end model superiority, summary-fidelity checker, certificate truthfulness run, or independent interoperability result exists here. |
+| `verification_bandwidth` | Passage-reviewed: semantic-unit definitions, effective verification workspace, coherence as constraint satisfaction, pairwise grinding, the two-body verification limit, lossy summary pressure, interface-verification tradeoffs, hierarchical summary fidelity tradeoffs, contradiction-rate test design, and RAG-as-engineering-compromise framing. | The proposed verification, contradiction-rate, and summary-fidelity tests have not been run or mechanized here. |
+| `spinoza` | Passage-reviewed: proof/citation/procedure-carrying belief graphs, proposition-node metadata, justification edges, tier labels, bounded formal scope, proof/citation/procedure artifacts, dependency tracing, contradiction revision, tier non-upgrade rules, semantic-isolation risk controls, and audit-trail expectations. | Does not prove open-domain formalization, arbitrary theorem validity, certificate truthfulness, or whole-system epistemic correctness. |
+| `context_engineer` | Passage-reviewed: context supply chains, need-to-know delivery, governor placement, layered memory, briefer/mission-brief compression, context-as-code fields, clearance levels, context shards, memory masks, allowed tools, Digital SCIF lifecycle, zeroization, sanitized commits, and information-flow controls. | Synthetic hallucination, leak, cost, and latency claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced. |
+| `vcm_editable` | Connector/source-note mapped: task-relative representation graphs and evidence-carrying certificates refine planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations. | Connector-readable refinement only; no VCM-Bench, certificate checker, or model-facing result has been run here. |
 
 ## Mechanism
 
 Once the ABI can materialize a packet, the stack still needs to know what kind of context each unit is and what it lost during compression. VCM public v1 supplies semantic objects, representations, validations, packets, materializations, protected compilation, and authority binding. Verification Bandwidth supplies the warning that summary convenience can erase verification capacity. Spinoza supplies claim/evidence cell discipline, Context Engineer supplies scoped mission briefs and clearance constraints, and editable VCM sharpens task-relative representation graphs and evidence-carrying certificates.
 
 A Semantic Page Certificate is the representation receipt that lets a compact cell remain useful without pretending to be raw evidence.
+
+The reviewed passages sharpen the chapter's boundary. VCM public v1 justifies typed pages, representation certificates, future-query limits, and authority non-escalation. Verification Bandwidth justifies recording summary loss as a verification constraint. Spinoza justifies treating claim/evidence cells as graph records with proof, citation, procedure, tier, dependency, and revision metadata. Context Engineer justifies structured mission briefs with clearance and memory-mask fields. None of those passages show this repository checking summary fidelity, proving certificate truthfulness, validating omission completeness, solving open-domain autoformalization, or reproducing source-reported benchmark figures.
 
 ```{mermaid}
 flowchart LR
@@ -177,13 +179,13 @@ These proof hooks are implemented only over finite Lean certificate and authorit
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache available |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache passage-reviewed |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache passage-reviewed |
+| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for semantic context units and certificate discipline. It does not treat summaries, source notes, or certificates as claim evidence without mapping and verification.
+The crosswalk identifies sources for semantic context units and certificate discipline. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and summary fidelity, omission completeness, certificate truthfulness, open-domain formalization, and benchmark claims remain unpromoted.
 
 ## Summary
 

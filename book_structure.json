@@ -3372,22 +3372,70 @@
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports typed context units through semantic objects, representations, validations, packets, materializations, source and authority binding, protected compilation, adequacy/admission separation, revocation, invalidation, and audit records.",
-              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority, summary fidelity test, or certificate truthfulness run exists here."
+              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority, summary fidelity test, or certificate truthfulness run exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:360-369",
+                "sources/raw/google_docs/vcm_public.txt:389-394",
+                "sources/raw/google_docs/vcm_public.txt:774-793",
+                "sources/raw/google_docs/vcm_public.txt:794-841",
+                "sources/raw/google_docs/vcm_public.txt:843-851",
+                "sources/raw/google_docs/vcm_public.txt:866-870"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context cells, semantic pages, stable logical addresses, page state fields, representation certificates, task-relative representation graphs, exact-decode versus semantic-materialization boundaries, future-query/strict-summary limits, use-relative sufficiency, authority non-escalation, evidence/authority separation, conformance boundaries, and model-facing non-results; no summary-fidelity checker, certificate truthfulness run, or end-to-end model superiority claim is promoted."
             },
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Supports making representation loss visible by distinguishing semantic units, verification workspace, pairwise grinding, summary fidelity tradeoffs, transitive decay, and contradiction-rate/residual accounting.",
-              "limits": "The proposed verification and contradiction-rate tests have not been run; source-proposed theoretical claims remain unpromoted."
+              "limits": "The proposed verification and contradiction-rate tests have not been run; source-proposed theoretical claims remain unpromoted.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:17-30",
+                "sources/raw/google_docs/verification_bandwidth.txt:33-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:62-72",
+                "sources/raw/google_docs/verification_bandwidth.txt:74-85",
+                "sources/raw/google_docs/verification_bandwidth.txt:87-92"
+              ],
+              "passage_review_note": "Reviewed local raw cache for semantic-unit definitions, effective verification workspace, coherence as constraint satisfaction, pairwise grinding, the two-body verification limit, lossy summary pressure, interface-verification tradeoffs, hierarchical summary fidelity tradeoffs, the proposed contradiction-rate test, RAG-as-engineering-compromise framing, and verification bandwidth as the limiting factor; no contradiction-rate experiment, summary-fidelity benchmark, or mechanized theorem is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports claim/evidence cells through proof-, citation-, and procedure-carrying claim graphs, support tiers, contradiction detection, dependency tracing, defeaters, downgrade/block behavior, and explicit verifier-scope limits.",
-              "limits": "Does not prove open-domain natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+              "limits": "Does not prove open-domain natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:292-321",
+                "sources/raw/google_docs/spinoza.txt:347-365",
+                "sources/raw/google_docs/spinoza.txt:384-397",
+                "sources/raw/google_docs/spinoza.txt:403-445",
+                "sources/raw/google_docs/spinoza.txt:458-466",
+                "sources/raw/google_docs/spinoza.txt:516-522",
+                "sources/raw/google_docs/spinoza.txt:694-718",
+                "sources/raw/google_docs/spinoza.txt:757-799",
+                "sources/raw/google_docs/spinoza.txt:995-1005",
+                "sources/raw/google_docs/spinoza.txt:1013-1023",
+                "sources/raw/google_docs/spinoza.txt:1293-1312",
+                "sources/raw/google_docs/spinoza.txt:1335-1366",
+                "sources/raw/google_docs/spinoza.txt:1373-1378",
+                "sources/raw/google_docs/spinoza.txt:1397-1401"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proof-carrying and citation/procedure-carrying belief graphs, proposition-node metadata, justification edges, tier labels, bounded formal scope, proof/citation/procedure artifacts, dependency tracing, contradiction revision, tier non-upgrade rules, certified-delusion limits, semantic-isolation risk controls, and audit-trail expectations; no open-domain autoformalization, arbitrary theorem validity, whole-system epistemic correctness, or certificate truthfulness result is promoted."
             },
             {
               "source_id": "context_engineer",
               "mapped_support": "Supports mission briefs and structured context objects under need-to-know constraints, clearance levels, context shards, memory masks, ephemeral sensitive context, sanitized outputs, and information-flow controls.",
-              "limits": "Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced here."
+              "limits": "Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/context_engineer.txt:17-27",
+                "sources/raw/google_docs/context_engineer.txt:31-64",
+                "sources/raw/google_docs/context_engineer.txt:125-164",
+                "sources/raw/google_docs/context_engineer.txt:171-212",
+                "sources/raw/google_docs/context_engineer.txt:238-250",
+                "sources/raw/google_docs/context_engineer.txt:277-290"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context-as-supply-chain framing, need-to-know delivery, governor placement, layered memory, briefer/mission-brief compression, context-as-code fields, clearance levels, context shards, memory masks, allowed-tool lists, Digital SCIF lifecycle, zeroization, sanitized commits, information-flow controls, source-reported benchmark figures, and limitations around software-only isolation and summarization loss; no local leak, hallucination, cost, latency, or summary-fidelity harness result is promoted."
             },
             {
               "source_id": "vcm_editable",

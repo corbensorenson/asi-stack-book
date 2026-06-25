@@ -1254,6 +1254,7 @@ Draft deliverables:
 - Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape only.
 - Implemented Lean proof target: valid derived cells carry source bindings, loss contracts, and permitted-use declarations.
 - Implemented Lean proof target: summaries respecting source cells cannot increase source authority ceilings.
+- Exact Appendix C claim-source mappings for the Semantic Pages claim across VCM public-v1 context cells/semantic pages/representation certificates, Verification Bandwidth summary-loss pressure, Spinoza proof/citation/procedure-carrying claim records, Context Engineer structured mission briefs and clearance fields, and editable VCM refinement context; the four local mappings (`vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, conformance artifacts, certificate checker results, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending paired source/derived cells, summary-fidelity tests, omission-completeness checks, certificate truthfulness tests, open-domain formalization evidence, or accepted evidence transitions.
 - Planned Codex test: Summary fidelity test.
 - Planned Codex test: certificate truthfulness test.
 
