@@ -458,27 +458,85 @@
             {
               "source_id": "viea",
               "mapped_support": "Supports authority boundaries through structured command fields, constraints, verification, failure behavior, artifact graphs, runtime adapters, and ledgers that separate intent, work, evidence, and execution.",
-              "limits": "Does not prove a deployed VIEA authority system or runtime enforcement in this repository."
+              "limits": "Does not prove a deployed VIEA authority system or runtime enforcement in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:17-23",
+                "sources/raw/google_docs/viea.txt:69-83",
+                "sources/raw/google_docs/viea.txt:182-199",
+                "sources/raw/google_docs/viea.txt:224-228",
+                "sources/raw/google_docs/viea.txt:269-273",
+                "sources/raw/google_docs/viea.txt:958-968",
+                "sources/raw/google_docs/viea.txt:2027-2042",
+                "sources/raw/google_docs/viea.txt:3108-3110"
+              ],
+              "passage_review_note": "Reviewed local raw cache for structured command contracts, explicit constraints, verification/failure behavior, bounded specialists, permission envelopes, provenance, runtime targets, approval/refusal policies, and acceptance through permissions and feedback; no deployed authority system or runtime enforcement result is promoted."
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports typed bounded authority with stable fields, contracts, qualifications, grants, route validation, lifecycle events, evaluator policy, and recovery paths.",
-              "limits": "Does not establish production safety, global alignment, or independently validated route/evaluator behavior."
+              "limits": "Does not establish production safety, global alignment, or independently validated route/evaluator behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:67-78",
+                "sources/raw/google_docs/scf.txt:109-119",
+                "sources/raw/google_docs/scf.txt:145-166",
+                "sources/raw/google_docs/scf.txt:279-285",
+                "sources/raw/google_docs/scf.txt:675-689",
+                "sources/raw/google_docs/scf.txt:720-720",
+                "sources/raw/google_docs/scf.txt:811-817",
+                "sources/raw/google_docs/scf.txt:1243-1250",
+                "sources/raw/google_docs/scf.txt:1437-1440"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable substitution boundaries, exact authorization identity, caller-bound authority, grants/leases, brokered tool and effect mediation, route validation, lifecycle authorization, confused-deputy limits, and conditional safety boundaries; no production safety, global alignment, or independently validated route/evaluator behavior is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports effect control through typed job lifecycles, contract locks, source allow-listing, blind secret handles, Digital SCIFs, audit logs, replay, controlled runtime adapters, and approvals.",
-              "limits": "Security and benchmark claims require separate artifacts; this mapping is architectural, not a reproduced enforcement test."
+              "limits": "Security and benchmark claims require separate artifacts; this mapping is architectural, not a reproduced enforcement test.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:1905-1905",
+                "sources/raw/google_docs/talos.txt:1931-1959",
+                "sources/raw/google_docs/talos.txt:1993-1993",
+                "sources/raw/google_docs/talos.txt:3335-3411",
+                "sources/raw/google_docs/talos.txt:3425-3456",
+                "sources/raw/google_docs/talos.txt:3477-3483",
+                "sources/raw/google_docs/talos.txt:3554-3570"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Talos/Aigis authority framing: contract locks, clearance levels, context partitioning, blind execution, semantic handles, sidecar permission checks, Digital SCIFs, audit logs, and secure-facility labor framing; security, benchmark, and enforcement claims remain architectural only."
             },
             {
               "source_id": "ladon_manhattan",
               "mapped_support": "Supports authority-handle boundaries by keeping credential bytes outside model context, using opaque handles, policy-mediated secret injection, isolated compartments, audit, and zeroization.",
-              "limits": "No Ladon implementation, kernel test, side-channel validation, or security audit exists in this repository."
+              "limits": "No Ladon implementation, kernel test, side-channel validation, or security audit exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:14-20",
+                "sources/raw/google_docs/ladon_manhattan.txt:27-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:51-69",
+                "sources/raw/google_docs/ladon_manhattan.txt:89-94",
+                "sources/raw/google_docs/ladon_manhattan.txt:102-119"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the agency paradox, right-to-use without knowledge-of-secret framing, opaque handles, trusted credential entry, kernel permission checks, authorized injection, Digital SCIF lifecycle, side-channel caveats, and zeroization sketches; no implementation, kernel test, side-channel validation, or security audit is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports proposal/execution separation through a small deterministic kernel, capability boundaries for nondeterministic effects, semantic patches, provenance hashes, replay logs, obligations, and protocol seals.",
-              "limits": "No GenesisCode prototype, replay checker, proof module, benchmark result, or security audit is present here."
+              "limits": "No GenesisCode prototype, replay checker, proof module, benchmark result, or security audit is present here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:8-24",
+                "sources/raw/google_docs/genesiscode.txt:31-37",
+                "sources/raw/google_docs/genesiscode.txt:117-128",
+                "sources/raw/google_docs/genesiscode.txt:164-190",
+                "sources/raw/google_docs/genesiscode.txt:215-245",
+                "sources/raw/google_docs/genesiscode.txt:249-258",
+                "sources/raw/google_docs/genesiscode.txt:641-669",
+                "sources/raw/google_docs/genesiscode.txt:683-688"
+              ],
+              "passage_review_note": "Reviewed local raw cache for AI-as-proposer framing, small trusted core, unforgeable protocol seals, sealed effect requests, host-provided capabilities, deny-by-default runners, deterministic effect logs/replay, obligations, evidence artifacts, semantic patch validation, and capability declaration checks; no prototype, replay checker, proof module, benchmark, or security audit is promoted."
             },
             {
               "source_id": "moecot",

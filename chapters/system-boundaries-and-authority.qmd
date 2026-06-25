@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; full source-passage audits and deployed enforcement tests remain incomplete."
+  - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The authority_transition_record fixture validates schema/example consistency only; full permission-separation and confused-deputy tests remain unimplemented."
   - "The implemented Authority Lean predicates cover finite-record ceiling preservation and missing-grant denial only; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector-only/source-note mapped: `moecot` |
 | Test state | `authority_transition_record.valid.json` passes protocol fixture validation, and `AsiStackProofs.Authority` builds locally; full permission-separation and confused-deputy tests remain planned. |
 
 ## Drafting guardrail
@@ -63,11 +63,11 @@ The recurring failure is permission collapse. Read access becomes write access. 
 
 [system-boundaries-and-authority.core, label: Design rationale, support: argument] Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals.
 
-The claim remains at `argument` support. VIEA, SCF, Talos, Ladon/Manhattan, and GenesisCode all push toward typed boundaries and effect control. The public claim strengthens beyond architectural argument only when denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts exist.
+The claim remains at `argument` support. VIEA, SCF, Talos, Ladon/Manhattan, and GenesisCode all push toward typed boundaries and effect control, and those five mappings now have reviewed local raw-cache passage references in the manifest. The public claim strengthens beyond architectural argument only when denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts exist.
 
 ### Claim-source mapping status
 
-Appendix C now records exact source-note mappings for this core authority claim. The mappings show convergent architecture support for typed bounded authority, while the support state stays `argument` because deployed enforcement and adversarial tests are not present.
+Appendix C now records exact source-note mappings for this core authority claim. Five mappings also carry reviewed local raw-cache passage references in the manifest. `moecot` remains connector-only/source-note mapped because usable local raw text is not committed. The mappings show convergent architecture support for typed bounded authority, while the support state stays `argument` because deployed enforcement and adversarial tests are not present.
 
 | Source | What it supports | Limit |
 |---|---|---|

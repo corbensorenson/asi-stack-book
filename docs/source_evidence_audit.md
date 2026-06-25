@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 458 |
 | Source notes listing assigned chapter | 458 |
-| Passage-reviewed mappings recorded | 19 |
+| Passage-reviewed mappings recorded | 24 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -35,7 +35,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 |---|---:|---:|---:|---:|---:|---|---|
 | `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
-| `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
+| `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -213,11 +213,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `beastbrain_timeless` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `aletheia` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `ladon_manhattan` | mapped | note present | chapter listed | not passage-reviewed |
-| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
+| `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
