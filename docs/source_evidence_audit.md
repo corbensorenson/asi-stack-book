@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 378 |
+| Passage-reviewed mappings recorded | 397 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -84,7 +84,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `prototype-roadmap` | 19 | 19 | 19 | 19 | 0 | argument | passage review required before source-derived promotion |
+| `prototype-roadmap` | 19 | 19 | 19 | 19 | 19 | argument | eligible for support review |
 | `living-book-methodology` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `open-research-agenda-and-bibliography-plan` | 21 | 21 | 21 | 21 | 0 | argument | passage review required before source-derived promotion |
 
@@ -614,25 +614,25 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `beastbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `beastbrain_timeless` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `moecot_md` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `road_to_agi` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_plan_compiler` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_circle_transfer` | mapped | note present | chapter listed | not passage-reviewed |
-| `prototype-roadmap.core` | `prototype-roadmap` | `circle_ai_contract_suite` | mapped | note present | chapter listed | not passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `beastbrain_timeless` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `road_to_agi` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_plan_compiler` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
+| `prototype-roadmap.core` | `prototype-roadmap` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
 | `living-book-methodology.core` | `living-book-methodology` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
 | `living-book-methodology.core` | `living-book-methodology` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
 | `living-book-methodology.core` | `living-book-methodology` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |

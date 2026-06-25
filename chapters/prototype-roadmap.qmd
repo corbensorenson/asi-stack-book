@@ -28,9 +28,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument until phase completion artifacts, acceptance checks, dependency gates, or accepted evidence transitions justify promotion."
-  - "The prototype_phase_record fixture validates schema/example consistency only; no phase has been completed, accepted, or used to promote a capability claim."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all nineteen assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle references; support remains argument until phase completion artifacts, accepted gates, reproduced checks, or accepted evidence transitions justify promotion."
+  - "The prototype_phase_record fixture and AsiStackProofs.PrototypeRoadmap finite-record predicates validate record shape and gate predicates only; no phase completion, phase acceptance, dependency-gate audit, phase execution, or roadmap milestone is promoted."
+  - "BeastBrain and BugBrain are lineage and cautionary sources only here; source-reported hardware, performance, context, AGI, consciousness, security, autonomy, and cost claims are not promoted."
+  - "No support-state promotion, benchmark result, model-quality result, deployment/readiness claim, phase-acceptance result, or raw source publication is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -46,8 +47,8 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`; supporting: `beastbrain_timeless`, `bugbrain`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` |
-| Source loading state | source notes: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; raw cache: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot_md`, `road_to_agi`; connector/recovery: `moecot`, `coherence_exchange` |
-| Test state | `prototype_phase_record.valid.json` passes repository-level protocol fixture validation; phase acceptance, dependency-gate, and evidence-state audits remain planned. |
+| Source loading state | source notes: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; raw cache: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot_md`; source-note-only or connector/recovery: `moecot`, `road_to_agi`, `coherence_exchange`; pinned local references: Project Theseus at `1ad88a22`, Circle Math at `63b0f511` |
+| Test state | `prototype_phase_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PrototypeRoadmap` builds finite-record predicates over phase unlock and claim-promotion reviews. Phase acceptance, dependency-gate, execution, benchmark, and evidence-state audits remain planned. |
 
 ## Drafting guardrail
 
@@ -68,6 +69,20 @@ VIEA says durable artifacts first. SCF says replacement and improvement need sta
 [prototype-roadmap.core, label: Design rationale, support: argument] The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.
 
 The claim remains at `argument` support. The source notes support a staged build sequence, but this chapter does not claim that the prototype phases have been completed.
+
+No roadmap phase has been accepted, executed, or used to promote a capability claim in this repository.
+
+### Claim-source mapping status
+
+Appendix C now records nineteen passage-reviewed mappings for this claim. The review sharpens what each source may support while keeping every non-claim visible.
+
+| Source group | Reviewed support | Boundary |
+|---|---|---|
+| Core stack sequencing sources: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge` | Durable artifacts, command contracts, claim ledgers, benchmark ratchets, stable fields, governed context, typed plans, gates, and residual discipline before higher-agency phases. | No phase acceptance, prototype execution, benchmark result, dependency-gate audit, or claim promotion. |
+| Prototype lineage sources: `beastbrain`, `beastbrain_timeless`, `bugbrain` | Local, stateful, resource-constrained, memory/planning/verification/routing vocabulary and cautionary prototype lineage. | No hardware, performance, context-length, security, autonomy, cost, AGI, consciousness, build, emulation, or hardware-test claim. |
+| Connector/recovery runtime sources: `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` | Runtime-reference context, release-wording normalization, remaining-work/blocker categories, governance/evidence-interface vocabulary, and source-reported status boundaries. | Source-note-only or variant use; no runtime artifact, reproduced command, benchmark evidence, economic mechanism, or roadmap gate. |
+| Theseus implementation references: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` | Report-first implementation lane, plan compiler contracts, self-evolution gates, architecture-gate checks, operator/work-board controls, and structural transfer design. | No current report bundle, compiler command, gate output, dashboard run, board step, transfer consumer, benchmark result, model-quality result, or deployment readiness. |
+| Circle contracts and formal/fixture artifacts: `circle_ai_contract_suite`, `prototype_phase_record.valid.json`, `AsiStackProofs.PrototypeRoadmap` | Future proof-carrying contract milestone shape and finite record-level phase-gate predicates. | No Circle command, generated contract pack, acceptance check, external Circle Lean build, receipt replay, downstream consumer, or semantic proof of phase completion. |
 
 ## Mechanism
 
@@ -163,16 +178,20 @@ These Lean hooks are implemented as finite-record predicates over phase unlock a
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Stable replacement and rollback substrate. | source note available; local raw cache available |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Governed context compiler and adequacy/admission separation. | source note available; local raw cache available |
 | `planforge` | PlanForge | planning_control | Goal-to-execution compilation, scheduling, and intelligence arbitrage. | source note available; local raw cache available |
-| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Local, stateful, SSD-native stack lineage. | source note available; local raw cache available |
-| `bugbrain` | BugBrain | edge_efficiency_lineage | Resource-constrained prototype lineage; speculative AGI claims not promoted. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Runtime/reference implementation context; not reproduced here. | source note available; connector or recovery required |
-| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining-work and blocker context; source-reported only. | source note available; local raw cache available |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Report-first local RMI implementation reference. | source note available |
-| `theseus_plan_compiler` | Theseus Plan Compiler | planning_control | Goal contracts, semantic IR DAGs, VCM slices, routes, and replay traces. | source note available |
-| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane and intervention ladder. | source note available |
-| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Gate checks before heavy training; snapshot not rerun here. | source note available |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Durable work board, operator controls, node registry, TTLs, kill switches. | source note available |
-| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Contract packs and non-claim discipline. | source note available |
+| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Local, stateful stack vocabulary and implementation-roadmap lineage; source-reported hardware/performance/cost claims not promoted. | source note available; local raw cache available |
+| `beastbrain_timeless` | BeastBrain Timeless Edition | whole_stack_lineage | Evergreen local-memory, planning, verification, and hardware-adaptation framing; no milestone validation. | source note available; local raw cache available |
+| `bugbrain` | BugBrain | edge_efficiency_lineage | Resource-constrained prototype lineage; build/emulation/hardware/AGI/consciousness claims not promoted. | source note available; local raw cache available |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Runtime/reference implementation context, readiness gates, ledgers, replay, and blockers; not reproduced here. | source note available; connector/recovery required |
+| `moecot_md` | MoECOT Markdown Export | implementation_reference_variant | Terminology and release-wording normalization; not independent corroboration. | source note available; local raw cache available |
+| `road_to_agi` | Road To AGI | strategic_roadmap | Remaining-work, blocker, and source-reported status context; commands/results not reproduced. | source note available; auth-gate/source-note-only placeholder |
+| `coherence_exchange` | Coherence Exchange | governance_evidence_interface | Optional governance/evidence-interface vocabulary and contestability framing; speculative economics not promoted. | source note available; connector/recovery required |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Report-first local RMI implementation reference and safety/report boundary. | pinned local project reference |
+| `theseus_plan_compiler` | Theseus Plan Compiler | planning_control | Goal contracts, semantic IR DAGs, VCM slices, routes, contract hashes, and replay-trace targets. | pinned local project reference |
+| `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane, intervention ladder, ATTD gates, and outcome ledgers. | pinned local project reference |
+| `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Gate checks before heavy training; source-reported snapshot not rerun here. | pinned local project reference |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Durable work board, operator controls, node registry, TTLs, kill switches, and feedback routing. | pinned local project reference |
+| `theseus_circle_transfer` | Circle Calculus Transfer Lane | proof_carrying_ai_contracts | Structural transfer design for future private experiments; quality/runtime/model-improvement claims not promoted. | pinned local project reference |
+| `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Contract packs, theorem-linked fields, receipt boundaries, and non-claim discipline. | pinned local project reference |
 
 ## Summary
 
