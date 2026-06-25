@@ -4,7 +4,7 @@ chapter_id: "simulation-fidelity-and-physical-constraints"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "simulation_scaling"
   - "cgs"
@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now maps this simulation-fidelity claim to all assigned source notes; support remains argument until a physical-computation audit, simulation benchmark, feasibility calculator, or external literature review exists."
   - "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, or external literature review has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -58,6 +58,18 @@ Resource economics matters here because simulation consumes capacity. Compact ge
 [simulation-fidelity-and-physical-constraints.core, label: Design rationale, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
 
 The claim remains at `argument` support. The source note supports discussion of contract-relative simulation demand and bottlenecks, but this chapter does not claim independent physical validation or simulation performance.
+
+### Claim-source mapping status
+
+Appendix C now maps this simulation-fidelity claim to all assigned source notes. The mappings support contract-relative scope, fidelity, resource costs, bottlenecks, hidden simulation burden, trace/storage cost, load pressure, and normative boundaries, not a demonstrated simulator or physical-computation result.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `simulation_scaling` | Contract-relative feasibility through scope, clockspeed, fidelity, temporal semantics, demand estimates, available capacity, and compute/memory/heat/bandwidth/latency bottlenecks. | Theoretical synthesis only; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit was run. |
+| `cgs` | Warning that compact simulators and generators can hide residual complexity unless residual burden, verification cost, governance interface, and hidden complexity debt are explicit. | Conceptual framework only; no local CGS benchmark or simulator adequacy test has been run. |
+| `rankfold_neuralfold` | Artifact manifests, deterministic reconstruction checks, residual coding, WORM assumptions, and archive-backend obligations around simulation and trace storage. | No local artifact compressor, trace-store benchmark, deterministic decoder, or reproduced ratio exists here. |
+| `tokenmana` | Simulation as a scarce-resource choice through bounded capacity, burst controls, load variance, cognitive friction, and quality/cost measurement ideas. | No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists. |
+| `alignment_field` | Normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions in simulation scenarios. | Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative. |
 
 ## Mechanism
 

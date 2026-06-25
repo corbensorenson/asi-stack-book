@@ -4531,6 +4531,33 @@
               "target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports the simulation-fidelity claim through contract-relative feasibility: declared scope, clockspeed, fidelity, temporal semantics, demand estimates, available capacity, and bottlenecks such as compute, memory, heat, bandwidth, and latency.",
+              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit was run here."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports the warning that compact simulators and generators can hide residual complexity unless residual burden, verification cost, governance interface, and hidden complexity debt are explicit.",
+              "limits": "Conceptual framework only; no local CGS benchmark or simulator adequacy test has been run."
+            },
+            {
+              "source_id": "rankfold_neuralfold",
+              "mapped_support": "Supports simulation/storage cost awareness through artifact manifests, deterministic reconstruction checks, residual coding, WORM assumptions, and archive-backend obligations.",
+              "limits": "Architecture and implementation-plan source only; no local artifact compressor, trace-store benchmark, deterministic decoder, or reproduced ratio exists here."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports treating simulation as a scarce-resource choice through bounded capacity, burst controls, load variance, cognitive friction, and quality/cost measurement ideas.",
+              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supports using simulation scenarios only with visible normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions.",
+              "limits": "Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative."
+            }
           ]
         },
         {
@@ -4614,6 +4641,58 @@
               "target": "A substrate without passing evidence remains non-core.",
               "status": "planned"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports optional substrate discipline through a tiny deterministic calculus, effect boundaries, semantic patches, replayable logs, obligation artifacts, provenance hashes, and capability-mediated execution.",
+              "limits": "Specification source only; no local GenesisCode implementation, proof artifact, replay checker, benchmark, or security audit exists here."
+            },
+            {
+              "source_id": "temporal_coil_research",
+              "mapped_support": "Supports manifest-driven A/B discipline for temporal-coil mechanisms through component variants, placement variants, progressive modes, multiseed readouts, and update logs.",
+              "limits": "Experiment process note only; no temporal-coil A/B run or result artifact was imported or validated here."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports treating substrates as compiler/IR options through source plans, typed semantic atoms, dependency analysis, validation requirements, target lowering, localized repair, and evaluator-backed artifacts.",
+              "limits": "Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists here."
+            },
+            {
+              "source_id": "treellm",
+              "mapped_support": "Supports semantic-graph and path-token substrates as optional representation/search candidates with traversal, residual attributes, editable graph updates, and shared semantic operating-system framing.",
+              "limits": "Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, reasoning benchmark, or verified token format exists here."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports resource-bounded substrate adoption by requiring scope, fidelity, temporal semantics, demand, capacity, and bottleneck assumptions before feasibility claims.",
+              "limits": "Theoretical synthesis only; no simulation benchmark, feasibility calculator, or independent literature audit was run."
+            },
+            {
+              "source_id": "coilmoecot",
+              "mapped_support": "Supports routed cyclic/specialist lanes as optional MoECOT substrate candidates governed by deterministic/fail-closed controls, readiness gates, benchmarks, approvals, and residual handling.",
+              "limits": "Connector-readable design/spec source only; no CoilMoECOT benchmark, route run, or performance evidence has been reproduced here."
+            },
+            {
+              "source_id": "circle_calculus_core",
+              "mapped_support": "Supports proof-boundary discipline for cyclic addressing, phase, recurrence, coverage, and contract receipts through Lean declarations, theorem manifests, Python/Rust evidence layers, and explicit non-claims.",
+              "limits": "External Circle repository was not built or tested from this repo; use as proof-boundary context, not local proof ownership or model-quality evidence."
+            },
+            {
+              "source_id": "circle_ai_architectures",
+              "mapped_support": "Supports optional cyclic-substrate adoption only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist.",
+              "limits": "No sidecar tests, Lean builds, MLX experiments, benchmark fixtures, or model-quality results were run here."
+            },
+            {
+              "source_id": "proof_carrying_circular_computation",
+              "mapped_support": "Supports cyclic compute as a proof-plus-benchmark program: cyclic address primitives, stride coverage, Lean-proved rewrite/address transformations, backend selection, and baseline benchmarking requirements.",
+              "limits": "No Circle sidecar examples, Lean builds, CoilIR backend, or backend benchmarks were run from this repo."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports strict transfer boundaries for deterministic Circle fixtures into private Theseus benchmark design, with workload, baseline, negative-control, metric, script, report, and non-claim requirements.",
+              "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed here."
+            }
           ]
         },
         {
@@ -4683,13 +4762,40 @@
               "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
               "module": "AsiStackProofs.ProofCarryingContracts",
               "target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:circle_contracts.consumer_gate.failure_blocks_promotion",
               "module": "AsiStackProofs.ProofCarryingContracts",
               "target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "circle_calculus_core",
+              "mapped_support": "Supports theorem-status discipline through Lean declarations, theorem manifests, Python reference models, JSON schemas, generated contract packs, proof boundaries, stable APIs, verification commands, and explicit non-claims.",
+              "limits": "The external Circle repository was not built or tested here; this mapping does not claim local Circle theorem replay or downstream model-quality evidence."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports proof-carrying AI contract receipts through finite engineering-object mappings, theorem ids, Python certificates, schema fields, consumer reports, require gates, bundle checks, fingerprints, and non-claim boundaries.",
+              "limits": "No Circle contract command, generated pack, Lean build, or receipt check was run from this repo."
+            },
+            {
+              "source_id": "rope_position_certifier",
+              "mapped_support": "Supports exact/discretized RoPE position-bookkeeping contracts through phase banks, collision reports, theorem ids, machine-readable certificates, public commands, numerical-diagnostic boundaries, and explicit non-claims.",
+              "limits": "No RoPE certifier command, sidecar regeneration, or Circle Lean build was run here; it does not support model-quality, context-length, speed, memory, or deployment claims."
+            },
+            {
+              "source_id": "proof_carrying_circular_computation",
+              "mapped_support": "Supports proof-carrying cyclic computation contracts through cyclic-address primitives, rewrite/address transformations, theorem manifests, backend-selection discipline, and benchmark requirements.",
+              "limits": "No Circle sidecar examples, external Lean builds, CoilIR lowering, or backend benchmarks were run here."
+            },
+            {
+              "source_id": "circle_ai_architectures",
+              "mapped_support": "Supports anti-overclaim discipline by separating finite-indexing facts from ML-relevant structural guarantees and requiring ordinary baselines, wrong-period controls, scalar controls, learned-position controls, and negative results.",
+              "limits": "No model-quality experiment, benchmark fixture, sidecar test, Lean build, or MLX run was executed here."
             }
           ]
         },
@@ -4768,6 +4874,28 @@
               "target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "coil_attention_memory",
+              "mapped_support": "Supports structural guardrails for cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop exits, work budgets, residue/winding/provenance, and alias diagnostics.",
+              "limits": "Proof-linked structural source only; no Circle sidecars, contract generators, learned-model experiments, retrieval-quality tests, or long-context results were run here."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports theorem-linked contract families and consumer fields for KV-cache freshness, sparse attention, recurrence schedules, cyclic memory residue/winding, multicoil phase, and explicit non-claims.",
+              "limits": "No generated contract pack, Circle command, receipt check, or Lean build was run from this repo."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports report-only transfer discipline for cyclic-memory and recurrence fixtures, with quality/runtime/memory/transfer/failure-case axes kept separate from deterministic structural smoke checks.",
+              "limits": "No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, or private inference/report artifact was executed or imported here."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports tying cyclic memory contracts back to governed context: semantic objects, immutable versions, packets, materializations, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states.",
+              "limits": "VCM control-plane source only; it does not prove recurrence quality, retrieval quality, long-context performance, or learned memory behavior."
+            }
           ]
         },
         {
@@ -4845,6 +4973,33 @@
               "module": "AsiStackProofs.CyclicMixers",
               "target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
               "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "coilra_multicoil_rope",
+              "mapped_support": "Supports cyclic adapter/mixer and position-encoding boundaries through adapter-block indices, residue/winding, block-cyclic routes, multicoil phase, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims.",
+              "limits": "Structural/proof-linked source only; no MLX run, model-quality result, speed, memory, training-stability, or context-length improvement exists here."
+            },
+            {
+              "source_id": "rope_position_certifier",
+              "mapped_support": "Supports exact/discretized RoPE receipt boundaries through phase-channel residues, phase-bank collisions, bounded prefix reports, theorem ids, machine-readable certificates, and numerical real-phase diagnostics as non-proof.",
+              "limits": "No RoPE certifier run, sidecar regeneration, or Circle Lean build was run here; no model-quality or long-context claim is supported."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports contract-family fields for RoPE, multicoil phase, cyclic mixers, receipts, theorem ids, consumer readiness, fingerprints, normalized parameters, and explicit boundaries/non-claims.",
+              "limits": "No Circle contract commands, generated packs, Lean builds, or receipt checks were run from this repo."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports transfer-boundary discipline for phase-feature invariance, mixer parameter accounting, workload smoke/proxy benchmarks, baseline/negative-control requirements, and disallowed quality/runtime/memory/transfer claims.",
+              "limits": "No transfer consumer, smoke workload, proxy benchmark, inference, or report artifact was executed or imported here."
+            },
+            {
+              "source_id": "circle_ai_architectures",
+              "mapped_support": "Supports using cyclic or coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic/circulant structure, or geometry-aware structure is real and controlled by baselines.",
+              "limits": "No universal cyclic-model advantage, sidecar test, MLX experiment, benchmark fixture, or model-quality result was run here."
             }
           ]
         }

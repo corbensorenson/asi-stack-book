@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now maps this cyclic-mixer claim to all assigned source notes; support remains argument until RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, or downstream quality evaluations exist."
   - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency only; no RoPE certifier run, cyclic mixer benchmark, MLX experiment, hardware-kernel test, or downstream quality evaluation has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -58,6 +58,18 @@ Circle AI Architectures gives the right rule: use cyclic structure where the dat
 [coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
 
 The claim remains at `argument` support. The source notes support discussion of cyclic adapter/mixer contracts, exact/discretized phase-bank receipts, residue/winding diagnostics, parameter accounting, baselines, controls, and non-claims. They do not support model improvement claims here.
+
+### Claim-source mapping status
+
+Appendix C now maps this cyclic-mixer claim to all assigned source notes. The mappings support cyclic adapter/mixer boundaries, phase-bank receipts, residue/winding diagnostics, parameter accounting, baseline requirements, and transfer non-claims, not model-quality or runtime improvement.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `coilra_multicoil_rope` | Adapter-block indices, residue/winding, block-cyclic routes, multicoil phase, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims. | Structural/proof-linked source only; no MLX run, model-quality result, speed, memory, training-stability, or context-length improvement exists here. |
+| `rope_position_certifier` | Exact/discretized RoPE receipt boundaries through phase-channel residues, phase-bank collisions, bounded prefix reports, theorem ids, machine-readable certificates, and numerical real-phase diagnostics as non-proof. | No RoPE certifier run, sidecar regeneration, or Circle Lean build was run here; no model-quality or long-context claim is supported. |
+| `circle_ai_contract_suite` | Contract-family fields for RoPE, multicoil phase, cyclic mixers, receipts, theorem ids, consumer readiness, fingerprints, normalized parameters, and explicit boundaries/non-claims. | No Circle contract commands, generated packs, Lean builds, or receipt checks were run from this repo. |
+| `theseus_circle_transfer` | Phase-feature invariance, mixer parameter accounting, workload smoke/proxy benchmarks, baseline/negative-control requirements, and disallowed quality/runtime/memory/transfer claims. | No transfer consumer, smoke workload, proxy benchmark, inference, or report artifact was executed or imported. |
+| `circle_ai_architectures` | Cyclic or coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic/circulant structure, or geometry-aware structure is real and controlled by baselines. | No universal cyclic-model advantage, sidecar test, MLX experiment, benchmark fixture, or model-quality result was run here. |
 
 ## Mechanism
 
