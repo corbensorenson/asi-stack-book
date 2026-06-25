@@ -29,9 +29,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument until passage review, integrated trace artifacts, tests, or accepted evidence transitions justify promotion."
-  - "The reference_trace_record fixture validates schema/example consistency only; no end-to-end runtime trace harness, authority stop-condition checker, or artifact continuity audit has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all twenty assigned sources, including source-note-only review for MoECOT and VCM Editable plus pinned local Theseus project-file references; support remains argument until integrated trace artifacts, tests, reproduced reports, or accepted evidence transitions justify promotion."
+  - "The reference_trace_record fixture validates schema/example consistency and AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace harness, authority stop-condition checker, artifact continuity audit, deployed runtime, or report replay has been run."
+  - "Local Theseus project references are report-first implementation context only; no current Theseus reports, dashboards, commands, board steps, compiler proof, or benchmark ledgers were rerun or independently inspected from this repository."
+  - "No support-state promotion, integrated runtime claim, benchmark success, model-quality result, deployment readiness, or raw source publication is implied."
 ---
 
 ## Chapter status
@@ -73,6 +74,18 @@ The integrated reference architecture therefore has to be explicit about handoff
 [integrated-reference-architecture.core, label: Design rationale, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
 
 The claim remains at `argument` support. The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. They do not show a completed integrated stack run here.
+
+### Claim-source mapping status
+
+Appendix C now records twenty passage-reviewed mappings for this chapter. The review makes the source crosswalk traceable enough for drafting and later support review, but it does not move the chapter above `argument` support. It also does not convert Project Theseus reports, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
+
+| Mapping group | Reviewed support | Boundary |
+|---|---|---|
+| Core stack sources | VIEA intent-to-execution, SCF replacement gates, VCM context packets, PlanForge planning, Talos execution, Spinoza claim discipline, Octopus routing, RMI ratchets, and Benchmaxxing evidence updates. | No end-to-end runtime trace, deployed authority enforcement, benchmark result, route-quality result, replay result, or support-state promotion. |
+| Normative and compression sources | Alignment Field as bounded normative/governance context; CGS as compact seed/rule/state/residual/verification/governance framing; Cognitive Loop Closure as procedural-memory handoff context. | No empirical consciousness, moral-status, alignment, compactness, procedural-memory, or safety result. |
+| Connector/recovery sources | MoECOT and VCM Editable source notes for runtime orchestration and richer VCM terminology. | Source-note only; raw connector text is not published here and no runtime, VCM-Bench, model-facing, or context-policy result is promoted. |
+| Pinned Theseus project files | Whitepaper, plan compiler, self-evolution system, architecture gate, operator OS/work board, and Circle transfer lane as report-first implementation references. | No current reports, commands, dashboards, board steps, compiler proof, transfer consumer, benchmark ledger, or model artifact was rerun or independently inspected here. |
+| Formal and fixture artifacts | `reference_trace_record.valid.json` and finite Lean predicates define record-level handoff and gate expectations. | They prove record-shape gates only, not deployed layer behavior, artifact continuity, authority-stop behavior, or stack safety. |
 
 ## Mechanism
 

@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 352 |
+| Passage-reviewed mappings recorded | 372 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -82,7 +82,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
-| `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
+| `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 0 | argument | passage review required before source-derived promotion |
 | `living-book-methodology` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
@@ -588,26 +588,26 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_sponsors_docs` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_agentic_workflow_injection_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_dao_delegation_fairness_2025` | mapped | note present | chapter listed | passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_plan_compiler` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_circle_transfer` | mapped | note present | chapter listed | not passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_plan_compiler` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_plan_compiler` | mapped | note present | chapter listed | not passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |

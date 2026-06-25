@@ -9972,102 +9972,292 @@
             {
               "source_id": "viea",
               "mapped_support": "Supports the integrated reference architecture as an intent-to-execution spine: command contracts, artifacts, claim ledgers, routing, runtime adapters, feedback, residuals, and regression coverage.",
-              "limits": "Architecture proposal only here; no end-to-end deployed VIEA runtime, execution log, or benchmark has been reproduced in this repository."
+              "limits": "Architecture proposal only here; no end-to-end deployed VIEA runtime, execution log, field-feedback record, workflow compiler, or benchmark has been reproduced in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:13-17",
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-132",
+                "sources/raw/google_docs/viea.txt:206-220",
+                "sources/raw/google_docs/viea.txt:239-272",
+                "sources/raw/google_docs/viea.txt:506-525"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution framing, command contracts, durable artifacts, claim/support-state ledgers, runtime targets, verification, feedback, residuals, regression coverage, repeated-work-to-tool compilation, and benchmark ratchets; no deployed VIEA trace or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports the self-improvement and replacement portions of the integrated stack through stable capability identities, evaluator policy, authority ceilings, qualification claims, lifecycle events, and recovery paths.",
-              "limits": "Does not prove production safety, evaluator integrity, global alignment, or reversible deployment behavior."
+              "limits": "Does not prove production safety, evaluator integrity, global alignment, reversible deployment behavior, route quality, or rollback success.",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:53-64",
+                "sources/raw/google_docs/scf.txt:67-78",
+                "sources/raw/google_docs/scf.txt:108-120",
+                "sources/raw/google_docs/scf.txt:244-306",
+                "sources/raw/google_docs/scf.txt:416-430",
+                "sources/raw/google_docs/scf.txt:453-463"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable capability identities, qualification claims, route validation, exact evidence graphs, authority admissibility, lifecycle transitions, contract debt, goalpost firewall, sequential-risk accounting, and policy/verifier/planner/router implementation identities; no production safety or rollback result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports the memory/context handoff layer through semantic objects, immutable versions, source and authority binding, adequacy/admission separation, protected compilation, taint, revocation, and audit records.",
-              "limits": "Does not establish end-to-end model accuracy improvement or broad VCM superiority."
+              "limits": "Does not establish end-to-end model accuracy improvement, broad VCM superiority, context-policy learning, retrieval-quality improvement, or model-facing benefit.",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-25",
+                "sources/raw/google_docs/vcm_public.txt:36-45",
+                "sources/raw/google_docs/vcm_public.txt:225-260",
+                "sources/raw/google_docs/vcm_public.txt:281-305",
+                "sources/raw/google_docs/vcm_public.txt:316-329",
+                "sources/raw/google_docs/vcm_public.txt:356-389",
+                "sources/raw/google_docs/vcm_public.txt:427-444",
+                "sources/raw/google_docs/vcm_public.txt:450-485"
+              ],
+              "passage_review_note": "Reviewed local raw cache for governed semantic memory, source/authority binding, adequacy versus admission, protected compilation, snapshot/revocation coherence, typed non-success states, context-policy fault studies, and packet field shapes; no model-facing or end-to-end accuracy result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports the planning handoff through hierarchical decomposition, primitive schemas, dependency inference, minimum viable intelligence tiering, scheduling, feedback loops, and failure-driven replanning.",
-              "limits": "Whitepaper/design support only; no PlanForge scheduler, DAG compiler, or planning benchmark has been validated here."
+              "limits": "Whitepaper/design support only; no PlanForge scheduler, DAG compiler, learned decomposer, runtime replanning flow, synthetic savings reproduction, or planning benchmark has been validated here.",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:39-130",
+                "sources/raw/google_docs/planforge.txt:160-180",
+                "sources/raw/google_docs/planforge.txt:263-291",
+                "sources/raw/google_docs/planforge.txt:550-559"
+              ],
+              "passage_review_note": "Reviewed local raw cache for hierarchical decomposition, plan optimization, dependency inference, tier annotation, scheduling, execution handoff, safety hooks, MVI scoring, cost/makespan objective, tier escalation, and calibration limitations; no scheduler or planning benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports the execution layer with typed jobs, contract locks, deterministic control planes, evidence records, isolation, audit, replay, delivery, and residual feedback.",
-              "limits": "Does not prove Talos benchmark, security, or production execution claims in this repository."
+              "limits": "Does not prove Talos benchmark, security, runtime execution, approval-service behavior, replay, or production execution claims in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:1053-1151",
+                "sources/raw/google_docs/talos.txt:1199-1214",
+                "sources/raw/google_docs/talos.txt:1534-1604",
+                "sources/raw/google_docs/talos.txt:2306-2393"
+              ],
+              "passage_review_note": "Reviewed local raw cache for lifecycle gates, contract locks, verified exit artifacts, rollback framing, delivery, assisted self-optimization review, scope hashes, audit logs, safety-tier checks, and re-locking after updates; no runtime execution or security result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports the evidence and belief-update handoff through proposer/verifier separation, proof/citation/procedure-carrying claims, contradiction handling, dependency tracing, downgrade paths, and protected axioms.",
-              "limits": "Does not solve open-domain formalization, verifier quality, or whole-system epistemic correctness."
+              "limits": "Does not solve open-domain formalization, verifier quality, proof-object correctness for arbitrary claims, reward validity, or whole-system epistemic correctness.",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:117-145",
+                "sources/raw/google_docs/spinoza.txt:176-180",
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:384-389",
+                "sources/raw/google_docs/spinoza.txt:402-450",
+                "sources/raw/google_docs/spinoza.txt:455-480",
+                "sources/raw/google_docs/spinoza.txt:493-516",
+                "sources/raw/google_docs/spinoza.txt:533-540"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proposer/verifier separation, tier labels, belief revision, contradiction handling, proof-carrying claims, output policy, proof laundering risks, verification budgets, and proof-artifact references; no verifier-quality or whole-system epistemic result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "octopus_router",
               "mapped_support": "Supports the routing handoff through specialist arms, a head/router, permission envelopes, dynamic loading, verification contracts, composition modes, quarantine, and arm lifecycle management.",
-              "limits": "No local routed-specialist prototype, arm-card implementation, or routing benchmark has been run."
+              "limits": "No local routed-specialist prototype, arm-card implementation, router-policy training run, routing benchmark, or safety result has been run.",
+              "passage_refs": [
+                "sources/raw/google_docs/octopus_router.txt:18-44",
+                "sources/raw/google_docs/octopus_router.txt:207-233",
+                "sources/raw/google_docs/octopus_router.txt:373-401",
+                "sources/raw/google_docs/octopus_router.txt:407-455"
+              ],
+              "passage_review_note": "Reviewed local raw cache for lightweight head/router duties, specialist arms, permission envelopes, verification contracts, performance logs updating routing policy, arm improvement loops, domain quarantine, formal routing state, and router intelligence boundaries; no router implementation or routing benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports the integrated improvement loop through benchmark pressure, routed specialist attempts, residual escrow, loop closure, regression preservation, arm/router lifecycle, and harder frontier selection.",
-              "limits": "Conceptual architecture source only here; no benchmark run, prototype inspection, or capability result is recorded."
+              "limits": "Conceptual architecture source only here; no benchmark run, prototype inspection, specialist-arm evaluation, router benchmark, or capability result is recorded.",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:213-255",
+                "sources/raw/google_docs/rmi.txt:418-448",
+                "sources/raw/google_docs/rmi.txt:736-843",
+                "sources/raw/google_docs/rmi.txt:1074-1129",
+                "sources/raw/google_docs/rmi.txt:1156-1222",
+                "sources/raw/google_docs/rmi.txt:1226-1245"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark pressure, specialist attempts, residual escrow, routed improvement, regression preservation, benchmark/model/residual ledgers, and benchmark-gaming mitigations; no RMI prototype or capability result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports the evidence-update and improvement-gate portions through benchmark lifecycle states, wall diagnosis, benchmark/model ledgers, regression preservation, anti-Goodhart safeguards, holdouts, and transfer checks.",
-              "limits": "No benchmark harness, mutation test, holdout run, contamination audit, or empirical result has been run in this repository."
+              "limits": "No benchmark harness, mutation test, holdout run, transfer check, contamination audit, live benchmark, or empirical result has been run in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:329-357",
+                "sources/raw/google_docs/benchmaxxing.txt:559-640",
+                "sources/raw/google_docs/benchmaxxing.txt:912-970",
+                "sources/raw/google_docs/benchmaxxing.txt:1103-1168"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark lifecycle states, saturated-to-regression transitions, harder frontiers, anti-Goodhart safeguards, holdouts, mutation, transfer checks, contamination audits, ledgers, ratchet rules, and failure mitigations; no benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "alignment_field",
               "mapped_support": "Supports the normative boundary of the integrated architecture through dignity, agency, value conflict, corrigibility, rights, and speculative consciousness-threshold concerns translated into governance constraints.",
-              "limits": "Metaphysical and normative design context only; it is not empirical proof of consciousness, moral status, or alignment."
+              "limits": "Metaphysical and normative design context only; it is not empirical proof of consciousness, moral status, alignment, rights preservation, or governance correctness.",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:149-160",
+                "sources/raw/google_docs/alignment_field.txt:268-286",
+                "sources/raw/google_docs/alignment_field.txt:601-618"
+              ],
+              "passage_review_note": "Reviewed local raw cache for behavioral-versus-interiority cautions, agency and value-conflict framing, organizational/macro-level alignment tests, and AI-objective human-flourishing warnings. The source remains speculative/normative context only, not empirical consciousness or alignment evidence.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cgs",
               "mapped_support": "Supports the compression and residual-honesty portion through compact seed/rule/state/residual/verification/governance interfaces and the requirement to expose hidden complexity debt.",
-              "limits": "Does not prove compactness, interpretability, safety, or adequacy for this stack."
+              "limits": "Does not prove compactness, interpretability, safety, adequacy, compression advantage, or hidden-residual absence for this stack.",
+              "passage_refs": [
+                "sources/raw/google_docs/cgs.txt:11-35",
+                "sources/raw/google_docs/cgs.txt:43-65",
+                "sources/raw/google_docs/cgs.txt:105-117",
+                "sources/raw/google_docs/cgs.txt:123-133",
+                "sources/raw/google_docs/cgs.txt:209-228",
+                "sources/raw/google_docs/cgs.txt:367-399",
+                "sources/raw/google_docs/cgs.txt:616-646"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compact seed/rule/state/residual/verification/governance interfaces, false-compactness warnings, residual accounting, verification requirements, compact governance levels, and recursive-governance risks; no compactness or safety result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports the procedural-memory handoff through trajectory logging, loop detection, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement.",
-              "limits": "No local loop detector, tool synthesis run, verification harness, or procedural-memory benchmark has been executed."
+              "limits": "No local loop detector, tool synthesis run, verifier, runtime monitor, tool registry, retirement workflow, or procedural-memory benchmark has been executed.",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:10-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:54-58",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-193",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:278-305",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:323-333",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:437-472"
+              ],
+              "passage_review_note": "Reviewed local raw cache for repeated trajectories, verified parameterized tools, trajectory logs, loop detection, parameter discovery, verification thresholds, routing modes, governed automation, monitoring, and retirement; no loop-closure system or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports MoECOT as an implementation-reference runtime lane with compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, handoff, and promotion blockers.",
-              "limits": "Connector/source-note support only; reported runtime and benchmark artifacts have not been ingested or reproduced here."
+              "limits": "Reviewed source note only because authenticated connector text is not published here; reported runtime and benchmark artifacts have not been ingested or reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT context: compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residual tracking, and implementation-reference caveats; no runtime artifact or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "vcm_editable",
               "mapped_support": "Supports the integrated context compiler framing with virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, and planner-guided paging.",
-              "limits": "No local VCM-Bench or model-facing result has been run, and third-party references still need citation normalization."
+              "limits": "Reviewed source note only because raw connector text is not published here; no local VCM-Bench, model-facing result, citation-normalized third-party literature review, or context-policy result has been run.",
+              "passage_refs": [
+                "sources/source_notes/vcm_editable.md:11-20",
+                "sources/source_notes/vcm_editable.md:22-29",
+                "sources/source_notes/vcm_editable.md:31-36",
+                "sources/source_notes/vcm_editable.md:47-52"
+              ],
+              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, and external-literature triage caveats; no VCM-Bench or model-facing result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports the report-first implementation reference for the integrated stack through pressure, attempt, residual, diagnosis, compression, verification, structure, specialist routing, sparse teacher governance, checkpoints, and trusted-node boundaries.",
-              "limits": "No Theseus reports, benchmark ledgers, code paths, or command outputs were rerun from this repository."
+              "limits": "No Theseus reports, benchmark ledgers, code paths, command outputs, current numbers, dashboard state, or model artifacts were rerun or independently inspected from this repository.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:19-38",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:71-76",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:97-119",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:300-341",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:343-364",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:387-427",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:549-580",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:664-700"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus whitepaper for report-first implementation framing, pressure/attempt/residual/diagnosis/structure loop, non-claims, benchmark statuses, residual escrow, tool/procedural-memory conditions, data ingress, performance/resource caveats, safety boundaries, and observability; no current Theseus run or model result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_plan_compiler",
               "mapped_support": "Supports the planning-to-execution trace with typed goal contracts, semantic IR DAGs, VCM slices, executor routes, claim/evidence targets, contract hashes, and replay traces.",
-              "limits": "Source-reported execute-mode status was not rerun or independently verified here."
+              "limits": "Source-reported execute-mode status was not rerun or independently verified here; no compiler command, report artifact, private execute proof, or replay trace is promoted.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:1-15",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:16-35",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:37-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/THESEUS_PLAN_COMPILER.md:44-78"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus plan-compiler note for typed contracts, hard constraint capsules, contract hashes, semantic IR DAG nodes, VCM slices, executor routes, claim/evidence targets, public-benchmark boundary, expected reports, and source-reported execute-mode proof; no command or report was rerun here.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_self_evolution_system",
               "mapped_support": "Supports the self-improvement gate with an intervention ladder, self-evolution governor, guarded teacher edits, ATTD repo-health gate, architecture experiment governance, outcome ledgers, and loop closure.",
-              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, branch workflow, or dashboard endpoints were executed from this repository."
+              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, branch workflow, architecture experiment governor, loop-closure harvester, dashboard endpoints, or outcome ledgers were executed or inspected here.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:5-22",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:24-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:44-64",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:84-102",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:104-120",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:148-171",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:173-188",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:204-226"
+              ],
+              "passage_review_note": "Reviewed pinned local self-evolution note for intervention ladder, self-evolution machinery, lifecycle/anti-bloat controls, ATTD health gate, guarded teacher flow, architecture experiment governance, outcome ledgers, loop closure, and source-of-truth reports; no self-evolution run is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_architecture_gate",
               "mapped_support": "Supports authority stops before heavy training through ratchet, routing, safety, residual, benchmark, procedural-tool, memory, lifecycle, and external-inference checks.",
-              "limits": "The reported gate snapshot was not independently verified by rerunning commands or inspecting current report JSON."
+              "limits": "The reported gate snapshot was not independently verified by rerunning commands or inspecting current report JSON, and it is not current readiness, deployment, safety, or training evidence.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-28",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:30-58"
+              ],
+              "passage_review_note": "Reviewed pinned local architecture-gate note for pre-training gate purpose, commands, reported snapshot, check list, failed-gate residual rule, rerun triggers, and necessary-not-sufficient caveat; no current gate result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports the operator/control surface through a shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, and signed update surfaces.",
-              "limits": "No Hive board, SQLite database, node registry, command channel, or dashboard was run from this repository."
+              "limits": "No Hive board, SQLite database, node registry, command channel, dashboard, board-executor step, remote-control surface, or unattended-operation proof was run from this repository.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-30",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:32-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:76-146",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:148-155",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:1-8",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:28-45",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:75-100",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_WORK_BOARD_EXECUTOR.md:111-146"
+              ],
+              "passage_review_note": "Reviewed pinned local Operator OS and work-board notes for shared command vocabulary, durable SQLite work board, reports, skills, hooks, feedback routing, node registry, safety gates, dashboard surfaces, board executor ledgers, improvement contract, teacher-boundary rules, and calibration boundaries; no operator surface or board step is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports the proof-contract transfer boundary by showing how Circle finite fixtures can configure private structural smoke or proxy benchmarks while preserving explicit non-claims.",
-              "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, or model-quality transfer result was executed here."
+              "limits": "No Circle-to-Theseus consumer, structural smoke workload, deterministic proxy benchmark, transfer report, private workload attachment, ordinary baseline, negative control, model-quality evaluation, runtime measurement, or memory measurement was run from this repository.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:1-17",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:18-68",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:70-108",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:120-142"
+              ],
+              "passage_review_note": "Reviewed pinned local transfer-lane note for report-only bridge, consumer/smoke/proxy commands, contract families, claim axes, structural-smoke boundaries, benchmark-design-only caveat, allowed structural claim, disallowed quality/runtime/context/speed claims, and next private attachment requirements; no transfer consumer or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
