@@ -174,6 +174,14 @@ A project-hive route has a different shape. A public repository or artifact stew
 
 These two flows share one rule: external requests and family-sensitive requests do not become ordinary compute jobs until the relevant person, policy, and evidence boundary is explicit.
 
+## Relationship to artifact stewards
+
+Personal hives and artifact stewards are paired but not interchangeable. The hive is the owned compute, memory, portal, and federation substrate. The steward is the project-lifecycle layer that decides which work is worth proposing for a book, repository, dataset, model, benchmark, or other durable artifact. A steward may request work from a hive, but it does not inherit authority over the hive's devices, people, memory, wallets, or physical tools.
+
+The boundary should be boring and explicit. A steward emits a project work contract with objective, context refs, allowed tools, forbidden tools, evidence requirements, budget, deadline, and non-claims. The hive compiles or wraps that request as a hive job contract, checks data class, tool risk, family policy, federation scope, cost, energy, and approval requirements, and then accepts, rejects, asks for repair, or returns a safer variant. The output back to the steward is an artifact bundle with logs, evidence refs, residuals, and revocation state, not a grant of project authority to the hive or hive authority to the project.
+
+This pairing prevents two common mistakes. The first mistake is treating project automation as if it can command personal hardware because the hardware is reachable. The second mistake is treating a personal hive as if it knows project purpose just because it can run jobs. Stewardship supplies mission and lifecycle context; the hive supplies lawful execution slots. Neither layer should erase the other.
+
 ## Hive-to-Hive protocol
 
 At maturity, the hive needs a small Hive-to-Hive protocol rather than a pile of ad hoc scripts. The protocol objects are boring on purpose: identity cards, device cards, portal cards, capability cards, data policies, job contracts, bids, leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations.

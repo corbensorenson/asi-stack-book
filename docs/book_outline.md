@@ -1969,6 +1969,7 @@ Draft arc:
 - Mechanism: Reject nodes by policy before scoring speed, cost, locality, energy, or capability.
 - Mechanism: Model job classes, federation modes, and Hive-to-Hive protocol records so public/project work cannot inherit private access.
 - Mechanism: Treat family-sensitive learning flows and public project-hive requests as mediation problems before they become ordinary compute jobs.
+- Mechanism: Pair with Artifact Steward Agents by accepting project work only through steward contracts that the hive can independently accept, reject, repair, or narrow without inheriting project authority.
 - Mechanism: Record every cross-device and cross-hive action with approvals, data-placement decisions, residuals, and revocation paths.
 - Mechanism: Preserve artifact, episodic, semantic, procedural, device, trust, family, project, and market memory as separate classes with distinct owners, retention rules, and placement policies.
 - Interface: VCM declares context, taint, adequacy, revocation, and data movement.
@@ -2908,6 +2909,7 @@ Draft arc:
 - Mechanism: Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until reviewed.
 - Mechanism: Treat the steward's normal action as proposal, evidence preparation, and coordination rather than unilateral ownership.
 - Mechanism: Model project-to-project federation and artifact economies through work contracts, evidence bundles, contribution ledgers, and sunset reviews rather than ambient project trust.
+- Mechanism: Pair with Personal Compute Hives by requesting owned or rented execution only through contracts that the hive can independently reject on data, tool, family, physical-world, budget, or federation-policy grounds.
 - Interface: VIEA and Talos connect intent, work contracts, artifacts, evidence, audit, replay, and delivery.
 - Interface: PlanForge lowers project goals into dependency-aware work packages.
 - Interface: VCM preserves project memory, taint, revocation, source refs, and open questions.
