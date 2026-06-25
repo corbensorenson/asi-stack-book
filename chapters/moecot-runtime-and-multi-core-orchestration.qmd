@@ -89,6 +89,8 @@ Appendix C now maps this MoECOT runtime claim to all assigned source notes. The 
 
 MoECOT is useful in the book only if it is treated as a runtime crosswalk, not a shortcut around evidence. Octopus Router and RMI define the modular route shape; Benchmaxxing defines the pressure and regression discipline; BeastBrain gives the local, stateful OS lineage; VIEA and Talos connect command contracts to execution artifacts; SCF constrains replacement; MoECOT and Project Theseus describe a compact orchestrator, routed specialist lanes, fail-closed ledgers, readiness gates, replay, handoff, and operator-visible control surfaces. The book's job is to map those runtime ideas onto the stack without pretending the runtime has been reproduced here.
 
+The useful artifact is therefore a runtime evidence packet, not a name. A MoECOT run should be able to show the command it accepted, the route it chose, the specialist lanes it activated, the control-plane gates that passed or failed, the ledgers and replay references it emitted, the handoff state it produced, and the residuals that still block promotion.
+
 A MoECOT Orchestration Record is the minimum public boundary for that mapping. It binds a run to its compact orchestrator, route head, specialist cores, control-plane gates, ledgers, replay references, handoff state, promotion blockers, residuals, and source-claim state.
 
 ```{mermaid}
@@ -154,6 +156,8 @@ The smallest useful implementation is an orchestration schema and fixture that r
 
 The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, command reference, orchestrator, route head, cores, gates, ledgers, readiness gates, replay, handoff, blockers, residuals, and source-claim state. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
 
+The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, the chapter remains an implementation-reference map.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
@@ -198,3 +202,5 @@ The crosswalk identifies implementation-reference and routing/readiness sources.
 MoECOT gives the book a runtime reference without letting runtime specificity dilute evidence discipline. It shows how a compact orchestrator, route head, specialist cores, fail-closed gates, ledgers, replay, and handoff can fit the stack.
 
 The chapter's job is to make that implementation lane useful and honest: concrete enough to guide prototypes, bounded enough to avoid source overclaiming, and structured enough for future artifacts to promote claims only when they earn it. With routing and readiness bounded, the book can turn to compression and representation: how capability becomes cheaper, denser, and more reusable without hiding residual burden.
+
+That transition matters because compression only helps the stack when the runtime can still say what was routed, what was verified, what became residual, and what remained too weak for promotion.

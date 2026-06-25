@@ -83,6 +83,8 @@ Routing begins where procedural memory leaves off. Once the stack has tools, spe
 
 The boundary therefore has two records. A Specialist Registry Record describes what a specialist is allowed to do, what it costs, what memory and tools it may access, what evidence qualifies it, and where it must fall back. A Routing Decision Record records why the router selected that specialist for this task instead of a cheaper, safer, more constrained, or more reviewed route.
 
+The decision record should be read as a task-local authority lease, not a standing appointment. The registry declares the specialist's maximum envelope; the route grants only the subset needed for this task, under this readiness state, with this fallback. That distinction keeps specialist selection from silently becoming authority transfer.
+
 ```{mermaid}
 flowchart LR
   A["Plan node"] --> B["Capability request"]
@@ -216,3 +218,5 @@ The crosswalk identifies sources for routed specialists, lifecycle, residual-awa
 Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure.
 
 This chapter therefore turns the router from a clever dispatcher into a control surface for capability, authority, memory, cost, fallback, and lifecycle. The next chapter adds the gate that the router must respect: a capability can be semantically appropriate and still not ready for ordinary use.
+
+The handoff is strict: the router may propose a route, but readiness determines whether that route is ordinary, canary, diagnostic, quarantined, or residual.

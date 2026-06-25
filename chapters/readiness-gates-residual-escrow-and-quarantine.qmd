@@ -83,6 +83,8 @@ Appendix C now maps this readiness-gate claim to all assigned source notes. The 
 
 Readiness is the router's memory of what has earned ordinary use. RMI supplies residual escrow and specialist lifecycle pressure; Benchmaxxing supplies benchmark lifecycle and anti-Goodhart caution; SCF supplies scoped, defeasible, expiring qualification; Octopus Router supplies arm cards and quarantine; Theseus supplies architecture gates and evidence-first self-evolution boundaries. Together they make readiness a governed state, not an informal confidence score.
 
+The readiness gate changes routability, not identity. A specialist can remain the same registered capability while moving from draft to shadow, canary, qualified, default, quarantined, retired, or diagnostic-only. This matters because the router consumes a current route permission, while SCF-style qualification preserves the longer-lived capability boundary and its evidence history.
+
 A Readiness Gate Record attaches that state to every module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted. It does not say the target is globally safe or permanently qualified. It says what evidence was checked, what residuals survived, what scope is allowed, what state transition is requested, and what should happen if the gate fails.
 
 ```{mermaid}
@@ -200,3 +202,5 @@ The crosswalk identifies sources for readiness gates, residual escrow, regressio
 Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.
 
 The result is a lifecycle discipline for modular intelligence: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution. The next chapter asks what a concrete runtime reference would have to record before this routing and readiness discipline could become operational evidence.
+
+That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.
