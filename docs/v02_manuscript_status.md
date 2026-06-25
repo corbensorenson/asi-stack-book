@@ -80,8 +80,9 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
 - Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage, with all 112 implemented as finite-record Lean candidates after adding the new Personal Compute Hives approval/federation predicates and Artifact Steward Agents release/sunset predicates.
 - `docs/proof_artifact_audit.md` now records a proof artifact traceability audit for all 112 targets, checking manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E wiring without claiming semantic proof adequacy or broad system behavior.
-- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 426 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
+- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 458 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
 - Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 54 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
+- `docs/source_evidence_audit.md` now records the public-safe source evidence audit: all 458 assigned source/chapter pairs have source notes, chapter listings, and exact claim-source mappings, while 0 mappings have recorded passage-level review.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -89,7 +90,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 
 ## Still Missing for v1.0
 
-- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions.
+- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 0 passage-reviewed mappings.
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Semantic proof adequacy audits for the implemented proof targets still need to confirm that each finite-record predicate is the right formalization of its intended operational boundary. The current traceability audit checks wiring and limitation coverage only.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
@@ -121,6 +122,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/sync_proof_manifest.py --check
 python3 scripts/validate_proof_readiness.py
 python3 scripts/validate_proof_artifact_audit.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

@@ -14,6 +14,7 @@ The book order is manifest-driven.
 ```bash
 python3 scripts/add_part.py --title "Part IV - New Research Track"
 python3 scripts/sync_scaffold.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_book.py
 ```
 
@@ -52,6 +53,7 @@ After edits:
 
 ```bash
 python3 scripts/sync_scaffold.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_book.py
 quarto render --to html
 ```
@@ -66,9 +68,10 @@ quarto render --to html
    - add the source ID to an existing chapter's `source_ids`, or
    - add a new chapter with `scripts/add_chapter.py`.
 6. Update Appendix C only through `scripts/sync_scaffold.py` unless a claim's support state changes after source ingestion or testing.
-7. Update `appendices/F_changelog.qmd`.
+7. Run `python3 scripts/validate_source_evidence_audit.py` to refresh/check the public-safe mapping and passage-review queue.
+8. Update `appendices/F_changelog.qmd`.
 
-Do not mark claims as source-derived or test-backed until the source has actually been ingested or the test has actually run.
+Do not mark claims as source-derived or test-backed until the source has actually been ingested, mapped to the claim, passage-reviewed or accepted through an evidence transition, and any claimed test has actually run.
 
 ## Bring in Conversation-Mined Context
 
@@ -88,6 +91,7 @@ The live book remains the canonical source. Reader, research, and audio editions
 ```bash
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py --check
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check

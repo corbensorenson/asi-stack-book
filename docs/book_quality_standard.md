@@ -18,6 +18,7 @@ The book should read like a serious systems architecture text.
 - No fabricated test results.
 - No source-derived label without source text.
 - No source-derived label without a source note or equivalent ingested-source artifact.
+- No source-derived label from source-note mapping alone; the mapped claim needs passage review or an accepted evidence transition with limitations.
 - No prototype-backed label without inspected prototype/code.
 - No test-backed label without an actual run record.
 - Negative, inconclusive, or failed results stay visible.

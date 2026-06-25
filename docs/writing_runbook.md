@@ -30,7 +30,7 @@ Use the source queue in `docs/book_outline.md` to decide what is in scope:
 - Variant sources are used to compare versions or recover missing details.
 - Connector or recovery sources must be loaded through Google Drive or kept as explicit blockers before source-derived claims.
 
-Do not mark a claim as `source-derived` unless the actual source text was read. Do not publish private conversation wording verbatim unless the user explicitly approves that exact text.
+Do not mark a claim as `source-derived` unless the actual source text was read, the claim-source mapping is recorded, and passage review or an accepted evidence transition supports the narrower move. Do not publish private conversation wording verbatim unless the user explicitly approves that exact text.
 
 ## Chapter Drafting Loop
 
@@ -102,7 +102,7 @@ Claim labels describe what kind of statement is being made. Support states descr
 
 | Movement | Required basis |
 |---|---|
-| `argument` -> `source-derived` | Actual source text read and mapped to claim. |
+| `argument` -> `source-derived` | Actual source text read, mapped to the claim, passage-reviewed or accepted through an evidence transition, and bounded by recorded limitations. |
 | `source-derived` -> `prototype-backed` | Prototype or code inspected. |
 | `prototype-backed` -> `synthetic-test-backed` | Test implemented and run on synthetic cases. |
 | `synthetic-test-backed` -> `empirical-test-backed` | Realistic external or field-like test run. |
@@ -119,6 +119,7 @@ Run:
 ```bash
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

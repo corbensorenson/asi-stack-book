@@ -1,6 +1,6 @@
 # Prewriting Readiness
 
-Last updated: 2026-06-24
+Last updated: 2026-06-25
 
 This file records the repo changes that made the full-book v0.2 drafting goal safe to start. The launch phase is complete; the current manuscript status is tracked in `docs/v02_manuscript_status.md`.
 
@@ -13,6 +13,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 - Authenticated connector reads are recorded in `sources/connector_readiness.json` and reflected in the source readiness report.
 - The per-chapter Definition of Done is machine-checked by `scripts/validate_chapter_dod.py`.
 - Required backbone source notes are machine-checked by `scripts/validate_source_notes.py`.
+- Source-note, claim-source mapping, and passage-review queue consistency is machine-checked by `scripts/validate_source_evidence_audit.py`.
 - Proof target triage is machine-checked by `scripts/validate_proof_readiness.py`.
 - Protocol schema examples are machine-checked by `scripts/validate_protocol_examples.py`.
 - Major-version reader and audio edition paths are scaffolded with `scripts/build_reader_edition.py`, `scripts/validate_reader_spine.py`, `scripts/build_audio_script.py`, and edition release-record validation.
@@ -22,8 +23,8 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 ## Still Missing Before Claims Can Rise Above Argument
 
-- Most chapter claims have not been mapped from source notes into Appendix C.
-- Most Lean targets remain planned or triaged as schema/process/research work.
+- Chapter claims now have exact source-note mappings in Appendix C, but none of the 458 current claim-source mappings have recorded passage-level review.
+- Lean targets are implemented as finite-record predicates and traceability-audited, but semantic proof adequacy review remains planned.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.
 - External literature has a queue and stance, but not a citation-normalized bibliography.
@@ -36,6 +37,7 @@ Before claiming the manuscript is current after a structural or drafting change,
 python3 scripts/source_readiness_report.py
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/build_reader_edition.py --check
