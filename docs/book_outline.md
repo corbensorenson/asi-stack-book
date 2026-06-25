@@ -1943,9 +1943,12 @@ Draft arc:
 - Insufficiency: Cloud assistants, single-device agents, home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed layer.
 - Mechanism: Define `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease` records.
 - Mechanism: Treat phones and dashboards as portals, desktops and old machines as bounded workers, NAS devices as memory stores, and rented/project nodes as temporary leased capacity.
+- Mechanism: Model device-role tables, portal authority, and memory placement so phones, laptops, desktops, NAS devices, old machines, headsets, workshop computers, and rented nodes have different duties rather than one shared trust class.
 - Mechanism: Reject nodes by policy before scoring speed, cost, locality, energy, or capability.
 - Mechanism: Model job classes, federation modes, and Hive-to-Hive protocol records so public/project work cannot inherit private access.
+- Mechanism: Treat family-sensitive learning flows and public project-hive requests as mediation problems before they become ordinary compute jobs.
 - Mechanism: Record every cross-device and cross-hive action with approvals, data-placement decisions, residuals, and revocation paths.
+- Mechanism: Preserve artifact, episodic, semantic, procedural, device, trust, family, project, and market memory as separate classes with distinct owners, retention rules, and placement policies.
 - Interface: VCM declares context, taint, adequacy, revocation, and data movement.
 - Interface: Talos and PlanForge lower goals into typed jobs and dependency-aware schedules.
 - Interface: Octopus/RMI routing and SCF leases define which capability on which node may be selected.
@@ -1987,6 +1990,11 @@ Draft deliverables:
 - Planned Codex test: Child topic routing test.
 - Planned Codex test: External project sandbox contract test.
 - Planned Codex test: Audit replay test.
+- Planned Codex test: Cross-router connectivity test.
+- Planned Codex test: Job bidding test.
+- Planned Codex test: Device dropout test.
+- Planned Codex test: Energy-aware scheduling test.
+- Planned Codex test: Portal continuity test.
 
 Lean proof targets:
 
@@ -2868,13 +2876,16 @@ Draft arc:
 
 - Problem: Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project.
 - Insufficiency: Issue trackers, CI systems, bots, funding pages, governance systems, and project-management tools each preserve only a slice of the artifact lifecycle.
-- Mechanism: Define `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`.
+- Mechanism: Define `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `TreasuryPolicyRecord`, `EventTaintRecord`, `StewardActionDecision`, and `SunsetReviewRecord`.
 - Mechanism: Bind the steward to mission, non-goals, authority ceiling, evidence policy, budget policy, governance model, and sunset criteria.
 - Mechanism: Run an explicit lifecycle from inception to bootstrap, build, release, maintenance, governance, decline, and archive.
+- Mechanism: Keep autonomy modes explicit: manual, assisted, bounded autonomous, community governed, and sunset.
 - Mechanism: Convert roadmap work into bounded contracts before dispatching humans, agents, hives, CI runners, rented compute, reviewers, or maintainers.
+- Mechanism: Keep treasury modes explicit: manual treasury, budgeted autonomy, bounty escrow, recurring operations, compute rental, governed treasury, and emergency freeze.
 - Mechanism: Separate reputation, governance rights, economic compensation, authorship, and evidence credit so one gameable score cannot capture the project.
 - Mechanism: Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until reviewed.
 - Mechanism: Treat the steward's normal action as proposal, evidence preparation, and coordination rather than unilateral ownership.
+- Mechanism: Model project-to-project federation and artifact economies through work contracts, evidence bundles, contribution ledgers, and sunset reviews rather than ambient project trust.
 - Interface: VIEA and Talos connect intent, work contracts, artifacts, evidence, audit, replay, and delivery.
 - Interface: PlanForge lowers project goals into dependency-aware work packages.
 - Interface: VCM preserves project memory, taint, revocation, source refs, and open questions.
@@ -2903,19 +2914,22 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A full chapter with steward lifecycle diagram, project record definitions, implementation ladder, public-safe source boundary, external source-note queue, and event-taint boundary.
-- Implemented repository-level fixtures: `artifact_steward_charter.valid.json`, `project_work_contract.valid.json`, `contribution_ledger_entry.valid.json`, `steward_action_decision.valid.json`, and `sunset_review_record.valid.json` validate record shape only; no steward bot, treasury executor, governance runner, or contributor system has been run.
+- A full chapter with steward lifecycle diagram, project record definitions, autonomy and treasury modes, implementation ladder, public-safe source boundary, external source-note queue, project-federation boundary, and event-taint boundary.
+- Implemented repository-level fixtures: `artifact_steward_charter.valid.json`, `project_work_contract.valid.json`, `contribution_ledger_entry.valid.json`, `treasury_policy_record.valid.json`, `event_taint_record.valid.json`, `steward_action_decision.valid.json`, and `sunset_review_record.valid.json` validate record shape only; no steward bot, treasury executor, event-taint workflow, governance runner, or contributor system has been run.
 - Implemented Lean predicate: dispatched steward work contracts require objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.
 - Implemented Lean predicate: protected steward actions without explicit approval evidence cannot execute.
 - Implemented Lean predicate: stewarded release publication requires test, evidence, changelog, residual, and approval records.
 - Implemented Lean predicate: sunset criteria block ordinary work generation until a sunset review opens.
 - Implemented Codex test: Project steward manifest fixture validation through `validate_protocol_examples.py`.
+- Implemented Codex test: Treasury policy and event-taint fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Work contract authority denial as a finite Lean predicate only.
 - Implemented Codex test: Treasury spend-cap/protected-action denial as a finite Lean predicate only.
 - Planned Codex test: Untrusted event taint test.
 - Planned Codex test: Contribution ledger separation test.
 - Planned Codex test: Sunset criteria test.
 - Planned Codex test: Release evidence handoff test.
+- Planned Codex test: Project federation contract test.
+- Planned Codex test: Autonomy-mode transition test.
 
 Lean proof targets:
 

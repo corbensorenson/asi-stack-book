@@ -4197,6 +4197,7 @@
             "Classify jobs by data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirement before scheduling.",
             "Let eligible devices bid on work after policy filtering, then choose the best lawful node rather than the fastest reachable node.",
             "Treat phones, laptops, tablets, dashboards, and headsets as portals; desktops, NAS boxes, old machines, workshop computers, and rented nodes as bounded workers or stores.",
+            "Represent device roles, family-sensitive portals, public project jobs, and hive memory classes separately so owned substrate does not collapse into surveillance or botnet behavior.",
             "Use portal cards, approval receipts, job bids, federation leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations as the Hive-to-Hive protocol surface.",
             "Preserve audit records, data-placement decisions, approval events, and residuals for every cross-device or cross-hive action."
           ],
@@ -4251,6 +4252,11 @@
             "Child topic routing test",
             "External project sandbox contract test",
             "Audit replay test",
+            "Cross-router connectivity test",
+            "Job bidding test",
+            "Device dropout test",
+            "Energy-aware scheduling test",
+            "Portal continuity test",
             {
               "name": "Bound approval receipt test",
               "purpose": "Check the finite Lean predicate that a high-risk hive job requiring approval cannot execute unless a bound approval receipt is present.",
@@ -6430,7 +6436,9 @@
             "Run an explicit lifecycle from inception to bootstrap, build, release, maintenance, governance, decline, and archive instead of treating stewardship as one long task list.",
             "Convert roadmap goals into project work contracts with required outputs, allowed tools, forbidden tools, worker requirements, budget, verification, payment, and reputation fields.",
             "Orchestrate humans, agents, personal hives, project hives, CI runners, rented compute, reviewers, and maintainers through typed jobs and evidence bundles.",
+            "Use treasury policy and event-taint records to keep spending and untrusted repository events inside explicit review boundaries.",
             "Separate reputation, governance shares, economic credits, authorship, review credit, and evidence credit so contribution, voting, money, and truth claims cannot collapse into one gameable token.",
+            "Move across manual, assisted, bounded-autonomous, community-governed, and sunset modes only through charter, policy, evidence, rollback, and approval records.",
             "Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until the steward records review."
           ],
           "interfaces": [
@@ -6467,6 +6475,13 @@
               "status": "implemented; fixture validation only"
             },
             {
+              "name": "Treasury policy and event-taint fixture validation",
+              "purpose": "Validate TreasuryPolicyRecord and EventTaintRecord public record shapes without connecting to funds, scanning workflows, or trusting unreviewed events.",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation",
+              "status": "implemented; fixture validation only"
+            },
+            {
               "name": "Work contract authority denial test",
               "purpose": "Check the finite Lean predicate that dispatched steward work contracts record objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.",
               "implementation_status": "implemented",
@@ -6484,6 +6499,8 @@
             "Contribution ledger separation test",
             "Sunset criteria test",
             "Release evidence handoff test",
+            "Project federation contract test",
+            "Autonomy-mode transition test",
             {
               "name": "Release evidence gate test",
               "purpose": "Check the finite Lean predicate that stewarded release publication requires test, evidence, changelog, residual, and approval records.",

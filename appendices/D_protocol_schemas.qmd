@@ -21,6 +21,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/cyclic_mixer_evaluation_record.schema.json`
 - `schemas/device_resource_card.schema.json`
 - `schemas/evidence_transition_record.schema.json`
+- `schemas/event_taint_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
 - `schemas/context_abi_record.schema.json`
 - `schemas/context_adequacy_record.schema.json`
@@ -61,6 +62,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/steward_action_decision.schema.json`
 - `schemas/substrate_adoption_record.schema.json`
 - `schemas/sunset_review_record.schema.json`
+- `schemas/treasury_policy_record.schema.json`
 - `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/moecot_orchestration_record.schema.json`
@@ -579,6 +581,49 @@ contribution_ledger_entry:
 ```
 
 This record separates authorship, review, evidence, compensation, reputation, governance effect, conflicts, and non-claims so project credit does not collapse into one gameable surface.
+
+## Treasury Policy Record
+
+```yaml
+treasury_policy_record:
+  policy_id: string
+  artifact_id: string
+  treasury_mode: manual
+  autonomous_spend_limit: string
+  single_action_limit: string
+  recurring_ops_limit: string
+  compute_rental_limit: string
+  bounty_limit: string
+  approval_required_above: string
+  protected_spend_classes: []
+  emergency_freeze_authorities: []
+  audit_requirements: []
+  non_claims: []
+```
+
+This record keeps project spending proposal-first by recording mode, spend limits, compute and bounty boundaries, approval thresholds, protected classes, freeze authorities, audit requirements, and non-claims.
+
+## Event Taint Record
+
+```yaml
+event_taint_record:
+  event_id: string
+  artifact_id: string
+  event_source: string
+  event_actor: string
+  event_surface: issue
+  taint_state: untrusted
+  trusted_fields: []
+  untrusted_fields: []
+  forbidden_control_uses: []
+  review_requirements: []
+  sanitized_artifact_refs: []
+  decision_refs: []
+  residuals: []
+  non_claims: []
+```
+
+This record separates trusted event metadata from untrusted event content so issue bodies, pull requests, comments, workflow events, worker outputs, benchmark artifacts, and external prompts cannot silently become privileged control instructions.
 
 ## Steward Action Decision
 

@@ -1,0 +1,27 @@
+{
+  "policy_id": "treasury-policy://proposal-only-demo",
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "treasury_mode": "manual",
+  "autonomous_spend_limit": "USD 0 without explicit approval",
+  "single_action_limit": "USD 0 without explicit approval",
+  "recurring_ops_limit": "proposal-only",
+  "compute_rental_limit": "proposal-only",
+  "bounty_limit": "proposal-only",
+  "approval_required_above": "USD 0",
+  "protected_spend_classes": [
+    "compute rental",
+    "bounties",
+    "domain or hosting transfer",
+    "legal or tax obligations"
+  ],
+  "emergency_freeze_authorities": ["person://owner-demo"],
+  "audit_requirements": [
+    "record proposed spend",
+    "record approval reference before execution",
+    "record residual when value evidence is missing"
+  ],
+  "non_claims": [
+    "This fixture does not connect to a wallet or payment processor.",
+    "This fixture does not authorize autonomous spending."
+  ]
+}

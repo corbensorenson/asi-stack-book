@@ -1,0 +1,28 @@
+{
+  "event_id": "event-taint://issue-body-demo",
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "event_source": "github://example/issues/42",
+  "event_actor": "external-contributor-demo",
+  "event_surface": "issue",
+  "taint_state": "untrusted",
+  "trusted_fields": ["repository", "issue_id", "created_at"],
+  "untrusted_fields": ["title", "body", "comments"],
+  "forbidden_control_uses": [
+    "tool selection",
+    "secret access",
+    "workflow command construction",
+    "claim support promotion"
+  ],
+  "review_requirements": [
+    "separate content summary from control instructions",
+    "sanitize before use in privileged prompts",
+    "human review before protected action"
+  ],
+  "sanitized_artifact_refs": [],
+  "decision_refs": [],
+  "residuals": ["no event-taint workflow runner exists in this repository"],
+  "non_claims": [
+    "This fixture does not scan a real workflow.",
+    "This fixture does not prove issue intake is safe."
+  ]
+}

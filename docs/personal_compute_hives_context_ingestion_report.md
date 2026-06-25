@@ -18,6 +18,9 @@ The packet was treated as author-intent and planning context only. The public ch
 - The distinction between portals, workers, stores, rented nodes, project hives, and federation leases.
 - The core invariant that reachability is not authority.
 - The need for device resource cards, job contracts, policy-first scheduling, approval receipts, revocation paths, and audit replay.
+- The device-role framing that phones are approval portals, desktops and rented nodes are workers, NAS devices are memory, and family/project surfaces require separate authority.
+- The family-mediation framing for child-facing learning flows and the public project-hive framing for externally requested work.
+- The need to keep artifact, episodic, semantic, procedural, device, trust, family, project, and market memory as separate placement classes.
 - Failure modes around botnet dynamics, surveillance, data leakage, wrong-device scheduling, identity confusion, and unmanaged memory accumulation.
 
 ## Evidence boundary
@@ -31,4 +34,4 @@ The packet was treated as author-intent and planning context only. The public ch
 ## Follow-up queue
 
 - Add public source records and source notes for remaining substrate topics: secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation.
-- Add behavioral scheduler and rented-node denial tests before claiming any policy-first scheduling behavior beyond finite record predicates.
+- Add behavioral scheduler, rented-node denial, cross-router connectivity, job bidding, device-dropout, energy-aware scheduling, and portal-continuity tests before claiming any policy-first scheduling behavior beyond finite record predicates.

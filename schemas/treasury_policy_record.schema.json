@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/treasury_policy_record.schema.json",
+  "title": "Treasury Policy Record",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "artifact_id",
+    "treasury_mode",
+    "autonomous_spend_limit",
+    "single_action_limit",
+    "recurring_ops_limit",
+    "compute_rental_limit",
+    "bounty_limit",
+    "approval_required_above",
+    "protected_spend_classes",
+    "emergency_freeze_authorities",
+    "audit_requirements",
+    "non_claims"
+  ],
+  "properties": {
+    "policy_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "treasury_mode": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "budgeted_autonomy",
+        "bounty_escrow",
+        "recurring_ops_budget",
+        "compute_rental_budget",
+        "governed_treasury",
+        "frozen"
+      ]
+    },
+    "autonomous_spend_limit": { "type": "string", "minLength": 1 },
+    "single_action_limit": { "type": "string", "minLength": 1 },
+    "recurring_ops_limit": { "type": "string", "minLength": 1 },
+    "compute_rental_limit": { "type": "string", "minLength": 1 },
+    "bounty_limit": { "type": "string", "minLength": 1 },
+    "approval_required_above": { "type": "string", "minLength": 1 },
+    "protected_spend_classes": { "type": "array", "items": { "type": "string" } },
+    "emergency_freeze_authorities": { "type": "array", "items": { "type": "string" } },
+    "audit_requirements": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

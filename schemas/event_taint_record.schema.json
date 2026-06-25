@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/event_taint_record.schema.json",
+  "title": "Event Taint Record",
+  "type": "object",
+  "required": [
+    "event_id",
+    "artifact_id",
+    "event_source",
+    "event_actor",
+    "event_surface",
+    "taint_state",
+    "trusted_fields",
+    "untrusted_fields",
+    "forbidden_control_uses",
+    "review_requirements",
+    "sanitized_artifact_refs",
+    "decision_refs",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "event_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "event_source": { "type": "string", "minLength": 1 },
+    "event_actor": { "type": "string", "minLength": 1 },
+    "event_surface": {
+      "type": "string",
+      "enum": ["issue", "pull_request", "comment", "workflow_event", "worker_output", "benchmark_artifact", "external_prompt", "other"]
+    },
+    "taint_state": {
+      "type": "string",
+      "enum": ["untrusted", "sanitized", "reviewed", "rejected"]
+    },
+    "trusted_fields": { "type": "array", "items": { "type": "string" } },
+    "untrusted_fields": { "type": "array", "items": { "type": "string" } },
+    "forbidden_control_uses": { "type": "array", "items": { "type": "string" } },
+    "review_requirements": { "type": "array", "items": { "type": "string" } },
+    "sanitized_artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "decision_refs": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

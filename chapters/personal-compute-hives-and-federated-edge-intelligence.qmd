@@ -50,7 +50,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, including external tooling notes. The core claim is still a design synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally, and four finite Lean predicates build. No hive scheduler, live registry, portal approval service, federation, or rented-node test has been run. |
+| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally, and four finite Lean predicates build. No hive scheduler, live registry, portal approval service, federation, rented-node test, cross-router connectivity test, child-routing test, dropout recovery test, or energy-aware scheduling test has been run. |
 
 ## Drafting guardrail
 
@@ -109,6 +109,23 @@ Those three records are necessary but not sufficient. The full hive protocol als
 
 This mechanism turns household and project machines into a policy-first compute fabric. A phone is primarily a portal and approval surface. A laptop is an interactive worker with limited background availability. A desktop GPU may be a heavy worker. A NAS may be long-term memory, artifact storage, and retrieval infrastructure. Old machines may run background summarization, indexing, or test jobs with low authority. Rented nodes may run public, scrubbed, or synthetic jobs. Project machines may accept work only through explicit contracts. Family devices may expose only age-appropriate portals and guardian-approved transitions.
 
+## Owned substrate and device roles
+
+The point of the hive is not to make every device interchangeable. It is to stop pretending that the device in the user's hand is the whole AI. The phone, laptop, desktop, NAS, headset, workshop computer, and rented node are different organs with different authority. A personal AI should be able to choose among them without losing the owner's policy boundary.
+
+| Hive participant | Best role | Default boundary |
+|---|---|---|
+| Phone | identity surface, approval portal, notifications, camera or voice capture, mobile review | high approval value; limited heavy compute; sensitive outputs should respect public surroundings |
+| Laptop | mobile workbench, coding, writing, local file operations, interactive inference | good human-in-the-loop worker; poor always-on background node |
+| Desktop or GPU PC | heavy inference, rendering, compilation, simulation, local training experiments | strong worker; not automatically trusted with family or regulated data |
+| NAS or storage server | durable memory, backups, datasets, vector indexes, artifact archives | strong store; internet-facing execution should be narrow and auditable |
+| Old machine | background indexing, crawler, low-priority transforms, test runners | cheap capacity; low trust unless patched and sandboxed |
+| Tablet, TV, browser, or headset | shared portal, education surface, spatial review, dashboard | portal authority depends on user, room, and attention context |
+| Workshop computer | CAD/CAM, fabrication, robotics, sensors, local physical tools | physical-world actions require stronger approval and operator presence |
+| Rented or public node | burst compute, public tests, synthetic workloads, rented inference | no private memory or secrets unless a stronger contract proves the exposure is lawful |
+
+This is why the hive vocabulary separates portals, workers, stores, and authorities. A phone can approve a job that runs on the desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public or synthetic work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device.
+
 ## Interfaces
 
 The hive interfaces with VCM before it interfaces with compute. VCM says what context exists, which version is in scope, which parts are tainted or revoked, and which data may be materialized. A scheduler that sees only a file path or prompt cannot protect the user because it cannot distinguish source evidence, private data, quoted hostile text, control text, and tool authority.
@@ -151,11 +168,36 @@ Hive scheduling should classify work before it asks for bids. The classes can st
 
 Federation should also be explicit. A personal hive uses one person's devices. A family hive has shared and private zones. A site hive binds a physical place such as a home or workshop. A joined private hive lets collaborators cooperate under a contract. A public project hive accepts temporary issue or benchmark work. A market hive exposes spare capacity for payment or credit. An emergency hive prioritizes local continuity when ordinary internet paths fail. Each mode changes what a lease may contain.
 
+## Family and project mediation
+
+Family governance is the place where a personal hive can become genuinely useful or genuinely abusive. The useful version keeps parents, guardians, and children in the loop for boundary decisions without turning every interaction into monitoring. A child-facing portal should classify the topic, choose an age-appropriate explanation when ordinary, escalate sensitive boundaries to a guardian when required, and record only the minimum policy event needed for review. The child should receive a dignified response, not a cryptic refusal whose real audience is an audit log.
+
+A project-hive route has a different shape. A public repository or artifact steward may request a bounded job such as reproducing an issue, running a test suite, rendering documentation, or proposing a patch. The personal hive should treat that request as untrusted until it has a signed job contract, sandbox manifest, resource budget, evidence obligation, and expiration. The project can ask; the personal hive governs acceptance.
+
+These two flows share one rule: external requests and family-sensitive requests do not become ordinary compute jobs until the relevant person, policy, and evidence boundary is explicit.
+
 ## Hive-to-Hive protocol
 
 At maturity, the hive needs a small Hive-to-Hive protocol rather than a pile of ad hoc scripts. The protocol objects are boring on purpose: identity cards, device cards, portal cards, capability cards, data policies, job contracts, bids, leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations.
 
 The protocol should support joining, leaving, advertising bounded capabilities, requesting work, bidding, leasing compute, transferring safe artifacts, verifying outputs, paying or crediting work, revoking access, and replaying audit logs. It should not support ambient trust. A public project may request a job; the personal hive decides whether that request is lawful. A rented node may bid; the scheduler decides whether the job's data class and sandbox rules permit that bid. A family portal may ask for a sensitive explanation; the guardian policy decides whether ordinary response, parent mediation, or denial is appropriate.
+
+## Hive memory
+
+A hive is also a memory topology. Artifact memory, episodic memory, semantic memory, procedural memory, device reliability history, trust history, family education records, project records, and market or payment records have different owners, retention rules, and allowed placements. Treating all of them as one vector store would erase the reason to have a hive.
+
+| Memory type | What it records | Placement rule |
+|---|---|---|
+| Artifact memory | documents, code, diagrams, builds, logs, release bundles | durable store with provenance and backup policy |
+| Episodic memory | meetings, sessions, task events, approvals | scoped retention and owner-visible review |
+| Semantic memory | concepts, source notes, embeddings, claim references | source-bound and revocable through VCM |
+| Procedural memory | repeated workflows compiled into tools | governed by tests, preconditions, postconditions, and retirement rules |
+| Device memory | benchmarks, thermal history, reliability, dropout events | used for scheduling, not for expanding authority |
+| Trust memory | safe or unsafe behavior by nodes, projects, workers, or providers | evidence-linked, contestable, and decay-aware |
+| Family memory | learning context, guardian decisions, shared household records | dignity-preserving, role-scoped, and minimally logged |
+| Project memory | issues, PRs, contracts, CI logs, releases, steward decisions | artifact-bound and auditable |
+
+This is where VCM becomes physical. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context is allowed to exist.
 
 ## Invariants
 
@@ -216,6 +258,11 @@ This repository now contains the record-level first step for that experiment: `d
 | Child topic routing test | Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers. | planned; not run |
 | External project sandbox contract test | Confirm project-to-personal federation receives only a sandboxed lease and cannot discover private network resources. | planned; not run |
 | Audit replay test | Reconstruct why a job ran on a node from device cards, job contract, scheduling decision, approvals, and evidence refs. | planned; not run |
+| Cross-router connectivity test | Confirm home, workshop, and mobile nodes can be represented as one logical hive without making network reachability an authority grant. | planned; not run |
+| Job bidding test | Confirm eligible nodes can estimate latency, cost, energy, locality, and capability after policy filtering. | planned; not run |
+| Device dropout test | Confirm a job records residuals and recovers or requeues when the selected device leaves the hive. | planned; not run |
+| Energy-aware scheduling test | Confirm battery, thermal, and quiet-hour constraints can reject or down-rank otherwise capable nodes. | planned; not run |
+| Portal continuity test | Confirm a user can leave a site with a phone portal while approval authority remains scoped and auditable. | planned; not run |
 
 ## Formalization hooks
 

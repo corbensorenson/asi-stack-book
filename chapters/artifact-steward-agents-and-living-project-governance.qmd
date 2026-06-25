@@ -33,7 +33,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The artifact-steward browser note is author-intent context only; it is not cited evidence and is kept in the ignored local source inbox."
-  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no steward bot, treasury executor, contributor ledger service, governance system, or sunset protocol has been run."
+  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no steward bot, treasury executor, event-taint workflow, contributor ledger service, governance system, or sunset protocol has been run."
   - "No support-state promotion is implied by this chapter draft."
 ---
 
@@ -51,7 +51,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, including external tooling and governance notes. The steward-agent architecture remains a synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, and sunset review validate locally, and four finite Lean predicates build. No steward bot, treasury policy engine, governance runner, release gate, or project federation harness has been run. |
+| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, sunset review, treasury policy, and event-taint record validate locally, and four finite Lean predicates build. No steward bot, treasury policy engine, event-taint workflow, governance runner, release gate, or project federation harness has been run. |
 
 ## Drafting guardrail
 
@@ -83,13 +83,17 @@ The core claim remains at `argument`. VIEA, Talos, PlanForge, VCM, Spinoza, Benc
 
 ## Mechanism
 
-An artifact steward is built from five project records: `Artifact Steward Charter`, `Project Work Contract`, `Contribution Ledger Entry`, `Steward Action Decision`, and `Sunset Review Record`.
+An artifact steward is built from seven project records: `Artifact Steward Charter`, `Project Work Contract`, `Contribution Ledger Entry`, `Treasury Policy Record`, `Event Taint Record`, `Steward Action Decision`, and `Sunset Review Record`.
 
 The `Artifact Steward Charter` binds the steward to a particular artifact. It records mission, non-goals, protected principles, maintainers, governance model, authority ceiling, budget policy, compute policy, source/evidence policy, release policy, contribution policy, federation policy, and sunset criteria. The charter is the steward's constitution. If the charter does not permit an action, the steward cannot infer authority from convenience.
 
 The `Project Work Contract` turns a roadmap item into bounded labor. It names the objective, context packet, allowed files or systems, allowed tools, forbidden tools, required outputs, acceptance tests, review requirements, evidence requirements, budget, payment terms if any, compute limits, deadline, non-claims, and rollback path. It can be assigned to a human, agent, personal hive, project hive, CI runner, rented node, or mixed team, but the contract remains the authority boundary.
 
 The `Contribution Ledger Entry` records what was contributed without collapsing every value into one token. It separates authorship credit, review credit, evidence credit, governance rights, economic compensation, reputation signals, and conflict-of-interest notes. The separation matters because a project is easier to capture when money, votes, status, and truth claims are a single number.
+
+The `Treasury Policy Record` keeps money, compute credits, bounty pools, recurring operations, and emergency reserves inside explicit policy. A steward may propose spending and may execute only inside the policy mode selected by the artifact. For a first public architecture, the safe default is manual or proposal-only treasury behavior.
+
+The `Event Taint Record` prevents repository events from becoming invisible control text. Issues, pull requests, comments, workflow events, worker outputs, and benchmark artifacts can be useful inputs, but their user-supplied fields remain untrusted until review or sanitization records say otherwise.
 
 The `Steward Action Decision` records what the steward did or proposed: triage an issue, draft a plan, request compute, open a PR, label a claim, propose a bounty, schedule a release, block a merge, trigger a benchmark, recommend sunset, or escalate to governance. Every decision includes authority basis, evidence refs, rejected alternatives, required approvals, residuals, and non-claims.
 
@@ -121,6 +125,32 @@ The steward lifecycle has stages. Inception creates the charter: mission, non-go
 
 This lifecycle matters because the steward is not merely a bot that reacts to issues. It is a continuity layer that knows when to plan, when to verify, when to ask for governance, when to publish, and when to stop.
 
+## Autonomy and treasury modes
+
+The steward should not begin as a fully autonomous manager. It should move through explicit autonomy modes that can be audited and reversed.
+
+| Mode | Steward behavior | Protected boundary |
+|---|---|---|
+| Manual | drafts plans, labels, summaries, and proposed contracts | humans approve every action |
+| Assisted | executes low-risk repository hygiene and local validation | protected branches, funds, releases, and governance remain human-gated |
+| Autonomous bounded | handles ordinary work inside recorded budgets and allowlists | caps, logs, rollback, and appeal remain active |
+| Community governed | major changes route through maintainer, contributor, or holder approval | quorum, delay, guardian, fork, and exit rights matter |
+| Sunset mode | preserves, archives, transfers, or freezes the artifact | ordinary feature work stops until sunset review changes state |
+
+The treasury should have the same explicitness. A budgeted steward can be useful only if spending is visibly scoped.
+
+| Treasury mode | Purpose | Default claim boundary |
+|---|---|---|
+| Manual treasury | every spend is proposed and externally approved | no autonomous spend |
+| Budgeted autonomy | small repeated work can spend below strict caps | spend is policy-bound, not self-authorized |
+| Bounty escrow | funds are reserved for verified work contracts | payout requires accepted evidence |
+| Recurring operations budget | hosting, domains, CI, storage, and monitoring | ordinary ops only |
+| Compute rental budget | rented GPU, runner, or cloud jobs | data class and sandbox must allow exposure |
+| Governed treasury | proposals and votes authorize larger changes | legitimacy and legal authority remain separate questions |
+| Emergency freeze | guardian or policy freezes spending | continuity yields to protection |
+
+The steward can be a treasurer's clerk, not the treasury's sovereign. The policy record is the actuator boundary.
+
 ## Interfaces
 
 VIEA supplies the artifact discipline. Important responses become durable artifacts, repeated work becomes tools, claims receive support states, failures become residuals, and delivered work feeds future improvement. An artifact steward is the project-level operator of that discipline.
@@ -148,10 +178,20 @@ SCF and Field of God governance supply the non-domination boundary. The steward 
 | `ArtifactStewardCharter` | Bind a steward to a specific artifact and its authority ceiling. | artifact id, mission, non-goals, maintainers, governance model, authority ceiling, budget policy, evidence policy, release policy, federation policy, sunset criteria |
 | `ProjectWorkContract` | Convert roadmap intent into bounded work. | objective, context refs, allowed files/systems, allowed tools, forbidden tools, outputs, acceptance tests, review gates, evidence refs, budget, deadline, rollback, non-claims |
 | `ContributionLedgerEntry` | Record contribution without collapsing credit, money, votes, and evidence. | contributor id, work contract id, artifact refs, review role, evidence role, compensation refs, reputation signal, governance effect, conflict notes |
+| `TreasuryPolicyRecord` | Bound project funds, compute credits, bounty escrow, recurring operations, and emergency freezes. | policy id, artifact id, mode, autonomous limit, single-action limit, compute/rental limit, approval thresholds, protected spend classes, freeze authorities, audit requirements |
+| `EventTaintRecord` | Keep untrusted repository and worker events from becoming privileged control text. | event id, source, actor, surface, taint state, trusted fields, untrusted fields, forbidden control uses, review requirements, sanitized artifacts, residuals |
 | `StewardActionDecision` | Explain what the steward proposed, ran, blocked, or escalated. | action type, authority basis, inputs, rejected options, approvals, evidence refs, residuals, affected artifacts, non-claims |
 | `SunsetReviewRecord` | Decide whether the artifact should continue, freeze, transfer, archive, or split. | value signal, active users, active maintainers, open risks, funds, dependencies, archival plan, fork/transfer path, appeal path |
 
 These records are deliberately plain. They should be representable as YAML, JSON, database rows, or issue-linked artifacts before they become more sophisticated governance machinery.
+
+## Worker federation and artifact economies
+
+A stewarded project becomes more interesting when it can request work from other stewards, personal hives, public hives, CI runners, or rented compute. The rule is that federation happens through contracts, not ambient trust.
+
+A book steward might request source-note work from a literature-review worker, ask a personal hive to run a Quarto render, ask a CI runner to validate schemas, or ask a benchmark steward to reproduce an experiment. Each request should carry the artifact id, context refs, allowed files, forbidden tools, required outputs, verification gates, budget, evidence requirements, non-claims, and rollback path. The worker returns an artifact bundle, not an entitlement to merge, publish, spend, or promote evidence.
+
+At maturity, projects can become partially self-sustaining: users fund them because they help, stewards identify the next useful work, bounded contracts attract workers, verification gates accept or reject artifacts, contribution ledgers record credit and compensation, governance handles major changes, and sunset review prevents continuity from becoming purposeless activity. This is an artifact economy only if the governance remains inspectable. If the steward hides the project from humans, the economy has already failed.
 
 ## Implementation ladder
 
@@ -211,11 +251,14 @@ The steward should not merge protected branches, spend funds, change governance,
 
 This repository now contains the record-level first step for that implementation: `artifact_steward_charter.schema.json`, `project_work_contract.schema.json`, `contribution_ledger_entry.schema.json`, `steward_action_decision.schema.json`, and `sunset_review_record.schema.json`, each with a matching valid fixture. These fixtures validate public record shape only; they do not execute a steward.
 
+The repository also now contains `treasury_policy_record.schema.json` and `event_taint_record.schema.json`, each with a matching valid fixture. These close two record-shape gaps in the chapter but do not connect to a wallet, run a treasury engine, scan workflows, or prove event-intake safety.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Project steward manifest fixture validation | Validate charter shape, authority ceiling, budget policy, evidence policy, governance model, and sunset criteria. | implemented; `validate_protocol_examples.py` validates the fixture shape only |
+| Treasury policy and event-taint fixture validation | Validate proposal-only treasury boundaries and untrusted event-field separation without connecting to funds or scanning real workflows. | implemented; `validate_protocol_examples.py` validates fixture shapes only |
 | Work contract authority denial test | Confirm a steward cannot dispatch work when the contract lacks authority, allowed tools, forbidden-tool handling, verification requirements, or non-claims. | implemented as a finite Lean predicate; no steward dispatch run |
 | Treasury spend-cap test | Confirm proposed spend above policy threshold becomes an approval request, not an executable action. | implemented as a finite Lean protected-action predicate; no treasury engine run |
 | Release evidence gate test | Confirm a stewarded release publication requires test, evidence, changelog, residual, and approval records. | implemented as a finite Lean predicate; no release runner exists |
@@ -224,6 +267,8 @@ This repository now contains the record-level first step for that implementation
 | Contribution ledger separation test | Confirm compensation, reputation, governance influence, evidence credit, and authorship are represented separately. | planned; not run |
 | Sunset criteria test | Confirm a project that meets configured inactivity or mission-failure thresholds triggers sunset review rather than ordinary work generation. | planned; not run |
 | Release evidence handoff test | Confirm release notes and claim updates reference actual tests, proof outputs, source mappings, or reviewer approvals before publication. | planned; not run |
+| Project federation contract test | Confirm a worker, personal hive, rented node, or external steward receives only a scoped work contract and cannot inherit project authority. | planned; not run |
+| Autonomy-mode transition test | Confirm a steward cannot move from assisted to bounded autonomy without charter, budget, evidence, rollback, and approval records. | planned; not run |
 
 ## Formalization hooks
 
