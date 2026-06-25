@@ -780,6 +780,7 @@ Draft arc:
 - Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
 - Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
 - Interface: Governance audits sensitive transitions through Authority Use Receipts.
+- Exact Appendix C claim-source mappings for the core security-kernel claim across Ladon/Manhattan blind handles, Context Engineer SCIF/context-supply-chain lifecycle, Talos execution/audit context, Alignment Field normative boundary pressure, and Coherence Exchange governance framing; four local mappings (`ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending secret-handle substitution tests, SCIF least-privilege tests, prompt-injection containment scenarios, threat-model artifacts, side-channel analysis, or deployed runtime evidence.
 
 Primary invariants:
 

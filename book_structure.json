@@ -2122,22 +2122,56 @@
             {
               "source_id": "ladon_manhattan",
               "mapped_support": "Supplies the blind credential handle pattern: secrets stay in a vault/manager, the model receives opaque handles, policy checks happen at injection boundaries, and sensitive work runs in compartments.",
-              "limits": "No Ladon implementation, kernel test, side-channel defense, or security audit exists in this repo."
+              "limits": "No Ladon implementation, kernel test, side-channel defense, or security audit exists in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:17-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:51-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:89-118"
+              ],
+              "passage_review_note": "Reviewed local raw cache for blind execution, right-to-use versus knowledge-of-credential separation, opaque handles, trusted secret entry, syscall-boundary substitution, Digital SCIF lifecycle, explicit wipe behavior, and side-channel risk language; no kernel implementation, side-channel defense, or security audit is promoted."
             },
             {
               "source_id": "context_engineer",
               "mapped_support": "Supports context as a supply chain with governors, mission briefs, clearance levels, context shards, memory masks, Digital SCIF lifecycle, zeroization, and sanitized commits.",
-              "limits": "Reported benchmark claims are source-reported only; no leak, hallucination, cost, or latency harness is reproduced here."
+              "limits": "Reported benchmark claims are source-reported only; no leak, hallucination, cost, or latency harness is reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/context_engineer.txt:17-64",
+                "sources/raw/google_docs/context_engineer.txt:71-88",
+                "sources/raw/google_docs/context_engineer.txt:176-212"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context-as-supply-chain framing, need-to-know context delivery, governor role, mission briefs, clearance fields, context shards, memory masks, Digital SCIF spawn/inject/execute/wipe/commit lifecycle, information-flow control, and anti-leak measures; source-reported benchmark/leakage numbers remain unpromoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports source allow-listing, blind secret handles, Digital SCIFs, typed jobs, evidence records, audit logs, replay, and approval-gated runtime adapters.",
-              "limits": "Security and benchmark claims require separate artifacts before support-state promotion."
+              "limits": "Security and benchmark claims require separate artifacts before support-state promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:4802-4838",
+                "sources/raw/google_docs/talos.txt:4875-4904",
+                "sources/raw/google_docs/talos.txt:6046-6052",
+                "sources/raw/google_docs/talos.txt:6213-6246",
+                "sources/raw/google_docs/talos.txt:6401-6426",
+                "sources/raw/google_docs/talos.txt:6476-6485"
+              ],
+              "passage_review_note": "Reviewed local raw cache for agency-paradox framing, blind execution, semantic handles, sidecar/contract-lock mediation, Digital SCIF isolation/wipe flow, zero-trust secret-blind execution, credentials/network mediation, hashed auditable I/O, proof bundles, replay, human adjudication, and residual-risk logging; no Talos security, approval, or benchmark behavior is promoted."
             },
             {
               "source_id": "alignment_field",
               "mapped_support": "Supplies normative boundary pressure around agency, dignity, consent, confinement, power, and cautious treatment of high-agency systems.",
-              "limits": "Normative lineage only; not technical security evidence or an empirical leakage result."
+              "limits": "Normative lineage only; not technical security evidence or an empirical leakage result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:449-464",
+                "sources/raw/google_docs/alignment_field.txt:1081-1102",
+                "sources/raw/google_docs/alignment_field.txt:1286-1300",
+                "sources/raw/google_docs/alignment_field.txt:1684-1713",
+                "sources/raw/google_docs/alignment_field.txt:1737-1767",
+                "sources/raw/google_docs/alignment_field.txt:1913-1932"
+              ],
+              "passage_review_note": "Reviewed local raw cache for speculative moral-threshold framing, agency/dignity/resource constraints, digital confinement hazards, power-with-feedback and consent constraints, powerful-entity alignment pressure, and power-versus-wisdom risk; used only as normative boundary pressure, not as technical security or empirical leakage evidence."
             },
             {
               "source_id": "coherence_exchange",

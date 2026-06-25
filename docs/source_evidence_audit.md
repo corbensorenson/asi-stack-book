@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 67 |
+| Passage-reviewed mappings recorded | 71 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -45,7 +45,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -279,10 +279,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `ladon_manhattan` | mapped | note present | chapter listed | not passage-reviewed |
-| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `context_engineer` | mapped | note present | chapter listed | not passage-reviewed |
-| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
+| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
+| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
+| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
