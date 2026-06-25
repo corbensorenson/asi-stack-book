@@ -2631,27 +2631,85 @@
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports treating instructions as bounded spells with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
-              "limits": "Promptcraft and vocabulary framework only; does not prove prompt safety, parser completeness, or productivity gains."
+              "limits": "Promptcraft and vocabulary framework only; does not prove prompt safety, parser completeness, or productivity gains.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:69-82",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-165",
+                "sources/raw/google_docs/software_magic_grimoire.txt:202-215",
+                "sources/raw/google_docs/software_magic_grimoire.txt:575-598",
+                "sources/raw/google_docs/software_magic_grimoire.txt:2058-2085",
+                "sources/raw/google_docs/software_magic_grimoire.txt:2453-2466"
+              ],
+              "passage_review_note": "Reviewed local raw cache for instruction artifacts, role/objective/context/constraint/procedure/output/verification/failure fields, bounded artifact and invariant naming, output-shape and truth-condition checks, canonicalization, AI promptcraft vocabulary, and semantic-density framing; no prompt-safety, parser-completeness, productivity, or behavioral result is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports a structured command layer with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, verification ledgers, routing, runtime adapters, and feedback.",
-              "limits": "Does not prove an automated semantic extractor, deployed command dispatcher, prompt-injection resistance, or execution correctness."
+              "limits": "Does not prove an automated semantic extractor, deployed command dispatcher, prompt-injection resistance, or execution correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:17-23",
+                "sources/raw/google_docs/viea.txt:69-83",
+                "sources/raw/google_docs/viea.txt:138-148",
+                "sources/raw/google_docs/viea.txt:182-199",
+                "sources/raw/google_docs/viea.txt:958-968",
+                "sources/raw/google_docs/viea.txt:2027-2042",
+                "sources/raw/google_docs/viea.txt:3108-3110"
+              ],
+              "passage_review_note": "Reviewed local raw cache for structured command contracts, the eight-limb command interface, artifact/routing/runtime/feedback spine, command examples with role/objective/context/constraints/procedure/output/verification/failure behavior, permission envelopes, provenance fields, runtime targets, and approval/refusal policies; no semantic extractor, dispatcher, injection defense, or execution-correctness result is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports explicit protocol shapes for privileged effects and control responses through capability boundaries, replay logs, obligations, semantic patches, provenance hashes, and unforgeable protocol seals.",
-              "limits": "No local implementation, replay checker, proof module, benchmark, or security audit validates the protocol discipline."
+              "limits": "No local implementation, replay checker, proof module, benchmark, or security audit validates the protocol discipline.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-25",
+                "sources/raw/google_docs/genesiscode.txt:33-40",
+                "sources/raw/google_docs/genesiscode.txt:117-128",
+                "sources/raw/google_docs/genesiscode.txt:164-210",
+                "sources/raw/google_docs/genesiscode.txt:218-264",
+                "sources/raw/google_docs/genesiscode.txt:453-457",
+                "sources/raw/google_docs/genesiscode.txt:494-508"
+              ],
+              "passage_review_note": "Reviewed local raw cache for hardened contracts, unforgeable seals, explicit effect requests, host-provided capabilities, deterministic effect logs, replay, obligation/evidence artifacts, semantic patch validation, provenance, and policy gates; no implementation, replay checker, proof module, benchmark, or security audit is promoted."
             },
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports lowering goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, inputs, outputs, dependencies, validation requirements, compiler passes, and target-specific artifacts.",
-              "limits": "Architecture and evaluation-plan source only; no local compiler, parser, trace suite, or empirical ablation validates the lowering path."
+              "limits": "Architecture and evaluation-plan source only; no local compiler, parser, trace suite, or empirical ablation validates the lowering path.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:4-27",
+                "sources/raw/google_docs/cognitive_compilation.txt:31-58",
+                "sources/raw/google_docs/cognitive_compilation.txt:65-100",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-180",
+                "sources/raw/google_docs/cognitive_compilation.txt:193-205",
+                "sources/raw/google_docs/cognitive_compilation.txt:229-238",
+                "sources/raw/google_docs/cognitive_compilation.txt:289-312",
+                "sources/raw/google_docs/cognitive_compilation.txt:352-382",
+                "sources/raw/google_docs/cognitive_compilation.txt:417-430",
+                "sources/raw/google_docs/cognitive_compilation.txt:540-555"
+              ],
+              "passage_review_note": "Reviewed local raw cache for source-plan contracts, explicit goals/inputs/outputs/constraints/acceptance tests/resources/risk flags, typed semantic atoms, input/output shape checks, dependency DAGs, compilation/linting passes, backend lowering, trace verification, localized repair, explicit-interface caveats, and target artifacts; no compiler, parser, trace suite, or ablation result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports the need for contracts that can lower into typed jobs with contract locks, adjudication, delivery, feedback, evidence records, audit, replay, approval gates, and controlled runtime adapters.",
-              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, replay behavior, or benchmark/security claims."
+              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, replay behavior, or benchmark/security claims.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:4433-4459",
+                "sources/raw/google_docs/talos.txt:4470-4482",
+                "sources/raw/google_docs/talos.txt:6046-6052",
+                "sources/raw/google_docs/talos.txt:6170-6195",
+                "sources/raw/google_docs/talos.txt:6213-6241",
+                "sources/raw/google_docs/talos.txt:6309-6312",
+                "sources/raw/google_docs/talos.txt:6401-6426",
+                "sources/raw/google_docs/talos.txt:6476-6485"
+              ],
+              "passage_review_note": "Reviewed local raw cache for job-based execution, contract locks, context handles, verification/adjudication, immutable project contract structure, typed claim/evidence records, proof bundles, replay, intent sanitation, human adjudication, controlled network/credential access, and residual-risk logging; tool-effect enforcement, approval behavior, replay behavior, benchmarks, and security claims remain unverified here."
             }
           ]
         },

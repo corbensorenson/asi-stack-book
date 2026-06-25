@@ -972,6 +972,7 @@ Draft deliverables:
 
 - A canonical command-contract template used by future chapter drafting and experiment prompts.
 - Implemented protocol validation: `command_contract` fixture validates public record shape only.
+- Exact Appendix C claim-source mappings for the core command-contract claim across Software Magic Grimoire command-envelope vocabulary, VIEA structured command layers, GenesisCode protocol/effect boundaries, Cognitive Compilation source-plan/S-IR lowering, and Talos typed-job contract discipline; all five local mappings (`software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`) now have reviewed passage references. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, or accepted evidence transitions.
 - Planned Codex test: Command schema validation test.
 - Planned Codex test: Failure-behavior declaration test.
 - Planned Codex test: Prompt override scenario.
