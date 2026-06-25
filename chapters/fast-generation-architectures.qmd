@@ -16,12 +16,22 @@ primary_sources:
   - "vcm_public"
   - "spinoza"
   - "rmi"
+  - "ext_speculative_decoding_2022"
+  - "ext_multi_token_prediction_2024"
+  - "ext_medusa_2024"
+  - "ext_eagle_2024"
+  - "ext_lookahead_decoding_2024"
+  - "ext_layerskip_2024"
+  - "ext_pagedattention_vllm_2023"
+  - "ext_mamba_2023"
+  - "ext_llada_2025"
+  - "ext_scaling_dllms_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this fast-generation architecture claim to all assigned internal source notes; external acceleration literature remains queued and no local decoding benchmark exists."
+  - "Appendix C now maps this fast-generation architecture claim to assigned internal source notes and selected external primary papers; no local decoding benchmark or reproduced external result exists."
   - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
-  - "External papers on MTP, speculative decoding, Medusa/EAGLE, diffusion LLMs, early exit, state-space models, and KV-cache serving have not yet been source-noted in this repository."
+  - "Selected external source notes cover speculative decoding, multi-token prediction, Medusa, EAGLE, lookahead decoding, LayerSkip, vLLM/PagedAttention, Mamba, LLaDA, and diffusion-LLM scaling; coverage is still selective and code artifacts were not reproduced."
   - "No local decoding, diffusion, acceptance-rate, KV-cache, or useful-solution-per-second benchmark has been implemented or run."
 ---
 
@@ -35,19 +45,19 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
-| Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` |
+| Last updated | 2026-06-25 |
+| Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` |
-| Source loading state | source notes exist for assigned internal sources; external acceleration literature is queued and unmined; browser-GPT packet is local-only author-intent context. |
+| Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`; variants/external literature: `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
+| Source loading state | source notes exist for assigned internal sources and selected external primary papers; browser-GPT packet remains local-only author-intent context. |
 | Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.FastGeneration` implements two finite-record promotion predicates; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
 
 ## Drafting guardrail
 
 This chapter records a missing stack layer: the generation substrate that determines how much planning, verification, tool use, reflection, and routing can fit inside a fixed latency and compute budget. It does not report measured speedups, reproduce third-party benchmark results, or claim that the repository contains a fast decoding implementation.
 
-The browser-GPT note that motivated this chapter is treated as author-intent and literature-queue context. Specific external papers, model names, and speed claims from that note must be mined from primary sources before this chapter can use them as `external-literature-backed` support. Until then, the chapter's support state remains `argument`.
+The browser-GPT note that motivated this chapter is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The chapter's support state remains `argument` until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
 
 ## Problem
 
@@ -83,7 +93,7 @@ The claim is architectural. It does not say that one acceleration family wins ev
 
 ### Claim-source mapping status
 
-Appendix C now maps this fast-generation claim to all assigned internal source notes. The mappings support the stack-side controls around fast generation: planner-selected modes, context packets, verifier bottlenecks, accepted-output accounting, artifactization, budget pressure, fallback, and promotion gates. They do not support third-party speed claims, external-method summaries, or local decoding results.
+Appendix C now maps this fast-generation claim to assigned internal source notes and selected external primary papers. The internal mappings support stack-side controls around fast generation: planner-selected modes, context packets, verifier bottlenecks, accepted-output accounting, artifactization, budget pressure, fallback, and promotion gates. The external mappings support the taxonomy of acceleration families. They do not support local decoding results, reproduced third-party speed claims, or a promoted generation mode.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -97,6 +107,16 @@ Appendix C now maps this fast-generation claim to all assigned internal source n
 | `vcm_public` | Bounded context packets, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states for generation routes. | Does not prove fast generation quality, speed, or end-to-end model superiority. |
 | `spinoza` | Proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, downgrades, and protected axioms separating accepted drafts from truth. | Open-domain autoformalization, verifier completeness, and fast-generation acceptance quality are not solved or reproduced here. |
 | `rmi` | Generation modes as routable modular capabilities governed by lifecycle, residual escrow, regression floors, readiness, fallback, and promotion discipline. | No empirical fast-generation result, modular-route run, or readiness transition has been reproduced. |
+| `ext_speculative_decoding_2022` | Speculative decoding as a draft-and-verify family where a cheaper model proposes multiple tokens and the target model verifies accepted candidates. | Reported speedups, proof details, hardware setup, and acceptance-rate results have not been reproduced here. |
+| `ext_multi_token_prediction_2024` | Multi-token prediction as future-token-head training and proposal mechanism with proposed-token versus accepted-output accounting. | No model was trained or evaluated here; reported benchmark and inference results remain source-reported. |
+| `ext_medusa_2024` | Internal multi-head drafting with tree-structured candidate verification as an alternative to a separate draft model. | No Medusa heads, branch verifier, training recipe, or speed-quality benchmark was run here. |
+| `ext_eagle_2024` | Feature-level speculative drafting and target-model verification as a distinct acceleration path from surface-token drafting. | No EAGLE implementation, feature predictor, distribution check, or task evaluation was reproduced here. |
+| `ext_lookahead_decoding_2024` | Lookahead decoding as exact parallel decoding that trades extra per-step computation for fewer serial decoding steps. | The implementation was not run and its FLOP, latency, branch, or quality behavior was not measured here. |
+| `ext_layerskip_2024` | Early-exit and self-speculative decoding where early layers draft and later layers verify or correct. | No LayerSkip model, early-exit threshold, or self-speculative benchmark was run locally; same-model verification remains a risk boundary. |
+| `ext_pagedattention_vllm_2023` | KV-cache and serving-layer acceleration as a memory-management and batching axis separate from single-request verified-output quality. | No vLLM/PagedAttention deployment, serving benchmark, cache isolation audit, or local throughput measurement exists here. |
+| `ext_mamba_2023` | State-space and recurrent sequence substrates as a backbone-efficiency axis distinct from draft-token acceptance mechanisms. | No Mamba model was trained, served, compared, or routed through ASI Stack governance gates. |
+| `ext_llada_2025` | Large masked-diffusion language models as an external family that can generate through iterative refinement instead of strict left-to-right autoregression. | No LLaDA run, diffusion benchmark, model-quality test, or ASI Stack integration exists here. |
+| `ext_scaling_dllms_2026` | Diffusion language-model evaluation by speed-quality tradeoffs rather than perplexity alone. | No diffusion scaling law, checkpoint, code release, sampling schedule, or speed-quality result has been independently inspected or reproduced here. |
 
 ## Mechanism
 
@@ -130,7 +150,7 @@ flowchart LR
 - Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
 - Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
 - Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
-- Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist.
+- Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
 
 This makes speed a governed policy choice. A low-risk autocomplete can use a cheap accelerated path. A code patch with tests can use a draft model if the test harness is strong enough. A high-risk claim, authority escalation, or irreversible action can force slower verification-heavy generation even when a faster path exists.
 
@@ -139,17 +159,17 @@ This makes speed a governed policy choice. A low-risk autocomplete can use a che
 | Mode family | Architectural role | Verification burden | Current book status |
 |---|---|---|---|
 | Autoregressive baseline | The fallback and measurement baseline for left-to-right generation. | Verify final output, citations, tests, and artifacts according to task risk. | Planned baseline; not run |
-| Multi-token prediction | Draft several future tokens or short continuations from one state. | Count accepted tokens separately from proposed tokens; fallback on rejection. | Queued external literature; no source note |
-| Speculative decoding | Cheap model proposes candidate tokens that a stronger verifier accepts or rejects. | Preserve correctness relative to acceptance predicate and count rejected work. | Queued external literature; no source note |
-| Multi-head internal drafting | Extra heads propose future tokens or branches without a separate draft model. | Verify branch acceptance and watch backbone/head drift. | Queued external literature; no source note |
-| Feature-level or latent drafting | Propose future internal states rather than surface tokens. | Verify that latent proposals preserve output distribution and task success. | Queued external literature; no source note |
-| Lookahead and trie retrieval | Retrieve or branch likely continuations from prior patterns. | Verify branches and prevent stale procedural-memory shortcuts. | Queued external literature; no source note |
-| Diffusion language modeling | Sketch or denoise many positions in parallel rather than strict left-to-right decoding. | Verify span commitments, uncertainty repair, and final task success. | Queued external literature; no source note |
+| Multi-token prediction | Draft several future tokens or short continuations from one state. | Count accepted tokens separately from proposed tokens; fallback on rejection. | Source-noted external literature; no local test |
+| Speculative decoding | Cheap model proposes candidate tokens that a stronger verifier accepts or rejects. | Preserve correctness relative to acceptance predicate and count rejected work. | Source-noted external literature; no local test |
+| Multi-head internal drafting | Extra heads propose future tokens or branches without a separate draft model. | Verify branch acceptance and watch backbone/head drift. | Source-noted external literature; no local test |
+| Feature-level or latent drafting | Propose future internal states rather than surface tokens. | Verify that latent proposals preserve output distribution and task success. | Source-noted external literature; no local test |
+| Lookahead and trie retrieval | Retrieve or branch likely continuations from prior patterns. | Verify branches and prevent stale procedural-memory shortcuts. | Lookahead source-noted; trie retrieval remains unmined |
+| Diffusion language modeling | Sketch or denoise many positions in parallel rather than strict left-to-right decoding. | Verify span commitments, uncertainty repair, and final task success. | Source-noted external literature; no local test |
 | Multi-seed diffusion | Run multiple denoising trajectories and select, merge, or repair candidates. | Prove useful solution per second improves after verifier and parallel compute costs. | Speculative research direction |
 | Hybrid AR, MTP, and diffusion | Combine left-to-right drafting, parallel repair, and verifier-guided refinement. | Record route, mode transitions, fallback, and accepted-output accounting. | Speculative research direction |
-| Early exit and self-speculative inference | Use intermediate layers as cheap drafts and deeper layers as verifiers. | Check when early outputs are reliable and when later layers must correct. | Queued external literature; no source note |
-| State-space or recurrent alternatives | Reduce sequence-processing cost through different sequence substrate. | Separate cheaper long-context processing from multi-token acceptance. | Queued external literature; no source note |
-| KV-cache and serving-layer accelerators | Improve memory layout, batching, and throughput around generation. | Separate aggregate serving throughput from single-request verified output. | Queued external literature; no source note |
+| Early exit and self-speculative inference | Use intermediate layers as cheap drafts and deeper layers as verifiers. | Check when early outputs are reliable and when later layers must correct. | Source-noted external literature; no local test |
+| State-space or recurrent alternatives | Reduce sequence-processing cost through different sequence substrate. | Separate cheaper long-context processing from multi-token acceptance. | Source-noted external literature; no local test |
+| KV-cache and serving-layer accelerators | Improve memory layout, batching, and throughput around generation. | Separate aggregate serving throughput from single-request verified output. | Source-noted external literature; no local test |
 
 The taxonomy is deliberately plural. The stack should not collapse all speed work into one bucket. A decoding trick, a training objective, a serving memory system, and a sequence-model substrate solve different bottlenecks. They can be combined, but their evidence records must stay separate.
 
@@ -195,7 +215,7 @@ The invariants bind speed to governance.
 - Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.
 - Accepted output is counted separately from proposed output.
 - High-risk tasks can require slower verified generation even when a faster mode exists.
-- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion.
+- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion.
 
 These invariants are intentionally conservative. They do not forbid fast decoding. They prevent fast decoding from laundering unverified output into the stack as if it were a proven capability.
 
@@ -253,21 +273,31 @@ These Lean hooks are implemented as finite-record predicates over promotion fiel
 
 | Source ID | Planned use | Readiness |
 |---|---|---|
-| `cgs` | Connect fast generation to compact generative systems, residual burden, and the generator/verifier loop. | source note available; claim-level mapping still needed |
-| `cognitive_loop_closure` | Frame MTP-like chunking and repeated generation as procedural-memory pressure. | source note available; claim-level mapping still needed |
-| `benchmaxxing` | Define the measurement discipline for useful output, regression, and promotion. | source note available; claim-level mapping still needed |
-| `planforge` | Route generation mode selection through planning and task constraints. | source note available; claim-level mapping still needed |
-| `verification_bandwidth` | Keep verifier capacity visible as the possible bottleneck. | source note available; claim-level mapping still needed |
-| `tokenmana` | Account for token, compute, memory, and latency budgets. | source note available; claim-level mapping still needed |
-| `talos` | Turn accepted generated output into artifacts rather than loose text. | source note available; claim-level mapping still needed |
-| `vcm_public` | Supply bounded context packets and context-loss contracts to the selected generation mode. | source note available; claim-level mapping still needed |
-| `spinoza` | Verify, critique, repair, or reject generated claims and candidates. | source note available; claim-level mapping still needed |
-| `rmi` | Connect generation modes to modular routing, readiness, and fallback. | source note available; claim-level mapping still needed |
+| `cgs` | Connect fast generation to compact generative systems, residual burden, and the generator/verifier loop. | source note available; claim-level mapping recorded |
+| `cognitive_loop_closure` | Frame repeated generation and chunking as procedural-memory pressure. | source note available; claim-level mapping recorded |
+| `benchmaxxing` | Define the measurement discipline for useful output, regression, and promotion. | source note available; claim-level mapping recorded |
+| `planforge` | Route generation mode selection through planning and task constraints. | source note available; claim-level mapping recorded |
+| `verification_bandwidth` | Keep verifier capacity visible as the possible bottleneck. | source note available; claim-level mapping recorded |
+| `tokenmana` | Account for token, compute, memory, and latency budgets. | source note available; claim-level mapping recorded |
+| `talos` | Turn accepted generated output into artifacts rather than loose text. | source note available; claim-level mapping recorded |
+| `vcm_public` | Supply bounded context packets and context-loss contracts to the selected generation mode. | source note available; claim-level mapping recorded |
+| `spinoza` | Verify, critique, repair, or reject generated claims and candidates. | source note available; claim-level mapping recorded |
+| `rmi` | Connect generation modes to modular routing, readiness, and fallback. | source note available; claim-level mapping recorded |
+| `ext_speculative_decoding_2022` | Source-note speculative draft-and-verify decoding. | source note available; reported results not reproduced |
+| `ext_multi_token_prediction_2024` | Source-note future-token-head training and proposal mechanisms. | source note available; reported results not reproduced |
+| `ext_medusa_2024` | Source-note internal multi-head/tree-branch drafting. | source note available; reported results not reproduced |
+| `ext_eagle_2024` | Source-note feature-level speculative drafting. | source note available; reported results not reproduced |
+| `ext_lookahead_decoding_2024` | Source-note exact lookahead/parallel decoding. | source note available; reported results not reproduced |
+| `ext_layerskip_2024` | Source-note early-exit and self-speculative decoding. | source note available; reported results not reproduced |
+| `ext_pagedattention_vllm_2023` | Source-note KV-cache memory management and serving throughput acceleration. | source note available; reported results not reproduced |
+| `ext_mamba_2023` | Source-note state-space/recurrent sequence substrates. | source note available; reported results not reproduced |
+| `ext_llada_2025` | Source-note large masked-diffusion language modeling. | source note available; reported results not reproduced |
+| `ext_scaling_dllms_2026` | Source-note diffusion LLM speed-quality evaluation. | source note available; reported results not reproduced |
 
-The external literature queue belongs in the outline and bibliography until source notes exist. It should eventually include primary-source treatment of multi-token prediction, speculative decoding, internal draft heads, feature-level drafting, diffusion language models, arbitrary-order generation, early exit, state-space alternatives, KV-cache memory architecture, and serving accelerators. This chapter should not cite or summarize their reported speedups until those sources are actually mined.
+The external literature queue is now partially mined for the chapter's selected primary papers. It is still not complete: code artifacts, exact experimental sections, later variants, and implementation-specific claims must be inspected before the book can summarize reported speedups in detail or promote support beyond `argument`.
 
 ## Summary
 
 Fast Generation Architectures defines the ASI Stack's generation substrate. Its thesis is not "make tokens faster." Its thesis is that generation speed becomes useful only when the stack can select a mode, verify accepted output, count repair and fallback cost, and promote the mode through evidence rather than excitement.
 
-That makes the chapter a bridge between compression, routing, execution, and evidence. PlanForge selects the route, VCM supplies context, the generator drafts, Spinoza verifies, Talos artifactizes, Benchmaxxing measures, and SCF decides whether the capability is ready. Multi-seed diffusion and hybrid AR/MTP/diffusion systems are promising research directions, but the book should keep them speculative until the work earns stronger support.
+That makes the chapter a bridge between compression, routing, execution, evidence, and the external inference-acceleration literature. PlanForge selects the route, VCM supplies context, the generator drafts, Spinoza verifies, Talos artifactizes, Benchmaxxing measures, and SCF decides whether the capability is ready. Speculative decoding, MTP, Medusa/EAGLE-style drafting, lookahead, early exit, state-space substrates, KV-cache serving, and diffusion LLMs now have source-note anchors. Multi-seed diffusion and hybrid AR/MTP/diffusion systems remain research directions until the work earns stronger support.

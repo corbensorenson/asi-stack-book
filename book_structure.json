@@ -3998,7 +3998,17 @@
             "talos",
             "vcm_public",
             "spinoza",
-            "rmi"
+            "rmi",
+            "ext_speculative_decoding_2022",
+            "ext_multi_token_prediction_2024",
+            "ext_medusa_2024",
+            "ext_eagle_2024",
+            "ext_lookahead_decoding_2024",
+            "ext_layerskip_2024",
+            "ext_pagedattention_vllm_2023",
+            "ext_mamba_2023",
+            "ext_llada_2025",
+            "ext_scaling_dllms_2026"
           ],
           "source_queue": {
             "primary": [
@@ -4015,7 +4025,18 @@
               "spinoza",
               "rmi"
             ],
-            "variants": [],
+            "variants": [
+              "ext_speculative_decoding_2022",
+              "ext_multi_token_prediction_2024",
+              "ext_medusa_2024",
+              "ext_eagle_2024",
+              "ext_lookahead_decoding_2024",
+              "ext_layerskip_2024",
+              "ext_pagedattention_vllm_2023",
+              "ext_mamba_2023",
+              "ext_llada_2025",
+              "ext_scaling_dllms_2026"
+            ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
               "2026-06-24 browser-GPT fast-generation planning note; use as author-intent and literature-queue context only."
@@ -4029,7 +4050,7 @@
             "Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.",
             "Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.",
             "Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.",
-            "Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist."
+            "Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist."
           ],
           "interfaces": [
             "PlanForge chooses the generation mode.",
@@ -4045,7 +4066,7 @@
             "Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.",
             "Accepted output is counted separately from proposed output.",
             "High-risk tasks can require slower verified generation even when a faster mode exists.",
-            "Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion."
+            "Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion."
           ],
           "failure_modes": [
             "Speed hides lower answer quality or higher repair cost.",
@@ -4133,6 +4154,56 @@
               "source_id": "rmi",
               "mapped_support": "Supports treating generation modes as routable modular capabilities governed by specialist lifecycle, residual escrow, regression floors, readiness, fallback, and promotion discipline.",
               "limits": "Architecture proposal only; no empirical fast-generation result, modular-route run, or readiness transition has been reproduced here."
+            },
+            {
+              "source_id": "ext_speculative_decoding_2022",
+              "mapped_support": "Source-notes speculative decoding as a draft-and-verify generation family where a cheaper model proposes multiple tokens and the target model verifies accepted candidates.",
+              "limits": "External paper only; this repository has not reproduced the reported speedups, proof details, hardware setup, or acceptance-rate results."
+            },
+            {
+              "source_id": "ext_multi_token_prediction_2024",
+              "mapped_support": "Source-notes multi-token prediction as a future-token-head training and proposal mechanism that separates proposed future tokens from accepted output.",
+              "limits": "No model has been trained or evaluated here; reported benchmark and inference results remain external and source-reported."
+            },
+            {
+              "source_id": "ext_medusa_2024",
+              "mapped_support": "Source-notes Medusa-style internal multi-head drafting with tree-structured candidate verification as an alternative to maintaining a separate draft model.",
+              "limits": "No Medusa heads, branch verifier, training recipe, or speed/quality benchmark has been run in this repository."
+            },
+            {
+              "source_id": "ext_eagle_2024",
+              "mapped_support": "Source-notes feature-level speculative drafting and target-model verification as a distinct acceleration path from surface-token draft models.",
+              "limits": "No EAGLE implementation, feature predictor, distribution check, or task evaluation has been reproduced here."
+            },
+            {
+              "source_id": "ext_lookahead_decoding_2024",
+              "mapped_support": "Source-notes lookahead decoding as an exact parallel decoding family that trades extra per-step computation for fewer serial decoding steps without an auxiliary draft model.",
+              "limits": "The repository has not run the Lookahead implementation or measured its FLOP, latency, branch, or quality behavior."
+            },
+            {
+              "source_id": "ext_layerskip_2024",
+              "mapped_support": "Source-notes early-exit and self-speculative decoding where early layers draft and later layers verify or correct under a compatible training recipe.",
+              "limits": "No LayerSkip model, early-exit threshold, or self-speculative benchmark has been run locally; same-model verification remains a risk boundary."
+            },
+            {
+              "source_id": "ext_pagedattention_vllm_2023",
+              "mapped_support": "Source-notes KV-cache and serving-layer acceleration as a memory-management and batching axis separate from single-request verified-output quality.",
+              "limits": "No vLLM/PagedAttention deployment, serving benchmark, cache isolation audit, or local throughput measurement exists here."
+            },
+            {
+              "source_id": "ext_mamba_2023",
+              "mapped_support": "Source-notes state-space and recurrent sequence substrates as a backbone-efficiency axis distinct from draft-token acceptance mechanisms.",
+              "limits": "No Mamba model has been trained, served, compared, or routed through ASI Stack governance gates."
+            },
+            {
+              "source_id": "ext_llada_2025",
+              "mapped_support": "Source-notes large masked-diffusion language models as an external family that can generate through iterative refinement instead of strict left-to-right autoregression.",
+              "limits": "No LLaDA run, diffusion benchmark, model-quality test, or ASI Stack integration exists in this repository."
+            },
+            {
+              "source_id": "ext_scaling_dllms_2026",
+              "mapped_support": "Source-notes diffusion language-model evaluation by speed-quality tradeoffs rather than perplexity alone, matching the chapter's accepted-output accounting principle.",
+              "limits": "No diffusion scaling law, checkpoint, code release, sampling schedule, or speed-quality result has been independently inspected or reproduced here."
             }
           ]
         },

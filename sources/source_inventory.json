@@ -706,5 +706,117 @@
     ],
     "url": "https://github.com/corbensorenson/circle-calculus/blob/main/papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md",
     "notes": "CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation."
+  },
+  {
+    "id": "ext_speculative_decoding_2022",
+    "title": "Fast Inference from Transformers via Speculative Decoding",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2211.17192",
+    "notes": "Primary external paper for speculative decoding: a draft model proposes multiple tokens and a target model verifies them, giving an exact-distribution acceleration path under its assumptions."
+  },
+  {
+    "id": "ext_multi_token_prediction_2024",
+    "title": "Better & Faster Large Language Models via Multi-token Prediction",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2404.19737",
+    "notes": "Primary external paper for multi-token prediction as an auxiliary training objective and inference-time multi-token proposal mechanism."
+  },
+  {
+    "id": "ext_medusa_2024",
+    "title": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2401.10774",
+    "notes": "Primary external paper for adding multiple decoding heads to an LLM and verifying tree-structured candidate continuations in parallel."
+  },
+  {
+    "id": "ext_eagle_2024",
+    "title": "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2401.15077",
+    "notes": "Primary external paper for feature-level speculative drafting and target-model verification as an acceleration mechanism."
+  },
+  {
+    "id": "ext_lookahead_decoding_2024",
+    "title": "Break the Sequential Dependency of LLM Inference Using Lookahead Decoding",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2402.02057",
+    "notes": "Primary external paper for lookahead decoding: a parallel exact decoding algorithm that reduces serial decoding steps without an auxiliary draft model."
+  },
+  {
+    "id": "ext_layerskip_2024",
+    "title": "LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2404.16710",
+    "notes": "Primary external paper for early-exit inference and self-speculative decoding where early layers draft and later layers verify."
+  },
+  {
+    "id": "ext_pagedattention_vllm_2023",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "priority": "external_literature",
+    "layer": "fast_generation",
+    "chapter_targets": [
+      "fast-generation",
+      "resource-economics"
+    ],
+    "url": "https://arxiv.org/abs/2309.06180",
+    "notes": "Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis."
+  },
+  {
+    "id": "ext_mamba_2023",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "priority": "external_literature",
+    "layer": "sequence_substrates",
+    "chapter_targets": [
+      "fast-generation",
+      "math-substrates"
+    ],
+    "url": "https://arxiv.org/abs/2312.00752",
+    "notes": "Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks."
+  },
+  {
+    "id": "ext_llada_2025",
+    "title": "Large Language Diffusion Models",
+    "priority": "external_literature",
+    "layer": "diffusion_language_models",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2502.09992",
+    "notes": "Primary external paper for LLaDA, a large masked-diffusion language model trained with pretraining and supervised fine-tuning rather than left-to-right autoregression."
+  },
+  {
+    "id": "ext_scaling_dllms_2026",
+    "title": "Scaling Beyond Masked Diffusion Language Models",
+    "priority": "external_literature",
+    "layer": "diffusion_language_models",
+    "chapter_targets": [
+      "fast-generation"
+    ],
+    "url": "https://arxiv.org/abs/2602.15014",
+    "notes": "Primary external paper for comparing diffusion language-model families by speed-quality tradeoffs rather than perplexity alone."
   }
 ]

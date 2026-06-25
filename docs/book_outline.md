@@ -2034,20 +2034,21 @@ Source loading queue:
 |---|---|---|
 | Primary | `cgs`, `cognitive_loop_closure`, `benchmaxxing` | Read first for the compact-generation loop, procedural chunking intuition, and measurement discipline. |
 | Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. |
+| External literature variants | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` | Read after internal sources to ground the method taxonomy; treat reported results as source-reported until reproduced or independently checked. |
 | Handoff or recovery notes | `sources/inbox/fast_generation_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
 External literature queue:
 
 | Area | Expected role | Status |
 |---|---|---|
-| Multi-token prediction and future-token heads | Compare MTP as a draft/proposal mechanism for breaking strict one-token-per-step generation. | queued; no source note yet |
-| Speculative decoding and speculative sampling | Compare draft-model proposal plus target-model verification to the stack's generate-verify-repair pattern. | queued; no source note yet |
-| Multi-head decoding and feature-level drafting | Compare Medusa/EAGLE-style internal drafting and latent-state proposal mechanisms. | queued; no source note yet |
-| Lookahead, trie retrieval, and branch verification | Compare cached branch proposal, retrieval, and verification as procedural-memory acceleration. | queued; no source note yet |
-| Diffusion language models and arbitrary-order generation | Compare parallel denoising, infilling, sketch-first decoding, and quality-speed controls. | queued; no source note yet |
-| Early exit and self-speculative inference | Compare cheap intermediate exits with later-layer verification. | queued; no source note yet |
-| State-space and recurrent sequence models | Compare sequence-processing efficiency as a different speed axis from multi-token acceptance. | queued; no source note yet |
-| KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | queued; no source note yet |
+| Multi-token prediction and future-token heads | Compare MTP as a draft/proposal mechanism for breaking strict one-token-per-step generation. | source-noted via `ext_multi_token_prediction_2024`; no local model or benchmark |
+| Speculative decoding and speculative sampling | Compare draft-model proposal plus target-model verification to the stack's generate-verify-repair pattern. | source-noted via `ext_speculative_decoding_2022`; no local acceptance benchmark |
+| Multi-head decoding and feature-level drafting | Compare Medusa/EAGLE-style internal drafting and latent-state proposal mechanisms. | source-noted via `ext_medusa_2024` and `ext_eagle_2024`; no local head or feature-draft run |
+| Lookahead, trie retrieval, and branch verification | Compare cached branch proposal, retrieval, and verification as procedural-memory acceleration. | lookahead source-noted via `ext_lookahead_decoding_2024`; trie retrieval remains unmined |
+| Diffusion language models and arbitrary-order generation | Compare parallel denoising, infilling, sketch-first decoding, and quality-speed controls. | source-noted via `ext_llada_2025` and `ext_scaling_dllms_2026`; no local diffusion benchmark |
+| Early exit and self-speculative inference | Compare cheap intermediate exits with later-layer verification. | source-noted via `ext_layerskip_2024`; no local early-exit run |
+| State-space and recurrent sequence models | Compare sequence-processing efficiency as a different speed axis from multi-token acceptance. | source-noted via `ext_mamba_2023`; no local substrate A/B run |
+| KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | source-noted via `ext_pagedattention_vllm_2023`; no local serving benchmark |
 
 Draft arc:
 
@@ -2057,7 +2058,7 @@ Draft arc:
 - Mechanism: Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability.
 - Mechanism: Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode.
 - Mechanism: Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates.
-- Mechanism: Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source notes and experiments exist.
+- Mechanism: Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
 - Interface: PlanForge chooses the generation mode.
 - Interface: VCM supplies the bounded context packet.
 - Interface: The generator emits draft tokens, sketches, spans, or candidates.
@@ -2072,7 +2073,7 @@ Primary invariants:
 - Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback.
 - Accepted output is counted separately from proposed output.
 - High-risk tasks can require slower verified generation even when a faster mode exists.
-- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source notes or tests justify promotion.
+- Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion.
 
 Failure modes to cover:
 

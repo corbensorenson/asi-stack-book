@@ -9,6 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 14
+- `source_note_available_uncached`: 10
 
 ## Records
 
@@ -73,3 +74,13 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_speculative_decoding_2022` | Fast Inference from Transformers via Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_multi_token_prediction_2024` | Better & Faster Large Language Models via Multi-token Prediction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_medusa_2024` | Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_eagle_2024` | EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lookahead_decoding_2024` | Break the Sequential Dependency of LLM Inference Using Lookahead Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_layerskip_2024` | LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_pagedattention_vllm_2023` | Efficient Memory Management for Large Language Model Serving with PagedAttention | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mamba_2023` | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_llada_2025` | Large Language Diffusion Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_scaling_dllms_2026` | Scaling Beyond Masked Diffusion Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
