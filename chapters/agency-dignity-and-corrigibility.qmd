@@ -79,7 +79,7 @@ Appendix C now maps this core agency/corrigibility claim to every assigned sourc
 
 ## Mechanism
 
-The mechanism is an Agency Rights Checklist.
+The agency layer turns protected predicates into runtime availability checks. It asks whether the affected person can still refuse, understand, contest, appeal, exit, reverse, and identify an accountable principal after the plan runs. A plan that makes those channels unavailable is not merely impolite; it has changed the user's authority position.
 
 - Represent agency constraints as limits on delegation and manipulation.
 - Define corrigibility as preserved update and shutdown pathways.
@@ -91,15 +91,18 @@ Corrigibility becomes operational when the path remains available after a transi
 
 ```{mermaid}
 flowchart LR
-  Plan["High-impact plan"] --> Checklist["Agency rights checklist"]
-  Checklist --> Refusal["Refusal and review channel"]
-  Checklist --> Appeal["Appeal and correction path"]
-  Checklist --> Rollback["Rollback or shutdown path"]
+  Plan["High-impact plan"] --> Affected["Affected parties + stakes"]
+  Affected --> Checklist["Agency rights checklist"]
+  Checklist --> Refusal["Refusal / consent route"]
+  Checklist --> Appeal["Review + appeal path"]
+  Checklist --> Rollback["Correction / rollback / shutdown"]
   Checklist --> Accountable["Accountable principal"]
+  Checklist --> Dependency["Residual dependency risk"]
   Refusal --> Decision["Governance decision"]
   Appeal --> Decision
   Rollback --> Decision
   Accountable --> Decision
+  Dependency --> Decision
   Decision -->|rights preserved| Execute["Bounded execution"]
   Decision -->|rights missing| Revise["Revise, escalate, or block"]
   Execute --> Evidence["Evidence record"]
@@ -108,7 +111,7 @@ flowchart LR
 
 ## Interfaces
 
-The interface is an Agency Rights Checklist.
+The interface is an Agency Rights Checklist attached to the plan, not a general value statement. It carries the affected parties, delegation scope, manipulation risk, review route, appeal route, rollback or shutdown path, accountable principal, dependency residual, and approval threshold into execution.
 
 - Alignment defines agency predicates.
 - Governance enforces rights.

@@ -81,7 +81,7 @@ Appendix C now maps this core governance-rights claim to every assigned source n
 
 ## Mechanism
 
-The mechanism is a Governance Right Record.
+Governance rights become real only when they have access paths, artifacts, preservation rules, and denial semantics. This chapter treats audit, exit, fork, dissent, and contestability as capabilities that the runtime must preserve across policy updates, memory changes, authority use, and capability replacement.
 
 - Represent rights as capabilities and required interfaces.
 - Attach audit artifacts to governance decisions.
@@ -95,13 +95,15 @@ SCFs later depend on this chapter: capability replacement must preserve protecte
 flowchart LR
   Transition["Governance transition"] --> Right["Governance right record"]
   Right --> Audit["Audit artifacts"]
-  Right --> Exit["Exit and export path"]
-  Right --> Fork["Fork boundary"]
+  Right --> Exit["Exit / export / revocation path"]
+  Right --> Fork["Fork boundary + obligations"]
   Right --> Dissent["Dissent channel"]
+  Right --> Redaction["Denial or redaction reason"]
   Audit --> Check["Rights preservation check"]
   Exit --> Check
   Fork --> Check
   Dissent --> Check
+  Redaction --> Check
   Check -->|preserved| Promote["Transition may proceed"]
   Check -->|missing or unsafe| Block["Block, redact with reason, or escalate"]
   Promote --> Evidence["Evidence record"]
@@ -110,7 +112,7 @@ flowchart LR
 
 ## Interfaces
 
-The interface is a Governance Right Record.
+The interface is a Governance Right Record. It is the point where political ideals become inspectable runtime obligations: who holds the right, what scope it covers, what artifacts are required, what access path exists, what safety constraints apply, what redaction reason is allowed, and how the right survives replacement.
 
 - Governance issues rights.
 - SCFs preserve rights across replacement.

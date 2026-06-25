@@ -443,12 +443,14 @@ Draft arc:
 
 - Problem: The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
 - Insufficiency: Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
-- Mechanism: Translate philosophical commitments into operational predicates where possible.
+- Mechanism: Treat the constitutional substrate as a translation layer from lineage-language to active predicates, open review obligations, and speculative/non-claim boundaries.
+- Mechanism: Translate philosophical commitments into operational predicates where possible, while preserving uncertainty labels.
 - Mechanism: Keep metaphysical claims labeled as interpretation unless separately supported.
-- Mechanism: Attach constitutional constraints to planning and replacement gates.
+- Mechanism: Attach active constitutional constraints to planning, tool/memory/power, and self-improvement gates.
 - Interface: Planning receives admissible-goal constraints.
-- Interface: Governance receives protected constraints.
-- Interface: Verification checks whether normative claims exceed evidence.
+- Interface: Runtime receives power, memory, and tool-risk gates.
+- Interface: Governance receives protected constraints and non-weakenable predicates.
+- Interface: Verification checks whether normative claims exceed evidence or translation status.
 
 Primary invariants:
 
@@ -495,12 +497,13 @@ Draft arc:
 
 - Problem: The book needs a precise account of how human agency and dignity constrain powerful optimization.
 - Insufficiency: Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.
-- Mechanism: Represent agency constraints as limits on delegation and manipulation.
-- Mechanism: Define corrigibility as preserved update and shutdown pathways.
+- Mechanism: Attach an agency-rights checklist to high-impact plans with affected parties, stakes, consent/refusal route, review, appeal, rollback, accountability, dependency residual, and approval threshold.
+- Mechanism: Represent agency constraints as limits on delegation, manipulation, coercive dependence, and irreversible effects.
+- Mechanism: Define corrigibility as preserved update, correction, rollback, shutdown, and appeal pathways.
 - Mechanism: Use contestability and audit rights as governance mechanisms.
 - Interface: Alignment defines agency predicates.
-- Interface: Governance enforces rights.
-- Interface: Execution requires approvals for irreversible effects.
+- Interface: Governance enforces rights and approval thresholds.
+- Interface: Execution requires preserved review and correction paths before irreversible effects.
 
 Primary invariants:
 
@@ -547,12 +550,14 @@ Draft arc:
 
 - Problem: A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.
 - Insufficiency: Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.
-- Mechanism: Classify conflicts by value type, stakeholder, reversibility, and evidence requirement.
-- Mechanism: Escalate unresolved conflicts to tribunal or human review.
-- Mechanism: Record decisions and residual moral uncertainty.
+- Mechanism: Preserve value conflict as evidence when a proposed action pulls protected commitments apart.
+- Mechanism: Classify conflicts by value type, stakeholder, reversibility, authority/consent boundary, stakes, and evidence requirement.
+- Mechanism: Escalate high-stakes or unresolved conflicts to tribunal or human review while preserving dissent and unsupported premises.
+- Mechanism: Record bounded decisions, revisit conditions, and residual moral uncertainty.
 - Interface: Alignment produces conflict records.
-- Interface: Planning uses conflict constraints.
-- Interface: Evidence records review outcomes.
+- Interface: Planning carries conflict constraints with the plan.
+- Interface: Governance decides review routes and authority boundaries.
+- Interface: Evidence records review outcomes, dissent, unsupported premises, and residual uncertainty.
 
 Primary invariants:
 
@@ -599,12 +604,12 @@ Draft arc:
 
 - Problem: Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
 - Insufficiency: Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
-- Mechanism: Represent rights as capabilities and required interfaces.
-- Mechanism: Attach audit artifacts to governance decisions.
-- Mechanism: Treat fork/exit as preserved escape hatches against lock-in.
+- Mechanism: Represent audit, exit, fork, dissent, and contestability as capabilities with access paths, artifacts, preservation rules, safety constraints, and denial semantics.
+- Mechanism: Attach audit artifacts and redaction/denial reasons to governance decisions.
+- Mechanism: Treat fork/exit as preserved escape hatches against lock-in while preserving source, privacy, and safety obligations.
 - Interface: Governance issues rights.
 - Interface: SCFs preserve rights across replacement.
-- Interface: Execution logs evidence for audit.
+- Interface: Memory/security/execution systems produce evidence for audit, export, revocation, and contestability.
 
 Primary invariants:
 
