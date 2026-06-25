@@ -2226,6 +2226,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `tokenmana`, `planforge` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External literature variants | `ext_pagedattention_vllm_2023` | Read for KV-cache memory, batching, and serving-throughput accounting; treat reported serving results as source-reported until reproduced. |
 
 Draft arc:
 
@@ -2234,21 +2235,25 @@ Draft arc:
 - Mechanism: Track task value, uncertainty, cost of error, and inference cost.
 - Mechanism: Use regenerative or budgeted capacity mechanisms where useful.
 - Mechanism: Escalate verification when risk justifies the cost.
+- Mechanism: Separate aggregate serving throughput and memory pressure from single-request verified-output value.
 - Interface: Planning allocates budgets.
 - Interface: Routing chooses costed specialists.
 - Interface: Evidence measures cost-quality tradeoffs.
+- Interface: Serving infrastructure reports memory and throughput costs without converting them into quality claims.
 
 Primary invariants:
 
 - Budgets do not override protected safety gates.
 - High-risk tasks pay verification cost.
 - Cost savings are recorded with quality results.
+- Serving-throughput gains remain separate from verified-output and task-success claims.
 
 Failure modes to cover:
 
 - Cost-cutting verification away.
 - Load-synchronized degradation.
 - Resource hoarding by low-value tasks.
+- Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
 
 Draft deliverables:
 
@@ -2257,6 +2262,7 @@ Draft deliverables:
 - Planned Codex test: Budget allocation test.
 - Planned Codex test: Risk-adjusted verification test.
 - Planned Codex test: Load stability scenario.
+- Planned Codex test: KV-cache memory accounting scenario.
 
 Lean proof targets:
 
@@ -2332,6 +2338,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `genesiscode`, `temporal_coil_research` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External literature variants | `ext_mamba_2023` | Read for state-space/recurrent sequence-substrate context; treat reported model results as source-reported until reproduced. |
 | Connector or recovery required | `coilmoecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2341,21 +2348,25 @@ Draft arc:
 - Mechanism: Frame each substrate as a specialist core or IR option.
 - Mechanism: Define expected advantage, baseline, and falsification condition.
 - Mechanism: Route experiments through evidence gates before adoption.
+- Mechanism: Distinguish backbone or sequence-substrate efficiency from draft-token acceleration and downstream task quality.
 - Interface: Routing treats substrate as specialist.
 - Interface: Compression tests representation efficiency.
 - Interface: Evidence compares against baselines.
+- Interface: Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records.
 
 Primary invariants:
 
 - Exploratory claims stay exploratory.
 - Baselines are recorded.
 - Failed hypotheses remain visible.
+- Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
 
 Failure modes to cover:
 
 - Performance overclaiming.
 - Opaque math treated as proof.
 - Adoption without regression tests.
+- Sequence-model throughput treated as evidence for unrelated substrate quality.
 
 Draft deliverables:
 
@@ -2364,6 +2375,7 @@ Draft deliverables:
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
+- Planned Codex test: Sequence-substrate A/B comparison test.
 
 Lean proof targets:
 

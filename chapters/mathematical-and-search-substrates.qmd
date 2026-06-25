@@ -16,11 +16,12 @@ primary_sources:
   - "circle_ai_architectures"
   - "proof_carrying_circular_computation"
   - "theseus_circle_transfer"
+  - "ext_mamba_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this mathematical/search substrate claim to all assigned source notes; support remains argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, or local Circle builds exist."
-  - "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build has been run."
+  - "Appendix C now maps this mathematical/search substrate claim to all assigned source notes, including Mamba as an external sequence-substrate source; support remains argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, local Circle builds, or sequence-substrate comparisons exist."
+  - "The substrate_adoption_record fixture validates schema/example consistency only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, or local Circle build has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,17 +35,17 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
-| Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer` |
+| Last updated | 2026-06-25 |
+| Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; connector/recovery: `coilmoecot` |
-| Source loading state | source notes: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; raw cache: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot` |
-| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation; baseline comparison, representation-efficiency, and falsification tests remain planned. |
+| Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`; connector/recovery: `coilmoecot` |
+| Source loading state | source notes: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023`; raw cache: `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`; uncached external note: `ext_mamba_2023` |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats mathematical and search substrates as optional specialist candidates. It does not claim that coils, calculi, geometric search, or cyclic compute improve model quality, compression, or runtime without baselines and artifacts.
+This chapter treats mathematical and search substrates as optional specialist candidates. It does not claim that coils, calculi, geometric search, cyclic compute, or state-space sequence backbones improve model quality, compression, search, or runtime without baselines and artifacts.
 
 ## Problem
 
@@ -56,7 +57,7 @@ The problem is adoption discipline. A substrate can be mathematically clean and 
 
 Novel substrates can become authority theater if they are not tied to baselines, adoption gates, and falsification criteria. Opaque math can be treated as proof. Single-seed experiments can be treated as discovery. A structural theorem can be laundered into a performance claim. A specialist lane can become load-bearing before its readiness gates exist.
 
-GenesisCode supplies the small-kernel and obligation discipline. Temporal Coil Research supplies manifest-driven A/B testing. Circle Calculus supplies proof-status boundaries. The Theseus transfer lane supplies the rule that deterministic structural fixtures are not model-quality evidence.
+GenesisCode supplies the small-kernel and obligation discipline. Temporal Coil Research supplies manifest-driven A/B testing. Circle Calculus supplies proof-status boundaries. Mamba supplies an external example of a sequence-substrate efficiency claim that still needs task-specific adoption evidence. The Theseus transfer lane supplies the rule that deterministic structural fixtures are not model-quality evidence.
 
 ## Core Claim
 
@@ -66,7 +67,7 @@ The claim remains at `argument` support. The assigned sources support discussion
 
 ### Claim-source mapping status
 
-Appendix C now maps this mathematical/search substrate claim to all assigned source notes. The mappings support optional substrate candidates, proof boundaries, manifests, A/B discipline, semantic IR, graph substrates, cyclic contracts, transfer boundaries, and adoption gates, not a promoted core substrate.
+Appendix C now maps this mathematical/search substrate claim to all assigned source notes. The mappings support optional substrate candidates, proof boundaries, manifests, A/B discipline, semantic IR, graph substrates, cyclic contracts, transfer boundaries, state-space sequence substrate context, and adoption gates, not a promoted core substrate.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -80,6 +81,7 @@ Appendix C now maps this mathematical/search substrate claim to all assigned sou
 | `circle_ai_architectures` | Cyclic-substrate adoption only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist. | No sidecar tests, Lean builds, MLX experiments, benchmark fixtures, or model-quality results were run. |
 | `proof_carrying_circular_computation` | Cyclic compute as a proof-plus-benchmark program: cyclic address primitives, stride coverage, rewrite/address transformations, backend selection, and baseline benchmarking. | No Circle sidecar examples, Lean builds, CoilIR backend, or backend benchmarks were run. |
 | `theseus_circle_transfer` | Transfer boundaries for deterministic Circle fixtures into private Theseus benchmark design, with workload, baseline, negative-control, metric, script, report, and non-claim requirements. | No Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed. |
+| `ext_mamba_2023` | Selective state-space and recurrent sequence models as optional sequence substrates whose efficiency claims must be separated from decoding tricks, verifier adequacy, and downstream task quality. | No Mamba model was trained, served, benchmarked, routed through governance gates, or compared against local baselines here. |
 
 ## Mechanism
 
@@ -129,7 +131,7 @@ Minimum fields:
 - `residuals`
 - `evidence_refs`
 
-Routing treats a candidate substrate as a specialist. Compression tests representation efficiency. Evidence compares against baselines. Proof envelopes preserve theorem status. Readiness gates decide whether a substrate is exploratory, canary, qualified, or retired.
+Routing treats a candidate substrate as a specialist. Compression tests representation efficiency. Evidence compares against baselines. Proof envelopes preserve theorem status. Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records. Readiness gates decide whether a substrate is exploratory, canary, qualified, or retired.
 
 ## Invariants
 
@@ -138,6 +140,7 @@ Routing treats a candidate substrate as a specialist. Compression tests represen
 - Failed hypotheses remain visible.
 - Proof of a structural property is not proof of task quality.
 - A substrate without passing evidence remains non-core.
+- Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
 
 The adoption invariant is intentionally conservative: the default state is optional. A substrate earns broader use through bounded evidence, not through elegance.
 
@@ -148,6 +151,7 @@ The adoption invariant is intentionally conservative: the default state is optio
 - Adoption without regression tests.
 - Single-seed or confounded experiments promoted as results.
 - Structural fixtures mistaken for learned-model benchmarks.
+- Sequence-model throughput treated as evidence for unrelated substrate quality.
 
 Each failure should produce a downgrade, residual, or blocked promotion. Negative results are useful; hidden negative results are architectural debt.
 
@@ -165,6 +169,7 @@ Passing the fixture does not prove a substrate. It prevents the book from descri
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |
+| Sequence-substrate A/B comparison test | Check whether a state-space or recurrent sequence substrate improves a declared workload against a transformer baseline with verifier adequacy and fallback recorded. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require concrete workloads, baselines, negative controls, and run artifacts; they are not reported substrate results. When a substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -191,11 +196,12 @@ These Lean hooks remain planned. The schema can require adoption evidence fields
 | `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | CoilIR-style path from circle/coil expressions to dictionary-recognized cyclic structure, Lean-proved rewrite/address transformations, backend selection, and benchmark validation. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
+| `ext_mamba_2023` | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | sequence_substrates | Selective state-space models as an optional sequence-substrate comparison point, not a promoted ASI substrate. | source note available; external result not reproduced |
 
-The crosswalk keeps optional substrates optional. `genesiscode` supplies small-kernel and obligation discipline, `temporal_coil_research` supplies manifest-driven A/B discipline, `coilmoecot` stays a readable design source rather than benchmark evidence, and the Circle sources supply proof-boundary language. None of the assigned sources promotes a substrate without baselines, controls, and adoption evidence.
+The crosswalk keeps optional substrates optional. `genesiscode` supplies small-kernel and obligation discipline, `temporal_coil_research` supplies manifest-driven A/B discipline, `coilmoecot` stays a readable design source rather than benchmark evidence, the Circle sources supply proof-boundary language, and `ext_mamba_2023` keeps sequence-backbone efficiency separate from substrate adoption. None of the assigned sources promotes a substrate without baselines, controls, and adoption evidence.
 
 ## Summary
 
 Mathematical substrates are valuable when they become disciplined specialists. They should carry baselines, proof boundaries, falsification conditions, evidence requirements, and readiness states.
 
-The stack can explore coils, calculi, semantic graphs, and cyclic compute without making them core prematurely. Optionality is not weakness; it is how the architecture keeps evidence in charge.
+The stack can explore coils, calculi, semantic graphs, cyclic compute, and sequence-substrate alternatives without making them core prematurely. Optionality is not weakness; it is how the architecture keeps evidence in charge.

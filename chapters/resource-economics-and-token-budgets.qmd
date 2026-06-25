@@ -13,11 +13,12 @@ primary_sources:
   - "viea"
   - "project_theseus_whitepaper"
   - "coilra_multicoil_rope"
+  - "ext_pagedattention_vllm_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this resource-economics claim to all assigned source notes; support remains argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, or cost-quality experiments exist."
-  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, or cost-quality experiment has been run."
+  - "Appendix C now maps this resource-economics claim to all assigned source notes, including PagedAttention/vLLM as an external serving-economics source; support remains argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, or cost-quality experiments exist."
+  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, or cost-quality experiment has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,17 +32,17 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
-| Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` |
+| Last updated | 2026-06-25 |
+| Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `ext_pagedattention_vllm_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` |
-| Source loading state | source notes: `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; raw cache: `tokenmana`, `planforge`, `simulation_scaling`, `viea`; connector/recovery: `coherence_exchange` |
-| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, scheduler, and load-stability tests remain planned. |
+| Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; variants/external literature: `ext_pagedattention_vllm_2023` |
+| Source loading state | source notes: `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `ext_pagedattention_vllm_2023`; raw cache: `tokenmana`, `planforge`, `simulation_scaling`, `viea`; connector/recovery: `coherence_exchange`; uncached external note: `ext_pagedattention_vllm_2023` |
+| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, scheduler, load-stability, and KV-cache accounting tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses TokenMana and PlanForge as resource-governance and planning sources. It does not reproduce TokenMana formal results, run load simulations, or claim measured welfare, profit, latency, or productivity effects.
+This chapter uses TokenMana and PlanForge as resource-governance and planning sources, and PagedAttention/vLLM as an external example of serving-layer memory economics. It does not reproduce TokenMana formal results, run load simulations, deploy vLLM, audit KV-cache behavior, or claim measured welfare, profit, latency, throughput, or productivity effects.
 
 ## Problem
 
@@ -53,7 +54,7 @@ Resource economics is not an accounting appendix. It is a control layer. Plannin
 
 Ignoring resource economics makes high-quality verification unaffordable and encourages hidden cost shifts. Hard quota resets can synchronize bursts. Token-only accounting can ignore human friction, sleep, quality, latency, and risk. Cheap routes can look efficient while exporting cost into later repair, review, or failure handling.
 
-TokenMana contributes the regenerative-capacity idea: bounded capacity accumulates continuously instead of appearing in synchronized cliffs. PlanForge contributes tier-aware scheduling: tasks should be assigned to the minimum adequate capability with fallback and replanning. Together they imply that budgets should be typed, risk-aware, and tied to evidence.
+TokenMana contributes the regenerative-capacity idea: bounded capacity accumulates continuously instead of appearing in synchronized cliffs. PlanForge contributes tier-aware scheduling: tasks should be assigned to the minimum adequate capability with fallback and replanning. PagedAttention/vLLM contributes a serving-layer warning: KV-cache memory, batching, and aggregate throughput are real resource variables, but they are not the same as verified output quality. Together they imply that budgets should be typed, risk-aware, and tied to evidence.
 
 ## Core Claim
 
@@ -63,7 +64,7 @@ The claim remains at `argument` support. The source notes justify design discuss
 
 ### Claim-source mapping status
 
-Appendix C now maps this resource-economics claim to all assigned source notes. The mappings support budget records, regenerative capacity, planner scheduling, physical feasibility, value/accounting metaphors, execution-spine resource discipline, report-first implementation pressure, and parameter accounting, not measured economic or scheduler performance.
+Appendix C now maps this resource-economics claim to all assigned source notes. The mappings support budget records, regenerative capacity, planner scheduling, physical feasibility, value/accounting metaphors, execution-spine resource discipline, report-first implementation pressure, parameter accounting, and serving-layer memory/throughput accounting, not measured economic, scheduler, serving, or quality performance.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -74,6 +75,7 @@ Appendix C now maps this resource-economics claim to all assigned source notes. 
 | `viea` | Command contracts, artifacts, specialist-routed work, verification, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage as the execution-spine context for resource accounting. | No completed deployment, runtime trace, budget scheduler, or verified execution result exists here. |
 | `project_theseus_whitepaper` | Small-until-evidence growth, compact substrate, autonomy control loop, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability. | Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here. |
 | `coilra_multicoil_rope` | Parameter-accounting and hardware/baseline discipline for dense, low-rank, block-cyclic, block-circulant, and circulant routes. | No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support. |
+| `ext_pagedattention_vllm_2023` | KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane separate from verified-output quality. | No vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, or quality result has been reproduced here. |
 
 ## Mechanism
 
@@ -99,6 +101,7 @@ The record should separate:
 - Capacity pool: what resource is being drawn down or regenerated.
 - Cost estimate: tokens, time, tools, storage, human review, or money.
 - Verification tax: the extra cost required to trust the output.
+- Serving pressure: memory pressure, batching, cache reuse, aggregate throughput, and latency when those affect route cost.
 - Safety gates: checks that cannot be disabled by budget pressure.
 - Budget decision: dispatch, escalate, defer, shrink, reject, or residual.
 
@@ -124,7 +127,7 @@ Minimum fields:
 - `residuals`
 - `evidence_refs`
 
-Planning allocates budgets and schedules work. Routing chooses costed specialists. Runtime adapters record actual spend. Evidence compares cost and quality. Governance protects gates that budget pressure is not allowed to override. Benchmark chapters use the same record to avoid Goodharting cheap metrics.
+Planning allocates budgets and schedules work. Routing chooses costed specialists. Runtime adapters record actual spend. Evidence compares cost and quality. Serving infrastructure reports memory and throughput costs without converting them into quality claims. Governance protects gates that budget pressure is not allowed to override. Benchmark chapters use the same record to avoid Goodharting cheap metrics.
 
 ## Invariants
 
@@ -133,6 +136,7 @@ Planning allocates budgets and schedules work. Routing chooses costed specialist
 - Cost savings are recorded with quality results.
 - Capacity mechanisms are bounded and cannot create infinite spend rights.
 - Low-value tasks cannot hoard scarce review capacity while high-risk work waits.
+- Serving-throughput gains remain separate from verified-output and task-success claims.
 
 The central invariant is risk-adjusted adequacy: a route is not cheap if it leaves the system unable to verify a high-impact outcome.
 
@@ -143,6 +147,7 @@ The central invariant is risk-adjusted adequacy: a route is not cheap if it leav
 - Resource hoarding by low-value tasks.
 - Token optimization that increases human repair burden.
 - Economic metaphors treated as implemented mechanisms.
+- Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
 
 Cost-cut verification should block or escalate. Load synchronization should trigger capacity smoothing or scheduling changes. Resource hoarding should be visible in the ledger. Human repair burden should count as cost. Speculative market language should remain optional until executable records and tests exist.
 
@@ -160,6 +165,7 @@ Passing the fixture does not prove load stability or economic optimality. It giv
 | Budget allocation test | Check that task value, risk, capacity, and cost are present before dispatch. | planned; not run |
 | Risk-adjusted verification test | Check that high-risk tasks cannot remove required verification to save cost. | planned; not run |
 | Load stability scenario | Simulate or review whether regenerative capacity reduces synchronized overload under toy assumptions. | planned; not run |
+| KV-cache memory accounting scenario | Check that serving-memory, batching, throughput, and single-request verified-output measures remain separate in a resource record. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require scheduler behavior, risk-policy checks, or a load model; they are not reported results. When a resource-economics test is implemented, the chapter should link to the command, fixture, environment notes, assumptions, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -183,8 +189,9 @@ These Lean hooks are implemented as finite-record predicates over required gates
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
 | `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, multicoil, relative RoPE, circulant convolution, cyclic mixer, and parameter-accounting substrate with explicit non-claims. | source note available |
+| `ext_pagedattention_vllm_2023` | Efficient Memory Management for Large Language Model Serving with PagedAttention | fast_generation | KV-cache memory management, batching, and serving throughput as a separate resource-economics lane. | source note available; external result not reproduced |
 
-The crosswalk separates resource accounting from economic overclaim. `tokenmana` motivates regenerative capacity and load-variance questions, `planforge` supplies tier-aware scheduling, `simulation_scaling` keeps physical feasibility explicit, `viea` and Project Theseus connect budgets to execution/report discipline, and `coilra_multicoil_rope` keeps parameter accounting distinct from quality claims. `coherence_exchange` remains speculative connector context, not an implemented market.
+The crosswalk separates resource accounting from economic overclaim. `tokenmana` motivates regenerative capacity and load-variance questions, `planforge` supplies tier-aware scheduling, `simulation_scaling` keeps physical feasibility explicit, `viea` and Project Theseus connect budgets to execution/report discipline, `coilra_multicoil_rope` keeps parameter accounting distinct from quality claims, and `ext_pagedattention_vllm_2023` keeps serving throughput distinct from verified cognition. `coherence_exchange` remains speculative connector context, not an implemented market.
 
 ## Summary
 

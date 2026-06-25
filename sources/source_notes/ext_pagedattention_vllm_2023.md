@@ -42,6 +42,7 @@ PagedAttention and vLLM treat KV-cache memory as a serving bottleneck. Their boo
 
 - Use this source to source-note KV-cache and serving-layer acceleration as a separate mode family.
 - Require fast-generation records to separate throughput, memory pressure, latency, and verified-output metrics.
+- Use this source in resource economics to separate serving-memory and aggregate-throughput gains from verified-output quality and task-success claims.
 - Do not use this note to claim local serving performance or quality improvement.
 
 ## Open Questions

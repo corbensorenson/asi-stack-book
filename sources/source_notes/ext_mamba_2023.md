@@ -42,6 +42,7 @@ Mamba proposes selective state-space sequence modeling as an efficient alternati
 
 - Use this source to source-note state-space sequence models as a distinct speed/sequence substrate.
 - Keep generation-mode records clear about whether speed comes from backbone choice or decoding acceptance.
+- Use this source in mathematical/search substrates to keep backbone-efficiency claims separate from substrate adoption, verifier adequacy, and downstream quality claims.
 - Do not claim Mamba-like substrates are adopted into the ASI Stack without A/B tests and governance gates.
 
 ## Open Questions

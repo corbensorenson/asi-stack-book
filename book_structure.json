@@ -4432,7 +4432,8 @@
             "simulation_scaling",
             "viea",
             "project_theseus_whitepaper",
-            "coilra_multicoil_rope"
+            "coilra_multicoil_rope",
+            "ext_pagedattention_vllm_2023"
           ],
           "source_queue": {
             "primary": [
@@ -4446,7 +4447,9 @@
               "project_theseus_whitepaper",
               "coilra_multicoil_rope"
             ],
-            "variants": [],
+            "variants": [
+              "ext_pagedattention_vllm_2023"
+            ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
           },
@@ -4456,28 +4459,33 @@
           "mechanism": [
             "Track task value, uncertainty, cost of error, and inference cost.",
             "Use regenerative or budgeted capacity mechanisms where useful.",
-            "Escalate verification when risk justifies the cost."
+            "Escalate verification when risk justifies the cost.",
+            "Separate aggregate serving throughput and memory pressure from single-request verified-output value."
           ],
           "interfaces": [
             "Planning allocates budgets.",
             "Routing chooses costed specialists.",
-            "Evidence measures cost-quality tradeoffs."
+            "Evidence measures cost-quality tradeoffs.",
+            "Serving infrastructure reports memory and throughput costs without converting them into quality claims."
           ],
           "invariants": [
             "Budgets do not override protected safety gates.",
             "High-risk tasks pay verification cost.",
-            "Cost savings are recorded with quality results."
+            "Cost savings are recorded with quality results.",
+            "Serving-throughput gains remain separate from verified-output and task-success claims."
           ],
           "failure_modes": [
             "Cost-cutting verification away.",
             "Load-synchronized degradation.",
-            "Resource hoarding by low-value tasks."
+            "Resource hoarding by low-value tasks.",
+            "Aggregate serving throughput mistaken for lower single-request risk or better answer quality."
           ],
           "minimal_implementation": "A resource ledger with budget, risk, cost, quality, and verification tax fields.",
           "codex_tests": [
             "Budget allocation test",
             "Risk-adjusted verification test",
-            "Load stability scenario"
+            "Load stability scenario",
+            "KV-cache memory accounting scenario"
           ],
           "lean_module": "AsiStackProofs.ResourceEconomics",
           "proof_targets": [
@@ -4529,6 +4537,11 @@
               "source_id": "coilra_multicoil_rope",
               "mapped_support": "Supports parameter-accounting and hardware/baseline discipline for cyclic mixers and adapters by separating dense, low-rank, block-cyclic, block-circulant, and circulant parameter counts from quality/runtime claims.",
               "limits": "No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support."
+            },
+            {
+              "source_id": "ext_pagedattention_vllm_2023",
+              "mapped_support": "Supports treating KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane that must stay separate from verified-output quality.",
+              "limits": "External paper only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, or quality result has been reproduced here."
             }
           ]
         },
@@ -4647,7 +4660,8 @@
             "circle_calculus_core",
             "circle_ai_architectures",
             "proof_carrying_circular_computation",
-            "theseus_circle_transfer"
+            "theseus_circle_transfer",
+            "ext_mamba_2023"
           ],
           "source_queue": {
             "primary": [
@@ -4663,7 +4677,9 @@
               "proof_carrying_circular_computation",
               "theseus_circle_transfer"
             ],
-            "variants": [],
+            "variants": [
+              "ext_mamba_2023"
+            ],
             "connector_or_recovery": [
               "coilmoecot"
             ],
@@ -4675,28 +4691,33 @@
           "mechanism": [
             "Frame each substrate as a specialist core or IR option.",
             "Define expected advantage, baseline, and falsification condition.",
-            "Route experiments through evidence gates before adoption."
+            "Route experiments through evidence gates before adoption.",
+            "Distinguish backbone or sequence-substrate efficiency from draft-token acceleration and downstream task quality."
           ],
           "interfaces": [
             "Routing treats substrate as specialist.",
             "Compression tests representation efficiency.",
-            "Evidence compares against baselines."
+            "Evidence compares against baselines.",
+            "Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records."
           ],
           "invariants": [
             "Exploratory claims stay exploratory.",
             "Baselines are recorded.",
-            "Failed hypotheses remain visible."
+            "Failed hypotheses remain visible.",
+            "Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains."
           ],
           "failure_modes": [
             "Performance overclaiming.",
             "Opaque math treated as proof.",
-            "Adoption without regression tests."
+            "Adoption without regression tests.",
+            "Sequence-model throughput treated as evidence for unrelated substrate quality."
           ],
           "minimal_implementation": "A technical-substrate appendix plan with experiment matrix and adoption gates.",
           "codex_tests": [
             "Baseline comparison test",
             "Representation efficiency test",
-            "Falsification review"
+            "Falsification review",
+            "Sequence-substrate A/B comparison test"
           ],
           "lean_module": "AsiStackProofs.SearchSubstrates",
           "proof_targets": [
@@ -4763,6 +4784,11 @@
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports strict transfer boundaries for deterministic Circle fixtures into private Theseus benchmark design, with workload, baseline, negative-control, metric, script, report, and non-claim requirements.",
               "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, inference run, or private-result import was executed here."
+            },
+            {
+              "source_id": "ext_mamba_2023",
+              "mapped_support": "Supports treating selective state-space and recurrent sequence models as optional sequence substrates whose efficiency claims must be separated from decoding tricks, verifier adequacy, and downstream task quality.",
+              "limits": "External paper only; no Mamba model was trained, served, benchmarked, routed through governance gates, or compared against local baselines here."
             }
           ]
         },
