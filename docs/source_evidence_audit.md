@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 94 |
+| Passage-reviewed mappings recorded | 99 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -51,7 +51,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
-| `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `virtual-context-abi` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `semantic-pages-context-cells-and-certificates` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -315,11 +315,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
-| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `planforge_compiler_arch` | mapped | note present | chapter listed | not passage-reviewed |
-| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
-| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `treellm` | mapped | note present | chapter listed | not passage-reviewed |
-| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `context_engineer` | mapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |

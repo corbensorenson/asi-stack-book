@@ -3085,27 +3085,68 @@
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports reframing complex generative work as a compiler pipeline that separates source planning, semantic compilation, target compilation, execution, repair, typed semantic atoms, dependencies, validation requirements, compiler passes, DAG scheduling, localized repair, and validator-backed artifacts.",
-              "limits": "Architecture and evaluation-plan source only; no local compiler, benchmark result, working trace suite, target-lowering harness, or empirical ablation validates compiler quality."
+              "limits": "Architecture and evaluation-plan source only; no local compiler, benchmark result, working trace suite, target-lowering harness, or empirical ablation validates compiler quality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:446-469",
+                "sources/raw/google_docs/cognitive_compilation.txt:494-503",
+                "sources/raw/google_docs/cognitive_compilation.txt:541-634",
+                "sources/raw/google_docs/cognitive_compilation.txt:991-1036",
+                "sources/raw/google_docs/cognitive_compilation.txt:1238-1294",
+                "sources/raw/google_docs/cognitive_compilation.txt:1366-1412"
+              ],
+              "passage_review_note": "Reviewed local raw cache for prompt-to-artifact brittleness, staged Plan Formation/Semantic Compilation/Target Compilation, typed S-IR semantic atoms, compiler passes, dependency analysis, semantic linting, scheduling, capability routing, traceable validators, localized repair, implementation-blueprint fields, evaluation metrics, ablations, and local-first product requirements; no compiler implementation, target-lowering harness, trace suite, localized-repair benchmark, or empirical ablation is promoted."
             },
             {
               "source_id": "planforge_compiler_arch",
               "mapped_support": "Supports the planner/compiler analogy with task graphs or intermediate representations, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, parallel independent nodes, critical-path scheduling, and cost/latency profiles.",
-              "limits": "Market and cost comparisons are motivating estimates only; cost, time, routing quality, and artifact quality numbers have not been reproduced here."
+              "limits": "Market and cost comparisons are motivating estimates only; cost, time, routing quality, and artifact quality numbers have not been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge_compiler_arch.txt:1"
+              ],
+              "passage_review_note": "Reviewed compact one-line local raw cache for the orchestration-gap framing, planner-as-compiler paradigm, task graph/intermediate representation, typed primitives, quality gates, model/tool tier routing, parallelism, critical-path scheduling, execution handoff, watchdog validation, and source-reported synthetic estimates; numerical savings and quality claims remain unreproduced."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports evidence-carrying IR discipline through canonical intermediate forms, stable provenance hashes, semantic patches, obligations, deterministic replay logs, capability boundaries, compiler-equivalence checks, and protocol seals.",
-              "limits": "No GenesisCode implementation, replay checker, proof module, benchmark result, translation-validation artifact, or security audit is present in this repository."
+              "limits": "No GenesisCode implementation, replay checker, proof module, benchmark result, translation-validation artifact, or security audit is present in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-25",
+                "sources/raw/google_docs/genesiscode.txt:63-77",
+                "sources/raw/google_docs/genesiscode.txt:165-202",
+                "sources/raw/google_docs/genesiscode.txt:218-260",
+                "sources/raw/google_docs/genesiscode.txt:354-392",
+                "sources/raw/google_docs/genesiscode.txt:641-704"
+              ],
+              "passage_review_note": "Reviewed local raw cache for canonical CoreForm IR, structural validation, semantic patch artifacts, stable provenance hashes, sealed effect requests, capability boundaries, deterministic effect logs, replay semantics, obligations, evidence artifacts, registry acceptance, translation validation, and implementation-roadmap phases; no GenesisCode implementation, replay checker, proof module, benchmark, translation-validation artifact, or security audit is promoted."
             },
             {
               "source_id": "treellm",
               "mapped_support": "Supports explicit semantic-substrate intuition through traversable concept graphs, path-derived semantic tokens, residual attributes, graph updates, and model navigation over an external semantic operating system.",
-              "limits": "No local TreeLLM implementation, token format validation, measured compression ratio, benchmarked reasoning gain, or graph-coverage result exists here."
+              "limits": "No local TreeLLM implementation, token format validation, measured compression ratio, benchmarked reasoning gain, or graph-coverage result exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/treellm.txt:1491-1525",
+                "sources/raw/google_docs/treellm.txt:1554-1589",
+                "sources/raw/google_docs/treellm.txt:1673-1716",
+                "sources/raw/google_docs/treellm.txt:1722-1753"
+              ],
+              "passage_review_note": "Reviewed local raw cache for memory-centric architecture, external Knowledge Lattice, fixed-width semantic token interface, identity stability, traceability, path-based navigation, append-only updates, deterministic path provenance, empirical hypotheses, and governance/safety limitations; no TreeLLM implementation, token validator, compression ratio, hallucination result, reasoning benchmark, or graph-coverage result is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports connecting compiled IR to the larger intent-to-artifact spine through workflow-to-tool compilation, artifact graphs, claim and verification ledgers, residuals, feedback loops, benchmarks, tools, and regression coverage.",
-              "limits": "Architecture proposal only; no completed deployment, working cognitive compiler, execution log, or reproduced benchmark is proven here."
+              "limits": "Architecture proposal only; no completed deployment, working cognitive compiler, execution log, or reproduced benchmark is proven here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:239-249",
+                "sources/raw/google_docs/viea.txt:651-668",
+                "sources/raw/google_docs/viea.txt:1477-1543"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution architecture, structured command contracts, artifact graphs, specialist routing, verification, workflow-to-tool compilation, repeated-work closure, claim and verification ledgers, residuals, runtime adapters, benchmark ratchets, and feedback loops; no completed deployment, working cognitive compiler, execution log, or reproduced benchmark is promoted."
             }
           ]
         },

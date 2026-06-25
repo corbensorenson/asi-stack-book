@@ -1139,6 +1139,7 @@ Draft deliverables:
 
 - A semantic IR sketch and compile/verify/repair loop for one artifact type.
 - Implemented protocol validation: `semantic_atom` fixture validates public record shape only.
+- Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, and VIEA intent-to-artifact ledger context; all five local mappings now have reviewed passage references. Support remains `argument` pending compiler traces, source-plan parsing, target-lowering preservation, validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
 - Planned Codex test: Requirement preservation test.
 - Planned Codex test: Incremental repair regression test.
 - Planned Codex test: Target compilation audit.

@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until compiler traces, target lowering, localized repair, or artifact validators exist."
+  - "All five assigned local raw-cache mappings are passage-reviewed; support remains argument until compiler traces, target lowering, localized repair, or artifact validators exist."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Source loading state | source notes: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
+| Source loading state | source notes and passage-reviewed local raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Test state | `semantic_atom.valid.json` passes protocol fixture validation; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; source-plan parsing, target lowering, localized repair, and artifact validators remain planned. |
 
 ## Drafting guardrail
@@ -65,21 +65,23 @@ The claim remains at `argument` support. Cognitive Compilation supplies the comp
 
 ### Claim-source mapping status
 
-Appendix C now maps this cognitive-compilation claim to all assigned source notes. The mappings support the need for semantic IR and compiler-style boundaries, not compiler correctness, benchmarked repair locality, or measured quality gains.
+Appendix C maps this cognitive-compilation claim to all assigned source notes, and all five local raw-cache mappings are now passage-reviewed. The mappings support the need for semantic IR, compiler-style boundaries, provenance, and external semantic substrates, not compiler correctness, benchmarked repair locality, measured quality gains, or a working target-lowering stack.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `cognitive_compilation` | Source planning, semantic compilation, target compilation, execution, repair, typed semantic atoms, dependencies, validation requirements, compiler passes, DAG scheduling, localized repair, and validator-backed artifacts. | No local compiler, benchmark result, trace suite, target-lowering harness, or empirical ablation validates compiler quality. |
-| `planforge_compiler_arch` | Task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, parallel independent nodes, critical-path scheduling, and cost/latency profiles. | Cost, time, routing quality, and artifact quality numbers have not been reproduced here. |
-| `genesiscode` | Canonical intermediate forms, provenance hashes, semantic patches, obligations, replay logs, capability boundaries, compiler-equivalence checks, and protocol seals. | No implementation, replay checker, proof module, benchmark, translation-validation artifact, or security audit is present. |
-| `treellm` | Explicit semantic substrates through traversable concept graphs, path-derived semantic tokens, residual attributes, graph updates, and model navigation over external semantic structure. | No TreeLLM implementation, token validation, compression ratio, reasoning benchmark, or graph-coverage result exists here. |
-| `viea` | Workflow-to-tool compilation, artifact graphs, claim and verification ledgers, residuals, feedback loops, tools, benchmarks, and regression coverage around the intent-to-artifact spine. | No completed deployment, working cognitive compiler, execution log, or reproduced benchmark is proven here. |
+| `cognitive_compilation` | Passage-reviewed: prompt-to-artifact brittleness, Plan Formation, Semantic Compilation, Target Compilation, typed semantic atoms, S-IR/T-IR, compiler passes, DAG scheduling, capability routing, traceable validators, localized repair, implementation-blueprint fields, metrics, and ablations. | No local compiler, benchmark result, trace suite, target-lowering harness, localized-repair result, or empirical ablation validates compiler quality. |
+| `planforge_compiler_arch` | Passage-reviewed: orchestration-gap framing, planner-as-compiler analogy, task graph or intermediate representation, typed primitives, quality gates, model/tool tier routing, parallelism, critical-path scheduling, execution handoff, watchdog validation, and source-reported estimates. | Cost, time, routing quality, and artifact quality numbers have not been reproduced here. |
+| `genesiscode` | Passage-reviewed: canonical CoreForm IR, structural validation, semantic patch artifacts, stable provenance hashes, sealed effect requests, capability boundaries, deterministic effect logs, replay semantics, obligations, evidence artifacts, registry acceptance, and translation validation. | No implementation, replay checker, proof module, benchmark, translation-validation artifact, or security audit is present. |
+| `treellm` | Passage-reviewed: explicit semantic substrates through an external Knowledge Lattice, fixed-width semantic tokens, identity stability, path traceability, append-only updates, externalized knowledge, and path-based navigation. | No TreeLLM implementation, token validation, compression ratio, hallucination result, reasoning benchmark, or graph-coverage result exists here. |
+| `viea` | Passage-reviewed: intent-to-execution architecture, structured command contracts, artifact graphs, specialist routing, verification, workflow-to-tool compilation, repeated-work closure, claim and verification ledgers, residuals, runtime adapters, benchmark ratchets, and feedback loops. | No completed deployment, working cognitive compiler, execution log, or reproduced benchmark is proven here. |
 
 ## Mechanism
 
 Cognitive Compilation turns planned work into a compiler boundary. Its source plan, semantic atoms, dependency analysis, validator requirements, target lowering, and localized repair supply the main pipeline. PlanForge compiler architecture contributes DAG scheduling and tier-routing pressure; GenesisCode contributes canonical forms, provenance, obligations, semantic patches, and effect boundaries; TreeLLM motivates explicit semantic substrates; VIEA supplies the artifact and verification ledger that the compiler must feed.
 
 This semantic IR pipeline moves from source plan to typed atoms, from atoms to target artifacts, from failed validators back to localized repair, and from accepted outputs into the artifact graph.
+
+The reviewed passages make one architectural move sharper: the compiler is not another prompt template. It is a boundary where obligations become addressable records. Cognitive Compilation supplies the typed S-IR and repair loop; PlanForge supplies scheduling pressure; GenesisCode supplies evidence-carrying acceptance and replay; TreeLLM supplies the intuition that semantic structure should be addressable outside model weights; VIEA supplies the artifact-ledger destination. None of those passages show that this repository can parse arbitrary goals into S-IR, lower S-IR to real artifacts, keep repairs local under load, or beat direct generation.
 
 ```{mermaid}
 flowchart LR
@@ -171,13 +173,13 @@ These Lean hooks are implemented as finite-record predicates over compiled-artif
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache available |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | source note available; local raw cache available |
-| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | source note available; local raw cache passage-reviewed |
+| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache passage-reviewed |
+| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
 
-The crosswalk identifies sources for compiler framing, semantic representation, provenance, and artifact-ledger integration. It does not claim that a cognitive compiler has been implemented here.
+The crosswalk identifies sources for compiler framing, semantic representation, provenance, and artifact-ledger integration. All assigned mappings have passage review, but the core claim stays at `argument` because parser behavior, compiler correctness, target-lowering preservation, validator adequacy, localized-repair performance, and quality/cost improvements remain unimplemented or unmeasured here.
 
 ## Summary
 
