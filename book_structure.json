@@ -629,37 +629,105 @@
             {
               "source_id": "scf",
               "mapped_support": "Supports stack-level failure analysis through authority laundering, contract drift, evaluator capture, state migration insolvency, dependency drift, bad reliance annotations, recovery failure, and procedural self-ratification.",
-              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or actual recovery behavior."
+              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or actual recovery behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:54-56",
+                "sources/raw/google_docs/scf.txt:108-124",
+                "sources/raw/google_docs/scf.txt:719-734",
+                "sources/raw/google_docs/scf.txt:755-797",
+                "sources/raw/google_docs/scf.txt:1010-1013"
+              ],
+              "passage_review_note": "Reviewed local raw cache for authority creep, evaluator capture, route revocation, recovery/migration/state/evidence failure, and goalpost/self-ratification controls; no production recovery or safety claim promoted."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports context and memory failure modes: summaries self-promoting into evidence or authority, hostile quoted text becoming behavioral control, stale/revoked context admission, taint leakage, and unrecorded adequacy gaps.",
-              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority or broad neighboring-system result is claimed."
+              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority or broad neighboring-system result is claimed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-24",
+                "sources/raw/google_docs/vcm_public.txt:121-146",
+                "sources/raw/google_docs/vcm_public.txt:186-200",
+                "sources/raw/google_docs/vcm_public.txt:328-359",
+                "sources/raw/google_docs/vcm_public.txt:370-389"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context contract/admission/authority/lifecycle failures, untrusted content self-promotion, stale or revoked context, planner-as-hint boundaries, invalidation, threat model, and conditional fault-injection limits; no broad model-quality claim promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports execution failure modes around tool calls bypassing contract locks or approvals, secrets entering model context, missing provenance, non-replayable jobs, unverifiable evidence, forgotten failures, and overclaimed security or benchmarks.",
-              "limits": "Execution-security and benchmark behavior are not reproduced here."
+              "limits": "Execution-security and benchmark behavior are not reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:216-246",
+                "sources/raw/google_docs/talos.txt:442-445",
+                "sources/raw/google_docs/talos.txt:1931-1959",
+                "sources/raw/google_docs/talos.txt:3358-3411",
+                "sources/raw/google_docs/talos.txt:3415-3456"
+              ],
+              "passage_review_note": "Reviewed local raw cache for contract lock, literature-review grounding, tribunal verification, human gates, context partitioning, secret-handle blind execution, Digital SCIF framing, and public-release security/control-plane vocabulary; no reproduced security or benchmark claim promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports verification failure modes: failed or timed-out verification treated as success, unsupported claims, contradiction mishandling, protected-axiom self-authorization, and open-domain autoformalization overclaiming.",
-              "limits": "Does not prove natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+              "limits": "Does not prove natural-language formalization, theorem validity for arbitrary claims, or whole-system epistemic correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:227-236",
+                "sources/raw/google_docs/spinoza.txt:327-365",
+                "sources/raw/google_docs/spinoza.txt:438-473",
+                "sources/raw/google_docs/spinoza.txt:498-516",
+                "sources/raw/google_docs/spinoza.txt:757-760",
+                "sources/raw/google_docs/spinoza.txt:953-981"
+              ],
+              "passage_review_note": "Reviewed local raw cache for neural-proposer/verifier separation, explicit formal scope, unsupported-on-insufficient-schema behavior, contradiction and retraction audit, constitutional sandboxing, unknown timeout status, and certified-delusion risk; no arbitrary natural-language formalization claim promoted."
             },
             {
               "source_id": "field_of_god",
               "mapped_support": "Supports the governance motivation that power can damage agency, dignity, plurality, consent, and coherence if metaphysical or normative language is not translated into operational boundaries.",
-              "limits": "Philosophical lineage only; not empirical evidence for consciousness, physics, morality, or AI safety mechanisms."
+              "limits": "Philosophical lineage only; not empirical evidence for consciousness, physics, morality, or AI safety mechanisms.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/field_of_god.txt:194-196",
+                "sources/raw/google_docs/field_of_god.txt:475-520",
+                "sources/raw/google_docs/field_of_god.txt:542-564",
+                "sources/raw/google_docs/field_of_god.txt:669-709"
+              ],
+              "passage_review_note": "Reviewed local raw cache for philosophical governance lineage around power without care, agency, dignity, privacy, consent, social justice, current-AI caveats, misaligned competence, and power-over-coherence risk; philosophical lineage only, not empirical safety evidence."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports early engineering failures such as generated text mistaken for execution, lost artifacts, lost constraints, lost source evidence, forgotten residuals, missing deployment feedback, repeated uncompiled workflows, and claim support inflation.",
-              "limits": "Architecture proposal only; no deployed failure detector or benchmark/runtime result is proven here."
+              "limits": "Architecture proposal only; no deployed failure detector or benchmark/runtime result is proven here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:12-17",
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:100-132",
+                "sources/raw/google_docs/viea.txt:181-195",
+                "sources/raw/google_docs/viea.txt:256-272",
+                "sources/raw/google_docs/viea.txt:504-508"
+              ],
+              "passage_review_note": "Reviewed local raw cache for generated text versus durable execution, artifact/support/residual/regression/feedback discipline, missing-evidence labels, verified/provenance-gated acceptance, benchmark residuals, and claim-ledger anti-inflation; no deployed detector, runtime, or benchmark claim promoted."
             },
             {
               "source_id": "simulation_scaling",
               "mapped_support": "Supports resource and simulation failure modes: unstated scope/fidelity/temporal contracts, computability mistaken for feasible execution, ignored memory/heat/bandwidth bottlenecks, and vague simulation arguments used as capability evidence.",
-              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, or independent literature audit was run here."
+              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, or independent literature audit was run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/simulation_scaling.txt:145-162",
+                "sources/raw/google_docs/simulation_scaling.txt:172-193",
+                "sources/raw/google_docs/simulation_scaling.txt:202-213",
+                "sources/raw/google_docs/simulation_scaling.txt:222-239",
+                "sources/raw/google_docs/simulation_scaling.txt:266-267",
+                "sources/raw/google_docs/simulation_scaling.txt:296-325",
+                "sources/raw/google_docs/simulation_scaling.txt:340-341"
+              ],
+              "passage_review_note": "Reviewed local raw cache for contract-relative simulation feasibility, computability versus physical feasibility, scope/clockspeed/efficiency tradeoffs, bottlenecks, coarse-graining limits, and incompatible scope/resolution/compute arguments; theoretical only, no physical or simulation benchmark promoted."
             },
             {
               "source_id": "vcm_editable",

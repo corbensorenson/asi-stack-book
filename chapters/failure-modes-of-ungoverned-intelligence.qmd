@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; scenario coverage and failure-detector evidence remain incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C, and seven of nine mappings carry reviewed local raw-cache passage references; `vcm_editable` and `moecot` remain connector-only/source-note mapped, while scenario coverage and failure-detector evidence remain incomplete."
   - "The failure_boundary_map fixture validates schema/example consistency only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain unimplemented."
   - "The implemented FailureModes Lean predicates cover finite-record invariant failure and unbounded-authority detection only; they do not prove deployed failure detection or containment."
   - "No support-state promotion is implied by this drafting pass."
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot`; raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot` |
 | Test state | `failure_boundary_map.valid.json` passes protocol fixture validation, and `AsiStackProofs.FailureModes` builds locally; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain planned. |
 
 ## Drafting guardrail
@@ -66,11 +66,11 @@ The ASI Stack therefore treats failure modes as first-class architectural object
 
 [failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
-The claim remains at `argument` support. SCF contributes lifecycle and evaluator-capture risks, VCM contributes context and taint failures, Talos contributes execution and tool-control failures, Spinoza contributes verification and downgrade failures, and the Field of God lineage contributes governance and agency risks. This chapter uses those sources as architecture vocabulary, not as empirical incident evidence.
+The claim remains at `argument` support. Seven local raw-cache mappings now carry reviewed passage references: SCF for lifecycle, authority, evaluator, route, and self-ratification risks; VCM for context, taint, stale-state, and authority-boundary risks; Talos for execution, tool-control, audit, replay, and secret-boundary risks; Spinoza for verification and downgrade risks; Field of God for philosophical governance lineage; VIEA for durable artifact, residual, and claim-ledger failures; and Simulation Scaling for resource-contract failures. `vcm_editable` and `moecot` remain connector-only/source-note mapped. This chapter uses those sources as architecture vocabulary, not as empirical incident evidence or detector/prevention evidence.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core failure claim to every assigned source note. The mappings support the obligation map for failure boundaries, not a claim that the stack already detects or prevents the failures.
+Appendix C now maps this core failure claim to every assigned source note. Seven local source mappings include reviewed raw-cache passage references; `vcm_editable` and `moecot` remain connector-only/source-note mapped. The mappings support the obligation map for failure boundaries, not a claim that the stack already detects or prevents the failures.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -185,13 +185,13 @@ These proof targets are implemented only over finite Lean records in `AsiStackPr
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `field_of_god` | The Field of God | alignment_constitution | Field of God source/outline/material. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw cache available |
+| `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw-cache passages reviewed for this chapter |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw-cache passages reviewed for this chapter |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw-cache passages reviewed for this chapter |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw-cache passages reviewed for this chapter |
+| `field_of_god` | The Field of God | alignment_constitution | Field of God source/outline/material. | source note available; local raw-cache passages reviewed for this chapter |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw-cache passages reviewed for this chapter |
+| `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw-cache passages reviewed for this chapter |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 

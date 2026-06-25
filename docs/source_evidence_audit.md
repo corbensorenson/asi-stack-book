@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 24 |
+| Passage-reviewed mappings recorded | 31 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -36,7 +36,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
+| `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 7 | argument | passage review required before source-derived promotion |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
@@ -222,13 +222,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `system-boundaries-and-authority.core` | `system-boundaries-and-authority` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `field_of_god` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `simulation_scaling` | mapped | note present | chapter listed | not passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |

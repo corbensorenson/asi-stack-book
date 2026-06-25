@@ -304,7 +304,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A layered failure taxonomy tied to invariants, source queues, and future tests.
-- Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; support remains `argument` pending scenario tests or deployed detector evidence.
+- Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; seven local mappings (`scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`) now have reviewed raw-cache passage references, while `vcm_editable` and `moecot` remain connector-only/source-note mapped. Support remains `argument` pending scenario tests or deployed detector evidence.
 - Planned Codex test: Authority creep scenario.
 - Planned Codex test: Context pollution scenario.
 - Planned Codex test: Evaluator drift scenario.
