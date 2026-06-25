@@ -54,6 +54,10 @@ Long context, sparse attention, ring buffers, and recursive loops can silently h
 
 VCM and Verification Bandwidth reinforce the boundary: context admission, context adequacy, freshness, and verification capacity are different things.
 
+The reader-facing distinction is structural memory versus useful memory. Structural memory can say that a slot exists, a version is current, a stride covers a lag, or a recurrence loop has an exit. Useful memory requires the retrieved material to help the task under the current claim, authority, and adequacy boundary. The first kind of fact is necessary for disciplined systems work. The second kind needs workload evidence.
+
+This matters because long-context systems often fail by sounding continuous while their memory contract is broken. A stale cell may still be fluent. A covered lag may still be irrelevant. A recurrence loop may produce more text while making no progress. The contract gives later validators a place to look for those failures before they become invisible inside a model trace.
+
 ## Core Claim
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
@@ -76,6 +80,8 @@ Appendix C now records passage-reviewed mappings for all four assigned sources. 
 Cyclic memory becomes useful when it exposes mistakes that ordinary long-context language hides. `coil_attention_memory` supplies the structural contract family: residue plus winding, freshness windows, sparse-coverage gaps, recurrence budgets, loop exits, and alias diagnostics. The Circle contract suite supplies theorem-linked receipt language, Theseus transfer keeps structural smoke checks separate from learned-model claims, and VCM keeps context adequacy, authority, taint, invalidation, and admission separate from memory success.
 
 A Cyclic Memory Contract records the finite facts that can be checked while preserving the non-claim that those facts do not prove retrieval, reasoning, speed, memory reduction, or longer usable context.
+
+The contract is especially useful at the boundary between VCM and model internals. VCM can say what context object was admitted, which authority labels and adequacy labels came with it, and which versions or taints matter. The cyclic-memory contract can then say how that object was represented in slots, windows, recurrence schedules, and fallback paths. Neither layer gets to claim semantic success alone; together they make the evidence trail inspectable.
 
 ```{mermaid}
 flowchart LR
@@ -101,6 +107,8 @@ The contract should record:
 - Non-claims about retrieval, reasoning, speed, and quality.
 
 This makes cyclic structure useful as a diagnostic and governance layer without asking it to carry unsupported semantic claims.
+
+The default failure response should be conservative. If winding is missing, aliasing becomes visible residual risk. If coverage is partial, fallback attention remains available. If a recurrence budget is exhausted, the loop exits instead of continuing as if thinking harder were free. These behaviors are ordinary engineering safeguards, but they are what let a cyclic memory idea become safe enough to test later.
 
 ## Interfaces
 

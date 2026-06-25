@@ -2464,6 +2464,7 @@ Draft arc:
 - Mechanism: Require expected advantage, ordinary baselines, negative controls, proof boundary, workload, metric, report, and falsification condition before canary use.
 - Mechanism: Route experiments through exploratory, canary, qualified, retired, or blocked evidence gates before broader adoption.
 - Mechanism: Keep backbone efficiency, proof readiness, fast-generation acceleration, compression, search quality, routing quality, and downstream task quality as separate axes.
+- Mechanism: Treat optionality as a positive adoption state so promising substrates can be tested through narrow routes without becoming load-bearing architecture before evidence exists.
 - Interface: Routing treats substrate as specialist.
 - Interface: Compression tests representation efficiency.
 - Interface: Evidence compares against baselines.
@@ -2579,6 +2580,7 @@ Draft arc:
 - Mechanism: Represent memory slots, residue, winding, provenance, strides, sparse windows, freshness windows, and recurrence schedules as finite structural contracts.
 - Mechanism: Expose alias, freshness, coverage, active-token, work-saving, fallback, stale-read, and loop-exit fields as auditable outputs with explicit non-claims.
 - Mechanism: Preserve VCM authority and adequacy labels while comparing slot-only, slot-plus-winding, FIFO, LRU, content-gated, ordinary attention, and ordinary memory baselines before promoting retrieval, reasoning, speed, or memory claims.
+- Mechanism: Keep structural memory facts separate from useful-memory claims, so freshness, coverage, and exits become diagnostic guardrails rather than retrieval-quality evidence.
 - Interface: VCM context traces expose context adequacy and authority labels.
 - Interface: Attention and memory modules consume contract fields as diagnostic guardrails.
 - Interface: Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
@@ -2637,6 +2639,7 @@ Draft arc:
 - Mechanism: Treat adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, circulant convolution, and route heads as structural contracts only where cyclic structure is real.
 - Mechanism: Attach receipt boundaries, alias diagnostics, load diagnostics, parameter accounting, hardware-kernel notes, and real-valued-versus-discretized limits before interpreting model behavior.
 - Mechanism: Promote the substrate only after quality, runtime, memory, parameter, transfer, and failure-case tradeoffs are measured against ordinary baselines and negative controls.
+- Mechanism: Keep structural, resource, and empirical ledgers separate so exact cyclic facts, parameter accounting, and measured workload behavior cannot spend evidence credit for one another.
 - Interface: Semantic representation chapters define when cyclic structure is actually present.
 - Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.

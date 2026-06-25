@@ -55,6 +55,10 @@ Parameter-count, equivariance, or exact phase facts can be mistaken for better m
 
 Circle AI Architectures gives the right rule: use cyclic structure where the data, model, or computation really has phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic structure, or geometry-aware structure. Otherwise use ordinary baselines.
 
+That rule is a defense against aesthetic adoption. Cyclic structure can be beautiful and still wrong for the workload. A phase bank can be exactly described and still hurt optimization. A mixer can reduce parameters and still run poorly on available hardware. A RoPE receipt can distinguish positions inside its declared model and still say nothing about whether a trained model uses longer context well. The chapter keeps those cases separate so structural clarity does not become performance mythology.
+
+The adoption question is therefore comparative. What does the cyclic candidate do better than dense layers, LoRA variants, ordinary RoPE, learned positional encodings, recurrent memory, state-space models, or nonperiodic controls? What does it make worse? Which hardware shape does it assume? Which alias or load diagnostic would block it? Without those answers, the cyclic substrate can remain a research candidate but not a default route.
+
 ## Core Claim
 
 [coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption.
@@ -79,6 +83,8 @@ Cyclic mixer adoption is where structural proof, parameter accounting, and hardw
 
 A Cyclic Mixer Evaluation Record keeps those layers separated. It can report a structural invariant, receipt boundary, alias/load diagnostics, parameter accounting, and hardware notes while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
 
+The record should make three ledgers visible at once. The structural ledger names the invariant and receipt boundary. The resource ledger names parameters, kernel shape, memory, latency, and hardware assumptions. The empirical ledger names baselines, metrics, failures, and adoption state. A strong cyclic proposal eventually has to survive all three; a result in one ledger should not silently spend credit in another.
+
 ```{mermaid}
 flowchart LR
   A["Cyclic substrate candidate"] --> B["Structural invariant"]
@@ -100,6 +106,8 @@ The record should separate:
 - Baselines: dense, LoRA, standard RoPE, learned position, recurrent memory, state-space, wrong-period, and nonperiodic controls where relevant.
 - Metrics: quality, runtime, memory, parameter count, transfer, and failure cases.
 - Adoption state and non-claims.
+
+This separation is what lets the book be friendly to cyclic methods without becoming credulous. A future experiment can promote a narrow route if it wins honestly. A failed route can still preserve a useful structural receipt. A result that wins on parameter count but loses on quality or runtime can stay as a cautionary record rather than being rewritten as progress.
 
 ## Interfaces
 
