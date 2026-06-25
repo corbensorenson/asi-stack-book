@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter treats artifacts as provenance-bearing work products, not as automatic evidence. Six local-cache source mappings have been passage-reviewed for the architecture surface; `moecot` remains connector/source-note mapped. The repo validates an artifact-graph fixture and proves two finite Lean predicates over provenance records, but it has not run a replay engine, audit reconstruction harness, produced-artifact checker, or provenance completeness service for this chapter.
 
+After typed jobs, the stack needs a memory surface for work itself. This chapter records what a job produced, where it came from, which claims or tests it touches, and which parts can be replayed before the architecture allows those outputs to become evidence, context, or procedural substrate.
+
 ## Problem
 
 The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
@@ -97,10 +99,7 @@ flowchart LR
   H --> I
 ```
 
-- Record artifacts as nodes with source, job, context, tool, claim, test, and evidence links.
-- Capture audit events, replay metadata, environment assumptions, provenance status, and replay limits.
-- Treat incomplete provenance as a residual rather than quietly using the artifact as evidence.
-- Use verified and failed traces as memory for later regression suites, procedural tools, and repair work.
+The artifact record attaches identity to work product history. It links parent job, sources, context, tools, claims, tests, audit events, replay metadata, environment assumptions, provenance status, and replay limits in one node. Incomplete provenance remains visible as a residual, while verified traces and failed traces both become useful: one can support future regression coverage, and the other can prevent repeated failure.
 
 Artifacts should have stable IDs and versioned revisions. Audit logs should be append-only or versioned. Replay metadata should declare what can be replayed, what cannot, and which environment assumptions matter.
 

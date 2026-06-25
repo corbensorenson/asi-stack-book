@@ -1561,10 +1561,9 @@ Draft arc:
 
 - Problem: Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
 - Insufficiency: Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
-- Mechanism: Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
-- Mechanism: Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.
-- Mechanism: Isolate tools and runtime adapters.
-- Mechanism: Record job lifecycle and evidence artifacts.
+- Mechanism: Convert accepted plans and required actions into typed job packets with contract lock, lifecycle state, permissions, approval gates, expected artifacts, failure behavior, audit trail, and replay expectations.
+- Mechanism: Keep orchestration, workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay as separate execution boundaries.
+- Handoff: Delivered, failed, or blocked jobs flow into artifact graphs as durable work products and audit traces.
 - Interface: Planning dispatches jobs.
 - Interface: Security mediates permissions.
 - Interface: Artifact graph receives outputs.
@@ -1617,9 +1616,9 @@ Draft arc:
 
 - Problem: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
 - Insufficiency: If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
-- Mechanism: Record artifacts as nodes with source, job, context, tool, and evidence links.
-- Mechanism: Capture replay metadata and environment assumptions.
-- Mechanism: Use artifacts as memory and improvement substrate.
+- Mechanism: Record artifacts as stable, versioned nodes with parent job, source/context/tool refs, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
+- Mechanism: Treat incomplete provenance as a residual while using verified and failed traces as inputs to evidence ledgers, regression suites, and procedural-memory candidates.
+- Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
 - Interface: Procedural memory mines repeated traces.
@@ -1673,10 +1672,9 @@ Draft arc:
 
 - Problem: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
 - Insufficiency: Tool calling without a permission and approval model turns reasoning errors into side effects.
-- Mechanism: Map jobs to runtime adapters with declared capabilities.
-- Mechanism: Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.
-- Mechanism: Require permission checks and approval gates for high-impact actions.
-- Mechanism: Record deployment evidence and rollback handles.
+- Mechanism: Map typed jobs to runtime adapters with declared target type, capability, permission requirement, sandbox mode, authority handle, approval state, input/output contract, and effect receipt.
+- Mechanism: Fail closed for high-impact actions without approval and return rollback handles or residuals for the artifact graph.
+- Handoff: Repeated adapter traces and repair patterns become candidates for procedural memory only after evidence and regression checks exist.
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.
 - Interface: Evidence records deployment outcomes.
@@ -1729,9 +1727,9 @@ Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
 - Insufficiency: Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
-- Mechanism: Log safe execution traces.
-- Mechanism: Detect recurring loops.
-- Mechanism: Abstract invariant structure, discover parameters, verify, and publish tools.
+- Mechanism: Use artifact traces to detect recurring loops only after enough comparable examples exist to avoid anecdotal toolification.
+- Mechanism: Abstract invariant structure, discover parameters, record preconditions/postconditions, synthesize candidate tools, verify them, attach regressions and monitoring, then promote, quarantine, revise, or retire.
+- Handoff: Verified procedural tools become routable candidates for Part III, while failed or uncertain loops remain residuals.
 - Interface: Artifact graph supplies traces.
 - Interface: Routing selects new tools.
 - Interface: Evidence tests utility and regressions.

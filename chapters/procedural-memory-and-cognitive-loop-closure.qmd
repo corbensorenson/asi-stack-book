@@ -43,6 +43,8 @@ open_evidence_gaps:
 
 This chapter treats procedural memory as a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture, but it does not yet run loop detection, tool synthesis, active parameter discovery, regression testing, routing, monitoring, or retirement automation.
 
+Closing Part II, this chapter converts execution history into future execution capacity. It does not assume that every successful trace deserves automation; it asks which repeated, bounded, verified patterns are mature enough to become routable tools in Part III.
+
 ## Problem
 
 Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -101,10 +103,7 @@ flowchart LR
   I --> J
 ```
 
-- Log safe execution traces with provenance, failures, residuals, and replay limits.
-- Detect recurring loops only after there are enough comparable traces to avoid anecdotal toolification.
-- Abstract invariant structure, discover parameters, and record preconditions/postconditions before synthesis.
-- Verify candidate tools, attach regressions and monitoring, then choose promotion, quarantine, revision, or retirement.
+The loop-closure path starts with safe traces that preserve provenance, failures, residuals, and replay limits. Comparable traces justify detection; detection leads to invariant abstraction, parameter discovery, preconditions, postconditions, and then candidate synthesis. Verification, regressions, monitoring, and retirement criteria decide whether the candidate becomes routable, remains in quarantine, returns to revision, or is retired.
 
 A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 

@@ -42,6 +42,8 @@ open_evidence_gaps:
 
 This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite Lean predicates over permission and approval records. Seven assigned source mappings have passage-reviewed refs, while `moecot` remains connector/source-note mapped. The fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
 
+This chapter sits after artifact graphs so the reader already has the evidence surface in mind before the book turns to external effects. The runtime adapter is the narrow point where a typed job may receive authority, use a tool, produce an effect receipt, and hand evidence back to the artifact graph.
+
 ## Problem
 
 Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
@@ -99,10 +101,7 @@ flowchart LR
   I --> J["Artifact graph"]
 ```
 
-- Map typed jobs to adapters with declared target type, capability, permission requirement, sandbox mode, and input/output contract.
-- Keep authority handles outside model-visible context until policy, destination, and approval checks authorize use.
-- Fail closed for high-impact actions: irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional state changes.
-- Return effect receipts, rollback handles where available, residuals where rollback is unavailable, and audit events for the artifact graph.
+The adapter maps a typed job to a declared target type, capability, permission requirement, sandbox mode, and input/output contract. Authority handles stay outside model-visible context until policy, destination, and approval checks authorize use. High-impact actions such as irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional state changes fail closed without approval. Every invocation returns an effect receipt, a rollback handle where one exists, residuals where rollback is unavailable, and audit events for the artifact graph.
 
 Adapters should declare target type, capability, permission required, sandbox mode, approval requirement, input/output contract, authority handles, expected evidence, rollback handle, and post-action audit events. The tool itself is not the policy boundary; the adapter is.
 

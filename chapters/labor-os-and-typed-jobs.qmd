@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter treats typed jobs as the execution contract for work, not as proof that a labor OS is implemented. The repo validates a typed-job fixture and now proves two finite Lean predicates over lifecycle and approval records, but it has not run a job scheduler, permission harness, adapter runner, approval service, or replay system for this chapter.
 
+Placed after tribunal review, this chapter is the first execution translation point. Reviewed claims, accepted plans, and unresolved required actions cannot remain conversational objects; they must become bounded work packets whose state, authority, approvals, and failure behavior can be inspected.
+
 ## Problem
 
 Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
@@ -96,10 +98,7 @@ flowchart LR
   J --> K["Feedback + replay status"]
 ```
 
-- Represent the work unit with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.
-- Keep orchestration, secure workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay as separate subfunctions.
-- Treat dispatch as a state transition that can be rejected, quarantined, replayed, or retired.
-- Record enough evidence for the next layer to know what happened without trusting the model's memory of the job.
+The job packet binds work type, inputs, allowed tools, permissions, expected artifacts, approval gates, failure behavior, and replay expectations before dispatch. Dispatch is not a model decision alone; it is a lifecycle transition that can be rejected, quarantined, replayed, or retired. Orchestration, secure workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay stay separate so a failure in one boundary does not disappear into the general idea of "the agent did it."
 
 The lifecycle should be explicit enough to reject invalid transitions. A job can be drafted, locked, awaiting approval, dispatchable, running, adjudicating, delivered, failed, blocked, replayed, or retired. High-impact work should stop at the approval gate until the required record exists.
 
