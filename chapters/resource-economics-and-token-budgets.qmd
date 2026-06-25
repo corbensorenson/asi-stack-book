@@ -81,6 +81,8 @@ Appendix C now maps this resource-economics claim to all assigned source notes. 
 
 Resource economics is the control layer that prevents efficiency work from becoming blind cost cutting. TokenMana supplies regenerative-capacity and load-variance pressure; PlanForge supplies task and route scheduling; Verification Bandwidth turns verification into a scarce resource; Simulation Scaling keeps physical capacity and fidelity explicit; VIEA and Project Theseus connect cost to execution/report discipline; PagedAttention-style serving work keeps aggregate throughput separate from single-request verified-output quality.
 
+A budget record is not a quota override. It is the policy surface that decides whether a task can afford the required cognition, context, tool use, verification, and human review without weakening protected gates. When the budget is insufficient, the correct result is escalation, scope reduction, deferral, rejection, or residual accounting, not quiet degradation.
+
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
 
 ```{mermaid}
@@ -88,8 +90,10 @@ flowchart LR
   A["Task or plan node"] --> B["Value and risk estimate"]
   B --> C["Capacity pool"]
   C --> D["Cost estimate"]
+  S["Serving memory / throughput pressure"] --> D
   D --> E["Verification tax"]
-  E --> F{"Budget adequate?"}
+  P["Protected gates"] --> F{"Budget adequate and gates intact?"}
+  E --> F
   F -- "yes" --> G["Dispatch route"]
   F -- "no" --> H["Escalate, defer, shrink, or reject"]
   G --> I["Cost-quality evidence"]
@@ -200,3 +204,5 @@ The crosswalk separates resource accounting from economic overclaim. `tokenmana`
 Resources are part of governance. A system that cannot account for tokens, verification, latency, human review, risk, and quality cannot honestly claim efficiency.
 
 This chapter turns budget pressure into an explicit record so the stack can save cost where it is safe, spend verification where risk demands it, and keep protected gates above local optimization. With compactness, speed, representation, and budgets bounded, the next section can ask which simulation and mathematical substrates are legitimate targets for adoption rather than architectural fashion.
+
+The handoff is deliberate: simulation, cyclic mixers, and mathematical substrates are not adopted because they look elegant or cheap. They have to enter through resource, fidelity, baseline, and evidence contracts.

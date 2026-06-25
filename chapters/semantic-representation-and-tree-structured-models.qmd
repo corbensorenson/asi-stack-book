@@ -79,6 +79,8 @@ Appendix C now maps this semantic-representation claim to all assigned source no
 
 Semantic representation is compression with meaning in the loop. TreeLLM proposes explicit traversable semantic graphs and path-derived tokens; Spinoza supplies proof/citation/belief-state discipline; Verification Bandwidth warns that compressed semantic units can lose constraints needed for joint checking; Cognitive Compilation supplies typed semantic IR; CGS and the cyclic representation sources keep representation-substrate claims optional until utility is shown.
 
+A semantic node is a scoped representation lease, not a canonical ontology verdict. It can be used for retrieval, planning, compilation, or explanation only under its grounding state, permitted uses, and adequacy limits. If a task needs constraints the node no longer carries, the route should fall back to richer source context or mark a context-adequacy residual.
+
 A Semantic Node Record can be embedded in semantic pages, claim graphs, or compiler IR without pretending the node is final truth. It records provenance, hierarchy, relation references, grounding state, permitted uses, versioning, residual uncertainty, and evaluation references so that semantic structure remains inspectable rather than authoritative by default.
 
 ```{mermaid}
@@ -88,9 +90,12 @@ flowchart LR
   B --> D["Provenance refs"]
   B --> E["Tokenization contract"]
   E --> F{"Grounded enough for use?"}
-  F -- "yes" --> G["VCM page / claim graph / IR atom"]
+  F -- "yes" --> G["Adequacy check for task"]
+  G --> J{"Adequate?"}
+  J -- "yes" --> K["VCM page / claim graph / IR atom"]
+  J -- "no" --> H
   F -- "no" --> H["Speculative label + residual"]
-  G --> I["Versioned hierarchy"]
+  K --> I["Versioned hierarchy"]
   H --> I
 ```
 
@@ -193,3 +198,5 @@ The crosswalk prevents semantic representation from becoming a free-floating ont
 Semantic structure is useful when it makes concepts, paths, provenance, versions, and uncertainty easier to inspect. It is harmful when it becomes an ontology-shaped authority claim without grounding or tests.
 
 Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated. The next chapter asks how much any of these representation choices should cost, and when the stack must spend more to verify rather than less to answer.
+
+That cost question is not secondary. A representation that saves tokens but increases verification burden, human repair, or downstream failure is not cheaper for the governed system.

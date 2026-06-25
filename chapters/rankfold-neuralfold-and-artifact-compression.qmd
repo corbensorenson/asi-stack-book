@@ -75,17 +75,21 @@ Appendix C now maps this artifact-compression claim to all assigned source notes
 
 Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The stack should not ask whether a compressed artifact is impressive; it should ask whether this task can use it without losing the constraints that matter.
 
+A compressed artifact is therefore not a cheaper source of truth. It is a routed representation candidate with a preserved full-artifact fallback. The full artifact remains the reference unless reconstruction, probe, utility, and cost records justify a narrower use. This keeps storage savings from silently becoming evidence loss.
+
 A Compressed Artifact Record therefore carries reconstruction, residual, probe, fallback, and utility fields. The probe is the routing boundary: if the compressed form cannot answer the task's needs, the route falls back to the full artifact.
 
 ```{mermaid}
 flowchart LR
-  A["Source artifact"] --> B["Compression method"]
+  A["Source artifact"] --> Z["Preserved full artifact"]
+  A --> B["Compression method"]
   B --> C["Codec parameters + manifest"]
   C --> D["Residual coding"]
   D --> E["Decode / reconstruction check"]
   E --> F{"Task probe passes?"}
   F -- "yes" --> G["Use compressed artifact"]
   F -- "no" --> H["Route to full artifact"]
+  Z --> H
   G --> I["Cost, utility, and non-claim ledger"]
   H --> I
 ```
@@ -183,3 +187,5 @@ The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold`
 Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.
 
 RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The next chapter turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.
+
+The bridge is that semantic representation is also compression. It compresses meaning, paths, and relations rather than bytes, so its probe must ask whether the represented meaning is grounded enough for the task.
