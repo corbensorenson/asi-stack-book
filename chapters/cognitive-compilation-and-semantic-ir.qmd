@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats cognitive compilation as an architectural boundary and prototype target. The repo validates a semantic-atom fixture, but it does not yet contain a compiler, localized repair benchmark, target-lowering harness, or measured quality comparison against direct generation.
 
+It follows PlanForge because a scheduled DAG still needs an artifact language. Semantic IR gives each node an addressable obligation before it becomes code, prose, a schema, a proof target, or a tool job.
+
 ## Problem
 
 LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
@@ -94,9 +96,7 @@ flowchart LR
   I --> D
 ```
 
-- Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.
-- Perform incremental repair over IR rather than re-prompting from scratch.
-- Compile IR into jobs, code, schemas, or documents.
+The compiler boundary represents requirements, semantics, dependencies, artifacts, validators, authority requirements, and target constraints explicitly. Incremental repair then operates over IR nodes rather than re-prompting from scratch. Lowering can produce jobs, code, schemas, documents, or proof targets, but every target artifact should preserve the obligations that made the node necessary.
 
 The key object is the semantic atom. A useful atom names its purpose, inputs, outputs, constraints, dependencies, authority requirements, validator, target artifact, and repair policy. A collection of atoms becomes a DAG. The DAG is what planning schedules, VCM loads context for, execution turns into jobs, and the artifact graph audits.
 

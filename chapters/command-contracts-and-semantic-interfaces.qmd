@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats prompt language as an operational interface only when it is bounded by explicit fields. The repository validates a command-contract fixture, but that validation proves shape only; it does not prove that a prompt is secure, complete, injection-proof, or empirically better than an unstructured prompt.
 
+It follows the execution-trace chapter by zooming into the first machine-readable handoff: the command surface that lets planning proceed without guessing what the user meant or what authority was granted.
+
 ## Problem
 
 The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
@@ -94,9 +96,7 @@ flowchart LR
   H -- "no" --> J["Missing-contract residual"]
 ```
 
-- Turn recurring command patterns into reusable templates.
-- Treat software words as coordination primitives.
-- Bind semantic interfaces to schemas and tests.
+The mechanism turns recurring command patterns into reusable templates and treats software words as coordination primitives. Field names such as objective, constraint, output, verification, authority, approval, and failure behavior are not decoration; they are routing handles for the rest of the stack. Binding those handles to schemas and tests is what lets later layers distinguish an authorized instruction from useful prose nearby.
 
 The command contract should be compact enough to write often and typed enough to validate. Its field names matter because they become routing handles. "Verification" routes to evidence and tests. "Failure behavior" routes to residuals and escalation. "Allowed means" routes to authority. "Output contract" routes to artifact checks.
 

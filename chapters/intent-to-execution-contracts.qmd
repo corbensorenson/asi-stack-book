@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats execution as a governed trace, not as a successful response. The repository contains draft schemas and fixtures for the trace shape, but it does not yet contain a deployed intent-to-execution runtime, a replayed vertical slice, or empirical evidence that a contract was satisfied.
 
+It opens Part II by turning Part I's governance boundary into an operational spine. The system can now ask not only whether a request is admissible, but how that request becomes planned, authorized, executed, verified, and fed back without losing its original constraints.
+
 ## Problem
 
 Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
@@ -96,9 +98,7 @@ flowchart LR
   H --> K
 ```
 
-- Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.
-- Route contracts through planning, memory, verification, and execution layers.
-- Attach result artifacts back to the claim and evidence ledger.
+The trace represents command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback. Each transition routes the contract through the layer that actually owns the next responsibility: planning decomposes, memory supplies bounded context, verification checks acceptance, execution causes side effects only under authority, and evidence attaches the result back to claims, regressions, and residuals.
 
 The trace is append-only at the level that matters: each transition either produces the next artifact or records why it could not. If a contract cannot be planned, that is a residual. If a job cannot run because approval is missing, that is a residual. If an artifact is produced but verification fails, that is a residual with a repair path.
 

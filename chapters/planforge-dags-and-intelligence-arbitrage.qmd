@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter treats PlanForge as a scheduler architecture and research target. The repo validates a draft PlanForge DAG fixture and implements narrow finite-record Lean predicates for indexed dependency order and failed-quality fallback. It does not measure cost savings, measure quality retention, implement a tier-routing scheduler, or prove the behavior of a deployed graph algorithm.
 
+It follows the planning chapter by taking a general plan graph and asking what must be true before that graph can become schedulable, parallelizable, and cost-accountable.
+
 ## Problem
 
 Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
@@ -99,9 +101,7 @@ flowchart LR
   J --> K
 ```
 
-- Decompose goals into DAGs.
-- Annotate nodes with capability tier, budget, context request, risk, and verification requirement.
-- Merge redundant branches and escalate only when predicates fail.
+The DAG mechanism decomposes goals into primitive nodes, annotates those nodes with capability tier, budget, context request, risk, quality predicate, and verification requirement, then makes merge, cache, escalation, and residual decisions explicit. Redundant branches can be merged only when their predicates and artifacts actually match. Cheap routes can be kept only when verification remains attached.
 
 The DAG should expose parallelism, critical path, redundant branches, cached work, and local repair opportunities. A failed node should not force global regeneration unless its dependencies require it. A passed node should not escape verification simply because it was assigned to a cheaper tier.
 

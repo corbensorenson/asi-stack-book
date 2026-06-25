@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter treats planning as a bounded control artifact. The repo validates a draft plan-graph fixture, but it does not yet validate plan quality, dependency soundness, authority preservation under replanning, or successful execution.
 
+It follows command contracts because explicit commands are still inert until the stack decides what work should exist, what order it belongs in, and which boundaries must be consulted before dispatch.
+
 ## Problem
 
 Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
@@ -99,11 +101,7 @@ flowchart LR
   I --> L
 ```
 
-- Compile goals into strategic, tactical, and runtime plans.
-- Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior.
-- Delegate execution through typed contracts.
-
-Strategic planning chooses the broad route. Tactical planning decomposes work and dependencies. Runtime planning creates dispatchable nodes and replanning policies. The boundaries matter because only the runtime layer should request specific tools, adapters, or human approvals.
+The control layer compiles accepted work into strategic, tactical, and runtime plans. Strategic planning chooses the broad route. Tactical planning decomposes work and dependencies. Runtime planning creates dispatchable nodes, context requests, authority requirements, budgets, verification plans, replanning policies, stop conditions, and failure behavior. The boundaries matter because execution still happens only through typed contracts downstream, and only authorized runtime layers should request specific tools, adapters, or human approvals.
 
 The planner should be allowed to say "I do not have enough context," "this dependency is cyclic," "this tool exceeds authority," or "this budget cannot satisfy the quality predicate." Those outputs are useful plan residuals, not failures to be hidden.
 
