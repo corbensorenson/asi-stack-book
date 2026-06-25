@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter sets the unit of analysis for the book. It is an architecture argument, not a claim that any one implementation already achieves ASI, safety, or empirical efficiency. Source notes shape the vocabulary; Appendix C still controls support-state movement.
 
+The opening sequence of Part I is ordered deliberately. This chapter names the system as a stack, the next chapter explains why that stack can be efficient, the authority chapter prevents efficiency from becoming permission leakage, the failure chapter names what breaks without those boundaries, and the evidence chapter governs how any of those claims may later move.
+
 ## Problem
 
 The book needs one architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. Without that frame, every paper in the source corpus can sound like a separate invention. With it, the papers become fragments of a single machine.
@@ -117,14 +119,9 @@ The diagram is intentionally circular at the end. Self-improvement is not outsid
 
 The stack frame begins by refusing to let any one component inherit every role. VIEA supplies the intent-to-execution spine, BeastBrain supplies the local stateful stack vocabulary, Aletheia supplies the evidence and uncertainty layer, Talos supplies the labor/execution layer, MoECOT supplies an implementation-reference runtime, and SCF supplies the replacement boundary. Together they point to the same architectural rule: a capability is governed by the contracts around it, not by the model name inside it.
 
-A layer contract is the mechanism that makes that rule concrete. The artifact is a Layer Boundary Record. A chapter is mature only when it can answer five questions.
+A layer contract is the mechanism that makes that rule concrete. The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what responsibility does the layer own, what artifact does it emit, what authority does it have and lack, what invariant must survive implementation changes, and what evidence would justify promotion, replacement, or rollback.
 
-First, what responsibility does the layer own? Second, what artifact does it emit? Third, what authority does it have and what authority does it lack? Fourth, what invariant must remain true across implementation changes? Fifth, what evidence would justify promoting the layer, replacing it, or rolling it back?
-
-- Define each layer by responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim.
-- Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system.
-- Treat the whole book as a reference architecture rather than a collection of standalone papers.
-- Use source queues and evidence states to keep future writing runs context-loaded and honest.
+Those questions are the book's defense against anthology drift. Each paper can introduce a mechanism, but the mechanism enters the stack only by naming its responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim. Source queues keep future writing runs context-loaded, and evidence states keep clearer prose from turning into stronger support without the corresponding artifact.
 
 The raw LLM sits inside that contract as a powerful semantic machine. It can compress, expand, draft, classify, translate, route, critique, and propose repairs. The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action.
 

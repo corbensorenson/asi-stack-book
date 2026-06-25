@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter governs how claims move. It does not promote a claim because prose became clearer, a source note exists nearby, or a validator passed an unrelated fixture.
 
+It follows the failure chapter because the book itself has the same failure surface as the systems it describes: clearer text can hide missing evidence, a nearby citation can launder a stronger claim, and a narrow proof can be rhetorically expanded beyond its formal scope.
+
 ## Problem
 
 The living book needs a shared language for what kind of claim is being made and what currently supports it.
@@ -82,7 +84,7 @@ A support-state transition gate makes that anti-inflation rule operational.
 flowchart LR
   A["Claim drafted"] --> B["Claim label"]
   A --> C["Support state: argument"]
-  C --> D{"Exact source-note mapping?"}
+  C --> D{"Exact mapping +<br/>accepted transition?"}
   D -- "yes" --> E["source-derived"]
   C --> F{"Validated schema / proof / test artifact?"}
   F -- "Lean build" --> G["Mechanized claim label within formal scope"]
@@ -95,10 +97,7 @@ flowchart LR
   J --> K
 ```
 
-- Use Appendix C as the claim ledger.
-- Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
-- Require source notes before promoting claims to source-derived.
-- Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
+Appendix C is the public claim ledger, but the ledger is not a shortcut around review. Claim labels and support states remain separate so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed. Source notes are prerequisites for source-derived movement, not automatic promotion. Test-backed movement requires an evidence bundle with the command, environment, result, limitations, and negative or inconclusive results where they exist.
 
 The gate separates two axes. Claim labels describe what kind of assertion is being made: design rationale, hypothesis, measurement, mechanism, demonstration, mechanized invariant, or speculation. Support states describe what artifact currently backs it: argument, source-derived mapping, prototype inspection, synthetic test, empirical test, external literature, refutation, or deprecation. Mixing these axes creates evidence inflation.
 

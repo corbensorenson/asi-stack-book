@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter defines the authority vocabulary for the stack. It is not a claim that all authority checks are implemented; only the explicitly recorded schemas, fixtures, and Lean modules count as executable support.
 
+It follows the efficiency chapter because the cheapest adequate route is useful only when route selection remains separate from permission to act. Cost, quality, and authority are different ledgers.
+
 ## Problem
 
 The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.
@@ -98,9 +100,7 @@ flowchart LR
   J --> K["Evidence ledger"]
 ```
 
-- Define principals, authorities, ceilings, grants, revocations, and handoff contracts.
-- Separate knowledge access from action authority.
-- Represent missing authority as a detectable failure rather than implicit permission.
+The transition record makes principals, ceilings, grants, revocations, and handoff contracts explicit before an effect can occur. It also separates knowledge access from action authority. A layer may know that an operation would be helpful, or may read text that requests the operation, without receiving the grant to execute it. Missing authority therefore becomes a detectable denial or escalation record rather than implicit permission.
 
 The record has four jobs. First, it says who or what is asking. Second, it names the operation and target boundary. Third, it checks the operation against the active ceiling and grant set. Fourth, it records the denial, authorized handoff, or effect receipt. A missing grant is not a soft warning; it is a failed transition.
 
