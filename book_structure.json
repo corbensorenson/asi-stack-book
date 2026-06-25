@@ -3905,12 +3905,35 @@
             {
               "source_id": "spinoza",
               "mapped_support": "Supports tiered proof/citation/procedure-carrying claims, proposer/verifier separation, verifier timeout handling, downgrade paths, and the non-assumption that open-domain translation to formal logic is solved.",
-              "limits": "Does not prove semantic equivalence between prose and formal targets, theorem validity for arbitrary claims, or open-domain autoformalization."
+              "limits": "Does not prove semantic equivalence between prose and formal targets, theorem validity for arbitrary claims, or open-domain autoformalization.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:263-284",
+                "sources/raw/google_docs/spinoza.txt:327-389",
+                "sources/raw/google_docs/spinoza.txt:694-718",
+                "sources/raw/google_docs/spinoza.txt:757-765",
+                "sources/raw/google_docs/spinoza.txt:1013-1023"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the explicit System 1 proposer/System 2 verifier separation, bounded formal scope, non-assumption of general natural-language-to-logic formalization, proof-carrying graph, tier-labeled outward claims, proposition nodes with provenance/tier/dependencies/validity/audit, justification artifacts, System 1 non-authority over tier labels, formalization ambiguity/failure records, proof/refute/unknown verifier outcomes, certified/supported/speculative object-level tiers, citation-backed interpretation mappings, and reproducible procedure logs; no semantic equivalence guarantee, arbitrary theorem validity, or open-domain autoformalization result is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports obligation-carrying artifacts through tests, property checks, proofs, provenance, resource budgets, determinism claims, capability policies, replay logs, semantic patches, and small trusted-core discipline.",
-              "limits": "No local GenesisCode implementation, replay checker, proof artifact, benchmark, or security audit has been imported or reproduced."
+              "limits": "No local GenesisCode implementation, replay checker, proof artifact, benchmark, or security audit has been imported or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-25",
+                "sources/raw/google_docs/genesiscode.txt:32-40",
+                "sources/raw/google_docs/genesiscode.txt:45-59",
+                "sources/raw/google_docs/genesiscode.txt:215-243",
+                "sources/raw/google_docs/genesiscode.txt:250-262",
+                "sources/raw/google_docs/genesiscode.txt:290-314",
+                "sources/raw/google_docs/genesiscode.txt:354-361",
+                "sources/raw/google_docs/genesiscode.txt:398-406",
+                "sources/raw/google_docs/genesiscode.txt:1133-1136"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the verification-and-provenance envelope, AI output untrusted by default, small trusted computing base, capability boundaries, deterministic effect logs and replay semantics, obligation engine with tests/property checks/proofs/resource budgets/determinism/capability policies/equivalence checks, evidence artifacts by hash, registry rejection when obligations are unsatisfied, semantic patch validation, SMT/interactive proof obligations, translation validation evidence, package acceptance only after obligations pass, AI provenance attachment, and no-proof-without-spec discipline; no local implementation, replay checker, proof artifact, benchmark, or security audit is promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -3920,12 +3943,28 @@
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Supports requiring stronger verification artifacts for high-risk claims because context capacity and generation capacity do not imply adequate joint verification.",
-              "limits": "The proposed contradiction-rate and verification-workspace tests have not been run or mechanized here."
+              "limits": "The proposed contradiction-rate and verification-workspace tests have not been run or mechanized here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:6-13",
+                "sources/raw/google_docs/verification_bandwidth.txt:30-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:68-83",
+                "sources/raw/google_docs/verification_bandwidth.txt:92-93"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the distinction between generation and global verification, verification as simultaneous attention over semantic units, the Effective Verification Workspace/Two-Body Limit, lossy-compression error when units exceed the verification workspace, quadratic pairwise verification cost, fidelity/scale tradeoff for trees and DAGs, the proposed Constraint Satisfaction Test with explicit grinding step and Logical Contradiction Rate metric, and the conclusion that context is a rigorous constraint-verification scope rather than storage; no contradiction-rate experiment, workspace measurement, mechanized theorem, or adequacy benchmark is promoted."
             },
             {
               "source_id": "treellm",
               "mapped_support": "Supports explicit semantic representation and graph/path traces as potential interpretation-mapping substrate for claim justification.",
-              "limits": "No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists in this repository."
+              "limits": "No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/treellm.txt:7-13",
+                "sources/raw/google_docs/treellm.txt:25-55",
+                "sources/raw/google_docs/treellm.txt:97-110",
+                "sources/raw/google_docs/treellm.txt:184-210"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the explicit traversable probabilistic DAG proposal, concept/question/relation nodes, weighted edges, multi-entry roots, convergent paths, fixed semantic-token path IDs and residual vectors, self-tokenizing bootstrap loop, exact-question-path trace framing, editable external DAG, multi-path traversal, cryptographically signed append-only DAG/log proposal, path assignment, and disambiguation-child handling; no TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, verified token format, perfect grounding, or model-size/performance claim is promoted."
             }
           ],
           "mechanism": [

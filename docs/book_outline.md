@@ -1473,6 +1473,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A tiered proof-carrying claim schema with one non-philosophical invariant example.
+- Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, and TreeLLM; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape only.
 - Planned Codex test: Proof artifact presence test.
 - Planned Codex test: Tier assignment test.

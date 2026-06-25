@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until verifier, tier-assignment, or formalization-mismatch tests exist."
+  - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
   - "Only protocol schema/fixture validation is implemented; no proof verifier or formalization-mismatch tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
-| Source loading state | source notes: `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`; raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`; connector/recovery: `coherence_exchange` |
+| Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`; connector/source-note mapped: `coherence_exchange` |
 | Test state | Proof-carrying claim fixture validation implemented; `AsiStackProofs.ProofCarryingClaims` implements finite artifact-reference and failed-verifier promotion gates; verifier and formalization behavior tests remain planned. |
 
 ## Drafting guardrail
@@ -61,23 +61,23 @@ GenesisCode contributes the obligation-envelope view: accepted artifacts should 
 
 [spinoza-verification-and-proof-carrying-claims.core, label: Design rationale, support: argument] Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers.
 
-The claim remains at `argument` support. Spinoza supplies tiered proof/citation/procedure-carrying claim discipline and downgrade paths. GenesisCode supplies obligation artifacts and provenance pressure. Verification Bandwidth explains why high-risk claims may need stronger checks than more context. TreeLLM supplies representation pressure. Coherence Exchange remains speculative synthesis rather than verifier evidence.
+The claim remains at `argument` support. Spinoza supplies the central discipline: vectors propose, symbolic or structured verifiers decide, formal scope is explicit, outward claims carry tiers, and unknown or failed verification cannot be narrated as success. GenesisCode supplies the broader evidence-envelope pattern for software artifacts: obligations, evidence hashes, replay logs, semantic patches, provenance, and small trusted-core boundaries. Verification Bandwidth explains why more context or more fluent generation is not enough when the verification workspace cannot jointly compare the relevant semantic units. TreeLLM supplies a possible semantic representation substrate through traversable graph paths and token traces. Coherence Exchange remains connector/source-note mapped speculative synthesis rather than verifier evidence.
 
 ### Claim-source mapping status
 
-Appendix C now maps this proof-carrying-claim assertion to all assigned source notes. The mappings support explicit tiers, justification artifacts, interpretation mappings, downgrade paths, and verification supply-chain pressure, not open-domain autoformalization or a completed verifier.
+Appendix C now maps this proof-carrying-claim assertion to all assigned source notes, and four local raw-cache mappings now carry passage-reviewed references. The mappings support explicit tiers, justification artifacts, interpretation mappings, downgrade paths, and verification supply-chain pressure, not open-domain autoformalization or a completed verifier.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `spinoza` | Tiered proof/citation/procedure-carrying claims, proposer/verifier separation, verifier timeout handling, downgrade paths, and the non-assumption that open-domain translation to formal logic is solved. | Does not prove semantic equivalence between prose and formal targets, theorem validity for arbitrary claims, or open-domain autoformalization. |
-| `genesiscode` | Obligation-carrying artifacts with tests, property checks, proofs, provenance, budgets, determinism claims, capability policies, replay logs, semantic patches, and small trusted-core discipline. | No local GenesisCode implementation, replay checker, proof artifact, benchmark, or security audit has been imported or reproduced. |
-| `coherence_exchange` | Verification supply chain connecting PlanForge, Spinoza, tribunals, audit, and structured epistemic units. | Speculative synthesis only; it does not implement or externally validate the verification supply chain. |
-| `verification_bandwidth` | Stronger verification artifacts for high-risk claims because context capacity and generation capacity do not imply adequate joint verification. | The proposed contradiction-rate and verification-workspace tests have not been run or mechanized here. |
-| `treellm` | Explicit semantic representation and graph/path traces as potential interpretation-mapping substrate for claim justification. | No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here. |
+| `spinoza` | Passage-reviewed: bounded formal scope, proposer/verifier separation, proof-carrying graph, tier-labeled outward claims, proposition nodes with provenance/tier/dependencies/validity/audit, justification artifacts, System 1 non-authority over tier labels, ambiguity/failure records, proof/refute/unknown outcomes, certified/supported/speculative object-level tiers, citation-backed interpretation mappings, and reproducible procedure logs. | Does not prove semantic equivalence between prose and formal targets, theorem validity for arbitrary claims, or open-domain autoformalization. |
+| `genesiscode` | Passage-reviewed: verification-and-provenance envelope, AI output untrusted by default, small trusted computing base, capability boundaries, deterministic effect logs and replay, obligation engine, evidence artifacts by hash, semantic patch validation, proof/refinement obligations, translation-validation evidence, package acceptance gates, and AI provenance attachment. | No local GenesisCode implementation, replay checker, proof artifact, benchmark, or security audit has been imported or reproduced. |
+| `coherence_exchange` | Connector/source-note mapped: verification supply chain connecting PlanForge, Spinoza, tribunals, audit, and structured epistemic units. | Speculative synthesis only; it does not implement or externally validate the verification supply chain. |
+| `verification_bandwidth` | Passage-reviewed: generation/verification distinction, verification as simultaneous comparison of semantic units, Effective Verification Workspace, Two-Body Limit, compression-loss error, quadratic pairwise verification cost, fidelity/scale tradeoff for trees and DAGs, proposed Constraint Satisfaction Test, grinding step, and Logical Contradiction Rate metric. | The proposed contradiction-rate and verification-workspace tests have not been run or mechanized here. |
+| `treellm` | Passage-reviewed: explicit traversable probabilistic DAG, concept/question/relation nodes, weighted edges, multi-entry roots, convergent paths, fixed semantic-token path IDs and residual vectors, self-tokenizing bootstrap loop, exact-question-path trace framing, editable external DAG, multi-path traversal, and signed append-only DAG/log proposal. | No local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, verified token format, perfect-grounding result, or model-size/performance claim exists here. |
 
 ## Mechanism
 
-Once the ledger has a claim and a requested support tier, Spinoza supplies the verification envelope. It separates neural proposal from verifier judgment, requires proof-, citation-, or procedure-carrying artifacts for stronger tiers, and treats timeout, failed verification, or formalization mismatch as downgrade or escalation signals. GenesisCode contributes obligation artifacts, provenance, semantic patches, replay logs, and small-trusted-core pressure. Verification Bandwidth explains why high-risk claims may need stronger checks than more context. TreeLLM supplies a possible semantic-graph route for interpretation mappings, while Coherence Exchange supplies speculative verification-supply-chain framing.
+Once the ledger has a claim and a requested support tier, Spinoza supplies the verification envelope. It separates neural proposal from verifier judgment, requires proof-, citation-, or procedure-carrying artifacts for stronger tiers, and treats timeout, failed verification, or formalization mismatch as downgrade or escalation signals. GenesisCode generalizes the same move for executable artifacts: AI proposes, but acceptance depends on obligations, evidence artifacts, replay, provenance, and explicit trust boundaries. Verification Bandwidth supplies the resource argument for this separation: generation can continue linearly while rigorous verification requires joint comparison inside a bounded workspace. TreeLLM supplies a possible semantic-graph route for interpretation mappings and traceable representation, while Coherence Exchange supplies connector/source-note verification-supply-chain framing.
 
 A Proof-Carrying Claim is the claim-ledger envelope that records the required tier, interpretation mapping, justification artifact, verifier result, limitations, downgrade rule, and residual route.
 
@@ -175,16 +175,16 @@ These Lean hooks are implemented as finite-record predicates over formal-tier cl
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | passage-reviewed local raw cache |
+| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | passage-reviewed local raw cache |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | passage-reviewed local raw cache |
+| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | passage-reviewed local raw cache |
 
-The crosswalk identifies sources for proof-carrying and justification-carrying claim discipline. It does not claim that Spinoza verification, GenesisCode obligations, or TreeLLM representations are implemented here.
+The crosswalk identifies sources for proof-carrying and justification-carrying claim discipline. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. It does not claim that Spinoza verification, GenesisCode obligations, or TreeLLM representations are implemented here.
 
 ## Summary
 
-Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures.
+Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures. The reviewed sources justify the envelope pattern; they do not show an implemented verifier, semantic-equivalence checker, or open-domain formalizer in this repo.
 
 The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it. The next chapter handles the cases where one verifier or one artifact is not enough and the claim needs adversarial, role-separated review.
