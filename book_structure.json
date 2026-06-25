@@ -2943,12 +2943,29 @@
             {
               "source_id": "planforge",
               "mapped_support": "Supports DAG-style planning through recursive decomposition, primitive action schemas, plan optimization, pre/postcondition annotation, dependency inference, scheduling, minimum viable intelligence tier annotation, execution handoff, fallback, and failure-driven replanning.",
-              "limits": "Conceptual design only here; no scheduler implementation, reproduced benchmark, route trace, or cost-quality result is present."
+              "limits": "Conceptual design only here; no scheduler implementation, reproduced benchmark, route trace, or cost-quality result is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-33",
+                "sources/raw/google_docs/planforge.txt:39-46",
+                "sources/raw/google_docs/planforge.txt:52-79",
+                "sources/raw/google_docs/planforge.txt:85-130",
+                "sources/raw/google_docs/planforge.txt:136-140",
+                "sources/raw/google_docs/planforge.txt:245-291",
+                "sources/raw/google_docs/planforge.txt:295-313",
+                "sources/raw/google_docs/planforge.txt:350-362"
+              ],
+              "passage_review_note": "Reviewed local raw cache for DAG-style planning, recursive decomposition, primitive schemas, deduplication, pre/postcondition annotation, dependency inference, tier annotation, scheduling, fallback escalation, execution handoff, critical-path/slack scheduling, source-reported synthetic benchmark scenarios, watchdog validation, and MVI calibration limits; no scheduler implementation, reproduced benchmark, route trace, or cost-quality result is promoted."
             },
             {
               "source_id": "planforge_compiler_arch",
               "mapped_support": "Sharpens the planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, parallel independent nodes, and critical-path scheduling.",
-              "limits": "Market and cost comparisons are motivating estimates only; this repository has not reproduced cost, time, or quality numbers."
+              "limits": "Market and cost comparisons are motivating estimates only; this repository has not reproduced cost, time, or quality numbers.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge_compiler_arch.txt:1"
+              ],
+              "passage_review_note": "Reviewed local raw cache export, which is a compact one-line document, for the orchestration-gap framing, planner-as-compiler paradigm, typed primitives, dependency-aware optimized DAG, MVI routing, critical-path scheduling, execution handoff, watchdog validation/escalation, and source-reported synthetic cost/latency comparisons; market and cost comparisons remain motivating estimates, not reproduced local evidence."
             },
             {
               "source_id": "coherence_exchange",
@@ -2958,12 +2975,33 @@
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports DAG compilation, dependency analysis, scheduling, critical-path/slack exposure, localized recompilation, validator-backed artifacts, repair locality, and routing subtasks to different capability tiers.",
-              "limits": "Architecture and evaluation-plan source only; no local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits."
+              "limits": "Architecture and evaluation-plan source only; no local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:4-27",
+                "sources/raw/google_docs/cognitive_compilation.txt:31-58",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-145",
+                "sources/raw/google_docs/cognitive_compilation.txt:244-259",
+                "sources/raw/google_docs/cognitive_compilation.txt:304-327",
+                "sources/raw/google_docs/cognitive_compilation.txt:597-620",
+                "sources/raw/google_docs/cognitive_compilation.txt:780-802",
+                "sources/raw/google_docs/cognitive_compilation.txt:991-1017"
+              ],
+              "passage_review_note": "Reviewed local raw cache for semantic DAG compilation, dependency analysis, capability/cost annotations, critical-path and slack scheduling, MVC/capability routing, localized recompilation and repair, validator-backed artifacts, evaluation metrics, ablations, cycle rejection, and backpressure/resource budgets; no compiler, DAG benchmark, route-selection trace, or empirical ablation is promoted."
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports treating budgets as governed capacity involving load variance, latency, burst limits, token-normalized cognitive friction, review capacity, and quality constraints rather than token counts alone.",
-              "limits": "Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists in this repository."
+              "limits": "Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:814-834",
+                "sources/raw/google_docs/tokenmana.txt:950-1049",
+                "sources/raw/google_docs/tokenmana.txt:1072-1098",
+                "sources/raw/google_docs/tokenmana.txt:1150-1228",
+                "sources/raw/google_docs/tokenmana.txt:1230-1246"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance, convex infrastructure cost, pricing feedback, implementation parameters, load-stability limitations, temporal elasticity, token-normalized cognitive friction, opt-in empirical strategy, and privacy/scope constraints; no simulation, formal reproduction, usage data, productivity result, welfare result, or scheduler-budget result is promoted."
             },
             {
               "source_id": "moecot",

@@ -1085,6 +1085,7 @@ Draft deliverables:
 - A DAG schema with node-level capability and verification annotations.
 - Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
 - Implemented Lean proof target: a dispatchable finite indexed plan-graph record carries an acyclicity certificate and ordered member dependency edges.
+- Exact Appendix C claim-source mappings for the PlanForge DAG claim across PlanForge DAG/MVI scheduling, PlanForge compiler-architecture framing, Coherence Exchange speculative intelligence-arbitrage framing, Cognitive Compilation semantic-DAG routing/repair, TokenMana resource-governance pressure, and MoECOT runtime-reference context; the four local mappings (`planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`) now have reviewed passage references. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. Support remains `argument` pending deployed scheduler runs, route traces, tier-adequacy tests, cost-quality results, or accepted evidence transitions.
 - Planned Codex test: Capability tier assignment test.
 - Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
 - Planned Codex test: deployed scheduler cycle rejection.

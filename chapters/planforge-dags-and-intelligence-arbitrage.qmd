@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until scheduler, tier-adequacy, cost-quality, or route-trace evidence exists."
+  - "Four local raw-cache mappings are passage-reviewed; `coherence_exchange` and `moecot` remain connector/source-note mapped, and support remains argument until scheduler, tier-adequacy, cost-quality, or route-trace evidence exists."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "Lean coverage is limited to finite indexed plan-graph and node-outcome predicates; deployed scheduler, tier-adequacy, and cost-quality proofs remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `planforge_compiler_arch`; supporting: `coherence_exchange`, `cognitive_compilation`, `tokenmana`; connector/recovery: `moecot` |
-| Source loading state | source notes: `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot`; raw cache: `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`; connector/recovery: `coherence_exchange`, `moecot` |
+| Source loading state | source notes: `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot`; passage-reviewed local raw cache: `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`; connector/source-note only: `coherence_exchange`, `moecot` |
 | Test state | Protocol fixture validation and `AsiStackProofs.PlanForge` finite-record proofs are implemented; scheduler and behavioral execution tests remain planned. |
 
 ## Drafting guardrail
@@ -67,22 +67,24 @@ The claim remains at `argument` support. PlanForge and its compiler-architecture
 
 ### Claim-source mapping status
 
-Appendix C now maps this PlanForge DAG claim to all assigned source notes. The mappings support DAG decomposition, tier annotation, budget pressure, and verification burden as an architecture, not measured cost savings, tier adequacy, deployed scheduler behavior, or implemented epistemic economics.
+Appendix C maps this PlanForge DAG claim to all assigned source notes. Four local raw-cache mappings are now passage-reviewed. The mappings support DAG decomposition, tier annotation, budget pressure, and verification burden as an architecture, not measured cost savings, tier adequacy, deployed scheduler behavior, or implemented epistemic economics. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, or external corroboration are imported or inspected.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `planforge` | Recursive decomposition, primitive action schemas, optimization, pre/postconditions, dependency inference, scheduling, MVI tier annotation, execution handoff, fallback, and failure-driven replanning. | No scheduler implementation, route trace, reproduced benchmark, or cost-quality result is present. |
-| `planforge_compiler_arch` | Planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, independent-node parallelism, and critical-path scheduling. | Market and cost comparisons are motivating estimates only; cost, time, and quality numbers are not reproduced here. |
-| `coherence_exchange` | Intelligence-arbitrage and coherence/liquidity framing connecting orchestration to verification supply chains, reviewable knowledge units, accounting mechanisms, and governance-visible knowledge movement. | Speculative connector context only; economic and institutional claims are not implemented or externally corroborated here. |
-| `cognitive_compilation` | DAG compilation, dependency analysis, scheduling, critical path and slack exposure, localized recompilation, validator-backed artifacts, repair locality, and capability-tier routing. | No local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits. |
-| `tokenmana` | Budgets include governed capacity, load variance, latency, burst limits, review capacity, token-normalized cognitive friction, and quality constraints. | Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists here. |
-| `moecot` | Runtime-reference context for routed specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff. | Source-reported runtime and benchmark artifacts have not been imported, inspected, or reproduced; this is not scheduler evidence. |
+| `planforge` | Passage-reviewed: recursive decomposition, primitive action schemas, optimization, pre/postconditions, dependency inference, scheduling, MVI tier annotation, execution handoff, fallback, source-reported synthetic scenarios, watchdog checks, and failure-driven replanning. | No scheduler implementation, route trace, reproduced benchmark, or cost-quality result is present. |
+| `planforge_compiler_arch` | Passage-reviewed: planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, independent-node parallelism, critical-path scheduling, and source-reported estimates. | Market and cost comparisons are motivating estimates only; cost, time, and quality numbers are not reproduced here. |
+| `coherence_exchange` | Connector/source-note mapped: intelligence-arbitrage and coherence/liquidity framing connecting orchestration to verification supply chains, reviewable knowledge units, accounting mechanisms, and governance-visible knowledge movement. | Speculative connector context only; economic and institutional claims are not implemented or externally corroborated here. |
+| `cognitive_compilation` | Passage-reviewed: DAG compilation, dependency analysis, scheduling, critical path and slack exposure, localized recompilation, validator-backed artifacts, repair locality, capability-tier routing, cycle rejection, and backpressure/resource budgets. | No local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits. |
+| `tokenmana` | Passage-reviewed: budgets include governed capacity, load variance, latency, bounded burst controls, token-normalized cognitive friction, study design, privacy constraints, and quality/human-friction limits. | Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists here. |
+| `moecot` | Connector/source-note mapped: runtime-reference context for routed specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff. | Source-reported runtime and benchmark artifacts have not been imported, inspected, or reproduced; this is not scheduler evidence. |
 
 ## Mechanism
 
 PlanForge specializes the plan graph into a schedulable DAG. The PlanForge sources supply recursive decomposition, primitive typing, dependency inference, critical-path scheduling, MVI tier annotation, fallback, and failure-driven replanning. Cognitive Compilation connects the DAG to IR and localized repair; TokenMana keeps budgets broader than tokens; Coherence Exchange contributes speculative intelligence-arbitrage vocabulary; MoECOT remains runtime-reference context for routed lanes, ledgers, readiness gates, and replay.
 
 A PlanForge DAG is the cost-quality control surface: every node has to name its capability tier, context request, budget, quality predicate, verification burden, route, escalation path, and residual.
+
+The reviewed passages justify the architecture vocabulary without proving the scheduler. PlanForge supplies the DAG, MVI, scheduling, fallback, and watchdog terms; the compiler-architecture variant sharpens the compiler/orchestration frame but stores source-reported estimates in a compact raw export; Cognitive Compilation adds semantic-DAG scheduling, validator, capability-routing, and localized-repair mechanics; TokenMana keeps the budget surface from collapsing into token counts by adding load, latency, burst, friction, and privacy constraints. None of those passages show this repository selecting tiers, running a scheduler, reproducing source-reported savings, or measuring quality retention.
 
 ```{mermaid}
 flowchart LR
@@ -182,14 +184,14 @@ These proof targets are implemented only over finite Lean plan-graph and node-ou
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache available |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | source note available; local raw cache available |
+| `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache passage-reviewed |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | source note available; local raw cache passage-reviewed |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache available |
-| `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache available |
+| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
+| `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache passage-reviewed |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for DAG orchestration, intelligence arbitrage, and resource governance. Numerical savings and quality claims remain unpromoted until this repo records reproducible scheduler runs.
+The crosswalk identifies sources for DAG orchestration, intelligence arbitrage, and resource governance. Four mappings have passage review, but the core claim stays at `argument` because connector mappings remain unreviewed and numerical savings, tier adequacy, scheduler behavior, quality retention, and welfare claims remain unpromoted until this repo records reproducible scheduler runs, route traces, simulations, or accepted evidence transitions.
 
 ## Summary
 
