@@ -157,6 +157,7 @@ def write_audio_checklist(
         "## Packaging Checks",
         "",
         "- [ ] Replace generated narration notes for tables, diagrams, images, code, and schemas with reviewed spoken text or companion-note references.",
+        "- [ ] Treat each audio format as `target_not_generated` until the exact audio artifact is produced and checked.",
         "- [ ] Fill chapter markers with final timecodes after audio generation.",
         "- [ ] Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
         "- [ ] Verify an audio-embedded EPUB actually contains the reviewed audio files before naming it in a release record.",
@@ -210,7 +211,12 @@ def generate(output_dir: Path) -> dict[str, object]:
             "chapter_markers": chapter_markers,
             "audio_review_checklist": review_checklist,
             "audio_artifact_formats": audio_policy.get("audio_artifact_formats", []),
+            "target_artifact_status": {
+                str(fmt): "target_not_generated"
+                for fmt in audio_policy.get("audio_artifact_formats", [])
+            },
             "audio_in_epub_rule": audio_policy.get("audio_in_epub_rule", ""),
+            "reader_review_dependency": "Audio release work begins only after the reader manuscript for the same major version is reviewed.",
             "review_requirements": audio_policy.get("review_requirements", []),
             "spoken_treatment_rules": audio_policy.get("spoken_treatment_rules", []),
             "review_status": "review_required",

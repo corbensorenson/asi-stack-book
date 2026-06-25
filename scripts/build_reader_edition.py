@@ -257,6 +257,15 @@ def write_reader_checklist(
 
     lines.extend([
         "",
+        "## Artifact Status Discipline",
+        "",
+        "- [ ] Treat every listed format as `target_not_rendered` until its specific render command succeeds.",
+        "- [ ] Record EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown, or plain-text artifacts only in an edition release record that names the actual path or URI.",
+        "- [ ] Keep audio and audio-embedded EPUB work out of the reader release unless a separate audio release record covers it.",
+    ])
+
+    lines.extend([
+        "",
         "## Non-Claims",
         "",
         "- This checklist does not claim EPUB, PDF, DOCX, AZW3, MOBI, or audio artifacts exist.",
@@ -279,6 +288,14 @@ def write_reader_manifest(
         "source_profile": profile.get("id", "reader_release"),
         "output_dir": summary["output_dir"],
         "formats": summary["formats"],
+        "target_artifact_status": {
+            str(fmt): "target_not_rendered"
+            for fmt in summary["formats"]
+        },
+        "downstream_artifact_status": {
+            str(fmt): "target_not_generated"
+            for fmt in reader_policy.get("optional_downstream_formats", [])
+        },
         "chapters": summary["chapters"],
         "files": summary["files"],
         "content_layer_policy": profile.get("content_layer_policy", {}),
@@ -289,10 +306,12 @@ def write_reader_manifest(
         "ebook_quality_checks": reader_policy.get("ebook_quality_checks", []),
         "optional_downstream_formats": reader_policy.get("optional_downstream_formats", []),
         "review_status": "review_required",
+        "audio_dependency": "Run scripts/build_audio_script.py only after this reader manuscript is reviewed for human continuity.",
         "non_claims": [
             "This generated source tree is not the canonical living book.",
             "Listed formats are targets, not rendered artifacts.",
-            "EPUB, PDF, DOCX, and HTML outputs must not be claimed until Quarto renders them and a release record says so.",
+            "EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown, and plain-text outputs must not be claimed until the exact render or conversion succeeds and a release record says so.",
+            "Audio and audio-embedded EPUB artifacts require a separate reviewed audio release path.",
             "A reader-edition draft still requires continuity, typography, figure, and appendix review before publication."
         ]
     }

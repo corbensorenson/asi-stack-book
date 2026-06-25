@@ -23,6 +23,18 @@ The project serves all three audiences by separating layers inside one canonical
 
 This means the live book can remain useful to AIs and researchers without making the human-reader editions carry every matrix, guardrail, or proof hook. Meaning-critical uncertainty still belongs in ordinary chapter prose so the reader release does not overstate claims after live-only scaffolding is removed.
 
+## Major-Version Artifact Ladder
+
+Each major version should move through a single derivation ladder:
+
+1. The tagged live book remains the canonical artifact for AIs and human researchers.
+2. The reader source is generated from that tag and strips repeated live-workflow scaffolding.
+3. EPUB, PDF, DOCX, and reader HTML are rendered from the reviewed reader source and recorded one format at a time.
+4. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB.
+5. Audio starts only after reader review. MP3, M4B, and audio-embedded EPUB releases need a reviewed narration script, generated audio, spot checks, metadata, and an edition release record.
+
+A listed format is a target, not proof that an artifact exists. The release record has to name the actual render, conversion, or audio package.
+
 ## Edition Profiles
 
 The tracked profile source is `editions/release_profiles.json`.
@@ -75,6 +87,8 @@ python3 scripts/render_reader_formats.py --formats html epub docx
 That helper writes `reader_render_report.json` in the generated reader workspace. The report records local render outcomes only; it is not a major-version release record.
 
 The reader-facing spine is the ordinary chapter prose outside the stripped headings. Any uncertainty that changes the meaning of a claim belongs in that spine, not only in a guardrail, source crosswalk, proof hook, or test-plan section that a reader edition removes.
+
+Images and diagrams stay in the reader path when they carry meaning. For audio, they need a concise spoken walkthrough or a companion-note route before an audiobook or audio-embedded EPUB is claimed.
 
 ## Audio Release Boundary
 

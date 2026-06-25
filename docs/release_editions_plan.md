@@ -27,6 +27,18 @@ The live book serves all three audiences by separating content layers instead of
 
 Every chapter should keep meaning-critical caveats in the reader-facing spine. Live-only sections can expand the evidence trail, but they should not be the only place where a reader learns that a claim is speculative, blocked, or untested.
 
+## Major-Version Artifact Ladder
+
+Use this ladder for every major release:
+
+1. The tagged live book remains canonical for AI agents and researchers.
+2. A reader source tree is generated from that tag after stripping live-only scaffolding.
+3. EPUB, PDF, DOCX, and reader HTML are rendered from the reviewed reader source, and each successful render is recorded separately.
+4. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not new sources.
+5. Audio starts only after the reader manuscript is reviewed. MP3, M4B, and audio-embedded EPUB artifacts are separate products that require a reviewed script, generated audio, spot checks, metadata, and a release record.
+
+The practical rule is simple: the live book is for AI agents and researchers, the reader release is for humans who want the book without workflow scaffolding, and the audio release is for listening. Each one is derived from the previous public-safe state and must say exactly which artifacts exist.
+
 ## Tracked Source Files
 
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
@@ -84,6 +96,8 @@ python3 scripts/render_reader_formats.py --formats html epub docx pdf
 This writes `build/reader_edition/reader_render_report.json`. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.
 
 Optional downstream formats such as Markdown, plain text, MOBI, or AZW3 can be produced from the reviewed reader source or reviewed EPUB with external tools. They should be listed in a release record only after generation and spot-checking.
+
+Images and diagrams remain part of the reader path when they carry meaning. For audio, they need either a concise spoken walkthrough or a companion-note route before an audiobook or audio-embedded EPUB is claimed.
 
 ## Reader Strip Rules
 

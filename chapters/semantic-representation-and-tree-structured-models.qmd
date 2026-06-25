@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -77,7 +77,9 @@ Appendix C now maps this semantic-representation claim to all assigned source no
 
 ## Mechanism
 
-The mechanism is a Semantic Node Record that can be embedded in semantic pages, claim graphs, or compiler IR without pretending the node is final truth.
+Semantic representation is compression with meaning in the loop. TreeLLM proposes explicit traversable semantic graphs and path-derived tokens; Spinoza supplies proof/citation/belief-state discipline; Verification Bandwidth warns that compressed semantic units can lose constraints needed for joint checking; Cognitive Compilation supplies typed semantic IR; CGS and the cyclic representation sources keep representation-substrate claims optional until utility is shown.
+
+A Semantic Node Record can be embedded in semantic pages, claim graphs, or compiler IR without pretending the node is final truth. It records provenance, hierarchy, relation references, grounding state, permitted uses, versioning, residual uncertainty, and evaluation references so that semantic structure remains inspectable rather than authoritative by default.
 
 ```{mermaid}
 flowchart LR
@@ -190,4 +192,4 @@ The crosswalk prevents semantic representation from becoming a free-floating ont
 
 Semantic structure is useful when it makes concepts, paths, provenance, versions, and uncertainty easier to inspect. It is harmful when it becomes an ontology-shaped authority claim without grounding or tests.
 
-Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated.
+Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated. The next chapter asks how much any of these representation choices should cost, and when the stack must spend more to verify rather than less to answer.

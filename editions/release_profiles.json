@@ -74,7 +74,8 @@
       "Generated manuscripts and media builds belong under build/ or another ignored release workspace unless a specific public artifact is intentionally attached elsewhere.",
       "The live book remains the source of truth after a reader or audio release is produced.",
       "Audio embedded in EPUB is a produced artifact only after the exact audio files are embedded, checked, and named in an edition release record.",
-      "E-reader convenience formats such as AZW3 or MOBI should be converted only from a reviewed EPUB and recorded as downstream artifacts, not treated as source formats."
+      "E-reader convenience formats such as AZW3 or MOBI should be converted only from a reviewed EPUB and recorded as downstream artifacts, not treated as source formats.",
+      "Reader releases are for relaxed human reading; audio releases are separate listening artifacts derived from a reviewed reader script, not from the live research scaffold."
     ]
   },
   "reader_manuscript_policy": {
@@ -103,6 +104,7 @@
       "PDF render is attempted only when local PDF dependencies are available and is checked for page breaks, figure sizing, and table overflow.",
       "DOCX opens with headings, figures, tables, and bibliography in usable form.",
       "Reader HTML is spot-checked for stripped live-only scaffolding, navigation, and image paths.",
+      "Images and diagrams remain readable in the reader artifact or have a clear companion-note route for audio.",
       "Any optional AZW3, MOBI, Markdown, or plain-text derivative is generated from the reviewed reader source or reviewed EPUB and listed separately in the release record."
     ],
     "optional_downstream_formats": [
@@ -133,7 +135,8 @@
       "Generate or write a narration script from the reviewed reader edition.",
       "Convert tables, schemas, code, and diagrams into spoken summaries or companion-note references.",
       "Maintain a pronunciation glossary for ASI Stack terms, source IDs, and invented architecture labels.",
-      "Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced."
+      "Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
+      "Confirm an audio-embedded EPUB actually contains the reviewed audio files before listing it as produced."
     ],
     "spoken_treatment_rules": [
       "Do not read dense source matrices, schemas, or proof tables verbatim unless the reader edition intentionally keeps them.",

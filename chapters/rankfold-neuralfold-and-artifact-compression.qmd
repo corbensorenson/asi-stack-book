@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -73,7 +73,9 @@ Appendix C now maps this artifact-compression claim to all assigned source notes
 
 ## Mechanism
 
-The mechanism is a Compressed Artifact Record with explicit reconstruction, residual, probe, fallback, and utility fields.
+Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The stack should not ask whether a compressed artifact is impressive; it should ask whether this task can use it without losing the constraints that matter.
+
+A Compressed Artifact Record therefore carries reconstruction, residual, probe, fallback, and utility fields. The probe is the routing boundary: if the compressed form cannot answer the task's needs, the route falls back to the full artifact.
 
 ```{mermaid}
 flowchart LR
@@ -180,4 +182,4 @@ The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold`
 
 Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.
 
-RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks.
+RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The next chapter turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.

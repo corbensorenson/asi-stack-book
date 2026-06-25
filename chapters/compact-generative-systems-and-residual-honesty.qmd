@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -75,7 +75,9 @@ Appendix C now maps this compact-generative claim to all assigned source notes. 
 
 ## Mechanism
 
-The mechanism is a Compact Generative Record that names what is compact, what is generated, how it is verified, what residuals remain, and who is allowed to use or promote it.
+Compression begins before bytes. The ASI Stack first asks whether a smaller structure can generate, govern, predict, or coordinate a larger target without hiding the burden it fails to carry. CGS supplies the seed/rule/memory/residual/governance tuple, RGS and RMI supply ratchet pressure, BugBrain and Simulation Scaling keep local resource limits visible, and Project Theseus keeps the evidence-before-growth discipline attached to implementation work.
+
+A Compact Generative Record names what is compact, what is generated, how it is verified, what residuals remain, and who is allowed to use or promote it. It treats compactness as a claim with costs, not as an aesthetic preference.
 
 ```{mermaid}
 flowchart LR
@@ -190,4 +192,4 @@ The crosswalk gives this chapter a compactness lineage: `cgs` supplies the seed/
 
 Compact systems are useful when they generate more value than their hidden burdens cost. The stack should therefore account for seed, rule system, memory, generation, verification, residuals, governance, fallback, and evidence together.
 
-Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task.
+Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The next chapter applies the same rule to compression that claims reconstruction: generation is allowed to be clever only when verification and repair pay the exact remainder.
