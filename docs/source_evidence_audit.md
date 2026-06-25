@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 290 |
+| Passage-reviewed mappings recorded | 295 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -75,7 +75,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
-| `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
@@ -503,11 +503,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `proof_carrying_circular_computation` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `ext_mamba_2023` | mapped | note present | chapter listed | passage-reviewed |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_calculus_core` | mapped | note present | chapter listed | not passage-reviewed |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_ai_contract_suite` | mapped | note present | chapter listed | not passage-reviewed |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `rope_position_certifier` | mapped | note present | chapter listed | not passage-reviewed |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `proof_carrying_circular_computation` | mapped | note present | chapter listed | not passage-reviewed |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_ai_architectures` | mapped | note present | chapter listed | not passage-reviewed |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_calculus_core` | mapped | note present | chapter listed | passage-reviewed |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `rope_position_certifier` | mapped | note present | chapter listed | passage-reviewed |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `proof_carrying_circular_computation` | mapped | note present | chapter listed | passage-reviewed |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_ai_architectures` | mapped | note present | chapter listed | passage-reviewed |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `coil_attention_memory` | mapped | note present | chapter listed | not passage-reviewed |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `circle_ai_contract_suite` | mapped | note present | chapter listed | not passage-reviewed |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `theseus_circle_transfer` | mapped | note present | chapter listed | not passage-reviewed |

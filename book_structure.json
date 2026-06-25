@@ -7866,6 +7866,13 @@
             "Receipt replay and fingerprint test"
           ],
           "claim_label": "Design rationale",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all five assigned proof-carrying contract sources; support remains at argument until local Circle theorem-id resolution, receipt replay, fingerprint checks, vendored contract packs, Circle Lean builds, or accepted evidence transitions exist.",
+            "The proof_target_record fixture validates proof-record schema/example consistency and AsiStackProofs.ProofCarryingContracts implements local finite-record boundary predicates only; no external Circle Lean build, theorem-id resolver, Circle contract command, RoPE certifier command, receipt replay, fingerprint check, sidecar regeneration, or vendored contract pack has been run from this repo.",
+            "Pinned Circle project references support proof-boundary and contract-shape discussion, but this ASI Stack repo did not rerun Circle commands or import generated contract artifacts as validated evidence.",
+            "RoPE material is used only for exact/discretized position-bookkeeping contract boundaries and numerical-diagnostic separation; it does not support model-quality, context-length, speed, memory, training-stability, or deployment-readiness claims.",
+            "No support-state promotion, raw source publication, local Circle proof ownership claim, receipt replay result, downstream model-quality claim, or substrate-performance claim is implied by this drafting pass."
+          ],
           "source_queue": {
             "primary": [
               "circle_calculus_core",
@@ -7899,27 +7906,83 @@
             {
               "source_id": "circle_calculus_core",
               "mapped_support": "Supports theorem-status discipline through Lean declarations, theorem manifests, Python reference models, JSON schemas, generated contract packs, proof boundaries, stable APIs, verification commands, and explicit non-claims.",
-              "limits": "The external Circle repository was not built or tested here; this mapping does not claim local Circle theorem replay or downstream model-quality evidence."
+              "limits": "The external Circle repository was not built or tested here; this mapping does not claim local Circle theorem replay or downstream model-quality evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:README.md:6-30",
+                "local-project:circle-math@63b0f511:README.md:43-72",
+                "local-project:circle-math@63b0f511:README.md:88-122",
+                "local-project:circle-math@63b0f511:README.md:124-140"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle project README for proof-carrying cyclic math, stable APIs, verification commands, Lean/proof manifest proof boundary, generated contract packs, and explicit non-claims; the external Circle repository was not built or tested from this ASI Stack repo, and no local theorem replay or downstream model-quality evidence is promoted."
             },
             {
               "source_id": "circle_ai_contract_suite",
               "mapped_support": "Supports proof-carrying AI contract receipts through finite engineering-object mappings, theorem ids, Python certificates, schema fields, consumer reports, require gates, bundle checks, fingerprints, and non-claim boundaries.",
-              "limits": "No Circle contract command, generated pack, Lean build, or receipt check was run from this repo."
+              "limits": "No Circle contract command, generated pack, Lean build, receipt replay, or fingerprint check was run from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:1-15",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:16-43",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:45-84",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:100-137",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:154-169",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:171-217",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:220-231",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:1-35",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:56-88",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:90-113",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:114-180",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:180-203",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:268-286"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle contract-suite and integration-guide docs for contract families, receipt schemas, require gates, replay/fingerprint/bundle checks, consumer readiness fields, theorem-id/proof-status fields, deterministic fields, planner recommendations, and non-claim boundaries; no Circle contract command, generated pack, Lean build, receipt replay, fingerprint check, or downstream consumer run was executed from this repo."
             },
             {
               "source_id": "rope_position_certifier",
               "mapped_support": "Supports exact/discretized RoPE position-bookkeeping contracts through phase banks, collision reports, theorem ids, machine-readable certificates, public commands, numerical-diagnostic boundaries, and explicit non-claims.",
-              "limits": "No RoPE certifier command, sidecar regeneration, or Circle Lean build was run here; it does not support model-quality, context-length, speed, memory, or deployment claims."
+              "limits": "No RoPE certifier command, sidecar regeneration, or Circle Lean build was run here; it does not support model-quality, context-length, speed, memory, training-stability, or deployment claims.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:1-15",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:18-40",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:42-120",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:1-14",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:61-80",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:82-103",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:105-148"
+              ],
+              "passage_review_note": "Reviewed pinned local RoPE certifier paper and quickstart for exact/discretized phase-bank contracts, theorem IDs, Python certifier surfaces, numerical real-phase diagnostics, rational/discretized certificate boundaries, and explicit non-claims; no RoPE certifier command, sidecar regeneration, or Circle Lean build was run here, and no model-quality/context-length/speed/memory/deployment claim is promoted."
             },
             {
               "source_id": "proof_carrying_circular_computation",
               "mapped_support": "Supports proof-carrying cyclic computation contracts through cyclic-address primitives, rewrite/address transformations, theorem manifests, backend-selection discipline, and benchmark requirements.",
-              "limits": "No Circle sidecar examples, external Lean builds, CoilIR lowering, or backend benchmarks were run here."
+              "limits": "No Circle sidecar examples, external Lean builds, CoilIR lowering, or backend benchmarks were run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:1-24",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:26-32",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:34-48",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:50-76",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:78-96"
+              ],
+              "passage_review_note": "Reviewed pinned local proof-carrying circular computation paper for cyclic address primitive, theorem spine, Lean-vs-Python source trail, proof-versus-benchmark split, backend program, and dense/direct/standard-library baseline requirements; no Circle sidecar example, external Lean build, CoilIR lowering, or backend benchmark is promoted."
             },
             {
               "source_id": "circle_ai_architectures",
               "mapped_support": "Supports anti-overclaim discipline by separating finite-indexing facts from ML-relevant structural guarantees and requiring ordinary baselines, wrong-period controls, scalar controls, learned-position controls, and negative results.",
-              "limits": "No model-quality experiment, benchmark fixture, sidecar test, Lean build, or MLX run was executed here."
+              "limits": "No model-quality experiment, benchmark fixture, sidecar test, Lean build, or MLX run was executed here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:1-29",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:41-55",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:75-89",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:91-104",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:105-117",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:126-135",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:149-165"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI architecture paper for finite-indexing versus ML-relevant proof tiers, deterministic benchmark fixtures, baseline/negative-control discipline, Theseus transfer boundaries, and guardrails; no model-quality experiment, sidecar test, Lean build, MLX run, or real-sequence benchmark was run from this repo."
             }
           ]
         },
