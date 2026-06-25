@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -18,12 +18,28 @@ primary_sources:
   - "tokenmana"
   - "cognitive_loop_closure"
   - "moecot"
+  - "ext_trpo_2015"
+  - "ext_ppo_2017"
+  - "ext_remax_2023"
+  - "ext_dpo_2023"
+  - "ext_ipo_preference_2023"
+  - "ext_orpo_2024"
+  - "ext_kto_2024"
+  - "ext_simpo_2024"
+  - "ext_reinforce_style_rlhf_2024"
+  - "ext_deepseek_r1_2025"
+  - "ext_dapo_2025"
+  - "ext_gspo_2025"
+  - "ext_s_grpo_2025"
+  - "ext_longrlvr_2026"
+  - "ext_rlhf_limitations_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
-  - "External policy-optimization papers named here are verified candidates, but this repository has not yet created source notes for them."
-  - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
+  - "Appendix C now records passage-reviewed mappings for all twenty-seven assigned sources, including source-note-only review for MoECOT and external arXiv method-family records; support remains argument until accepted evidence transitions, local experiments, or stronger literature review justify promotion."
+  - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
+  - "The policy_optimization_record fixture validates schema/example consistency and AsiStackProofs.PolicyOptimization implements finite record predicates only; neither artifact proves reward quality, optimizer convergence, benchmark improvement, policy safety, or reward-hacking resistance."
 ---
 
 ## Chapter status
@@ -34,8 +50,8 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
-| Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot` |
+| Last updated | 2026-06-25 |
+| Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
@@ -65,6 +81,18 @@ The stack therefore needs policy optimization to be governed by the same evidenc
 [policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.
 
 The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. The external RL literature records source-note method families and failure cautions, but no external-literature-backed support state is claimed yet.
+
+### Claim-source mapping status
+
+Appendix C now records twenty-seven passage-reviewed mappings for this chapter. The internal ASI Stack mappings use local raw-cache passages for benchmark pressure, modular ratcheting, verifier tiers, context adequacy, execution feedback, planner and router policy targets, SCF governance, resource pressure, and procedural loop closure. `moecot` remains source-note-only implementation-reference context because raw connector text is not published here. The external method-family records use public arXiv abstract/metadata references plus conservative source notes; they are taxonomy and risk context, not reproduced experiments.
+
+| Mapping group | Reviewed support | Boundary |
+|---|---|---|
+| Internal evidence/governance sources | Benchmark ratchets, residual escrow, verifier tiering, verification bandwidth, typed execution ledgers, context adequacy, planner/router policy targets, SCF gates, resource pressure, and procedural compilation. | No policy training, reward-quality result, benchmark result, route-quality result, verifier-quality result, context-policy result, or support-state promotion. |
+| `moecot` connector/recovery source | Compact orchestration, specialist lanes, readiness gates, replay, promotion blockers, residual tracking, and implementation-reference policy-update context. | Source-note only; no runtime artifact, benchmark artifact, log, or policy-update result has been imported or reproduced. |
+| External online-RL sources | TRPO/PPO/ReMax/REINFORCE-style method-family context for bounded or simpler policy-gradient updates. | arXiv abstract/metadata and source-note review only; no online RL run, environment, reward model, benchmark, or ASI Stack policy update is reproduced. |
+| External preference-optimization sources | DPO, IPO/preference theory, ORPO, KTO, and SimPO context for preference, binary-feedback, reference-free, and sequence-level objectives. | No local preference data, preference trainer, reward-model validation, preference-quality study, or governance-safe behavior result. |
+| External reasoning/RLVR/limitations sources | DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF-limitations context for reasoning RL, sequence-level updates, early exit, verifiable context rewards, and reward-process risks. | No reasoning-RL reproduction, context-grounding reward experiment, model-quality result, early-exit result, mitigation result, or deployed safeguard. |
 
 ## Mechanism
 

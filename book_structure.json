@@ -8969,137 +8969,355 @@
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports treating feedback as benchmark pressure that must preserve ledgers, baselines, residuals, regressions, holdouts, anti-Goodhart checks, and conservative support-state effects before any policy update is promoted.",
-              "limits": "Does not prove reward quality, policy improvement, or any local benchmark result."
+              "limits": "Does not prove reward quality, policy improvement, policy-training success, local benchmark success, or model-capability improvement.",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:329-357",
+                "sources/raw/google_docs/benchmaxxing.txt:559-640",
+                "sources/raw/google_docs/benchmaxxing.txt:912-970",
+                "sources/raw/google_docs/benchmaxxing.txt:1103-1168"
+              ],
+              "passage_review_note": "Reviewed local raw cache for frontier-to-regression transitions, harder frontiers, private holdouts, benchmark mutation, multi-metric evaluation, transfer checks, contamination audits, benchmark/model ledgers, ratchet rules, and benchmark failure mitigations; no reward quality, policy update, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports policy optimization as modular ratcheting: arm/router improvement, specialist lifecycle, residual escrow, benchmark diagnosis, regression preservation, and harder-frontier selection rather than unconstrained fine-tuning.",
-              "limits": "Conceptual architecture only; no policy-training run, routing benchmark, or modular improvement result has been reproduced here."
+              "limits": "Conceptual architecture only; no policy-training run, specialist-arm evaluation, routing benchmark, modular improvement result, or capability result has been reproduced here.",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:213-255",
+                "sources/raw/google_docs/rmi.txt:418-448",
+                "sources/raw/google_docs/rmi.txt:736-843",
+                "sources/raw/google_docs/rmi.txt:1074-1129",
+                "sources/raw/google_docs/rmi.txt:1156-1222",
+                "sources/raw/google_docs/rmi.txt:1226-1245"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark pressure, specialist attempts, routed improvement, residual escrow, regression preservation, benchmark/model/residual ledgers, and failure-mode mitigations; no RMI policy-training, routing benchmark, or modular improvement result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports keeping reward signals, verifier outputs, preference labels, proof tiers, belief revisions, contradictions, and downgrade behavior distinct before they influence accepted claims or policy updates.",
-              "limits": "Does not prove verifier quality, preference validity, natural-language formalization, or whole-system epistemic correctness."
+              "limits": "Does not prove verifier quality, preference validity, natural-language formalization, proof-object correctness for arbitrary claims, reward validity, or whole-system epistemic correctness.",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:117-145",
+                "sources/raw/google_docs/spinoza.txt:176-180",
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:384-389",
+                "sources/raw/google_docs/spinoza.txt:402-450",
+                "sources/raw/google_docs/spinoza.txt:455-480",
+                "sources/raw/google_docs/spinoza.txt:493-516",
+                "sources/raw/google_docs/spinoza.txt:533-540"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proposer/verifier separation, tier labels, belief revision, contradiction handling, proof-carrying claims, verification budgets, proof laundering risks, claim-output policy, and proof-artifact references; no verifier-quality or reward-quality result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Supports bounding context-policy and reasoning-budget rewards by effective verification workspace, semantic-unit comparison, contradiction pressure, summary loss, and adequacy rather than context length or shorter reasoning alone.",
-              "limits": "The proposed contradiction-rate and constraint-satisfaction tests have not been run; theoretical claims remain source-proposed until tested or mechanized."
+              "limits": "The proposed contradiction-rate, constraint-satisfaction, context-adequacy, summary-loss, and reasoning-budget tests have not been run; theoretical claims remain source-proposed until tested or mechanized.",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:6-12",
+                "sources/raw/google_docs/verification_bandwidth.txt:22-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:70-82",
+                "sources/raw/google_docs/verification_bandwidth.txt:91-92"
+              ],
+              "passage_review_note": "Reviewed local raw cache for effective verification workspace, semantic-unit comparison, context-window-as-verification-workbench framing, summary fidelity tradeoffs, contradiction-rate protocol, and constraint-satisfaction test proposal; no adequacy or reasoning-budget experiment is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports execution-policy feedback through typed jobs, contract locks, evidence records, artifact success, approval gates, audit logs, replay, delivery evidence, and residual feedback.",
-              "limits": "No Talos training, execution-policy update, security result, or benchmark artifact has been reproduced here."
+              "limits": "No Talos training, execution-policy update, runtime execution, replay result, approval-service result, security result, or benchmark artifact has been reproduced here.",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:1053-1151",
+                "sources/raw/google_docs/talos.txt:1199-1214",
+                "sources/raw/google_docs/talos.txt:1534-1604",
+                "sources/raw/google_docs/talos.txt:2306-2393"
+              ],
+              "passage_review_note": "Reviewed local raw cache for linear lifecycle gates, contract locks, verified exit artifacts, rollback framing, delivery and assisted self-optimization review, scope hashes, audit logs, safety-tier audit checks, and re-locking after updates; no execution-policy learning or runtime security result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports context-policy rewards around source binding, adequacy/admission separation, protected compilation, taint, revocation, snapshot coherence, and typed non-success states instead of retrieval volume alone.",
-              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model-quality or policy-training result is claimed."
+              "limits": "VCM evidence remains bounded to control-plane properties; no context-policy training run, end-to-end model-quality result, retrieval-quality result, or reward-quality result is claimed.",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-25",
+                "sources/raw/google_docs/vcm_public.txt:36-45",
+                "sources/raw/google_docs/vcm_public.txt:225-260",
+                "sources/raw/google_docs/vcm_public.txt:281-305",
+                "sources/raw/google_docs/vcm_public.txt:316-329",
+                "sources/raw/google_docs/vcm_public.txt:356-389",
+                "sources/raw/google_docs/vcm_public.txt:427-444",
+                "sources/raw/google_docs/vcm_public.txt:450-485"
+              ],
+              "passage_review_note": "Reviewed local raw cache for governed context compilation, source/authority binding, adequacy versus admission, protected compilation, snapshot/revocation coherence, typed non-success states, context-policy fault studies, and packet field shapes; no context-policy learning or model-quality result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports planner-policy update targets through decomposition quality, dependency preservation, primitive schemas, tier routing, scheduling, fallback requirements, failure-driven replanning, and stopping conditions.",
-              "limits": "No PlanForge scheduler, planner-policy training run, or task-quality benchmark has been implemented in this repo."
+              "limits": "No PlanForge scheduler, planner-policy training run, learned decomposer, task-quality benchmark, synthetic savings reproduction, or runtime replanning result has been implemented in this repo.",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:39-130",
+                "sources/raw/google_docs/planforge.txt:160-180",
+                "sources/raw/google_docs/planforge.txt:263-291",
+                "sources/raw/google_docs/planforge.txt:550-559"
+              ],
+              "passage_review_note": "Reviewed local raw cache for hierarchical decomposition, plan optimization, dependency inference, tier annotation, scheduling, execution feedback, safety hooks, learned-decomposer roadmap, MVI scoring from historical logs, cost objective, tier escalation, and calibration limitations; no planner-policy training or scheduler benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "octopus_router",
               "mapped_support": "Supports router-policy update targets through specialist selection, permission envelopes, domain quarantine, dynamic loading, arm lifecycle, composition patterns, and residual-aware routing.",
-              "limits": "No local routed-specialist prototype, arm-card experiment, routing benchmark, or safety result was run."
+              "limits": "No local routed-specialist prototype, arm-card experiment, router-policy training run, routing benchmark, safety result, or specialist lifecycle result was run.",
+              "passage_refs": [
+                "sources/raw/google_docs/octopus_router.txt:18-44",
+                "sources/raw/google_docs/octopus_router.txt:207-233",
+                "sources/raw/google_docs/octopus_router.txt:373-401",
+                "sources/raw/google_docs/octopus_router.txt:407-455"
+              ],
+              "passage_review_note": "Reviewed local raw cache for lightweight head/router duties, specialist arms, permissions, verification contracts, performance logs updating routing policy, arm improvement loops, domain quarantine, formal routing state, verification outputs, and router intelligence boundaries; no router-policy update or routing benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports governance of policy-update promotion through stable capability fields, contracts, qualifications, evaluator policy, authority ceilings, lifecycle events, rollback, quarantine, and recovery paths.",
-              "limits": "Does not prove evaluator integrity, production safety, global alignment, route quality, or rollback success."
+              "limits": "Does not prove evaluator integrity, production safety, global alignment, route quality, policy-update safety, learned-behavior bounds, or rollback success.",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:53-64",
+                "sources/raw/google_docs/scf.txt:67-78",
+                "sources/raw/google_docs/scf.txt:108-120",
+                "sources/raw/google_docs/scf.txt:244-306",
+                "sources/raw/google_docs/scf.txt:416-430",
+                "sources/raw/google_docs/scf.txt:453-463"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable substitution boundaries, qualification claims, route validation, two-timescale online adaptation, evidence graphs, authority checks, route validity, lifecycle transitions, contract debt, goalpost firewall, sequential-risk accounting, and policy/verifier/planner/router implementation identities; no policy-update safety or rollback result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports resource and latency rewards only when bounded capacity, load variance, burst controls, human/cognitive friction, privacy, and quality constraints are recorded alongside efficiency pressure.",
-              "limits": "No regenerative-budget simulation, pricing result, or human outcome study has been reproduced here."
+              "limits": "No regenerative-budget simulation, pricing result, load-variance reproduction, latency-quality tradeoff, human outcome study, sleep/cognitive study, or quality result has been reproduced here.",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:8-12",
+                "sources/raw/google_docs/tokenmana.txt:16-29",
+                "sources/raw/google_docs/tokenmana.txt:183-231",
+                "sources/raw/google_docs/tokenmana.txt:306-308",
+                "sources/raw/google_docs/tokenmana.txt:481-491",
+                "sources/raw/google_docs/tokenmana.txt:813-833",
+                "sources/raw/google_docs/tokenmana.txt:950-953"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance, pricing feedback, source-reported variance/profit claims, temporal elasticity, cognitive productivity hypotheses, anti-artificial-consumption caution, and reset-driven impulse removal; no resource-reward or human-quality result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports distinguishing policy learning from procedural compilation: repeated trajectories may become tools only with trajectory logs, loop detection, parameter discovery, verification, routing, monitoring, revision, and retirement records.",
-              "limits": "No loop-closure system, tool synthesis run, or verification/monitoring harness has been executed."
+              "limits": "No loop-closure system, tool synthesis run, verifier, runtime monitor, tool registry, retirement workflow, or procedural-memory benchmark has been executed.",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:10-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:54-58",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-193",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:278-305",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:323-333",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:437-472"
+              ],
+              "passage_review_note": "Reviewed local raw cache for repeated trajectory logs, loop detection, parameterized tools, verification against prior/held-out/synthetic/adversarial cases, routing modes, tool governance, monitoring, retirement conditions, and structured trace fields; no loop-closure system or procedural benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime-adjacent policy updates for specialist routing and orchestration while requiring readiness gates, regression floors, replay, ledgers, promotion blockers, and residual tracking.",
-              "limits": "Implementation-reference context only; runtime artifacts, benchmark artifacts, logs, and policy-update results have not been imported or reproduced."
+              "limits": "Reviewed source note only because authenticated connector text is not published here; implementation-reference context only, and runtime artifacts, benchmark artifacts, logs, and policy-update results have not been imported or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for MoECOT context: compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residual tracking, and benchmark-claim caveats; no runtime or policy-update artifact is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_trpo_2015",
               "mapped_support": "Supports the external method-family comparison for trust-region bounded policy updates and drift constraints.",
-              "limits": "Does not support the ASI Stack governance claim by itself and does not report local planner/router/context-policy training."
+              "limits": "External method-family context only; does not support the ASI Stack governance claim by itself and does not report local planner, router, context-policy, or model training.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/1502.05477:abstract / trust-region policy optimization / constrained policy update / reported source-setting benchmarks",
+                "sources/source_notes/ext_trpo_2015.md:12-35",
+                "sources/source_notes/ext_trpo_2015.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for trust-region update-size discipline, constrained policy improvement, and drift-bound vocabulary; no TRPO experiment, environment, reward model, benchmark, or ASI Stack policy update is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_ppo_2017",
               "mapped_support": "Supports the external method-family comparison for PPO-style online policy-gradient updates and proximal surrogate objectives.",
-              "limits": "Does not validate reward quality, local PPO runs, or deployment readiness."
+              "limits": "External method-family context only; does not validate reward quality, local PPO runs, planner/router/context-policy training, or deployment readiness.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/1707.06347:abstract / proximal policy optimization / surrogate objective / minibatch online RL updates",
+                "sources/source_notes/ext_ppo_2017.md:12-35",
+                "sources/source_notes/ext_ppo_2017.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for PPO-style online policy gradients, proximal surrogate objectives, repeated sampled-data updates, and tuning/reward cautions; no PPO run or deployment result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_remax_2023",
               "mapped_support": "Supports the external method-family comparison for simpler RLHF-oriented policy-gradient updates relative to PPO complexity.",
-              "limits": "Does not prove local RLHF efficiency or stack-policy improvement."
+              "limits": "External method-family context only; does not prove local RLHF efficiency, reward quality, stack-policy improvement, or universal PPO replacement.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2310.10505:abstract / ReMax / simplified RLHF policy gradient / PPO-complexity comparison",
+                "sources/source_notes/ext_remax_2023.md:12-35",
+                "sources/source_notes/ext_remax_2023.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for critic-light RLHF framing, simpler policy-gradient updates, fast simulation assumptions, and reward-model fragility cautions; no ReMax or RLHF run is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_dpo_2023",
               "mapped_support": "Supports the external method-family comparison for offline preference optimization from pairwise preference data.",
-              "limits": "Does not validate local preference data, DPO training, or governance-safe behavior."
+              "limits": "External method-family context only; does not validate local preference data, DPO training, preference quality, reward correctness, or governance-safe behavior.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2305.18290:abstract / direct preference optimization / pairwise preference data / offline preference training",
+                "sources/source_notes/ext_dpo_2023.md:12-35",
+                "sources/source_notes/ext_dpo_2023.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for DPO-style direct preference optimization, pairwise preference data, reward-model-loop avoidance, and offline preference-data risks; no DPO model or dataset is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_ipo_preference_2023",
               "mapped_support": "Supports external framing of preference-learning assumptions, including pairwise preferences, pointwise reward approximations, and policy-distribution shift.",
-              "limits": "Theoretical comparison only; no local preference-learning theorem or experiment is recorded."
+              "limits": "External theoretical context only; no local preference-learning theorem, reward-model validation, preference experiment, or ASI Stack policy update is recorded.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2310.12036:abstract / learning from human preferences / pairwise preferences / pointwise reward approximations",
+                "sources/source_notes/ext_ipo_preference_2023.md:12-35",
+                "sources/source_notes/ext_ipo_preference_2023.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for preference-learning assumptions, pairwise-to-pointwise reward approximations, policy-distribution shift, and objective-boundary risks; no preference-learning proof or experiment is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_orpo_2024",
               "mapped_support": "Supports the external method-family comparison for reference-model-free monolithic preference optimization.",
-              "limits": "Does not prove local ORPO training or alignment improvement."
+              "limits": "External method-family context only; does not prove local ORPO training, alignment improvement, truthfulness, tool safety, or governance compliance.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2403.07691:abstract / ORPO / reference-model-free preference optimization / monolithic alignment objective",
+                "sources/source_notes/ext_orpo_2024.md:12-35",
+                "sources/source_notes/ext_orpo_2024.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for reference-model-free preference optimization, combined SFT/preference framing, and preference-bias risks; no ORPO training or alignment result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_kto_2024",
               "mapped_support": "Supports the external method-family comparison for prospect-theoretic or human-aware loss objectives and binary feedback framing.",
-              "limits": "Does not prove a correct human model, reward validity, or local policy safety."
+              "limits": "External method-family context only; does not prove a correct human model, reward validity, preference-data validity, local policy safety, or governance compliance.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2402.01306:abstract / KTO / prospect-theoretic optimization / binary desirable-undesirable feedback",
+                "sources/source_notes/ext_kto_2024.md:12-35",
+                "sources/source_notes/ext_kto_2024.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for human-aware/prospect-theory-inspired alignment loss, desirable/undesirable feedback, asymmetric valuation assumptions, and wrong-human-model risks; no KTO training or policy-safety result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_simpo_2024",
               "mapped_support": "Supports the external method-family comparison for simple reference-free sequence-level preference optimization.",
-              "limits": "Does not prove local SimPO performance or preference-quality robustness."
+              "limits": "External method-family context only; does not prove local SimPO performance, preference-quality robustness, truthfulness, tool safety, or governed deployment readiness.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2405.14734:abstract / SimPO / reference-free reward / sequence-level preference objective",
+                "sources/source_notes/ext_simpo_2024.md:12-35",
+                "sources/source_notes/ext_simpo_2024.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for simple reference-free preference optimization, sequence-level reward framing, and length/style artifact cautions; no SimPO run or preference-quality result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_reinforce_style_rlhf_2024",
               "mapped_support": "Supports the external method-family comparison for simpler REINFORCE-style RLHF baselines and PPO-cost/tuning cautions.",
-              "limits": "Does not show that the repo has implemented REINFORCE, RLOO, or RLHF training."
+              "limits": "External method-family context only; does not show that the repo has implemented REINFORCE, RLOO, RLHF training, reward modeling, or policy-safety evaluation.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2402.14740:abstract / REINFORCE-style RLHF / simpler policy-gradient baseline / PPO cost and tuning cautions",
+                "sources/source_notes/ext_reinforce_style_rlhf_2024.md:12-35",
+                "sources/source_notes/ext_reinforce_style_rlhf_2024.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for simpler REINFORCE-style RLHF baselines, PPO cost/tuning cautions, and reward-dependence risks; no REINFORCE/RLOO/RLHF path is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_deepseek_r1_2025",
               "mapped_support": "Supports external comparison for reasoning-RL pressure and the distinction between reasoning behavior, reward design, and benchmark reporting.",
-              "limits": "Does not import or reproduce DeepSeek-R1 models, training artifacts, evaluations, or governance claims."
+              "limits": "External method-family context only; does not import or reproduce DeepSeek-R1 models, training artifacts, evaluations, benchmark results, model behavior, or governance claims.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2501.12948:abstract / reasoning reinforcement learning / reasoning behavior / benchmark reporting",
+                "sources/source_notes/ext_deepseek_r1_2025.md:12-35",
+                "sources/source_notes/ext_deepseek_r1_2025.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for reasoning-RL framing, reduced demonstration dependence, benchmark/reporting boundary, and overthinking/reward-hacking cautions; no model, training artifact, evaluation, or governance claim is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_dapo_2025",
               "mapped_support": "Supports external comparison for open-source reasoning-RL systems, decoupled clipping, dynamic sampling, and reproducibility pressure.",
-              "limits": "Does not mean DAPO has been run, audited, or reproduced in this repository."
+              "limits": "External method-family context only; does not mean DAPO has been run, audited, imported, or reproduced in this repository.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2503.14476:abstract / DAPO / open-source LLM RL system / decoupled clipping and dynamic sampling",
+                "sources/source_notes/ext_dapo_2025.md:12-35",
+                "sources/source_notes/ext_dapo_2025.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for reasoning-RL systems framing, decoupled clipping, dynamic sampling, reproducibility pressure, and implementation-detail caveats; no DAPO system or result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_gspo_2025",
               "mapped_support": "Supports external comparison for sequence-level group policy optimization and sequence-level clipping/reward design.",
-              "limits": "Does not validate local sequence-level RL or model-quality improvements."
+              "limits": "External method-family context only; does not validate local sequence-level RL, reasoning-budget policy, model-quality improvement, or reward robustness.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2507.18071:abstract / group sequence policy optimization / sequence-level ratios / sequence-level clipping",
+                "sources/source_notes/ext_gspo_2025.md:12-35",
+                "sources/source_notes/ext_gspo_2025.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for sequence-level policy optimization, group updates, clipping/reward granularity, and sequence-objective risks; no GSPO run or model-quality result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_s_grpo_2025",
               "mapped_support": "Supports external comparison for early-exit/reasoning-budget RL and overthinking control.",
-              "limits": "Does not prove shorter reasoning is better or that local reasoning-budget policies exist."
+              "limits": "External method-family context only; does not prove shorter reasoning is better, local reasoning-budget policies exist, or verification adequacy is preserved under early exit.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2505.07686:abstract / S-GRPO / early exit via reinforcement learning / reasoning-budget control",
+                "sources/source_notes/ext_s_grpo_2025.md:12-35",
+                "sources/source_notes/ext_s_grpo_2025.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for early-exit/reasoning-budget RL, overthinking control, length penalties, and adequacy risks; no local reasoning-budget policy or early-exit result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_longrlvr_2026",
               "mapped_support": "Supports external comparison for long-context RLVR and verifiable context-grounding rewards relevant to VCM policy learning.",
-              "limits": "Does not reproduce LongRLVR or prove VCM context-policy reward quality."
+              "limits": "External method-family context only; does not reproduce LongRLVR, context-grounding reward experiments, VCM context-policy learning, or reward-quality evidence.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2603.02146:abstract / LongRLVR / long-context reinforcement learning / verifiable context rewards",
+                "sources/source_notes/ext_longrlvr_2026.md:12-35",
+                "sources/source_notes/ext_longrlvr_2026.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for long-context RLVR, verifiable context rewards, final-answer reward limitations, and grounding-reward gaming risks; no LongRLVR or VCM policy-learning result is reproduced.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "ext_rlhf_limitations_2023",
               "mapped_support": "Supports external risk framing for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards.",
-              "limits": "Survey framing only; not proof of any local mitigation or reward-process safety."
+              "limits": "External survey/risk framing only; not proof of any local mitigation, reward-process safety, evaluator quality, or deployed safeguard.",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2307.15217:abstract / RLHF limitations / reward hacking / evaluator and feedback limits",
+                "sources/source_notes/ext_rlhf_limitations_2023.md:12-35",
+                "sources/source_notes/ext_rlhf_limitations_2023.md:43-45"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for RLHF limitation categories, feedback/evaluator/reward-model risks, reward hacking, and mitigation-boundary cautions; no local mitigation or reward-process safety result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
