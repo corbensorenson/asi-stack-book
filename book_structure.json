@@ -243,47 +243,134 @@
             {
               "source_id": "viea",
               "mapped_support": "Supports efficient capability growth through routed work, workflow-to-tool compilation, durable artifacts, feedback, residuals, benchmarks, and regression coverage.",
-              "limits": "Does not provide reproduced route-cost measurements, deployment logs, or benchmark results in this repository."
+              "limits": "Does not provide reproduced route-cost measurements, deployment logs, or benchmark results in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-129",
+                "sources/raw/google_docs/viea.txt:226-264"
+              ],
+              "passage_review_note": "Reviewed local raw cache for routed specialist work, workflow-to-tool compilation, durable artifacts, residuals, benchmark/regression coverage, runtime targeting, and feedback loops; no route-cost, deployment, or benchmark result is promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports the ratchet loop: benchmark pressure, specialist attempts, logs, loop closure, residual escrow, diagnosis, arm/router improvement, regression preservation, and harder frontiers.",
-              "limits": "Conceptual architecture only here; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this source note."
+              "limits": "Conceptual architecture only here; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this source note.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:11-47",
+                "sources/raw/google_docs/rmi.txt:72-105",
+                "sources/raw/google_docs/rmi.txt:214-251",
+                "sources/raw/google_docs/rmi.txt:363-414"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark pressure, modular routing, loop closure, residual escrow, regression preservation, intervention ladders, and harder-frontier ratcheting; no reproduced benchmark or prototype result is promoted."
             },
             {
               "source_id": "cgs",
               "mapped_support": "Supports the smallest-adequate-structure idea with compact seeds, rule systems, memory/state, residual/error, verification, and governance/generation interfaces.",
-              "limits": "No local CGS benchmark, proof, or implementation validates compactness, safety, interpretability, or adequacy."
+              "limits": "No local CGS benchmark, proof, or implementation validates compactness, safety, interpretability, or adequacy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cgs.txt:25-67",
+                "sources/raw/google_docs/cgs.txt:123-133",
+                "sources/raw/google_docs/cgs.txt:209-228",
+                "sources/raw/google_docs/cgs.txt:270-286",
+                "sources/raw/google_docs/cgs.txt:293-304"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compact seeds, explicit rule systems, memory/state, residual/error accounting, verification, governance interfaces, success thresholds, and false-compactness warnings; no CGS benchmark, proof, or implementation result is promoted."
             },
             {
               "source_id": "rankfold_neuralfold",
               "mapped_support": "Supports artifact-compression economics through per-artifact transforms, residual bit cost, deterministic reconstruction, manifests, codec parameters, and checks.",
-              "limits": "No local compression benchmarks, implementation artifacts, or reproducible ratios are present."
+              "limits": "No local compression benchmarks, implementation artifacts, or reproducible ratios are present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rankfold_neuralfold.txt:13-17",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:41-45",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:246-248",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:264-274",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:379-381",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:405-414",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:446-476"
+              ],
+              "passage_review_note": "Reviewed local raw cache for per-artifact residual coding, codec-aligned transform costs, mandatory fallback, deterministic decode/reconstruction, explicit byte accounting, and rate-distortion evaluation protocol; no compression benchmark, implementation artifact, or reproducible ratio is promoted."
             },
             {
               "source_id": "bbvca_v9",
               "mapped_support": "Supports generate-verify-repair compression, contract-relative reconstruction, retained detail, residuals, repair streams, fallback, boundary costs, and proxy-rate honesty.",
-              "limits": "The repository has not implemented BBVCA Prototype A or reproduced compression ratios."
+              "limits": "The repository has not implemented BBVCA Prototype A or reproduced compression ratios.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/bbvca_v9.txt:23-30",
+                "sources/raw/google_docs/bbvca_v9.txt:179-188",
+                "sources/raw/google_docs/bbvca_v9.txt:193-200",
+                "sources/raw/google_docs/bbvca_v9.txt:242-243",
+                "sources/raw/google_docs/bbvca_v9.txt:265-269",
+                "sources/raw/google_docs/bbvca_v9.txt:337-350",
+                "sources/raw/google_docs/bbvca_v9.txt:468-475"
+              ],
+              "passage_review_note": "Reviewed local raw cache for generate-verify-repair doctrine, reconstruction contracts, exact residual/repair streams, literal fallback, interface and boundary costs, local verification, and two-phase proxy-rate accounting; no Prototype A or compression-ratio result is promoted."
             },
             {
               "source_id": "simulation_scaling",
               "mapped_support": "Supports contract-relative feasibility by tying resource demand to scope, clockspeed, fidelity, efficiency, compute, memory, thermodynamics, and communication bottlenecks.",
-              "limits": "Theoretical synthesis only here; no physical experiment, simulation benchmark, or independent literature audit was run."
+              "limits": "Theoretical synthesis only here; no physical experiment, simulation benchmark, or independent literature audit was run.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/simulation_scaling.txt:145-150",
+                "sources/raw/google_docs/simulation_scaling.txt:192-215",
+                "sources/raw/google_docs/simulation_scaling.txt:222-234",
+                "sources/raw/google_docs/simulation_scaling.txt:263-266",
+                "sources/raw/google_docs/simulation_scaling.txt:324-341"
+              ],
+              "passage_review_note": "Reviewed local raw cache for simulation contracts, scope, clockspeed, effective efficiency, capacity bottlenecks, memory/compute/dissipation bounds, contract-relative liberties, and feasibility tradeoffs; no physical experiment, simulation benchmark, or independent literature audit is promoted."
             },
             {
               "source_id": "beastbrain",
               "mapped_support": "Supports efficiency-by-architecture through local state, persistent memory substrates, routing by semantic intent/tier/critical path/capability, and paging of attention, experts, and memory.",
-              "limits": "SSD-first, hardware, and performance claims remain source-reported and unvalidated locally."
+              "limits": "SSD-first, hardware, and performance claims remain source-reported and unvalidated locally.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/beastbrain.txt:15-23",
+                "sources/raw/google_docs/beastbrain.txt:35-39",
+                "sources/raw/google_docs/beastbrain.txt:52-60",
+                "sources/raw/google_docs/beastbrain.txt:87-103",
+                "sources/raw/google_docs/beastbrain.txt:231-238",
+                "sources/raw/google_docs/beastbrain.txt:291-302",
+                "sources/raw/google_docs/beastbrain.txt:477-483"
+              ],
+              "passage_review_note": "Reviewed local raw cache for local stateful architecture, SSD-first memory framing, persistent context, attention/expert paging, semantic/tier/critical-path planning, and intelligence-arbitrage routing; no SSD-first, hardware, context-length, or performance claim is promoted."
             },
             {
               "source_id": "beastbrain_timeless",
               "mapped_support": "Supports roadmap-independent BeastBrain framing for local intelligence, hardware adaptation, SSD-native memory, planning, verification, and multimodal interaction as architecture directions.",
-              "limits": "Does not validate hardware adaptation, geometric verification, or distributed scaling; use mainly for variant deduplication and evergreen framing."
+              "limits": "Does not validate hardware adaptation, geometric verification, or distributed scaling; use mainly for variant deduplication and evergreen framing.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/beastbrain_timeless.txt:12-20",
+                "sources/raw/google_docs/beastbrain_timeless.txt:25-32",
+                "sources/raw/google_docs/beastbrain_timeless.txt:75-80",
+                "sources/raw/google_docs/beastbrain_timeless.txt:115-129",
+                "sources/raw/google_docs/beastbrain_timeless.txt:234-242"
+              ],
+              "passage_review_note": "Reviewed local raw cache for roadmap-independent local-organism framing, hardware adaptation constraints, SSD-native memory, PlanForge efficiency routing, Aletheia verification framing, and explicitly pending empirical benchmarking; no hardware-adaptation, geometric-verification, or distributed-scaling result is promoted."
             },
             {
               "source_id": "aletheia",
               "mapped_support": "Supports spending verification and context effort by risk, uncertainty, ambiguity, and historical failure rather than treating all outputs as equally trusted.",
-              "limits": "No local live-oracle, adversarial, or implementation evidence proves the efficiency or quality of those routes."
+              "limits": "No local live-oracle, adversarial, or implementation evidence proves the efficiency or quality of those routes.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/aletheia.txt:15-16",
+                "sources/raw/google_docs/aletheia.txt:64-87",
+                "sources/raw/google_docs/aletheia.txt:252-271",
+                "sources/raw/google_docs/aletheia.txt:369-379",
+                "sources/raw/google_docs/aletheia.txt:473-489",
+                "sources/raw/google_docs/aletheia.txt:535-543",
+                "sources/raw/google_docs/aletheia.txt:737-746"
+              ],
+              "passage_review_note": "Reviewed local raw cache for risk/uncertainty/ambiguity budgeting, truth-vs-throughput framing, least-privilege context, worker-tier and budget assignment, risk-tiered verification, rollback on verification failure, and latency/rework metrics; no live-oracle, adversarial-review, implementation, efficiency, or quality result is promoted."
             },
             {
               "source_id": "moecot",

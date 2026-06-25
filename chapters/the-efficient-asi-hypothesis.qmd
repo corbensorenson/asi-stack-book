@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; measured route cost, residual burden, and utility-preserving compression evidence remain missing."
+  - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and nine of ten mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The costed_route_record fixture validates schema/example consistency only; record-level Lean predicates exist, but route-search completeness, residual-burden measurement, and utility-preserving compression tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; passage-reviewed local raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector-only/source-note mapped: `moecot` |
 | Test state | `costed_route_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Efficiency` implements finite route-comparison and residual-promotion predicates; route-search, residual-burden, and utility-preserving compression tests remain planned. |
 
 ## Drafting guardrail
@@ -66,11 +66,11 @@ The stack needs a route ledger for the same reason it needs a claim ledger: with
 
 [the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals.
 
-The claim remains at `argument` support. RMI supports residual escrow and ratcheting, CGS supports smallest-adequate-structure reasoning, BBVCA and RankFold/NeuralFold support compression vocabulary, and Simulation Scaling keeps feasibility tied to scope and fidelity. None of those source notes is a reproduced efficiency benchmark in this repository.
+The claim remains at `argument` support. RMI supports residual escrow and ratcheting, CGS supports smallest-adequate-structure reasoning, BBVCA and RankFold/NeuralFold support compression vocabulary, Simulation Scaling keeps feasibility tied to scope and fidelity, and Aletheia/BeastBrain variants support risk-weighted verification and routing vocabulary. None of those source notes is a reproduced efficiency benchmark in this repository.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core claim to every assigned source note. The mappings justify the design vocabulary, not measured efficiency.
+Appendix C now maps this core claim to every assigned source note. Nine mappings also carry reviewed local raw-cache passage references in the manifest. `moecot` remains connector-only/source-note mapped because usable local raw text is not committed. The mappings justify the design vocabulary, not measured efficiency.
 
 | Source | What it supports | Limit |
 |---|---|---|
