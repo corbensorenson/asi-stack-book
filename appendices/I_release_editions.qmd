@@ -20,6 +20,7 @@ The project serves all three audiences by separating layers inside one canonical
 | `machine_contracts` | `book_structure.json`, `docs/book_outline.md`, inventories, schemas, scripts, Lean modules, and validation commands. | Canonical for AI/writing agents; exclude from reader/audio manuscripts except when explained in prose. |
 | `release_derivatives` | Ignored build workspaces and explicitly recorded release artifacts. | Non-canonical outputs; record only artifacts that were actually generated or rendered. |
 | `audio_adaptation` | Audio-script and future audio release workspaces. | Derive from a reviewed reader release, not directly from the live book. |
+| `companion_material` | Generated reader/audio companion notes for diagrams, images, tables, code, schemas, omitted dense matrices, and audio-embedded EPUB packaging checks. | Use as human-consumption review aids; do not treat them as evidence ledgers or proof that release artifacts exist. |
 
 This means the live book can remain useful to AIs and researchers without making the human-reader editions carry every matrix, guardrail, or proof hook. Meaning-critical uncertainty still belongs in ordinary chapter prose so the reader release does not overstate claims after live-only scaffolding is removed.
 
@@ -90,7 +91,7 @@ It writes derived Quarto source under `build/reader_edition/`, which is ignored 
 
 `scripts/validate_reader_spine.py --check` derives the manuscript in a temporary workspace and checks that every chapter still has a substantial human-readable spine after live-only scaffolding is removed. A non-check run writes `build/reader_spine_report.json` for major-version review; that report is local and does not claim any ebook or audio artifact exists.
 
-The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review requirement, e-reader quality checks, optional downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md`, which records continuity, typography, figure, EPUB, DOCX, PDF, optional AZW3/MOBI, residual, and release-record checks. These generated files do not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
+The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review requirement, e-reader quality checks, optional downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md`, which records continuity, typography, figure, EPUB, DOCX, PDF, optional AZW3/MOBI, companion-note, residual, and release-record checks. `companion_notes.md` records stripped live-only section counts and reader/audio treatment tasks for dense material. These generated files do not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
 
 Reader format renders can be attempted and recorded with:
 
@@ -126,7 +127,7 @@ python3 scripts/build_audio_script.py
 
 It creates `build/audio_script/` and a pronunciation glossary for review. It does not synthesize audio and does not produce MP3, M4B, or audio-embedded EPUB artifacts.
 
-The generated audio workspace includes `audio_manifest.json` with the source reader generation summary, audio profile, content-layer policy, script files, pronunciation glossary, chapter markers, audio review checklist, review status, and non-claims. `AUDIO_RELEASE_CHECKLIST.md` keeps the narration-review and packaging gate explicit so dense tables, diagrams, source IDs, schemas, and proof hooks are either spoken clearly or moved to companion notes rather than silently omitted.
+The generated audio workspace includes `audio_manifest.json` with the source reader generation summary, audio profile, content-layer policy, script files, companion-treatment counts, pronunciation glossary, chapter markers, audio review checklist, review status, and non-claims. `companion_notes.md` counts tables, diagrams, code/schema blocks, and images by script file. `AUDIO_RELEASE_CHECKLIST.md` keeps the narration-review and packaging gate explicit so dense tables, diagrams, source IDs, schemas, and proof hooks are either spoken clearly or moved to companion notes rather than silently omitted.
 
 ## Major Version Gate
 

@@ -129,6 +129,19 @@
       },
       "additionalProperties": false
     },
+    "companion_material": {
+      "type": "object",
+      "required": ["path_or_uri", "status", "review_notes"],
+      "properties": {
+        "path_or_uri": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "generated", "reviewed", "published", "failed"]
+        },
+        "review_notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
     "human_consumption_gate": {
       "type": "object",
       "required": [

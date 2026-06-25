@@ -28,6 +28,49 @@ def narration_note(text: str) -> str:
     return f"> Narration note: {text}"
 
 
+def scan_audio_treatments(text: str) -> dict[str, int]:
+    counts = {
+        "tables": 0,
+        "mermaid_diagrams": 0,
+        "code_or_schema_blocks": 0,
+        "images": 0,
+    }
+    in_code = False
+    in_table = False
+
+    for line in build_reader_edition.strip_frontmatter(text).splitlines():
+        stripped = line.strip()
+
+        if stripped.startswith("```"):
+            if not in_code:
+                in_code = True
+                if "mermaid" in stripped.lower():
+                    counts["mermaid_diagrams"] += 1
+                else:
+                    counts["code_or_schema_blocks"] += 1
+            else:
+                in_code = False
+            in_table = False
+            continue
+
+        if in_code:
+            continue
+
+        if IMAGE_RE.match(stripped):
+            counts["images"] += 1
+            in_table = False
+            continue
+
+        if stripped.startswith("|"):
+            if not in_table:
+                counts["tables"] += 1
+                in_table = True
+            continue
+        in_table = False
+
+    return counts
+
+
 def qmd_to_audio_markdown(text: str) -> str:
     lines = build_reader_edition.strip_frontmatter(text).splitlines()
     output: list[str] = []
@@ -117,10 +160,12 @@ def write_audio_checklist(
     output_dir: Path,
     audio_profile: dict,
     audio_policy: dict,
+    companion_policy: dict,
     bundle_policy: dict,
     script_files: list[str],
 ) -> str:
     checklist_path = str(audio_policy.get("generated_checklist_path", "AUDIO_RELEASE_CHECKLIST.md"))
+    companion_path = str(companion_policy.get("audio_companion_path", "companion_notes.md"))
     review_requirements = audio_policy.get("review_requirements", [])
     packaging_checks = audio_policy.get("audio_packaging_checks", [])
     spoken_rules = audio_policy.get("spoken_treatment_rules", [])
@@ -139,6 +184,7 @@ def write_audio_checklist(
         f"- Profile: `{audio_profile.get('id', 'audio_release')}`",
         f"- Script files: {len(script_files)}",
         f"- Target audio artifacts: {', '.join(artifact_formats)}",
+        f"- Companion notes: `{companion_path}`",
         "",
         "## Required Gate",
         "",
@@ -179,6 +225,7 @@ def write_audio_checklist(
         "## Packaging Checks",
         "",
         "- [ ] Replace generated narration notes for tables, diagrams, images, code, and schemas with reviewed spoken text or companion-note references.",
+        f"- [ ] Review `{companion_path}` before claiming MP3, M4B, or audio-embedded EPUB artifacts.",
         "- [ ] Treat each audio format as `target_not_generated` until the exact audio artifact is produced and checked.",
         "- [ ] Fill chapter markers with final timecodes after audio generation.",
         "- [ ] Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
@@ -195,6 +242,89 @@ def write_audio_checklist(
     return checklist_path
 
 
+def write_audio_companion_notes(
+    output_dir: Path,
+    companion_policy: dict,
+    treatment_summary: dict[str, dict[str, int]],
+) -> str:
+    companion_path = str(companion_policy.get("audio_companion_path", "companion_notes.md"))
+    totals = {
+        "tables": 0,
+        "mermaid_diagrams": 0,
+        "code_or_schema_blocks": 0,
+        "images": 0,
+    }
+    for counts in treatment_summary.values():
+        for key in totals:
+            totals[key] += int(counts.get(key, 0))
+
+    lines = [
+        "# Audio Companion Notes",
+        "",
+        "Status: generated starter notes for narration and audio-packaging review.",
+        "",
+        "These notes identify material that should be spoken, summarized, moved to companion material, or checked inside an audio-embedded EPUB. They are not an audiobook, not a transcript review, and not evidence that audio files exist.",
+        "",
+        "## Purpose",
+        "",
+        str(companion_policy.get("purpose", "Keep audio companion decisions explicit for human-listener releases.")),
+        "",
+        "## Treatment Summary",
+        "",
+        "| Script file | Tables | Mermaid diagrams | Code/schema blocks | Images |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    for script_file, counts in sorted(treatment_summary.items()):
+        lines.append(
+            "| "
+            f"`{script_file}` | "
+            f"{counts.get('tables', 0)} | "
+            f"{counts.get('mermaid_diagrams', 0)} | "
+            f"{counts.get('code_or_schema_blocks', 0)} | "
+            f"{counts.get('images', 0)} |"
+        )
+
+    lines.extend([
+        "| **Total** | "
+        f"{totals['tables']} | "
+        f"{totals['mermaid_diagrams']} | "
+        f"{totals['code_or_schema_blocks']} | "
+        f"{totals['images']} |",
+        "",
+        "## Companion Topics To Review",
+        "",
+    ])
+    for item in companion_policy.get("required_topics", []):
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Review Requirements",
+        "",
+    ])
+    for item in companion_policy.get("review_requirements", []):
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Audio Packaging Notes",
+        "",
+        "- [ ] Replace generated narration notes in chapter scripts with reviewed spoken summaries or explicit companion-note references.",
+        "- [ ] Confirm chapter markers, metadata, and sample listening checks before listing MP3 or M4B artifacts.",
+        "- [ ] Confirm an audio-embedded EPUB actually contains the reviewed audio files and usable navigation before listing it as produced.",
+        "- [ ] Preserve uncertainty and evidence limits in the spoken script whenever omission would overstate a claim.",
+        "",
+        "## Non-Claims",
+        "",
+    ])
+    for item in companion_policy.get("non_claims", []):
+        lines.append(f"- {item}")
+    lines.append("")
+
+    (output_dir / companion_path).write_text("\n".join(lines), encoding="utf-8")
+    return companion_path
+
+
 def generate(output_dir: Path) -> dict[str, object]:
     with tempfile.TemporaryDirectory(prefix="asi-reader-for-audio-") as temp_dir:
         reader_dir = Path(temp_dir) / DEFAULT_READER_TEMP_NAME
@@ -204,6 +334,9 @@ def generate(output_dir: Path) -> dict[str, object]:
         audio_policy = profile_data.get("audio_manuscript_policy", {})
         if not isinstance(audio_policy, dict):
             raise TypeError("audio_manuscript_policy must be an object")
+        companion_policy = profile_data.get("companion_material_policy", {})
+        if not isinstance(companion_policy, dict):
+            raise TypeError("companion_material_policy must be an object")
         bundle_policy = profile_data.get("human_consumption_bundle_policy", {})
         if not isinstance(bundle_policy, dict):
             raise TypeError("human_consumption_bundle_policy must be an object")
@@ -213,19 +346,24 @@ def generate(output_dir: Path) -> dict[str, object]:
         output_dir.mkdir(parents=True, exist_ok=True)
 
         script_files: list[str] = []
+        treatment_summary: dict[str, dict[str, int]] = {}
         for source_path in sorted(reader_dir.rglob("*.qmd")):
             relative = source_path.relative_to(reader_dir)
             target = output_dir / relative.with_suffix(".md")
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text(qmd_to_audio_markdown(source_path.read_text(encoding="utf-8")), encoding="utf-8")
+            source_text = source_path.read_text(encoding="utf-8")
+            target.write_text(qmd_to_audio_markdown(source_text), encoding="utf-8")
             script_files.append(str(target.relative_to(output_dir)))
+            treatment_summary[str(target.relative_to(output_dir))] = scan_audio_treatments(source_text)
 
         write_pronunciation_glossary(output_dir)
         chapter_markers = write_chapter_markers(output_dir, script_files)
+        companion_notes = write_audio_companion_notes(output_dir, companion_policy, treatment_summary)
         review_checklist = write_audio_checklist(
             output_dir,
             audio_profile,
             audio_policy,
+            companion_policy,
             bundle_policy,
             script_files,
         )
@@ -238,7 +376,10 @@ def generate(output_dir: Path) -> dict[str, object]:
             "source_reader_generation": reader_summary,
             "output_dir": str(output_dir),
             "human_consumption_bundle_policy": bundle_policy,
+            "companion_material_policy": companion_policy,
             "script_files": script_files,
+            "companion_notes": companion_notes,
+            "companion_treatment_summary": treatment_summary,
             "pronunciation_glossary": "pronunciation_glossary.md",
             "chapter_markers": chapter_markers,
             "audio_review_checklist": review_checklist,
@@ -281,6 +422,15 @@ def main() -> None:
                 raise SystemExit("Audio script check failed: missing AUDIO_RELEASE_CHECKLIST.md.")
             if not (Path(temp_dir) / "chapter_markers.md").exists():
                 raise SystemExit("Audio script check failed: missing chapter_markers.md.")
+            profile_data = build_reader_edition.load_release_profiles()
+            companion_policy = profile_data.get("companion_material_policy", {})
+            companion_path = str(
+                companion_policy.get("audio_companion_path", "companion_notes.md")
+                if isinstance(companion_policy, dict)
+                else "companion_notes.md"
+            )
+            if not (Path(temp_dir) / companion_path).exists():
+                raise SystemExit(f"Audio script check failed: missing {companion_path}.")
             if manifest["review_status"] != "review_required":
                 raise SystemExit("Audio script check failed: generated manifest must require review.")
             print(

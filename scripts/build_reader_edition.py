@@ -206,10 +206,12 @@ def write_reader_checklist(
     output_dir: Path,
     profile: dict,
     reader_policy: dict,
+    companion_policy: dict,
     bundle_policy: dict,
     summary: dict[str, object],
 ) -> str:
     checklist_path = str(reader_policy.get("generated_checklist_path", "READER_RELEASE_CHECKLIST.md"))
+    companion_path = str(companion_policy.get("reader_companion_path", "companion_notes.md"))
     quality_checks = reader_policy.get("ebook_quality_checks", [])
     human_quality_floor = reader_policy.get("human_reader_quality_floor", [])
     downstream_formats = reader_policy.get("optional_downstream_formats", [])
@@ -244,6 +246,7 @@ def write_reader_checklist(
         "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
         "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
         "- [ ] Check that glossary and bibliography are sufficient for interested human readers.",
+        f"- [ ] Review `{companion_path}` for omitted dense material and e-reader/audio companion needs.",
         "- [ ] Record residuals and non-claims in an edition release record.",
         "",
         "## E-Reader And Document Checks",
@@ -300,11 +303,78 @@ def write_reader_checklist(
     return checklist_path
 
 
+def write_reader_companion_notes(
+    output_dir: Path,
+    companion_policy: dict,
+    summary: dict[str, object],
+) -> str:
+    companion_path = str(companion_policy.get("reader_companion_path", "companion_notes.md"))
+    removed_sections = summary.get("removed_sections", {})
+    if not isinstance(removed_sections, dict):
+        removed_sections = {}
+
+    lines = [
+        "# Reader Companion Notes",
+        "",
+        "Status: generated starter notes for major-version human-reader review.",
+        "",
+        "These notes are derived from the living book reader-edition generator. They are review aids for e-reader, document, and future audio packaging; they are not the canonical evidence ledger and they do not claim any artifact has been rendered.",
+        "",
+        "## Purpose",
+        "",
+        str(companion_policy.get("purpose", "Keep companion decisions explicit for human-reader releases.")),
+        "",
+        "## Removed Live-Only Sections",
+        "",
+    ]
+    if removed_sections:
+        lines.extend(["| Heading | Removed count |", "|---|---:|"])
+        for heading, count in sorted(removed_sections.items()):
+            lines.append(f"| `{heading}` | {count} |")
+    else:
+        lines.append("No live-only sections were removed by the generator.")
+
+    lines.extend([
+        "",
+        "## Companion Topics To Review",
+        "",
+    ])
+    for item in companion_policy.get("required_topics", []):
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Review Requirements",
+        "",
+    ])
+    for item in companion_policy.get("review_requirements", []):
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Artifact Notes",
+        "",
+        "- [ ] Confirm EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown, or plain-text artifacts are named only after the corresponding render or conversion succeeds.",
+        "- [ ] Confirm audio companion decisions are moved into the audio workspace before MP3, M4B, or audio-embedded EPUB work begins.",
+        "- [ ] Confirm meaning-critical caveats remain in the reader manuscript, not only in these notes.",
+        "",
+        "## Non-Claims",
+        "",
+    ])
+    for item in companion_policy.get("non_claims", []):
+        lines.append(f"- {item}")
+    lines.append("")
+
+    (output_dir / companion_path).write_text("\n".join(lines), encoding="utf-8")
+    return companion_path
+
+
 def write_reader_manifest(
     output_dir: Path,
     summary: dict[str, object],
     profile: dict,
     reader_policy: dict,
+    companion_policy: dict,
     bundle_policy: dict,
 ) -> None:
     manifest = {
@@ -327,6 +397,11 @@ def write_reader_manifest(
         "removed_sections": summary["removed_sections"],
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
+        "companion_notes": summary.get(
+            "companion_notes",
+            companion_policy.get("reader_companion_path", "companion_notes.md"),
+        ),
+        "companion_material_policy": companion_policy,
         "human_consumption_bundle_policy": bundle_policy,
         "ebook_quality_checks": reader_policy.get("ebook_quality_checks", []),
         "human_reader_quality_floor": reader_policy.get("human_reader_quality_floor", []),
@@ -363,6 +438,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     reader_policy = profile_data.get("reader_manuscript_policy", {})
     if not isinstance(reader_policy, dict):
         raise TypeError("reader_manuscript_policy must be an object")
+    companion_policy = profile_data.get("companion_material_policy", {})
+    if not isinstance(companion_policy, dict):
+        raise TypeError("companion_material_policy must be an object")
     bundle_policy = profile_data.get("human_consumption_bundle_policy", {})
     if not isinstance(bundle_policy, dict):
         raise TypeError("human_consumption_bundle_policy must be an object")
@@ -415,9 +493,18 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "removed_sections": removed_totals,
         "formats": profile.get("publication_formats", []),
     }
-    checklist_path = write_reader_checklist(output_dir, profile, reader_policy, bundle_policy, summary)
+    checklist_path = write_reader_checklist(
+        output_dir,
+        profile,
+        reader_policy,
+        companion_policy,
+        bundle_policy,
+        summary,
+    )
+    companion_path = write_reader_companion_notes(output_dir, companion_policy, summary)
     summary["review_checklist"] = checklist_path
-    write_reader_manifest(output_dir, summary, profile, reader_policy, bundle_policy)
+    summary["companion_notes"] = companion_path
+    write_reader_manifest(output_dir, summary, profile, reader_policy, companion_policy, bundle_policy)
     return summary
 
 
@@ -461,6 +548,15 @@ def main() -> None:
                 raise SystemExit(1)
             if not (output_dir / "READER_RELEASE_CHECKLIST.md").exists():
                 raise SystemExit("Reader edition check failed: missing READER_RELEASE_CHECKLIST.md.")
+            profile_data = load_release_profiles()
+            companion_policy = profile_data.get("companion_material_policy", {})
+            companion_path = str(
+                companion_policy.get("reader_companion_path", "companion_notes.md")
+                if isinstance(companion_policy, dict)
+                else "companion_notes.md"
+            )
+            if not (output_dir / companion_path).exists():
+                raise SystemExit(f"Reader edition check failed: missing {companion_path}.")
             print(
                 "Reader edition check passed: "
                 f"{summary['chapters']} chapters, {summary['files']} files, "

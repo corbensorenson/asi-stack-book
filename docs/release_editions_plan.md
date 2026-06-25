@@ -24,6 +24,7 @@ The live book serves all three audiences by separating content layers instead of
 | Machine-readable contracts | `book_structure.json`, `docs/book_outline.md`, inventories, schemas, scripts, Lean modules, and validation commands. | Canonical for AI/writing agents; excluded from reader/audio manuscripts except where explained in prose. |
 | Release derivatives | Generated reader source, EPUB/PDF/DOCX/HTML builds, audio scripts, MP3/M4B packages, and audio-embedded EPUBs. | Non-canonical outputs that exist only after generation, review or render, and release-record entry. |
 | Audio adaptation | Narration script, pronunciation guidance, chapter markers, and spoken-treatment notes. | Derived from the reviewed reader release, not directly from the live book. |
+| Companion material | Reader/audio companion notes for diagrams, images, tables, code, schemas, omitted dense matrices, and audio-embedded EPUB packaging checks. | Generated as release-workspace review aids; not a substitute for reader prose, evidence ledgers, or actual artifact checks. |
 
 Every chapter should keep meaning-critical caveats in the reader-facing spine. Live-only sections can expand the evidence trail, but they should not be the only place where a reader learns that a claim is speculative, blocked, or untested.
 
@@ -81,7 +82,7 @@ python3 scripts/build_reader_edition.py
 
 The generated tree is ignored by git. Review it before rendering release artifacts.
 
-Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, e-reader quality checks, downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, and release-record residuals. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
+Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, e-reader quality checks, downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, companion notes, and release-record residuals. The generated `companion_notes.md` records stripped live-only section counts and the dense material that needs reader/audio treatment. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
 
 The generated reader manifest also carries the human-consumption bundle policy so a release run can distinguish reader formats, optional e-reader conversions, and later audio artifacts without relying on memory.
 
@@ -171,7 +172,7 @@ Embedding audio into an EPUB is allowed only when the produced EPUB actually con
 
 The generated audio script is a review workspace, not an audiobook. It marks tables, diagrams, images, code, and schemas for spoken treatment so they are not silently omitted.
 
-The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. The manifest records that the script was derived from the reader release path and still requires review before any MP3, M4B, or audio-embedded EPUB can be claimed. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
+The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, `pronunciation_glossary.md`, and `companion_notes.md`. The manifest records that the script was derived from the reader release path and still requires review before any MP3, M4B, or audio-embedded EPUB can be claimed. The companion notes count tables, diagrams, code/schema blocks, and images by script file so the narration review can decide what is spoken, summarized, or moved to companion material. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
 
 The audio manifest carries the same human-consumption bundle policy, but only to enforce dependency direction. Audio is not a shortcut around reader review, and audio embedded in EPUB remains a separate checked artifact.
 

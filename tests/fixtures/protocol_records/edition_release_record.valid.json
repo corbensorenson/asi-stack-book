@@ -45,6 +45,11 @@
     "status": "not_required",
     "review_notes": "Reader release fixture does not include audio."
   },
+  "companion_material": {
+    "path_or_uri": "build/reader_edition/companion_notes.md",
+    "status": "generated",
+    "review_notes": "Fixture only; real records must summarize companion-note review before naming human-consumption artifacts as reviewed or published."
+  },
   "human_consumption_gate": {
     "reader_spine_review": "not_started",
     "ebook_layout_review": "not_started",

@@ -53,6 +53,14 @@
       "canonical_location": "build/audio_script/ and future reviewed audio release workspaces",
       "description": "The listening-oriented script layer that turns the reviewed reader manuscript into spoken chapters, pronunciation guidance, chapter markers, and companion-note decisions for tables, diagrams, code, and schemas.",
       "edition_policy": "Derived from the reviewed reader release, not directly from the live book. It does not imply audio files exist until they are generated and checked."
+    },
+    {
+      "id": "companion_material",
+      "label": "Reader and audio companion material",
+      "primary_audiences": ["interested_humans", "human_researchers"],
+      "canonical_location": "generated reader/audio release workspaces and explicit release records",
+      "description": "Human-useful notes for diagrams, images, tables, code, schemas, proof-adjacent material, omitted dense matrices, and audio-embedded EPUB packaging checks.",
+      "edition_policy": "Generated downstream of the reader or audio workspace. Companion material helps human consumption, but it is not the canonical evidence ledger and does not imply that an artifact has been published."
     }
   ],
   "reader_spine_contract": [
@@ -120,6 +128,28 @@
       "Audio embedded in EPUB is a produced artifact only after the exact audio files are embedded, checked, and named in an edition release record.",
       "E-reader convenience formats such as AZW3 or MOBI should be converted only from a reviewed EPUB and recorded as downstream artifacts, not treated as source formats.",
       "Reader releases are for relaxed human reading; audio releases are separate listening artifacts derived from a reviewed reader script, not from the live research scaffold."
+    ]
+  },
+  "companion_material_policy": {
+    "reader_companion_path": "companion_notes.md",
+    "audio_companion_path": "companion_notes.md",
+    "purpose": "Keep human-reader and audiobook companion decisions explicit without making dense live-book scaffolding part of the relaxed reader manuscript.",
+    "required_topics": [
+      "meaning-carrying diagrams and images",
+      "tables that should be summarized rather than read verbatim",
+      "code, schemas, and proof-adjacent passages that need companion treatment",
+      "omitted source matrices, guardrails, validation details, and release machinery",
+      "audio-embedded EPUB packaging and navigation checks"
+    ],
+    "review_requirements": [
+      "Companion notes must say which dense material was omitted, summarized, retained, or moved.",
+      "Meaning-changing uncertainty must stay in the reader or spoken prose, not only in companion notes.",
+      "Audio companion notes must be reviewed before MP3, M4B, or audio-embedded EPUB artifacts are claimed.",
+      "Reader companion notes must be checked for e-reader usefulness before optional AZW3, MOBI, Markdown, or plain-text derivatives are recorded."
+    ],
+    "non_claims": [
+      "Generated companion notes are review aids, not proof of artifact quality.",
+      "Generated companion notes do not claim that audio files, EPUB packages, or e-reader conversions exist."
     ]
   },
   "human_consumption_bundle_policy": {
@@ -301,7 +331,7 @@
         "retain": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
         "strip_or_summarize": [],
         "derive": [],
-        "exclude": ["release_derivatives", "audio_adaptation"]
+        "exclude": ["release_derivatives", "audio_adaptation", "companion_material"]
       },
       "publication_formats": ["html"],
       "include_appendices": [
@@ -343,7 +373,7 @@
       "content_layer_policy": {
         "retain": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
         "strip_or_summarize": [],
-        "derive": ["release_derivatives"],
+        "derive": ["release_derivatives", "companion_material"],
         "exclude": ["audio_adaptation"]
       },
       "publication_formats": ["html", "pdf"],
@@ -379,7 +409,7 @@
       "content_layer_policy": {
         "retain": ["reader_spine"],
         "strip_or_summarize": ["live_research_scaffold", "evidence_matrices", "machine_contracts"],
-        "derive": ["release_derivatives"],
+        "derive": ["release_derivatives", "companion_material"],
         "exclude": ["audio_adaptation"]
       },
       "publication_formats": ["html", "epub", "pdf", "docx"],
@@ -426,7 +456,7 @@
       "content_layer_policy": {
         "retain": [],
         "strip_or_summarize": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
-        "derive": ["release_derivatives", "audio_adaptation"],
+        "derive": ["release_derivatives", "audio_adaptation", "companion_material"],
         "exclude": []
       },
       "publication_formats": ["mp3", "m4b", "audio-embedded-epub"],

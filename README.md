@@ -21,7 +21,7 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
 - `scripts/validate_reader_spine.py` checks that the generated reader manuscript keeps a substantial human-readable spine after live-only scaffolding is stripped.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
-- `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
+- `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
@@ -90,6 +90,7 @@ The project uses one canonical source tree with explicit content layers:
 
 - The reader-facing chapter spine is ordinary prose, diagrams, examples, uncertainty, and summaries that should still read well after live-only headings are removed.
 - The live research scaffold contains source crosswalks, guardrails, Codex tests, formalization hooks, claim mappings, and other audit machinery for AIs and researchers.
+- Companion material records how diagrams, tables, code, schemas, and omitted dense matrices should be handled for e-reader, document, and audio releases.
 - Release derivatives such as EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB exist only after generation or render, review, and release-record entry.
 
 For major versions, use [docs/major_version_release_runbook.md](docs/major_version_release_runbook.md) as the operating sequence: tag the live book, validate the live/research surface, generate and review the reader manuscript, render only the formats that pass locally, then derive audio from the reviewed reader script.
@@ -123,7 +124,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-Generated edition builds are written under `build/` and ignored by git. Reader builds include `READER_RELEASE_CHECKLIST.md`; audio builds include `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts unless those specific render, conversion, or audio-generation commands have actually succeeded and a release record says so.
+Generated edition builds are written under `build/` and ignored by git. Reader builds include `READER_RELEASE_CHECKLIST.md` and `companion_notes.md`; audio builds include `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts unless those specific render, conversion, or audio-generation commands have actually succeeded and a release record says so.
 
 ## Dynamic Book Structure
 

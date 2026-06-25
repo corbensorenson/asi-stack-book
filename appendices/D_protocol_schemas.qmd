@@ -1123,6 +1123,10 @@ edition_release_record:
     script_dir: string
     status: not_required
     review_notes: string
+  companion_material:
+    path_or_uri: string
+    status: generated
+    review_notes: string
   human_consumption_gate:
     reader_spine_review: not_started
     ebook_layout_review: not_started

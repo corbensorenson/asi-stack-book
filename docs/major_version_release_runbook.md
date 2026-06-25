@@ -23,11 +23,13 @@ Meaning-changing caveats must appear in the reader-facing spine. Do not put the 
 3. Optionally produce a research release that preserves the full live evidence machinery.
 4. Generate a reader source tree from the tag.
 5. Review the generated reader manuscript for continuity and e-reader quality.
-6. Render EPUB, DOCX, HTML, and PDF only as local dependencies allow.
-7. Record only formats that actually rendered.
-8. Generate an audio-script workspace only after the reader manuscript is reviewed.
-9. Replace generated narration notes with reviewed spoken prose or companion-note references.
-10. Produce MP3, M4B, or audio-embedded EPUB only after the reviewed script is recorded, packaged, spot-checked, and recorded.
+6. Review generated reader companion notes for dense material that should be retained, summarized, or moved out of the relaxed manuscript.
+7. Render EPUB, DOCX, HTML, and PDF only as local dependencies allow.
+8. Record only formats that actually rendered.
+9. Generate an audio-script workspace only after the reader manuscript is reviewed.
+10. Replace generated narration notes with reviewed spoken prose or companion-note references.
+11. Review audio companion notes before packaging MP3, M4B, or audio-embedded EPUB artifacts.
+12. Produce MP3, M4B, or audio-embedded EPUB only after the reviewed script is recorded, packaged, spot-checked, and recorded.
 
 ## Human Consumption Bundle
 
@@ -75,7 +77,7 @@ Generate the local source workspace:
 python3 scripts/build_reader_edition.py
 ```
 
-Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md` and the generated manuscript before rendering release artifacts.
+Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, and the generated manuscript before rendering release artifacts.
 
 Attempt specific formats and record actual local outcomes:
 
@@ -95,7 +97,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/chapter_markers.md`, and `build/audio_script/pronunciation_glossary.md`.
+Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, `build/audio_script/chapter_markers.md`, and `build/audio_script/pronunciation_glossary.md`.
 
 Before claiming any audio artifact:
 

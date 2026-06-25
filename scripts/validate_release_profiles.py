@@ -19,10 +19,12 @@ REQUIRED_CONTENT_LAYERS = {
     "machine_contracts",
     "release_derivatives",
     "audio_adaptation",
+    "companion_material",
 }
 CONTENT_LAYER_POLICY_KEYS = ("retain", "strip_or_summarize", "derive", "exclude")
 REQUIRED_TOP_LEVEL_POLICIES = {
     "major_version_policy",
+    "companion_material_policy",
     "human_consumption_bundle_policy",
     "reader_manuscript_policy",
     "reader_spine_validation",
@@ -129,11 +131,14 @@ def validate_content_layer_policy(
             if isinstance(policy.get("strip_or_summarize"), list)
             else set()
         )
+        derived = set(policy.get("derive", [])) if isinstance(policy.get("derive"), list) else set()
         if "reader_spine" not in retained:
             errors.append("reader_release must retain the reader_spine content layer.")
         for required_layer in ("live_research_scaffold", "machine_contracts"):
             if required_layer not in stripped:
                 errors.append(f"reader_release must strip_or_summarize {required_layer}.")
+        if "companion_material" not in derived:
+            errors.append("reader_release must derive companion_material for e-reader/audio treatment notes.")
 
     if profile_id == "audio_release":
         derived = set(policy.get("derive", [])) if isinstance(policy.get("derive"), list) else set()
@@ -144,6 +149,8 @@ def validate_content_layer_policy(
         )
         if "audio_adaptation" not in derived:
             errors.append("audio_release must derive the audio_adaptation content layer.")
+        if "companion_material" not in derived:
+            errors.append("audio_release must derive companion_material for spoken-treatment notes.")
         if "reader_spine" not in stripped:
             errors.append("audio_release must adapt the reader_spine through strip_or_summarize.")
 
@@ -246,6 +253,35 @@ def main() -> None:
             missing_ladder = REQUIRED_RELEASE_LADDER_STAGES - stages
             if missing_ladder:
                 errors.append(f"major_version_policy.release_ladder missing stages: {sorted(missing_ladder)}")
+
+    companion_policy = data.get("companion_material_policy")
+    if isinstance(companion_policy, dict):
+        for key in ("reader_companion_path", "audio_companion_path", "purpose"):
+            value = companion_policy.get(key)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"companion_material_policy.{key} must be a non-empty string.")
+        for path_key in ("reader_companion_path", "audio_companion_path"):
+            value = companion_policy.get(path_key)
+            if isinstance(value, str) and value and not value.endswith(".md"):
+                errors.append(f"companion_material_policy.{path_key} must be a Markdown file name.")
+        validate_string_list(
+            "companion_material_policy",
+            "required_topics",
+            companion_policy.get("required_topics"),
+            errors,
+        )
+        validate_string_list(
+            "companion_material_policy",
+            "review_requirements",
+            companion_policy.get("review_requirements"),
+            errors,
+        )
+        validate_string_list(
+            "companion_material_policy",
+            "non_claims",
+            companion_policy.get("non_claims"),
+            errors,
+        )
 
     bundle_policy = data.get("human_consumption_bundle_policy")
     if isinstance(bundle_policy, dict):
