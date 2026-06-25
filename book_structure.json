@@ -78,22 +78,62 @@
             {
               "source_id": "viea",
               "mapped_support": "Frames advanced AI as intent-to-execution machinery that turns human intent into command contracts, durable artifacts, routing, verification, runtime execution, feedback, residuals, tools, benchmarks, and regressions.",
-              "limits": "Architecture proposal and systems framework only; does not prove a completed deployment, benchmark result, or end-to-end ASI stack in this repository."
+              "limits": "Architecture proposal and systems framework only; does not prove a completed deployment, benchmark result, or end-to-end ASI stack in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:13-17",
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-129"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution flow, command contracts, durable artifacts, routing, verification, runtime targeting, feedback, residuals, benchmarks, and regression boundaries; no deployment or benchmark result is promoted."
             },
             {
               "source_id": "beastbrain",
               "mapped_support": "Supports the whole-stack framing with local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, and interface layers rather than a stateless model.",
-              "limits": "Hardware, cost, context-length, and benchmark claims are source-reported and not locally reproduced."
+              "limits": "Hardware, cost, context-length, and benchmark claims are source-reported and not locally reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/beastbrain.txt:15-23",
+                "sources/raw/google_docs/beastbrain.txt:31-39",
+                "sources/raw/google_docs/beastbrain.txt:64-83",
+                "sources/raw/google_docs/beastbrain.txt:87-103",
+                "sources/raw/google_docs/beastbrain.txt:135-148",
+                "sources/raw/google_docs/beastbrain.txt:167-169"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stateless-model critique, local organism framing, SSD/memory persistence, verification/planning/routing/security/interface layers, and post-model architecture framing; no hardware, cost, context-length, or benchmark claim is promoted."
             },
             {
               "source_id": "aletheia",
               "mapped_support": "Supports separating generation from trusted output through context acquisition, claim decomposition, verification gates, uncertainty routing, and constitutional governance.",
-              "limits": "No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present here."
+              "limits": "No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/aletheia.txt:16-30",
+                "sources/raw/google_docs/aletheia.txt:221-229",
+                "sources/raw/google_docs/aletheia.txt:257-271",
+                "sources/raw/google_docs/aletheia.txt:473-489",
+                "sources/raw/google_docs/aletheia.txt:519-528",
+                "sources/raw/google_docs/aletheia.txt:612-614",
+                "sources/raw/google_docs/aletheia.txt:717-724"
+              ],
+              "passage_review_note": "Reviewed local raw cache for generation-vs-trusted-output separation, job contracts, least-privilege context, verification gates, claim extraction/tiering, evidence objects, and constitutional/policy governance; no local implementation, oracle, adversarial-review, or proof result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports the execution/labor layer by treating AI work as typed jobs, deterministic control planes, evidence, isolation, audit, replay, delivery, and residual feedback.",
-              "limits": "Useful as an execution-OS design source, not proof that security or benchmark behavior has been reproduced in this repository."
+              "limits": "Useful as an execution-OS design source, not proof that security or benchmark behavior has been reproduced in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:3559-3565",
+                "sources/raw/google_docs/talos.txt:3964-3970",
+                "sources/raw/google_docs/talos.txt:4433-4450",
+                "sources/raw/google_docs/talos.txt:4472-4482",
+                "sources/raw/google_docs/talos.txt:4515-4536",
+                "sources/raw/google_docs/talos.txt:4803-4809",
+                "sources/raw/google_docs/talos.txt:4998-5012"
+              ],
+              "passage_review_note": "Reviewed local raw cache for AI labor OS/control-plane framing, compiled verified work, execution middleware, isolation, contracts/scope hashes, audit logs, delivery/security boundaries, and configuration/runtime costs; no Talos security or benchmark behavior is promoted."
             },
             {
               "source_id": "moecot",
@@ -103,7 +143,16 @@
             {
               "source_id": "scf",
               "mapped_support": "Supports the governed-stack thesis by defining stable capability fields as replaceable machinery behind durable contracts, evidence registries, qualification, routing, authority, lifecycle, and recovery paths.",
-              "limits": "Does not establish production safety, global alignment, or independently validated reversibility for the whole stack."
+              "limits": "Does not establish production safety, global alignment, or independently validated reversibility for the whole stack.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:57-64",
+                "sources/raw/google_docs/scf.txt:106-123",
+                "sources/raw/google_docs/scf.txt:256-270",
+                "sources/raw/google_docs/scf.txt:302-310"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable field identity, replaceable machinery, contracts/artifacts/evidence/qualification/routing/authority/lifecycle/recovery, content-bound qualification, defeasible evidence, witnessed transfer, and lifecycle evidence boundaries; no production-safety or reversibility claim is promoted."
             }
           ],
           "mechanism": [

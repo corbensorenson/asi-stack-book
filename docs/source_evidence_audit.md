@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 458 |
 | Source notes listing assigned chapter | 458 |
-| Passage-reviewed mappings recorded | 5 |
+| Passage-reviewed mappings recorded | 10 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -33,7 +33,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Chapter ID | Assigned pairs | Claim-source mappings | Source notes present | Source notes listing chapter | Passage-reviewed mappings | Support state | Next action |
 |---|---:|---:|---:|---:|---:|---|---|
-| `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
+| `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
@@ -197,12 +197,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 
 | Claim ID | Chapter ID | Source ID | Mapping state | Source note state | Source-note chapter listing | Passage review state |
 |---|---|---|---|---|---|---|
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `beastbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `aletheia` | mapped | note present | chapter listed | not passage-reviewed |
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `aletheia` | mapped | note present | chapter listed | passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |

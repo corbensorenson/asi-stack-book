@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C; mechanism-level source-passage audits remain incomplete."
+  - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The layer_boundary_record fixture and stack-boundary Lean proofs validate narrow record/proof surfaces only; source-to-layer traceability and claim-support audits remain planned."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`; raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; connector-only/source-note mapped: `moecot` |
 | Test state | `layer_boundary_record.valid.json` passes protocol fixture validation and stack-boundary Lean hooks build locally; source-to-layer traceability and claim-support audits remain planned. |
 
 ## Drafting guardrail
@@ -62,13 +62,13 @@ The ASI Stack treats those missing contracts as first-class design objects. It d
 
 [asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
-The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence.
+The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Aletheia supports the trusted-output and verification boundary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence.
 
 The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
 
 ### Claim-source mapping status
 
-Appendix C now records exact source-note mappings for this core claim across all assigned sources. The mappings support the architectural frame, not an implementation result.
+Appendix C now records exact source-note mappings for this core claim across all assigned sources. Five mappings also carry reviewed local raw-cache passage references in the manifest. `moecot` remains connector-only/source-note mapped because usable local raw text is not committed. The mappings support the architectural frame, not an implementation result.
 
 | Source | What it supports | Limit |
 |---|---|---|
