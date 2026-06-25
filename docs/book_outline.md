@@ -1639,6 +1639,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An artifact graph schema with job, source, context, and evidence edges.
+- Passage-reviewed Appendix C mappings for six local raw-cache sources: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, and `cognitive_loop_closure`; `moecot` remains connector/source-note mapped until durable runtime artifacts, ledgers, logs, benchmark records, or replay records are imported and inspected.
 - Implemented protocol validation: `artifact_graph_record` fixture validates public record shape only.
 - Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.

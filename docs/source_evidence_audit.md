@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 131 |
+| Passage-reviewed mappings recorded | 137 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -60,7 +60,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `unified-adaptive-tribunal-and-adversarial-review` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 4 | argument | passage review required before source-derived promotion |
-| `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
+| `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
@@ -362,12 +362,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `talos_md` | mapped | note present | chapter listed | not passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `spinoza_composer` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `spinoza_composer` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `viea` | mapped | note present | chapter listed | not passage-reviewed |

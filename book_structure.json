@@ -4334,32 +4334,85 @@
             {
               "source_id": "talos",
               "mapped_support": "Supports artifact evidence through typed jobs, delivery, evidence records, audit logs, replay, source allow-listing, blind secret handles, tests, residuals, regression coverage, and forgotten-failure prevention.",
-              "limits": "No Talos artifact graph, audit reconstruction, replay run, benchmark, or security result has been reproduced in this repository."
+              "limits": "No Talos artifact graph, audit reconstruction, replay run, benchmark, or security result has been reproduced in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5791-5820",
+                "sources/raw/google_docs/talos.txt:5866-5890",
+                "sources/raw/google_docs/talos.txt:5913-5946",
+                "sources/raw/google_docs/talos.txt:5963-5980",
+                "sources/raw/google_docs/talos.txt:6208-6241",
+                "sources/raw/google_docs/talos.txt:6308-6338",
+                "sources/raw/google_docs/talos.txt:6530-6535"
+              ],
+              "passage_review_note": "Reviewed local raw cache for verifiable cognitive jobs/artifacts, evidence bindings, claim graphs, verification states, typed jobs, artifact certification, proof bundles, deterministic audit logging, replay, evidence auditability, traceable claim-evidence-uncertainty graphs, and replayable auditable outputs; no Talos artifact-graph service, replay run, audit reconstruction, benchmark, or security result is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops.",
-              "limits": "No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here."
+              "limits": "No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:420-500",
+                "sources/raw/google_docs/viea.txt:651-669",
+                "sources/raw/google_docs/viea.txt:1028-1047"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-artifact-to-execution flow, artifact graph purpose, artifact types/fields/relationships, verification and runtime feedback links, workflow-to-tool closure, and minimum vertical-slice artifact store/claim-ledger requirements; no VIEA deployment, runtime trace, artifact graph service, or benchmark result is promoted."
             },
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style evaluation metrics.",
-              "limits": "Architecture and evaluation plan only; no working compiler, trace suite, repair-locality benchmark, or empirical ablation exists in this repository."
+              "limits": "Architecture and evaluation plan only; no working compiler, trace suite, repair-locality benchmark, or empirical ablation exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:34-58",
+                "sources/raw/google_docs/cognitive_compilation.txt:193-205",
+                "sources/raw/google_docs/cognitive_compilation.txt:290-312",
+                "sources/raw/google_docs/cognitive_compilation.txt:352-382",
+                "sources/raw/google_docs/cognitive_compilation.txt:740-756"
+              ],
+              "passage_review_note": "Reviewed local raw cache for source plans, typed semantic IR DAGs, target lowering, final artifacts plus trace bundles, validation, trace verification, localized repair, end-to-end compile/render/validate pseudocode, intermediate artifact storage, and trace-bundle fields; no compiler implementation, trace suite, repair-locality benchmark, or empirical ablation is promoted."
             },
             {
               "source_id": "spinoza_composer",
               "mapped_support": "Supports artifact graph enrichment with world graphs, belief states, causal history, scope tags, narrative trees, verified logical state, disclosures, exports, baselines, and evaluation plans.",
-              "limits": "No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run here."
+              "limits": "No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza_composer.txt:935-945",
+                "sources/raw/google_docs/spinoza_composer.txt:984-1018",
+                "sources/raw/google_docs/spinoza_composer.txt:1178-1186",
+                "sources/raw/google_docs/spinoza_composer.txt:1274-1304",
+                "sources/raw/google_docs/spinoza_composer.txt:1463-1469"
+              ],
+              "passage_review_note": "Reviewed local raw cache for two-layer evidence/canon graph framing, provenance and uncertainty, source pointers, contracted generation, provenance/audit bundles, replay/debugging/compliance review, export fields, final artifact hashes, and bounded invariants; no composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports provenance-bearing artifacts through canonical intermediate forms, semantic patches, stable provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals.",
-              "limits": "No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists in this repo."
+              "limits": "No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-24",
+                "sources/raw/google_docs/genesiscode.txt:183-210",
+                "sources/raw/google_docs/genesiscode.txt:218-243",
+                "sources/raw/google_docs/genesiscode.txt:354-361"
+              ],
+              "passage_review_note": "Reviewed local raw cache for canonical IR, semantic patch artifacts, deterministic effect logs, replay semantics, auditable AI calls, obligation/evidence artifacts, content-addressed package hashes, and example acceptance with recorded effect logs and provenance; no GenesisCode kernel, patch checker, deterministic replay system, proof artifact, benchmark, or security audit is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports using execution traces as procedural-memory substrate through trajectory logging, loop detection, tool cards, verification, registries, monitoring, lifecycle states, and retirement discipline.",
-              "limits": "No local loop detector, trace miner, synthesized tool, or verification harness has been executed."
+              "limits": "No local loop detector, trace miner, synthesized tool, or verification harness has been executed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:438-464",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:548-592",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:727-758",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:884-931"
+              ],
+              "passage_review_note": "Reviewed local raw cache for structured trajectory logs, input/output objects, artifacts, verification results, loop detection over logs, tool registry records, runtime monitoring, residuals, separated telemetry/cognitive/event/residual logs, bounded tools, and audit logs for model-containing tools; no loop detector, trace miner, synthesized tool, or verification harness is promoted."
             },
             {
               "source_id": "moecot",
