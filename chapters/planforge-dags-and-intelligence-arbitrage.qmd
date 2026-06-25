@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until scheduler, tier-adequacy, cost-quality, or route-trace evidence exists."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "Lean coverage is limited to finite indexed plan-graph and node-outcome predicates; deployed scheduler, tier-adequacy, and cost-quality proofs remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -64,6 +64,19 @@ The opposite failure is under-routing: a weak worker handles a node whose qualit
 [planforge-dags-and-intelligence-arbitrage.core, label: Design rationale, support: argument] PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
 
 The claim remains at `argument` support. PlanForge and its compiler-architecture variant supply decomposition, primitive typing, MVI routing, and scheduling vocabulary. Cognitive Compilation supplies the IR and repair-locality connection. TokenMana motivates budgets as load, latency, review, and cognitive-friction constraints. The Coherence Exchange remains speculative connector context, not benchmark evidence.
+
+### Claim-source mapping status
+
+Appendix C now maps this PlanForge DAG claim to all assigned source notes. The mappings support DAG decomposition, tier annotation, budget pressure, and verification burden as an architecture, not measured cost savings, tier adequacy, deployed scheduler behavior, or implemented epistemic economics.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `planforge` | Recursive decomposition, primitive action schemas, optimization, pre/postconditions, dependency inference, scheduling, MVI tier annotation, execution handoff, fallback, and failure-driven replanning. | No scheduler implementation, route trace, reproduced benchmark, or cost-quality result is present. |
+| `planforge_compiler_arch` | Planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, independent-node parallelism, and critical-path scheduling. | Market and cost comparisons are motivating estimates only; cost, time, and quality numbers are not reproduced here. |
+| `coherence_exchange` | Intelligence-arbitrage and coherence/liquidity framing connecting orchestration to verification supply chains, reviewable knowledge units, accounting mechanisms, and governance-visible knowledge movement. | Speculative connector context only; economic and institutional claims are not implemented or externally corroborated here. |
+| `cognitive_compilation` | DAG compilation, dependency analysis, scheduling, critical path and slack exposure, localized recompilation, validator-backed artifacts, repair locality, and capability-tier routing. | No local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits. |
+| `tokenmana` | Budgets include governed capacity, load variance, latency, burst limits, review capacity, token-normalized cognitive friction, and quality constraints. | Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists here. |
+| `moecot` | Runtime-reference context for routed specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff. | Source-reported runtime and benchmark artifacts have not been imported, inspected, or reproduced; this is not scheduler evidence. |
 
 ## Mechanism
 

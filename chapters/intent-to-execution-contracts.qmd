@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until execution traces, replay, or behavioral tests exist."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ The stack needs a contract boundary because later layers should not infer author
 [intent-to-execution-contracts.core, label: Design rationale, support: argument] The stack should transform intent into execution contracts before any tool or runtime action occurs.
 
 The claim remains at `argument` support. VIEA supplies the intent-to-artifact spine, Talos supplies the typed-job and audit pressure, Software Magic Grimoire supplies the command-envelope vocabulary, GenesisCode supplies effect/provenance discipline, and MoECOT is still treated as an implementation-reference route rather than local proof.
+
+### Claim-source mapping status
+
+Appendix C now maps this core claim to all assigned source notes. The mappings support the need for an intent-to-execution contract boundary before tool or runtime action, but they do not prove a deployed runtime, trace replay, artifact satisfaction, or behavioral execution tests.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `viea` | Intent becomes structured command contracts, durable artifacts, routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage. | Architecture proposal only; no deployed runtime, replayed vertical slice, or artifact-satisfaction test is proven here. |
+| `talos` | Work lowers into typed job lifecycles with decomposition, contract locks, execution, adjudication, delivery, feedback, audit, replay, approvals, and residual feedback. | Security, approval behavior, benchmark claims, and tool-effect enforcement are not reproduced or verified in this repository. |
+| `software_magic_grimoire` | Bounded operational instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, and recovery paths. | Promptcraft vocabulary only; no empirical prompt-performance result, execution runtime, or behavioral test is present. |
+| `genesiscode` | AI proposals remain separate from execution through deterministic kernels, capability-mediated effects, semantic patches, provenance hashes, replay logs, obligations, and protocol seals. | No prototype, replay checker, proof artifact, benchmark, or security audit is present here. |
+| `moecot` | Runtime-reference context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, and handoff. | Connector-readable context only; code, logs, release artifacts, and benchmarks have not been imported or reproduced. |
 
 ## Mechanism
 

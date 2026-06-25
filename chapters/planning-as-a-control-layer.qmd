@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until planner harnesses, dependency checks, context-demand tests, or runtime replanning traces exist."
   - "The plan_graph fixture validates schema/example consistency only; decomposition, dependency ordering, context-demand, and runtime replanning tests remain unimplemented."
   - "The implemented Planning Lean predicates cover finite plan-node records only; they do not prove planner quality, graph completeness, dependency soundness, or deployed replanning behavior."
   - "No support-state promotion is implied by this drafting pass."
@@ -63,6 +63,18 @@ Planning also needs to be separate from final answers because plans are cheap to
 [planning-as-a-control-layer.core, label: Design rationale, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
 
 The claim remains at `argument` support. PlanForge supplies decomposition, dependency, tier, and scheduler vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; MoECOT remains an implementation-reference route rather than local evidence for this chapter.
+
+### Claim-source mapping status
+
+Appendix C now maps this planning-control claim to all assigned source notes. The mappings support planning as a bounded control artifact between accepted goals and execution, not planner quality, dependency soundness, context-demand prediction, or deployed replanning behavior.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `planforge` | Planning middleware decouples planning from execution through hierarchical decomposition, primitive schemas, plan optimization, dependency inference, scheduling, MVI tiering, fallback, and failure-driven replanning. | Conceptual whitepaper only; no verified scheduler, acyclicity checker, or benchmark result is present. |
+| `viea` | Accepted commands feed an artifact spine with orchestration, routing, workflow-to-tool compilation, verification, runtime adapters, feedback, residuals, tools, benchmarks, and regression coverage. | Does not prove a deployed planner, runtime handoff, or end-to-end execution trace. |
+| `cognitive_compilation` | Plan formation, semantic compilation, target compilation, execution, and repair are separated while goals and constraints become source plans, semantic atoms, DAGs, validators, and repairable artifacts. | No local compiler, planner harness, task trace suite, or empirical ablation validates planning quality. |
+| `software_magic_grimoire` | Workflows can be represented as spell stacks with handoffs, guards, entry/exit rules, loops, recursion, recovery paths, evidence-advancing loops, and mode separation. | Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present. |
+| `moecot` | Runtime-reference context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff. | Runtime and benchmark claims remain source-reported until artifacts are inspected or reproduced. |
 
 ## Mechanism
 

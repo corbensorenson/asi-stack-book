@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until parser, dispatch, prompt-injection, or execution tests exist."
   - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ GenesisCode adds a useful analogy from software: privileged effects and control 
 [command-contracts-and-semantic-interfaces.core, label: Design rationale, support: argument] Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
 
 The claim remains at `argument` support. Software Magic Grimoire supplies the semantic-density and bounded-command vocabulary; VIEA supplies the role/objective/context/constraint/output/verification envelope; GenesisCode supplies privileged effect and protocol-shape discipline; Cognitive Compilation and Talos show why the contract must lower cleanly into IR, typed jobs, and evidence records.
+
+### Claim-source mapping status
+
+Appendix C now maps this core command-contract claim to all assigned source notes. The mappings support the explicit semantic-interface vocabulary, not prompt safety, parser completeness, dispatch correctness, or empirical productivity gains.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `software_magic_grimoire` | Instructions as bounded spells with roles, objectives, context, constraints, procedure, output, verification, failure behavior, guards, handoffs, loops, recursion, and recovery paths. | Promptcraft and vocabulary framework only; no prompt-safety or productivity result is proven. |
+| `viea` | Structured command layer with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, ledgers, routing, runtime adapters, and feedback. | Does not prove an automated semantic extractor, command dispatcher, injection defense, or execution correctness. |
+| `genesiscode` | Privileged effects and control responses require recognizable protocol shapes: capability boundaries, replay logs, obligations, semantic patches, provenance hashes, and protocol seals. | No local implementation, replay checker, proof module, benchmark, or security audit validates the protocol discipline. |
+| `cognitive_compilation` | Goals and constraints lower into source plans, semantic atoms, inputs, outputs, dependencies, validation requirements, compiler passes, and target artifacts. | No local compiler, parser, trace suite, or empirical ablation validates the lowering path. |
+| `talos` | Contracts lower into typed jobs with contract locks, adjudication, delivery, feedback, evidence records, audit, replay, approvals, and controlled adapters. | Design source only; tool-effect enforcement, approval behavior, replay behavior, and benchmark/security claims are unverified here. |
 
 ## Mechanism
 

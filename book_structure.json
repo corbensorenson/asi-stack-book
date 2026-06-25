@@ -1719,6 +1719,33 @@
               "target": "An execution job without required approval cannot transition to running.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Frames advanced AI as an intent-to-execution system where human intent becomes structured command contracts, durable artifacts, routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal and systems framework only; does not prove a deployed runtime, replayed vertical slice, artifact satisfaction, or behavioral execution tests in this repository."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports lowering work into a typed job lifecycle with decomposition, contract locks, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, approvals, and residual feedback.",
+              "limits": "Design source only; security, approval behavior, benchmark claims, and tool-effect enforcement are not reproduced or verified in this repository."
+            },
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports bounded operational instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
+              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result, execution runtime, or local behavioral test is present."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports separating AI proposals from execution through a small deterministic kernel, capability boundaries for effects, semantic patches, provenance hashes, replayable logs, obligations, and protocol seals.",
+              "limits": "No GenesisCode prototype, replay checker, proof artifact, benchmark result, or security audit is present in this repository."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for compact orchestration, specialist lanes, fail-closed control planes, run/task/control-plane ledgers, readiness gates, replay, and handoff.",
+              "limits": "Connector-readable runtime reference only; code, logs, release artifacts, and benchmark results have not been imported, inspected, or reproduced here."
+            }
           ]
         },
         {
@@ -1791,6 +1818,33 @@
               "target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
               "status": "implemented"
             }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports treating instructions as bounded spells with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
+              "limits": "Promptcraft and vocabulary framework only; does not prove prompt safety, parser completeness, or productivity gains."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports a structured command layer with role, objective, context, constraints, procedure, output contract, verification, failure behavior, artifacts, verification ledgers, routing, runtime adapters, and feedback.",
+              "limits": "Does not prove an automated semantic extractor, deployed command dispatcher, prompt-injection resistance, or execution correctness."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports explicit protocol shapes for privileged effects and control responses through capability boundaries, replay logs, obligations, semantic patches, provenance hashes, and unforgeable protocol seals.",
+              "limits": "No local implementation, replay checker, proof module, benchmark, or security audit validates the protocol discipline."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports lowering goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, inputs, outputs, dependencies, validation requirements, compiler passes, and target-specific artifacts.",
+              "limits": "Architecture and evaluation-plan source only; no local compiler, parser, trace suite, or empirical ablation validates the lowering path."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports the need for contracts that can lower into typed jobs with contract locks, adjudication, delivery, feedback, evidence records, audit, replay, approval gates, and controlled runtime adapters.",
+              "limits": "Design source only; does not prove tool-effect enforcement, approval behavior, replay behavior, or benchmark/security claims."
+            }
           ]
         },
         {
@@ -1858,13 +1912,40 @@
               "tag": "lean:planning.control_layer.operational_invariant",
               "module": "AsiStackProofs.Planning",
               "target": "A plan node inherits the authority ceiling of its parent contract unless governance lowers it.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:planning.control_layer.failure_blocks_promotion",
               "module": "AsiStackProofs.Planning",
               "target": "A plan with unsatisfied required constraints cannot be dispatched.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "planforge",
+              "mapped_support": "Defines planning middleware that decouples planning from execution through hierarchical decomposition, primitive action schemas, plan optimization, dependency inference, scheduling, minimum viable intelligence tiering, fallback requirements, and failure-driven replanning.",
+              "limits": "Conceptual whitepaper only here; no verified implementation, scheduler run, acyclicity checker, or benchmark result is present."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports the accepted-command-to-artifact spine with orchestration, routing, workflow-to-tool compilation, verification, runtime adapters, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only; does not prove a deployed planner, runtime handoff, or end-to-end execution trace."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports separating plan formation, semantic compilation, target compilation, execution, and repair while converting goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, DAGs, validators, and repairable artifacts.",
+              "limits": "No local compiler, planner harness, task trace suite, or empirical ablation validates planning quality or repair locality."
+            },
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports workflow control through named spell stacks with handoff artifacts, guards, entry rules, exit rules, loops, recursion, recovery paths, evidence-advancing loops, and mode separation.",
+              "limits": "Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for a compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff.",
+              "limits": "Runtime and benchmark claims remain source-reported context until code, logs, release artifacts, or reproduced benchmarks are available."
             }
           ]
         },
@@ -1933,13 +2014,45 @@
               "tag": "lean:planforge.dag.operational_invariant",
               "module": "AsiStackProofs.PlanForge",
               "target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:planforge.dag.failure_blocks_promotion",
               "module": "AsiStackProofs.PlanForge",
               "target": "A node whose quality predicate fails must escalate or emit a residual.",
-              "status": "planned"
+              "status": "implemented"
+            }
+          ],
+          "claim_source_mappings": [
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports DAG-style planning through recursive decomposition, primitive action schemas, plan optimization, pre/postcondition annotation, dependency inference, scheduling, minimum viable intelligence tier annotation, execution handoff, fallback, and failure-driven replanning.",
+              "limits": "Conceptual design only here; no scheduler implementation, reproduced benchmark, route trace, or cost-quality result is present."
+            },
+            {
+              "source_id": "planforge_compiler_arch",
+              "mapped_support": "Sharpens the planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, parallel independent nodes, and critical-path scheduling.",
+              "limits": "Market and cost comparisons are motivating estimates only; this repository has not reproduced cost, time, or quality numbers."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports the intelligence-arbitrage and coherence/liquidity framing by connecting PlanForge-style orchestration to verification supply chains, reviewable knowledge units, value/accounting mechanisms, and governance-visible movement of knowledge between agents or tools.",
+              "limits": "Speculative synthesis and connector-readable context only; economic, epistemic-liquidity, security, and institutional claims are not implemented or externally corroborated here."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports DAG compilation, dependency analysis, scheduling, critical-path/slack exposure, localized recompilation, validator-backed artifacts, repair locality, and routing subtasks to different capability tiers.",
+              "limits": "Architecture and evaluation-plan source only; no local compiler, DAG benchmark, route-selection trace, or empirical ablation validates these benefits."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports treating budgets as governed capacity involving load variance, latency, burst limits, token-normalized cognitive friction, review capacity, and quality constraints rather than token counts alone.",
+              "limits": "Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists in this repository."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for routed specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff around multi-core orchestration.",
+              "limits": "Source-reported runtime and benchmark artifacts have not been ingested, inspected, or reproduced; this mapping is not scheduler evidence."
             }
           ]
         },
