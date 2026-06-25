@@ -8200,6 +8200,13 @@
             "Parameter-quality-runtime separation test"
           ],
           "claim_label": "Design rationale",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains at argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
+            "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
+            "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence.",
+            "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here.",
+            "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."
+          ],
           "source_queue": {
             "primary": [
               "coilra_multicoil_rope",
@@ -8233,27 +8240,95 @@
             {
               "source_id": "coilra_multicoil_rope",
               "mapped_support": "Supports cyclic adapter/mixer and position-encoding boundaries through adapter-block indices, residue/winding, block-cyclic routes, multicoil phase, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims.",
-              "limits": "Structural/proof-linked source only; no MLX run, model-quality result, speed, memory, training-stability, or context-length improvement exists here."
+              "limits": "Structural/proof-linked source only; no ASI Stack MLX run, model-quality result, speed result, memory result, training-stability result, hardware-efficiency result, or context-length improvement was run or imported here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:1-15",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:41-69",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:70-82",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:84-95",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:97-128",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:130-164",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:166-184",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_03_COILRA_AND_MULTICOIL_ROPE.md:186-197",
+                "local-project:circle-math@63b0f511:docs/MULTICOIL_PHASE_FEATURE_CERTIFIER_QUICKSTART.md:1-14",
+                "local-project:circle-math@63b0f511:docs/MULTICOIL_PHASE_FEATURE_CERTIFIER_QUICKSTART.md:47-90",
+                "local-project:circle-math@63b0f511:docs/MULTICOIL_PHASE_FEATURE_CERTIFIER_QUICKSTART.md:92-98",
+                "local-project:circle-math@63b0f511:docs/CIRCULANT_BLOCK_CYCLIC_MIXER_CERTIFIER_QUICKSTART.md:1-14",
+                "local-project:circle-math@63b0f511:docs/CIRCULANT_BLOCK_CYCLIC_MIXER_CERTIFIER_QUICKSTART.md:47-77",
+                "local-project:circle-math@63b0f511:docs/CIRCULANT_BLOCK_CYCLIC_MIXER_CERTIFIER_QUICKSTART.md:92-107"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI 03 paper plus MultiCoil and circulant/block-cyclic quickstarts for adapter-block indexing, position residue/winding, block-cyclic cells, MultiCoil phase tuples, RoPE relative phase, circulant convolution, parameter accounting, baseline/control requirements, alias/load diagnostics, hardware-friendly-size guardrails, and explicit non-claims; no ASI Stack MLX run, model-quality result, speed result, memory result, training-stability result, hardware-efficiency result, context-length result, Circle command, or sidecar benchmark was run or imported here."
             },
             {
               "source_id": "rope_position_certifier",
               "mapped_support": "Supports exact/discretized RoPE receipt boundaries through phase-channel residues, phase-bank collisions, bounded prefix reports, theorem ids, machine-readable certificates, and numerical real-phase diagnostics as non-proof.",
-              "limits": "No RoPE certifier run, sidecar regeneration, or Circle Lean build was run here; no model-quality or long-context claim is supported."
+              "limits": "No RoPE certifier run, sidecar regeneration, Circle Lean build, full all-channel real-valued RoPE theorem, model-quality result, speed result, memory result, training-stability result, deployment result, or long-context claim is supported here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:1-17",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:252-263",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:265-304",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:312-350",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:383-452",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:7-14",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:61-80",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:82-103",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:5-8",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:33-48",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:90-116"
+              ],
+              "passage_review_note": "Reviewed pinned local RoPE certifier paper, quickstart, and results note for the exact integer/discretized phase-bank model, all-channel collision/divisibility contract, count and prefix reports, one-channel standard-RoPE real-phase frontier, numerical diagnostic boundary, public command surfaces, machine-readable receipts, and non-claims; no ASI Stack RoPE certifier run, sidecar regeneration, Circle Lean build, full all-channel real-valued RoPE theorem, model-quality result, speed result, memory result, training-stability result, deployment result, or long-context claim is supported here."
             },
             {
               "source_id": "circle_ai_contract_suite",
               "mapped_support": "Supports contract-family fields for RoPE, multicoil phase, cyclic mixers, receipts, theorem ids, consumer readiness, fingerprints, normalized parameters, and explicit boundaries/non-claims.",
-              "limits": "No Circle contract commands, generated packs, Lean builds, or receipt checks were run from this repo."
+              "limits": "No Circle contract command, generated pack, acceptance-policy check, receipt replay, fingerprint check, downstream consumer, or external Circle Lean build was run from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:7-15",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:116-137",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:154-169",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:171-217",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:7-58",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:60-89",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:114-203",
+                "local-project:circle-math@63b0f511:docs/MULTICOIL_PHASE_FEATURE_CERTIFIER_QUICKSTART.md:71-90",
+                "local-project:circle-math@63b0f511:docs/CIRCULANT_BLOCK_CYCLIC_MIXER_CERTIFIER_QUICKSTART.md:78-107"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle contract-suite, integration, MultiCoil quickstart, and mixer quickstart docs for contract families, RoPE/multicoil/circulant-block-cyclic fields, theorem ids, consumer checks, fingerprints, readiness gates, planner recommendations, ordinary-baseline fields, acceptance-policy surfaces, and non-claim text; no Circle contract command, generated pack, acceptance-policy check, receipt replay, fingerprint check, downstream consumer, or external Circle Lean build was run from this repo."
             },
             {
               "source_id": "theseus_circle_transfer",
-              "mapped_support": "Supports transfer-boundary discipline for phase-feature invariance, mixer parameter accounting, workload smoke/proxy benchmarks, baseline/negative-control requirements, and disallowed quality/runtime/memory/transfer claims.",
-              "limits": "No transfer consumer, smoke workload, proxy benchmark, inference, or report artifact was executed or imported here."
+              "mapped_support": "Supports transfer-boundary discipline for phase-feature invariance, mixer parameter accounting, report-only consumers, workload smoke/proxy/scored layers, baseline/negative-control/report requirements, and disallowed public quality/runtime/memory/transfer claims.",
+              "limits": "Source-reported private transfer artifacts remain nonlocal context; no ASI Stack transfer consumer, smoke workload, proxy benchmark, scored private benchmark import, inference run, report artifact, router-head trace, runtime/memory measurement, or promotion evidence was executed or imported here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:1-18",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:116-161",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:190-228",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:237-304",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:315-355",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:365-404",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:406-428",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:443-451"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus-Hive transfer note for phase-feature tags, circulant/block-cyclic lightweight mixers, contract-pack/consumer surfaces, smoke/proxy/scored layer boundaries, private aggregate handling, route/ranker/router-head attachments, baseline/negative-control/metric/report requirements, and explicit disallowed public claims; source-reported private transfer artifacts remain nonlocal context, and no ASI Stack transfer consumer, smoke workload, proxy benchmark, scored private benchmark import, inference run, report artifact, router-head trace, runtime/memory measurement, or promotion evidence was executed or imported here."
             },
             {
               "source_id": "circle_ai_architectures",
               "mapped_support": "Supports using cyclic or coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic/circulant structure, or geometry-aware structure is real and controlled by baselines.",
-              "limits": "No universal cyclic-model advantage, sidecar test, MLX experiment, benchmark fixture, or model-quality result was run here."
+              "limits": "No universal cyclic-model advantage, ASI Stack sidecar test, ASI Stack MLX experiment, imported benchmark fixture, model-quality result, speed result, memory result, or deployment result was run or imported here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:1-29",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:41-55",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:91-104",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:105-117",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:126-149",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_01_CIRCLE_AI_ARCHITECTURES.md:151-165"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI 01 paper for the disciplined cyclic-substrate thesis, finite-indexing versus structural-guarantee separation, synthetic benchmark guardrails, ordinary-baseline and negative-control requirements, Theseus transfer contract framing, and anti-universal-advantage guardrail; no universal cyclic-model advantage, ASI Stack sidecar test, ASI Stack MLX experiment, imported benchmark fixture, model-quality result, speed result, memory result, or deployment result was run or imported here."
             }
           ]
         }
