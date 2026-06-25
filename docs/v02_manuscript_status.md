@@ -79,6 +79,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, model-quality evaluations, and non-record-level simulation proof claims.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
 - Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage, with all 112 implemented as finite-record Lean candidates after adding the new Personal Compute Hives approval/federation predicates and Artifact Steward Agents release/sunset predicates.
+- `docs/proof_artifact_audit.md` now records a proof artifact traceability audit for all 112 targets, checking manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E wiring without claiming semantic proof adequacy or broad system behavior.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 426 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
 - Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 54 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
@@ -90,7 +91,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 
 - No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions.
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
-- Artifact-by-artifact audits for the implemented proof targets still need to confirm that each finite-record predicate remains aligned with its intended operational boundary, limitations, and non-claims.
+- Semantic proof adequacy audits for the implemented proof targets still need to confirm that each finite-record predicate is the right formalization of its intended operational boundary. The current traceability audit checks wiring and limitation coverage only.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
 - External literature remains incomplete outside the source-noted fast-generation and initial policy-optimization/RL sets; alignment, governance/evals, planning, memory/RAG, formal methods, modular routing, compression, benchmark science, broader process-reward work, RLOO/REINFORCE++ variants, and evaluator-gaming work still need citation-normalized records and source notes.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.
@@ -119,6 +120,7 @@ python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/sync_proof_manifest.py --check
 python3 scripts/validate_proof_readiness.py
+python3 scripts/validate_proof_artifact_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

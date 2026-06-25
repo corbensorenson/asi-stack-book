@@ -5514,11 +5514,50 @@
             "Unstable proof target names.",
             "Claiming proof from prose."
           ],
-          "minimal_implementation": "A proof manifest, Lean workspace, and first invariant modules for support-state and authority checks.",
+          "minimal_implementation": "A proof manifest, proof target schema and fixture, Lean workspace, proof-readiness validator, and proof artifact traceability audit report for all implemented finite-record targets.",
           "codex_tests": [
-            "Proof manifest sync test",
-            "Lake build smoke test",
-            "Proof target coverage audit"
+            {
+              "name": "Proof target record fixture validation",
+              "purpose": "Check that proof target records expose verifier command/result, limitations, support-state effect, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation",
+              "status": "implemented; fixture validation only"
+            },
+            {
+              "name": "Proof manifest sync test",
+              "purpose": "Check that outline proof tags and proofs/proof_manifest.json agree.",
+              "implementation_status": "implemented",
+              "result_status": "passes via proof manifest check",
+              "status": "implemented by validation"
+            },
+            {
+              "name": "Lake build smoke test",
+              "purpose": "Check that local Lean modules build.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented by Lean build"
+            },
+            {
+              "name": "Proof target coverage summary",
+              "purpose": "Classify proof targets by status, triage class, and recommended route.",
+              "implementation_status": "implemented",
+              "result_status": "passes via proof readiness validation",
+              "status": "implemented in generated Appendix E"
+            },
+            {
+              "name": "Proof artifact traceability audit",
+              "purpose": "Verify that each implemented proof target is traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage.",
+              "implementation_status": "implemented",
+              "result_status": "passes via proof artifact audit",
+              "status": "implemented; traceability and non-claim audit only"
+            },
+            {
+              "name": "Semantic proof adequacy audit",
+              "purpose": "Review whether each finite-record predicate is the right formalization of its intended chapter boundary.",
+              "implementation_status": "planned",
+              "result_status": "not run",
+              "status": "planned; requires human/formal review"
+            }
           ],
           "lean_module": "AsiStackProofs.ProofEnvelope",
           "proof_targets": [

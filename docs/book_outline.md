@@ -2701,12 +2701,14 @@ Failure modes to cover:
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
-- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; artifact-by-artifact audits still need to verify that each implemented finite-record predicate matches its intended operational boundary and non-claims.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 112 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Planned Codex test: Proof manifest sync test.
-- Planned Codex test: Lake build smoke test.
-- Planned Codex test: Artifact-by-artifact target audit.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 112 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented Codex test: Proof manifest sync test.
+- Implemented Codex test: Lake build smoke test.
+- Implemented Codex test: Proof artifact traceability audit.
+- Planned Codex test: Semantic proof adequacy audit.
 
 Lean proof targets:
 
