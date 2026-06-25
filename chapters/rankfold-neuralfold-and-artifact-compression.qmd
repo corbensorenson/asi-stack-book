@@ -14,9 +14,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this artifact-compression claim to all assigned source notes; support remains argument until a compressor, deterministic decoder, corpus benchmark, or utility probe exists."
+  - "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists."
   - "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context."
+  - "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -32,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
-| Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
 | Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
@@ -59,12 +60,12 @@ The claim remains at `argument` support. The source notes support architecture d
 
 ### Claim-source mapping status
 
-Appendix C now maps this artifact-compression claim to all assigned source notes. The mappings support low-rank/tensor artifact compression, manifests, deterministic decode obligations, residual and fallback accounting, and resource-constrained lineage, not measured RankFold/NeuralFold performance.
+Appendix C now carries passage-reviewed mappings for all five assigned sources. The mappings support low-rank/tensor artifact-compression architecture, manifests, deterministic decode obligations, residual and fallback accounting, reconstruction-contract discipline, and resource-constrained implementation pressure. They do not support measured RankFold/NeuralFold performance, codec correctness, lossless reconstruction, or downstream utility in this repository.
 
 | Source | What it supports | Limit |
 |---|---|---|
 | `rankfold_neuralfold` | Tensor-centric archival structure, per-artifact optimization, low-rank residual transforms, residual-coder cost alignment, WORM assumptions, manifests, codec parameters, deterministic decode, fuzz/integration tests, and reconstruction checks. | No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here. |
-| `rankfold_compressor` | Vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness, determinism, metrics, and CLI plans. | Lineage source with broad claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run. |
+| `rankfold_compressor` | Vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness/determinism ambitions, metrics, and CLI plans. | Lineage source with broad source-reported claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run. |
 | `bbvca_v9` | Reconstruction contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation for artifact compression discipline. | Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness. |
 | `cgs` | Compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting. | Does not prove that any compressed artifact preserves downstream utility or cost advantage. |
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |

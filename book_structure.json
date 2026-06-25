@@ -6850,28 +6850,110 @@
             {
               "source_id": "rankfold_neuralfold",
               "mapped_support": "Supports the artifact-compression claim through tensor-centric archival structure, per-artifact optimization, low-rank residual transforms, residual-coder cost alignment, WORM assumptions, manifests, codec parameters, deterministic decode, fuzz/integration tests, and reconstruction checks.",
-              "limits": "No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here."
+              "limits": "No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rankfold_neuralfold.txt:13-17",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:23-35",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:41-45",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:54-61",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:149-155",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:178-188",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:207-224",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:244-248",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:264-274",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:278-294",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:320-325",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:379-381",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:446-462",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:487-495",
+                "sources/raw/google_docs/rankfold_neuralfold.txt:527-531"
+              ],
+              "passage_review_note": "Reviewed local raw cache for WORM archival scope, heterogeneous artifact classes, per-artifact low-rank residual coding, NeuralFold inspection/probe/route/fallback, stream/container design, exact-reconstruction and residual conditions, full byte accounting, deterministic decode/evaluation requirements, decode-cost limits, and structure-dependent gains; no compressor implementation, deterministic decoder, ratio, corpus benchmark, or utility probe is promoted."
             },
             {
               "source_id": "rankfold_compressor",
               "mapped_support": "Supports low-rank/tensor compression lineage through vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness, determinism, metrics, and CLI plans.",
-              "limits": "Lineage source with broad claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run."
+              "limits": "Lineage source with broad claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rankfold_compressor.txt:7-12",
+                "sources/raw/google_docs/rankfold_compressor.txt:17-23",
+                "sources/raw/google_docs/rankfold_compressor.txt:25-33",
+                "sources/raw/google_docs/rankfold_compressor.txt:68-73",
+                "sources/raw/google_docs/rankfold_compressor.txt:134-144",
+                "sources/raw/google_docs/rankfold_compressor.txt:152-160",
+                "sources/raw/google_docs/rankfold_compressor.txt:398-410",
+                "sources/raw/google_docs/rankfold_compressor.txt:422-424",
+                "sources/raw/google_docs/rankfold_compressor.txt:440-464",
+                "sources/raw/google_docs/rankfold_compressor.txt:499-514",
+                "sources/raw/google_docs/rankfold_compressor.txt:540-620"
+              ],
+              "passage_review_note": "Reviewed local raw cache as lineage/source-intent context for vector-pair/factorized representation, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, meta-selection, correctness/determinism ambitions, metrics, and CLI/benchmark plans. Broad source-reported losslessness, benchmark, ratio, latency, code, and reproducibility statements are not independently validated or promoted."
             },
             {
               "source_id": "bbvca_v9",
               "mapped_support": "Supports reconstruction and rate-accounting discipline for artifact compression through explicit contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation.",
-              "limits": "Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness in this repo."
+              "limits": "Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/bbvca_v9.txt:12-23",
+                "sources/raw/google_docs/bbvca_v9.txt:25-30",
+                "sources/raw/google_docs/bbvca_v9.txt:179-199",
+                "sources/raw/google_docs/bbvca_v9.txt:222-242",
+                "sources/raw/google_docs/bbvca_v9.txt:338-350",
+                "sources/raw/google_docs/bbvca_v9.txt:355-372",
+                "sources/raw/google_docs/bbvca_v9.txt:407-425",
+                "sources/raw/google_docs/bbvca_v9.txt:468-520"
+              ],
+              "passage_review_note": "Reviewed local raw cache for reconstruction contracts, generate-verify-repair doctrine, exact repair streams, fallback, interface and total-rate accounting, local verification, repair hierarchy, search-time proxy versus final serialization separation, and proxy calibration; no RankFold performance evidence, artifact utility result, codec correctness, or BBVCA implementation result is promoted."
             },
             {
               "source_id": "cgs",
               "mapped_support": "Supports residual-honesty framing for compressed artifacts through compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting.",
-              "limits": "Does not prove that any compressed artifact preserves downstream utility or cost advantage."
+              "limits": "Does not prove that any compressed artifact preserves downstream utility or cost advantage.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cgs.txt:121-133",
+                "sources/raw/google_docs/cgs.txt:140-170",
+                "sources/raw/google_docs/cgs.txt:209-228",
+                "sources/raw/google_docs/cgs.txt:367-399",
+                "sources/raw/google_docs/cgs.txt:688-740",
+                "sources/raw/google_docs/cgs.txt:788-837"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compact seeds, rule expansion, memory/state, residual/error channels, verification, governance interfaces, full cost accounting, residual honesty, fallback, and hidden-complexity concerns; no downstream artifact-utility preservation, cost advantage, or compression benchmark is promoted."
             },
             {
               "source_id": "bugbrain",
               "mapped_support": "Supports resource-constrained implementation pressure through tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible.",
-              "limits": "Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated here."
+              "limits": "Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/bugbrain.txt:23-27",
+                "sources/raw/google_docs/bugbrain.txt:48-48",
+                "sources/raw/google_docs/bugbrain.txt:137-193",
+                "sources/raw/google_docs/bugbrain.txt:484-513",
+                "sources/raw/google_docs/bugbrain.txt:598-603",
+                "sources/raw/google_docs/bugbrain.txt:682-699",
+                "sources/raw/google_docs/bugbrain.txt:746-789",
+                "sources/raw/google_docs/bugbrain.txt:1397-1434",
+                "sources/raw/google_docs/bugbrain.txt:1473-1474",
+                "sources/raw/google_docs/bugbrain.txt:1617-1632",
+                "sources/raw/google_docs/bugbrain.txt:1804-1827",
+                "sources/raw/google_docs/bugbrain.txt:1997-1999",
+                "sources/raw/google_docs/bugbrain.txt:2232-2240",
+                "sources/raw/google_docs/bugbrain.txt:2952-3030",
+                "sources/raw/google_docs/bugbrain.txt:3053-3082"
+              ],
+              "passage_review_note": "Reviewed local raw cache for tiny/local hardware constraints, paging, storage hierarchy, brain/blob framing, semantic graph linearization, cache locality, edge-list delta compression, decompression/journaling, and resource-constrained implementation pressure; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark is promoted."
             }
+          ],
+          "draft_maturity": "v0.2 manuscript draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists.",
+            "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run.",
+            "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context.",
+            "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
           ]
         },
         {

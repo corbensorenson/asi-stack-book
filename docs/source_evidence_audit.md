@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 254 |
+| Passage-reviewed mappings recorded | 259 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -70,7 +70,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
-| `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
 | `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -467,11 +467,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mamba_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_llada_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_scaling_dllms_2026` | mapped | note present | chapter listed | passage-reviewed |
-| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | not passage-reviewed |
-| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | not passage-reviewed |
-| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | not passage-reviewed |
-| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `treellm` | mapped | note present | chapter listed | not passage-reviewed |
 | `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
 | `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
