@@ -57,6 +57,10 @@ Capability claims need pressure, but fixed benchmarks can become traps. A system
 
 Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements. A result is especially dangerous when it lacks command, environment, baseline, residuals, negative results, holdouts, transfer checks, and contamination notes. The stack must make benchmark state explicit enough to decide whether a result can update readiness.
 
+The important distinction is between a benchmark as an event and a benchmark as a managed instrument. An event produces a score. An instrument produces a history: what was tried, what changed, what regressed, what saturated, what transferred, and what still failed. The score can be useful, but only the history can support governance. Without that history, the system has no way to tell whether it learned the capability, learned the test, learned a presentation pattern, or merely found a path around the measurement.
+
+Goodhart pressure also appears before anyone is acting maliciously. If the easiest visible metric is speed, the system may drop verification work. If the easiest visible metric is pass rate, the system may avoid difficult cases. If the easiest visible metric is a public benchmark, the system may shape memory, examples, prompts, and training pressure around that surface until the benchmark stops measuring the thing it was meant to measure. A ratchet is the countermeasure: every success preserves a floor, exposes residuals, and asks for a harder frontier instead of turning one number into a broad capability claim.
+
 ## Core Claim
 
 [benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
@@ -86,6 +90,10 @@ Appendix C now records twelve passage-reviewed mappings for this chapter. Those 
 
 A benchmark ratchet turns a result into an evidence-state transition, not a celebration. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
 
+The ratchet has two memories. The first is a regression memory: once a behavior matters, later systems must keep passing it or explicitly explain why the requirement changed. The second is a frontier memory: once a benchmark stops applying pressure, it should be retired into a floor and replaced by harder, less predictable work. The stack therefore does not ask whether a benchmark is "solved" in the abstract. It asks what the benchmark is allowed to prove now, what it must continue to guard, and what new pressure is needed next.
+
+This creates an asymmetry that is useful for governance. Failure can immediately create a residual, a diagnosis, a regression, or a blocked promotion. Success only opens a review path. To become evidence, success must survive baseline comparison, negative-result accounting, hidden or transfer checks where appropriate, contamination review, and a claim-specific promotion decision. That asymmetry is deliberate: it is cheaper to record uncertainty than to repair an overpromoted capability.
+
 ```{mermaid}
 flowchart LR
   A["Benchmark frontier"] --> B["Run record + baseline"]
@@ -101,6 +109,8 @@ flowchart LR
 ```
 
 The record should track benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
+
+In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. The book's evidence discipline depends on this mundane bookkeeping.
 
 ## Interfaces
 

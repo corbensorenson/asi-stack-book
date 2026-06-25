@@ -74,6 +74,10 @@ The claim remains at `argument` support. The source notes support a staged build
 
 No roadmap phase has been accepted, executed, or used to promote a capability claim in this repository.
 
+The roadmap should therefore be read less like a product plan and more like a dependency graph for trust. The early phases create the conditions under which later phases can mean anything: sources can be inspected, artifacts can be found again, claims can be downgraded, and authority checks can stop an unsafe action. Later phases are only legitimate when they inherit those conditions. A planner that cannot preserve source provenance is not ready to dispatch work. A runtime that cannot replay actions is not ready to close loops. A replacement system that cannot roll back is not ready to improve itself.
+
+This ordering also protects useful prototypes from their own momentum. A half-working local agent, benchmark harness, context memory, or route scheduler can feel convincing long before it is governable. The phase record slows that down. It says which artifacts exist, which checks passed, which blockers remain, and which claims are still forbidden. That makes the roadmap a pressure surface for better engineering rather than a story that later work was inevitable.
+
 ### Claim-source mapping status
 
 Appendix C now records nineteen passage-reviewed mappings for this claim. The review sharpens what each source may support while keeping every non-claim visible.
@@ -113,6 +117,12 @@ Recommended phase order:
 - Stable capability fields, replacement transactions, rollback, and bounded self-improvement.
 
 Self-improvement comes late because it depends on evaluator integrity, rollback, governance rights, evidence ledgers, and a demonstrated ability to preserve residuals instead of hiding them.
+
+The first phase is not glamorous, but it is the root of the whole build. A source matrix, source notes, claim ledger, and publication validator give the system a memory for what it is allowed to say. Without that layer, later automation will optimize fluent architecture prose while silently dropping evidence boundaries. The second phase turns that memory into durable artifacts: schemas, fixtures, proof manifests, release records, and audit logs that can be checked without trusting the latest explanation.
+
+Only after that does the prototype need richer agency. Intent contracts and PlanForge-style DAGs can lower goals into work. VCM records can decide what context is admitted. Typed jobs can describe what an executor is actually being asked to do. Runtime adapters, permissions, replay, and procedural memory then decide which effects may happen and which successful patterns can become reusable tools. Routing, readiness gates, and benchmark ratchets come after these control surfaces because specialists and benchmarks are dangerous when they are not tied to authority, evidence, and rollback.
+
+The final phases are capability replacement and bounded self-improvement. They require stable capability fields, acceptance gates, regression floors, evaluator integrity, rollback windows, governance rights, and residual accounting. The roadmap does not say that self-improvement is impossible before those pieces exist. It says that before those pieces exist, self-improvement is not an evidence-governed engineering operation in the sense this book cares about.
 
 ## Interfaces
 
