@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 201 |
+| Passage-reviewed mappings recorded | 224 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -81,7 +81,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 0 | argument | passage review required before source-derived promotion |
-| `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 0 | argument | passage review required before source-derived promotion |
+| `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 0 | argument | passage review required before source-derived promotion |
@@ -565,29 +565,29 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_s_grpo_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_longrlvr_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_rlhf_limitations_2023` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `tokenmana` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_akash_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_golem_docs_2025` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_webhooks_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_openzeppelin_governor_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_open_collective_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_sponsors_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_agentic_workflow_injection_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_dao_delegation_fairness_2025` | mapped | note present | chapter listed | not passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_akash_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_golem_docs_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_webhooks_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_openzeppelin_governor_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_open_collective_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_sponsors_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_agentic_workflow_injection_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_dao_delegation_fairness_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |

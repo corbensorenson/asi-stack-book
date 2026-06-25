@@ -8064,117 +8064,299 @@
             {
               "source_id": "viea",
               "mapped_support": "Supports artifact discipline, claim support states, residuals, regression coverage, intent-to-execution boundaries, and the rule that important responses become durable artifacts.",
-              "limits": "Does not prove a deployed project steward exists or that any autonomous management behavior is safe."
+              "limits": "Does not prove a deployed project steward exists or that any autonomous management behavior is safe.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:13-17",
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-132",
+                "sources/raw/google_docs/viea.txt:206-220",
+                "sources/raw/google_docs/viea.txt:239-272",
+                "sources/raw/google_docs/viea.txt:506-525"
+              ],
+              "passage_review_note": "Reviewed local raw cache for intent-to-execution framing, durable artifacts, claim/support-state ledgers, residuals, regression coverage, feedback, repeated-work-to-tool compilation, benchmark ratchets, and verification-before-acceptance; no deployed project steward or autonomous project-management safety result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports typed project work, contract locks, isolation, audit, replay, evidence, delivery, approval gates, and residual feedback.",
-              "limits": "Does not authorize free-form agent management or prove a steward bot implementation."
+              "limits": "Does not authorize free-form agent management or prove a steward bot implementation.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:30-42",
+                "sources/raw/google_docs/talos.txt:46-89",
+                "sources/raw/google_docs/talos.txt:5038-5065",
+                "sources/raw/google_docs/talos.txt:5149-5173",
+                "sources/raw/google_docs/talos.txt:5177-5182",
+                "sources/raw/google_docs/talos.txt:5400-5424"
+              ],
+              "passage_review_note": "Reviewed local raw cache for MVI routing, typed job decomposition, contract locks, tool/isolation constraints, audit, verification judiciary, fail-closed sidecar behavior, HITL escalation, evidence/delivery flow, and residual feedback; no free-form steward bot or project-management implementation is promoted."
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports roadmap decomposition, dependencies, scheduling, minimum viable intelligence tiering, fallback, and failure-driven replanning.",
-              "limits": "Does not make a plan equivalent to project authority or governance approval."
+              "limits": "Does not make a plan equivalent to project authority or governance approval.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-36",
+                "sources/raw/google_docs/planforge.txt:69-130",
+                "sources/raw/google_docs/planforge.txt:265-291",
+                "sources/raw/google_docs/planforge.txt:354-371"
+              ],
+              "passage_review_note": "Reviewed local raw cache for executor-agnostic goal compilation, DAG decomposition, dependency inference, tier annotation, multi-objective scheduling, fallback escalation, feedback-driven replanning, MVI scoring, critical-path scheduling, speculative execution, limitations, and worker-bidding concept; planning is not treated as governance authority."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports project memory with source binding, taint, revocation, context adequacy, materializations, and typed non-success states.",
-              "limits": "Does not solve long-term project memory quality or steward reliability."
+              "limits": "Does not solve long-term project memory quality or steward reliability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-24",
+                "sources/raw/google_docs/vcm_public.txt:35-44",
+                "sources/raw/google_docs/vcm_public.txt:252-263",
+                "sources/raw/google_docs/vcm_public.txt:264-323",
+                "sources/raw/google_docs/vcm_public.txt:324-330",
+                "sources/raw/google_docs/vcm_public.txt:350-359",
+                "sources/raw/google_docs/vcm_public.txt:361-389",
+                "sources/raw/google_docs/vcm_public.txt:427-445"
+              ],
+              "passage_review_note": "Reviewed local raw cache for VCM durable memory/control-plane framing, source and authority binding, adequacy/admission separation, evidence/authority/exposure separation, semantic materialization, protected compilation, authorization-before-staging, typed non-success/revocation behavior, threat model, and evidence limitations; no long-term steward memory quality or reliability guarantee is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports proof-carrying claim discipline, belief revision, failed-verification downgrade, contradiction handling, and protected axioms.",
-              "limits": "Does not prove open-domain formalization, verifier quality, or governance correctness."
+              "limits": "Does not prove open-domain formalization, verifier quality, or governance correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:247-257",
+                "sources/raw/google_docs/spinoza.txt:291-329",
+                "sources/raw/google_docs/spinoza.txt:384-389",
+                "sources/raw/google_docs/spinoza.txt:402-450",
+                "sources/raw/google_docs/spinoza.txt:493-500",
+                "sources/raw/google_docs/spinoza.txt:647-652",
+                "sources/raw/google_docs/spinoza.txt:713-718"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proof-carrying belief graphs, provenance metadata, tier labels, contradiction-triggered bounded belief revision, governance-controlled axioms/schema, semantic-alignment cautions, and the invariant that System 1 cannot upgrade claim tiers; no open-domain formalization, verifier quality, or governance correctness result is promoted."
             },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports benchmark lifecycle, residual diagnosis, regression preservation, anti-Goodhart checks, and cautious architecture-change discipline.",
-              "limits": "Does not provide local benchmark or release-readiness results for stewarded projects."
+              "limits": "Does not provide local benchmark or release-readiness results for stewarded projects.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:20-31",
+                "sources/raw/google_docs/benchmaxxing.txt:50-68",
+                "sources/raw/google_docs/benchmaxxing.txt:269-304",
+                "sources/raw/google_docs/benchmaxxing.txt:329-342",
+                "sources/raw/google_docs/benchmaxxing.txt:559-572"
+              ],
+              "passage_review_note": "Reviewed local raw cache for moving benchmark frontiers, residual reporting, architecture-change discipline, saturated benchmark promotion to regression, harder benchmark selection, and anti-Goodhart rotation; no stewarded-project benchmark or release-readiness result is promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports residual escrow, modular improvement loops, specialist lifecycle, readiness gates, and regression-floor preservation.",
-              "limits": "Does not prove autonomous project improvement or capture resistance."
+              "limits": "Does not prove autonomous project improvement or capture resistance.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:60-105",
+                "sources/raw/google_docs/rmi.txt:195-230",
+                "sources/raw/google_docs/rmi.txt:736-842",
+                "sources/raw/google_docs/rmi.txt:1328-1365"
+              ],
+              "passage_review_note": "Reviewed local raw cache for residual escrow, modular improvement, specialist lifecycle, benchmark lifecycle, critical-failure veto, readiness ratchets, safety/runtime tiers, sandboxing, verification, and human approval gates; no autonomous project improvement or capture-resistance result is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports turning repeated project workflows into verified tools with preconditions, postconditions, monitoring, revision, and retirement.",
-              "limits": "Does not justify automating every recurring task or replacing human review."
+              "limits": "Does not justify automating every recurring task or replacing human review.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:11-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:48-58",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-193",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:211-219",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:278-305",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:323-333",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:433-456",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:532-563",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:581-608"
+              ],
+              "passage_review_note": "Reviewed local raw cache for detecting repeated trajectories, compiling verified parameterized tools, routing by match/preconditions/risk/verification, governed automation, safe trajectory logs, tool registries, runtime monitoring, and revision/retirement; no automation of every recurring task or replacement of human review is promoted."
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports bounded resource accounting for compute, money, reviewer time, load variance, burst controls, and cognitive friction.",
-              "limits": "Does not prove treasury performance, funding design, or optimal spend policy."
+              "limits": "Does not prove treasury performance, funding design, or optimal spend policy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:1-30",
+                "sources/raw/google_docs/tokenmana.txt:533-549",
+                "sources/raw/google_docs/tokenmana.txt:638-660",
+                "sources/raw/google_docs/tokenmana.txt:814-833",
+                "sources/raw/google_docs/tokenmana.txt:1025-1049",
+                "sources/raw/google_docs/tokenmana.txt:1072-1098"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance under convex infrastructure cost, renewal-time clustering, pricing feedback, practical burst/concurrency guidance, and temporal welfare/cognitive-friction framing; used only for resource-budget thinking, not as treasury, funding, or spend-policy evidence."
             },
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports fork, exit, audit, contestability, value/accounting, review-market, and governance-interface framing.",
-              "limits": "Speculative where economic or epistemic-liquidity language exceeds executable records."
+              "limits": "Speculative where economic or epistemic-liquidity language exceeds executable records.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "google-drive-connector:coherence_exchange:Tab 1 / sections 2-5 (Verified Epistemic Units, verification supply chain, RAIV, Recursive Republic governance)",
+                "google-drive-connector:coherence_exchange:Tab 5 / Civitas Protocol sections 1-4 (fork, exit, audit, constitutional kernel, epistemic judiciary)"
+              ],
+              "passage_review_note": "Reviewed authenticated Google Drive connector text for Verified Epistemic Units, verification supply chain, risk-adjusted verification/cost framing, fork/exit/audit governance, contestability, and governance-interface language. The mapping remains explicitly speculative design context; no epistemic-liquidity market, governance economics, or institutional safety result is promoted, and raw connector text is not published."
             },
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports local-first report discipline, trusted-node task allowlists, residual ledgers, and implementation-reference governance surfaces.",
-              "limits": "No current project reports or command outputs were inspected or rerun as evidence here."
+              "limits": "No current project reports or command outputs were inspected or rerun as evidence here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:53-76",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:584-612",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:632-665",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:694-742",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:764-787"
+              ],
+              "passage_review_note": "Reviewed tracked local Theseus whitepaper source for report-first implementation discipline, benchmark/residual ledgers, specialist arms, promotion gates, trusted-machine Hive framing, internal compute-market accounting, licensing gates, machine-readable reports, and roadmap items for turning repeated work into measured tools; no current project reports or commands were rerun here."
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports durable work boards, operator channels, node registries, background/watch/wake contracts, feedback routing, TTLs, kill switches, and safety-visible operator surfaces.",
-              "limits": "Does not prove unattended project operation is safe."
+              "limits": "Does not prove unattended project operation is safe.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:76-114",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:123-155"
+              ],
+              "passage_review_note": "Reviewed tracked local Hive Operator OS source for shared command vocabulary, durable work board, background/watch/wake contracts, persistent goals, tool-hook ledger, feedback routing, node registry, evidence-bearing task execution, TTLs, kill switches, signed updates, and safety-visible dashboard surfaces; no unattended project operation safety result is promoted."
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports capability leases, qualification, lifecycle, route validation, governance controls, authority ceilings, and no procedural self-ratification.",
-              "limits": "Does not qualify an artifact steward capability or validate governance enforcement."
+              "limits": "Does not qualify an artifact steward capability or validate governance enforcement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:40-48",
+                "sources/raw/google_docs/scf.txt:67-77",
+                "sources/raw/google_docs/scf.txt:107-122",
+                "sources/raw/google_docs/scf.txt:230-256",
+                "sources/raw/google_docs/scf.txt:262-284",
+                "sources/raw/google_docs/scf.txt:830-898"
+              ],
+              "passage_review_note": "Reviewed local raw cache for governed capability substitution, authorization ontology, route validation, leases, no authority laundering, independent lifecycle states, invocation-time authorization, authority ceilings, staged isolation, shadow/canary/production authorization, monitoring, containment, recovery, and quarantine; no artifact-steward qualification or governance-enforcement result is promoted."
             },
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports consent, non-domination, least sufficient power, memory/tool governance, reversibility, auditability, and caution around self-authorization.",
-              "limits": "Does not implement constitutional enforcement or prove institutional capture resistance."
+              "limits": "Does not implement constitutional enforcement or prove institutional capture resistance.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:20-26",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:123-135",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:163-201",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:390-402",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:520-562",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:566-589",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:592-631",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:656-689"
+              ],
+              "passage_review_note": "Reviewed tracked local AI Constitution source for consent, scope, power, non-domination, agency preservation, least sufficient power, reversibility, auditability, tool-risk tiers, prohibited tool behaviors, memory/privacy principles, self-modification governance, sandboxed growth, anti-technocracy, and contestability; no constitutional-enforcement engine or capture-resistance proof is promoted."
             },
             {
               "source_id": "ext_akash_docs_2026",
               "mapped_support": "Supports rented decentralized-compute vocabulary for steward budgets, provider resources, leases, and deployment operations.",
-              "limits": "Does not prove a steward should rent compute or that provider isolation, cost, legality, or result quality are acceptable."
+              "limits": "Does not prove a steward should rent compute or that provider isolation, cost, legality, or result quality are acceptable.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://akash.network/docs/:Akash Network documentation / decentralized cloud / deployments / providers / leases / GPUs / SDKs"
+              ],
+              "passage_review_note": "Reviewed official Akash documentation page via network fetch for decentralized cloud, provider resources, leases, GPU, SDK, and rented-compute vocabulary; no claim that a steward should rent compute or that provider isolation, cost, legality, or result quality are acceptable is promoted."
             },
             {
               "source_id": "ext_golem_docs_2025",
               "mapped_support": "Supports decentralized task execution, provider selection, and resource-sharing vocabulary for public project hives.",
-              "limits": "Does not prove sandbox safety, evidence validity, payment fairness, or dispute resolution for stewarded work."
+              "limits": "Does not prove sandbox safety, evidence validity, payment fairness, or dispute resolution for stewarded work.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.golem.network/:Golem developer resources / executing tasks / selecting providers / transferring data / working with results"
+              ],
+              "passage_review_note": "Reviewed official Golem documentation page via network fetch for decentralized task execution, provider selection, data transfer, result handling, and resource-sharing vocabulary; no sandbox safety, evidence validity, payment fairness, or dispute-resolution claim is promoted."
             },
             {
               "source_id": "ext_github_webhooks_docs",
               "mapped_support": "Supports event-driven repository automation vocabulary for issues, pull requests, workflow events, delivery headers, and typed payload intake.",
-              "limits": "Does not make webhook content trusted control text or prove a steward bot is safe."
+              "limits": "Does not make webhook content trusted control text or prove a steward bot is safe.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.github.com/en/webhooks/webhook-events-and-payloads:Webhook events and payloads / event types / payload cap / delivery headers / event-specific permissions"
+              ],
+              "passage_review_note": "Reviewed official GitHub webhooks documentation for event-driven repository payloads, delivery headers, payload limits, event availability, and event-specific permissions; webhook content is not treated as trusted control text or steward-bot safety evidence."
             },
             {
               "source_id": "ext_github_self_hosted_runners_docs",
               "mapped_support": "Supports self-hosted runner vocabulary for project-owned or maintainer-assigned compute execution.",
-              "limits": "Does not prove self-hosted runners are safe for untrusted tasks without isolation, cleanup, credential, and review gates."
+              "limits": "Does not prove self-hosted runners are safe for untrusted tasks without isolation, cleanup, credential, and review gates.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.github.com/en/actions/concepts/runners/self-hosted-runners:GitHub Docs / self-hosted runners / user-managed machines for Actions jobs"
+              ],
+              "passage_review_note": "Reviewed official GitHub self-hosted runners documentation page via network fetch for user-managed physical/virtual/container/on-prem/cloud runner vocabulary and maintenance responsibility; no untrusted-task isolation, cleanup, credential-boundary, or runner-safety claim is promoted."
             },
             {
               "source_id": "ext_openzeppelin_governor_docs",
               "mapped_support": "Supports proposal, vote, quorum, timelock, settings, and guardian-control vocabulary for steward governance.",
-              "limits": "Does not solve project legitimacy, legal authority, capture resistance, or safe treasury autonomy."
+              "limits": "Does not solve project legitimacy, legal authority, capture resistance, or safe treasury autonomy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.openzeppelin.com/contracts/5.x/api/governance:OpenZeppelin Contracts Governance / Governor modules / voting power / quorum / timelock extensions"
+              ],
+              "passage_review_note": "Reviewed official OpenZeppelin governance documentation for Governor modules, voting power, counting, quorum fractions, super quorum, timelock extensions, proposal lifecycle vocabulary, and warnings around quorum configuration; no project legitimacy, legal authority, capture resistance, or safe treasury autonomy result is promoted."
             },
             {
               "source_id": "ext_open_collective_docs",
               "mapped_support": "Supports transparent community money management, fiscal-hosting vocabulary, contribution intake, expense review, accounting, and the separation between a project and the legal entity that holds funds.",
-              "limits": "Does not prove autonomous treasury safety, legal compliance, project sustainability, or that an AI steward may spend without human, host, maintainer, or governance review."
+              "limits": "Does not prove autonomous treasury safety, legal compliance, project sustainability, or that an AI steward may spend without human, host, maintainer, or governance review.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://documentation.opencollective.com/:Open Collective docs / transparent money management / fiscal hosts / contributions / expenses / accounting"
+              ],
+              "passage_review_note": "Reviewed official Open Collective documentation for transparent community money management, fiscal hosts, contribution intake, expense submission/tracking, accounting, and legal-entity delegation through fiscal hosting; no autonomous treasury safety, legal compliance, or project sustainability claim is promoted."
             },
             {
               "source_id": "ext_github_sponsors_docs",
               "mapped_support": "Supports GitHub-native sponsorship surfaces for eligible open-source contributors and organizations, including non-code contribution categories such as documentation, triage, leadership, project management, mentorship, and design.",
-              "limits": "Does not prove sponsorship incentives are governance-safe or that funding signals should control roadmap, evidence, release, or treasury decisions."
+              "limits": "Does not prove sponsorship incentives are governance-safe or that funding signals should control roadmap, evidence, release, or treasury decisions.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors:GitHub Sponsors / eligible open-source contribution categories / sponsorship tiers / payouts"
+              ],
+              "passage_review_note": "Reviewed official GitHub Sponsors documentation for eligible open-source contributors and organizations, contribution categories including triage/documentation/leadership/project management/mentorship/design, sponsorship tiers, sponsor profiles, and payout surfaces; funding signals are not treated as roadmap, evidence, release, or governance authority."
             },
             {
               "source_id": "ext_agentic_workflow_injection_2026",
               "mapped_support": "Supports the steward chapter warning that untrusted issue, PR, comment, and workflow event context can become agentic workflow injection material.",
-              "limits": "Does not prove this repository is vulnerable or safe; no workflow-injection fixture or scan has been run."
+              "limits": "Does not prove this repository is vulnerable or safe; no workflow-injection fixture or scan has been run.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2605.07135:abstract / untrusted GitHub event context / P2A and P2S AWI patterns / taint-analysis findings"
+              ],
+              "passage_review_note": "Reviewed arXiv abstract for Agentic Workflow Injection in GitHub Actions, including untrusted issue/PR/comment/workflow-event context reaching agent prompts or downstream workflow logic and reported taint-analysis findings; no scan of this repository, exploit reproduction, or vulnerability/safety claim is promoted."
             },
             {
               "source_id": "ext_dao_delegation_fairness_2025",
               "mapped_support": "Supports anti-capture concerns around voter apathy, voting-power concentration, delegation misalignment, and ranking bias.",
-              "limits": "Does not prove the proposed separated ledgers prevent governance capture."
+              "limits": "Does not prove the proposed separated ledgers prevent governance capture.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2510.05830:abstract / voter apathy / voting-power concentration / misaligned delegation / ranking-interface bias"
+              ],
+              "passage_review_note": "Reviewed arXiv abstract for DAO token-delegation fairness, including voter apathy, voting-power concentration, misaligned delegation, visibility/ranking bias, and representativeness concerns; no claim that separated ledgers prevent governance capture is promoted."
             }
           ],
           "mechanism": [
@@ -8287,6 +8469,12 @@
               "target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
               "status": "implemented"
             }
+          ],
+          "draft_maturity": "chapter draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all assigned Artifact Steward Agents sources; support remains at argument until a steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, release gate, sunset protocol, or behavioral tests exist.",
+            "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no steward bot, treasury policy engine, event-taint workflow, governance system, project federation harness, or sunset protocol has been executed from this repository.",
+            "External tooling and governance sources are reviewed as adjacent substrate/risk references only; they do not prove the ASI Stack steward design or any safety, legal, funding, governance, or capture-resistance property."
           ]
         },
         {
