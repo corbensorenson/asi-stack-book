@@ -1,0 +1,22 @@
+{
+  "contract_id": "work-contract://schema-fixture-validation",
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "objective": "Validate steward-agent protocol fixture shapes without dispatching external workers.",
+  "context_refs": ["tests/fixtures/protocol_records/artifact_steward_charter.valid.json"],
+  "allowed_files_or_systems": ["schemas/", "tests/fixtures/protocol_records/"],
+  "allowed_tools": ["python3 scripts/validate_schemas.py", "python3 scripts/validate_protocol_examples.py"],
+  "forbidden_tools": ["fund transfer", "protected branch merge", "unreviewed external worker dispatch"],
+  "required_outputs": ["valid schema files", "valid fixture files"],
+  "acceptance_tests": ["schema validation passes", "protocol example validation passes"],
+  "review_requirements": ["human review before any authority expansion"],
+  "evidence_requirements": ["command output from local validators"],
+  "budget_limit": "zero external spend",
+  "compute_limits": "local validation only",
+  "deadline": "demo deadline; not operational",
+  "rollback_path": "revert fixture/schema changes before release if validation fails",
+  "dispatch_status": "proposed",
+  "non_claims": [
+    "This contract does not dispatch real project work.",
+    "This contract does not prove a steward can manage contributors."
+  ]
+}

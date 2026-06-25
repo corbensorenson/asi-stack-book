@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/sunset_review_record.schema.json",
+  "title": "Sunset Review Record",
+  "type": "object",
+  "required": [
+    "review_id",
+    "artifact_id",
+    "value_signal",
+    "active_users_status",
+    "active_maintainers_status",
+    "funds_status",
+    "open_risks",
+    "dependencies",
+    "sunset_recommendation",
+    "archival_plan",
+    "fork_or_transfer_path",
+    "appeal_path",
+    "decision_status",
+    "evidence_refs",
+    "non_claims"
+  ],
+  "properties": {
+    "review_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "value_signal": { "type": "string", "minLength": 1 },
+    "active_users_status": { "type": "string", "minLength": 1 },
+    "active_maintainers_status": { "type": "string", "minLength": 1 },
+    "funds_status": { "type": "string", "minLength": 1 },
+    "open_risks": { "type": "array", "items": { "type": "string" } },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "sunset_recommendation": {
+      "type": "string",
+      "enum": ["continue", "freeze", "transfer", "archive", "split", "replace", "review_later"]
+    },
+    "archival_plan": { "type": "string", "minLength": 1 },
+    "fork_or_transfer_path": { "type": "string", "minLength": 1 },
+    "appeal_path": { "type": "string", "minLength": 1 },
+    "decision_status": {
+      "type": "string",
+      "enum": ["proposed", "approved", "rejected", "deferred"]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

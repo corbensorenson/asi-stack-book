@@ -24,7 +24,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The artifact-steward browser note is author-intent context only; it is not cited evidence and is kept in the ignored local source inbox."
-  - "No steward bot, treasury executor, contributor ledger, governance system, or sunset protocol has been implemented or tested in this repo."
+  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no steward bot, treasury executor, contributor ledger service, governance system, or sunset protocol has been run."
   - "No support-state promotion is implied by this chapter draft."
 ---
 
@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, but the steward-agent architecture is a synthesis. The browser note is local-only planning context. |
-| Test state | Chapter-level tests remain planned; no steward bot, treasury policy engine, governance runner, or project federation harness has been run. |
+| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, and sunset review validate locally, and two finite Lean predicates build. No steward bot, treasury policy engine, governance runner, or project federation harness has been run. |
 
 ## Drafting guardrail
 
@@ -70,7 +70,7 @@ The claim is a design claim. It does not say that every project should immediate
 
 ### Claim-source mapping status
 
-The core claim remains at `argument`. VIEA, Talos, PlanForge, VCM, Spinoza, Benchmaxxing, RMI, Cognitive Loop Closure, TokenMana, Coherence Exchange, Project Theseus, Hive Operator OS, SCF, and Field of God governance each support pieces of the design. The assembled artifact-steward layer has not been implemented or tested. The local browser note supplied author intent and terminology; it is not a source-derived evidence artifact.
+The core claim remains at `argument`. VIEA, Talos, PlanForge, VCM, Spinoza, Benchmaxxing, RMI, Cognitive Loop Closure, TokenMana, Coherence Exchange, Project Theseus, Hive Operator OS, SCF, and Field of God governance each support pieces of the design. The repository now includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first steward records, but the assembled artifact-steward layer has not been implemented or behaviorally tested. The local browser note supplied author intent and terminology; it is not a source-derived evidence artifact.
 
 ## Mechanism
 
@@ -178,13 +178,15 @@ The first implementation can be a repository-local steward with no spending auth
 
 The steward should not merge protected branches, spend funds, change governance, publish releases, promote evidence states, or assign external workers without human approval in the minimal version.
 
+This repository now contains the record-level first step for that implementation: `artifact_steward_charter.schema.json`, `project_work_contract.schema.json`, `contribution_ledger_entry.schema.json`, `steward_action_decision.schema.json`, and `sunset_review_record.schema.json`, each with a matching valid fixture. These fixtures validate public record shape only; they do not execute a steward.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Project steward manifest fixture validation | Validate charter shape, authority ceiling, budget policy, evidence policy, governance model, and sunset criteria. | planned; not run |
-| Work contract authority denial test | Confirm a steward cannot dispatch work when the contract lacks authority, allowed tools, forbidden-tool handling, verification requirements, or non-claims. | planned; not run |
-| Treasury spend-cap test | Confirm proposed spend above policy threshold becomes an approval request, not an executable action. | planned; not run |
+| Project steward manifest fixture validation | Validate charter shape, authority ceiling, budget policy, evidence policy, governance model, and sunset criteria. | implemented; `validate_protocol_examples.py` validates the fixture shape only |
+| Work contract authority denial test | Confirm a steward cannot dispatch work when the contract lacks authority, allowed tools, forbidden-tool handling, verification requirements, or non-claims. | implemented as a finite Lean predicate; no steward dispatch run |
+| Treasury spend-cap test | Confirm proposed spend above policy threshold becomes an approval request, not an executable action. | implemented as a finite Lean protected-action predicate; no treasury engine run |
 | Untrusted event taint test | Confirm issue, PR, comment, or worker text is treated as tainted context and cannot become control instructions without review. | planned; not run |
 | Contribution ledger separation test | Confirm compensation, reputation, governance influence, evidence credit, and authorship are represented separately. | planned; not run |
 | Sunset criteria test | Confirm a project that meets configured inactivity or mission-failure thresholds triggers sunset review rather than ordinary work generation. | planned; not run |
@@ -194,10 +196,10 @@ The steward should not merge protected branches, spend funds, change governance,
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | planned |
-| `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | planned |
+| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | implemented |
+| `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | implemented |
 
-These are not proofs of good governance. They are finite-record safety checks that should come after the project defines the charter, work-contract, treasury-policy, and approval-record schemas.
+These are not proofs of good governance. They are finite-record safety checks over declared work-contract and protected-action review fields; they do not prove institutional capture resistance, legal authority, treasury safety, or human project quality.
 
 ## Source crosswalk
 

@@ -1,0 +1,24 @@
+{
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "steward_id": "steward://proposal-only-demo",
+  "mission": "Maintain a public-safe living-book artifact with explicit source, evidence, proof, and release boundaries.",
+  "non_goals": [
+    "spend funds autonomously",
+    "merge protected branches autonomously",
+    "promote claim support without evidence"
+  ],
+  "maintainers": ["person://owner-demo"],
+  "governance_model": "proposal-only steward; human maintainer approval required for protected actions",
+  "authority_ceiling": "draft plans, propose work contracts, run local validation, and record evidence",
+  "budget_policy": "zero autonomous spend; all spend becomes an approval request",
+  "evidence_policy": "support-state movement requires mapped sources, tests, proofs, or accepted release artifacts",
+  "release_policy": "publish only after validation, render, commit, push, and Pages verification",
+  "contribution_policy": "separate authorship, review, evidence, compensation, reputation, and governance effects",
+  "federation_policy": "external workers require explicit work contracts and sandboxed artifact boundaries",
+  "sunset_criteria": "review if maintainers, users, funds, or mission coherence disappear",
+  "protected_assets": ["main branch", "claim/evidence matrix", "release records", "source notes"],
+  "non_claims": [
+    "This fixture does not deploy a steward bot.",
+    "This fixture does not grant spending or governance authority."
+  ]
+}

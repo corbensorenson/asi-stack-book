@@ -21,7 +21,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The personal-compute-hive browser note is author-intent context only; it is not cited evidence and is kept in the ignored local source inbox."
-  - "No device registry, scheduler, federation protocol, family-governance policy engine, or rented-node sandbox has been implemented or tested in this repo."
+  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no device registry, scheduler, federation protocol, family-governance policy engine, or rented-node sandbox has been run."
   - "No support-state promotion is implied by this chapter draft."
 ---
 
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, but the core claim is still a design synthesis. The browser note is local-only planning context. |
-| Test state | Chapter-level tests remain planned; no hive scheduler, registry, federation, or rented-node test has been run. |
+| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision` validate locally, and two finite Lean predicates build. No hive scheduler, live registry, federation, or rented-node test has been run. |
 
 ## Drafting guardrail
 
@@ -65,7 +65,7 @@ The claim is architectural, not empirical. It says that governed personal AI nee
 
 ### Claim-source mapping status
 
-The core claim has not been promoted above `argument`. The assigned source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. The combined hive architecture remains this book's synthesis until a schema, prototype, test, or external literature set is added.
+The core claim has not been promoted above `argument`. The assigned source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. The repository now includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but the combined hive architecture remains this book's synthesis until behavioral prototypes, scheduler tests, or external literature mappings are added.
 
 ## Mechanism
 
@@ -160,12 +160,14 @@ The first implementation should be deliberately small:
 
 This minimum viable hive can run as a local experiment without pretending to be a complete personal cloud. Its value is that it makes the missing control records visible.
 
+This repository now contains the record-level first step for that experiment: `device_resource_card.schema.json`, `hive_job_contract.schema.json`, and `hive_scheduling_decision.schema.json`, each with a matching valid fixture. These fixtures prove only that the public record shapes can be validated by the local protocol validator.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Device registry fixture validation | Validate `DeviceResourceCard` shape, trust tier, owner/guardian field, allowed data classes, allowed tool classes, and revocation path. | planned; not run |
-| Policy-first scheduling denial test | Confirm a faster node is rejected before optimization when its policy membrane forbids the job's data, authority, or network scope. | planned; not run |
+| Device registry fixture validation | Validate `DeviceResourceCard` shape, trust tier, owner/guardian field, allowed data classes, allowed tool classes, and revocation path. | implemented; `validate_protocol_examples.py` validates the fixture shape only |
+| Policy-first scheduling denial test | Confirm a faster node is rejected before optimization when its policy membrane forbids the job's data, authority, or network scope. | implemented as a finite Lean predicate; no scheduler run |
 | Data locality and rented-node denial test | Confirm private or family data cannot be sent to a rented node unless the job contract explicitly permits the exposure class. | planned; not run |
 | Phone approval gate test | Confirm a high-risk or high-spend job cannot execute until a bound approval receipt exists. | planned; not run |
 | Child topic routing test | Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers. | planned; not run |
@@ -176,10 +178,10 @@ This minimum viable hive can run as a local experiment without pretending to be 
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | planned |
-| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | planned |
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | implemented |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
 
-These targets should start as finite records or schema-backed executable checks. A meaningful Lean treatment needs a small model of device cards, job contracts, policy predicates, eligibility, and selected-node decisions before it attempts anything stronger.
+These targets are implemented as finite record predicates. They do not prove a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, or privacy guarantee.
 
 ## Source crosswalk
 

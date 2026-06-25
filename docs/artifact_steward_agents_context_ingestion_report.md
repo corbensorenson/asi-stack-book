@@ -22,7 +22,8 @@ The packet was treated as author-intent and planning context only. The public ch
 
 ## Evidence boundary
 
-- No steward bot, treasury executor, governance system, contributor ledger, project-work dispatcher, or sunset protocol was implemented or tested.
+- Record-shape schemas and fixtures were later added for `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`, and narrow finite Lean predicates were implemented for dispatch-boundary and protected-action approval checks.
+- No steward bot, treasury executor, governance system, contributor ledger service, project-work dispatcher, or sunset protocol was implemented or behaviorally tested.
 - No external tooling or literature mentioned in the browser packet was added as cited evidence.
 - All external systems named in the packet remain research leads until source records and source notes are created.
 - The chapter remains `Design rationale` with `argument` support.
@@ -30,5 +31,5 @@ The packet was treated as author-intent and planning context only. The public ch
 ## Follow-up queue
 
 - Add public source records and source notes for selected repository automation, fiscal-hosting, governance, public-goods funding, workflow-injection, and compute-market references if the book later needs external comparison.
-- Define candidate schemas for `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`.
-- Add fixture-only tests before claiming any steward-agent behavior.
+- Extend the schema family to approval receipts, treasury policies, and event-taint records before attempting a larger steward prototype.
+- Add behavioral steward, treasury, event-taint, contribution-ledger, and sunset-protocol tests before claiming steward-agent behavior beyond finite record predicates.

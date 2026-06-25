@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/hive_scheduling_decision.schema.json",
+  "title": "Hive Scheduling Decision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "job_id",
+    "eligible_nodes",
+    "rejected_nodes",
+    "selected_node_id",
+    "selected_reason",
+    "policy_filter_status",
+    "approval_receipt_refs",
+    "data_placement_refs",
+    "secret_handle_plan",
+    "estimated_cost",
+    "estimated_energy",
+    "isolation_mode",
+    "expiration",
+    "evidence_refs",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "decision_id": { "type": "string", "minLength": 1 },
+    "job_id": { "type": "string", "minLength": 1 },
+    "eligible_nodes": { "type": "array", "items": { "type": "string" } },
+    "rejected_nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["node_id", "reason"],
+        "properties": {
+          "node_id": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "selected_node_id": { "type": "string", "minLength": 1 },
+    "selected_reason": { "type": "string", "minLength": 1 },
+    "policy_filter_status": {
+      "type": "string",
+      "enum": ["passed", "failed", "residual"]
+    },
+    "approval_receipt_refs": { "type": "array", "items": { "type": "string" } },
+    "data_placement_refs": { "type": "array", "items": { "type": "string" } },
+    "secret_handle_plan": { "type": "string", "minLength": 1 },
+    "estimated_cost": { "type": "string", "minLength": 1 },
+    "estimated_energy": { "type": "string", "minLength": 1 },
+    "isolation_mode": { "type": "string", "minLength": 1 },
+    "expiration": { "type": "string", "minLength": 1 },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -3915,8 +3915,20 @@
           ],
           "minimal_implementation": "A local personal-hive dashboard with a device registry, signed resource cards, job queue, manual phone approval, policy-first scheduler, artifact log, and no public federation or autonomous spending.",
           "codex_tests": [
-            "Device registry fixture validation",
-            "Policy-first scheduling denial test",
+            {
+              "name": "Device registry fixture validation",
+              "purpose": "Validate DeviceResourceCard, HiveJobContract, and HiveSchedulingDecision public record shapes without contacting devices or running a scheduler.",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation",
+              "status": "implemented; fixture validation only"
+            },
+            {
+              "name": "Policy-first scheduling denial test",
+              "purpose": "Check the finite Lean predicate that a faster node forbidden by policy cannot be selected.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no scheduler run"
+            },
             "Data locality and rented-node denial test",
             "Phone approval gate test",
             "Child topic routing test",
@@ -3928,13 +3940,13 @@
               "tag": "lean:personal_hives.scheduling.operational_invariant",
               "module": "AsiStackProofs.PersonalComputeHives",
               "target": "A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:personal_hives.policy_first.failure_blocks_promotion",
               "module": "AsiStackProofs.PersonalComputeHives",
               "target": "A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -5894,9 +5906,27 @@
           ],
           "minimal_implementation": "A `PROJECT_STEWARD.yml` file plus a GitHub-oriented steward bot that labels issues, drafts plans, proposes work contracts, requests CI, summarizes pull requests, writes release notes, records evidence, and never spends funds or merges to protected branches without policy approval.",
           "codex_tests": [
-            "Project steward manifest fixture validation",
-            "Work contract authority denial test",
-            "Treasury spend-cap test",
+            {
+              "name": "Project steward manifest fixture validation",
+              "purpose": "Validate ArtifactStewardCharter, ProjectWorkContract, ContributionLedgerEntry, StewardActionDecision, and SunsetReviewRecord public record shapes without running a steward.",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation",
+              "status": "implemented; fixture validation only"
+            },
+            {
+              "name": "Work contract authority denial test",
+              "purpose": "Check the finite Lean predicate that dispatched steward work contracts record objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no steward dispatch run"
+            },
+            {
+              "name": "Treasury spend-cap test",
+              "purpose": "Check the finite Lean protected-action predicate that treasury-exceeding, governance-changing, or protected-asset actions without approval evidence cannot execute.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no treasury engine run"
+            },
             "Untrusted event taint test",
             "Contribution ledger separation test",
             "Sunset criteria test",
@@ -5907,13 +5937,13 @@
               "tag": "lean:artifact_stewards.work_contract.operational_invariant",
               "module": "AsiStackProofs.ArtifactStewardAgents",
               "target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactStewardAgents",
               "target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },

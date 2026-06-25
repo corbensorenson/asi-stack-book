@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/project_work_contract.schema.json",
+  "title": "Project Work Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "artifact_id",
+    "objective",
+    "context_refs",
+    "allowed_files_or_systems",
+    "allowed_tools",
+    "forbidden_tools",
+    "required_outputs",
+    "acceptance_tests",
+    "review_requirements",
+    "evidence_requirements",
+    "budget_limit",
+    "compute_limits",
+    "deadline",
+    "rollback_path",
+    "dispatch_status",
+    "non_claims"
+  ],
+  "properties": {
+    "contract_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "context_refs": { "type": "array", "items": { "type": "string" } },
+    "allowed_files_or_systems": { "type": "array", "items": { "type": "string" } },
+    "allowed_tools": { "type": "array", "items": { "type": "string" } },
+    "forbidden_tools": { "type": "array", "items": { "type": "string" } },
+    "required_outputs": { "type": "array", "items": { "type": "string" } },
+    "acceptance_tests": { "type": "array", "items": { "type": "string" } },
+    "review_requirements": { "type": "array", "items": { "type": "string" } },
+    "evidence_requirements": { "type": "array", "items": { "type": "string" } },
+    "budget_limit": { "type": "string", "minLength": 1 },
+    "compute_limits": { "type": "string", "minLength": 1 },
+    "deadline": { "type": "string", "minLength": 1 },
+    "rollback_path": { "type": "string", "minLength": 1 },
+    "dispatch_status": {
+      "type": "string",
+      "enum": ["proposed", "approved", "dispatched", "completed", "rejected"]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

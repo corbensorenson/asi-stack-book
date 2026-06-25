@@ -1972,9 +1972,11 @@ Failure modes to cover:
 Draft deliverables:
 
 - A full chapter with hive object records, policy-first scheduling diagram, implementation ladder, public-safe source boundary, and external-literature queue.
-- Planned schema: `device_resource_card`, `hive_job_contract`, and `hive_scheduling_decision`.
-- Planned Codex test: Device registry fixture validation.
-- Planned Codex test: Policy-first scheduling denial test.
+- Implemented repository-level fixtures: `device_resource_card.valid.json`, `hive_job_contract.valid.json`, and `hive_scheduling_decision.valid.json` validate record shape only; no personal hive scheduler, device registry, rented-node sandbox, or federation protocol has been run.
+- Implemented Lean predicate: admitted hive jobs require identity, data, tool, federation, and approval checks.
+- Implemented Lean predicate: a faster node forbidden by policy cannot be selected.
+- Implemented Codex test: Device registry fixture validation through `validate_protocol_examples.py`.
+- Implemented Codex test: Policy-first scheduling denial as a finite Lean predicate only.
 - Planned Codex test: Data locality and rented-node denial test.
 - Planned Codex test: Phone approval gate test.
 - Planned Codex test: Child topic routing test.
@@ -1985,8 +1987,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | planned |
-| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | planned |
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | implemented |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
 
 ### Compact Generative Systems and Residual Honesty
 
@@ -2889,10 +2891,12 @@ Failure modes to cover:
 Draft deliverables:
 
 - A full chapter with steward lifecycle diagram, project record definitions, implementation ladder, public-safe source boundary, and external-literature queue.
-- Planned schema: `artifact_steward_charter`, `project_work_contract`, `contribution_ledger_entry`, `steward_action_decision`, and `sunset_review_record`.
-- Planned Codex test: Project steward manifest fixture validation.
-- Planned Codex test: Work contract authority denial test.
-- Planned Codex test: Treasury spend-cap test.
+- Implemented repository-level fixtures: `artifact_steward_charter.valid.json`, `project_work_contract.valid.json`, `contribution_ledger_entry.valid.json`, `steward_action_decision.valid.json`, and `sunset_review_record.valid.json` validate record shape only; no steward bot, treasury executor, governance runner, or contributor system has been run.
+- Implemented Lean predicate: dispatched steward work contracts require objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.
+- Implemented Lean predicate: protected steward actions without explicit approval evidence cannot execute.
+- Implemented Codex test: Project steward manifest fixture validation through `validate_protocol_examples.py`.
+- Implemented Codex test: Work contract authority denial as a finite Lean predicate only.
+- Implemented Codex test: Treasury spend-cap/protected-action denial as a finite Lean predicate only.
 - Planned Codex test: Untrusted event taint test.
 - Planned Codex test: Contribution ledger separation test.
 - Planned Codex test: Sunset criteria test.
@@ -2902,8 +2906,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | planned |
-| `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | planned |
+| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | implemented |
+| `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | implemented |
 
 ### Integrated Reference Architecture
 

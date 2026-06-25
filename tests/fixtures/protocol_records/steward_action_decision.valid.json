@@ -1,0 +1,29 @@
+{
+  "decision_id": "steward-decision://schema-fixture-validation",
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "steward_id": "steward://proposal-only-demo",
+  "action_type": "propose_contract",
+  "authority_basis": "artifact steward charter permits proposal-only local validation work",
+  "inputs": [
+    "docs/book_outline.md",
+    "chapters/artifact-steward-agents-and-living-project-governance.qmd"
+  ],
+  "rejected_options": [
+    "autonomous spending",
+    "unreviewed governance update",
+    "external worker dispatch"
+  ],
+  "required_approvals": ["human maintainer approval for protected branch or spend"],
+  "approval_refs": [],
+  "evidence_refs": ["planned local validator output"],
+  "affected_artifacts": [
+    "schemas/project_work_contract.schema.json",
+    "tests/fixtures/protocol_records/project_work_contract.valid.json"
+  ],
+  "residuals": ["no steward bot execution occurred"],
+  "execution_status": "proposed",
+  "non_claims": [
+    "This fixture does not execute a project steward.",
+    "This fixture does not approve spend or governance changes."
+  ]
+}

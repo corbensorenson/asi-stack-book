@@ -1,0 +1,21 @@
+{
+  "entry_id": "contribution://schema-fixture-validation",
+  "contributor_id": "agent://codex-demo",
+  "work_contract_id": "work-contract://schema-fixture-validation",
+  "artifact_refs": [
+    "schemas/artifact_steward_charter.schema.json",
+    "tests/fixtures/protocol_records/artifact_steward_charter.valid.json"
+  ],
+  "authorship_credit": "drafted fixture/schema proposal",
+  "review_credit": "none recorded in fixture",
+  "evidence_credit": "validator output only after command is run",
+  "compensation_ref": "none; no payment claim",
+  "reputation_signal": "separate from governance and compensation",
+  "governance_effect": "none; no voting or maintainer authority created",
+  "conflict_notes": "fixture only; no conflict review performed",
+  "recorded_by": "steward://proposal-only-demo",
+  "non_claims": [
+    "This fixture does not award real compensation.",
+    "This fixture does not change governance rights."
+  ]
+}

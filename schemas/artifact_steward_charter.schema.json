@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/artifact_steward_charter.schema.json",
+  "title": "Artifact Steward Charter",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "steward_id",
+    "mission",
+    "non_goals",
+    "maintainers",
+    "governance_model",
+    "authority_ceiling",
+    "budget_policy",
+    "evidence_policy",
+    "release_policy",
+    "contribution_policy",
+    "federation_policy",
+    "sunset_criteria",
+    "protected_assets",
+    "non_claims"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "steward_id": { "type": "string", "minLength": 1 },
+    "mission": { "type": "string", "minLength": 1 },
+    "non_goals": { "type": "array", "items": { "type": "string" } },
+    "maintainers": { "type": "array", "items": { "type": "string" } },
+    "governance_model": { "type": "string", "minLength": 1 },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "budget_policy": { "type": "string", "minLength": 1 },
+    "evidence_policy": { "type": "string", "minLength": 1 },
+    "release_policy": { "type": "string", "minLength": 1 },
+    "contribution_policy": { "type": "string", "minLength": 1 },
+    "federation_policy": { "type": "string", "minLength": 1 },
+    "sunset_criteria": { "type": "string", "minLength": 1 },
+    "protected_assets": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

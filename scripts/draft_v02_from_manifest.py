@@ -95,6 +95,24 @@ def sanitize_cell(value: str) -> str:
     return re.sub(r"\s+", " ", value).replace("|", "\\|").strip()
 
 
+def test_record_name(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("name", "Unnamed test"))
+    return str(test)
+
+
+def test_record_purpose(test: object, chapter: dict) -> str:
+    if isinstance(test, dict) and test.get("purpose"):
+        return str(test["purpose"])
+    return test_purpose(test_record_name(test), chapter)
+
+
+def test_record_status(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("status", "planned; not run"))
+    return "planned; not run"
+
+
 def bullet_lines(values: list[str]) -> str:
     return "\n".join(f"- {value}" for value in values)
 
@@ -253,8 +271,10 @@ def test_table(chapter: dict) -> str:
         "|---|---|---|",
     ]
     for test in chapter.get("codex_tests", []):
-        purpose = test_purpose(test, chapter)
-        rows.append(f"| {sanitize_cell(test)} | {sanitize_cell(purpose)} | planned; not run |")
+        purpose = test_record_purpose(test, chapter)
+        rows.append(
+            f"| {sanitize_cell(test_record_name(test))} | {sanitize_cell(purpose)} | {sanitize_cell(test_record_status(test))} |"
+        )
     return "\n".join(rows)
 
 

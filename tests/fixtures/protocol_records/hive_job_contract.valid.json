@@ -1,0 +1,20 @@
+{
+  "job_id": "hive-job://schema-fixture-validation",
+  "objective": "Validate a public-safe protocol fixture without contacting external devices.",
+  "context_packet_refs": ["tests/fixtures/protocol_records/device_resource_card.valid.json"],
+  "data_classes": ["public_source_notes", "synthetic_test_data"],
+  "tool_classes": ["schema_validation"],
+  "authority_ceiling": "read fixture files and run local validators only",
+  "physical_risk_tier": "none",
+  "federation_scope": "local_only",
+  "budget_limit": "no spend; local CPU only",
+  "energy_policy": "ordinary foreground validation, no background overnight work",
+  "deadline": "demo deadline; not operational",
+  "required_approvals": ["operator approval for any non-local execution"],
+  "verification_predicate": "fixture validates against matching local schema",
+  "residual_policy": "record validator failure as residual; do not retry on rented nodes",
+  "non_claims": [
+    "This fixture does not execute a personal compute hive.",
+    "This fixture does not prove scheduling, privacy, or federation safety."
+  ]
+}

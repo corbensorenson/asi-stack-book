@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/hive_job_contract.schema.json",
+  "title": "Hive Job Contract",
+  "type": "object",
+  "required": [
+    "job_id",
+    "objective",
+    "context_packet_refs",
+    "data_classes",
+    "tool_classes",
+    "authority_ceiling",
+    "physical_risk_tier",
+    "federation_scope",
+    "budget_limit",
+    "energy_policy",
+    "deadline",
+    "required_approvals",
+    "verification_predicate",
+    "residual_policy",
+    "non_claims"
+  ],
+  "properties": {
+    "job_id": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "context_packet_refs": { "type": "array", "items": { "type": "string" } },
+    "data_classes": { "type": "array", "items": { "type": "string" } },
+    "tool_classes": { "type": "array", "items": { "type": "string" } },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
+    "physical_risk_tier": {
+      "type": "string",
+      "enum": ["none", "low", "medium", "high", "prohibited"]
+    },
+    "federation_scope": {
+      "type": "string",
+      "enum": ["local_only", "family", "project", "rented", "public"]
+    },
+    "budget_limit": { "type": "string", "minLength": 1 },
+    "energy_policy": { "type": "string", "minLength": 1 },
+    "deadline": { "type": "string", "minLength": 1 },
+    "required_approvals": { "type": "array", "items": { "type": "string" } },
+    "verification_predicate": { "type": "string", "minLength": 1 },
+    "residual_policy": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

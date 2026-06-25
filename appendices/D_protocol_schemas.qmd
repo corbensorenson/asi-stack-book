@@ -7,6 +7,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/authority_use_receipt.schema.json`
 - `schemas/authority_transition_record.schema.json`
 - `schemas/artifact_graph_record.schema.json`
+- `schemas/artifact_steward_charter.schema.json`
 - `schemas/benchmark_ratchet_record.schema.json`
 - `schemas/belief_revision_record.schema.json`
 - `schemas/claim_record.schema.json`
@@ -14,9 +15,11 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/compact_generative_record.schema.json`
 - `schemas/compressed_artifact_record.schema.json`
 - `schemas/compression_receipt.schema.json`
+- `schemas/contribution_ledger_entry.schema.json`
 - `schemas/costed_route_record.schema.json`
 - `schemas/cyclic_memory_contract.schema.json`
 - `schemas/cyclic_mixer_evaluation_record.schema.json`
+- `schemas/device_resource_card.schema.json`
 - `schemas/evidence_transition_record.schema.json`
 - `schemas/constitutional_predicate_record.schema.json`
 - `schemas/context_abi_record.schema.json`
@@ -26,6 +29,8 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/failure_boundary_map.schema.json`
 - `schemas/generation_mode_record.schema.json`
 - `schemas/governance_right_record.schema.json`
+- `schemas/hive_job_contract.schema.json`
+- `schemas/hive_scheduling_decision.schema.json`
 - `schemas/agency_rights_checklist.schema.json`
 - `schemas/intent_contract.schema.json`
 - `schemas/intent_execution_trace.schema.json`
@@ -37,6 +42,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/proof_carrying_claim.schema.json`
 - `schemas/proof_target_record.schema.json`
 - `schemas/procedural_tool_record.schema.json`
+- `schemas/project_work_contract.schema.json`
 - `schemas/prototype_phase_record.schema.json`
 - `schemas/readiness_gate_record.schema.json`
 - `schemas/reference_trace_record.schema.json`
@@ -52,7 +58,9 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/simulation_contract_record.schema.json`
 - `schemas/specialist_registry_record.schema.json`
 - `schemas/stable_capability_field.schema.json`
+- `schemas/steward_action_decision.schema.json`
 - `schemas/substrate_adoption_record.schema.json`
+- `schemas/sunset_review_record.schema.json`
 - `schemas/tribunal_review_record.schema.json`
 - `schemas/typed_job.schema.json`
 - `schemas/moecot_orchestration_record.schema.json`
@@ -430,6 +438,192 @@ routing_decision_record:
 ```
 
 This record turns router selection into an auditable decision. It separates candidate discovery, selection, route shape, authority check, readiness check, cost-quality reasoning, fallback, residuals, and ledger references.
+
+## Device Resource Card
+
+```yaml
+device_resource_card:
+  device_id: string
+  owner_principal: string
+  guardian_principal: string
+  trust_tier: owner_private
+  locality_class: home
+  compute_profile: string
+  storage_profile: string
+  network_profile: string
+  allowed_data_classes: []
+  allowed_tool_classes: []
+  secret_handle_capability: handles_only
+  operator_presence_mode: phone_approval
+  enrollment_status: active
+  revocation_path: string
+```
+
+This record describes a hive participant as eligible but bounded. It records identity, trust, locality, resource profile, allowed data/tool classes, secret-handle capability, operator-presence mode, enrollment state, and revocation path without granting open execution authority.
+
+## Hive Job Contract
+
+```yaml
+hive_job_contract:
+  job_id: string
+  objective: string
+  context_packet_refs: []
+  data_classes: []
+  tool_classes: []
+  authority_ceiling: string
+  physical_risk_tier: none
+  federation_scope: local_only
+  budget_limit: string
+  energy_policy: string
+  deadline: string
+  required_approvals: []
+  verification_predicate: string
+  residual_policy: string
+  non_claims: []
+```
+
+This record turns hive work into a bounded job with context refs, data/tool classes, authority ceiling, physical risk, federation scope, budget, energy policy, approvals, verification, residual handling, and non-claims.
+
+## Hive Scheduling Decision
+
+```yaml
+hive_scheduling_decision:
+  decision_id: string
+  job_id: string
+  eligible_nodes: []
+  rejected_nodes:
+    - node_id: string
+      reason: string
+  selected_node_id: string
+  selected_reason: string
+  policy_filter_status: passed
+  approval_receipt_refs: []
+  data_placement_refs: []
+  secret_handle_plan: string
+  estimated_cost: string
+  estimated_energy: string
+  isolation_mode: string
+  expiration: string
+  evidence_refs: []
+  residuals: []
+  non_claims: []
+```
+
+This record makes policy-first scheduling inspectable by preserving eligible nodes, rejected nodes with reasons, selected node, approvals, data placement, secret handling, cost/energy estimates, isolation, expiration, evidence, residuals, and non-claims.
+
+## Artifact Steward Charter
+
+```yaml
+artifact_steward_charter:
+  artifact_id: string
+  steward_id: string
+  mission: string
+  non_goals: []
+  maintainers: []
+  governance_model: string
+  authority_ceiling: string
+  budget_policy: string
+  evidence_policy: string
+  release_policy: string
+  contribution_policy: string
+  federation_policy: string
+  sunset_criteria: string
+  protected_assets: []
+  non_claims: []
+```
+
+This record binds a steward to an artifact mission and authority ceiling while keeping budget, evidence, release, contribution, federation, protected-asset, sunset, and non-claim boundaries explicit.
+
+## Project Work Contract
+
+```yaml
+project_work_contract:
+  contract_id: string
+  artifact_id: string
+  objective: string
+  context_refs: []
+  allowed_files_or_systems: []
+  allowed_tools: []
+  forbidden_tools: []
+  required_outputs: []
+  acceptance_tests: []
+  review_requirements: []
+  evidence_requirements: []
+  budget_limit: string
+  compute_limits: string
+  deadline: string
+  rollback_path: string
+  dispatch_status: proposed
+  non_claims: []
+```
+
+This record lowers project work into a bounded contract with allowed and forbidden surfaces, outputs, tests, review and evidence requirements, budget, compute limits, rollback, dispatch status, and non-claims.
+
+## Contribution Ledger Entry
+
+```yaml
+contribution_ledger_entry:
+  entry_id: string
+  contributor_id: string
+  work_contract_id: string
+  artifact_refs: []
+  authorship_credit: string
+  review_credit: string
+  evidence_credit: string
+  compensation_ref: string
+  reputation_signal: string
+  governance_effect: string
+  conflict_notes: string
+  recorded_by: string
+  non_claims: []
+```
+
+This record separates authorship, review, evidence, compensation, reputation, governance effect, conflicts, and non-claims so project credit does not collapse into one gameable surface.
+
+## Steward Action Decision
+
+```yaml
+steward_action_decision:
+  decision_id: string
+  artifact_id: string
+  steward_id: string
+  action_type: propose_contract
+  authority_basis: string
+  inputs: []
+  rejected_options: []
+  required_approvals: []
+  approval_refs: []
+  evidence_refs: []
+  affected_artifacts: []
+  residuals: []
+  execution_status: proposed
+  non_claims: []
+```
+
+This record explains what a steward proposed, approved, executed, blocked, escalated, or rejected, and preserves authority basis, approvals, evidence, affected artifacts, residuals, and non-claims.
+
+## Sunset Review Record
+
+```yaml
+sunset_review_record:
+  review_id: string
+  artifact_id: string
+  value_signal: string
+  active_users_status: string
+  active_maintainers_status: string
+  funds_status: string
+  open_risks: []
+  dependencies: []
+  sunset_recommendation: continue
+  archival_plan: string
+  fork_or_transfer_path: string
+  appeal_path: string
+  decision_status: proposed
+  evidence_refs: []
+  non_claims: []
+```
+
+This record makes project continuation, freeze, transfer, archive, split, replacement, or later review a documented decision rather than an artifact drifting indefinitely.
 
 ## Readiness Gate Record
 

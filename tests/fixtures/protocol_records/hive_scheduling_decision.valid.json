@@ -1,0 +1,27 @@
+{
+  "decision_id": "hive-decision://schema-fixture-validation",
+  "job_id": "hive-job://schema-fixture-validation",
+  "eligible_nodes": ["device://home-desktop-gpu-demo"],
+  "rejected_nodes": [
+    {
+      "node_id": "device://rented-gpu-demo",
+      "reason": "job contract is local_only and fixture does not permit rented-node execution"
+    }
+  ],
+  "selected_node_id": "device://home-desktop-gpu-demo",
+  "selected_reason": "matches local_only scope and fixture data classes after policy filtering",
+  "policy_filter_status": "passed",
+  "approval_receipt_refs": ["approval://operator-demo-local-fixture"],
+  "data_placement_refs": ["tests/fixtures/protocol_records/hive_job_contract.valid.json"],
+  "secret_handle_plan": "no secrets; handles_only capability remains unused",
+  "estimated_cost": "zero external spend",
+  "estimated_energy": "ordinary local validation cost; not measured",
+  "isolation_mode": "local process; no network federation",
+  "expiration": "fixture expires when validation run ends",
+  "evidence_refs": ["python3 scripts/validate_protocol_examples.py"],
+  "residuals": ["no scheduler implementation or device registry was exercised"],
+  "non_claims": [
+    "This fixture is not a scheduler benchmark.",
+    "This fixture does not prove privacy, availability, or security."
+  ]
+}

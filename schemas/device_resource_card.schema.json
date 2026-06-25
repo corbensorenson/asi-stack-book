@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/device_resource_card.schema.json",
+  "title": "Device Resource Card",
+  "type": "object",
+  "required": [
+    "device_id",
+    "owner_principal",
+    "trust_tier",
+    "locality_class",
+    "compute_profile",
+    "storage_profile",
+    "network_profile",
+    "allowed_data_classes",
+    "allowed_tool_classes",
+    "secret_handle_capability",
+    "operator_presence_mode",
+    "enrollment_status",
+    "revocation_path"
+  ],
+  "properties": {
+    "device_id": { "type": "string", "minLength": 1 },
+    "owner_principal": { "type": "string", "minLength": 1 },
+    "guardian_principal": { "type": "string" },
+    "trust_tier": {
+      "type": "string",
+      "enum": ["owner_private", "family_managed", "project_managed", "rented_public", "untrusted"]
+    },
+    "locality_class": {
+      "type": "string",
+      "enum": ["home", "mobile", "workshop", "project_space", "rented_region", "unknown"]
+    },
+    "compute_profile": { "type": "string", "minLength": 1 },
+    "storage_profile": { "type": "string", "minLength": 1 },
+    "network_profile": { "type": "string", "minLength": 1 },
+    "allowed_data_classes": { "type": "array", "items": { "type": "string" } },
+    "allowed_tool_classes": { "type": "array", "items": { "type": "string" } },
+    "secret_handle_capability": {
+      "type": "string",
+      "enum": ["none", "handles_only", "credential_injection_boundary"]
+    },
+    "operator_presence_mode": {
+      "type": "string",
+      "enum": ["not_required", "local_present", "phone_approval", "guardian_required"]
+    },
+    "enrollment_status": {
+      "type": "string",
+      "enum": ["active", "suspended", "revoked"]
+    },
+    "revocation_path": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

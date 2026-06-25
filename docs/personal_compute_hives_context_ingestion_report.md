@@ -22,7 +22,8 @@ The packet was treated as author-intent and planning context only. The public ch
 
 ## Evidence boundary
 
-- No personal hive implementation, scheduler, network overlay, rented-node sandbox, family-governance policy engine, or device registry test was run.
+- Record-shape schemas and fixtures were later added for `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision`, and narrow finite Lean predicates were implemented for policy-before-optimization admission and faster-forbidden-node rejection.
+- No personal hive implementation, scheduler, network overlay, rented-node sandbox, family-governance policy engine, live device registry, or behavioral scheduling test was run.
 - No external tooling or literature mentioned in the browser packet was added as cited evidence.
 - All external systems named in the packet remain research leads until source records and source notes are created.
 - The chapter remains `Design rationale` with `argument` support.
@@ -30,5 +31,5 @@ The packet was treated as author-intent and planning context only. The public ch
 ## Follow-up queue
 
 - Add public source records and source notes for selected edge-compute, mesh-network, orchestration, distributed-compute, file-sync, and rented-compute systems if the book later needs external comparison.
-- Define candidate schemas for `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision`.
-- Add fixture-only tests before claiming any policy-first scheduling behavior.
+- Extend the schema family to approval receipts and federation leases before attempting a larger hive scheduler prototype.
+- Add behavioral scheduler and rented-node denial tests before claiming any policy-first scheduling behavior beyond finite record predicates.

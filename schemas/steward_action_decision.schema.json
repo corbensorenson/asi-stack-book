@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/steward_action_decision.schema.json",
+  "title": "Steward Action Decision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "artifact_id",
+    "steward_id",
+    "action_type",
+    "authority_basis",
+    "inputs",
+    "rejected_options",
+    "required_approvals",
+    "approval_refs",
+    "evidence_refs",
+    "affected_artifacts",
+    "residuals",
+    "execution_status",
+    "non_claims"
+  ],
+  "properties": {
+    "decision_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "steward_id": { "type": "string", "minLength": 1 },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "triage_issue",
+        "draft_plan",
+        "propose_contract",
+        "request_compute",
+        "open_pr",
+        "label_claim",
+        "propose_spend",
+        "block_merge",
+        "schedule_release",
+        "recommend_sunset",
+        "escalate_governance",
+        "other"
+      ]
+    },
+    "authority_basis": { "type": "string", "minLength": 1 },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "rejected_options": { "type": "array", "items": { "type": "string" } },
+    "required_approvals": { "type": "array", "items": { "type": "string" } },
+    "approval_refs": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "affected_artifacts": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "execution_status": {
+      "type": "string",
+      "enum": ["proposed", "approved", "executed", "blocked", "escalated", "rejected"]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

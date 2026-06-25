@@ -110,8 +110,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | MoECOT source-ingestion gate | planned | not run |
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Runtime crosswalk completeness test | planned | not run |
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | planned | not run |
-| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | planned | not run |
-| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | planned | not run |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | implemented | passes via protocol fixture validation |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Data locality and rented-node denial test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Phone approval gate test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Child topic routing test | planned | not run |
@@ -180,9 +180,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Context-policy grounding reward test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reasoning-budget penalty test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Rollback and promotion gate test | planned | not run |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | planned | not run |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | planned | not run |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury spend-cap test | planned | not run |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | implemented | passes via protocol fixture validation |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | implemented | passes via Lean build |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury spend-cap test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Untrusted event taint test | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Contribution ledger separation test | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset criteria test | planned | not run |
@@ -228,13 +228,10 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 104 |
-| planned | 4 |
+| implemented | 108 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 104 |
-| planned | process-contract | policy-model-first | 1 |
-| planned | schema-contract | schema-first | 3 |
+| implemented | formal-invariant | lean-candidate | 108 |

@@ -136,6 +136,36 @@ def qmd_escape(value: object) -> str:
     return text.replace("|", "\\|").replace("\n", " ")
 
 
+def test_name(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("name", "Unnamed test"))
+    return str(test)
+
+
+def test_purpose_text(test: object, chapter: dict) -> str:
+    if isinstance(test, dict) and test.get("purpose"):
+        return str(test["purpose"])
+    return scaffold_test_purpose(test_name(test), chapter)
+
+
+def test_status_summary(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("status", "planned; not run"))
+    return "planned; not run"
+
+
+def test_implementation_status(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("implementation_status", "planned"))
+    return "planned"
+
+
+def test_result_status(test: object) -> str:
+    if isinstance(test, dict):
+        return str(test.get("result_status", "not run"))
+    return "not run"
+
+
 def yaml_string(value: object) -> str:
     return json.dumps("" if value is None else str(value))
 
@@ -251,7 +281,7 @@ def write_chapter_stub(chapter: dict, records: list[dict], rewrite: bool = False
 
     tests = chapter.get("codex_tests") or ["No chapter-level test declared yet"]
     test_rows = "\n".join(
-        f"| {qmd_escape(test)} | {qmd_escape(scaffold_test_purpose(test, chapter))} | planned; not run |"
+        f"| {qmd_escape(test_name(test))} | {qmd_escape(test_purpose_text(test, chapter))} | {qmd_escape(test_status_summary(test))} |"
         for test in tests
     )
     claim_id = f"{chapter['id']}.core"
@@ -665,7 +695,7 @@ def write_test_specs(structure: dict) -> None:
             continue
         for test in tests:
             rows.append(
-                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | {qmd_escape(test)} | planned | not run |"
+                f"| `{chapter['id']}` | {qmd_escape(chapter['title'])} | {qmd_escape(test_name(test))} | {qmd_escape(test_implementation_status(test))} | {qmd_escape(test_result_status(test))} |"
             )
     proof_coverage = proof_target_coverage_markdown()
     body = f"""# Codex Test Specs

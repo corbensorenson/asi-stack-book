@@ -1,0 +1,16 @@
+{
+  "device_id": "device://home-desktop-gpu-demo",
+  "owner_principal": "person://owner-demo",
+  "guardian_principal": "",
+  "trust_tier": "owner_private",
+  "locality_class": "home",
+  "compute_profile": "desktop GPU worker; fixture only, no device was contacted",
+  "storage_profile": "local encrypted project cache allowed for public-safe artifacts",
+  "network_profile": "private LAN plus outbound allowlisted package downloads",
+  "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+  "allowed_tool_classes": ["local_build", "schema_validation", "quarto_render"],
+  "secret_handle_capability": "handles_only",
+  "operator_presence_mode": "phone_approval",
+  "enrollment_status": "active",
+  "revocation_path": "remove card from hive registry and invalidate active leases"
+}

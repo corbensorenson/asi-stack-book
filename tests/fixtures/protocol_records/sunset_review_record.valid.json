@@ -1,0 +1,23 @@
+{
+  "review_id": "sunset-review://demo",
+  "artifact_id": "artifact://asi-stack-book-demo",
+  "value_signal": "active drafting and validation continue; demo record recommends continuing",
+  "active_users_status": "owner and future readers remain intended audiences",
+  "active_maintainers_status": "human maintainer required for protected actions",
+  "funds_status": "no funds controlled by fixture",
+  "open_risks": [
+    "chapter claims remain mostly argument-level",
+    "reader edition still requires human editorial review before major version publication"
+  ],
+  "dependencies": ["Quarto", "Lean", "GitHub Pages"],
+  "sunset_recommendation": "continue",
+  "archival_plan": "archive public repository and rendered site snapshot if project sunsets",
+  "fork_or_transfer_path": "human maintainer can fork or transfer repository under ordinary GitHub controls",
+  "appeal_path": "human maintainer review before archive or transfer",
+  "decision_status": "proposed",
+  "evidence_refs": ["docs/publication_readiness.md"],
+  "non_claims": [
+    "This fixture does not perform a real sunset review.",
+    "This fixture does not prove the project should continue indefinitely."
+  ]
+}
