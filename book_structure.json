@@ -2489,22 +2489,65 @@
             {
               "source_id": "viea",
               "mapped_support": "Frames advanced AI as an intent-to-execution system where human intent becomes structured command contracts, durable artifacts, routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal and systems framework only; does not prove a deployed runtime, replayed vertical slice, artifact satisfaction, or behavioral execution tests in this repository."
+              "limits": "Architecture proposal and systems framework only; does not prove a deployed runtime, replayed vertical slice, artifact satisfaction, or behavioral execution tests in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:47-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-148",
+                "sources/raw/google_docs/viea.txt:206-219",
+                "sources/raw/google_docs/viea.txt:1537-1543"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the intent-to-execution transformation, structured command contracts, durable artifacts, routing, verification, runtime adapters, feedback, residuals, support states, and regression coverage; no deployed runtime, replayed vertical slice, artifact satisfaction result, or behavioral execution test is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports lowering work into a typed job lifecycle with decomposition, contract locks, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, approvals, and residual feedback.",
-              "limits": "Design source only; security, approval behavior, benchmark claims, and tool-effect enforcement are not reproduced or verified in this repository."
+              "limits": "Design source only; security, approval behavior, benchmark claims, and tool-effect enforcement are not reproduced or verified in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:4433-4450",
+                "sources/raw/google_docs/talos.txt:4451-4466",
+                "sources/raw/google_docs/talos.txt:4470-4482",
+                "sources/raw/google_docs/talos.txt:6046-6052",
+                "sources/raw/google_docs/talos.txt:6170-6195",
+                "sources/raw/google_docs/talos.txt:6213-6241",
+                "sources/raw/google_docs/talos.txt:6401-6426",
+                "sources/raw/google_docs/talos.txt:6476-6485"
+              ],
+              "passage_review_note": "Reviewed local raw cache for typed/job-based execution, contract locks, context and secret handles, verification/adjudication, delivery, trace analysis, claim/evidence binding, proof bundles, replay, mediated network/credential access, and residual logging; security, approval behavior, benchmarks, and tool-effect enforcement remain unverified here."
             },
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports bounded operational instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, entry/exit rules, loops, recursion, and recovery paths.",
-              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result, execution runtime, or local behavioral test is present."
+              "limits": "Vocabulary and promptcraft framework only; no empirical prompt-performance result, execution runtime, or local behavioral test is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:69-82",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-165",
+                "sources/raw/google_docs/software_magic_grimoire.txt:202-215",
+                "sources/raw/google_docs/software_magic_grimoire.txt:575-598",
+                "sources/raw/google_docs/software_magic_grimoire.txt:2058-2085",
+                "sources/raw/google_docs/software_magic_grimoire.txt:2453-2466"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the instruction-artifact definition, role/objective/context/constraint/procedure/output/verification/failure fields, artifact boundaries, invariants, verification, fallback behavior, canonicalization, promptcraft vocabulary, and checkable output shapes; no prompt-performance result, runtime, or behavioral test is promoted."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports separating AI proposals from execution through a small deterministic kernel, capability boundaries for effects, semantic patches, provenance hashes, replayable logs, obligations, and protocol seals.",
-              "limits": "No GenesisCode prototype, replay checker, proof artifact, benchmark result, or security audit is present in this repository."
+              "limits": "No GenesisCode prototype, replay checker, proof artifact, benchmark result, or security audit is present in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-25",
+                "sources/raw/google_docs/genesiscode.txt:33-40",
+                "sources/raw/google_docs/genesiscode.txt:164-210",
+                "sources/raw/google_docs/genesiscode.txt:218-264",
+                "sources/raw/google_docs/genesiscode.txt:354-360",
+                "sources/raw/google_docs/genesiscode.txt:398-406",
+                "sources/raw/google_docs/genesiscode.txt:453-457",
+                "sources/raw/google_docs/genesiscode.txt:494-508"
+              ],
+              "passage_review_note": "Reviewed local raw cache for AI-as-proposer, tiny deterministic kernel, hardened contracts and seals, capability-gated effects, deterministic effect logs, replay, obligations, evidence artifacts, semantic patch validation, provenance, and policy gates; no prototype, replay checker, proof artifact, benchmark, or security audit is promoted."
             },
             {
               "source_id": "moecot",

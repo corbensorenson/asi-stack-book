@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 77 |
+| Passage-reviewed mappings recorded | 81 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -47,7 +47,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 6 | argument | passage review required before source-derived promotion |
-| `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
@@ -294,10 +294,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
-| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | not passage-reviewed |
-| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `software_magic_grimoire` | mapped | note present | chapter listed | not passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `viea` | mapped | note present | chapter listed | not passage-reviewed |

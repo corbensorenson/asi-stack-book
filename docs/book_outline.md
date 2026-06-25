@@ -918,6 +918,7 @@ Draft deliverables:
 
 - A command-contract schema and one end-to-end intent-to-artifact trace.
 - Implemented protocol validation: `command_contract` and `intent_execution_trace` fixtures validate public record shape only.
+- Exact Appendix C claim-source mappings for the core intent-to-execution claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, and MoECOT runtime-reference context; four local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`) now have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending contract-completeness tests, constraint-preservation tests, artifact-traceability tests, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
 - Planned Codex test: Contract field completeness test.
 - Planned Codex test: Constraint preservation test.
 - Planned Codex test: Artifact traceability test.
