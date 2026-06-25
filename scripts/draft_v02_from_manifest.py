@@ -358,7 +358,6 @@ def build_chapter(chapter: dict, part: dict, part_index: int, chapter_index: int
     next_sentence = f"It hands its output to {next_title}, where the next layer tightens or implements the same constraint." if next_title else "It closes this part by making the remaining handoff to the next part explicit."
 
     lines = [chapter_frontmatter(chapter, part, today, source_ids)]
-    lines.append(f"# {chapter['title']}\n")
     lines.append("## Chapter status\n")
     lines.append(chapter_status_table(chapter, part, source_ids, cache_records, today))
     lines.append("\n## Drafting guardrail\n")

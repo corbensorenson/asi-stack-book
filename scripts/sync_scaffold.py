@@ -298,8 +298,6 @@ claim_label: "{chapter.get('claim_label', 'Design rationale')}"
 open_evidence_gaps:{yaml_list(gaps)}
 ---
 
-# {chapter['title']}
-
 ## Chapter status
 
 | Field | Value |
