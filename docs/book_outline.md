@@ -2977,10 +2977,10 @@ Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 - Insufficiency: Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
-- Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.
-- Mechanism: Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.
-- Mechanism: Show which artifact each layer emits.
-- Mechanism: Identify where authority can stop or reroute the process.
+- Mechanism: Represent the integrated stack as a Reference Trace Record that names intent, authority chain, layer handoffs, emitted artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims.
+- Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, compression/procedural loop closure, and SCF improvement gates without collapsing layer boundaries.
+- Mechanism: Show the artifact emitted by each layer: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, residual, or capability-field transition.
+- Mechanism: Identify where authority can stop, narrow, reroute, quarantine, rollback, or require review before downstream work proceeds.
 - Interface: All stack layers participate.
 - Interface: Artifacts and evidence ledgers provide continuity.
 - Interface: SCF gates control improvement.
@@ -3095,10 +3095,10 @@ Draft arc:
 
 - Problem: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
 - Insufficiency: A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.
-- Mechanism: Start with source inventory, claim ledger, artifact graph, and validation.
-- Mechanism: Represent each build phase with a prototype phase record.
-- Mechanism: Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order.
-- Mechanism: Delay recursive self-improvement until evaluator and governance integrity are credible.
+- Mechanism: Represent each build phase with a Prototype Phase Record naming deliverables, required artifacts, acceptance gates, blockers, validation commands, evidence refs, non-claims, and status.
+- Mechanism: Start with source inventory, source notes, claim ledger, artifact graph, schemas, proof manifest, validation, and release discipline before introducing autonomous action.
+- Mechanism: Add intent contracts, PlanForge DAGs, VCM context records, typed jobs, runtime adapters, audit/replay, procedural memory, routing, readiness gates, benchmark ratchets, and SCF replacement gates in dependency order.
+- Mechanism: Delay recursive self-improvement until evaluator integrity, rollback, residual preservation, governance rights, and evidence-ledger behavior are credible.
 - Interface: Each phase unlocks a later layer.
 - Interface: Evidence gates decide promotion.
 - Interface: Changelog and releases document progress.
@@ -3150,12 +3150,11 @@ Draft arc:
 
 - Problem: The book itself must remain a living technical system rather than a static anthology.
 - Insufficiency: Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
-- Mechanism: Use `book_structure.json` for order and dynamic chapters.
-- Mechanism: Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
-- Mechanism: Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
-- Mechanism: Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
-- Mechanism: Maintain three audience surfaces from one source: live AI/research scaffolding, frozen research releases, and stripped reader/audio editions for interested human readers.
-- Mechanism: Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
+- Mechanism: Keep `book_structure.json` as the ordering source of truth for parts, stable chapter ids, chapter file paths, front matter, and appendices.
+- Mechanism: Keep `docs/book_outline.md` as the drafting, source-queue, proof-scope, Lean-tag, and future-writing control surface.
+- Mechanism: Treat conversation-mined packets as author-intent, terminology, lineage, and recovery context only, not as source-derived evidence.
+- Mechanism: Maintain distinct live AI/research scaffolding, frozen research releases, stripped reader editions, companion notes, and audio-script workspaces derived from one validated source state.
+- Mechanism: Require meaningful structural, evidence, proof, schema, source, or publication changes to sync scaffold, sync proof manifest, validate, render, update changelog, commit, push, and verify the public site.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
 - Interface: Tests feed support states.
@@ -3211,9 +3210,10 @@ Draft arc:
 
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
-- Mechanism: Maintain source inventory, source notes, bibliography, and source-loading queues.
-- Mechanism: Track recovered and missing items as research backlog records instead of treating them as evidence.
-- Mechanism: Use triage rules to update chapters or add precise new ones.
+- Mechanism: Maintain source inventory, source notes, generated bibliography, chapter source queues, and direct-citation status before using a source as support.
+- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence.
+- Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
+- Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Interface: Appendix G lists corpus and external literature queue.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.

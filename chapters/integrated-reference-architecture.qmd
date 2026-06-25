@@ -55,6 +55,8 @@ open_evidence_gaps:
 
 This chapter synthesizes the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository.
 
+The previous chapter introduced artifact stewardship as a bounded continuity layer. This chapter zooms back out and asks what a steward, planner, memory system, router, verifier, executor, benchmark ratchet, and SCF gate are all supposed to preserve together: an inspectable trace from authorized intent to artifact and evidence-backed change. Integration is useful only if it makes the handoffs more visible, not if it hides them behind a single system label.
+
 ## Problem
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.

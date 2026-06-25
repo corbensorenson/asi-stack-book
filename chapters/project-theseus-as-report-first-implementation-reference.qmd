@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter uses Project Theseus sources as report-first implementation references. It does not import private project artifacts, rerun benchmarks, verify current dashboards, or promote source-reported implementation state into public empirical evidence.
 
+The previous chapter defines the integrated trace as a design target. This chapter narrows that target into an implementation-reference boundary: Theseus can show what report-first machinery should look like, but reports, ledgers, configs, gates, and work-board records must remain distinct from public proof of capability. A dashboard can orient the reader; only artifacts can carry a claim.
+
 ## Problem
 
 The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. Project Theseus is useful because its source notes describe pressure loops, plan compiler contracts, architecture gates, work boards, residual escrow, and self-evolution controls as reportable machinery.
