@@ -31,6 +31,18 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 - How a minimal implementation can grow from artifact graph to governed capability replacement.
 - How the living book acts as an evidence ratchet instead of a static anthology.
 
+## Audience and Edition Spine
+
+Future writing runs should serve three audiences from one canonical source tree:
+
+- AIs and writing agents need stable IDs, source queues, claim/evidence states, proof hooks, schemas, validation commands, and guardrails.
+- Human researchers need the full technical argument plus traceable evidence machinery, known residuals, and frozen major-version review artifacts.
+- Interested human readers need a coherent manuscript for EPUB, PDF, DOCX, e-reader, and audio consumption without repeated live-workflow scaffolding.
+
+The ordinary chapter prose is the reader-facing spine. It must still make sense after live-only headings such as `Chapter status`, `Drafting guardrail`, `Codex test plan`, `Source crosswalk`, `Claim-source mapping status`, and `Formalization hooks` are stripped. Meaning-critical caveats, uncertainty, and support-state limits belong in the spine, not only in a stripped guardrail or source-crosswalk section.
+
+Major-version reader and audio editions are derivatives of the live book, not parallel manuscripts. Use `editions/release_profiles.json` as the machine-readable contract for content layers, strip rules, release gates, target formats, generated manifests, and non-claims.
+
 ## Book-Level Throughline
 
 1. Define the stack, its boundaries, and why model scale alone is not an architecture.

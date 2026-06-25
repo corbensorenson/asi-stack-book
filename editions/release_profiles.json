@@ -5,6 +5,62 @@
     "outline": "docs/book_outline.md",
     "live_quarto_config": "_quarto.yml"
   },
+  "content_layers": [
+    {
+      "id": "reader_spine",
+      "label": "Reader-facing chapter spine",
+      "primary_audiences": ["interested_humans", "human_researchers"],
+      "canonical_location": "ordinary chapter prose outside live-only headings",
+      "description": "The coherent human manuscript layer: problem, insufficiency, mechanism, interfaces, invariants, failure modes, minimal implementation discussion, diagrams, summaries, glossary path, and uncertainty that changes claim meaning.",
+      "edition_policy": "Retained by reader releases and adapted by audio releases. It must remain readable after live-only sections are stripped."
+    },
+    {
+      "id": "live_research_scaffold",
+      "label": "Live research scaffold",
+      "primary_audiences": ["ai_agents", "human_researchers"],
+      "canonical_location": "per-chapter status, guardrail, test-plan, proof-hook, and source-crosswalk sections",
+      "description": "The live-book machinery that keeps source loading, evidence states, proof scope, validation commands, and overclaiming guardrails visible during research work.",
+      "edition_policy": "Retained by the live book and research releases; stripped or summarized for reader and audio releases."
+    },
+    {
+      "id": "evidence_matrices",
+      "label": "Evidence and source matrices",
+      "primary_audiences": ["ai_agents", "human_researchers"],
+      "canonical_location": "appendices, source notes, release records, schemas, proof manifest, and test fixtures",
+      "description": "The audit layer for sources, claim/evidence states, protocol schemas, Codex tests, release records, bibliography, changelog, and lineage.",
+      "edition_policy": "Retained by live and research releases. Reader releases keep selected human-useful appendices such as glossary and bibliography while omitting dense matrices unless a major release explicitly includes them."
+    },
+    {
+      "id": "machine_contracts",
+      "label": "Machine-readable contracts",
+      "primary_audiences": ["ai_agents"],
+      "canonical_location": "book_structure.json, docs/book_outline.md, source inventory, schemas, scripts, Lean modules, and validation commands",
+      "description": "The structured control layer that lets future agents add chapters, route source context, generate proof manifests, validate protocols, and derive editions without hand-renumbering or duplicating manuscripts.",
+      "edition_policy": "Canonical for the live project; excluded from reader and audio manuscripts except where explained in prose."
+    },
+    {
+      "id": "release_derivatives",
+      "label": "Generated release derivatives",
+      "primary_audiences": ["human_researchers", "interested_humans"],
+      "canonical_location": "ignored build workspaces and explicit release artifacts recorded under release_records/",
+      "description": "Generated reader manuscripts, frozen research snapshots, EPUB/PDF/DOCX/HTML builds, audio scripts, MP3/M4B packages, and audio-embedded EPUBs.",
+      "edition_policy": "Never the canonical source of truth. A derivative exists only after generation, review or render, and a release record that names the actual artifact."
+    },
+    {
+      "id": "audio_adaptation",
+      "label": "Audio adaptation layer",
+      "primary_audiences": ["interested_humans"],
+      "canonical_location": "build/audio_script/ and future reviewed audio release workspaces",
+      "description": "The listening-oriented script layer that turns the reviewed reader manuscript into spoken chapters, pronunciation guidance, chapter markers, and companion-note decisions for tables, diagrams, code, and schemas.",
+      "edition_policy": "Derived from the reviewed reader release, not directly from the live book. It does not imply audio files exist until they are generated and checked."
+    }
+  ],
+  "reader_spine_contract": [
+    "Every chapter should remain intelligible from ordinary prose after live-only headings are removed.",
+    "Uncertainty, support-state limits, and caveats that change claim meaning must appear in the reader spine, not only in stripped guardrails or source crosswalks.",
+    "Images and diagrams that carry meaning should remain in reader releases and receive spoken-treatment notes for audio releases.",
+    "Repeated source matrices, proof hooks, Codex test plans, and guardrail blocks belong in the live/research scaffold, not in the bedtime-reading manuscript."
+  ],
   "major_version_policy": {
     "canonical_source_profile": "live_book",
     "release_record_directory": "release_records",
@@ -15,7 +71,8 @@
       "A profile format is a target, not a produced artifact.",
       "A release record must list only formats that were actually rendered, generated, reviewed, or explicitly marked not attempted.",
       "Generated manuscripts and media builds belong under build/ or another ignored release workspace unless a specific public artifact is intentionally attached elsewhere.",
-      "The live book remains the source of truth after a reader or audio release is produced."
+      "The live book remains the source of truth after a reader or audio release is produced.",
+      "Audio embedded in EPUB is a produced artifact only after the exact audio files are embedded, checked, and named in an edition release record."
     ]
   },
   "reader_manuscript_policy": {
@@ -96,6 +153,12 @@
       "primary_audiences": ["ai_agents", "human_researchers"],
       "purpose": "Canonical public Quarto site for the living architecture, source mapping, evidence discipline, proof hooks, schemas, validation records, and research workflow.",
       "source_policy": "All tracked book source remains in the main repo. Raw source exports stay local/private unless explicitly approved for publication.",
+      "content_layer_policy": {
+        "retain": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
+        "strip_or_summarize": [],
+        "derive": [],
+        "exclude": ["release_derivatives", "audio_adaptation"]
+      },
       "publication_formats": ["html"],
       "include_appendices": [
         "appendices/A_source_matrix.qmd",
@@ -133,6 +196,12 @@
       "primary_audiences": ["human_researchers", "ai_agents"],
       "purpose": "Frozen major-version snapshot for review, audit, citation, and replication work while preserving the live evidence and source machinery.",
       "source_policy": "Derived from a tagged commit. Keeps matrices, evidence appendices, schema/proof appendices, release records, and known residuals.",
+      "content_layer_policy": {
+        "retain": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
+        "strip_or_summarize": [],
+        "derive": ["release_derivatives"],
+        "exclude": ["audio_adaptation"]
+      },
       "publication_formats": ["html", "pdf"],
       "include_appendices": [
         "appendices/A_source_matrix.qmd",
@@ -163,6 +232,12 @@
       "primary_audiences": ["interested_humans"],
       "purpose": "Major-version human manuscript for e-readers and relaxed reading, derived from the living book while removing AI/research workflow scaffolding.",
       "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, and bibliography path.",
+      "content_layer_policy": {
+        "retain": ["reader_spine"],
+        "strip_or_summarize": ["live_research_scaffold", "evidence_matrices", "machine_contracts"],
+        "derive": ["release_derivatives"],
+        "exclude": ["audio_adaptation"]
+      },
       "publication_formats": ["html", "epub", "pdf", "docx"],
       "generated_source_dir": "build/reader_edition",
       "reader_review_required": true,
@@ -184,6 +259,7 @@
       ],
       "release_gate": [
         "python3 scripts/build_reader_edition.py --check",
+        "python3 scripts/render_reader_formats.py --check",
         "reader manuscript is manually reviewed for narrative continuity",
         "EPUB render passes",
         "DOCX render passes",
@@ -202,6 +278,12 @@
       "primary_audiences": ["interested_humans"],
       "purpose": "Narration-ready version of a major reader release, optimized for listening rather than table-heavy technical audit.",
       "source_policy": "Derived from the reader release after human manuscript review. Tables, schemas, code blocks, proof hooks, and dense crosswalks are converted to concise narration or moved to companion notes.",
+      "content_layer_policy": {
+        "retain": [],
+        "strip_or_summarize": ["reader_spine", "live_research_scaffold", "evidence_matrices", "machine_contracts"],
+        "derive": ["release_derivatives", "audio_adaptation"],
+        "exclude": []
+      },
       "publication_formats": ["mp3", "m4b", "audio-embedded-epub"],
       "include_appendices": [],
       "strip_headings": [

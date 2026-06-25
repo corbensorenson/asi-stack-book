@@ -21,6 +21,7 @@ REQUIRED_FILES = [
     "appendices/I_release_editions.qmd",
     "proofs/proof_manifest.json",
     "scripts/build_reader_edition.py",
+    "scripts/render_reader_formats.py",
     "scripts/validate_release_profiles.py",
     ".github/pull_request_template.md",
     ".github/ISSUE_TEMPLATE/config.yml",
@@ -34,6 +35,7 @@ REQUIRED_README_STRINGS = [
     "proofs/proof_manifest.json",
     "editions/release_profiles.json",
     "scripts/build_reader_edition.py",
+    "scripts/render_reader_formats.py",
     "scripts/validate_publication.py",
     "Do not report a theorem as proven unless",
 ]

@@ -9,6 +9,8 @@ This directory defines how major versions of the living book become audience-spe
 - `reader_release`: a cleaned human manuscript path for EPUB, PDF, DOCX, and HTML.
 - `audio_release`: a narration-ready path derived from the reviewed reader release.
 
+The same file also defines the content-layer contract: reader-facing chapter spine, live research scaffold, evidence matrices, machine-readable contracts, release derivatives, and audio adaptation. Future writing runs should keep meaning-critical prose in the reader spine and put repeatable source/proof/test machinery in live-only sections that the release profiles can remove or summarize.
+
 Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a reviewed release script instead.
 
 Validate the profile definitions with:
@@ -24,6 +26,13 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/build_reader_edition.py
 ```
 
+Attempt and record reader-format renders with:
+
+```bash
+python3 scripts/render_reader_formats.py --check
+python3 scripts/render_reader_formats.py --formats html epub docx
+```
+
 Create or check a derived audio-script review workspace with:
 
 ```bash
@@ -32,3 +41,5 @@ python3 scripts/build_audio_script.py
 ```
 
 The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts have been rendered or generated until those commands actually run and a release record says so.
+
+Generated reader workspaces include `reader_manifest.json`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`. These manifests document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.

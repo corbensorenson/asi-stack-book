@@ -98,6 +98,7 @@ def generate(output_dir: Path) -> dict[str, object]:
     with tempfile.TemporaryDirectory(prefix="asi-reader-for-audio-") as temp_dir:
         reader_dir = Path(temp_dir) / DEFAULT_READER_TEMP_NAME
         reader_summary = build_reader_edition.generate(reader_dir, "reader_release")
+        audio_profile = build_reader_edition.find_profile("audio_release")
 
         if output_dir.exists():
             shutil.rmtree(output_dir)
@@ -116,6 +117,8 @@ def generate(output_dir: Path) -> dict[str, object]:
         manifest = {
             "schema_version": "0.1",
             "source_profile": "reader_release",
+            "audio_profile": audio_profile.get("id", "audio_release"),
+            "content_layer_policy": audio_profile.get("content_layer_policy", {}),
             "source_reader_generation": reader_summary,
             "output_dir": str(output_dir),
             "script_files": script_files,

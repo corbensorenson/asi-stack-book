@@ -1,6 +1,6 @@
 # Publication Readiness
 
-Last audited: 2026-06-24
+Last audited: 2026-06-25
 
 This file tracks whether the public repository is ready for the next major phase: source-substantiating, testing, and improving the v0.2 manuscript draft.
 
@@ -16,9 +16,10 @@ This file tracks whether the public repository is ready for the next major phase
 - The fast-generation context ingestion report exists at `docs/fast_generation_context_ingestion_report.md`.
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
 - The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
-- Audience-specific release profiles exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
-- `scripts/build_audio_script.py` can derive an audio-script review workspace and pronunciation glossary under ignored `build/` without claiming audio exists.
+- Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
+- `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, and pronunciation glossary under ignored `build/` without claiming audio exists.
 - Future major-version research, reader, and audio releases have a dedicated public-safe record schema at `schemas/edition_release_record.schema.json`.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
@@ -56,6 +57,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_release_profiles.py`.
 - Run `python3 scripts/build_reader_edition.py --check`.
+- Run `python3 scripts/render_reader_formats.py --check`.
 - Run `python3 scripts/build_audio_script.py --check` when preparing an audio script or checking the full edition path.
 - Run `python3 scripts/validate_book.py`.
 - Run `python3 scripts/validate_visual_coverage.py`.

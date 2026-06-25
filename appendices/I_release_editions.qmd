@@ -8,6 +8,21 @@ The living book has three audiences:
 
 The public GitHub Pages book remains the canonical live artifact. Major versions can produce additional editions, but those editions are derived from the live source rather than maintained as independent books.
 
+## Content Layers
+
+The project serves all three audiences by separating layers inside one canonical source tree:
+
+| Layer | Canonical location | Edition rule |
+|---|---|---|
+| `reader_spine` | Ordinary chapter prose outside live-only headings. | Retain for reader releases and adapt for audio. |
+| `live_research_scaffold` | Chapter status, drafting guardrails, Codex test plans, proof hooks, source crosswalks, and claim-source mapping sections. | Retain for live/research releases; strip or summarize for reader/audio releases. |
+| `evidence_matrices` | Appendices, source notes, schemas, release records, proof manifest, test specs, bibliography, changelog, and lineage. | Retain for live/research releases; include selected human-useful appendices in reader releases. |
+| `machine_contracts` | `book_structure.json`, `docs/book_outline.md`, inventories, schemas, scripts, Lean modules, and validation commands. | Canonical for AI/writing agents; exclude from reader/audio manuscripts except when explained in prose. |
+| `release_derivatives` | Ignored build workspaces and explicitly recorded release artifacts. | Non-canonical outputs; record only artifacts that were actually generated or rendered. |
+| `audio_adaptation` | Audio-script and future audio release workspaces. | Derive from a reviewed reader release, not directly from the live book. |
+
+This means the live book can remain useful to AIs and researchers without making the human-reader editions carry every matrix, guardrail, or proof hook. Meaning-critical uncertainty still belongs in ordinary chapter prose so the reader release does not overstate claims after live-only scaffolding is removed.
+
 ## Edition Profiles
 
 The tracked profile source is `editions/release_profiles.json`.
@@ -45,6 +60,17 @@ python3 scripts/build_reader_edition.py
 
 It writes derived Quarto source under `build/reader_edition/`, which is ignored by git. The generated manuscript is a candidate for human review, not the canonical source of truth.
 
+The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review requirement, and non-claims. It does not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
+
+Reader format renders can be attempted and recorded with:
+
+```bash
+python3 scripts/render_reader_formats.py --check
+python3 scripts/render_reader_formats.py --formats html epub docx
+```
+
+That helper writes `reader_render_report.json` in the generated reader workspace. The report records local render outcomes only; it is not a major-version release record.
+
 The reader-facing spine is the ordinary chapter prose outside the stripped headings. Any uncertainty that changes the meaning of a claim belongs in that spine, not only in a guardrail, source crosswalk, proof hook, or test-plan section that a reader edition removes.
 
 ## Audio Release Boundary
@@ -67,6 +93,8 @@ python3 scripts/build_audio_script.py
 ```
 
 It creates `build/audio_script/` and a pronunciation glossary for review. It does not synthesize audio and does not produce MP3, M4B, or audio-embedded EPUB artifacts.
+
+The generated audio workspace includes `audio_manifest.json` with the source reader generation summary, audio profile, content-layer policy, script files, pronunciation glossary, review status, and non-claims.
 
 ## Major Version Gate
 

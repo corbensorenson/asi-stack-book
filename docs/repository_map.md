@@ -16,7 +16,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/fast_generation_context_ingestion_report.md` | Public-safe synthesis of the fast-generation browser-GPT planning note and evidence boundaries. | tracked |
 | `docs/release_editions_plan.md` | Major-version reader/research/audio release plan, strip rules, and artifact gates. | tracked |
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
-| `editions/release_profiles.json` | Machine-readable audience and release-profile definitions for live, research, reader, and audio editions. | tracked |
+| `editions/release_profiles.json` | Machine-readable audience, content-layer, and release-profile definitions for live, research, reader, and audio editions. | tracked |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |
 | `sources/raw/` | Local raw source exports. | ignored |
@@ -28,7 +28,7 @@ This repository is organized around the living book and its validation loop.
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `experiments/` | Synthetic experiment and benchmark harness workspace. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
-| `build/` | Generated reader/release edition source and output trees. | ignored |
+| `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |
 | `.github/` | GitHub Pages workflow, issue templates, and PR template. | tracked |
 | `_site/`, `.quarto/`, `site_libs/` | Render/build outputs and Quarto cache. | ignored |
@@ -39,7 +39,7 @@ This repository is organized around the living book and its validation loop.
 - Edit `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`.
 - Edit public source metadata in `sources/source_inventory.json`; keep raw source text out of git unless publication is explicitly approved.
 - Update `appendices/F_changelog.qmd` for meaningful changes.
-- Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py`, `python3 scripts/build_reader_edition.py --check`, and `python3 scripts/build_audio_script.py --check` when the audio path is affected.
+- Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py`, `python3 scripts/build_reader_edition.py --check`, `python3 scripts/render_reader_formats.py --check`, and `python3 scripts/build_audio_script.py --check` when the audio path is affected.
 
 ## Public Readiness Invariants
 

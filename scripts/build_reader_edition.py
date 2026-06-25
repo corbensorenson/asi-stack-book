@@ -197,6 +197,32 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
     (output_dir / "_quarto.yml").write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_reader_manifest(output_dir: Path, summary: dict[str, object], profile: dict) -> None:
+    manifest = {
+        "schema_version": "0.1",
+        "source_profile": profile.get("id", "reader_release"),
+        "output_dir": summary["output_dir"],
+        "formats": summary["formats"],
+        "chapters": summary["chapters"],
+        "files": summary["files"],
+        "content_layer_policy": profile.get("content_layer_policy", {}),
+        "stripped_heading_policy": profile.get("strip_headings", []),
+        "removed_sections": summary["removed_sections"],
+        "reader_review_required": profile.get("reader_review_required", True),
+        "review_status": "review_required",
+        "non_claims": [
+            "This generated source tree is not the canonical living book.",
+            "Listed formats are targets, not rendered artifacts.",
+            "EPUB, PDF, DOCX, and HTML outputs must not be claimed until Quarto renders them and a release record says so.",
+            "A reader-edition draft still requires continuity, typography, figure, and appendix review before publication."
+        ]
+    }
+    (output_dir / "reader_manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def copy_assets(output_dir: Path) -> None:
     src = ROOT / "assets"
     dst = output_dir / "assets"
@@ -250,7 +276,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
                 removed_totals[key] = removed_totals.get(key, 0) + count
 
     write_quarto(output_dir, structure, profile)
-    return {
+    summary = {
         "output_dir": str(output_dir),
         "profile": profile_id,
         "chapters": chapter_count,
@@ -258,6 +284,8 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "removed_sections": removed_totals,
         "formats": profile.get("publication_formats", []),
     }
+    write_reader_manifest(output_dir, summary, profile)
+    return summary
 
 
 def scan_for_stripped_headings(output_dir: Path, strip_headings: set[tuple[int, str]]) -> list[str]:

@@ -21,7 +21,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until MoECOT runtime artifacts, replay records, benchmark records, or reproduced local runs exist."
   - "Only protocol schema/fixture validation is implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -65,6 +65,25 @@ This chapter holds the middle position. MoECOT should be mapped to the stack as 
 [moecot-runtime-and-multi-core-orchestration.core, label: Design rationale, support: argument] MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
 
 The claim remains at `argument` support. The MoECOT source note supports implementation-reference discussion of compact orchestration, specialist lanes, control-plane ledgers, readiness gates, replay, and handoff. It does not promote benchmark, safety, or deployment claims without inspected artifacts or reproduced runs.
+
+### Claim-source mapping status
+
+Appendix C now maps this MoECOT runtime claim to all assigned source notes. The mappings support using MoECOT as an implementation-reference crosswalk for compact orchestration, specialist lanes, ledgers, readiness, replay, and handoff, not as reproduced runtime evidence.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `octopus_router` | Head/router selection, specialist arms, dynamic loading, permission envelopes, memory routing, local benchmark ratchets, arm cards, split/merge/retire policies, and verification/composition routes. | Does not prove MoECOT or any router implementation; no routing benchmark or specialist runtime run exists here. |
+| `rmi` | Head/router, specialist arms, arm registry, memory/permission/tool routers, benchmark ledger, residual escrow ledger, verification/safety layer, regression floors, and lifecycle discipline. | No empirical modular-intelligence result, benchmark reproduction, or prototype inspection has been performed. |
+| `benchmaxxing` | Benchmark lifecycle, wall diagnosis, model/benchmark ledgers, anti-Goodhart safeguards, regression conversion, residual preservation, and architecture-change criteria. | No local benchmark harness, mutation, holdout, run, or reproduced performance claim exists here. |
+| `beastbrain` | Local/stateful OS-like intelligence process with memory substrate, planning, routing, verification, security, consolidation, interface surfaces, and local deployment vocabulary. | Architecture lineage only; cost, SSD-first, hardware, and benchmark claims are unverified. |
+| `viea` | Command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage. | No completed VIEA deployment, runtime trace, or verified execution result exists here. |
+| `scf` | Runtime cores as replaceable capability implementations behind stable contracts, evidence registries, scoped qualifications, route validation, lifecycle events, incidents, appeals, rollback, and authority boundaries. | Does not prove MoECOT core safety, evaluator quality, or production replacement behavior. |
+| `talos` | Typed jobs, deterministic control planes, factory execution, adjudication, delivery, feedback, evidence records, audit logs, replay, tool isolation, and approval gates. | No Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark has been reproduced. |
+| `moecot_md` | Terminology normalization for compact orchestrator, specialist lanes, control-plane ledgers, readiness gates, replay, and fail-closed promotion. | Variant source only; it is not independent corroboration. |
+| `moecot` | Compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, residual tracking, and explicit limitations. | Code, logs, benchmark artifacts, replay records, and release artifacts have not been imported, inspected, or reproduced. |
+| `project_theseus_whitepaper` | Compact substrate, autonomy control loop, Octopus router, bounded specialist arms, benchmark/residual ledgers, checkpoints, Hive runtime, observability, and trusted-node task allowlists. | Current reports, ledgers, code paths, and command outputs were not rerun here. |
+| `theseus_operator_os` | Command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation. | No Hive board, database, node registry, command channel, dashboard, or hook ledger was run. |
+| `theseus_architecture_gate` | Pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | Reported gate snapshot is not reproduced evidence; current gate artifacts were not regenerated or independently inspected here. |
 
 ## Mechanism
 

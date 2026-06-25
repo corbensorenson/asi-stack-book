@@ -17,7 +17,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until routing benchmarks, learned-router harnesses, runtime routes, or authority-enforcement tests exist."
   - "Protocol schema/fixture validation and narrow Lean routing/readiness predicates are implemented; no specialist-routing benchmark, learned-router harness, runtime route, or authority-enforcement test has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -61,6 +61,21 @@ This matters because routing is not just a performance problem. It is also a gov
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
 The claim remains at `argument` support. The source notes justify source-derived discussion of router heads, specialist arms, permission envelopes, memory routing, residual-aware routing, and arm lifecycle, but they do not by themselves prove that a particular router is safe or empirically superior.
+
+### Claim-source mapping status
+
+Appendix C now maps this routing-head claim to all assigned source notes. The mappings support router heads, bounded specialist cores, local tools and memory, authority envelopes, residual-aware routing, and specialist lifecycle discipline, not a solved router or measured routing advantage.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `octopus_router` | Resident head/router selection, dynamically loaded arms, local tools, memory, benchmarks, residuals, permissions, runtime tiers, verification contracts, route patterns, permission envelopes, arm cards, and split/merge/retire policies. | No routed-specialist prototype, learned-router harness, runtime authority enforcement, or routing benchmark has been run here. |
+| `rmi` | Head/router, specialist arms, arm registry, memory router, permission router, tool registry, benchmark ledger, residual escrow, verification/safety layer, lifecycle states, and regression-floor preservation. | No independent reproduction, benchmark run, prototype inspection, or empirical specialist-routing result exists here. |
+| `beastbrain` | Local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, interface surfaces, semantic intent, intelligence tiers, and capability routes. | Architecture lineage only; hardware, cost, context-length, security, and benchmark claims are source-reported. |
+| `cognitive_loop_closure` | Verified procedural memory, tool registry, router, runtime monitor, execution modes, tool cards, risk tiers, lifecycle states, and retirement discipline. | No local loop detector, tool synthesis, router monitor, or verified procedural tool has been executed. |
+| `rgs` | Ratcheting system that logs attempts, classifies successes/failures, promotes verified tools, preserves residuals, maintains regressions, and keeps ledgers for routing and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
+| `moecot` | Compact orchestration, routed specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced. |
+| `project_theseus_whitepaper` | Octopus head router, bounded specialist arms, schemas, permissions, local memory, benchmarks, residuals, reliability scores, lifecycle state, retirement criteria, and trusted-node task allowlists. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
+| `theseus_operator_os` | Durable work boards, node registries, command-channel parity, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation surfaces. | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run. |
 
 ## Mechanism
 

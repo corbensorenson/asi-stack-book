@@ -17,9 +17,10 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
-- `editions/release_profiles.json` defines live, research, reader, and audio release profiles for the three-audience publication model.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree under ignored `build/`.
-- `scripts/build_audio_script.py` can derive an audio-script review workspace and pronunciation glossary under ignored `build/`.
+- `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
+- `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, and pronunciation glossary under ignored `build/`.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -81,6 +82,12 @@ The rendered HTML is written to `_site/`, which is ignored by git.
 
 The live book is optimized for AIs and human researchers. Major versions can also produce cleaned human-reader editions and audio editions from the same source.
 
+The project uses one canonical source tree with explicit content layers:
+
+- The reader-facing chapter spine is ordinary prose, diagrams, examples, uncertainty, and summaries that should still read well after live-only headings are removed.
+- The live research scaffold contains source crosswalks, guardrails, Codex tests, formalization hooks, claim mappings, and other audit machinery for AIs and researchers.
+- Release derivatives such as EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB exist only after generation or render, review, and release-record entry.
+
 Tracked release profile source:
 
 ```bash
@@ -92,6 +99,14 @@ Generate or check a local reader-edition Quarto source tree:
 ```bash
 python3 scripts/build_reader_edition.py --check
 python3 scripts/build_reader_edition.py
+```
+
+Render selected reader-edition formats and record actual local outcomes:
+
+```bash
+python3 scripts/render_reader_formats.py --check
+python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
 Generate or check a narration-script candidate after the reader manuscript is ready for review:

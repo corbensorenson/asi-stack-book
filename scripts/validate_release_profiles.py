@@ -12,6 +12,15 @@ PROFILES_PATH = ROOT / "editions" / "release_profiles.json"
 
 REQUIRED_AUDIENCES = {"ai_agents", "human_researchers", "interested_humans"}
 REQUIRED_PROFILES = {"live_book", "research_release", "reader_release", "audio_release"}
+REQUIRED_CONTENT_LAYERS = {
+    "reader_spine",
+    "live_research_scaffold",
+    "evidence_matrices",
+    "machine_contracts",
+    "release_derivatives",
+    "audio_adaptation",
+}
+CONTENT_LAYER_POLICY_KEYS = ("retain", "strip_or_summarize", "derive", "exclude")
 REQUIRED_TOP_LEVEL_POLICIES = {
     "major_version_policy",
     "reader_manuscript_policy",
@@ -72,6 +81,54 @@ def validate_string_list(owner: str, key: str, values: object, errors: list[str]
             errors.append(f"{owner}: {key} entries must be non-empty strings.")
 
 
+def validate_content_layer_policy(
+    profile_id: str,
+    policy: object,
+    known_content_layers: set[str],
+    errors: list[str],
+) -> None:
+    if not isinstance(policy, dict):
+        errors.append(f"{profile_id}: content_layer_policy must be an object.")
+        return
+
+    for key in CONTENT_LAYER_POLICY_KEYS:
+        values = policy.get(key)
+        if not isinstance(values, list):
+            errors.append(f"{profile_id}: content_layer_policy.{key} must be a list.")
+            continue
+        for value in values:
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{profile_id}: content_layer_policy.{key} entries must be non-empty strings.")
+                continue
+            if value not in known_content_layers:
+                errors.append(f"{profile_id}: unknown content layer in {key}: {value}")
+
+    if profile_id == "reader_release":
+        retained = set(policy.get("retain", [])) if isinstance(policy.get("retain"), list) else set()
+        stripped = (
+            set(policy.get("strip_or_summarize", []))
+            if isinstance(policy.get("strip_or_summarize"), list)
+            else set()
+        )
+        if "reader_spine" not in retained:
+            errors.append("reader_release must retain the reader_spine content layer.")
+        for required_layer in ("live_research_scaffold", "machine_contracts"):
+            if required_layer not in stripped:
+                errors.append(f"reader_release must strip_or_summarize {required_layer}.")
+
+    if profile_id == "audio_release":
+        derived = set(policy.get("derive", [])) if isinstance(policy.get("derive"), list) else set()
+        stripped = (
+            set(policy.get("strip_or_summarize", []))
+            if isinstance(policy.get("strip_or_summarize"), list)
+            else set()
+        )
+        if "audio_adaptation" not in derived:
+            errors.append("audio_release must derive the audio_adaptation content layer.")
+        if "reader_spine" not in stripped:
+            errors.append("audio_release must adapt the reader_spine through strip_or_summarize.")
+
+
 def main() -> None:
     errors: list[str] = []
     data = load_json(PROFILES_PATH)
@@ -84,6 +141,43 @@ def main() -> None:
     for key in REQUIRED_TOP_LEVEL_POLICIES:
         if not isinstance(data.get(key), dict):
             errors.append(f"Missing required top-level policy object: {key}")
+
+    content_layers = data.get("content_layers")
+    if not isinstance(content_layers, list):
+        errors.append("content_layers must be a list.")
+        known_content_layers: set[str] = set()
+    else:
+        known_content_layers = {
+            str(record.get("id", ""))
+            for record in content_layers
+            if isinstance(record, dict)
+        }
+        missing_content_layers = REQUIRED_CONTENT_LAYERS - known_content_layers
+        if missing_content_layers:
+            errors.append(f"Missing required content layers: {sorted(missing_content_layers)}")
+        for index, record in enumerate(content_layers):
+            if not isinstance(record, dict):
+                errors.append(f"content_layers[{index}] must be an object.")
+                continue
+            layer_id = str(record.get("id", ""))
+            if not layer_id:
+                errors.append(f"content_layers[{index}] missing id.")
+            for key in ("label", "canonical_location", "description", "edition_policy"):
+                if not isinstance(record.get(key), str) or not record[key].strip():
+                    errors.append(f"content_layers[{index}] {layer_id}: missing non-empty {key}.")
+            validate_path_list(
+                f"content_layers[{index}] {layer_id}",
+                "primary_audiences",
+                record.get("primary_audiences"),
+                errors,
+            )
+
+    validate_string_list(
+        "reader_spine_contract",
+        "reader_spine_contract",
+        data.get("reader_spine_contract"),
+        errors,
+    )
 
     major_policy = data.get("major_version_policy")
     if isinstance(major_policy, dict):
@@ -158,6 +252,12 @@ def main() -> None:
             if not isinstance(profile.get(key), str) or not profile[key].strip():
                 errors.append(f"{profile_id}: missing non-empty {key}.")
 
+        validate_content_layer_policy(
+            profile_id,
+            profile.get("content_layer_policy"),
+            known_content_layers,
+            errors,
+        )
         validate_path_list(profile_id, "publication_formats", profile.get("publication_formats"), errors)
         validate_path_list(profile_id, "include_appendices", profile.get("include_appendices"), errors)
         validate_path_list(profile_id, "release_gate", profile.get("release_gate"), errors)
@@ -209,6 +309,12 @@ def main() -> None:
         for required_format in ("epub", "pdf", "docx"):
             if required_format not in formats:
                 errors.append(f"reader_release must list {required_format} as a publication format.")
+        release_gate = reader.get("release_gate", [])
+        if (
+            not isinstance(release_gate, list)
+            or "python3 scripts/render_reader_formats.py --check" not in release_gate
+        ):
+            errors.append("reader_release release_gate must include render_reader_formats.py --check.")
 
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):

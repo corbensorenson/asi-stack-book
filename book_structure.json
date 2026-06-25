@@ -3419,6 +3419,48 @@
           "problem": "The architecture needs to allocate cognition across specialists rather than force one system to do every task.",
           "insufficient": "Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.",
           "core_claim": "ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.",
+          "claim_source_mappings": [
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports the core routing-head/specialist-arm design through resident head/router selection, dynamically loaded arms, local tools, memory, benchmarks, residuals, permissions, runtime tiers, verification contracts, routing patterns, permission envelopes, memory routing, arm cards, and split/merge/retire policies.",
+              "limits": "Conceptual architecture source only; no routed-specialist prototype, learned-router harness, runtime authority enforcement, or routing benchmark has been run here."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports modular routing through head/router, specialist arms, arm registry, memory router, permission router, tool registry, benchmark ledger, residual escrow, verification/safety layer, lifecycle states, and regression-floor preservation.",
+              "limits": "No independent reproduction, benchmark run, prototype inspection, or empirical specialist-routing result exists in this repository."
+            },
+            {
+              "source_id": "beastbrain",
+              "mapped_support": "Supports whole-stack routing pressure through local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, interface surfaces, semantic intent, intelligence tiers, and capability routes.",
+              "limits": "Architecture lineage only; hardware, cost, context-length, security, and benchmark claims are source-reported and not locally reproduced."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports routable specialist tools through verified procedural memory, tool registry, router, runtime monitor, execution modes, tool cards, risk tiers, lifecycle states, and retirement discipline.",
+              "limits": "No local loop detector, tool synthesis, router monitor, or verified procedural tool has been executed here."
+            },
+            {
+              "source_id": "rgs",
+              "mapped_support": "Supports routing within a ratcheting system that logs attempts, classifies successes/failures, promotes verified tools, preserves residuals, maintains regressions, and keeps ledgers for routing and interventions.",
+              "limits": "No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference routing through compact orchestration, routed specialist lanes, fail-closed control planes, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking.",
+              "limits": "Connector-readable implementation-reference source only; runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced here."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports local-first routed specialists through Octopus head router, bounded specialist arms, schemas, permissions, local memory, benchmarks, residuals, reliability scores, lifecycle state, retirement criteria, and trusted-node task allowlists.",
+              "limits": "Source-reported implementation narrative only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports operator-visible routing through durable work boards, node registries, command-channel parity, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation surfaces.",
+              "limits": "No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository."
+            }
+          ],
           "mechanism": [
             "Register specialists with capabilities, costs, readiness, authority, and memories.",
             "Route tasks to the smallest adequate specialist.",
@@ -3451,13 +3493,13 @@
               "tag": "lean:routing.specialists.operational_invariant",
               "module": "AsiStackProofs.Routing",
               "target": "A router may select only specialists whose authority and readiness satisfy the task requirement.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:routing.specialists.failure_blocks_promotion",
               "module": "AsiStackProofs.Routing",
               "target": "A failed readiness predicate routes to fallback or residual, not promotion.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3500,6 +3542,53 @@
           "problem": "Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.",
           "insufficient": "A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.",
           "core_claim": "Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.",
+          "claim_source_mappings": [
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports readiness and residual discipline through mastery thresholds, critical-failure vetoes, residual escrow, benchmark diagnosis, regression preservation, specialist lifecycle, add/split/merge/retire decisions, quarantine, and frontier/floor separation.",
+              "limits": "Conceptual architecture source only; no readiness engine, benchmark run, residual ledger, or prototype inspection exists here."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports gate evidence through benchmark lifecycle states, wall diagnosis, benchmark/model ledgers, residual preservation, anti-Goodhart safeguards, contamination checks, transfer checks, and architecture-change discipline.",
+              "limits": "No benchmark harness, benchmark mutation, holdout, empirical run, or local model/prototype result was produced here."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports governed qualification through stable capability fields, exact implementation identity, append-only evidence registry, scoped/defeasible/expiring qualification, route validation, lifecycle events, incidents, appeals, rollback, and authority ceilings.",
+              "limits": "Does not prove production safety, global alignment, evaluator quality, or current reversibility beyond the finite proofs and schemas separately recorded in this repo."
+            },
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports readiness-aware routing through arm cards, local benchmarks, residuals, permission envelopes, domain quarantine, split/merge/retire policies, routing metrics, and arm lifecycle governance.",
+              "limits": "No routed-specialist prototype, routing benchmark, quarantine harness, or learned-router evaluation has been run."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports lifecycle and promotion boundaries for procedural tools through verification grades, risk/runtime tiers, monitoring plans, stale-tool retirement, revision discipline, and warnings against premature closure or unsafe automation.",
+              "limits": "No local loop-detection, tool-synthesis, monitoring, or retirement automation was executed."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports readiness gates, benchmark artifacts, promotion blockers, residual tracking, replay, handoff, fail-closed control-plane ledgers, and explicit current limitations as runtime-reference context.",
+              "limits": "Runtime readiness artifacts, code, logs, benchmark records, and replay records have not been imported, inspected, or reproduced here."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports residual escrow, benchmark floors, frontier/diagnostic/regression/public-calibration/retired benchmark states, specialist lifecycle, safety-visible gates, and report-first implementation discipline.",
+              "limits": "Source-reported implementation state only; current machine-readable reports and benchmark ledgers were not rerun or verified from this repo."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports readiness gates as pre-training promotion controls covering ratchet completeness, router readiness, safety ledger, regression suite, public calibration, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
+              "limits": "The reported green gate snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON from this repo."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports evidence-gated lifecycle governance through intervention ladders, ATTD repo-health gates, guarded teacher edits, architecture experiment governance, outcome ledgers, lifecycle-governed cells, and loop closure into local tools.",
+              "limits": "No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, dashboard endpoint, or autonomous-improvement result was executed here."
+            }
+          ],
           "mechanism": [
             "Maintain readiness states and promotion gates.",
             "Record residual failures in escrow.",
@@ -3532,13 +3621,13 @@
               "tag": "lean:readiness.gates.operational_invariant",
               "module": "AsiStackProofs.ReadinessGates",
               "target": "A module can enter promoted state only after all required gates pass.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:readiness.gates.failure_blocks_promotion",
               "module": "AsiStackProofs.ReadinessGates",
               "target": "A quarantined module cannot be selected for ordinary execution routes.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3588,6 +3677,68 @@
           "problem": "The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.",
           "insufficient": "A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.",
           "core_claim": "MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.",
+          "claim_source_mappings": [
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports the MoECOT runtime crosswalk through head/router selection, specialist arms, dynamic loading, permission envelopes, memory routing, local benchmark ratchets, arm cards, split/merge/retire policies, and verification/composition routes.",
+              "limits": "Does not prove MoECOT or any router implementation; no routing benchmark or specialist runtime run exists here."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports multi-core orchestration through head/router, specialist arms, arm registry, memory/permission/tool routers, benchmark ledger, residual escrow ledger, verification/safety layer, regression floors, and lifecycle discipline.",
+              "limits": "No empirical modular-intelligence result, benchmark reproduction, or prototype inspection has been performed in this repo."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports runtime promotion discipline through benchmark lifecycle, wall diagnosis, model/benchmark ledgers, anti-Goodhart safeguards, regression conversion, residual preservation, and architecture-change criteria.",
+              "limits": "No local benchmark harness, mutation, holdout, run, or reproduced performance claim exists here."
+            },
+            {
+              "source_id": "beastbrain",
+              "mapped_support": "Supports whole-stack runtime shape through a local/stateful OS-like intelligence process with memory substrate, planning, routing, verification, security, consolidation, interface surfaces, and local deployment vocabulary.",
+              "limits": "Architecture lineage only; cost, SSD-first, hardware, and benchmark claims are source-reported and unverified here."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports connecting MoECOT to the broader intent-to-execution spine: command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "No completed VIEA deployment, runtime trace, or verified execution result exists in this repository."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports treating runtime cores as replaceable capability implementations behind stable contracts, evidence registries, scoped qualifications, route validation, lifecycle events, incidents, appeals, rollback, and authority boundaries.",
+              "limits": "Does not prove MoECOT core safety, evaluator quality, or production replacement behavior."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports runtime execution discipline through typed jobs, deterministic control planes, factory execution, adjudication, delivery, feedback, evidence records, audit logs, replay, tool isolation, and approval gates.",
+              "limits": "No Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark has been reproduced here."
+            },
+            {
+              "source_id": "moecot_md",
+              "mapped_support": "Supports terminology normalization for compact orchestrator, specialist lanes, control-plane ledgers, readiness gates, replay, and fail-closed promotion as a Markdown/export variant of the MoECOT source.",
+              "limits": "Variant source only; it is not independent corroboration and does not verify benchmark, readiness, or runtime behavior."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports the core implementation-reference claim through compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, residual tracking, and explicit limitations.",
+              "limits": "Readable source note only; code, logs, benchmark artifacts, replay records, and release artifacts have not been imported, inspected, or reproduced."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports a report-first implementation analogue with compact substrate, autonomy control loop, Octopus router, bounded specialist arms, benchmark/residual ledgers, checkpoints, Hive runtime, observability, and trusted-node task allowlists.",
+              "limits": "Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports operator-visible runtime surfaces through command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation.",
+              "limits": "No Hive board, database, node registry, command channel, dashboard, or hook ledger was run from this repository."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports runtime-readiness gating through pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
+              "limits": "Reported gate snapshot is not reproduced evidence; current gate artifacts were not regenerated or independently inspected here."
+            }
+          ],
           "mechanism": [
             "Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts.",
             "Keep direct MoECOT claims conservative until the primary source is ingested.",
