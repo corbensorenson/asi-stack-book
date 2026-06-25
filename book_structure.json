@@ -1667,7 +1667,15 @@
             {
               "source_id": "ethica_mechanica",
               "mapped_support": "Supports contestable recursive governance, public correction, agency, institutional memory, and resistance to frozen sovereign authority.",
-              "limits": "Not a tested institution, legal guarantee, or empirical governance result."
+              "limits": "Not a tested institution, legal guarantee, or empirical governance result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ethica_mechanica.txt:78-95",
+                "sources/raw/google_docs/ethica_mechanica.txt:100-111",
+                "sources/raw/google_docs/ethica_mechanica.txt:145-168",
+                "sources/raw/google_docs/ethica_mechanica.txt:186-216"
+              ],
+              "passage_review_note": "Reviewed local raw cache for consensus-layer governance, right to fork, absolute exit, material conditions of exit, open audit, hard-coded exit/audit/privacy/dissent rights, constitutional rejection of rights-violating proposals, and mass-exodus/fork semantics; no institutional guarantee, legal claim, or deployed governance result is promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -1677,27 +1685,69 @@
             {
               "source_id": "alignment_field",
               "mapped_support": "Adds dignity, agency, plurality, corrigibility, and governance constraints that rights interfaces should preserve under power.",
-              "limits": "Normative lineage only; not empirical evidence that rights are preserved."
+              "limits": "Normative lineage only; not empirical evidence that rights are preserved.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:1710-1716",
+                "sources/raw/google_docs/alignment_field.txt:1720-1735",
+                "sources/raw/google_docs/alignment_field.txt:1736-1747",
+                "sources/raw/google_docs/alignment_field.txt:1758-1766"
+              ],
+              "passage_review_note": "Reviewed local raw cache for governance safeguards against cultish, technocratic, and tyrannical control; rights as functional requirements; feedback/audit/dissent constraints on centralized power; consent limits on irreversible harm; and resistance against existential threats; no empirical preservation of rights is promoted."
             },
             {
               "source_id": "ladon_manhattan",
-              "mapped_support": "Supports the technical need for hidden credential boundaries, handle-based authority, logs, compartments, and policy injection points around audit and authority use.",
-              "limits": "Architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed."
+              "mapped_support": "Supports the technical need for hidden credential boundaries, handle-based authority, permission lookup, isolated compartments, and credential-injection points around authority use.",
+              "limits": "Architecture/specification only; no kernel implementation, side-channel validation, audit-log implementation, or security audit is claimed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:14-20",
+                "sources/raw/google_docs/ladon_manhattan.txt:24-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:45-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:89-90"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the agency paradox, right-to-use without credential knowledge, kernel-level secret management, handle-based authority, permission-table lookup, and Digital SCIF isolation; no implemented kernel, side-channel defense result, audit log, or security audit is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports claim graphs, protected axioms, contradiction handling, downgrades, and blocked self-authorizing changes as review discipline for governance decisions.",
-              "limits": "Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy."
+              "limits": "Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-235",
+                "sources/raw/google_docs/spinoza.txt:402-451",
+                "sources/raw/google_docs/spinoza.txt:488-518",
+                "sources/raw/google_docs/spinoza.txt:841-865"
+              ],
+              "passage_review_note": "Reviewed local raw cache for auditable derivation, proof-carrying graph revision, governance-controlled axioms, contradiction-triggered bounded revision with decision logs, constitutional sandbox approval gates, versioned axiom/schema changes, and rollback procedures; no whole-system correctness or governance legitimacy proof is promoted."
             },
             {
               "source_id": "uat",
               "mapped_support": "Supports adversarial review, proposition tiering, dossier-bounded verification, unsupported-claim removal, and human sign-off checkpoints for contested governance claims.",
-              "limits": "Protocol design only; no implemented review process or benchmark result is reproduced."
+              "limits": "Protocol design only; no implemented review process or benchmark result is reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:130-153",
+                "sources/raw/google_docs/uat.txt:187-207",
+                "sources/raw/google_docs/uat.txt:225-247",
+                "sources/raw/google_docs/uat.txt:452-453"
+              ],
+              "passage_review_note": "Reviewed local raw cache for SME adjudication, pre-audited drafts tied to retrieval sources, proposition tiering, adversarial citation/dossier review, unsupported-claim dropping, and final human sign-off; no implemented tribunal or benchmark result is promoted."
             },
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports auditability, agency preservation, consent, reversibility, least sufficient power, risk-tiered tool use, red-team evaluations, version control, and self-improvement freezes.",
-              "limits": "Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability."
+              "limits": "Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-205",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:380-418",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:477-517",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:568-610",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:912-946",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
+              ],
+              "passage_review_note": "Reviewed tracked local-project source for consent, power, corrigibility, agency preservation, non-domination, reversibility, auditability, least sufficient power, contestability, rollback/shutdown paths, memory correction/deletion/inspection, self-modification review, and constitutional articles/checklist; specification only, no deployed rights or access-path result is promoted."
             }
           ]
         },

@@ -4,7 +4,7 @@ chapter_id: "governance-rights-fork-exit-and-audit"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "ethica_mechanica"
   - "coherence_exchange"
@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
+  - "Six of seven claim-source mappings now have reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped until a durable local export or line-addressable connector capture is available."
   - "The governance_right_record fixture validates schema/example consistency only; audit availability, exit-path preservation, and fork-right safety tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -31,12 +31,12 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `coherence_exchange`; supporting: `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
-| Source loading state | source notes: `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; passage-reviewed tracked local-project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
 | Test state | `governance_right_record.valid.json` passes protocol fixture validation; `AsiStackProofs.GovernanceRights` implements finite audit/exit preservation and protected-right removal gates; audit-record availability, exit-path preservation, and fork-right safety tests remain planned. |
 
 ## Drafting guardrail
@@ -49,7 +49,7 @@ Powerful AI infrastructure needs rights and mechanisms that prevent governance l
 
 The previous chapter preserves value conflict. This chapter gives affected people and institutions technical rights when governance itself becomes the risk. A system that can update policies, route evidence, manage memory, and execute actions should not require trust in a single opaque control point.
 
-Ethica Mechanica frames governance as contestable recursive correction rather than fixed sovereign authority. The Coherence Exchange contributes fork, exit, audit, and contestability as epistemic-governance concepts. Ladon/Manhattan adds the security lesson: rights are weak if secret authority and logs are hidden from the user. The stack translates those ideas into interfaces.
+Ethica Mechanica frames governance as contestable recursive correction rather than fixed sovereign authority. The Coherence Exchange contributes fork, exit, audit, and contestability as epistemic-governance concepts that still need a durable line-addressable export. Ladon/Manhattan adds the security lesson: rights are weak if credential use, permission lookup, and execution compartments are invisible to the party whose authority is being exercised. The stack translates those ideas into interfaces.
 
 ## Why existing approaches are insufficient
 
@@ -63,18 +63,18 @@ The rights have to be technical. They need artifacts, permissions, retention rul
 
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
-The claim remains at `argument` support. Ethica Mechanica and Coherence Exchange supply contestability language, Ladon/Manhattan supplies security-bound audit context, and Spinoza/UAT supply review discipline. The chapter turns that language into interfaces without presenting it as implemented governance.
+The claim remains at `argument` support. Ethica Mechanica supplies the strongest reviewed fork/exit/audit lineage; Alignment Field and the AI Constitution supply reviewed non-domination, consent, contestability, reversibility, and auditability constraints; Ladon/Manhattan supplies reviewed authority-boundary mechanics; and Spinoza/UAT supply reviewed governance-review discipline. Coherence Exchange remains useful connector-only synthesis, but it is not passage-reviewed here. The chapter turns that source language into interfaces without presenting it as implemented governance.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core governance-rights claim to every assigned source note. The mappings support the interface vocabulary for audit, exit, fork, dissent, and contestability, not a claim that any deployed institution or runtime already provides those rights.
+Appendix C maps this core governance-rights claim to every assigned source note. Six mappings now carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped. The mappings support the interface vocabulary for audit, exit, fork, dissent, authority boundaries, and contestability, not a claim that any deployed institution or runtime already provides those rights.
 
 | Source | What it supports | Limit |
 |---|---|---|
 | `ethica_mechanica` | Contestable recursive governance, public correction, agency, institutional memory, and resistance to frozen sovereign authority. | Not a tested institution, legal guarantee, or empirical governance result. |
 | `coherence_exchange` | Fork, exit, audit, contestability, verification supply-chain, value/accounting, and governance-interface framing. | Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed. |
 | `alignment_field` | Dignity, agency, plurality, corrigibility, and governance constraints that rights interfaces should preserve under power. | Normative lineage only; not empirical evidence that rights are preserved. |
-| `ladon_manhattan` | Hidden credential boundaries, handle-based authority, logs, compartments, and policy injection points around audit and authority use. | Architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed. |
+| `ladon_manhattan` | Hidden credential boundaries, handle-based authority, permission lookup, isolated compartments, and credential-injection points around authority use. | Architecture/specification only; no kernel implementation, side-channel validation, audit-log implementation, or security audit is claimed. |
 | `spinoza` | Claim graphs, protected axioms, contradiction handling, downgrades, and blocked self-authorizing changes as review discipline for governance decisions. | Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy. |
 | `uat` | Adversarial review, proposition tiering, dossier-bounded verification, unsupported-claim removal, and human sign-off checkpoints for contested governance claims. | Protocol design only; no implemented review process or benchmark result is reproduced. |
 | `field_of_god_ai_constitution` | Auditability, agency preservation, consent, reversibility, least sufficient power, risk-tiered tool use, red-team evaluations, version control, and self-improvement freezes. | Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability. |
@@ -175,15 +175,15 @@ These Lean hooks are implemented as finite-record predicates over governance tra
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw cache available |
-| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw cache available |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
+| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw cache available; passage reviewed for fork, exit, audit, dissent, and hard-coded rights |
+| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector-only/source-note mapped |
+| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available; passage reviewed for functional rights, feedback, consent limits, and resistance |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available; passage reviewed for credential boundaries, handles, permission lookup, and SCIF isolation |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available; passage reviewed for governed axioms, auditable revision, sandboxing, versioning, and rollback |
+| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw cache available; passage reviewed for dossier-bounded verification, adversarial review, unsupported-claim removal, and SME sign-off |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available; tracked local-project passage reviewed for consent, non-domination, reversibility, auditability, memory rights, and self-modification review |
 
-The crosswalk keeps governance rights tied to their source families while preserving the distinction between rights vocabulary, schema validation, and actual institutional implementation.
+The crosswalk keeps governance rights tied to their source families while preserving the distinction between rights vocabulary, schema validation, reviewed source passages, connector-only synthesis, and actual institutional implementation.
 
 ## Summary
 

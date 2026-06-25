@@ -629,6 +629,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A governance-rights table with required artifacts, authorities, and failure tests.
+- Exact Appendix C claim-source mappings for the governance-rights core claim across recursive governance, connector synthesis, alignment lineage, security-bound authority, Spinoza review discipline, UAT adversarial review, and the AI Constitution source; six mappings (`ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending audit-record availability, exit-path preservation, fork-right safety, authority-boundary, or deployed governance evidence.
 - Planned Codex test: Audit-record availability test.
 - Planned Codex test: Exit-path preservation test.
 - Planned Codex test: Fork-right safety test.
