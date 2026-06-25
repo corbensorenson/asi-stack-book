@@ -21,9 +21,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source-note mappings now exist for all assigned sources, but support remains argument until source passages, run records, benchmark artifacts, or evidence transitions justify promotion."
-  - "The benchmark_ratchet_record fixture validates schema/example consistency only; no benchmark run, contamination audit, regression preservation test, or hidden-transfer test has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all twelve assigned sources, including source-note-only review for connector/recovery sources; support remains argument until run records, benchmark artifacts, contamination audits, regression-preservation tests, hidden-transfer tests, local Theseus report verification, or accepted evidence transitions justify promotion."
+  - "The benchmark_ratchet_record fixture validates schema/example consistency and AsiStackProofs.BenchmarkRatchets implements finite record predicates only; no benchmark run, hidden holdout, mutation test, transfer check, contamination audit, regression preservation test, source-reported benchmark replay, or current Theseus report verification has been run."
+  - "Connector/recovery mappings for Coherence Exchange, MoECOT, and Road To AGI were reviewed against source notes only because raw connector text is not published here; they remain planning/status context rather than benchmark evidence."
+  - "No support-state promotion, benchmark success, runtime readiness, model quality, deployment readiness, or raw source publication is implied."
 ---
 
 ## Chapter status
@@ -59,6 +60,25 @@ Benchmarks can saturate, be gamed, erase regressions, or fail to represent real 
 [benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
 
 The claim remains at `argument` support. The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, and readiness gates. They do not prove benchmark gains in this repo.
+
+### Claim-source mapping status
+
+Appendix C now records twelve passage-reviewed mappings for this chapter. Those mappings make the source crosswalk traceable enough for drafting and support review, but they do not move the chapter above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
+
+| Source ID | Reviewed support | Boundary |
+|---|---|---|
+| `benchmaxxing` | Benchmark lifecycle, wall diagnosis, frontier-to-regression transition, anti-Goodhart safeguards, holdouts, mutation, transfer checks, contamination audits, and ledgers. | No benchmark harness, mutation test, holdout run, transfer check, contamination audit, live benchmark, empirical result, or model-capability result. |
+| `rmi` | Frontier/floor discipline, residual escrow, mastery thresholds, critical-failure vetoes, public calibration, and benchmark/model/residual ledgers. | No RMI prototype inspection, benchmark run, specialist-arm evaluation, router benchmark, safety result, or capability result. |
+| `cognitive_loop_closure` | Repeated trajectories, tool creation triggers, parameter discovery, verification/routing/monitoring, tool cards, and retirement criteria. | No loop detector, tool synthesis run, verification harness, regression suite, runtime monitor, or procedural-memory benchmark. |
+| `uat` | Retrieval dossiers, proposition tiers, unsupported-claim deletion, bounded adversarial review, double-lock termination, and atomic compression. | No local tribunal pipeline, proposition extractor, dossier verifier, adversarial-review run, or benchmark adjudication run. |
+| `coherence_exchange` | Source-note context for claim/evidence units, verification supply chains, audit, fork/exit, and contestability. | Source-note only; no implemented economics, governance mechanism, external corroboration, security evidence, or benchmark evidence. |
+| `tokenmana` | Latency, load variance, human friction, regenerative capacity, hard quotas, temporal compression, and temporal-elasticity hypotheses. | Theoretical/source-reported only; no theorem formalization, simulation, pricing experiment, human study, infrastructure result, or quality result. |
+| `moecot` | Source-note runtime context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, promotion blockers, and residual tracking. | Source-note only; no runtime artifact, benchmark artifact, log, release evidence, or reproduced benchmark result. |
+| `road_to_agi` | Source-note roadmap/status context for remaining work, source-reported commands/results, readiness status, and promotion blockers. | Source-note only; no reported command, benchmark result, readiness result, or roadmap status was reproduced. |
+| `project_theseus_whitepaper` | Report-first benchmark states, candidate gates, residual escrow, loop closure, governed data ingress, safety boundaries, and observability caveats. | No current Theseus reports, commands, numbers, dashboard state, model artifacts, or benchmark ledgers were rerun or independently inspected. |
+| `theseus_architecture_gate` | Pre-training gate checks, failed-gate residual rules, rerun triggers, and necessary-not-sufficient caveat. | The reported snapshot was not regenerated and is not current readiness, deployment, safety, or heavy-training evidence. |
+| `theseus_self_evolution_system` | Intervention ladder, ATTD health gate, guarded teacher flow, architecture experiment governance, outcome ledgers, and loop-closure design. | No self-evolution scripts, ATTD reports, teacher runner, benchmark adapter flow, dashboard endpoints, or outcome ledgers were executed or inspected. |
+| `theseus_circle_transfer` | Report-only bridge, structural smoke/proxy boundaries, claim axes, allowed structural claim, and disallowed quality/runtime/context/speed claims. | No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, private benchmark, model-quality evaluation, runtime measurement, or memory measurement. |
 
 ## Mechanism
 

@@ -8692,62 +8692,196 @@
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports the benchmark-ratchet claim directly with lifecycle states for frontier, diagnostic, regression, retired, and live benchmarks plus wall diagnosis, benchmark/model ledgers, anti-Goodhart safeguards, holdouts, mutation, transfer checks, and contamination audits.",
-              "limits": "No benchmark harness, mutation test, holdout run, transfer check, contamination audit, or empirical benchmark result has been run in this repository."
+              "limits": "No benchmark harness, mutation test, holdout run, transfer check, contamination audit, live benchmark, empirical benchmark result, or model-capability result has been run in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:10-21",
+                "sources/raw/google_docs/benchmaxxing.txt:48-59",
+                "sources/raw/google_docs/benchmaxxing.txt:63-70",
+                "sources/raw/google_docs/benchmaxxing.txt:86-115",
+                "sources/raw/google_docs/benchmaxxing.txt:165-192",
+                "sources/raw/google_docs/benchmaxxing.txt:217-243",
+                "sources/raw/google_docs/benchmaxxing.txt:329-357",
+                "sources/raw/google_docs/benchmaxxing.txt:559-640",
+                "sources/raw/google_docs/benchmaxxing.txt:912-970",
+                "sources/raw/google_docs/benchmaxxing.txt:974-1001",
+                "sources/raw/google_docs/benchmaxxing.txt:1026-1035",
+                "sources/raw/google_docs/benchmaxxing.txt:1103-1168"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark saturation, frontier-to-regression transition, wall diagnosis, benchmark portfolio design, anti-Goodhart safeguards, private holdouts, benchmark mutation, multi-metric evaluation, transfer checks, contamination audits, capability narratives, benchmark/model ledgers, ratchet rule, and failure-mode mitigations; no benchmark run or empirical capability result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports preserving floors while moving frontiers through benchmark pressure, routed specialist attempts, residual escrow, regression preservation, harder frontiers, mastery thresholds, and lifecycle discipline.",
-              "limits": "Conceptual architecture source only here; no independent reproduction, benchmark run, prototype inspection, or capability result is recorded."
+              "limits": "Conceptual architecture source only here; no independent reproduction, benchmark run, prototype inspection, specialist-arm evaluation, router benchmark, safety result, or capability result is recorded.",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:10-25",
+                "sources/raw/google_docs/rmi.txt:72-88",
+                "sources/raw/google_docs/rmi.txt:93-105",
+                "sources/raw/google_docs/rmi.txt:213-255",
+                "sources/raw/google_docs/rmi.txt:389-397",
+                "sources/raw/google_docs/rmi.txt:418-448",
+                "sources/raw/google_docs/rmi.txt:736-843",
+                "sources/raw/google_docs/rmi.txt:846-870",
+                "sources/raw/google_docs/rmi.txt:1074-1129",
+                "sources/raw/google_docs/rmi.txt:1156-1222",
+                "sources/raw/google_docs/rmi.txt:1226-1245",
+                "sources/raw/google_docs/rmi.txt:1330-1348",
+                "sources/raw/google_docs/rmi.txt:1379-1406"
+              ],
+              "passage_review_note": "Reviewed local raw cache for pressure-to-structure loop, benchmark ratcheting, regression floors, residual escrow, specialist routing, benchmark lifecycle, mastery thresholds, critical-failure vetoes, public calibration, benchmark/model/residual ledgers, metrics, failure modes, implementation phases, and non-claims; no RMI prototype or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports turning repeated successful trajectories into verified procedural tools only after logging, loop detection, parameter discovery, verification, routing, monitoring, residual tracking, and retirement discipline.",
-              "limits": "No local loop detector, tool synthesis run, verification harness, regression suite, or procedural-memory benchmark has been executed."
+              "limits": "No local loop detector, tool synthesis run, verification harness, regression suite, runtime monitor, tool-card registry, or procedural-memory benchmark has been executed.",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:10-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:53-69",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:167-207",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:210-258",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:391-428",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:437-457",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:621-718",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:850-878",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:882-930",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1210-1272"
+              ],
+              "passage_review_note": "Reviewed local raw cache for trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verifier, registry, routing, runtime monitoring, revision/retirement, three execution modes, model-call constraints inside semi-deterministic tools, and tool-card fields; no loop-closure system or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "uat",
               "mapped_support": "Supports benchmark-evidence review through retrieval-bounded dossiers, proposition states, adversarial critique, unsupported-claim removal, SME checkpoints, and final sign-off before claims are treated as verified.",
-              "limits": "Does not validate benchmark thresholds or prove UAT can discover novel truth; no local tribunal pipeline or benchmark adjudication run exists."
+              "limits": "Does not validate benchmark thresholds, prove UAT can discover novel truth, or replace subject-matter review; no local tribunal pipeline, proposition extractor, dossier verifier, adversarial-review run, or benchmark adjudication run exists.",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:16-27",
+                "sources/raw/google_docs/uat.txt:178-208",
+                "sources/raw/google_docs/uat.txt:211-250",
+                "sources/raw/google_docs/uat.txt:360-375",
+                "sources/raw/google_docs/uat.txt:390-443"
+              ],
+              "passage_review_note": "Reviewed local raw cache for tribunal fragility, retrieval dossier as world boundary, proposition-tier states, unsupported-claim deletion, SME review tags, bounded adversarial siege, double-lock termination, atomic compression, sentinel scan, and implementation pseudocode; no UAT pipeline or benchmark adjudication result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports contestable evidence movement through structured claim/evidence units, verification supply chains, audit, fork/exit/contestability language, and governance/accounting frames for knowledge claims.",
-              "limits": "Epistemic-liquidity and exchange metaphors are not implemented economics, external corroboration, or benchmark evidence."
+              "limits": "Reviewed source note only because authenticated connector text is not published here; epistemic-liquidity and exchange metaphors are not implemented economics, external corroboration, security evidence, governance evidence, or benchmark evidence.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-32",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for connector-readable Coherence Exchange context: structured claim/evidence units, verification supply chain, audit, fork/exit/contestability, coherence/liquidity, and value/accounting framing. This does not promote any implemented economics, governance mechanism, external corroboration, or benchmark evidence.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports resource-aware anti-Goodhart pressure by requiring latency, load variance, human friction, bounded burst capacity, and quality constraints to be visible rather than optimizing token spend alone.",
-              "limits": "No TokenMana formal result, load simulation, pricing experiment, or human study has been reproduced here."
+              "limits": "No TokenMana theorem formalization, load simulation, pricing experiment, A/B rollout, human study, productivity result, infrastructure-cost result, or quality result has been reproduced here.",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:8-12",
+                "sources/raw/google_docs/tokenmana.txt:16-29",
+                "sources/raw/google_docs/tokenmana.txt:145-150",
+                "sources/raw/google_docs/tokenmana.txt:183-231",
+                "sources/raw/google_docs/tokenmana.txt:411-424",
+                "sources/raw/google_docs/tokenmana.txt:428-430",
+                "sources/raw/google_docs/tokenmana.txt:813-834",
+                "sources/raw/google_docs/tokenmana.txt:1040-1050",
+                "sources/raw/google_docs/tokenmana.txt:1071-1086",
+                "sources/raw/google_docs/tokenmana.txt:1090-1099"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance, hard-quota baseline, pricing feedback, source-reported variance/stability/profit claims, explicit limitations, temporal compression, sleep/cognitive-friction hypotheses, and empirical strategy. These remain source-reported/theoretical; no simulation, pricing, human, or quality result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
               "mapped_support": "Supports runtime-reference benchmark governance through compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, and residual tracking.",
-              "limits": "Benchmark artifacts and runtime claims are source-reported only until code, logs, reports, or release artifacts are imported and reproduced or inspected."
+              "limits": "Reviewed source note only because authenticated connector text is not published here; benchmark artifacts and runtime claims are source-reported until code, logs, reports, or release artifacts are imported, inspected, or reproduced.",
+              "passage_refs": [
+                "sources/source_notes/moecot.md:11-20",
+                "sources/source_notes/moecot.md:22-32",
+                "sources/source_notes/moecot.md:61-68"
+              ],
+              "passage_review_note": "Reviewed source note only for connector-readable MoECOT context: compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residual tracking, and benchmark-claim caveats. No MoECOT runtime artifact, benchmark artifact, log, or release evidence is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "road_to_agi",
               "mapped_support": "Supports keeping roadmap blockers, source-reported benchmark commands/results, remaining work, readiness status, and promotion blockers visible instead of converting them into completed evidence.",
-              "limits": "Roadmap and benchmark status are connector-readable context only; reported commands/results have not been reproduced in this repository."
+              "limits": "Reviewed source note only because the local cache is an auth-gate placeholder and raw text is not published here; roadmap and benchmark status are connector-readable context only, and reported commands/results have not been reproduced in this repository.",
+              "passage_refs": [
+                "sources/source_notes/road_to_agi.md:11-25",
+                "sources/source_notes/road_to_agi.md:27-31",
+                "sources/source_notes/road_to_agi.md:42-46"
+              ],
+              "passage_review_note": "Reviewed source note only for Road To AGI roadmap/status context: remaining work, source-reported benchmark commands/results, readiness status, promotion blockers, implementation sequencing, and conservative support-state treatment. No reported command, benchmark, or readiness result is reproduced or promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports report-first benchmark discipline through frontier/diagnostic/regression/public-calibration/retired benchmark states, residual escrow, bounded specialist arms, benchmark ledgers, and the rule that the floor should hold while the frontier moves.",
-              "limits": "Theseus reports, benchmark ledgers, code paths, command outputs, and current numbers were not rerun or independently inspected from this repository."
+              "limits": "Theseus reports, benchmark ledgers, code paths, command outputs, current numbers, dashboard state, and model artifacts were not rerun or independently inspected from this repository; the source itself says live numbers belong in current reports.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:11-15",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:19-38",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:71-76",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:97-105",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:107-119",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:300-341",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:343-364",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:387-400",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:402-427",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:549-580",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:664-690",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:692-700"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus whitepaper for report-first caveats, frontier/floor/residual design, non-claims, benchmark statuses, candidate-gate requirements, residual escrow, loop closure, governed data ingress, performance/resource awareness, safety boundaries, and report-first observability; no current Theseus numbers, reports, commands, or model results are promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_architecture_gate",
               "mapped_support": "Supports readiness-gate treatment of benchmark and regression evidence through pre-training checks for ratchet completion, safety ledger, regression suite, residual escrow, bridge benchmark, lifecycle governance, and external-inference zero.",
-              "limits": "The reported gate snapshot was not regenerated or independently verified here and cannot be treated as current readiness evidence."
+              "limits": "The reported gate snapshot was not regenerated or independently verified here and cannot be treated as current readiness evidence, deployment evidence, safety evidence, or proof that heavy training should start.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-28",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:30-58"
+              ],
+              "passage_review_note": "Reviewed pinned local architecture-gate note for pre-training gate purpose, commands, reported snapshot, check list, failed-gate residual rule, rerun triggers, and necessary-not-sufficient caveat. The snapshot was not regenerated here and is not promoted as current readiness evidence.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_self_evolution_system",
               "mapped_support": "Supports evidence-gated improvement by using an intervention ladder, outcome ledgers, benchmark adapters, residuals, guarded teacher edits, lifecycle governance, and repo-health controls before architecture or parameter growth.",
-              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, benchmark adapter flow, or dashboard endpoints were executed here."
+              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, benchmark adapter flow, architecture experiment governor, loop-closure harvester, dashboard endpoints, or outcome ledgers were executed or inspected here.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:5-22",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:24-42",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:44-64",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:84-102",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:104-120",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:148-171",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:173-188",
+                "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:204-226"
+              ],
+              "passage_review_note": "Reviewed pinned local self-evolution note for intervention ladder, self-evolution machinery, lifecycle/anti-bloat controls, deterministic rule substrate, ATTD health gate, guarded teacher branch flow, architecture experiment governance, outcome ledgers, loop closure, expected autonomy refreshes, and source-of-truth reports; no self-evolution run or dashboard state is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports strict transfer-claim boundaries by separating deterministic structural fixtures from quality, runtime, memory, parameter, transfer, and failure-case axes that need named workloads, baselines, metrics, scripts, and reports.",
-              "limits": "No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, transfer report, or model-quality evaluation was run from this repository."
+              "limits": "No Circle-to-Theseus consumer, structural smoke workload, deterministic proxy benchmark, transfer report, private workload attachment, ordinary baseline, negative control, model-quality evaluation, runtime measurement, or memory measurement was run from this repository.",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:1-17",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:18-68",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:70-108",
+                "local-project:Theseus-Hive@1ad88a22:docs/CIRCLE_CALCULUS_TRANSFER.md:120-142"
+              ],
+              "passage_review_note": "Reviewed pinned local transfer-lane note for report-only bridge, consumer/smoke/proxy commands, output reports, contract families, claim axes, not-measured/planned-private-eval status, structural-smoke boundaries, benchmark-design-only caveat, allowed claim, disallowed quality/runtime/context/speed/ASI-progress claims, and next private attachment requirements; no transfer consumer or benchmark is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
