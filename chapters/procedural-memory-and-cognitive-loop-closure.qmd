@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
   - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, or regression harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -66,6 +66,22 @@ The efficient stack needs three modes: interpretation for novel work, compiled-t
 [procedural-memory-and-cognitive-loop-closure.core, label: Design rationale, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
 
 The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution.
+
+### Claim-source mapping status
+
+Appendix C now maps this procedural-memory claim to all assigned source notes. The mappings support loop closure as a governed promotion path from repeated traces into verified parameterized tools, not a working loop detector, tool synthesizer, or autonomous self-improvement result.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `cognitive_loop_closure` | Trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance. | No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed. |
+| `rmi` | Benchmark pressure, routed specialist attempts, logs, loop closure, residual escrow, regression preservation, arm/router lifecycle, and interpreter/compiled-tool/reflex modes. | Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven. |
+| `rgs` | Verified tool promotion, residual preservation, regression suites, and ledgers for benchmarks, models, tools, residuals, calibration, safety, routing, and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
+| `benchmaxxing` | Benchmark lifecycle, wall diagnosis, ledgers, anti-Goodhart safeguards, residual accounting, and architecture-change discipline. | No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here. |
+| `talos` | Job lifecycles, adjudication, delivery, feedback/autopoiesis, audit logs, replay, tests, residuals, and regression coverage. | No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced. |
+| `moecot` | Specialist lanes, readiness gates, ledgers, replay, handoff, promotion blockers, residual tracking, and limitation reporting. | MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced. |
+| `project_theseus_whitepaper` | Report-first loop closure into verified tools after parameters, preconditions, postconditions, verification, risk, and retirement criteria are recorded. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
+| `theseus_self_evolution_system` | Evidence-gated improvement through intervention ladders, local verified tools, outcome ledgers, lifecycle-governed cells, branch isolation, checks, and trace ledgers. | No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, or dashboard endpoint was executed here. |
+| `theseus_operator_os` | Durable work-board state, goals with budgets/judges/steps/stop conditions/dependencies/events, skill registry, tool hooks, feedback routing, and safety-visible operator surfaces. | No Hive board, node registry, command channel, database, or dashboard was run from this repository. |
 
 ## Mechanism
 

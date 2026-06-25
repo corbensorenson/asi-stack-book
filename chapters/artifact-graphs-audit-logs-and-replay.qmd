@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until artifact replay, audit reconstruction, or completeness harnesses exist."
   - "Protocol schema/fixture validation and narrow Lean provenance predicates are implemented; no artifact-graph replay, audit reconstruction, or produced-artifact completeness harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -64,6 +64,20 @@ The artifact graph is the system's memory of work. It does not guarantee truth, 
 [artifact-graphs-audit-logs-and-replay.core, label: Design rationale, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
 
 The claim remains at `argument` support. Talos supplies execution evidence and replay pressure; VIEA supplies artifact and feedback ledgers; Cognitive Compilation supplies build-graph and repair-locality pressure; Spinoza Composer supplies state/history preservation patterns; GenesisCode supplies effect logs, provenance hashes, and obligations; Cognitive Loop Closure explains why traces become procedural memory.
+
+### Claim-source mapping status
+
+Appendix C now maps this artifact-graph claim to all assigned source notes. The mappings support provenance-bearing artifacts, audit logs, replay metadata, trace preservation, and improvement substrate discipline, not a completed replay engine or artifact graph service.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `talos` | Typed jobs, delivery, evidence records, audit logs, replay, source allow-listing, blind handles, tests, residuals, regression coverage, and forgotten-failure prevention. | No Talos artifact graph, audit reconstruction, replay run, benchmark, or security result has been reproduced here. |
+| `viea` | Artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops. | No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here. |
+| `cognitive_compilation` | Build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style metrics. | No working compiler, trace suite, repair-locality benchmark, or empirical ablation exists here. |
+| `spinoza_composer` | World graphs, belief states, causal history, scope tags, narrative trees, verified logical state, disclosures, exports, baselines, and evaluation plans. | No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run. |
+| `genesiscode` | Canonical IR, semantic patches, provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals. | No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists here. |
+| `cognitive_loop_closure` | Execution traces as procedural-memory substrate through logging, loop detection, tool cards, verification, registries, monitoring, lifecycle states, and retirement discipline. | No local loop detector, trace miner, synthesized tool, or verification harness has been executed. |
+| `moecot` | Runtime-reference ledgers, replay, handoff, readiness gates, benchmark artifacts, promotion blockers, and residual tracking. | Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here. |
 
 ## Mechanism
 

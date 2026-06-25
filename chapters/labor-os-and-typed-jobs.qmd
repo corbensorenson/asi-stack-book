@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until scheduler, permission, adapter, or replay harnesses exist."
   - "Protocol schema/fixture validation and narrow Lean lifecycle/approval predicates are implemented; no job scheduler, permission-enforcement harness, adapter runner, or replay harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -63,6 +63,19 @@ GenesisCode reinforces the distinction: proposals and effects are different thin
 [labor-os-and-typed-jobs.core, label: Design rationale, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
 The claim remains at `argument` support. Talos supplies the labor-OS and job-lifecycle vocabulary; VIEA supplies the intent-to-artifact trace; GenesisCode supplies effect-boundary and replay-log discipline; Software Magic Grimoire supplies workflow guard vocabulary; the Markdown Talos release is a terminology variant, not independent benchmark evidence.
+
+### Claim-source mapping status
+
+Appendix C now maps this labor-OS claim to all assigned source notes. The mappings support typed jobs, lifecycle gates, permissions, evidence records, replay, and approval boundaries as execution architecture, not a working scheduler or runtime.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `talos` | Typed job lifecycle, decomposition, contract lock, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, evidence, isolation, and approval-gate failure modes. | No Talos scheduler, approval service, runtime, replay log, benchmark, or security result has been reproduced here. |
+| `viea` | Intent lowering into command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage. | No deployed intent-to-job pipeline or verified execution trace exists here. |
+| `genesiscode` | Proposal/effect separation through capability boundaries, deterministic effect logs, provenance, obligations, semantic patches, and small trusted-core discipline. | No local GenesisCode implementation, effect runner, replay checker, proof artifact, or security audit exists here. |
+| `software_magic_grimoire` | Bounded instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, guards, entry/exit rules, loops, recursion, and recovery paths. | Workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work. |
+| `talos_md` | Public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIFs. | Variant/canonicalization aid only; reported benchmark or security claims remain unverified. |
+| `moecot` | Runtime-reference context for governed orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here. |
 
 ## Mechanism
 

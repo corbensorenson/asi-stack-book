@@ -2895,6 +2895,38 @@
           "problem": "Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.",
           "insufficient": "Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.",
           "core_claim": "The execution layer should convert plans into typed jobs managed by a governed labor operating system.",
+          "claim_source_mappings": [
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports the labor-OS frame through typed job lifecycle, decomposition, contract lock, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, evidence, isolation, and approval-gate failure modes.",
+              "limits": "Design-source support only here; no Talos scheduler, approval service, runtime, replay log, benchmark, or security result has been reproduced in this repository."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports lowering intent into structured command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only; no deployed intent-to-job pipeline or verified execution trace exists here."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports separating proposals from effects through capability boundaries, deterministic effect logs, provenance, obligations, semantic patches, and small trusted-core discipline.",
+              "limits": "No local GenesisCode implementation, effect runner, replay checker, proof artifact, or security audit has been imported or reproduced."
+            },
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports job and workflow shape through bounded instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, guards, entry/exit rules, loops, recursion, and recovery paths.",
+              "limits": "Promptcraft/workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work."
+            },
+            {
+              "source_id": "talos_md",
+              "mapped_support": "Supports public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase job lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIF boundaries.",
+              "limits": "Variant/canonicalization aid only; reported benchmark or security claims remain unverified."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime-reference context for governed orchestration with a compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking.",
+              "limits": "Connector-readable implementation-reference source only; runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here."
+            }
+          ],
           "mechanism": [
             "Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior.",
             "Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions.",
@@ -2928,13 +2960,13 @@
               "tag": "lean:jobs.lifecycle.operational_invariant",
               "module": "AsiStackProofs.TypedJobs",
               "target": "A job transitions only through valid lifecycle states.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:jobs.lifecycle.failure_blocks_promotion",
               "module": "AsiStackProofs.TypedJobs",
               "target": "A job requiring approval cannot execute before approval is recorded.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -2973,6 +3005,43 @@
           "problem": "The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.",
           "insufficient": "If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.",
           "core_claim": "Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.",
+          "claim_source_mappings": [
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports artifact evidence through typed jobs, delivery, evidence records, audit logs, replay, source allow-listing, blind secret handles, tests, residuals, regression coverage, and forgotten-failure prevention.",
+              "limits": "No Talos artifact graph, audit reconstruction, replay run, benchmark, or security result has been reproduced in this repository."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops.",
+              "limits": "No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Supports build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style evaluation metrics.",
+              "limits": "Architecture and evaluation plan only; no working compiler, trace suite, repair-locality benchmark, or empirical ablation exists in this repository."
+            },
+            {
+              "source_id": "spinoza_composer",
+              "mapped_support": "Supports artifact graph enrichment with world graphs, belief states, causal history, scope tags, narrative trees, verified logical state, disclosures, exports, baselines, and evaluation plans.",
+              "limits": "No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run here."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports provenance-bearing artifacts through canonical intermediate forms, semantic patches, stable provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals.",
+              "limits": "No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists in this repo."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports using execution traces as procedural-memory substrate through trajectory logging, loop detection, tool cards, verification, registries, monitoring, lifecycle states, and retirement discipline.",
+              "limits": "No local loop detector, trace miner, synthesized tool, or verification harness has been executed."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime-reference ledgers, replay, handoff, readiness gates, benchmark artifacts, promotion blockers, and residual tracking as implementation-context for artifact and audit surfaces.",
+              "limits": "Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here."
+            }
+          ],
           "mechanism": [
             "Record artifacts as nodes with source, job, context, tool, and evidence links.",
             "Capture replay metadata and environment assumptions.",
@@ -3005,13 +3074,13 @@
               "tag": "lean:artifacts.graph.operational_invariant",
               "module": "AsiStackProofs.ArtifactGraph",
               "target": "Every produced artifact records its parent job and source/context references.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:artifacts.graph.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactGraph",
               "target": "An artifact with missing required provenance cannot support a promoted claim.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3052,6 +3121,48 @@
           "problem": "Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.",
           "insufficient": "Tool calling without a permission and approval model turns reasoning errors into side effects.",
           "core_claim": "Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.",
+          "claim_source_mappings": [
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports controlled runtime adapters through typed jobs, tool isolation, contract locks, human approval, blind secret handles, Digital SCIFs, evidence records, audit logs, replay, and promotion through tests/residuals/regressions.",
+              "limits": "No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced here."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports intent-to-runtime boundaries through structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists in this repository."
+            },
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supports handle-mediated authority through hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions.",
+              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here."
+            },
+            {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports adapter workflow discipline through guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, loops that advance on evidence, and scoped recursion.",
+              "limits": "Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports capability-mediated effects by keeping nondeterminism, I/O, time, randomness, networking, and model calls behind capability boundaries with deterministic effect logs and protocol seals.",
+              "limits": "No local capability runtime, sandbox, effect log verifier, or security proof has been implemented from GenesisCode."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports implementation-reference context for specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration.",
+              "limits": "Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced in this book repo."
+            },
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Supports governing tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization of sovereignty.",
+              "limits": "Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports operator-visible runtime control through shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation.",
+              "limits": "No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository."
+            }
+          ],
           "mechanism": [
             "Map jobs to runtime adapters with declared capabilities.",
             "Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.",
@@ -3085,13 +3196,13 @@
               "tag": "lean:runtime.adapters.operational_invariant",
               "module": "AsiStackProofs.RuntimeAdapters",
               "target": "A runtime adapter invocation is valid only when job permissions include the adapter capability.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:runtime.adapters.failure_blocks_promotion",
               "module": "AsiStackProofs.RuntimeAdapters",
               "target": "A high-impact adapter call without approval is rejected.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -3134,6 +3245,53 @@
           "problem": "Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.",
           "insufficient": "Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.",
           "core_claim": "Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.",
+          "claim_source_mappings": [
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports the core loop-closure mechanism through trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance.",
+              "limits": "No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports ratcheted procedural memory through benchmark pressure, routed specialist attempts, logs, loop closure, residual escrow, regression preservation, arm/router lifecycle, and interpreter/compiled-tool/reflex modes.",
+              "limits": "Conceptual architecture source only; no independent reproduction, benchmark run, prototype inspection, or ASI behavior is proven here."
+            },
+            {
+              "source_id": "rgs",
+              "mapped_support": "Supports promoting repeated successful procedures into verified tools while preserving residuals, using regression suites, and keeping ledgers for benchmarks, models, tools, residuals, calibration, safety, routing, and interventions.",
+              "limits": "No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports regression and promotion discipline through benchmark lifecycle states, wall diagnosis, benchmark/model ledgers, anti-Goodhart safeguards, residual accounting, and architecture-change discipline.",
+              "limits": "No benchmark harness, mutation, holdout, empirical run, or model/prototype result was produced here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports procedural memory as typed, audited execution work through job lifecycles, adjudication, delivery, feedback/autopoiesis, audit logs, replay, tests, residuals, and regression coverage.",
+              "limits": "No Talos loop-closure pipeline, scheduler, replay log, or benchmark result has been reproduced in this repository."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime-reference context for procedural reuse through specialist lanes, readiness gates, ledgers, replay, handoff, promotion blockers, residual tracking, and current limitation reporting.",
+              "limits": "MoECOT runtime artifacts, code, logs, readiness records, and benchmark results have not been imported or reproduced."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports report-first loop closure through repeated trajectory closure into verified tools after parameters, preconditions, postconditions, verification, risk, and retirement criteria are recorded.",
+              "limits": "Source-reported implementation state only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports evidence-gated procedural improvement through intervention ladders, loop closure into local verified tools, outcome ledgers, lifecycle-governed cells, branch isolation, local checks, and trace ledgers.",
+              "limits": "No Theseus scripts, ATTD reports, branch-creation flow, teacher runner, outcome ledger, or dashboard endpoint was executed here."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports procedural-memory operations through durable work-board state, goals with budgets/judges/steps/stop conditions/dependencies/events, skill registry, tool hooks, feedback routing, and safety-visible operator surfaces.",
+              "limits": "No Hive board, node registry, command channel, database, or dashboard was run from this repository."
+            }
+          ],
           "mechanism": [
             "Log safe execution traces.",
             "Detect recurring loops.",

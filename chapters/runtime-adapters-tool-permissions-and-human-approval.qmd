@@ -17,7 +17,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until adapter execution, sandbox, approval-service, rollback, or secret-handle harnesses exist."
   - "Protocol schema/fixture validation and narrow Lean permission/approval predicates are implemented; no adapter execution, sandbox, approval-service, rollback, or secret-handle harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -65,6 +65,21 @@ The right boundary is not "never call tools." It is "call tools through adapters
 [runtime-adapters-tool-permissions-and-human-approval.core, label: Design rationale, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
 
 The claim remains at `argument` support. Talos supplies adapter and approval discipline; VIEA supplies intent-to-runtime and feedback boundaries; Ladon/Manhattan supplies handle-mediated secret use; GenesisCode supplies capability-mediated effects and replay logs; Software Magic Grimoire and Theseus Operator OS supply workflow and operator-surface pressure. MoECOT remains a connector implementation-reference route, not local execution evidence.
+
+### Claim-source mapping status
+
+Appendix C now maps this runtime-adapter claim to all assigned source notes. The mappings support typed permissions, sandbox and approval boundaries, handle-mediated authority, least-power governance, operator visibility, and post-action evidence capture, not safe tool execution in this repository.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `talos` | Typed jobs, tool isolation, contract locks, human approval, blind handles, Digital SCIFs, evidence records, audit logs, replay, tests, residuals, and regressions. | No live adapter runner, approval service, sandbox, security test, or Talos runtime result has been reproduced. |
+| `viea` | Structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage. | No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists here. |
+| `ladon_manhattan` | Hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions. | Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here. |
+| `software_magic_grimoire` | Guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, evidence-advancing loops, and scoped recursion. | Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety. |
+| `genesiscode` | Capability-mediated effects for I/O, time, randomness, networking, model calls, deterministic effect logs, and protocol seals. | No local capability runtime, sandbox, effect log verifier, or security proof exists. |
+| `moecot` | Specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration. | Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced. |
+| `field_of_god_ai_constitution` | Governed tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization. | Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here. |
+| `theseus_operator_os` | Shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation. | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository. |
 
 ## Mechanism
 
