@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter treats cyclic adapters, phase banks, RoPE certifiers, and cyclic mixers as optional substrate candidates. It does not claim better perplexity, longer context, faster runtime, lower memory, training stability, or deployment readiness.
 
+The previous chapter applies structural contracts to memory and recurrence. This chapter applies the same boundary to model-internal cyclic structure: adapters, phase banks, position encodings, route heads, and mixers. The core question is not whether a cyclic invariant exists; it is whether that invariant survives contact with baselines, kernels, parameter accounting, failure cases, and workload metrics.
+
 ## Problem
 
 Position encodings, adapters, route heads, and mixers can contain real cyclic or block-cyclic structure. When they do, proofs and structural diagnostics can prevent confusion about residues, winding, collisions, load, parameter counts, and shift-equivariance. But those structural facts are not model-quality facts.

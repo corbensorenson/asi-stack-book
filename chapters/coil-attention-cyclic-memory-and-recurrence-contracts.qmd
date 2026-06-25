@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter treats cyclic memory, sparse coverage, KV freshness, and recurrence schedules as structural contracts. It does not claim retrieval quality, reasoning quality, longer usable context, speed, memory reduction, or model improvement.
 
+The previous chapter defines how proof-carrying receipts preserve finite structural boundaries. This chapter specializes that receipt discipline for memory and recurrence, where the tempting overclaim is semantic: a slot is fresh, a lag is covered, or a loop exits, therefore the model must remember or reason better. The ASI Stack keeps those facts useful by treating them as guardrails for admission, fallback, and residual handling rather than as task-success evidence.
+
 ## Problem
 
 Long context and recurrence can fail in quiet ways: stale reads, duplicate requests, uncovered lags, alias collisions, non-terminating loops, overthinking, or hidden work. Coil Attention and Memory contributes a useful frame: finite cyclic structures can make some of these hazards visible, but visibility is not the same thing as quality.

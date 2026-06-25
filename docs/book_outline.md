@@ -2403,9 +2403,9 @@ Draft arc:
 
 - Problem: The architecture needs a realism check on simulations, nested worlds, fidelity, clockspeed, and compute constraints.
 - Insufficiency: Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit.
-- Mechanism: Define scope, clockspeed, fidelity, and resource demand.
-- Mechanism: Use simulation limits to constrain roadmap and benchmark claims.
-- Mechanism: Record liberties or approximations explicitly.
+- Mechanism: Turn every simulator, synthetic benchmark, or nested-world scenario into a contract with declared scope, clockspeed, fidelity, temporal semantics, resource demand, approximation liberties, and supported-claim boundary.
+- Mechanism: Use the contract to decide whether a simulation supports a unit invariant, a bounded benchmark, a roadmap constraint, or only a speculative scenario note.
+- Mechanism: Route failed or under-specified simulation claims into residuals, reduced scope, or blocked status instead of treating approximate worlds as ground truth.
 - Interface: Efficiency theory uses resource constraints.
 - Interface: Benchmarks record fidelity limits.
 - Interface: Alignment scenarios avoid unbounded simulation claims.
@@ -2458,10 +2458,10 @@ Draft arc:
 
 - Problem: The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed.
 - Insufficiency: Novel substrates can become authority theater if they are not tied to baselines, adoption gates, and falsification criteria.
-- Mechanism: Frame each substrate as a specialist core or IR option.
-- Mechanism: Define expected advantage, baseline, and falsification condition.
-- Mechanism: Route experiments through evidence gates before adoption.
-- Mechanism: Distinguish backbone or sequence-substrate efficiency from draft-token acceleration and downstream task quality.
+- Mechanism: Register each coil, calculus, geometric, graph, compiler-IR, or state-space substrate as an exploratory candidate with intended use, authority boundary, and adoption state.
+- Mechanism: Require expected advantage, ordinary baselines, negative controls, proof boundary, workload, metric, report, and falsification condition before canary use.
+- Mechanism: Route experiments through exploratory, canary, qualified, retired, or blocked evidence gates before broader adoption.
+- Mechanism: Keep backbone efficiency, proof readiness, fast-generation acceleration, compression, search quality, routing quality, and downstream task quality as separate axes.
 - Interface: Routing treats substrate as specialist.
 - Interface: Compression tests representation efficiency.
 - Interface: Evidence compares against baselines.
@@ -2516,9 +2516,9 @@ Draft arc:
 
 - Problem: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
 - Insufficiency: Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.
-- Mechanism: Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful.
-- Mechanism: Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims.
-- Mechanism: Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
+- Mechanism: Admit a finite circular address, schedule, window, or phase model only when the engineering object is faithfully represented at that boundary.
+- Mechanism: Emit a proof-carrying receipt with theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, validation commands, replay checks, consumer gates, and explicit non-claims.
+- Mechanism: Preserve the receipt boundary in downstream consumers and require workloads, ordinary baselines, negative controls, metrics, scripts, and evidence artifacts before any quality, runtime, memory, or transfer claim is promoted.
 - Interface: Lean and proof manifests supply theorem status.
 - Interface: Python or CLI tools emit receipts and validation reports.
 - Interface: Theseus-style private experiments consume contracts without importing private results into public claims.
@@ -2574,9 +2574,9 @@ Draft arc:
 
 - Problem: Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
 - Insufficiency: Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.
-- Mechanism: Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures.
-- Mechanism: Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs.
-- Mechanism: Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
+- Mechanism: Represent memory slots, residue, winding, provenance, strides, sparse windows, freshness windows, and recurrence schedules as finite structural contracts.
+- Mechanism: Expose alias, freshness, coverage, active-token, work-saving, fallback, stale-read, and loop-exit fields as auditable outputs with explicit non-claims.
+- Mechanism: Preserve VCM authority and adequacy labels while comparing slot-only, slot-plus-winding, FIFO, LRU, content-gated, ordinary attention, and ordinary memory baselines before promoting retrieval, reasoning, speed, or memory claims.
 - Interface: VCM context traces expose context adequacy and authority labels.
 - Interface: Attention and memory modules consume contract fields as diagnostic guardrails.
 - Interface: Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
@@ -2632,9 +2632,9 @@ Draft arc:
 
 - Problem: Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
 - Insufficiency: Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.
-- Mechanism: Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts.
-- Mechanism: Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior.
-- Mechanism: Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
+- Mechanism: Treat adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, circulant convolution, and route heads as structural contracts only where cyclic structure is real.
+- Mechanism: Attach receipt boundaries, alias diagnostics, load diagnostics, parameter accounting, hardware-kernel notes, and real-valued-versus-discretized limits before interpreting model behavior.
+- Mechanism: Promote the substrate only after quality, runtime, memory, parameter, transfer, and failure-case tradeoffs are measured against ordinary baselines and negative controls.
 - Interface: Semantic representation chapters define when cyclic structure is actually present.
 - Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.
