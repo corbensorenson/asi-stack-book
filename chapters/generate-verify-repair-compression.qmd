@@ -13,9 +13,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this generate-verify-repair claim to all assigned source notes; support remains argument until a codec, bounded-search harness, reconstruction benchmark, repair-cost benchmark, or rate experiment exists."
-  - "The compression_receipt fixture and narrow Lean reconstruction/verification predicates are implemented; no codec, bounded-search harness, exact reconstruction benchmark, repair-cost benchmark, or rate experiment has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned Generate-Verify-Repair Compression sources; support remains at argument until a codec, bounded-search harness, reconstruction benchmark, repair-cost benchmark, final-rate experiment, or reproduced artifact-compression result exists."
+  - "Only the compression_receipt fixture and narrow finite Lean reconstruction/verification predicates have been implemented; no BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, or rate comparison has been executed from this repository."
+  - "BBVCA main and RankFold/NeuralFold are used as architecture lineage and comparison points only; they do not prove codec correctness, compression efficiency, universality, or working decode behavior here."
 ---
 
 ## Chapter status
@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `bbvca_v9`, `bbvca_main`; supporting: `cgs`, `rankfold_neuralfold` |
-| Source loading state | source notes: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold`; raw cache: `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings for `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold`; no raw source text is published |
 | Test state | `compression_receipt.valid.json` passes repository-level protocol fixture validation; finite reconstruction/verification predicates implemented in `AsiStackProofs.GenerateVerifyRepair`; reconstruction-quality, repair-cost, bounded-search, and rate tests remain planned. |
 
 ## Drafting guardrail
@@ -62,7 +62,7 @@ The claim is architectural: it says how this layer should be shaped if the whole
 
 ### Claim-source mapping status
 
-Appendix C now maps this generate-verify-repair claim to all assigned source notes. The mappings support reconstruction contracts, shared-law generation, exact repair streams, bounded verification, rate honesty, residual accounting, and artifact-compression comparison points, not a working compressor.
+Appendix C now carries passage-reviewed mappings for all four assigned sources. The mappings support reconstruction contracts, shared-law generation, exact repair streams, bounded verification, rate honesty, residual accounting, and artifact-compression comparison points, not a working compressor, BBVCA Prototype A implementation, entropy-coder run, RankFold/NeuralFold artifact run, or reproduced compression ratio.
 
 | Source | What it supports | Limit |
 |---|---|---|
