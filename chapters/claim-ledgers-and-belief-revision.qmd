@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -78,7 +78,9 @@ Appendix C now maps this claim-ledger claim to all assigned source notes. The ma
 
 ## Mechanism
 
-The mechanism is a Belief Revision Record.
+After context adequacy decides what a packet can support, reasoning needs a durable place for claims, uncertainty, contradictions, and updates. Spinoza supplies proposer/verifier separation, claim tiers, contradiction detection, defeaters, entrenchment, and downgrade/block behavior. VIEA supplies durable claim and verification ledgers. Aletheia supplies claim-native dossiers, unknown preservation, and verification gates. UAT supplies proposition states and review routes, while Coherence Exchange contributes speculative verification-supply-chain vocabulary without becoming external corroboration.
+
+A Belief Revision Record is the ledger transition that keeps claims separable from prose and keeps every support-state change tied to evidence, contradiction handling, uncertainty, and history.
 
 ```{mermaid}
 flowchart LR
@@ -187,4 +189,4 @@ The crosswalk identifies sources for claim-ledger and belief-revision discipline
 
 Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history.
 
-The chapter's rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise.
+The chapter's rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise. The next chapter takes selected ledger claims and asks what kind of proof, citation, procedure, or justification artifact would be required before their tier can rise.

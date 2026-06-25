@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -77,7 +77,9 @@ Appendix C now maps this proof-carrying-claim assertion to all assigned source n
 
 ## Mechanism
 
-The mechanism is a Proof-Carrying Claim.
+Once the ledger has a claim and a requested support tier, Spinoza supplies the verification envelope. It separates neural proposal from verifier judgment, requires proof-, citation-, or procedure-carrying artifacts for stronger tiers, and treats timeout, failed verification, or formalization mismatch as downgrade or escalation signals. GenesisCode contributes obligation artifacts, provenance, semantic patches, replay logs, and small-trusted-core pressure. Verification Bandwidth explains why high-risk claims may need stronger checks than more context. TreeLLM supplies a possible semantic-graph route for interpretation mappings, while Coherence Exchange supplies speculative verification-supply-chain framing.
+
+A Proof-Carrying Claim is the claim-ledger envelope that records the required tier, interpretation mapping, justification artifact, verifier result, limitations, downgrade rule, and residual route.
 
 ```{mermaid}
 flowchart LR
@@ -185,4 +187,4 @@ The crosswalk identifies sources for proof-carrying and justification-carrying c
 
 Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures.
 
-The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it.
+The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it. The next chapter handles the cases where one verifier or one artifact is not enough and the claim needs adversarial, role-separated review.
