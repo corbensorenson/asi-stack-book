@@ -8409,47 +8409,157 @@
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports small executable invariants through a tiny deterministic kernel, explicit effect boundaries, provenance hashes, semantic patches, replayable logs, obligations, capability policies, and protocol seals.",
-              "limits": "No GenesisCode prototype, replay checker, security audit, benchmark, or proof artifact has been implemented or validated in this repository."
+              "limits": "Local raw-cache specification source only; no GenesisCode implementation, replay checker, semantic patch engine, obligation runner, proof stack, security audit, benchmark, or integration has been implemented or validated here beyond ASI Stack's separate schema and Lean gates.",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:9-10",
+                "sources/raw/google_docs/genesiscode.txt:16-25",
+                "sources/raw/google_docs/genesiscode.txt:30-40",
+                "sources/raw/google_docs/genesiscode.txt:45-59",
+                "sources/raw/google_docs/genesiscode.txt:63-77",
+                "sources/raw/google_docs/genesiscode.txt:164-211",
+                "sources/raw/google_docs/genesiscode.txt:215-245",
+                "sources/raw/google_docs/genesiscode.txt:249-314",
+                "sources/raw/google_docs/genesiscode.txt:354-361",
+                "sources/raw/google_docs/genesiscode.txt:396-406",
+                "sources/raw/google_docs/genesiscode.txt:641-704",
+                "sources/raw/google_docs/genesiscode.txt:886-893",
+                "sources/raw/google_docs/genesiscode.txt:1134-1138"
+              ],
+              "passage_review_note": "Reviewed local raw cache for small deterministic kernel scope, sealed protocols, capability-mediated effects, deterministic logs and replay, obligation/evidence artifacts, semantic patches, translation validation, AI-as-proposer boundaries, and no-proof-without-spec discipline; no GenesisCode implementation or proof artifact is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports proof-carrying claim discipline through proposer/verifier separation, proof/citation/procedure-carrying claim graphs, tiered support states, contradiction handling, dependency tracing, and downgrade/block behavior.",
-              "limits": "Does not solve open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+              "limits": "Formal-scope and reasoning-architecture source only; no open-domain autoformalizer, proof verifier, belief-maintainer, contradiction reducer, tier engine, arbitrary theorem-validity result, or whole-system epistemic correctness proof exists in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:227-236",
+                "sources/raw/google_docs/spinoza.txt:263-285",
+                "sources/raw/google_docs/spinoza.txt:327-389",
+                "sources/raw/google_docs/spinoza.txt:402-451",
+                "sources/raw/google_docs/spinoza.txt:757-799",
+                "sources/raw/google_docs/spinoza.txt:1013-1023"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proposer/verifier/belief-maintainer separation, explicit formal scope, non-assumption of general NL-to-logic, proof obligations, tier labels, contradiction revision, dependency tracing, proof caching, downgrade behavior, and citation/procedure tiers; no verifier implementation or epistemic-correctness proof is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports capability and replacement invariants through stable field identity, versioned contracts, qualification claims, route validation, authority ceilings, lifecycle events, evidence registries, and recovery paths.",
-              "limits": "Does not prove production safety, global alignment, evaluator integrity, route quality, or actual rollback behavior."
+              "limits": "Supports invariants and governed field boundaries but does not prove production safety, global alignment, evaluator integrity, route quality, actual rollback behavior, or the companion executable fragment inside this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:40-49",
+                "sources/raw/google_docs/scf.txt:53-78",
+                "sources/raw/google_docs/scf.txt:106-123",
+                "sources/raw/google_docs/scf.txt:410-431",
+                "sources/raw/google_docs/scf.txt:535-548",
+                "sources/raw/google_docs/scf.txt:675-689",
+                "sources/raw/google_docs/scf.txt:1425-1442",
+                "sources/raw/google_docs/scf.txt:1576-1603",
+                "sources/raw/google_docs/scf.txt:1715-1823"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable field identity, exact content binding, trusted-validator/untrusted-proposer split, rich contract requirements, evidence graph, caller-bound authority, migration solvency, lifecycle ordering, governed internal-science framing, and qualify-and-activate procedure; no SCF production safety or actual rollback result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports job-lifecycle executable specs through typed jobs, contract locks, deterministic control planes, evidence records, isolation, audit logs, replay, controlled runtime adapters, and approval gates.",
-              "limits": "Execution-security and benchmark claims remain design-source context until Talos artifacts, tests, or logs are imported and validated."
+              "limits": "Design-source context only; no Talos runtime, job executor, security benchmark, replay proof bundle, imported logs, or execution-security result has been implemented or validated in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:4433-4482",
+                "sources/raw/google_docs/talos.txt:5352-5393",
+                "sources/raw/google_docs/talos.txt:5400-5424",
+                "sources/raw/google_docs/talos.txt:6046-6052",
+                "sources/raw/google_docs/talos.txt:6155-6241",
+                "sources/raw/google_docs/talos.txt:6308-6343",
+                "sources/raw/google_docs/talos.txt:6401-6426",
+                "sources/raw/google_docs/talos.txt:6476-6508"
+              ],
+              "passage_review_note": "Reviewed local raw cache for AI labor OS framing, contract locks, typed jobs, claim extraction, evidence binding, adversarial verification, artifact certification, proof bundles, replay, secret-blind execution, Digital SCIFs, audit logs, residual risk, and cost/certainty tradeoffs; no Talos runtime or security/benchmark behavior is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports intent-to-execution proof/spec priorities through command contracts, artifact graphs, claim and verification ledgers, support states, runtime adapters, feedback loops, residuals, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal only here; no completed VIEA deployment, runtime trace, or benchmark result is proven in this repository."
+              "limits": "Architecture proposal only here; no completed VIEA deployment, runtime trace, workflow compiler, benchmark result, field-feedback record, or execution-loop behavior is proven in this repository.",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:47-67",
+                "sources/raw/google_docs/viea.txt:81-95",
+                "sources/raw/google_docs/viea.txt:117-148",
+                "sources/raw/google_docs/viea.txt:239-272",
+                "sources/raw/google_docs/viea.txt:455-527",
+                "sources/raw/google_docs/viea.txt:710-785",
+                "sources/raw/google_docs/viea.txt:1477-1543",
+                "sources/raw/google_docs/viea.txt:1913-2016"
+              ],
+              "passage_review_note": "Reviewed local raw cache for command contracts, durable artifacts, support-state rule, workflow-to-tool compilation, artifact fields and relationships, claim/verification ledger states, evaluation ratchets, residuals, vertical-slice loop, evidence hierarchy, and downgrade policy; no VIEA deployment or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "circle_calculus_core",
               "mapped_support": "Supports proof-envelope discipline through Lean declarations, theorem manifests, proof-status policy, Python/Rust/JSON sidecar separation, finite structural facts, and explicit non-claims for performance or model quality.",
-              "limits": "External Circle build, theorem manifests, sidecars, and tests were not rerun from this repository."
+              "limits": "External Circle build, theorem manifests, sidecars, and tests were not rerun from this repository; use as proof-boundary context, not local proof ownership, theorem replay, model-quality evidence, or deployment evidence.",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:README.md:6-30",
+                "local-project:circle-math@63b0f511:README.md:43-72",
+                "local-project:circle-math@63b0f511:README.md:88-122",
+                "local-project:circle-math@63b0f511:README.md:124-140"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle project README for proof-carrying project structure, public APIs, receipt commands, verification commands, theorem-manifest policy, proof boundary, sidecar separation, finite structural facts, and explicit non-claims; no external Circle build or local theorem replay is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "circle_ai_contract_suite",
               "mapped_support": "Supports executable contract receipts through theorem ids, schema fields, generated reports, minimum consumer fields, downstream rejection reports, and explicit boundaries/non-claims.",
-              "limits": "No Circle contract command, generated pack, receipt replay, or Lean build was run here; it cannot support model-quality or deployment claims."
+              "limits": "No Circle contract command, generated pack, receipt replay, fingerprint check, or Lean build was run here; it cannot support model-quality, context-length, performance, deployment, or ASI Stack proof-adequacy claims.",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:1-15",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:16-43",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:45-84",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:100-137",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:154-169",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:171-217",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:220-231",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:7-58",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:60-89",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:114-203"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI contract docs for contract families, runner commands, schema/replay/fingerprint artifacts, require gates, common contract shape, consumer reading order, readiness fields, generated pack fields, downstream rejection surfaces, and non-claims; no Circle command or receipt replay is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "rope_position_certifier",
               "mapped_support": "Supports the boundary between exact/discretized proof and numerical diagnostics through theorem-linked RoPE position receipts, collision counts, margin reports, and machine-readable certificates.",
-              "limits": "Does not prove arbitrary real-valued RoPE behavior, context-length extension, speed, memory improvement, or model quality; no certifier run was reproduced here."
+              "limits": "Does not prove arbitrary real-valued RoPE behavior, full all-channel real-valued RoPE, context-length extension, speed, memory improvement, model quality, training stability, or deployment readiness; no certifier command, sidecar regeneration, or Circle Lean build was reproduced here.",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:1-17",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:252-263",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:265-304",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:312-350",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_04_ROPE_POSITION_CERTIFIER.md:383-452",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:7-14",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:61-80",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_QUICKSTART.md:82-103",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:5-8",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:33-48",
+                "local-project:circle-math@63b0f511:docs/ROPE_CERTIFIER_RESULTS_NOTE.md:90-116"
+              ],
+              "passage_review_note": "Reviewed pinned local RoPE certifier paper, quickstart, and results note for exact/discretized receipt boundaries, collision/margin fields, theorem ids, certifier commands, one-channel real-phase frontier, sidecar regeneration surfaces, and explicit non-claims; no certifier run or model-quality result is promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "proof_carrying_circular_computation",
               "mapped_support": "Supports proof-carrying compute-substrate specs through cyclic address primitives, finite address-safety facts, stride-coverage criteria, rewrite legality, and a separate benchmark side for backend adoption.",
-              "limits": "No Circle sidecars, Lean builds, cyclic backend benchmarks, or performance claims were reproduced in this repository."
+              "limits": "No Circle sidecars, Lean builds, CoilIR lowering, cyclic backend benchmark, hardware-kernel benchmark, or performance claim was reproduced in this repository.",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:1-24",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:26-32",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:34-48",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:50-76",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_COMP_01_PROOF_CARRYING_CIRCULAR_COMPUTATION.md:78-96"
+              ],
+              "passage_review_note": "Reviewed pinned local proof-carrying circular computation paper for cyclic-address seed, elementary address-safety theorem scope, stride-coverage boundary, Lean/Python sidecar distinction, backend proof-plus-benchmark program, and dense/direct/baseline guardrail; no Circle build or performance result is promoted.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [

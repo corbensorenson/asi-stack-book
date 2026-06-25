@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 304 |
+| Passage-reviewed mappings recorded | 313 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -78,7 +78,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
+| `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 0 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
@@ -517,15 +517,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | `coilra-multicoil-rope-and-cyclic-mixers` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | `coilra-multicoil-rope-and-cyclic-mixers` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | `coilra-multicoil-rope-and-cyclic-mixers` | `circle_ai_architectures` | mapped | note present | chapter listed | passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `circle_calculus_core` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `circle_ai_contract_suite` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `rope_position_certifier` | mapped | note present | chapter listed | not passage-reviewed |
-| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `proof_carrying_circular_computation` | mapped | note present | chapter listed | not passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `circle_calculus_core` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `rope_position_certifier` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `proof_carrying_circular_computation` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |

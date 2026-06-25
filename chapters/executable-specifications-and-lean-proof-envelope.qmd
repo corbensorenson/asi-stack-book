@@ -18,9 +18,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source-note mappings now exist for all assigned sources, but support remains argument until source passages, evidence transitions, or additional artifact audits justify promotion."
-  - "The proof_target_record fixture validates schema/example consistency and the Lean workspace currently implements all 112 manifest proof targets as narrow finite-record predicates; the proof artifact traceability audit now checks manifest, triage, module, import, chapter-hook, limitation, and Appendix E wiring, but it is not a semantic adequacy audit or a proof of system behavior."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all nine assigned sources, but support remains argument until semantic proof adequacy review, additional artifact audits, source-passage transitions, validated executable-spec behavior, or accepted evidence transitions justify promotion."
+  - "The proof_target_record fixture validates schema/example consistency and the Lean workspace currently implements all 112 manifest proof targets as narrow finite-record predicates; the proof artifact traceability audit checks wiring only, not broad system behavior, source-interpretation correctness, external theorem validation, local proof discovery, deployed enforcement, production security, or benchmark performance."
+  - "Internal Google Docs sources support architectural/spec design for obligations, claim tiering, capability fields, typed jobs, artifact graphs, support states, residuals, and evidence hierarchy; they do not provide local implementations, security audits, benchmarks, deployments, or runtime traces beyond validated artifacts in this repo."
+  - "External Circle project references support theorem-status, receipt, schema, sidecar, finite-cyclic, RoPE, and benchmark-boundary discipline; Circle commands, generated packs, receipt replay, fingerprint checks, sidecar regeneration, and external Circle Lean builds were not rerun or imported as local evidence."
+  - "No support-state promotion, raw source publication, model-quality result, deployment proof, performance result, or semantic adequacy proof is implied."
 ---
 
 ## Chapter status
@@ -58,6 +60,22 @@ Formal methods are ineffective when applied to vague philosophical claims instea
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
 The claim remains at `argument` support. This repository currently has a Lean workspace and all 112 manifest proof targets are marked implemented as narrow finite-record Lean predicates. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, or benchmark performance.
+
+### Claim-source mapping status
+
+Appendix C now records passage-reviewed mappings for all nine assigned sources. The mappings justify this chapter's proof-envelope priorities as design rationale only: small operational predicates, typed records, evidence artifacts, support-state boundaries, route/authority/lifecycle checks, and explicit non-claims. They do not promote the chapter beyond `argument` support.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `genesiscode` | Tiny deterministic kernels, sealed protocols, capability-mediated effects, effect logs, replay, obligations, semantic patches, provenance, and no-proof-without-spec discipline. | No GenesisCode implementation, replay checker, semantic patch engine, obligation runner, proof stack, security audit, benchmark, or integration has been validated here. |
+| `spinoza` | Proposer/verifier separation, explicit formal scope, proof/citation/procedure tiers, belief revision, dependency tracing, downgrade behavior, and verifier-bound claims. | No open-domain autoformalizer, proof verifier, belief-maintainer, tier engine, arbitrary theorem-validity result, or whole-system epistemic correctness proof exists here. |
+| `scf` | Stable capability identity, exact content binding, trusted-validator/untrusted-proposer split, contract requirements, evidence graphs, caller-bound authority, lifecycle ordering, and migration solvency. | Does not prove production safety, global alignment, evaluator integrity, route quality, actual rollback, or the SCF companion executable fragment inside this repo. |
+| `talos` | Typed jobs, contract locks, claim extraction, evidence binding, adversarial verification, artifact certification, proof bundles, replay, secret-blind execution, and audit logs. | No Talos runtime, job executor, security benchmark, replay proof bundle, imported log, or execution-security result is validated here. |
+| `viea` | Command contracts, artifact graphs, support-state rules, workflow-to-tool compilation, evaluation ratchets, residuals, vertical-slice loops, evidence hierarchy, and downgrade policy. | Architecture proposal only; no VIEA deployment, runtime trace, workflow compiler, benchmark, field-feedback record, or execution-loop behavior is proven here. |
+| `circle_calculus_core` | Proof-status discipline, theorem manifests, proof boundaries, sidecar separation, finite structural facts, receipt commands, and explicit non-claims. | External Circle build, theorem manifests, sidecars, and tests were not rerun from this repo; use as proof-boundary context, not local proof ownership. |
+| `circle_ai_contract_suite` | Contract families, schema and receipt fields, require gates, replay/fingerprint surfaces, generated packs, downstream rejection records, readiness fields, and non-claims. | No Circle contract command, generated pack, receipt replay, fingerprint check, or Lean build was run here; no model-quality, context, performance, or deployment claim follows. |
+| `rope_position_certifier` | Exact/discretized RoPE receipt boundaries, collision and margin fields, theorem ids, certifier commands, sidecar regeneration surfaces, and one-channel real-phase frontier language. | Does not prove arbitrary real-valued RoPE, full all-channel RoPE, longer usable context, speed, memory, training stability, model quality, or deployment readiness. |
+| `proof_carrying_circular_computation` | Cyclic-address seed, elementary address-safety theorem scope, stride-coverage boundary, Lean/Python sidecar distinction, and proof-plus-benchmark backend program. | No Circle sidecar, external Lean build, CoilIR lowering, cyclic backend benchmark, hardware-kernel benchmark, or performance claim is reproduced here. |
 
 ## Mechanism
 
