@@ -815,20 +815,20 @@
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate adoption record includes baseline, measured target, and falsification criterion.",
-      "target_status": "planned",
-      "triage": "research-agenda",
-      "recommended_route": "defer-until-narrowed",
-      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite record-field predicate: substrate adoption records expose baseline, measured-target, and falsification fields before adoption claims are reviewed."
     },
     {
       "tag": "lean:substrates.search.failure_blocks_promotion",
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate without passing evidence remains non-core.",
-      "target_status": "planned",
-      "triage": "research-agenda",
-      "recommended_route": "defer-until-narrowed",
-      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite promotion predicate: a substrate without passing evidence remains in a non-core adoption state."
     },
     {
       "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",

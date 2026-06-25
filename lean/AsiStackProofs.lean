@@ -38,6 +38,7 @@ import AsiStackProofs.RuntimeAdapters
 import AsiStackProofs.Routing
 import AsiStackProofs.SecurityKernel
 import AsiStackProofs.SemanticRepresentation
+import AsiStackProofs.SearchSubstrates
 import AsiStackProofs.SelfImprovement
 import AsiStackProofs.SimulationFidelity
 import AsiStackProofs.StackBoundaries

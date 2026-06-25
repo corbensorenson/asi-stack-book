@@ -177,10 +177,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | planned |
-| `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | planned |
+| `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | implemented |
+| `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | implemented |
 
-These Lean hooks remain planned. The schema can require adoption evidence fields, but it does not prove a substrate improves search, routing, compression, or representation. The first proof target should model the promotion gate: without passing evidence, a substrate remains non-core.
+These Lean hooks are implemented as finite-record predicates over substrate-adoption and promotion-review fields. They prove only that the record exposes baseline, measured-target, and falsification fields, and that a substrate without passing evidence remains in a non-core state. They do not prove that any substrate improves search, routing, compression, representation, long-context behavior, runtime, or model quality.
 
 ## Source crosswalk
 
