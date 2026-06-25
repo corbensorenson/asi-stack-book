@@ -55,10 +55,13 @@ The generator is:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 ```
 
 It writes derived Quarto source under `build/reader_edition/`, which is ignored by git. The generated manuscript is a candidate for human review, not the canonical source of truth.
+
+`scripts/validate_reader_spine.py --check` derives the manuscript in a temporary workspace and checks that every chapter still has a substantial human-readable spine after live-only scaffolding is removed. A non-check run writes `build/reader_spine_report.json` for major-version review; that report is local and does not claim any ebook or audio artifact exists.
 
 The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review requirement, e-reader quality checks, optional downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md`, which records continuity, typography, figure, EPUB, DOCX, PDF, optional AZW3/MOBI, residual, and release-record checks. These generated files do not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
 

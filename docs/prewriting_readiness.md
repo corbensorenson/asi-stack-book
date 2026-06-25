@@ -15,7 +15,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 - Required backbone source notes are machine-checked by `scripts/validate_source_notes.py`.
 - Proof target triage is machine-checked by `scripts/validate_proof_readiness.py`.
 - Protocol schema examples are machine-checked by `scripts/validate_protocol_examples.py`.
-- Major-version reader and audio edition paths are scaffolded with `scripts/build_reader_edition.py`, `scripts/build_audio_script.py`, and edition release-record validation.
+- Major-version reader and audio edition paths are scaffolded with `scripts/build_reader_edition.py`, `scripts/validate_reader_spine.py`, `scripts/build_audio_script.py`, and edition release-record validation.
 - The Lean toolchain is pinned and the implemented evidence-state proofs are wired to the outline/manifest.
 - CI is configured to run validation, render Quarto, and build the Lean workspace.
 - Stale local handoff trees are quarantined under ignored `_archive/local_context/`.
@@ -39,6 +39,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

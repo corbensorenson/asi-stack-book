@@ -33,10 +33,11 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 9. Update chapter prose and source notes only from available source text, clearly labeled design reasoning, or clearly labeled author-intent context.
 10. Update Appendix C when a claim changes, its claim label changes, or its support state changes.
 11. Run `python3 scripts/validate_publication.py` for public-surface changes.
-12. Run `python3 scripts/validate_book.py`.
-13. Run `python3 scripts/validate_visual_coverage.py` after visual, chapter, or site changes.
-14. Run schema and fixture validators when protocol artifacts change: `python3 scripts/validate_schemas.py` and `python3 scripts/validate_protocol_examples.py`.
-15. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
+12. Run `python3 scripts/validate_release_profiles.py` and `python3 scripts/validate_reader_spine.py --check` after edition/profile/reader-spine changes.
+13. Run `python3 scripts/validate_book.py`.
+14. Run `python3 scripts/validate_visual_coverage.py` after visual, chapter, or site changes.
+15. Run schema and fixture validators when protocol artifacts change: `python3 scripts/validate_schemas.py` and `python3 scripts/validate_protocol_examples.py`.
+16. Render with `quarto render --to html`; for full local output use `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render`.
 
 ## New Paper Triage
 
@@ -74,6 +75,8 @@ Use these commands before reporting completion:
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
+python3 scripts/validate_release_profiles.py
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py

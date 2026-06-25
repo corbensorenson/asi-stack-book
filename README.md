@@ -19,6 +19,7 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
+- `scripts/validate_reader_spine.py` checks that the generated reader manuscript keeps a substantial human-readable spine after live-only scaffolding is stripped.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
@@ -63,6 +64,7 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/source_readiness_report.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
@@ -99,6 +101,7 @@ Generate or check a local reader-edition Quarto source tree:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 ```
 

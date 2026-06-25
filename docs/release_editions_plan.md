@@ -33,6 +33,7 @@ Every chapter should keep meaning-critical caveats in the reader-facing spine. L
 - `appendices/I_release_editions.qmd` publishes the model inside the live book.
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
+- `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose and stripped live-only scaffolding.
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
@@ -43,6 +44,7 @@ Check the reader profile without leaving generated files in the repo:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_spine.py --check
 ```
 
 Generate a local reader-edition source tree:
@@ -98,6 +100,8 @@ The reader release removes repeated live-workflow sections by heading:
 - `Formalization hooks`
 
 The reader release keeps the core prose and diagrams. If an uncertainty caveat changes the meaning of a claim, keep it in the narrative rather than relying on a stripped guardrail block.
+
+`scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if stripped headings remain, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
 
 ## Reader-Facing Spine
 

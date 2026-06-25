@@ -24,6 +24,7 @@ CONTENT_LAYER_POLICY_KEYS = ("retain", "strip_or_summarize", "derive", "exclude"
 REQUIRED_TOP_LEVEL_POLICIES = {
     "major_version_policy",
     "reader_manuscript_policy",
+    "reader_spine_validation",
     "audio_manuscript_policy",
 }
 READER_REQUIRED_STRIPS = {
@@ -221,6 +222,26 @@ def main() -> None:
             errors,
         )
 
+    spine_policy = data.get("reader_spine_validation")
+    if isinstance(spine_policy, dict):
+        if spine_policy.get("script") != "scripts/validate_reader_spine.py":
+            errors.append("reader_spine_validation.script must be scripts/validate_reader_spine.py.")
+        report_path = spine_policy.get("report_path")
+        if not isinstance(report_path, str) or report_path != "build/reader_spine_report.json":
+            errors.append("reader_spine_validation.report_path must be build/reader_spine_report.json.")
+        minimum = spine_policy.get("minimum_chapter_word_count")
+        if not isinstance(minimum, int) or minimum < 100:
+            errors.append("reader_spine_validation.minimum_chapter_word_count must be an integer >= 100.")
+        validate_string_list(
+            "reader_spine_validation",
+            "hard_blocked_terms",
+            spine_policy.get("hard_blocked_terms"),
+            errors,
+        )
+        purpose = spine_policy.get("purpose")
+        if not isinstance(purpose, str) or not purpose.strip():
+            errors.append("reader_spine_validation.purpose must be a non-empty string.")
+
     audio_policy = data.get("audio_manuscript_policy")
     if isinstance(audio_policy, dict):
         if audio_policy.get("derived_from_profile") != "reader_release":
@@ -349,6 +370,11 @@ def main() -> None:
             or "python3 scripts/render_reader_formats.py --check" not in release_gate
         ):
             errors.append("reader_release release_gate must include render_reader_formats.py --check.")
+        if (
+            not isinstance(release_gate, list)
+            or "python3 scripts/validate_reader_spine.py --check" not in release_gate
+        ):
+            errors.append("reader_release release_gate must include validate_reader_spine.py --check.")
 
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):

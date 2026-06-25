@@ -19,6 +19,7 @@ REQUIRED = [
     "scripts/sync_proof_manifest.py",
     "scripts/validate_publication.py",
     "scripts/validate_release_profiles.py",
+    "scripts/validate_reader_spine.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
     "docs/book_outline.md",
@@ -319,9 +320,9 @@ def validate_publication_surface() -> None:
         sys.exit(result.returncode)
 
 
-def run_validator(script_name: str) -> None:
+def run_validator(script_name: str, *args: str) -> None:
     result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / script_name)],
+        [sys.executable, str(ROOT / "scripts" / script_name), *args],
         cwd=ROOT,
         text=True,
         stdout=subprocess.PIPE,
@@ -345,16 +346,7 @@ def main() -> None:
     validate_structure_proof_statuses(chapters)
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
-    result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "build_reader_edition.py"), "--check"],
-        cwd=ROOT,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    if result.returncode != 0:
-        print(result.stdout.strip())
-        sys.exit(result.returncode)
+    run_validator("validate_reader_spine.py", "--check")
     run_validator("validate_chapter_dod.py")
     run_validator("validate_visual_coverage.py")
     run_validator("validate_repeated_prose.py")

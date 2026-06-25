@@ -89,6 +89,7 @@ The live book remains the canonical source. Reader, research, and audio editions
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py --check
 python3 scripts/validate_release_profiles.py
+python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/validate_book.py
 quarto render --to html
@@ -98,6 +99,7 @@ quarto render --to html
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_spine.py --check
 ```
 
 3. Generate the local reader manuscript source:

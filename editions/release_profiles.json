@@ -111,6 +111,18 @@
       "mobi or azw3 converted from a reviewed EPUB with an external tool"
     ]
   },
+  "reader_spine_validation": {
+    "script": "scripts/validate_reader_spine.py",
+    "report_path": "build/reader_spine_report.json",
+    "minimum_chapter_word_count": 300,
+    "hard_blocked_terms": [
+      "drafting guardrail",
+      "codex test plan",
+      "claim-source mapping status",
+      "formalization hooks"
+    ],
+    "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine after live-only scaffolding is stripped."
+  },
   "audio_manuscript_policy": {
     "derived_from_profile": "reader_release",
     "generated_script_directory": "build/audio_script",
@@ -277,6 +289,7 @@
       ],
       "release_gate": [
         "python3 scripts/build_reader_edition.py --check",
+        "python3 scripts/validate_reader_spine.py --check",
         "python3 scripts/render_reader_formats.py --check",
         "reader manuscript is manually reviewed for narrative continuity",
         "EPUB render passes",

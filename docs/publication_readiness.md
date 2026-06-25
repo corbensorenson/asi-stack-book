@@ -17,7 +17,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
 - The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `READER_RELEASE_CHECKLIST.md` under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `READER_RELEASE_CHECKLIST.md` under ignored `build/`; `scripts/validate_release_profiles.py` validates profile definitions; and `scripts/validate_reader_spine.py` checks that the generated human-reader spine remains substantial after live-only scaffolding is stripped.
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and pronunciation glossary under ignored `build/` without claiming audio exists.
 - Future major-version research, reader, and audio releases have a dedicated public-safe record schema at `schemas/edition_release_record.schema.json`.
@@ -57,6 +57,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_release_profiles.py`.
 - Run `python3 scripts/build_reader_edition.py --check`.
+- Run `python3 scripts/validate_reader_spine.py --check`.
 - Run `python3 scripts/render_reader_formats.py --check`.
 - Run `python3 scripts/build_audio_script.py --check` when preparing an audio script or checking the full edition path.
 - Run `python3 scripts/validate_book.py`.
@@ -77,5 +78,5 @@ The public repository is presentable when:
 - GitHub Pages workflow passes.
 - Rendered site links are live.
 - Validation scripts pass locally.
-- Edition profiles validate and the reader-edition derivation check passes.
+- Edition profiles validate, the reader-edition derivation check passes, and the reader-spine check passes.
 - The working tree is clean after commit and push.
