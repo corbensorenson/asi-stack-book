@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 159 |
+| Passage-reviewed mappings recorded | 167 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -64,7 +64,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
-| `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
+| `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 0 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
@@ -394,15 +394,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
-| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_self_evolution_system` | mapped | note present | chapter listed | not passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |

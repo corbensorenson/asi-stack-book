@@ -1875,6 +1875,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A module lifecycle state machine and residual escrow ledger.
+- Exact Appendix C claim-source mappings for readiness gates: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected.
 - Implemented protocol validation: `readiness_gate_record` fixture validates public record shape only.
 - Implemented Lean predicate: promoted decisions require all required gates to pass.
 - Implemented Lean predicate: quarantined targets cannot be selected for ordinary execution routes.
