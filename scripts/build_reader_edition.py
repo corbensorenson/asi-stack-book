@@ -29,6 +29,13 @@ def load_json(path: Path) -> object:
         return json.load(f)
 
 
+def load_release_profiles() -> dict:
+    data = load_json(PROFILES_PATH)
+    if not isinstance(data, dict):
+        raise TypeError("editions/release_profiles.json must contain an object")
+    return data
+
+
 def yaml_string(value: object) -> str:
     return json.dumps("" if value is None else str(value))
 
@@ -70,9 +77,7 @@ def strip_sections(text: str, strip_headings: set[tuple[int, str]]) -> tuple[str
 
 
 def find_profile(profile_id: str) -> dict:
-    data = load_json(PROFILES_PATH)
-    if not isinstance(data, dict):
-        raise TypeError("editions/release_profiles.json must contain an object")
+    data = load_release_profiles()
     profiles = data.get("profiles", [])
     if not isinstance(profiles, list):
         raise TypeError("release profile file must contain a profiles list")
@@ -197,7 +202,78 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
     (output_dir / "_quarto.yml").write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_reader_manifest(output_dir: Path, summary: dict[str, object], profile: dict) -> None:
+def write_reader_checklist(
+    output_dir: Path,
+    profile: dict,
+    reader_policy: dict,
+    summary: dict[str, object],
+) -> str:
+    checklist_path = str(reader_policy.get("generated_checklist_path", "READER_RELEASE_CHECKLIST.md"))
+    quality_checks = reader_policy.get("ebook_quality_checks", [])
+    downstream_formats = reader_policy.get("optional_downstream_formats", [])
+    release_gate = profile.get("release_gate", [])
+
+    lines = [
+        "# Reader Release Checklist",
+        "",
+        "Status: generated checklist for major-version reader review.",
+        "",
+        "This workspace is derived from the living book. It is not the canonical source and it is not a published reader edition until review, renders, and release records say so.",
+        "",
+        "## Generated Source",
+        "",
+        f"- Profile: `{profile.get('id', 'reader_release')}`",
+        f"- Chapters: {summary['chapters']}",
+        f"- Files: {summary['files']}",
+        f"- Target formats: {', '.join(summary['formats'])}",
+        f"- Live-only sections removed: {sum(summary['removed_sections'].values())}",
+        "",
+        "## Required Gate",
+        "",
+    ]
+    for item in release_gate:
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Reader Review",
+        "",
+        "- [ ] Read the generated manuscript for chapter-to-chapter continuity.",
+        "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
+        "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
+        "- [ ] Check that glossary and bibliography are sufficient for interested human readers.",
+        "- [ ] Record residuals and non-claims in an edition release record.",
+        "",
+        "## E-Reader And Document Checks",
+        "",
+    ])
+    for item in quality_checks:
+        lines.append(f"- [ ] {item}")
+
+    if downstream_formats:
+        lines.extend(["", "## Optional Downstream Formats", ""])
+        for item in downstream_formats:
+            lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Non-Claims",
+        "",
+        "- This checklist does not claim EPUB, PDF, DOCX, AZW3, MOBI, or audio artifacts exist.",
+        "- This checklist does not promote any live-book claim support state.",
+        "- The live book remains the source of truth after any reader derivative is produced.",
+        "",
+    ])
+    (output_dir / checklist_path).write_text("\n".join(lines), encoding="utf-8")
+    return checklist_path
+
+
+def write_reader_manifest(
+    output_dir: Path,
+    summary: dict[str, object],
+    profile: dict,
+    reader_policy: dict,
+) -> None:
     manifest = {
         "schema_version": "0.1",
         "source_profile": profile.get("id", "reader_release"),
@@ -209,6 +285,9 @@ def write_reader_manifest(output_dir: Path, summary: dict[str, object], profile:
         "stripped_heading_policy": profile.get("strip_headings", []),
         "removed_sections": summary["removed_sections"],
         "reader_review_required": profile.get("reader_review_required", True),
+        "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
+        "ebook_quality_checks": reader_policy.get("ebook_quality_checks", []),
+        "optional_downstream_formats": reader_policy.get("optional_downstream_formats", []),
         "review_status": "review_required",
         "non_claims": [
             "This generated source tree is not the canonical living book.",
@@ -235,6 +314,10 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     structure = load_json(STRUCTURE_PATH)
     if not isinstance(structure, dict):
         raise TypeError("book_structure.json must contain an object")
+    profile_data = load_release_profiles()
+    reader_policy = profile_data.get("reader_manuscript_policy", {})
+    if not isinstance(reader_policy, dict):
+        raise TypeError("reader_manuscript_policy must be an object")
     profile = find_profile(profile_id)
     strip_headings = profile_strip_headings(profile)
 
@@ -284,7 +367,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "removed_sections": removed_totals,
         "formats": profile.get("publication_formats", []),
     }
-    write_reader_manifest(output_dir, summary, profile)
+    checklist_path = write_reader_checklist(output_dir, profile, reader_policy, summary)
+    summary["review_checklist"] = checklist_path
+    write_reader_manifest(output_dir, summary, profile, reader_policy)
     return summary
 
 
@@ -326,6 +411,8 @@ def main() -> None:
                 for violation in violations:
                     print(f" - {violation}")
                 raise SystemExit(1)
+            if not (output_dir / "READER_RELEASE_CHECKLIST.md").exists():
+                raise SystemExit("Reader edition check failed: missing READER_RELEASE_CHECKLIST.md.")
             print(
                 "Reader edition check passed: "
                 f"{summary['chapters']} chapters, {summary['files']} files, "

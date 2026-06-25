@@ -193,6 +193,9 @@ def main() -> None:
 
     reader_policy = data.get("reader_manuscript_policy")
     if isinstance(reader_policy, dict):
+        checklist = reader_policy.get("generated_checklist_path")
+        if not isinstance(checklist, str) or checklist != "READER_RELEASE_CHECKLIST.md":
+            errors.append("reader_manuscript_policy.generated_checklist_path must be READER_RELEASE_CHECKLIST.md.")
         validate_string_list(
             "reader_manuscript_policy",
             "retain_section_intent",
@@ -205,15 +208,46 @@ def main() -> None:
             reader_policy.get("continuity_requirements"),
             errors,
         )
+        validate_string_list(
+            "reader_manuscript_policy",
+            "ebook_quality_checks",
+            reader_policy.get("ebook_quality_checks"),
+            errors,
+        )
+        validate_string_list(
+            "reader_manuscript_policy",
+            "optional_downstream_formats",
+            reader_policy.get("optional_downstream_formats"),
+            errors,
+        )
 
     audio_policy = data.get("audio_manuscript_policy")
     if isinstance(audio_policy, dict):
         if audio_policy.get("derived_from_profile") != "reader_release":
             errors.append("audio_manuscript_policy.derived_from_profile must be reader_release.")
+        checklist = audio_policy.get("generated_checklist_path")
+        if not isinstance(checklist, str) or checklist != "AUDIO_RELEASE_CHECKLIST.md":
+            errors.append("audio_manuscript_policy.generated_checklist_path must be AUDIO_RELEASE_CHECKLIST.md.")
+        audio_formats = audio_policy.get("audio_artifact_formats")
+        if not isinstance(audio_formats, list):
+            errors.append("audio_manuscript_policy.audio_artifact_formats must be a list.")
+        else:
+            missing_audio_formats = {"mp3", "m4b", "audio-embedded-epub"} - set(audio_formats)
+            if missing_audio_formats:
+                errors.append(
+                    "audio_manuscript_policy.audio_artifact_formats is missing "
+                    f"{sorted(missing_audio_formats)}."
+                )
         validate_string_list(
             "audio_manuscript_policy",
             "review_requirements",
             audio_policy.get("review_requirements"),
+            errors,
+        )
+        validate_string_list(
+            "audio_manuscript_policy",
+            "spoken_treatment_rules",
+            audio_policy.get("spoken_treatment_rules"),
             errors,
         )
 

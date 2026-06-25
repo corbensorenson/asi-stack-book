@@ -149,8 +149,10 @@ The smallest useful implementation is a prototype phase schema and fixture. The 
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | planned |
-| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | planned |
+| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | implemented |
+| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | implemented |
+
+These Lean hooks are implemented as finite-record predicates over phase unlock and claim-promotion reviews. They prove only the record-level gates: dependent phases require declared passing acceptance gates, and a milestone cannot promote a claim without evidence artifacts. They do not prove that any prototype phase is complete, that dependent prototypes are safe to run, or that any capability claim has earned stronger support.
 
 ## Source crosswalk
 

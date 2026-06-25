@@ -17,9 +17,9 @@ This file tracks whether the public repository is ready for the next major phase
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
 - The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `READER_RELEASE_CHECKLIST.md` under ignored `build/`, and `scripts/validate_release_profiles.py` validates the profile definitions.
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
-- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, and pronunciation glossary under ignored `build/` without claiming audio exists.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and pronunciation glossary under ignored `build/` without claiming audio exists.
 - Future major-version research, reader, and audio releases have a dedicated public-safe record schema at `schemas/edition_release_record.schema.json`.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
@@ -42,11 +42,11 @@ This file tracks whether the public repository is ready for the next major phase
 - Source-derived claims require exact claim-level mapping from source notes before support-state promotion; the opening foundation/intent core claims and the evidence-discipline core claim are mapped examples, not promotion precedents.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
-- Most Lean proof targets now have finite-record implementations; Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`, with the remaining planned targets kept as research agenda items.
+- All 104 manifest proof targets now have finite-record Lean implementations and Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`; artifact-by-artifact proof audits remain planned and the finite-record modules do not prove broad system behavior.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized or source-noted.
 - The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.
-- Reader, research, PDF, EPUB, DOCX, and audio editions are planned and scaffolded, but no human-reader major-version artifact or audiobook should be reported until the corresponding generated manuscript, render, review, and release record exist.
+- Reader, research, PDF, EPUB, DOCX, AZW3, MOBI, and audio editions are planned and scaffolded, but no human-reader major-version artifact or audiobook should be reported until the corresponding generated manuscript, render or conversion, review, and release record exist.
 
 ## Manuscript Maintenance Checklist
 

@@ -17,7 +17,7 @@ The generated machine-readable manifest is `proofs/proof_manifest.json`.
 
 The proof triage file is `proofs/proof_triage.json`. It classifies each outline target as a near-term formal invariant, schema contract, process contract, or research-agenda item. Use it to avoid turning every chapter's conceptual claim into ceremonial Lean. The readiness validator cross-checks triage tags, chapter IDs, modules, root imports, formal targets, and target statuses against `proofs/proof_manifest.json`.
 
-Appendix E publishes a generated proof-target coverage summary from `proofs/proof_triage.json`. Treat that summary as coverage/accounting evidence only; planned targets still need their own artifacts before they can be marked implemented.
+Appendix E publishes a generated proof-target coverage summary from `proofs/proof_triage.json`. Treat that summary as coverage/accounting evidence only. The current manifest marks all 104 proof targets implemented as finite-record Lean candidates, but artifact-by-artifact audits still need to confirm that each predicate matches its intended boundary, limitations, and non-claims.
 
 ## What Belongs in Proofs
 
@@ -34,7 +34,7 @@ Good proof candidates:
 
 Avoid formalizing vague philosophical claims before they are translated into operational predicates.
 
-Targets marked `schema-contract`, `process-contract`, or `research-agenda` should not be marked implemented merely because prose exists. They need an executable schema, policy model, test harness, or better formal statement first.
+Targets should not be marked implemented merely because prose exists. They need an executable schema, policy model, test harness, Lean predicate, or better formal statement first, and an implemented finite-record predicate still does not prove broad system behavior, source correctness, or benchmark performance.
 
 ## What Belongs in Code
 

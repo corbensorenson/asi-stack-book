@@ -57,6 +57,8 @@ Write every chapter for three audiences without maintaining three separate books
 
 The reader-facing spine is the prose outside the headings listed in `editions/release_profiles.json` under `reader_release.strip_headings`. Do not put a caveat that changes the meaning of a claim only inside `Drafting guardrail`, `Source crosswalk`, `Codex test plan`, `Formalization hooks`, or `Claim-source mapping status`, because those sections are removed from reader and audio editions. Keep essential uncertainty in the main prose.
 
+Major-version reader and audio work stays downstream of the live book. Generated reader workspaces include `READER_RELEASE_CHECKLIST.md`; generated audio workspaces include `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Use those files to review continuity, e-reader behavior, spoken treatment of diagrams/tables/code, and release-record residuals before claiming EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
+
 ## Per-Chapter Definition of Done
 
 Each chapter must maintain these sections:
@@ -141,6 +143,6 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-These commands generate source workspaces only. Do not claim EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts until the specific render or audio-generation command succeeds and a release record under `release_records/` states the result.
+These commands generate source workspaces only. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts until the specific render, conversion, or audio-generation command succeeds and a release record under `release_records/` states the result.
 
 Then commit and push only tracked source, metadata, notes, scripts, and public-safe artifacts.

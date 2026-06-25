@@ -40,6 +40,6 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts have been rendered or generated until those commands actually run and a release record says so.
+The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts have been rendered, converted, or generated until those commands actually run and a release record says so.
 
-Generated reader workspaces include `reader_manifest.json`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`. These manifests document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.
+Generated reader workspaces include `reader_manifest.json` and `READER_RELEASE_CHECKLIST.md`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. These manifests and checklists document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.

@@ -20,7 +20,8 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
-- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, and pronunciation glossary under ignored `build/`.
+- `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -116,7 +117,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-Generated edition builds are written under `build/` and ignored by git. Do not claim EPUB, PDF, DOCX, or audio artifacts unless those specific render or generation commands have actually succeeded and a release record says so.
+Generated edition builds are written under `build/` and ignored by git. Reader builds include `READER_RELEASE_CHECKLIST.md`; audio builds include `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts unless those specific render, conversion, or audio-generation commands have actually succeeded and a release record says so.
 
 ## Dynamic Book Structure
 

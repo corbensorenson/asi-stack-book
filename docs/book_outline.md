@@ -43,6 +43,8 @@ The ordinary chapter prose is the reader-facing spine. It must still make sense 
 
 Major-version reader and audio editions are derivatives of the live book, not parallel manuscripts. Use `editions/release_profiles.json` as the machine-readable contract for content layers, strip rules, release gates, target formats, generated manifests, and non-claims.
 
+When drafting or revising chapters, preserve a continuous reader-facing spine before the live-only sections do their audit work. A future writing goal should be able to strip status blocks, source crosswalks, proof hooks, and Codex test plans while still leaving a coherent EPUB/PDF/DOCX manuscript and a narration-ready audio script path.
+
 ## Book-Level Throughline
 
 1. Define the stack, its boundaries, and why model scale alone is not an architecture.
@@ -2611,8 +2613,8 @@ Failure modes to cover:
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
-- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; many planned targets still need their next Lean, schema, policy-model, or research artifact.
-- Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming full proof-target coverage.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; artifact-by-artifact audits still need to verify that each implemented finite-record predicate matches its intended operational boundary and non-claims.
+- Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 104 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
@@ -2922,8 +2924,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | planned |
-| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | planned |
+| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | implemented |
+| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | implemented |
 
 ### Living Book Methodology
 

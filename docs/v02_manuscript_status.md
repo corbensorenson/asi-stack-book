@@ -1,6 +1,6 @@
 # v0.2 Manuscript Status
 
-Last updated: 2026-06-24
+Last updated: 2026-06-25
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
@@ -59,6 +59,7 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 - The bibliography-plan Lean proof targets are implemented in `AsiStackProofs.BibliographyPlan` as narrow finite-record predicates for source-ingestion and source-assignment gates.
 - The proof-carrying-claim, tribunal, procedural-memory, MoECOT-runtime, benchmark-ratchet, and Theseus-reference Lean proof targets are implemented in `AsiStackProofs.ProofCarryingClaims`, `AsiStackProofs.Tribunal`, `AsiStackProofs.ProceduralMemory`, `AsiStackProofs.MoECOTRuntime`, `AsiStackProofs.BenchmarkRatchets`, and `AsiStackProofs.TheseusReference` as narrow finite-record predicates for process artifact and promotion gates.
 - The policy-optimization Lean proof targets are implemented in `AsiStackProofs.PolicyOptimization` as narrow finite-record predicates for governed policy-update records and unverified-reward/missing-governance promotion blocking.
+- The prototype-roadmap Lean proof targets are implemented in `AsiStackProofs.PrototypeRoadmap` as narrow finite-record predicates for phase-unlock acceptance gates and evidence-required claim-promotion blocking.
 - `Policy Optimization and Learning from Feedback` is a manifest-driven Part IV chapter after Benchmark Ratchets, with a public-safe browser-note ingestion report, method-family taxonomy, stack-policy target map, external-literature queue, policy-update schema, fixture, diagram, test backlog, and explicit no-training-run/non-claim boundary.
 - The Project Theseus implementation-reference chapter and Circle proof-contract chapter now include Mermaid diagrams for their report and receipt boundaries.
 - Every chapter now includes at least one Mermaid interface, lifecycle, state, or evidence-flow diagram.
@@ -74,7 +75,7 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 - The compactness/compression/semantic-resource chapters now distinguish compact generative records, compression receipts, compressed artifact records, semantic node records, and resource budget fixtures from unimplemented codecs, utility probes, grounding benchmarks, load simulations, scheduler runs, and non-record-level Lean obligations.
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, model-quality evaluations, and non-record-level simulation proof claims.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
-- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage, 100 are implemented formal-invariant Lean candidates, and 4 remain planned across research routes.
+- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage and all 104 are implemented formal-invariant Lean candidates.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 389 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are exact source-to-claim and claim-to-mechanism mapping work, not support-state promotions.
 - Appendix C now includes a generated claim-source mapping column, with exact source-note maps recorded for the first foundation cluster (`asi-is-a-stack-not-a-model.core`, `the-efficient-asi-hypothesis.core`, `system-boundaries-and-authority.core`), `failure-modes-of-ungoverned-intelligence.core`, `evidence-states-and-claim-discipline.core`, and `human-intent-as-a-formal-input.core`; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
@@ -86,8 +87,7 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 
 - Most source-to-claim mappings still need explicit claim-level mapping from the source notes before support states can be promoted; the opening foundation/intent cluster and the evidence-discipline core claim are mapped examples.
 - Source-note coverage and chapter-listing coverage are no longer the main blockers for assigned sources; exact source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
-- Some Lean proof targets remain planned or triaged as research targets; 100 of 104 proof targets are currently marked implemented.
-- Artifact-by-artifact audits for the remaining planned proof targets still need to identify the next research, schema, or Lean artifact for each target.
+- Artifact-by-artifact audits for the implemented proof targets still need to confirm that each finite-record predicate remains aligned with its intended operational boundary, limitations, and non-claims.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized, including fast-generation, decoding-substrate, and policy-optimization/RL feedback queues.
 - The manuscript still needs hand revision after deeper source mining for remaining chapters so they can become less template-shaped and more source-specific without losing the stack contract.

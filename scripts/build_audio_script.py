@@ -94,11 +94,93 @@ Status: starter glossary for future audio review.
     (output_dir / "pronunciation_glossary.md").write_text(text, encoding="utf-8")
 
 
+def write_chapter_markers(output_dir: Path, script_files: list[str]) -> str:
+    marker_path = "chapter_markers.md"
+    lines = [
+        "# Chapter Markers",
+        "",
+        "Status: generated starter markers for future audio packaging.",
+        "",
+        "Replace placeholder times with final timecodes only after the reviewed script is recorded and checked.",
+        "",
+        "| Marker | Script file | Start time | Review note |",
+        "|---|---|---|---|",
+    ]
+    for index, script_file in enumerate(script_files, start=1):
+        lines.append(f"| {index} | `{script_file}` | TBD | Verify after audio render. |")
+    lines.append("")
+    (output_dir / marker_path).write_text("\n".join(lines), encoding="utf-8")
+    return marker_path
+
+
+def write_audio_checklist(
+    output_dir: Path,
+    audio_profile: dict,
+    audio_policy: dict,
+    script_files: list[str],
+) -> str:
+    checklist_path = str(audio_policy.get("generated_checklist_path", "AUDIO_RELEASE_CHECKLIST.md"))
+    review_requirements = audio_policy.get("review_requirements", [])
+    spoken_rules = audio_policy.get("spoken_treatment_rules", [])
+    release_gate = audio_profile.get("release_gate", [])
+    artifact_formats = audio_policy.get("audio_artifact_formats", [])
+
+    lines = [
+        "# Audio Release Checklist",
+        "",
+        "Status: generated checklist for narration-script review.",
+        "",
+        "This workspace is a script-preparation artifact derived from the reader edition. It is not an audiobook, and it does not produce audio files.",
+        "",
+        "## Generated Script",
+        "",
+        f"- Profile: `{audio_profile.get('id', 'audio_release')}`",
+        f"- Script files: {len(script_files)}",
+        f"- Target audio artifacts: {', '.join(artifact_formats)}",
+        "",
+        "## Required Gate",
+        "",
+    ]
+    for item in release_gate:
+        lines.append(f"- [ ] {item}")
+
+    lines.extend(["", "## Review Requirements", ""])
+    for item in review_requirements:
+        lines.append(f"- [ ] {item}")
+
+    lines.extend(["", "## Spoken Treatment Rules", ""])
+    for item in spoken_rules:
+        lines.append(f"- [ ] {item}")
+
+    lines.extend([
+        "",
+        "## Packaging Checks",
+        "",
+        "- [ ] Replace generated narration notes for tables, diagrams, images, code, and schemas with reviewed spoken text or companion-note references.",
+        "- [ ] Fill chapter markers with final timecodes after audio generation.",
+        "- [ ] Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
+        "- [ ] Verify an audio-embedded EPUB actually contains the reviewed audio files before naming it in a release record.",
+        "",
+        "## Non-Claims",
+        "",
+        "- This checklist does not claim any MP3, M4B, or audio-embedded EPUB exists.",
+        "- This checklist does not claim narration quality, pronunciation quality, or accessibility quality.",
+        "- The reviewed reader edition remains the source for audio adaptation.",
+        "",
+    ])
+    (output_dir / checklist_path).write_text("\n".join(lines), encoding="utf-8")
+    return checklist_path
+
+
 def generate(output_dir: Path) -> dict[str, object]:
     with tempfile.TemporaryDirectory(prefix="asi-reader-for-audio-") as temp_dir:
         reader_dir = Path(temp_dir) / DEFAULT_READER_TEMP_NAME
         reader_summary = build_reader_edition.generate(reader_dir, "reader_release")
+        profile_data = build_reader_edition.load_release_profiles()
         audio_profile = build_reader_edition.find_profile("audio_release")
+        audio_policy = profile_data.get("audio_manuscript_policy", {})
+        if not isinstance(audio_policy, dict):
+            raise TypeError("audio_manuscript_policy must be an object")
 
         if output_dir.exists():
             shutil.rmtree(output_dir)
@@ -113,6 +195,8 @@ def generate(output_dir: Path) -> dict[str, object]:
             script_files.append(str(target.relative_to(output_dir)))
 
         write_pronunciation_glossary(output_dir)
+        chapter_markers = write_chapter_markers(output_dir, script_files)
+        review_checklist = write_audio_checklist(output_dir, audio_profile, audio_policy, script_files)
 
         manifest = {
             "schema_version": "0.1",
@@ -123,6 +207,12 @@ def generate(output_dir: Path) -> dict[str, object]:
             "output_dir": str(output_dir),
             "script_files": script_files,
             "pronunciation_glossary": "pronunciation_glossary.md",
+            "chapter_markers": chapter_markers,
+            "audio_review_checklist": review_checklist,
+            "audio_artifact_formats": audio_policy.get("audio_artifact_formats", []),
+            "audio_in_epub_rule": audio_policy.get("audio_in_epub_rule", ""),
+            "review_requirements": audio_policy.get("review_requirements", []),
+            "spoken_treatment_rules": audio_policy.get("spoken_treatment_rules", []),
             "review_status": "review_required",
             "non_claims": [
                 "This generated workspace is not an audiobook.",
@@ -148,6 +238,10 @@ def main() -> None:
             manifest = generate(Path(temp_dir))
             if not manifest["script_files"]:
                 raise SystemExit("Audio script check failed: no script files generated.")
+            if not (Path(temp_dir) / "AUDIO_RELEASE_CHECKLIST.md").exists():
+                raise SystemExit("Audio script check failed: missing AUDIO_RELEASE_CHECKLIST.md.")
+            if not (Path(temp_dir) / "chapter_markers.md").exists():
+                raise SystemExit("Audio script check failed: missing chapter_markers.md.")
             if manifest["review_status"] != "review_required":
                 raise SystemExit("Audio script check failed: generated manifest must require review.")
             print(

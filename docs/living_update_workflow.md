@@ -106,6 +106,8 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/build_reader_edition.py
 ```
 
+Review `build/reader_edition/READER_RELEASE_CHECKLIST.md` alongside the generated manuscript.
+
 4. Attempt selected local reader renders and write a render report:
 
 ```bash
@@ -132,7 +134,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-3. Review `build/audio_script/` and replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
+3. Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md` and `build/audio_script/chapter_markers.md`, then replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
 4. Keep the pronunciation glossary current.
 5. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.
 6. Add an `edition_release` record under `release_records/` that lists exactly which audio artifacts were produced and checked.

@@ -995,20 +995,20 @@
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
-      "target_status": "planned",
-      "triage": "research-agenda",
-      "recommended_route": "defer-until-narrowed",
-      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite phase-unlock predicate: dependent phases require declared passing acceptance gates before unlock."
     },
     {
       "tag": "lean:roadmap.phases.failure_blocks_promotion",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
-      "target_status": "planned",
-      "triage": "research-agenda",
-      "recommended_route": "defer-until-narrowed",
-      "rationale": "Initial triage: this target records a research or roadmap commitment and should not be treated as near-term Lean until narrowed to an operational predicate."
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite claim-promotion predicate: a phase milestone cannot promote a claim without evidence artifacts."
     },
     {
       "tag": "lean:living_book.methodology.operational_invariant",

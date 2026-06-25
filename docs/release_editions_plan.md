@@ -53,7 +53,7 @@ python3 scripts/build_reader_edition.py
 
 The generated tree is ignored by git. Review it before rendering release artifacts.
 
-Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, and non-claims. The manifest is a release-preparation aid; it is not evidence that any ebook or PDF has been rendered.
+Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, e-reader quality checks, downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, and release-record residuals. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
 
 From `build/reader_edition/`, later release runs can attempt specific formats:
 
@@ -135,7 +135,7 @@ Embedding audio into an EPUB is allowed only when the produced EPUB actually con
 
 The generated audio script is a review workspace, not an audiobook. It marks tables, diagrams, images, code, and schemas for spoken treatment so they are not silently omitted.
 
-The generated audio workspace includes `audio_manifest.json`, which records that the script was derived from the reader release path and still requires review before any MP3, M4B, or audio-embedded EPUB can be claimed.
+The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. The manifest records that the script was derived from the reader release path and still requires review before any MP3, M4B, or audio-embedded EPUB can be claimed. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
 
 ## Major Version Rule
 
