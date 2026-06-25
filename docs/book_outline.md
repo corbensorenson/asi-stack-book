@@ -576,6 +576,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A value-conflict record schema and scenario library.
+- Exact Appendix C claim-source mappings for the value-conflict core claim across recursive-agency governance, alignment lineage, connector synthesis, UAT review mechanics, Spinoza belief revision, and the AI Constitution source; five mappings (`ethica_mechanica`, `alignment_field`, `uat`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending value-conflict classification, review-escalation, residual-uncertainty preservation, reviewer-quality, or runtime-policy evidence.
 - Planned Codex test: Value conflict classification test.
 - Planned Codex test: Review escalation test.
 - Planned Codex test: Residual uncertainty preservation test.

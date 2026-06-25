@@ -1499,12 +1499,32 @@
             {
               "source_id": "ethica_mechanica",
               "mapped_support": "Frames agency, contestability, recursive correction, constitutional failure, and objections as reasons to preserve disputed values rather than freeze one authority layer.",
-              "limits": "Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result."
+              "limits": "Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ethica_mechanica.txt:78-95",
+                "sources/raw/google_docs/ethica_mechanica.txt:100-111",
+                "sources/raw/google_docs/ethica_mechanica.txt:116-120",
+                "sources/raw/google_docs/ethica_mechanica.txt:145-168",
+                "sources/raw/google_docs/ethica_mechanica.txt:186-207"
+              ],
+              "passage_review_note": "Reviewed local raw cache for human-defined values over AI logistics, veil-of-ignorance framing, exit/fork and dissent rights, explicit stress-test objections, contradiction exploration, audit/exit practices, hard-coded rights, and value-update rejection on rights contradiction; conceptual governance lineage only."
             },
             {
               "source_id": "alignment_field",
               "mapped_support": "Supplies the chapter vocabulary for value conflict, suffering, dignity, agency, moral thresholds, coherence, and constraints under uncertainty.",
-              "limits": "Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness."
+              "limits": "Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:288-302",
+                "sources/raw/google_docs/alignment_field.txt:489-513",
+                "sources/raw/google_docs/alignment_field.txt:523-560",
+                "sources/raw/google_docs/alignment_field.txt:620-646",
+                "sources/raw/google_docs/alignment_field.txt:947-982",
+                "sources/raw/google_docs/alignment_field.txt:1679-1687",
+                "sources/raw/google_docs/alignment_field.txt:1736-1747"
+              ],
+              "passage_review_note": "Reviewed local raw cache for value conflict as internal contradiction/residual uncertainty, structural conflict from competing local attractors, suffering as misalignment information under uncertainty, expanded moral scope, harm/value definitions, anti-sacrifice constraints, value pluralism, consent, and feedback limits; speculative and heuristic material only, no moral-status metric or value-correctness validation promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -1514,17 +1534,57 @@
             {
               "source_id": "uat",
               "mapped_support": "Provides adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims.",
-              "limits": "Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds."
+              "limits": "Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:130-153",
+                "sources/raw/google_docs/uat.txt:187-207",
+                "sources/raw/google_docs/uat.txt:224-247",
+                "sources/raw/google_docs/uat.txt:256-276",
+                "sources/raw/google_docs/uat.txt:291-293",
+                "sources/raw/google_docs/uat.txt:451-453"
+              ],
+              "passage_review_note": "Reviewed local raw cache for UAT as SME force multiplier rather than truth machine, retrieval-dossier boundary, verified/inferred/unsupported proposition states, SME review flags, unsupported-claim deletion, red-team logic/citation/omission attacks, double-lock termination, compression preservation, and correlated-hallucination/decomposition/plateau risks; protocol design only, no local pipeline or benchmark promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports explicit support tiers, contradiction detection, belief revision, defeaters, downgrades, and non-assumption that open-domain formalization is solved.",
-              "limits": "Does not settle moral uncertainty or prove reviewer/verifier correctness."
+              "limits": "Does not settle moral uncertainty or prove reviewer/verifier correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-235",
+                "sources/raw/google_docs/spinoza.txt:351-365",
+                "sources/raw/google_docs/spinoza.txt:383-389",
+                "sources/raw/google_docs/spinoza.txt:402-451",
+                "sources/raw/google_docs/spinoza.txt:539-541",
+                "sources/raw/google_docs/spinoza.txt:647-653",
+                "sources/raw/google_docs/spinoza.txt:713-718",
+                "sources/raw/google_docs/spinoza.txt:730-734",
+                "sources/raw/google_docs/spinoza.txt:757-764",
+                "sources/raw/google_docs/spinoza.txt:772-808",
+                "sources/raw/google_docs/spinoza.txt:841-865"
+              ],
+              "passage_review_note": "Reviewed local raw cache for explicit formal-scope limits, tier-labeled outputs, unsupported-in-current-scope responses, contradiction-as-revision events, bounded/auditable AGM-style revision, formalization error risk, separation of proposer/verifier/belief-maintainer roles, enforced tiers, tier collapse prevention, and schema/axiom governance; does not settle moral uncertainty or reviewer/verifier quality."
             },
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports runtime checks for stakeholders, uncertainty, consent, reversibility, least sufficient power, truth/relation/task tensions, and non-domination.",
-              "limits": "No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts."
+              "limits": "No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:52-56",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:99-103",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:155-201",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:213-241",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:284-339",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:666-739",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:839-839",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:948-954",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1011-1025"
+              ],
+              "passage_review_note": "Reviewed tracked local-project source for non-executable constitutional status, alignment as truth/relation/task tensor rather than scalar, moral caution under uncertainty, truth/consent/scope/power definitions, directive priority under lower-level conflicts, tensor questions, moral patienthood uncertainty, conflict-resolution priority order, runtime stakeholder/uncertainty/agency/reversibility checks, default-under-uncertainty behavior, and moral-uncertainty articles; specification only, no policy-engine or red-team result promoted."
             }
           ]
         },

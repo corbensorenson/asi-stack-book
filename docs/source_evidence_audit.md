@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 47 |
+| Passage-reviewed mappings recorded | 52 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -41,7 +41,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
 | `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
+| `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
@@ -255,12 +255,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `eternal_code` | mapped | note present | chapter listed | passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
 | `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | not passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `uat` | mapped | note present | chapter listed | not passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `uat` | mapped | note present | chapter listed | passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `ethica_mechanica` | mapped | note present | chapter listed | not passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `coherence_exchange` | mapped | note present | chapter listed | not passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |

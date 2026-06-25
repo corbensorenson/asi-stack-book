@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Claim-level source mappings now exist for all assigned sources, but support remains at argument until source passages, tests, or runtime artifacts justify promotion."
+  - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
   - "The value_conflict_record fixture validates schema/example consistency only; value-conflict classification, review escalation, and residual-uncertainty tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -30,12 +30,12 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
-| Source loading state | source notes: `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution`; raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
 | Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; value-conflict classification, review escalation, and residual-uncertainty preservation tests remain planned. |
 
 ## Drafting guardrail
@@ -62,11 +62,11 @@ The failure is false consensus: the system acts as if a contested value question
 
 [moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
 
-The claim remains at `argument` support. Ethica Mechanica and Alignment Field provide the value-conflict vocabulary, UAT provides adversarial review mechanics, and Spinoza provides downgrade discipline. The chapter does not turn any one source into a final moral authority.
+The claim remains at `argument` support. Five mappings now carry reviewed passage references: Ethica Mechanica for human-defined values over AI logistics, veil-of-ignorance framing, exit/fork, dissent, contradiction exploration, and hard-coded rights checks; Alignment Field for value conflict as residual uncertainty, structural conflict from competing local attractors, suffering as misalignment information, expanded moral scope, anti-sacrifice constraints, value pluralism, consent, and feedback limits; UAT for retrieval-bounded proposition states, SME review flags, unsupported-claim deletion, adversarial review, and double-lock termination; Spinoza for formal-scope limits, enforced support tiers, unsupported-in-current-scope responses, contradiction-as-revision events, bounded belief revision, and schema/axiom governance; and the Field of God AI Constitution for tensor conflict handling, moral caution under uncertainty, stakeholder/scope/reversibility checks, and default-under-uncertainty behavior. `coherence_exchange` remains connector-only/source-note mapped. The chapter does not turn any one source into a final moral authority.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core value-conflict claim to every assigned source note. The mappings support explicit recordkeeping, review, and downgrade discipline for unresolved conflicts, not a solved moral theory or an implemented conflict-resolution system.
+Appendix C now maps this core value-conflict claim to every assigned source note. Five mappings include reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped. The mappings support explicit recordkeeping, review, and downgrade discipline for unresolved conflicts, not a solved moral theory or an implemented conflict-resolution system.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -173,14 +173,14 @@ These Lean hooks are implemented as finite-record predicates over conflict decis
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw cache available |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw cache available |
+| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw-cache passages reviewed for this chapter |
+| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw-cache passages reviewed for this chapter |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw cache available |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available |
+| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw-cache passages reviewed for this chapter |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw-cache passages reviewed for this chapter |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available; tracked local-project source passages reviewed for this chapter |
 
-The crosswalk names the sources for conflict vocabulary and review mechanics. It does not settle the conflicts it records.
+The crosswalk names the sources for conflict vocabulary and review mechanics. Passage-reviewed mappings make the drafting trail tighter, but they do not settle the conflicts the chapter records.
 
 ## Summary
 
