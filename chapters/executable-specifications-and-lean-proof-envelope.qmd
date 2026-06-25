@@ -165,3 +165,5 @@ These Lean hooks are implemented as local finite-record predicates for proof-tar
 ## Summary
 
 The proof envelope keeps formality useful by keeping it small, operational, and honest. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.
+
+The next chapter applies the same separation to performance pressure. A benchmark result can raise confidence only when its run record, baseline, residuals, regression floor, and anti-Goodhart checks are explicit.

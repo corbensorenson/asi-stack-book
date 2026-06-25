@@ -9,7 +9,7 @@
 ::: {.living-dashboard}
 <div>
 <strong>Book state</strong>
-<span>v0.2 manuscript draft across 50 chapters</span>
+<span>v0.2 manuscript draft across 54 chapters; v1.0 improvement pass active</span>
 </div>
 <div>
 <strong>Sources</strong>
@@ -21,7 +21,7 @@
 </div>
 <div>
 <strong>Tests</strong>
-<span>Chapter tests planned; schema fixtures validated</span>
+<span>Schema fixtures and finite-record Lean predicates validated; behavioral tests mostly planned</span>
 </div>
 :::
 
@@ -54,6 +54,27 @@ flowchart LR
 ```
 
 Every arrow is meant to become an interface, not just a metaphor. The book is organized so each chapter owns one boundary: what enters it, what artifact it emits, what invariants must hold, what can fail, and what evidence would justify stronger claims.
+
+## Dependency spine
+
+The chapter list is dynamic, but the argument should remain stable when chapters are inserted, moved, split, or merged. The living spine is the dependency order below: governance defines what may happen, operational layers lower intent into work, evidence decides what can improve, and the release layer keeps the book itself honest.
+
+```{mermaid}
+flowchart TD
+  Unit["Stack as unit of analysis"] --> AuthorityModel["Boundaries, authority, and failures"]
+  AuthorityModel --> EvidenceLanguage["Evidence states and claim discipline"]
+  EvidenceLanguage --> IntentLayer["Human intent, constitution, agency, and value conflict"]
+  IntentLayer --> ChangeRights["Governance rights, stable fields, replacement, security, and RSI gates"]
+  ChangeRights --> ControlSpine["Intent contracts, commands, plans, semantic IR, and context ABI"]
+  ControlSpine --> EpistemicSpine["Context adequacy, claim ledgers, proof-carrying claims, and tribunal review"]
+  EpistemicSpine --> ExecutionSpine["Typed jobs, artifacts, adapters, and procedural memory"]
+  ExecutionSpine --> CapabilitySpine["Routing, readiness gates, MoECOT, and personal compute hives"]
+  CapabilitySpine --> EfficiencySpine["Compact generation, compression, fast generation, semantic representation, and resource budgets"]
+  EfficiencySpine --> SubstrateSpine["Simulation, search substrates, Circle contracts, coil memory, and cyclic mixers"]
+  SubstrateSpine --> EvidenceSpine["Executable specs, benchmarks, policy optimization, and artifact stewards"]
+  EvidenceSpine --> IntegrationSpine["Integrated reference architecture, Theseus reference path, prototype roadmap, living method, and research backlog"]
+  IntegrationSpine --> EvidenceLanguage
+```
 
 ## Reading path
 

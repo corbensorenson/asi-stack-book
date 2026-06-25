@@ -164,3 +164,5 @@ These Lean hooks are implemented as finite-record predicates over capability-pro
 ## Summary
 
 Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.
+
+The next chapter asks how that pressure changes future behavior. Policy optimization is allowed to learn from rewards, preferences, verifier outputs, and benchmark signals only when the update preserves provenance, rollback, and governance gates.
