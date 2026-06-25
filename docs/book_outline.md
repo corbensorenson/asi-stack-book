@@ -726,6 +726,7 @@ Draft arc:
 - Interface: SCF ledger defines the field identity to preserve.
 - Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
 - Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
+- Exact Appendix C claim-source mappings for the core replacement claim across SCF field identity, RMI modular ratchets, Benchmaxxing benchmark lifecycle, Cognitive Loop Closure procedural lifecycle, Talos audit/replay context, and MoECOT runtime-reference context; five local mappings (`scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending regression-preservation tests, rollback dry runs, monitor-window evidence, artifact replay, or deployed replacement evidence.
 
 Primary invariants:
 

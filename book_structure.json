@@ -1969,27 +1969,76 @@
             {
               "source_id": "scf",
               "mapped_support": "Supplies the field identity, implementation artifact, qualification, state migration, lifecycle, evaluator-integrity, and rollback vocabulary that a replacement transaction must preserve.",
-              "limits": "Does not prove a real replacement has executed, recovered, or resisted evaluator capture."
+              "limits": "Does not prove a real replacement has executed, recovered, or resisted evaluator capture.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-48",
+                "sources/raw/google_docs/scf.txt:53-56",
+                "sources/raw/google_docs/scf.txt:108-122",
+                "sources/raw/google_docs/scf.txt:1425-1442",
+                "sources/raw/google_docs/scf.txt:1576-1603",
+                "sources/raw/google_docs/scf.txt:1715-1823"
+              ],
+              "passage_review_note": "Reviewed local raw cache for field identity, replaceable implementations, exact qualification, state-migration solvency, evaluator separation, canary/recovery lifecycle, residual effects, and change-classification boundaries; no deployed replacement, recovery, or evaluator-capture resistance claim is promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports moving a frontier while preserving regression floors, residual escrow, specialist lifecycle discipline, critical-failure vetoes, and route/arm retirement decisions.",
-              "limits": "Conceptual framework only; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this note."
+              "limits": "Conceptual framework only; no independent reproduction, benchmark run, prototype inspection, or Lean proof was performed from this note.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:14-27",
+                "sources/raw/google_docs/rmi.txt:72-82",
+                "sources/raw/google_docs/rmi.txt:95-102",
+                "sources/raw/google_docs/rmi.txt:737-842",
+                "sources/raw/google_docs/rmi.txt:1032-1070",
+                "sources/raw/google_docs/rmi.txt:1083-1189"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark ratcheting, frontier/floor preservation, residual escrow, critical-failure vetoes, specialist add/split/merge/retire lifecycle, and benchmark/model/tool/residual ledgers; no benchmark result, router run, or modular-system prototype claim is promoted."
             },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, regression promotion, residual ledgers, and architecture-change discipline.",
-              "limits": "No benchmark harness, mutation, holdout, or empirical run was performed in this repo."
+              "limits": "No benchmark harness, mutation, holdout, or empirical run was performed in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:20-68",
+                "sources/raw/google_docs/benchmaxxing.txt:310-357",
+                "sources/raw/google_docs/benchmaxxing.txt:559-635",
+                "sources/raw/google_docs/benchmaxxing.txt:857-883",
+                "sources/raw/google_docs/benchmaxxing.txt:898-970",
+                "sources/raw/google_docs/benchmaxxing.txt:1231-1287"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark pressure, saturation-to-regression promotion, harder frontiers, private holdouts, mutation, contamination audits, architecture-change preconditions, benchmark/model ledgers, and ratchet enforcement; no benchmark harness, holdout, mutation, or empirical run is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports verified tool/procedure lifecycle, loop detection, tool cards, runtime monitoring, revision, retirement, and risk-tiered procedural memory.",
-              "limits": "No local loop-detection, tool synthesis, or verification harness was executed here."
+              "limits": "No local loop-detection, tool synthesis, or verification harness was executed here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:11-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:532-607",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1407-1529",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1764-1815",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1895-1904"
+              ],
+              "passage_review_note": "Reviewed local raw cache for repeated trajectory compression, verifier and tool-registry fields, runtime monitoring, candidate-to-retired lifecycle, risk-tiered approval, audit logs, sandbox/dry-run activation, and rollback as a high-impact safeguard; no loop detector, tool synthesizer, or verification harness result is promoted."
             },
             {
               "source_id": "talos",
-              "mapped_support": "Supports replacement as auditable work: typed jobs, contract locks, adjudication, delivery evidence, feedback, replay, residuals, and controlled promotion.",
-              "limits": "Does not prove real replacement execution, approval behavior, or runtime enforcement."
+              "mapped_support": "Supports replacement as auditable work: job records, verification policies, artifact claim/evidence bindings, proof bundles, replay, hashed logs, human adjudication, and residual uncertainty.",
+              "limits": "Does not prove real replacement execution, approval behavior, runtime enforcement, or artifact replay in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5792-5819",
+                "sources/raw/google_docs/talos.txt:5866-5896",
+                "sources/raw/google_docs/talos.txt:6204-6246",
+                "sources/raw/google_docs/talos.txt:6309-6358",
+                "sources/raw/google_docs/talos.txt:6401-6426",
+                "sources/raw/google_docs/talos.txt:6480-6507"
+              ],
+              "passage_review_note": "Reviewed local raw cache for deterministic/auditable job execution, artifact claim/evidence/proof-bundle fields, bounded verification policies, hashed I/O, replay/audit, human adjudication, and residual uncertainty; narrowed the mapping away from unverified controlled-promotion claims."
             },
             {
               "source_id": "moecot",
