@@ -1196,6 +1196,7 @@ Draft deliverables:
 - A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
 - Implemented protocol validation: `context_abi_record` fixture validates public record shape only.
 - Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
+- Exact Appendix C claim-source mappings for the Virtual Context ABI claim across VCM public-v1 control-plane/ABI vocabulary, Context Engineer context-supply-chain pressure, Verification Bandwidth adequacy limits, VIEA context allocation and execution-spine integration, editable VCM refinement context, and MoECOT runtime-reference context; the four local mappings (`vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`) now have reviewed passage references. `vcm_editable` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending resolver behavior, adequacy classification, context compiler traces, VCM conformance artifacts, model-facing results, benchmark reproduction, or accepted evidence transitions.
 - Planned Codex test: Admission vs adequacy test.
 - Planned Codex test: Conflict adequacy classification test.
 - Implemented Lean proof target: mandatory context misses produce typed faults instead of best-effort packets.

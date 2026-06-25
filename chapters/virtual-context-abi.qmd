@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until resolver, context compiler, adequacy classifier, or VCM conformance tests exist."
+  - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` and `moecot` remain connector/source-note mapped, and support remains argument until resolver, context compiler, adequacy classifier, or VCM conformance tests exist."
   - "Only protocol schema/fixture validation is implemented; no VCM resolver or context compiler tests have been run for this chapter."
   - "Lean coverage is limited to finite context-reference and lookup records; real resolver, adequacy classifier, and context compiler behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/source-note only: `vcm_editable`, `moecot` |
 | Test state | Context ABI fixture validation and `AsiStackProofs.VirtualContextABI` finite-record proofs are implemented; resolver and compiler tests remain planned. |
 
 ## Drafting guardrail
@@ -67,22 +67,24 @@ The claim remains at `argument` support. VCM public v1 supplies the ABI, source 
 
 ### Claim-source mapping status
 
-Appendix C now maps this VCM ABI claim to all assigned source notes. The mappings support addresses, versions, mounts, snapshots, representation contracts, adequacy states, and typed faults as a control interface, not a deployed resolver or model-facing VCM result.
+Appendix C maps this VCM ABI claim to all assigned source notes. Four local raw-cache mappings are now passage-reviewed. The mappings support addresses, versions, mounts, snapshots, representation contracts, adequacy states, and typed faults as a control interface, not a deployed resolver, adequacy classifier, context compiler, or model-facing VCM result. `vcm_editable` and `moecot` remain connector/source-note mapped until durable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `vcm_public` | Compiled working context over a versioned semantic address space with semantic objects, content versions, representations, validations, packets, materializations, source/authority binding, adequacy/admission separation, snapshot coherence, revocation, invalidation, audits, and typed non-success states. | No local resolver, context compiler, VCM-Bench run, or end-to-end superiority result exists here. |
-| `context_engineer` | Context supply chains with a governor, layered memory, briefer agents, structured mission briefs, clearance levels, context shards, memory masks, allowed tools, Digital SCIFs, zeroization, sanitized commits, and information-flow controls. | Reported hallucination, leak, cost, and latency benchmark claims are source-reported only. |
-| `verification_bandwidth` | Context admission must stay separate from verification adequacy because long context, semantic-unit comparison, attention budget, transitive decay, and summary loss constrain verification. | The proposed contradiction-rate or adequacy tests have not been run or mechanized here. |
-| `viea` | Context materializations feed the intent-to-execution spine through artifacts, ledgers, residuals, runtime adapters, feedback, tools, benchmarks, and regressions. | No deployed context handoff, runtime adapter, or verified VIEA execution trace exists in this repo. |
-| `vcm_editable` | Refines ABI terminology around stable addresses, mounts, snapshots, materializations, representation graphs, certificates, protected compilation, authority non-escalation, semantic paging, transactions, and benchmark agenda. | Connector-readable refinement only; no local VCM-Bench or model-facing result is recorded. |
-| `moecot` | Runtime-reference context for governed orchestration with specialist lanes, fail-closed ledgers, replay, handoff, readiness gates, promotion blockers, and residual tracking. | Runtime and benchmark artifacts have not been imported, inspected, or reproduced. |
+| `vcm_public` | Passage-reviewed: compiled working context over a versioned semantic address space, semantic object/version/representation/validation/packet/materialization identities, source/authority binding, role-indexed obligations, adequacy/admission separation, protected compilation, semantic faults, snapshot/revocation/invalidation coherence, signed protocol boundaries, conformance coverage, and core record fields. | No local resolver, context compiler, VCM-Bench run, frozen-model result, or end-to-end superiority result exists here. |
+| `context_engineer` | Passage-reviewed: context supply chains with a governor between planner and worker, layered memory, briefer agents, structured mission briefs, clearance levels, context shards, memory masks, allowed tools, Digital SCIF lifecycle, zeroization, sanitized commits, and information-flow controls. | Reported hallucination, leak, cost, and latency benchmark claims are source-reported only; no harness, raw runs, leak result, latency result, or security result is reproduced here. |
+| `verification_bandwidth` | Passage-reviewed: context admission must stay separate from verification adequacy because long context, effective verification workspace, semantic-unit comparison, pairwise grinding, attention budget, transitive decay, summary loss, and contradiction-rate testing constrain verification. | The proposed contradiction-rate or adequacy tests have not been run or mechanized here. |
+| `viea` | Passage-reviewed: context materializations feed the intent-to-execution spine through structured command contracts, artifact graphs, specialist routing, context allocation, permission envelopes, claim/verification ledgers, residuals, runtime adapters, feedback, tools, benchmarks, and active-context selection. | No deployed context handoff, runtime adapter, verified VIEA execution trace, or reproduced benchmark exists in this repo. |
+| `vcm_editable` | Connector/source-note mapped: refines ABI terminology around stable addresses, mounts, snapshots, materializations, representation graphs, certificates, protected compilation, authority non-escalation, semantic paging, transactions, and benchmark agenda. | Connector-readable refinement only; no local VCM-Bench or model-facing result is recorded. |
+| `moecot` | Connector/source-note mapped: runtime-reference context for governed orchestration with specialist lanes, fail-closed ledgers, replay, handoff, readiness gates, promotion blockers, and residual tracking. | Runtime and benchmark artifacts have not been imported, inspected, or reproduced. |
 
 ## Mechanism
 
 After semantic IR defines the atoms that need evidence, VCM defines how context is addressed and materialized for those atoms. VCM public v1 supplies semantic objects, immutable versions, representations, validations, materializations, source/authority binding, adequacy/admission separation, and typed non-success states. Context Engineer frames context as a need-to-know supply chain. Verification Bandwidth explains why admitted context can still be inadequate for a claim. VIEA ties materializations back to artifacts and ledgers, while editable VCM and MoECOT provide refinement and runtime-reference pressure without becoming local resolver evidence.
 
 A Context ABI Record is the contract that keeps those concerns from collapsing into a raw retrieval dump.
+
+The reviewed passages sharpen the chapter's negative claim. VCM public v1 justifies a record-level ABI and fault vocabulary; Context Engineer justifies the supply-chain and compartmentalization pressure; Verification Bandwidth justifies treating admitted context as potentially verification-inadequate; VIEA justifies the handoff into specialists, permission envelopes, ledgers, and runtime targets. None of those passages show this repository resolving semantic addresses, classifying adequacy correctly, compiling context packets under load, reproducing VCM-Bench, or validating source-reported hallucination, leak, cost, latency, or runtime claims.
 
 ```{mermaid}
 flowchart LR
@@ -184,14 +186,14 @@ These proof hooks are implemented only over finite Lean context-reference and lo
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache available |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
+| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache passage-reviewed |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for the VCM ABI and context-supply-chain vocabulary. It does not claim the repo has reproduced VCM conformance artifacts or benchmark results.
+The crosswalk identifies sources for the VCM ABI and context-supply-chain vocabulary. Four mappings have passage review, but the core claim stays at `argument` because connector mappings remain unreviewed and resolver behavior, adequacy classification, context compilation, VCM conformance artifacts, model-facing results, and benchmark claims remain unpromoted.
 
 ## Summary
 
