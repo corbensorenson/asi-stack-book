@@ -122,6 +122,59 @@
       "Reader releases are for relaxed human reading; audio releases are separate listening artifacts derived from a reviewed reader script, not from the live research scaffold."
     ]
   },
+  "human_consumption_bundle_policy": {
+    "canonical_reader_profile": "reader_release",
+    "source_sequence": [
+      "tagged live_book commit",
+      "reviewed reader_release source",
+      "reader format renders or downstream e-reader conversions",
+      "reviewed audio_release script",
+      "generated and checked audio artifacts"
+    ],
+    "bundle_artifact_classes": [
+      {
+        "id": "reader_formats",
+        "profile": "reader_release",
+        "formats": ["html", "epub", "pdf", "docx"],
+        "artifact_rule": "Render from the reviewed reader source and record each successful artifact separately.",
+        "review_gate": "Human continuity, typography, figure, diagram, glossary, bibliography, and e-reader checks are complete."
+      },
+      {
+        "id": "optional_ereader_conversions",
+        "profile": "reader_release",
+        "formats": ["azw3", "mobi", "markdown", "plain text"],
+        "artifact_rule": "Convert only from a reviewed reader source or reviewed EPUB; never treat these as canonical source formats.",
+        "review_gate": "Open or inspect the converted file enough to confirm navigation, figures, tables, and line wrapping remain usable."
+      },
+      {
+        "id": "audio_artifacts",
+        "profile": "audio_release",
+        "formats": ["mp3", "m4b"],
+        "artifact_rule": "Generate only from a reviewed narration script, then spot-check audio against that script before recording the artifact.",
+        "review_gate": "Pronunciation, chapter markers, metadata, and sample listening checks are complete."
+      },
+      {
+        "id": "audio_embedded_epub",
+        "profile": "audio_release",
+        "formats": ["audio-embedded-epub"],
+        "artifact_rule": "Publish only after the EPUB actually contains the reviewed audio files and opens with playable audio.",
+        "review_gate": "Audio files, navigation, metadata, and companion notes are checked inside the packaged EPUB."
+      }
+    ],
+    "human_quality_gates": [
+      "The manuscript reads as one continuous book after live-only scaffolding is stripped.",
+      "Meaning-critical caveats and uncertainty remain in the reader spine.",
+      "Images and diagrams are readable on an e-reader-sized surface or have companion-note treatment.",
+      "Dense tables, schemas, proof hooks, source IDs, and release machinery are omitted, summarized, or moved to companion material unless they are essential to the human argument.",
+      "The release record names exactly which artifacts exist and which targets remain unattempted, failed, or not applicable."
+    ],
+    "audio_quality_gates": [
+      "The audio script is reviewed after the reader manuscript review, not generated directly from the live book.",
+      "Tables, diagrams, images, code, schemas, and proof-adjacent passages have reviewed spoken summaries or companion-note references.",
+      "Pronunciation, chapter markers, metadata, and listening spot checks are recorded before MP3, M4B, or audio-embedded EPUB is claimed.",
+      "Audio embedded in EPUB is verified inside the EPUB package before being listed as produced."
+    ]
+  },
   "reader_manuscript_policy": {
     "reader_facing_source": "Chapter prose outside strip_headings is the human-readable spine used to derive reader editions.",
     "generated_checklist_path": "READER_RELEASE_CHECKLIST.md",

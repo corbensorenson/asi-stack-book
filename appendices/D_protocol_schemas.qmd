@@ -1123,12 +1123,27 @@ edition_release_record:
     script_dir: string
     status: not_required
     review_notes: string
+  human_consumption_gate:
+    reader_spine_review: not_started
+    ebook_layout_review: not_started
+    diagram_image_review: not_started
+    bedtime_readability_review: not_started
+    companion_notes_status: not_started
+    notes: string
+  audiobook_gate:
+    script_review: not_required
+    spoken_treatment_review: not_required
+    chapter_marker_review: not_required
+    audio_spot_check: not_required
+    embedded_epub_check: not_required
+    status: not_required
+    notes: string
   release_notes: string
   residuals: []
   non_claims: []
 ```
 
-This record separates future major-version edition accountability from live-book publication hygiene. It records which research, reader, or audio profile was derived from which tagged live-book state, which artifact formats were actually rendered or generated, which review gates ran, and which residuals and non-claims remain. It does not claim that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts exist unless the release record lists those artifacts with successful status.
+This record separates future major-version edition accountability from live-book publication hygiene. It records which research, reader, or audio profile was derived from which tagged live-book state, which artifact formats were actually rendered or generated, which human-consumption and audiobook review gates ran, and which residuals and non-claims remain. It does not claim that EPUB, PDF, DOCX, MP3, M4B, or audio-embedded EPUB artifacts exist unless the release record lists those artifacts with successful status.
 
 ## Theseus Report Crosswalk Record
 

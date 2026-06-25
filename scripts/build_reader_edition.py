@@ -206,6 +206,7 @@ def write_reader_checklist(
     output_dir: Path,
     profile: dict,
     reader_policy: dict,
+    bundle_policy: dict,
     summary: dict[str, object],
 ) -> str:
     checklist_path = str(reader_policy.get("generated_checklist_path", "READER_RELEASE_CHECKLIST.md"))
@@ -256,6 +257,22 @@ def write_reader_checklist(
         for item in human_quality_floor:
             lines.append(f"- [ ] {item}")
 
+    if bundle_policy:
+        lines.extend([
+            "",
+            "## Major-Version Human Bundle",
+            "",
+            f"- Canonical reader profile: `{bundle_policy.get('canonical_reader_profile', 'reader_release')}`",
+            "- [ ] Confirm this reader workspace was generated from the tagged live-book state.",
+            "- [ ] Confirm any optional e-reader conversion starts from the reviewed reader source or reviewed EPUB.",
+            "- [ ] Keep audio packaging in a separate audio-release record unless that package has its own reviewed script and artifacts.",
+            "",
+            "### Human Quality Gates",
+            "",
+        ])
+        for item in bundle_policy.get("human_quality_gates", []):
+            lines.append(f"- [ ] {item}")
+
     if downstream_formats:
         lines.extend(["", "## Optional Downstream Formats", ""])
         for item in downstream_formats:
@@ -288,6 +305,7 @@ def write_reader_manifest(
     summary: dict[str, object],
     profile: dict,
     reader_policy: dict,
+    bundle_policy: dict,
 ) -> None:
     manifest = {
         "schema_version": "0.1",
@@ -309,6 +327,7 @@ def write_reader_manifest(
         "removed_sections": summary["removed_sections"],
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
+        "human_consumption_bundle_policy": bundle_policy,
         "ebook_quality_checks": reader_policy.get("ebook_quality_checks", []),
         "human_reader_quality_floor": reader_policy.get("human_reader_quality_floor", []),
         "optional_downstream_formats": reader_policy.get("optional_downstream_formats", []),
@@ -344,6 +363,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     reader_policy = profile_data.get("reader_manuscript_policy", {})
     if not isinstance(reader_policy, dict):
         raise TypeError("reader_manuscript_policy must be an object")
+    bundle_policy = profile_data.get("human_consumption_bundle_policy", {})
+    if not isinstance(bundle_policy, dict):
+        raise TypeError("human_consumption_bundle_policy must be an object")
     profile = find_profile(profile_id)
     strip_headings = profile_strip_headings(profile)
 
@@ -393,9 +415,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "removed_sections": removed_totals,
         "formats": profile.get("publication_formats", []),
     }
-    checklist_path = write_reader_checklist(output_dir, profile, reader_policy, summary)
+    checklist_path = write_reader_checklist(output_dir, profile, reader_policy, bundle_policy, summary)
     summary["review_checklist"] = checklist_path
-    write_reader_manifest(output_dir, summary, profile, reader_policy)
+    write_reader_manifest(output_dir, summary, profile, reader_policy, bundle_policy)
     return summary
 
 

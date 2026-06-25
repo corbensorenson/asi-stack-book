@@ -35,6 +35,19 @@ Each major version should move through a single derivation ladder:
 
 A listed format is a target, not proof that an artifact exists. The release record has to name the actual render, conversion, or audio package.
 
+## Human Consumption Bundle
+
+A major version can produce a human-consumption bundle after the live-book tag passes its validation gate. The bundle has four artifact classes:
+
+| Class | Formats | Gate |
+|---|---|---|
+| Reader formats | HTML, EPUB, PDF, DOCX | Render from the reviewed reader source, then record each successful artifact separately. |
+| Optional e-reader conversions | AZW3, MOBI, Markdown, plain text | Convert from a reviewed reader source or reviewed EPUB, then spot-check navigation, figures, tables, and wrapping. |
+| Audio artifacts | MP3, M4B | Generate from a reviewed narration script and spot-check against that script. |
+| Audio embedded in EPUB | audio-embedded EPUB | Open the packaged EPUB and verify the reviewed audio is present and playable before listing it as produced. |
+
+The reader manuscript is the human source for the bundle. The audio script is downstream of that manuscript. The live book remains canonical for AIs and researchers after any human bundle is produced.
+
 ## Edition Profiles
 
 The tracked profile source is `editions/release_profiles.json`.
@@ -125,6 +138,8 @@ A major version should have a release record that says exactly what was validate
 - EPUB render passed if EPUB is listed as produced
 - DOCX render passed if DOCX is listed as produced
 - PDF render passed only when local PDF dependencies are available and the render actually succeeded
+- human-consumption gate records continuity, layout, diagram/image, relaxed-reading, and companion-note review
+- audiobook gate records reviewed script, spoken-treatment, chapter-marker, spot-check, and embedded-EPUB status when audio is in scope
 - audio release is separate unless narration files and metadata are generated and checked
 
 This keeps the live book useful for AI and research work while giving human readers clean editions that do not ask them to wade through every internal evidence scaffold.

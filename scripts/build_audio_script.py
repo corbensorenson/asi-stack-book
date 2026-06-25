@@ -117,6 +117,7 @@ def write_audio_checklist(
     output_dir: Path,
     audio_profile: dict,
     audio_policy: dict,
+    bundle_policy: dict,
     script_files: list[str],
 ) -> str:
     checklist_path = str(audio_policy.get("generated_checklist_path", "AUDIO_RELEASE_CHECKLIST.md"))
@@ -153,6 +154,21 @@ def write_audio_checklist(
     for item in spoken_rules:
         lines.append(f"- [ ] {item}")
 
+    if bundle_policy:
+        lines.extend([
+            "",
+            "## Major-Version Audio Bundle",
+            "",
+            "- [ ] Confirm the reader manuscript for this major version was reviewed before this script is used.",
+            "- [ ] Keep MP3/M4B packaging separate from EPUB/DOCX/PDF reader artifacts in the release record.",
+            "- [ ] Treat audio embedded in EPUB as its own checked artifact, not as a side effect of EPUB generation.",
+            "",
+            "### Audio Quality Gates",
+            "",
+        ])
+        for item in bundle_policy.get("audio_quality_gates", []):
+            lines.append(f"- [ ] {item}")
+
     if packaging_checks:
         lines.extend(["", "## Audio Packaging Checks", ""])
         for item in packaging_checks:
@@ -188,6 +204,9 @@ def generate(output_dir: Path) -> dict[str, object]:
         audio_policy = profile_data.get("audio_manuscript_policy", {})
         if not isinstance(audio_policy, dict):
             raise TypeError("audio_manuscript_policy must be an object")
+        bundle_policy = profile_data.get("human_consumption_bundle_policy", {})
+        if not isinstance(bundle_policy, dict):
+            raise TypeError("human_consumption_bundle_policy must be an object")
 
         if output_dir.exists():
             shutil.rmtree(output_dir)
@@ -203,7 +222,13 @@ def generate(output_dir: Path) -> dict[str, object]:
 
         write_pronunciation_glossary(output_dir)
         chapter_markers = write_chapter_markers(output_dir, script_files)
-        review_checklist = write_audio_checklist(output_dir, audio_profile, audio_policy, script_files)
+        review_checklist = write_audio_checklist(
+            output_dir,
+            audio_profile,
+            audio_policy,
+            bundle_policy,
+            script_files,
+        )
 
         manifest = {
             "schema_version": "0.1",
@@ -212,6 +237,7 @@ def generate(output_dir: Path) -> dict[str, object]:
             "content_layer_policy": audio_profile.get("content_layer_policy", {}),
             "source_reader_generation": reader_summary,
             "output_dir": str(output_dir),
+            "human_consumption_bundle_policy": bundle_policy,
             "script_files": script_files,
             "pronunciation_glossary": "pronunciation_glossary.md",
             "chapter_markers": chapter_markers,

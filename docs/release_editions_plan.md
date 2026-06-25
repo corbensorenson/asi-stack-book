@@ -39,6 +39,19 @@ Use this ladder for every major release:
 
 The practical rule is simple: the live book is for AI agents and researchers, the reader release is for humans who want the book without workflow scaffolding, and the audio release is for listening. Each one is derived from the previous public-safe state and must say exactly which artifacts exist.
 
+## Human Consumption Bundle
+
+A major version can have a human-consumption bundle, but the bundle is assembled in layers rather than treated as one artifact:
+
+| Class | Formats | Gate |
+|---|---|---|
+| Reader formats | HTML, EPUB, PDF, DOCX | Render from the reviewed reader source and record each successful artifact separately. |
+| Optional e-reader conversions | AZW3, MOBI, Markdown, plain text | Convert only from reviewed reader source or reviewed EPUB, then spot-check navigation, figures, tables, and wrapping. |
+| Audio artifacts | MP3, M4B | Generate only from a reviewed narration script and spot-check against that script. |
+| Audio embedded in EPUB | audio-embedded EPUB | Verify that the packaged EPUB actually contains playable reviewed audio before listing it as produced. |
+
+The reader manuscript is the human source for the bundle. The audio script is downstream of that reader manuscript. The live book remains the canonical source for AI agents and researchers after the human bundle is produced.
+
 ## Tracked Source Files
 
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
@@ -69,6 +82,8 @@ python3 scripts/build_reader_edition.py
 The generated tree is ignored by git. Review it before rendering release artifacts.
 
 Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, e-reader quality checks, downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, and release-record residuals. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
+
+The generated reader manifest also carries the human-consumption bundle policy so a release run can distinguish reader formats, optional e-reader conversions, and later audio artifacts without relying on memory.
 
 `docs/major_version_release_runbook.md` is the checklist to follow once a tagged major version is ready. It keeps the live/research surface, reader manuscript, and audio package in a single derivation ladder so a generated source tree cannot be mistaken for a published artifact.
 
@@ -158,6 +173,8 @@ The generated audio script is a review workspace, not an audiobook. It marks tab
 
 The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. The manifest records that the script was derived from the reader release path and still requires review before any MP3, M4B, or audio-embedded EPUB can be claimed. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
 
+The audio manifest carries the same human-consumption bundle policy, but only to enforce dependency direction. Audio is not a shortcut around reader review, and audio embedded in EPUB remains a separate checked artifact.
+
 ## Major Version Rule
 
 Each major version should have a public-safe release record under `release_records/` that states:
@@ -169,6 +186,8 @@ Each major version should have a public-safe release record under `release_recor
 - validation commands actually run
 - validation status
 - reader/audio review status
+- human-consumption gate status
+- audiobook gate status
 - residuals
 - non-claims
 

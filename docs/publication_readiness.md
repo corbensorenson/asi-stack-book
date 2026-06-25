@@ -22,6 +22,7 @@ This file tracks whether the public repository is ready for the next major phase
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and pronunciation glossary under ignored `build/` without claiming audio exists.
 - Future major-version research, reader, and audio releases have a dedicated public-safe record schema at `schemas/edition_release_record.schema.json`.
+- Major-version human-consumption bundles now have explicit reader-format, optional e-reader conversion, audio artifact, and audio-embedded EPUB gates in `editions/release_profiles.json`, generated manifests, and edition release records.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - Source metadata is tracked without publishing raw source exports.

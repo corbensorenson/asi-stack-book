@@ -59,6 +59,8 @@ The reader-facing spine is the prose outside the headings listed in `editions/re
 
 Major-version reader and audio work stays downstream of the live book. Generated reader workspaces include `READER_RELEASE_CHECKLIST.md`; generated audio workspaces include `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Use those files to review continuity, e-reader behavior, spoken treatment of diagrams/tables/code, and release-record residuals before claiming EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
 
+When writing chapters, assume the reader spine may become a relaxed human-consumption bundle: reader HTML, EPUB, PDF, DOCX, optional e-reader conversions, and a later audio script. Dense live-only machinery can stay in the live book, but the main prose should carry enough transitions, caveats, diagram explanations, and examples to survive stripping and narration.
+
 Run `python3 scripts/validate_reader_spine.py --check` before treating a generated reader manuscript as a major-version candidate. The check verifies that the human-readable layer survives stripping and that live-only terms do not leak into chapter prose.
 
 When a tagged major version is actually being packaged, follow `docs/major_version_release_runbook.md`. It is the release sequence for live/research, reader, ebook/document, and audio artifacts.

@@ -23,6 +23,7 @@ REQUIRED_CONTENT_LAYERS = {
 CONTENT_LAYER_POLICY_KEYS = ("retain", "strip_or_summarize", "derive", "exclude")
 REQUIRED_TOP_LEVEL_POLICIES = {
     "major_version_policy",
+    "human_consumption_bundle_policy",
     "reader_manuscript_policy",
     "reader_spine_validation",
     "audio_manuscript_policy",
@@ -35,6 +36,15 @@ REQUIRED_RELEASE_LADDER_STAGES = {
     "audio_script",
     "audio_artifacts",
 }
+REQUIRED_BUNDLE_CLASSES = {
+    "reader_formats",
+    "optional_ereader_conversions",
+    "audio_artifacts",
+    "audio_embedded_epub",
+}
+REQUIRED_READER_BUNDLE_FORMATS = {"html", "epub", "pdf", "docx"}
+REQUIRED_OPTIONAL_EREADER_FORMATS = {"azw3", "mobi", "markdown", "plain text"}
+REQUIRED_AUDIO_BUNDLE_FORMATS = {"mp3", "m4b", "audio-embedded-epub"}
 READER_REQUIRED_STRIPS = {
     (2, "chapter status"),
     (2, "drafting guardrail"),
@@ -236,6 +246,104 @@ def main() -> None:
             missing_ladder = REQUIRED_RELEASE_LADDER_STAGES - stages
             if missing_ladder:
                 errors.append(f"major_version_policy.release_ladder missing stages: {sorted(missing_ladder)}")
+
+    bundle_policy = data.get("human_consumption_bundle_policy")
+    if isinstance(bundle_policy, dict):
+        if bundle_policy.get("canonical_reader_profile") != "reader_release":
+            errors.append("human_consumption_bundle_policy.canonical_reader_profile must be reader_release.")
+        validate_string_list(
+            "human_consumption_bundle_policy",
+            "source_sequence",
+            bundle_policy.get("source_sequence"),
+            errors,
+        )
+        validate_string_list(
+            "human_consumption_bundle_policy",
+            "human_quality_gates",
+            bundle_policy.get("human_quality_gates"),
+            errors,
+        )
+        validate_string_list(
+            "human_consumption_bundle_policy",
+            "audio_quality_gates",
+            bundle_policy.get("audio_quality_gates"),
+            errors,
+        )
+        classes = bundle_policy.get("bundle_artifact_classes")
+        if not isinstance(classes, list) or not classes:
+            errors.append("human_consumption_bundle_policy.bundle_artifact_classes must be a non-empty list.")
+        else:
+            class_ids: set[str] = set()
+            formats_by_class: dict[str, set[str]] = {}
+            for index, record in enumerate(classes):
+                if not isinstance(record, dict):
+                    errors.append(
+                        f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] must be an object."
+                    )
+                    continue
+                class_id = record.get("id")
+                if not isinstance(class_id, str) or not class_id.strip():
+                    errors.append(
+                        f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] missing non-empty id."
+                    )
+                    continue
+                class_ids.add(class_id)
+                profile_id = record.get("profile")
+                if not isinstance(profile_id, str) or profile_id not in REQUIRED_PROFILES:
+                    errors.append(
+                        f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] "
+                        f"profile must be one of {sorted(REQUIRED_PROFILES)}."
+                    )
+                formats = record.get("formats")
+                if not isinstance(formats, list) or not formats:
+                    errors.append(
+                        f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] "
+                        "formats must be a non-empty list."
+                    )
+                else:
+                    normalized_formats = {str(value) for value in formats if isinstance(value, str)}
+                    formats_by_class[class_id] = normalized_formats
+                    if len(normalized_formats) != len(formats):
+                        errors.append(
+                            f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] "
+                            "formats must be strings."
+                        )
+                for key in ("artifact_rule", "review_gate"):
+                    if not isinstance(record.get(key), str) or not record[key].strip():
+                        errors.append(
+                            f"human_consumption_bundle_policy.bundle_artifact_classes[{index}] "
+                            f"missing non-empty {key}."
+                        )
+            missing_classes = REQUIRED_BUNDLE_CLASSES - class_ids
+            if missing_classes:
+                errors.append(
+                    "human_consumption_bundle_policy.bundle_artifact_classes missing "
+                    f"{sorted(missing_classes)}."
+                )
+            reader_formats = formats_by_class.get("reader_formats", set())
+            missing_reader_formats = REQUIRED_READER_BUNDLE_FORMATS - reader_formats
+            if missing_reader_formats:
+                errors.append(
+                    "human_consumption_bundle_policy.reader_formats missing "
+                    f"{sorted(missing_reader_formats)}."
+                )
+            optional_formats = formats_by_class.get("optional_ereader_conversions", set())
+            missing_optional_formats = REQUIRED_OPTIONAL_EREADER_FORMATS - optional_formats
+            if missing_optional_formats:
+                errors.append(
+                    "human_consumption_bundle_policy.optional_ereader_conversions missing "
+                    f"{sorted(missing_optional_formats)}."
+                )
+            audio_formats = (
+                formats_by_class.get("audio_artifacts", set())
+                | formats_by_class.get("audio_embedded_epub", set())
+            )
+            missing_audio_formats = REQUIRED_AUDIO_BUNDLE_FORMATS - audio_formats
+            if missing_audio_formats:
+                errors.append(
+                    "human_consumption_bundle_policy audio bundle classes missing "
+                    f"{sorted(missing_audio_formats)}."
+                )
 
     reader_policy = data.get("reader_manuscript_policy")
     if isinstance(reader_policy, dict):

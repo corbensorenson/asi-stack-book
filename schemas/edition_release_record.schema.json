@@ -16,6 +16,8 @@
     "validation_commands",
     "validation_status",
     "review_status",
+    "human_consumption_gate",
+    "audiobook_gate",
     "release_notes",
     "residuals",
     "non_claims"
@@ -124,6 +126,81 @@
           "enum": ["not_required", "script_generated", "reviewed", "audio_generated", "published", "failed"]
         },
         "review_notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "human_consumption_gate": {
+      "type": "object",
+      "required": [
+        "reader_spine_review",
+        "ebook_layout_review",
+        "diagram_image_review",
+        "bedtime_readability_review",
+        "companion_notes_status",
+        "notes"
+      ],
+      "properties": {
+        "reader_spine_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "ebook_layout_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "diagram_image_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "bedtime_readability_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "companion_notes_status": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "audiobook_gate": {
+      "type": "object",
+      "required": [
+        "script_review",
+        "spoken_treatment_review",
+        "chapter_marker_review",
+        "audio_spot_check",
+        "embedded_epub_check",
+        "status",
+        "notes"
+      ],
+      "properties": {
+        "script_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "spoken_treatment_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "chapter_marker_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "audio_spot_check": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "embedded_epub_check": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
+        "notes": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false
     },

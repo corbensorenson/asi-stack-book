@@ -45,6 +45,23 @@
     "status": "not_required",
     "review_notes": "Reader release fixture does not include audio."
   },
+  "human_consumption_gate": {
+    "reader_spine_review": "not_started",
+    "ebook_layout_review": "not_started",
+    "diagram_image_review": "not_started",
+    "bedtime_readability_review": "not_started",
+    "companion_notes_status": "not_started",
+    "notes": "Fixture only; real reader releases must record continuity, layout, diagram/image, relaxed-reading, and companion-note review."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Reader release fixture does not include audio artifacts."
+  },
   "release_notes": "Schema fixture for future major-version reader edition records.",
   "residuals": [
     "Fixture only. It validates record shape, not manuscript quality or artifact production."

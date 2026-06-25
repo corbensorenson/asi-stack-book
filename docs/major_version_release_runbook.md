@@ -29,6 +29,19 @@ Meaning-changing caveats must appear in the reader-facing spine. Do not put the 
 9. Replace generated narration notes with reviewed spoken prose or companion-note references.
 10. Produce MP3, M4B, or audio-embedded EPUB only after the reviewed script is recorded, packaged, spot-checked, and recorded.
 
+## Human Consumption Bundle
+
+The human-consumption bundle for a major version is assembled from checked layers:
+
+| Class | Formats | Release-record requirement |
+|---|---|---|
+| Reader formats | HTML, EPUB, PDF, DOCX | `artifact_formats` names only successful renders, and `human_consumption_gate` records continuity, layout, diagram/image, relaxed-reading, and companion-note review. |
+| Optional e-reader conversions | AZW3, MOBI, Markdown, plain text | Record only after conversion from the reviewed reader source or reviewed EPUB and a spot check. |
+| Audio artifacts | MP3, M4B | `audiobook_gate` records reviewed script, spoken treatment, chapter markers, and spot checks. |
+| Audio embedded in EPUB | audio-embedded EPUB | Record only after the EPUB package is opened and verified to contain playable reviewed audio. |
+
+The reader manuscript is the human source. The audio script is downstream of the reviewed reader manuscript. The live book remains canonical after the bundle is produced.
+
 ## Live Gate
 
 ```bash
@@ -99,5 +112,6 @@ A major-version record must name exactly what exists:
 - `research_release` records can preserve live evidence machinery.
 - `reader_release` records can list EPUB, DOCX, HTML, PDF, AZW3, MOBI, Markdown, or plain-text artifacts only after render or conversion.
 - `audio_release` records can list MP3, M4B, or audio-embedded EPUB only after audio generation and checks.
+- `human_consumption_gate` and `audiobook_gate` must reflect what review actually happened, not what the profile intends.
 
 Do not infer artifact existence from a profile target, generated source tree, checklist, or render plan.
