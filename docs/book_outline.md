@@ -1395,9 +1395,9 @@ Draft arc:
 
 - Problem: The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
 - Insufficiency: A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
-- Mechanism: Extract claims into structured records.
-- Mechanism: Attach evidence tier, provenance, and uncertainty.
-- Mechanism: Revise beliefs when contradictions or stronger evidence appear.
+- Mechanism: Convert admitted context and generated prose into durable claim records with evidence refs, support state, uncertainty, contradiction refs, and revision history.
+- Mechanism: Treat belief revision as support-state change, downgrade, split, merge, residual creation, or tribunal escalation rather than promotion-only bookkeeping.
+- Handoff: Selected high-value claims flow to Spinoza for proof-, citation-, or procedure-carrying justification envelopes.
 - Interface: VCM supplies source context.
 - Interface: Spinoza verifies claims.
 - Interface: Evidence matrix records book-level claims.
@@ -1451,9 +1451,9 @@ Draft arc:
 
 - Problem: The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
 - Insufficiency: Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.
-- Mechanism: Separate heuristic proposal from symbolic or structured interrogation.
-- Mechanism: Attach formal interpretation mappings, proof bundles, or citation-backed dossiers.
-- Mechanism: Downgrade or escalate claims that cannot meet their required tier.
+- Mechanism: Wrap selected ledger claims in proof-carrying or justification-carrying envelopes that include required tier, interpretation mapping, justification artifact, verifier result, limitations, downgrade rule, and residual route.
+- Mechanism: Separate neural proposal from verifier judgment, so failed, timed-out, or mismatched verification lowers confidence or escalates instead of becoming a success story.
+- Handoff: Claims whose mapping, stakes, or evidence conflict exceed one verifier move to UAT.
 - Interface: Claim ledger stores proof status.
 - Interface: GenesisCode and Lean provide formal hooks.
 - Interface: UAT provides adversarial review.
@@ -1505,9 +1505,9 @@ Draft arc:
 
 - Problem: Complex claims and artifacts need adversarial review that is more structured than one model critique.
 - Insufficiency: Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
-- Mechanism: Assign reviewer roles and critique objectives.
-- Mechanism: Use adversarial checks for high-risk claims.
-- Mechanism: Record dissent, unresolved issues, and human-adjudication points.
+- Mechanism: Escalate contested or high-risk claims into bounded tribunal records with dossier refs, reviewer roles, adversarial probes, evidence-linked findings, dissent, unresolved issues, verdict, and required actions.
+- Mechanism: Preserve review boundaries by requiring dossier-scoped evidence, hard cycle caps, and human adjudication where risk or uncertainty remains.
+- Handoff: Accepted or blocked outcomes flow back into the claim ledger and execution layers as tier decisions, residuals, required actions, or human sign-off.
 - Interface: Spinoza consumes tribunal results.
 - Interface: Planning escalates risky nodes to tribunal.
 - Interface: Evidence records reviewer outcomes.

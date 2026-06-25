@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures and implements narrow finite-record Lean predicates for prior-evidence/history preservation and open-contradiction promotion blocking. It does not yet run a claim extractor, contradiction detector, or automated belief-revision engine.
 
+Placed after Verification Bandwidth, this chapter is where adequacy records become belief-management inputs. The stack does not ask prose to remember what it implied. It writes each material claim into a record that can be supported, challenged, downgraded, split, merged, or handed to Spinoza and UAT.
+
 ## Problem
 
 The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
@@ -93,9 +95,7 @@ flowchart LR
   H --> I["Claim ledger"]
 ```
 
-- Extract claims into structured records.
-- Attach evidence tier, provenance, and uncertainty.
-- Revise beliefs when contradictions or stronger evidence appear.
+The mechanism is a sequence rather than a checklist. Generated or extracted claims become ledger entries; each entry receives provenance, support state, uncertainty, evidence refs, and contradiction refs; and later evidence can revise the entry without erasing the prior state. When a contradiction is unresolved, the ledger preserves it and blocks support-state promotion instead of smoothing it into prose.
 
 The ledger separates claim text, claim label, support state, evidence refs, uncertainty, contradictions, revision reason, and review status. A claim can remain useful while unsupported, speculative, contradicted, or blocked, but it must be labeled accordingly.
 

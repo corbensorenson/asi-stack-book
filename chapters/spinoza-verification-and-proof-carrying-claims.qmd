@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats proof-carrying claims as a verification envelope, not as proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture, but the fixture's verifier result is not a passed theorem or empirical validation.
 
+Coming immediately after claim ledgers, this chapter raises the bar for the subset of claims that matter enough to justify proof, citation, or procedure artifacts. It bridges from recorded support state to the question of what must be checked before that state can improve.
+
 ## Problem
 
 The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
@@ -93,9 +95,7 @@ flowchart LR
   H --> I
 ```
 
-- Separate heuristic proposal from symbolic or structured interrogation.
-- Attach formal interpretation mappings, proof bundles, or citation-backed dossiers.
-- Downgrade or escalate claims that cannot meet their required tier.
+The verification path is tiered. The model may propose a claim, mapping, proof sketch, citation dossier, or procedure, but promotion depends on a separate verifier result and a recorded justification artifact. A failed proof, timeout, or ambiguous interpretation is not neutral decoration; it writes a downgrade, block, residual, or tribunal route back to the claim ledger.
 
 A proof-carrying claim contains the claim, required tier, interpretation mapping, justification artifact, verifier, verifier result, limitations, downgrade rule, and residuals. Formal proof is one tier, not the default expectation for every claim.
 
