@@ -3782,6 +3782,163 @@
           ]
         },
         {
+          "id": "personal-compute-hives-and-federated-edge-intelligence",
+          "title": "Personal Compute Hives and Federated Edge Intelligence",
+          "file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "field_of_god_ai_constitution",
+            "scf",
+            "talos",
+            "vcm_public",
+            "planforge",
+            "octopus_router",
+            "rmi",
+            "tokenmana",
+            "project_theseus_whitepaper",
+            "theseus_operator_os",
+            "ladon_manhattan"
+          ],
+          "source_queue": {
+            "primary": [
+              "vcm_public",
+              "talos",
+              "octopus_router",
+              "project_theseus_whitepaper"
+            ],
+            "supporting": [
+              "field_of_god_ai_constitution",
+              "scf",
+              "planforge",
+              "rmi",
+              "tokenmana",
+              "theseus_operator_os",
+              "ladon_manhattan"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "sources/inbox/personal_compute_hives_browser_note_2026-06-25/"
+            ]
+          },
+          "problem": "A governed ASI stack needs an owned compute substrate where personal, family, project, and rented devices can run work without collapsing reachability into authority.",
+          "insufficient": "Cloud-only assistants, single-device apps, ordinary home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed substrate.",
+          "core_claim": "A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.",
+          "claim_source_mappings": [
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Supports the hive's consent, least-sufficient-power, memory/tool governance, reversibility, auditability, and family/agency caution boundaries.",
+              "limits": "Does not implement or validate a family-governance policy engine or deployed consent workflow."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports capability leases, route validation, qualification, lifecycle state, authority ceilings, and no procedural self-ratification for node capabilities.",
+              "limits": "Does not qualify any particular personal-device capability or prove federation safety."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports typed jobs, contract locks, allowed tools, forbidden tools, audit, replay, delivery evidence, and residual feedback for work run on hive nodes.",
+              "limits": "Does not prove a distributed hive runner or device scheduler exists."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports governed context packets, source binding, taint, revocation, adequacy, materialization boundaries, and separation of data from authority.",
+              "limits": "Does not prove memory quality, retrieval quality, or end-to-end privacy protection."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports goal decomposition, dependency-aware scheduling, minimum viable intelligence tiers, fallback, and replanning across heterogeneous workers.",
+              "limits": "Does not prove scheduler optimality or safe execution on personal devices."
+            },
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports routing among bounded specialist capabilities, permission envelopes, dynamic loading, local memory, residuals, and lifecycle-managed capability nodes.",
+              "limits": "Does not prove modular routing performance or safety in a personal network."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports residual escrow, specialist lifecycle, regression preservation, three execution modes, and modular improvement discipline for hive capabilities.",
+              "limits": "Does not prove the hive improves capability or preserves regressions in practice."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports regenerative capacity and resource-governance framing for compute, money, energy, load, human attention, burst control, and friction.",
+              "limits": "Does not prove a specific hive scheduler is economically optimal or user-beneficial."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports local-first trusted-machine Hive framing, registered task-kind providers, residual ledgers, and report-first operational discipline.",
+              "limits": "No Theseus Hive reports, node registry, benchmark ledgers, or command outputs were rerun from this repo."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports operator channels, durable work board, node registry, background/watch/wake contracts, feedback routing, TTLs, kill switches, and safety-visible surfaces.",
+              "limits": "Does not prove unattended operation or distributed node control is safe."
+            },
+            {
+              "source_id": "ladon_manhattan",
+              "mapped_support": "Supports blind secret handles, secure entry paths, policy injection boundaries, isolated compartments, and reduced credential exposure.",
+              "limits": "Does not prove kernel-level isolation, side-channel resistance, or complete AI security."
+            }
+          ],
+          "mechanism": [
+            "Represent persons, devices, portals, workers, stores, datasets, tools, jobs, and external hives with signed identity and policy cards.",
+            "Classify jobs by data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirement before scheduling.",
+            "Let eligible devices bid on work after policy filtering, then choose the best lawful node rather than the fastest reachable node.",
+            "Treat phones, laptops, tablets, dashboards, and headsets as portals; desktops, NAS boxes, old machines, workshop computers, and rented nodes as bounded workers or stores.",
+            "Preserve audit records, data-placement decisions, approval events, and residuals for every cross-device or cross-hive action."
+          ],
+          "interfaces": [
+            "VCM declares what context is needed and what data may move.",
+            "Talos and PlanForge lower tasks into typed jobs with resource, authority, and verification requirements.",
+            "Octopus/RMI routing and TokenMana-style resource records score eligible devices and rented nodes.",
+            "Field-of-God and SCF governance define family, child, privacy, physical-tool, and federation membranes.",
+            "Project hives and artifact stewards interact through explicit job contracts, sandbox manifests, evidence bundles, and revocation paths."
+          ],
+          "invariants": [
+            "Reachability is not authority.",
+            "Policy filtering precedes optimization.",
+            "External work receives sandboxed job slots, not private network access.",
+            "Family and child-facing portals preserve dignity, consent boundaries, and parent/guardian review for sensitive transitions.",
+            "Secrets remain handles and approvals, not strings in model context.",
+            "Every temporary federation link has an expiration, revocation path, and audit record."
+          ],
+          "failure_modes": [
+            "Personal hive becomes a botnet or malware execution surface.",
+            "Family governance becomes surveillance.",
+            "Rented or public project compute leaks private data.",
+            "Wrong-device scheduling drains batteries, overheats machines, exposes data, or bypasses approvals.",
+            "Identity confusion grants child, guest, agent, or project authority to the wrong principal.",
+            "Hive memory becomes an ungoverned swamp of artifacts, logs, models, and personal data."
+          ],
+          "minimal_implementation": "A local personal-hive dashboard with a device registry, signed resource cards, job queue, manual phone approval, policy-first scheduler, artifact log, and no public federation or autonomous spending.",
+          "codex_tests": [
+            "Device registry fixture validation",
+            "Policy-first scheduling denial test",
+            "Data locality and rented-node denial test",
+            "Phone approval gate test",
+            "Child topic routing test",
+            "External project sandbox contract test",
+            "Audit replay test"
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:personal_hives.scheduling.operational_invariant",
+              "module": "AsiStackProofs.PersonalComputeHives",
+              "target": "A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:personal_hives.policy_first.failure_blocks_promotion",
+              "module": "AsiStackProofs.PersonalComputeHives",
+              "target": "A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "compact-generative-systems-and-residual-honesty",
           "title": "Compact Generative Systems and Residual Honesty",
           "file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
@@ -5576,6 +5733,187 @@
               "module": "AsiStackProofs.PolicyOptimization",
               "target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
               "status": "implemented"
+            }
+          ]
+        },
+        {
+          "id": "artifact-steward-agents-and-living-project-governance",
+          "title": "Artifact Steward Agents and Living Project Governance",
+          "file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "viea",
+            "talos",
+            "planforge",
+            "vcm_public",
+            "spinoza",
+            "benchmaxxing",
+            "rmi",
+            "cognitive_loop_closure",
+            "tokenmana",
+            "coherence_exchange",
+            "project_theseus_whitepaper",
+            "theseus_operator_os",
+            "scf",
+            "field_of_god_ai_constitution"
+          ],
+          "source_queue": {
+            "primary": [
+              "viea",
+              "talos",
+              "planforge",
+              "vcm_public"
+            ],
+            "supporting": [
+              "spinoza",
+              "benchmaxxing",
+              "rmi",
+              "cognitive_loop_closure",
+              "tokenmana",
+              "coherence_exchange",
+              "project_theseus_whitepaper",
+              "theseus_operator_os",
+              "scf",
+              "field_of_god_ai_constitution"
+            ],
+            "variants": [],
+            "connector_or_recovery": [
+              "coherence_exchange"
+            ],
+            "handoff_or_recovery_notes": [
+              "sources/inbox/artifact_steward_agents_browser_note_2026-06-25/"
+            ]
+          },
+          "problem": "Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project.",
+          "insufficient": "Issue trackers, CI systems, bots, DAOs, funding pages, and project-management tools each cover a slice of artifact lifecycle, but none by themselves preserve mission, memory, authority, treasury limits, contributor credit, evidence, and death protocol as one governed project steward.",
+          "core_claim": "Every durable artifact should be able to carry a bounded steward agent that preserves mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset policy across the artifact lifecycle while acting only through explicit work contracts, verification gates, treasury limits, contribution ledgers, and governance rules.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports artifact discipline, claim support states, residuals, regression coverage, intent-to-execution boundaries, and the rule that important responses become durable artifacts.",
+              "limits": "Does not prove a deployed project steward exists or that any autonomous management behavior is safe."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports typed project work, contract locks, isolation, audit, replay, evidence, delivery, approval gates, and residual feedback.",
+              "limits": "Does not authorize free-form agent management or prove a steward bot implementation."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports roadmap decomposition, dependencies, scheduling, minimum viable intelligence tiering, fallback, and failure-driven replanning.",
+              "limits": "Does not make a plan equivalent to project authority or governance approval."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports project memory with source binding, taint, revocation, context adequacy, materializations, and typed non-success states.",
+              "limits": "Does not solve long-term project memory quality or steward reliability."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports proof-carrying claim discipline, belief revision, failed-verification downgrade, contradiction handling, and protected axioms.",
+              "limits": "Does not prove open-domain formalization, verifier quality, or governance correctness."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports benchmark lifecycle, residual diagnosis, regression preservation, anti-Goodhart checks, and cautious architecture-change discipline.",
+              "limits": "Does not provide local benchmark or release-readiness results for stewarded projects."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports residual escrow, modular improvement loops, specialist lifecycle, readiness gates, and regression-floor preservation.",
+              "limits": "Does not prove autonomous project improvement or capture resistance."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports turning repeated project workflows into verified tools with preconditions, postconditions, monitoring, revision, and retirement.",
+              "limits": "Does not justify automating every recurring task or replacing human review."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports bounded resource accounting for compute, money, reviewer time, load variance, burst controls, and cognitive friction.",
+              "limits": "Does not prove treasury performance, funding design, or optimal spend policy."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports fork, exit, audit, contestability, value/accounting, review-market, and governance-interface framing.",
+              "limits": "Speculative where economic or epistemic-liquidity language exceeds executable records."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports local-first report discipline, trusted-node task allowlists, residual ledgers, and implementation-reference governance surfaces.",
+              "limits": "No current project reports or command outputs were inspected or rerun as evidence here."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports durable work boards, operator channels, node registries, background/watch/wake contracts, feedback routing, TTLs, kill switches, and safety-visible operator surfaces.",
+              "limits": "Does not prove unattended project operation is safe."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports capability leases, qualification, lifecycle, route validation, governance controls, authority ceilings, and no procedural self-ratification.",
+              "limits": "Does not qualify an artifact steward capability or validate governance enforcement."
+            },
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Supports consent, non-domination, least sufficient power, memory/tool governance, reversibility, auditability, and caution around self-authorization.",
+              "limits": "Does not implement constitutional enforcement or prove institutional capture resistance."
+            }
+          ],
+          "mechanism": [
+            "Bind a steward to an artifact mission, non-goals, authority ceiling, governance model, budget policy, evidence requirements, and sunset criteria.",
+            "Convert roadmap goals into project work contracts with required outputs, allowed tools, forbidden tools, worker requirements, budget, verification, payment, and reputation fields.",
+            "Orchestrate humans, agents, personal hives, project hives, CI runners, rented compute, reviewers, and maintainers through typed jobs and evidence bundles.",
+            "Separate reputation, governance shares, and economic credits so contribution, voting, and money cannot collapse into one gameable token.",
+            "Run the artifact lifecycle from inception through bootstrap, build, release, maintenance, governance, decline, and archive."
+          ],
+          "interfaces": [
+            "VCM preserves project memory, source documents, decisions, issues, releases, and unresolved questions.",
+            "PlanForge and Talos turn goals into milestones, issues, jobs, reviews, artifacts, and releases.",
+            "Spinoza, Benchmaxxing, and evidence ledgers decide whether submitted work changes claim or readiness state.",
+            "TokenMana and treasury policies bound spending, compute rental, bounties, and recurring operations.",
+            "SCF, governance rights, and constitutional predicates prevent steward authority from replacing owner, maintainer, contributor, or community authority."
+          ],
+          "invariants": [
+            "The steward is not the owner.",
+            "Mission, non-goals, and sunset criteria remain durable.",
+            "Spending is a bounded actuator governed by treasury policy.",
+            "Untrusted issues, pull requests, comments, and worker outputs enter as tainted context until reviewed.",
+            "Major governance changes require explicit proposal, review, delay, quorum, appeal, or guardian paths.",
+            "A project that no longer has value, users, maintainers, or funds can enter sunset mode rather than continuing activity for its own sake."
+          ],
+          "failure_modes": [
+            "Mission drift from optimizing activity rather than purpose.",
+            "Treasury drain through low-value compute, bounty spam, or runaway recurring costs.",
+            "Contribution gaming and reputation capture.",
+            "Governance capture by large holders, early maintainers, or steward-controlled scoring.",
+            "Agentic workflow injection through untrusted repository event context.",
+            "AI maintainer monopoly that makes the project opaque to humans.",
+            "Zombie project continuation after user value disappears."
+          ],
+          "minimal_implementation": "A `PROJECT_STEWARD.yml` file plus a GitHub-oriented steward bot that labels issues, drafts plans, proposes work contracts, requests CI, summarizes pull requests, writes release notes, records evidence, and never spends funds or merges to protected branches without policy approval.",
+          "codex_tests": [
+            "Project steward manifest fixture validation",
+            "Work contract authority denial test",
+            "Treasury spend-cap test",
+            "Untrusted event taint test",
+            "Contribution ledger separation test",
+            "Sunset criteria test",
+            "Release evidence handoff test"
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:artifact_stewards.work_contract.operational_invariant",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
+              "status": "planned"
             }
           ]
         },

@@ -64,18 +64,18 @@ The claim remains at `argument` support. The assigned sources support design dis
 
 ## Mechanism
 
-The mechanism is a Benchmark Ratchet Record.
+A benchmark ratchet turns a result into an evidence-state transition, not a celebration. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
 
 ```{mermaid}
 flowchart LR
-  A["Benchmark frontier"] --> B["Run record"]
-  B --> C["Mastery / saturation check"]
-  C --> D["Residual escrow"]
-  D --> E["Regression suite"]
-  E --> F["Anti-Goodhart checks"]
-  F --> G{"Promote readiness?"}
-  G -- "yes" --> H["New regression floor + harder frontier"]
-  G -- "no" --> I["Residual / blocked promotion"]
+  A["Benchmark frontier"] --> B["Run record + baseline"]
+  B --> C["Mastery, saturation, and wall diagnosis"]
+  C --> D["Residual escrow + negative results"]
+  D --> E["Regression floor"]
+  E --> F["Holdout, transfer, mutation, and contamination checks"]
+  F --> G{"Promote readiness or claims?"}
+  G -- "yes" --> H["Harder frontier + preserved floor"]
+  G -- "no" --> I["Blocked promotion / residual queue"]
   H --> J["Claim/evidence matrix"]
   I --> J
 ```
@@ -84,7 +84,7 @@ The record should track benchmark state, baseline, command, environment, mastery
 
 ## Interfaces
 
-The interface is the Benchmark Ratchet Record.
+The Benchmark Ratchet Record is the interface between evaluation, readiness gates, Appendix C, prototype phases, and the changelog. It carries enough evidence metadata for downstream layers to distinguish a reproduced result, a source-reported result, a synthetic fixture, a failed run, and an unattempted target.
 
 Minimum fields:
 

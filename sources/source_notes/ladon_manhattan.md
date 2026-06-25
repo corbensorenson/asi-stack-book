@@ -47,6 +47,7 @@ Ladon and the Manhattan Protocol propose a kernel-level security architecture fo
 - `security-kernel-and-digital-scifs` (Security Kernel and Digital SCIFs)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 
 ## Claims To Add Or Update
 

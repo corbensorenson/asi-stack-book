@@ -77,24 +77,24 @@ Appendix C now maps this core intent claim to all assigned source notes. The map
 
 ## Mechanism
 
-The mechanism is an Intent Contract.
+The stack admits human purpose through an Intent Contract: a loss-control boundary between a request and any machine work that follows. The contract does not pretend to recover the user's complete inner preference. It records the smallest authorized interpretation durable enough for alignment review, planning, execution, and evidence.
 
 ```{mermaid}
 flowchart LR
-  A["Natural-language request"] --> B["Intent parse"]
-  B --> C{"Ambiguous or high-risk?"}
-  C -- "yes" --> D["Clarify / bounded default / abstain"]
-  C -- "no" --> E["Intent Contract"]
-  E --> F["Alignment filter"]
-  F --> G["Planning source plan"]
-  G --> H["Authorized job contract"]
-  H --> I["Execution / artifact"]
-  I --> J["Evidence and feedback"]
+  A["Natural-language request"] --> B["Intent intake"]
+  B --> C["Goal / means / authority split"]
+  C --> D{"Ambiguity, missing authority, or high risk?"}
+  D -- "yes" --> E["Clarify, bounded draft, abstain, or residual"]
+  D -- "no" --> F["Intent Contract"]
+  F --> G["Alignment admissibility check"]
+  G --> H["Command contract or plan source"]
+  H --> I["Authorized typed work"]
+  I --> J["Artifact, evidence, and feedback"]
 ```
 
-- Parse intent into command contracts.
-- Separate desired outcome from allowed means.
-- Attach acceptance criteria and escalation conditions.
+- Compile a request into an explicit objective, constraints, authority ceiling, source boundary, acceptance criteria, and stop conditions.
+- Separate desired outcome from allowed means so planning cannot convert a wish into unrestricted action.
+- Route unresolved ambiguity to clarification, bounded draft work, abstention, or residual tracking rather than hidden assumptions.
 
 The contract separates desired outcome from allowed means. It captures what the user wants, what the system may do, what it must not do, what evidence is required before completion, which authority grants exist, and when to stop. The raw request remains useful as context, but it is not the artifact consumed by execution.
 
@@ -102,7 +102,7 @@ When ambiguity remains, the stack should not pretend to have resolved it. It can
 
 ## Interfaces
 
-The interface is an Intent Contract.
+The Intent Contract is also the first cross-layer interface. Alignment reads it as an admissibility record, planning reads it as a bounded compilation input, execution reads it as an authority envelope, and evidence reads it as the acceptance target for the delivered artifact.
 
 - Alignment filters intent.
 - Planning compiles accepted contracts.

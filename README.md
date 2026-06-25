@@ -13,7 +13,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0 evidence release.
 
 - Quarto book structure is initialized and renders to HTML.
-- All 52 outline chapters exist as v0.2 manuscript drafts across four manifest-driven parts.
+- All 54 outline chapters exist as manuscript drafts across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.

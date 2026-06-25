@@ -63,18 +63,19 @@ The claim remains at `argument` support. This repository currently has a Lean wo
 
 ## Mechanism
 
-The mechanism is a Proof Target Record backed by generated manifests and build checks.
+The proof envelope begins by refusing to formalize the book's broad theses directly. Each candidate claim is lowered into a Proof Target Record, then routed to Lean, executable schema validation, process validation, research backlog, or blocked status according to the predicate that can actually be checked.
 
 ```{mermaid}
 flowchart LR
-  A["Outline proof target"] --> B["Triage"]
-  B --> C{"Operational predicate?"}
-  C -- "yes" --> D["Lean module or executable spec"]
-  C -- "no" --> E["Schema / process / research target"]
-  D --> F["Verifier command"]
-  E --> G["Residual or backlog"]
-  F --> H{"Verifier passed?"}
-  H -- "yes" --> I["Implemented proof/spec state"]
+  A["Chapter claim or invariant"] --> B["Proof Target Record"]
+  B --> C["Triage kind and non-claims"]
+  C --> D{"Operational predicate?"}
+  D -- "Lean-suitable" --> E["Lean module + lake build"]
+  D -- "record/process" --> F["Schema, fixture, or validator"]
+  D -- "not operational yet" --> G["Research target, blocked target, or residual"]
+  E --> H{"Verifier passed?"}
+  F --> H
+  H -- "yes" --> I["Narrow implemented proof/spec state"]
   H -- "no" --> G
 ```
 
@@ -84,7 +85,7 @@ The repository now mechanizes the envelope rule as a finite target-status predic
 
 ## Interfaces
 
-The interface is the Proof Target Record.
+The Proof Target Record is the interface between prose, outline, Lean, schemas, validators, and Appendix E. It lets the book say exactly which finite predicate has an artifact behind it while keeping broader system behavior outside the proof claim.
 
 Minimum fields:
 

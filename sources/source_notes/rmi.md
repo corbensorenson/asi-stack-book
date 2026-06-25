@@ -44,10 +44,12 @@ Ratcheting Modular Intelligence, or RMI, argues that AI systems should improve b
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 

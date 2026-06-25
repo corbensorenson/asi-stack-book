@@ -45,6 +45,7 @@ Cognitive Loop Closure argues that repeated AI reasoning/action trajectories sho
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `living-book-methodology` (Living Book Methodology)
 

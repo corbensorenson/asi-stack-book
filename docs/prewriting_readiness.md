@@ -8,7 +8,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 
 ## Completed Readiness Work
 
-- A complete v0.2 manuscript baseline now exists across all 52 manifest-driven chapters.
+- A manuscript baseline now exists across all 54 manifest-driven chapters.
 - Backbone source notes now exist for VIEA, SCF, PlanForge, Talos, VCM, Spinoza, Alignment Field, MoECOT, and connector-resolved variants.
 - Authenticated connector reads are recorded in `sources/connector_readiness.json` and reflected in the source readiness report.
 - The per-chapter Definition of Done is machine-checked by `scripts/validate_chapter_dod.py`.

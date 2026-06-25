@@ -43,8 +43,10 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
 - MoECOT Runtime and Multi-Core Orchestration
+- Personal Compute Hives and Federated Edge Intelligence
 - Executable Specifications and Lean Proof Envelope
 - Policy Optimization and Learning from Feedback
+- Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan

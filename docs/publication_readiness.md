@@ -29,8 +29,8 @@ This file tracks whether the public repository is ready for the next major phase
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, and every core claim now has an exact source-note mapping in Appendix C.
-- Appendix C now records exact source-note mappings for all 52 core claims without promoting support states.
-- All 52 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
+- Appendix C now records exact source-note mappings for all 54 core claims without promoting support states.
+- All 54 chapters have manuscript drafts from the source-of-truth manifest and hand drafting passes, kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
@@ -44,7 +44,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and an accepted evidence transition; exact source-note mapping alone is not a support-state promotion.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
-- All 104 manifest proof targets now have finite-record Lean implementations and Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`; artifact-by-artifact proof audits remain planned and the finite-record modules do not prove broad system behavior.
+- The manifest now tracks 108 proof targets: 104 implemented finite-record Lean targets and 4 planned schema/process-first targets for the Personal Compute Hives and Artifact Steward Agents chapters. Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`; artifact-by-artifact proof audits remain planned and the finite-record modules do not prove broad system behavior.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized or source-noted.
 - The v0.2 chapters are coherent architecture drafts, but several still need source-specific prose, direct passage review, claim-to-mechanism reconciliation, and hand revision before v1.0 publication quality.

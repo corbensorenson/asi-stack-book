@@ -43,6 +43,8 @@ VCM treats the context window as a compiled working cache over a larger versione
 - Fast Generation Architectures
 - Coil Attention, Cyclic Memory, and Recurrence Contracts
 - Policy Optimization and Learning from Feedback
+- Personal Compute Hives and Federated Edge Intelligence
+- Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan

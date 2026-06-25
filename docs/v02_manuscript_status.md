@@ -4,11 +4,11 @@ Last updated: 2026-06-25
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 52 chapter files, 85,951 chapter words, averaging 1,653 words per chapter.
+Current scale: 54 chapter files, 113,283 chapter words, averaging 2,098 words per chapter.
 
 ## Completed in v0.2
 
-- All 52 manifest-driven chapters now have end-to-end manuscript prose.
+- All 54 manifest-driven chapters now have end-to-end manuscript prose.
 - Every chapter retains the required contract: status, drafting guardrail, problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, Codex test plan, source crosswalk, and summary.
 - Every chapter lists source loading state from the source notes, local raw cache, and connector/recovery records currently visible to the repo.
 - Every chapter exposes formalization hooks from the existing proof targets.
@@ -75,9 +75,9 @@ Current scale: 52 chapter files, 85,951 chapter words, averaging 1,653 words per
 - The compactness/compression/semantic-resource chapters now distinguish compact generative records, compression receipts, compressed artifact records, semantic node records, and resource budget fixtures from unimplemented codecs, utility probes, grounding benchmarks, load simulations, scheduler runs, and non-record-level Lean obligations.
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, model-quality evaluations, and non-record-level simulation proof claims.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
-- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage and all 104 are implemented formal-invariant Lean candidates.
-- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 389 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
-- Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 52 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
+- Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 108 proof targets are covered by triage, with 104 implemented finite-record Lean candidates and 4 planned schema/process-first targets for the two newest chapters.
+- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 426 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
+- Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 54 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.

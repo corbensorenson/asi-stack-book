@@ -44,6 +44,8 @@ The Field of God AI Constitution turns the broader Field of God alignment frame 
 - `governance-rights-fork-exit-and-audit` (Governance Rights: Fork, Exit, and Audit)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update
@@ -56,4 +58,3 @@ The Field of God AI Constitution turns the broader Field of God alignment frame 
 - Which constitutional clauses should become executable policy schemas versus narrative governance principles?
 - Which red-team scenarios should become book-level test fixtures?
 - How should metaphysical terminology be translated for technical audiences without losing the intended alignment constraints?
-

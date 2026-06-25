@@ -47,6 +47,7 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 - Fast Generation Architectures
 - Semantic Representation and Tree-Structured Models
 - Policy Optimization and Learning from Feedback
+- Artifact Steward Agents and Living Project Governance
 - Evidence States and Claim Discipline
 - Executable Specifications and Lean Proof Envelope
 - Integrated Reference Architecture

@@ -41,6 +41,8 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 - Resource Economics and Token Budgets
 - Fast Generation Architectures
 - Policy Optimization and Learning from Feedback
+- Personal Compute Hives and Federated Edge Intelligence
+- Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan

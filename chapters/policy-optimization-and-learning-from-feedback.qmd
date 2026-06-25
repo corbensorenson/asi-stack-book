@@ -72,20 +72,21 @@ The claim remains at `argument` support. The assigned ASI Stack sources support 
 
 ## Mechanism
 
-The mechanism is a Policy Optimization Record.
+Policy optimization enters the stack as a governed update ledger. Before any behavior is changed, the stack records which policy is being updated, which feedback artifact is admissible, what drift bound applies, how reward hacking will be probed, which residuals remain, and which governance gate can promote or reject the update.
 
 ```{mermaid}
 flowchart LR
-  A["Feedback source"] --> B["Target policy"]
-  B --> C["Reward or preference signal"]
-  C --> D["Update constraint / drift bound"]
-  D --> E["Evaluation and reward-hacking probes"]
-  E --> F["Governance gate"]
-  F --> G{"Promote update?"}
-  G -- "yes" --> H["SCF promotion + rollback handle"]
-  G -- "no" --> I["Quarantine, rollback, or residual"]
-  H --> J["Claim/evidence ledger"]
-  I --> J
+  A["Feedback artifact"] --> B["Admissibility check"]
+  B --> C["Target policy and update family"]
+  C --> D["Reward or preference boundary"]
+  D --> E["Drift bound + rollback plan"]
+  E --> F["Holdouts, regressions, and reward-hacking probes"]
+  F --> G["SCF / governance gate"]
+  G --> H{"Promote update?"}
+  H -- "yes" --> I["Promotion with rollback handle"]
+  H -- "no" --> J["Quarantine, rollback, or residual"]
+  I --> K["Claim/evidence ledger"]
+  J --> K
 ```
 
 The record should separate:

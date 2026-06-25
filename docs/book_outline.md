@@ -2,7 +2,7 @@
 
 Working title: **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI**
 
-Status: expanded source-of-truth drafting outline, updated 2026-06-24 after local Project Theseus and Circle Calculus mining. `book_structure.json` remains the ordering source of truth; Quarto generates displayed chapter numbers from the manifest.
+Status: expanded source-of-truth drafting outline, updated 2026-06-25 after adding Personal Compute Hives and Artifact Steward Agents from public-safe browser-note triage. `book_structure.json` remains the ordering source of truth; Quarto generates displayed chapter numbers from the manifest.
 
 ## Drafting Thesis
 
@@ -1919,6 +1919,75 @@ Lean proof targets:
 | `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
 | `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
+### Personal Compute Hives and Federated Edge Intelligence
+
+Stable ID: `personal-compute-hives-and-federated-edge-intelligence`
+
+Chapter job: The architecture needs an owned compute-substrate chapter for phones, laptops, desktops, NAS devices, old machines, project runners, and rented nodes as policy-bounded participants in one personal or project hive.
+
+Core claim: A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `vcm_public`, `talos`, `octopus_router`, `project_theseus_whitepaper` | Read first for governed context packets, typed jobs, routed specialists, and trusted-machine Hive/node framing. |
+| Supporting | `field_of_god_ai_constitution`, `scf`, `planforge`, `rmi`, `tokenmana`, `theseus_operator_os`, `ladon_manhattan` | Mine after primary sources for consent, capability leases, scheduling, residuals, capacity accounting, operator surfaces, and secret-handle boundaries. |
+| Handoff or recovery notes | `sources/inbox/personal_compute_hives_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
+| External literature queue | mesh VPNs, container/small-cluster schedulers, distributed compute frameworks, volunteer compute, rented compute markets, file sync, content-addressed storage | Add source records and source notes before citation or support-state promotion. |
+
+Draft arc:
+
+- Problem: A governed ASI stack needs an owned substrate where personal, family, project, and rented devices can run work without collapsing reachability into authority.
+- Insufficiency: Cloud assistants, single-device agents, home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed layer.
+- Mechanism: Define `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision` records.
+- Mechanism: Treat phones and dashboards as portals, desktops and old machines as bounded workers, NAS devices as memory stores, and rented/project nodes as temporary leased capacity.
+- Mechanism: Reject nodes by policy before scoring speed, cost, locality, energy, or capability.
+- Mechanism: Record every cross-device and cross-hive action with approvals, data-placement decisions, residuals, and revocation paths.
+- Interface: VCM declares context, taint, adequacy, revocation, and data movement.
+- Interface: Talos and PlanForge lower goals into typed jobs and dependency-aware schedules.
+- Interface: Octopus/RMI routing and SCF leases define which capability on which node may be selected.
+- Interface: TokenMana-style resource records account for compute, money, energy, human attention, and friction.
+- Interface: Field-of-God and Ladon/Manhattan boundaries preserve consent, least sufficient power, family governance, and secret handles.
+
+Primary invariants:
+
+- Reachability is not authority.
+- Policy filtering precedes optimization.
+- A device must be eligible for the job's data, tool, network, and approval scope before it can bid.
+- External work receives sandboxed leases, not private network access.
+- Family and child-facing portals preserve dignity, consent boundaries, and guardian review for sensitive transitions.
+- Secrets remain handles and approvals, not strings in model context.
+- Temporary federation links expire and can be revoked.
+
+Failure modes to cover:
+
+- Personal hive becomes a botnet or malware execution surface.
+- Family governance becomes surveillance.
+- Rented or public project compute leaks private data.
+- Wrong-device scheduling drains batteries, overheats machines, exposes data, or bypasses approvals.
+- Identity confusion grants child, guest, agent, or project authority to the wrong principal.
+- Hive memory becomes an ungoverned swamp of artifacts, logs, models, and personal data.
+
+Draft deliverables:
+
+- A full chapter with hive object records, policy-first scheduling diagram, implementation ladder, public-safe source boundary, and external-literature queue.
+- Planned schema: `device_resource_card`, `hive_job_contract`, and `hive_scheduling_decision`.
+- Planned Codex test: Device registry fixture validation.
+- Planned Codex test: Policy-first scheduling denial test.
+- Planned Codex test: Data locality and rented-node denial test.
+- Planned Codex test: Phone approval gate test.
+- Planned Codex test: Child topic routing test.
+- Planned Codex test: External project sandbox contract test.
+- Planned Codex test: Audit replay test.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | planned |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | planned |
+
 ### Compact Generative Systems and Residual Honesty
 
 Stable ID: `compact-generative-systems-and-residual-honesty`
@@ -2625,7 +2694,7 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; artifact-by-artifact audits still need to verify that each implemented finite-record predicate matches its intended operational boundary and non-claims.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 104 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: Appendix E summarizes all 108 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Artifact-by-artifact target audit.
@@ -2763,6 +2832,78 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
+
+### Artifact Steward Agents and Living Project Governance
+
+Stable ID: `artifact-steward-agents-and-living-project-governance`
+
+Chapter job: The living architecture needs a project-lifecycle layer for durable artifacts that must preserve mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset criteria across many human and AI work cycles.
+
+Core claim: Every durable artifact should be able to carry a bounded steward agent that preserves mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset policy across the artifact lifecycle while acting only through explicit work contracts, verification gates, treasury limits, contribution ledgers, and governance rules.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `viea`, `talos`, `planforge`, `vcm_public` | Read first for artifact discipline, typed jobs, roadmap decomposition, and project memory. |
+| Supporting | `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution` | Mine after primary sources for proof/evidence gates, benchmark pressure, residual escrow, procedural tools, resource budgets, fork/exit/audit, work boards, capability leases, and non-domination constraints. |
+| Connector or recovery required | `coherence_exchange` | Use as speculative governance/economic framing unless exact source-note mappings and support boundaries are recorded. |
+| Handoff or recovery notes | `sources/inbox/artifact_steward_agents_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
+| External literature queue | repository automation, fiscal sponsorship, public-good funding, compute markets, decentralized governance, workflow-injection research | Add source records and source notes before citation or support-state promotion. |
+
+Draft arc:
+
+- Problem: Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project.
+- Insufficiency: Issue trackers, CI systems, bots, funding pages, governance systems, and project-management tools each preserve only a slice of the artifact lifecycle.
+- Mechanism: Define `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`.
+- Mechanism: Bind the steward to mission, non-goals, authority ceiling, evidence policy, budget policy, governance model, and sunset criteria.
+- Mechanism: Convert roadmap work into bounded contracts before dispatching humans, agents, hives, CI runners, rented compute, reviewers, or maintainers.
+- Mechanism: Separate reputation, governance rights, economic compensation, authorship, and evidence credit so one gameable score cannot capture the project.
+- Mechanism: Treat the steward's normal action as proposal, evidence preparation, and coordination rather than unilateral ownership.
+- Interface: VIEA and Talos connect intent, work contracts, artifacts, evidence, audit, replay, and delivery.
+- Interface: PlanForge lowers project goals into dependency-aware work packages.
+- Interface: VCM preserves project memory, taint, revocation, source refs, and open questions.
+- Interface: Spinoza, Benchmaxxing, RMI, and Appendix C determine whether submitted work changes support, readiness, or regression state.
+- Interface: TokenMana, SCF, Field-of-God governance, and fork/exit/audit rights bound spending, compute, authority, consent, and appeal.
+
+Primary invariants:
+
+- The steward is not the owner.
+- The steward has no authority not grounded in the charter, a work contract, or explicit governance approval.
+- Spending is a bounded actuator governed by treasury policy.
+- Untrusted issues, pull requests, comments, worker outputs, and external prompts remain tainted until reviewed.
+- Reputation, governance rights, economic compensation, authorship, and evidence credit remain separate ledgers.
+- Human-readable maps, decision logs, release notes, and appeal paths remain available.
+- Projects that meet sunset criteria enter sunset review rather than manufacturing activity.
+
+Failure modes to cover:
+
+- Mission drift from optimizing activity rather than purpose.
+- Treasury drain through low-value compute, bounty spam, or recurring costs.
+- Contribution gaming and reputation capture.
+- Governance capture by large holders, early maintainers, or steward-controlled scoring.
+- Agentic workflow injection through untrusted repository event context.
+- AI maintainer monopoly that makes the project opaque to humans.
+- Zombie project continuation after user value disappears.
+
+Draft deliverables:
+
+- A full chapter with steward lifecycle diagram, project record definitions, implementation ladder, public-safe source boundary, and external-literature queue.
+- Planned schema: `artifact_steward_charter`, `project_work_contract`, `contribution_ledger_entry`, `steward_action_decision`, and `sunset_review_record`.
+- Planned Codex test: Project steward manifest fixture validation.
+- Planned Codex test: Work contract authority denial test.
+- Planned Codex test: Treasury spend-cap test.
+- Planned Codex test: Untrusted event taint test.
+- Planned Codex test: Contribution ledger separation test.
+- Planned Codex test: Sunset criteria test.
+- Planned Codex test: Release evidence handoff test.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | planned |
+| `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | planned |
 
 ### Integrated Reference Architecture
 

@@ -45,6 +45,8 @@ TokenMana proposes regenerative capacity mechanisms for AI usage pricing and res
 - `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 
 ## Claims To Add Or Update
 

@@ -42,6 +42,8 @@ The Hive Operator OS is the usability and control layer for Project Theseus Hive
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 - `prototype-roadmap` (Prototype Roadmap)
@@ -56,4 +58,3 @@ The Hive Operator OS is the usability and control layer for Project Theseus Hive
 - Which Operator OS concepts belong in the book's runtime chapter versus the Project Theseus reference chapter?
 - Should the ASI Stack define a generic work-board schema independent of Theseus?
 - Which safety-visible operator fields are minimum required for overnight autonomy?
-

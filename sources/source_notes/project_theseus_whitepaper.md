@@ -45,9 +45,11 @@ Project Theseus is a local-first, report-driven Ratcheting Modular Intelligence 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 - `prototype-roadmap` (Prototype Roadmap)
@@ -63,4 +65,3 @@ Project Theseus is a local-first, report-driven Ratcheting Modular Intelligence 
 - Which Theseus reports should be mirrored as public-safe schemas in this book?
 - Which implementation claims can be upgraded only after inspecting or replaying current report artifacts?
 - Which Project Theseus mechanisms deserve Lean invariants versus JSON-schema or integration-test treatment?
-

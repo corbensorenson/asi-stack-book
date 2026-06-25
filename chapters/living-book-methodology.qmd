@@ -67,12 +67,12 @@ The claim remains at `argument` support. The repository demonstrates the method 
 
 ## Mechanism
 
-The mechanism is a ratchet. Each improvement should leave the repository in a more informative state than it found it, while preserving the ability to explain what changed.
+The living-book method is a ratcheted publication loop. Each improvement should leave the repository more informative than it found it, preserve the reason for the change, and keep the AI/research scaffold separate from downstream reader and audio editions.
 
 - Use `book_structure.json` for order and dynamic chapters.
 - Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
 - Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
-- Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful.
+- Keep live AI/research scaffolding, reader-edition manuscripts, companion notes, and audio-script workspaces as distinct layers derived from one source.
 - Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
 
 The key artifact split is deliberate. `book_structure.json` controls order and stable IDs. `docs/book_outline.md` controls drafting intent, source queues, and proof targets. Source notes record what has actually been read. Appendix C records claim support state. The proof manifest records formalization targets. The changelog records meaningful movement. GitHub Pages renders the public state.
@@ -91,12 +91,14 @@ flowchart LR
   Draft --> Claims["Claim/evidence matrix update"]
   Claims --> Proofs["Proof, schema, or test update"]
   Proofs --> Validate["Validation and render"]
-  Validate --> Release["Commit, changelog, public site"]
-  Release --> Residuals["Open gaps and next queue"]
+  Validate --> Release["Commit, changelog, public live site"]
+  Release --> Editions["Reader/audio derivatives when tagged"]
+  Editions --> Residuals["Residuals, companion notes, and next queue"]
   Residuals --> Triage
 
   Notes -. "no note, no source-derived support" .-> Claims
   Proofs -. "no run, no result" .-> Claims
+  Editions -. "target format is not an artifact" .-> Residuals
   Validate -. "failure blocks release" .-> Draft
 ```
 

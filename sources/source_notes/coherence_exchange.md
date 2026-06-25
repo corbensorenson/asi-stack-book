@@ -45,6 +45,7 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - Unified Adaptive Tribunal and Adversarial Review
 - Resource Economics and Token Budgets
 - Benchmark Ratchets and Anti-Goodhart Evidence
+- Artifact Steward Agents and Living Project Governance
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan
 

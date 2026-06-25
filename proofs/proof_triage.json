@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-06-24",
+  "updated": "2026-06-25",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -671,6 +671,26 @@
       "rationale": "Implemented in AsiStackProofs.MoECOTRuntime as a finite source-boundary predicate: runtime claims sourced only from unavailable text cannot be promoted above argument state."
     },
     {
+      "tag": "lean:personal_hives.scheduling.operational_invariant",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "module": "AsiStackProofs.PersonalComputeHives",
+      "formal_target": "A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "This target needs concrete DeviceResourceCard, HiveJobContract, and HiveSchedulingDecision schemas before a useful Lean model can define admission, eligibility, and policy-before-optimization."
+    },
+    {
+      "tag": "lean:personal_hives.policy_first.failure_blocks_promotion",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "module": "AsiStackProofs.PersonalComputeHives",
+      "formal_target": "A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "This should start as a finite scheduler-record check over rejected nodes, policy membranes, and selected-node reasons before claiming any stronger distributed-system or security property."
+    },
+    {
       "tag": "lean:compression.cgs.operational_invariant",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.CompactGenerativeSystems",
@@ -949,6 +969,26 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite reward/governance predicate: unverified reward or missing governance gate blocks policy-update promotion."
+    },
+    {
+      "tag": "lean:artifact_stewards.work_contract.operational_invariant",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
+      "target_status": "planned",
+      "triage": "schema-contract",
+      "recommended_route": "schema-first",
+      "rationale": "This target needs a project-work-contract schema and fixture set before Lean can model dispatch eligibility and distinguish missing fields from invalid authority."
+    },
+    {
+      "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Treasury, protected-asset, and governance-change boundaries require an explicit policy model with approval evidence and action classes before a useful formal invariant can be stated."
     },
     {
       "tag": "lean:reference_architecture.trace.operational_invariant",

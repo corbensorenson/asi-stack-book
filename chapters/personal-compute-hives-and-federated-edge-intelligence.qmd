@@ -1,0 +1,206 @@
+---
+title: "Personal Compute Hives and Federated Edge Intelligence"
+chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "chapter draft"
+last_updated: "2026-06-25"
+primary_sources:
+  - "field_of_god_ai_constitution"
+  - "scf"
+  - "talos"
+  - "vcm_public"
+  - "planforge"
+  - "octopus_router"
+  - "rmi"
+  - "tokenmana"
+  - "project_theseus_whitepaper"
+  - "theseus_operator_os"
+  - "ladon_manhattan"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The personal-compute-hive browser note is author-intent context only; it is not cited evidence and is kept in the ignored local source inbox."
+  - "No device registry, scheduler, federation protocol, family-governance policy engine, or rented-node sandbox has been implemented or tested in this repo."
+  - "No support-state promotion is implied by this chapter draft."
+---
+
+# Personal Compute Hives and Federated Edge Intelligence
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
+| Part | Part III - Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Last updated | 2026-06-25 |
+| Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | All assigned sources have public source notes, but the core claim is still a design synthesis. The browser note is local-only planning context. |
+| Test state | Chapter-level tests remain planned; no hive scheduler, registry, federation, or rented-node test has been run. |
+
+## Drafting guardrail
+
+This chapter uses source-note material for VCM, Talos, Octopus Router, RMI, TokenMana, Project Theseus, the Hive Operator OS, SCF, Field of God governance, PlanForge, and Ladon/Manhattan. It does not claim that a complete personal compute hive exists. It also does not treat commercial mesh networks, orchestration systems, volunteer-compute systems, rented-compute systems, or file-sync tools as cited evidence until they have source records and source notes.
+
+## Problem
+
+A governed ASI stack needs a place to live. If the stack is only a cloud service, it inherits the cloud provider's boundaries, cost model, availability, surveillance risk, and authority assumptions. If it is only a local application, it cannot coordinate the phones, laptops, desktops, network storage, old machines, workshop computers, rented nodes, and project machines that already form the practical substrate of a person's work.
+
+The missing layer is not merely "edge compute." Edge compute says that work can run near data or users. A Personal Compute Hive says that a person's, family's, or project's machines are a governed body: a federated substrate with identity, memory, policy, scheduling, evidence, and revocation. Its purpose is to let an ASI stack use the hardware that is actually available while preserving a hard distinction between reachability and authority.
+
+## Why existing approaches are insufficient
+
+Cloud assistants are convenient, but their default shape is centralized: the user sends context upward, rented infrastructure performs the work, and the provider controls most of the runtime boundary. Single-device assistants are private by comparison, but they strand memory and compute inside one box. Home clusters and generic schedulers can distribute jobs, yet they typically optimize availability, load, and throughput before they represent consent, family authority, data sensitivity, tool risk, or evidence requirements as first-class constraints.
+
+The ASI Stack requires a different abstraction. The scheduler must understand that a phone may be the right approval portal but the wrong training node; that a NAS may be the right memory store but the wrong place for internet-facing code; that a desktop GPU may be a good worker until the job touches private family data; that a rented node may be useful for public inference but unacceptable for sensitive memory; and that a child's device may be reachable without being a lawful endpoint for a topic, tool, or dataset.
+
+## Core Claim
+
+[personal-compute-hives-and-federated-edge-intelligence.core, label: Design rationale, support: argument] A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.
+
+The claim is architectural, not empirical. It says that governed personal AI needs this layer in order to preserve authority and locality while using distributed hardware. It does not say that the scheduler is already implemented, that the network is secure, that old devices are always worth using, or that rented nodes can safely touch private data.
+
+### Claim-source mapping status
+
+The core claim has not been promoted above `argument`. The assigned source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. The combined hive architecture remains this book's synthesis until a schema, prototype, test, or external literature set is added.
+
+## Mechanism
+
+A Personal Compute Hive is built around three records: a `Device Resource Card`, a `Hive Job Contract`, and a `Hive Scheduling Decision`.
+
+The `Device Resource Card` describes a node without granting it open-ended authority. It records device identity, owner or guardian, physical location class, trust tier, network reachability, compute profile, storage profile, power state, data classes allowed, tool classes allowed, secret-handle capability, operator-presence requirements, and revocation path. A phone, laptop, desktop, NAS, old machine, family tablet, workshop PC, rented GPU, and project runner can all be represented by the same record type, but their policy cards differ.
+
+The `Hive Job Contract` is the work request. It names the objective, data dependencies, context packet, tool requirements, authority ceiling, physical-world risk, federation scope, budget, energy preference, deadline, required approvals, verification predicate, and residual policy. It is compiled from intent, planning, VCM materialization, and Talos-style typed work rather than free-form agent desire.
+
+The `Hive Scheduling Decision` is the narrow bridge between the job and the substrate. It records all eligible nodes, rejected nodes with reasons, selected node, approval receipts, data-placement decision, secret-handle plan, verification path, cost and energy estimate, expiration, and audit references. Optimization happens after rejection reasons are recorded, not before.
+
+```{mermaid}
+flowchart TD
+  intent["Human or project intent"] --> plan["PlanForge / Talos job lowering"]
+  plan --> contract["Hive Job Contract"]
+  vcm["VCM context packet\nsource, taint, adequacy, revocation"] --> contract
+  registry["Device Resource Cards\nphones, laptops, GPUs, NAS, rented nodes"] --> filter["Policy filter"]
+  contract --> filter
+  gov["Governance predicates\nconsent, family rules, SCF leases, secret handles"] --> filter
+  filter --> rejected["Rejected nodes\nwith reasons"]
+  filter --> bids["Eligible node bids\ncapability, locality, cost, energy"]
+  bids --> decision["Hive Scheduling Decision"]
+  decision --> approval["Portal approval\nwhen required"]
+  approval --> execute["Bounded execution slot"]
+  execute --> evidence["Artifact, audit, residual, and revocation records"]
+  evidence --> vcm
+```
+
+This mechanism turns household and project machines into a policy-first compute fabric. A phone is primarily a portal and approval surface. A laptop is an interactive worker with limited background availability. A desktop GPU may be a heavy worker. A NAS may be long-term memory, artifact storage, and retrieval infrastructure. Old machines may run background summarization, indexing, or test jobs with low authority. Rented nodes may run public, scrubbed, or synthetic jobs. Project machines may accept work only through explicit contracts. Family devices may expose only age-appropriate portals and guardian-approved transitions.
+
+## Interfaces
+
+The hive interfaces with VCM before it interfaces with compute. VCM says what context exists, which version is in scope, which parts are tainted or revoked, and which data may be materialized. A scheduler that sees only a file path or prompt cannot protect the user because it cannot distinguish source evidence, private data, quoted hostile text, control text, and tool authority.
+
+Talos and PlanForge provide the work interface. PlanForge decomposes the goal and identifies dependencies, minimum viable intelligence tier, fallback needs, and scheduling constraints. Talos turns the selected unit into a typed job with output contract, allowed tools, forbidden tools, isolation, audit, replay, and delivery requirements. The hive should not accept a raw "do this somewhere" instruction.
+
+Octopus Router and RMI provide the capability interface. A device can be a node, but the schedulable unit is a bounded capability on that node: local summarizer, code runner, file indexer, GPU worker, verifier, retrieval store, workshop controller, or public test runner. Capability state, residuals, regressions, retirement criteria, and readiness matter as much as hardware specs.
+
+TokenMana-style accounting provides the capacity interface. The hive should track not just tokens but heat, battery, bandwidth, storage churn, human attention, approval fatigue, reviewer time, monetary cost, and opportunity cost. A schedule that saves cloud spend while draining a phone battery or waking a human reviewer at the wrong time is not efficient in the ASI Stack sense.
+
+SCF, Field of God governance, and Ladon/Manhattan provide the authority interface. A node receives a lease, not a blank check. Sensitive credentials remain behind handles. Tool use remains reversible where possible, logged where required, and escalated when consent, family governance, physical effects, or protected data are involved.
+
+## Hive objects
+
+| Object | Purpose | Minimum fields |
+|---|---|---|
+| `DeviceResourceCard` | Declare a node as an eligible but bounded hive participant. | device id, owner/guardian, trust tier, locality, compute profile, storage profile, network profile, allowed data classes, allowed tool classes, secret-handle capability, operator-presence mode, revocation path |
+| `HiveJobContract` | Declare what work may be attempted. | objective, source context refs, data classes, tool classes, authority ceiling, risk tier, federation scope, budget, deadline, verification predicate, residual policy |
+| `HiveSchedulingDecision` | Record why work ran where it ran. | eligible nodes, rejected nodes, selected node, rejection reasons, approval refs, data-placement refs, estimated cost/energy, isolation mode, evidence refs, expiration |
+| `HiveApprovalReceipt` | Bind human or guardian approval to a specific job boundary. | approver id, portal id, job id, permission granted, permission denied, time window, appeal or reversal path |
+| `HiveFederationLease` | Let another hive or project borrow bounded capacity. | requester, provider, job class, data class, tool class, budget, network scope, evidence obligations, expiration, revocation |
+
+These records are intentionally smaller than a full distributed operating system. They are enough for a first implementation to decide whether a task may run on a node, whether a person must approve it, what data may move, and how the result becomes evidence.
+
+## Invariants
+
+- Reachability is not authority.
+- Policy filtering precedes optimization.
+- A device is not a worker for a job unless its resource card permits the job's data, tool, network, and approval scope.
+- External work receives sandboxed job slots, not private network access.
+- Family and child-facing portals preserve dignity, consent boundaries, and parent or guardian review for sensitive transitions.
+- Secrets remain handles and approvals, not strings in model context.
+- Rented nodes can receive public, synthetic, encrypted, or scrubbed jobs only when the job contract permits that exposure.
+- Every temporary federation link has an expiration, revocation path, and audit record.
+
+The phrase "personal hive" should not be allowed to smuggle in surveillance. A family hive is not a parental monitoring system by default. It is a policy system whose goal is to give the right person or guardian the right approval point for the right transition while minimizing unnecessary observation.
+
+## Failure modes
+
+The obvious failure is a botnet: a hive control layer starts executing arbitrary work across reachable machines, or malware learns to impersonate a hive scheduler. The architectural response is narrow leases, signed device cards, job contracts, tool allowlists, revocation, and no private-network access for external workers.
+
+The social failure is surveillance. A system designed to help family members can become a memory and telemetry dragnet. The governance response is data minimization, topic-specific approvals, guardian checks for sensitive transitions, visibility into what is being recorded, and deletion or export paths.
+
+The privacy failure is data leakage to rented or public project nodes. A scheduler under cost pressure may send private context to cheap compute. The response is policy-first scheduling, data-class rejection before bids, secret handles, scrubbed/synthetic job variants, and audit replay.
+
+The operational failure is wrong-device scheduling. A job may drain batteries, overheat machines, stall the network, interrupt work, or run a high-risk action on a device without the right human present. The response is operator-presence modes, energy budgets, thermal and battery constraints, quiet hours, and approval receipts.
+
+The identity failure is authority confusion. A child, guest, agent, project, or borrowed node can be mistaken for the owner or guardian. The response is principal-specific identity, role-specific leases, and denial by default when identity or guardianship is ambiguous.
+
+The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The response is VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
+
+## Minimal implementation
+
+The first implementation should be deliberately small:
+
+- A local dashboard that lists devices and their signed resource cards.
+- A job queue that accepts only typed job contracts.
+- A policy-first scheduler that rejects nodes before scoring them.
+- A phone approval path for jobs that cross data, authority, physical-risk, or spending thresholds.
+- A local artifact log with scheduling decisions, approvals, outputs, residuals, and revocation events.
+- No public federation, no autonomous spending, no private-data rented-node execution, and no background operation across family devices without explicit enrollment.
+
+This minimum viable hive can run as a local experiment without pretending to be a complete personal cloud. Its value is that it makes the missing control records visible.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Device registry fixture validation | Validate `DeviceResourceCard` shape, trust tier, owner/guardian field, allowed data classes, allowed tool classes, and revocation path. | planned; not run |
+| Policy-first scheduling denial test | Confirm a faster node is rejected before optimization when its policy membrane forbids the job's data, authority, or network scope. | planned; not run |
+| Data locality and rented-node denial test | Confirm private or family data cannot be sent to a rented node unless the job contract explicitly permits the exposure class. | planned; not run |
+| Phone approval gate test | Confirm a high-risk or high-spend job cannot execute until a bound approval receipt exists. | planned; not run |
+| Child topic routing test | Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers. | planned; not run |
+| External project sandbox contract test | Confirm project-to-personal federation receives only a sandboxed lease and cannot discover private network resources. | planned; not run |
+| Audit replay test | Reconstruct why a job ran on a node from device cards, job contract, scheduling decision, approvals, and evidence refs. | planned; not run |
+
+## Formalization hooks
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | planned |
+| `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | planned |
+
+These targets should start as finite records or schema-backed executable checks. A meaningful Lean treatment needs a small model of device cards, job contracts, policy predicates, eligibility, and selected-node decisions before it attempts anything stronger.
+
+## Source crosswalk
+
+| Source ID | Use in this chapter | Boundary |
+|---|---|---|
+| `vcm_public` | Context packets, taint, revocation, adequacy, source binding, and materialization boundaries. | Does not prove retrieval quality or memory safety. |
+| `talos` | Typed jobs, audit, replay, allowed tools, forbidden tools, evidence, and delivery contracts. | Does not prove the hive runner exists. |
+| `octopus_router` | Routing vocabulary for bounded specialists, permission envelopes, and lifecycle-managed capability nodes. | Does not prove modular routing performance. |
+| `rmi` | Residual escrow, specialist lifecycle, regression preservation, and three-mode execution discipline. | Does not prove a distributed personal hive improves capability. |
+| `tokenmana` | Capacity accounting beyond raw tokens: load, friction, budget, burst, and scarcity. | Does not prove a specific scheduler is economically optimal. |
+| `project_theseus_whitepaper` | Trusted-machine Hive node framing, local-first report discipline, and registered task-kind providers. | Does not prove the current Theseus Hive is operational from this repo. |
+| `theseus_operator_os` | Operator channels, work board, node registry, feedback routing, TTLs, kill switches, and safety-visible surfaces. | Does not prove unattended operation is safe. |
+| `scf` | Capability leases, qualification, route validation, lifecycle, replacement, and authority non-escalation. | Does not prove any personal-device capability is qualified. |
+| `field_of_god_ai_constitution` | Consent, least sufficient power, memory/tool governance, reversibility, and family/agency caution. | Does not validate a policy engine. |
+| `planforge` | Goal decomposition, dependency-aware scheduling, tiering, fallback, and replanning. | Does not prove scheduler quality. |
+| `ladon_manhattan` | Secret handles, secure entry paths, credential injection boundaries, and isolated compartments. | Does not prove kernel-level isolation or side-channel resistance. |
+
+## External literature and tooling queue
+
+The browser note proposed several adjacent systems to examine later: mesh VPNs, container orchestrators, small-cluster schedulers, distributed compute frameworks, volunteer compute, rented compute markets, file-sync networks, and content-addressed storage. These are useful research leads, but they are not cited evidence in this chapter. Before they support claims, each needs a source record, source note, and explicit mapping to a hive claim.
+
+## Summary
+
+Personal Compute Hives make the ASI Stack materially personal. They give the architecture an owned substrate without pretending that every reachable machine is safe to use. The design center is simple: compile work into contracts, represent devices as bounded resources, reject unlawful nodes before optimizing, and record why execution happened where it happened. A complete implementation would let a person, family, or project use local and rented compute while keeping identity, privacy, authority, evidence, and revocation visible.

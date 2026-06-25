@@ -55,6 +55,7 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - Resource Economics and Token Budgets
 - Executable Specifications and Lean Proof Envelope
 - MoECOT Runtime and Multi-Core Orchestration
+- Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Living Book Methodology
