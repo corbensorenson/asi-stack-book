@@ -1527,6 +1527,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A tribunal protocol for claim/artifact review with reviewer roles and output schema.
+- Exact Appendix C claim-source mappings for `unified-adaptive-tribunal-and-adversarial-review.core` across UAT, Spinoza, Coherence Exchange, Talos, and Verification Bandwidth; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `tribunal_review_record` fixture validates public record shape only.
 - Planned Codex test: Adversarial review coverage test.
 - Planned Codex test: Dissent preservation test.

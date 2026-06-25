@@ -4043,12 +4043,32 @@
             {
               "source_id": "uat",
               "mapped_support": "Supports tribunal coordination through orthogonal priors, retrieval dossiers, atomic proposition states, bounded adversarial siege, rotating logic/citation/omission critiques, hard cycle caps, compression checks, SME checkpoints, and final sign-off.",
-              "limits": "No local multi-reviewer run, independent validation, or threshold reproduction exists in this repo."
+              "limits": "No local multi-reviewer run, independent validation, or threshold reproduction exists in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:118-145",
+                "sources/raw/google_docs/uat.txt:180-207",
+                "sources/raw/google_docs/uat.txt:226-281",
+                "sources/raw/google_docs/uat.txt:291-296",
+                "sources/raw/google_docs/uat.txt:310-319",
+                "sources/raw/google_docs/uat.txt:365-375",
+                "sources/raw/google_docs/uat.txt:400-453"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the UAT reference architecture as a human-in-the-loop SME force multiplier, retrieval-source-bound claims, orthogonal structural/retrieval/dialectical priors, raw fact dossiers, atomic proposition decomposition, verified/inferred/unsupported states, SME_REVIEW handling, bounded adversarial siege, red-team access limited to dossier and draft rather than original prompt, rotating logic/citation/omission attack vectors, double-lock stability checks, hard cycle caps, atomic compression preserving verified proposition counts, correlated-hallucination, decomposition-loss, plateau-trapping, tool-fragility limits, adjudication pass, and final sign-off; no local multi-reviewer run, reviewer-independence validation, threshold reproduction, or tribunal-quality result is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports tribunal consequences through tiered claim support, verifier separation, contradiction handling, and downgrade/block behavior for claims that fail required justification.",
-              "limits": "Does not prove reviewer independence, adversarial-probe quality, or verdict correctness."
+              "limits": "Does not prove reviewer independence, adversarial-probe quality, or verdict correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:327-389",
+                "sources/raw/google_docs/spinoza.txt:402-445",
+                "sources/raw/google_docs/spinoza.txt:757-799",
+                "sources/raw/google_docs/spinoza.txt:1013-1023",
+                "sources/raw/google_docs/spinoza.txt:1496-1506"
+              ],
+              "passage_review_note": "Reviewed local raw cache for neural-proposer/symbolic-verifier/belief-maintainer separation, proposal-only learned models, proof/refute/unknown verifier outcomes, certified/supported/speculative tiers, bounded contradiction revision, dependency and unsat-core tracing, entrenchment-scored retraction, proof invalidation, logged revision outcomes, object-level tiers, downgrade to in-revision or lower tiers, citation-backed interpretation mappings, reproducible procedure logs, unresolved ambiguity output fields, and audit trails populated from System-2 artifacts; no reviewer independence, adversarial-probe quality, consensus quality, human adjudication quality, or verdict-correctness result is promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -4058,12 +4078,33 @@
             {
               "source_id": "talos",
               "mapped_support": "Supports review artifacts as typed work products with adjudication, evidence records, audit logs, replay, approval gates, residual feedback, and delivery discipline.",
-              "limits": "No Talos tribunal pipeline, security result, replay log, or benchmark has been reproduced in this repository."
+              "limits": "No Talos tribunal pipeline, security result, replay log, or benchmark has been reproduced in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5792-5827",
+                "sources/raw/google_docs/talos.txt:6094-6124",
+                "sources/raw/google_docs/talos.txt:6156-6209",
+                "sources/raw/google_docs/talos.txt:6220-6240",
+                "sources/raw/google_docs/talos.txt:6309-6312",
+                "sources/raw/google_docs/talos.txt:6401-6415",
+                "sources/raw/google_docs/talos.txt:6432-6485",
+                "sources/raw/google_docs/talos.txt:6484-6505",
+                "sources/raw/google_docs/talos.txt:6507-6535"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Talos as a deterministic, auditable, job-based cognitive-manufacturing model, conversion of untrusted generative outputs into structured evidence-bound uncertainty-aware artifacts, typed atomic claims, immutable content-addressed evidence, verified/uncertain/refuted claim states, fixed job pipelines, raw prompt shielding from verification agents, machine-readable claim graphs, evidence-set world boundaries, independent adversarial agents seeking contradictions/counterexamples/missing dependencies, threshold failure and retrieval re-entry, proof bundles, logged/hashed/auditable I/O, replay/re-verification/evidence audit, human adjudication in job runs, residual-risk logging, and explicit cost/certainty tradeoffs; no Talos tribunal pipeline, security result, replay log, benchmark, or proof bundle has been reproduced."
             },
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Supports tribunal escalation when verification requires more than a larger context window, especially for contradiction pressure, summary loss, and effective verification-workspace limits.",
-              "limits": "Conceptual/theoretical support only here; no contradiction-rate or adequacy benchmark has been executed."
+              "limits": "Conceptual/theoretical support only here; no contradiction-rate or adequacy benchmark has been executed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:6-13",
+                "sources/raw/google_docs/verification_bandwidth.txt:30-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:68-83",
+                "sources/raw/google_docs/verification_bandwidth.txt:92-93"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the distinction between local generation and global relational verification, pairwise grinding over semantic units, Effective Verification Workspace/Two-Body Limit, lossy compression when joint units exceed the workspace, quadratic pairwise verification cost, fidelity/scale tradeoff in tree/DAG summary verification, the proposed Constraint Satisfaction Test with explicit final grinding step, Logical Contradiction Rate metric, and context as the maximum scope of rigorous constraint verification; no contradiction-rate experiment, adequacy benchmark, workspace measurement, or mechanized theorem is promoted."
             }
           ],
           "mechanism": [
