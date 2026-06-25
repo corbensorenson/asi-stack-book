@@ -24,6 +24,7 @@ primary_sources:
   - "ext_ray_core_docs_2026"
   - "ext_boinc_home_2026"
   - "ext_syncthing_home"
+  - "ext_ipfs_docs"
   - "ext_akash_docs_2026"
   - "ext_golem_docs_2025"
   - "ext_github_self_hosted_runners_docs"
@@ -45,7 +46,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Last updated | 2026-06-25 |
-| Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, Akash, Golem, and GitHub self-hosted runners |
+| Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, and GitHub self-hosted runners |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, including external tooling notes. The core claim is still a design synthesis. The browser note is local-only planning context. |
@@ -53,7 +54,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter uses source-note material for VCM, Talos, Octopus Router, RMI, TokenMana, Project Theseus, the Hive Operator OS, SCF, Field of God governance, PlanForge, and Ladon/Manhattan. It also uses source-note material for adjacent public systems: private overlay networking, orchestration, lightweight cluster operation, distributed execution, volunteer compute, file synchronization, rented compute, and self-hosted CI. It does not claim that a complete personal compute hive exists, that those tools prove the ASI Stack design, or that any private device has been enrolled.
+This chapter uses source-note material for VCM, Talos, Octopus Router, RMI, TokenMana, Project Theseus, the Hive Operator OS, SCF, Field of God governance, PlanForge, and Ladon/Manhattan. It also uses source-note material for adjacent public systems: private overlay networking, orchestration, lightweight cluster operation, distributed execution, volunteer compute, file synchronization, content-addressed retrieval, rented compute, and self-hosted CI. It does not claim that a complete personal compute hive exists, that those tools prove the ASI Stack design, or that any private device has been enrolled.
 
 ## Problem
 
@@ -75,7 +76,7 @@ The claim is architectural, not empirical. It says that governed personal AI nee
 
 ### Claim-source mapping status
 
-The core claim has not been promoted above `argument`. The internal source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. External source notes now ground adjacent substrate patterns such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, rented compute, and self-hosted runners. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but the combined hive architecture remains this book's synthesis until behavioral prototypes, scheduler tests, security reviews, or reproduced experiments exist.
+The core claim has not been promoted above `argument`. The internal source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. External source notes now ground adjacent substrate patterns such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, and self-hosted runners. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but the combined hive architecture remains this book's synthesis until behavioral prototypes, scheduler tests, security reviews, or reproduced experiments exist.
 
 ## Mechanism
 
@@ -249,13 +250,14 @@ These targets are implemented as finite record predicates. They do not prove a d
 | `ext_ray_core_docs_2026` | Distributed task, actor, and object-reference vocabulary. | Does not prove safe data movement or hidden-state control. |
 | `ext_boinc_home_2026` | Volunteer-compute lineage and background job participation. | Does not authorize arbitrary project work on personal machines. |
 | `ext_syncthing_home` | File synchronization, device identity, encrypted transport, and user-controlled storage vocabulary. | Does not solve VCM revocation or semantic memory quality. |
+| `ext_ipfs_docs` | Content-addressed, peer-to-peer artifact location and decentralized retrieval vocabulary. | Does not solve private hive memory, deletion, VCM revocation, privacy, authority control, or safe federation. |
 | `ext_akash_docs_2026` | Decentralized cloud leases, providers, GPUs, SDKs, and rented-compute vocabulary. | Does not prove provider isolation or private-data suitability. |
 | `ext_golem_docs_2025` | Decentralized computation, provider selection, task execution, and result handling vocabulary. | Does not prove output validity, payment fairness, or sandbox safety. |
 | `ext_github_self_hosted_runners_docs` | User-managed CI runners as physical, virtual, containerized, on-prem, or cloud execution slots. | Does not prove unattended runner safety for untrusted work. |
 
 ## External literature and tooling queue
 
-Initial source records and conservative source notes now exist for the most important adjacent systems named above. Remaining queue items include content-addressed storage, secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation. Before those support claims, each needs a source record, source note, and explicit mapping to a hive claim.
+Initial source records and conservative source notes now exist for the most important adjacent systems named above, including content-addressed storage. Remaining queue items include secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation. Before those support claims, each needs a source record, source note, and explicit mapping to a hive claim.
 
 ## Summary
 

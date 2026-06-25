@@ -1197,6 +1197,19 @@
     "citation_label": "Syncthing Project Site"
   },
   {
+    "id": "ext_ipfs_docs",
+    "title": "IPFS Documentation and Project Site",
+    "priority": "external_literature",
+    "layer": "personal_compute_hives",
+    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "url": "https://ipfs.tech/",
+    "notes": "Official IPFS project documentation and site for peer-to-peer content addressing, content identifiers, provider discovery, and decentralized retrieval vocabulary.",
+    "source_type": "official_project_site",
+    "published": "",
+    "updated": "",
+    "citation_label": "IPFS Project Site"
+  },
+  {
     "id": "ext_akash_docs_2026",
     "title": "Akash Network Documentation",
     "priority": "external_literature",
@@ -1260,6 +1273,32 @@
     "published": "",
     "updated": "",
     "citation_label": "OpenZeppelin Contracts Docs, Governance"
+  },
+  {
+    "id": "ext_open_collective_docs",
+    "title": "Open Collective Documentation",
+    "priority": "external_literature",
+    "layer": "artifact_steward_agents",
+    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "url": "https://documentation.opencollective.com/",
+    "notes": "Official Open Collective documentation for transparent community money management, fiscal hosts, contribution intake, expenses, accounting, and legal-entity delegation through fiscal hosting.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "Open Collective Documentation (2026)"
+  },
+  {
+    "id": "ext_github_sponsors_docs",
+    "title": "About GitHub Sponsors for open source contributors",
+    "priority": "external_literature",
+    "layer": "artifact_steward_agents",
+    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors",
+    "notes": "Official GitHub Sponsors documentation for contributor and organization sponsorship eligibility, open-source contribution categories, sponsor profiles, and GitHub-native funding surfaces.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "GitHub Docs (2026), About GitHub Sponsors"
   },
   {
     "id": "ext_agentic_workflow_injection_2026",

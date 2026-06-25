@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 38
 - `connector_readable`: 7
-- `source_note_available_public_project`: 16
-- `source_note_available_uncached`: 37
+- `source_note_available_public_project`: 17
+- `source_note_available_uncached`: 39
 
 ## Records
 
@@ -106,10 +106,13 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_ray_core_docs_2026` | What's Ray Core? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_boinc_home_2026` | BOINC | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_syncthing_home` | Syncthing | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ipfs_docs` | IPFS Documentation and Project Site | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_akash_docs_2026` | Akash Network Documentation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_golem_docs_2025` | Golem Developer Resources | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_github_webhooks_docs` | Webhook events and payloads | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `ext_github_self_hosted_runners_docs` | Self-hosted runners | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `ext_openzeppelin_governor_docs` | OpenZeppelin Contracts: Governance | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_open_collective_docs` | Open Collective Documentation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_github_sponsors_docs` | About GitHub Sponsors for open source contributors | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `ext_agentic_workflow_injection_2026` | Demystifying and Detecting Agentic Workflow Injection Vulnerabilities in GitHub Actions | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_dao_delegation_fairness_2025` | Fairness in Token Delegation: Mitigating Voting Power Concentration in DAOs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -1933,9 +1933,9 @@ Source loading queue:
 |---|---|---|
 | Primary | `vcm_public`, `talos`, `octopus_router`, `project_theseus_whitepaper` | Read first for governed context packets, typed jobs, routed specialists, and trusted-machine Hive/node framing. |
 | Supporting | `field_of_god_ai_constitution`, `scf`, `planforge`, `rmi`, `tokenmana`, `theseus_operator_os`, `ladon_manhattan` | Mine after primary sources for consent, capability leases, scheduling, residuals, capacity accounting, operator surfaces, and secret-handle boundaries. |
-| External source-note records | `ext_tailscale_docs_2025`, `ext_kubernetes_overview_docs`, `ext_k3s_docs_2026`, `ext_nomad_docs`, `ext_ray_core_docs_2026`, `ext_boinc_home_2026`, `ext_syncthing_home`, `ext_akash_docs_2026`, `ext_golem_docs_2025`, `ext_github_self_hosted_runners_docs` | Load after internal sources to ground adjacent substrate/tooling patterns. Treat them as external context, not as proof that the personal hive exists or is safe. |
+| External source-note records | `ext_tailscale_docs_2025`, `ext_kubernetes_overview_docs`, `ext_k3s_docs_2026`, `ext_nomad_docs`, `ext_ray_core_docs_2026`, `ext_boinc_home_2026`, `ext_syncthing_home`, `ext_ipfs_docs`, `ext_akash_docs_2026`, `ext_golem_docs_2025`, `ext_github_self_hosted_runners_docs` | Load after internal sources to ground adjacent substrate/tooling patterns. Treat them as external context, not as proof that the personal hive exists or is safe. |
 | Handoff or recovery notes | `sources/inbox/personal_compute_hives_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
-| Remaining external queue | content-addressed storage, secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, privacy-preserving computation | Add source records and source notes before citation or support-state promotion. |
+| Remaining external queue | secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, privacy-preserving computation | Add source records and source notes before citation or support-state promotion. |
 
 Draft arc:
 
@@ -2859,10 +2859,10 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `talos`, `planforge`, `vcm_public` | Read first for artifact discipline, typed jobs, roadmap decomposition, and project memory. |
 | Supporting | `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution` | Mine after primary sources for proof/evidence gates, benchmark pressure, residual escrow, procedural tools, resource budgets, fork/exit/audit, work boards, capability leases, and non-domination constraints. |
-| External source-note records | `ext_github_webhooks_docs`, `ext_github_self_hosted_runners_docs`, `ext_openzeppelin_governor_docs`, `ext_agentic_workflow_injection_2026`, `ext_dao_delegation_fairness_2025`, `ext_akash_docs_2026`, `ext_golem_docs_2025` | Load after internal sources to ground event-driven automation, self-hosted compute, governance machinery, workflow-injection risk, delegation concentration, and rented-compute context. |
+| External source-note records | `ext_github_webhooks_docs`, `ext_github_self_hosted_runners_docs`, `ext_openzeppelin_governor_docs`, `ext_open_collective_docs`, `ext_github_sponsors_docs`, `ext_agentic_workflow_injection_2026`, `ext_dao_delegation_fairness_2025`, `ext_akash_docs_2026`, `ext_golem_docs_2025` | Load after internal sources to ground event-driven automation, self-hosted compute, governance machinery, fiscal-hosted treasury context, sponsorship surfaces, workflow-injection risk, delegation concentration, and rented-compute context. |
 | Connector or recovery required | `coherence_exchange` | Use as speculative governance/economic framing unless exact source-note mappings and support boundaries are recorded. |
 | Handoff or recovery notes | `sources/inbox/artifact_steward_agents_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
-| Remaining external queue | fiscal hosting, grants, sponsorships, bounty platforms, package-maintainer sustainability, software supply-chain security, legal/tax treatment of stewarded treasuries | Add source records and source notes before citation or support-state promotion. |
+| Remaining external queue | grants, bounty platforms, package-maintainer sustainability, software supply-chain security, legal/tax treatment of stewarded treasuries | Add source records and source notes before citation or support-state promotion. |
 
 Draft arc:
 

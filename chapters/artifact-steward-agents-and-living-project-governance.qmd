@@ -25,6 +25,8 @@ primary_sources:
   - "ext_github_webhooks_docs"
   - "ext_github_self_hosted_runners_docs"
   - "ext_openzeppelin_governor_docs"
+  - "ext_open_collective_docs"
+  - "ext_github_sponsors_docs"
   - "ext_agentic_workflow_injection_2026"
   - "ext_dao_delegation_fairness_2025"
 evidence_level: "argument"
@@ -45,7 +47,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Last updated | 2026-06-25 |
-| Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
+| Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes, including external tooling and governance notes. The steward-agent architecture remains a synthesis. The browser note is local-only planning context. |
@@ -77,7 +79,7 @@ The claim is a design claim. It does not say that every project should immediate
 
 ### Claim-source mapping status
 
-The core claim remains at `argument`. VIEA, Talos, PlanForge, VCM, Spinoza, Benchmaxxing, RMI, Cognitive Loop Closure, TokenMana, Coherence Exchange, Project Theseus, Hive Operator OS, SCF, and Field of God governance each support pieces of the design. External source notes now ground event-driven repository automation, self-hosted CI, decentralized compute, on-chain governance machinery, agentic workflow-injection risk, and DAO delegation concentration risk. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first steward records, but the assembled artifact-steward layer has not been implemented or behaviorally tested. The local browser note supplied author intent and terminology; it is not a source-derived evidence artifact.
+The core claim remains at `argument`. VIEA, Talos, PlanForge, VCM, Spinoza, Benchmaxxing, RMI, Cognitive Loop Closure, TokenMana, Coherence Exchange, Project Theseus, Hive Operator OS, SCF, and Field of God governance each support pieces of the design. External source notes now ground event-driven repository automation, self-hosted CI, decentralized compute, on-chain governance machinery, fiscal-hosted transparent project finance, GitHub-native sponsorship, agentic workflow-injection risk, and DAO delegation concentration risk. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first steward records, but the assembled artifact-steward layer has not been implemented or behaviorally tested. The local browser note supplied author intent and terminology; it is not a source-derived evidence artifact.
 
 ## Mechanism
 
@@ -255,6 +257,8 @@ These are not proofs of good governance. They are finite-record safety checks ov
 | `ext_github_webhooks_docs` | Event-driven repository automation, delivery headers, payloads, event permissions, and typed intake vocabulary. | Does not make event text trusted instructions or prove a steward bot is safe. |
 | `ext_github_self_hosted_runners_docs` | Self-hosted runners as user-managed project or maintainer compute. | Does not prove isolation, cleanup, credential safety, or trusted execution for untrusted tasks. |
 | `ext_openzeppelin_governor_docs` | Proposal, vote, quorum, timelock, settings, and guardian-control vocabulary. | Does not solve legal authority, legitimacy, capture resistance, or treasury safety. |
+| `ext_open_collective_docs` | Transparent community money management, fiscal-hosting vocabulary, contribution intake, expense review, accounting, and project/legal-entity separation. | Does not prove autonomous treasury safety, legal compliance, project sustainability, or AI spend authority. |
+| `ext_github_sponsors_docs` | GitHub-native sponsorship surfaces for eligible open-source contributors and organizations, including non-code contribution categories. | Does not prove funding signals should control roadmap, evidence, release, governance, or treasury decisions. |
 | `ext_agentic_workflow_injection_2026` | Agentic workflow-injection risk from untrusted repository event context. | Does not prove this repository is vulnerable or safe. |
 | `ext_dao_delegation_fairness_2025` | Voter apathy, voting-power concentration, delegation misalignment, and ranking-bias risk. | Does not prove separated ledgers prevent capture. |
 | `ext_akash_docs_2026` | Decentralized cloud leases, provider resources, GPUs, and rented-compute vocabulary. | Does not prove a steward should rent compute or that providers meet evidence obligations. |
@@ -262,7 +266,7 @@ These are not proofs of good governance. They are finite-record safety checks ov
 
 ## External literature and tooling queue
 
-Initial source records and conservative source notes now exist for repository events, self-hosted CI runners, decentralized compute markets, on-chain governance machinery, agentic workflow-injection risk, and DAO delegation concentration risk. Remaining queue items include fiscal hosting, grants, sponsorships, bounty platforms, package-maintainer sustainability, software supply-chain security, and legal/tax treatment of stewarded treasuries. The book should later separate three questions: which tooling patterns already work, which governance patterns have known capture risks, and which pieces need new ASI Stack-specific schemas.
+Initial source records and conservative source notes now exist for repository events, self-hosted CI runners, decentralized compute markets, on-chain governance machinery, fiscal hosting, GitHub-native sponsorships, agentic workflow-injection risk, and DAO delegation concentration risk. Remaining queue items include grants, bounty platforms, package-maintainer sustainability, software supply-chain security, and legal/tax treatment of stewarded treasuries. The book should later separate three questions: which tooling patterns already work, which governance patterns have known capture risks, and which pieces need new ASI Stack-specific schemas.
 
 ## Summary
 

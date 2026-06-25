@@ -4038,6 +4038,7 @@
             "ext_ray_core_docs_2026",
             "ext_boinc_home_2026",
             "ext_syncthing_home",
+            "ext_ipfs_docs",
             "ext_akash_docs_2026",
             "ext_golem_docs_2025",
             "ext_github_self_hosted_runners_docs"
@@ -4066,6 +4067,7 @@
               "ext_ray_core_docs_2026",
               "ext_boinc_home_2026",
               "ext_syncthing_home",
+              "ext_ipfs_docs",
               "ext_akash_docs_2026",
               "ext_golem_docs_2025",
               "ext_github_self_hosted_runners_docs"
@@ -4168,6 +4170,11 @@
               "source_id": "ext_syncthing_home",
               "mapped_support": "Supports local-first file synchronization, device identity, encrypted transport, and user-controlled storage-location vocabulary.",
               "limits": "Does not solve semantic memory quality, VCM revocation, source adequacy, or per-device data-class policy."
+            },
+            {
+              "source_id": "ext_ipfs_docs",
+              "mapped_support": "Supports content-addressed, peer-to-peer artifact location and decentralized retrieval vocabulary for hive bundles, public caches, and reproducible references.",
+              "limits": "Does not solve private hive memory, deletion, VCM revocation, privacy, authority control, or safe federation."
             },
             {
               "source_id": "ext_akash_docs_2026",
@@ -6256,6 +6263,8 @@
             "ext_github_webhooks_docs",
             "ext_github_self_hosted_runners_docs",
             "ext_openzeppelin_governor_docs",
+            "ext_open_collective_docs",
+            "ext_github_sponsors_docs",
             "ext_agentic_workflow_injection_2026",
             "ext_dao_delegation_fairness_2025"
           ],
@@ -6284,6 +6293,8 @@
               "ext_github_webhooks_docs",
               "ext_github_self_hosted_runners_docs",
               "ext_openzeppelin_governor_docs",
+              "ext_open_collective_docs",
+              "ext_github_sponsors_docs",
               "ext_agentic_workflow_injection_2026",
               "ext_dao_delegation_fairness_2025"
             ],
@@ -6392,6 +6403,16 @@
               "source_id": "ext_openzeppelin_governor_docs",
               "mapped_support": "Supports proposal, vote, quorum, timelock, settings, and guardian-control vocabulary for steward governance.",
               "limits": "Does not solve project legitimacy, legal authority, capture resistance, or safe treasury autonomy."
+            },
+            {
+              "source_id": "ext_open_collective_docs",
+              "mapped_support": "Supports transparent community money management, fiscal-hosting vocabulary, contribution intake, expense review, accounting, and the separation between a project and the legal entity that holds funds.",
+              "limits": "Does not prove autonomous treasury safety, legal compliance, project sustainability, or that an AI steward may spend without human, host, maintainer, or governance review."
+            },
+            {
+              "source_id": "ext_github_sponsors_docs",
+              "mapped_support": "Supports GitHub-native sponsorship surfaces for eligible open-source contributors and organizations, including non-code contribution categories such as documentation, triage, leadership, project management, mentorship, and design.",
+              "limits": "Does not prove sponsorship incentives are governance-safe or that funding signals should control roadmap, evidence, release, or treasury decisions."
             },
             {
               "source_id": "ext_agentic_workflow_injection_2026",

@@ -11,11 +11,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 54 |
-| Assigned source/chapter pairs | 458 |
-| Exact claim-source mappings | 458 |
+| Assigned source/chapter pairs | 461 |
+| Exact claim-source mappings | 461 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 458 |
-| Source notes listing assigned chapter | 458 |
+| Source notes present for assigned pairs | 461 |
+| Source notes listing assigned chapter | 461 |
 | Passage-reviewed mappings recorded | 24 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
@@ -66,7 +66,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
-| `personal-compute-hives-and-federated-edge-intelligence` | 21 | 21 | 21 | 21 | 0 | argument | passage review required before source-derived promotion |
+| `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 0 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
@@ -81,7 +81,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 0 | argument | passage review required before source-derived promotion |
-| `artifact-steward-agents-and-living-project-governance` | 21 | 21 | 21 | 21 | 0 | argument | passage review required before source-derived promotion |
+| `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 0 | argument | passage review required before source-derived promotion |
 | `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 0 | argument | passage review required before source-derived promotion |
@@ -161,6 +161,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_ray_core_docs_2026` | 1 | yes |
 | `ext_boinc_home_2026` | 1 | yes |
 | `ext_syncthing_home` | 1 | yes |
+| `ext_ipfs_docs` | 1 | yes |
 | `bbvca_main` | 1 | yes |
 | `ext_speculative_decoding_2022` | 1 | yes |
 | `ext_multi_token_prediction_2024` | 1 | yes |
@@ -190,6 +191,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_rlhf_limitations_2023` | 1 | yes |
 | `ext_github_webhooks_docs` | 1 | yes |
 | `ext_openzeppelin_governor_docs` | 1 | yes |
+| `ext_open_collective_docs` | 1 | yes |
+| `ext_github_sponsors_docs` | 1 | yes |
 | `ext_agentic_workflow_injection_2026` | 1 | yes |
 | `ext_dao_delegation_fairness_2025` | 1 | yes |
 
@@ -430,6 +433,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ray_core_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_boinc_home_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_syncthing_home` | mapped | note present | chapter listed | not passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ipfs_docs` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_akash_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_golem_docs_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | not passage-reviewed |
@@ -580,6 +584,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_webhooks_docs` | mapped | note present | chapter listed | not passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | not passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_openzeppelin_governor_docs` | mapped | note present | chapter listed | not passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_open_collective_docs` | mapped | note present | chapter listed | not passage-reviewed |
+| `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_sponsors_docs` | mapped | note present | chapter listed | not passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_agentic_workflow_injection_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_dao_delegation_fairness_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `viea` | mapped | note present | chapter listed | not passage-reviewed |

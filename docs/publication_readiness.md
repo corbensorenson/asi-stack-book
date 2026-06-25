@@ -26,7 +26,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - `docs/proof_artifact_audit.md` records the current proof artifact traceability audit across all 112 proof targets.
-- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 458 assigned source/chapter pairs, 458 exact claim-source mappings, complete source-note/chapter-listing coverage, and 24 passage-reviewed mappings recorded.
+- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 461 assigned source/chapter pairs, 461 exact claim-source mappings, complete source-note/chapter-listing coverage, and 24 passage-reviewed mappings recorded.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.

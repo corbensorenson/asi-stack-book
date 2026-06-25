@@ -24,11 +24,11 @@ The packet was treated as author-intent and planning context only. The public ch
 
 - Record-shape schemas and fixtures were later added for `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease`; narrow finite Lean predicates were implemented for policy-before-optimization admission, faster-forbidden-node rejection, approval gating, and federation-lease boundaries.
 - No personal hive implementation, scheduler, network overlay, rented-node sandbox, family-governance policy engine, live device registry, or behavioral scheduling test was run.
-- External source records and conservative source notes now exist for selected adjacent systems: Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, Akash, Golem, and GitHub self-hosted runners.
+- External source records and conservative source notes now exist for selected adjacent systems: Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, and GitHub self-hosted runners.
 - Those external notes ground nearby tooling patterns only; they do not prove that the proposed personal hive exists, is safe, or has been tested.
 - The chapter remains `Design rationale` with `argument` support.
 
 ## Follow-up queue
 
-- Add public source records and source notes for remaining substrate topics: content-addressed storage, secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation.
+- Add public source records and source notes for remaining substrate topics: secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation.
 - Add behavioral scheduler and rented-node denial tests before claiming any policy-first scheduling behavior beyond finite record predicates.
