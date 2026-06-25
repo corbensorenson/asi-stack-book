@@ -121,6 +121,7 @@ def write_audio_checklist(
 ) -> str:
     checklist_path = str(audio_policy.get("generated_checklist_path", "AUDIO_RELEASE_CHECKLIST.md"))
     review_requirements = audio_policy.get("review_requirements", [])
+    packaging_checks = audio_policy.get("audio_packaging_checks", [])
     spoken_rules = audio_policy.get("spoken_treatment_rules", [])
     release_gate = audio_profile.get("release_gate", [])
     artifact_formats = audio_policy.get("audio_artifact_formats", [])
@@ -151,6 +152,11 @@ def write_audio_checklist(
     lines.extend(["", "## Spoken Treatment Rules", ""])
     for item in spoken_rules:
         lines.append(f"- [ ] {item}")
+
+    if packaging_checks:
+        lines.extend(["", "## Audio Packaging Checks", ""])
+        for item in packaging_checks:
+            lines.append(f"- [ ] {item}")
 
     lines.extend([
         "",
@@ -218,6 +224,7 @@ def generate(output_dir: Path) -> dict[str, object]:
             "audio_in_epub_rule": audio_policy.get("audio_in_epub_rule", ""),
             "reader_review_dependency": "Audio release work begins only after the reader manuscript for the same major version is reviewed.",
             "review_requirements": audio_policy.get("review_requirements", []),
+            "audio_packaging_checks": audio_policy.get("audio_packaging_checks", []),
             "spoken_treatment_rules": audio_policy.get("spoken_treatment_rules", []),
             "review_status": "review_required",
             "non_claims": [

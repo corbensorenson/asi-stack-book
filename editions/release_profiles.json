@@ -67,6 +67,50 @@
     "release_record_directory": "release_records",
     "living_release_record_schema": "schemas/living_book_release_record.schema.json",
     "edition_release_record_schema": "schemas/edition_release_record.schema.json",
+    "release_ladder": [
+      {
+        "stage": "live_tag",
+        "profile": "live_book",
+        "audiences": ["ai_agents", "human_researchers"],
+        "gate": "Tag a validated live-book commit; the live HTML site remains canonical.",
+        "artifact_rule": "Only the live Quarto/GitHub Pages book is implied."
+      },
+      {
+        "stage": "research_release",
+        "profile": "research_release",
+        "audiences": ["human_researchers", "ai_agents"],
+        "gate": "Freeze a major-version state with matrices, proof/test status, residuals, and release record.",
+        "artifact_rule": "Research HTML/PDF artifacts exist only if rendered and recorded."
+      },
+      {
+        "stage": "reader_source",
+        "profile": "reader_release",
+        "audiences": ["interested_humans"],
+        "gate": "Generate and manually review build/reader_edition for continuity after live-only scaffolding is stripped.",
+        "artifact_rule": "Generated source is a candidate manuscript, not an EPUB, PDF, DOCX, or publication."
+      },
+      {
+        "stage": "reader_formats",
+        "profile": "reader_release",
+        "audiences": ["interested_humans"],
+        "gate": "Render and spot-check each format separately.",
+        "artifact_rule": "EPUB, DOCX, PDF, HTML, AZW3, MOBI, Markdown, and plain text exist only after successful render or conversion and release-record entry."
+      },
+      {
+        "stage": "audio_script",
+        "profile": "audio_release",
+        "audiences": ["interested_humans"],
+        "gate": "Generate a narration-script workspace only from a reviewed reader manuscript.",
+        "artifact_rule": "Generated scripts, markers, and pronunciation glossary are review inputs, not audio artifacts."
+      },
+      {
+        "stage": "audio_artifacts",
+        "profile": "audio_release",
+        "audiences": ["interested_humans"],
+        "gate": "Record, package, spot-check, and document the reviewed script.",
+        "artifact_rule": "MP3, M4B, and audio-embedded EPUB exist only after generation, packaging checks, and release-record entry."
+      }
+    ],
     "version_rule": "Every major-version research, reader, or audio release is derived from a tagged live-book commit and recorded in a public-safe release record.",
     "artifact_policy": [
       "A profile format is a target, not a produced artifact.",
@@ -98,6 +142,13 @@
       "Do not put a caveat that changes claim meaning only inside a stripped live-only section.",
       "Avoid repeating source crosswalk or guardrail language in the reader-facing spine.",
       "Before a major reader release, review the generated manuscript for chapter-to-chapter continuity, duplicate explanation, missing transitions, and e-reader typography."
+    ],
+    "human_reader_quality_floor": [
+      "The generated reader manuscript should feel like a continuous book, not an exported research notebook.",
+      "Chapter openings and summaries should carry transitions after live-only scaffolding is stripped.",
+      "Tables, schemas, and proof-adjacent material should remain only when they help a human reader; otherwise move detail to live or companion material.",
+      "Images and diagrams should be readable on an e-reader-sized viewport or have a companion route for audio.",
+      "The reader release should preserve uncertainty and evidence limits without repeating source-management machinery in every chapter."
     ],
     "ebook_quality_checks": [
       "EPUB opens in at least one e-reader application or device with readable tables, figures, and diagrams.",
@@ -137,6 +188,13 @@
       "Maintain a pronunciation glossary for ASI Stack terms, source IDs, and invented architecture labels.",
       "Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
       "Confirm an audio-embedded EPUB actually contains the reviewed audio files before listing it as produced."
+    ],
+    "audio_packaging_checks": [
+      "Chapter markers match final audio timecodes.",
+      "Audio metadata includes title, major version, source tag or commit, narrator/tooling note, and license or rights statement.",
+      "Companion notes cover diagrams, tables, schemas, proof hooks, and omitted dense matrices.",
+      "Sample listening checks cover the preface, one early chapter, one technical chapter, one appendix or notes segment, and the ending.",
+      "An audio-embedded EPUB is opened after packaging to confirm the audio files are present and playable."
     ],
     "spoken_treatment_rules": [
       "Do not read dense source matrices, schemas, or proof tables verbatim unless the reader edition intentionally keeps them.",

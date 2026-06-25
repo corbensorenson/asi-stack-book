@@ -210,6 +210,7 @@ def write_reader_checklist(
 ) -> str:
     checklist_path = str(reader_policy.get("generated_checklist_path", "READER_RELEASE_CHECKLIST.md"))
     quality_checks = reader_policy.get("ebook_quality_checks", [])
+    human_quality_floor = reader_policy.get("human_reader_quality_floor", [])
     downstream_formats = reader_policy.get("optional_downstream_formats", [])
     release_gate = profile.get("release_gate", [])
 
@@ -249,6 +250,11 @@ def write_reader_checklist(
     ])
     for item in quality_checks:
         lines.append(f"- [ ] {item}")
+
+    if human_quality_floor:
+        lines.extend(["", "## Human Reader Quality Floor", ""])
+        for item in human_quality_floor:
+            lines.append(f"- [ ] {item}")
 
     if downstream_formats:
         lines.extend(["", "## Optional Downstream Formats", ""])
@@ -304,6 +310,7 @@ def write_reader_manifest(
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
         "ebook_quality_checks": reader_policy.get("ebook_quality_checks", []),
+        "human_reader_quality_floor": reader_policy.get("human_reader_quality_floor", []),
         "optional_downstream_formats": reader_policy.get("optional_downstream_formats", []),
         "review_status": "review_required",
         "audio_dependency": "Run scripts/build_audio_script.py only after this reader manuscript is reviewed for human continuity.",

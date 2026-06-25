@@ -42,6 +42,7 @@ The project has a complete v0.2 manuscript draft, but it is not yet a final v1.0
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Current v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
+| [docs/major_version_release_runbook.md](docs/major_version_release_runbook.md) | Operational ladder for tagged live, reader, e-reader/document, and audio releases. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
@@ -90,6 +91,8 @@ The project uses one canonical source tree with explicit content layers:
 - The reader-facing chapter spine is ordinary prose, diagrams, examples, uncertainty, and summaries that should still read well after live-only headings are removed.
 - The live research scaffold contains source crosswalks, guardrails, Codex tests, formalization hooks, claim mappings, and other audit machinery for AIs and researchers.
 - Release derivatives such as EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB exist only after generation or render, review, and release-record entry.
+
+For major versions, use [docs/major_version_release_runbook.md](docs/major_version_release_runbook.md) as the operating sequence: tag the live book, validate the live/research surface, generate and review the reader manuscript, render only the formats that pass locally, then derive audio from the reviewed reader script.
 
 Tracked release profile source:
 

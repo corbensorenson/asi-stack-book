@@ -27,6 +27,14 @@ REQUIRED_TOP_LEVEL_POLICIES = {
     "reader_spine_validation",
     "audio_manuscript_policy",
 }
+REQUIRED_RELEASE_LADDER_STAGES = {
+    "live_tag",
+    "research_release",
+    "reader_source",
+    "reader_formats",
+    "audio_script",
+    "audio_artifacts",
+}
 READER_REQUIRED_STRIPS = {
     (2, "chapter status"),
     (2, "drafting guardrail"),
@@ -191,6 +199,43 @@ def main() -> None:
             elif not (ROOT / value).exists():
                 errors.append(f"major_version_policy.{path_key} does not exist: {value}")
         validate_string_list("major_version_policy", "artifact_policy", major_policy.get("artifact_policy"), errors)
+        release_ladder = major_policy.get("release_ladder")
+        if not isinstance(release_ladder, list) or not release_ladder:
+            errors.append("major_version_policy.release_ladder must be a non-empty list.")
+        else:
+            stages: set[str] = set()
+            for index, record in enumerate(release_ladder):
+                if not isinstance(record, dict):
+                    errors.append(f"major_version_policy.release_ladder[{index}] must be an object.")
+                    continue
+                stage = record.get("stage")
+                if not isinstance(stage, str) or not stage.strip():
+                    errors.append(f"major_version_policy.release_ladder[{index}] missing non-empty stage.")
+                else:
+                    stages.add(stage)
+                profile_id = record.get("profile")
+                if not isinstance(profile_id, str) or profile_id not in REQUIRED_PROFILES:
+                    errors.append(
+                        f"major_version_policy.release_ladder[{index}] profile must be one of "
+                        f"{sorted(REQUIRED_PROFILES)}."
+                    )
+                audiences = record.get("audiences")
+                if not isinstance(audiences, list) or not audiences:
+                    errors.append(f"major_version_policy.release_ladder[{index}] audiences must be a non-empty list.")
+                else:
+                    unknown = sorted(set(audiences) - REQUIRED_AUDIENCES)
+                    if unknown:
+                        errors.append(
+                            f"major_version_policy.release_ladder[{index}] unknown audiences: {unknown}"
+                        )
+                for key in ("gate", "artifact_rule"):
+                    if not isinstance(record.get(key), str) or not record[key].strip():
+                        errors.append(
+                            f"major_version_policy.release_ladder[{index}] missing non-empty {key}."
+                        )
+            missing_ladder = REQUIRED_RELEASE_LADDER_STAGES - stages
+            if missing_ladder:
+                errors.append(f"major_version_policy.release_ladder missing stages: {sorted(missing_ladder)}")
 
     reader_policy = data.get("reader_manuscript_policy")
     if isinstance(reader_policy, dict):
@@ -207,6 +252,12 @@ def main() -> None:
             "reader_manuscript_policy",
             "continuity_requirements",
             reader_policy.get("continuity_requirements"),
+            errors,
+        )
+        validate_string_list(
+            "reader_manuscript_policy",
+            "human_reader_quality_floor",
+            reader_policy.get("human_reader_quality_floor"),
             errors,
         )
         validate_string_list(
@@ -263,6 +314,12 @@ def main() -> None:
             "audio_manuscript_policy",
             "review_requirements",
             audio_policy.get("review_requirements"),
+            errors,
+        )
+        validate_string_list(
+            "audio_manuscript_policy",
+            "audio_packaging_checks",
+            audio_policy.get("audio_packaging_checks"),
             errors,
         )
         validate_string_list(

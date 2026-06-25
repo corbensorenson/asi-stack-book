@@ -43,6 +43,7 @@ The practical rule is simple: the live book is for AI agents and researchers, th
 
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
 - `appendices/I_release_editions.qmd` publishes the model inside the live book.
+- `docs/major_version_release_runbook.md` gives the operational sequence for live, research, reader, ebook/document, and audio release work.
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose and stripped live-only scaffolding.
@@ -68,6 +69,8 @@ python3 scripts/build_reader_edition.py
 The generated tree is ignored by git. Review it before rendering release artifacts.
 
 Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review status, e-reader quality checks, downstream-format notes, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, and release-record residuals. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
+
+`docs/major_version_release_runbook.md` is the checklist to follow once a tagged major version is ready. It keeps the live/research surface, reader manuscript, and audio package in a single derivation ladder so a generated source tree cannot be mistaken for a published artifact.
 
 From `build/reader_edition/`, later release runs can attempt specific formats:
 

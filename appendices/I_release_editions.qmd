@@ -39,6 +39,8 @@ A listed format is a target, not proof that an artifact exists. The release reco
 
 The tracked profile source is `editions/release_profiles.json`.
 
+The operational runbook for packaging a tagged major version is `docs/major_version_release_runbook.md`. The profile file defines the contract; the runbook gives the ordered release procedure.
+
 | Profile | Primary audience | Purpose | Default formats |
 |---|---|---|---|
 | `live_book` | AIs and human researchers | Current Quarto/GitHub Pages book with matrices, source crosswalks, proof hooks, schemas, release records, and guardrails. | HTML |

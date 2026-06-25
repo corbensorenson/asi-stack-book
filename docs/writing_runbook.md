@@ -61,6 +61,8 @@ Major-version reader and audio work stays downstream of the live book. Generated
 
 Run `python3 scripts/validate_reader_spine.py --check` before treating a generated reader manuscript as a major-version candidate. The check verifies that the human-readable layer survives stripping and that live-only terms do not leak into chapter prose.
 
+When a tagged major version is actually being packaged, follow `docs/major_version_release_runbook.md`. It is the release sequence for live/research, reader, ebook/document, and audio artifacts.
+
 ## Per-Chapter Definition of Done
 
 Each chapter must maintain these sections:
