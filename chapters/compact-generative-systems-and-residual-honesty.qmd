@@ -15,9 +15,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this compact-generative claim to all assigned source notes; support remains argument until utility, residual-burden, fallback, or downstream behavior tests exist."
-  - "The compact_generative_record fixture and narrow Lean residual/exactness predicates are implemented; CGS utility, residual-burden behavior, fallback behavior, and downstream tests remain unimplemented."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned Compact Generative Systems sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, downstream utility tests, compact-adequacy proofs, generator behavior, or reproduced implementation evidence exist."
+  - "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; no CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
+  - "BugBrain and Project Theseus passages are used as speculative/source-reported implementation lineage only; they do not prove edge AGI, consciousness, compact adequacy, or runtime behavior."
 ---
 
 ## Chapter status
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
-| Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; raw cache: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi` |
+| Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; passage-reviewed local raw-cache mappings for `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`; passage-reviewed pinned local-project mapping for `project_theseus_whitepaper`; no raw source text is published |
 | Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation; finite residual/exactness predicates implemented in `AsiStackProofs.CompactGenerativeSystems`; chapter-specific CGS utility, fallback, and downstream tests remain planned. |
 
 ## Drafting guardrail
@@ -60,7 +60,7 @@ The claim remains at `argument` support. The source notes support source-derived
 
 ### Claim-source mapping status
 
-Appendix C now maps this compact-generative claim to all assigned source notes. The mappings support compact seeds, rule systems, residual channels, verification contracts, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core.
+Appendix C now carries passage-reviewed mappings for all six assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core, generator, fallback harness, downstream utility result, BugBrain build, simulation benchmark, or Theseus rerun.
 
 | Source | What it supports | Limit |
 |---|---|---|

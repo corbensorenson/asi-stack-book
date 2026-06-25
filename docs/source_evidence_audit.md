@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 224 |
+| Passage-reviewed mappings recorded | 230 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -67,7 +67,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
-| `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
+| `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
@@ -437,12 +437,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_akash_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_golem_docs_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `simulation_scaling` | mapped | note present | chapter listed | not passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `bbvca_v9` | mapped | note present | chapter listed | not passage-reviewed |
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `bbvca_main` | mapped | note present | chapter listed | not passage-reviewed |
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
