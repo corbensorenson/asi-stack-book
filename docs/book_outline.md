@@ -521,6 +521,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A rights-and-corrigibility checklist attached to high-impact plans.
+- Exact Appendix C claim-source mappings for the agency/corrigibility core claim across alignment lineage, recursive-agency governance, metaphysical variants, connector synthesis, and the AI Constitution source; five mappings (`alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending agency-preservation, corrigibility-pathway, high-impact approval, manipulation-resistance, or runtime-policy evidence.
 - Planned Codex test: Agency-preservation scenario.
 - Planned Codex test: Corrigibility pathway test.
 - Planned Codex test: High-impact approval test.

@@ -90,7 +90,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 
 ## Still Missing for v1.0
 
-- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 42 passage-reviewed mappings.
+- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 47 passage-reviewed mappings.
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Semantic proof adequacy audits for the implemented proof targets still need to confirm that each finite-record predicate is the right formalization of its intended operational boundary. The current traceability audit checks wiring and limitation coverage only.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
