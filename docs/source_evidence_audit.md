@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 58 |
+| Passage-reviewed mappings recorded | 62 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -43,7 +43,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `stable-capability-fields` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `stable-capability-fields` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
@@ -268,10 +268,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
-| `stable-capability-fields.core` | `stable-capability-fields` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `stable-capability-fields.core` | `stable-capability-fields` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `stable-capability-fields.core` | `stable-capability-fields` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `stable-capability-fields.core` | `stable-capability-fields` | `ladon_manhattan` | mapped | note present | chapter listed | not passage-reviewed |
+| `stable-capability-fields.core` | `stable-capability-fields` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `stable-capability-fields.core` | `stable-capability-fields` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `stable-capability-fields.core` | `stable-capability-fields` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `stable-capability-fields.core` | `stable-capability-fields` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |

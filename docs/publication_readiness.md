@@ -26,7 +26,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
 - `docs/proof_artifact_audit.md` records the current proof artifact traceability audit across all 112 proof targets.
-- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 461 assigned source/chapter pairs, 461 exact claim-source mappings, complete source-note/chapter-listing coverage, and 58 passage-reviewed mappings recorded.
+- `docs/source_evidence_audit.md` records the current public-safe source evidence audit: 461 assigned source/chapter pairs, 461 exact claim-source mappings, complete source-note/chapter-listing coverage, and 62 passage-reviewed mappings recorded.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
@@ -43,7 +43,7 @@ This file tracks whether the public repository is ready for the next major phase
 
 ## Known Blockers Before v1.0 Evidence Release
 
-- Source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and an accepted evidence transition; the source evidence audit confirms mapping coverage and records the first 58 passage-reviewed mappings, but exact source-note mapping alone remains insufficient for support-state promotion.
+- Source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and an accepted evidence transition; the source evidence audit confirms mapping coverage and records the first 62 passage-reviewed mappings, but exact source-note mapping alone remains insufficient for support-state promotion.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - The manifest now tracks 112 proof targets, all implemented as finite-record Lean targets after adding Personal Compute Hives approval/federation predicates and Artifact Steward Agents release/sunset predicates. Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`, and `docs/proof_artifact_audit.md` records traceability coverage. Semantic proof adequacy review remains planned, and the finite-record modules do not prove broad system behavior.

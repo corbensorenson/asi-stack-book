@@ -1830,22 +1830,59 @@
             {
               "source_id": "scf",
               "mapped_support": "Defines stable field identity, versioned contracts, content-bound implementation artifacts, qualification claims, evaluator policy, route validation, lifecycle states, authority ceilings, and recovery paths.",
-              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or deployed rollback behavior."
+              "limits": "Does not prove production safety, global alignment, strategic-deception resistance, or deployed rollback behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:41-49",
+                "sources/raw/google_docs/scf.txt:53-64",
+                "sources/raw/google_docs/scf.txt:67-75",
+                "sources/raw/google_docs/scf.txt:108-122",
+                "sources/raw/google_docs/scf.txt:1715-1823"
+              ],
+              "passage_review_note": "Reviewed local raw cache for durable semantic identity, governed substitution boundaries, content-bound authorization, scoped qualification, route validation, authority ceilings, state migration solvency, recoverable lifecycle stages, evaluator separation, canary/fallback activation, and change-classification limits; no production SCF deployment, global safety result, strategic-deception defense, or deployed rollback behavior is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports durable artifacts, support states, residuals, regression coverage, routing, verification ledgers, and intent-to-execution handoff boundaries around capability use.",
-              "limits": "Architecture proposal only; no completed VIEA deployment or benchmark/runtime result is proven here."
+              "limits": "Architecture proposal only; no completed VIEA deployment or benchmark/runtime result is proven here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:40-67",
+                "sources/raw/google_docs/viea.txt:455-498",
+                "sources/raw/google_docs/viea.txt:504-527",
+                "sources/raw/google_docs/viea.txt:710-785",
+                "sources/raw/google_docs/viea.txt:958-968"
+              ],
+              "passage_review_note": "Reviewed local raw cache for durable artifact graphs, claim/support-state ledgers, specialist routing, workflow-to-tool compilation, evaluation ratchets, regression coverage, residual backlogs, artifact relationships, benchmark critical-failure vetoes, and least-privilege permission envelopes; no completed deployment, runtime result, or benchmark reproduction is promoted."
             },
             {
               "source_id": "talos",
-              "mapped_support": "Supports typed jobs, deterministic control planes, audit logs, replay, approvals, residual feedback, and promotion controls for capability invocation.",
-              "limits": "Design source only; execution-security and benchmark behavior are not reproduced in this repo."
+              "mapped_support": "Supports typed cognitive jobs, deterministic/auditable execution, evidence-bound artifacts, verification states, proof bundles, replay, mediated external access, and residual uncertainty around capability invocation.",
+              "limits": "Design source only; execution-security, approval behavior, promotion behavior, and benchmark behavior are not reproduced in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5792-5819",
+                "sources/raw/google_docs/talos.txt:5839-5867",
+                "sources/raw/google_docs/talos.txt:5866-5896",
+                "sources/raw/google_docs/talos.txt:5913-5926",
+                "sources/raw/google_docs/talos.txt:5958-5979",
+                "sources/raw/google_docs/talos.txt:6310-6312",
+                "sources/raw/google_docs/talos.txt:6480-6507"
+              ],
+              "passage_review_note": "Reviewed local raw cache for job-based cognitive manufacturing, evidence-bound artifacts, verification states, immutable evidence, evidence binding, adversarial checking, deterministic audit logging, proof bundles, replay, audit, and residual uncertainty; no execution-security result, approval behavior, promotion behavior, or benchmark reproduction is promoted."
             },
             {
               "source_id": "ladon_manhattan",
-              "mapped_support": "Supports authority-handle pressure: capabilities that touch secrets or privileged actions need constrained handles, policy boundaries, compartments, and auditable injection points.",
-              "limits": "Security architecture/specification only; no kernel implementation, side-channel validation, or security audit is claimed."
+              "mapped_support": "Supports authority-handle pressure: capabilities that touch secrets or privileged actions need constrained handles, permission checks, policy boundaries, compartments, and controlled injection points.",
+              "limits": "Security architecture/specification only; no kernel implementation, side-channel validation, audit-log implementation, or security audit is claimed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:14-20",
+                "sources/raw/google_docs/ladon_manhattan.txt:24-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:45-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:101-118"
+              ],
+              "passage_review_note": "Reviewed local raw cache for credential-use without credential knowledge, kernel/vault separation, opaque handles, permission-table lookup, authorized injection, Digital SCIF isolation, and cleanup; no kernel implementation, side-channel result, audit-log implementation, or security audit is promoted."
             },
             {
               "source_id": "moecot",
