@@ -610,6 +610,7 @@ Draft arc:
 - Mechanism: Represent audit, exit, fork, dissent, and contestability as capabilities with access paths, artifacts, preservation rules, safety constraints, and denial semantics.
 - Mechanism: Attach audit artifacts and redaction/denial reasons to governance decisions.
 - Mechanism: Treat fork/exit as preserved escape hatches against lock-in while preserving source, privacy, and safety obligations.
+- Mechanism: Treat material usability and recorded denial semantics as part of the right, so an audit, exit, fork, or dissent path is not merely a declared policy aspiration.
 - Interface: Governance issues rights.
 - Interface: SCFs preserve rights across replacement.
 - Interface: Memory/security/execution systems produce evidence for audit, export, revocation, and contestability.
@@ -2406,6 +2407,7 @@ Draft arc:
 - Mechanism: Turn every simulator, synthetic benchmark, or nested-world scenario into a contract with declared scope, clockspeed, fidelity, temporal semantics, resource demand, approximation liberties, and supported-claim boundary.
 - Mechanism: Use the contract to decide whether a simulation supports a unit invariant, a bounded benchmark, a roadmap constraint, or only a speculative scenario note.
 - Mechanism: Route failed or under-specified simulation claims into residuals, reduced scope, or blocked status instead of treating approximate worlds as ground truth.
+- Mechanism: Treat simulation as a translation problem whose results can travel back only along the declared variables, omissions, bottlenecks, and fidelity boundary.
 - Interface: Efficiency theory uses resource constraints.
 - Interface: Benchmarks record fidelity limits.
 - Interface: Alignment scenarios avoid unbounded simulation claims.
@@ -2706,6 +2708,7 @@ Draft arc:
 - Mechanism: Keep `proofs/proof_manifest.json` generated from outline `lean:*` tags and require traceability through triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E before calling a target implemented.
 - Mechanism: Route candidates to Lean predicates, executable schemas, fixture validators, process contracts, research targets, blocked targets, or retired targets according to what can actually be checked.
 - Mechanism: Keep semantic proof adequacy as a separate review from build success, schema success, source interpretation, deployed enforcement, model quality, or benchmark evidence.
+- Mechanism: Treat the proof envelope as a lane discipline: Lean proves finite predicates, schemas validate record shape, process validators check wiring, tests exercise behavior, and benchmarks measure performance without collapsing those artifacts into one support state.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.

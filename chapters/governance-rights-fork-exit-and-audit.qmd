@@ -59,6 +59,10 @@ Transparency is not the same as auditability. A user can be shown an explanation
 
 The rights have to be technical. They need artifacts, permissions, retention rules, redaction rules, and failure tests.
 
+The practical test is whether a right still works when it is inconvenient for the system. Audit matters most when the decision is contested. Exit matters most when the platform would prefer retention. Fork matters most when maintainers disagree. Dissent matters most when the governing process wants closure. If those rights depend on voluntary cooperation from the authority being challenged, they are not robust interfaces; they are policy aspirations.
+
+This does not mean rights should override every safety boundary. A fork can be denied or narrowed when it would expose private data, secrets, dangerous tools, or obligations that cannot be transferred. An audit can redact protected material. An exit path can preserve legal or safety constraints. The engineering requirement is that denial itself becomes an artifact with scope, reason, authority, and appeal path, rather than disappearing into an opaque refusal.
+
 ## Core Claim
 
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
@@ -86,6 +90,8 @@ Governance rights become real only when they have access paths, artifacts, prese
 Each right is represented as a capability with an owner, scope, artifact requirement, safety constraint, access path, preservation rule, and test. Audit requires durable records attached to governance decisions. Exit requires export, revocation, and continuity paths. Fork requires a reproducible boundary that preserves source, privacy, and safety obligations. Dissent requires a channel that cannot be silently deleted by the authority being challenged.
 
 SCFs later depend on this chapter: capability replacement must preserve protected governance rights across implementation changes.
+
+The rights record is therefore a bridge between governance and runtime state. It says which logs must survive, which memory exports are allowed, which secrets must remain sealed, which dependencies must be portable, and which decision can be contested after a model, policy, tool, or capability field changes. That bridge matters because governance failure often looks like ordinary maintenance: a migration drops old logs, an update changes appeal semantics, a new integration captures user data, or a replacement implementation removes an export hook. The stack treats those as rights-preservation failures, not as harmless refactors.
 
 ```{mermaid}
 flowchart LR
@@ -128,6 +134,8 @@ Minimum fields:
 - `test_hook`
 
 Governance issues rights. SCFs preserve rights across replacement. Execution and memory systems produce audit artifacts. Evidence checks whether the right was materially usable rather than merely declared.
+
+Material usability is the interface standard. A declared audit right is weak if records are missing, unreadable, unauthenticated, or controlled only by the challenged party. A declared exit path is weak if exports omit the state needed to continue elsewhere. A declared fork right is weak if it has no reproducible boundary or if it silently discards safety obligations. The record does not solve institutional governance by itself, but it gives later validators something concrete to inspect.
 
 ## Invariants
 

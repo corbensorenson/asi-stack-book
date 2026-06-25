@@ -57,6 +57,10 @@ GenesisCode supplies the small trusted-kernel and obligation discipline. Spinoza
 
 Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions. They are also misleading when tests, diagrams, generated JSON, or Python examples are described as proofs. The stack needs a proof envelope that says what is mechanized, what is executable but not formal, what is blocked, and what is intentionally out of scope.
 
+The hard part is not enthusiasm for proof; it is choosing the right unit of proof. "The system is safe" is too broad. "An execution request without a required approval cannot enter the approved state" is narrow enough to test, model, or prove. "The architecture is aligned" is too broad. "A support-state transition cannot move above `argument` without the required evidence record" is narrow enough to encode. The proof envelope keeps this discipline visible so formal artifacts strengthen the book instead of decorating it.
+
+This also protects readers from a subtle form of evidence inflation. A Lean module may prove a record invariant, while a schema validates fields, while a test exercises behavior, while a benchmark measures performance. Those artifacts can all be valuable, but they do not collapse into one kind of support. If the book cannot state which lane a claim belongs to, the claim is not ready for stronger evidence language.
+
 ## Core Claim
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
@@ -101,6 +105,8 @@ Each target should record its tag, module, formal target, artifact path, verifie
 
 The repository now mechanizes the envelope rule as a finite target-status predicate. In `AsiStackProofs.ProofEnvelope`, an implemented target must carry module-existence and build-passed flags, and a non-operational target is routed to planned or blocked rather than implemented. The proof is a policy invariant over proof-target records; it is not a filesystem crawler, theorem-discovery tool, or coverage audit.
 
+The result is a layered formalization path. First the prose names an invariant. Then the outline assigns a stable `lean:*` tag. Then the proof manifest records the target. Then triage decides whether the target belongs in Lean, a schema, a process validator, a research backlog, or a blocked state. Only then does an implementation artifact matter. This path makes it harder for a future writing run to confuse a desirable theorem with an existing theorem, or an existing theorem with a broad system guarantee.
+
 ## Interfaces
 
 The Proof Target Record is the interface between prose, outline, Lean, schemas, validators, and Appendix E. It lets the book say exactly which finite predicate has an artifact behind it while keeping broader system behavior outside the proof claim.
@@ -120,6 +126,8 @@ Minimum fields:
 - `non_claims`
 
 The outline defines proof scope. `proofs/proof_manifest.json` records the generated target set. Lean modules implement selected invariants. JSON Schemas implement record contracts. Validation checks that manifests, schemas, and examples stay coherent.
+
+The support-state effect remains deliberately narrow. A passed `lake build` can justify saying that a local finite-record predicate builds. It cannot justify saying the source interpretation is correct, the real system enforces the rule, the model behaves well, or the benchmark improved. A passed schema validator can justify saying that a fixture has the required shape. It cannot justify saying the represented event happened. This separation is what makes the proof envelope useful to a living book rather than theatrical.
 
 ## Invariants
 

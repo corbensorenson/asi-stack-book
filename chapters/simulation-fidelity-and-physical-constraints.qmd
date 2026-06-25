@@ -55,6 +55,10 @@ Simulation-based claims can become unbounded if scope, fidelity, resource cost, 
 
 Resource economics matters here because simulation consumes capacity. Compact generative systems matter because a compact simulator can hide residual complexity. Artifact compression matters because storing traces and states can become part of the cost. Alignment scenarios matter because speculative metaphysics should not be smuggled into engineering claims.
 
+The most common error is letting a simulation inherit the authority of the thing it imitates. A simulator may preserve a causal structure, a statistical pattern, a control interface, or a failure surface, but rarely all of them at once. A result that is valid for a toy dynamic may not transfer to a physical device. A result that is valid for a narrow benchmark environment may not transfer to an open world. A result that is useful for stress-testing a policy may not justify claims about consciousness, moral status, or confinement.
+
+The contract prevents that slippage by making simulation a translation problem. What is translated from the target system into the simulated world? What is omitted? What is distorted by time scale, resolution, resource ceilings, or observation? What part of the result is allowed to travel back? A simulation can be extremely valuable when those questions are answered, but it should not receive a blank check simply because it looks like an environment.
+
 ## Core Claim
 
 [simulation-fidelity-and-physical-constraints.core, label: Design rationale, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
@@ -78,6 +82,8 @@ Appendix C now records passage-reviewed mappings for all five assigned sources. 
 Simulation is a substrate only after it becomes an instrument with a declared contract. `simulation_scaling` supplies the feasibility frame: scope, clockspeed, fidelity, temporal semantics, efficiency, and bottlenecks have to be named before a result can mean anything. CGS and RankFold/NeuralFold add the hidden-burden warning: a compact simulator or stored trace can hide complexity in residuals, manifests, reconstruction checks, or storage costs. TokenMana adds the budget pressure, and `alignment_field` keeps speculative agency and metaphysical claims from becoming engineering evidence.
 
 A Simulation Contract Record makes that boundary inspectable. It records the simulated target, the fidelity promise, the resource bill, the approximation liberties, and the exact claim boundary the simulation is allowed to support.
+
+The record also separates three uses that are often conflated. A simulation can be a unit-test surface for a local invariant, a benchmark surface for comparing systems under declared approximations, or a scenario surface for exploring possible risks. These uses have different evidential weight. Unit tests can check a narrow transition. Benchmarks can compare behavior inside the environment. Scenarios can organize imagination and red-team thinking. None of those automatically proves physical feasibility, open-world transfer, or moral significance.
 
 ```{mermaid}
 flowchart LR
@@ -104,6 +110,8 @@ The record should specify:
 - Claim boundary: what the simulation can and cannot support.
 
 This turns simulation from a vague substrate into a bounded experimental instrument.
+
+When a simulation fails the contract, the right move is not necessarily to abandon it. The system can reduce scope, lower the support claim, expose a residual, add missing resource estimates, or route the result to a speculative scenario lane. The important thing is that the claim moves down to match the fidelity rather than the prose moving up to match the ambition.
 
 ## Interfaces
 
