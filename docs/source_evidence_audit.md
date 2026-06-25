@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 167 |
+| Passage-reviewed mappings recorded | 179 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -65,7 +65,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
-| `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
+| `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 0 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
@@ -403,18 +403,18 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `beastbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot_md` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_architecture_gate` | mapped | note present | chapter listed | not passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `talos` | mapped | note present | chapter listed | not passage-reviewed |

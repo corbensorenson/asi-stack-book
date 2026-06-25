@@ -3,7 +3,7 @@ title: "MoECOT Runtime and Multi-Core Orchestration"
 chapter_id: "moecot-runtime-and-multi-core-orchestration"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
+draft_maturity: "chapter draft"
 last_updated: "2026-06-25"
 primary_sources:
   - "octopus_router"
@@ -21,9 +21,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until MoECOT runtime artifacts, replay records, benchmark records, or reproduced local runs exist."
-  - "Only protocol schema/fixture validation is implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned MoECOT runtime sources; support remains at argument until MoECOT runtime artifacts, replay records, benchmark records, or reproduced local runs exist."
+  - "Only protocol schema/fixture validation and finite Lean predicates are implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
+  - "No support-state promotion is implied by this passage-review pass."
 ---
 
 ## Chapter status
@@ -33,13 +33,13 @@ open_evidence_gaps:
 | Chapter ID | `moecot-runtime-and-multi-core-orchestration` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
+| Manuscript maturity | chapter draft |
 | Last updated | 2026-06-25 |
 | Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
-| Source loading state | source notes: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; raw cache: `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`; connector/recovery: `moecot` |
+| Source loading state | source notes: all assigned sources; local raw cache reviewed for `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, and `talos`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; tracked local-project source passages reviewed for the three Theseus records; raw source text is not published. |
 | Test state | MoECOT orchestration fixture validation implemented; `AsiStackProofs.MoECOTRuntime` implements finite runtime-core evidence-reference and unavailable-source promotion gates; runtime replay and benchmark checks remain planned. |
 
 ## Drafting guardrail
@@ -66,7 +66,7 @@ The claim remains at `argument` support. The MoECOT source note supports impleme
 
 ### Claim-source mapping status
 
-Appendix C now maps this MoECOT runtime claim to all assigned source notes. The mappings support using MoECOT as an implementation-reference crosswalk for compact orchestration, specialist lanes, ledgers, readiness, replay, and handoff, not as reproduced runtime evidence.
+Appendix C now records exact passage-reviewed mappings for all twelve assigned MoECOT runtime sources. Seven Google Docs raw-cache mappings, two authenticated Google Drive connector mappings, and three tracked local-project Theseus mappings were reviewed. These mappings support the implementation-reference crosswalk for compact orchestration, specialist lanes, ledgers, readiness, replay, and handoff; they do not promote runtime, benchmark, replay, safety, or deployment claims.
 
 | Source | What it supports | Limit |
 |---|---|---|
