@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/hive_federation_lease.schema.json",
+  "title": "Hive Federation Lease",
+  "type": "object",
+  "required": [
+    "lease_id",
+    "provider_hive",
+    "requester_hive",
+    "job_contract_ref",
+    "allowed_job_classes",
+    "allowed_data_classes",
+    "allowed_tool_classes",
+    "network_scope",
+    "sandbox_manifest_ref",
+    "budget_limit",
+    "payment_or_credit_ref",
+    "evidence_obligations",
+    "issued_at",
+    "expires_at",
+    "revocation_path",
+    "non_claims"
+  ],
+  "properties": {
+    "lease_id": { "type": "string", "minLength": 1 },
+    "provider_hive": { "type": "string", "minLength": 1 },
+    "requester_hive": { "type": "string", "minLength": 1 },
+    "job_contract_ref": { "type": "string", "minLength": 1 },
+    "allowed_job_classes": { "type": "array", "items": { "type": "string" } },
+    "allowed_data_classes": { "type": "array", "items": { "type": "string" } },
+    "allowed_tool_classes": { "type": "array", "items": { "type": "string" } },
+    "network_scope": { "type": "string", "minLength": 1 },
+    "sandbox_manifest_ref": { "type": "string", "minLength": 1 },
+    "budget_limit": { "type": "string", "minLength": 1 },
+    "payment_or_credit_ref": { "type": "string", "minLength": 1 },
+    "evidence_obligations": { "type": "array", "items": { "type": "string" } },
+    "issued_at": { "type": "string", "minLength": 1 },
+    "expires_at": { "type": "string", "minLength": 1 },
+    "revocation_path": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

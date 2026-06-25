@@ -48,4 +48,61 @@ theorem faster_forbidden_node_cannot_be_selected
   intro valid forbidden
   exact valid forbidden
 
+structure HighRiskApprovalReview where
+  highRiskJob : Bool
+  approvalRequired : Bool
+  boundApprovalReceiptPresent : Bool
+  jobExecuted : Bool
+deriving DecidableEq, Repr
+
+def HighRiskJobRequiresBoundApproval
+    (review : HighRiskApprovalReview) : Prop :=
+  review.highRiskJob = true ->
+    review.approvalRequired = true ->
+      review.jobExecuted = true ->
+        review.boundApprovalReceiptPresent = true
+
+theorem high_risk_hive_job_without_bound_approval_cannot_execute
+    {review : HighRiskApprovalReview} :
+    HighRiskJobRequiresBoundApproval review ->
+    review.highRiskJob = true ->
+      review.approvalRequired = true ->
+        review.jobExecuted = true ->
+          review.boundApprovalReceiptPresent = true := by
+  intro valid highRisk approvalRequired executed
+  exact valid highRisk approvalRequired executed
+
+structure FederationLeaseReview where
+  externalAccessGranted : Bool
+  activeLeasePresent : Bool
+  scopeRecorded : Bool
+  sandboxRecorded : Bool
+  evidenceObligationsRecorded : Bool
+  expirationRecorded : Bool
+  revocationPathRecorded : Bool
+deriving DecidableEq, Repr
+
+def ExternalAccessRequiresLeaseBoundary
+    (review : FederationLeaseReview) : Prop :=
+  review.externalAccessGranted = true ->
+    review.activeLeasePresent = true ∧
+      review.scopeRecorded = true ∧
+        review.sandboxRecorded = true ∧
+          review.evidenceObligationsRecorded = true ∧
+            review.expirationRecorded = true ∧
+              review.revocationPathRecorded = true
+
+theorem external_hive_access_requires_lease_scope_sandbox_evidence_expiration_and_revocation
+    {review : FederationLeaseReview} :
+    ExternalAccessRequiresLeaseBoundary review ->
+    review.externalAccessGranted = true ->
+      review.activeLeasePresent = true ∧
+        review.scopeRecorded = true ∧
+          review.sandboxRecorded = true ∧
+            review.evidenceObligationsRecorded = true ∧
+              review.expirationRecorded = true ∧
+                review.revocationPathRecorded = true := by
+  intro valid granted
+  exact valid granted
+
 end AsiStackProofs.PersonalComputeHives

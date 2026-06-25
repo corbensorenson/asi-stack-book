@@ -3799,7 +3799,17 @@
             "tokenmana",
             "project_theseus_whitepaper",
             "theseus_operator_os",
-            "ladon_manhattan"
+            "ladon_manhattan",
+            "ext_tailscale_docs_2025",
+            "ext_kubernetes_overview_docs",
+            "ext_k3s_docs_2026",
+            "ext_nomad_docs",
+            "ext_ray_core_docs_2026",
+            "ext_boinc_home_2026",
+            "ext_syncthing_home",
+            "ext_akash_docs_2026",
+            "ext_golem_docs_2025",
+            "ext_github_self_hosted_runners_docs"
           ],
           "source_queue": {
             "primary": [
@@ -3817,7 +3827,18 @@
               "theseus_operator_os",
               "ladon_manhattan"
             ],
-            "variants": [],
+            "variants": [
+              "ext_tailscale_docs_2025",
+              "ext_kubernetes_overview_docs",
+              "ext_k3s_docs_2026",
+              "ext_nomad_docs",
+              "ext_ray_core_docs_2026",
+              "ext_boinc_home_2026",
+              "ext_syncthing_home",
+              "ext_akash_docs_2026",
+              "ext_golem_docs_2025",
+              "ext_github_self_hosted_runners_docs"
+            ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
               "sources/inbox/personal_compute_hives_browser_note_2026-06-25/"
@@ -3881,6 +3902,56 @@
               "source_id": "ladon_manhattan",
               "mapped_support": "Supports blind secret handles, secure entry paths, policy injection boundaries, isolated compartments, and reduced credential exposure.",
               "limits": "Does not prove kernel-level isolation, side-channel resistance, or complete AI security."
+            },
+            {
+              "source_id": "ext_tailscale_docs_2025",
+              "mapped_support": "Supports private overlay-network and identity-connectivity vocabulary for joining personal devices across network locations.",
+              "limits": "Does not grant execution authority, data access, family approval, or scheduler safety."
+            },
+            {
+              "source_id": "ext_kubernetes_overview_docs",
+              "mapped_support": "Supports container-orchestration vocabulary for service discovery, storage orchestration, rollouts, bin packing, and self-healing.",
+              "limits": "Does not encode personal AI authority, VCM taint, child portals, rented-node safety, or evidence-state governance."
+            },
+            {
+              "source_id": "ext_k3s_docs_2026",
+              "mapped_support": "Supports lightweight edge, homelab, IoT, CI, single-board, air-gapped, and embedded Kubernetes substrate options.",
+              "limits": "Does not prove K3s is the right substrate for a hive or that lightweight orchestration enforces ASI Stack policy."
+            },
+            {
+              "source_id": "ext_nomad_docs",
+              "mapped_support": "Supports heterogeneous job scheduling across containers, binaries, batch jobs, on-prem infrastructure, and cloud infrastructure.",
+              "limits": "Does not decide which jobs are lawful, private, age-appropriate, evidence-sufficient, or safe to run on personal devices."
+            },
+            {
+              "source_id": "ext_ray_core_docs_2026",
+              "mapped_support": "Supports distributed task, actor, and object-reference vocabulary for hive workers and project-hive execution.",
+              "limits": "Does not prove distributed object movement preserves data locality, taint, revocation, or privacy."
+            },
+            {
+              "source_id": "ext_boinc_home_2026",
+              "mapped_support": "Supports volunteer-compute lineage for background jobs and donated machine capacity.",
+              "limits": "Does not make public project work safe for personal machines without signed contracts, sandboxes, and evidence bundles."
+            },
+            {
+              "source_id": "ext_syncthing_home",
+              "mapped_support": "Supports local-first file synchronization, device identity, encrypted transport, and user-controlled storage-location vocabulary.",
+              "limits": "Does not solve semantic memory quality, VCM revocation, source adequacy, or per-device data-class policy."
+            },
+            {
+              "source_id": "ext_akash_docs_2026",
+              "mapped_support": "Supports decentralized cloud, provider resources, leases, GPUs, SDKs, and rented-compute vocabulary.",
+              "limits": "Does not prove rented compute is appropriate for private data or that any provider satisfies hive evidence obligations."
+            },
+            {
+              "source_id": "ext_golem_docs_2025",
+              "mapped_support": "Supports decentralized task execution, provider selection, data transfer, result handling, and resource-sharing vocabulary.",
+              "limits": "Does not prove provider trust, payment fairness, sandbox safety, output validity, or dispute handling."
+            },
+            {
+              "source_id": "ext_github_self_hosted_runners_docs",
+              "mapped_support": "Supports self-hosted CI runners as user-managed physical, virtual, containerized, on-prem, or cloud execution machines.",
+              "limits": "Does not prove unattended runner isolation, cleanup, credential boundaries, or safe execution for untrusted work."
             }
           ],
           "mechanism": [
@@ -3888,6 +3959,7 @@
             "Classify jobs by data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirement before scheduling.",
             "Let eligible devices bid on work after policy filtering, then choose the best lawful node rather than the fastest reachable node.",
             "Treat phones, laptops, tablets, dashboards, and headsets as portals; desktops, NAS boxes, old machines, workshop computers, and rented nodes as bounded workers or stores.",
+            "Use portal cards, approval receipts, job bids, federation leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations as the Hive-to-Hive protocol surface.",
             "Preserve audit records, data-placement decisions, approval events, and residuals for every cross-device or cross-hive action."
           ],
           "interfaces": [
@@ -3913,11 +3985,18 @@
             "Identity confusion grants child, guest, agent, or project authority to the wrong principal.",
             "Hive memory becomes an ungoverned swamp of artifacts, logs, models, and personal data."
           ],
-          "minimal_implementation": "A local personal-hive dashboard with a device registry, signed resource cards, job queue, manual phone approval, policy-first scheduler, artifact log, and no public federation or autonomous spending.",
+          "minimal_implementation": "A local personal-hive dashboard with a device registry, portal cards, signed resource cards, job queue, manual phone approval receipts, policy-first scheduler, job bids, federation leases disabled by default, artifact log, and no public federation or autonomous spending.",
           "codex_tests": [
             {
               "name": "Device registry fixture validation",
               "purpose": "Validate DeviceResourceCard, HiveJobContract, and HiveSchedulingDecision public record shapes without contacting devices or running a scheduler.",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation",
+              "status": "implemented; fixture validation only"
+            },
+            {
+              "name": "Portal, approval, bid, and federation fixture validation",
+              "purpose": "Validate PortalCard, HiveApprovalReceipt, HiveJobBid, and HiveFederationLease public record shapes without contacting devices, approving real work, or joining hives.",
               "implementation_status": "implemented",
               "result_status": "passes via protocol fixture validation",
               "status": "implemented; fixture validation only"
@@ -3933,7 +4012,21 @@
             "Phone approval gate test",
             "Child topic routing test",
             "External project sandbox contract test",
-            "Audit replay test"
+            "Audit replay test",
+            {
+              "name": "Bound approval receipt test",
+              "purpose": "Check the finite Lean predicate that a high-risk hive job requiring approval cannot execute unless a bound approval receipt is present.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no approval service run"
+            },
+            {
+              "name": "Federation lease boundary test",
+              "purpose": "Check the finite Lean predicate that external hive access requires active lease, scope, sandbox, evidence, expiration, and revocation records.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no federation run"
+            }
           ],
           "proof_targets": [
             {
@@ -3946,6 +4039,18 @@
               "tag": "lean:personal_hives.policy_first.failure_blocks_promotion",
               "module": "AsiStackProofs.PersonalComputeHives",
               "target": "A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:personal_hives.approval_gate.failure_blocks_promotion",
+              "module": "AsiStackProofs.PersonalComputeHives",
+              "target": "A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:personal_hives.federation_lease.operational_invariant",
+              "module": "AsiStackProofs.PersonalComputeHives",
+              "target": "External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records.",
               "status": "implemented"
             }
           ]
@@ -5875,7 +5980,14 @@
             "project_theseus_whitepaper",
             "theseus_operator_os",
             "scf",
-            "field_of_god_ai_constitution"
+            "field_of_god_ai_constitution",
+            "ext_akash_docs_2026",
+            "ext_golem_docs_2025",
+            "ext_github_webhooks_docs",
+            "ext_github_self_hosted_runners_docs",
+            "ext_openzeppelin_governor_docs",
+            "ext_agentic_workflow_injection_2026",
+            "ext_dao_delegation_fairness_2025"
           ],
           "source_queue": {
             "primary": [
@@ -5896,7 +6008,15 @@
               "scf",
               "field_of_god_ai_constitution"
             ],
-            "variants": [],
+            "variants": [
+              "ext_akash_docs_2026",
+              "ext_golem_docs_2025",
+              "ext_github_webhooks_docs",
+              "ext_github_self_hosted_runners_docs",
+              "ext_openzeppelin_governor_docs",
+              "ext_agentic_workflow_injection_2026",
+              "ext_dao_delegation_fairness_2025"
+            ],
             "connector_or_recovery": [
               "coherence_exchange"
             ],
@@ -5977,14 +6097,50 @@
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports consent, non-domination, least sufficient power, memory/tool governance, reversibility, auditability, and caution around self-authorization.",
               "limits": "Does not implement constitutional enforcement or prove institutional capture resistance."
+            },
+            {
+              "source_id": "ext_akash_docs_2026",
+              "mapped_support": "Supports rented decentralized-compute vocabulary for steward budgets, provider resources, leases, and deployment operations.",
+              "limits": "Does not prove a steward should rent compute or that provider isolation, cost, legality, or result quality are acceptable."
+            },
+            {
+              "source_id": "ext_golem_docs_2025",
+              "mapped_support": "Supports decentralized task execution, provider selection, and resource-sharing vocabulary for public project hives.",
+              "limits": "Does not prove sandbox safety, evidence validity, payment fairness, or dispute resolution for stewarded work."
+            },
+            {
+              "source_id": "ext_github_webhooks_docs",
+              "mapped_support": "Supports event-driven repository automation vocabulary for issues, pull requests, workflow events, delivery headers, and typed payload intake.",
+              "limits": "Does not make webhook content trusted control text or prove a steward bot is safe."
+            },
+            {
+              "source_id": "ext_github_self_hosted_runners_docs",
+              "mapped_support": "Supports self-hosted runner vocabulary for project-owned or maintainer-assigned compute execution.",
+              "limits": "Does not prove self-hosted runners are safe for untrusted tasks without isolation, cleanup, credential, and review gates."
+            },
+            {
+              "source_id": "ext_openzeppelin_governor_docs",
+              "mapped_support": "Supports proposal, vote, quorum, timelock, settings, and guardian-control vocabulary for steward governance.",
+              "limits": "Does not solve project legitimacy, legal authority, capture resistance, or safe treasury autonomy."
+            },
+            {
+              "source_id": "ext_agentic_workflow_injection_2026",
+              "mapped_support": "Supports the steward chapter warning that untrusted issue, PR, comment, and workflow event context can become agentic workflow injection material.",
+              "limits": "Does not prove this repository is vulnerable or safe; no workflow-injection fixture or scan has been run."
+            },
+            {
+              "source_id": "ext_dao_delegation_fairness_2025",
+              "mapped_support": "Supports anti-capture concerns around voter apathy, voting-power concentration, delegation misalignment, and ranking bias.",
+              "limits": "Does not prove the proposed separated ledgers prevent governance capture."
             }
           ],
           "mechanism": [
             "Bind a steward to an artifact mission, non-goals, authority ceiling, governance model, budget policy, evidence requirements, and sunset criteria.",
+            "Run an explicit lifecycle from inception to bootstrap, build, release, maintenance, governance, decline, and archive instead of treating stewardship as one long task list.",
             "Convert roadmap goals into project work contracts with required outputs, allowed tools, forbidden tools, worker requirements, budget, verification, payment, and reputation fields.",
             "Orchestrate humans, agents, personal hives, project hives, CI runners, rented compute, reviewers, and maintainers through typed jobs and evidence bundles.",
-            "Separate reputation, governance shares, and economic credits so contribution, voting, and money cannot collapse into one gameable token.",
-            "Run the artifact lifecycle from inception through bootstrap, build, release, maintenance, governance, decline, and archive."
+            "Separate reputation, governance shares, economic credits, authorship, review credit, and evidence credit so contribution, voting, money, and truth claims cannot collapse into one gameable token.",
+            "Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until the steward records review."
           ],
           "interfaces": [
             "VCM preserves project memory, source documents, decisions, issues, releases, and unresolved questions.",
@@ -6010,7 +6166,7 @@
             "AI maintainer monopoly that makes the project opaque to humans.",
             "Zombie project continuation after user value disappears."
           ],
-          "minimal_implementation": "A `PROJECT_STEWARD.yml` file plus a GitHub-oriented steward bot that labels issues, drafts plans, proposes work contracts, requests CI, summarizes pull requests, writes release notes, records evidence, and never spends funds or merges to protected branches without policy approval.",
+          "minimal_implementation": "A `PROJECT_STEWARD.yml` file plus a GitHub-oriented steward bot that labels issues, drafts plans, proposes work contracts, requests CI, summarizes pull requests, writes release notes, records evidence, opens sunset reviews, and never spends funds or merges to protected branches without policy approval.",
           "codex_tests": [
             {
               "name": "Project steward manifest fixture validation",
@@ -6036,7 +6192,21 @@
             "Untrusted event taint test",
             "Contribution ledger separation test",
             "Sunset criteria test",
-            "Release evidence handoff test"
+            "Release evidence handoff test",
+            {
+              "name": "Release evidence gate test",
+              "purpose": "Check the finite Lean predicate that stewarded release publication requires test, evidence, changelog, residual, and approval records.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no release runner exists"
+            },
+            {
+              "name": "Sunset ordinary-work block test",
+              "purpose": "Check the finite Lean predicate that ordinary work generation is blocked when sunset criteria are met and no sunset review has opened.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean predicate; no steward loop exists"
+            }
           ],
           "proof_targets": [
             {
@@ -6049,6 +6219,18 @@
               "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactStewardAgents",
               "target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifact_stewards.release_gate.operational_invariant",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifact_stewards.sunset_review.failure_blocks_promotion",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
               "status": "implemented"
             }
           ]

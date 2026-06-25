@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/portal_card.schema.json",
+  "title": "Portal Card",
+  "type": "object",
+  "required": [
+    "portal_id",
+    "human_principal",
+    "input_modes",
+    "output_modes",
+    "authority_level",
+    "privacy_context",
+    "attention_level",
+    "locality_class",
+    "safe_output_profile",
+    "revocation_path",
+    "non_claims"
+  ],
+  "properties": {
+    "portal_id": { "type": "string", "minLength": 1 },
+    "human_principal": { "type": "string", "minLength": 1 },
+    "guardian_principal": { "type": "string" },
+    "input_modes": { "type": "array", "items": { "type": "string" } },
+    "output_modes": { "type": "array", "items": { "type": "string" } },
+    "authority_level": {
+      "type": "string",
+      "enum": ["view_only", "ordinary_request", "approval_surface", "guardian_surface", "admin_surface"]
+    },
+    "privacy_context": {
+      "type": "string",
+      "enum": ["public", "personal_private", "family_sensitive", "workshop", "project", "unknown"]
+    },
+    "attention_level": {
+      "type": "string",
+      "enum": ["background", "glanceable", "interactive", "operator_present", "guardian_present"]
+    },
+    "locality_class": {
+      "type": "string",
+      "enum": ["home", "mobile", "workshop", "project_space", "rented_region", "unknown"]
+    },
+    "safe_output_profile": { "type": "string", "minLength": 1 },
+    "revocation_path": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

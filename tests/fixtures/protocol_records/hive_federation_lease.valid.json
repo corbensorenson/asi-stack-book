@@ -1,0 +1,21 @@
+{
+  "lease_id": "hive-lease://disabled-public-project-demo",
+  "provider_hive": "hive://personal-demo",
+  "requester_hive": "hive://public-project-demo",
+  "job_contract_ref": "hive-job://schema-fixture-validation",
+  "allowed_job_classes": ["schema_validation"],
+  "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+  "allowed_tool_classes": ["schema_validation"],
+  "network_scope": "no private network; fixture-only disabled lease",
+  "sandbox_manifest_ref": "sandbox://fixture-no-execution",
+  "budget_limit": "no spend",
+  "payment_or_credit_ref": "credit://none",
+  "evidence_obligations": ["artifact_log", "validator_command", "non_claims"],
+  "issued_at": "2026-06-25T00:00:00Z",
+  "expires_at": "fixture validation run ends",
+  "revocation_path": "delete lease and reject all external project jobs",
+  "non_claims": [
+    "This fixture does not join two hives.",
+    "This fixture does not prove sandbox, payment, reputation, or federation safety."
+  ]
+}

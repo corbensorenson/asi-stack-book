@@ -1,0 +1,20 @@
+{
+  "bid_id": "hive-bid://schema-fixture-validation-home-desktop",
+  "job_id": "hive-job://schema-fixture-validation",
+  "bidder_device_id": "device://home-desktop-gpu-demo",
+  "bid_status": "eligible",
+  "estimated_latency": "under one minute for schema validation; not measured",
+  "estimated_cost": "zero external spend",
+  "estimated_energy": "ordinary local validation cost; not measured",
+  "data_transfer_estimate": "local fixture files only",
+  "thermal_risk": "low",
+  "interruption_risk": "low",
+  "privacy_fit": "high",
+  "capability_fit": "high",
+  "policy_reason": "fixture job is local_only and uses public-safe schema records",
+  "evidence_refs": ["tests/fixtures/protocol_records/device_resource_card.valid.json"],
+  "non_claims": [
+    "This fixture is not a measured scheduler bid.",
+    "This fixture does not prove performance, privacy, availability, or energy accounting."
+  ]
+}

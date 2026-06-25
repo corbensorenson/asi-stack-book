@@ -1,0 +1,17 @@
+{
+  "portal_id": "portal://phone-demo",
+  "human_principal": "person://owner-demo",
+  "guardian_principal": "",
+  "input_modes": ["touch", "voice"],
+  "output_modes": ["screen", "notification"],
+  "authority_level": "approval_surface",
+  "privacy_context": "personal_private",
+  "attention_level": "interactive",
+  "locality_class": "mobile",
+  "safe_output_profile": "owner-only approval prompts for fixture jobs; no real device was contacted",
+  "revocation_path": "remove portal card from hive registry and invalidate active approval receipts",
+  "non_claims": [
+    "This fixture does not enroll a phone.",
+    "This fixture does not prove authentication, privacy, or approval UX safety."
+  ]
+}

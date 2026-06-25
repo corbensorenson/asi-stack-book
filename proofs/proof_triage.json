@@ -1089,6 +1089,46 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-assignment predicate: accepted new-source assignments require an existing chapter id."
+    },
+    {
+      "tag": "lean:personal_hives.approval_gate.failure_blocks_promotion",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "module": "AsiStackProofs.PersonalComputeHives",
+      "formal_target": "A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Added with the personal-hive protocol expansion: the target is a finite record implication over high-risk job, approval-required, execution, and bound-receipt fields."
+    },
+    {
+      "tag": "lean:personal_hives.federation_lease.operational_invariant",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "module": "AsiStackProofs.PersonalComputeHives",
+      "formal_target": "External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Added with the H2H protocol expansion: the target is a finite record implication over external access, active lease, scope, sandbox, evidence, expiration, and revocation fields."
+    },
+    {
+      "tag": "lean:artifact_stewards.release_gate.operational_invariant",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Added with the steward lifecycle expansion: the target is a finite release-gate implication over publication and required evidence records."
+    },
+    {
+      "tag": "lean:artifact_stewards.sunset_review.failure_blocks_promotion",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Added with the steward lifecycle expansion: the target is a finite record implication blocking ordinary work when sunset criteria are met and no review is open."
     }
   ]
 }

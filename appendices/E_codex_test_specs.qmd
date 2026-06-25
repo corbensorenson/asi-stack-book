@@ -111,12 +111,15 @@ No result is recorded here unless a test has actually been implemented and run.
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Runtime crosswalk completeness test | planned | not run |
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | implemented | passes via protocol fixture validation |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Portal, approval, bid, and federation fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Data locality and rented-node denial test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Phone approval gate test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Child topic routing test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | External project sandbox contract test | planned | not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Audit replay test | planned | not run |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Bound approval receipt test | implemented | passes via Lean build |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Federation lease boundary test | implemented | passes via Lean build |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | S/R/Q/G/V/E loop consistency test | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | Residual burden test | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems and Residual Honesty | Downstream utility test | planned | not run |
@@ -187,6 +190,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Contribution ledger separation test | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset criteria test | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence handoff test | planned | not run |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence gate test | implemented | passes via Lean build |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset ordinary-work block test | implemented | passes via Lean build |
 | `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | planned | not run |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | planned | not run |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Authority stop-condition test | planned | not run |
@@ -222,16 +227,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 108 |
+| Proof targets covered by triage | 112 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 108 |
+| implemented | 112 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 108 |
+| implemented | formal-invariant | lean-candidate | 112 |

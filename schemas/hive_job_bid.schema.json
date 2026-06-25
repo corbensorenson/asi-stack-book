@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/hive_job_bid.schema.json",
+  "title": "Hive Job Bid",
+  "type": "object",
+  "required": [
+    "bid_id",
+    "job_id",
+    "bidder_device_id",
+    "bid_status",
+    "estimated_latency",
+    "estimated_cost",
+    "estimated_energy",
+    "data_transfer_estimate",
+    "thermal_risk",
+    "interruption_risk",
+    "privacy_fit",
+    "capability_fit",
+    "policy_reason",
+    "evidence_refs",
+    "non_claims"
+  ],
+  "properties": {
+    "bid_id": { "type": "string", "minLength": 1 },
+    "job_id": { "type": "string", "minLength": 1 },
+    "bidder_device_id": { "type": "string", "minLength": 1 },
+    "bid_status": {
+      "type": "string",
+      "enum": ["eligible", "declined", "policy_blocked"]
+    },
+    "estimated_latency": { "type": "string", "minLength": 1 },
+    "estimated_cost": { "type": "string", "minLength": 1 },
+    "estimated_energy": { "type": "string", "minLength": 1 },
+    "data_transfer_estimate": { "type": "string", "minLength": 1 },
+    "thermal_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "interruption_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "privacy_fit": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "blocked", "unknown"]
+    },
+    "capability_fit": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "blocked", "unknown"]
+    },
+    "policy_reason": { "type": "string", "minLength": 1 },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

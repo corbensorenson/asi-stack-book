@@ -1,0 +1,17 @@
+{
+  "approval_id": "approval://operator-demo-local-fixture",
+  "approver_principal": "person://owner-demo",
+  "portal_id": "portal://phone-demo",
+  "job_id": "hive-job://schema-fixture-validation",
+  "approval_scope": "local fixture validation only; no external execution or spend",
+  "granted_permissions": ["read_fixture_files", "run_local_schema_validator"],
+  "denied_permissions": ["rent_compute", "contact_external_hive", "access_private_memory"],
+  "valid_from": "2026-06-25T00:00:00Z",
+  "valid_until": "fixture validation run ends",
+  "reversal_path": "delete receipt and rerun scheduler eligibility check",
+  "evidence_refs": ["tests/fixtures/protocol_records/portal_card.valid.json"],
+  "non_claims": [
+    "This fixture is not a real approval event.",
+    "This fixture does not prove guardian, biometric, device, or human-consent safety."
+  ]
+}

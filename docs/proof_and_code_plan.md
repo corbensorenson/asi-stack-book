@@ -17,7 +17,7 @@ The generated machine-readable manifest is `proofs/proof_manifest.json`.
 
 The proof triage file is `proofs/proof_triage.json`. It classifies each outline target as a near-term formal invariant, schema contract, process contract, or research-agenda item. Use it to avoid turning every chapter's conceptual claim into ceremonial Lean. The readiness validator cross-checks triage tags, chapter IDs, modules, root imports, formal targets, and target statuses against `proofs/proof_manifest.json`.
 
-Appendix E publishes a generated proof-target coverage summary from `proofs/proof_triage.json`. Treat that summary as coverage/accounting evidence only. The current manifest tracks 108 proof targets, all implemented as finite-record Lean candidates after adding the Personal Compute Hives and Artifact Steward Agents modules. Artifact-by-artifact audits still need to confirm that each implemented predicate matches its intended boundary, limitations, and non-claims.
+Appendix E publishes a generated proof-target coverage summary from `proofs/proof_triage.json`. Treat that summary as coverage/accounting evidence only. The current manifest tracks 112 proof targets, all implemented as finite-record Lean candidates after adding Personal Compute Hives approval/federation predicates and Artifact Steward Agents release/sunset predicates. Artifact-by-artifact audits still need to confirm that each implemented predicate matches its intended boundary, limitations, and non-claims.
 
 ## What Belongs in Proofs
 

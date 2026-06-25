@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Exact claim-level source-note mappings now exist for all assigned sources, but support remains argument until source passages, evidence transitions, or additional artifact audits justify promotion."
-  - "The proof_target_record fixture validates schema/example consistency and the Lean workspace currently implements all 108 manifest proof targets as narrow finite-record predicates; this is not a full artifact-by-artifact proof audit or a proof of system behavior."
+  - "The proof_target_record fixture validates schema/example consistency and the Lean workspace currently implements all 112 manifest proof targets as narrow finite-record predicates; this is not a full artifact-by-artifact proof audit or a proof of system behavior."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -59,7 +59,7 @@ Formal methods are ineffective when applied to vague philosophical claims instea
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.
 
-The claim remains at `argument` support. This repository currently has a Lean workspace and all 108 manifest proof targets are marked implemented as narrow finite-record Lean predicates. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, or benchmark performance.
+The claim remains at `argument` support. This repository currently has a Lean workspace and all 112 manifest proof targets are marked implemented as narrow finite-record Lean predicates. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, or benchmark performance.
 
 ## Mechanism
 
@@ -125,7 +125,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. It does not prove the target.
 
-The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 108 proof targets are covered by triage and all 108 are implemented as formal-invariant Lean candidates. The deeper artifact-by-artifact audit remains a separate planned check.
+The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage and all 112 are implemented as formal-invariant Lean candidates. The deeper artifact-by-artifact audit remains a separate planned check.
 
 ## Codex test plan
 

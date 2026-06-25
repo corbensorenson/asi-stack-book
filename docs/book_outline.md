@@ -1933,16 +1933,18 @@ Source loading queue:
 |---|---|---|
 | Primary | `vcm_public`, `talos`, `octopus_router`, `project_theseus_whitepaper` | Read first for governed context packets, typed jobs, routed specialists, and trusted-machine Hive/node framing. |
 | Supporting | `field_of_god_ai_constitution`, `scf`, `planforge`, `rmi`, `tokenmana`, `theseus_operator_os`, `ladon_manhattan` | Mine after primary sources for consent, capability leases, scheduling, residuals, capacity accounting, operator surfaces, and secret-handle boundaries. |
+| External source-note records | `ext_tailscale_docs_2025`, `ext_kubernetes_overview_docs`, `ext_k3s_docs_2026`, `ext_nomad_docs`, `ext_ray_core_docs_2026`, `ext_boinc_home_2026`, `ext_syncthing_home`, `ext_akash_docs_2026`, `ext_golem_docs_2025`, `ext_github_self_hosted_runners_docs` | Load after internal sources to ground adjacent substrate/tooling patterns. Treat them as external context, not as proof that the personal hive exists or is safe. |
 | Handoff or recovery notes | `sources/inbox/personal_compute_hives_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
-| External literature queue | mesh VPNs, container/small-cluster schedulers, distributed compute frameworks, volunteer compute, rented compute markets, file sync, content-addressed storage | Add source records and source notes before citation or support-state promotion. |
+| Remaining external queue | content-addressed storage, secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, privacy-preserving computation | Add source records and source notes before citation or support-state promotion. |
 
 Draft arc:
 
 - Problem: A governed ASI stack needs an owned substrate where personal, family, project, and rented devices can run work without collapsing reachability into authority.
 - Insufficiency: Cloud assistants, single-device agents, home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed layer.
-- Mechanism: Define `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision` records.
+- Mechanism: Define `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease` records.
 - Mechanism: Treat phones and dashboards as portals, desktops and old machines as bounded workers, NAS devices as memory stores, and rented/project nodes as temporary leased capacity.
 - Mechanism: Reject nodes by policy before scoring speed, cost, locality, energy, or capability.
+- Mechanism: Model job classes, federation modes, and Hive-to-Hive protocol records so public/project work cannot inherit private access.
 - Mechanism: Record every cross-device and cross-hive action with approvals, data-placement decisions, residuals, and revocation paths.
 - Interface: VCM declares context, taint, adequacy, revocation, and data movement.
 - Interface: Talos and PlanForge lower goals into typed jobs and dependency-aware schedules.
@@ -1971,11 +1973,14 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A full chapter with hive object records, policy-first scheduling diagram, implementation ladder, public-safe source boundary, and external-literature queue.
-- Implemented repository-level fixtures: `device_resource_card.valid.json`, `hive_job_contract.valid.json`, and `hive_scheduling_decision.valid.json` validate record shape only; no personal hive scheduler, device registry, rented-node sandbox, or federation protocol has been run.
+- A full chapter with hive object records, policy-first scheduling diagram, job classes, federation modes, H2H protocol surface, implementation ladder, public-safe source boundary, and external-source-note queue.
+- Implemented repository-level fixtures: `device_resource_card.valid.json`, `portal_card.valid.json`, `hive_job_contract.valid.json`, `hive_job_bid.valid.json`, `hive_scheduling_decision.valid.json`, `hive_approval_receipt.valid.json`, and `hive_federation_lease.valid.json` validate record shape only; no personal hive scheduler, device registry, rented-node sandbox, or federation protocol has been run.
 - Implemented Lean predicate: admitted hive jobs require identity, data, tool, federation, and approval checks.
 - Implemented Lean predicate: a faster node forbidden by policy cannot be selected.
+- Implemented Lean predicate: high-risk hive jobs that require approval require a bound approval receipt before execution.
+- Implemented Lean predicate: external hive access requires active lease, scope, sandbox, evidence, expiration, and revocation records.
 - Implemented Codex test: Device registry fixture validation through `validate_protocol_examples.py`.
+- Implemented Codex test: Portal, approval, bid, and federation fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Policy-first scheduling denial as a finite Lean predicate only.
 - Planned Codex test: Data locality and rented-node denial test.
 - Planned Codex test: Phone approval gate test.
@@ -1989,6 +1994,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:personal_hives.scheduling.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization. | implemented |
 | `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
+| `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
+| `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
 
 ### Compact Generative Systems and Residual Honesty
 
@@ -2696,7 +2703,7 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only; artifact-by-artifact audits still need to verify that each implemented finite-record predicate matches its intended operational boundary and non-claims.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 108 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: Appendix E summarizes all 112 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Planned Codex test: Proof manifest sync test.
 - Planned Codex test: Lake build smoke test.
 - Planned Codex test: Artifact-by-artifact target audit.
@@ -2850,9 +2857,10 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `talos`, `planforge`, `vcm_public` | Read first for artifact discipline, typed jobs, roadmap decomposition, and project memory. |
 | Supporting | `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution` | Mine after primary sources for proof/evidence gates, benchmark pressure, residual escrow, procedural tools, resource budgets, fork/exit/audit, work boards, capability leases, and non-domination constraints. |
+| External source-note records | `ext_github_webhooks_docs`, `ext_github_self_hosted_runners_docs`, `ext_openzeppelin_governor_docs`, `ext_agentic_workflow_injection_2026`, `ext_dao_delegation_fairness_2025`, `ext_akash_docs_2026`, `ext_golem_docs_2025` | Load after internal sources to ground event-driven automation, self-hosted compute, governance machinery, workflow-injection risk, delegation concentration, and rented-compute context. |
 | Connector or recovery required | `coherence_exchange` | Use as speculative governance/economic framing unless exact source-note mappings and support boundaries are recorded. |
 | Handoff or recovery notes | `sources/inbox/artifact_steward_agents_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
-| External literature queue | repository automation, fiscal sponsorship, public-good funding, compute markets, decentralized governance, workflow-injection research | Add source records and source notes before citation or support-state promotion. |
+| Remaining external queue | fiscal hosting, grants, sponsorships, bounty platforms, package-maintainer sustainability, software supply-chain security, legal/tax treatment of stewarded treasuries | Add source records and source notes before citation or support-state promotion. |
 
 Draft arc:
 
@@ -2860,8 +2868,10 @@ Draft arc:
 - Insufficiency: Issue trackers, CI systems, bots, funding pages, governance systems, and project-management tools each preserve only a slice of the artifact lifecycle.
 - Mechanism: Define `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`.
 - Mechanism: Bind the steward to mission, non-goals, authority ceiling, evidence policy, budget policy, governance model, and sunset criteria.
+- Mechanism: Run an explicit lifecycle from inception to bootstrap, build, release, maintenance, governance, decline, and archive.
 - Mechanism: Convert roadmap work into bounded contracts before dispatching humans, agents, hives, CI runners, rented compute, reviewers, or maintainers.
 - Mechanism: Separate reputation, governance rights, economic compensation, authorship, and evidence credit so one gameable score cannot capture the project.
+- Mechanism: Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until reviewed.
 - Mechanism: Treat the steward's normal action as proposal, evidence preparation, and coordination rather than unilateral ownership.
 - Interface: VIEA and Talos connect intent, work contracts, artifacts, evidence, audit, replay, and delivery.
 - Interface: PlanForge lowers project goals into dependency-aware work packages.
@@ -2891,10 +2901,12 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A full chapter with steward lifecycle diagram, project record definitions, implementation ladder, public-safe source boundary, and external-literature queue.
+- A full chapter with steward lifecycle diagram, project record definitions, implementation ladder, public-safe source boundary, external source-note queue, and event-taint boundary.
 - Implemented repository-level fixtures: `artifact_steward_charter.valid.json`, `project_work_contract.valid.json`, `contribution_ledger_entry.valid.json`, `steward_action_decision.valid.json`, and `sunset_review_record.valid.json` validate record shape only; no steward bot, treasury executor, governance runner, or contributor system has been run.
 - Implemented Lean predicate: dispatched steward work contracts require objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.
 - Implemented Lean predicate: protected steward actions without explicit approval evidence cannot execute.
+- Implemented Lean predicate: stewarded release publication requires test, evidence, changelog, residual, and approval records.
+- Implemented Lean predicate: sunset criteria block ordinary work generation until a sunset review opens.
 - Implemented Codex test: Project steward manifest fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Work contract authority denial as a finite Lean predicate only.
 - Implemented Codex test: Treasury spend-cap/protected-action denial as a finite Lean predicate only.
@@ -2909,6 +2921,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch. | implemented |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence. | implemented |
+| `lean:artifact_stewards.release_gate.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A stewarded release publication requires test, evidence, changelog, residual, and approval records. | implemented |
+| `lean:artifact_stewards.sunset_review.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened. | implemented |
 
 ### Integrated Reference Architecture
 

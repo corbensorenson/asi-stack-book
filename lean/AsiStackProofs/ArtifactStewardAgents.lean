@@ -63,4 +63,55 @@ theorem protected_steward_action_without_approval_cannot_execute
       review.actionExecuted = false := by
   exact valid protectedBoundary missingApproval
 
+structure StewardReleaseGateReview where
+  releasePublished : Bool
+  testsRecorded : Bool
+  evidenceRecorded : Bool
+  changelogRecorded : Bool
+  residualsRecorded : Bool
+  approvalRecorded : Bool
+deriving DecidableEq, Repr
+
+def PublishedReleaseRequiresEvidenceGate
+    (review : StewardReleaseGateReview) : Prop :=
+  review.releasePublished = true ->
+    review.testsRecorded = true ∧
+      review.evidenceRecorded = true ∧
+        review.changelogRecorded = true ∧
+          review.residualsRecorded = true ∧
+            review.approvalRecorded = true
+
+theorem stewarded_release_publication_requires_test_evidence_changelog_residual_and_approval_records
+    {review : StewardReleaseGateReview} :
+    PublishedReleaseRequiresEvidenceGate review ->
+    review.releasePublished = true ->
+      review.testsRecorded = true ∧
+        review.evidenceRecorded = true ∧
+          review.changelogRecorded = true ∧
+            review.residualsRecorded = true ∧
+              review.approvalRecorded = true := by
+  intro valid published
+  exact valid published
+
+structure StewardSunsetReview where
+  sunsetCriteriaMet : Bool
+  sunsetReviewOpened : Bool
+  ordinaryWorkGenerated : Bool
+deriving DecidableEq, Repr
+
+def SunsetCriteriaBlocksOrdinaryWork
+    (review : StewardSunsetReview) : Prop :=
+  review.sunsetCriteriaMet = true ->
+    review.sunsetReviewOpened = false ->
+      review.ordinaryWorkGenerated = false
+
+theorem sunset_criteria_block_ordinary_work_until_review_opened
+    {review : StewardSunsetReview} :
+    SunsetCriteriaBlocksOrdinaryWork review ->
+    review.sunsetCriteriaMet = true ->
+      review.sunsetReviewOpened = false ->
+        review.ordinaryWorkGenerated = false := by
+  intro valid criteriaMet noReview
+  exact valid criteriaMet noReview
+
 end AsiStackProofs.ArtifactStewardAgents

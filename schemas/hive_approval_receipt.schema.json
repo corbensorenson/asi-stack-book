@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/hive_approval_receipt.schema.json",
+  "title": "Hive Approval Receipt",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "approver_principal",
+    "portal_id",
+    "job_id",
+    "approval_scope",
+    "granted_permissions",
+    "denied_permissions",
+    "valid_from",
+    "valid_until",
+    "reversal_path",
+    "evidence_refs",
+    "non_claims"
+  ],
+  "properties": {
+    "approval_id": { "type": "string", "minLength": 1 },
+    "approver_principal": { "type": "string", "minLength": 1 },
+    "portal_id": { "type": "string", "minLength": 1 },
+    "job_id": { "type": "string", "minLength": 1 },
+    "approval_scope": { "type": "string", "minLength": 1 },
+    "granted_permissions": { "type": "array", "items": { "type": "string" } },
+    "denied_permissions": { "type": "array", "items": { "type": "string" } },
+    "valid_from": { "type": "string", "minLength": 1 },
+    "valid_until": { "type": "string", "minLength": 1 },
+    "reversal_path": { "type": "string", "minLength": 1 },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
