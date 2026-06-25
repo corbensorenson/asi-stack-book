@@ -5666,112 +5666,270 @@
             {
               "source_id": "field_of_god_ai_constitution",
               "mapped_support": "Supports the hive's consent, least-sufficient-power, memory/tool governance, reversibility, auditability, and family/agency caution boundaries.",
-              "limits": "Does not implement or validate a family-governance policy engine or deployed consent workflow."
+              "limits": "Does not implement or validate a family-governance policy engine or deployed consent workflow.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:20-26",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:123-135",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:163-201",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:390-402",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:520-562",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:566-589",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:592-631",
+                "local-project:Theseus-Hive@1ad88a22:personality-documents/field_of_god_ai_constitution_v1.md:656-689"
+              ],
+              "passage_review_note": "Reviewed local Theseus constitution source for runtime checks before actions/tool use/memory/delegation, consent and power definitions, agency preservation, non-domination, reversibility/auditability, least sufficient power, consent rules, tool-risk tiers, prohibited tool behaviors, memory/privacy principles, sandboxed growth, and anti-technocracy governance; no family-governance engine or deployed consent workflow is promoted."
             },
             {
               "source_id": "scf",
               "mapped_support": "Supports capability leases, route validation, qualification, lifecycle state, authority ceilings, and no procedural self-ratification for node capabilities.",
-              "limits": "Does not qualify any particular personal-device capability or prove federation safety."
+              "limits": "Does not qualify any particular personal-device capability or prove federation safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:40-48",
+                "sources/raw/google_docs/scf.txt:67-77",
+                "sources/raw/google_docs/scf.txt:107-122",
+                "sources/raw/google_docs/scf.txt:230-256",
+                "sources/raw/google_docs/scf.txt:262-284",
+                "sources/raw/google_docs/scf.txt:830-898"
+              ],
+              "passage_review_note": "Reviewed local raw cache for governed substitution boundaries, authorization ontology, route validation, leases, federation without authority laundering, independent lifecycle states, invocation-time authorization, profile transfer limits, authority admissibility, qualification, staged isolation, shadow/canary/production authorization, monitoring, containment, recovery, and quarantine; no personal-device capability qualification or federation safety result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports typed jobs, contract locks, allowed tools, forbidden tools, audit, replay, delivery evidence, and residual feedback for work run on hive nodes.",
-              "limits": "Does not prove a distributed hive runner or device scheduler exists."
+              "limits": "Does not prove a distributed hive runner or device scheduler exists.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:30-42",
+                "sources/raw/google_docs/talos.txt:46-89",
+                "sources/raw/google_docs/talos.txt:5038-5065",
+                "sources/raw/google_docs/talos.txt:5149-5173",
+                "sources/raw/google_docs/talos.txt:5177-5182",
+                "sources/raw/google_docs/talos.txt:5400-5424"
+              ],
+              "passage_review_note": "Reviewed local raw cache for MVI routing, contract locks, cost/time budgets, literature/reconnaissance, DAG decomposition, worker assignment, watchdog dispatch, Talos as AI labor OS/control plane, clearance, context slicing, secure execution, verification judiciary, fail-closed sidecar behavior, HITL escalation, and factory/judiciary flow; no distributed hive runner or scheduler behavior is promoted."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports governed context packets, source binding, taint, revocation, adequacy, materialization boundaries, and separation of data from authority.",
-              "limits": "Does not prove memory quality, retrieval quality, or end-to-end privacy protection."
+              "limits": "Does not prove memory quality, retrieval quality, or end-to-end privacy protection.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-24",
+                "sources/raw/google_docs/vcm_public.txt:35-44",
+                "sources/raw/google_docs/vcm_public.txt:252-263",
+                "sources/raw/google_docs/vcm_public.txt:264-323",
+                "sources/raw/google_docs/vcm_public.txt:324-330",
+                "sources/raw/google_docs/vcm_public.txt:350-359",
+                "sources/raw/google_docs/vcm_public.txt:361-389",
+                "sources/raw/google_docs/vcm_public.txt:427-445"
+              ],
+              "passage_review_note": "Reviewed local raw cache for VCM durable memory/control-plane framing, source and authority binding, adequacy/admission separation, evidence/authority/exposure separation, semantic materialization, protected compilation, authorization-before-staging, native runtime materialization boundaries, revocation/invalidation, threat model, evidence limitations, and retrieval-to-residency framing; no hive memory quality, retrieval quality, or privacy guarantee is promoted."
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports goal decomposition, dependency-aware scheduling, minimum viable intelligence tiers, fallback, and replanning across heterogeneous workers.",
-              "limits": "Does not prove scheduler optimality or safe execution on personal devices."
+              "limits": "Does not prove scheduler optimality or safe execution on personal devices.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-36",
+                "sources/raw/google_docs/planforge.txt:69-130",
+                "sources/raw/google_docs/planforge.txt:265-291",
+                "sources/raw/google_docs/planforge.txt:354-371"
+              ],
+              "passage_review_note": "Reviewed local raw cache for executor-agnostic goal compilation, DAG decomposition, tier annotation, dependency inference, multi-objective scheduling, fallback escalation, feedback-driven replanning, MVI scoring, cost/makespan objective, critical-path scheduling, speculative execution, limitations, and planned worker-bidding protocol; no personal-device scheduler optimality or safe execution is promoted."
             },
             {
               "source_id": "octopus_router",
               "mapped_support": "Supports routing among bounded specialist capabilities, permission envelopes, dynamic loading, local memory, residuals, and lifecycle-managed capability nodes.",
-              "limits": "Does not prove modular routing performance or safety in a personal network."
+              "limits": "Does not prove modular routing performance or safety in a personal network.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/octopus_router.txt:10-47",
+                "sources/raw/google_docs/octopus_router.txt:61-69",
+                "sources/raw/google_docs/octopus_router.txt:366-403",
+                "sources/raw/google_docs/octopus_router.txt:407-420",
+                "sources/raw/google_docs/octopus_router.txt:480-507",
+                "sources/raw/google_docs/octopus_router.txt:543-582"
+              ],
+              "passage_review_note": "Reviewed local raw cache for head/router, dynamically loaded specialist arms, local tools/memory/benchmarks/residuals/permissions, budget and risk routing, scoped permission envelopes, verification, runtime tiers, arm cards, cost profiles, freshness, and lifecycle status; no personal-network modular routing performance or safety result is promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports residual escrow, specialist lifecycle, regression preservation, three execution modes, and modular improvement discipline for hive capabilities.",
-              "limits": "Does not prove the hive improves capability or preserves regressions in practice."
+              "limits": "Does not prove the hive improves capability or preserves regressions in practice.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:60-105",
+                "sources/raw/google_docs/rmi.txt:195-230",
+                "sources/raw/google_docs/rmi.txt:736-842",
+                "sources/raw/google_docs/rmi.txt:1328-1365"
+              ],
+              "passage_review_note": "Reviewed local raw cache for interpreter/compiled/reflex execution modes, head/router and specialist arms, local tools/memory/permissions/benchmarks/residuals, benchmark lifecycle, critical-failure veto, residual escrow, arm ratchets, safety/runtime tiers, sandboxing, verification, and human approval gates; no distributed personal-hive improvement or regression-preservation behavior is promoted."
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports regenerative capacity and resource-governance framing for compute, money, energy, load, human attention, burst control, and friction.",
-              "limits": "Does not prove a specific hive scheduler is economically optimal or user-beneficial."
+              "limits": "Does not prove a specific hive scheduler is economically optimal or user-beneficial.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:1-30",
+                "sources/raw/google_docs/tokenmana.txt:533-549",
+                "sources/raw/google_docs/tokenmana.txt:638-660",
+                "sources/raw/google_docs/tokenmana.txt:814-833",
+                "sources/raw/google_docs/tokenmana.txt:1025-1049",
+                "sources/raw/google_docs/tokenmana.txt:1072-1098"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance under convex infrastructure cost, renewal-time clustering, pricing feedback, practical burst/concurrency guidance, and temporal welfare/cognitive-friction framing; used only for resource/capacity economics, not as proof of a hive scheduler or user benefit."
             },
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports local-first trusted-machine Hive framing, registered task-kind providers, residual ledgers, and report-first operational discipline.",
-              "limits": "No Theseus Hive reports, node registry, benchmark ledgers, or command outputs were rerun from this repo."
+              "limits": "No Theseus Hive reports, node registry, benchmark ledgers, or command outputs were rerun from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:53-76",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:584-612",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:632-665",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:694-742",
+                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:764-787"
+              ],
+              "passage_review_note": "Reviewed local Theseus whitepaper at the tracked commit for trusted-machine Hive framing, CUDA/MLX/CPU/checkpoint-chat capability advertising, installable home/workshop/friend/family/company mesh, phone/PWA operator client, registered task kinds, internal compute-market accounting, privacy/licensing gates, report-first Hive status and scheduler records, and roadmap priorities; no current reports, node registry, scheduler, or commands were rerun here."
             },
             {
               "source_id": "theseus_operator_os",
               "mapped_support": "Supports operator channels, durable work board, node registry, background/watch/wake contracts, feedback routing, TTLs, kill switches, and safety-visible surfaces.",
-              "limits": "Does not prove unattended operation or distributed node control is safe."
+              "limits": "Does not prove unattended operation or distributed node control is safe.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-52",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:76-114",
+                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:123-155"
+              ],
+              "passage_review_note": "Reviewed local Hive Operator OS source at the tracked commit for command vocabulary, durable work board, background/watch/wake/phone-delivery contracts, node registry, artifact sync, overnight proof, skill registry, tool hooks, feedback routing, board executor, node assignment, training/light/inference/training node split, TTLs, kill switches, signed updates, and dashboard surfaces; no unattended operation or distributed node-control safety is promoted."
             },
             {
               "source_id": "ladon_manhattan",
               "mapped_support": "Supports blind secret handles, secure entry paths, policy injection boundaries, isolated compartments, and reduced credential exposure.",
-              "limits": "Does not prove kernel-level isolation, side-channel resistance, or complete AI security."
+              "limits": "Does not prove kernel-level isolation, side-channel resistance, or complete AI security.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:18-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:45-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:89-125"
+              ],
+              "passage_review_note": "Reviewed local raw cache for blind secret handles, hardware-backed vault framing, trusted UX input path, syscall interception, permission-table authorization, secret injection at kernel boundary, Digital SCIF isolated execution, wipe lifecycle, side-channel caveats, and handle structure; no kernel isolation, side-channel resistance, or complete AI security result is promoted."
             },
             {
               "source_id": "ext_tailscale_docs_2025",
               "mapped_support": "Supports private overlay-network and identity-connectivity vocabulary for joining personal devices across network locations.",
-              "limits": "Does not grant execution authority, data access, family approval, or scheduler safety."
+              "limits": "Does not grant execution authority, data access, family approval, or scheduler safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://tailscale.com/docs/concepts/what-is-tailscale:What is Tailscale / WireGuard-based private connectivity / tailnet concept"
+              ],
+              "passage_review_note": "Reviewed official Tailscale documentation page via network fetch for identity-based private connectivity, WireGuard/tailnet vocabulary, and personal/edge/homelab adjacency; reachability is not treated as execution authority or data access."
             },
             {
               "source_id": "ext_kubernetes_overview_docs",
               "mapped_support": "Supports container-orchestration vocabulary for service discovery, storage orchestration, rollouts, bin packing, and self-healing.",
-              "limits": "Does not encode personal AI authority, VCM taint, child portals, rented-node safety, or evidence-state governance."
+              "limits": "Does not encode personal AI authority, VCM taint, child portals, rented-node safety, or evidence-state governance.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://kubernetes.io/docs/concepts/overview/:Kubernetes overview / container orchestration / extensible platform"
+              ],
+              "passage_review_note": "Reviewed official Kubernetes overview via network fetch for container orchestration, workload/service, storage, rollout, bin-packing, and self-healing vocabulary; no ASI Stack authority, family, VCM, or evidence membrane is implied."
             },
             {
               "source_id": "ext_k3s_docs_2026",
               "mapped_support": "Supports lightweight edge, homelab, IoT, CI, single-board, air-gapped, and embedded Kubernetes substrate options.",
-              "limits": "Does not prove K3s is the right substrate for a hive or that lightweight orchestration enforces ASI Stack policy."
+              "limits": "Does not prove K3s is the right substrate for a hive or that lightweight orchestration enforces ASI Stack policy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.k3s.io/:K3s lightweight Kubernetes / edge / homelab / IoT / CI / embedded K8s"
+              ],
+              "passage_review_note": "Reviewed official K3s documentation page via network fetch for lightweight edge/homelab/IoT/CI/single-board/air-gapped/embedded Kubernetes substrate vocabulary; no claim that K3s is the right or safe hive substrate is promoted."
             },
             {
               "source_id": "ext_nomad_docs",
               "mapped_support": "Supports heterogeneous job scheduling across containers, binaries, batch jobs, on-prem infrastructure, and cloud infrastructure.",
-              "limits": "Does not decide which jobs are lawful, private, age-appropriate, evidence-sufficient, or safe to run on personal devices."
+              "limits": "Does not decide which jobs are lawful, private, age-appropriate, evidence-sufficient, or safe to run on personal devices.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://developer.hashicorp.com/nomad:Nomad documentation / scheduler and orchestrator / containers, binaries, batch jobs / cloud and on-prem"
+              ],
+              "passage_review_note": "Reviewed official HashiCorp Nomad documentation page via network fetch for heterogeneous scheduling and orchestration of containers, binaries, and batch jobs across cloud/on-prem infrastructure; no job-lawfulness, privacy, or personal-device safety claim is promoted."
             },
             {
               "source_id": "ext_ray_core_docs_2026",
               "mapped_support": "Supports distributed task, actor, and object-reference vocabulary for hive workers and project-hive execution.",
-              "limits": "Does not prove distributed object movement preserves data locality, taint, revocation, or privacy."
+              "limits": "Does not prove distributed object movement preserves data locality, taint, revocation, or privacy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.ray.io/en/latest/ray-core/walkthrough.html:Ray Core walkthrough / tasks / actors / objects / distributed Python applications"
+              ],
+              "passage_review_note": "Reviewed official Ray Core walkthrough via network fetch for tasks, actors, objects, and scaling Python applications; no data-locality, taint, revocation, hidden-state, or privacy guarantee is promoted."
             },
             {
               "source_id": "ext_boinc_home_2026",
               "mapped_support": "Supports volunteer-compute lineage for background jobs and donated machine capacity.",
-              "limits": "Does not make public project work safe for personal machines without signed contracts, sandboxes, and evidence bundles."
+              "limits": "Does not make public project work safe for personal machines without signed contracts, sandboxes, and evidence bundles.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-site:https://boinc.berkeley.edu/:BOINC Compute for Science / app downloads jobs and runs them in the background"
+              ],
+              "passage_review_note": "Reviewed official BOINC project site via network fetch for volunteer-compute lineage and background job execution on user computers; no arbitrary project-work authorization, sandbox, evidence, or personal-machine safety claim is promoted."
             },
             {
               "source_id": "ext_syncthing_home",
               "mapped_support": "Supports local-first file synchronization, device identity, encrypted transport, and user-controlled storage-location vocabulary.",
-              "limits": "Does not solve semantic memory quality, VCM revocation, source adequacy, or per-device data-class policy."
+              "limits": "Does not solve semantic memory quality, VCM revocation, source adequacy, or per-device data-class policy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-site:https://syncthing.net/:Syncthing / private file synchronization / encrypted communication / authenticated devices / user-controlled storage"
+              ],
+              "passage_review_note": "Reviewed official Syncthing project site via network fetch for local-first synchronization, device identity, encrypted transport, and user-controlled data placement vocabulary; no semantic memory quality, VCM revocation, or per-device data-class policy is promoted."
             },
             {
               "source_id": "ext_ipfs_docs",
               "mapped_support": "Supports content-addressed, peer-to-peer artifact location and decentralized retrieval vocabulary for hive bundles, public caches, and reproducible references.",
-              "limits": "Does not solve private hive memory, deletion, VCM revocation, privacy, authority control, or safe federation."
+              "limits": "Does not solve private hive memory, deletion, VCM revocation, privacy, authority control, or safe federation.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-site:https://ipfs.tech/:IPFS / open protocols to store, verify, and share data / content addressing / distributed networks"
+              ],
+              "passage_review_note": "Reviewed official IPFS project site via network fetch for content-addressed, peer-to-peer storage/retrieval vocabulary and distributed artifact identity; no private hive memory, deletion, revocation, privacy, authority, or safe-federation claim is promoted."
             },
             {
               "source_id": "ext_akash_docs_2026",
               "mapped_support": "Supports decentralized cloud, provider resources, leases, GPUs, SDKs, and rented-compute vocabulary.",
-              "limits": "Does not prove rented compute is appropriate for private data or that any provider satisfies hive evidence obligations."
+              "limits": "Does not prove rented compute is appropriate for private data or that any provider satisfies hive evidence obligations.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://akash.network/docs/:Akash Network documentation / decentralized cloud / deployments / providers / leases / GPUs / SDKs"
+              ],
+              "passage_review_note": "Reviewed official Akash documentation page via network fetch for decentralized cloud, provider resources, leases, GPU, SDK, and rented-compute vocabulary; no provider isolation, private-data suitability, spend safety, or evidence-obligation satisfaction is promoted."
             },
             {
               "source_id": "ext_golem_docs_2025",
               "mapped_support": "Supports decentralized task execution, provider selection, data transfer, result handling, and resource-sharing vocabulary.",
-              "limits": "Does not prove provider trust, payment fairness, sandbox safety, output validity, or dispute handling."
+              "limits": "Does not prove provider trust, payment fairness, sandbox safety, output validity, or dispute handling.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.golem.network/:Golem developer resources / executing tasks / selecting providers / transferring data / working with results"
+              ],
+              "passage_review_note": "Reviewed official Golem documentation page via network fetch for decentralized task execution, provider selection, data transfer, result handling, and resource-sharing vocabulary; no provider trust, payment fairness, sandbox safety, output validity, or dispute handling is promoted."
             },
             {
               "source_id": "ext_github_self_hosted_runners_docs",
               "mapped_support": "Supports self-hosted CI runners as user-managed physical, virtual, containerized, on-prem, or cloud execution machines.",
-              "limits": "Does not prove unattended runner isolation, cleanup, credential boundaries, or safe execution for untrusted work."
+              "limits": "Does not prove unattended runner isolation, cleanup, credential boundaries, or safe execution for untrusted work.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "official-doc:https://docs.github.com/en/actions/concepts/runners/self-hosted-runners:GitHub Docs / self-hosted runners / user-managed machines for Actions jobs"
+              ],
+              "passage_review_note": "Reviewed official GitHub self-hosted runners documentation page via network fetch for user-managed physical/virtual/container/on-prem/cloud runner vocabulary and maintenance responsibility; no unattended runner isolation, cleanup, credential, or untrusted-work safety claim is promoted."
             }
           ],
           "mechanism": [
@@ -5879,6 +6037,12 @@
               "target": "External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records.",
               "status": "implemented"
             }
+          ],
+          "draft_maturity": "chapter draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument until a live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or behavioral tests exist.",
+            "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, or federation run has been executed from this repository.",
+            "External tooling sources are reviewed as adjacent substrate references only; they do not prove the ASI Stack hive design or any safety property."
           ]
         },
         {

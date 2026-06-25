@@ -31,9 +31,9 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The personal-compute-hive browser note is author-intent context only; it is not cited evidence and is kept in the ignored local source inbox."
-  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no device registry, scheduler, portal approval service, federation protocol, family-governance policy engine, or rented-node sandbox has been run."
-  - "No support-state promotion is implied by this chapter draft."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument until a live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or behavioral tests exist."
+  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, or federation run has been executed from this repository."
+  - "External tooling sources are reviewed as adjacent substrate references only; they do not prove the ASI Stack hive design or any safety property."
 ---
 
 ## Chapter status
@@ -47,7 +47,7 @@ open_evidence_gaps:
 | Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, and GitHub self-hosted runners |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All assigned sources have public source notes, including external tooling notes. The core claim is still a design synthesis. The browser note is local-only planning context. |
+| Source loading state | All assigned sources have public source notes. Internal/local raw passages and tracked local-project passages have now been passage-reviewed for the chapter; official external tooling pages were reviewed as adjacent substrate references. The core claim remains a design synthesis. The browser note is local-only planning context. |
 | Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally, and four finite Lean predicates build. No hive scheduler, live registry, portal approval service, federation, rented-node test, cross-router connectivity test, child-routing test, dropout recovery test, or energy-aware scheduling test has been run. |
 
 ## Drafting guardrail
@@ -74,7 +74,7 @@ The claim is architectural, not empirical. It says that governed personal AI nee
 
 ### Claim-source mapping status
 
-The core claim has not been promoted above `argument`. The internal source notes support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. External source notes now ground adjacent substrate patterns such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, and self-hosted runners. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but the combined hive architecture remains this book's synthesis until behavioral prototypes, scheduler tests, security reviews, or reproduced experiments exist.
+The core claim has not been promoted above `argument`. Appendix C now carries passage-reviewed mappings for all twenty-two assigned sources: eleven internal or tracked local architecture sources and eleven official external tooling references. The internal mappings support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use. External mappings ground adjacent substrate vocabulary such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, and self-hosted runners. The repository includes record-shape schemas, valid fixtures, and narrow Lean predicates for the first hive records, but no live hive scheduler, device registry, approval portal, family-governance engine, network overlay, rented-node sandbox, federation run, behavioral test, security review, or reproduced experiment exists in this repository.
 
 ## Mechanism
 

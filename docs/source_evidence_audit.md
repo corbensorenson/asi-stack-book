@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 179 |
+| Passage-reviewed mappings recorded | 201 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -66,7 +66,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
-| `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 0 | argument | passage review required before source-derived promotion |
+| `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
@@ -415,28 +415,28 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `tokenmana` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ladon_manhattan` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_tailscale_docs_2025` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_kubernetes_overview_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_k3s_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_nomad_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ray_core_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_boinc_home_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_syncthing_home` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ipfs_docs` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_akash_docs_2026` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_golem_docs_2025` | mapped | note present | chapter listed | not passage-reviewed |
-| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | not passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_tailscale_docs_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_kubernetes_overview_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_k3s_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_nomad_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ray_core_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_boinc_home_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_syncthing_home` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_ipfs_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_akash_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_golem_docs_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rgs` | mapped | note present | chapter listed | not passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bugbrain` | mapped | note present | chapter listed | not passage-reviewed |
