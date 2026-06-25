@@ -5640,6 +5640,108 @@
           "problem": "Readers need to see how the layers operate as one machine from intent to governed action and improvement.",
           "insufficient": "Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.",
           "core_claim": "The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports the integrated reference architecture as an intent-to-execution spine: command contracts, artifacts, claim ledgers, routing, runtime adapters, feedback, residuals, and regression coverage.",
+              "limits": "Architecture proposal only here; no end-to-end deployed VIEA runtime, execution log, or benchmark has been reproduced in this repository."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports the self-improvement and replacement portions of the integrated stack through stable capability identities, evaluator policy, authority ceilings, qualification claims, lifecycle events, and recovery paths.",
+              "limits": "Does not prove production safety, evaluator integrity, global alignment, or reversible deployment behavior."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports the memory/context handoff layer through semantic objects, immutable versions, source and authority binding, adequacy/admission separation, protected compilation, taint, revocation, and audit records.",
+              "limits": "Does not establish end-to-end model accuracy improvement or broad VCM superiority."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports the planning handoff through hierarchical decomposition, primitive schemas, dependency inference, minimum viable intelligence tiering, scheduling, feedback loops, and failure-driven replanning.",
+              "limits": "Whitepaper/design support only; no PlanForge scheduler, DAG compiler, or planning benchmark has been validated here."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports the execution layer with typed jobs, contract locks, deterministic control planes, evidence records, isolation, audit, replay, delivery, and residual feedback.",
+              "limits": "Does not prove Talos benchmark, security, or production execution claims in this repository."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports the evidence and belief-update handoff through proposer/verifier separation, proof/citation/procedure-carrying claims, contradiction handling, dependency tracing, downgrade paths, and protected axioms.",
+              "limits": "Does not solve open-domain formalization, verifier quality, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports the routing handoff through specialist arms, a head/router, permission envelopes, dynamic loading, verification contracts, composition modes, quarantine, and arm lifecycle management.",
+              "limits": "No local routed-specialist prototype, arm-card implementation, or routing benchmark has been run."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports the integrated improvement loop through benchmark pressure, routed specialist attempts, residual escrow, loop closure, regression preservation, arm/router lifecycle, and harder frontier selection.",
+              "limits": "Conceptual architecture source only here; no benchmark run, prototype inspection, or capability result is recorded."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports the evidence-update and improvement-gate portions through benchmark lifecycle states, wall diagnosis, benchmark/model ledgers, regression preservation, anti-Goodhart safeguards, holdouts, and transfer checks.",
+              "limits": "No benchmark harness, mutation test, holdout run, contamination audit, or empirical result has been run in this repository."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supports the normative boundary of the integrated architecture through dignity, agency, value conflict, corrigibility, rights, and speculative consciousness-threshold concerns translated into governance constraints.",
+              "limits": "Metaphysical and normative design context only; it is not empirical proof of consciousness, moral status, or alignment."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports the compression and residual-honesty portion through compact seed/rule/state/residual/verification/governance interfaces and the requirement to expose hidden complexity debt.",
+              "limits": "Does not prove compactness, interpretability, safety, or adequacy for this stack."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports the procedural-memory handoff through trajectory logging, loop detection, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement.",
+              "limits": "No local loop detector, tool synthesis run, verification harness, or procedural-memory benchmark has been executed."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports MoECOT as an implementation-reference runtime lane with compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, handoff, and promotion blockers.",
+              "limits": "Connector/source-note support only; reported runtime and benchmark artifacts have not been ingested or reproduced here."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Supports the integrated context compiler framing with virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, and planner-guided paging.",
+              "limits": "No local VCM-Bench or model-facing result has been run, and third-party references still need citation normalization."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports the report-first implementation reference for the integrated stack through pressure, attempt, residual, diagnosis, compression, verification, structure, specialist routing, sparse teacher governance, checkpoints, and trusted-node boundaries.",
+              "limits": "No Theseus reports, benchmark ledgers, code paths, or command outputs were rerun from this repository."
+            },
+            {
+              "source_id": "theseus_plan_compiler",
+              "mapped_support": "Supports the planning-to-execution trace with typed goal contracts, semantic IR DAGs, VCM slices, executor routes, claim/evidence targets, contract hashes, and replay traces.",
+              "limits": "Source-reported execute-mode status was not rerun or independently verified here."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports the self-improvement gate with an intervention ladder, self-evolution governor, guarded teacher edits, ATTD repo-health gate, architecture experiment governance, outcome ledgers, and loop closure.",
+              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, branch workflow, or dashboard endpoints were executed from this repository."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports authority stops before heavy training through ratchet, routing, safety, residual, benchmark, procedural-tool, memory, lifecycle, and external-inference checks.",
+              "limits": "The reported gate snapshot was not independently verified by rerunning commands or inspecting current report JSON."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports the operator/control surface through a shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, and signed update surfaces.",
+              "limits": "No Hive board, SQLite database, node registry, command channel, or dashboard was run from this repository."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports the proof-contract transfer boundary by showing how Circle finite fixtures can configure private structural smoke or proxy benchmarks while preserving explicit non-claims.",
+              "limits": "No Circle-to-Theseus consumer, smoke workload, proxy benchmark, or model-quality transfer result was executed here."
+            }
+          ],
           "mechanism": [
             "Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.",
             "Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.",
@@ -5700,6 +5802,38 @@
           "problem": "The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.",
           "insufficient": "A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.",
           "core_claim": "Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims.",
+          "claim_source_mappings": [
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports mining Project Theseus as a report-first RMI implementation reference with pressure loops, residual escrow, bounded specialist arms, benchmark floors, sparse teacher governance, checkpoints, Hive nodes, and trusted-node task boundaries.",
+              "limits": "Does not provide independently verified benchmark performance, ASI capability, deployment safety, or public-compute readiness in this repository."
+            },
+            {
+              "source_id": "theseus_plan_compiler",
+              "mapped_support": "Supports the plan/report interface through typed goal contracts, semantic IR DAGs, VCM context slices, executor routes, claim/evidence targets, contract hashes, bounded execution packets, and replay traces.",
+              "limits": "The source-reported GREEN execute-mode proof was not rerun or independently verified here."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports Theseus self-evolution as an evidence-first governance lane using an intervention ladder, guarded teacher edits, ATTD repo-health gates, architecture experiment governance, outcome ledgers, and loop closure.",
+              "limits": "Does not prove autonomous improvement success, safety, teacher independence, or current dashboard state."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports gate-first implementation claims through pre-training checks for ratchet completion, routing, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, arm lifecycle governance, and external-inference zero.",
+              "limits": "The current gate snapshot is source-reported only and was not regenerated or inspected as a live report artifact here."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports the operator work-board and control-surface portion with durable task state, shared command vocabulary, node registry, feedback routing, hooks, TTLs, kill switches, signed updates, and isolation surfaces.",
+              "limits": "No Hive work board, command channel, SQLite state, node registry, or unattended-safety check has been run here."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports the claim-boundary discipline for importing Circle finite fixtures into private Theseus experiment design while separating structural smoke checks from model-quality or promotion evidence.",
+              "limits": "Does not prove quality, runtime, memory, transfer, or capability improvements."
+            }
+          ],
           "mechanism": [
             "Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts.",
             "Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline.",
@@ -5834,6 +5968,103 @@
           "problem": "The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.",
           "insufficient": "A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.",
           "core_claim": "The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement.",
+          "claim_source_mappings": [
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports starting the roadmap with durable artifacts, command contracts, claim ledgers, residuals, feedback, tools, benchmarks, and regression coverage before higher-agency layers are introduced.",
+              "limits": "Does not prove that any roadmap phase has been implemented or validated."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports phasing benchmark frontier work after ledgers, baselines, wall diagnosis, regression floors, anti-Goodhart safeguards, and residual accounting exist.",
+              "limits": "No benchmark harness, phase acceptance benchmark, or empirical run is recorded here."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports delaying governed capability replacement until stable capability fields, evaluator boundaries, qualification claims, authority ceilings, lifecycle events, and recovery paths exist.",
+              "limits": "Does not prove field replacement is safe, reversible, or production-ready."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports adding the context/memory phase only with semantic objects, source binding, adequacy/admission separation, snapshots, taint, revocation, invalidation, and audit records.",
+              "limits": "Does not establish model-facing accuracy gains or context-system superiority."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports introducing planning as typed decomposition, primitive schemas, dependency scheduling, intelligence-tier routing, fallback, and replanning before execution autonomy.",
+              "limits": "No planner implementation, scheduler benchmark, or execution handoff trace has been validated here."
+            },
+            {
+              "source_id": "beastbrain",
+              "mapped_support": "Supports roadmap vocabulary for a local, stateful, memory/planning/verification/routing/security stack and broad implementation sequence.",
+              "limits": "Hardware, cost, benchmark, context-length, and organism-metaphor claims remain unvalidated."
+            },
+            {
+              "source_id": "beastbrain_timeless",
+              "mapped_support": "Supports keeping BeastBrain-derived roadmap discussion evergreen: vessel, memory substrate, planning, verification, hardware introspection, and interface layers as long-term implementation directions.",
+              "limits": "Does not validate hardware adaptation, geometric verification, distributed scaling, or any implementation milestone."
+            },
+            {
+              "source_id": "bugbrain",
+              "mapped_support": "Supports an early resource-constrained prototype lane with explicit build, emulation, flashing, bridge, training, and testing workflows before broad capability claims.",
+              "limits": "No BugBrain build, QEMU run, flashing workflow, benchmark, or consciousness claim is validated here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports later runtime prototype phases around compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, handoff, and promotion blockers.",
+              "limits": "MoECOT runtime and benchmark artifacts have not been ingested or reproduced in this repository."
+            },
+            {
+              "source_id": "moecot_md",
+              "mapped_support": "Supports MoECOT roadmap terminology and release-wording normalization as a variant/source export of the primary MoECOT whitepaper.",
+              "limits": "Variant source only; it is not independent corroboration or reproduced runtime evidence."
+            },
+            {
+              "source_id": "road_to_agi",
+              "mapped_support": "Supports keeping prototype phases tied to remaining-work categories, source-reported readiness status, promotion blockers, and implementation sequencing.",
+              "limits": "Reported commands/results are source-reported only and have not been reproduced here."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports optional governance and evidence-interface framing through verified epistemic units, verification supply chains, fork/exit/audit, contestability, and value/accounting concepts.",
+              "limits": "Speculative synthesis source; it does not implement an epistemic market, security layer, or economic mechanism."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports a report-first prototype lane using pressure loops, residual escrow, bounded specialist arms, benchmark floors, sparse teacher governance, and trusted-node allowlists.",
+              "limits": "No current Theseus reports, benchmark ledgers, code paths, or command outputs were rerun here."
+            },
+            {
+              "source_id": "theseus_plan_compiler",
+              "mapped_support": "Supports a planning/compiler milestone with typed contracts, semantic IR DAGs, VCM slices, executor routes, claim targets, contract hashes, and replay traces.",
+              "limits": "Source-reported compiler status is not reproduced or independently verified."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports delaying recursive self-improvement until intervention ladders, guarded teacher edits, ATTD gates, architecture experiment governance, outcome ledgers, and loop closure are in place.",
+              "limits": "No self-evolution commands, teacher-edit runner, ATTD reports, or dashboard endpoints were executed here."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports architecture-gate phases before heavy training with ratchet, routing, safety, residual, benchmark, procedural-tool, memory, lifecycle, and external-inference checks.",
+              "limits": "The reported gate snapshot is not local evidence of current readiness."
+            },
+            {
+              "source_id": "theseus_operator_os",
+              "mapped_support": "Supports an operator-surface phase with durable work-board state, command vocabulary, node registry, feedback routing, hooks, safety-visible controls, TTLs, kill switches, signed updates, and isolation.",
+              "limits": "No Hive board, node registry, or operator dashboard was run here."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports adding proof-contract transfer as a later structural-fixture lane that feeds private experiment design without becoming model-quality evidence.",
+              "limits": "No transfer consumer, smoke workload, proxy benchmark, or model-improvement result exists here."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports a future proof-carrying contract milestone with theorem-linked receipts, minimum consumer fields, request-validation reports, artifact manifests, fingerprints, and explicit non-claims.",
+              "limits": "No Circle contract commands, packs, Lean builds, or receipt checks were run from this repo."
+            }
+          ],
           "mechanism": [
             "Start with source inventory, claim ledger, artifact graph, and validation.",
             "Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order.",
@@ -5911,6 +6142,43 @@
           "problem": "The book itself must remain a living technical system rather than a static anthology.",
           "insufficient": "Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.",
           "core_claim": "The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases.",
+          "claim_source_mappings": [
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports treating book improvement as a ratchet with lifecycle states, wall diagnosis, ledgers, residuals, regression preservation, anti-Goodhart safeguards, and architecture-change discipline.",
+              "limits": "Does not prove manuscript quality, benchmark validity, or any chapter claim."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports the living-book method through durable artifacts, claim support states, residuals, verified outputs, feedback, tools, benchmarks, and regression coverage.",
+              "limits": "Does not make the book itself an implemented VIEA runtime or prove its architecture claims."
+            },
+            {
+              "source_id": "bugbrain",
+              "mapped_support": "Supports the value of explicit build, test, bridge, training, and resource-constrained workflows as a cautionary prototype-lineage example for living technical documentation.",
+              "limits": "Speculative and unbuilt in this repo; no BugBrain implementation or consciousness claim is validated."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports proceduralizing repeated book-maintenance workflows through trajectory logging, loop detection, tool synthesis, verification, routing, monitoring, and retirement discipline.",
+              "limits": "No autonomous loop-closure system or tool-synthesis harness has been run; book workflow reuse remains process discipline."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports using runtime-reference ledgers, replay, readiness gates, residuals, handoff, and promotion blockers as analogues for living-book release and evidence discipline.",
+              "limits": "MoECOT reports and benchmarks are not reproduced here and do not prove book quality."
+            },
+            {
+              "source_id": "moecot_md",
+              "mapped_support": "Supports terminology normalization and variant comparison for MoECOT-related living-book updates.",
+              "limits": "Variant source only; not independent evidence or a reproduced artifact."
+            },
+            {
+              "source_id": "road_to_agi",
+              "mapped_support": "Supports keeping the living book honest about source-reported status, remaining work, unreproduced benchmarks, promotion blockers, and implementation sequencing.",
+              "limits": "Roadmap/status context only; reported commands or benchmark results are not locally reproduced."
+            }
+          ],
           "mechanism": [
             "Use `book_structure.json` for order and dynamic chapters.",
             "Use `docs/book_outline.md` for drafting, source queues, and Lean scope.",
@@ -6019,6 +6287,113 @@
           "problem": "The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.",
           "insufficient": "A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.",
           "core_claim": "The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.",
+          "claim_source_mappings": [
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports a research backlog for context adequacy, semantic-unit verification, contradiction-rate tests, summary-loss accounting, and the distinction between long context and verified reasoning.",
+              "limits": "The proposed tests and theorems remain source-proposed until mechanized or empirically tested."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports bibliography and agenda tracking for benchmark lifecycles, wall diagnosis, anti-Goodhart safeguards, benchmark ledgers, mutation, holdouts, contamination audits, and source-reported benchmark claims.",
+              "limits": "Does not provide local benchmark results or citation-normalized external literature by itself."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supports tracking normative and metaphysical assumptions, rights, value-conflict boundaries, dignity, corrigibility, and needed external literature before public consciousness or moral-status claims.",
+              "limits": "Not empirical evidence for consciousness, alignment, or moral status."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports research agenda items for stable capability identity, evaluator boundaries, qualification, route validation, lifecycle ordering, rollback, recovery, and authority non-escalation.",
+              "limits": "Does not prove SCF production safety or replacement correctness."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports future planning experiments around primitive schemas, dependency precedence, scheduler behavior, tier routing, fallback, replanning, and planner/executor boundaries.",
+              "limits": "No PlanForge implementation or planning benchmark is validated here."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports research agenda items for VCM packet schemas, source binding, adequacy/admission separation, certificates, taint, revocation, invalidation, and context-system conformance tests.",
+              "limits": "Does not establish broad model-facing VCM gains or neighbor-system superiority."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports backlog work for proof-carrying claims, belief revision records, contradiction detection, downgrade paths, protected axioms, and formalization-scope boundaries.",
+              "limits": "Does not solve natural-language formalization or verifier quality."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports research agenda items for typed job lifecycles, control planes, evidence records, Digital SCIFs, audit logs, replay, approval gates, runtime adapters, and delivery evidence.",
+              "limits": "No Talos benchmark or security claim is reproduced here."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports backlog items for residual escrow, benchmark pressure, routed specialist attempts, arm/router lifecycle, regression preservation, quarantine, and modular improvement tests.",
+              "limits": "No RMI prototype or benchmark result has been independently verified here."
+            },
+            {
+              "source_id": "cgs",
+              "mapped_support": "Supports compression and residual-honesty research items for compact seeds, rule systems, residual channels, verification contracts, governance interfaces, hidden complexity debt, and CGS metrics.",
+              "limits": "No local CGS benchmark, proof, or implementation has been run."
+            },
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports agenda items for AI-assisted programming evidence boundaries: tiny kernels, semantic patches, provenance hashes, effect logs, capability policies, obligations, replay, and translation validation.",
+              "limits": "GenesisCode is not implemented, benchmarked, audited, or mechanically verified in this repository."
+            },
+            {
+              "source_id": "simulation_scaling",
+              "mapped_support": "Supports research agenda items for simulation contracts, scope, clockspeed, fidelity, efficiency, physical capacity, bottlenecks, and resource-accounted synthetic evaluation.",
+              "limits": "No physical experiment, simulation benchmark, or independent literature audit was run here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports agenda tracking for MoECOT runtime artifacts, readiness gates, ledgers, replay, benchmark artifacts, residuals, promotion blockers, and implementation-reference gaps.",
+              "limits": "Reported MoECOT runtime and benchmark claims remain uninspected and unreproduced."
+            },
+            {
+              "source_id": "coilmoecot",
+              "mapped_support": "Supports optional routed-substrate research agenda items for coil specialist lanes, readiness gates, benchmark baselines, residual handling, and cyclic/routed lane adoption.",
+              "limits": "No CoilMoECOT local benchmarks or performance claims are validated."
+            },
+            {
+              "source_id": "road_to_agi",
+              "mapped_support": "Supports agenda tracking for MoECOT remaining work, reported benchmark commands/results, readiness status, promotion blockers, and implementation sequencing.",
+              "limits": "Roadmap and source-reported status only; no commands/results were reproduced."
+            },
+            {
+              "source_id": "vcm_editable",
+              "mapped_support": "Supports bibliography triage for richer VCM terminology, planner-guided paging, evidence-carrying context, and external-literature candidates that need normalized metadata before citation.",
+              "limits": "Connector-readable variant only; no VCM-Bench result or citation-normalized third-party source is implied."
+            },
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Supports agenda items for constitutional alignment clauses, tool-risk tiers, memory as power, least sufficient power, consent, audit, reversibility, red-team scenarios, and self-improvement freezes.",
+              "limits": "Constitutional specification only; no runtime policy engine, red-team suite, Lean proof, or system-prompt evaluation has been run here."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports backlog tracking for public-safe Theseus reports, residual ledgers, benchmark ledgers, sparse teacher governance, trusted-node task allowlists, and report-first implementation artifacts.",
+              "limits": "Does not provide current report verification or reproduced benchmark results in this repo."
+            },
+            {
+              "source_id": "circle_calculus_core",
+              "mapped_support": "Supports bibliography/proof-boundary agenda items for theorem ids, Lean proof status, theorem manifests, Python reference models, Rust utilities, Quarto proof surfaces, and finite cyclic contract receipts.",
+              "limits": "The external Circle repository was not built or tested from this repo."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports research agenda items for proof-carrying AI contract fields, receipt validation, theorem-linked recommendations, consumer gates, fingerprints, minimum evidence fields, and explicit non-claims.",
+              "limits": "No Circle contract pack, CLI command, Lean build, or receipt check was run here."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports backlog and insertion rules for transfer-lane artifacts that separate structural smoke checks from quality, runtime, memory, transfer, and model-improvement claims.",
+              "limits": "No transfer consumer, workload-smoke test, proxy benchmark, or private workload report has been executed here."
+            }
+          ],
           "mechanism": [
             "Maintain source inventory, source notes, bibliography, and source-loading queues.",
             "Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.",

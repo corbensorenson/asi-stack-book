@@ -2,6 +2,7 @@
 
 ## 2026-06-25 - v1.0 improvement goal source mining
 
+- Completed exact source-note claim mappings for the remaining Part IV integration, Theseus-reference, prototype-roadmap, living-methodology, and research-agenda chapters, so Appendix C now has exact source-note mappings for all 52 core claims. No support state was promoted.
 - Added `scripts/validate_reader_spine.py` and wired it into release profiles, validation, runbooks, and the Pages workflow so major-version reader/audio releases preserve a substantial human-readable spine while stripping live-only AI/research scaffolding. No ebook, PDF, DOCX, or audio artifact is claimed.
 - Added selected external-literature source records and public source notes for the fast-generation chapter covering speculative decoding, multi-token prediction, Medusa, EAGLE, lookahead decoding, LayerSkip, vLLM/PagedAttention, Mamba, LLaDA, and diffusion-LLM scaling.
 - Updated the Fast Generation Architectures manifest mappings, chapter source crosswalk, generation-mode taxonomy, and outline source queue so the external literature is source-noted but remains bounded as unreproduced, source-reported evidence.

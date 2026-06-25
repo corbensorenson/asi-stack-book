@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -30,7 +30,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, or accepted evidence transitions justify promotion."
   - "The research_backlog_record fixture validates schema/example consistency only; external literature normalization, direct citation checks, and new-paper triage rehearsals remain incomplete."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -45,7 +45,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -135,7 +135,7 @@ The smallest useful implementation is a research backlog schema and fixture. The
 |---|---|---|
 | Research backlog record fixture validation | Validate that a backlog record names source/gap, access state, assigned chapters, source-note state, claim mapping state, external-literature need, proof/test backlog, insertion decision, residuals, and next action. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
-| Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes currently exist for assigned sources; claim mapping remains incomplete |
+| Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes and exact core-claim mappings currently exist for assigned sources; passage-level review and evidence transitions remain incomplete |
 | New-paper triage scenario | Check whether a new paper updates an existing chapter or creates a new boundary. | planned; not run |
 
 ### Formalization hooks

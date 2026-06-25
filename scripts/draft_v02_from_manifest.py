@@ -283,8 +283,13 @@ def test_purpose(test: str, chapter: dict) -> str:
 
 
 def chapter_frontmatter(chapter: dict, part: dict, today: str, source_ids: list[str]) -> str:
+    mapping_gap = (
+        "Exact source-note mappings exist for the core claim, but support remains argument until passage review, accepted evidence transitions, or executed artifacts justify promotion."
+        if chapter.get("claim_source_mappings")
+        else "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+    )
     open_gaps = [
-        "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete.",
+        mapping_gap,
         "No chapter-level Codex tests have been implemented or run unless separately recorded in Appendix E.",
         "No support-state promotion is implied by this drafting pass.",
     ]

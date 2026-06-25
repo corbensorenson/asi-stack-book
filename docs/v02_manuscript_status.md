@@ -4,7 +4,7 @@ Last updated: 2026-06-25
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
-Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per chapter.
+Current scale: 52 chapter files, 85,951 chapter words, averaging 1,653 words per chapter.
 
 ## Completed in v0.2
 
@@ -76,8 +76,8 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 - The simulation/search/cyclic-substrate chapters now distinguish simulation contracts, substrate adoption records, proof target records, cyclic memory contracts, and cyclic mixer evaluation fixtures from unimplemented feasibility calculators, A/B runs, theorem-resolution and receipt-replay checks, KV-cache/sparse-coverage harnesses, RoPE/cyclic-mixer benchmarks, hardware tests, model-quality evaluations, and non-record-level simulation proof claims.
 - The Part IV implementation/living-book chapters now distinguish proof target records, benchmark ratchet records, reference trace records, Theseus report crosswalk records, prototype phase records, living-book release records, and research backlog fixtures from unimplemented artifact-by-artifact proof audits, benchmark runs, integrated trace harnesses, imported Theseus reports, phase completion evidence, editorial quality review, and new-paper triage rehearsals.
 - Appendix E now publishes a generated proof-target coverage summary from `proofs/proof_triage.json`: 104 proof targets are covered by triage and all 104 are implemented formal-invariant Lean candidates.
-- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 389 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes; remaining gaps are exact source-to-claim and claim-to-mechanism mapping work, not support-state promotions.
-- Appendix C now includes a generated claim-source mapping column, with exact source-note maps recorded for the first foundation cluster (`asi-is-a-stack-not-a-model.core`, `the-efficient-asi-hypothesis.core`, `system-boundaries-and-authority.core`), `failure-modes-of-ungoverned-intelligence.core`, `evidence-states-and-claim-discipline.core`, `human-intent-as-a-formal-input.core`, and the first Part IV proof/evidence-policy cluster (`executable-specifications-and-lean-proof-envelope.core`, `benchmark-ratchets-and-anti-goodhart-evidence.core`, `policy-optimization-and-learning-from-feedback.core`); the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
+- Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 389 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
+- Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 52 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -85,8 +85,8 @@ Current scale: 52 chapter files, 86,067 chapter words, averaging 1,655 words per
 
 ## Still Missing for v1.0
 
-- The remaining unmapped core claims are now concentrated in five Part IV integration, implementation-reference, prototype, living-methodology, and research-agenda chapters; the mapped clusters remain examples, not support-state promotion precedents.
-- Source-note coverage and chapter-listing coverage are no longer the main blockers for assigned sources; exact source-to-claim mapping, direct chapter revision from those notes, and claim-level evidence promotion remain incomplete.
+- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions.
+- Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Artifact-by-artifact audits for the implemented proof targets still need to confirm that each finite-record predicate remains aligned with its intended operational boundary, limitations, and non-claims.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.
 - External literature remains queued rather than citation-normalized, including fast-generation, decoding-substrate, and policy-optimization/RL feedback queues.
