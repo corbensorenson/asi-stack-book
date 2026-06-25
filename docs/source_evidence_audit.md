@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 234 |
+| Passage-reviewed mappings recorded | 254 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -69,7 +69,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
-| `fast-generation-architectures` | 20 | 20 | 20 | 20 | 0 | argument | passage review required before source-derived promotion |
+| `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
@@ -447,26 +447,26 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `bbvca_main` | mapped | note present | chapter listed | passage-reviewed |
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `tokenmana` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_speculative_decoding_2022` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_multi_token_prediction_2024` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_medusa_2024` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_eagle_2024` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_lookahead_decoding_2024` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_layerskip_2024` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_pagedattention_vllm_2023` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mamba_2023` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_llada_2025` | mapped | note present | chapter listed | not passage-reviewed |
-| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_scaling_dllms_2026` | mapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_speculative_decoding_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_multi_token_prediction_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_medusa_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_eagle_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_lookahead_decoding_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_layerskip_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_pagedattention_vllm_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mamba_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_llada_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_scaling_dllms_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | not passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | not passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | not passage-reviewed |

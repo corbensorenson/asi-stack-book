@@ -29,10 +29,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this fast-generation architecture claim to assigned internal source notes and selected external primary papers; no local decoding benchmark or reproduced external result exists."
-  - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
-  - "Selected external source notes cover speculative decoding, multi-token prediction, Medusa, EAGLE, lookahead decoding, LayerSkip, vLLM/PagedAttention, Mamba, LLaDA, and diffusion-LLM scaling; coverage is still selective and code artifacts were not reproduced."
-  - "No local decoding, diffusion, acceptance-rate, KV-cache, or useful-solution-per-second benchmark has been implemented or run."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned Fast Generation Architecture sources; support remains at argument until local autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, hybrid generation, or serving benchmarks exist, or external-literature support is explicitly promoted under a stronger evidence transition."
+  - "The 2026-06-24 browser-GPT note remains author-intent and literature-queue context only; it is not treated as source-derived evidence."
+  - "External literature mappings are reviewed against public arXiv abstract pages only unless a paper is later vendored or fully inspected; reported speedups, code artifacts, model checkpoints, hardware setups, and quality results remain source-reported and unreproduced."
+  - "Only the generation_mode_record fixture and narrow finite Lean promotion predicates have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
 ---
 
 ## Chapter status
@@ -48,7 +48,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`; variants/external literature: `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
-| Source loading state | source notes exist for assigned internal sources and selected external primary papers; browser-GPT packet remains local-only author-intent context. |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for assigned internal sources; selected external literature mappings are passage-reviewed against public arXiv abstract/metadata pages only; the browser-GPT packet remains local-only author-intent context; no raw private source text or full external paper artifacts are published. |
 | Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.FastGeneration` implements two finite-record promotion predicates; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
 
 ## Drafting guardrail
@@ -91,7 +91,7 @@ The claim is architectural. It does not say that one acceleration family wins ev
 
 ### Claim-source mapping status
 
-Appendix C now maps this fast-generation claim to assigned internal source notes and selected external primary papers. The internal mappings support stack-side controls around fast generation: planner-selected modes, context packets, verifier bottlenecks, accepted-output accounting, artifactization, budget pressure, fallback, and promotion gates. The external mappings support the taxonomy of acceleration families. They do not support local decoding results, reproduced third-party speed claims, or a promoted generation mode.
+Appendix C now carries passage-reviewed mappings for all twenty assigned sources. The internal mappings support stack-side controls around fast generation: planner-selected modes, context packets, verifier bottlenecks, accepted-output accounting, artifactization, budget pressure, fallback, and promotion gates. The external arXiv mappings support the taxonomy of acceleration families only. They do not support local decoding results, reproduced third-party speed claims, external benchmark promotion, or a promoted generation mode.
 
 | Source | What it supports | Limit |
 |---|---|---|

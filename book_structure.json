@@ -6507,103 +6507,272 @@
             {
               "source_id": "cgs",
               "mapped_support": "Supports treating fast generation as compact generative leverage only when residual burden, verification cost, fallback, and governance interface are visible.",
-              "limits": "Does not provide local decoding-speed, accepted-token, or useful-solution-per-second evidence."
+              "limits": "Does not provide local decoding-speed, accepted-token, or useful-solution-per-second evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cgs.txt:121-133",
+                "sources/raw/google_docs/cgs.txt:140-170",
+                "sources/raw/google_docs/cgs.txt:209-228",
+                "sources/raw/google_docs/cgs.txt:367-399",
+                "sources/raw/google_docs/cgs.txt:688-740",
+                "sources/raw/google_docs/cgs.txt:788-837"
+              ],
+              "passage_review_note": "Reviewed local raw cache for compact generation, residual/error surfaces, verification burden, residual burden, verification cost, governance boundaries, and hidden-complexity tradeoffs; no decoding-speed, accepted-token, or useful-solution-per-second evidence is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
               "mapped_support": "Supports repeated-generation shortcuts as procedural-memory pressure through trajectory logging, loop detection, parameterized tool synthesis, verification, tool registry, routing, runtime monitoring, and retirement discipline.",
-              "limits": "No local loop detector, tool synthesis run, fast-path cache, or procedural generation shortcut has been executed here."
+              "limits": "No local loop detector, tool synthesis run, fast-path cache, or procedural generation shortcut has been executed here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:11-24",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:29-35",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:48-58",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-194",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:279-305",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:514-563",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1120-1161",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1407-1535",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1636-1660",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:2204-2216"
+              ],
+              "passage_review_note": "Reviewed local raw cache for trajectory logging, cognitive-loop closure, procedural compression, loop detection, parameterized tool synthesis, verification, registry, routing, monitoring, and retirement; no loop detector, tool synthesis run, fast-path cache, or procedural generation shortcut is promoted."
             },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports speed-quality promotion discipline through benchmark lifecycle, wall diagnosis, benchmark/model ledgers, regression preservation, anti-Goodhart safeguards, transfer checks, and architecture-change criteria.",
-              "limits": "No local benchmark harness, mutation, holdout, acceptance-rate test, or reproduced performance run exists here."
+              "limits": "No local benchmark harness, mutation, holdout, acceptance-rate test, or reproduced performance run exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:20-29",
+                "sources/raw/google_docs/benchmaxxing.txt:50-68",
+                "sources/raw/google_docs/benchmaxxing.txt:96-110",
+                "sources/raw/google_docs/benchmaxxing.txt:131-168",
+                "sources/raw/google_docs/benchmaxxing.txt:178-192",
+                "sources/raw/google_docs/benchmaxxing.txt:217-241",
+                "sources/raw/google_docs/benchmaxxing.txt:283-304",
+                "sources/raw/google_docs/benchmaxxing.txt:329-356",
+                "sources/raw/google_docs/benchmaxxing.txt:559-628",
+                "sources/raw/google_docs/benchmaxxing.txt:912-970",
+                "sources/raw/google_docs/benchmaxxing.txt:1216-1302"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark frontier/wall diagnosis, benchmark/model ledgers, regression preservation, anti-Goodhart safeguards, transfer checks, mutation, holdouts, efficiency benchmarks, and architecture-change criteria; no local benchmark harness, mutation, holdout, acceptance-rate test, or performance run is promoted."
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports planner-selected generation modes through hierarchical decomposition, primitive schemas, minimum viable intelligence tiers, dependency scheduling, fallback requirements, and failure-driven replanning.",
-              "limits": "Planning whitepaper only; no PlanForge scheduler, mode selector, or benchmark trace has been implemented in this repo."
+              "limits": "Planning whitepaper only; no PlanForge scheduler, mode selector, or benchmark trace has been implemented in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-33",
+                "sources/raw/google_docs/planforge.txt:52-76",
+                "sources/raw/google_docs/planforge.txt:85-124",
+                "sources/raw/google_docs/planforge.txt:130-140",
+                "sources/raw/google_docs/planforge.txt:205-214",
+                "sources/raw/google_docs/planforge.txt:243-291",
+                "sources/raw/google_docs/planforge.txt:353-361",
+                "sources/raw/google_docs/planforge.txt:551-559"
+              ],
+              "passage_review_note": "Reviewed local raw cache for hierarchical decomposition, primitive schemas, MVI scoring, dependency scheduling, parallelism, fallback escalation, replanning, and speculative execution/lazy-start framing; no PlanForge scheduler, generation-mode selector, or benchmark trace is promoted."
             },
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "Supports separating raw generation speed from verified cognition by making verifier workspace, semantic units, pairwise constraint checks, summaries, and contradiction pressure explicit.",
-              "limits": "Conceptual framework only; the proposed contradiction-rate or constraint-satisfaction tests have not been run here."
+              "limits": "Conceptual framework only; the proposed contradiction-rate or constraint-satisfaction tests have not been run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:6-12",
+                "sources/raw/google_docs/verification_bandwidth.txt:18-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:65-70",
+                "sources/raw/google_docs/verification_bandwidth.txt:92-92"
+              ],
+              "passage_review_note": "Reviewed local raw cache for verifier workspace, generation-versus-verification separation, semantic units, pairwise constraint checking, effective verification workspace, lossy summaries, constraint loss, pairwise-cost pressure, and tree/DAG fidelity tradeoffs; no contradiction-rate or constraint-satisfaction test is promoted."
             },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports token/compute/memory/latency/load/cognitive-friction accounting through regenerative capacity, bounded pools, burst controls, load signals, and quality/human-friction measurement ideas.",
-              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here."
+              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:9-12",
+                "sources/raw/google_docs/tokenmana.txt:23-28",
+                "sources/raw/google_docs/tokenmana.txt:306-308",
+                "sources/raw/google_docs/tokenmana.txt:459-483",
+                "sources/raw/google_docs/tokenmana.txt:814-833",
+                "sources/raw/google_docs/tokenmana.txt:1025-1040",
+                "sources/raw/google_docs/tokenmana.txt:1072-1080"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst pools, load variance, convex infrastructure cost, latency/SLA penalties, temporal elasticity, token-normalized quality and cognitive-friction measures, and implementation parameters; no TokenMana simulation, pricing experiment, human study, or load-stability result is promoted."
             },
             {
               "source_id": "talos",
               "mapped_support": "Supports requiring accepted generated output to become typed artifacts with contracts, evidence records, audit logs, replay, approval gates, isolation, residuals, and delivery discipline.",
-              "limits": "Design source only; no Talos runtime, generated-artifact replay, approval-gate test, or security result has been reproduced."
+              "limits": "Design source only; no Talos runtime, generated-artifact replay, approval-gate test, or security result has been reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:1514-1524",
+                "sources/raw/google_docs/talos.txt:1534-1534",
+                "sources/raw/google_docs/talos.txt:1583-1610",
+                "sources/raw/google_docs/talos.txt:1887-1899",
+                "sources/raw/google_docs/talos.txt:2103-2126",
+                "sources/raw/google_docs/talos.txt:2307-2330",
+                "sources/raw/google_docs/talos.txt:2353-2385"
+              ],
+              "passage_review_note": "Reviewed local raw cache for verified-output manufacturing, contract locks, traceability, scope hashes, adversarial review, lifecycle gates, audit logs, rollback, approval discipline, and isolation/security boundaries; no Talos runtime, generated-artifact replay, approval-gate test, or security result is promoted."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports generation-mode context boundaries through bounded context packets, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states.",
-              "limits": "VCM control-plane source only; it does not prove fast generation quality, speed, or end-to-end model superiority."
+              "limits": "VCM control-plane source only; it does not prove fast generation quality, speed, or end-to-end model superiority.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-18",
+                "sources/raw/google_docs/vcm_public.txt:22-25",
+                "sources/raw/google_docs/vcm_public.txt:36-43",
+                "sources/raw/google_docs/vcm_public.txt:121-130",
+                "sources/raw/google_docs/vcm_public.txt:252-260",
+                "sources/raw/google_docs/vcm_public.txt:282-287",
+                "sources/raw/google_docs/vcm_public.txt:322-329",
+                "sources/raw/google_docs/vcm_public.txt:362-389"
+              ],
+              "passage_review_note": "Reviewed local raw cache for bounded context packets, source/authority binding, adequacy/admission separation, evidence/exposure/influence/action separation, runtime/KV-cache caveats, revocation/invalidation, typed non-success states, conformance boundaries, and conditional synthetic-study claims; no fast-generation quality, speed, or end-to-end model-superiority result is promoted."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Supports keeping accepted drafts separate from truth by routing generated claims through proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, downgrades, and protected axioms.",
-              "limits": "Reasoning architecture source only; open-domain autoformalization, verifier completeness, and fast-generation acceptance quality are not solved or reproduced here."
+              "limits": "Reasoning architecture source only; open-domain autoformalization, verifier completeness, and fast-generation acceptance quality are not solved or reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-235",
+                "sources/raw/google_docs/spinoza.txt:292-320",
+                "sources/raw/google_docs/spinoza.txt:384-394",
+                "sources/raw/google_docs/spinoza.txt:403-445",
+                "sources/raw/google_docs/spinoza.txt:647-653",
+                "sources/raw/google_docs/spinoza.txt:757-766",
+                "sources/raw/google_docs/spinoza.txt:805-806"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, proof caching, downgrades, protected axiom/schema governance, and tier-label enforcement; open-domain autoformalization, verifier completeness, and fast-generation acceptance quality are not promoted."
             },
             {
               "source_id": "rmi",
               "mapped_support": "Supports treating generation modes as routable modular capabilities governed by specialist lifecycle, residual escrow, regression floors, readiness, fallback, and promotion discipline.",
-              "limits": "Architecture proposal only; no empirical fast-generation result, modular-route run, or readiness transition has been reproduced here."
+              "limits": "Architecture proposal only; no empirical fast-generation result, modular-route run, or readiness transition has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:60-105",
+                "sources/raw/google_docs/rmi.txt:195-230",
+                "sources/raw/google_docs/rmi.txt:736-842",
+                "sources/raw/google_docs/rmi.txt:1328-1365"
+              ],
+              "passage_review_note": "Reviewed local raw cache for modular capability routing, specialist lifecycle, residual escrow, readiness levels, regression floors, fallback, replacement discipline, and safety tiers; no empirical fast-generation result, modular route run, or readiness transition is promoted."
             },
             {
               "source_id": "ext_speculative_decoding_2022",
               "mapped_support": "Source-notes speculative decoding as a draft-and-verify generation family where a cheaper model proposes multiple tokens and the target model verifies accepted candidates.",
-              "limits": "External paper only; this repository has not reproduced the reported speedups, proof details, hardware setup, or acceptance-rate results."
+              "limits": "External paper only; this repository has not reproduced the reported speedups, proof details, hardware setup, or acceptance-rate results.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2211.17192:abstract / serial autoregressive bottleneck / approximation-model drafts / target-model verification / distribution preservation / reported T5-XXL acceleration"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for speculative draft-and-verify decoding; no proof details, hardware setup, code, acceptance-rate result, or speedup is reproduced."
             },
             {
               "source_id": "ext_multi_token_prediction_2024",
               "mapped_support": "Source-notes multi-token prediction as a future-token-head training and proposal mechanism that separates proposed future tokens from accepted output.",
-              "limits": "No model has been trained or evaluated here; reported benchmark and inference results remain external and source-reported."
+              "limits": "No model has been trained or evaluated here; reported benchmark and inference results remain external and source-reported.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2404.19737:abstract / multiple future-token heads / shared trunk / auxiliary training / reported benchmark and inference gains"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for multi-token prediction with future-token heads and shared trunk; no local training, evaluation, benchmark, or speedup is reproduced."
             },
             {
               "source_id": "ext_medusa_2024",
               "mapped_support": "Source-notes Medusa-style internal multi-head drafting with tree-structured candidate verification as an alternative to maintaining a separate draft model.",
-              "limits": "No Medusa heads, branch verifier, training recipe, or speed/quality benchmark has been run in this repository."
+              "limits": "No Medusa heads, branch verifier, training recipe, or speed/quality benchmark has been run in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2401.10774:abstract / multiple decoding heads / tree-based attention / simultaneous candidate verification / frozen-backbone and joint fine-tuning variants"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for Medusa-style internal multi-head drafting and tree verification; no Medusa heads, tree verifier, training recipe, or benchmark is reproduced."
             },
             {
               "source_id": "ext_eagle_2024",
               "mapped_support": "Source-notes feature-level speculative drafting and target-model verification as a distinct acceleration path from surface-token draft models.",
-              "limits": "No EAGLE implementation, feature predictor, distribution check, or task evaluation has been reproduced here."
+              "limits": "No EAGLE implementation, feature predictor, distribution check, or task evaluation has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2401.15077:abstract / feature-level speculative sampling / second-to-top-layer prediction / target-model distribution maintenance / reported latency and throughput"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for feature-level speculative sampling and target-model verification; no feature predictor, code artifact, distribution check, or evaluation is reproduced."
             },
             {
               "source_id": "ext_lookahead_decoding_2024",
               "mapped_support": "Source-notes lookahead decoding as an exact parallel decoding family that trades extra per-step computation for fewer serial decoding steps without an auxiliary draft model.",
-              "limits": "The repository has not run the Lookahead implementation or measured its FLOP, latency, branch, or quality behavior."
+              "limits": "The repository has not run the Lookahead implementation or measured its FLOP, latency, branch, or quality behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2402.02057:abstract / exact parallel decoding / no auxiliary draft model or data store / FLOP-for-step tradeoff / reported speedups"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for exact parallel lookahead decoding without an auxiliary draft model or data store; no implementation, FLOP measurement, latency result, or quality measurement is reproduced."
             },
             {
               "source_id": "ext_layerskip_2024",
               "mapped_support": "Source-notes early-exit and self-speculative decoding where early layers draft and later layers verify or correct under a compatible training recipe.",
-              "limits": "No LayerSkip model, early-exit threshold, or self-speculative benchmark has been run locally; same-model verification remains a risk boundary."
+              "limits": "No LayerSkip model, early-exit threshold, or self-speculative benchmark has been run locally; same-model verification remains a risk boundary.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2404.16710:abstract / layer dropout and early-exit loss / early-layer draft / later-layer verification and correction / reported speedups"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for early-exit/self-speculative decoding with layer dropout and early-exit loss; no early-exit threshold, model checkpoint, benchmark, or same-model verification audit is reproduced."
             },
             {
               "source_id": "ext_pagedattention_vllm_2023",
               "mapped_support": "Source-notes KV-cache and serving-layer acceleration as a memory-management and batching axis separate from single-request verified-output quality.",
-              "limits": "No vLLM/PagedAttention deployment, serving benchmark, cache isolation audit, or local throughput measurement exists here."
+              "limits": "No vLLM/PagedAttention deployment, serving benchmark, cache isolation audit, or local throughput measurement exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2309.06180:abstract / KV-cache memory bottleneck / PagedAttention virtual-memory paging / vLLM cache sharing / reported throughput gains"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for PagedAttention/vLLM cache management and serving throughput; no deployment, cache-isolation audit, throughput benchmark, or verified-output quality result is reproduced."
             },
             {
               "source_id": "ext_mamba_2023",
               "mapped_support": "Source-notes state-space and recurrent sequence substrates as a backbone-efficiency axis distinct from draft-token acceptance mechanisms.",
-              "limits": "No Mamba model has been trained, served, compared, or routed through ASI Stack governance gates."
+              "limits": "No Mamba model has been trained, served, compared, or routed through ASI Stack governance gates.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2312.00752:abstract / selective state-space parameters / hardware-aware recurrent-mode algorithm / fast inference and linear sequence scaling claims"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for selective state-space sequence modeling and hardware-aware recurrent-mode inference; no Mamba model, training run, serving comparison, or routed stack benchmark is reproduced."
             },
             {
               "source_id": "ext_llada_2025",
               "mapped_support": "Source-notes large masked-diffusion language models as an external family that can generate through iterative refinement instead of strict left-to-right autoregression.",
-              "limits": "No LLaDA run, diffusion benchmark, model-quality test, or ASI Stack integration exists in this repository."
+              "limits": "No LLaDA run, diffusion benchmark, model-quality test, or ASI Stack integration exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2502.09992:abstract / forward masking process / reverse generation / masked-token prediction / reported large diffusion LM evaluations"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for large masked-diffusion language modeling through forward masking, reverse generation, and masked-token prediction; no run, checkpoint, quality test, speed test, or ASI Stack integration is reproduced."
             },
             {
               "source_id": "ext_scaling_dllms_2026",
               "mapped_support": "Source-notes diffusion language-model evaluation by speed-quality tradeoffs rather than perplexity alone, matching the chapter's accepted-output accounting principle.",
-              "limits": "No diffusion scaling law, checkpoint, code release, sampling schedule, or speed-quality result has been independently inspected or reproduced here."
+              "limits": "No diffusion scaling law, checkpoint, code release, sampling schedule, or speed-quality result has been independently inspected or reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2602.15014:abstract / diffusion speed-quality Pareto / scaling study / perplexity can mislead across families / reported code and checkpoints"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for diffusion-LM scaling and speed-quality Pareto framing; no code, checkpoints, sampling schedules, scaling law, or speed-quality result is reproduced."
             }
+          ],
+          "draft_maturity": "v0.2 manuscript draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all assigned Fast Generation Architecture sources; support remains at argument until local autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, hybrid generation, or serving benchmarks exist, or external-literature support is explicitly promoted under a stronger evidence transition.",
+            "The 2026-06-24 browser-GPT note remains author-intent and literature-queue context only; it is not treated as source-derived evidence.",
+            "External literature mappings are reviewed against public arXiv abstract pages only unless a paper is later vendored or fully inspected; reported speedups, code artifacts, model checkpoints, hardware setups, and quality results remain source-reported and unreproduced.",
+            "Only the generation_mode_record fixture and narrow finite Lean promotion predicates have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
           ]
         },
         {
