@@ -45,6 +45,8 @@ open_evidence_gaps:
 
 This chapter defines the boundary for self-improvement. It does not report autonomous improvement success, teacher independence, or current readiness unless the corresponding gate artifacts are inspected or reproduced.
 
+It closes Part I as a gate, not as a triumph claim. The book can discuss self-improving systems only after it has named the fields, transactions, security boundaries, protected predicates, and evidence ledgers that keep improvement from becoming self-ratification.
+
 ## Problem
 
 The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
@@ -108,9 +110,7 @@ flowchart LR
   N --> O
 ```
 
-- Define improvement proposals, protected invariants, and evidence gates.
-- Separate proposing, evaluating, approving, committing, and monitoring.
-- Delay autonomous replacement until evaluators and governance are credible.
+The transition record separates proposing, evaluating, approving, committing, monitoring, rolling back, and retiring. It names the improvement proposal, protected invariants, and evidence gates before a candidate can become the new default. More autonomous replacement is deliberately delayed until evaluators, readiness gates, governance logs, and rollback paths are credible enough to make the transition inspectable.
 
 The proposal must identify the observed wall or residual, the field being changed, the cheaper interventions already tried, protected invariants, evaluator independence evidence, replacement transaction link, governance approval, monitor window, and rollback path. If those records are missing, the proposal remains an idea, not an accepted self-improvement.
 
@@ -125,6 +125,7 @@ The interface is a Self-Improvement Transition that points outward rather than a
 - SCFs define replaceable units.
 - Evidence ratchets provide gates.
 - Alignment supplies protected constraints.
+- Governance supplies approval boundaries and non-self-ratification rules.
 
 Minimum fields:
 

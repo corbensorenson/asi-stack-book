@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter treats Stable Capability Fields as a governed substitution boundary. It does not claim that SCF safety properties are implemented here beyond the schema fixture and any explicitly built proofs.
 
+It follows governance rights because rights cannot survive implementation churn unless the capability boundary has a stable identity, stable authority ceiling, and explicit replacement policy.
+
 ## Problem
 
 The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
@@ -94,10 +96,7 @@ flowchart LR
   I --> J["Rollback and recovery path"]
 ```
 
-- Separate field identity from implementation.
-- Bind qualification claims to exact artifacts.
-- Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired.
-- Require route validity and evaluator integrity before promotion.
+The field record separates identity from implementation. Qualification claims bind to exact artifacts and scoped contexts rather than to a generic model or tool name. Lifecycle states such as shadow, canary, qualified, default, deprecated, and retired make promotion reversible and inspectable. Route validity and evaluator integrity are therefore prerequisites for default use, not optional paperwork after the fact.
 
 Qualification is scoped, not global. A candidate can be qualified for one domain, risk tier, authority ceiling, hardware context, benchmark epoch, or user population without being qualified everywhere. Its evidence should be append-only enough that later readers can reconstruct what was known when it was promoted.
 

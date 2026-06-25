@@ -40,6 +40,8 @@ open_evidence_gaps:
 
 This chapter narrows security claims to handle-mediated authority and compartment discipline. It does not claim kernel-level security, side-channel safety, or leak prevention without a local fixture or threat-model-specific test.
 
+It follows replacement because capability churn is not safe if new implementations can carry secrets, privileged context, or authority across boundaries that the old implementation was never allowed to cross.
+
 ## Problem
 
 High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
@@ -96,9 +98,7 @@ sequenceDiagram
   K->>L: record handle use, policy, result, residuals
 ```
 
-- Use handles rather than exposing secrets.
-- Separate model-visible context from privileged substitution.
-- Run high-risk tasks inside compartmentalized context containers.
+The mechanism is least exposure. Handles replace secret bytes in model-visible context. Privileged substitution happens only inside an approved execution boundary. High-risk work runs inside compartmentalized context containers whose lifecycle, sanitized output, residual leak risk, and audit trail remain visible after the task ends.
 
 Handles are not magic. A handle must carry scope: permitted destination, action type, time window, spending or rate limit, user approval state, logging rule, and revocation path. A SCIF must carry lifecycle: spawn, inject, execute, sanitize, zeroize, commit, and audit.
 

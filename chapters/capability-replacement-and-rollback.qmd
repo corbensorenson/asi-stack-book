@@ -42,6 +42,8 @@ open_evidence_gaps:
 
 This chapter defines replacement as a transaction record. It does not claim any real replacement has succeeded unless the prior artifact, candidate artifact, gates, regressions, monitor window, and rollback result are recorded.
 
+It follows Stable Capability Fields because the field gives replacement a target identity; the transaction gives that identity a disciplined change procedure.
+
 ## Problem
 
 Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
@@ -101,11 +103,9 @@ flowchart LR
   N --> M
 ```
 
-- Define replacement proposals as artifacts.
-- Run qualification, regression, and authority checks.
-- Commit only after evidence gates pass and rollback remains available.
+The replacement proposal is itself an artifact. It cannot become a commit merely because the candidate looks better. The transaction runs qualification, regression, authority, residual, and rollback checks before default promotion, and it records failed gates as residuals rather than letting them disappear behind a successful upgrade story.
 
-The transaction is an artifact before it is a change. It names the field, prior implementation, candidate, gates, evidence refs, regression suite, residual escrow, rollback command or plan, approval record, monitor window, and final decision. Failed gates become residuals rather than disappearing.
+The transaction names the field, prior implementation, candidate, gates, evidence refs, regression suite, residual escrow, rollback command or plan, approval record, monitor window, and final decision. Failed gates become residuals rather than disappearing.
 
 The passage review sharpens one boundary: rollback is not just "run the old version." A state migration can be replayable, loss-bounded, dual-read, or non-solvent. If the old state cannot be interpreted, or if external effects remain unresolved, the transaction should record a fork, compensation obligation, or residual effect rather than claiming full recovery.
 
