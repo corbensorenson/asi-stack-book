@@ -1818,6 +1818,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A router registry with capability metadata, cost, authority, and fallback rules.
+- Exact Appendix C claim-source mappings for routing heads: five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
 - Planned Codex test: Specialist routing accuracy test.
 - Implemented Lean predicate: selected routes satisfy authority and readiness.

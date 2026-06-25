@@ -17,7 +17,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until routing benchmarks, learned-router harnesses, runtime routes, or authority-enforcement tests exist."
+  - "Appendix C now records exact passage-reviewed mappings for seven assigned sources; `moecot` remains connector/source-note mapped only, and support remains at argument until routing benchmarks, learned-router harnesses, runtime routes, or authority-enforcement tests exist."
   - "Protocol schema/fixture validation and narrow Lean routing/readiness predicates are implemented; no specialist-routing benchmark, learned-router harness, runtime route, or authority-enforcement test has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -35,12 +35,12 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os`; connector/recovery: `moecot` |
-| Source loading state | source notes: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; connector/recovery: `moecot` |
+| Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`; connector/source-note mapped only: `moecot` |
 | Test state | Specialist registry and routing decision fixture validation implemented; finite routing/readiness predicates implemented in `AsiStackProofs.Routing`; routing accuracy, learned-router, runtime-route, and authority-enforcement tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is architecture argument grounded in the available source notes. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus and MoECOT supply implementation-reference pressure; the repo now proves two finite Lean predicates over route records, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, or runtime reproduction has been run in this repository for this chapter.
+This chapter is architecture argument grounded in available source notes and seven reviewed source passages. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus supplies implementation-lineage pressure; `moecot` remains connector/source-note mapped only. The repo now proves two finite Lean predicates over route records, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, or runtime reproduction has been run in this repository for this chapter.
 
 ## Problem
 
@@ -58,22 +58,22 @@ This matters because routing is not just a performance problem. It is also a gov
 
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
-The claim remains at `argument` support. The source notes justify source-derived discussion of router heads, specialist arms, permission envelopes, memory routing, residual-aware routing, and arm lifecycle, but they do not by themselves prove that a particular router is safe or empirically superior.
+The claim remains at `argument` support. The reviewed passages justify discussion of router heads, specialist arms, permission envelopes, memory routing, residual-aware routing, and arm lifecycle, but they do not by themselves prove that a particular router is safe or empirically superior. `moecot` supplies connector/source-note context only until usable source text or runtime artifacts are imported.
 
 ### Claim-source mapping status
 
-Appendix C now maps this routing-head claim to all assigned source notes. The mappings support router heads, bounded specialist cores, local tools and memory, authority envelopes, residual-aware routing, and specialist lifecycle discipline, not a solved router or measured routing advantage.
+Appendix C now maps this routing-head claim to all assigned source notes and records passage-reviewed support for seven mappings. The mappings support router heads, bounded specialist cores, local tools and memory, authority envelopes, residual-aware routing, and specialist lifecycle discipline, not a solved router or measured routing advantage.
 
-| Source | What it supports | Limit |
-|---|---|---|
-| `octopus_router` | Resident head/router selection, dynamically loaded arms, local tools, memory, benchmarks, residuals, permissions, runtime tiers, verification contracts, route patterns, permission envelopes, arm cards, and split/merge/retire policies. | No routed-specialist prototype, learned-router harness, runtime authority enforcement, or routing benchmark has been run here. |
-| `rmi` | Head/router, specialist arms, arm registry, memory router, permission router, tool registry, benchmark ledger, residual escrow, verification/safety layer, lifecycle states, and regression-floor preservation. | No independent reproduction, benchmark run, prototype inspection, or empirical specialist-routing result exists here. |
-| `beastbrain` | Local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, interface surfaces, semantic intent, intelligence tiers, and capability routes. | Architecture lineage only; hardware, cost, context-length, security, and benchmark claims are source-reported. |
-| `cognitive_loop_closure` | Verified procedural memory, tool registry, router, runtime monitor, execution modes, tool cards, risk tiers, lifecycle states, and retirement discipline. | No local loop detector, tool synthesis, router monitor, or verified procedural tool has been executed. |
-| `rgs` | Ratcheting system that logs attempts, classifies successes/failures, promotes verified tools, preserves residuals, maintains regressions, and keeps ledgers for routing and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
-| `moecot` | Compact orchestration, routed specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced. |
-| `project_theseus_whitepaper` | Octopus head router, bounded specialist arms, schemas, permissions, local memory, benchmarks, residuals, reliability scores, lifecycle state, retirement criteria, and trusted-node task allowlists. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
-| `theseus_operator_os` | Durable work boards, node registries, command-channel parity, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation surfaces. | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run. |
+| Source | Review state | What it supports | Limit |
+|---|---|---|---|
+| `octopus_router` | passage-reviewed local raw cache | Resident head/router selection, dynamically loaded arms, local tools, memory, benchmarks, residuals, permissions, runtime tiers, verification contracts, route patterns, permission envelopes, arm cards, and split/merge/retire policies. | No routed-specialist prototype, learned-router harness, runtime authority enforcement, or routing benchmark has been run here. |
+| `rmi` | passage-reviewed local raw cache | Head/router, specialist arms, arm registry, memory router, permission router, tool registry, benchmark ledger, residual escrow, verification/safety layer, lifecycle states, and regression-floor preservation. | No independent reproduction, benchmark run, prototype inspection, or empirical specialist-routing result exists here. |
+| `beastbrain` | passage-reviewed local raw cache | Local, stateful intelligence split across memory, verification, planning, routing, security, consolidation, interface surfaces, semantic intent, intelligence tiers, and capability routes. | Architecture lineage only; hardware, cost, context-length, security, and benchmark claims are source-reported. |
+| `cognitive_loop_closure` | passage-reviewed local raw cache | Verified procedural memory, tool registry, router, runtime monitor, execution modes, tool cards, risk tiers, lifecycle states, and retirement discipline. | No local loop detector, tool synthesis, router monitor, or verified procedural tool has been executed. |
+| `rgs` | passage-reviewed local raw cache | Ratcheting system that logs attempts, classifies successes/failures, promotes verified tools, preserves residuals, maintains regressions, and keeps ledgers for routing and interventions. | No local benchmark runs, tool-promotion traces, regression data, or implemented ratchet are present. |
+| `moecot` | connector/source-note mapped only | Compact orchestration, routed specialist lanes, fail-closed control planes, ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced. |
+| `project_theseus_whitepaper` | passage-reviewed local public-project source | Octopus head router, bounded specialist arms, schemas, permissions, local memory, benchmarks, residuals, reliability scores, lifecycle state, retirement criteria, and trusted-node task allowlists. | Current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
+| `theseus_operator_os` | passage-reviewed local public-project source | Durable work boards, node registries, command-channel parity, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation surfaces. | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run. |
 
 ## Mechanism
 
@@ -200,20 +200,20 @@ These proof hooks are implemented as finite-record predicates. They do not prove
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Lightweight head/router with dynamically loaded specialist arms and local boundaries. | source note available; local raw cache available |
-| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
-| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | source note available; local raw cache available |
-| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; local raw cache available |
-| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | source note available; local raw cache available |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
-| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
+| `octopus_router` | Octopus Router Architecture | routing_modular_intelligence | Lightweight head/router with dynamically loaded specialist arms and local boundaries. | source note available; passage-reviewed local raw cache |
+| `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; passage-reviewed local raw cache |
+| `beastbrain` | BeastBrain Cognitive Architecture | whole_stack_lineage | Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence. | source note available; passage-reviewed local raw cache |
+| `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; passage-reviewed local raw cache |
+| `rgs` | Ratcheting Generative Systems | compression_capability_growth | Bridge between active compression, procedural memory, benchmark frontiers, verified AI growth. | source note available; passage-reviewed local raw cache |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector/source-note mapped only |
+| `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available; passage-reviewed local public-project source |
+| `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available; passage-reviewed local public-project source |
 
-The crosswalk identifies sources for routed specialists, lifecycle, residual-aware routing, and operator-visible control. It does not claim local routing accuracy or safety has been demonstrated.
+The crosswalk identifies sources for routed specialists, lifecycle, residual-aware routing, and operator-visible control. This pass tightened seven mappings against exact passages and left `moecot` connector/source-note mapped only. It does not claim local routing accuracy or safety has been demonstrated.
 
 ## Summary
 
-Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure.
+Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. This pass tightened the source crosswalk, but it did not run or benchmark a router.
 
 This chapter therefore turns the router from a clever dispatcher into a control surface for capability, authority, memory, cost, fallback, and lifecycle. The next chapter adds the gate that the router must respect: a capability can be semantically appropriate and still not ready for ordinary use.
 

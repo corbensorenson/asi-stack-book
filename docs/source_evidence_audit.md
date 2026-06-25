@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 152 |
+| Passage-reviewed mappings recorded | 159 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -63,7 +63,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
-| `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 0 | argument | passage review required before source-derived promotion |
+| `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 0 | argument | passage review required before source-derived promotion |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 0 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 0 | argument | passage review required before source-derived promotion |
@@ -386,14 +386,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `octopus_router` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `beastbrain` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `cognitive_loop_closure` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rgs` | mapped | note present | chapter listed | not passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_operator_os` | mapped | note present | chapter listed | not passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
