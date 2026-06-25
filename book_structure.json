@@ -3520,22 +3520,67 @@
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports transactional context semantics through immutable content versions, semantic objects, source and authority binding, protected compilation, snapshot coherence, revocation, invalidation, audit records, and visible non-success states.",
-              "limits": "No local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is present."
+              "limits": "No local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:203-230",
+                "sources/raw/google_docs/vcm_public.txt:265-330",
+                "sources/raw/google_docs/vcm_public.txt:332-351",
+                "sources/raw/google_docs/vcm_public.txt:774-793",
+                "sources/raw/google_docs/vcm_public.txt:1240-1251",
+                "sources/raw/google_docs/vcm_public.txt:1252-1265",
+                "sources/raw/google_docs/vcm_public.txt:1266-1276",
+                "sources/raw/google_docs/vcm_public.txt:1277-1325"
+              ],
+              "passage_review_note": "Reviewed local raw cache for object/version/representation/validation/packet/materialization identities, role-indexed obligations, representation graphs, protected compilation, semantic faults, runtime materialization keys, core-vs-transactions separation, immutable versions, pinned snapshots, commit/merge/branch/invalidation/deletion-closure ownership, race-free invalidation, residue reports, conformance boundaries, semantic page state, memory transactions, atomic commits, causal ordering, copy-on-write branches, cache invalidation, task checkpoints, access-controlled mount/read/write/share/delete operations, execution classes, summarization-preserved authority, and write-time controls; no local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is promoted."
             },
             {
               "source_id": "ladon_manhattan",
               "mapped_support": "Supports sensitive context boundaries with opaque credential handles, policy-mediated secret injection, hardened managers, ephemeral isolated compartments, zeroization, compartment lifecycle, audit considerations, and side-channel assumptions.",
-              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here."
+              "limits": "Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ladon_manhattan.txt:14-20",
+                "sources/raw/google_docs/ladon_manhattan.txt:24-41",
+                "sources/raw/google_docs/ladon_manhattan.txt:45-70",
+                "sources/raw/google_docs/ladon_manhattan.txt:90-94",
+                "sources/raw/google_docs/ladon_manhattan.txt:97-125"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the agency/credential exposure problem, blind execution thesis, kernel-level enclave/vault framing, opaque handles, trusted credential-entry overlay, syscall interception, permission-table checks, secret injection, Digital SCIF spawn/inject/execute/wipe/return lifecycle, side-channel defense considerations, Rust implementation sketch, and source-proposed ignorance/ephemerality theorems; no Ladon implementation, kernel-level test, side-channel validation, security audit, or theorem proof is promoted."
             },
             {
               "source_id": "context_engineer",
               "mapped_support": "Supports layered memory, context shards, clearance labels, memory masks, allowed-tool lists, Digital SCIFs, ephemeral context injection, zeroization, sanitized commits, outgoing secret scans, and read/write policies.",
-              "limits": "No benchmark harness or runtime enforcement test for clearance, taint, leak prevention, cost, or latency is reproduced here."
+              "limits": "No benchmark harness or runtime enforcement test for clearance, taint, leak prevention, cost, or latency is reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/context_engineer.txt:17-27",
+                "sources/raw/google_docs/context_engineer.txt:31-64",
+                "sources/raw/google_docs/context_engineer.txt:71-77",
+                "sources/raw/google_docs/context_engineer.txt:125-164",
+                "sources/raw/google_docs/context_engineer.txt:171-212",
+                "sources/raw/google_docs/context_engineer.txt:238-250",
+                "sources/raw/google_docs/context_engineer.txt:277-290"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context-as-supply-chain framing, need-to-know delivery, governor placement, layered archive/semantic-web/cache memory, briefer/mission-brief compression, context-as-code fields, clearance levels, context shards, memory masks, allowed tools, Digital SCIF isolation/sanitization/destruction, clearance checks, task-duration injection, sanitized success commits, information-flow controls, anti-leak scanning, source-reported benchmark figures, and limitations around software-only isolation and summarization loss; no benchmark harness, runtime enforcement test, leak-prevention result, clearance result, cost result, or latency result is promoted."
             },
             {
               "source_id": "black_hole_context_manager",
               "mapped_support": "Supports concrete memory-budget patterns with chunks, embeddings, entropy, mass, timestamps, goal-drift scoring, lazy recomputation, freezing, eviction, cluster management, critical-context preservation, sanitization, and rate limits.",
-              "limits": "Design/specification source only; no package, local test run, freeze/evict fixture, or benchmark demonstrates production behavior."
+              "limits": "Design/specification source only; no package, local test run, freeze/evict fixture, or benchmark demonstrates production behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/black_hole_context_manager.txt:21-77",
+                "sources/raw/google_docs/black_hole_context_manager.txt:111-139",
+                "sources/raw/google_docs/black_hole_context_manager.txt:157-205",
+                "sources/raw/google_docs/black_hole_context_manager.txt:233-317",
+                "sources/raw/google_docs/black_hole_context_manager.txt:332-386",
+                "sources/raw/google_docs/black_hole_context_manager.txt:396-437",
+                "sources/raw/google_docs/black_hole_context_manager.txt:448-468",
+                "sources/raw/google_docs/black_hole_context_manager.txt:488-507",
+                "sources/raw/google_docs/black_hole_context_manager.txt:531-541"
+              ],
+              "passage_review_note": "Reviewed local raw cache for chunk records, embeddings, entropy, cached mass, goal-vector state, lazy reweighting under goal drift, HMAC/multi-confirmation promotion gates, dormant cluster freezing, disk swap/thaw, turn-level validation, goal-vector updates, tiered cache budgeting, mass-based eviction, implementation roadmap, hot/warm/cold cache framing, TTL downgrade, mass formula, drift checks, and a proposed drifting-needle scenario; no package import, local test run, freeze/evict fixture, benchmark, or production-behavior claim is promoted."
             },
             {
               "source_id": "vcm_editable",

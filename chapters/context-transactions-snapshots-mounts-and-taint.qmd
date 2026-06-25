@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact claim-level source mappings are recorded for all assigned sources; support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
+  - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
   - "Only protocol schema/fixture validation is implemented; no transactional memory-store tests have been run for this chapter."
   - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
-| Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
 | Test state | Context transaction fixture validation and `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
@@ -66,21 +66,23 @@ The claim remains at `argument` support. VCM public v1 supplies snapshot, revoca
 
 ### Claim-source mapping status
 
-Appendix C now maps this transaction claim to all assigned source notes. The mappings support transaction vocabulary, taint boundaries, deletion obligations, and context-budget mechanisms, not a production memory store or security guarantee.
+Appendix C maps this transaction claim to all assigned source notes. Four local raw-cache mappings are now passage-reviewed. The mappings support transaction vocabulary, snapshot and invalidation boundaries, sensitive-compartment lifecycle patterns, taint/deletion pressure, and context-budget mechanisms, not a production memory store, branch-isolation harness, deletion-closure result, security guarantee, or benchmark result. `vcm_editable` remains connector/source-note mapped until durable raw text, memory-store artifacts, conformance results, VCM-Bench records, or external corroboration are imported or inspected.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `vcm_public` | Immutable content versions, semantic objects, source/authority binding, protected compilation, snapshot coherence, revocation, invalidation, audit records, and visible non-success states. | No local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is present. |
-| `ladon_manhattan` | Sensitive context boundaries through opaque handles, policy-mediated secret injection, hardened managers, ephemeral compartments, zeroization, audit considerations, and side-channel assumptions. | No Ladon implementation, kernel test, side-channel validation, or security audit exists here. |
-| `context_engineer` | Layered memory, context shards, clearance labels, memory masks, allowed tools, Digital SCIFs, ephemeral injection, zeroization, sanitized commits, secret scans, and read/write policies. | No runtime enforcement or benchmark reproduction for clearance, taint, leak prevention, cost, or latency exists here. |
-| `black_hole_context_manager` | Memory-budget patterns: chunks, embeddings, entropy, mass, timestamps, goal-drift scoring, lazy recomputation, freezing, eviction, cluster management, critical-context preservation, sanitization, and rate limits. | No package, local test run, freeze/evict fixture, or benchmark demonstrates production behavior. |
-| `vcm_editable` | Stable addresses, mounts, snapshots, materializations, semantic paging, protected compilation, authority non-escalation, and transactional/governed memory vocabulary. | Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists. |
+| `vcm_public` | Passage-reviewed: object/version/representation/validation/packet/materialization identities, role-indexed obligations, representation graphs, protected compilation, semantic faults, runtime materialization keys, core-vs-transactions separation, immutable versions, pinned snapshots, commit/merge/branch/invalidation/deletion-closure ownership, race-free invalidation, residue reports, semantic page state, atomic memory transactions, causal ordering, copy-on-write branches, cache invalidation, task checkpoints, execution classes, and write-time controls. | No local memory store, resolver, deletion-closure harness, branch-isolation test, VCM conformance run, or independent interoperability result is present. |
+| `ladon_manhattan` | Passage-reviewed: agency/credential exposure pressure, blind execution, kernel-level enclave/vault framing, opaque handles, trusted credential-entry overlay, syscall interception, permission-table checks, secret injection, Digital SCIF spawn/inject/execute/wipe/return lifecycle, side-channel defense considerations, and Rust implementation sketch. | No Ladon implementation, kernel test, side-channel validation, security audit, or theorem proof exists here. |
+| `context_engineer` | Passage-reviewed: layered memory, context shards, clearance labels, memory masks, allowed tools, Digital SCIFs, ephemeral injection, zeroization, sanitized commits, information-flow controls, outgoing secret scans, source-reported benchmark figures, and limitations around software-only isolation and summarization loss. | No runtime enforcement or benchmark reproduction for clearance, taint, leak prevention, cost, or latency exists here. |
+| `black_hole_context_manager` | Passage-reviewed: chunk records, embeddings, entropy, cached mass, timestamps, goal-vector state, lazy reweighting under goal drift, HMAC and multi-confirmation promotion gates, dormant cluster freezing, disk swap/thaw, tiered cache budgeting, mass-based eviction, TTL downgrade, hot/warm/cold cache framing, and a proposed drifting-needle scenario. | No package, local test run, freeze/evict fixture, benchmark, or production-behavior evidence exists here. |
+| `vcm_editable` | Connector/source-note mapped: stable addresses, mounts, snapshots, materializations, semantic paging, protected compilation, authority non-escalation, and transactional/governed memory vocabulary. | Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists. |
 
 ## Mechanism
 
 Certificates make context units honest; transactions make memory operations replayable. VCM public v1 supplies immutable versions, snapshot coherence, revocation, invalidation, protected compilation, and audit records. Ladon/Manhattan and Context Engineer supply sensitive mounts, opaque handles, ephemeral compartments, zeroization, clearance labels, memory masks, and sanitized commits. Black Hole Context Manager contributes chunk mass, drift, freezing, eviction, and critical-context preservation. Editable VCM ties those ideas back to mounts, snapshots, materializations, semantic paging, protected compilation, and transactional memory.
 
 A Context Transaction Record is the runtime ledger for reads, writes, branches, taint propagation, deletion obligations, contradiction records, and faults.
+
+The reviewed passages sharpen the runtime boundary. VCM public v1 justifies transaction vocabulary, snapshot coherence, invalidation, deletion-residue reporting, copy-on-write branches, execution classes, and write-time controls. Ladon/Manhattan justifies keeping sensitive authority behind handles and ephemeral compartments. Context Engineer justifies clearance-labeled mission contexts, memory masks, Digital SCIF zeroization, sanitized commits, and leak-scanning pressure. Black Hole Context Manager justifies memory-budget machinery around chunks, mass, drift, freezing, eviction, and critical-context preservation. None of those passages show this repository running a memory store, enforcing mount visibility, proving branch isolation, closing deletion over derivatives, validating side-channel defenses, or reproducing source-reported benchmark numbers.
 
 ```{mermaid}
 flowchart LR
@@ -182,13 +184,13 @@ These proof hooks are implemented only over finite Lean event/snapshot and taint
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
-| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache available |
-| `black_hole_context_manager` | Black Hole Context Manager | memory_context_lineage | Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. | source note available; local raw cache available |
+| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
+| `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache passage-reviewed |
+| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
+| `black_hole_context_manager` | Black Hole Context Manager | memory_context_lineage | Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for transactional context semantics and memory-budget pressure. It does not claim production readiness or local execution of a context manager.
+The crosswalk identifies sources for transactional context semantics and memory-budget pressure. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and memory-store behavior, mount visibility, branch isolation, deletion closure, side-channel validation, context-manager execution, and benchmark claims remain unpromoted.
 
 ## Summary
 
