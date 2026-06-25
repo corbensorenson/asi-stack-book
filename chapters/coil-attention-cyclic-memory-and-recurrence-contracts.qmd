@@ -13,9 +13,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this coil-attention and cyclic-memory claim to all assigned source notes; support remains argument until KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, or learned-model memory tests exist."
-  - "The cyclic_memory_contract fixture validates schema/example consistency only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-model memory test has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
+  - "The cyclic_memory_contract fixture validates schema/example consistency and `AsiStackProofs.CoilAttentionMemory` implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo."
+  - "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence."
+  - "VCM material is used only for governed context/addressability, authority, adequacy/admission, taint, revocation, invalidation, audit, and residency boundaries; it does not support recurrence quality, retrieval quality, long-context performance, or learned memory behavior."
+  - "No support-state promotion, raw source publication, downstream model-quality result, retrieval-quality result, long-context result, performance result, memory-savings result, or transfer-result claim is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -31,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `coil_attention_memory`, `circle_ai_contract_suite`; supporting: `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` |
-| Source loading state | source notes: `coil_attention_memory`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `vcm_public`; raw cache: `vcm_public` |
+| Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; `vcm_public` uses local raw cache, while Circle and Theseus transfer mappings use pinned local Circle project passages; no Circle/Theseus commands or generated contract artifacts were run/imported here |
 | Test state | `cyclic_memory_contract.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.CoilAttentionMemory` implements finite alias-boundary and coverage/freshness quality-promotion gates; alias, sparse-coverage, recurrence-exit, and freshness behavior tests remain planned. |
 
 ## Drafting guardrail
@@ -54,18 +56,18 @@ VCM and Verification Bandwidth reinforce the boundary: context admission, contex
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
 
-The claim remains at `argument` support. The source notes support source-derived discussion of cyclic memory slots, winding/provenance, KV freshness, sparse coverage, recurrence schedules, loop exits, and explicit non-claims. They do not support learned model-quality improvements in this repository.
+The claim remains at `argument` support. The passage-reviewed mappings support discussion of cyclic memory slots, winding/provenance, KV freshness, sparse coverage, recurrence schedules, loop exits, transfer gates, governed context boundaries, and explicit non-claims. They do not support learned model-quality, retrieval-quality, long-context, speed, memory-savings, or transfer-result claims in this repository.
 
 ### Claim-source mapping status
 
-Appendix C now maps this coil-attention and cyclic-memory claim to all assigned source notes. The mappings support structural contracts for aliasing, freshness, sparse coverage, recurrence schedules, transfer boundaries, and governed context, not retrieval or reasoning quality.
+Appendix C now records passage-reviewed mappings for all four assigned sources. The mappings support structural contracts for aliasing, freshness, sparse coverage, recurrence schedules, transfer boundaries, and governed context, not retrieval quality, reasoning quality, long-context performance, memory savings, speed, or local Circle/Theseus execution results.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `coil_attention_memory` | Cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop exits, work budgets, residue/winding/provenance, and alias diagnostics. | Structural source only; no Circle sidecars, contract generators, learned-model experiments, retrieval-quality tests, or long-context results were run. |
-| `circle_ai_contract_suite` | Theorem-linked contract families and consumer fields for KV-cache freshness, sparse attention, recurrence schedules, cyclic memory residue/winding, multicoil phase, and explicit non-claims. | No generated contract pack, Circle command, receipt check, or Lean build was run from this repo. |
-| `theseus_circle_transfer` | Report-only transfer discipline for cyclic-memory and recurrence fixtures, with quality/runtime/memory/transfer/failure-case axes separated from deterministic structural smoke checks. | No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, or private inference/report artifact was executed or imported. |
-| `vcm_public` | Governed context boundaries: semantic objects, immutable versions, packets, materializations, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states. | VCM control-plane source only; it does not prove recurrence quality, retrieval quality, long-context performance, or learned memory behavior. |
+| `coil_attention_memory` | Cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop exits, work budgets, residue/winding/provenance, and alias diagnostics. | Structural source only; no Circle sidecars, contract generators, certifier commands, learned-model experiments, retrieval-quality tests, performance tests, or long-context results were run. |
+| `circle_ai_contract_suite` | Theorem-linked contract families and consumer fields for KV-cache freshness, sparse attention, recurrence schedules, cyclic memory residue/winding, multicoil phase, and explicit non-claims. | No generated contract pack, Circle command, receipt check, receipt replay, fingerprint check, or Lean build was run from this repo. |
+| `theseus_circle_transfer` | Report-only transfer discipline for cyclic-memory and recurrence fixtures, with quality/runtime/memory/transfer/failure-case axes separated from deterministic structural smoke checks. | No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, scored private benchmark, private inference/report artifact, or aggregate feedback handoff was executed or imported. |
+| `vcm_public` | Governed context boundaries: semantic objects, immutable versions, packets, materializations, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states. | VCM control-plane source only; it does not prove recurrence quality, retrieval quality, long-context performance, learned memory behavior, or arbitrary KV-cache composition safety. |
 
 ## Mechanism
 

@@ -8033,6 +8033,13 @@
             "Freshness stale-read rejection test"
           ],
           "claim_label": "Design rationale",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
+            "The cyclic_memory_contract fixture validates schema/example consistency and AsiStackProofs.CoilAttentionMemory implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo.",
+            "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence.",
+            "VCM material is used only for governed context/addressability, authority, adequacy/admission, taint, revocation, invalidation, audit, and residency boundaries; it does not support recurrence quality, retrieval quality, long-context performance, or learned memory behavior.",
+            "No support-state promotion, raw source publication, downstream model-quality result, retrieval-quality result, long-context result, performance result, memory-savings result, or transfer-result claim is implied by this drafting pass."
+          ],
           "source_queue": {
             "primary": [
               "coil_attention_memory",
@@ -8066,22 +8073,82 @@
             {
               "source_id": "coil_attention_memory",
               "mapped_support": "Supports structural guardrails for cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop exits, work budgets, residue/winding/provenance, and alias diagnostics.",
-              "limits": "Proof-linked structural source only; no Circle sidecars, contract generators, learned-model experiments, retrieval-quality tests, or long-context results were run here."
+              "limits": "Proof-linked structural source only; no Circle sidecars, contract generators, certifier commands, learned-model experiments, retrieval-quality tests, performance tests, or long-context results were run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:1-18",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:23-75",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:403-428",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:560-587",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:589-599",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:647-659",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:701-718",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:722-779",
+                "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:789-815",
+                "local-project:circle-math@63b0f511:docs/CYCLIC_MEMORY_CERTIFIER_QUICKSTART.md:1-14",
+                "local-project:circle-math@63b0f511:docs/CYCLIC_MEMORY_CERTIFIER_QUICKSTART.md:43-64",
+                "local-project:circle-math@63b0f511:docs/CYCLIC_MEMORY_CERTIFIER_QUICKSTART.md:86-98",
+                "local-project:circle-math@63b0f511:docs/KV_CACHE_CERTIFIER_QUICKSTART.md:1-18",
+                "local-project:circle-math@63b0f511:docs/KV_CACHE_CERTIFIER_QUICKSTART.md:79-90",
+                "local-project:circle-math@63b0f511:docs/KV_CACHE_CERTIFIER_QUICKSTART.md:174-185",
+                "local-project:circle-math@63b0f511:docs/SPARSE_ATTENTION_CERTIFIER_QUICKSTART.md:1-18",
+                "local-project:circle-math@63b0f511:docs/SPARSE_ATTENTION_CERTIFIER_QUICKSTART.md:80-84",
+                "local-project:circle-math@63b0f511:docs/SPARSE_ATTENTION_CERTIFIER_QUICKSTART.md:86-139",
+                "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:1-21",
+                "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:72-74",
+                "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:101-122",
+                "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:172-195"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle AI 02 paper and memory/KV/sparse/recurrence quickstarts for cyclic slot indexing, residue-plus-winding alias visibility, KV freshness and stale-read boundaries, sparse coverage/gap certificates, recurrence schedules, loop-exit/work-budget fields, ordinary-baseline requirements, and explicit non-claims; no Circle sidecar, contract generator, certifier command, learned-model experiment, retrieval-quality test, performance test, or long-context result was run from this repo."
             },
             {
               "source_id": "circle_ai_contract_suite",
               "mapped_support": "Supports theorem-linked contract families and consumer fields for KV-cache freshness, sparse attention, recurrence schedules, cyclic memory residue/winding, multicoil phase, and explicit non-claims.",
-              "limits": "No generated contract pack, Circle command, receipt check, or Lean build was run from this repo."
+              "limits": "No generated contract pack, Circle command, receipt check, receipt replay, fingerprint check, or Lean build was run from this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:7-15",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:116-137",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:154-169",
+                "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:171-217",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:56-88",
+                "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:114-203"
+              ],
+              "passage_review_note": "Reviewed pinned local Circle contract-suite and integration-guide docs for KV-cache, sparse-attention, recurrence, cyclic-memory, receipt/readiness, fingerprint, theorem-id, consumer-check, minimum-field, planner-recommendation, and non-claim surfaces; no generated contract pack, Circle command, receipt check, receipt replay, fingerprint check, downstream consumer, or Lean build was run from this repo."
             },
             {
               "source_id": "theseus_circle_transfer",
               "mapped_support": "Supports report-only transfer discipline for cyclic-memory and recurrence fixtures, with quality/runtime/memory/transfer/failure-case axes kept separate from deterministic structural smoke checks.",
-              "limits": "No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, or private inference/report artifact was executed or imported here."
+              "limits": "No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, scored private benchmark, private inference, report artifact, or aggregate feedback handoff was executed or imported here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:1-18",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:40-65",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:67-86",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:88-115",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:190-216",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:237-304",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:365-402",
+                "local-project:circle-math@63b0f511:docs/THESEUS_HIVE_AI_TRANSFER.md:404-428"
+              ],
+              "passage_review_note": "Reviewed pinned local Theseus-Hive transfer note for report-only recurrence, fanout, cyclic-memory, contract-pack, consumer, smoke/proxy/real-workload-attachment, privacy, no-promotion, no-training-mutation, no-external-inference, no-private-export, and baseline/metric/report boundaries; no Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, scored private benchmark, private inference, report artifact, or feedback handoff was executed or imported here."
             },
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports tying cyclic memory contracts back to governed context: semantic objects, immutable versions, packets, materializations, source/authority binding, adequacy/admission separation, taint, revocation, invalidation, audit records, and non-success states.",
-              "limits": "VCM control-plane source only; it does not prove recurrence quality, retrieval quality, long-context performance, or learned memory behavior."
+              "limits": "VCM control-plane source only; it does not prove recurrence quality, retrieval quality, long-context performance, learned memory behavior, or arbitrary KV-cache composition safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/vcm_public.txt:7-24",
+                "sources/raw/google_docs/vcm_public.txt:35-44",
+                "sources/raw/google_docs/vcm_public.txt:252-263",
+                "sources/raw/google_docs/vcm_public.txt:264-323",
+                "sources/raw/google_docs/vcm_public.txt:324-333",
+                "sources/raw/google_docs/vcm_public.txt:347-359",
+                "sources/raw/google_docs/vcm_public.txt:360-389",
+                "sources/raw/google_docs/vcm_public.txt:427-445"
+              ],
+              "passage_review_note": "Reviewed local VCM public raw cache for governed semantic-memory control plane, object/version/packet/materialization separation, authority/evidence/exposure separation, adequacy/admission and feasibility states, compile outcomes, runtime/KV materialization cautions, invalidation/revocation/deletion boundaries, audit/conformance evidence, and explicit model-facing non-result; VCM is used here only for governed context boundaries, not recurrence quality, retrieval quality, long-context performance, learned memory behavior, or arbitrary KV-cache composition safety."
             }
           ]
         },
