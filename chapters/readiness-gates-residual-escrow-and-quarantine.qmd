@@ -43,6 +43,8 @@ open_evidence_gaps:
 
 This chapter uses passage-reviewed local raw-cache text for RMI, Benchmaxxing, SCF, Octopus Router, and Cognitive Loop Closure, plus passage-reviewed local public-project text for the three Theseus sources. MoECOT remains connector/source-note mapped only. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted. The repo now proves two finite Lean predicates over readiness records, but it has not implemented a lifecycle engine or rerun any readiness gate.
 
+After routing, readiness determines whether a semantically plausible route is allowed to become ordinary execution. The route can be correct as a match and still fail as a governed choice because evidence is stale, regressions are unresolved, scope is too broad, or residuals need quarantine.
+
 ## Problem
 
 A specialist can be useful without being ready. It can pass a narrow benchmark and still hide residual failures. It can improve on the frontier and regress on the floor. It can be safe in canary and unsafe as default. The stack therefore needs lifecycle states that are stricter than "available" and richer than a single score.
@@ -98,11 +100,7 @@ flowchart LR
   H --> I
 ```
 
-Readiness has three inputs:
-
-- Gate evidence: source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision.
-- Regression preservation: a floor that should not be lost while the frontier moves.
-- Residual escrow: named failures, edge cases, uncertainties, and blocked obligations that survive promotion.
+Readiness has three inputs. Gate evidence names the source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision. Regression preservation protects a floor that should not be lost while the frontier moves. Residual escrow keeps named failures, edge cases, uncertainties, and blocked obligations attached to the target even when some narrower promotion is allowed.
 
 Quarantine is not deletion. It is a routing state. A quarantined module can remain available for diagnosis, replay, repair, or restricted review while ordinary routes are blocked. This distinction is what lets the architecture learn from failures without letting failures remain live in the control path.
 

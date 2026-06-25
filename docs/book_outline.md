@@ -1794,9 +1794,9 @@ Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
 - Insufficiency: Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.
-- Mechanism: Register specialists with capabilities, costs, readiness, authority, and memories.
-- Mechanism: Route tasks to the smallest adequate specialist.
-- Mechanism: Fallback or escalate when confidence and readiness are insufficient.
+- Mechanism: Treat routing as a task-local authority lease over registered specialists with capability, cost, readiness, authority, memory, tool, fallback, residual, and evidence metadata.
+- Mechanism: Select the smallest adequate specialist only after capability, authority, readiness, and fallback predicates are explicit.
+- Handoff: Failed or uncertain routes flow to readiness gates, residual escrow, fallback routes, or tribunal/review rather than ordinary execution.
 - Interface: Planning requests capabilities.
 - Interface: Governance bounds specialists.
 - Interface: Evidence updates readiness.
@@ -1851,9 +1851,9 @@ Draft arc:
 
 - Problem: Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
 - Insufficiency: A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
-- Mechanism: Maintain readiness states and promotion gates.
-- Mechanism: Record residual failures in escrow.
-- Mechanism: Quarantine modules with safety, regression, or scope failures.
+- Mechanism: Maintain lifecycle states and readiness gates that separate semantic fit from ordinary routability.
+- Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
+- Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
 - Interface: Routing reads readiness.
 - Interface: Benchmarks update gates.
 - Interface: SCFs govern replacement.
@@ -1909,9 +1909,9 @@ Draft arc:
 
 - Problem: The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.
 - Insufficiency: A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
-- Mechanism: Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts.
-- Mechanism: Keep direct MoECOT claims conservative until the primary source is ingested.
-- Mechanism: Map MoECOT mechanisms to other stack layers rather than making it a separate silo.
+- Mechanism: Treat MoECOT as a runtime evidence-packet target that binds command, route head, specialist cores, control-plane gates, ledgers, readiness refs, replay refs, handoff state, promotion blockers, residuals, and source-claim state.
+- Mechanism: Keep direct MoECOT claims conservative until runtime artifacts, replay records, benchmark records, or reproduced local runs exist.
+- Handoff: A concrete runtime must still land on an owned, leased, or project compute substrate whose reachability does not imply authority.
 - Interface: Routing selects cores.
 - Interface: SCFs govern replacement.
 - Interface: Evidence and replay ledgers evaluate runtime changes.
@@ -1965,15 +1965,10 @@ Draft arc:
 
 - Problem: A governed ASI stack needs an owned substrate where personal, family, project, and rented devices can run work without collapsing reachability into authority.
 - Insufficiency: Cloud assistants, single-device agents, home clusters, and generic schedulers do not preserve identity, privacy, family authority, data locality, physical-tool risk, federation boundaries, and evidence records as one governed layer.
-- Mechanism: Define `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease` records.
-- Mechanism: Treat phones and dashboards as portals, desktops and old machines as bounded workers, NAS devices as memory stores, and rented/project nodes as temporary leased capacity.
-- Mechanism: Model device-role tables, portal authority, and memory placement so phones, laptops, desktops, NAS devices, old machines, headsets, workshop computers, and rented nodes have different duties rather than one shared trust class.
-- Mechanism: Reject nodes by policy before scoring speed, cost, locality, energy, or capability.
-- Mechanism: Model job classes, federation modes, and Hive-to-Hive protocol records so public/project work cannot inherit private access.
-- Mechanism: Treat family-sensitive learning flows and public project-hive requests as mediation problems before they become ordinary compute jobs.
-- Mechanism: Pair with Artifact Steward Agents by accepting project work only through steward contracts that the hive can independently accept, reject, repair, or narrow without inheriting project authority.
-- Mechanism: Record every cross-device and cross-hive action with approvals, data-placement decisions, residuals, and revocation paths.
-- Mechanism: Preserve artifact, episodic, semantic, procedural, device, trust, family, project, and market memory as separate classes with distinct owners, retention rules, and placement policies.
+- Mechanism: Define `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease` records so portals, workers, stores, rented nodes, and project machines are represented without sharing one trust class.
+- Mechanism: Reject nodes by identity, data, tool, network, approval, family, project, or federation policy before scoring speed, cost, locality, energy, or capability.
+- Mechanism: Preserve family-sensitive, project-hive, rented-node, artifact-steward, and memory-placement flows as mediated contracts with approvals, data-placement decisions, residuals, revocation paths, and distinct retention rules.
+- Handoff: The hive creates pressure for compact generation, but compression claims remain governed by residual burden, verification cost, fallback, and source/test evidence.
 - Interface: VCM declares context, taint, adequacy, revocation, and data movement.
 - Interface: Talos and PlanForge lower goals into typed jobs and dependency-aware schedules.
 - Interface: Octopus/RMI routing and SCF leases define which capability on which node may be selected.

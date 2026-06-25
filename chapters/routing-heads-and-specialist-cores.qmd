@@ -42,6 +42,8 @@ open_evidence_gaps:
 
 This chapter is architecture argument grounded in available source notes and seven reviewed source passages. Octopus Router Architecture and RMI supply the routing vocabulary; Project Theseus supplies implementation-lineage pressure; `moecot` remains connector/source-note mapped only. The repo now proves two finite Lean predicates over route records, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, or runtime reproduction has been run in this repository for this chapter.
 
+Opening Part III, this chapter receives the verified procedures and specialist candidates that Part II made possible. The new problem is selection under constraint: which bounded capability may act, under which authority, with which readiness state, and with which fallback if the route fails.
+
 ## Problem
 
 The stack cannot route every task to one general cognitive core and still claim local authority, local memory, readiness-aware selection, or clean rollback. The more tasks the system accepts, the more it needs a way to say which bounded capability should act, what it is allowed to see, what tools it may use, what evidence qualifies it, and where the result should go if the route fails.
