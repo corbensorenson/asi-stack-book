@@ -82,7 +82,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 - `docs/proof_artifact_audit.md` now records a proof artifact traceability audit for all 112 targets, checking manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E wiring without claiming semantic proof adequacy or broad system behavior.
 - Appendix C now includes a generated source-note chapter-mapping column for the claim/evidence matrix. All 461 assigned source/chapter pairs have source notes and are explicitly listed by stable chapter ID or exact chapter title in the corresponding source notes.
 - Appendix C now includes a generated claim-source mapping column with exact source-note maps for all 54 core claims; the claims remain at `argument` support until accepted evidence transitions, passage reviews, or executed test/proof artifacts justify promotion.
-- `docs/source_evidence_audit.md` now records the public-safe source evidence audit: all 461 assigned source/chapter pairs have source notes, chapter listings, and exact claim-source mappings, while 111 mappings have recorded passage-level review.
+- `docs/source_evidence_audit.md` now records the public-safe source evidence audit: all 461 assigned source/chapter pairs have source notes, chapter listings, and exact claim-source mappings, while 119 mappings have recorded passage-level review.
 - All chapter metadata now uses the current source-note/source-mapping boundary rather than the earlier v0.2 source-note-backlog wording, and the old generic planned-test/proof/crosswalk marker scan is clean.
 - The remaining generic chapter test-plan purposes have been replaced with concrete acceptance targets, and `scripts/validate_book.py` now rejects stale generated manuscript phrases in chapters and chapter-generation scripts.
 - The exact repeated long-paragraph scan is clean after replacing the last repeated invariant paragraph with chapter-specific prose, and `scripts/validate_repeated_prose.py` now keeps that regression out of `validate_book.py`.
@@ -90,7 +90,7 @@ Current scale: 54 chapter files, 113,467 chapter words, averaging 2,101 words pe
 
 ## Still Missing for v1.0
 
-- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 115 passage-reviewed mappings.
+- No core claim is missing an exact source-note mapping, but source-derived support still requires passage-level source review, claim-to-mechanism reconciliation, and accepted evidence transitions; the current source evidence audit records 119 passage-reviewed mappings.
 - Source-note coverage, chapter-listing coverage, and core claim mapping are no longer the main blockers for assigned sources; direct chapter revision from those notes and claim-level evidence promotion remain incomplete.
 - Semantic proof adequacy audits for the implemented proof targets still need to confirm that each finite-record predicate is the right formalization of its intended operational boundary. The current traceability audit checks wiring and limitation coverage only.
 - Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture and release-record validation are implemented and remain limited to schema/example consistency.

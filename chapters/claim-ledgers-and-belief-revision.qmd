@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until extraction, contradiction, or belief-revision tests exist."
+  - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
   - "Only protocol schema/fixture validation is implemented; no claim-extraction or contradiction-detection tests have been run for this chapter."
   - "Lean coverage is limited to finite claim-update and promotion-review records; claim extraction, contradiction detection, and substantive belief revision remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat` |
-| Source loading state | source notes: `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat`; raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/recovery: `coherence_exchange` |
+| Source loading state | passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/source-note mapped: `coherence_exchange` |
 | Test state | Claim/belief-revision fixture validation and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented; extraction and contradiction tests remain planned. |
 
 ## Drafting guardrail
@@ -62,23 +62,23 @@ Aletheia and UAT both push against this failure by decomposing outputs into prop
 
 [claim-ledgers-and-belief-revision.core, label: Design rationale, support: argument] Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.
 
-The claim remains at `argument` support. Spinoza supplies proposer/verifier separation, claim graphs, defeaters, and downgrade discipline. VIEA supplies artifact and claim-ledger pressure. Coherence Exchange is useful speculative synthesis, not external corroboration. Aletheia and UAT supply proposition-tiering, uncertainty preservation, and review routes.
+The claim remains at `argument` support. Spinoza supplies proposer/verifier separation, proposition graphs, enforced tiers, contradiction-triggered revision, dependency tracing, and downgrade discipline. VIEA supplies artifact and claim-ledger pressure: important claims should become durable artifacts with support states, evidence relationships, provenance, and downgrade policy. Aletheia and UAT supply claim-native artifacts, verification gates, bounded review, retrieval-bounded proposition states, and SME adjudication routes. Coherence Exchange remains connector/source-note mapped speculative governance vocabulary, not external corroboration.
 
 ### Claim-source mapping status
 
-Appendix C now maps this claim-ledger claim to all assigned source notes. The mappings support durable claim records, evidence states, contradiction links, uncertainty, review routes, and non-overwriting revision history as an architectural discipline, not a working claim extractor or belief-revision engine.
+Appendix C now maps this claim-ledger claim to all assigned source notes, and four local raw-cache mappings now carry passage-reviewed references. The mappings support durable claim records, evidence states, contradiction links, uncertainty, review routes, and non-overwriting revision history as an architectural discipline, not a working claim extractor or belief-revision engine.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `spinoza` | Proposer/verifier separation, proof/citation/procedure-carrying claim tiers, contradiction detection, dependency tracing, defeaters, entrenchment, downgrade/block behavior, and explicit belief revision. | Does not prove open-domain claim extraction, natural-language formalization, or a complete belief-revision engine here. |
-| `viea` | Durable claim and verification ledgers, artifact graphs, support states, residuals, feedback, benchmark/regression coverage, and the rule that important responses become durable artifacts. | No deployed VIEA claim-ledger system or runtime evidence trace exists in this repo. |
-| `coherence_exchange` | Structured claim/evidence units, verification supply chains, contestability, and fork/exit/audit governance framing for epistemic objects. | Epistemic-liquidity and economic metaphors remain speculative synthesis. |
-| `aletheia` | Claim-native truth manufacturing through active context acquisition, layered propositions/claims/dossiers, verification gates, unknown preservation, adversarial tests, and incident observability. | No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present. |
-| `uat` | Retrieval-bounded proposition decomposition, verified/inferred/unsupported states, adversarial review, SME checkpoints, and final sign-off as review paths for contested ledger states. | Does not prove tribunal thresholds, reviewer independence, or novel truth discovery beyond the declared dossier. |
+| `spinoza` | Passage-reviewed: proof-carrying hypergraph, proposition nodes with provenance/tier/entrenchment/dependencies/validity/versions/audit, justification hyperedges, enforced claim tiers, proof/refute/unknown outcomes, contradiction-triggered revision, dependency and unsat-core tracing, retraction, invalidation, re-verification, revision logs, and first-class certified/citation/procedure support tiers. | Does not prove open-domain claim extraction, natural-language formalization, or a complete belief-revision engine here. |
+| `viea` | Passage-reviewed: durable artifact graph, claim and verification ledger, verified/speculative/unsupported/contradicted/experiment-required states, claim extraction into support states, support/challenge relationships, evidence hierarchy, model-consensus limitation, provenance fields, and downgrade on expired, challenged, failed, or contradicted support. | No deployed VIEA claim-ledger system, runtime evidence trace, or claim-extraction test exists in this repo. |
+| `coherence_exchange` | Connector/source-note mapped: structured claim/evidence units, verification supply chains, contestability, and fork/exit/audit governance framing for epistemic objects. | Epistemic-liquidity and economic metaphors remain speculative synthesis. |
+| `aletheia` | Passage-reviewed: verification gates, per-node verification requirements, verification tiers, claim extraction and tier assignment, verified commitments in memory, claim-native artifacts with claim IDs, dependencies, and evidence refs, bounded adversarial review, omission/stability checks, contradiction-triggered belief revision, quarantine, human review, and new-evidence requirements. | No local Aletheia implementation, live-oracle run, adversarial battery result, or proof artifact is present. |
+| `uat` | Passage-reviewed: human-in-the-loop SME force multiplier, retrieval-source-bound claims, atomic proposition decomposition, verified/inferred/unsupported states, dossier-bounded checks, SME_REVIEW handling, adversarial logic/citation/omission review, stability and hard-cycle caps, compression that preserves verified proposition counts, final SME sign-off, correlated-hallucination risk, and decomposition-loss risk. | Does not prove tribunal thresholds, reviewer independence, autonomous truth-machine behavior, or novel truth discovery beyond the declared dossier. |
 
 ## Mechanism
 
-After context adequacy decides what a packet can support, reasoning needs a durable place for claims, uncertainty, contradictions, and updates. Spinoza supplies proposer/verifier separation, claim tiers, contradiction detection, defeaters, entrenchment, and downgrade/block behavior. VIEA supplies durable claim and verification ledgers. Aletheia supplies claim-native dossiers, unknown preservation, and verification gates. UAT supplies proposition states and review routes, while Coherence Exchange contributes speculative verification-supply-chain vocabulary without becoming external corroboration.
+After context adequacy decides what a packet can support, reasoning needs a durable place for claims, uncertainty, contradictions, and updates. Spinoza supplies the internal mechanics: proposition nodes carry provenance, tiers, dependencies, validity state, versions, audit hashes, and justifications; contradictions trigger bounded revision by dependency slicing, unsat-core use where available, entrenchment-scored retraction, invalidation, re-verification, and logs. VIEA turns the same discipline into an execution-system rule: important outputs become artifacts, claims receive support states, evidence can support or challenge them, and expired, failed, challenged, or contradicted support causes downgrade. Aletheia hardens the artifact boundary by requiring claim-native objects, evidence refs, verification tiers, adversarial review, and explicit contradiction handling. UAT supplies the human review path for claims that are inferred, unsupported, contested, or vulnerable to dossier error. Coherence Exchange contributes connector/source-note governance vocabulary without becoming external corroboration.
 
 A Belief Revision Record is the ledger transition that keeps claims separable from prose and keeps every support-state change tied to evidence, contradiction handling, uncertainty, and history.
 
@@ -177,16 +177,16 @@ These proof hooks are implemented only over finite Lean claim-update and promoti
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | passage-reviewed local raw cache |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | passage-reviewed local raw cache |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | source note available; local raw cache available |
-| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw cache available |
+| `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | passage-reviewed local raw cache |
+| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | passage-reviewed local raw cache |
 
-The crosswalk identifies sources for claim-ledger and belief-revision discipline. It does not promote any chapter claim merely because the repo has claim-record schemas.
+The crosswalk identifies sources for claim-ledger and belief-revision discipline. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. This does not promote any chapter claim merely because the repo has claim-record schemas.
 
 ## Summary
 
-Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history.
+Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history. The reviewed sources justify the ledger boundary; they do not yet show a working extractor, contradiction detector, or belief-revision engine in this repo.
 
 The chapter's rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise. The next chapter takes selected ledger claims and asks what kind of proof, citation, procedure, or justification artifact would be required before their tier can rise.

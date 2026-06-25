@@ -1417,6 +1417,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A claim-record schema and belief-revision transition example.
+- Exact Appendix C claim-source mappings for `claim-ledgers-and-belief-revision.core` across Spinoza, VIEA, Coherence Exchange, Aletheia, and UAT; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
 - Planned Codex test: Contradiction detection test.

@@ -3766,12 +3766,31 @@
             {
               "source_id": "spinoza",
               "mapped_support": "Supports claim ledgers through proposer/verifier separation, proof/citation/procedure-carrying claim tiers, contradiction detection, dependency tracing, defeaters, entrenchment, downgrade/block behavior, and explicit belief revision.",
-              "limits": "Does not prove open-domain claim extraction, natural-language formalization, or a complete belief-revision engine in this repository."
+              "limits": "Does not prove open-domain claim extraction, natural-language formalization, or a complete belief-revision engine in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:292-321",
+                "sources/raw/google_docs/spinoza.txt:384-445",
+                "sources/raw/google_docs/spinoza.txt:694-718",
+                "sources/raw/google_docs/spinoza.txt:757-799",
+                "sources/raw/google_docs/spinoza.txt:1013-1023"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the proof-carrying hypergraph, proposition nodes with provenance/tier/entrenchment/dependencies/governance flags, justification hyperedges, enforced outward-claim tiers, proof/refute/unknown outcomes, proof caching and invalidation, contradiction-triggered bounded revision, dependency/unsat-core tracing, entrenchment-scored retraction, re-verification, revision logs, and first-class certified/citation/procedure support tiers; no open-domain extraction, natural-language formalization, or complete belief-revision engine is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports durable claim and verification ledgers, artifact graphs, support states, residuals, feedback, benchmark/regression coverage, and the rule that important responses become durable artifacts.",
-              "limits": "Architecture proposal only here; no deployed VIEA claim-ledger system or runtime evidence trace exists in this repo."
+              "limits": "Architecture proposal only here; no deployed VIEA claim-ledger system or runtime evidence trace exists in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:47-65",
+                "sources/raw/google_docs/viea.txt:92-125",
+                "sources/raw/google_docs/viea.txt:142-166",
+                "sources/raw/google_docs/viea.txt:465-506",
+                "sources/raw/google_docs/viea.txt:1913-2016",
+                "sources/raw/google_docs/viea.txt:2027-2056"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the artifact graph, claim and verification ledger, verified/speculative/unsupported/contradicted/experiment-required support states, durable artifact rule, facts/claims/assumptions/speculation separation, claim extraction and support-state assignment, support/challenge relationships, evidence hierarchy, model-consensus limitation, high-impact verification diversity, automatic downgrade on expired/challenged/failed/contradicted support, and provenance/permission fields; no deployed VIEA ledger, runtime evidence trace, or claim-extraction test is promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -3781,12 +3800,33 @@
             {
               "source_id": "aletheia",
               "mapped_support": "Supports claim-native truth manufacturing through active context acquisition, layered propositions/claims/dossiers, verification gates, unknown preservation, adversarial tests, and incident observability.",
-              "limits": "No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present here."
+              "limits": "No local Aletheia implementation, live-oracle run, adversarial result, or proof artifact is present here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/aletheia.txt:269-311",
+                "sources/raw/google_docs/aletheia.txt:354-403",
+                "sources/raw/google_docs/aletheia.txt:473-511",
+                "sources/raw/google_docs/aletheia.txt:717-729",
+                "sources/raw/google_docs/aletheia.txt:800-836",
+                "sources/raw/google_docs/aletheia.txt:1496-1512"
+              ],
+              "passage_review_note": "Reviewed local raw cache for structured verification gates, per-node verification requirements, belief revision when contradictions occur, verification-tier epistemic classification, claim extraction and tier assignment, verified commitments in memory, first-class verification manufacturing, higher-risk rejection of low-tier claims, bounded adversarial review, rollback on failed verification, claim-native artifacts with claims arrays, claim IDs, dependencies, evidence refs, reviewer access to contract/claims/evidence, omission/stability checks, commitment-promotion rules, contradiction quarantine, human review, and new-evidence requirements; no implementation, live-oracle run, adversarial battery result, or proof artifact is promoted."
             },
             {
               "source_id": "uat",
               "mapped_support": "Supports retrieval-bounded proposition decomposition, verified/inferred/unsupported states, adversarial review, SME checkpoints, and final sign-off as review paths for contested ledger states.",
-              "limits": "Does not prove tribunal thresholds, reviewer independence, or novel truth discovery beyond the declared dossier."
+              "limits": "Does not prove tribunal thresholds, reviewer independence, or novel truth discovery beyond the declared dossier.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:118-145",
+                "sources/raw/google_docs/uat.txt:180-207",
+                "sources/raw/google_docs/uat.txt:226-281",
+                "sources/raw/google_docs/uat.txt:291-292",
+                "sources/raw/google_docs/uat.txt:310-319",
+                "sources/raw/google_docs/uat.txt:365-375",
+                "sources/raw/google_docs/uat.txt:400-453"
+              ],
+              "passage_review_note": "Reviewed local raw cache for UAT as a human-in-the-loop SME force multiplier, every claim tied to retrieval source, atomic proposition decomposition, verified/inferred/unsupported states, dossier-bounded verifier checks, SME_REVIEW handling, adversarial logic/citation/omission review, stability and hard-cycle caps, compression that preserves verified proposition counts, final SME sign-off, correlated-hallucination risk, and decomposition-loss risk; no tribunal threshold proof, reviewer-independence result, autonomous truth-machine claim, novel-truth discovery, or implemented benchmark is promoted."
             }
           ],
           "mechanism": [
