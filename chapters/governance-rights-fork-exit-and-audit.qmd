@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter treats fork, exit, audit, and dissent as technical rights. It does not claim that any institution or deployed system already provides those rights; the repo currently validates record shape only.
 
+It follows the value-conflict chapter because unresolved disagreement is not useful unless affected people can inspect the record, challenge it, leave, fork where safe, or preserve dissent without depending on the authority being challenged.
+
 ## Problem
 
 Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
@@ -61,7 +63,7 @@ The rights have to be technical. They need artifacts, permissions, retention rul
 
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
-The claim remains at `argument` support. Ethica Mechanica supplies the strongest reviewed fork/exit/audit lineage; Alignment Field and the AI Constitution supply reviewed non-domination, consent, contestability, reversibility, and auditability constraints; Ladon/Manhattan supplies reviewed authority-boundary mechanics; and Spinoza/UAT supply reviewed governance-review discipline. Coherence Exchange remains useful connector-only synthesis, but it is not passage-reviewed here. The chapter turns that source language into interfaces without presenting it as implemented governance.
+The claim remains at `argument` support. Ethica Mechanica supplies the strongest reviewed fork/exit/audit lineage; Alignment Field and the AI Constitution supply reviewed non-domination, consent, contestability, reversibility, and auditability constraints; Ladon/Manhattan supplies reviewed authority-boundary mechanics; and Spinoza/UAT supply reviewed governance-review discipline. Coherence Exchange remains useful connector-only synthesis without a durable local raw-cache export here. The chapter turns that source language into interfaces without presenting it as implemented governance.
 
 ### Claim-source mapping status
 
@@ -81,11 +83,7 @@ Appendix C maps this core governance-rights claim to every assigned source note.
 
 Governance rights become real only when they have access paths, artifacts, preservation rules, and denial semantics. This chapter treats audit, exit, fork, dissent, and contestability as capabilities that the runtime must preserve across policy updates, memory changes, authority use, and capability replacement.
 
-- Represent rights as capabilities and required interfaces.
-- Attach audit artifacts to governance decisions.
-- Treat fork/exit as preserved escape hatches against lock-in.
-
-Each right is represented as a capability with an owner, scope, artifact requirement, safety constraint, and test. Audit requires durable records. Exit requires export and revocation paths. Fork requires a reproducible boundary that preserves obligations. Dissent requires a channel that cannot be silently deleted by the authority being challenged.
+Each right is represented as a capability with an owner, scope, artifact requirement, safety constraint, access path, preservation rule, and test. Audit requires durable records attached to governance decisions. Exit requires export, revocation, and continuity paths. Fork requires a reproducible boundary that preserves source, privacy, and safety obligations. Dissent requires a channel that cannot be silently deleted by the authority being challenged.
 
 SCFs later depend on this chapter: capability replacement must preserve protected governance rights across implementation changes.
 

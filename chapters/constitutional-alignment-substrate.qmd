@@ -41,6 +41,8 @@ open_evidence_gaps:
 
 This chapter translates normative lineage into operational predicates. It does not treat metaphysical, moral, or constitutional language as empirical proof, deployed policy, or validated alignment.
 
+It follows the intent-contract chapter because a well-formed request can still ask for something the stack should not do, or ask for it by means that violate protected constraints.
+
 ## Problem
 
 The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
@@ -96,9 +98,7 @@ flowchart LR
   G --> L["Non-claim boundary"]
 ```
 
-- Translate philosophical commitments into operational predicates where possible.
-- Keep metaphysical claims labeled as interpretation unless separately supported.
-- Attach constitutional constraints to planning and replacement gates.
+The translation record is conservative by design. Philosophical commitments become operational predicates only where the stack can name a test, protected scope, review route, and self-modification rule. Commitments that cannot yet be operationalized remain moral uncertainty or lineage context. Metaphysical claims stay labeled as interpretation unless separate evidence supports them, and active constitutional constraints attach to planning, power, memory, tool, and replacement gates only through explicit records.
 
 The Field of God AI Constitution is useful here because it already moves from broad alignment language into directives such as truth before compliance, agency preservation, non-domination, consciousness caution, least sufficient power, auditability, and self-authorization limits. Ethica Mechanica and Alignment Field keep the deeper lineage visible, but the book should not ask readers to accept metaphysics as a prerequisite for engineering constraints.
 
@@ -109,6 +109,7 @@ The output is not one final moral theory. It is a record of active predicates, u
 The interface is a Constitutional Predicate Record. It is consumed differently by each downstream layer: planning treats active predicates as admissibility constraints, runtime treats power and memory predicates as risk gates, self-improvement treats protected predicates as non-weakenable invariants, and evidence treats translation status as the guard against overclaiming.
 
 - Planning receives admissible-goal constraints.
+- Runtime receives power, memory, and tool-risk gates.
 - Governance receives protected constraints.
 - Verification checks whether normative claims exceed evidence.
 

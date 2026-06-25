@@ -39,6 +39,8 @@ open_evidence_gaps:
 
 This chapter treats human intent as an input contract, not as direct permission to act. Source notes supply design vocabulary; executable support is limited to the schemas, fixtures, and proofs actually present in the repo.
 
+It starts the second movement of Part I. The first five chapters establish the stack, evidence, and failure discipline; this chapter introduces the first live boundary where that discipline meets a person asking the system to do work.
+
 ## Problem
 
 A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
@@ -90,11 +92,7 @@ flowchart LR
   I --> J["Artifact, evidence, and feedback"]
 ```
 
-- Compile a request into an explicit objective, constraints, authority ceiling, source boundary, acceptance criteria, and stop conditions.
-- Separate desired outcome from allowed means so planning cannot convert a wish into unrestricted action.
-- Route unresolved ambiguity to clarification, bounded draft work, abstention, or residual tracking rather than hidden assumptions.
-
-The contract separates desired outcome from allowed means. It captures what the user wants, what the system may do, what it must not do, what evidence is required before completion, which authority grants exist, and when to stop. The raw request remains useful as context, but it is not the artifact consumed by execution.
+The contract compiles the request into an explicit objective, constraints, authority ceiling, source boundary, acceptance criteria, evidence requirement, and stop condition. Its central move is separation: desired outcome is not allowed means, and a useful interpretation is not permission. The raw request remains useful as context, but execution consumes the bounded contract.
 
 When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
 
