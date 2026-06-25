@@ -1028,6 +1028,7 @@ Draft deliverables:
 
 - A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
 - Implemented protocol validation: `plan_graph` fixture validates public record shape only.
+- Exact Appendix C claim-source mappings for the planning-control claim across PlanForge planning middleware, VIEA orchestration/runtime spine, Cognitive Compilation source-plan/S-IR pipeline, Software Magic Grimoire spell-stack workflow discipline, and MoECOT runtime-reference context; the four local mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`) now have reviewed passage references. `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, runtime replanning traces, or accepted evidence transitions.
 - Planned Codex test: Decomposition accuracy test.
 - Planned Codex test: Dependency ordering test.
 - Planned Codex test: Context-demand prediction test.

@@ -2791,22 +2791,72 @@
             {
               "source_id": "planforge",
               "mapped_support": "Defines planning middleware that decouples planning from execution through hierarchical decomposition, primitive action schemas, plan optimization, dependency inference, scheduling, minimum viable intelligence tiering, fallback requirements, and failure-driven replanning.",
-              "limits": "Conceptual whitepaper only here; no verified implementation, scheduler run, acyclicity checker, or benchmark result is present."
+              "limits": "Conceptual whitepaper only here; no verified implementation, scheduler run, acyclicity checker, or benchmark result is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-33",
+                "sources/raw/google_docs/planforge.txt:39-46",
+                "sources/raw/google_docs/planforge.txt:52-79",
+                "sources/raw/google_docs/planforge.txt:85-130",
+                "sources/raw/google_docs/planforge.txt:136-140",
+                "sources/raw/google_docs/planforge.txt:156-163",
+                "sources/raw/google_docs/planforge.txt:178-188"
+              ],
+              "passage_review_note": "Reviewed local raw cache for planning middleware, planning/execution decoupling, recursive decomposition, plan optimization and verification, dependency inference, MVI tiering, worker scheduling, execution handoff, replanning hooks, primitive schema, and high-impact approval gates; no scheduler run, acyclicity checker, benchmark, or implementation result is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports the accepted-command-to-artifact spine with orchestration, routing, workflow-to-tool compilation, verification, runtime adapters, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal only; does not prove a deployed planner, runtime handoff, or end-to-end execution trace."
+              "limits": "Architecture proposal only; does not prove a deployed planner, runtime handoff, or end-to-end execution trace.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:14-17",
+                "sources/raw/google_docs/viea.txt:40-59",
+                "sources/raw/google_docs/viea.txt:60-67",
+                "sources/raw/google_docs/viea.txt:81-92",
+                "sources/raw/google_docs/viea.txt:138-173",
+                "sources/raw/google_docs/viea.txt:564-578",
+                "sources/raw/google_docs/viea.txt:582-595",
+                "sources/raw/google_docs/viea.txt:790-837",
+                "sources/raw/google_docs/viea.txt:1025-1052"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the intent-to-execution spine, command contracts, artifact graph, orchestration/routing, bounded specialist modules, verification, workflow compilation, runtime adapters, feedback, residuals, and MVP vertical-loop components; no deployed planner, runtime handoff, or end-to-end execution trace is promoted."
             },
             {
               "source_id": "cognitive_compilation",
               "mapped_support": "Supports separating plan formation, semantic compilation, target compilation, execution, and repair while converting goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, DAGs, validators, and repairable artifacts.",
-              "limits": "No local compiler, planner harness, task trace suite, or empirical ablation validates planning quality or repair locality."
+              "limits": "No local compiler, planner harness, task trace suite, or empirical ablation validates planning quality or repair locality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:4-27",
+                "sources/raw/google_docs/cognitive_compilation.txt:31-58",
+                "sources/raw/google_docs/cognitive_compilation.txt:64-105",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-145",
+                "sources/raw/google_docs/cognitive_compilation.txt:244-259",
+                "sources/raw/google_docs/cognitive_compilation.txt:304-327",
+                "sources/raw/google_docs/cognitive_compilation.txt:331-390",
+                "sources/raw/google_docs/cognitive_compilation.txt:428-437"
+              ],
+              "passage_review_note": "Reviewed local raw cache for plan formation, source-plan contracts, typed semantic DAGs, dependencies, capability/cost annotations, critical-path scheduling, localized repair, planner/executor context separation, append-only traces, implementation components, and validator-controlled outputs; no compiler prototype, planner harness, trace suite, or ablation result is promoted."
             },
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports workflow control through named spell stacks with handoff artifacts, guards, entry rules, exit rules, loops, recursion, recovery paths, evidence-advancing loops, and mode separation.",
-              "limits": "Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present."
+              "limits": "Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:69-82",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-152",
+                "sources/raw/google_docs/software_magic_grimoire.txt:575-598",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3158-3188",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3192-3235",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3235-3275",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3275-3295",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3380-3407",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3408-3429",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3451-3471"
+              ],
+              "passage_review_note": "Reviewed local raw cache for bounded instruction artifacts, artifact boundaries, invariants, output shapes, verification, failure behavior, spell stacks, handoff artifacts, guards, entry/exit rules, loops, recursion, recovery paths, evidence-based iteration, release gates, stack identity, and stack failure modes; no workflow engine, prompt-stack benchmark, or behavioral planning test is promoted."
             },
             {
               "source_id": "moecot",

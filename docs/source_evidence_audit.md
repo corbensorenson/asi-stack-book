@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 86 |
+| Passage-reviewed mappings recorded | 90 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -49,7 +49,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 6 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `virtual-context-abi` | 6 | 6 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
@@ -304,10 +304,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `viea` | mapped | note present | chapter listed | not passage-reviewed |
-| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `cognitive_compilation` | mapped | note present | chapter listed | not passage-reviewed |
-| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `software_magic_grimoire` | mapped | note present | chapter listed | not passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
 | `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge_compiler_arch` | mapped | note present | chapter listed | not passage-reviewed |
