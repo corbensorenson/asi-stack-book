@@ -27,7 +27,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Source readiness is tracked in `docs/source_readiness_report.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, so chapter-level loading queues are now complete even though claim-level mapping remains incomplete.
-- Appendix C now supports exact claim-source mappings and records the opening foundation/intent core claims plus the evidence-discipline core claim without promoting support states.
+- Appendix C now supports exact claim-source mappings and records the opening foundation/intent core claims, the evidence-discipline core claim, and the first Part IV proof/evidence-policy cluster without promoting support states.
 - All 52 chapters have v0.2 manuscript drafts generated from the source-of-truth manifest and kept at conservative support states.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
@@ -39,13 +39,13 @@ This file tracks whether the public repository is ready for the next major phase
 
 ## Known Blockers Before v1.0 Evidence Release
 
-- Source-derived claims require exact claim-level mapping from source notes before support-state promotion; the opening foundation/intent core claims and the evidence-discipline core claim are mapped examples, not promotion precedents.
+- Source-derived claims require exact claim-level mapping from source notes before support-state promotion; the opening foundation/intent core claims, the evidence-discipline core claim, and the first Part IV proof/evidence-policy cluster are mapped examples, not promotion precedents.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
 - Authenticated connector access succeeded for `vcm_editable`, `moecot`, `coherence_exchange`, `talos_md`, `moecot_md`, `road_to_agi`, and `coilmoecot`, but durable raw cache exports are still local/private and not committed.
 - All 104 manifest proof targets now have finite-record Lean implementations and Appendix E publishes the current coverage/accounting breakdown from `proofs/proof_triage.json`; artifact-by-artifact proof audits remain planned and the finite-record modules do not prove broad system behavior.
 - Most chapter-level Codex tests are planned, not implemented or run; protocol schema fixture and release-record validation are implemented.
 - External literature queue is explicit in `docs/external_literature_queue.md`, including fast generation, decoding substrates, and policy optimization / learning from feedback, but not citation-normalized or source-noted.
-- The v0.2 chapters are coherent architecture drafts, but most still need source-specific prose, claim-to-source mapping, and hand revision before v1.0 publication quality.
+- The v0.2 chapters are coherent architecture drafts, but several still need source-specific prose, remaining Part IV claim-to-source mapping, and hand revision before v1.0 publication quality.
 - Reader, research, PDF, EPUB, DOCX, AZW3, MOBI, and audio editions are planned and scaffolded, but no human-reader major-version artifact or audiobook should be reported until the corresponding generated manuscript, render or conversion, review, and release record exist.
 
 ## Manuscript Maintenance Checklist

@@ -9,6 +9,8 @@
 - Implemented `AsiStackProofs.SearchSubstrates` for finite-record substrate adoption and non-core promotion predicates, then updated the outline, chapter, proof manifest, and triage without promoting any substrate-quality or benchmark claim.
 - Implemented `AsiStackProofs.PrototypeRoadmap` for finite-record phase-unlock and milestone-promotion predicates, then updated the outline, chapter, proof manifest, and triage without claiming any prototype phase is complete or any capability claim has stronger support.
 - Hardened the major-version reader/audio release workflow with generated reader and audio review checklists, chapter markers, e-reader downstream-format guidance, audio-embedded EPUB non-claims, and profile validation for the three-audience publication model.
+- Added exact source-note claim mappings for the first Part IV proof/evidence-policy cluster: executable specifications and Lean proof envelope, benchmark ratchets, and policy optimization. The mappings cover all assigned sources for those three core claims, correct stale proof-envelope status in `book_structure.json`, and keep support at `argument`.
+- Hardened `scripts/validate_book.py` so proof target statuses in `book_structure.json` must stay aligned with the generated proof manifest.
 
 ## 2026-06-24 - v1.0 improvement goal visual layer
 

@@ -249,6 +249,50 @@ def validate_claim_states() -> None:
         fail(f"Claim/evidence matrix is missing claim-label definitions: {sorted(missing_labels)}")
 
 
+def validate_structure_proof_statuses(chapters: list[dict]) -> None:
+    manifest = read_json(ROOT / "proofs" / "proof_manifest.json")
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("records"), list):
+        fail("proofs/proof_manifest.json must contain a records list.")
+
+    manifest_records = {
+        record.get("tag"): record
+        for record in manifest["records"]
+        if isinstance(record, dict) and isinstance(record.get("tag"), str)
+    }
+    errors: list[str] = []
+    for chapter in chapters:
+        chapter_id = chapter.get("id", "<missing>")
+        for target in chapter.get("proof_targets", []):
+            if not isinstance(target, dict):
+                errors.append(f"{chapter_id}: proof_targets entry must be an object.")
+                continue
+            tag = target.get("tag")
+            if not isinstance(tag, str) or not tag:
+                errors.append(f"{chapter_id}: proof target missing tag.")
+                continue
+            manifest_record = manifest_records.get(tag)
+            if manifest_record is None:
+                errors.append(f"{chapter_id}: proof target {tag!r} missing from proofs/proof_manifest.json.")
+                continue
+            if manifest_record.get("chapter_id") != chapter_id:
+                errors.append(
+                    f"{chapter_id}: proof target {tag!r} manifest chapter is "
+                    f"{manifest_record.get('chapter_id')!r}."
+                )
+            if manifest_record.get("status") != target.get("status"):
+                errors.append(
+                    f"{chapter_id}: proof target {tag!r} status "
+                    f"{target.get('status')!r} does not match manifest "
+                    f"{manifest_record.get('status')!r}."
+                )
+
+    if errors:
+        print("book_structure.json proof targets disagree with proofs/proof_manifest.json:")
+        for error in errors:
+            print(f" - {error}")
+        sys.exit(1)
+
+
 def validate_proof_manifest() -> None:
     result = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_proof_manifest.py"), "--check"],
@@ -298,6 +342,7 @@ def main() -> None:
     validate_stale_generated_language()
     validate_claim_states()
     validate_proof_manifest()
+    validate_structure_proof_statuses(chapters)
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
     result = subprocess.run(

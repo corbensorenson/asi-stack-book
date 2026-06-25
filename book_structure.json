@@ -5173,6 +5173,53 @@
           "problem": "The book needs to decide which architecture claims should become executable specs or Lean proofs.",
           "insufficient": "Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.",
           "core_claim": "Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records.",
+          "claim_source_mappings": [
+            {
+              "source_id": "genesiscode",
+              "mapped_support": "Supports small executable invariants through a tiny deterministic kernel, explicit effect boundaries, provenance hashes, semantic patches, replayable logs, obligations, capability policies, and protocol seals.",
+              "limits": "No GenesisCode prototype, replay checker, security audit, benchmark, or proof artifact has been implemented or validated in this repository."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports proof-carrying claim discipline through proposer/verifier separation, proof/citation/procedure-carrying claim graphs, tiered support states, contradiction handling, dependency tracing, and downgrade/block behavior.",
+              "limits": "Does not solve open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports capability and replacement invariants through stable field identity, versioned contracts, qualification claims, route validation, authority ceilings, lifecycle events, evidence registries, and recovery paths.",
+              "limits": "Does not prove production safety, global alignment, evaluator integrity, route quality, or actual rollback behavior."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports job-lifecycle executable specs through typed jobs, contract locks, deterministic control planes, evidence records, isolation, audit logs, replay, controlled runtime adapters, and approval gates.",
+              "limits": "Execution-security and benchmark claims remain design-source context until Talos artifacts, tests, or logs are imported and validated."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports intent-to-execution proof/spec priorities through command contracts, artifact graphs, claim and verification ledgers, support states, runtime adapters, feedback loops, residuals, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only here; no completed VIEA deployment, runtime trace, or benchmark result is proven in this repository."
+            },
+            {
+              "source_id": "circle_calculus_core",
+              "mapped_support": "Supports proof-envelope discipline through Lean declarations, theorem manifests, proof-status policy, Python/Rust/JSON sidecar separation, finite structural facts, and explicit non-claims for performance or model quality.",
+              "limits": "External Circle build, theorem manifests, sidecars, and tests were not rerun from this repository."
+            },
+            {
+              "source_id": "circle_ai_contract_suite",
+              "mapped_support": "Supports executable contract receipts through theorem ids, schema fields, generated reports, minimum consumer fields, downstream rejection reports, and explicit boundaries/non-claims.",
+              "limits": "No Circle contract command, generated pack, receipt replay, or Lean build was run here; it cannot support model-quality or deployment claims."
+            },
+            {
+              "source_id": "rope_position_certifier",
+              "mapped_support": "Supports the boundary between exact/discretized proof and numerical diagnostics through theorem-linked RoPE position receipts, collision counts, margin reports, and machine-readable certificates.",
+              "limits": "Does not prove arbitrary real-valued RoPE behavior, context-length extension, speed, memory improvement, or model quality; no certifier run was reproduced here."
+            },
+            {
+              "source_id": "proof_carrying_circular_computation",
+              "mapped_support": "Supports proof-carrying compute-substrate specs through cyclic address primitives, finite address-safety facts, stride-coverage criteria, rewrite legality, and a separate benchmark side for backend adoption.",
+              "limits": "No Circle sidecars, Lean builds, cyclic backend benchmarks, or performance claims were reproduced in this repository."
+            }
+          ],
           "mechanism": [
             "Translate mechanisms into predicates and transition rules.",
             "Keep proof manifest generated from the outline.",
@@ -5205,13 +5252,13 @@
               "tag": "lean:proofs.envelope.operational_invariant",
               "module": "AsiStackProofs.ProofEnvelope",
               "target": "A proof target marked implemented has an existing module and passes the build.",
-              "status": "planned"
+              "status": "implemented"
             },
             {
               "tag": "lean:proofs.envelope.failure_blocks_promotion",
               "module": "AsiStackProofs.ProofEnvelope",
               "target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
-              "status": "planned"
+              "status": "implemented"
             }
           ]
         },
@@ -5260,6 +5307,68 @@
           "problem": "The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.",
           "insufficient": "Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.",
           "core_claim": "Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.",
+          "claim_source_mappings": [
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports the benchmark-ratchet claim directly with lifecycle states for frontier, diagnostic, regression, retired, and live benchmarks plus wall diagnosis, benchmark/model ledgers, anti-Goodhart safeguards, holdouts, mutation, transfer checks, and contamination audits.",
+              "limits": "No benchmark harness, mutation test, holdout run, transfer check, contamination audit, or empirical benchmark result has been run in this repository."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports preserving floors while moving frontiers through benchmark pressure, routed specialist attempts, residual escrow, regression preservation, harder frontiers, mastery thresholds, and lifecycle discipline.",
+              "limits": "Conceptual architecture source only here; no independent reproduction, benchmark run, prototype inspection, or capability result is recorded."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports turning repeated successful trajectories into verified procedural tools only after logging, loop detection, parameter discovery, verification, routing, monitoring, residual tracking, and retirement discipline.",
+              "limits": "No local loop detector, tool synthesis run, verification harness, regression suite, or procedural-memory benchmark has been executed."
+            },
+            {
+              "source_id": "uat",
+              "mapped_support": "Supports benchmark-evidence review through retrieval-bounded dossiers, proposition states, adversarial critique, unsupported-claim removal, SME checkpoints, and final sign-off before claims are treated as verified.",
+              "limits": "Does not validate benchmark thresholds or prove UAT can discover novel truth; no local tribunal pipeline or benchmark adjudication run exists."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports contestable evidence movement through structured claim/evidence units, verification supply chains, audit, fork/exit/contestability language, and governance/accounting frames for knowledge claims.",
+              "limits": "Epistemic-liquidity and exchange metaphors are not implemented economics, external corroboration, or benchmark evidence."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports resource-aware anti-Goodhart pressure by requiring latency, load variance, human friction, bounded burst capacity, and quality constraints to be visible rather than optimizing token spend alone.",
+              "limits": "No TokenMana formal result, load simulation, pricing experiment, or human study has been reproduced here."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime-reference benchmark governance through compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, and residual tracking.",
+              "limits": "Benchmark artifacts and runtime claims are source-reported only until code, logs, reports, or release artifacts are imported and reproduced or inspected."
+            },
+            {
+              "source_id": "road_to_agi",
+              "mapped_support": "Supports keeping roadmap blockers, source-reported benchmark commands/results, remaining work, readiness status, and promotion blockers visible instead of converting them into completed evidence.",
+              "limits": "Roadmap and benchmark status are connector-readable context only; reported commands/results have not been reproduced in this repository."
+            },
+            {
+              "source_id": "project_theseus_whitepaper",
+              "mapped_support": "Supports report-first benchmark discipline through frontier/diagnostic/regression/public-calibration/retired benchmark states, residual escrow, bounded specialist arms, benchmark ledgers, and the rule that the floor should hold while the frontier moves.",
+              "limits": "Theseus reports, benchmark ledgers, code paths, command outputs, and current numbers were not rerun or independently inspected from this repository."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports readiness-gate treatment of benchmark and regression evidence through pre-training checks for ratchet completion, safety ledger, regression suite, residual escrow, bridge benchmark, lifecycle governance, and external-inference zero.",
+              "limits": "The reported gate snapshot was not regenerated or independently verified here and cannot be treated as current readiness evidence."
+            },
+            {
+              "source_id": "theseus_self_evolution_system",
+              "mapped_support": "Supports evidence-gated improvement by using an intervention ladder, outcome ledgers, benchmark adapters, residuals, guarded teacher edits, lifecycle governance, and repo-health controls before architecture or parameter growth.",
+              "limits": "No Theseus self-evolution scripts, ATTD reports, teacher runner, benchmark adapter flow, or dashboard endpoints were executed here."
+            },
+            {
+              "source_id": "theseus_circle_transfer",
+              "mapped_support": "Supports strict transfer-claim boundaries by separating deterministic structural fixtures from quality, runtime, memory, parameter, transfer, and failure-case axes that need named workloads, baselines, metrics, scripts, and reports.",
+              "limits": "No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, transfer report, or model-quality evaluation was run from this repository."
+            }
+          ],
           "mechanism": [
             "Track benchmark mastery thresholds and saturation.",
             "Generate regressions and hidden checks.",
@@ -5326,6 +5435,68 @@
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
           "core_claim": "Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.",
+          "claim_source_mappings": [
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports treating feedback as benchmark pressure that must preserve ledgers, baselines, residuals, regressions, holdouts, anti-Goodhart checks, and conservative support-state effects before any policy update is promoted.",
+              "limits": "Does not prove reward quality, policy improvement, or any local benchmark result."
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supports policy optimization as modular ratcheting: arm/router improvement, specialist lifecycle, residual escrow, benchmark diagnosis, regression preservation, and harder-frontier selection rather than unconstrained fine-tuning.",
+              "limits": "Conceptual architecture only; no policy-training run, routing benchmark, or modular improvement result has been reproduced here."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Supports keeping reward signals, verifier outputs, preference labels, proof tiers, belief revisions, contradictions, and downgrade behavior distinct before they influence accepted claims or policy updates.",
+              "limits": "Does not prove verifier quality, preference validity, natural-language formalization, or whole-system epistemic correctness."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Supports bounding context-policy and reasoning-budget rewards by effective verification workspace, semantic-unit comparison, contradiction pressure, summary loss, and adequacy rather than context length or shorter reasoning alone.",
+              "limits": "The proposed contradiction-rate and constraint-satisfaction tests have not been run; theoretical claims remain source-proposed until tested or mechanized."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports execution-policy feedback through typed jobs, contract locks, evidence records, artifact success, approval gates, audit logs, replay, delivery evidence, and residual feedback.",
+              "limits": "No Talos training, execution-policy update, security result, or benchmark artifact has been reproduced here."
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports context-policy rewards around source binding, adequacy/admission separation, protected compilation, taint, revocation, snapshot coherence, and typed non-success states instead of retrieval volume alone.",
+              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model-quality or policy-training result is claimed."
+            },
+            {
+              "source_id": "planforge",
+              "mapped_support": "Supports planner-policy update targets through decomposition quality, dependency preservation, primitive schemas, tier routing, scheduling, fallback requirements, failure-driven replanning, and stopping conditions.",
+              "limits": "No PlanForge scheduler, planner-policy training run, or task-quality benchmark has been implemented in this repo."
+            },
+            {
+              "source_id": "octopus_router",
+              "mapped_support": "Supports router-policy update targets through specialist selection, permission envelopes, domain quarantine, dynamic loading, arm lifecycle, composition patterns, and residual-aware routing.",
+              "limits": "No local routed-specialist prototype, arm-card experiment, routing benchmark, or safety result was run."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports governance of policy-update promotion through stable capability fields, contracts, qualifications, evaluator policy, authority ceilings, lifecycle events, rollback, quarantine, and recovery paths.",
+              "limits": "Does not prove evaluator integrity, production safety, global alignment, route quality, or rollback success."
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports resource and latency rewards only when bounded capacity, load variance, burst controls, human/cognitive friction, privacy, and quality constraints are recorded alongside efficiency pressure.",
+              "limits": "No regenerative-budget simulation, pricing result, or human outcome study has been reproduced here."
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supports distinguishing policy learning from procedural compilation: repeated trajectories may become tools only with trajectory logs, loop detection, parameter discovery, verification, routing, monitoring, revision, and retirement records.",
+              "limits": "No loop-closure system, tool synthesis run, or verification/monitoring harness has been executed."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports runtime-adjacent policy updates for specialist routing and orchestration while requiring readiness gates, regression floors, replay, ledgers, promotion blockers, and residual tracking.",
+              "limits": "Implementation-reference context only; runtime artifacts, benchmark artifacts, logs, and policy-update results have not been imported or reproduced."
+            }
+          ],
           "mechanism": [
             "Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, or generation mode.",
             "Record the feedback source: human preference, verifier reward, benchmark result, tool result, context-grounding check, governance check, or latency/resource signal.",
