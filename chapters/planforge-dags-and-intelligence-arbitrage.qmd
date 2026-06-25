@@ -4,7 +4,7 @@ chapter_id: "planforge-dags-and-intelligence-arbitrage"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-24"
+last_updated: "2026-06-25"
 primary_sources:
   - "planforge"
   - "planforge_compiler_arch"
@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-24 |
+| Last updated | 2026-06-25 |
 | Primary source records | `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -80,7 +80,9 @@ Appendix C now maps this PlanForge DAG claim to all assigned source notes. The m
 
 ## Mechanism
 
-The mechanism is a PlanForge DAG.
+PlanForge specializes the plan graph into a schedulable DAG. The PlanForge sources supply recursive decomposition, primitive typing, dependency inference, critical-path scheduling, MVI tier annotation, fallback, and failure-driven replanning. Cognitive Compilation connects the DAG to IR and localized repair; TokenMana keeps budgets broader than tokens; Coherence Exchange contributes speculative intelligence-arbitrage vocabulary; MoECOT remains runtime-reference context for routed lanes, ledgers, readiness gates, and replay.
+
+A PlanForge DAG is the cost-quality control surface: every node has to name its capability tier, context request, budget, quality predicate, verification burden, route, escalation path, and residual.
 
 ```{mermaid}
 flowchart LR
@@ -193,4 +195,4 @@ The crosswalk identifies sources for DAG orchestration, intelligence arbitrage, 
 
 PlanForge DAGs and Intelligence Arbitrage turns planning into scheduled, typed work. The system decomposes goals, annotates nodes, routes by minimum adequate capability, verifies quality predicates, and records cost-quality outcomes.
 
-The chapter's efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals.
+The chapter's efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals. The next chapter lowers that scheduled work into semantic IR so artifact generation, validation, and repair have stable addresses.
