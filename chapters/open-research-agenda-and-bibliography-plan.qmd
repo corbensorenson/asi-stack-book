@@ -30,9 +30,10 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Exact source-note mappings now cover all assigned sources for this core claim; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, or accepted evidence transitions justify promotion."
-  - "The research_backlog_record fixture validates schema/example consistency only; external literature normalization, direct citation checks, and new-paper triage rehearsals remain incomplete."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records passage-reviewed mappings for all twenty-one assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle/constitution references; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, artifact reproduction, or accepted evidence transitions justify promotion."
+  - "The research_backlog_record fixture and AsiStackProofs.BibliographyPlan finite-record predicates validate backlog-record shape, source-note gates, and chapter-assignment gates only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, or new-paper triage quality."
+  - "Connector/recovery and variant sources remain bounded: MoECOT, CoilMoECOT, Road To AGI, and VCM Editable do not promote runtime, benchmark, model-facing, or citation-normalized third-party claims."
+  - "No support-state promotion, external-literature normalization result, direct citation check, benchmark reproduction, runtime artifact, model-quality result, Circle command, external Circle build, current Theseus report verification, policy-engine result, or raw source publication is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -48,7 +49,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
-| Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `coilmoecot`, `road_to_agi`; connector/recovery: `moecot`, `vcm_editable` |
+| Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`; source-note-only or connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`; pinned local references: Project Theseus, Circle Math, and Field of God AI Constitution |
 | Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates; new-paper triage scenario remains planned. |
 
 ## Drafting guardrail
@@ -67,7 +68,19 @@ A pile of sources or ad hoc citations does not tell future writing agents what t
 
 [open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules.
 
-The claim remains at `argument` support. The repository now has source inventory, source notes, chapter listings, and exact core-claim source-note mappings, but passage-level review, external literature normalization, and claim-to-mechanism reconciliation remain incomplete.
+The claim remains at `argument` support. The repository now has source inventory, source notes, chapter listings, exact core-claim source-note mappings, and passage-reviewed mapping refs for the assigned sources, but external literature normalization, direct citation checks, artifact reproduction, and new-paper triage rehearsals remain incomplete.
+
+### Claim-source mapping status
+
+Appendix C now records twenty-one passage-reviewed mappings for this claim. The review turns the agenda into a context-loading map for future writing, proof, and experiment work; it does not turn any backlog item into completed evidence.
+
+| Source group | Reviewed support | Boundary |
+|---|---|---|
+| Verification, evidence, and benchmark backlog: `verification_bandwidth`, `benchmaxxing`, `spinoza` | Context-adequacy tests, semantic-unit verification, contradiction-rate proposals, benchmark lifecycle, residuals, ledgers, anti-Goodhart safeguards, proof-carrying claims, belief revision, downgrade paths, and protected axioms. | No contradiction-rate test, theorem result, benchmark run, mutation/holdout run, contamination audit, verifier-quality result, autoformalization result, or citation-normalized literature claim. |
+| Governance, replacement, and safety backlog: `alignment_field`, `scf`, `field_of_god_ai_constitution` | Normative assumptions, value conflict, dignity, corrigibility, stable capability identity, evaluator boundaries, authority ceilings, lifecycle ordering, rollback, recovery, constitutional tool/memory/self-improvement constraints, and least sufficient power. | No empirical consciousness, moral-status, alignment, rights-preservation, route/evaluator correctness, replacement safety, runtime policy-engine, red-team, system-prompt, or moral-correctness result. |
+| Planning, context, execution, and improvement backlog: `planforge`, `vcm_public`, `talos`, `rmi`, `genesiscode` | Planning experiments, primitive schemas, VCM packet schemas, source binding, typed job lifecycles, audit/replay, residual escrow, specialist lifecycle, capability policies, effect logs, replay, and translation-validation topics. | No planner implementation, VCM-Bench, retrieval-quality result, Talos runtime/security run, RMI prototype, GenesisCode implementation, replay checker, benchmark, or security audit. |
+| Compression, simulation, and optional substrate backlog: `cgs`, `simulation_scaling`, `coilmoecot`, `vcm_editable` | Compact-seed and residual-honesty research items, simulation contracts and resource limits, optional routed coil/specialist lanes, richer VCM terminology, planner-guided paging, and third-party citation candidates. | No CGS benchmark, simulation benchmark, feasibility audit, CoilMoECOT baseline, route run, VCM model-facing result, or normalized third-party citation. |
+| Implementation and proof-contract backlog: `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` | Runtime artifact tracking, readiness gates, replay, promotion blockers, remaining-work status, report-first Theseus artifacts, theorem ids, proof-boundary discipline, AI contract fields, receipts, consumer gates, and transfer-lane insertion rules. | No MoECOT runtime artifact, reproduced command, current Theseus report verification, external Circle build, Circle command, generated contract pack, receipt replay, transfer consumer, proxy benchmark, private workload report, or model-improvement result. |
 
 ## Mechanism
 
@@ -136,7 +149,7 @@ The smallest useful implementation is a research backlog schema and fixture. The
 |---|---|---|
 | Research backlog record fixture validation | Validate that a backlog record names source/gap, access state, assigned chapters, source-note state, claim mapping state, external-literature need, proof/test backlog, insertion decision, residuals, and next action. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
-| Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes and exact core-claim mappings currently exist for assigned sources; passage-level review and evidence transitions remain incomplete |
+| Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes, exact core-claim mappings, and passage-reviewed mapping refs currently exist for assigned sources; external-literature normalization and evidence transitions remain incomplete |
 | New-paper triage scenario | Check whether a new paper updates an existing chapter or creates a new boundary. | planned; not run |
 
 ### Formalization hooks
@@ -154,7 +167,7 @@ This chapter intentionally keeps a broad source set because it governs the backl
 
 Priority backlog:
 
-- Passage-level review for mapped core claims and claim-to-mechanism reconciliation.
+- Claim-to-mechanism reconciliation beyond this core-claim mapping pass, especially where future chapter drafting depends on narrower mechanisms rather than broad source-family assignment.
 - External literature normalization and direct citation checks.
 - Reproduction or import of any benchmark artifacts before support promotion.
 - Lean triage for proof targets that are currently schema or process contracts.

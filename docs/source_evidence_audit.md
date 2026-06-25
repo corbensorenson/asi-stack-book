@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 0 |
 | Source notes present for assigned pairs | 461 |
 | Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 404 |
+| Passage-reviewed mappings recorded | 425 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -86,7 +86,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 19 | argument | eligible for support review |
 | `living-book-methodology` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
-| `open-research-agenda-and-bibliography-plan` | 21 | 21 | 21 | 21 | 0 | argument | passage review required before source-derived promotion |
+| `open-research-agenda-and-bibliography-plan` | 21 | 21 | 21 | 21 | 21 | argument | eligible for support review |
 
 ## Source Load Priority
 
@@ -640,27 +640,27 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `living-book-methodology.core` | `living-book-methodology` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `living-book-methodology.core` | `living-book-methodology` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
 | `living-book-methodology.core` | `living-book-methodology` | `road_to_agi` | mapped | note present | chapter listed | passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `verification_bandwidth` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `benchmaxxing` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `alignment_field` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `scf` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `planforge` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `vcm_public` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `spinoza` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `talos` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `rmi` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `cgs` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `genesiscode` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `simulation_scaling` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `moecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `coilmoecot` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `road_to_agi` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `vcm_editable` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `project_theseus_whitepaper` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `circle_calculus_core` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `circle_ai_contract_suite` | mapped | note present | chapter listed | not passage-reviewed |
-| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `theseus_circle_transfer` | mapped | note present | chapter listed | not passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `coilmoecot` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `road_to_agi` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `circle_calculus_core` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
+| `open-research-agenda-and-bibliography-plan.core` | `open-research-agenda-and-bibliography-plan` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
 
 ## Validation Errors
 
