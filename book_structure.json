@@ -559,22 +559,51 @@
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Benchmark lifecycle, ledgers, anti-Goodhart safeguards, wall diagnosis, regression duties, and residual accounting support the rule that benchmark evidence must be scoped before it moves a claim.",
-              "limits": "Does not prove any benchmark result in this repository or justify treating a benchmark score as permanent intelligence evidence."
+              "limits": "Does not prove any benchmark result in this repository or justify treating a benchmark score as permanent intelligence evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/benchmaxxing.txt:64-70",
+                "sources/raw/google_docs/benchmaxxing.txt:265-286"
+              ],
+              "passage_review_note": "Reviewed local raw cache for benchmark ratchet, anti-Goodhart, wall diagnosis, regression-guard, and residual-report boundaries; no local benchmark result is claimed."
             },
             {
               "source_id": "spinoza",
               "mapped_support": "Proof/citation/procedure-carrying claim tiers, belief revision, contradiction handling, and downgrade/block behavior support explicit claim labels, support states, and failed-verification demotion.",
-              "limits": "Does not prove open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness."
+              "limits": "Does not prove open-domain autoformalization, theorem validity for arbitrary claims, or whole-system epistemic correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-236",
+                "sources/raw/google_docs/spinoza.txt:384-390",
+                "sources/raw/google_docs/spinoza.txt:403-458"
+              ],
+              "passage_review_note": "Reviewed local raw cache for proof-carrying graph, tier labels, bounded belief revision, contradiction handling, and untagged-assertion prohibition; no open-domain verifier claim is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Artifact graphs, claim and verification ledgers, residuals, feedback, benchmarks, and the rule of durability support keeping claims, evidence, failures, and regression coverage as durable records.",
-              "limits": "Does not prove a completed VIEA deployment or any benchmark/runtime result in this repository."
+              "limits": "Does not prove a completed VIEA deployment or any benchmark/runtime result in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:47-66",
+                "sources/raw/google_docs/viea.txt:120-127",
+                "sources/raw/google_docs/viea.txt:468-488",
+                "sources/raw/google_docs/viea.txt:507-517"
+              ],
+              "passage_review_note": "Reviewed local raw cache for durable artifacts, claim/verification ledger, support states, residuals, artifact relationships, and benchmark/regression coverage; no deployment claim is promoted."
             },
             {
               "source_id": "uat",
               "mapped_support": "Retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and final sign-off support the distinction between verified, inferred, unsupported, and review-required propositions.",
-              "limits": "Does not prove the UAT protocol discovers novel truth or that its thresholds are validated here."
+              "limits": "Does not prove the UAT protocol discovers novel truth or that its thresholds are validated here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/uat.txt:131-135",
+                "sources/raw/google_docs/uat.txt:188-190",
+                "sources/raw/google_docs/uat.txt:451-453",
+                "sources/raw/google_docs/uat.txt:469-472"
+              ],
+              "passage_review_note": "Reviewed local raw cache for pre-audited drafts, proposition verification tiers, SME review handoff, final sign-off, and source-review mitigation; no autonomous truth-machine claim is promoted."
             },
             {
               "source_id": "coherence_exchange",
@@ -584,7 +613,15 @@
             {
               "source_id": "verification_bandwidth",
               "mapped_support": "The distinction between context length and verification workspace supports the rule that source ingestion or large context does not itself verify a claim without adequacy, contradiction, and coverage checks.",
-              "limits": "Does not prove the proposed verification-bandwidth tests or contradiction-rate claims have been run here."
+              "limits": "Does not prove the proposed verification-bandwidth tests or contradiction-rate claims have been run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:8-13",
+                "sources/raw/google_docs/verification_bandwidth.txt:22-30",
+                "sources/raw/google_docs/verification_bandwidth.txt:33-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:74-85"
+              ],
+              "passage_review_note": "Reviewed local raw cache for context-window/storage distinction, effective verification workspace, pairwise constraint checking, probabilistic loss under compression, and proposed falsifiability test; no contradiction-rate experiment is claimed."
             }
           ],
           "mechanism": [

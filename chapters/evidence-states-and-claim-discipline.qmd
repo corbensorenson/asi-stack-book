@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records a claim-level source-note map for this chapter's core claim, but the support state remains argument until an evidence transition is accepted."
+  - "Appendix C now records a claim-level source-note map for this chapter's core claim, and five of six assigned mappings have local raw-cache passage review; the support state remains argument until the remaining connector-only mapping is reviewed and an evidence transition is accepted."
   - "The evidence_transition_record fixture and evidence-state Lean proofs validate narrow transition surfaces only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -36,7 +36,8 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `spinoza`, `viea`; supporting: `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Source loading state | source notes: `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth`; raw cache: `benchmaxxing`, `spinoza`, `viea`, `uat`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
-| Test state | `evidence_transition_record.valid.json` passes protocol fixture validation and evidence-state Lean hooks build locally; claim-ledger completeness, evidence bundle completeness, and changelog consistency audits remain planned. |
+| Source evidence review state | Five of six claim-source mappings have reviewed local raw-cache passage references in `book_structure.json`; `coherence_exchange` remains connector-only/source-note mapped in this pass. |
+| Test state | `evidence_transition_record.valid.json` passes protocol fixture validation, evidence-state Lean hooks build locally, and source evidence audit records the five reviewed mappings; claim-ledger completeness, evidence bundle completeness, and changelog consistency audits remain planned. |
 
 ## Drafting guardrail
 
@@ -62,7 +63,7 @@ The missing object is the evidence transition. If a claim moves from `argument` 
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
-The claim remains at `argument` support. Appendix C now records a claim-level source-note map for the support this chapter draws from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. That map makes the evidence bridge explicit, but it does not by itself promote the claim. Promotion still requires an accepted evidence transition, source-passage review, or executed test/proof artifact with declared scope.
+The claim remains at `argument` support. Appendix C now records a claim-level source-note map for the support this chapter draws from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. Five mappings now have reviewed local raw-cache passage references in the manifest. Coherence Exchange remains connector-only and source-note mapped in this pass. The map and partial passage review make the evidence bridge more inspectable, but they do not by themselves promote the claim. Promotion still requires the remaining review boundary to be closed and an accepted evidence transition or executed test/proof artifact with declared scope.
 
 | Source | Claim-level contribution | Limit |
 |---|---|---|

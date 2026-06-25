@@ -565,6 +565,13 @@ def write_claim_matrix(structure: dict) -> None:
     rows = []
     chapters = flatten_chapters(structure)
     total_claim_mappings = sum(len(chapter.get("claim_source_mappings", [])) for chapter in chapters)
+    total_passage_reviewed = sum(
+        1
+        for chapter in chapters
+        for mapping in chapter.get("claim_source_mappings", [])
+        if mapping.get("passage_review_state") in {"reviewed", "accepted", "complete"}
+        and (mapping.get("passage_refs") or mapping.get("passage_references"))
+    )
     for chapter in chapters:
         chapter_source_ids = source_ids_for(chapter)
         source_label = ", ".join(f"`{source_id}`" for source_id in chapter_source_ids) or "None assigned yet"
@@ -636,7 +643,7 @@ Each claim has two separate classifications: a claim label that describes what k
 
 No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
-Current generated coverage: {len(chapters)} chapter core claims and {total_claim_mappings} exact claim-source mappings. These mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
+Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, and {total_passage_reviewed} passage-reviewed mappings. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap |
 |---|---|---|---|---|---|---|---|---|---|
