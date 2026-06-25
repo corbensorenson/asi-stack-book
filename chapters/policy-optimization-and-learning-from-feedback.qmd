@@ -62,6 +62,8 @@ open_evidence_gaps:
 
 This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. The external RL papers named here now have stable source records, primary arXiv metadata, and conservative source notes; they support method-family context only, not support-state promotion or local training claims.
 
+The previous chapter turns benchmark pressure into evidence records. This chapter explains how that pressure may change future behavior without letting reward become authority. A policy update is allowed to propose better planning, routing, context selection, verification, execution, or generation only when admissible feedback, drift bounds, evaluations, rollback, and governance gates are recorded.
+
 ## Problem
 
 Benchmarks, verifiers, human preferences, tool results, context-grounding checks, and governance violations all produce feedback. A living ASI stack needs a disciplined way to turn that feedback into future behavior. Without that layer, the book can explain how to measure, review, and gate capabilities, but not how the system learns which behaviors to repeat, suppress, shorten, route, verify, or retire.

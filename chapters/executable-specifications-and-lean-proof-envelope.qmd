@@ -45,6 +45,8 @@ open_evidence_gaps:
 
 This chapter distinguishes executable contracts, tests, and Lean proofs. A theorem is not proven because the prose says so; a proof target is implemented only when the corresponding artifact exists and the verifier passes.
 
+Part III ended by separating structural receipts from model-quality claims. Part IV begins by generalizing that discipline: every formal-looking statement needs a declared artifact lane. Some claims become Lean predicates, some become schema fixtures, some become process validators, and some remain research targets until the architecture can state an operational predicate without pretending that broad ASI behavior has been proven.
+
 ## Problem
 
 The book contains many claims that sound formal: authority boundaries, support-state transitions, capability replacement, context adequacy, job lifecycles, proof-carrying claims, and cyclic contracts. Some of these can become Lean proofs. Some should remain JSON Schemas or process contracts. Some are research questions.

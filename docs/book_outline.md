@@ -2673,7 +2673,7 @@ Lean proof targets:
 
 ## Part IV - Evidence, Implementation, and the Living Book
 
-Part job: Turn the architecture into an accountable research program: executable specifications, Lean proof envelopes, benchmark ratchets, reference traces, implementation roadmap, living-book method, and bibliography discipline.
+Part job: Turn the architecture into an accountable research program: executable specifications, Lean proof envelopes, benchmark ratchets, governed policy-update records, artifact stewardship, integrated reference traces, implementation roadmap, living-book method, and bibliography discipline.
 
 Part source loading queue:
 
@@ -2702,9 +2702,10 @@ Draft arc:
 
 - Problem: The book needs to decide which architecture claims should become executable specs or Lean proofs.
 - Insufficiency: Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
-- Mechanism: Maintain a proof target record for each proof/spec candidate.
-- Mechanism: Keep proof manifest generated from the outline.
-- Mechanism: Distinguish Lean proofs, executable specs, schema contracts, process contracts, research targets, blocked targets, and retired targets.
+- Mechanism: Lower each formal-looking chapter claim into a Proof Target Record with tag, module or artifact path, formal target, verifier command/result, support-state effect, limitations, and non-claims.
+- Mechanism: Keep `proofs/proof_manifest.json` generated from outline `lean:*` tags and require traceability through triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E before calling a target implemented.
+- Mechanism: Route candidates to Lean predicates, executable schemas, fixture validators, process contracts, research targets, blocked targets, or retired targets according to what can actually be checked.
+- Mechanism: Keep semantic proof adequacy as a separate review from build success, schema success, source interpretation, deployed enforcement, model quality, or benchmark evidence.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.
@@ -2760,10 +2761,10 @@ Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
 - Insufficiency: Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
-- Mechanism: Track benchmark mastery thresholds and saturation in a benchmark ratchet record.
-- Mechanism: Generate regressions, holdout checks, transfer checks, and contamination checks.
-- Mechanism: Move residual failures into escrow and new frontier tasks.
-- Mechanism: Record negative and inconclusive results as evidence, not cleanup.
+- Mechanism: Convert every benchmark result into a ratchet record with command/run refs, environment, baseline, frontier state, mastery threshold, saturation state, residual escrow, regression refs, anti-Goodhart checks, promotion decision, support-state effect, and negative results.
+- Mechanism: Generate regression floors, holdout checks, transfer checks, mutation checks, contamination checks, and public-calibration notes before using a benchmark to move readiness or claim support.
+- Mechanism: Move residual failures into escrow, convert saturated tasks into regression floors, and create harder frontier tasks only when the prior evidence boundary survives review.
+- Mechanism: Record source-reported, synthetic, empirical, negative, and inconclusive results as distinct evidence states rather than cleanup notes.
 - Interface: Routing and SCFs use readiness gates.
 - Interface: Evidence matrix records support movement.
 - Interface: Changelog records evidence changes.
