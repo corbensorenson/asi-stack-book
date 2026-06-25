@@ -17,9 +17,11 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now maps this resource-economics claim to all assigned source notes, including PagedAttention/vLLM as an external serving-economics source; support remains argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, or cost-quality experiments exist."
-  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, or cost-quality experiment has been run."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Appendix C now records exact passage-reviewed mappings for all eight assigned resource-economics sources; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, cost-quality experiments, or accepted evidence transitions exist."
+  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, cost-quality experiment, or scheduler trace has been run."
+  - "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims."
+  - "PagedAttention/vLLM is reviewed against the public arXiv abstract/metadata only; reported throughput gains, cache-sharing behavior, code artifacts, latency results, and quality behavior remain source-reported and unreproduced."
+  - "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, or quality result is implied by this drafting pass."
 ---
 
 ## Chapter status
@@ -35,7 +37,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; variants/external literature: `ext_pagedattention_vllm_2023` |
-| Source loading state | source notes: `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `ext_pagedattention_vllm_2023`; raw cache: `tokenmana`, `planforge`, `simulation_scaling`, `viea`; connector/recovery: `coherence_exchange`; uncached external note: `ext_pagedattention_vllm_2023` |
+| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `tokenmana`, `planforge`, `simulation_scaling`, and `viea`; `coherence_exchange`, `project_theseus_whitepaper`, and `coilra_multicoil_rope` are passage-reviewed against public source notes only; `ext_pagedattention_vllm_2023` is passage-reviewed against the public arXiv abstract/metadata page only. |
 | Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, scheduler, load-stability, and KV-cache accounting tests remain planned. |
 
 ## Drafting guardrail
@@ -62,18 +64,18 @@ The claim remains at `argument` support. The source notes justify design discuss
 
 ### Claim-source mapping status
 
-Appendix C now maps this resource-economics claim to all assigned source notes. The mappings support budget records, regenerative capacity, planner scheduling, physical feasibility, value/accounting metaphors, execution-spine resource discipline, report-first implementation pressure, parameter accounting, and serving-layer memory/throughput accounting, not measured economic, scheduler, serving, or quality performance.
+Appendix C now carries passage-reviewed mappings for all eight assigned sources. The mappings support budget records, regenerative capacity, planner scheduling, physical feasibility, value/accounting metaphors, execution-spine resource discipline, report-first implementation pressure, parameter accounting, and serving-layer memory/throughput accounting. They do not support measured economic outcomes, welfare effects, scheduler quality, serving performance, cache behavior, or model-output quality in this repository.
 
 | Source | What it supports | Limit |
 |---|---|---|
 | `tokenmana` | Regenerative bounded capacity, burst controls, load signals, convex infrastructure-cost comparisons, load variance, renewal clustering, nocturnal usage, cognitive friction, and privacy/opt-in study constraints. | Formal results, simulations, human outcomes, profit effects, and productivity claims have not been reproduced. |
 | `planforge` | Hierarchical decomposition, MVI tiers, dependency scheduling, cost/capability routing, fallback, replanning, and execution handoff. | No scheduler benchmark, cost-quality trace, or verified implementation exists here. |
-| `coherence_exchange` | Verified epistemic units, verification supply chains, intelligence arbitrage, coherence/liquidity language, fork, exit, audit, and contestability as value/accounting and governance framing. | Speculative connector source; economic/liquidity metaphors are not implemented mechanisms or external corroboration. |
+| `coherence_exchange` | Source-note-only verified epistemic units, verification supply chains, intelligence arbitrage, coherence/liquidity language, fork, exit, audit, and contestability as value/accounting and governance framing. | Connector source text is not published here; speculative economic/liquidity metaphors are not implemented mechanisms or external corroboration. |
 | `simulation_scaling` | Scope, clockspeed, fidelity, resource fraction, efficiency, memory, heat, bandwidth, latency, and capacity bottleneck accounting. | Theoretical synthesis only; no simulation benchmark, physical experiment, or independent literature audit was run. |
 | `viea` | Command contracts, artifacts, specialist-routed work, verification, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage as the execution-spine context for resource accounting. | No completed deployment, runtime trace, budget scheduler, or verified execution result exists here. |
-| `project_theseus_whitepaper` | Small-until-evidence growth, compact substrate, autonomy control loop, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability. | Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here. |
-| `coilra_multicoil_rope` | Parameter-accounting and hardware/baseline discipline for dense, low-rank, block-cyclic, block-circulant, and circulant routes. | No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support. |
-| `ext_pagedattention_vllm_2023` | KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane separate from verified-output quality. | No vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, or quality result has been reproduced here. |
+| `project_theseus_whitepaper` | Source-note-only small-until-evidence growth, compact substrate, autonomy control loop, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability. | Raw local project text is not copied here; current reports, ledgers, code paths, and command outputs were not rerun. |
+| `coilra_multicoil_rope` | Source-note-only parameter-accounting and hardware/baseline discipline for dense, low-rank, block-cyclic, block-circulant, and circulant routes. | Raw local project text is not copied here; no model-quality, speed, memory, training-stability, or context-length result exists. |
+| `ext_pagedattention_vllm_2023` | KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane separate from verified-output quality. | Reviewed against public arXiv abstract/metadata only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, latency result, or quality result has been reproduced. |
 
 ## Mechanism
 

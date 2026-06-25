@@ -7244,43 +7244,145 @@
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports resource-economics framing through regenerative bounded capacity, burst controls, load signals, convex infrastructure-cost comparisons, load variance, renewal clustering, nocturnal usage, cognitive friction, and privacy/opt-in study constraints.",
-              "limits": "Design and research-plan source only; formal results, simulations, human outcomes, profit effects, and productivity claims have not been reproduced."
+              "limits": "Design and research-plan source only; formal results, simulations, human outcomes, profit effects, and productivity claims have not been reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/tokenmana.txt:9-12",
+                "sources/raw/google_docs/tokenmana.txt:19-28",
+                "sources/raw/google_docs/tokenmana.txt:67-75",
+                "sources/raw/google_docs/tokenmana.txt:156-188",
+                "sources/raw/google_docs/tokenmana.txt:227-238",
+                "sources/raw/google_docs/tokenmana.txt:267-278",
+                "sources/raw/google_docs/tokenmana.txt:306-319",
+                "sources/raw/google_docs/tokenmana.txt:380-431",
+                "sources/raw/google_docs/tokenmana.txt:458-483",
+                "sources/raw/google_docs/tokenmana.txt:814-834",
+                "sources/raw/google_docs/tokenmana.txt:847-849",
+                "sources/raw/google_docs/tokenmana.txt:1025-1040",
+                "sources/raw/google_docs/tokenmana.txt:1072-1080"
+              ],
+              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst pools, load variance, renewal clustering, convex infrastructure cost, latency/SLA penalties, profit and stability claims as source-reported formal results, temporal elasticity, sleep/cognitive-friction hypotheses, opt-in empirical strategy, and implementation parameters; no TokenMana simulation, pricing experiment, human outcome, productivity result, or profit effect is reproduced or promoted."
             },
             {
               "source_id": "planforge",
               "mapped_support": "Supports typed budget allocation through hierarchical decomposition, minimum viable intelligence tiers, dependency scheduling, cost/capability routing, fallback, replanning, and execution handoff.",
-              "limits": "Planning whitepaper only; no scheduler benchmark, cost-quality trace, or verified implementation exists in this repo."
+              "limits": "Planning whitepaper only; no scheduler benchmark, cost-quality trace, or verified implementation exists in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge.txt:14-33",
+                "sources/raw/google_docs/planforge.txt:76-124",
+                "sources/raw/google_docs/planforge.txt:130-140",
+                "sources/raw/google_docs/planforge.txt:205-210",
+                "sources/raw/google_docs/planforge.txt:243-291",
+                "sources/raw/google_docs/planforge.txt:311-313",
+                "sources/raw/google_docs/planforge.txt:354-361",
+                "sources/raw/google_docs/planforge.txt:403-408",
+                "sources/raw/google_docs/planforge.txt:463-489",
+                "sources/raw/google_docs/planforge.txt:509-511",
+                "sources/raw/google_docs/planforge.txt:552-565"
+              ],
+              "passage_review_note": "Reviewed local raw cache for hierarchical decomposition, primitive schemas, MVI/intelligence tiering, dependency scheduling, cost/time objective, cost-capability routing, parallelism, fallback escalation, replanning, and execution handoff. Source-reported synthetic savings and projected cost assumptions are not reproduced; no scheduler benchmark, cost-quality trace, or verified implementation is promoted."
             },
             {
               "source_id": "coherence_exchange",
               "mapped_support": "Supports speculative value/accounting and governance framing through verified epistemic units, verification supply chains, intelligence arbitrage, coherence/liquidity language, fork, exit, audit, and contestability.",
-              "limits": "Speculative connector source; economic/liquidity metaphors are not implemented mechanisms or external corroboration."
+              "limits": "Speculative connector source; economic/liquidity metaphors are not implemented mechanisms or external corroboration.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:8-13",
+                "sources/source_notes/coherence_exchange.md:17-20",
+                "sources/source_notes/coherence_exchange.md:24-32",
+                "sources/source_notes/coherence_exchange.md:54-57"
+              ],
+              "passage_review_note": "Reviewed public source note only because authenticated connector text is not published here. The note supports verified epistemic units, verification supply-chain, intelligence-arbitrage, coherence/liquidity, fork/exit/audit, and contestability language as optional value/accounting and governance framing; no epistemic market, liquidity mechanism, external corroboration, or implemented economics/security claim is promoted."
             },
             {
               "source_id": "simulation_scaling",
               "mapped_support": "Supports physical resource contracts through scope, clockspeed, fidelity, resource fraction, efficiency, memory, heat, bandwidth, latency, and capacity bottleneck accounting.",
-              "limits": "Theoretical synthesis only; no simulation benchmark, physical experiment, or independent literature audit was run here."
+              "limits": "Theoretical synthesis only; no simulation benchmark, physical experiment, or independent literature audit was run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/simulation_scaling.txt:9-19",
+                "sources/raw/google_docs/simulation_scaling.txt:29-41",
+                "sources/raw/google_docs/simulation_scaling.txt:61-71",
+                "sources/raw/google_docs/simulation_scaling.txt:145-150",
+                "sources/raw/google_docs/simulation_scaling.txt:192-215",
+                "sources/raw/google_docs/simulation_scaling.txt:222-239",
+                "sources/raw/google_docs/simulation_scaling.txt:263-266",
+                "sources/raw/google_docs/simulation_scaling.txt:324-341",
+                "sources/raw/google_docs/simulation_scaling.txt:384-394",
+                "sources/raw/google_docs/simulation_scaling.txt:445-483",
+                "sources/raw/google_docs/simulation_scaling.txt:490-512",
+                "sources/raw/google_docs/simulation_scaling.txt:523-547",
+                "sources/raw/google_docs/simulation_scaling.txt:550-564"
+              ],
+              "passage_review_note": "Reviewed local raw cache for contract-relative scope, clockspeed, effective efficiency, allocated resources, capacity bottlenecks, memory/rate/dissipation/heat constraints, bandwidth/latency-style bottleneck accounting, and simulation feasibility tradeoffs; no simulation benchmark, physical experiment, or independent literature audit is promoted."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports resource accounting as part of the intent-to-execution spine through command contracts, artifacts, specialist-routed work, verification, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal only; no completed deployment, runtime trace, budget scheduler, or verified execution result exists here."
+              "limits": "Architecture proposal only; no completed deployment, runtime trace, budget scheduler, or verified execution result exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:14-17",
+                "sources/raw/google_docs/viea.txt:21-37",
+                "sources/raw/google_docs/viea.txt:45-59",
+                "sources/raw/google_docs/viea.txt:62-76",
+                "sources/raw/google_docs/viea.txt:81-92",
+                "sources/raw/google_docs/viea.txt:117-130",
+                "sources/raw/google_docs/viea.txt:226-239",
+                "sources/raw/google_docs/viea.txt:258-272",
+                "sources/raw/google_docs/viea.txt:330-350",
+                "sources/raw/google_docs/viea.txt:566-594",
+                "sources/raw/google_docs/viea.txt:651-704"
+              ],
+              "passage_review_note": "Reviewed local raw cache for command contracts, artifact graphs, specialist routing, verification gates, runtime targeting, feedback, residuals, benchmark/regression coverage, workflow-to-tool costs, and execution-spine resource discipline; no completed deployment, runtime trace, budget scheduler, or verified execution result is promoted."
             },
             {
               "source_id": "project_theseus_whitepaper",
               "mapped_support": "Supports report-first resource discipline through small-until-evidence growth, compact substrate, autonomy control loop, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability.",
-              "limits": "Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here."
+              "limits": "Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/project_theseus_whitepaper.md:8-13",
+                "sources/source_notes/project_theseus_whitepaper.md:17-24",
+                "sources/source_notes/project_theseus_whitepaper.md:28-31",
+                "sources/source_notes/project_theseus_whitepaper.md:35-40",
+                "sources/source_notes/project_theseus_whitepaper.md:60-61"
+              ],
+              "passage_review_note": "Reviewed public source note only because local project source text is not copied into this repo. The note supports report-first implementation pressure, small-until-evidence growth, compact substrate, autonomy control loop, specialist routing, benchmark/residual ledgers, checkpoints, sparse teacher governance, trusted Hive nodes, and observability; no current Theseus report, benchmark ledger, code path, command output, deployment safety, or public-compute readiness is promoted."
             },
             {
               "source_id": "coilra_multicoil_rope",
               "mapped_support": "Supports parameter-accounting and hardware/baseline discipline for cyclic mixers and adapters by separating dense, low-rank, block-cyclic, block-circulant, and circulant parameter counts from quality/runtime claims.",
-              "limits": "No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support."
+              "limits": "No model-quality, speed, memory, training-stability, or context-length result exists; use only as structural and accounting support.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/coilra_multicoil_rope.md:9-13",
+                "sources/source_notes/coilra_multicoil_rope.md:17-21",
+                "sources/source_notes/coilra_multicoil_rope.md:25-28",
+                "sources/source_notes/coilra_multicoil_rope.md:32-46"
+              ],
+              "passage_review_note": "Reviewed public source note only because raw local project text is not copied into this repo. The note supports parameter-accounting and hardware/baseline discipline across dense, LoRA-style, block-cyclic, block-circulant, and circulant routes; no quality, speed, memory, training-stability, context-length, or runtime result is promoted."
             },
             {
               "source_id": "ext_pagedattention_vllm_2023",
               "mapped_support": "Supports treating KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane that must stay separate from verified-output quality.",
-              "limits": "External paper only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, or quality result has been reproduced here."
+              "limits": "External paper only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, or quality result has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/2309.06180:abstract / KV-cache memory bottleneck / dynamic cache growth and fragmentation / PagedAttention virtual-memory paging / vLLM cache sharing / reported throughput gains"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata for KV-cache memory management, batching, fragmentation, duplication, PagedAttention, vLLM cache sharing, and source-reported throughput gains; no deployment, cache-isolation audit, serving benchmark, local throughput measurement, latency result, or verified-output quality result is reproduced."
             }
+          ],
+          "draft_maturity": "v0.2 manuscript draft",
+          "open_evidence_gaps": [
+            "Appendix C now records exact passage-reviewed mappings for all eight assigned resource-economics sources; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, cost-quality experiments, or accepted evidence transitions exist.",
+            "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, cost-quality experiment, or scheduler trace has been run.",
+            "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims.",
+            "PagedAttention/vLLM is reviewed against the public arXiv abstract/metadata only; reported throughput gains, cache-sharing behavior, code artifacts, latency results, and quality behavior remain source-reported and unreproduced.",
+            "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, or quality result is implied by this drafting pass."
           ]
         },
         {
