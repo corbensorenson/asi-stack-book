@@ -4187,22 +4187,59 @@
             {
               "source_id": "talos",
               "mapped_support": "Supports the labor-OS frame through typed job lifecycle, decomposition, contract lock, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, evidence, isolation, and approval-gate failure modes.",
-              "limits": "Design-source support only here; no Talos scheduler, approval service, runtime, replay log, benchmark, or security result has been reproduced in this repository."
+              "limits": "Design-source support only here; no Talos scheduler, approval service, runtime, replay log, benchmark, or security result has been reproduced in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5352-5393",
+                "sources/raw/google_docs/talos.txt:5400-5424",
+                "sources/raw/google_docs/talos.txt:6044-6085",
+                "sources/raw/google_docs/talos.txt:6155-6241",
+                "sources/raw/google_docs/talos.txt:6308-6343",
+                "sources/raw/google_docs/talos.txt:6347-6415"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Talos as an Operating System for AI Labor and control plane that manages compute, security, and veracity; contract locks requiring re-verification; MVI routing; adversarial verification; atomic decomposition; blind execution and credential-handle boundaries; observability with input hashes, token cost, and intervention scoring; factory-to-tribunal job flow; deterministic execution framework replacing conversational AI with cognitive manufacturing; job-based asynchronous execution, typed claim-evidence representation, zero-trust secret-blind layer, replayable proof system, non-reproducibility and secret-exposure failure modes, fixed convergent execution pipeline, intent sanitation, claim extraction, evidence binding, adversarial verification, threshold failure/retrieval re-entry, proof bundle, logged/hashed/auditable I/O, replay/re-verify/evidence audit, evidence-bound uncertainty-explicit artifacts, explicit non-claims about absolute truth/correctness/SME replacement, typed claims/evidence/states/artifacts, and asynchronous jobs that run until verification policies pass or fail; no Talos scheduler, approval service, runtime, replay log, benchmark, security result, or proof bundle is reproduced here."
             },
             {
               "source_id": "viea",
               "mapped_support": "Supports lowering intent into structured command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal only; no deployed intent-to-job pipeline or verified execution trace exists here."
+              "limits": "Architecture proposal only; no deployed intent-to-job pipeline or verified execution trace exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:1441-1463",
+                "sources/raw/google_docs/viea.txt:1467-1493",
+                "sources/raw/google_docs/viea.txt:1497-1543",
+                "sources/raw/google_docs/viea.txt:5766-5795",
+                "sources/raw/google_docs/viea.txt:6050-6107",
+                "sources/raw/google_docs/viea.txt:6182-6205"
+              ],
+              "passage_review_note": "Reviewed local raw cache for VIEA generation-not-execution framing, the intent to structured command to artifact graph to routed specialist execution to integration to runtime target to verification gate to deployment/execution to feedback loop, systematic execution questions, major subsystems including command contracts/artifact graph/claim ledger/provenance-permission model/specialists/runtime adapters, core operating loop with user confirmation, artifacts, support states, specialist and permission selection, verification gates, residuals, runtime compilation, execution only if gates pass, artifact provenance and permission metadata, permission envelopes for tools/specialists/runtime adapters, least privilege, approval-role authority, integration contracts, side-effect classes, irreversible side-effect gates, transactional integration/rollback, runtime adapter maturity levels, and different artifacts/verification per runtime; no deployed intent-to-job pipeline, permission service, runtime adapter, feedback loop, or verified execution trace exists here."
             },
             {
               "source_id": "genesiscode",
               "mapped_support": "Supports separating proposals from effects through capability boundaries, deterministic effect logs, provenance, obligations, semantic patches, and small trusted-core discipline.",
-              "limits": "No local GenesisCode implementation, effect runner, replay checker, proof artifact, or security audit has been imported or reproduced."
+              "limits": "No local GenesisCode implementation, effect runner, replay checker, proof artifact, or security audit has been imported or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/genesiscode.txt:8-26",
+                "sources/raw/google_docs/genesiscode.txt:30-40",
+                "sources/raw/google_docs/genesiscode.txt:165-202",
+                "sources/raw/google_docs/genesiscode.txt:218-264",
+                "sources/raw/google_docs/genesiscode.txt:354-361"
+              ],
+              "passage_review_note": "Reviewed local raw cache for GenesisCode as a small pure kernel plus verification/provenance envelope, untrusted AI-output premise, capability boundary for nondeterminism including I/O/time/randomness/network/LLM calls, deterministic effect logs and replay semantics, obligation engine requiring evidence artifacts, canonical IR and validators before execution, semantic patch artifacts, small TCB, determinism by default, AI as proposer not authority, standardized effect program representation, sealed effect requests, host-provided capabilities, effect-log entries with allowed/denied decisions and capability identity, replay mismatch behavior, obligations such as tests/proofs/bounds/capability policies/translation validation, immutable evidence artifacts, registry rejection until obligations pass, content-addressed packages, semantic patch acceptance pipeline, and example AI-proposed patch accepted only if obligations pass with provenance and replay; no local GenesisCode implementation, effect runner, replay checker, proof artifact, security audit, or registry policy run exists here."
             },
             {
               "source_id": "software_magic_grimoire",
               "mapped_support": "Supports job and workflow shape through bounded instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, guards, entry/exit rules, loops, recursion, and recovery paths.",
-              "limits": "Promptcraft/workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work."
+              "limits": "Promptcraft/workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:69-86",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-152",
+                "sources/raw/google_docs/software_magic_grimoire.txt:4957-5004",
+                "sources/raw/google_docs/software_magic_grimoire.txt:5910-5940"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Software Magic Grimoire instruction artifacts that transform bounded context into bounded software results, explicit artifact/objective/constraints/output/truth-condition framing, eight-limb spell anatomy with role/objective/context/constraints/procedure/output contract/verification/failure behavior, risk-scaled cast levels, exploration-vs-execution distinction, practical workflow requiring artifact, invariant, desired change, bounded search space, output shape, verification, and failure behavior, prompt pathologies around hidden constraints/missing artifact boundary/no output contract/no truth test/no fallback behavior, spell-stack coordination with stage artifacts, continuation/loop/recurse/escalate/stop decisions, FEATURE-RAIL artifact flow from spec to design to patch to verification to go/no-go, loop rules based on tests/acceptance criteria, and verification-bundle procedure/output/gaps/failure behavior; workflow vocabulary only, with no empirical labor-OS performance, safety, scheduler, or runtime result."
             },
             {
               "source_id": "talos_md",

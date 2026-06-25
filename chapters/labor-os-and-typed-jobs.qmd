@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until scheduler, permission, adapter, or replay harnesses exist."
+  - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `talos_md` and `moecot` remain connector/source-note mapped."
   - "Protocol schema/fixture validation and narrow Lean lifecycle/approval predicates are implemented; no job scheduler, permission-enforcement harness, adapter runner, or replay harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
-| Source loading state | source notes: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot`; raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`; connector/recovery: `moecot` |
+| Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; connector/source-note mapped: `talos_md`, `moecot` |
 | Test state | Typed job fixture validation implemented; finite lifecycle and approval predicates implemented in `AsiStackProofs.TypedJobs`; scheduler, permission, adapter, and replay tests remain planned. |
 
 ## Drafting guardrail
@@ -60,24 +60,24 @@ GenesisCode reinforces the distinction: proposals and effects are different thin
 
 [labor-os-and-typed-jobs.core, label: Design rationale, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
-The claim remains at `argument` support. Talos supplies the labor-OS and job-lifecycle vocabulary; VIEA supplies the intent-to-artifact trace; GenesisCode supplies effect-boundary and replay-log discipline; Software Magic Grimoire supplies workflow guard vocabulary; the Markdown Talos release is a terminology variant, not independent benchmark evidence.
+The claim remains at `argument` support. Talos supplies the labor-OS frame, contract-lock discipline, job pipeline, evidence-bound artifact, audit, replay, and explicit non-claim boundaries. VIEA supplies the intent-to-artifact-to-runtime trace, permission envelopes, approval roles, side-effect classes, runtime-adapter maturity levels, and feedback loop. GenesisCode supplies the proposal/effect separation, host-provided capability boundary, deterministic effect logs, replay semantics, obligations, provenance, and semantic patch discipline. Software Magic Grimoire supplies workflow guard vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, and gated spell stacks. The Markdown Talos release and MoECOT remain connector/source-note mapped context, not passage-reviewed evidence.
 
 ### Claim-source mapping status
 
-Appendix C now maps this labor-OS claim to all assigned source notes. The mappings support typed jobs, lifecycle gates, permissions, evidence records, replay, and approval boundaries as execution architecture, not a working scheduler or runtime.
+Appendix C now maps this labor-OS claim to all assigned source notes, and four local raw-cache mappings now carry passage-reviewed references. The mappings support typed jobs, lifecycle gates, permissions, evidence records, replay, and approval boundaries as execution architecture, not a working scheduler or runtime.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `talos` | Typed job lifecycle, decomposition, contract lock, factory execution, adjudication, delivery, feedback/autopoiesis, deterministic control planes, audit, replay, evidence, isolation, and approval-gate failure modes. | No Talos scheduler, approval service, runtime, replay log, benchmark, or security result has been reproduced here. |
-| `viea` | Intent lowering into command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage. | No deployed intent-to-job pipeline or verified execution trace exists here. |
-| `genesiscode` | Proposal/effect separation through capability boundaries, deterministic effect logs, provenance, obligations, semantic patches, and small trusted-core discipline. | No local GenesisCode implementation, effect runner, replay checker, proof artifact, or security audit exists here. |
-| `software_magic_grimoire` | Bounded instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, guards, entry/exit rules, loops, recursion, and recovery paths. | Workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work. |
-| `talos_md` | Public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIFs. | Variant/canonicalization aid only; reported benchmark or security claims remain unverified. |
-| `moecot` | Runtime-reference context for governed orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here. |
+| `talos` | Passage-reviewed: Operating System for AI Labor and control-plane framing, contract lock, MVI routing, adversarial verification, atomic decomposition, blind execution, observability, factory-to-tribunal job flow, deterministic cognitive manufacturing, job-based asynchronous execution, fixed execution pipeline, intent sanitation, claim extraction, evidence binding, proof bundles, hashed/auditable I/O, replay/reverification/evidence audit, typed claim/evidence/state/artifact records, and explicit non-claims about truth/correctness/SME replacement. | No Talos scheduler, approval service, runtime, replay log, benchmark, security result, or proof bundle has been reproduced here. |
+| `viea` | Passage-reviewed: generation-not-execution framing, intent to command to artifact graph to routed specialist execution to runtime target to verification gate to execution and feedback, command contracts, artifact graph, permission model, specialist/runtime adapter subsystems, least-privilege permission envelopes, approval roles, integration contracts, side-effect classes, rollback limits, irreversible side-effect gates, runtime-adapter maturity levels, and runtime-specific verification. | No deployed intent-to-job pipeline, permission service, runtime adapter, feedback loop, or verified execution trace exists here. |
+| `genesiscode` | Passage-reviewed: untrusted AI-output premise, small pure kernel, capability boundary for nondeterminism, deterministic effect logs, replay semantics, obligation engine, canonical IR validators, semantic patches, AI as proposer not authority, sealed effect requests, host-provided capabilities, evidence artifacts, registry rejection until obligations pass, content-addressed packages, and accepted-patch provenance. | No local GenesisCode implementation, effect runner, replay checker, proof artifact, security audit, registry policy, or obligation run exists here. |
+| `software_magic_grimoire` | Passage-reviewed: bounded instruction artifacts, artifact/objective/constraint/output/truth-condition framing, eight-limb role/objective/context/constraints/procedure/output-contract/verification/failure-behavior anatomy, risk-scaled cast levels, exploration/execution separation, artifact/invariant/search/output/verification/failure workflow, prompt pathologies, spell-stack coordination, FEATURE-RAIL, loop rules, and verification-bundle shape. | Workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work. |
+| `talos_md` | Connector/source-note mapped: public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIFs. | Variant/canonicalization aid only; local cache is an auth-gate placeholder, and reported benchmark or security claims remain unverified. |
+| `moecot` | Connector/source-note mapped: runtime-reference context for governed orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here. |
 
 ## Mechanism
 
-The execution layer is where a plan stops being an intention and becomes a governed unit of work. Talos supplies the labor-OS shape: contract lock, factory execution, adjudication, delivery, feedback, audit, and replay. VIEA keeps that work inside the larger intent-to-artifact trace. GenesisCode sharpens the boundary between proposals and effects, while Software Magic Grimoire gives the workflow vocabulary for guards, entry rules, exits, loops, and recovery paths.
+The execution layer is where a plan stops being an intention and becomes a governed unit of work. Talos supplies the labor-OS shape: contract lock, fixed pipeline, evidence-bound artifact, audit, and replay. VIEA keeps that work inside the larger intent-to-artifact-to-runtime trace and adds permission envelopes, approval roles, side-effect classes, and runtime maturity levels. GenesisCode sharpens the boundary between proposals and effects: capabilities come from the host runner, effects produce logs, and acceptance depends on obligations and provenance. Software Magic Grimoire gives the workflow vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, gates, loops, and stop conditions.
 
 A Typed Job is the packet that binds those ideas together. It says what kind of work this is, which contract authorized it, which inputs and tools are allowed, which artifact is expected, which approval state blocks dispatch, how failure is handled, and what audit trail must survive.
 
@@ -178,17 +178,17 @@ These proof hooks are implemented as finite-record predicates. They prove the bo
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache available |
-| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
-| `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache available |
-| `talos_md` | Talos_Protocol_v1.0.md | labor_execution_os | Markdown/public release version. | source note available; local raw cache available |
+| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | passage-reviewed local raw cache |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | passage-reviewed local raw cache |
+| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | passage-reviewed local raw cache |
+| `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | passage-reviewed local raw cache |
+| `talos_md` | Talos_Protocol_v1.0.md | labor_execution_os | Markdown/public release version. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for labor-OS execution discipline. It does not claim a Talos or MoECOT labor runtime has been executed in this repo.
+The crosswalk identifies sources for labor-OS execution discipline. Four local raw-cache sources now have passage-reviewed mappings, while `talos_md` and `moecot` remain connector/source-note mapped. This does not claim a Talos, MoECOT, GenesisCode, or VIEA labor runtime has been executed in this repo.
 
 ## Summary
 
-Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status.
+Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The reviewed sources justify the typed-work boundary; they do not show a working scheduler, permission service, approval service, adapter runner, or replay system here.
 
 The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The next chapter follows the job's output into the artifact graph, where work becomes durable memory instead of a disappearing side effect.

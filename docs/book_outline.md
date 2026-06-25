@@ -1584,6 +1584,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A typed-job schema with lifecycle states and permission checks.
+- Exact Appendix C claim-source mappings for `labor-os-and-typed-jobs.core` across Talos, VIEA, GenesisCode, Software Magic Grimoire, Talos Markdown, and MoECOT; four local raw-cache mappings are passage-reviewed, while `talos_md` and `moecot` remain connector/source-note mapped.
 - Implemented protocol validation: `typed_job` fixture validates public record shape only.
 - Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
 - Planned Codex test: Tool permission enforcement test.
