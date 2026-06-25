@@ -14,7 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Source notes exist for all assigned sources, but claim-level source mapping remains incomplete."
+  - "Appendix C now records exact source-note mappings for the core claim; support remains at argument until multi-reviewer tribunal runs or review-quality tests exist."
   - "Only protocol schema/fixture validation is implemented; no multi-reviewer tribunal run has been executed for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -62,6 +62,18 @@ The point is targeted escalation. Most claims should not pay tribunal cost. High
 [unified-adaptive-tribunal-and-adversarial-review.core, label: Design rationale, support: argument] A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
 
 The claim remains at `argument` support. UAT supplies retrieval-bounded proposition review, adversarial siege, role separation, hard cycle caps, and human checkpoints. Spinoza supplies tier and downgrade consequences. Talos supplies execution/audit pressure for review artifacts. Verification Bandwidth explains why tribunal escalation is sometimes the right response to inadequate context. Coherence Exchange remains speculative connective tissue.
+
+### Claim-source mapping status
+
+Appendix C now maps this tribunal-layer claim to all assigned source notes. The mappings support role-separated review, bounded dossiers, adversarial probes, documented uncertainty, dissent preservation, and escalation consequences, not reviewer independence, verdict correctness, or a working tribunal pipeline.
+
+| Source | What it supports | Limit |
+|---|---|---|
+| `uat` | Orthogonal priors, retrieval dossiers, atomic proposition states, bounded adversarial siege, rotating logic/citation/omission critiques, hard cycle caps, compression checks, SME checkpoints, and final sign-off. | No local multi-reviewer run, independent validation, or threshold reproduction exists in this repo. |
+| `spinoza` | Tiered claim support, verifier separation, contradiction handling, and downgrade/block behavior for claims that fail required justification. | Does not prove reviewer independence, adversarial-probe quality, or verdict correctness. |
+| `coherence_exchange` | Governance-visible review paths through verification supply chains, contestability, fork, exit, audit, and review-market framing. | Speculative governance and exchange language is not tested institutional design or implementation evidence. |
+| `talos` | Review artifacts as typed work products with adjudication, evidence records, audit logs, replay, approval gates, residual feedback, and delivery discipline. | No Talos tribunal pipeline, security result, replay log, or benchmark has been reproduced here. |
+| `verification_bandwidth` | Tribunal escalation when verification requires more than a larger context window, especially for contradiction pressure, summary loss, and effective verification-workspace limits. | Conceptual/theoretical support only here; no contradiction-rate or adequacy benchmark has been executed. |
 
 ## Mechanism
 
