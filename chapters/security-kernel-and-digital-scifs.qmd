@@ -77,7 +77,7 @@ Appendix C now maps this core security-kernel claim to every assigned source not
 
 ## Mechanism
 
-The mechanism is a handle-mediated execution path.
+The security kernel keeps privileged material out of ordinary model context by splitting request, authorization, substitution, execution, sanitization, and audit. The model may reason about the purpose and constraints of a sensitive action, but the secret or privileged context is injected only inside the approved execution boundary. A Digital SCIF is the temporary compartment where that boundary is strongest.
 
 ```{mermaid}
 sequenceDiagram
@@ -88,11 +88,12 @@ sequenceDiagram
   participant C as Digital SCIF
   participant L as Audit ledger
   U->>K: authorize policy and scope
-  P->>K: request use of handle
+  P->>K: request handle use, destination, purpose
   K->>K: check clearance, destination, purpose
+  K-->>P: decision and handle status, not secret bytes
   K->>C: spawn isolated context
   S->>C: inject secret only inside boundary
-  C->>K: return sanitized result
+  C->>K: return sanitized result and residual leak risk
   K->>L: record handle use, policy, result, residuals
 ```
 
@@ -104,7 +105,7 @@ Handles are not magic. A handle must carry scope: permitted destination, action 
 
 ## Interfaces
 
-The interface is an Authority Use Receipt, not a prompt convention.
+The public interface is an Authority Use Receipt, not a prompt convention. It records the purpose, handle, clearance, destination, approved action, SCIF lifecycle, sanitized output, residual leak risk, and revocation path without placing the underlying secret in the transcript.
 
 - VCM supplies least-privilege context.
 - Execution checks tool permissions.

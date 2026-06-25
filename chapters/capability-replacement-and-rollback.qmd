@@ -80,24 +80,26 @@ Appendix C now maps this core replacement claim to every assigned source note. T
 
 ## Mechanism
 
-The mechanism is a Replacement Transaction.
+A replacement transaction is the moment an SCF stops being an abstract boundary and becomes an accountable change. It turns a proposed improvement into a sequence of prechecks, gates, canaries, residual decisions, and rollback obligations. The transaction is allowed to fail; what it cannot do is fail invisibly.
 
 ```{mermaid}
 flowchart LR
   A["Prior implementation"] --> B["Replacement proposal"]
-  B --> C["Precheck: field identity + authority"]
-  C --> D["Qualification gates"]
-  D --> E["Regression suite"]
-  E --> F{"Pass with rollback ready?"}
-  F -- "yes" --> G["Canary / commit"]
-  F -- "no" --> H["Reject / quarantine / residual"]
-  G --> I["Monitor window"]
-  I --> J{"Incident or regression?"}
-  J -- "yes" --> K["Rollback"]
-  J -- "no" --> L["Promote / retire prior"]
+  B --> C["Wall diagnosis + evidence packet"]
+  C --> D["Precheck: field identity + authority"]
+  D --> E["Qualification gates"]
+  E --> F["Regression floor + holdouts"]
+  F --> R["Residual escrow"]
+  R --> G{"Pass with rollback ready?"}
+  G -- "yes" --> I["Canary / commit"]
+  G -- "no" --> H["Reject / quarantine / residual"]
+  I --> J["Monitor window"]
+  J --> K{"Incident or regression?"}
+  K -- "yes" --> L["Rollback"]
+  K -- "no" --> N["Promote / retain prior as recovery"]
   H --> M["Evidence + changelog"]
-  K --> M
   L --> M
+  N --> M
 ```
 
 - Define replacement proposals as artifacts.
@@ -110,7 +112,7 @@ Benchmarks are used as evidence surfaces, not permission slips. If a benchmark s
 
 ## Interfaces
 
-The interface is a Replacement Transaction.
+The replacement transaction connects four ledgers. The SCF ledger says what identity must be preserved. The benchmark ledger says what frontier and regression evidence was used. The artifact graph says which candidate, state migration, and rollback materials exist. The changelog says what became default, what stayed canary, and what was rejected.
 
 - SCF defines the field.
 - Benchmarks test behavior.

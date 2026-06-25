@@ -78,21 +78,22 @@ Appendix C now maps this core SCF claim to every assigned source note. The mappi
 
 ## Mechanism
 
-The mechanism is a Stable Capability Field record.
+An SCF is not just a registry row. It is the contract that lets a system ask three questions separately: what capability is being requested, which implementation may currently satisfy it, and under what evidence and authority may that implementation be routed to. That separation prevents a stronger candidate from quietly inheriting a weaker candidate's trust envelope.
 
 ```{mermaid}
 flowchart LR
-  A["Stable field identity"] --> B["Interface contract"]
-  B --> C["Authority ceiling"]
-  C --> D["Candidate implementation"]
-  D --> E{"Qualification context"}
-  E --> F{"Evaluator integrity"}
-  F --> G{"Route validity"}
-  G -- "pass" --> H["Lifecycle: canary / qualified / default"]
-  G -- "fail" --> I["Reject / quarantine / residual"]
-  H --> J["Evidence + regression ledger"]
-  I --> J
-  J --> K["Rollback and recovery path"]
+  A["Field contract: identity + interface"] --> B["Candidate implementation artifact"]
+  A --> C["Authority ceiling + evaluator policy"]
+  B --> D["Scoped qualification context"]
+  C --> E["Narrow route validator"]
+  D --> E
+  P["Route proposer (untrusted)"] --> E
+  E --> F{"Same field, valid route?"}
+  F -- "yes" --> G["Lifecycle: shadow / canary / qualified / default"]
+  F -- "no" --> H["Reject / quarantine / residual"]
+  G --> I["Evidence + regression ledger"]
+  H --> I
+  I --> J["Rollback and recovery path"]
 ```
 
 - Separate field identity from implementation.
@@ -106,7 +107,7 @@ The route proposer may be broad and heuristic; the route validator must be narro
 
 ## Interfaces
 
-The interface is the Stable Capability Field record.
+The field record has different faces for different layers. Planning sees a semantic capability boundary. Execution sees an authorized route. Evidence sees qualification claims and regressions. Governance sees authority ceilings, evaluator policy, lifecycle state, incidents, and recovery paths.
 
 - Planning requests field capabilities.
 - Execution invokes authorized routes.

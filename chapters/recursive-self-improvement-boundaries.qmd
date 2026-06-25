@@ -87,24 +87,26 @@ Appendix C now maps this core recursive-self-improvement claim to every assigned
 
 ## Mechanism
 
-The mechanism is a Self-Improvement Transition.
+A self-improvement transition composes the prior three controls. The target must be an SCF, the change must be a replacement transaction, and any privileged action must pass through the security kernel. Theseus adds a practical ordering rule: try cheaper interventions and collect evidence before editing teachers, architecture, or parameters. The transition records where that ladder stopped and why a stronger intervention is justified.
 
 ```{mermaid}
 flowchart LR
-  A["Observed wall / residual"] --> B["Improvement proposal"]
-  B --> C["Protected invariant check"]
-  C --> D["Evaluator independence check"]
-  D --> E["Replacement transaction"]
-  E --> F{"Gates pass?"}
-  F -- "no" --> G["Reject / quarantine / residual"]
-  F -- "yes" --> H["Governance approval"]
-  H --> I["Canary / monitor"]
-  I --> J{"Regression or invariant breach?"}
-  J -- "yes" --> K["Rollback / retire"]
-  J -- "no" --> L["Promote"]
-  G --> M["Outcome ledger"]
-  K --> M
-  L --> M
+  A["Observed wall / residual"] --> B["Cheaper intervention ladder"]
+  B --> C["Improvement proposal + evidence packet"]
+  C --> D["SCF target and authority ceiling"]
+  D --> E["Protected invariant check"]
+  E --> F["Evaluator independence check"]
+  F --> G["Replacement transaction"]
+  G --> H{"Gates pass?"}
+  H -- "no" --> I["Reject / quarantine / residual"]
+  H -- "yes" --> J["Governance approval"]
+  J --> K["Canary / monitor"]
+  K --> L{"Regression or invariant breach?"}
+  L -- "yes" --> M["Rollback / retire"]
+  L -- "no" --> N["Promote within field scope"]
+  I --> O["Outcome ledger"]
+  M --> O
+  N --> O
 ```
 
 - Define improvement proposals, protected invariants, and evidence gates.
@@ -117,7 +119,7 @@ Autonomy should be phased. The early stack can propose changes, produce evidence
 
 ## Interfaces
 
-The interface is a Self-Improvement Transition.
+The interface is a Self-Improvement Transition that points outward rather than absorbing the other ledgers. It links to the residual that triggered the proposal, the SCF being changed, the replacement transaction, the protected-invariant review, evaluator-independence evidence, governance approval, monitor window, rollback path, and outcome ledger.
 
 - SCFs define replaceable units.
 - Evidence ratchets provide gates.

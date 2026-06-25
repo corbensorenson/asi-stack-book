@@ -652,14 +652,15 @@ Draft arc:
 
 - Problem: The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
 - Insufficiency: Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
-- Mechanism: Separate field identity from implementation.
-- Mechanism: Bind qualification claims to exact artifacts.
+- Mechanism: Treat an SCF as the contract that separates requested capability, candidate implementation, and routable authority.
+- Mechanism: Separate field identity from implementation artifacts, evaluator policy, and lifecycle state.
+- Mechanism: Bind qualification claims to exact artifacts and scoped qualification contexts.
 - Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
 - Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
-- Mechanism: Require route validity and evaluator integrity before promotion.
-- Interface: Planning requests field capabilities.
-- Interface: Execution invokes authorized routes.
-- Interface: Evidence records qualification and regression results.
+- Mechanism: Pair broad route proposers with narrow validators that check field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings.
+- Interface: Planning sees semantic capability boundaries.
+- Interface: Execution sees authorized routes.
+- Interface: Evidence and governance see qualification claims, regressions, incidents, lifecycle state, evaluator policy, and recovery paths.
 
 Primary invariants:
 
@@ -709,12 +710,12 @@ Draft arc:
 
 - Problem: Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
 - Insufficiency: Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
-- Mechanism: Define replacement proposals as artifacts.
-- Mechanism: Run qualification, regression, and authority checks.
-- Mechanism: Commit only after evidence gates pass and rollback remains available.
-- Interface: SCF defines the field.
-- Interface: Benchmarks test behavior.
-- Interface: Evidence and changelog record the transition.
+- Mechanism: Turn each proposed improvement into a replacement transaction with wall diagnosis, evidence packet, prechecks, gates, canary, residual escrow, monitor window, and rollback obligation.
+- Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
+- Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
+- Interface: SCF ledger defines the field identity to preserve.
+- Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
+- Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
 
 Primary invariants:
 
@@ -761,12 +762,13 @@ Draft arc:
 
 - Problem: High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
 - Insufficiency: Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
-- Mechanism: Use handles rather than exposing secrets.
-- Mechanism: Separate model-visible context from privileged substitution.
-- Mechanism: Run high-risk tasks inside compartmentalized context containers.
-- Interface: VCM supplies least-privilege context.
-- Interface: Execution checks tool permissions.
-- Interface: Governance audits sensitive transitions.
+- Mechanism: Split sensitive action into request, authorization, substitution, execution, sanitization, and audit.
+- Mechanism: Use handles rather than exposing secrets; return handle status and decisions without secret bytes.
+- Mechanism: Separate model-visible context from privileged substitution inside approved boundaries.
+- Mechanism: Run high-risk tasks inside compartmentalized Digital SCIF context containers with lifecycle and residual leak-risk records.
+- Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
+- Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
+- Interface: Governance audits sensitive transitions through Authority Use Receipts.
 
 Primary invariants:
 
@@ -814,12 +816,13 @@ Draft arc:
 
 - Problem: The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
 - Insufficiency: Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
-- Mechanism: Define improvement proposals, protected invariants, and evidence gates.
-- Mechanism: Separate proposing, evaluating, approving, committing, and monitoring.
-- Mechanism: Delay autonomous replacement until evaluators and governance are credible.
-- Interface: SCFs define replaceable units.
-- Interface: Evidence ratchets provide gates.
-- Interface: Alignment supplies protected constraints.
+- Mechanism: Compose SCF targets, replacement transactions, security-kernel boundaries, protected-invariant reviews, and evidence gates into a Self-Improvement Transition.
+- Mechanism: Require a cheaper-intervention ladder and evidence packet before teacher edits, architecture edits, or parameter growth.
+- Mechanism: Separate proposing, evaluating, approving, committing, monitoring, rollback, and retirement.
+- Mechanism: Delay autonomous replacement until evaluators, readiness gates, governance logs, and rollback paths are credible.
+- Interface: SCFs define replaceable units and authority ceilings.
+- Interface: Evidence ratchets, readiness gates, and replacement transactions provide gates.
+- Interface: Alignment and governance supply protected constraints, approval boundaries, and non-self-ratification rules.
 
 Primary invariants:
 
