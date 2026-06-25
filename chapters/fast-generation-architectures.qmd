@@ -122,6 +122,8 @@ Appendix C now maps this fast-generation claim to assigned internal source notes
 
 Fast generation is the time-domain version of compact generation. The system is trying to produce useful verified output with less wall-clock, compute, or memory burden, but the same residual rule applies: proposed output is not accepted output, and accepted output is not useful work until task success, repair cost, fallback, and verification load are visible. CGS gives the generator/verifier frame, PlanForge supplies task-aware mode selection, Verification Bandwidth keeps the verifier bottleneck visible, TokenMana and PagedAttention-style serving work keep memory and load separate from quality, and Benchmaxxing supplies the promotion discipline.
 
+The generation-mode record is therefore a compression receipt for time. It records what the fast path proposed, what the verifier accepted, what work was rejected or repaired, what fallback ran, and whether the useful solution per second improved after the whole route was counted.
+
 The operational boundary is mode selection around a draft-verify-accept loop.
 
 ```{mermaid}
@@ -144,8 +146,10 @@ flowchart LR
   L --> M["Accepted verified output"]
   L --> N["Fallback, repair, or slower mode"]
   M --> O["Talos artifact"]
-  O --> P["Benchmaxxing speed-quality record"]
-  P --> Q["SCF promotion gate"]
+  N --> P["Rejected work + verifier cost"]
+  O --> P
+  P --> R["Benchmaxxing speed-quality record"]
+  R --> Q["SCF promotion gate"]
 ```
 
 - Separate raw generation speed from effective verified tokens per second and useful solution per second.
@@ -303,3 +307,5 @@ The external literature queue is now partially mined for the chapter's selected 
 Fast Generation Architectures defines the ASI Stack's generation substrate. Its thesis is not "make tokens faster." Its thesis is that generation speed becomes useful only when the stack can select a mode, verify accepted output, count repair and fallback cost, and promote the mode through evidence rather than excitement.
 
 That makes the chapter a bridge between compression, routing, execution, evidence, and the external inference-acceleration literature. PlanForge selects the route, VCM supplies context, the generator drafts, Spinoza verifies, Talos artifactizes, Benchmaxxing measures, and SCF decides whether the capability is ready. Speculative decoding, MTP, Medusa/EAGLE-style drafting, lookahead, early exit, state-space substrates, KV-cache serving, and diffusion LLMs now have source-note anchors. Multi-seed diffusion and hybrid AR/MTP/diffusion systems remain research directions until the work earns stronger support. The next chapter narrows from generation modes to compressed artifacts: how a cheaper representation is routed only when probes and fallback make it safe enough for the task.
+
+The bridge is intentionally conservative: speed becomes an architecture win only when the accepted-output ledger survives contact with verification bandwidth, memory pressure, fallback cost, and downstream task success.
