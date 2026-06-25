@@ -22,14 +22,13 @@ The packet was treated as author-intent and planning context only. The public ch
 
 ## Evidence boundary
 
-- Record-shape schemas and fixtures were later added for `DeviceResourceCard`, `HiveJobContract`, and `HiveSchedulingDecision`, and narrow finite Lean predicates were implemented for policy-before-optimization admission and faster-forbidden-node rejection.
+- Record-shape schemas and fixtures were later added for `DeviceResourceCard`, `PortalCard`, `HiveJobContract`, `HiveJobBid`, `HiveSchedulingDecision`, `HiveApprovalReceipt`, and `HiveFederationLease`; narrow finite Lean predicates were implemented for policy-before-optimization admission, faster-forbidden-node rejection, approval gating, and federation-lease boundaries.
 - No personal hive implementation, scheduler, network overlay, rented-node sandbox, family-governance policy engine, live device registry, or behavioral scheduling test was run.
-- No external tooling or literature mentioned in the browser packet was added as cited evidence.
-- All external systems named in the packet remain research leads until source records and source notes are created.
+- External source records and conservative source notes now exist for selected adjacent systems: Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, Akash, Golem, and GitHub self-hosted runners.
+- Those external notes ground nearby tooling patterns only; they do not prove that the proposed personal hive exists, is safe, or has been tested.
 - The chapter remains `Design rationale` with `argument` support.
 
 ## Follow-up queue
 
-- Add public source records and source notes for selected edge-compute, mesh-network, orchestration, distributed-compute, file-sync, and rented-compute systems if the book later needs external comparison.
-- Extend the schema family to approval receipts and federation leases before attempting a larger hive scheduler prototype.
+- Add public source records and source notes for remaining substrate topics: content-addressed storage, secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation.
 - Add behavioral scheduler and rented-node denial tests before claiming any policy-first scheduling behavior beyond finite record predicates.

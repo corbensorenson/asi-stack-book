@@ -22,14 +22,14 @@ The packet was treated as author-intent and planning context only. The public ch
 
 ## Evidence boundary
 
-- Record-shape schemas and fixtures were later added for `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`, and narrow finite Lean predicates were implemented for dispatch-boundary and protected-action approval checks.
+- Record-shape schemas and fixtures were later added for `ArtifactStewardCharter`, `ProjectWorkContract`, `ContributionLedgerEntry`, `StewardActionDecision`, and `SunsetReviewRecord`; narrow finite Lean predicates were implemented for dispatch boundaries, protected-action approval checks, release evidence gates, and sunset-work blocking.
 - No steward bot, treasury executor, governance system, contributor ledger service, project-work dispatcher, or sunset protocol was implemented or behaviorally tested.
-- No external tooling or literature mentioned in the browser packet was added as cited evidence.
-- All external systems named in the packet remain research leads until source records and source notes are created.
+- External source records and conservative source notes now exist for selected adjacent systems and risks: GitHub webhooks, GitHub self-hosted runners, OpenZeppelin Governor, Akash, Golem, agentic workflow injection, and DAO delegation concentration.
+- Those external notes ground nearby tooling and risk patterns only; they do not prove that the proposed steward layer is implemented, lawful, financially safe, or capture-resistant.
 - The chapter remains `Design rationale` with `argument` support.
 
 ## Follow-up queue
 
-- Add public source records and source notes for selected repository automation, fiscal-hosting, governance, public-goods funding, workflow-injection, and compute-market references if the book later needs external comparison.
-- Extend the schema family to approval receipts, treasury policies, and event-taint records before attempting a larger steward prototype.
+- Add public source records and source notes for remaining governance and funding topics: fiscal hosting, grants, sponsorships, bounty platforms, package-maintainer sustainability, software supply-chain security, and legal/tax treatment of stewarded treasuries.
+- Extend the schema family to treasury policies and event-taint records before attempting a larger steward prototype.
 - Add behavioral steward, treasury, event-taint, contribution-ledger, and sunset-protocol tests before claiming steward-agent behavior beyond finite record predicates.
