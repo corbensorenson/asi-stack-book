@@ -1352,6 +1352,7 @@ This record separates a durable semantic capability boundary from replaceable im
 ```yaml
 replacement_transaction:
   transaction_id: string
+  transaction_state: canary
   field_id: string
   prior_implementation: string
   candidate_implementation: string
@@ -1372,12 +1373,17 @@ replacement_transaction:
     trigger_conditions: []
     owner: string
   approval_record: string
+  canary_scope: string
   monitor_window: string
+  monitor_status: not_started
   decision: canary
+  promotion_blockers: []
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record turns capability replacement into an evidence-gated transaction with identity preservation, prior state, candidate state, regressions, evaluator independence, residuals, rollback receipt, approval, monitoring, decision, and non-claims attached.
+This record turns capability replacement into an evidence-gated transaction with transaction state, identity preservation, prior state, candidate state, regressions, evaluator independence, residuals, rollback receipt, approval, canary scope, monitoring status, promotion blockers, source refs, support-state effect, decision, and non-claims attached.
 
 ## Self-Improvement Transition
 

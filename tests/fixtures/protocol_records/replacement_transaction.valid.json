@@ -1,5 +1,6 @@
 {
   "transaction_id": "replacement-demo-001",
+  "transaction_state": "canary",
   "field_id": "field://demo-context-adequacy",
   "prior_implementation": "impl://context-adequacy-v0",
   "candidate_implementation": "impl://context-adequacy-v1",
@@ -21,7 +22,16 @@
     "owner": "human-review-required-before-default"
   },
   "approval_record": "human-review-required-before-default",
+  "canary_scope": "Fixture-only canary discussion; no live route, workload, or default promotion is exercised.",
   "monitor_window": "not_started",
+  "monitor_status": "not_started",
   "decision": "canary",
+  "promotion_blockers": [
+    "rollback dry run not executed",
+    "monitor window not started",
+    "no workload replay or regression harness result"
+  ],
+  "source_refs": ["sources/source_notes/scf.md", "sources/source_notes/rmi.md", "sources/source_notes/benchmaxxing.md"],
+  "support_state_effect": "record_shape_only",
   "non_claims": ["does not execute a replacement", "does not prove rollback", "does not prove monitor-window behavior"]
 }

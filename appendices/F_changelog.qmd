@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal replacement transaction state gates
+
+- Strengthened the capability replacement boundary: replacement transaction records now validate transaction state, canary scope, monitor status, promotion blockers, source refs, support-state effect, and non-claims in addition to identity preservation, evaluator independence, residual escrow, rollback plan, rollback receipt, approval, and decision. Updated the replacement chapter, outline, protocol appendix, schema, and fixture so future self-improvement work can distinguish proposed/shadow/canary/default/rollback states from regression preservation, rollback dry-run evidence, monitor-window success, deployed replacement, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal semantic ir lowering gates
 
 - Strengthened the cognitive-compilation boundary: semantic atom records now validate atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims in addition to source-plan refs, dependencies, validators, target artifact refs, lowering receipts, and repair scope. Updated the Cognitive Compilation chapter, outline, protocol appendix, schema, and fixture so future compiler traces can distinguish parsed/typed/lowered/validated/repaired/blocked states from source-plan parsing, compiler correctness, target lowering, localized-repair behavior, artifact validator coverage, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.

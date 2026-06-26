@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Five local raw-cache claim-source mappings now carry reviewed passage references, but moecot remains connector/recovery-only and support remains at argument until tests, runtime artifacts, or accepted evidence transitions justify promotion."
-  - "The replacement_transaction fixture validates schema/example consistency for identity preservation, evaluator independence, rollback receipt, and non-claims only; regression preservation and rollback dry-run tests remain unimplemented."
+  - "The replacement_transaction fixture validates schema/example consistency for transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims only; regression preservation and rollback dry-run tests remain unimplemented."
   - "The implemented Replacement Lean predicates cover finite commit records only; they do not prove deployed replacement execution, monitor-window behavior, or rollback execution."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
 | Source mapping review | Five local raw-cache mappings are passage-reviewed; `moecot` remains connector-only/source-note mapped. |
-| Test state | `replacement_transaction.valid.json` passes protocol fixture validation with identity preservation, evaluator independence, rollback receipt, and non-claims; `AsiStackProofs.Replacement` builds locally; regression preservation and rollback dry-run tests remain planned. |
+| Test state | `replacement_transaction.valid.json` passes protocol fixture validation with transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims; `AsiStackProofs.Replacement` builds locally; regression preservation and rollback dry-run tests remain planned. |
 
 ## Drafting guardrail
 
@@ -113,7 +113,7 @@ flowchart LR
 
 The replacement proposal is itself an artifact. It cannot become a commit merely because the candidate looks better. The transaction runs qualification, regression, authority, residual, and rollback checks before default promotion, and it records failed gates as residuals rather than letting them disappear behind a successful upgrade story.
 
-The transaction names the field, prior implementation, candidate, identity-preservation claim, gates, evidence refs, regression suite, evaluator-independence boundary, residual escrow, rollback command or plan, rollback receipt, approval record, monitor window, final decision, and explicit non-claims. Failed gates become residuals rather than disappearing.
+The transaction names the transaction state, field, prior implementation, candidate, identity-preservation claim, gates, evidence refs, regression suite, evaluator-independence boundary, residual escrow, rollback command or plan, rollback receipt, approval record, canary scope, monitor window, monitor status, final decision, promotion blockers, source refs, support-state effect, and explicit non-claims. Failed gates become residuals rather than disappearing.
 
 A good transaction preserves both sides of the change. It records why the candidate exists and why the prior implementation mattered. It keeps the regression suite attached so a future reviewer can see whether the floor was preserved. It keeps canary and monitor evidence separate from default promotion. It keeps rollback as an obligation, not a vague assurance. That is what turns recursive improvement from a mutation story into a governed state transition.
 
@@ -134,6 +134,7 @@ The replacement transaction connects four ledgers. The SCF ledger says what iden
 Minimum fields:
 
 - `transaction_id`
+- `transaction_state`
 - `field_id`
 - `prior_implementation`
 - `candidate_implementation`
@@ -147,15 +148,20 @@ Minimum fields:
 - `rollback_plan`
 - `rollback_receipt`
 - `approval_record`
+- `canary_scope`
 - `monitor_window`
+- `monitor_status`
 - `decision`
+- `promotion_blockers`
+- `source_refs`
+- `support_state_effect`
 - `non_claims`
 
 SCF defines the field. Benchmark ratchets and regression suites test behavior. Evidence and changelog records preserve the transition. Governance approves authority changes and high-impact commits.
 
 The interface also protects later chapters. Security checks whether the replacement crosses a secret or permission boundary. Runtime adapters check whether the replacement changes effect authority. Policy optimization checks whether learning pressure is trying to ratify its own evaluator. The transaction gives each layer a concrete artifact to inspect rather than asking them to trust the word "upgrade."
 
-The interface should expose decision states: proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired. These states keep a candidate from becoming default simply because it survived one test. The transaction should also name what the candidate is not allowed to conclude from the fixture: no runtime replacement, no rollback execution, no monitor-window success, and no support-state promotion unless separate evidence exists.
+The interface should expose transaction and decision states: proposed, precheck, shadow, canary, default-candidate, committed, rolled-back, quarantined, superseded, retired, and blocked. These states keep a candidate from becoming default simply because it survived one test. The transaction should also name canary scope, monitor status, promotion blockers, and what the candidate is not allowed to conclude from the fixture: no runtime replacement, no rollback execution, no monitor-window success, and no support-state promotion unless separate evidence exists.
 
 ## Invariants
 
@@ -180,7 +186,7 @@ The subtle failure is rollback theater. The transaction contains a rollback fiel
 
 ## Minimal implementation
 
-The smallest useful implementation is a `replacement_transaction` schema and valid fixture. It validates identity preservation, required evidence, evaluator independence, residual escrow, rollback plan, rollback receipt, monitor window, decision, and non-claims, not a claim that a real replacement succeeded.
+The smallest useful implementation is a `replacement_transaction` schema and valid fixture. It validates transaction state, identity preservation, required evidence, evaluator independence, residual escrow, rollback plan, rollback receipt, canary scope, monitor window/status, promotion blockers, source refs, support-state effect, decision, and non-claims, not a claim that a real replacement succeeded.
 
 The next useful fixture set is a replacement trace: proposal, shadow run, canary with regression floor, failed rollback dry run that blocks default promotion, and a successful rollback receipt for a separate reversible candidate.
 
@@ -188,7 +194,7 @@ The next useful fixture set is a replacement trace: proposal, shadow run, canary
 
 | Test | Purpose | Status |
 |---|---|---|
-| Replacement transaction fixture validation | Check that the replacement fixture matches the public schema, including identity preservation, evaluator independence, rollback receipt, and non-claims. | implemented by protocol validation; run in this pass |
+| Replacement transaction fixture validation | Check that the replacement fixture matches the public schema, including transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Replacement commit finite-record proof | Check that a modeled replacement promotion requires qualification evidence and rollback metadata. | implemented in `AsiStackProofs.Replacement`; runtime replacement test not run |
 | Failed-regression finite-record proof | Check that a modeled replacement with a failed regression cannot be promoted. | implemented in `AsiStackProofs.Replacement`; regression-suite coverage test not run |
 | Regression preservation test | Check that known regressions remain attached to the candidate decision. | planned; not run |

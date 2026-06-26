@@ -807,7 +807,7 @@ Draft arc:
 - Mechanism: Turn each proposed improvement into a replacement transaction with wall diagnosis, evidence packet, prechecks, gates, canary, residual escrow, monitor window, and rollback obligation.
 - Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
 - Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
-- Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence, and rollback obligation as separate transaction states.
+- Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence/status, promotion blockers, and rollback obligation as separate transaction states.
 - Mechanism: emit rollback receipts that record prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner.
 - Mechanism: require identity-preservation and evaluator-independence fields so the candidate cannot validate its own promotion or silently redefine the field it claims to improve.
 - Mechanism: expose replacement decision states such as proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired.
@@ -835,7 +835,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A replacement transaction schema with identity-preservation, precheck, gate, commit, monitor, evaluator-independence, rollback receipt, residual, and non-claim fields.
+- A replacement transaction schema with transaction state, identity-preservation, precheck, gate, commit, canary scope, monitor status, evaluator-independence, rollback receipt, promotion blockers, source refs, support-state effect, residual, and non-claim fields.
 - Planned Codex test: Replacement transaction test.
 - Planned Codex test: Regression preservation test.
 - Planned Codex test: Rollback execution dry run.
