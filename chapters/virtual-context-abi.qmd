@@ -43,6 +43,8 @@ This chapter treats VCM as a control-plane interface, not as a completed memory 
 
 It follows cognitive compilation because semantic atoms need source context, but they should receive a governed materialization rather than an accidental slice of transcript or retrieval output.
 
+The ABI is the context layer's syscall surface. A planner should ask for context through stable addresses, mounts, representation needs, authority labels, and adequacy targets, not by smuggling retrieval instructions into prose.
+
 ## Problem
 
 Long-horizon agents need a stable interface between durable memory and model-visible working context.
@@ -51,6 +53,8 @@ The planning chapters define what work needs context. VCM defines how that conte
 
 VCM is therefore an ABI: a stable contract between planners, memory stores, context compilers, verifiers, execution adapters, and auditors. It must expose addresses, versions, mounts, snapshots, representation contracts, adequacy states, authority labels, and typed faults.
 
+The ABI also needs lease semantics. A materialization is valid for a task, snapshot, authority state, representation contract, and time window. It should not become ambient memory for later plans merely because it is already in the transcript.
+
 ## Why existing approaches are insufficient
 
 Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
@@ -58,6 +62,8 @@ Long context windows and ordinary retrieval do not define addressability, eviden
 Long context is capacity, not governance. A retrieved passage may be stale, revoked, unauthenticated, infeasible to use, unsafe for the current worker, or inadequate for the claim being checked. A bigger window can also hide conflicts by making the model generate across text it cannot jointly verify.
 
 Ordinary retrieval usually answers "what looks relevant?" VCM must also answer "which version, under which mount, for which task, under which authority, with which representation losses, and what happens if the context is missing, conflicting, unsafe, unknown, or unsatisfiable?"
+
+Best-effort retrieval can be actively harmful when the task requires mandatory context. If the required context is missing, stale, unsafe, or unresolved, the correct output is a typed miss or escalation, not a plausible substitute.
 
 ## Core Claim
 
@@ -107,6 +113,8 @@ Admission and adequacy are separate. A packet can be admitted for drafting but i
 
 Typed non-success states are part of the design: unknown, deferred, infeasible, unsafe, ask, abstain, deny, retry, and residual. A VCM layer that always returns "best effort context" is not a governed context layer.
 
+The ABI should separate request validity, resolution validity, materialization validity, and adequacy validity. A request can be well formed but unresolved. A reference can resolve but be unauthorized. A materialization can be authorized but inadequate for verification. Each state should be visible before the model uses the packet.
+
 ## Interfaces
 
 The interface is the Context ABI Record.
@@ -133,6 +141,8 @@ Minimum fields:
 
 Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
 
+The interface should produce context receipts. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
+
 ## Invariants
 
 - Addresses and versions are stable.
@@ -140,6 +150,8 @@ Planning requests context by task and semantic address. VCM resolves versions an
 - Faults are typed and visible.
 
 Address stability is what makes later verification possible: a claim should not depend on "whatever retrieval returned at the time." Snapshot validity is what makes context replay possible. Typed faults are what prevent missing context from being laundered into confident output.
+
+Another invariant is non-widening materialization. A context packet cannot broaden authority, source scope, task scope, or permitted use relative to its request and mount policy. If downstream work needs more, it asks again.
 
 ## Failure modes
 
@@ -149,6 +161,8 @@ Address stability is what makes later verification possible: a claim should not 
 
 Flat transcript memory loses addresses, versions, and authority labels. Stale context makes a correct old answer look current. Silent unsafe fit is worse than denial because it feeds a worker context it should not see or use. Each should produce a typed fault or residual before the packet is used.
 
+The subtle failure is context lease drift. A packet created for drafting or review is later reused for execution, citation, or self-improvement after its snapshot, authority, or adequacy assumptions no longer hold. The ABI should force a fresh request or residual.
+
 ## Minimal implementation
 
 A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
@@ -156,6 +170,8 @@ A context ABI table covering address, version, mount, snapshot, representation, 
 The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
 
 The record is an executable shape constraint. The Lean predicates cannot prove that a real semantic address resolver is correct, that a materialization is adequate, or that a deployed context service emits every required fault.
+
+The next useful implementation step is a resolver fixture set: one valid request that resolves to a leased materialization, one mandatory miss that emits a typed fault, one resolved packet rejected for inadequate verification support, one packet denied by mount policy, and one lease-expired reuse attempt blocked. That would test ABI semantics without claiming a deployed VCM service.
 
 ## Codex test plan
 
@@ -197,3 +213,5 @@ The crosswalk identifies sources for the VCM ABI and context-supply-chain vocabu
 Virtual Context ABI is the stack's memory/context contract. It keeps durable memory separate from working context while making addresses, versions, mounts, snapshots, representation contracts, authority, adequacy, faults, materializations, and audits explicit.
 
 The chapter's rule is simple: context that cannot be addressed, versioned, authorized, represented, and faulted should not be silently treated as usable memory. The next chapter moves inside the materialized packet and asks what each page, cell, and summary must carry so compressed context does not impersonate evidence.
+
+The practical standard is that context access should be replayable. If a future auditor cannot reconstruct why the model saw a packet, what it was allowed to mean, and when its authority expired, the ABI did not do its job.

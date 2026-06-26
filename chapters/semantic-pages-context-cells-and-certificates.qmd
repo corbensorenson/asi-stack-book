@@ -42,6 +42,8 @@ This chapter treats summaries and context cells as evidence-bounded representati
 
 It follows the ABI chapter by moving inside the materialized packet. Once context can be addressed and faulted, the next question is what each compact unit is allowed to mean.
 
+The certificate is the border control for meaning. It prevents a compact cell from changing role as it moves from planning to evidence, execution, review, or memory.
+
 ## Problem
 
 Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
@@ -50,6 +52,8 @@ The ABI says how context is requested and materialized. This chapter says what t
 
 Each derived representation needs a certificate: where it came from, what it omits, what authority labels survived, what it can be used for, and what kind of verification it can support. Without that certificate, a summary becomes a trust-me blob.
 
+The same source may need multiple honest representations. A quote-preserving evidence cell, a terse planning brief, a redacted execution instruction, and a contradiction-checking pair can all derive from the same source, but they do not carry the same authority or verification value.
+
 ## Why existing approaches are insufficient
 
 Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
@@ -57,6 +61,8 @@ Summaries can look authoritative while dropping source bindings, omissions, auth
 Summarization is not neutral. It can compress away dissent, uncertainty, chronology, exact wording, revocation state, or the fact that a source was only usable under a narrow authority label. Verification Bandwidth adds the reason this matters: a compact summary can make generation easier while making joint verification harder because the lost constraints are no longer available.
 
 The fix is not to ban summaries. It is to make representation loss visible. A summary can be useful for planning, unsafe for citation, inadequate for proof, and forbidden for execution all at the same time.
+
+A second insufficiency is role drift. A cell created as a planning summary can later be treated as evidence because it sounds precise. A cell created for evidence can later be sent to a worker who lacks clearance. Certificates should keep allowed use attached to the representation, not to the surrounding prose.
 
 ## Core Claim
 
@@ -103,6 +109,8 @@ For example, the same source can produce a terse planning brief, a quotation-pre
 
 Spinoza consumes claim/evidence cells; planning consumes constraints and decisions; execution receives only permitted representations. The same cell should not silently change role when moved between layers.
 
+Certificate updates should be explicit. If a source is revoked, a summary is corrected, an omission becomes material, or a representation is promoted from planning-only to evidence-capable, the certificate changes and the old one remains auditable.
+
 ## Interfaces
 
 The interface is the Semantic Page Certificate.
@@ -128,6 +136,8 @@ Minimum fields:
 
 The certificate is what lets a compact cell remain honest. It says what the cell is, which sources bind it, what was lost, which authority ceiling survived, which uses are permitted, whether verification is adequate, and what residual risks remain.
 
+The interface should distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference. Each representation kind has different failure modes and different permitted uses. Calling them all "context" erases the reason for the certificate.
+
 ## Invariants
 
 - Authority labels survive summarization.
@@ -135,6 +145,8 @@ The certificate is what lets a compact cell remain honest. It says what the cell
 - A derived cell points back to source bindings.
 
 Authority cannot increase through summarization. A derived cell cannot become more citable, more executable, more secret-cleared, or more verified than the source material and certificate permit. If the certificate is missing, the cell is not eligible for support-state promotion.
+
+Another invariant is use preservation under transfer. Moving a cell into a plan, claim ledger, job, report, or reader edition cannot broaden its permitted use. If the target use is outside the certificate, the system needs a stronger representation or a new review.
 
 ## Failure modes
 
@@ -144,6 +156,8 @@ Authority cannot increase through summarization. A derived cell cannot become mo
 
 Summary overconfidence happens when fluent compression hides the actual loss contract. Provenance loss breaks source-to-claim mapping. Authority escalation via compression happens when a summary strips labels and then looks safe to use elsewhere. Each failure should block the representation from being used as evidence.
 
+The subtle failure is certificate laundering. A certificate exists, so downstream layers stop asking whether its fields are truthful, current, and adequate for the new use. The certificate should make those questions easier, not exempt the cell from them.
+
 ## Minimal implementation
 
 A semantic-page schema with certificate fields and example source-to-summary derivation.
@@ -151,6 +165,8 @@ A semantic-page schema with certificate fields and example source-to-summary der
 The smallest useful implementation is a `semantic_page_certificate` schema and fixture. It should validate source bindings, derivation, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks. The accompanying Lean module is intentionally narrower than a summary evaluator: it models finite certificate records, source cells, and summary cells; a valid derived cell must declare source bindings, a loss contract, and permitted uses; and a summary that respects its source cells cannot raise its authority ceiling above any source.
 
 That validation proves only that the certificate names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
+
+The next useful implementation step is a paired-cell fixture set: one source excerpt, one planning summary with loss recorded, one evidence cell preserving exact wording, one redacted execution cell with a lower authority ceiling, one stale certificate invalidated by source revocation, and one attempted use outside the certificate blocked. That would test certificate semantics without claiming summary fidelity.
 
 ## Codex test plan
 
@@ -190,3 +206,5 @@ The crosswalk identifies sources for semantic context units and certificate disc
 Semantic Pages, Context Cells, and Certificates makes context units typed and evidence-carrying. The system can compress and adapt context, but it must keep provenance, loss, authority, permitted use, verification state, and residual risks attached.
 
 This chapter is the antidote to overconfident summaries. A representation can be small, useful, and still honest about what it is not allowed to prove. The next chapter gives those certified units runtime semantics: snapshots, mounts, branches, taint, deletion closure, and auditable memory faults.
+
+The practical standard is that a certified cell should become harder to misuse as it travels. If the certificate disappears into surrounding prose, the representation has become another unbounded summary.

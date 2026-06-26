@@ -1085,6 +1085,8 @@ Draft arc:
 - Mechanism: Decompose goals into DAGs.
 - Mechanism: Annotate nodes with capability tier, budget, context request, risk, and verification requirement.
 - Mechanism: Merge redundant branches and escalate only when predicates fail.
+- Mechanism: Give each node both a work contract and an adequacy contract so schedulability depends on authority, context, quality predicate, verification, and failure behavior.
+- Mechanism: Track scheduling states such as ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, and merged.
 - Interface: Routing consumes capability annotations.
 - Interface: VCM consumes context requests.
 - Interface: Evidence records cost/quality results.
@@ -1196,6 +1198,8 @@ Draft arc:
 - Mechanism: Compile task-relative context packets through an ABI.
 - Mechanism: Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
 - Mechanism: Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
+- Mechanism: Separate request validity, resolution validity, materialization validity, and adequacy validity so well-formed requests, resolved references, authorized packets, and verification-adequate packets remain distinct states.
+- Mechanism: Emit context receipts with request, resolution, materialization, authority labels, support boundary, lease expiration, fault state, and residuals for replayable audits.
 - Interface: Planning requests context.
 - Interface: VCM compiles packets.
 - Interface: Execution receives authority-appropriate context.
@@ -1253,6 +1257,8 @@ Draft arc:
 - Mechanism: Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.
 - Mechanism: Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.
 - Mechanism: Use task-relative representation graphs instead of one linear compression ladder.
+- Mechanism: Distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference so each representation kind preserves its use boundary.
+- Mechanism: Treat certificate updates, revocations, stale certificates, and attempted use outside the certificate as auditable state transitions rather than prose edits.
 - Interface: Spinoza consumes claim/evidence cells.
 - Interface: Planning consumes constraints and decisions.
 - Interface: Execution receives only permitted representations.
