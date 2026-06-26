@@ -5,6 +5,8 @@
   "type": "object",
   "required": [
     "field_id",
+    "field_version",
+    "owner",
     "semantic_boundary",
     "interface_contract",
     "authority_ceiling",
@@ -16,17 +18,24 @@
     "evaluator_policy",
     "evaluator_independence",
     "route_validity",
+    "route_permission_effect",
+    "consumer_policy",
     "evidence_refs",
+    "readiness_gate_refs",
     "incident_refs",
     "review_triggers",
     "state_migration",
     "regression_suite",
     "rollback_plan",
     "rollback_obligations",
+    "source_refs",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "field_id": { "type": "string", "minLength": 1 },
+    "field_version": { "type": "string", "minLength": 1 },
+    "owner": { "type": "string", "minLength": 1 },
     "semantic_boundary": { "type": "string", "minLength": 1 },
     "interface_contract": { "type": "string", "minLength": 1 },
     "authority_ceiling": { "type": "string", "minLength": 1 },
@@ -53,13 +62,30 @@
       "type": "string",
       "enum": ["unchecked", "valid", "invalid", "residual"]
     },
+    "route_permission_effect": {
+      "type": "string",
+      "enum": ["none", "shadow_only", "canary_only", "qualified_for_scope", "default_allowed", "blocks_routing"]
+    },
+    "consumer_policy": { "type": "string", "minLength": 1 },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "readiness_gate_refs": { "type": "array", "items": { "type": "string" } },
     "incident_refs": { "type": "array", "items": { "type": "string" } },
     "review_triggers": { "type": "array", "items": { "type": "string" } },
     "state_migration": { "type": "string", "minLength": 1 },
     "regression_suite": { "type": "array", "items": { "type": "string" } },
     "rollback_plan": { "type": "string", "minLength": 1 },
     "rollback_obligations": { "type": "array", "items": { "type": "string" } },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

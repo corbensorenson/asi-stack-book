@@ -5,35 +5,83 @@
   "type": "object",
   "required": [
     "invocation_id",
+    "invocation_state",
     "job_id",
     "adapter_id",
     "target_type",
     "capability",
     "permission_required",
     "sandbox_mode",
+    "impact_class",
+    "risk_tier",
     "approval_required",
     "approval_record",
+    "approval_scope",
+    "approval_expiry",
     "authority_handle",
     "inputs",
+    "effect_lease",
     "effect_receipt",
+    "pre_state_ref",
+    "post_state_ref",
+    "external_side_effects",
+    "verification_refs",
     "rollback_handle",
-    "residuals"
+    "irreversible_residuals",
+    "incident_refs",
+    "audit_refs",
+    "residuals",
+    "support_state_effect",
+    "non_claims"
   ],
   "properties": {
     "invocation_id": { "type": "string", "minLength": 1 },
+    "invocation_state": {
+      "type": "string",
+      "enum": ["requested", "denied", "approved", "executed", "failed", "residual", "retired"]
+    },
     "job_id": { "type": "string", "minLength": 1 },
     "adapter_id": { "type": "string", "minLength": 1 },
     "target_type": { "type": "string", "minLength": 1 },
     "capability": { "type": "string", "minLength": 1 },
     "permission_required": { "type": "string", "minLength": 1 },
     "sandbox_mode": { "type": "string", "minLength": 1 },
+    "impact_class": {
+      "type": "string",
+      "enum": ["low_impact", "high_impact", "irreversible", "unknown"]
+    },
+    "risk_tier": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical", "unknown"]
+    },
     "approval_required": { "type": "boolean" },
     "approval_record": { "type": "string" },
+    "approval_scope": { "type": "string", "minLength": 1 },
+    "approval_expiry": { "type": "string", "minLength": 1 },
     "authority_handle": { "type": "string" },
     "inputs": { "type": "array", "items": { "type": "string" } },
+    "effect_lease": { "type": "string", "minLength": 1 },
     "effect_receipt": { "type": "string", "minLength": 1 },
+    "pre_state_ref": { "type": "string" },
+    "post_state_ref": { "type": "string" },
+    "external_side_effects": { "type": "array", "items": { "type": "string" } },
+    "verification_refs": { "type": "array", "items": { "type": "string" } },
     "rollback_handle": { "type": "string" },
-    "residuals": { "type": "array", "items": { "type": "string" } }
+    "irreversible_residuals": { "type": "array", "items": { "type": "string" } },
+    "incident_refs": { "type": "array", "items": { "type": "string" } },
+    "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

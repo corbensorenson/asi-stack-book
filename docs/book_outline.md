@@ -770,7 +770,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, qualification lease, evaluator independence, evidence, route validity, incidents, review triggers, migration path, rollback obligations, and non-claims.
+- An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context, qualification lease, evaluator independence, evidence, route validity, route permission effect, consumer policy, readiness gate refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, and non-claims.
 - Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
 - Planned Codex test: Qualification predicate test.
 - Planned Codex test: Route validity test.
@@ -1893,9 +1893,9 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A runtime-adapter contract with permissions, approval requirements, and result evidence.
+- A runtime-adapter contract with permissions, approval requirements, invocation state, impact class, risk tier, effect lease, pre/post state refs, external side effects, verification refs, rollback and irreversible residual fields, incident/audit refs, support-state effect, and non-claims.
 - Exact Appendix C claim-source mappings for `runtime-adapters-tool-permissions-and-human-approval.core` across Talos, VIEA, Ladon/Manhattan, Software Magic Grimoire, GenesisCode, MoECOT, Field of God AI Constitution, and Theseus Operator OS; five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped.
-- Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape only.
+- Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape, invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims only.
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
 - Planned Codex test: Rollback handle capture test.

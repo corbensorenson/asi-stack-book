@@ -1287,6 +1287,8 @@ This record turns fork, exit, audit, appeal, and dissent into technical rights w
 ```yaml
 stable_capability_field:
   field_id: string
+  field_version: string
+  owner: string
   semantic_boundary: string
   interface_contract: string
   authority_ceiling: string
@@ -1301,17 +1303,22 @@ stable_capability_field:
   evaluator_policy: string
   evaluator_independence: string
   route_validity: residual
+  route_permission_effect: canary_only
+  consumer_policy: string
   evidence_refs: []
+  readiness_gate_refs: []
   incident_refs: []
   review_triggers: []
   state_migration: string
   regression_suite: []
   rollback_plan: string
   rollback_obligations: []
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record separates a durable semantic capability boundary from replaceable implementations, while keeping authority, qualification lease, evaluator policy, evaluator independence, route validity, evidence, incidents, review triggers, regression, migration, rollback obligations, and non-claims visible.
+This record separates a durable semantic capability boundary from replaceable implementations, while keeping field version, owner, authority, qualification lease, evaluator policy, evaluator independence, route validity, route permission effect, consumer policy, readiness gates, source refs, support-state effect, evidence, incidents, review triggers, regression, migration, rollback obligations, and non-claims visible.
 
 ## Replacement Transaction
 
@@ -1417,22 +1424,37 @@ This record turns outputs into durable artifacts with provenance, context-transa
 ```yaml
 runtime_adapter_invocation:
   invocation_id: string
+  invocation_state: requested
   job_id: string
   adapter_id: string
   target_type: string
   capability: string
   permission_required: string
   sandbox_mode: string
+  impact_class: low_impact
+  risk_tier: low
   approval_required: false
   approval_record: string
+  approval_scope: string
+  approval_expiry: string
   authority_handle: string
   inputs: []
+  effect_lease: string
   effect_receipt: string
+  pre_state_ref: string
+  post_state_ref: string
+  external_side_effects: []
+  verification_refs: []
   rollback_handle: string
+  irreversible_residuals: []
+  incident_refs: []
+  audit_refs: []
   residuals: []
+  support_state_effect: record_shape_only
+  non_claims: []
 ```
 
-This record is the effects boundary: it records adapter capability, permissions, sandboxing, approval, authority handles, inputs, effect receipt, rollback, and residuals.
+This record is the effects boundary: it records adapter capability, invocation state, permissions, sandboxing, impact/risk class, approval scope and expiry, authority handles, inputs, effect lease, pre/post state refs, external side effects, verification refs, rollback, irreversible residuals, incident/audit refs, support-state effect, residuals, and non-claims.
 
 ## Procedural Tool Record
 

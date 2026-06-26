@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact claim-source mappings with passage-reviewed references for five local raw-cache sources plus two local public-project sources; `moecot` remains connector/source-note mapped."
-  - "Protocol schema/fixture validation and narrow Lean permission/approval predicates are implemented; no adapter execution, sandbox, approval-service, rollback, or secret-handle harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean permission/approval predicates are implemented; the fixture now records invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims. No adapter execution, sandbox, approval-service, rollback, or secret-handle harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; passage-reviewed local public-project source: `field_of_god_ai_constitution`, `theseus_operator_os`; connector/source-note mapped: `moecot` |
-| Test state | Runtime adapter fixture validation implemented; finite permission and approval predicates implemented in `AsiStackProofs.RuntimeAdapters`; adapter execution, sandbox, approval-service, rollback, and secret-handle tests remain planned. |
+| Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims; finite permission and approval predicates implemented in `AsiStackProofs.RuntimeAdapters`; adapter execution, sandbox, approval-service, rollback, and secret-handle tests remain planned. |
 
 ## Drafting guardrail
 
@@ -111,7 +111,7 @@ flowchart LR
 
 The adapter maps a typed job to a declared target type, capability, permission requirement, sandbox mode, and input/output contract. Authority handles stay outside model-visible context until policy, destination, and approval checks authorize use. High-impact actions such as irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional state changes fail closed without approval. Every invocation returns an effect receipt, a rollback handle where one exists, residuals where rollback is unavailable, and audit events for the artifact graph.
 
-Adapters should declare target type, capability, permission required, sandbox mode, approval requirement, input/output contract, authority handles, expected evidence, rollback handle, and post-action audit events. The tool itself is not the policy boundary; the adapter is.
+Adapters should declare target type, capability, permission required, sandbox mode, impact class, risk tier, approval requirement, approval scope, approval expiry, input/output contract, authority handles, effect lease, expected evidence, rollback handle, irreversible residuals, and post-action audit events. The tool itself is not the policy boundary; the adapter is.
 
 High-impact actions include irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional actions. These should fail closed without approval.
 
@@ -147,19 +147,34 @@ The interface is the Runtime Adapter Invocation.
 Minimum fields:
 
 - `invocation_id`
+- `invocation_state`
 - `job_id`
 - `adapter_id`
 - `target_type`
 - `capability`
 - `permission_required`
 - `sandbox_mode`
+- `impact_class`
+- `risk_tier`
 - `approval_required`
 - `approval_record`
+- `approval_scope`
+- `approval_expiry`
 - `authority_handle`
 - `inputs`
+- `effect_lease`
 - `effect_receipt`
+- `pre_state_ref`
+- `post_state_ref`
+- `external_side_effects`
+- `verification_refs`
 - `rollback_handle`
+- `irreversible_residuals`
+- `incident_refs`
+- `audit_refs`
 - `residuals`
+- `support_state_effect`
+- `non_claims`
 
 Execution owns adapters. Security mediates secrets and authority handles. Evidence records effect receipts, rollback handles, residuals, and deployment outcomes.
 
@@ -203,7 +218,7 @@ Tool overreach means the adapter performed beyond granted scope. Approval bypass
 
 A runtime-adapter contract with permissions, approval requirements, and result evidence.
 
-The smallest useful implementation is a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, capability, permission, sandbox, approval, authority handle, effect receipt, rollback handle, and residual fields. It does not execute a tool.
+The smallest useful implementation is a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, invocation state, target, capability, permission, sandbox, impact class, risk tier, approval scope/expiry, authority handle, effect lease, effect receipt, pre/post state refs, external side effects, verification refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, residuals, and non-claims. It does not execute a tool.
 
 The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. This does not demonstrate tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity, or rollback.
 
@@ -211,7 +226,7 @@ The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` 
 
 | Test | Purpose | Status |
 |---|---|---|
-| Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, approval, authority handle, inputs, effect receipt, rollback handle, and residuals. | implemented by protocol validation; run in this pass |
+| Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, invocation state, impact class, risk tier, approval scope/expiry, authority handle, inputs, effect lease, receipt refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Adapter permission predicate | Check that adapter capability is included in the parent job's permissions. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Approval gate rejection predicate | Check that high-impact adapter calls without approval are rejected. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |
