@@ -43,14 +43,16 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 
 When the user brings a new AI-related paper:
 
-1. Create or update a record in `sources/source_inventory.json` with a stable source ID.
-2. Do not place private or restricted source text in the public repo unless the user explicitly approves.
-3. Use `python3 scripts/cache_drive_sources.py` and `python3 scripts/source_readiness_report.py` to refresh local cache status when appropriate.
-4. If the source text is available, create `sources/source_notes/<source-id>.md` with thesis, mechanisms, evidence, failure modes, supported chapters, and open questions.
-5. Decide whether the source updates an existing chapter, needs a new chapter, belongs in an appendix, or should remain unassigned.
-6. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
-7. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
-8. Keep support state at `argument` unless source ingestion or tests justify a stronger state.
+1. Decide source storage and public-safety policy before adding text: public source, public note only, connector only, local private cache, external URL only, or blocked.
+2. Create or update a record in `sources/source_inventory.json` with a stable source ID.
+3. Do not place private or restricted source text in the public repo unless the user explicitly approves.
+4. Use `python3 scripts/cache_drive_sources.py` and `python3 scripts/source_readiness_report.py` to refresh local cache status when appropriate.
+5. If the source text is available and permitted, create `sources/source_notes/<source-id>.md` with thesis, mechanisms, evidence, failure modes, supported chapters, and open questions.
+6. Use the Research Backlog Record and New Paper Triage Scenario surfaces to decide whether the source updates an existing chapter, proposes a precise new chapter, belongs in an appendix/backlog, should be deferred until read, or should be rejected as duplicate/out of scope.
+7. Record deduplication state, chapter-decision refs, merge/split policy, required pre-drafting work, evidence-transition preconditions, promotion blockers, and non-claims before strengthening prose.
+8. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
+9. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
+10. Keep support state at `argument` unless source ingestion, passage review, accepted evidence transition, proof, or tests justify a stronger state.
 
 Read `references/triage.md` when deciding whether to update an existing chapter or create a new one.
 

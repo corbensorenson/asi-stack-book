@@ -60,16 +60,36 @@ quarto render --to html
 
 ## Bring in a New AI Paper
 
-1. Add the paper metadata to `sources/source_inventory.json`.
-2. Add the raw or exported source to a private/local source location only if publication is allowed.
-3. Create `sources/source_notes/<source-id>.md` after actually reading the source.
-4. Decide whether the paper updates an existing chapter or requires a new chapter.
-5. Update `book_structure.json`:
+1. Decide the source storage and public-safety policy before adding text:
+   - `repo_public_note_only` for public-safe notes without raw source publication.
+   - `repo_public_source_allowed` only when publication is explicitly allowed.
+   - `connector_only`, `local_private_cache`, `external_url_only`, or `blocked` when raw text should not enter the public repo.
+2. Add or update the paper metadata in `sources/source_inventory.json` with a stable source ID.
+3. Create or update a `research_backlog_record` when the source changes chapter boundaries, evidence state, proof/test backlog, or publication risk.
+4. Use the `new_paper_triage_scenario` decision surface before prose changes:
+   - update an existing chapter when the source strengthens an existing boundary,
+   - propose a new chapter only when it owns a distinct interface, invariant, artifact type, or failure mode,
+   - route to appendix/backlog when it is useful but not chapter-owning,
+   - defer unread external literature,
+   - reject duplicate or superseded variants.
+5. Create `sources/source_notes/<source-id>.md` only after actually reading the source or a permitted connector/export.
+6. Update `book_structure.json` only after the chapter decision is clear:
    - add the source ID to an existing chapter's `source_ids`, or
    - add a new chapter with `scripts/add_chapter.py`.
-6. Update Appendix C only through `scripts/sync_scaffold.py` unless a claim's support state changes after source ingestion or testing.
-7. Run `python3 scripts/validate_source_evidence_audit.py` to refresh/check the public-safe mapping and passage-review queue.
-8. Update `appendices/F_changelog.qmd`.
+7. Record required pre-drafting work, chapter-decision refs, deduplication state, evidence-transition preconditions, promotion blockers, and non-claims before strengthening chapter prose.
+8. Update Appendix C only through `scripts/sync_scaffold.py` unless a claim's support state changes after source ingestion, proof, or testing.
+9. Run the relevant checks:
+
+```bash
+python3 scripts/sync_scaffold.py
+python3 scripts/validate_schemas.py
+python3 scripts/validate_protocol_examples.py
+python3 scripts/validate_source_evidence_audit.py
+python3 scripts/validate_book.py
+quarto render --to html
+```
+
+10. Update `appendices/F_changelog.qmd`.
 
 Do not mark claims as source-derived or test-backed until the source has actually been ingested, mapped to the claim, passage-reviewed or accepted through an evidence transition, and any claimed test has actually run.
 

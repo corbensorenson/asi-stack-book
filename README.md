@@ -165,6 +165,8 @@ python3 scripts/source_readiness_report.py
 
 The tracked readiness report is `docs/source_readiness_report.md`. Raw exports stay under `sources/raw/`.
 
+When adding a new AI paper or artifact, use [docs/living_update_workflow.md](docs/living_update_workflow.md) and the repo skill triage reference before editing prose. New sources need storage/public-safety policy, deduplication state, chapter-decision refs, required pre-drafting work, and promotion blockers. `schemas/research_backlog_record.schema.json` records durable backlog items, and `schemas/new_paper_triage_scenario.schema.json` validates synthetic update/add/defer/reject decision shape only.
+
 Claims use both a claim label and a support state. Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` unless the source ingestion, prototype review, proof check, or test execution actually happened and is recorded. Conversation-mined material can guide author intent and lineage, but it is not external evidence.
 
 ## Proof Discipline
