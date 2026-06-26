@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "planforge"
   - "viea"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -54,6 +54,8 @@ The planner is therefore a control layer, not a general cognition blob. It turns
 
 The planner's job is not to be clever at any cost. Its job is to keep the action surface legible: what is being attempted, why this order, what context is needed, which tools are requested, what authority is missing, how success will be checked, and where the work must stop.
 
+The planner should therefore be judged by the quality of its refusals as much as by the elegance of its decomposition. A plan that blocks a node because context is missing, authority is inferred, or verification is unavailable is doing useful control work. A plan that dispatches everything because the graph looks plausible is not a control layer.
+
 ## Why existing approaches are insufficient
 
 Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
@@ -63,6 +65,8 @@ A memory layer retrieves context; it should not silently create work. A reasonin
 Planning also needs to be separate from final answers because plans are cheap to reject. A bad plan can be repaired before side effects occur. A bad execution may need rollback, audit, or incident handling.
 
 Collapsing planning into execution also hides opportunity for review. A human, tribunal, router, or verifier can inspect a plan graph before a tool call exists. Once the tool call runs, the system has moved from deliberation into effects.
+
+This is why planning needs dispatch states. A plan node can be valuable as an idea, dependency, question, or risk note without being ready to become a job. If every node is treated as executable, the graph becomes a work generator instead of a boundary.
 
 ## Core Claim
 
@@ -113,6 +117,22 @@ The planner should be allowed to say "I do not have enough context," "this depen
 
 Planning should preserve alternatives without pretending all alternatives are approved. A plan may list candidate routes, but only dispatchable nodes with satisfied constraints, authority, context, and verification plans should lower into typed jobs. The rest remain options, residuals, or review items.
 
+Plan nodes should carry lifecycle states:
+
+| State | Meaning | Lowering rule |
+|---|---|---|
+| `proposed` | A node is useful for decomposition but not yet checked. | No job creation. |
+| `blocked_context` | Required context or source adequacy is missing. | Request context or split task. |
+| `blocked_authority` | Required means, tool, publication, or effect lacks authority. | Re-contract or approval route. |
+| `blocked_dependency` | Upstream node, artifact, or review is incomplete. | Wait or replan. |
+| `blocked_verification` | Success predicate or verifier is missing. | Define verifier or narrow output. |
+| `dispatchable` | Constraints, context, authority, dependencies, and verification plan are satisfied. | May lower into a typed job. |
+| `dispatched` | The node has produced a job packet. | Track job parentage. |
+| `replanned` | The node changed after feedback while preserving contract boundaries. | Record delta and residuals. |
+| `stopped` | Stop condition, denial, budget exhaustion, or risk gate ended the node. | Preserve reason and evidence. |
+
+These states let the plan graph be useful before execution and accountable after execution. They also keep candidate routes from being confused with authorized work.
+
 ## Interfaces
 
 The interface is the Plan Graph.
@@ -143,11 +163,27 @@ Alignment filters goals before planning. VCM supplies context packets. Routing c
 
 The plan graph is also the handoff between cognition and scheduling. It should say which nodes are exploratory, which are executable, which require approval, which are blocked, and which are evidence-only. Without that state, downstream execution has to infer whether a node is a thought, a task, a request, or a permission grant.
 
+A dispatch receipt should be produced when a node lowers into a job:
+
+- `plan_node_id`
+- `parent_contract_id`
+- `dispatch_state`
+- `satisfied_constraints`
+- `context_packet_refs`
+- `authority_basis`
+- `verification_plan_ref`
+- `replanning_history`
+- `typed_job_ref`
+
+This receipt is the narrow bridge to the Labor OS. If it is missing, execution can still be attempted by an ad hoc tool caller, but the book should not treat that as governed job dispatch.
+
 ## Invariants
 
 - Plans expose constraints and stop conditions.
 - Runtime replanning preserves authority limits.
 - Tool selection is justified by task requirements.
+- Only dispatchable nodes lower into typed jobs.
+- Candidate routes, blocked nodes, and review notes are not executable permission.
 
 A plan node inherits the parent command's authority ceiling unless governance narrows or explicitly changes it. Runtime replanning may change order, route, or decomposition, but it cannot broaden the authority boundary by calling itself adaptation.
 
@@ -158,6 +194,8 @@ Stop-condition preservation is equally important. Replanning after failure may f
 - Scope creep.
 - Planning without replanning.
 - Tool choice exceeds authority or budget.
+- Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.
+- Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.
 
 Scope creep occurs when a plan adds goals that were never accepted. Planning without replanning means failures create improvisation instead of controlled repair. Tool choice exceeding authority or budget means the plan is not dispatchable, even if the work would be useful.
 
@@ -184,6 +222,8 @@ The next useful implementation step is a tiny plan-dispatch fixture with one val
 | Dependency ordering test | Check whether dependencies precede dependents before dispatch. | planned; not run |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
 | Runtime replanning test | Check whether replanning preserves authority, stop conditions, and residual history. | planned; not run |
+| Dispatch-state enforcement test | Check that only `dispatchable` nodes can lower into typed jobs and blocked/proposed nodes remain residuals or review items. | planned; not run |
+| Replanning-delta audit | Check that replanning records changed assumptions, authority basis, context, verification, stop conditions, and residuals. | planned; not run |
 
 Only the fixture-shape check is implemented. The planned tests require a planner harness, dependency checker, context-demand oracle, or replay trace before the support state can move.
 

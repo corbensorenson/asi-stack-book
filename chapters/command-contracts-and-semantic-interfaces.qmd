@@ -4,7 +4,7 @@ chapter_id: "command-contracts-and-semantic-interfaces"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "software_magic_grimoire"
   - "viea"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -53,6 +53,8 @@ A command contract is not a prettier prompt. It is the smallest artifact that le
 
 The key property is contract precedence. Helpful context, style notes, examples, retrieved passages, and prior conversation can inform the work, but they should not silently rewrite objective, constraints, authority, verification, or failure behavior. The command contract is the semantic firewall between useful context and operational permission.
 
+This firewall has to be visible at field level. A command can look structured while still smuggling ambiguity into the fields. The stack should therefore record where each field came from: user-confirmed, system-inferred, source-derived, defaulted, policy-imposed, or missing. Field provenance is what lets planning distinguish a real grant from a plausible fill-in.
+
 ## Why existing approaches are insufficient
 
 Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
@@ -62,6 +64,8 @@ Free-form prompts are useful for exploration, but they are weak as operational b
 GenesisCode adds a useful analogy from software: privileged effects and control responses need recognizable protocol shapes. In the ASI Stack, a command must expose output and verification requirements before it can be lowered into planning or execution.
 
 Unstructured prompts also make error recovery harder. If a result fails, the system cannot tell whether the failure came from a bad objective, missing context, invalid procedure, unsupported tool, weak verification, or ambiguous output contract. A semantic interface makes failures addressable instead of merely disappointing.
+
+Structured prompts can fail in the same way if they only move prose into boxes. A vague output field, inferred authority field, or missing failure behavior is not cured by being placed in YAML or JSON. The interface should require enough specificity that another layer can decide whether to dispatch, clarify, block, or create a residual.
 
 ## Core Claim
 
@@ -110,6 +114,20 @@ Promptcraft remains useful, but only inside this envelope. The command can inclu
 
 The contract should also mark field confidence. Some fields are exact, some are inferred, some are defaulted, and some are missing. A planner should be able to distinguish "the user authorized this means" from "the system inferred a likely means" before it creates work. Missing or inferred authority should route to clarification, draft-only output, or residual rather than dispatch.
 
+Command contracts should move through explicit validation states:
+
+| State | Meaning | Allowed movement |
+|---|---|---|
+| `draft` | Fields are being extracted or normalized. | No planning dispatch. |
+| `field_complete` | Required fields exist but may include inferred/defaulted values. | Validation and review only. |
+| `conflict_detected` | Context, examples, hidden instructions, or fields conflict with explicit constraints. | Residual or clarification. |
+| `authority_inferred` | A means, tool, disclosure, publication, or effect is inferred rather than granted. | Draft-only or re-contract. |
+| `dispatch_blocked` | Required output, verification, failure, approval, or authority field is missing or vague. | No plan node dispatch. |
+| `validated_for_planning` | Required fields are concrete and precedence review passed. | May lower into a plan graph. |
+| `superseded` | A newer command contract replaces the current one. | Historical trace only. |
+
+These states are intentionally pre-execution states. They do not say the work is correct. They only say whether the contract is clear enough to become planning input.
+
 ## Interfaces
 
 The interface is the Command Contract.
@@ -141,11 +159,26 @@ Planning consumes the structured command. Execution enforces allowed means and o
 
 This interface is deliberately narrower than natural language. It does not attempt to preserve every nuance of the request; it preserves the operational fields that downstream layers need to avoid guessing. The raw request can remain attached for review, but the structured fields control dispatch.
 
+Each field should carry confidence/provenance metadata:
+
+| Field status | Meaning | Dispatch rule |
+|---|---|---|
+| `confirmed` | Explicitly stated or accepted by the user/governance boundary. | May support planning. |
+| `policy_imposed` | Added by active policy, constitution, or safety rule. | May constrain planning; cannot broaden authority. |
+| `source_derived` | Taken from an authorized source artifact. | May support context or requirements within source limits. |
+| `defaulted` | Filled by a bounded default. | Must carry scope and re-contract trigger. |
+| `inferred` | Guessed from context or pattern. | Cannot authorize side effects. |
+| `missing` | Required value absent. | Blocks dispatch or narrows output to clarification/draft. |
+
+This metadata keeps field confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.
+
 ## Invariants
 
 - A command exposes output and verification requirements.
 - Failure behavior is declared.
 - Implicit instructions do not override explicit constraints.
+- Field provenance and confidence remain visible to planning and verification.
+- Inferred or defaulted authority cannot authorize side effects.
 
 The override rule is central: context can inform a command, but it cannot silently replace explicit constraints. If a source, tool, user message, or retrieved note conflicts with the command contract, the system should emit a conflict residual instead of choosing the most fluent interpretation.
 
@@ -156,6 +189,8 @@ A related invariant is output-test coupling. A command with no artifact expectat
 - Semantic ambiguity.
 - Prompt injection through context.
 - Unspecified output contract.
+- Field laundering, where vague prose is moved into a formal field without becoming testable.
+- Authority inference, where a likely means is treated as if the human granted it.
 
 Semantic ambiguity produces false agreement: everyone thinks the command is clear until the artifact arrives. Prompt injection through context attacks the contract boundary. An unspecified output contract makes verification subjective. All three should become missing-contract or conflict records before planning proceeds.
 
@@ -179,6 +214,8 @@ The next useful implementation step is a small command-conflict fixture set: one
 | Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | planned; not run |
 | Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | planned; not run |
 | Prompt override scenario | Check that hidden or conflicting context instructions cannot override explicit constraints. | planned; not run |
+| Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields have different dispatch consequences. | planned; not run |
+| Authority-inference block test | Check that inferred means, tools, disclosures, publications, or effects cannot lower into executable plans without re-contracting. | planned; not run |
 
 Only the fixture-shape check is implemented. The override and dispatch-blocking tests need a parser, conflict rule, or harness that can compare explicit fields against retrieved context and hidden instructions.
 

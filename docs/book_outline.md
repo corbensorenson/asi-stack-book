@@ -420,6 +420,8 @@ Draft arc:
 - Mechanism: Attach acceptance criteria and escalation conditions.
 - Mechanism: Treat the intent contract as a scoped authority lease: the raw request preserves human expression, while the structured contract controls what powers downstream layers may use.
 - Mechanism: Require re-contracting when a plan changes allowed means, authority ceiling, publication surface, affected parties, evidence requirements, or stop conditions.
+- Mechanism: Track intent intake states: raw request, interpreted, bounded default, clarification required, authority pending, accepted contract, re-contract required, rejected or expired.
+- Mechanism: Emit an intent receipt with confirmed assumptions, bounded defaults, unauthorized means, required approvals, re-contract triggers, review refs, and downstream contract refs.
 - Interface: Alignment filters intent.
 - Interface: Planning compiles accepted contracts.
 - Interface: Execution consumes only authorized task contracts.
@@ -429,12 +431,16 @@ Primary invariants:
 - Ambiguity triggers clarification or bounded defaults.
 - Intent contracts expose authority limits.
 - Stop conditions remain attached to the plan.
+- Raw request context cannot override the accepted contract.
+- Re-contracting is required when downstream work changes means, authority, affected parties, evidence, publication surface, or stop conditions.
 
 Failure modes to cover:
 
 - Goal misbinding.
 - Scope creep.
 - Implicit permission to act.
+- Assumption laundering, where a helpful guess becomes execution authority.
+- Review bypass, where urgency or trust language is treated as permission to skip evidence or approval.
 
 Draft deliverables:
 
@@ -443,6 +449,8 @@ Draft deliverables:
 - Planned Codex test: Intent parsing ambiguity test.
 - Planned Codex test: Authority extraction test.
 - Planned Codex test: Stop-condition preservation test.
+- Planned Codex test: Re-contract trigger test.
+- Planned Codex test: Bounded-default audit.
 
 Lean proof targets:
 
@@ -1009,6 +1017,8 @@ Draft arc:
 - Mechanism: Bind semantic interfaces to schemas and tests.
 - Mechanism: Treat command contracts as semantic firewalls: retrieved context, examples, prior conversation, and style notes can inform work but cannot override explicit objective, constraints, authority, verification, or failure behavior.
 - Mechanism: Mark field confidence and missing/inferred authority so planning can distinguish authorized means from inferred defaults, draft-only routes, clarifications, and residuals.
+- Mechanism: Track command validation states: draft, field-complete, conflict-detected, authority-inferred, dispatch-blocked, validated-for-planning, and superseded.
+- Mechanism: Attach field provenance and confidence states: confirmed, policy-imposed, source-derived, defaulted, inferred, and missing.
 - Interface: Planning consumes structured commands.
 - Interface: Execution enforces output contracts.
 - Interface: Verification checks stated failure behavior.
@@ -1018,12 +1028,16 @@ Primary invariants:
 - A command exposes output and verification requirements.
 - Failure behavior is declared.
 - Implicit instructions do not override explicit constraints.
+- Field provenance and confidence remain visible to planning and verification.
+- Inferred or defaulted authority cannot authorize side effects.
 
 Failure modes to cover:
 
 - Semantic ambiguity.
 - Prompt injection through context.
 - Unspecified output contract.
+- Field laundering, where vague prose is moved into a formal field without becoming testable.
+- Authority inference, where a likely means is treated as if the human granted it.
 
 Draft deliverables:
 
@@ -1033,6 +1047,8 @@ Draft deliverables:
 - Planned Codex test: Command schema validation test.
 - Planned Codex test: Failure-behavior declaration test.
 - Planned Codex test: Prompt override scenario.
+- Planned Codex test: Field-confidence audit.
+- Planned Codex test: Authority-inference block test.
 
 Lean proof targets:
 
@@ -1066,6 +1082,8 @@ Draft arc:
 - Mechanism: Delegate execution through typed contracts.
 - Mechanism: Treat the plan graph as a refusal-friendly control artifact: missing context, blocked dependencies, authority overreach, exhausted budgets, and failed predicates become residuals before side effects.
 - Mechanism: Preserve stop conditions, authority ceilings, and alternative-route status during replanning; only dispatchable nodes with satisfied constraints lower into typed jobs.
+- Mechanism: Track plan node lifecycle states: proposed, blocked-context, blocked-authority, blocked-dependency, blocked-verification, dispatchable, dispatched, replanned, and stopped.
+- Mechanism: Emit dispatch receipts with satisfied constraints, context refs, authority basis, verification plan, replanning history, and typed-job refs.
 - Interface: Alignment filters goals.
 - Interface: VCM supplies context packets.
 - Interface: Routing selects specialists.
@@ -1076,12 +1094,16 @@ Primary invariants:
 - Plans expose constraints and stop conditions.
 - Runtime replanning preserves authority limits.
 - Tool selection is justified by task requirements.
+- Only dispatchable nodes lower into typed jobs.
+- Candidate routes, blocked nodes, and review notes are not executable permission.
 
 Failure modes to cover:
 
 - Scope creep.
 - Planning without replanning.
 - Tool choice exceeds authority or budget.
+- Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.
+- Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.
 
 Draft deliverables:
 
@@ -1092,6 +1114,8 @@ Draft deliverables:
 - Planned Codex test: Dependency ordering test.
 - Planned Codex test: Context-demand prediction test.
 - Planned Codex test: Runtime replanning test.
+- Planned Codex test: Dispatch-state enforcement test.
+- Planned Codex test: Replanning-delta audit.
 
 Lean proof targets:
 
@@ -1649,6 +1673,8 @@ Draft arc:
 - Mechanism: Keep orchestration, workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay as separate execution boundaries.
 - Mechanism: Preserve job parentage from command contract to plan node, approval record, adapter, artifact, residual, and replay declaration so useful work cannot be laundered into governed execution without receipts.
 - Mechanism: Separate delivery from evidence-ready completion: a job can produce output while still missing approval, verification, artifact capture, audit events, or replay metadata.
+- Mechanism: Track lifecycle states: drafted, locked, awaiting-approval, approved, dispatchable, running, adjudicating, delivered, evidence-ready, failed/blocked, quarantined, replayed, and retired.
+- Mechanism: Emit completion receipts with approval, permission, adapter, artifact, verification, audit, residual, replay/non-replay, delivery, and evidence-state fields.
 - Handoff: Delivered, failed, or blocked jobs flow into artifact graphs as durable work products and audit traces.
 - Interface: Planning dispatches jobs.
 - Interface: Security mediates permissions.
@@ -1659,12 +1685,16 @@ Primary invariants:
 - Every job has type and lifecycle state.
 - Tool permissions are explicit.
 - Human approval gates block high-impact jobs.
+- Delivered output is not evidence-ready until verification, artifact capture, audit, residual, and replay/non-replay fields are present.
+- Job parentage remains traceable to contract, plan node, approval, adapter, artifact, and residual.
 
 Failure modes to cover:
 
 - Tool overreach.
 - Unlogged side effects.
 - Infinite or chaotic agent swarms.
+- Completion laundering, where output existence is treated as governed evidence.
+- Parentage loss, where a job cannot be traced back to the command contract and dispatchable plan node that authorized it.
 
 Draft deliverables:
 
@@ -1674,6 +1704,8 @@ Draft deliverables:
 - Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
 - Planned Codex test: Tool permission enforcement test.
 - Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
+- Planned Codex test: Delivery versus evidence-ready test.
+- Planned Codex test: Job parentage trace test.
 
 Lean proof targets:
 
