@@ -1142,13 +1142,16 @@ Draft arc:
 - Mechanism: Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.
 - Mechanism: Perform incremental repair over IR rather than re-prompting from scratch.
 - Mechanism: Compile IR into jobs, code, schemas, or documents.
+- Mechanism: emit lowering receipts that bind source-plan obligations, semantic atoms, target artifacts, validators, assumptions, and residuals.
 - Interface: Planning produces or consumes IR.
 - Interface: Execution receives target-specific artifacts.
 - Interface: Verification checks IR-to-output preservation.
+- Interface: distinguish source-plan validity, semantic-IR validity, lowering validity, and target-artifact validation before reporting a successful compile.
 
 Primary invariants:
 
 - IR preserves declared requirements.
+- Obligations may be refined, split, deferred, or rejected, but not silently erased.
 - Repair changes are localized and auditable.
 - Target compilation records assumptions.
 
@@ -1157,6 +1160,7 @@ Failure modes to cover:
 - IR drift.
 - Compiler hallucination.
 - Repair that breaks earlier requirements.
+- Compilation laundering through syntactic artifact acceptance without obligation-preserving lowering.
 
 Draft deliverables:
 
@@ -1895,22 +1899,26 @@ Draft arc:
 - Insufficiency: A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden.
 - Mechanism: Maintain lifecycle states and readiness gates that separate semantic fit from ordinary routability.
 - Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
+- Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
 - Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
 - Interface: Routing reads readiness.
 - Interface: Benchmarks update gates.
 - Interface: SCFs govern replacement.
+- Interface: expose lifecycle states such as draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded for router/auditor consumption.
 
 Primary invariants:
 
 - Promotion requires gate evidence.
 - Residuals are not deleted on promotion.
 - Quarantine blocks ordinary routing.
+- Stronger readiness requires adequate added evidence or narrower permitted scope; readiness cannot increase by losing records.
 
 Failure modes to cover:
 
 - Premature promotion.
 - Residual hiding.
 - Untracked regression after merge.
+- Gate laundering through rename, wrapper, merge, split, or retirement without inherited residual escrow.
 
 Draft deliverables:
 
@@ -1953,22 +1961,27 @@ Draft arc:
 - Insufficiency: A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
 - Mechanism: Treat MoECOT as a runtime evidence-packet target that binds command, route head, specialist cores, control-plane gates, ledgers, readiness refs, replay refs, handoff state, promotion blockers, residuals, and source-claim state.
 - Mechanism: Keep direct MoECOT claims conservative until runtime artifacts, replay records, benchmark records, or reproduced local runs exist.
+- Mechanism: separate source-reported, locally reproduced, externally corroborated, and blocked fields inside each runtime evidence packet.
+- Mechanism: record cold-start-to-handoff traces, including denied routes, failed gates, missing replay refs, unresolved handoffs, and residual branches.
 - Handoff: A concrete runtime must still land on an owned, leased, or project compute substrate whose reachability does not imply authority.
 - Interface: Routing selects cores.
 - Interface: SCFs govern replacement.
 - Interface: Evidence and replay ledgers evaluate runtime changes.
+- Interface: route authority ledger records command authorization, specialist authority envelopes, tool and memory permissions, and denied authority changes.
 
 Primary invariants:
 
 - MoECOT claims stay at argument level until source notes exist.
 - Implementation evidence is separated from design argument.
 - Runtime promotion follows readiness gates.
+- Runtime evidence states remain separate across design example, reproduced artifact, benchmark evidence, and blocked source field.
 
 Failure modes to cover:
 
 - Overclaiming unavailable source content.
 - Treating implementation branding as architecture proof.
 - Losing cross-layer traceability.
+- Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases.
 
 Draft deliverables:
 
@@ -2632,10 +2645,12 @@ Draft arc:
 - Mechanism: Expose alias, freshness, coverage, active-token, work-saving, fallback, stale-read, and loop-exit fields as auditable outputs with explicit non-claims.
 - Mechanism: Preserve VCM authority and adequacy labels while comparing slot-only, slot-plus-winding, FIFO, LRU, content-gated, ordinary attention, and ordinary memory baselines before promoting retrieval, reasoning, speed, or memory claims.
 - Mechanism: Keep structural memory facts separate from useful-memory claims, so freshness, coverage, and exits become diagnostic guardrails rather than retrieval-quality evidence.
+- Mechanism: treat cyclic and sparse memory contracts as admission-control structures with VCM packet chain-of-custody, recurrence work budgets, and workload-evaluation eligibility.
 - Interface: VCM context traces expose context adequacy and authority labels.
 - Interface: Attention and memory modules consume contract fields as diagnostic guardrails.
 - Interface: Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
 - Interface: Proof contracts define the finite boundary of the claim.
+- Interface: memory-contract records include baseline obligations before improvement claims are considered.
 
 Primary invariants:
 
@@ -2643,6 +2658,7 @@ Primary invariants:
 - Full structural coverage is not semantic coverage.
 - Recurrence budgets include exits and guardrails.
 - Stale reads fail closed or enter residual escrow.
+- Mapping governed context into slots, recurrence traces, or compressed attention cannot widen authority, lease, permitted use, or adequacy.
 
 Failure modes to cover:
 
@@ -2651,6 +2667,7 @@ Failure modes to cover:
 - Uncovered sparse-attention lags.
 - Freshness facts treated as retrieval-quality evidence.
 - No ordinary baseline controls.
+- Structural adequacy laundering, where freshness, coverage, or loop-exit facts are treated as workload adequacy.
 
 Draft deliverables:
 
