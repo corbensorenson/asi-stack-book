@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all assigned Compact Generative Systems sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, downstream utility tests, compact-adequacy proofs, generator behavior, or reproduced implementation evidence exist."
-  - "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; the fixture validates correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion state, retirement condition, support-state effect, and non-claims only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
+  - "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; the fixture validates generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers, promotion state, source refs, support-state effect, and non-claims only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
   - "BugBrain and Project Theseus passages are used as speculative/source-reported implementation lineage only; they do not prove edge AGI, consciousness, compact adequacy, or runtime behavior."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
 | Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; passage-reviewed local raw-cache mappings for `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`; passage-reviewed pinned local-project mapping for `project_theseus_whitepaper`; no raw source text is published |
-| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation for correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion state, retirement condition, support-state effect, and non-claims; finite residual/exactness predicates implemented in `AsiStackProofs.CompactGenerativeSystems`; chapter-specific CGS utility, fallback, and downstream tests remain planned. |
+| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation for generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers, promotion state, source refs, support-state effect, and non-claims; finite residual/exactness predicates implemented in `AsiStackProofs.CompactGenerativeSystems`; chapter-specific CGS utility, fallback, and downstream tests remain planned. |
 
 ## Drafting guardrail
 
@@ -85,7 +85,7 @@ Compression begins before bytes. The ASI Stack first asks whether a smaller stru
 
 After the runtime reference records what was routed, executed, replayed, and left residual, compact generation asks whether any part of that burden can be represented by a smaller lawful structure. The answer is useful only when the record still exposes the generation cost, verification cost, correction channel, fallback path, and authority boundary.
 
-A Compact Generative Record names what is compact, what is generated, how it is corrected, how it is verified, which verifier separation is required, what residuals remain, what use envelope is allowed, which burdens and costs are being counted, and who is allowed to use, promote, retire, or fall back from it. It treats compactness as a claim with costs, not as an aesthetic preference.
+A Compact Generative Record names what is compact, what is generated, whether generation ran, how it is corrected, how it is verified, whether verification ran, which verifier separation is required, what residuals remain, whether fallback was tested or used, whether residual burden is bounded, what use envelope is allowed, which burdens and costs are being counted, and who is allowed to use, promote, retire, or fall back from it. It treats compactness as a claim with costs, not as an aesthetic preference.
 
 ```{mermaid}
 flowchart LR
@@ -125,9 +125,11 @@ Minimum fields:
 - `compact_seed`
 - `rule_system`
 - `memory_state`
+- `generation_status`
 - `residual_channel`
 - `correction_mechanism`
 - `verification_contract`
+- `verification_status`
 - `verifier_independence`
 - `governance_interface`
 - `authority_boundary`
@@ -137,9 +139,13 @@ Minimum fields:
 - `generative_leverage`
 - `hidden_complexity_risks`
 - `fallback_path`
+- `fallback_status`
+- `residual_burden_status`
 - `promotion_state`
+- `promotion_blockers`
 - `retirement_condition`
 - `support_state_effect`
+- `source_refs`
 - `evidence_refs`
 - `non_claims`
 
@@ -173,7 +179,7 @@ The subtle failure is residual displacement. The system appears compact because 
 
 ## Minimal implementation
 
-The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, residuals, correction mechanism, verification, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback, promotion state, retirement condition, support-state effect, evidence references, and non-claims.
+The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
 
 The current fixture validates that this public contract can be represented consistently. The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
@@ -185,7 +191,7 @@ The next useful implementation step is a compact-core comparison fixture: one co
 
 | Test | Purpose | Status |
 |---|---|---|
-| Compact generative record fixture validation | Validate that the public record contract includes target, seed, rules, memory, residuals, correction mechanism, verification, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, fallback, promotion state, retirement condition, support-state effect, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Compact generative record fixture validation | Validate that the public record contract includes target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | S/R/Q/G/V/E loop consistency test | Check that seed, route/index, query/search, generator, verifier, and exact/residual fields are all present. | planned; not run |
 | Residual honesty predicate | Check that unresolved obligations carry residual records. | implemented in `AsiStackProofs.CompactGenerativeSystems`; checked by Lean build |
 | Lossy exactness predicate | Check that a lossy representation cannot be marked exact without verification evidence. | implemented in `AsiStackProofs.CompactGenerativeSystems`; checked by Lean build |

@@ -9,9 +9,11 @@
     "compact_seed",
     "rule_system",
     "memory_state",
+    "generation_status",
     "residual_channel",
     "correction_mechanism",
     "verification_contract",
+    "verification_status",
     "verifier_independence",
     "governance_interface",
     "authority_boundary",
@@ -21,9 +23,13 @@
     "generative_leverage",
     "hidden_complexity_risks",
     "fallback_path",
+    "fallback_status",
+    "residual_burden_status",
     "promotion_state",
+    "promotion_blockers",
     "retirement_condition",
     "support_state_effect",
+    "source_refs",
     "evidence_refs",
     "non_claims"
   ],
@@ -33,9 +39,17 @@
     "compact_seed": { "type": "string", "minLength": 1 },
     "rule_system": { "type": "string", "minLength": 1 },
     "memory_state": { "type": "string", "minLength": 1 },
+    "generation_status": {
+      "type": "string",
+      "enum": ["not_run", "generated", "failed", "blocked", "not_applicable"]
+    },
     "residual_channel": { "type": "array", "items": { "type": "string" } },
     "correction_mechanism": { "type": "string", "minLength": 1 },
     "verification_contract": { "type": "string", "minLength": 1 },
+    "verification_status": {
+      "type": "string",
+      "enum": ["not_run", "passed", "failed", "blocked", "residual"]
+    },
     "verifier_independence": { "type": "string", "minLength": 1 },
     "governance_interface": { "type": "string", "minLength": 1 },
     "authority_boundary": { "type": "string", "minLength": 1 },
@@ -45,10 +59,19 @@
     "generative_leverage": { "type": "string", "minLength": 1 },
     "hidden_complexity_risks": { "type": "array", "items": { "type": "string" } },
     "fallback_path": { "type": "string", "minLength": 1 },
+    "fallback_status": {
+      "type": "string",
+      "enum": ["not_required", "available", "used", "failed", "blocked", "not_tested"]
+    },
+    "residual_burden_status": {
+      "type": "string",
+      "enum": ["unmeasured", "bounded", "dominant", "acceptable", "blocked"]
+    },
     "promotion_state": {
       "type": "string",
       "enum": ["conceptual", "candidate", "verified_for_scope", "fallback_required", "residualized", "blocked", "retired"]
     },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
     "retirement_condition": { "type": "string", "minLength": 1 },
     "support_state_effect": {
       "type": "string",
@@ -60,6 +83,7 @@
         "blocks_promotion"
       ]
     },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },

@@ -1091,9 +1091,11 @@ compact_generative_record:
   compact_seed: string
   rule_system: string
   memory_state: string
+  generation_status: not_run
   residual_channel: []
   correction_mechanism: string
   verification_contract: string
+  verification_status: not_run
   verifier_independence: string
   governance_interface: string
   authority_boundary: string
@@ -1103,14 +1105,18 @@ compact_generative_record:
   generative_leverage: string
   hidden_complexity_risks: []
   fallback_path: string
+  fallback_status: not_tested
+  residual_burden_status: unmeasured
   promotion_state: conceptual
+  promotion_blockers: []
   retirement_condition: string
   support_state_effect: record_shape_only
+  source_refs: []
   evidence_refs: []
   non_claims: []
 ```
 
-This record describes a compact generative core without hiding the work it exports to generation, correction, verification, governance, fallback, human review, residual correction, authority review, promotion decisions, or retirement.
+This record describes a compact generative core without hiding the work it exports to generation, correction, verification, governance, fallback, human review, residual correction, authority review, promotion decisions, or retirement. It keeps generation status, verification status, fallback status, residual-burden status, promotion blockers, source refs, support-state effect, and non-claims visible before compactness can be treated as utility.
 
 ## Compressed Artifact Record
 

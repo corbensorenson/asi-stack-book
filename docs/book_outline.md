@@ -2277,7 +2277,7 @@ Draft arc:
 
 - Problem: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
 - Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
-- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, correction mechanism, verifier, verifier independence, residual channel, fallback path, governance interface, authority boundary, use envelope, burden ledger, evidence/cost ledger, promotion state, retirement condition, support-state effect, and non-claims.
+- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, generation status, correction mechanism, verifier, verification status, verifier independence, residual channel, fallback path/status, residual-burden status, governance interface, authority boundary, use envelope, burden ledger, evidence/cost ledger, promotion blockers/state, source refs, support-state effect, and non-claims.
 - Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
 - Mechanism: Separate reconstruction burden, decision burden, and governance burden so compactness is judged by total recorded cost rather than seed size.
 - Mechanism: Require verifier separation and use envelopes so compact cores cannot self-promote their own adequacy for evidence, runtime, or replacement claims.
@@ -2301,7 +2301,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
-- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion state, retirement condition, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
+- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers/state, source refs, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Implemented Lean predicate: unresolved obligations require residual records.
 - Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
