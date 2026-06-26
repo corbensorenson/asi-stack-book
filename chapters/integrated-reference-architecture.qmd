@@ -57,11 +57,15 @@ This chapter synthesizes the stack as an end-to-end design target. It does not c
 
 The previous chapter introduced artifact stewardship as a bounded continuity layer. This chapter zooms back out and asks what a steward, planner, memory system, router, verifier, executor, benchmark ratchet, and SCF gate are all supposed to preserve together: an inspectable trace from authorized intent to artifact and evidence-backed change. Integration is useful only if it makes the handoffs more visible, not if it hides them behind a single system label.
 
+The reference architecture is therefore not an orchestration diagram with more boxes. It is the book's test of compositional honesty. If a layer claims to improve the system, the trace should show what authority it received, what artifact it emitted, what residual it left, and which later layer was allowed to depend on it.
+
 ## Problem
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
 
 This chapter is the end-to-end integration point. It receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. Its job is to show how those pieces compose without pretending that composition is already implemented or proven.
+
+The integration question has two halves. The happy path asks whether intent can become an artifact without losing context, authority, or evidence. The blocked path asks whether missing authorization, inadequate context, failed verification, excessive residual, or evaluator capture actually stops the flow. A reference architecture that cannot explain the blocked path is not governed; it is only sequenced.
 
 ## Why existing approaches are insufficient
 
@@ -70,6 +74,8 @@ Layer chapters can still feel disconnected unless the book traces the complete c
 The failure mode is architectural fragmentation. A planner can produce tasks, a memory system can supply context, a verifier can score claims, an execution OS can run tools, and a benchmark harness can report improvement, while no one can answer whether the original authority grant still covers the final action. That is not a minor documentation gap. It is the difference between a collection of useful mechanisms and a governed system.
 
 The integrated reference architecture therefore has to be explicit about handoffs. The output of one layer is not "more context" or "a better answer." It is a typed artifact: a command contract, plan DAG, context packet, claim record, work order, route decision, proof obligation, audit log, benchmark result, or capability-field transition.
+
+A single all-purpose agent loop can make this worse by turning every boundary into hidden prompt state. The ASI Stack should resist that collapse. The planner should not silently become the verifier; the memory compiler should not silently become the authority source; the execution OS should not silently decide that a failed residual is acceptable; and the benchmark ratchet should not silently promote a candidate whose regression floor moved.
 
 ## Core Claim
 
@@ -96,6 +102,8 @@ The reference architecture is a trace contract. A request enters through human i
 This is where the earlier layers compose. VIEA supplies the intent-to-execution spine, VCM supplies source-bound working memory, PlanForge and Talos supply planning and work contracts, Spinoza supplies claim discipline, Octopus/RMI/Benchmaxxing supply routing and ratchet pressure, CGS and loop closure supply compression pressure, and SCF supplies the replacement gate. Project Theseus and MoECOT remain implementation-reference context until their artifacts are imported or rerun here.
 
 The control question at every step is simple: what artifact was received, what authority did it carry, what evidence changed, and what stop condition could still block progress?
+
+The trace should include positive and negative checkpoints. A positive checkpoint says what the layer completed and which downstream dependency may now consume it. A negative checkpoint says why the flow stopped, narrowed, escalated, or entered quarantine. This makes the blocked path a first-class artifact instead of an exception that disappears into prose.
 
 The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation.
 
@@ -133,6 +141,8 @@ The important feature is that every participant emits something durable enough f
 
 The interface is the Reference Trace Record: a finite public record of intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
+A useful trace record is not merely chronological. It records parentage, authority deltas, evidence deltas, and residual deltas. Parentage says which artifact produced the next artifact. Authority deltas say whether authority narrowed, expired, escalated, or was denied. Evidence deltas say which claim state changed, if any. Residual deltas say what risk or missing work survived the handoff. Without those deltas, the trace becomes a log of events rather than an architecture record.
+
 ## Invariants
 
 The reference-architecture invariants keep an end-to-end trace from becoming a shortcut around the stack: every layer may add evidence, but none may erase authority, provenance, or residual obligations.
@@ -143,6 +153,8 @@ The reference-architecture invariants keep an end-to-end trace from becoming a s
 
 The strongest invariant is continuity under authority. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
 
+Completeness is also an invariant. A blank field in the trace must mean "not applicable" or "not yet available," not "the system forgot to ask." Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.
+
 ## Failure modes
 
 - Untraceable handoffs.
@@ -151,9 +163,13 @@ The strongest invariant is continuity under authority. A downstream artifact can
 
 Untraceable handoffs should create missing-contract records. Planning/execution collapse should preserve the failed plan, runtime artifact, and residual. Self-improvement without evaluator integrity should stop at the SCF gate.
 
+The subtle failure is integration theater: every layer name appears in the diagram, but the actual run still depends on informal summaries, ambient authority, unversioned context, dashboard prose, or unverifiable benchmark claims. A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.
+
 ## Minimal implementation
 
 The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
+
+The next useful implementation step is a tiny dry-run trace set with one approved flow and one blocked flow. The approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. The blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. That would still be a fixture, not a runtime result, but it would make the architecture's stop conditions executable.
 
 ## Codex test plan
 
@@ -207,5 +223,7 @@ The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow,
 Integrated Reference Architecture defines one boundary in the ASI Stack: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. Its job is to make a capability more governable, not merely more impressive.
 
 The architecture is coherent only if a reader can follow a request from human intent to evidence-backed change. This chapter gives that trace a shape: governance approves the command, planning compiles it, memory bounds the working context, routing selects capability, verification checks claims and residuals, execution produces artifacts, evidence records outcomes, and SCF gates decide whether improvement is allowed.
+
+The chapter also gives future implementation work a falsification target. If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.
 
 The next chapter narrows the integration claim into an implementation reference. Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.

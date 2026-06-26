@@ -58,9 +58,13 @@ This chapter manages future work. It does not cite unread sources, infer bibliog
 
 The previous chapter defines how the living book changes without losing evidence control. This final chapter keeps that change honest after publication: every missing source, external-literature queue, proof target, experiment idea, artifact reproduction task, and possible chapter insertion becomes a backlog item with an owner boundary instead of a vague promise that future work will fill the gap.
 
+The agenda is also admission control for future enthusiasm. A new paper, benchmark result, tool, proof idea, or conversation-mined insight can improve the book, but it should not enter as undifferentiated confidence. It enters as a source record, source note, chapter assignment, claim mapping, proof or test route, and residual.
+
 ## Problem
 
 A living book can decay into a pile of sources unless it has a research backlog. Future writing agents need to know which source to load, which chapter owns the boundary, which evidence is missing, which proof target is operational, and when a new paper should update an existing chapter instead of creating a duplicate one.
+
+They also need to know what not to do. Do not cite a title because it sounds relevant. Do not add a chapter because a source uses new language for an old boundary. Do not promote a claim because a private artifact exists somewhere else. Do not turn an external reference named inside a draft into a citation until the reference itself has been checked.
 
 ## Why existing approaches are insufficient
 
@@ -69,6 +73,8 @@ A pile of sources or ad hoc citations does not tell future writing agents what t
 The bibliography for this book is not just a list of references at the end. It is an operating surface for a living research program. Each source has to answer practical questions: which chapter owns it, which claim can it inform, what text has actually been read, what remains private or connector-only, what external literature needs direct verification, and what would have to happen before the source could raise support above `argument`. A static bibliography cannot carry that burden by itself.
 
 The research agenda is the matching map of ignorance. It names the work the book is not yet allowed to pretend is done: citation normalization, benchmark reproduction, semantic proof adequacy, chapter-level tests, external literature review, artifact import, reader-edition review, and new-paper triage. Keeping that ignorance explicit is what lets the book keep growing without becoming more confident merely because it became longer.
+
+The book therefore needs more than bibliography management. It needs state management for knowledge work: unread, inventoried, cached, source-noted, mapped to claims, passage-reviewed, integrated into chapter prose, tested, mechanized, reproduced, deprecated, or refuted. Those states are not decoration. They are the difference between a living book and a confident scrapbook.
 
 ## Core Claim
 
@@ -95,6 +101,8 @@ The research agenda is a queue with admission rules. Verification Bandwidth supp
 The Research Backlog Record keeps those future moves from becoming loose intentions.
 
 A good backlog item is more specific than "research this." It names the source or gap, the affected chapter boundary, the evidence state it could change, the proof or test route that would make the change meaningful, and the non-claims that remain even after the work is done. That structure prevents two common mistakes. The first is duplicate expansion, where every new paper becomes a new chapter even though it belongs inside an existing boundary. The second is evidence smearing, where a useful source influences prose in five places but no one can say which claim it actually supports.
+
+The useful lifecycle is conservative: discover, inventory, access, note, assign, map, draft, verify, integrate, release. A source can stop at any stage. A missing PDF can remain a backlog item. A useful but unread reference can remain external literature. A source-note-only connector item can inform planning while remaining outside public evidence. A test idea can wait until a fixture or harness exists. The system is allowed to remember unfinished work without pretending it is done.
 
 New AI papers should enter through this same gate. If a paper gives better vocabulary for an existing layer, it should update that layer's source queue and source note. If it introduces a genuinely new interface, invariant, artifact type, or failure mode that no chapter owns, it can justify a new chapter. If it is interesting but not yet read, it belongs in the external literature queue, not in the claim/evidence matrix. The rule keeps the book dynamic without making it shapeless.
 
@@ -135,6 +143,8 @@ Appendix G lists the corpus and external literature queue. Source notes support 
 
 Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the broader corpus visible. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
 
+When a future agent receives a new paper, the interface should produce a triage decision before prose changes: update existing chapter, propose new chapter, route to appendix, keep in backlog, or reject as out of scope. The decision should name the boundary it affects and the evidence it could change. That makes dynamic chapters possible without forcing manual renumbering or turning the outline into a catchall.
+
 ## Invariants
 
 - Do not cite unread sources as support.
@@ -142,6 +152,8 @@ Those interfaces are deliberately redundant. The outline tells a writing agent w
 - New papers update inventory before chapter claims.
 - Missing sources are backlog items, not evidence.
 - New chapters are added only when they own a distinct boundary.
+
+A source may inspire design language before it supports a claim only if the text says so and the evidence state remains unchanged. Inspiration, author intent, source-derived support, implementation evidence, and reproduced results are different states. The agenda exists to keep them from merging.
 
 ## Failure modes
 
@@ -151,9 +163,13 @@ Those interfaces are deliberately redundant. The outline tells a writing agent w
 - Private empirical results leaking into public claims.
 - External references named by source documents becoming citations before direct verification.
 
+Another failure is backlog rot. If every uncertain item becomes permanent "future work," the research agenda stops guiding action. Backlog records should keep next actions small enough to execute: fetch source, write note, verify citation, add fixture, run benchmark, formalize finite predicate, update chapter, or close as out of scope.
+
 ## Minimal implementation
 
 The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, but it does not normalize external literature, perform direct citation checks, or promote mapped claims to stronger support states.
+
+The next useful implementation step is a new-paper triage fixture set. One fixture should update an existing chapter, one should propose a precise new chapter because it owns a new boundary, one should remain external literature because it has not been read, and one should be rejected as redundant or out of scope. That would test the living-book insertion rule without claiming that any particular future source has been evaluated.
 
 ## Codex test plan
 
@@ -196,3 +212,5 @@ Recovery boundaries:
 The research agenda is the book's backlog discipline. It keeps source ingestion, bibliography, proof targets, experiments, missing evidence, and chapter insertion rules visible so the living book can grow without losing evidence control.
 
 After the exact core-claim mappings, the next bottleneck is no longer knowing which sources belong to which claims. It is doing the slower work: passage review, external citation normalization, artifact import or reproduction, and source-specific chapter revision without collapsing design rationale into unsupported evidence.
+
+This final chapter is the handoff back to future work. The book can keep changing, but every change should leave a trace: what source moved, what chapter boundary changed, what claim state stayed the same or moved, what test or proof was affected, what edition was regenerated, and what remains blocked.

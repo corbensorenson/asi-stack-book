@@ -3018,6 +3018,8 @@ Draft arc:
 - Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, compression/procedural loop closure, and SCF improvement gates without collapsing layer boundaries.
 - Mechanism: Show the artifact emitted by each layer: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, residual, or capability-field transition.
 - Mechanism: Identify where authority can stop, narrow, reroute, quarantine, rollback, or require review before downstream work proceeds.
+- Mechanism: Record positive and negative checkpoints so approved paths and blocked paths are both inspectable.
+- Mechanism: Track parentage, authority deltas, evidence deltas, and residual deltas instead of treating the trace as a chronological log.
 - Interface: All stack layers participate.
 - Interface: Artifacts and evidence ledgers provide continuity.
 - Interface: SCF gates control improvement.
@@ -3253,6 +3255,8 @@ Draft arc:
 - Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence.
 - Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
+- Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
+- Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
 - Interface: Appendix G lists corpus and external literature queue.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.
@@ -3268,6 +3272,9 @@ Failure modes to cover:
 - Citation drift.
 - Duplicate chapter creation for overlapping ideas.
 - Missing sources treated as evidence.
+- Private empirical results leaking into public claims.
+- External references named by source documents becoming citations before direct verification.
+- Backlog rot where vague future-work items never become executable source, citation, proof, fixture, benchmark, or chapter tasks.
 
 Draft deliverables:
 
