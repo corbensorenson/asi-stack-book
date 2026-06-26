@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal circle coil receipt gates
+
+- Strengthened the Circle/Coil structural-evidence boundary across Circle Calculus contracts and CoilRA/MultiCoil cyclic mixers: proof-contract receipt records now validate receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims; cyclic mixer evaluation records now validate evaluation state, claim partitions, baseline matrix refs, failure-case refs, source refs, support-state effect, and non-claims. Updated the chapters, outline, and protocol appendix so future writing runs can distinguish theorem-linked structural receipts and cyclic mixer diagnostics from local Circle builds, theorem-id resolution, receipt replay, fingerprint checks, model quality, runtime, memory, context-length, hardware efficiency, deployment readiness, support-state promotion, proof-status promotion, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal evidence proof support gates
 
 - Strengthened the evidence/proof support boundary across Evidence States and Spinoza Verification: evidence transition records now validate claim surface refs, evidence packet refs, source mapping refs, negative evidence refs, support-state effect, and non-claims; proof-carrying claim records now validate claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims. Updated the chapters, outline, and protocol appendix so future writing runs can distinguish claim support movement and proof envelopes from claim truth, semantic equivalence, verifier quality, citation accuracy, proof discharge, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.

@@ -2810,7 +2810,7 @@ Draft arc:
 - Interface: Python or CLI tools emit receipts and validation reports.
 - Interface: Theseus-style private experiments consume contracts without importing private results into public claims.
 - Interface: The evidence matrix records claim boundaries and support states.
-- Interface: `proof_contract_receipt_record` records finite-model scope, theorem refs, proof status, source version, fingerprint field, deterministic fields, verifier state, resolver/replay state, consumer gate, failure behavior, evidence refs, and non-claims.
+- Interface: `proof_contract_receipt_record` records receipt state, finite-model scope, proof boundary, theorem refs, proof status, source version, fingerprint field/status, deterministic fields, verifier state, resolver/replay state, consumer gate/state, staleness policy, failure behavior, source refs, support-state effect, evidence refs, and non-claims.
 
 Primary invariants:
 
@@ -2828,8 +2828,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, resolver/replay states, and non-claims.
-- Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape only; no Circle theorem-id resolver, receipt replay, fingerprint check, external Lean build, or generated contract pack exists yet.
+- A contract record with theorem IDs, receipt state, proof boundary, proof status, content fingerprint, fingerprint status, deterministic fields, validation commands, consumer check/state, ordinary baselines, resolver/replay states, staleness policy, support-state effect, and non-claims.
+- Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape, receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims only; no Circle theorem-id resolver, receipt replay, fingerprint check, external Lean build, or generated contract pack exists yet.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack exists yet.
 - Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming external Circle theorem replay.
 - Implemented Codex test: Proof contract receipt schema validation test.
@@ -2958,7 +2958,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
-- Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape, workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, and non-claims only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
+- Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape, evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
 - Planned Codex test: RoPE receipt boundary test
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic

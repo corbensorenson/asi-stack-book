@@ -5,30 +5,42 @@
   "type": "object",
   "required": [
     "receipt_id",
+    "receipt_state",
     "source_project",
     "contract_family",
     "engineering_object",
     "finite_model",
+    "proof_boundary",
     "theorem_refs",
     "proof_status",
     "source_version",
     "content_fingerprint",
+    "fingerprint_status",
     "deterministic_fields",
     "verifier_command",
     "verifier_result",
     "resolver_status",
     "replay_status",
     "consumer_gate",
+    "consumer_state",
+    "staleness_policy",
     "failure_behavior",
+    "source_refs",
+    "support_state_effect",
     "non_claims",
     "evidence_refs"
   ],
   "properties": {
     "receipt_id": { "type": "string", "minLength": 1 },
+    "receipt_state": {
+      "type": "string",
+      "enum": ["source_reported", "theorem_linked", "fingerprinted", "resolver_checked", "replayed", "consumer_gated", "workload_blocked", "retired"]
+    },
     "source_project": { "type": "string", "minLength": 1 },
     "contract_family": { "type": "string", "minLength": 1 },
     "engineering_object": { "type": "string", "minLength": 1 },
     "finite_model": { "type": "string", "minLength": 1 },
+    "proof_boundary": { "type": "string", "minLength": 1 },
     "theorem_refs": { "type": "array", "items": { "type": "string" } },
     "proof_status": {
       "type": "string",
@@ -36,6 +48,10 @@
     },
     "source_version": { "type": "string", "minLength": 1 },
     "content_fingerprint": { "type": "string", "minLength": 1 },
+    "fingerprint_status": {
+      "type": "string",
+      "enum": ["not_computed", "computed", "mismatch", "stale", "blocked"]
+    },
     "deterministic_fields": { "type": "array", "items": { "type": "string" } },
     "verifier_command": { "type": "string", "minLength": 1 },
     "verifier_result": {
@@ -61,7 +77,23 @@
       },
       "additionalProperties": false
     },
+    "consumer_state": {
+      "type": "string",
+      "enum": ["structural_only", "eligible_for_diagnostics", "eligible_for_downstream_review", "blocked", "retired"]
+    },
+    "staleness_policy": { "type": "string", "minLength": 1 },
     "failure_behavior": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } },
     "evidence_refs": { "type": "array", "items": { "type": "string" } }
   },

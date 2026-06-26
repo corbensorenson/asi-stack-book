@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned proof-carrying contract sources; support remains at argument until local Circle theorem-id resolution, receipt replay, fingerprint checks, vendored contract packs, Circle Lean builds, or accepted evidence transitions exist."
-  - "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency, and `AsiStackProofs.ProofCarryingContracts` implements local finite-record boundary predicates only; no external Circle Lean build, theorem-id resolver, Circle contract command, RoPE certifier command, receipt replay, fingerprint check, sidecar regeneration, or vendored contract pack has been run from this repo."
+  - "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency; the receipt fixture now records receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. `AsiStackProofs.ProofCarryingContracts` implements local finite-record boundary predicates only; no external Circle Lean build, theorem-id resolver, Circle contract command, RoPE certifier command, receipt replay, fingerprint check, sidecar regeneration, or vendored contract pack has been run from this repo."
   - "Pinned Circle project references support proof-boundary and contract-shape discussion, but this ASI Stack repo did not rerun Circle commands or import generated contract artifacts as validated evidence."
   - "RoPE material is used only for exact/discretized position-bookkeeping contract boundaries and numerical-diagnostic separation; it does not support model-quality, context-length, speed, memory, training-stability, or deployment-readiness claims."
   - "No support-state promotion, raw source publication, local Circle proof ownership claim, receipt replay result, downstream model-quality claim, or substrate-performance claim is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`; supporting: `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Source loading state | source notes and passage-reviewed pinned local Circle project mappings exist for all assigned sources; raw project text is not copied into this repo; no Circle commands or generated contract artifacts were run/imported here |
-| Test state | `proof_target_record.valid.json` and `proof_contract_receipt_record.valid.json` pass repository-level protocol fixture validation; `AsiStackProofs.ProofCarryingContracts` passes the Lean build for receipt-boundary and consumer-gate predicates; theorem-id resolution, contract replay, fingerprint, and text-level non-claim preservation checks remain planned. |
+| Test state | `proof_target_record.valid.json` and `proof_contract_receipt_record.valid.json` pass repository-level protocol fixture validation, with proof-contract receipts now covering receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims; `AsiStackProofs.ProofCarryingContracts` passes the Lean build for receipt-boundary and consumer-gate predicates; theorem-id resolution, contract replay, fingerprint, and text-level non-claim preservation checks remain planned. |
 
 ## Drafting guardrail
 
@@ -105,7 +105,7 @@ flowchart LR
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant theorem references, validation commands, deterministic fields, receipt fingerprints, unsupported axes, and failure conditions.
 
-The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: finite-model scope, proof status, source version, content fingerprint, resolver status, replay status, consumer permissions, failure behavior, and evidence references. That formalization is intentionally silent about whether any named external theorem ID resolves.
+The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: receipt state, finite-model scope, proof boundary, proof status, source version, content fingerprint, fingerprint status, resolver status, replay status, consumer permissions, consumer state, staleness policy, failure behavior, source refs, support-state effect, and evidence references. That formalization is intentionally silent about whether any named external theorem ID resolves.
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
 
@@ -135,21 +135,28 @@ A useful receipt records theorem refs, proof policy, source version, content fin
 Minimum proof-contract receipt fields:
 
 - `receipt_id`
+- `receipt_state`
 - `source_project`
 - `contract_family`
 - `engineering_object`
 - `finite_model`
+- `proof_boundary`
 - `theorem_refs`
 - `proof_status`
 - `source_version`
 - `content_fingerprint`
+- `fingerprint_status`
 - `deterministic_fields`
 - `verifier_command`
 - `verifier_result`
 - `resolver_status`
 - `replay_status`
 - `consumer_gate`
+- `consumer_state`
+- `staleness_policy`
 - `failure_behavior`
+- `source_refs`
+- `support_state_effect`
 - `non_claims`
 - `evidence_refs`
 
@@ -181,7 +188,7 @@ The subtle failure is proof cargo-culting: diagrams, theorem names, and receipt 
 
 The smallest useful implementation is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.
 
-The current implementation has three public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including not-run resolver and replay states. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, and requiring workload, baseline, metric, and evidence artifacts before downstream promotion. A Circle-specific generated contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
+The current implementation has three public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including receipt state, not-run resolver and replay states, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, and requiring workload, baseline, metric, and evidence artifacts before downstream promotion. A Circle-specific generated contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
 
 The next useful implementation step is a local surrogate contract pack: one valid receipt with a resolvable local theorem reference, one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence. That would test transfer semantics without importing private or unrun Circle results.
 
@@ -190,7 +197,7 @@ The next useful implementation step is a local surrogate contract pack: one vali
 | Test | Purpose | Status |
 |---|---|---|
 | Proof target record fixture validation | Validate that a proof target record names chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| Proof contract receipt record fixture validation | Validate that a theorem-linked receipt record exposes finite-model scope, theorem refs, proof status, fingerprint field, resolver/replay states, consumer gate, failure behavior, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Proof contract receipt record fixture validation | Validate that a theorem-linked receipt record exposes receipt state, finite-model scope, proof boundary, theorem refs, proof status, fingerprint field/status, resolver/replay states, consumer gate/state, staleness policy, failure behavior, source refs, support-state effect, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Receipt boundary Lean predicate | Prove that a downstream-ready proof-carrying receipt exposes theorem references, deterministic fields, and an explicit non-claim boundary. | implemented in `AsiStackProofs.ProofCarryingContracts`; passing via `cd lean && lake build` |
 | Consumer gate promotion predicate | Prove that contract readiness alone cannot promote a downstream claim when workload, baseline, metric, or evidence-artifact fields are missing. | implemented in `AsiStackProofs.ProofCarryingContracts`; passing via `cd lean && lake build` |
 | Contract schema validation test | Validate a Circle-specific contract pack with theorem refs, deterministic fields, verifier commands, consumer gates, and explicit non-claims. | planned; not run |

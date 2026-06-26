@@ -1,13 +1,16 @@
 {
   "receipt_id": "proof-contract-demo-001",
+  "receipt_state": "source_reported",
   "source_project": "Circle Calculus source family",
   "contract_family": "finite cyclic position bookkeeping",
   "engineering_object": "demo phase-bank receipt",
   "finite_model": "positions are represented only as declared finite residues for this fixture",
+  "proof_boundary": "external proof-linked source note only; no local theorem resolution or replay",
   "theorem_refs": ["external-source-note:rope_position_certifier"],
   "proof_status": "external_source_reported",
   "source_version": "source note reviewed; external project not built from this repo",
   "content_fingerprint": "not_computed",
+  "fingerprint_status": "not_computed",
   "deterministic_fields": ["declared periods", "bounded prefix", "collision report shape"],
   "verifier_command": "not run; future Circle contract replay or local surrogate command required",
   "verifier_result": "not_run",
@@ -19,7 +22,11 @@
     "blocked_uses": ["model-quality promotion", "runtime promotion", "context-length promotion", "deployment-readiness claim"],
     "required_downstream_evidence": ["local theorem-id resolver or surrogate proof", "receipt replay or fingerprint check", "workload, baseline, metric, and report before performance claims"]
   },
+  "consumer_state": "structural_only",
+  "staleness_policy": "Treat source-reported theorem refs as stale for promotion until resolver and fingerprint checks run.",
   "failure_behavior": "If resolver, replay, or fingerprint evidence is missing, keep downstream use structural-only or blocked.",
+  "source_refs": ["sources/source_notes/rope_position_certifier.md", "sources/source_notes/circle_ai_contract_suite.md"],
+  "support_state_effect": "record_shape_only",
   "non_claims": ["no local Circle build", "no receipt replay", "no model-quality result", "no context-length result"],
   "evidence_refs": ["sources/source_notes/rope_position_certifier.md", "sources/source_notes/circle_ai_contract_suite.md"]
 }

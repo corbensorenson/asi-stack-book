@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
-  - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency for workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, and non-claims; AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo."
+  - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo."
   - "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence."
   - "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here."
   - "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
-| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation for workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, and non-claims; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff promotion gates; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
+| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff promotion gates; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
 
 ## Drafting guardrail
 
@@ -85,7 +85,7 @@ Appendix C now records passage-reviewed mappings for all five assigned sources. 
 
 Cyclic mixer adoption is where structural proof, parameter accounting, and hardware reality meet. `coilra_multicoil_rope` supplies the adapter, phase, RoPE, circulant, block-cyclic, and parameter-accounting frame. The RoPE certifier supplies exact/discretized position-bookkeeping receipts. The Circle contract suite supplies consumer fields and non-claims. Theseus transfer requires workload, baseline, negative-control, metric, script, and report boundaries. Circle AI Architectures supplies the anti-fashion rule: use cyclic structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic structure, or geometry-aware structure is actually present.
 
-A Cyclic Mixer Evaluation Record keeps those layers separated. It can report a workload target, structural invariant, receipt refs, receipt boundary, alias/load diagnostics, parameter accounting, hardware notes, baseline symmetry, negative controls, resource costs, metrics status, consumer policy, and hardware refusal path while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
+A Cyclic Mixer Evaluation Record keeps those layers separated. It can report evaluation state, workload target, structural invariant, receipt refs, receipt boundary, claim partitions, alias/load diagnostics, parameter accounting, hardware notes, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, consumer policy, and hardware refusal path while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
 
 The record should make three ledgers visible at once. The structural ledger names the invariant and receipt boundary. The resource ledger names parameters, kernel shape, memory, latency, and hardware assumptions. The empirical ledger names baselines, metrics, failures, and adoption state. A strong cyclic proposal eventually has to survive all three; a result in one ledger should not silently spend credit in another.
 
@@ -122,19 +122,23 @@ The interface is the Cyclic Mixer Evaluation Record.
 Minimum fields:
 
 - `evaluation_id`
+- `evaluation_state`
 - `substrate_id`
 - `workload_target`
 - `structural_invariant`
 - `receipt_refs`
 - `proof_or_receipt_boundary`
+- `claim_partition`
 - `alias_diagnostics`
 - `load_diagnostics`
 - `parameter_accounting`
 - `hardware_kernel_notes`
 - `hardware_refusal_path`
 - `baseline_refs`
+- `baseline_matrix_refs`
 - `baseline_symmetry_policy`
 - `negative_controls`
+- `failure_case_refs`
 - `resource_costs`
 - `metrics_required`
 - `metrics_status`
@@ -142,6 +146,8 @@ Minimum fields:
 - `consumer_policy`
 - `adoption_state`
 - `adoption_decision_rationale`
+- `source_refs`
+- `support_state_effect`
 - `non_claims`
 - `evidence_refs`
 
@@ -175,7 +181,7 @@ The subtle failure is cyclic favoritism. The cyclic candidate gets theorem langu
 
 ## Minimal implementation
 
-The smallest useful implementation is a cyclic mixer evaluation schema and fixture. The current fixture records workload target, structural invariant, receipt refs, proof or receipt boundary, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline symmetry, negative controls, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, non-claims, and evidence references.
+The smallest useful implementation is a cyclic mixer evaluation schema and fixture. The current fixture records evaluation state, workload target, structural invariant, receipt refs, proof or receipt boundary, claim partitions, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, source refs, support-state effect, non-claims, and evidence references.
 
 Passing the fixture does not prove a mixer works. It proves the book can represent the adoption boundary without laundering structural facts into performance claims.
 
@@ -185,7 +191,7 @@ The next useful fixture set is a tradeoff packet: one structural receipt accepte
 
 | Test | Purpose | Status |
 |---|---|---|
-| Cyclic mixer evaluation record fixture validation | Validate that a cyclic-substrate evaluation records workload target, structural invariant, receipt refs, proof/receipt boundary, alias/load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline symmetry, negative controls, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state/rationale, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Cyclic mixer evaluation record fixture validation | Validate that a cyclic-substrate evaluation records evaluation state, workload target, structural invariant, receipt refs, proof/receipt boundary, claim partitions, alias/load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state/rationale, source refs, support-state effect, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | RoPE receipt boundary test | Check that exact/discretized receipts are separated from real-valued and model-quality claims. | planned; not run |
 | Cyclic mixer baseline matrix test | Check that dense, LoRA, RoPE, learned, recurrent, or state-space baselines are named before adoption. | planned; not run |
 | Residue/winding alias diagnostic | Check that alias diagnostics include winding when residue is insufficient. | planned; not run |

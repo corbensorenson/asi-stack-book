@@ -494,19 +494,28 @@ This record captures finite cyclic-memory, sparse-coverage, freshness, and recur
 ```yaml
 cyclic_mixer_evaluation_record:
   evaluation_id: string
+  evaluation_state: structural_only
   substrate_id: string
   workload_target: string
   structural_invariant: string
   receipt_refs: []
   proof_or_receipt_boundary: string
+  claim_partition:
+    structural_claims: []
+    quality_claims: []
+    runtime_claims: []
+    memory_claims: []
+    deployment_claims: []
   alias_diagnostics: []
   load_diagnostics: []
   parameter_accounting: string
   hardware_kernel_notes: []
   hardware_refusal_path: string
   baseline_refs: []
+  baseline_matrix_refs: []
   baseline_symmetry_policy: string
   negative_controls: []
+  failure_case_refs: []
   resource_costs: []
   metrics_required: []
   metrics_status: not_run
@@ -514,11 +523,13 @@ cyclic_mixer_evaluation_record:
   consumer_policy: string
   adoption_state: structural_only
   adoption_decision_rationale: string
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
   evidence_refs: []
 ```
 
-This record separates cyclic adapter, RoPE, phase-bank, and mixer structural facts from quality, runtime, memory, context-length, and deployment claims, while requiring workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet refs, consumer policy, and adoption rationale before adoption.
+This record separates cyclic adapter, RoPE, phase-bank, and mixer structural facts from quality, runtime, memory, context-length, and deployment claims, while requiring evaluation state, workload target, receipt refs, claim partitions, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet refs, consumer policy, adoption rationale, source refs, support-state effect, and non-claims before adoption.
 
 ## Specialist Registry Record
 
@@ -1614,14 +1625,17 @@ This record makes proof or justification claims tiered and auditable, including 
 ```yaml
 proof_contract_receipt_record:
   receipt_id: string
+  receipt_state: source_reported
   source_project: string
   contract_family: string
   engineering_object: string
   finite_model: string
+  proof_boundary: string
   theorem_refs: []
   proof_status: external_source_reported
   source_version: string
   content_fingerprint: string
+  fingerprint_status: not_computed
   deterministic_fields: []
   verifier_command: string
   verifier_result: not_run
@@ -1632,12 +1646,16 @@ proof_contract_receipt_record:
     allowed_uses: []
     blocked_uses: []
     required_downstream_evidence: []
+  consumer_state: structural_only
+  staleness_policy: string
   failure_behavior: string
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
   evidence_refs: []
 ```
 
-This record packages theorem-linked structural facts as receipts with finite-model scope, theorem references, proof status, fingerprints, deterministic fields, resolver/replay status, consumer permissions, failure behavior, evidence references, and explicit non-claims. It records receipt shape only; it does not imply external theorem replay, model-quality evidence, runtime evidence, or substrate adoption.
+This record packages theorem-linked structural facts as receipts with receipt state, finite-model scope, proof boundary, theorem references, proof status, fingerprints and fingerprint status, deterministic fields, resolver/replay status, consumer permissions and consumer state, staleness policy, failure behavior, source refs, support-state effect, evidence references, and explicit non-claims. It records receipt shape only; it does not imply external theorem replay, model-quality evidence, runtime evidence, or substrate adoption.
 
 ## Proof Target Record
 

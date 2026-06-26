@@ -1,18 +1,28 @@
 {
   "evaluation_id": "cyclic-mixer-demo-001",
+  "evaluation_state": "structural_only",
   "substrate_id": "substrate://multicoil-rope-demo",
   "workload_target": "future cyclic-position or adapter experiment; no workload run in this fixture",
   "structural_invariant": "phase-bank or block-cyclic structure is recorded separately from quality",
   "receipt_refs": ["sources/source_notes/rope_position_certifier.md"],
   "proof_or_receipt_boundary": "external proof-linked source note only; no local Circle build",
+  "claim_partition": {
+    "structural_claims": ["phase-bank or block-cyclic structure is recordable"],
+    "quality_claims": [],
+    "runtime_claims": [],
+    "memory_claims": [],
+    "deployment_claims": []
+  },
   "alias_diagnostics": ["residue and winding must be preserved when needed"],
   "load_diagnostics": ["record parameter and route-load assumptions"],
   "parameter_accounting": "parameter count is a separate field from quality and runtime",
   "hardware_kernel_notes": ["hardware-friendly sizes and kernel costs remain residuals"],
   "hardware_refusal_path": "block adoption or narrow scope if deployment kernels, layouts, or precision assumptions are unavailable",
   "baseline_refs": ["standard RoPE", "learned positions", "wrong-period control"],
+  "baseline_matrix_refs": [],
   "baseline_symmetry_policy": "candidate and baselines must share workload, metric, data condition, hardware notes, and fallback policy",
   "negative_controls": ["wrong-period control", "nonperiodic control"],
+  "failure_case_refs": [],
   "resource_costs": ["parameter count", "runtime", "memory", "kernel availability"],
   "metrics_required": ["quality", "runtime", "memory", "failure cases"],
   "metrics_status": "not_run",
@@ -20,6 +30,8 @@
   "consumer_policy": "May support structural diagnostics only; quality, runtime, memory, or canary routing require measured tradeoffs.",
   "adoption_state": "structural_only",
   "adoption_decision_rationale": "fixture has structural-source context but no baseline-symmetric workload evidence",
+  "source_refs": ["sources/source_notes/coilra_multicoil_rope.md", "sources/source_notes/rope_position_certifier.md"],
+  "support_state_effect": "record_shape_only",
   "non_claims": ["no context-length claim", "no model-quality claim", "no runtime claim"],
   "evidence_refs": ["sources/source_notes/coilra_multicoil_rope.md", "sources/source_notes/rope_position_certifier.md"]
 }

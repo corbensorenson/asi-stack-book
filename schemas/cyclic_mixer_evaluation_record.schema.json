@@ -5,19 +5,23 @@
   "type": "object",
   "required": [
     "evaluation_id",
+    "evaluation_state",
     "substrate_id",
     "workload_target",
     "structural_invariant",
     "receipt_refs",
     "proof_or_receipt_boundary",
+    "claim_partition",
     "alias_diagnostics",
     "load_diagnostics",
     "parameter_accounting",
     "hardware_kernel_notes",
     "hardware_refusal_path",
     "baseline_refs",
+    "baseline_matrix_refs",
     "baseline_symmetry_policy",
     "negative_controls",
+    "failure_case_refs",
     "resource_costs",
     "metrics_required",
     "metrics_status",
@@ -25,24 +29,44 @@
     "consumer_policy",
     "adoption_state",
     "adoption_decision_rationale",
+    "source_refs",
+    "support_state_effect",
     "non_claims",
     "evidence_refs"
   ],
   "properties": {
     "evaluation_id": { "type": "string", "minLength": 1 },
+    "evaluation_state": {
+      "type": "string",
+      "enum": ["not_run", "structural_only", "baseline_planned", "measured", "blocked", "retired"]
+    },
     "substrate_id": { "type": "string", "minLength": 1 },
     "workload_target": { "type": "string", "minLength": 1 },
     "structural_invariant": { "type": "string", "minLength": 1 },
     "receipt_refs": { "type": "array", "items": { "type": "string" } },
     "proof_or_receipt_boundary": { "type": "string", "minLength": 1 },
+    "claim_partition": {
+      "type": "object",
+      "required": ["structural_claims", "quality_claims", "runtime_claims", "memory_claims", "deployment_claims"],
+      "properties": {
+        "structural_claims": { "type": "array", "items": { "type": "string" } },
+        "quality_claims": { "type": "array", "items": { "type": "string" } },
+        "runtime_claims": { "type": "array", "items": { "type": "string" } },
+        "memory_claims": { "type": "array", "items": { "type": "string" } },
+        "deployment_claims": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
     "alias_diagnostics": { "type": "array", "items": { "type": "string" } },
     "load_diagnostics": { "type": "array", "items": { "type": "string" } },
     "parameter_accounting": { "type": "string", "minLength": 1 },
     "hardware_kernel_notes": { "type": "array", "items": { "type": "string" } },
     "hardware_refusal_path": { "type": "string", "minLength": 1 },
     "baseline_refs": { "type": "array", "items": { "type": "string" } },
+    "baseline_matrix_refs": { "type": "array", "items": { "type": "string" } },
     "baseline_symmetry_policy": { "type": "string", "minLength": 1 },
     "negative_controls": { "type": "array", "items": { "type": "string" } },
+    "failure_case_refs": { "type": "array", "items": { "type": "string" } },
     "resource_costs": { "type": "array", "items": { "type": "string" } },
     "metrics_required": { "type": "array", "items": { "type": "string" } },
     "metrics_status": {
@@ -56,6 +80,17 @@
       "enum": ["structural_only", "exploratory", "canary", "qualified", "qualified_for_scope", "blocked", "retired", "superseded", "refuted"]
     },
     "adoption_decision_rationale": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } },
     "evidence_refs": { "type": "array", "items": { "type": "string" } }
   },
