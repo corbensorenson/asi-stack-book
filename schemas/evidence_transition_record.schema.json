@@ -8,14 +8,22 @@
     "claim_id",
     "old_support_state",
     "new_support_state",
+    "transition_effect",
+    "scope_boundary",
+    "evidence_roles",
     "transition_reason",
     "required_artifacts",
     "artifact_refs",
     "verification_command",
     "verification_result",
     "negative_results",
+    "downgrade_triggers",
+    "promotion_burden",
     "limitations",
-    "review_status"
+    "review_status",
+    "reviewer_independence",
+    "changelog_ref",
+    "non_claims"
   ],
   "properties": {
     "transition_id": { "type": "string", "minLength": 1 },
@@ -28,6 +36,12 @@
       "type": "string",
       "enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]
     },
+    "transition_effect": {
+      "type": "string",
+      "enum": ["no_change", "upward", "downward", "deprecated", "refuted"]
+    },
+    "scope_boundary": { "type": "string", "minLength": 1 },
+    "evidence_roles": { "type": "array", "items": { "type": "string" } },
     "transition_reason": { "type": "string", "minLength": 1 },
     "required_artifacts": { "type": "array", "items": { "type": "string" } },
     "artifact_refs": { "type": "array", "items": { "type": "string" } },
@@ -37,11 +51,16 @@
       "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
     },
     "negative_results": { "type": "array", "items": { "type": "string" } },
+    "downgrade_triggers": { "type": "array", "items": { "type": "string" } },
+    "promotion_burden": { "type": "string", "minLength": 1 },
     "limitations": { "type": "array", "items": { "type": "string" } },
     "review_status": {
       "type": "string",
       "enum": ["open", "accepted", "rejected", "needs_review"]
-    }
+    },
+    "reviewer_independence": { "type": "string", "minLength": 1 },
+    "changelog_ref": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

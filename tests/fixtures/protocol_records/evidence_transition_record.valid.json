@@ -3,12 +3,20 @@
   "claim_id": "claim://demo/no-promotion",
   "old_support_state": "argument",
   "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "scope_boundary": "local fixture-shape validation only",
+  "evidence_roles": ["schema_fixture", "process_validator"],
   "transition_reason": "Record shape validation only; no claim is promoted by this fixture.",
   "required_artifacts": ["claim-specific source map or validated proof/test before promotion"],
   "artifact_refs": ["schemas/evidence_transition_record.schema.json"],
   "verification_command": "python3 scripts/validate_protocol_examples.py",
   "verification_result": "pass",
   "negative_results": [],
+  "downgrade_triggers": ["failed verification", "scope mismatch", "missing required artifact"],
+  "promotion_burden": "upward movement requires claim-specific artifacts, limitations, and review acceptance",
   "limitations": ["fixture validation is not evidence for a substantive claim"],
-  "review_status": "open"
+  "review_status": "open",
+  "reviewer_independence": "not reviewed beyond local validator execution",
+  "changelog_ref": "appendices/F_changelog.qmd",
+  "non_claims": ["does not promote support state", "does not prove claim truth"]
 }

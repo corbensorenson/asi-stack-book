@@ -362,7 +362,7 @@ Draft arc:
 - Mechanism: Separate claim label from support state with evidence transition records so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Mechanism: Require source notes before promoting claims to source-derived.
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
-- Mechanism: emit evidence receipts that lock artifact role, claim scope, verification command or review, limitations, and negative or inconclusive results.
+- Mechanism: emit evidence receipts that lock artifact role, claim scope, transition effect, evidence role, verification command or review, downgrade triggers, promotion burden, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
 - Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
@@ -386,6 +386,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
+- Implemented repository-level fixture: `evidence_transition_record.valid.json` validates transition effect, scope boundary, evidence roles, downgrade triggers, promotion burden, reviewer independence, changelog ref, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
 - Planned Codex test: Support-state transition test.
 - Planned Codex test: Claim ledger completeness test.
 - Planned Codex test: Evidence bundle completeness test.
@@ -3135,11 +3136,11 @@ Draft arc:
 - Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
 - Insufficiency: RLHF, preference optimization, and verifier rewards are often framed as model fine-tuning recipes rather than stack-wide update mechanisms.
 - Mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
-- Mechanism: Record the feedback source, reward/preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
+- Mechanism: Record update state, policy delta, feedback source/admissibility, reward/preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packets, deployment scope, support-state effect, residuals, and non-claims.
 - Mechanism: Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked.
 - Mechanism: Keep REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO-style trust-region updates, GRPO/DAPO/GSPO-style group or sequence updates, DPO/IPO/ORPO/KTO/SimPO-style offline preference optimization, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
 - Mechanism: treat policy updates as behavior-change leases with target layer, evaluation scope, drift bound, rollback condition, monitor window, and promotion gate.
-- Mechanism: emit policy-delta receipts that record behavior changes, admissible feedback, reward-hacking probes, regressions, unchanged authority boundary, and rollback restoration path.
+- Mechanism: emit policy-delta receipts that record behavior changes, admissible feedback, reward boundary, reward-hacking probes, holdouts, regressions, unchanged authority boundary, monitor window, evidence packet, deployment scope, support-state effect, and rollback restoration path.
 - Interface: Benchmarks and verifiers produce reward or preference signals.
 - Interface: VCM and artifact graphs preserve training/evaluation context and evidence references.
 - Interface: Talos records training, tool, and evaluation artifacts.
@@ -3167,8 +3168,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A policy optimization record schema with target layer, feedback source, reward signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
-- Implemented repository-level fixture: `policy_optimization_record.valid.json` validates policy-update record shape only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
+- A policy optimization record schema with update state, target layer, policy delta, feedback source/admissibility, reward signal/boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, support-state effect, residuals, and non-claims.
+- Implemented repository-level fixture: `policy_optimization_record.valid.json` validates update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
 - External literature queue: initial source records and conservative source notes now exist for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitation work; process-reward work beyond LongRLVR remains queued.
 - Planned Codex test: DPO/offline preference baseline test.

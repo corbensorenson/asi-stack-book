@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records a claim-level source-note map for this chapter's core claim, and five of six assigned mappings have local raw-cache passage review; the support state remains argument until the remaining connector-only mapping is reviewed and an evidence transition is accepted."
-  - "The evidence_transition_record fixture and evidence-state Lean proofs validate narrow transition surfaces only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain unimplemented."
+  - "The evidence_transition_record fixture and evidence-state Lean proofs validate narrow transition surfaces only; the fixture now records transition effect, scope boundary, evidence roles, downgrade triggers, promotion burden, reviewer independence, changelog ref, and non-claims. Claim-ledger completeness, evidence bundle completeness, and changelog audits remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Source queue | primary: `benchmaxxing`, `spinoza`, `viea`; supporting: `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Source loading state | source notes: `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth`; raw cache: `benchmaxxing`, `spinoza`, `viea`, `uat`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
 | Source evidence review state | Five of six claim-source mappings have reviewed local raw-cache passage references in `book_structure.json`; `coherence_exchange` remains connector-only/source-note mapped in this pass. |
-| Test state | `evidence_transition_record.valid.json` passes protocol fixture validation, evidence-state Lean hooks build locally, and source evidence audit records the five reviewed mappings; claim-ledger completeness, evidence bundle completeness, and changelog consistency audits remain planned. |
+| Test state | `evidence_transition_record.valid.json` passes protocol fixture validation for transition effect, scope boundary, evidence roles, downgrade triggers, promotion burden, reviewer independence, changelog ref, and non-claims; evidence-state Lean hooks build locally, and source evidence audit records the five reviewed mappings; claim-ledger completeness, evidence bundle completeness, and changelog consistency audits remain planned. |
 
 ## Drafting guardrail
 
@@ -43,7 +43,7 @@ This chapter governs how claims move. It does not promote a claim because prose 
 
 It follows the failure chapter because the book itself has the same failure surface as the systems it describes: clearer text can hide missing evidence, a nearby citation can launder a stronger claim, and a narrow proof can be rhetorically expanded beyond its formal scope.
 
-The chapter's control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, by which command or review, with which limitations, and with which negative or inconclusive results still attached.
+The chapter's control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, in which evidence role, by which command or review, with which limitations, with which downgrade triggers, and with which negative or inconclusive results still attached.
 
 ## Problem
 
@@ -123,14 +123,22 @@ Minimum evidence transition fields:
 - `claim_id`
 - `old_support_state`
 - `new_support_state`
+- `transition_effect`
+- `scope_boundary`
+- `evidence_roles`
 - `transition_reason`
 - `required_artifacts`
 - `artifact_refs`
 - `verification_command`
 - `verification_result`
 - `negative_results`
+- `downgrade_triggers`
+- `promotion_burden`
 - `limitations`
 - `review_status`
+- `reviewer_independence`
+- `changelog_ref`
+- `non_claims`
 
 Drafting updates claim text and labels. Source ingestion adds source notes and source-to-claim mappings. Proof and code work adds commands, fixtures, modules, and results. The changelog records meaningful evidence movement. Appendix C remains the public ledger that keeps those transitions visible.
 
@@ -158,7 +166,7 @@ The subtle failure is evidence smoothing. A revision improves prose by removing 
 
 ## Minimal implementation
 
-The smallest useful implementation is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid transition fixture, and the Lean evidence-state proof module. The schema validates transition shape. The Lean module proves the narrow support-state invariant in this repository. Neither artifact promotes any chapter claim without claim-specific evidence.
+The smallest useful implementation is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid transition fixture, and the Lean evidence-state proof module. The schema validates transition shape, scope boundary, evidence roles, downgrade triggers, promotion burden, reviewer independence, changelog linkage, and non-claims. The Lean module proves the narrow support-state invariant in this repository. Neither artifact promotes any chapter claim without claim-specific evidence.
 
 The next useful fixture set is an evidence-receipt suite: one lineage-only source, one direct-support source, one failed verification, one schema-only validation, one finite Lean predicate, and one benchmark result whose scope is deliberately narrower than the prose claim.
 
@@ -166,7 +174,7 @@ The next useful fixture set is an evidence-receipt suite: one lineage-only sourc
 
 | Test | Purpose | Status |
 |---|---|---|
-| Evidence transition record validation | Check that the transition fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Evidence transition record validation | Check that the transition fixture records support states, transition effect, scope boundary, evidence roles, artifacts, verification result, downgrade triggers, promotion burden, limitations, reviewer independence, changelog ref, and non-claims. | implemented by protocol validation; run in this pass |
 | Support-state transition test | Check that a claim cannot move upward without the artifact required by the target support state. | planned; not run |
 | Claim ledger completeness test | Check that every major chapter claim appears in Appendix C with label, support state, and open gap. | planned; not run |
 | Evidence bundle completeness test | Check that test-backed claims include command, environment, logs, metrics, limitations, and negative results. | planned; not run |

@@ -836,6 +836,42 @@ benchmark_ratchet_record:
 
 This record turns benchmark pressure into an evidence-gated decision. It preserves baselines, run records, saturation state, residuals, regressions, anti-Goodhart checks, promotion decisions, support-state effects, and negative results.
 
+## Policy Optimization Record
+
+```yaml
+policy_optimization_record:
+  update_id: string
+  update_state: proposed
+  target_layer: router
+  policy_ref: string
+  policy_delta_summary: string
+  training_mode: not_run
+  feedback_source: string
+  feedback_admissibility: not_reviewed
+  reward_or_preference_signal: string
+  reward_boundary: string
+  verifier_refs: []
+  reward_hacking_probes: []
+  update_constraint: string
+  drift_bound: string
+  holdout_refs: []
+  regression_refs: []
+  evaluation_refs: []
+  governance_gate_refs: []
+  authority_effect: not_evaluated
+  rollback_plan: string
+  monitor_window: string
+  evidence_packet_refs: []
+  deployment_scope: string
+  promotion_decision: not_evaluated
+  measurement_status: not_run
+  support_state_effect: record_shape_only
+  residuals: []
+  non_claims: []
+```
+
+This record treats policy optimization as a behavior-change lease. It separates target layer, policy delta, feedback admissibility, reward boundary, probes, holdouts, regressions, governance gates, authority effect, rollback, monitoring, evidence packets, deployment scope, support-state effect, residuals, and non-claims before any update can be promoted.
+
 ## MoECOT Orchestration Record
 
 ```yaml
@@ -1428,17 +1464,25 @@ evidence_transition_record:
   claim_id: string
   old_support_state: argument
   new_support_state: argument
+  transition_effect: no_change
+  scope_boundary: string
+  evidence_roles: []
   transition_reason: string
   required_artifacts: []
   artifact_refs: []
   verification_command: string
   verification_result: not_run
   negative_results: []
+  downgrade_triggers: []
+  promotion_burden: string
   limitations: []
   review_status: open
+  reviewer_independence: string
+  changelog_ref: string
+  non_claims: []
 ```
 
-This record makes support-state movement reviewable. It names the claim, prior and candidate support states, required artifacts, verifier command/result, negative results, limitations, and review state before a claim can move.
+This record makes support-state movement reviewable. It names the claim, prior and candidate support states, transition effect, scope boundary, evidence roles, required artifacts, verifier command/result, negative results, downgrade triggers, promotion burden, limitations, reviewer independence, changelog ref, non-claims, and review state before a claim can move.
 
 ## Belief Revision Record
 

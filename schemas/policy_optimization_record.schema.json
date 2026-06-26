@@ -5,24 +5,40 @@
   "type": "object",
   "required": [
     "update_id",
+    "update_state",
     "target_layer",
     "policy_ref",
+    "policy_delta_summary",
     "training_mode",
     "feedback_source",
+    "feedback_admissibility",
     "reward_or_preference_signal",
+    "reward_boundary",
     "verifier_refs",
+    "reward_hacking_probes",
     "update_constraint",
     "drift_bound",
+    "holdout_refs",
+    "regression_refs",
     "evaluation_refs",
     "governance_gate_refs",
+    "authority_effect",
     "rollback_plan",
+    "monitor_window",
+    "evidence_packet_refs",
+    "deployment_scope",
     "promotion_decision",
     "measurement_status",
+    "support_state_effect",
     "residuals",
     "non_claims"
   ],
   "properties": {
     "update_id": { "type": "string", "minLength": 1 },
+    "update_state": {
+      "type": "string",
+      "enum": ["proposed", "research_only", "evidence_packet_ready", "canary", "promoted", "quarantined", "rolled_back", "rejected", "retired"]
+    },
     "target_layer": {
       "type": "string",
       "enum": [
@@ -38,6 +54,7 @@
       ]
     },
     "policy_ref": { "type": "string", "minLength": 1 },
+    "policy_delta_summary": { "type": "string", "minLength": 1 },
     "training_mode": {
       "type": "string",
       "enum": [
@@ -53,18 +70,43 @@
       ]
     },
     "feedback_source": { "type": "string", "minLength": 1 },
+    "feedback_admissibility": {
+      "type": "string",
+      "enum": ["not_reviewed", "admissible_for_planning", "admissible_for_training", "admissible_for_canary", "blocked", "retired"]
+    },
     "reward_or_preference_signal": { "type": "string", "minLength": 1 },
+    "reward_boundary": { "type": "string", "minLength": 1 },
     "verifier_refs": { "type": "array", "items": { "type": "string" } },
+    "reward_hacking_probes": { "type": "array", "items": { "type": "string" } },
     "update_constraint": { "type": "string", "minLength": 1 },
     "drift_bound": { "type": "string", "minLength": 1 },
+    "holdout_refs": { "type": "array", "items": { "type": "string" } },
+    "regression_refs": { "type": "array", "items": { "type": "string" } },
     "evaluation_refs": { "type": "array", "items": { "type": "string" } },
     "governance_gate_refs": { "type": "array", "items": { "type": "string" } },
+    "authority_effect": {
+      "type": "string",
+      "enum": ["unchanged", "narrows", "requires_review", "blocked", "not_evaluated"]
+    },
     "rollback_plan": { "type": "string", "minLength": 1 },
+    "monitor_window": { "type": "string", "minLength": 1 },
+    "evidence_packet_refs": { "type": "array", "items": { "type": "string" } },
+    "deployment_scope": { "type": "string", "minLength": 1 },
     "promotion_decision": {
       "type": "string",
       "enum": ["promote", "keep_experimental", "quarantine", "rollback", "reject", "not_evaluated"]
     },
     "measurement_status": { "type": "string", "enum": ["not_run", "planned", "run"] },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "residuals": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },

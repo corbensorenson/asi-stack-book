@@ -1,17 +1,28 @@
 {
   "update_id": "policy-update-demo-001",
+  "update_state": "proposed",
   "target_layer": "router",
   "policy_ref": "policy://demo-router-selection",
+  "policy_delta_summary": "No policy delta exists; fixture records required fields for a future router-policy update.",
   "training_mode": "not_run",
   "feedback_source": "planned benchmark, verifier, and governance feedback; no training run has occurred",
+  "feedback_admissibility": "not_reviewed",
   "reward_or_preference_signal": "planned reward = task success + verified evidence use - cost - unsupported claims - authority violations",
+  "reward_boundary": "reward is a proposed proxy only and cannot stand in for route quality, authority fit, or task success",
   "verifier_refs": [
     "planned: benchmark ratchet record",
     "planned: Spinoza verifier",
     "planned: Talos artifact validation"
   ],
+  "reward_hacking_probes": [
+    "planned: unsupported-claim exploit probe",
+    "planned: cheap-route authority bypass probe",
+    "planned: latency-versus-verification suppression probe"
+  ],
   "update_constraint": "policy update must preserve authority, evidence, and rollback boundaries",
   "drift_bound": "not measured; would require KL, capability-field, or route-change bound before promotion",
+  "holdout_refs": ["planned: route-selection holdout set"],
+  "regression_refs": ["planned: source-grounding regression suite", "planned: authority-boundary regression suite"],
   "evaluation_refs": [
     "planned: holdout tasks",
     "planned: regression suite",
@@ -21,12 +32,17 @@
     "planned: SCF promotion gate",
     "planned: human review for high-impact update"
   ],
+  "authority_effect": "not_evaluated",
   "rollback_plan": "rollback to previous router policy if evaluation, governance, or regression gates fail",
+  "monitor_window": "not opened; would be required before canary or promotion",
+  "evidence_packet_refs": [],
+  "deployment_scope": "none; fixture is not deployed or trained",
   "promotion_decision": "not_evaluated",
   "measurement_status": "not_run",
+  "support_state_effect": "record_shape_only",
   "residuals": [
     "no policy optimization experiment has been run",
-    "external RL literature has not been source-noted into this repo"
+    "external RL literature has source notes but no local reproduction or evidence transition"
   ],
   "non_claims": [
     "This fixture is not a PPO, DPO, GRPO, or RLVR result.",
