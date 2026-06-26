@@ -1,6 +1,7 @@
 {
   "transaction_id": "context-transaction-demo-001",
   "transaction_state": "committed",
+  "transaction_validity_state": "shape_validated",
   "operation": "derive",
   "snapshot_id": "snapshot-demo-001",
   "snapshot_boundary": "single fixture snapshot; no live store replay",
@@ -9,6 +10,7 @@
   "read_set": ["sources/source_notes/vcm_public.md"],
   "write_set": ["semantic-page-demo-001"],
   "branch_policy": "copy-on-write for drafting representations",
+  "isolation_state": "not_tested",
   "taint_labels": ["no-raw-private-source"],
   "taint_propagation": "propagated",
   "deletion_obligations": ["remove derived page if source note is withdrawn"],
@@ -22,6 +24,13 @@
   "context_abi_refs": ["tests/fixtures/protocol_records/context_abi_record.valid.json"],
   "source_refs": ["sources/source_notes/vcm_public.md"],
   "audit_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"],
+  "consumer_policy": "May be used as a fixture-level transaction example only; not as evidence of live memory-store behavior.",
+  "verification_refs": ["python3 scripts/validate_protocol_examples.py"],
+  "promotion_blockers": [
+    "no executable memory-store harness",
+    "branch isolation not tested",
+    "deletion closure over derivatives not tested"
+  ],
   "replay_boundary": "Fixture records the declared transaction shape only; it does not replay a memory store.",
   "support_state_effect": "record_shape_only",
   "non_claims": ["does not prove branch isolation", "does not prove deletion closure over a live store", "does not prove leak prevention"]

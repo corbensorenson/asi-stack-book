@@ -1446,7 +1446,7 @@ Draft arc:
 - Mechanism: Propagate taint and deletion obligations through derived context.
 - Mechanism: Distinguish view construction from view use: mounts, snapshot, clearance, branch, materialization, actual reads, derivatives, propagated taint, and deletion/declassification obligations.
 - Mechanism: Fail closed with typed faults when mount visibility, snapshot coherence, taint propagation, or deletion closure cannot be established.
-- Mechanism: record materialization state, derivative refs, declassification refs, replay boundary, and non-claims before a context view can feed a durable artifact.
+- Mechanism: record transaction validity state, isolation state, materialization state, derivative refs, declassification refs, consumer policy, verification refs, promotion blockers, replay boundary, and non-claims before a context view can feed a durable artifact.
 - Interface: Planning receives consistent views.
 - Interface: Security labels sensitive mounts.
 - Interface: Evidence records contradictions and supersession.
@@ -1468,7 +1468,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A transaction model for context reads, writes, branches, and deletion closure.
-- Implemented protocol validation: `context_transaction_record` fixture validates public record shape, transaction state, snapshot boundary, mount policy, taint propagation, rollback/deletion closure, derivative refs, declassification refs, context ABI refs, source refs, materialization state, replay boundary, support-state effect, and non-claims only.
+- Implemented protocol validation: `context_transaction_record` fixture validates public record shape, transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, derivative refs, declassification refs, context ABI refs, source refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims only.
 - Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
 - Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Exact Appendix C claim-source mappings for the Context Transactions claim across VCM public-v1 transaction/snapshot/invalidation/deletion semantics, Ladon/Manhattan sensitive-compartment and handle boundaries, Context Engineer clearance-labeled mission contexts and Digital SCIF lifecycle, Black Hole Context Manager memory-budget/drift/freeze/evict patterns, and editable VCM refinement context; the four local mappings (`vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, memory-store artifacts, conformance results, VCM-Bench records, or external corroboration are imported or inspected. Support remains `argument` pending memory-store behavior, mount-visibility tests, branch-isolation checks, deletion-closure harnesses, side-channel validation, context-manager execution, benchmark reproduction, or accepted evidence transitions.

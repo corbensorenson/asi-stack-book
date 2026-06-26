@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records transaction state, snapshot boundary, mount policy, taint propagation, rollback/deletion closure, declassification refs, derivatives, materialization state, replay boundary, context ABI refs, source refs, support-state effect, and non-claims, but no transactional memory-store tests have been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; the fixture now records transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivatives, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims, but no transactional memory-store tests have been run for this chapter."
   - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
-| Test state | Context transaction fixture validation now includes transaction state, snapshot boundary, mount policy, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
+| Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
 
@@ -108,7 +108,7 @@ flowchart LR
   K -- "no" --> M["Fault / quarantine"]
 ```
 
-The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, taint labels, deletion obligations, declassification references, derivative references, contradiction references, materialization state, closure state, faults, replay boundary, non-claims, and audit references are coherent enough to replay.
+The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, transaction validity state, isolation state, taint labels, deletion obligations, declassification references, derivative references, contradiction references, materialization state, closure state, faults, consumer policy, verification refs, promotion blockers, replay boundary, non-claims, and audit references are coherent enough to replay.
 
 The record should distinguish view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered. If the view becomes a durable artifact, the artifact should point back to the transaction rather than merely naming the source files it happened to read.
 
@@ -128,6 +128,7 @@ Minimum fields:
 
 - `transaction_id`
 - `transaction_state`
+- `transaction_validity_state`
 - `operation`
 - `snapshot_id`
 - `snapshot_boundary`
@@ -136,6 +137,7 @@ Minimum fields:
 - `read_set`
 - `write_set`
 - `branch_policy`
+- `isolation_state`
 - `taint_labels`
 - `taint_propagation`
 - `deletion_obligations`
@@ -149,6 +151,9 @@ Minimum fields:
 - `context_abi_refs`
 - `source_refs`
 - `audit_refs`
+- `consumer_policy`
+- `verification_refs`
+- `promotion_blockers`
 - `replay_boundary`
 - `support_state_effect`
 - `non_claims`
@@ -182,7 +187,7 @@ The subtle failure is context laundering. A sensitive or unsupported source can 
 
 A transaction model for context reads, writes, branches, and deletion closure.
 
-The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates transaction state, operation, snapshot, snapshot boundary, mounts, mount policy, read/write sets, branch policy, taint labels, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivative refs, contradiction refs, materialization state, closure state, faults, context ABI refs, source refs, audit refs, replay boundary, support-state effect, and non-claims. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
+The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates transaction state, transaction validity state, operation, snapshot, snapshot boundary, mounts, mount policy, read/write sets, branch policy, isolation state, taint labels, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivative refs, contradiction refs, materialization state, closure state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
 
 The fixture validates only the record surface. The Lean predicates do not prove read-your-writes consistency across a store, branch isolation, deletion closure, or poisoning resistance.
 
@@ -192,7 +197,7 @@ The next useful implementation step is a tiny memory-store fixture set: one cohe
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares transaction state, operation, snapshot boundary, mounts, mount policy, read/write sets, branch policy, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivatives, materialization state, contradictions, closure state, faults, context ABI refs, source refs, audits, replay boundary, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares transaction state, transaction validity state, operation, snapshot boundary, mounts, mount policy, read/write sets, branch policy, isolation state, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivatives, materialization state, contradictions, closure state, faults, context ABI refs, source refs, audits, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Snapshot read predicate | Check that a valid finite snapshot read sees a committed event in its declared view. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Taint propagation predicate | Check that tainted source context produces tainted derived context unless declassification is authorized. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Deletion closure test | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | planned; not run |

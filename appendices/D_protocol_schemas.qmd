@@ -291,6 +291,7 @@ This record is the stable ABI between planning, durable memory, context compilat
 context_transaction_record:
   transaction_id: string
   transaction_state: committed
+  transaction_validity_state: shape_validated
   operation: derive
   snapshot_id: string
   snapshot_boundary: string
@@ -299,6 +300,7 @@ context_transaction_record:
   read_set: []
   write_set: []
   branch_policy: string
+  isolation_state: not_tested
   taint_labels: []
   taint_propagation: propagated
   deletion_obligations: []
@@ -312,12 +314,15 @@ context_transaction_record:
   context_abi_refs: []
   source_refs: []
   audit_refs: []
+  consumer_policy: string
+  verification_refs: []
+  promotion_blockers: []
   replay_boundary: string
   support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, transaction state, snapshot boundary, mount policy, deletion closure, taint propagation, declassification references, derivatives, context ABI refs, source refs, materialization state, contradictions, faults, replay boundary, support-state effect, non-claims, and audit.
+This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, deletion closure, taint propagation, declassification references, derivatives, context ABI refs, source refs, materialization state, contradictions, faults, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, non-claims, and audit.
 
 ## Costed Route Record
 

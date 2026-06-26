@@ -6,6 +6,7 @@
   "required": [
     "transaction_id",
     "transaction_state",
+    "transaction_validity_state",
     "operation",
     "snapshot_id",
     "snapshot_boundary",
@@ -14,6 +15,7 @@
     "read_set",
     "write_set",
     "branch_policy",
+    "isolation_state",
     "taint_labels",
     "taint_propagation",
     "deletion_obligations",
@@ -27,6 +29,9 @@
     "context_abi_refs",
     "source_refs",
     "audit_refs",
+    "consumer_policy",
+    "verification_refs",
+    "promotion_blockers",
     "replay_boundary",
     "support_state_effect",
     "non_claims"
@@ -36,6 +41,10 @@
     "transaction_state": {
       "type": "string",
       "enum": ["opened", "committed", "faulted", "rolled_back", "retired"]
+    },
+    "transaction_validity_state": {
+      "type": "string",
+      "enum": ["not_checked", "shape_validated", "store_validated", "replay_validated", "failed", "blocked"]
     },
     "operation": {
       "type": "string",
@@ -48,6 +57,10 @@
     "read_set": { "type": "array", "items": { "type": "string" } },
     "write_set": { "type": "array", "items": { "type": "string" } },
     "branch_policy": { "type": "string", "minLength": 1 },
+    "isolation_state": {
+      "type": "string",
+      "enum": ["not_tested", "isolated", "leaked", "blocked", "not_applicable"]
+    },
     "taint_labels": { "type": "array", "items": { "type": "string" } },
     "taint_propagation": {
       "type": "string",
@@ -70,6 +83,9 @@
     "context_abi_refs": { "type": "array", "items": { "type": "string" } },
     "source_refs": { "type": "array", "items": { "type": "string" } },
     "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "consumer_policy": { "type": "string", "minLength": 1 },
+    "verification_refs": { "type": "array", "items": { "type": "string" } },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
     "replay_boundary": { "type": "string", "minLength": 1 },
     "support_state_effect": {
       "type": "string",

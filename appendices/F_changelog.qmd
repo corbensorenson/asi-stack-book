@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal context transaction validity gates
+
+- Strengthened the context transaction boundary: context transaction records now validate transaction validity state, isolation state, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims in addition to transaction state, snapshots, mounts, read/write sets, branch policy, taint propagation, deletion closure, declassification refs, derivatives, materialization state, faults, replay boundary, context ABI refs, source refs, and audit refs. Updated the Context Transactions chapter, outline, protocol appendix, schema, and fixture so future memory-store work can distinguish fixture-shape validation from store validation, branch isolation, deletion-closure behavior, replay, support-state promotion, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal stable capability lease gates
 
 - Strengthened the Stable Capability Field boundary: SCF records now validate qualification status, qualification lease status, route scope, field history refs, default-route blockers, source refs, support-state effect, and non-claims in addition to field version, owner, lifecycle, evaluator independence, route validity, route permission effect, consumer policy, readiness refs, regression suite, migration, and rollback obligations. Updated the Stable Capability Fields chapter, outline, protocol appendix, schema, and fixture so future routing/replacement work can distinguish canary/residual/fixture-only capability records from qualified default routes, route-validity tests, evaluator-integrity evidence, rollback-readiness evidence, support-state promotion, reader artifact, or audio artifact.
