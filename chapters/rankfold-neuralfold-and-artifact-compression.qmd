@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -57,6 +57,8 @@ Storage savings are not enough. A compressed artifact must be useful for the tas
 The book therefore treats artifact compression as a routed representation choice. A task can use a compressed artifact only after the relevant probe passes; otherwise it routes to the full artifact or records a residual.
 
 This routing view prevents a common category error. Compression ratio, reconstruction adequacy, task utility, and operational cost are different ledgers. A record can have an excellent serialized size and still be useless for a retrieval task. It can preserve enough meaning for summarization while failing exact reconstruction. It can decode correctly while costing so much at read time that the system should not use it on the hot path.
+
+The artifact layer therefore needs admission states, not just ratios. A compressed artifact can be admitted for cold archive, denied for hot retrieval, accepted for preview, rejected for exact replay, or quarantined after decoder drift. Each state should be attached to a task family and access pattern. Without that state, a storage decision can accidentally become a reasoning shortcut.
 
 ## Core Claim
 
@@ -110,6 +112,20 @@ Each claim can fail separately. The architecture should preserve that separation
 
 The operational rule is simple: compression can save cost only inside a declared use envelope. The record should say which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact. A compressed artifact without those fields is a cost experiment, not an evidence-bearing representation.
 
+Artifact-compression states:
+
+| State | Meaning | Consequence |
+|---|---|---|
+| `not_admitted` | The compressed form lacks required manifest, probe, residual, fallback, or decode metadata. | Cannot be routed to consumers. |
+| `cold_archive_candidate` | The form may be useful for rarely read, write-once artifacts after decode checks. | Eligible for archive experiments only. |
+| `preview_only` | The form supports browsing, routing, or rough inspection but not exact replay. | Must carry loss/non-claim labels. |
+| `task_probe_passed` | A bounded task probe passed under the declared use envelope. | May be routed for that task family. |
+| `exact_replay_ready` | Decode determinism and reconstruction contract passed for the target. | May support exact-replay consumers if cost permits. |
+| `fallback_dominant` | Probe failures or decode costs make the full artifact the normal route. | Keep full artifact as default and record negative evidence. |
+| `decoder_quarantined` | Platform, dependency, floating-point, or manifest drift broke deterministic decode. | Block exactness and route to full artifact. |
+
+These states keep WORM archive logic from leaking into every use case. A compressed form can be excellent for deep archive and still inappropriate for an active planning context, a citation audit, or a benchmark trace.
+
 ## Interfaces
 
 The interface is the Compressed Artifact Record.
@@ -133,6 +149,18 @@ Artifact graphs store compressed and full references. Routing selects the repres
 
 The artifact graph matters here because the compressed record should never stand alone. It should point back to the preserved full artifact, the codec manifest, the source/job that produced it, and any evaluation artifacts used to justify routing. That connection gives later readers and agents a way to distinguish source-reported compression lineage from locally reproduced compression behavior.
 
+The record should also declare an access pattern:
+
+- cold archival storage
+- warm retrieval cache
+- hot planning context
+- exact replay
+- semantic preview
+- benchmark or evaluation input
+- legal, citation, or governance audit
+
+Compression decisions should be allowed to differ across these patterns. A slow but compact decode may be acceptable for cold archive. A fast lossy preview may be useful for routing. Neither is automatically suitable for exact replay or audit.
+
 ## Invariants
 
 - Fallback path is known.
@@ -140,6 +168,8 @@ The artifact graph matters here because the compressed record should never stand
 - Downstream utility is tested.
 - Compression ratios include metadata, parameters, seeds, manifests, and residuals.
 - Lossless claims require a reconstruction contract and decode check.
+- Admission state is task-relative and access-pattern-relative.
+- A compressed artifact cannot replace the full artifact as evidence unless the exact replay or declared-use gate passed.
 
 The strongest invariant is decode accountability: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
@@ -150,6 +180,8 @@ The strongest invariant is decode accountability: if the system cannot say what 
 - Latency gains erased by fallback.
 - Encoder cost hidden behind write-once assumptions.
 - Floating-point or dependency drift breaking deterministic decode.
+- Archive-policy leakage, where cold-storage assumptions are reused for hot-path reasoning.
+- Evidence substitution, where a compressed preview is cited as if it were the preserved source artifact.
 
 Probe failure should route to the full artifact. Rare-case damage should become a regression. Hidden encoder cost should move into resource accounting. Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.
 
@@ -171,6 +203,7 @@ The next useful implementation step is a toy corpus with deliberately adversaria
 | Compression ratio test | Check that reported ratios include metadata, parameters, seeds, manifests, and residuals. | planned; not run |
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
+| Access-pattern admission test | Check that cold archive, hot retrieval, exact replay, preview, benchmark, and audit consumers receive only compressed artifacts admitted for their use envelope. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 

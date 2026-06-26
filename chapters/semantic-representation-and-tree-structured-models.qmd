@@ -4,7 +4,7 @@ chapter_id: "semantic-representation-and-tree-structured-models"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "treellm"
   - "spinoza"
@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -55,6 +55,8 @@ But explicit structure can also become false confidence. A semantic graph can be
 
 The stack should want semantic structure because it can make some work cheaper to inspect, not because it makes meaning magically settled. A good semantic representation reduces the distance between sources, claims, plans, proofs, and explanations. A bad one hides the same uncertainty behind a cleaner shape.
 
+This chapter therefore treats semantic representation as a governed cache of meaning, not as meaning itself. The cache can accelerate retrieval, planning, compilation, and explanation, but it must remain answerable to source artifacts, claim ledgers, adequacy records, and revision history.
+
 ## Why existing approaches are insufficient
 
 Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths. Yet hand-built ontologies and semantic graphs do not automatically solve grounding either. They can make a system look explainable while encoding the same uncertainties in a different form.
@@ -62,6 +64,8 @@ Opaque token prediction does not by itself expose concept hierarchy, source grou
 Verification Bandwidth adds a second pressure: a representation must be adequate for the checks it is asked to support. A short semantic token may help routing or retrieval, but it can also lose the constraints needed for verification. Cognitive Compilation adds the operational view: semantic atoms and IR are useful only when typed, validated, and repairable.
 
 This is why hierarchy is not enough. A parent-child relation can support navigation while still failing grounding. A graph traversal can explain a route while still omitting a decisive source constraint. A semantic token can be compact while still too lossy for adjudication. The architecture must test the represented use, not admire the representation.
+
+The insufficiency becomes severe when semantic graphs are shared across agents. Sharing can reduce repeated cognition, but it also spreads stale concepts, hidden assumptions, and authority mistakes. A graph update should therefore be treated like a schema migration with consumers, compatibility, supersession, and downgrade behavior, not like a harmless note edit.
 
 ## Core Claim
 
@@ -121,6 +125,20 @@ This lets the stack use tree or graph structure for retrieval, analogy, explanat
 
 The three gates are grounding, adequacy, and interoperability. Grounding asks what source or artifact supports the node. Adequacy asks whether the node preserves enough constraints for the current task. Interoperability asks whether the node can be consumed by VCM, Spinoza, planning, compilation, or evidence layers without hidden translation loss. A semantic representation should not be promoted because one gate passed while the others remain untested.
 
+Semantic nodes should move through lifecycle states:
+
+| State | Meaning | Allowed use |
+|---|---|---|
+| `proposed` | A concept, relation, or path has been extracted or hypothesized. | Search, discussion, and triage only. |
+| `grounded` | The node has active provenance references. | Bounded retrieval, explanation, or planning use. |
+| `adequate_for_task` | The node preserved required constraints for a declared task. | Task-local use, not universal reuse. |
+| `interoperable` | The node has been consumed by a target layer without hidden translation loss. | Use by the named consumer interface. |
+| `superseded` | A newer node or hierarchy revision replaced it while preserving lineage. | Historical trace and migration only. |
+| `stale` | Provenance, hierarchy, or consumer assumptions may no longer hold. | Requires review before use. |
+| `quarantined` | The node is misleading, ungrounded for claimed use, or contradicted. | No operational use except debugging. |
+
+The lifecycle makes semantic graphs editable without becoming forgetful. Updating a node should preserve the old reference or record supersession, because downstream claims may still depend on the earlier meaning.
+
 ## Interfaces
 
 The interface is the Semantic Node Record.
@@ -145,6 +163,19 @@ VCM stores semantic pages. Spinoza consumes semantic claims only with evidence a
 
 That interface makes semantic representation a shared boundary rather than a private model feature. If a node is used by a planner, the planner should know its permitted uses and residual uncertainty. If it is used by a proof-carrying claim layer, the layer should see its provenance and downgrade path. If it is used by compression or retrieval, the route should expose which constraints were preserved and which were dropped.
 
+Consumer policies should be explicit:
+
+| Consumer | Required boundary |
+|---|---|
+| VCM | Adequacy state, source coverage, and loss contract. |
+| Spinoza / claim ledger | Provenance, support tier, defeaters, and downgrade path. |
+| Planning | Permitted uses, residual uncertainty, and authority limits. |
+| Cognitive compilation | Typed inputs, outputs, constraints, and repair behavior. |
+| Compression | Utility and fallback records for the represented task. |
+| Human reader | Explanation trace and visible non-claims. |
+
+This table is a guardrail against graph-authority drift. A node may be perfectly useful for one consumer and unsafe for another.
+
 ## Invariants
 
 - Semantic nodes are grounded or labeled speculative.
@@ -152,6 +183,8 @@ That interface makes semantic representation a shared boundary rather than a pri
 - Representation claims require tests.
 - A fixed-size semantic token is not automatically adequate for all tasks.
 - Graph updates preserve prior references or record supersession.
+- Shared semantic graphs remain indexes and working representations, not independent source authorities.
+- Consumer use is scoped by grounding, adequacy, interoperability, and permitted-use fields.
 
 The strongest invariant is provenance: a grounded node must say what grounds it. If no provenance exists, the node can still be useful as a hypothesis or planning construct, but it must not masquerade as verified knowledge.
 
@@ -162,6 +195,8 @@ The strongest invariant is provenance: a grounded node must say what grounds it.
 - Hierarchy drift.
 - Canonical graph capture, where the graph becomes an unreviewed authority source.
 - Token compression that drops constraints needed for verification.
+- Graph migration debt, where downstream consumers keep using stale node meanings.
+- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
 
 Brittleness should trigger residuals and versioning. False explainability should downgrade claims. Hierarchy drift should preserve supersession links. Canonical graph capture should route through governance and audit. Verification loss should be recorded as a context-adequacy failure.
 
@@ -183,6 +218,7 @@ The next useful implementation step is a small grounded domain where source pass
 | Grounding fidelity test | Check that grounded nodes have provenance and that task-relevant constraints are preserved. | planned; not run |
 | Hierarchy revision test | Check that hierarchy updates preserve prior references or record supersession. | planned; not run |
 | Representation utility benchmark | Compare semantic-node representations against neural-only or plain-text baselines on a bounded task. | planned; not run |
+| Consumer-policy test | Check that VCM, claim-ledger, planning, compilation, compression, and human-reader consumers reject nodes that lack the fields each consumer requires. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require a grounded domain, update operations, baselines, and task metrics; they are not reported results. When a semantic-representation test is implemented, the chapter should link to the command, fixture, environment notes, source domain, and result summary, and Appendix E should be regenerated or updated accordingly.
 

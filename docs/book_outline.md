@@ -2217,6 +2217,8 @@ Draft arc:
 - Insufficiency: Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
 - Mechanism: Record a compression receipt with reconstruction contract, public law family, seed, generated regions, verification result, exact repair residual, fallback threshold, rate accounting, and non-claims.
 - Mechanism: Separate proxy/search-rate estimates from final serialized costs, and record literal fallback or negative results when repair and metadata erase the saving.
+- Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
+- Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
 - Handoff: The same draft/verify/repair accounting becomes accepted-output and verifier-cost accounting in fast generation.
 - Interface: Evidence measures reconstruction and utility.
 - Interface: Routing chooses compressed or full representation.
@@ -2227,12 +2229,16 @@ Primary invariants:
 - Verification precedes exactness claims.
 - Repair cost is counted.
 - Search bounds are explicit.
+- Consumer use is scoped to the reconstruction contract and declared loss.
+- Negative rate results are preserved instead of rewritten as narrative success.
 
 Failure modes to cover:
 
 - Unbounded search.
 - Verification skipped.
 - Repair larger than original data.
+- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, or benchmark work.
+- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
 
 Draft deliverables:
 
@@ -2243,6 +2249,7 @@ Draft deliverables:
 - Planned Codex test: Reconstruction quality test.
 - Planned Codex test: Repair-cost accounting test.
 - Planned Codex test: Bounded-search failure test.
+- Planned Codex test: Consumer-policy enforcement test.
 
 Lean proof targets:
 
@@ -2358,6 +2365,8 @@ Draft arc:
 - Mechanism: Separate representation, reconstruction, compression-ratio, and downstream-utility claims so one passing property cannot promote the others.
 - Mechanism: Keep compression, reconstruction, residual, utility, cost, and fallback ledgers separate so a smaller representation cannot silently become a stronger evidence object.
 - Mechanism: Require compressed records to state the declared use envelope, probe boundary, fallback trigger, and non-claims before downstream agents can use the compressed form.
+- Mechanism: Add artifact-admission states for not-admitted, cold-archive candidate, preview-only, task-probe-passed, exact-replay-ready, fallback-dominant, and decoder-quarantined compressed forms.
+- Mechanism: Declare access patterns such as cold archive, warm retrieval, hot planning context, exact replay, semantic preview, benchmark input, and audit before choosing a compressed route.
 - Handoff: Semantic representation inherits the same probe discipline, but the risk shifts from bit-level reconstruction to grounding and hierarchy drift.
 - Interface: Artifact graph stores compressed and full references.
 - Interface: Routing selects representation by task.
@@ -2368,12 +2377,16 @@ Primary invariants:
 - Fallback path is known.
 - Residual coding is measured.
 - Downstream utility is tested.
+- Admission state is task-relative and access-pattern-relative.
+- A compressed artifact cannot replace the full artifact as evidence unless the exact replay or declared-use gate passed.
 
 Failure modes to cover:
 
 - Compression damaging rare critical cases.
 - Probe not representative.
 - Latency gains erased by fallback.
+- Archive-policy leakage, where cold-storage assumptions are reused for hot-path reasoning.
+- Evidence substitution, where a compressed preview is cited as if it were the preserved source artifact.
 
 Draft deliverables:
 
@@ -2382,6 +2395,7 @@ Draft deliverables:
 - Planned Codex test: Compression ratio test.
 - Planned Codex test: Probe-route fallback test.
 - Planned Codex test: Downstream utility preservation test.
+- Planned Codex test: Access-pattern admission test.
 
 Lean proof targets:
 
@@ -2413,6 +2427,8 @@ Draft arc:
 - Mechanism: Use tree or graph structure for retrieval, planning, compilation, and explanation only where grounding, adequacy, interoperability, and baseline comparisons justify the route.
 - Mechanism: Separate grounding, adequacy, and interoperability gates so hierarchy or compact semantic tokens cannot stand in for source support, task fit, or cross-layer usability.
 - Mechanism: Preserve provenance and supersession links so semantic graphs remain indexes and working representations rather than unreviewed authority sources.
+- Mechanism: Track semantic-node lifecycle states: proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined.
+- Mechanism: Require consumer-specific policies for VCM, claim ledgers, planning, cognitive compilation, compression, and human-reader explanation.
 - Handoff: Resource economics decides when semantic compression is actually cheaper after verification burden, repair, and downstream failures are counted.
 - Interface: Spinoza uses semantic claims.
 - Interface: VCM stores semantic pages.
@@ -2423,12 +2439,16 @@ Primary invariants:
 - Semantic nodes are grounded or labeled speculative.
 - Hierarchy changes are versioned.
 - Representation claims require tests.
+- Shared semantic graphs remain indexes and working representations, not independent source authorities.
+- Consumer use is scoped by grounding, adequacy, interoperability, and permitted-use fields.
 
 Failure modes to cover:
 
 - Hand-built ontology brittleness.
 - False explainability.
 - Hierarchy drift.
+- Graph migration debt, where downstream consumers keep using stale node meanings.
+- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
 
 Draft deliverables:
 
@@ -2437,6 +2457,7 @@ Draft deliverables:
 - Planned Codex test: Grounding fidelity test.
 - Planned Codex test: Hierarchy revision test.
 - Planned Codex test: Representation utility benchmark.
+- Planned Codex test: Consumer-policy test.
 
 Lean proof targets:
 

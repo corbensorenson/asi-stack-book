@@ -4,7 +4,7 @@ chapter_id: "generate-verify-repair-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "bbvca_v9"
   - "bbvca_main"
@@ -26,7 +26,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -48,6 +48,8 @@ The compression chapters sit where the efficient-ASI thesis becomes concrete. If
 
 This chapter defines the contract that keeps the idea honest. A compressed artifact must name what is public, what is transmitted, what the generator produces, what verification checked, what repair residuals restore, what the fallback is, and what rate accounting was used. Without those fields, the stack has not compressed anything governable; it has only renamed loss.
 
+The important shift is from "compression as result" to "compression as a transaction." The transaction begins with a reconstruction contract and ends with one of several states: exact, lossy-with-declared-loss, repaired, literal fallback, negative rate result, or quarantined. Each state is useful if it is honest. The only bad state is one that lets an approximation masquerade as exactness.
+
 ## Why existing approaches are insufficient
 
 Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
@@ -55,6 +57,8 @@ Compression narratives can overclaim exactness without bounded search, verificat
 BBVCA v9 is useful because it hardens the intuition. It rejects the fantasy that an arbitrary larger artifact can be recovered from a smaller private seed alone. The useful form is shared-law compression: a public law family carries repeatable structure, an artifact-specific seed selects local behavior, verification compares generated output to the target, and exact repair streams pay for what the generator missed.
 
 The hardest practical issue is rate honesty. A search-time proxy can guide a dynamic program, but it is not the final encoded length. The source therefore separates proxy scoring from final serialization and requires calibration, anti-pruning margins, and refresh when realized rates diverge.
+
+A second issue is consumer honesty. A downstream layer may not care about exact reconstruction for every task. A lossy summary may be fine for orientation, while a citation, proof, artifact replay, or governance audit may require exact bytes or exact semantics under a declared contract. The compression receipt must therefore carry a consumer policy instead of a universal permission to use the smaller form.
 
 ## Core Claim
 
@@ -101,6 +105,19 @@ The process is contract-relative: a public law family and artifact-specific seed
 
 The compression record should include the reconstruction contract, law-family id, seed payload, verification region, repair stream, literal fallback, interface costs, search bound, proxy model, final entropy model, and proxy gap. That record is the bridge from a beautiful compression idea to an auditable ASI substrate.
 
+Compression receipts should move through explicit states:
+
+| State | Meaning | Allowed downstream use |
+|---|---|---|
+| `candidate` | A generator, seed, or law family has been proposed but not verified. | Search and analysis only. |
+| `verified_exact` | Decode plus repair equals the target under the reconstruction contract. | Exact-use tasks within the declared contract. |
+| `verified_lossy` | Loss is declared and accepted for a bounded use envelope. | Drafting, routing, preview, or other loss-tolerant tasks only. |
+| `repaired_exact` | Exactness depends on a recorded repair residual. | Exact-use tasks, with repair and metadata counted. |
+| `literal_fallback` | Compression was not cheaper or verification failed; literal form is used. | Full-artifact route, negative evidence for this method. |
+| `quarantined` | Search, verification, decode, or rate accounting violated the contract. | No downstream use except debugging. |
+
+These are evidence states for a representation, not claims about universal compression. They let the system preserve a failed experiment as useful negative evidence without turning it into a successful codec story.
+
 ## Interfaces
 
 The interface is a Compression Receipt.
@@ -124,6 +141,18 @@ Minimum fields:
 
 VCM can consume lossy summaries only when loss is declared. Routing can choose a full artifact instead of a compressed one when repair cost or verification failure crosses a threshold. Evidence ledgers can reject exactness claims when the receipt lacks verification or residual accounting.
 
+The consumer policy should be explicit:
+
+- exact replay
+- citation or legal/audit use
+- proof or schema derivation
+- semantic orientation
+- routing preview
+- retrieval hint
+- model-training or benchmark input
+
+These consumers have different tolerance for loss. A representation adequate for routing preview may be disallowed for proof input. A repaired exact receipt may be valid for replay but inefficient for hot-path use. The interface should carry those permissions so compression does not silently widen authority.
+
 ## Invariants
 
 The compression invariants keep compactness honest: every reconstruction, repair stream, declared loss, and fallback threshold must remain visible when a shorter artifact is routed into later layers.
@@ -131,6 +160,8 @@ The compression invariants keep compactness honest: every reconstruction, repair
 - Verification precedes exactness claims.
 - Repair cost is counted.
 - Search bounds are explicit.
+- Consumer use is scoped to the reconstruction contract and declared loss.
+- Negative rate results are preserved instead of rewritten as narrative success.
 
 The exactness invariant is the important one: decoded generator output plus exact repair must equal the target under the stated contract. If the contract permits loss, the loss must be named and cannot support a lossless claim. If the repair stream is larger than the original, the system should record a negative result, not hide the failed compression behind a successful decode.
 
@@ -141,6 +172,8 @@ The failure model is part of the design, not an afterthought. This layer is expe
 - Unbounded search.
 - Verification skipped.
 - Repair larger than original data.
+- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, or benchmark work.
+- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
 
 The most common failure is side-information laundering: moving data into law IDs, parameters, boundaries, or repair streams and then celebrating the seed as small. A second failure is proxy dishonesty: optimizing a cheap proxy objective and never checking the final serialized rate. A third is domain mismatch: forcing volumetric or lawful structure onto data that does not have enough exploitable locality.
 
@@ -164,6 +197,7 @@ The current fixture covers only the receipt side of that implementation: reconst
 | Reconstruction quality test | Run a generator and verifier against a declared target and check exact reconstruction when the receipt claims exactness; lossy contracts must name the loss. | planned; not run |
 | Repair-cost accounting test | Compare seed, law ID, repair residual, and metadata against a literal baseline and record a negative result when the repaired form is larger. | planned; not run |
 | Bounded-search failure test | Force the generator past its declared search budget and check that the result falls back, quarantines, or stays unpromoted. | planned; not run |
+| Consumer-policy enforcement test | Check that lossy, preview, or orientation receipts cannot feed exact replay, proof, audit, citation, benchmark, or training consumers without a stronger receipt. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require a real generator, verifier, repair stream, fallback criterion, and rate comparison; they are not reported results. When a codec test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
