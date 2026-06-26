@@ -11,13 +11,19 @@
     "implementations",
     "lifecycle_state",
     "qualification_context",
+    "qualification_lease",
     "qualification_predicates",
     "evaluator_policy",
+    "evaluator_independence",
     "route_validity",
     "evidence_refs",
+    "incident_refs",
+    "review_triggers",
     "state_migration",
     "regression_suite",
-    "rollback_plan"
+    "rollback_plan",
+    "rollback_obligations",
+    "non_claims"
   ],
   "properties": {
     "field_id": { "type": "string", "minLength": 1 },
@@ -30,16 +36,31 @@
       "enum": ["shadow", "canary", "qualified", "default", "deprecated", "retired", "quarantined"]
     },
     "qualification_context": { "type": "string", "minLength": 1 },
+    "qualification_lease": {
+      "type": "object",
+      "required": ["epoch", "expires_on", "review_triggers"],
+      "properties": {
+        "epoch": { "type": "string", "minLength": 1 },
+        "expires_on": { "type": "string", "minLength": 1 },
+        "review_triggers": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
     "qualification_predicates": { "type": "array", "items": { "type": "string" } },
     "evaluator_policy": { "type": "string", "minLength": 1 },
+    "evaluator_independence": { "type": "string", "minLength": 1 },
     "route_validity": {
       "type": "string",
       "enum": ["unchecked", "valid", "invalid", "residual"]
     },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "incident_refs": { "type": "array", "items": { "type": "string" } },
+    "review_triggers": { "type": "array", "items": { "type": "string" } },
     "state_migration": { "type": "string", "minLength": 1 },
     "regression_suite": { "type": "array", "items": { "type": "string" } },
-    "rollback_plan": { "type": "string", "minLength": 1 }
+    "rollback_plan": { "type": "string", "minLength": 1 },
+    "rollback_obligations": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

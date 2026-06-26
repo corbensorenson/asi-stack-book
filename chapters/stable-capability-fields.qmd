@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "scf"
   - "viea"
@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four of five claim-source mappings now have reviewed passage references; `moecot` remains connector-only/source-note mapped until a durable local export or line-addressable connector capture is available."
-  - "The stable_capability_field fixture validates schema/example consistency only; route validity and rollback readiness tests remain unimplemented."
+  - "The stable_capability_field fixture validates schema/example consistency for qualification leases, evaluator independence, review triggers, rollback obligations, and non-claims only; route validity and rollback readiness tests remain unimplemented."
   - "The implemented StableCapabilityFields Lean predicates cover finite replacement records only; they do not prove deployed route validation, evaluator integrity, or rollback readiness."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -28,13 +28,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`; passage-reviewed local raw cache: `scf`, `viea`, `talos`, `ladon_manhattan`; connector-only/source-note mapped: `moecot` |
-| Test state | `stable_capability_field.valid.json` passes protocol fixture validation, and `AsiStackProofs.StableCapabilityFields` builds locally; route validity and rollback readiness tests remain planned. |
+| Test state | `stable_capability_field.valid.json` passes protocol fixture validation with qualification lease, evaluator independence, review triggers, rollback obligations, and non-claims; `AsiStackProofs.StableCapabilityFields` builds locally; route validity and rollback readiness tests remain planned. |
 
 ## Drafting guardrail
 
@@ -106,7 +106,7 @@ The field record separates identity from implementation. Qualification claims bi
 
 Qualification is scoped, not global. A candidate can be qualified for one domain, risk tier, authority ceiling, hardware context, benchmark epoch, or user population without being qualified everywhere. Its evidence should be append-only enough that later readers can reconstruct what was known when it was promoted.
 
-Qualification should also age. A candidate qualified under one benchmark epoch, source corpus, hardware profile, permission tier, or threat model should not remain default forever by inertia. The field record should make review intervals, expiration conditions, incident triggers, and requalification duties visible so stability does not become stagnation.
+Qualification should also age. A candidate qualified under one benchmark epoch, source corpus, hardware profile, permission tier, or threat model should not remain default forever by inertia. The field record should make review intervals, expiration conditions, incident triggers, and requalification duties visible so stability does not become stagnation. The qualification lease is the machine-readable version of that rule: it says which epoch qualified the implementation, when the route must be reviewed, and what events force requalification before default use continues.
 
 The route proposer may be broad and heuristic; the route validator must be narrow and explicit. It checks field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings before the candidate can become the default route.
 
@@ -127,17 +127,23 @@ Minimum fields:
 - `implementations`
 - `lifecycle_state`
 - `qualification_context`
+- `qualification_lease`
 - `qualification_predicates`
 - `evaluator_policy`
+- `evaluator_independence`
 - `route_validity`
 - `evidence_refs`
+- `incident_refs`
+- `review_triggers`
 - `state_migration`
 - `regression_suite`
 - `rollback_plan`
+- `rollback_obligations`
+- `non_claims`
 
 Planning requests a field by semantic boundary and capability profile. Execution invokes only authorized routes. Evidence records qualification, regressions, incidents, appeals, and lifecycle transitions. Governance decides whether a field can broaden authority or change evaluator policy.
 
-The same field record becomes an anchor for procedural memory and benchmark ratchets. A generated tool should know which field it is trying to satisfy. A benchmark result should know which field boundary it evaluates. A replacement transaction should know which field authority ceiling it may not silently widen.
+The same field record becomes an anchor for procedural memory and benchmark ratchets. A generated tool should know which field it is trying to satisfy. A benchmark result should know which field boundary it evaluates. A replacement transaction should know which field authority ceiling it may not silently widen. A readiness gate should know whether the field's qualification lease is still fresh or has become stale evidence.
 
 ## Invariants
 
@@ -145,6 +151,7 @@ The same field record becomes an anchor for procedural memory and benchmark ratc
 - Evaluator integrity is protected.
 - Qualification context is explicit and time-bound.
 - Rollback remains available after failed mutation.
+- Qualification leases expire or downgrade when their review triggers fire.
 
 The strongest invariant is identity binding: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
 
@@ -162,15 +169,15 @@ The quiet failure is orphaned regression memory. A field may accumulate tests an
 
 ## Minimal implementation
 
-The smallest useful implementation is the existing `stable_capability_field` schema expanded with lifecycle, qualification context, evaluator policy, route validity, evidence references, state migration, and rollback metadata. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
+The smallest useful implementation is the existing `stable_capability_field` schema expanded with lifecycle, qualification context, qualification lease, evaluator policy, evaluator independence, route validity, evidence references, incidents, review triggers, state migration, regression suite, rollback plan, rollback obligations, and non-claims. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
 
-The next useful implementation step is a field history fixture: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification context, and one rollback path. That fixture would make identity, lifecycle, and evidence aging concrete without claiming a deployed route validator.
+The next useful implementation step is a field history fixture: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. That fixture would make identity, lifecycle, and evidence aging concrete without claiming a deployed route validator.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Stable capability field fixture validation | Check that the SCF fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Stable capability field fixture validation | Check that the SCF fixture matches the public schema, including qualification lease, evaluator independence, review triggers, rollback obligations, and non-claims. | implemented by protocol validation; run in this pass |
 | Qualification predicate finite-record proof | Check that a replacement record is allowed only when the candidate satisfies the field qualification predicate. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime qualification test not run |
 | Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | planned; not run |
 | Authority non-escalation finite-record proof | Check that authority-expanding replacement is rejected when no governance grant is present. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime route enforcement not run |

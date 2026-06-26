@@ -3,13 +3,25 @@
   "field_id": "field://demo-context-adequacy",
   "prior_implementation": "impl://context-adequacy-v0",
   "candidate_implementation": "impl://context-adequacy-v1",
+  "identity_preservation": "Candidate is scoped to the same context-adequacy field and cannot broaden authority.",
   "precheck_results": ["field identity unchanged", "authority ceiling unchanged"],
   "qualification_evidence": ["schema fixture present", "source-derived promotion not claimed"],
   "regression_results": ["support-state conservatism preserved", "rollback metadata present"],
   "authority_check": "candidate does not expand authority beyond read_public_book_context_only",
+  "evaluator_independence": "The candidate cannot mark its own gate result or modify the regression floor.",
   "residual_escrow": ["no real benchmark or production replacement has been run"],
   "rollback_plan": "Keep impl://context-adequacy-v0 as the default route.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://context-adequacy-v0",
+    "state_migration_status": "not_applicable_for_fixture",
+    "reversible_fields": ["route selection"],
+    "irreversible_effects": [],
+    "dry_run_status": "not_run",
+    "trigger_conditions": ["qualification predicate fails", "support-state conservatism regresses"],
+    "owner": "human-review-required-before-default"
+  },
   "approval_record": "human-review-required-before-default",
   "monitor_window": "not_started",
-  "decision": "canary"
+  "decision": "canary",
+  "non_claims": ["does not execute a replacement", "does not prove rollback", "does not prove monitor-window behavior"]
 }

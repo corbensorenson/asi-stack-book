@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected."
-  - "Protocol schema/fixture validation and narrow Lean gate/quarantine predicates are implemented; no readiness-transition checker, residual-ledger harness, benchmark harness, or quarantine-routing harness has been run for this chapter."
+  - "Protocol schema/fixture validation and narrow Lean gate/quarantine predicates are implemented; the fixture now records field identity, workload family, freshness window, inherited residuals, route permissions, fallback path, expiry, and non-claims, but no readiness-transition checker, residual-ledger harness, benchmark harness, or quarantine-routing harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; passage-reviewed local public-project sources: `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/source-note only: `moecot` |
-| Test state | Readiness gate fixture validation implemented; finite gate/quarantine predicates implemented in `AsiStackProofs.ReadinessGates`; readiness-transition, residual-ledger, benchmark, and quarantine-routing tests remain planned. |
+| Test state | Readiness gate fixture validation now includes field identity, workload family, freshness window, inherited residuals, route permissions, fallback path, expiry, and non-claims; finite gate/quarantine predicates are implemented in `AsiStackProofs.ReadinessGates`; readiness-transition, residual-ledger, benchmark, and quarantine-routing tests remain planned. |
 
 ## Drafting guardrail
 
@@ -89,7 +89,7 @@ Readiness is the router's memory of what has earned ordinary use. RMI supplies r
 
 The readiness gate changes routability, not identity. A specialist can remain the same registered capability while moving from draft to shadow, canary, qualified, default, quarantined, retired, or diagnostic-only. This matters because the router consumes a current route permission, while SCF-style qualification preserves the longer-lived capability boundary and its evidence history.
 
-A Readiness Gate Record attaches that state to every module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted. It does not say the target is globally safe or permanently qualified. It says what evidence was checked, what residuals survived, what scope is allowed, what state transition is requested, and what should happen if the gate fails.
+A Readiness Gate Record attaches that state to every module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted. It does not say the target is globally safe or permanently qualified. It says what field identity is involved, what workload family and freshness window apply, what evidence was checked, what residuals survived or were inherited, what routes are allowed or blocked, what state transition is requested, when the gate expires, and what should happen if the gate fails.
 
 The record should keep frontier pressure and floor preservation separate. Frontier evidence says what the target newly handles. Floor evidence says what it must not forget. Residual escrow names the tail that is still outside both.
 
@@ -110,7 +110,7 @@ Readiness has three inputs. Gate evidence names the source notes, test records, 
 
 Quarantine is not deletion. It is a routing state. A quarantined module can remain available for diagnosis, replay, repair, or restricted review while ordinary routes are blocked. This distinction is what lets the architecture learn from failures without letting failures remain live in the control path.
 
-Residual escrow is not an unstructured backlog or a reputation marker. It is the mechanism that prevents unresolved cases from being laundered away during promotion, merge, split, retirement, or retraining. A residual can be accepted as bounded only when its scope, trigger, owner, and next review condition are named.
+Residual escrow is not an unstructured backlog or a reputation marker. It is the mechanism that prevents unresolved cases from being laundered away during promotion, merge, split, retirement, or retraining. A residual can be accepted as bounded only when its scope, trigger, owner, and next review condition are named. Inherited residuals are especially important: a renamed, wrapped, split, or merged target must carry old residuals forward unless a separate record retires them.
 
 ## Interfaces
 
@@ -121,19 +121,28 @@ Minimum fields:
 - `gate_id`
 - `target_id`
 - `target_kind`
+- `field_id`
 - `current_state`
 - `candidate_state`
+- `workload_family`
+- `freshness_window`
 - `gate_evidence`
 - `regression_results`
 - `residual_escrow`
+- `inherited_residuals`
 - `authority_scope`
 - `promotion_blockers`
 - `quarantine_conditions`
+- `allowed_routes`
+- `blocked_routes`
+- `fallback_path`
+- `expiry`
 - `decision`
 - `review_refs`
 - `next_review_trigger`
+- `non_claims`
 
-Routing reads `current_state`, `authority_scope`, and `promotion_blockers`. Benchmark ratchets update `gate_evidence`, `regression_results`, and `residual_escrow`. SCF replacement transactions use the record as part of qualification and rollback. Artifact graphs preserve the ledger references so future decisions can distinguish "not tested" from "tested and failed" from "tested in a narrower context."
+Routing reads `current_state`, `authority_scope`, `allowed_routes`, `blocked_routes`, and `promotion_blockers`. Benchmark ratchets update `gate_evidence`, `regression_results`, and `residual_escrow`. SCF replacement transactions use the record as part of qualification and rollback. Artifact graphs preserve the ledger references so future decisions can distinguish "not tested" from "tested and failed" from "tested in a narrower context."
 
 The lifecycle states should be explicit enough for routers and auditors to consume: draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded. The exact names can vary, but ordinary execution must not depend on prose interpretation of a benchmark note.
 
@@ -144,6 +153,7 @@ The lifecycle states should be explicit enough for routers and auditors to consu
 - Quarantine blocks ordinary routing.
 - A saturated benchmark cannot be the sole basis for higher readiness.
 - A stale gate must be rerun after architecture, frontier, authority, or lifecycle changes.
+- Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
 
 The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.
 
@@ -165,17 +175,17 @@ The subtle failure is gate laundering. A target fails readiness under one name, 
 
 The smallest useful implementation is a readiness gate schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
 
-The `readiness_gate_record` schema validates the shape of that record. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
+The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, inherited residuals, allowed and blocked routes, fallback path, expiry, and non-claims. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
 
 `AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, plus a bounded quarantine predicate blocking ordinary route selection for quarantined targets. These proofs do not implement benchmark evaluation, residual escrow storage, lifecycle transitions, or routing enforcement.
 
-The next useful fixture set is a lifecycle trace: draft to shadow, shadow to canary, canary rejected by residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation. That would test gate semantics without claiming module quality.
+The next useful fixture set is a lifecycle trace: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation. That would test gate semantics without claiming module quality.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, lifecycle states, evidence, regression results, residual escrow, authority, blockers, quarantine conditions, decision, reviews, and next trigger. | implemented by protocol validation; run in this pass |
+| Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, field identity, lifecycle states, workload family, freshness window, evidence, regression results, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, decision, reviews, next trigger, and non-claims. | implemented by protocol validation; run in this pass |
 | Readiness gate promotion predicate | Check that promoted decisions require all required gates to pass. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
 | Quarantine ordinary-route predicate | Check that quarantined targets cannot be selected for ordinary execution routes. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
 | Readiness transition enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness. | planned; not run |

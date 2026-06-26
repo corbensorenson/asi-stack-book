@@ -7,17 +7,26 @@
     "gate_id",
     "target_id",
     "target_kind",
+    "field_id",
     "current_state",
     "candidate_state",
+    "workload_family",
+    "freshness_window",
     "gate_evidence",
     "regression_results",
     "residual_escrow",
+    "inherited_residuals",
     "authority_scope",
     "promotion_blockers",
     "quarantine_conditions",
+    "allowed_routes",
+    "blocked_routes",
+    "fallback_path",
+    "expiry",
     "decision",
     "review_refs",
-    "next_review_trigger"
+    "next_review_trigger",
+    "non_claims"
   ],
   "properties": {
     "gate_id": { "type": "string", "minLength": 1 },
@@ -26,6 +35,7 @@
       "type": "string",
       "enum": ["specialist", "tool", "field_implementation", "runtime_lane", "benchmark", "workflow"]
     },
+    "field_id": { "type": "string", "minLength": 1 },
     "current_state": {
       "type": "string",
       "enum": ["candidate", "shadow", "canary", "qualified", "default", "quarantined", "retired"]
@@ -34,18 +44,26 @@
       "type": "string",
       "enum": ["shadow", "canary", "qualified", "default", "quarantined", "retired"]
     },
+    "workload_family": { "type": "string", "minLength": 1 },
+    "freshness_window": { "type": "string", "minLength": 1 },
     "gate_evidence": { "type": "array", "items": { "type": "string" } },
     "regression_results": { "type": "array", "items": { "type": "string" } },
     "residual_escrow": { "type": "array", "items": { "type": "string" } },
+    "inherited_residuals": { "type": "array", "items": { "type": "string" } },
     "authority_scope": { "type": "string", "minLength": 1 },
     "promotion_blockers": { "type": "array", "items": { "type": "string" } },
     "quarantine_conditions": { "type": "array", "items": { "type": "string" } },
+    "allowed_routes": { "type": "array", "items": { "type": "string" } },
+    "blocked_routes": { "type": "array", "items": { "type": "string" } },
+    "fallback_path": { "type": "string", "minLength": 1 },
+    "expiry": { "type": "string", "minLength": 1 },
     "decision": {
       "type": "string",
       "enum": ["reject", "quarantine", "shadow", "canary", "qualify", "default", "retire", "rerun"]
     },
     "review_refs": { "type": "array", "items": { "type": "string" } },
-    "next_review_trigger": { "type": "string", "minLength": 1 }
+    "next_review_trigger": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

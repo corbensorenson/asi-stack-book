@@ -739,12 +739,14 @@ Draft arc:
 - Mechanism: Bind qualification claims to exact artifacts and scoped qualification contexts.
 - Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
 - Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
+- Mechanism: Record a qualification lease with epoch, expiry, review triggers, incidents, rollback obligations, and non-claims so qualified routes can age, downgrade, or force requalification.
 - Mechanism: Pair broad route proposers with narrow validators that check field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings.
 - Mechanism: Treat the SCF as capability-identity memory: field identity, evaluator policy, regression floors, lifecycle history, incidents, and rollback obligations survive implementation replacement.
 - Mechanism: Make qualification leases reviewable and aging: benchmark epoch, source corpus, hardware profile, threat model, incident triggers, and requalification duties can expire or downgrade route status.
 - Interface: Planning sees semantic capability boundaries.
 - Interface: Execution sees authorized routes.
 - Interface: Evidence and governance see qualification claims, regressions, incidents, lifecycle state, evaluator policy, and recovery paths.
+- Interface: Replacement and readiness gates consume the SCF lease, evaluator independence statement, rollback obligations, review triggers, and non-claims.
 
 Primary invariants:
 
@@ -752,6 +754,7 @@ Primary invariants:
 - Evaluator integrity is protected.
 - Qualification context is explicit and time-bound.
 - Rollback remains available after failed mutation.
+- Qualification leases expire or downgrade when review triggers fire.
 
 Failure modes to cover:
 
@@ -761,7 +764,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.
+- An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, qualification lease, evaluator independence, evidence, route validity, incidents, review triggers, migration path, rollback obligations, and non-claims.
 - Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
 - Planned Codex test: Qualification predicate test.
 - Planned Codex test: Route validity test.
@@ -800,11 +803,13 @@ Draft arc:
 - Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
 - Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence, and rollback obligation as separate transaction states.
 - Mechanism: emit rollback receipts that record prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner.
+- Mechanism: require identity-preservation and evaluator-independence fields so the candidate cannot validate its own promotion or silently redefine the field it claims to improve.
 - Mechanism: expose replacement decision states such as proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired.
 - Interface: SCF ledger defines the field identity to preserve.
 - Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
 - Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
 - Interface: security, runtime-adapter, policy-optimization, and governance layers inspect replacement transactions for authority, secret, evaluator, monitor, and rollback changes.
+- Interface: readiness gates consume replacement receipts only within the field, workload family, freshness window, route permissions, and residual inheritance they declare.
 - Exact Appendix C claim-source mappings for the core replacement claim across SCF field identity, RMI modular ratchets, Benchmaxxing benchmark lifecycle, Cognitive Loop Closure procedural lifecycle, Talos audit/replay context, and MoECOT runtime-reference context; five local mappings (`scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending regression-preservation tests, rollback dry runs, monitor-window evidence, artifact replay, or deployed replacement evidence.
 
 Primary invariants:
@@ -813,6 +818,7 @@ Primary invariants:
 - Regressions stay attached.
 - Rollback metadata is required before promotion.
 - Candidate-provided evidence cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
+- Rollback receipts must name reversible fields, irreversible effects, trigger conditions, and owner before default promotion.
 
 Failure modes to cover:
 
@@ -823,7 +829,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases.
+- A replacement transaction schema with identity-preservation, precheck, gate, commit, monitor, evaluator-independence, rollback receipt, residual, and non-claim fields.
 - Planned Codex test: Replacement transaction test.
 - Planned Codex test: Regression preservation test.
 - Planned Codex test: Rollback execution dry run.
@@ -2051,11 +2057,13 @@ Draft arc:
 - Mechanism: Maintain lifecycle states and readiness gates that separate semantic fit from ordinary routability.
 - Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
 - Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
+- Mechanism: expose allowed routes, blocked routes, fallback path, expiry, inherited residuals, and non-claims so canary or diagnostic permission cannot be mistaken for default readiness.
 - Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
 - Interface: Routing reads readiness.
 - Interface: Benchmarks update gates.
 - Interface: SCFs govern replacement.
 - Interface: expose lifecycle states such as draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded for router/auditor consumption.
+- Interface: artifact graphs and benchmark ledgers preserve gate records so renamed, wrapped, split, merged, or retired modules cannot shed old residual escrow.
 
 Primary invariants:
 
@@ -2063,6 +2071,7 @@ Primary invariants:
 - Residuals are not deleted on promotion.
 - Quarantine blocks ordinary routing.
 - Stronger readiness requires adequate added evidence or narrower permitted scope; readiness cannot increase by losing records.
+- Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
 
 Failure modes to cover:
 
@@ -2075,7 +2084,7 @@ Draft deliverables:
 
 - A module lifecycle state machine and residual escrow ledger.
 - Exact Appendix C claim-source mappings for readiness gates: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected.
-- Implemented protocol validation: `readiness_gate_record` fixture validates public record shape only.
+- Implemented protocol validation: `readiness_gate_record` fixture validates public record shape, field identity, workload family, freshness window, route permissions, inherited residuals, fallback path, expiry, and non-claims only.
 - Implemented Lean predicate: promoted decisions require all required gates to pass.
 - Implemented Lean predicate: quarantined targets cannot be selected for ordinary execution routes.
 - Planned Codex test: Readiness transition enforcement test.

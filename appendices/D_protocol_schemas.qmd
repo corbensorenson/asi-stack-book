@@ -693,20 +693,29 @@ readiness_gate_record:
   gate_id: string
   target_id: string
   target_kind: specialist
+  field_id: string
   current_state: shadow
   candidate_state: canary
+  workload_family: string
+  freshness_window: string
   gate_evidence: []
   regression_results: []
   residual_escrow: []
+  inherited_residuals: []
   authority_scope: string
   promotion_blockers: []
   quarantine_conditions: []
+  allowed_routes: []
+  blocked_routes: []
+  fallback_path: string
+  expiry: string
   decision: canary
   review_refs: []
   next_review_trigger: string
+  non_claims: []
 ```
 
-This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to evidence, regressions, residual escrow, authority, blockers, quarantine conditions, review, and stale-gate triggers.
+This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to field identity, workload family, freshness, evidence, regressions, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, review, stale-gate triggers, and non-claims.
 
 ## Benchmark Ratchet Record
 
@@ -1039,16 +1048,25 @@ stable_capability_field:
   implementations: []
   lifecycle_state: canary
   qualification_context: string
+  qualification_lease:
+    epoch: string
+    expires_on: string
+    review_triggers: []
   qualification_predicates: []
   evaluator_policy: string
+  evaluator_independence: string
   route_validity: residual
   evidence_refs: []
+  incident_refs: []
+  review_triggers: []
   state_migration: string
   regression_suite: []
   rollback_plan: string
+  rollback_obligations: []
+  non_claims: []
 ```
 
-This record separates a durable semantic capability boundary from replaceable implementations, while keeping authority, evaluator policy, route validity, evidence, regression, migration, and rollback obligations visible.
+This record separates a durable semantic capability boundary from replaceable implementations, while keeping authority, qualification lease, evaluator policy, evaluator independence, route validity, evidence, incidents, review triggers, regression, migration, rollback obligations, and non-claims visible.
 
 ## Replacement Transaction
 
@@ -1058,18 +1076,29 @@ replacement_transaction:
   field_id: string
   prior_implementation: string
   candidate_implementation: string
+  identity_preservation: string
   precheck_results: []
   qualification_evidence: []
   regression_results: []
   authority_check: string
+  evaluator_independence: string
   residual_escrow: []
   rollback_plan: string
+  rollback_receipt:
+    prior_artifact: string
+    state_migration_status: string
+    reversible_fields: []
+    irreversible_effects: []
+    dry_run_status: not_run
+    trigger_conditions: []
+    owner: string
   approval_record: string
   monitor_window: string
   decision: canary
+  non_claims: []
 ```
 
-This record turns capability replacement into an evidence-gated transaction with prior state, candidate state, regressions, residuals, approval, monitoring, and rollback attached.
+This record turns capability replacement into an evidence-gated transaction with identity preservation, prior state, candidate state, regressions, evaluator independence, residuals, rollback receipt, approval, monitoring, decision, and non-claims attached.
 
 ## Self-Improvement Transition
 
