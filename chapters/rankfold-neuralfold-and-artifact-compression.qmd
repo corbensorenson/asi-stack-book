@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists."
-  - "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
+  - "The compressed_artifact_record fixture validates schema/example consistency for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
   - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context."
   - "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -84,7 +84,7 @@ Artifact compression is where representation cost meets task routing. RankFold/N
 
 A compressed artifact is therefore not a cheaper source of truth. It is a routed representation candidate with a preserved full-artifact fallback. The full artifact remains the reference unless reconstruction, probe, utility, and cost records justify a narrower use. This keeps storage savings from silently becoming evidence loss.
 
-A Compressed Artifact Record therefore carries reconstruction, residual, probe, fallback, and utility fields. The probe is the routing boundary: if the compressed form cannot answer the task's needs, the route falls back to the full artifact.
+A Compressed Artifact Record therefore carries task family, access pattern, admission state, reconstruction, declared use envelope, metadata cost, residual, probe, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence, and utility fields. The probe is the routing boundary: if the compressed form cannot answer the task's needs, the route falls back to the full artifact.
 
 ```{mermaid}
 flowchart LR
@@ -134,15 +134,25 @@ Minimum fields:
 
 - `artifact_id`
 - `source_artifact`
+- `task_family`
+- `access_pattern`
+- `admission_state`
 - `compression_method`
 - `reconstruction_contract`
+- `declared_use_envelope`
 - `ratio_claim_state`
 - `codec_parameters`
+- `metadata_costs`
 - `residual_coding`
 - `probe_plan`
 - `fallback_artifact`
+- `fallback_trigger`
 - `decode_determinism`
+- `exact_replay_status`
+- `consumer_policy`
 - `utility_tests`
+- `support_state_effect`
+- `evidence_refs`
 - `non_claims`
 
 Artifact graphs store compressed and full references. Routing selects the representation by task and probe. Evidence records ratio, latency, residual size, decoder determinism, utility, and fallback frequency. Resource economics decides whether encoding cost is justified by the access pattern.
@@ -189,7 +199,7 @@ The most dangerous failure is silent narrowing. A compressed representation may 
 
 ## Minimal implementation
 
-The smallest useful implementation is a compressed artifact schema and fixture. The current fixture validates that a record names method, reconstruction contract, ratio claim state, codec parameters, residual coding, probe plan, fallback, decode determinism, utility tests, and non-claims.
+The smallest useful implementation is a compressed artifact schema and fixture. The current fixture validates that a record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 
 Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
 
@@ -199,7 +209,7 @@ The next useful implementation step is a toy corpus with deliberately adversaria
 
 | Test | Purpose | Status |
 |---|---|---|
-| Compressed artifact record fixture validation | Validate that an artifact-compression record names method, contract, ratio state, codec parameters, residuals, probes, fallback, decode determinism, utility tests, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Compressed artifact record fixture validation | Validate that an artifact-compression record names task family, access pattern, admission state, method, contract, use envelope, ratio state, codec parameters, metadata costs, residuals, probes, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Compression ratio test | Check that reported ratios include metadata, parameters, seeds, manifests, and residuals. | planned; not run |
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |

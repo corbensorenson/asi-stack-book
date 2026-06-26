@@ -5,10 +5,20 @@
   "rule_system": "preserve support-state discipline, cite source IDs, and record residuals",
   "memory_state": "public source notes and chapter outline only",
   "residual_channel": ["no benchmark proves generated prose quality", "source-to-claim mapping remains incomplete"],
+  "correction_mechanism": "downgrade unsupported claims, retain source notes, and route missing evidence to residual review",
   "verification_contract": "local validators and human review can inspect source IDs and non-claims",
+  "verifier_independence": "the compact generator cannot be the sole authority for its own adequacy",
   "governance_interface": "support state remains argument until evidence changes",
+  "authority_boundary": "drafting and planning only; no source, proof, benchmark, or runtime authority is granted",
+  "use_envelope": ["chapter planning", "drafting context", "residual tracking"],
+  "burden_ledger": ["generation burden", "verification burden", "human review burden", "fallback burden"],
+  "cost_accounting": ["validation time is counted", "unmeasured downstream utility remains residual"],
   "generative_leverage": "small source-note set guides a longer chapter draft",
   "hidden_complexity_risks": ["human review burden", "unmeasured downstream utility"],
   "fallback_path": "retain full source notes and mark unresolved claims as residuals",
-  "evidence_refs": ["sources/source_notes/cgs.md", "sources/source_notes/rgs.md"]
+  "promotion_state": "conceptual",
+  "retirement_condition": "retire or narrow the compact core if residual burden, review burden, or fallback frequency dominates the saved representation cost",
+  "support_state_effect": "record_shape_only",
+  "evidence_refs": ["sources/source_notes/cgs.md", "sources/source_notes/rgs.md"],
+  "non_claims": ["no CGS benchmark", "no compact-adequacy proof", "no downstream utility result"]
 }

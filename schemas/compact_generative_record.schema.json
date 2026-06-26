@@ -10,12 +10,22 @@
     "rule_system",
     "memory_state",
     "residual_channel",
+    "correction_mechanism",
     "verification_contract",
+    "verifier_independence",
     "governance_interface",
+    "authority_boundary",
+    "use_envelope",
+    "burden_ledger",
+    "cost_accounting",
     "generative_leverage",
     "hidden_complexity_risks",
     "fallback_path",
-    "evidence_refs"
+    "promotion_state",
+    "retirement_condition",
+    "support_state_effect",
+    "evidence_refs",
+    "non_claims"
   ],
   "properties": {
     "system_id": { "type": "string", "minLength": 1 },
@@ -24,12 +34,34 @@
     "rule_system": { "type": "string", "minLength": 1 },
     "memory_state": { "type": "string", "minLength": 1 },
     "residual_channel": { "type": "array", "items": { "type": "string" } },
+    "correction_mechanism": { "type": "string", "minLength": 1 },
     "verification_contract": { "type": "string", "minLength": 1 },
+    "verifier_independence": { "type": "string", "minLength": 1 },
     "governance_interface": { "type": "string", "minLength": 1 },
+    "authority_boundary": { "type": "string", "minLength": 1 },
+    "use_envelope": { "type": "array", "items": { "type": "string" } },
+    "burden_ledger": { "type": "array", "items": { "type": "string" } },
+    "cost_accounting": { "type": "array", "items": { "type": "string" } },
     "generative_leverage": { "type": "string", "minLength": 1 },
     "hidden_complexity_risks": { "type": "array", "items": { "type": "string" } },
     "fallback_path": { "type": "string", "minLength": 1 },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+    "promotion_state": {
+      "type": "string",
+      "enum": ["conceptual", "candidate", "verified_for_scope", "fallback_required", "residualized", "blocked", "retired"]
+    },
+    "retirement_condition": { "type": "string", "minLength": 1 },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

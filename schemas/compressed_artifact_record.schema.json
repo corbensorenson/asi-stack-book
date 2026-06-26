@@ -6,32 +6,70 @@
   "required": [
     "artifact_id",
     "source_artifact",
+    "task_family",
+    "access_pattern",
+    "admission_state",
     "compression_method",
     "reconstruction_contract",
+    "declared_use_envelope",
     "ratio_claim_state",
     "codec_parameters",
+    "metadata_costs",
     "residual_coding",
     "probe_plan",
     "fallback_artifact",
+    "fallback_trigger",
     "decode_determinism",
+    "exact_replay_status",
+    "consumer_policy",
     "utility_tests",
+    "support_state_effect",
+    "evidence_refs",
     "non_claims"
   ],
   "properties": {
     "artifact_id": { "type": "string", "minLength": 1 },
     "source_artifact": { "type": "string", "minLength": 1 },
+    "task_family": { "type": "string", "minLength": 1 },
+    "access_pattern": {
+      "type": "string",
+      "enum": ["cold_archive", "warm_retrieval_cache", "hot_planning_context", "exact_replay", "semantic_preview", "benchmark_input", "audit"]
+    },
+    "admission_state": {
+      "type": "string",
+      "enum": ["not_admitted", "cold_archive_candidate", "preview_only", "task_probe_passed", "exact_replay_ready", "fallback_dominant", "decoder_quarantined"]
+    },
     "compression_method": { "type": "string", "minLength": 1 },
     "reconstruction_contract": { "type": "string", "minLength": 1 },
+    "declared_use_envelope": { "type": "array", "items": { "type": "string" } },
     "ratio_claim_state": {
       "type": "string",
       "enum": ["not_measured", "source_proposed", "synthetic_test", "empirical_test"]
     },
     "codec_parameters": { "type": "array", "items": { "type": "string" } },
+    "metadata_costs": { "type": "array", "items": { "type": "string" } },
     "residual_coding": { "type": "array", "items": { "type": "string" } },
     "probe_plan": { "type": "array", "items": { "type": "string" } },
     "fallback_artifact": { "type": "string", "minLength": 1 },
+    "fallback_trigger": { "type": "string", "minLength": 1 },
     "decode_determinism": { "type": "string", "minLength": 1 },
+    "exact_replay_status": {
+      "type": "string",
+      "enum": ["not_claimed", "not_run", "passed", "failed", "blocked"]
+    },
+    "consumer_policy": { "type": "string", "minLength": 1 },
     "utility_tests": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

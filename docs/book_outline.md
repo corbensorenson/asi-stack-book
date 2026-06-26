@@ -2274,7 +2274,7 @@ Draft arc:
 
 - Problem: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
 - Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
-- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, verifier, residual channel, fallback path, governance interface, and evidence/cost ledger.
+- Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, correction mechanism, verifier, verifier independence, residual channel, fallback path, governance interface, authority boundary, use envelope, burden ledger, evidence/cost ledger, promotion state, retirement condition, support-state effect, and non-claims.
 - Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
 - Mechanism: Separate reconstruction burden, decision burden, and governance burden so compactness is judged by total recorded cost rather than seed size.
 - Mechanism: Require verifier separation and use envelopes so compact cores cannot self-promote their own adequacy for evidence, runtime, or replacement claims.
@@ -2297,8 +2297,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.
-- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape only; utility and residual-burden behavior remain planned tests.
+- A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
+- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion state, retirement condition, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Implemented Lean predicate: unresolved obligations require residual records.
 - Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
@@ -2332,7 +2332,7 @@ Draft arc:
 
 - Problem: Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
 - Insufficiency: Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
-- Mechanism: Record a compression receipt with reconstruction contract, public law family, seed, generated regions, verification result, exact repair residual, fallback threshold, rate accounting, and non-claims.
+- Mechanism: Record a compression receipt with receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, exact repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims.
 - Mechanism: Separate proxy/search-rate estimates from final serialized costs, and record literal fallback or negative results when repair and metadata erase the saving.
 - Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
 - Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
@@ -2359,8 +2359,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A compression record with generator, verification result, repair residual, and fallback threshold.
-- Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt fields only; no codec, reconstruction benchmark, or rate experiment exists yet.
+- A compression record with generator, verification result, repair residual, fallback threshold, consumer policy, use permissions, proxy/final-rate status, and support-state effect.
+- Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt state, search bound, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims only; no codec, reconstruction benchmark, or rate experiment exists yet.
 - Implemented Lean predicate: exact reconstruction claims require generator output plus repair residual to equal the target in a finite record.
 - Implemented Lean predicate: failed verification blocks exactness promotion.
 - Planned Codex test: Reconstruction quality test.
@@ -2478,7 +2478,7 @@ Draft arc:
 
 - Problem: The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
 - Insufficiency: Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
-- Mechanism: Treat compressed artifacts as routed representation candidates with preserved full-artifact fallback, reconstruction contract, codec parameters, residual coding, probe plan, decode determinism, utility tests, and non-claims.
+- Mechanism: Treat compressed artifacts as routed representation candidates with preserved full-artifact fallback, task family, access pattern, admission state, reconstruction contract, declared use envelope, codec parameters, metadata costs, residual coding, probe plan, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 - Mechanism: Separate representation, reconstruction, compression-ratio, and downstream-utility claims so one passing property cannot promote the others.
 - Mechanism: Keep compression, reconstruction, residual, utility, cost, and fallback ledgers separate so a smaller representation cannot silently become a stronger evidence object.
 - Mechanism: Require compressed records to state the declared use envelope, probe boundary, fallback trigger, and non-claims before downstream agents can use the compressed form.
@@ -2507,8 +2507,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A compressed artifact record with ratio, residual, probe, fallback, and utility fields.
-- Implemented repository-level fixture: `compressed_artifact_record.valid.json` validates the artifact-compression record shape only; no decoder, corpus benchmark, or downstream utility probe exists yet.
+- A compressed artifact record with task family, access pattern, admission state, ratio, metadata costs, residual, probe, fallback trigger, exact-replay status, consumer policy, support-state effect, and utility fields.
+- Implemented repository-level fixture: `compressed_artifact_record.valid.json` validates the artifact-compression record shape, task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; no decoder, corpus benchmark, or downstream utility probe exists yet.
 - Planned Codex test: Compression ratio test.
 - Planned Codex test: Probe-route fallback test.
 - Planned Codex test: Downstream utility preservation test.

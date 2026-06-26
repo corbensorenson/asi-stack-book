@@ -5,21 +5,35 @@
   "type": "object",
   "required": [
     "artifact_id",
+    "receipt_state",
     "reconstruction_contract",
     "public_law_family",
     "seed",
+    "search_bound",
     "generated_regions",
     "verification_result",
     "repair_residual",
     "fallback_threshold",
+    "interface_costs",
+    "consumer_policy",
+    "use_permissions",
+    "proxy_rate_status",
+    "final_serialization_status",
     "rate_accounting",
+    "support_state_effect",
+    "evidence_refs",
     "non_claims"
   ],
   "properties": {
     "artifact_id": { "type": "string", "minLength": 1 },
+    "receipt_state": {
+      "type": "string",
+      "enum": ["candidate", "verified_exact", "verified_lossy", "repaired_exact", "literal_fallback", "negative_rate", "quarantined"]
+    },
     "reconstruction_contract": { "type": "string", "minLength": 1 },
     "public_law_family": { "type": "string", "minLength": 1 },
     "seed": { "type": "string" },
+    "search_bound": { "type": "string", "minLength": 1 },
     "generated_regions": { "type": "array", "items": { "type": "string" } },
     "verification_result": {
       "type": "string",
@@ -27,6 +41,17 @@
     },
     "repair_residual": { "type": "string" },
     "fallback_threshold": { "type": "string", "minLength": 1 },
+    "interface_costs": { "type": "array", "items": { "type": "string" } },
+    "consumer_policy": { "type": "string", "minLength": 1 },
+    "use_permissions": { "type": "array", "items": { "type": "string" } },
+    "proxy_rate_status": {
+      "type": "string",
+      "enum": ["not_run", "uncalibrated", "calibrated", "stale", "not_applicable"]
+    },
+    "final_serialization_status": {
+      "type": "string",
+      "enum": ["not_run", "estimated", "measured", "blocked", "not_applicable"]
+    },
     "rate_accounting": {
       "type": "object",
       "required": ["proxy_bits", "final_bits", "literal_bits", "proxy_gap"],
@@ -38,6 +63,17 @@
       },
       "additionalProperties": false
     },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

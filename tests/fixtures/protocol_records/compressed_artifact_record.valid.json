@@ -1,14 +1,24 @@
 {
   "artifact_id": "compressed-artifact-demo-001",
   "source_artifact": "artifact://full-source-note-set",
+  "task_family": "draft orientation",
+  "access_pattern": "semantic_preview",
+  "admission_state": "preview_only",
   "compression_method": "semantic summary plus residual refs",
   "reconstruction_contract": "adequate for drafting context only, not exact source reconstruction",
+  "declared_use_envelope": ["orientation", "source triage", "draft planning"],
   "ratio_claim_state": "not_measured",
   "codec_parameters": ["summary length limit", "source ID preservation"],
+  "metadata_costs": ["source refs", "residual refs", "fallback pointer"],
   "residual_coding": ["full source notes remain authoritative", "missing exact quotes are not reconstructed"],
   "probe_plan": ["check source IDs", "check non-claims", "check fallback path"],
   "fallback_artifact": "sources/source_notes/",
+  "fallback_trigger": "route to full source notes for exact source wording, citations, proof input, benchmark input, or audit",
   "decode_determinism": "not an executable decoder; fixture records a draft contract only",
+  "exact_replay_status": "not_claimed",
+  "consumer_policy": "Preview consumers may use this record for orientation only; exact replay, citation, proof, audit, benchmark, or training consumers must use the full artifact or stronger receipt.",
   "utility_tests": ["planned downstream utility comparison"],
-  "non_claims": ["no compression ratio measured", "no lossless reconstruction claimed"]
+  "support_state_effect": "record_shape_only",
+  "evidence_refs": ["sources/source_notes/rankfold_neuralfold.md"],
+  "non_claims": ["no compression ratio measured", "no lossless reconstruction claimed", "no downstream utility result"]
 }

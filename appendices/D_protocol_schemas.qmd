@@ -958,22 +958,31 @@ This record keeps derived context cells honest by preserving provenance, transac
 ```yaml
 compression_receipt:
   artifact_id: string
+  receipt_state: candidate
   reconstruction_contract: string
   public_law_family: string
   seed: string
+  search_bound: string
   generated_regions: []
   verification_result: partial
   repair_residual: string
   fallback_threshold: string
+  interface_costs: []
+  consumer_policy: string
+  use_permissions: []
+  proxy_rate_status: not_run
+  final_serialization_status: not_run
   rate_accounting:
     proxy_bits: 0
     final_bits: 0
     literal_bits: 0
     proxy_gap: 0
+  support_state_effect: record_shape_only
+  evidence_refs: []
   non_claims: []
 ```
 
-This record keeps generate-verify-repair compression honest by separating proxy compression claims from final serialized size, repair burden, and explicit non-claims.
+This record keeps generate-verify-repair compression honest by separating receipt state, search bounds, proxy compression claims, final serialized size, repair burden, interface costs, consumer policy, use permissions, support-state effect, evidence refs, and explicit non-claims.
 
 ## Compact Generative Record
 
@@ -985,15 +994,25 @@ compact_generative_record:
   rule_system: string
   memory_state: string
   residual_channel: []
+  correction_mechanism: string
   verification_contract: string
+  verifier_independence: string
   governance_interface: string
+  authority_boundary: string
+  use_envelope: []
+  burden_ledger: []
+  cost_accounting: []
   generative_leverage: string
   hidden_complexity_risks: []
   fallback_path: string
+  promotion_state: conceptual
+  retirement_condition: string
+  support_state_effect: record_shape_only
   evidence_refs: []
+  non_claims: []
 ```
 
-This record describes a compact generative core without hiding the work it exports to generation, verification, governance, fallback, human review, or residual correction.
+This record describes a compact generative core without hiding the work it exports to generation, correction, verification, governance, fallback, human review, residual correction, authority review, promotion decisions, or retirement.
 
 ## Compressed Artifact Record
 
@@ -1001,19 +1020,29 @@ This record describes a compact generative core without hiding the work it expor
 compressed_artifact_record:
   artifact_id: string
   source_artifact: string
+  task_family: string
+  access_pattern: semantic_preview
+  admission_state: preview_only
   compression_method: string
   reconstruction_contract: string
+  declared_use_envelope: []
   ratio_claim_state: not_measured
   codec_parameters: []
+  metadata_costs: []
   residual_coding: []
   probe_plan: []
   fallback_artifact: string
+  fallback_trigger: string
   decode_determinism: string
+  exact_replay_status: not_claimed
+  consumer_policy: string
   utility_tests: []
+  support_state_effect: record_shape_only
+  evidence_refs: []
   non_claims: []
 ```
 
-This record separates representation, reconstruction, compression, and utility claims for compressed artifacts, while preserving residuals, probes, fallback, decode assumptions, and explicit non-claims.
+This record separates representation, reconstruction, compression, exact replay, access-pattern, and utility claims for compressed artifacts, while preserving metadata costs, residuals, probes, fallback triggers, decode assumptions, consumer policy, support-state effect, evidence refs, and explicit non-claims.
 
 ## Authority Use Receipt
 
