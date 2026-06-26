@@ -8,8 +8,13 @@
     "triage_state",
     "source_or_gap",
     "access_state",
+    "source_storage_policy",
+    "public_safety_state",
     "assigned_chapters",
     "chapter_action_policy",
+    "chapter_decision_refs",
+    "deduplication_state",
+    "merge_or_split_policy",
     "boundary_decision_rationale",
     "source_note_state",
     "claim_mapping_state",
@@ -17,9 +22,11 @@
     "external_literature_need",
     "proof_or_test_backlog",
     "evidence_transition_precondition",
+    "required_before_drafting",
     "insertion_decision",
     "source_refs",
     "support_state_effect",
+    "promotion_blockers",
     "residuals",
     "next_action",
     "non_claims"
@@ -45,8 +52,42 @@
       "type": "string",
       "enum": ["available", "source_note_available", "connector_required", "recovery_required", "missing", "private_restricted"]
     },
+    "source_storage_policy": {
+      "type": "string",
+      "enum": [
+        "repo_public_note_only",
+        "repo_public_source_allowed",
+        "connector_only",
+        "local_private_cache",
+        "external_url_only",
+        "blocked"
+      ]
+    },
+    "public_safety_state": {
+      "type": "string",
+      "enum": [
+        "public_safe",
+        "needs_redaction",
+        "permission_required",
+        "private_restricted",
+        "blocked"
+      ]
+    },
     "assigned_chapters": { "type": "array", "items": { "type": "string" } },
     "chapter_action_policy": { "type": "string", "minLength": 1 },
+    "chapter_decision_refs": { "type": "array", "items": { "type": "string" } },
+    "deduplication_state": {
+      "type": "string",
+      "enum": [
+        "not_checked",
+        "unique_boundary",
+        "overlaps_existing_chapter",
+        "duplicate_source",
+        "superseded_variant",
+        "blocked"
+      ]
+    },
+    "merge_or_split_policy": { "type": "string", "minLength": 1 },
     "boundary_decision_rationale": { "type": "string", "minLength": 1 },
     "source_note_state": {
       "type": "string",
@@ -63,6 +104,7 @@
     "external_literature_need": { "type": "array", "items": { "type": "string" } },
     "proof_or_test_backlog": { "type": "array", "items": { "type": "string" } },
     "evidence_transition_precondition": { "type": "array", "items": { "type": "string" } },
+    "required_before_drafting": { "type": "array", "items": { "type": "string" } },
     "insertion_decision": {
       "type": "string",
       "enum": ["update_existing_chapter", "propose_new_chapter", "appendix_only", "defer", "reject_duplicate", "blocked"]
@@ -79,6 +121,7 @@
         "blocks_promotion"
       ]
     },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
     "residuals": { "type": "array", "items": { "type": "string" } },
     "next_action": { "type": "string", "minLength": 1 },
     "non_claims": { "type": "array", "items": { "type": "string" } }

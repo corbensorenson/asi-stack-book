@@ -3,8 +3,13 @@
   "triage_state": "mapped",
   "source_or_gap": "Claim-to-source mapping for Appendix C",
   "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
   "assigned_chapters": ["open-research-agenda-and-bibliography-plan"],
   "chapter_action_policy": "Update the existing research-agenda chapter because the gap concerns evidence discipline across the whole book rather than a distinct new architecture layer.",
+  "chapter_decision_refs": ["book_structure.json", "docs/book_outline.md", "appendices/C_claim_evidence_matrix.qmd"],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Merge this bookkeeping gap into the existing research-agenda boundary; do not create one chapter per source family.",
   "boundary_decision_rationale": "The item affects source-to-claim bookkeeping and external citation normalization; it should not create a duplicate chapter for each source family.",
   "source_note_state": "available",
   "claim_mapping_state": "partial",
@@ -16,9 +21,15 @@
     "direct citation metadata checked before external-literature support",
     "accepted Appendix C evidence transition recorded before support promotion"
   ],
+  "required_before_drafting": [
+    "confirm source inventory and chapter assignment",
+    "use public source notes or permitted connector text only",
+    "record claim mapping before strengthening prose"
+  ],
   "insertion_decision": "update_existing_chapter",
   "source_refs": ["docs/source_evidence_audit.md", "appendices/C_claim_evidence_matrix.qmd"],
   "support_state_effect": "backlog_only",
+  "promotion_blockers": ["external literature normalization incomplete", "no accepted evidence transition", "no new-paper triage scenario fixture"],
   "residuals": ["Appendix C remains claim-level argument support until mappings are recorded"],
   "next_action": "Create claim-to-source mapping records before support-state promotion.",
   "non_claims": [

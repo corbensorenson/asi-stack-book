@@ -31,7 +31,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twenty-one assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle/constitution references; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, artifact reproduction, or accepted evidence transitions justify promotion."
-  - "The research_backlog_record fixture and AsiStackProofs.BibliographyPlan finite-record predicates validate backlog-record shape, triage state, chapter action policy, boundary-decision rationale, evidence-transition preconditions, source refs, support-state effect, non-claims, source-note gates, and chapter-assignment gates only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, or new-paper triage quality."
+  - "The research_backlog_record fixture and AsiStackProofs.BibliographyPlan finite-record predicates validate backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, non-claims, source-note gates, and chapter-assignment gates only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, public-release permission, or new-paper triage quality."
   - "Connector/recovery and variant sources remain bounded: MoECOT, CoilMoECOT, Road To AGI, and VCM Editable do not promote runtime, benchmark, model-facing, or citation-normalized third-party claims."
   - "No support-state promotion, external-literature normalization result, direct citation check, benchmark reproduction, runtime artifact, model-quality result, Circle command, external Circle build, current Theseus report verification, policy-engine result, or raw source publication is implied by this drafting pass."
 ---
@@ -50,7 +50,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`; source-note-only or connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`; pinned local references: Project Theseus, Circle Math, and Field of God AI Constitution |
-| Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; the backlog fixture now carries triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates; new-paper triage scenario remains planned. |
+| Test state | Source inventory validation, source-note validation, and `research_backlog_record.valid.json` protocol fixture validation pass; the backlog fixture now carries triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates; new-paper triage scenario remains planned. |
 
 ## Drafting guardrail
 
@@ -98,7 +98,7 @@ Appendix C now records twenty-one passage-reviewed mappings for this claim. The 
 
 The research agenda is a queue with admission rules. Verification Bandwidth supplies context-adequacy and contradiction-rate test ideas. Benchmaxxing supplies benchmark lifecycle and anti-Goodhart backlog structure. SCF, VCM, PlanForge, Talos, Spinoza, RMI, CGS, GenesisCode, Simulation Scaling, Circle, Theseus, MoECOT, and the constitutional sources each name future artifacts that could strengthen the book only after source notes, direct citation checks, proof/test routes, and non-claim boundaries are recorded.
 
-The Research Backlog Record keeps those future moves from becoming loose intentions. It should say whether the item is discovered, inventoried, source-noted, mapped, integrated, deferred, blocked, rejected, or retired; what chapter action policy applies; why the boundary decision was made; what evidence-transition preconditions would have to be met; which source refs were inspected; and what support-state effect is allowed.
+The Research Backlog Record keeps those future moves from becoming loose intentions. It should say whether the item is discovered, inventoried, source-noted, mapped, integrated, deferred, blocked, rejected, or retired; where the source text is allowed to live; whether the public surface is safe, redacted, permission-gated, private, or blocked; what chapter action policy applies; which chapter-decision refs justify that policy; whether the item is unique, overlapping, duplicate, superseded, or blocked; why the boundary decision was made; what must happen before drafting; what evidence-transition preconditions would have to be met; which source refs were inspected; what still blocks promotion; and what support-state effect is allowed.
 
 A good backlog item is more specific than "research this." It names the source or gap, the affected chapter boundary, the evidence state it could change, the proof or test route that would make the change meaningful, and the non-claims that remain even after the work is done. That structure prevents two common mistakes. The first is duplicate expansion, where every new paper becomes a new chapter even though it belongs inside an existing boundary. The second is evidence smearing, where a useful source influences prose in five places but no one can say which claim it actually supports.
 
@@ -118,7 +118,7 @@ flowchart LR
   G --> H["Proof/test/backlog item"]
 ```
 
-The record should track source id, access state, assigned chapters, source-note state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, insertion decision, and residuals.
+The record should track source id, access state, source storage policy, public-safety state, assigned chapters, chapter-decision refs, deduplication state, merge/split policy, source-note state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, pre-drafting requirements, insertion decision, promotion blockers, and residuals.
 
 ## Interfaces
 
@@ -130,8 +130,13 @@ Minimum fields:
 - `triage_state`
 - `source_or_gap`
 - `access_state`
+- `source_storage_policy`
+- `public_safety_state`
 - `assigned_chapters`
 - `chapter_action_policy`
+- `chapter_decision_refs`
+- `deduplication_state`
+- `merge_or_split_policy`
 - `boundary_decision_rationale`
 - `source_note_state`
 - `claim_mapping_state`
@@ -139,9 +144,11 @@ Minimum fields:
 - `external_literature_need`
 - `proof_or_test_backlog`
 - `evidence_transition_precondition`
+- `required_before_drafting`
 - `insertion_decision`
 - `source_refs`
 - `support_state_effect`
+- `promotion_blockers`
 - `residuals`
 - `next_action`
 - `non_claims`
@@ -174,7 +181,7 @@ Another failure is backlog rot. If every uncertain item becomes permanent "futur
 
 ## Minimal implementation
 
-The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, including triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, or promote mapped claims to stronger support states.
+The smallest useful implementation is a research backlog schema and fixture. The current fixture makes future source ingestion and chapter insertion reviewable, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, run a new-paper scenario, or promote mapped claims to stronger support states.
 
 The next useful implementation step is a new-paper triage fixture set. One fixture should update an existing chapter, one should propose a precise new chapter because it owns a new boundary, one should remain external literature because it has not been read, and one should be rejected as redundant or out of scope. That would test the living-book insertion rule without claiming that any particular future source has been evaluated.
 
@@ -182,7 +189,7 @@ The next useful implementation step is a new-paper triage fixture set. One fixtu
 
 | Test | Purpose | Status |
 |---|---|---|
-| Research backlog record fixture validation | Validate that a backlog record names source/gap, triage state, access state, assigned chapters, chapter action policy, boundary rationale, source-note state, claim mapping state, external-literature need, proof/test backlog, evidence-transition preconditions, insertion decision, source refs, support-state effect, residuals, next action, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Research backlog record fixture validation | Validate that a backlog record names source/gap, triage state, access state, source storage policy, public-safety state, assigned chapters, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, source-note state, claim mapping state, external-literature need, proof/test backlog, required pre-drafting work, evidence-transition preconditions, insertion decision, source refs, promotion blockers, support-state effect, residuals, next action, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
 | Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes, exact core-claim mappings, and passage-reviewed mapping refs currently exist for assigned sources; external-literature normalization and evidence transitions remain incomplete |
 | New-paper triage scenario | Check whether a new paper updates an existing chapter or creates a new boundary. | planned; not run |
@@ -203,6 +210,7 @@ This chapter intentionally keeps a broad source set because it governs the backl
 Priority backlog:
 
 - Claim-to-mechanism reconciliation beyond this core-claim mapping pass, especially where future chapter drafting depends on narrower mechanisms rather than broad source-family assignment.
+- New-paper intake fixtures that exercise update-existing, propose-new-chapter, appendix-only, defer, and reject-duplicate decisions with storage/public-safety policy.
 - External literature normalization and direct citation checks.
 - Reproduction or import of any benchmark artifacts before support promotion.
 - Lean triage for proof targets that are currently schema or process contracts.

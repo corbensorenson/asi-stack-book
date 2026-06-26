@@ -1908,8 +1908,13 @@ research_backlog_record:
   triage_state: mapped
   source_or_gap: string
   access_state: source_note_available
+  source_storage_policy: repo_public_note_only
+  public_safety_state: public_safe
   assigned_chapters: []
   chapter_action_policy: string
+  chapter_decision_refs: []
+  deduplication_state: overlaps_existing_chapter
+  merge_or_split_policy: string
   boundary_decision_rationale: string
   source_note_state: available
   claim_mapping_state: partial
@@ -1917,12 +1922,14 @@ research_backlog_record:
   external_literature_need: []
   proof_or_test_backlog: []
   evidence_transition_precondition: []
+  required_before_drafting: []
   insertion_decision: update_existing_chapter
   source_refs: []
   support_state_effect: backlog_only
+  promotion_blockers: []
   residuals: []
   next_action: string
   non_claims: []
 ```
 
-This record turns future-source and missing-evidence management into a reviewable backlog item. It records triage state, access state, chapter action policy, boundary-decision rationale, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, evidence-transition preconditions, insertion decision, source refs, support-state effect, residuals, next action, and non-claims.
+This record turns future-source and missing-evidence management into a reviewable backlog item. It records triage state, access state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, evidence-transition preconditions, required pre-drafting work, insertion decision, source refs, support-state effect, promotion blockers, residuals, next action, and non-claims.

@@ -3555,7 +3555,7 @@ Draft arc:
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 - Mechanism: Maintain source inventory, source notes, generated bibliography, chapter source queues, and direct-citation status before using a source as support.
-- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims.
+- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims.
 - Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
@@ -3581,8 +3581,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A research backlog record schema with external literature areas, source-note state, claim-mapping state, proof/test backlog, and insertion/merge rules.
-- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape, triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims only; external-literature normalization, direct citation checks, evidence transitions, and new-paper triage rehearsals remain incomplete.
+- A research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
+- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; external-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
 - Planned Codex test: New-paper triage scenario.
