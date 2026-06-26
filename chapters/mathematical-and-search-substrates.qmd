@@ -4,7 +4,7 @@ chapter_id: "mathematical-and-search-substrates"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "genesiscode"
   - "temporal_coil_research"
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -49,6 +49,8 @@ open_evidence_gaps:
 This chapter treats mathematical and search substrates as optional specialist candidates. It does not claim that coils, calculi, geometric search, cyclic compute, or state-space sequence backbones improve model quality, compression, search, or runtime without baselines and artifacts.
 
 The previous chapter bounded simulated worlds by scope, fidelity, and resources. This chapter applies the same discipline to mathematical substrates: an elegant representation is not a right to become architecture. A substrate enters the ASI Stack through an adoption record that states intended use, baseline, falsification condition, proof boundary, and evidence gate before it can become a route, representation, or compression dependency.
+
+The adoption record is a routing permission, not a trophy. It says where a substrate may be tried, what it must be compared against, and what evidence would retire, narrow, or promote it.
 
 ## Problem
 
@@ -65,6 +67,8 @@ GenesisCode supplies the small-kernel and obligation discipline. Temporal Coil R
 The reader should treat this chapter as an adoption filter. It is where attractive mechanisms wait until the book can say what they are for, what ordinary method they replace, what negative control would embarrass them, and what residual would remain even after a favorable result. That filter keeps the stack open to unusual mathematics without letting novelty become authority.
 
 The filter also prevents cross-axis leakage. A substrate might improve a representation task while making routing worse. It might reduce active work while increasing verification burden. It might have a proof-relevant finite structure while offering no downstream quality benefit. The adoption record keeps those axes separate so the book can use a substrate in one narrow lane without implying it should become a general backbone.
+
+The insufficiency is especially dangerous when a substrate has real mathematics behind it. A correct theorem can make the surrounding architecture feel more justified than it is. The theorem should travel only as far as its statement, model, assumptions, and proof artifact permit.
 
 ## Core Claim
 
@@ -125,6 +129,8 @@ This lets the architecture keep a library of promising substrates without turnin
 
 Optionality is a positive design state. It means the stack can route experiments toward a substrate while keeping default behavior on ordinary baselines. It also means a future implementation can test a substrate without changing the book's core architecture claim. The substrate becomes load-bearing only after evidence, not before.
 
+Adoption states should therefore be operational: exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded. A state that does not change routing, testing, or evidence obligations is a label, not governance.
+
 ## Interfaces
 
 The interface is the Substrate Adoption Record.
@@ -146,6 +152,8 @@ Minimum fields:
 
 Routing treats a candidate substrate as a specialist. Compression tests representation efficiency. Evidence compares against baselines. Proof envelopes preserve theorem status. Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records. Readiness gates decide whether a substrate is exploratory, canary, qualified, or retired.
 
+The interface should also record an axis ledger: structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality. A substrate can pass one axis and fail another without contradiction.
+
 ## Invariants
 
 - Exploratory claims stay exploratory.
@@ -156,6 +164,8 @@ Routing treats a candidate substrate as a specialist. Compression tests represen
 - Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
 
 The adoption invariant is intentionally conservative: the default state is optional. A substrate earns broader use through bounded evidence, not through elegance.
+
+Another invariant is negative-control memory. The ordinary baseline, simple ablation, and embarrassing control remain attached to the substrate record after a favorable result. Promotion without the controls is not promotion; it is wishful selection.
 
 ## Failure modes
 
@@ -168,11 +178,15 @@ The adoption invariant is intentionally conservative: the default state is optio
 
 Each failure should produce a downgrade, residual, or blocked promotion. Negative results are useful; hidden negative results are architectural debt.
 
+The subtle failure is theorem spillover. A proof of an address, phase, recurrence, or structural property is used to imply speed, search quality, compression, or reasoning quality that the theorem never measured.
+
 ## Minimal implementation
 
 The smallest useful implementation is a substrate adoption schema and fixture. The current fixture records the candidate, intended use, advantage, baselines, negative controls, proof boundary, experiment requirements, falsification condition, adoption state, residuals, and evidence references.
 
 Passing the fixture does not prove a substrate. It prevents the book from describing adoption without the fields that adoption requires.
+
+The next useful fixture set is a substrate-adoption trace: exploratory registration, structural-only proof receipt, canary benchmark plan, failed negative control, narrowed adoption state, and residual reason. That would make optionality executable before any substrate becomes load-bearing.
 
 ## Codex test plan
 
@@ -218,3 +232,5 @@ The crosswalk keeps optional substrates optional. `genesiscode` supplies small-k
 Mathematical substrates are valuable when they become disciplined specialists. They should carry baselines, proof boundaries, falsification conditions, evidence requirements, and readiness states.
 
 The stack can explore coils, calculi, semantic graphs, cyclic compute, and sequence-substrate alternatives without making them core prematurely. Optionality is not weakness; it is how the architecture keeps evidence in charge. The next chapter narrows from adoption policy to proof-carrying contracts: how a finite structural fact can travel without becoming a quality claim.
+
+The practical standard is that a substrate should become easier to reject as it becomes more interesting. If the record cannot say what would falsify adoption, the mechanism is not ready to influence architecture.

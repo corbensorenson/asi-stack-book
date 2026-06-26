@@ -4,7 +4,7 @@ chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -43,6 +43,8 @@ open_evidence_gaps:
 This chapter describes the repository's operating method. It can claim that local validators and Quarto renders pass only when they have actually been run; it cannot use release hygiene as evidence that architecture claims are true.
 
 The previous chapter sequences the future prototype. This chapter applies the same sequencing discipline to the manuscript itself. The book should not ask future AI systems to preserve provenance, gates, residuals, and rollback while its own chapters drift away from manifest order, source notes, proof targets, validation, changelog, or release records.
+
+The living-book method is the book's own governance test. Every substantive change should leave a packet that says what changed, why it changed, which source or author-intent context justified it, which evidence state moved, which validations ran, and which residuals remain.
 
 ## Problem
 
@@ -59,6 +61,8 @@ Static manuscripts cannot show source additions, claim-state movement, deprecati
 The usual alternatives fail in opposite directions. A static PDF can be polished, but it freezes the source and evidence state at one moment. A loose wiki can change quickly, but it often loses architectural discipline. A code repo can validate structure, but it does not by itself explain the thesis to readers. A chat history can preserve intent, but it is not a public evidence artifact.
 
 The living book needs all four properties at once: readable prose, versioned source, executable validation, and visible evidence state. That combination is what lets the project improve aggressively without becoming a moving target that no reader can audit.
+
+The audience split makes this stricter, not looser. AI assistants need structured scaffolding. Human researchers need source crosswalks and evidence state. General readers need coherent editions without scaffolding noise. A living book has to derive all three from one governed source rather than hand-maintaining divergent manuscripts.
 
 ## Core Claim
 
@@ -93,6 +97,8 @@ Conversation-mined material has a bounded role: it can preserve author intent, t
 
 The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. Major reader and audio editions are downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
 
+The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
+
 ## Operating loop
 
 ```{mermaid}
@@ -116,6 +122,8 @@ flowchart LR
 
 This loop is the book's own version of benchmark ratcheting and cognitive loop closure. Repeated maintenance work should become scripts, validators, schemas, or proof modules. But the same rule applies as everywhere else in the stack: do not close a loop until it is parameterized, testable, and safe to reuse.
 
+When an AI agent writes from the outline, the outline should behave like a build plan. It names source queues, proof tags, expected mechanisms, failure modes, and deliverables so a future writing pass can update the right chapter or add a new one without renumbering the book by hand.
+
 ## Interfaces
 
 - Source ingestion feeds source notes.
@@ -124,6 +132,8 @@ This loop is the book's own version of benchmark ratcheting and cognitive loop c
 - Releases feed GitHub Pages.
 
 The interface is the Living Book Release Record: source commit, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark.
+
+The reader-edition interface needs the same discipline: edition profile, source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims. A format listed in a profile is not a release artifact until that record exists.
 
 ## Invariants
 
@@ -135,6 +145,8 @@ The methodology invariants protect the book from confusing publication activity 
 
 The strongest invariant is evidence separation. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
 
+Another invariant is stable addressability. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
+
 ## Failure modes
 
 - Public site diverges from Quarto source.
@@ -143,11 +155,15 @@ The strongest invariant is evidence separation. A source note, schema validation
 
 Public-site divergence should block release. Outline/manifest drift should be caught by scaffold and proof-manifest sync. Speculation ambiguity should be fixed in Appendix C, chapter guardrails, and changelog entries rather than smoothed over in prose.
 
+The subtle failure is publication laundering. A polished reader artifact, rendered website, or successful build is treated as if it proved source interpretation, architecture quality, or empirical claims. Release quality and claim support are related, but they are not the same evidence state.
+
 ## Minimal implementation
 
 The smallest useful implementation is the current public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, a living-book release fixture, and public release records.
 
 The current fixture and public release records validate release-record shape only. A release record does not prove manuscript completeness, source accuracy, or claim truth.
+
+The next useful fixture set is a change-packet record: one chapter edit with source IDs, one outline-only change, one proof-manifest shift, one reader-edition generation record, and one blocked release with residuals. That would make the living process auditable without claiming final manuscript quality.
 
 ## Codex test plan
 
@@ -188,3 +204,5 @@ The crosswalk connects the book's method to the stack's method: Benchmaxxing sup
 Living Book Methodology defines how this project improves without losing its memory. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
 
 This matters because the book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, reader editions, audio derivatives, and releases, then it has not earned the right to describe governed recursive improvement. The next chapter turns that humility into an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.
+
+The practical standard is that a future agent should be able to resume the book from the repository state, not from private memory. If the repo cannot explain what to load, what to change, what to validate, what to publish, and what remains blocked, the living-book layer is not yet alive enough.

@@ -618,21 +618,25 @@ Draft arc:
 - Mechanism: Attach audit artifacts and redaction/denial reasons to governance decisions.
 - Mechanism: Treat fork/exit as preserved escape hatches against lock-in while preserving source, privacy, and safety obligations.
 - Mechanism: Treat material usability and recorded denial semantics as part of the right, so an audit, exit, fork, or dissent path is not merely a declared policy aspiration.
+- Mechanism: emit rights receipts that record request, holder, scope, material available, material withheld, denial/redaction reason, appeal path, expiry, and preservation obligation.
 - Interface: Governance issues rights.
 - Interface: SCFs preserve rights across replacement.
 - Interface: Memory/security/execution systems produce evidence for audit, export, revocation, and contestability.
+- Interface: distinguish access failure, justified denial, redacted access, partial export, portable export, contested decision, and preserved dissent.
 
 Primary invariants:
 
 - Audit records cannot be silently deleted.
 - Exit paths remain materially usable.
 - Fork rights do not bypass safety constraints.
+- The challenged authority cannot be the only keeper of the record, denial reason, or appeal path.
 
 Failure modes to cover:
 
 - Governance capture.
 - Data hostage-taking.
 - Opaque automated policy updates.
+- Rights theater: policy text exists, but logs, exports, redaction rules, appeal channels, or preservation hooks fail when the right is inconvenient.
 
 Draft deliverables:
 
@@ -2470,21 +2474,25 @@ Draft arc:
 - Mechanism: Use the contract to decide whether a simulation supports a unit invariant, a bounded benchmark, a roadmap constraint, or only a speculative scenario note.
 - Mechanism: Route failed or under-specified simulation claims into residuals, reduced scope, or blocked status instead of treating approximate worlds as ground truth.
 - Mechanism: Treat simulation as a translation problem whose results can travel back only along the declared variables, omissions, bottlenecks, and fidelity boundary.
+- Mechanism: emit fidelity receipts that record contract version, assumptions, omitted variables, resource bill, observed result, claim boundary, transfer decision, and instrumentation effects.
 - Interface: Efficiency theory uses resource constraints.
 - Interface: Benchmarks record fidelity limits.
 - Interface: Alignment scenarios avoid unbounded simulation claims.
+- Interface: classify simulation results as invariant checks, benchmark comparisons, feasibility estimates, scenario explorations, safety rehearsals, or speculative thought experiments.
 
 Primary invariants:
 
 - Fidelity is declared.
 - Resource bounds are explicit.
 - Speculative simulation metaphysics stays separated from engineering claims.
+- Simulation results do not transfer beyond the declared claim boundary by default.
 
 Failure modes to cover:
 
 - Overclaiming nested simulation feasibility.
 - Ignoring resource ceilings.
 - Treating approximate simulations as ground truth.
+- Simulation laundering: clean synthetic results described as if omitted variables, bottlenecks, and transfer limits were irrelevant.
 
 Draft deliverables:
 
@@ -2527,10 +2535,12 @@ Draft arc:
 - Mechanism: Route experiments through exploratory, canary, qualified, retired, or blocked evidence gates before broader adoption.
 - Mechanism: Keep backbone efficiency, proof readiness, fast-generation acceleration, compression, search quality, routing quality, and downstream task quality as separate axes.
 - Mechanism: Treat optionality as a positive adoption state so promising substrates can be tested through narrow routes without becoming load-bearing architecture before evidence exists.
+- Mechanism: treat adoption records as routing permissions with operational states such as exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded.
 - Interface: Routing treats substrate as specialist.
 - Interface: Compression tests representation efficiency.
 - Interface: Evidence compares against baselines.
 - Interface: Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records.
+- Interface: maintain an axis ledger for structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality.
 
 Primary invariants:
 
@@ -2538,6 +2548,7 @@ Primary invariants:
 - Baselines are recorded.
 - Failed hypotheses remain visible.
 - Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
+- Negative controls remain attached after favorable results.
 
 Failure modes to cover:
 
@@ -2545,6 +2556,7 @@ Failure modes to cover:
 - Opaque math treated as proof.
 - Adoption without regression tests.
 - Sequence-model throughput treated as evidence for unrelated substrate quality.
+- Theorem spillover: structural proofs are used to imply speed, search, compression, or reasoning quality.
 
 Draft deliverables:
 
@@ -3237,16 +3249,20 @@ Draft arc:
 - Mechanism: Treat conversation-mined packets as author-intent, terminology, lineage, and recovery context only, not as source-derived evidence.
 - Mechanism: Maintain distinct live AI/research scaffolding, frozen research releases, stripped reader editions, companion notes, and audio-script workspaces derived from one validated source state.
 - Mechanism: Require meaningful structural, evidence, proof, schema, source, or publication changes to sync scaffold, sync proof manifest, validate, render, update changelog, commit, push, and verify the public site.
+- Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, public URL if published, and explicit non-claims.
+- Mechanism: preserve three-audience derivation discipline: AI/research scaffold, human-research live site, and stripped reader/audio editions all derive from one governed source state.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
 - Interface: Tests feed support states.
 - Interface: Releases feed GitHub Pages, major-version edition records, reader manuscripts, and audio-script candidates.
+- Interface: reader-edition records carry source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims.
 
 Primary invariants:
 
 - No fabricated source content.
 - No fabricated test results.
 - Deprecated claims remain visible.
+- Stable IDs preserve lineage across part/chapter splits, merges, reorders, proof-target moves, and releases.
 
 Failure modes to cover:
 
@@ -3254,6 +3270,7 @@ Failure modes to cover:
 - Outline and manifest drift.
 - Readers cannot tell which claims are speculative.
 - Reader or audio releases accidentally imply that target formats exist before render, review, or audio production.
+- Publication laundering: successful builds, polished pages, or reader artifacts treated as evidence for source interpretation, architecture quality, or empirical claims.
 
 Draft deliverables:
 

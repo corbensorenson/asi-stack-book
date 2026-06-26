@@ -4,7 +4,7 @@ chapter_id: "simulation-fidelity-and-physical-constraints"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "simulation_scaling"
   - "cgs"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -42,6 +42,8 @@ open_evidence_gaps:
 This chapter treats simulation claims as contract-relative design constraints. It does not make new physics claims, reproduce physical-computation literature, or claim that any simulation benchmark has been run in this repository.
 
 This is the closing realism check for the preceding resource-economics chapter. Resource budgets say what the stack can afford; simulation contracts say what an experiment is actually allowed to mean. The handoff matters because a cheap synthetic world can be useful for a narrow invariant while still being too abstract, too slow, too lossy, or too physically expensive for a stronger claim.
+
+The central object is not the simulator; it is the claim transport rule. A result may travel from simulated world to book claim only along the variables, approximations, clocks, resources, and omissions named in the contract.
 
 ## Problem
 
@@ -58,6 +60,8 @@ Resource economics matters here because simulation consumes capacity. Compact ge
 The most common error is letting a simulation inherit the authority of the thing it imitates. A simulator may preserve a causal structure, a statistical pattern, a control interface, or a failure surface, but rarely all of them at once. A result that is valid for a toy dynamic may not transfer to a physical device. A result that is valid for a narrow benchmark environment may not transfer to an open world. A result that is useful for stress-testing a policy may not justify claims about consciousness, moral status, or confinement.
 
 The contract prevents that slippage by making simulation a translation problem. What is translated from the target system into the simulated world? What is omitted? What is distorted by time scale, resolution, resource ceilings, or observation? What part of the result is allowed to travel back? A simulation can be extremely valuable when those questions are answered, but it should not receive a blank check simply because it looks like an environment.
+
+Fidelity is therefore relative to the intended claim. A low-fidelity simulator can be adequate for a lifecycle transition test and inadequate for a physical-deployment claim. A high-fidelity simulator can be impressive and still irrelevant if it omits the bottleneck that decides the question.
 
 ## Core Claim
 
@@ -84,6 +88,8 @@ Simulation is a substrate only after it becomes an instrument with a declared co
 A Simulation Contract Record makes that boundary inspectable. It records the simulated target, the fidelity promise, the resource bill, the approximation liberties, and the exact claim boundary the simulation is allowed to support.
 
 The record also separates three uses that are often conflated. A simulation can be a unit-test surface for a local invariant, a benchmark surface for comparing systems under declared approximations, or a scenario surface for exploring possible risks. These uses have different evidential weight. Unit tests can check a narrow transition. Benchmarks can compare behavior inside the environment. Scenarios can organize imagination and red-team thinking. None of those automatically proves physical feasibility, open-world transfer, or moral significance.
+
+A simulation result should therefore emit a fidelity receipt. The receipt records the contract version, input assumptions, omitted variables, resource bill, observed result, claim boundary, and transfer decision. If the result is useful only as scenario evidence, the receipt should say so.
 
 ```{mermaid}
 flowchart LR
@@ -113,6 +119,8 @@ This turns simulation from a vague substrate into a bounded experimental instrum
 
 When a simulation fails the contract, the right move is not necessarily to abandon it. The system can reduce scope, lower the support claim, expose a residual, add missing resource estimates, or route the result to a speculative scenario lane. The important thing is that the claim moves down to match the fidelity rather than the prose moving up to match the ambition.
 
+The contract should also name instrumentation effects. A simulator that changes behavior through observation, logging, compression, sampling, or intervention has a fidelity cost that belongs in the result, not in a footnote after promotion.
+
 ## Interfaces
 
 The interface is the Simulation Contract Record.
@@ -133,6 +141,8 @@ Minimum fields:
 
 Benchmarks record fidelity limits. Resource budgets account for simulation cost. Evidence states prevent approximate simulations from supporting claims beyond their contract. Prototype roadmaps use the record to decide whether a simulation is a useful test surface or just an attractive metaphor.
 
+The interface should separate claim class: invariant check, benchmark comparison, feasibility estimate, scenario exploration, safety rehearsal, or speculative thought experiment. Each class has a different admissible support state.
+
 ## Invariants
 
 - Fidelity is declared.
@@ -142,6 +152,8 @@ Benchmarks record fidelity limits. Resource budgets account for simulation cost.
 - Approximation liberties remain visible after results are summarized.
 
 The key invariant is claim-boundedness. A simulation can be useful and still be inadequate for the stronger claim someone wants to make.
+
+Another invariant is non-transfer by default. Simulation results do not travel to broader deployment, physical feasibility, moral-status, or safety claims unless the contract explicitly licenses that transfer and records the remaining residuals.
 
 ## Failure modes
 
@@ -153,11 +165,15 @@ The key invariant is claim-boundedness. A simulation can be useful and still be 
 
 Each failure should create a residual or downgrade. The correct response to a weak simulation is not to discard simulation; it is to reduce the claim, state the approximation, or run a better experiment.
 
+The subtle failure is simulation laundering. A synthetic environment is used to produce a clean result, then the result is described as if the omitted variables, resource bottlenecks, and transfer limits were irrelevant.
+
 ## Minimal implementation
 
 The smallest useful implementation is a simulation contract schema and fixture. The current fixture records scope, fidelity, time semantics, demand, bottlenecks, approximations, supported claim boundary, residuals, and evidence references.
 
 Passing the fixture does not show feasibility. It makes the feasibility claim inspectable.
+
+The next useful fixture set is a simulation receipt suite: one unit-invariant result, one benchmark result with approximation limits, one scenario-only result, one blocked transfer because a bottleneck is missing, and one downgraded claim after instrumentation cost is recorded.
 
 ## Codex test plan
 
@@ -196,3 +212,5 @@ The crosswalk keeps simulation language engineering-bound. `simulation_scaling` 
 Simulation is not a magic substrate. It is a contract with scope, fidelity, clockspeed, cost, bottlenecks, approximations, and claim boundaries.
 
 The ASI Stack can use simulations aggressively, but only when they are treated as bounded instruments whose conclusions cannot outrun their fidelity and resource assumptions. The next chapter generalizes that rule from simulators to mathematical and search substrates: no substrate becomes core merely because it is elegant.
+
+The practical standard is that a simulation should make the boundary of its usefulness clearer. If the result makes the claim sound broader than the contract permits, the simulation has become rhetoric rather than evidence.
