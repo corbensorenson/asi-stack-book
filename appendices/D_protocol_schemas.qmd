@@ -281,8 +281,11 @@ resource_budget_record:
   value_hypothesis: string
   risk_class: medium
   capacity_pool: string
+  budget_state: dispatchable
   cost_estimate: []
   verification_tax: []
+  protected_overhead: []
+  displaced_costs: []
   quality_predicate: string
   safety_gates: []
   budget_decision: dispatch
@@ -291,7 +294,7 @@ resource_budget_record:
   evidence_refs: []
 ```
 
-This record turns budget pressure into a governed decision. It ties value, risk, capacity, cost, verification tax, quality predicates, safety gates, dispatch or escalation, residuals, and evidence into one auditable artifact.
+This record turns budget pressure into a governed decision. It ties value, risk, capacity, adjudication state, cost, verification tax, protected overhead, displaced costs, quality predicates, safety gates, dispatch or escalation, residuals, and evidence into one auditable artifact.
 
 ## Generation Mode Record
 

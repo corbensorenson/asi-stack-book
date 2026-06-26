@@ -9,8 +9,11 @@
     "value_hypothesis",
     "risk_class",
     "capacity_pool",
+    "budget_state",
     "cost_estimate",
     "verification_tax",
+    "protected_overhead",
+    "displaced_costs",
     "quality_predicate",
     "safety_gates",
     "budget_decision",
@@ -24,8 +27,25 @@
     "value_hypothesis": { "type": "string", "minLength": 1 },
     "risk_class": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
     "capacity_pool": { "type": "string", "minLength": 1 },
+    "budget_state": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "priced",
+        "underfunded",
+        "protected_overhead_required",
+        "dispatchable",
+        "escalated",
+        "deferred",
+        "scope_reduced",
+        "rejected",
+        "residualized"
+      ]
+    },
     "cost_estimate": { "type": "array", "items": { "type": "string" } },
     "verification_tax": { "type": "array", "items": { "type": "string" } },
+    "protected_overhead": { "type": "array", "items": { "type": "string" } },
+    "displaced_costs": { "type": "array", "items": { "type": "string" } },
     "quality_predicate": { "type": "string", "minLength": 1 },
     "safety_gates": { "type": "array", "items": { "type": "string" } },
     "budget_decision": {

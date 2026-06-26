@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache claim-source mappings now carry reviewed passage references, but coherence_exchange remains connector-only/source-note mapped and support remains at argument until tests, threat-model artifacts, runtime evidence, or accepted evidence transitions justify promotion."
-  - "The authority_use_receipt fixture validates schema/example consistency and the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates only; secret-handle substitution, SCIF least-privilege, and prompt-injection containment scenarios remain unimplemented."
+  - "The authority_use_receipt fixture validates schema/example consistency and the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates only; secret-handle substitution, handle-lease expiry/reuse, SCIF least-privilege, sanitized-output residual, and prompt-injection containment scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -27,14 +27,14 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange` |
 | Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
 | Source mapping review | Four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector-only/source-note mapped. |
-| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; secret-handle substitution, SCIF least-privilege, and prompt-injection containment tests remain planned. |
+| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; secret-handle substitution, handle-lease expiry/reuse, SCIF least-privilege, sanitized-output residual, security-overhead budget preservation, and prompt-injection containment tests remain planned. |
 
 ## Drafting guardrail
 
@@ -108,6 +108,8 @@ The mechanism is least exposure. Handles replace secret bytes in model-visible c
 
 Handles are not magic. A handle must carry scope: permitted destination, action type, time window, spending or rate limit, user approval state, logging rule, and revocation path. A SCIF must carry lifecycle: spawn, inject, execute, sanitize, zeroize, commit, and audit.
 
+The useful security object is a lease, not a label. A handle should move through explicit states such as `requested`, `denied`, `scoped`, `active`, `substituted`, `sanitized`, `zeroized`, `expired`, `revoked`, and `leak_residual_recorded`. Those states keep the boundary visible when a later planner, route, budget allocator, or self-improvement proposal tries to reuse the authority. A handle that is merely present in context is not authority; a scoped lease plus receipt is.
+
 The passage review sharpens the claim boundary: keeping secret bytes out of model-visible context can reduce direct disclosure by prompt injection, but it does not prove isolation, side-channel safety, log hygiene, UI safety, or containment of every derived summary. Alignment-field material belongs here only as a warning about power, consent, agency, and confinement; it is not a security proof.
 
 The boundary should also distinguish request visibility from substitution visibility. The model may see that a payment handle, deployment token, private source, or personal record is available under policy; it should not see the underlying material unless the task requires model-visible reasoning over that material and a SCIF admits it. Even then, the commit path should be sanitized by default.
@@ -119,6 +121,8 @@ The public interface is an Authority Use Receipt, not a prompt convention. It re
 - VCM supplies least-privilege context.
 - Execution checks tool permissions.
 - Governance audits sensitive transitions.
+
+For high-risk work, the receipt should be paired with a SCIF Commit Record. That record should name the admitted context shards, memory masks, allowed tools, denied material, substitution event, sanitization decision, zeroization result, material committed back to ordinary memory, residual leak-risk class, and expiry or revocation event. The commit record is the handoff to resource economics: secure execution costs tokens, latency, review, logs, and storage, and those costs must be budgeted rather than optimized away.
 
 Minimum fields:
 
@@ -143,6 +147,8 @@ That receipt becomes the bridge to resource economics and self-improvement. Budg
 - Secrets are not directly model-visible.
 - SCIF context is purpose-limited.
 - Privilege substitution is auditable.
+- Handle leases expire or revoke instead of becoming ambient authority.
+- Sanitized commits record retained material and residual leak risk.
 
 The strongest invariant is ignorance: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
 
@@ -153,6 +159,8 @@ A second invariant is purpose binding. A handle authorized for one destination, 
 - Prompt injection extracting secrets.
 - Privilege leakage through summaries.
 - SCIF bypass.
+- Ambient-handle drift, where a scoped authority survives into later plans, summaries, tools, or self-improvement proposals.
+- Security-cost laundering, where a cheaper route looks efficient only because it drops isolation, logging, approval, or sanitization.
 
 The common trap is treating handles as safe while granting them unbounded use. A second trap is committing too much of the SCIF transcript back into ordinary memory. A third is assuming software isolation defeats hardware, browser, clipboard, screenshot, logging, and timing channels. Each trap should be visible in the threat model and residual risk field.
 
@@ -170,7 +178,10 @@ The next useful implementation step is a leak-path fixture set: one allowed hand
 |---|---|---|
 | Authority use receipt fixture validation | Check that the authority-use receipt fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Secret-handle substitution test | Check that model-visible logs contain only a handle while substitution happens outside the transcript. | planned; not run |
+| Handle lease expiry/reuse test | Check that an expired, revoked, destination-mismatched, or purpose-mismatched handle cannot be reused as ambient authority. | planned; not run |
 | SCIF least-privilege test | Check that a SCIF receives only purpose-limited context, tools, and authority. | planned; not run |
+| Sanitized-output residual test | Check that summaries and commits record retained sensitive derivatives and residual leak-risk class. | planned; not run |
+| Security-overhead budget preservation test | Check that a budget or self-improvement proposal cannot claim a cheaper route by silently removing isolation, logging, approval, or sanitization obligations. | planned; not run |
 | Prompt-injection containment scenario | Check that injected instructions cannot disclose a secret value absent an authorized boundary. | planned; not run |
 
 ### Formalization hooks

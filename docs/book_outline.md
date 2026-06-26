@@ -836,6 +836,8 @@ Draft arc:
 - Mechanism: Run high-risk tasks inside compartmentalized Digital SCIF context containers with lifecycle and residual leak-risk records.
 - Mechanism: Bind handles to purpose, destination, action, time window, approval, logging, and revocation so authority cannot become ambient context or be reused after the lease expires.
 - Mechanism: Treat sanitized outputs as security artifacts with removal notes and residual leak-risk records; summaries can still leak derived sensitive information.
+- Mechanism: Track handle-lease states such as requested, denied, scoped, active, substituted, sanitized, zeroized, expired, revoked, and leak-residual-recorded.
+- Mechanism: Emit a SCIF Commit Record with admitted context shards, memory masks, allowed tools, denied material, substitution event, sanitization decision, zeroization result, committed material, residual leak-risk class, and expiry or revocation event.
 - Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
 - Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
 - Interface: Governance audits sensitive transitions through Authority Use Receipts.
@@ -846,18 +848,25 @@ Primary invariants:
 - Secrets are not directly model-visible.
 - SCIF context is purpose-limited.
 - Privilege substitution is auditable.
+- Handle leases expire or revoke rather than becoming ambient authority.
+- Sanitized commits record retained material and residual leak risk.
 
 Failure modes to cover:
 
 - Prompt injection extracting secrets.
 - Privilege leakage through summaries.
 - SCIF bypass.
+- Ambient-handle drift.
+- Security-cost laundering.
 
 Draft deliverables:
 
 - A secure-handle workflow and SCIF lifecycle diagram.
 - Planned Codex test: Secret-handle substitution test.
+- Planned Codex test: Handle lease expiry/reuse test.
 - Planned Codex test: SCIF least-privilege test.
+- Planned Codex test: Sanitized-output residual test.
+- Planned Codex test: Security-overhead budget preservation test.
 - Planned Codex test: Prompt-injection containment scenario.
 
 Lean proof targets:
@@ -893,6 +902,8 @@ Draft arc:
 - Mechanism: Delay autonomous replacement until evaluators, readiness gates, governance logs, and rollback paths are credible.
 - Mechanism: Treat security and resource boundary changes as first-class governance questions: a self-improvement proposal cannot silently widen handles, weaken SCIF lifecycle, cut verification budget, relax rollback, or retire regressions.
 - Mechanism: Record self-improvement transitions as chain-of-custody artifacts from residual/wall through authority used, budget spent, evidence collected, independent evaluation, protected-invariant result, approval, canary, rollback, and lifecycle state.
+- Mechanism: Require a Boundary Delta Review naming authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion.
+- Mechanism: Track transition states such as proposed, research-only, evidence-packet-ready, boundary-delta-blocked, canary, default-candidate, promoted, quarantined, rolled-back, superseded, and retired.
 - Interface: SCFs define replaceable units and authority ceilings.
 - Interface: Evidence ratchets, readiness gates, and replacement transactions provide gates.
 - Interface: Alignment and governance supply protected constraints, approval boundaries, and non-self-ratification rules.
@@ -902,12 +913,16 @@ Primary invariants:
 - Self-improvement cannot weaken protected invariants.
 - Evaluator independence is required.
 - Every accepted change remains auditable.
+- Boundary deltas are explicit before promotion.
+- Resource savings cannot spend security, verification, rollback, or human-review obligations unless governance separately changes those obligations.
 
 Failure modes to cover:
 
 - Recursive evaluator capture.
 - Constitutional weakening.
 - Irreversible flawed upgrades.
+- Boundary delta laundering.
+- Stale-gate promotion.
 
 Draft deliverables:
 
@@ -915,6 +930,9 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for the core recursive-self-improvement claim across SCF stable fields, Benchmaxxing benchmark-ratchet discipline, RMI modular improvement loops, Alignment Field normative caution, VIEA durable artifact/feedback discipline, Talos typed jobs/audit/replay, MoECOT runtime-reference context, Field of God AI Constitution protected constraints, and Theseus self-evolution/readiness-gate notes; six local mappings (`scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped and the constitution/Theseus mappings remain public-project/source-note mapped until raw source is vendored or made durable in this project. Support remains `argument` pending protected-invariant tests, evaluator-independence scenarios, rollback/canary execution evidence, fresh Theseus report inspection, or accepted evidence transitions.
 - Planned Codex test: Protected-invariant preservation test.
 - Planned Codex test: Evaluator independence test.
+- Planned Codex test: Boundary-delta review test.
+- Planned Codex test: Verification-budget preservation test.
+- Planned Codex test: Stale-gate replay test.
 - Planned Codex test: Self-improvement rollback scenario.
 
 Lean proof targets:
@@ -2531,6 +2549,8 @@ Draft arc:
 - Mechanism: Let budgets choose dispatch, escalation, deferral, scope reduction, rejection, or residual accounting without disabling protected verification or safety gates.
 - Mechanism: Treat security overhead, approval overhead, replay cost, human review, repair burden, and non-action costs as budget fields rather than invisible externalities.
 - Mechanism: Prevent efficiency laundering: cheaper routes that shift work into future debugging, hidden human repair, lost evidence, or unrecorded security risk must emit residual costs or be rejected.
+- Mechanism: Track budget adjudication states such as proposed, priced, underfunded, protected-overhead-required, dispatchable, escalated, deferred, scope-reduced, rejected, and residualized.
+- Mechanism: Record displaced costs from future debugging, reviewer burden, hidden context reconstruction, private-data exposure, benchmark contamination, rollback difficulty, or evidence loss before accepting a cheaper route.
 - Handoff: Simulation, mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.
 - Interface: Planning allocates budgets.
 - Interface: Routing chooses costed specialists.
@@ -2543,6 +2563,8 @@ Primary invariants:
 - High-risk tasks pay verification cost.
 - Cost savings are recorded with quality results.
 - Serving-throughput gains remain separate from verified-output and task-success claims.
+- Protected overhead is budgeted explicitly and cannot be silently deleted.
+- Displaced costs remain residuals until measured or accepted by a scoped evidence transition.
 
 Failure modes to cover:
 
@@ -2550,13 +2572,18 @@ Failure modes to cover:
 - Load-synchronized degradation.
 - Resource hoarding by low-value tasks.
 - Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
+- Protected-overhead deletion.
+- Review-capacity capture.
 
 Draft deliverables:
 
 - A resource ledger with budget, risk, cost, quality, and verification tax fields.
-- Implemented repository-level fixture: `resource_budget_record.valid.json` validates the budget-record shape only; no TokenMana simulation, PlanForge scheduler benchmark, or welfare/load study exists yet.
+- Implemented repository-level fixture: `resource_budget_record.valid.json` validates the budget-record shape, including budget state, protected overhead, and displaced costs only; no TokenMana simulation, PlanForge scheduler benchmark, protected-overhead accounting test, displaced-cost residual test, or welfare/load study exists yet.
 - Planned Codex test: Budget allocation test.
 - Planned Codex test: Risk-adjusted verification test.
+- Planned Codex test: Protected-overhead accounting test.
+- Planned Codex test: Displaced-cost residual test.
+- Planned Codex test: Review-capacity hoarding test.
 - Planned Codex test: Load stability scenario.
 - Planned Codex test: KV-cache memory accounting scenario.
 

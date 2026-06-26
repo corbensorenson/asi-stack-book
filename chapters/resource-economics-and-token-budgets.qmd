@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all eight assigned resource-economics sources; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, cost-quality experiments, or accepted evidence transitions exist."
-  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, cost-quality experiment, or scheduler trace has been run."
+  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, protected-overhead accounting test, displaced-cost residual test, cost-quality experiment, or scheduler trace has been run."
   - "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims."
   - "PagedAttention/vLLM is reviewed against the public arXiv abstract/metadata only; reported throughput gains, cache-sharing behavior, code artifacts, latency results, and quality behavior remain source-reported and unreproduced."
   - "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, or quality result is implied by this drafting pass."
@@ -32,13 +32,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `ext_pagedattention_vllm_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; variants/external literature: `ext_pagedattention_vllm_2023` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `tokenmana`, `planforge`, `simulation_scaling`, and `viea`; `coherence_exchange`, `project_theseus_whitepaper`, and `coilra_multicoil_rope` are passage-reviewed against public source notes only; `ext_pagedattention_vllm_2023` is passage-reviewed against the public arXiv abstract/metadata page only. |
-| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, scheduler, load-stability, and KV-cache accounting tests remain planned. |
+| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, protected-overhead accounting, displaced-cost residual, scheduler, load-stability, and KV-cache accounting tests remain planned. |
 
 ## Drafting guardrail
 
@@ -91,6 +91,8 @@ Resource economics is the control layer that prevents efficiency work from becom
 
 A budget record is not a quota override. It is the policy surface that decides whether a task can afford the required cognition, context, tool use, verification, and human review without weakening protected gates. When the budget is insufficient, the correct result is escalation, scope reduction, deferral, rejection, or residual accounting, not quiet degradation.
 
+The budget state should therefore be an adjudication state, not just a number. A task can be `proposed`, `priced`, `underfunded`, `protected_overhead_required`, `dispatchable`, `escalated`, `deferred`, `scope_reduced`, `rejected`, or `residualized`. Those states keep verification, security, approval, replay, and human-review costs visible when local optimization pressure wants to compress them into zero.
+
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
 
 ```{mermaid}
@@ -99,12 +101,12 @@ flowchart LR
   B --> C["Capacity pool"]
   C --> D["Cost estimate"]
   S["Serving memory / throughput pressure"] --> D
-  D --> E["Verification tax"]
+  D --> E["Verification + security overhead"]
   P["Protected gates"] --> F{"Budget adequate and gates intact?"}
   E --> F
   F -- "yes" --> G["Dispatch route"]
   F -- "no" --> H["Escalate, defer, shrink, or reject"]
-  G --> I["Cost-quality evidence"]
+  G --> I["Cost-quality and residual evidence"]
   H --> I
 ```
 
@@ -115,6 +117,7 @@ The record should separate:
 - Capacity pool: what resource is being drawn down or regenerated.
 - Cost estimate: tokens, time, tools, storage, human review, or money.
 - Verification tax: the extra cost required to trust the output.
+- Protected overhead: security handles, Digital SCIFs, approval, replay, rollback, audit, and human review that policy requires.
 - Serving pressure: memory pressure, batching, cache reuse, aggregate throughput, and latency when those affect route cost.
 - Safety gates: checks that cannot be disabled by budget pressure.
 - Budget decision: dispatch, escalate, defer, shrink, reject, or residual.
@@ -122,6 +125,8 @@ The record should separate:
 The stack can save resources, but not by silently dropping protected verification. High-risk tasks should either pay the verification cost or route to escalation.
 
 The security interface matters here. Secure handles, Digital SCIFs, human approval, and replayable artifacts add cost, but those costs are part of the task when protected authority is involved. A route that is cheap only because it avoids the security boundary is not a cheaper equivalent route.
+
+The budget record should also carry a displaced-cost section. If a route saves model calls by increasing future debugging, reviewer burden, hidden context reconstruction, private-data exposure, benchmark contamination, or rollback difficulty, the savings are not yet accepted. They become residual costs until a cost-quality test or evidence packet shows the displacement is harmless for the specific risk class.
 
 ## Interfaces
 
@@ -134,8 +139,11 @@ Minimum fields:
 - `value_hypothesis`
 - `risk_class`
 - `capacity_pool`
+- `budget_state`
 - `cost_estimate`
 - `verification_tax`
+- `protected_overhead`
+- `displaced_costs`
 - `quality_predicate`
 - `safety_gates`
 - `budget_decision`
@@ -147,6 +155,8 @@ Planning allocates budgets and schedules work. Routing chooses costed specialist
 
 Self-improvement transitions also consume this interface. A proposed improvement should say whether it saves tokens, verifier time, human review, memory, or latency, and whether those savings preserve quality and protected gates. Cost savings without a support boundary are just a pressure to overclaim.
 
+That means budgets can constrain self-improvement in both directions. They can block wasteful architecture churn, but they can also block supposedly efficient changes that reduce the verifier, security kernel, rollback, or human-review budget below the risk class. Efficiency is admissible only after the protected overhead remains paid.
+
 ## Invariants
 
 - Budgets do not override protected safety gates.
@@ -155,6 +165,8 @@ Self-improvement transitions also consume this interface. A proposed improvement
 - Capacity mechanisms are bounded and cannot create infinite spend rights.
 - Low-value tasks cannot hoard scarce review capacity while high-risk work waits.
 - Serving-throughput gains remain separate from verified-output and task-success claims.
+- Protected overhead is budgeted explicitly and cannot be silently deleted.
+- Displaced costs remain residuals until measured or accepted by a scoped evidence transition.
 
 The central invariant is risk-adjusted adequacy: a route is not cheap if it leaves the system unable to verify a high-impact outcome.
 
@@ -168,6 +180,8 @@ A second invariant is protected overhead. Safety gates, evidence requirements, a
 - Token optimization that increases human repair burden.
 - Economic metaphors treated as implemented mechanisms.
 - Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
+- Protected-overhead deletion, where isolation, audit, approval, replay, rollback, or review are removed and the route is still called efficient.
+- Review-capacity capture, where low-risk throughput consumes the scarce human or verifier budget needed for high-risk work.
 
 Cost-cut verification should block or escalate. Load synchronization should trigger capacity smoothing or scheduling changes. Resource hoarding should be visible in the ledger. Human repair burden should count as cost. Speculative market language should remain optional until executable records and tests exist.
 
@@ -185,9 +199,12 @@ The next useful implementation step is a toy budget ledger with one low-risk dis
 
 | Test | Purpose | Status |
 |---|---|---|
-| Resource budget record fixture validation | Validate that a budget record names value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Resource budget record fixture validation | Validate that a budget record names value, risk, capacity, budget state, cost, verification tax, protected overhead, displaced costs, quality predicate, safety gates, decision, escalation, residuals, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Budget allocation test | Check that task value, risk, capacity, and cost are present before dispatch. | planned; not run |
 | Risk-adjusted verification test | Check that high-risk tasks cannot remove required verification to save cost. | planned; not run |
+| Protected-overhead accounting test | Check that security handles, SCIFs, approvals, replay, rollback, audit, and human review remain budgeted when the risk class requires them. | planned; not run |
+| Displaced-cost residual test | Check that cheaper routes record future debugging, reviewer burden, evidence loss, privacy exposure, or rollback difficulty as residual cost before promotion. | planned; not run |
+| Review-capacity hoarding test | Check that low-risk bulk work cannot consume scarce reviewer or verifier capacity while high-risk blocked work waits. | planned; not run |
 | Load stability scenario | Simulate or review whether regenerative capacity reduces synchronized overload under toy assumptions. | planned; not run |
 | KV-cache memory accounting scenario | Check that serving-memory, batching, throughput, and single-request verified-output measures remain separate in a resource record. | planned; not run |
 
