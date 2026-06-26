@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "scf"
   - "rmi"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -43,6 +43,8 @@ open_evidence_gaps:
 This chapter defines replacement as a transaction record. It does not claim any real replacement has succeeded unless the prior artifact, candidate artifact, gates, regressions, monitor window, and rollback result are recorded.
 
 It follows Stable Capability Fields because the field gives replacement a target identity; the transaction gives that identity a disciplined change procedure.
+
+The replacement transaction is the stack's version of a high-risk write. It changes a live capability boundary, so it needs preconditions, a commit protocol, monitor obligations, rollback evidence, and a post-change residual record.
 
 ## Problem
 
@@ -63,6 +65,8 @@ Replacement needs transaction semantics because partial success can be worse tha
 The key reader-facing distinction is candidate improvement versus accepted replacement. A candidate can be promising, cheaper, faster, or cleaner without becoming the default. Accepted replacement means the stack has preserved field identity, checked authority boundaries, retained regression floors, recorded residuals, and kept a recovery path. Until that happens, the candidate belongs in shadow, canary, or quarantine state, not in the ordinary route.
 
 Rollback also has to be more specific than nostalgia for the prior version. The prior artifact must still exist, the old state must be readable or compensated, external effects must be accounted for, and the monitor window must say when rollback is triggered. If any of those pieces is missing, the transaction can still record a partial recovery plan, but it should not claim reversible improvement.
+
+The insufficiency is one-way improvement. A candidate is allowed to replace the old path because the forward story is attractive, while the reverse path, state compatibility, dependent artifacts, rights preservation, and external effects are left implicit.
 
 ## Core Claim
 
@@ -117,6 +121,8 @@ The passage review sharpens one boundary: rollback is not just "run the old vers
 
 Benchmarks are used as evidence surfaces, not permission slips. If a benchmark saturates, becomes gamed, or fails to transfer, that diagnosis belongs in the transaction.
 
+The transaction should include a rollback receipt even when rollback is not exercised. The receipt records the prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner. If rollback is impossible, the record should say compensation, fork, quarantine, or residual instead of pretending reversibility.
+
 ## Interfaces
 
 The replacement transaction connects four ledgers. The SCF ledger says what identity must be preserved. The benchmark ledger says what frontier and regression evidence was used. The artifact graph says which candidate, state migration, and rollback materials exist. The changelog says what became default, what stayed canary, and what was rejected.
@@ -145,6 +151,8 @@ SCF defines the field. Benchmark ratchets and regression suites test behavior. E
 
 The interface also protects later chapters. Security checks whether the replacement crosses a secret or permission boundary. Runtime adapters check whether the replacement changes effect authority. Policy optimization checks whether learning pressure is trying to ratify its own evaluator. The transaction gives each layer a concrete artifact to inspect rather than asking them to trust the word "upgrade."
 
+The interface should expose decision states: proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired. These states keep a candidate from becoming default simply because it survived one test.
+
 ## Invariants
 
 - No replacement without prior and posterior artifacts.
@@ -152,6 +160,8 @@ The interface also protects later chapters. Security checks whether the replacem
 - Rollback metadata is required before promotion.
 
 The transaction must leave enough information to answer a simple question later: what changed, why was it allowed, what got worse, and how could the system return to the prior state?
+
+Another invariant is evaluator independence. The candidate may supply evidence, but it cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
 
 ## Failure modes
 
@@ -161,9 +171,13 @@ The transaction must leave enough information to answer a simple question later:
 
 Regression deletion is the classic false improvement: the candidate does better on the frontier while forgetting what the stack already knew. Rollback impossibility turns a bad canary into permanent damage. Self-judged replacement lets a component rewrite the evidence used to approve it. Each failure blocks promotion.
 
+The subtle failure is rollback theater. The transaction contains a rollback field, but no executable path, state-compatibility check, trigger condition, or responsible owner exists when the monitor window fails.
+
 ## Minimal implementation
 
 The smallest useful implementation is a `replacement_transaction` schema and valid fixture. It should validate required evidence and rollback fields, not claim a real replacement succeeded.
+
+The next useful fixture set is a replacement trace: proposal, shadow run, canary with regression floor, failed rollback dry run that blocks default promotion, and a successful rollback receipt for a separate reversible candidate.
 
 ## Codex test plan
 
@@ -204,3 +218,5 @@ Capability Replacement and Rollback turns improvement into a transaction. It pre
 The chapter's discipline is floor preservation. The frontier may move only when the existing floor remains visible and recoverable.
 
 The next chapter adds the security kernel that keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross.
+
+The practical standard is that a replacement should be easier to undo than to overclaim. If the record cannot identify the prior artifact, compatibility boundary, rollback trigger, and owner, the candidate is not ready to become default.

@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -50,7 +50,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -63,6 +63,8 @@ open_evidence_gaps:
 This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. The external RL papers named here now have stable source records, primary arXiv metadata, and conservative source notes; they support method-family context only, not support-state promotion or local training claims.
 
 The previous chapter turns benchmark pressure into evidence records. This chapter explains how that pressure may change future behavior without letting reward become authority. A policy update is allowed to propose better planning, routing, context selection, verification, execution, or generation only when admissible feedback, drift bounds, evaluations, rollback, and governance gates are recorded.
+
+The policy update is a behavior-change lease. It grants a candidate policy limited authority to act under a target layer, evaluation scope, drift bound, rollback condition, and monitor window before it can become ordinary behavior.
 
 ## Problem
 
@@ -77,6 +79,8 @@ RLHF, preference optimization, and verifier-reward training are often discussed 
 A reward signal can also become a failure channel. Human preference can reward persuasive wrongness. A verifier can be gamed. A benchmark can become a target instead of a pressure surface. A latency reward can suppress needed verification. A router reward can learn cheap shortcuts that pass local tests while damaging cross-layer traceability.
 
 The stack therefore needs policy optimization to be governed by the same evidence discipline as every other layer.
+
+The insufficiency is reward substitution. A reward, preference label, verifier score, latency metric, or benchmark result stands in for the actual claim: safer routing, better context, truthful answers, lower cost, or stronger reasoning. The update record must keep the proxy and the target claim separate.
 
 ## Core Claim
 
@@ -126,6 +130,8 @@ The record should separate:
 
 The core rule is simple: policy optimization may learn from feedback, but the book should never let a reward signal silently become evidence, authority, or readiness.
 
+Every update should produce a policy-delta receipt. The receipt records what behavior changed, which feedback authorized the change, which probes tried to break the reward, which regressions were checked, which authority boundary remained unchanged, and how rollback would restore the prior policy.
+
 ## Method families
 
 The external literature named in the browser packet is best organized by what the update is trying to do.
@@ -140,6 +146,8 @@ The external literature named in the browser packet is best organized by what th
 | Control-policy RL | Train planner, router, VCM, execution, and generation-mode policies rather than only answer style. | Planned ASI Stack experiments |
 
 This chapter should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
+
+The method-family list is therefore subordinate to governance. PPO-like, DPO-like, GRPO-like, RLVR-like, or custom control-policy updates all need the same record: target policy, reward boundary, drift limit, evaluation suite, failure probes, rollback, and promotion gate.
 
 The chapter should make the target policy explicit before naming an optimizer.
 
@@ -192,6 +200,8 @@ Policy optimization connects to nearly every layer:
 - Governance policy: reward promotion decisions that preserve regression floors, rollback, rights, and auditability.
 - Generation-mode policy: reward verified output quality per wall-clock cost while preserving fallback.
 
+The interface should distinguish training evidence, evaluation evidence, governance evidence, and deployment evidence. A successful training run is not a promotion decision; a promotion decision is not a long-term safety result; a rollback handle is not proof that rollback works until it is exercised or dry-run.
+
 ## Invariants
 
 - Reward is not evidence unless the verifier and evaluation boundary are recorded.
@@ -201,6 +211,8 @@ Policy optimization connects to nearly every layer:
 - Rollback remains available for promoted updates.
 
 The most important invariant is authority conservation. A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.
+
+Another invariant is proxy humility. Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.
 
 ## Failure modes
 
@@ -212,11 +224,15 @@ The most important invariant is authority conservation. A policy update may impr
 
 Each failure should block promotion or force rollback. If the reward is ambiguous, the update remains experimental. If the verifier can be gamed, the verifier enters residual escrow. If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.
 
+The subtle failure is reward laundering. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
+
 ## Minimal implementation
 
 The smallest useful implementation is `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
 
 The fixture records target layer, policy ref, training mode, feedback source, reward or preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gate refs, rollback plan, promotion decision, measurement status, residuals, and non-claims. It validates the record shape only. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
+
+The next useful fixture set is a policy-delta trace: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.
 
 ## Codex test plan
 

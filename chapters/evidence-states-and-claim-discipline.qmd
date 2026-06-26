@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -42,6 +42,8 @@ open_evidence_gaps:
 This chapter governs how claims move. It does not promote a claim because prose became clearer, a source note exists nearby, or a validator passed an unrelated fixture.
 
 It follows the failure chapter because the book itself has the same failure surface as the systems it describes: clearer text can hide missing evidence, a nearby citation can launder a stronger claim, and a narrow proof can be rhetorically expanded beyond its formal scope.
+
+The chapter's control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, by which command or review, with which limitations, and with which negative or inconclusive results still attached.
 
 ## Problem
 
@@ -58,6 +60,8 @@ Without explicit support states, conceptual architecture prose can accidentally 
 Citation lists are not enough. A citation can show lineage, motivation, terminology, contradiction, or external context; it does not automatically support the exact claim being made. Benchmarks are not enough either. Benchmaxxing treats benchmarks as pressure surfaces with lifecycle states, wall diagnoses, anti-Goodhart safeguards, and regression duties, not as permanent definitions of intelligence. Spinoza adds the claim graph and downgrade discipline: failed verification must block or lower confidence. UAT adds adversarial review and proposition tiering under a bounded dossier. Verification Bandwidth adds a further warning: even a large context may not support joint verification of everything inside it.
 
 The missing object is the evidence transition. If a claim moves from `argument` to `source-derived`, the transition should name the source note and the mapped claim. If it moves to `synthetic-test-backed`, it should name the fixture, command, environment, and result. If a test fails, the failure should remain visible rather than disappearing into the next draft.
+
+The insufficiency is scope drift. A source may support terminology but not the mechanism. A schema may support record shape but not the represented event. A proof may support a finite predicate but not the deployed system. A benchmark may support one workload but not a general capability claim. Evidence discipline keeps those scopes locked.
 
 ## Core Claim
 
@@ -103,6 +107,8 @@ The gate separates two axes. Claim labels describe what kind of assertion is bei
 
 The layer also preserves negative information. A failed proof attempt, benchmark wall, contradiction, missing source, or invalid fixture is not clutter. It is the information that prevents the stack from ratcheting in the wrong direction.
 
+Promotion should therefore be treated as a burden, not a reward. The default move is to leave support unchanged until the exact claim, artifact, command, review status, and limitations align. Downgrade requires less ceremony: contradiction, missing support, scope mismatch, or failed verification is enough to move a claim downward or into residual status.
+
 ## Interfaces
 
 The interface is the Evidence Transition Record plus the Claim Record.
@@ -128,6 +134,8 @@ Minimum evidence transition fields:
 
 Drafting updates claim text and labels. Source ingestion adds source notes and source-to-claim mappings. Proof and code work adds commands, fixtures, modules, and results. The changelog records meaningful evidence movement. Appendix C remains the public ledger that keeps those transitions visible.
 
+The interface should distinguish evidence roles: lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement. A single artifact can play one role without playing all of them.
+
 ## Invariants
 
 - No fabricated source support.
@@ -135,6 +143,8 @@ Drafting updates claim text and labels. Source ingestion adds source notes and s
 - Negative and inconclusive results remain visible.
 
 The strongest invariant is asymmetric: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found. This is why Appendix C deliberately remains conservative after source-note coverage improves. Source notes are necessary context, not automatic claim promotion.
+
+Another invariant is scope non-expansion. A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.
 
 ## Failure modes
 
@@ -144,9 +154,13 @@ The strongest invariant is asymmetric: support can move up only when the require
 
 Citation laundering is the common failure: a nearby source is used to make an unsupported claim feel sourced. Benchmark laundering is the analogous measurement failure: a run result is generalized beyond its scope. Proof laundering happens when a small formal invariant is rhetorically expanded into a whole-system guarantee. The correction is scope discipline. The evidence artifact says exactly what it supports and exactly what it does not support.
 
+The subtle failure is evidence smoothing. A revision improves prose by removing caveats, failed attempts, or open gaps while leaving the support state unchanged. The text becomes easier to read and less true.
+
 ## Minimal implementation
 
 The smallest useful implementation is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid transition fixture, and the Lean evidence-state proof module. The schema validates transition shape. The Lean module proves the narrow support-state invariant in this repository. Neither artifact promotes any chapter claim without claim-specific evidence.
+
+The next useful fixture set is an evidence-receipt suite: one lineage-only source, one direct-support source, one failed verification, one schema-only validation, one finite Lean predicate, and one benchmark result whose scope is deliberately narrower than the prose claim.
 
 ## Codex test plan
 
@@ -185,3 +199,5 @@ The crosswalk names the evidence vocabulary loaded for this chapter. Support mov
 Evidence States and Claim Discipline is the book's anti-inflation layer. It lets the manuscript be ambitious without pretending that design rationales, source notes, schemas, Lean proofs, benchmarks, and empirical results are the same thing.
 
 The layer is deliberately conservative. Source-note coverage improves drafting readiness, but claim support rises only after exact mappings or artifacts exist. That discipline is what allows the living book to keep improving all night without quietly manufacturing evidence along the way. The next chapter moves from book-level claim discipline to the first input boundary: how human intent becomes a formal object instead of a prompt-shaped wish.
+
+The practical standard is that a reader should be able to ask "why is this claim allowed to sound this strong?" and find a precise answer. If the answer is only confidence, fluency, or proximity to a source, the claim is over-speaking.

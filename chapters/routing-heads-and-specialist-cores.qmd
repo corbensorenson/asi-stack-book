@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -44,6 +44,8 @@ This chapter is architecture argument grounded in available source notes and sev
 
 Opening Part III, this chapter receives the verified procedures and specialist candidates that Part II made possible. The new problem is selection under constraint: which bounded capability may act, under which authority, with which readiness state, and with which fallback if the route fails.
 
+The route is a lease, not a preference. It grants a specialist a task-local envelope for context, tools, budget, evidence obligation, and fallback behavior, and it expires when the task or route state ends.
+
 ## Problem
 
 The stack cannot route every task to one general cognitive core and still claim local authority, local memory, readiness-aware selection, or clean rollback. The more tasks the system accepts, the more it needs a way to say which bounded capability should act, what it is allowed to see, what tools it may use, what evidence qualifies it, and where the result should go if the route fails.
@@ -55,6 +57,8 @@ The Octopus Router source frames this as a resident head/router with dynamically
 Monolithic scaling hides the route. Static tool lists hide the capability boundary. Prompt-only orchestration can choose a tool, but it rarely records why that tool was adequate, which authority envelope applied, which local memory was in scope, how readiness was checked, or what fallback will be used when the result is inadequate.
 
 This matters because routing is not just a performance problem. It is also a governance problem. A specialist that can read a private memory, call a tool, mutate an artifact, or advise a high-impact decision is exercising authority. The router therefore needs a registry and a decision record, not just a confidence score.
+
+The insufficiency is route opacity. A system may choose a good specialist and still leave no explanation of rejected candidates, denied authority, missing readiness, fallback options, or residual work. That makes later audit and learning impossible.
 
 ## Core Claim
 
@@ -112,6 +116,8 @@ The router should support several route shapes:
 
 Each route shape still needs the same discipline: capability match, authority match, readiness check, cost-quality rationale, fallback, and residual recording.
 
+The decision should also record non-selection. A rejected candidate may be too expensive, underqualified, overprivileged, stale, quarantined, or missing context. Those rejections are evidence for future readiness, routing, and resource policy.
+
 ## Interfaces
 
 The interface is the pair of records emitted around each route.
@@ -148,6 +154,8 @@ Routing Decision Record fields:
 
 Planning requests capabilities, not personalities. Governance bounds authority. Evidence updates readiness. Execution receives the selected specialist and the authority envelope. Artifact graphs receive the route decision so downstream claims can be traced back to the capability that produced them.
 
+The interface should include a route receipt. It records selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
+
 ## Invariants
 
 - Specialist authority is local.
@@ -157,6 +165,8 @@ Planning requests capabilities, not personalities. Governance bounds authority. 
 - Router confidence cannot override an authority ceiling.
 
 The important invariant is that selection and authorization are different predicates. A specialist can be the best semantic match and still be disallowed because its authority scope, readiness state, or evidence state is inadequate for the task.
+
+Another invariant is least-capable adequate routing. The router should not select a stronger, broader, or more privileged specialist unless the task's risk, context demand, verifier requirement, or fallback policy justifies it.
 
 ## Failure modes
 
@@ -168,6 +178,8 @@ The important invariant is that selection and authorization are different predic
 
 Wrong selection should become a residual and a benchmark candidate. Overconfidence should become a route-quality defect. Authority leak should become a governance incident. Specialist bloat should trigger split, merge, retirement, or quarantine review. Composition hallucination should be routed through verification or tribunal review rather than hidden behind a fluent final answer.
 
+The subtle failure is route laundering. A task is routed through a broad specialist because that is convenient, then the successful output is used to justify broader authority even though the route never proved that narrower specialists were inadequate.
+
 ## Minimal implementation
 
 The smallest useful implementation is not a learned router. It is a registry schema, a routing decision schema, and valid fixtures that make route decisions inspectable.
@@ -175,6 +187,8 @@ The smallest useful implementation is not a learned router. It is a registry sch
 The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, selected route, route shape, authority check, readiness check, cost-quality reason, fallback, residuals, and ledger references. Passing these fixtures proves only that the records are structurally valid; it does not prove routing accuracy.
 
 `AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. These proofs do not implement a router, select a specialist, or measure routing quality.
+
+The next useful fixture set is a route-receipt suite: one least-capable adequate route, one rejected overprivileged specialist, one missing-readiness fallback, one expired context lease, and one residual owner assigned after failed composition.
 
 ## Codex test plan
 
@@ -220,3 +234,5 @@ Routing makes modular intelligence governable only when it is recorded as a boun
 This chapter therefore turns the router from a clever dispatcher into a control surface for capability, authority, memory, cost, fallback, and lifecycle. The next chapter adds the gate that the router must respect: a capability can be semantically appropriate and still not ready for ordinary use.
 
 The handoff is strict: the router may propose a route, but readiness determines whether that route is ordinary, canary, diagnostic, quarantined, or residual.
+
+The practical standard is that a route should explain why this specialist, under this authority, now. If that answer cannot be reconstructed, the router is not yet a governable control surface.

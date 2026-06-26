@@ -344,21 +344,26 @@ Draft arc:
 - Mechanism: Separate claim label from support state with evidence transition records so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Mechanism: Require source notes before promoting claims to source-derived.
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
+- Mechanism: emit evidence receipts that lock artifact role, claim scope, verification command or review, limitations, and negative or inconclusive results.
+- Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
 - Interface: Changelog records evidence movement.
+- Interface: distinguish lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement.
 
 Primary invariants:
 
 - No fabricated source support.
 - No fabricated test results.
 - Negative and inconclusive results remain visible.
+- Evidence scope cannot expand through proximity to a source, proof module, benchmark, or neighboring chapter.
 
 Failure modes to cover:
 
 - Support-state inflation.
 - Citation laundering.
 - Silent removal of failed claims.
+- Evidence smoothing: clearer prose removes caveats, failures, or open gaps while the support state remains unchanged.
 
 Draft deliverables:
 
@@ -746,9 +751,12 @@ Draft arc:
 - Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
 - Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
 - Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence, and rollback obligation as separate transaction states.
+- Mechanism: emit rollback receipts that record prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner.
+- Mechanism: expose replacement decision states such as proposed, shadow, canary, default-candidate, default, rolled-back, quarantined, superseded, and retired.
 - Interface: SCF ledger defines the field identity to preserve.
 - Interface: Benchmark and evidence ledgers test frontier movement and regression preservation.
 - Interface: Artifact graph and changelog record candidate artifacts, state migration, decision, residuals, and recovery state.
+- Interface: security, runtime-adapter, policy-optimization, and governance layers inspect replacement transactions for authority, secret, evaluator, monitor, and rollback changes.
 - Exact Appendix C claim-source mappings for the core replacement claim across SCF field identity, RMI modular ratchets, Benchmaxxing benchmark lifecycle, Cognitive Loop Closure procedural lifecycle, Talos audit/replay context, and MoECOT runtime-reference context; five local mappings (`scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending regression-preservation tests, rollback dry runs, monitor-window evidence, artifact replay, or deployed replacement evidence.
 
 Primary invariants:
@@ -756,12 +764,14 @@ Primary invariants:
 - No replacement without prior and posterior artifacts.
 - Regressions stay attached.
 - Rollback metadata is required before promotion.
+- Candidate-provided evidence cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
 
 Failure modes to cover:
 
 - Regression deletion.
 - Rollback impossible after deployment.
 - Self-judged replacement.
+- Rollback theater: rollback fields exist without executable path, compatibility check, trigger condition, or owner.
 
 Draft deliverables:
 
@@ -1854,22 +1864,27 @@ Draft arc:
 - Insufficiency: Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.
 - Mechanism: Treat routing as a task-local authority lease over registered specialists with capability, cost, readiness, authority, memory, tool, fallback, residual, and evidence metadata.
 - Mechanism: Select the smallest adequate specialist only after capability, authority, readiness, and fallback predicates are explicit.
+- Mechanism: emit route receipts that record selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
+- Mechanism: record non-selection evidence so rejected candidates inform readiness, resource policy, and future routing.
 - Handoff: Failed or uncertain routes flow to readiness gates, residual escrow, fallback routes, or tribunal/review rather than ordinary execution.
 - Interface: Planning requests capabilities.
 - Interface: Governance bounds specialists.
 - Interface: Evidence updates readiness.
+- Interface: artifact graphs and evidence ledgers retain route receipts for downstream claim traceability.
 
 Primary invariants:
 
 - Specialist authority is local.
 - Routing decisions are logged.
 - Fallback paths remain available.
+- The router selects the least-capable adequate specialist unless task risk, context demand, verifier requirement, or fallback policy justifies broader capability.
 
 Failure modes to cover:
 
 - Wrong specialist selection.
 - Router overconfidence.
 - Specialist authority leak.
+- Route laundering: broad successful routes justify broader authority without proving narrower specialists were inadequate.
 
 Draft deliverables:
 
@@ -2927,11 +2942,14 @@ Draft arc:
 - Mechanism: Record the feedback source, reward/preference signal, verifier refs, update constraint, drift bound, evaluation refs, governance gates, rollback plan, residuals, and non-claims.
 - Mechanism: Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked.
 - Mechanism: Keep REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO-style trust-region updates, GRPO/DAPO/GSPO-style group or sequence updates, DPO/IPO/ORPO/KTO/SimPO-style offline preference optimization, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
+- Mechanism: treat policy updates as behavior-change leases with target layer, evaluation scope, drift bound, rollback condition, monitor window, and promotion gate.
+- Mechanism: emit policy-delta receipts that record behavior changes, admissible feedback, reward-hacking probes, regressions, unchanged authority boundary, and rollback restoration path.
 - Interface: Benchmarks and verifiers produce reward or preference signals.
 - Interface: VCM and artifact graphs preserve training/evaluation context and evidence references.
 - Interface: Talos records training, tool, and evaluation artifacts.
 - Interface: Spinoza and UAT audit reward meaning, failed verifiers, and reward-hacking probes.
 - Interface: SCF gates decide promotion, quarantine, rollback, or continued experiment status.
+- Interface: distinguish training evidence, evaluation evidence, governance evidence, deployment evidence, rollback evidence, and long-term safety evidence.
 
 Primary invariants:
 
@@ -2940,6 +2958,7 @@ Primary invariants:
 - A faster or shorter policy is not promoted unless task success and regressions are preserved.
 - Reward-hacking probes are part of the update record, not optional commentary.
 - Rollback remains available for promoted updates.
+- Proxy improvement cannot promote the target claim without target-specific evaluation, residuals, and failure probes.
 
 Failure modes to cover:
 
@@ -2948,6 +2967,7 @@ Failure modes to cover:
 - Planner, router, or context policies learning hidden shortcuts.
 - Latency rewards suppressing needed verification.
 - Policy drift crossing SCF authority or readiness boundaries.
+- Reward laundering: proxy improvement is written up as task improvement while reward hacks, preference bias, verifier blind spots, or regression losses remain unresolved.
 
 Draft deliverables:
 
