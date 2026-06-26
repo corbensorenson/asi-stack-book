@@ -50,6 +50,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/reference_trace_record.schema.json`
 - `schemas/replacement_transaction.schema.json`
 - `schemas/research_backlog_record.schema.json`
+- `schemas/new_paper_triage_scenario.schema.json`
 - `schemas/resource_budget_record.schema.json`
 - `schemas/routing_decision_record.schema.json`
 - `schemas/runtime_adapter_invocation.schema.json`
@@ -1933,3 +1934,33 @@ research_backlog_record:
 ```
 
 This record turns future-source and missing-evidence management into a reviewable backlog item. It records triage state, access state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, evidence-transition preconditions, required pre-drafting work, insertion decision, source refs, support-state effect, promotion blockers, residuals, next action, and non-claims.
+
+## New Paper Triage Scenario
+
+```yaml
+new_paper_triage_scenario:
+  scenario_id: string
+  scenario_scope: string
+  case_validity_state: fixture_only
+  cases:
+    - case_id: string
+      intake_kind: new_source
+      access_state: available
+      source_storage_policy: external_url_only
+      public_safety_state: public_safe
+      deduplication_state: overlaps_existing_chapter
+      candidate_decision: update_existing_chapter
+      chapter_manifest_action: add_source_to_existing_chapter
+      existing_chapter_id: string
+      proposed_chapter_id: not_applicable
+      decision_rationale: string
+      required_before_drafting: []
+      evidence_transition_preconditions: []
+      promotion_blockers: []
+      non_claims: []
+  validation_boundary: string
+  support_state_effect: record_shape_only
+  non_claims: []
+```
+
+This synthetic fixture suite tests the decision surface for future source intake. It covers update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions with storage/public-safety policy, deduplication state, manifest action, pre-drafting requirements, evidence-transition preconditions, promotion blockers, and non-claims. It validates triage shape only; it does not evaluate any real paper or edit the chapter manifest.

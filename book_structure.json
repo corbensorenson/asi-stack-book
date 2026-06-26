@@ -11743,7 +11743,13 @@
           "codex_tests": [
             "Source inventory validation test",
             "Source-note backlog audit",
-            "New-paper triage scenario"
+            {
+              "name": "New-paper triage scenario",
+              "purpose": "Check whether a synthetic intake case updates an existing chapter, proposes a new boundary, defers unread external literature, or rejects a duplicate variant without changing support state.",
+              "implementation_status": "implemented",
+              "result_status": "run in this pass",
+              "status": "implemented by protocol validation; run in this pass"
+            }
           ],
           "lean_module": "AsiStackProofs.BibliographyPlan",
           "proof_targets": [

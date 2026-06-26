@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/new_paper_triage_scenario.schema.json",
+  "title": "New Paper Triage Scenario",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "scenario_scope",
+    "case_validity_state",
+    "cases",
+    "validation_boundary",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "scenario_id": { "type": "string", "minLength": 1 },
+    "scenario_scope": { "type": "string", "minLength": 1 },
+    "case_validity_state": {
+      "type": "string",
+      "enum": ["fixture_only", "reviewed", "accepted", "blocked"]
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "intake_kind",
+          "access_state",
+          "source_storage_policy",
+          "public_safety_state",
+          "deduplication_state",
+          "candidate_decision",
+          "chapter_manifest_action",
+          "existing_chapter_id",
+          "proposed_chapter_id",
+          "decision_rationale",
+          "required_before_drafting",
+          "evidence_transition_preconditions",
+          "promotion_blockers",
+          "non_claims"
+        ],
+        "properties": {
+          "case_id": { "type": "string", "minLength": 1 },
+          "intake_kind": {
+            "type": "string",
+            "enum": [
+              "new_source",
+              "source_variant",
+              "missing_source",
+              "external_literature",
+              "local_project_artifact"
+            ]
+          },
+          "access_state": {
+            "type": "string",
+            "enum": ["available", "source_note_available", "connector_required", "recovery_required", "missing", "private_restricted"]
+          },
+          "source_storage_policy": {
+            "type": "string",
+            "enum": [
+              "repo_public_note_only",
+              "repo_public_source_allowed",
+              "connector_only",
+              "local_private_cache",
+              "external_url_only",
+              "blocked"
+            ]
+          },
+          "public_safety_state": {
+            "type": "string",
+            "enum": [
+              "public_safe",
+              "needs_redaction",
+              "permission_required",
+              "private_restricted",
+              "blocked"
+            ]
+          },
+          "deduplication_state": {
+            "type": "string",
+            "enum": [
+              "not_checked",
+              "unique_boundary",
+              "overlaps_existing_chapter",
+              "duplicate_source",
+              "superseded_variant",
+              "blocked"
+            ]
+          },
+          "candidate_decision": {
+            "type": "string",
+            "enum": ["update_existing_chapter", "propose_new_chapter", "appendix_only", "defer", "reject_duplicate", "blocked"]
+          },
+          "chapter_manifest_action": {
+            "type": "string",
+            "enum": [
+              "none",
+              "add_source_to_existing_chapter",
+              "propose_manifest_chapter",
+              "appendix_only",
+              "defer_to_backlog",
+              "reject_duplicate"
+            ]
+          },
+          "existing_chapter_id": { "type": "string", "minLength": 1 },
+          "proposed_chapter_id": { "type": "string", "minLength": 1 },
+          "decision_rationale": { "type": "string", "minLength": 1 },
+          "required_before_drafting": { "type": "array", "items": { "type": "string" } },
+          "evidence_transition_preconditions": { "type": "array", "items": { "type": "string" } },
+          "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+          "non_claims": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_boundary": { "type": "string", "minLength": 1 },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["record_shape_only", "backlog_only", "blocks_promotion"]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

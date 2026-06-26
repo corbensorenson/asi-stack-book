@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal new paper triage scenario fixture
+
+- Added a synthetic new-paper triage scenario schema and fixture covering update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions with access state, storage/public-safety policy, deduplication state, manifest action, pre-drafting requirements, evidence-transition preconditions, promotion blockers, support-state effect, and non-claims. Updated the Open Research Agenda chapter, outline, protocol appendix, and generated Codex test metadata so future paper-intake work has an implemented fixture gate while live new-paper triage, citation normalization, public-release permission checks, source-specific evidence review, manifest insertion, reader artifact, and audio artifact remain unclaimed.
+
 ## 2026-06-26 - v1.0 improvement goal source intake insertion gates
 
 - Strengthened the research backlog/source-intake boundary: research backlog records now validate source storage policy, public-safety state, chapter-decision refs, deduplication state, merge/split policy, required pre-drafting work, and promotion blockers in addition to triage state, access state, assigned chapters, chapter action policy, boundary rationale, source-note state, claim mapping, passage review, external literature work, proof/test backlog, evidence-transition preconditions, insertion decision, source refs, support-state effect, residuals, next action, and non-claims. Updated the Open Research Agenda chapter, outline, protocol appendix, schema, and fixture so future new-paper runs can distinguish public-safe source notes, connector/private source handling, update-vs-new-chapter decisions, duplicate/superseded sources, and drafting prerequisites without claiming citation normalization, source-publication permission, new-paper triage quality, claim support promotion, reader artifact, or audio artifact.

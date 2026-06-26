@@ -3582,10 +3582,10 @@ Failure modes to cover:
 Draft deliverables:
 
 - A research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
-- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; external-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and new-paper triage rehearsals remain incomplete.
+- Implemented repository-level fixtures: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; `new_paper_triage_scenario.valid.json` validates synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate intake decisions only. External-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and live new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
-- Planned Codex test: New-paper triage scenario.
+- Implemented Codex test: New-paper triage scenario fixture.
 
 Lean proof targets:
 
