@@ -7,8 +7,24 @@
   "negative_controls": ["wrong-period control", "nonperiodic control"],
   "proof_boundary": "no local proof or benchmark has been run",
   "experiment_requirements": ["multiseed readout", "isolated component variants", "promotion metrics"],
+  "consumer_gate": "May be used for research planning only; cannot feed routing, compression, model-quality, or performance claims without workload evidence.",
+  "axis_ledger": [
+    {
+      "axis": "structure",
+      "status": "planned",
+      "evidence_refs": ["sources/source_notes/temporal_coil_research.md"],
+      "non_claims": ["no local structural proof has been run"]
+    },
+    {
+      "axis": "downstream_task_quality",
+      "status": "unmeasured",
+      "evidence_refs": [],
+      "non_claims": ["no model-quality result is implied"]
+    }
+  ],
   "falsification_condition": "No improvement against baselines or confounded wins after controls",
   "adoption_state": "exploratory",
   "residuals": ["no temporal-coil A/B artifacts imported"],
-  "evidence_refs": ["sources/source_notes/temporal_coil_research.md"]
+  "evidence_refs": ["sources/source_notes/temporal_coil_research.md"],
+  "non_claims": ["no substrate promotion", "no runtime improvement", "no model-quality improvement"]
 }

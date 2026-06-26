@@ -2698,16 +2698,18 @@ Draft arc:
 - Problem: The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed.
 - Insufficiency: Novel substrates can become authority theater if they are not tied to baselines, adoption gates, and falsification criteria.
 - Mechanism: Register each coil, calculus, geometric, graph, compiler-IR, or state-space substrate as an exploratory candidate with intended use, authority boundary, and adoption state.
-- Mechanism: Require expected advantage, ordinary baselines, negative controls, proof boundary, workload, metric, report, and falsification condition before canary use.
+- Mechanism: Require expected advantage, ordinary baselines, negative controls, proof boundary, workload, metric, report, consumer gate, axis ledger, non-claims, and falsification condition before canary use.
 - Mechanism: Route experiments through exploratory, canary, qualified, retired, or blocked evidence gates before broader adoption.
 - Mechanism: Keep backbone efficiency, proof readiness, fast-generation acceleration, compression, search quality, routing quality, and downstream task quality as separate axes.
 - Mechanism: Treat optionality as a positive adoption state so promising substrates can be tested through narrow routes without becoming load-bearing architecture before evidence exists.
-- Mechanism: treat adoption records as routing permissions with operational states such as exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded.
+- Mechanism: treat adoption records as routing permissions with operational states such as exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded, using machine-readable values such as `structural_only` and `qualified_for_scope`.
+- Mechanism: maintain a four-lane adoption packet for structural facts, empirical workload evidence, consumer permissions, and retirement/falsification behavior.
 - Interface: Routing treats substrate as specialist.
 - Interface: Compression tests representation efficiency.
 - Interface: Evidence compares against baselines.
 - Interface: Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records.
 - Interface: maintain an axis ledger for structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality.
+- Interface: require consumer gates so a substrate record can support structural discussion without supporting routing, compression, runtime, or model-quality promotion.
 
 Primary invariants:
 
@@ -2716,6 +2718,7 @@ Primary invariants:
 - Failed hypotheses remain visible.
 - Backbone-efficiency claims do not imply search, routing, compression, or reasoning-quality gains.
 - Negative controls remain attached after favorable results.
+- A consumer may not rely on an unmeasured, blocked, or explicitly excluded substrate axis.
 
 Failure modes to cover:
 
@@ -2728,7 +2731,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A technical-substrate appendix plan with experiment matrix and adoption gates.
-- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates the substrate-adoption record shape only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
+- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, consumer gate, axis ledger, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
@@ -2765,10 +2768,12 @@ Draft arc:
 - Mechanism: Preserve the receipt boundary in downstream consumers and require workloads, ordinary baselines, negative controls, metrics, scripts, and evidence artifacts before any quality, runtime, memory, or transfer claim is promoted.
 - Mechanism: Separate proof authority from consumer authority: theorem-linked structural facts can be necessary for downstream use but never sufficient for substrate promotion.
 - Mechanism: Record proof policy, source version, content fingerprint, resolver status, validation command, failure behavior, consumer requirements, and non-claims so stale references become visible residuals.
+- Mechanism: treat proof-contract receipt states such as theorem-linked, dictionary-bound, fingerprinted, resolver-checked, consumer-gated, workload-blocked, and retired/superseded as transport states rather than model-quality states.
 - Interface: Lean and proof manifests supply theorem status.
 - Interface: Python or CLI tools emit receipts and validation reports.
 - Interface: Theseus-style private experiments consume contracts without importing private results into public claims.
 - Interface: The evidence matrix records claim boundaries and support states.
+- Interface: `proof_contract_receipt_record` records finite-model scope, theorem refs, proof status, source version, fingerprint field, deterministic fields, verifier state, resolver/replay state, consumer gate, failure behavior, evidence refs, and non-claims.
 
 Primary invariants:
 
@@ -2786,10 +2791,12 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, and non-claims.
+- A contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer check, ordinary baselines, resolver/replay states, and non-claims.
+- Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape only; no Circle theorem-id resolver, receipt replay, fingerprint check, external Lean build, or generated contract pack exists yet.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack exists yet.
 - Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming external Circle theorem replay.
-- Planned Codex test: Contract schema validation test
+- Implemented Codex test: Proof contract receipt schema validation test.
+- Planned Codex test: Circle contract pack validation test
 - Planned Codex test: Theorem-id resolution test
 - Planned Codex test: Non-claim preservation test
 - Planned Codex test: Receipt replay and fingerprint test
@@ -2958,17 +2965,19 @@ Draft arc:
 
 - Problem: The book needs to decide which architecture claims should become executable specs or Lean proofs.
 - Insufficiency: Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
-- Mechanism: Lower each formal-looking chapter claim into a Proof Target Record with tag, module or artifact path, formal target, verifier command/result, support-state effect, limitations, and non-claims.
+- Mechanism: Lower each formal-looking chapter claim into a Proof Target Record with tag, artifact lane, module or artifact path, formal target, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims.
 - Mechanism: Keep `proofs/proof_manifest.json` generated from outline `lean:*` tags and require traceability through triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E before calling a target implemented.
 - Mechanism: Route candidates to Lean predicates, executable schemas, fixture validators, process contracts, research targets, blocked targets, or retired targets according to what can actually be checked.
 - Mechanism: Keep semantic proof adequacy as a separate review from build success, schema success, source interpretation, deployed enforcement, model quality, or benchmark evidence.
 - Mechanism: Treat the proof envelope as a lane discipline: Lean proves finite predicates, schemas validate record shape, process validators check wiring, tests exercise behavior, and benchmarks measure performance without collapsing those artifacts into one support state.
 - Mechanism: emit proof/spec receipts with command, artifact path, predicate or schema covered, consumer requirements, limitations, and explicit non-claims.
 - Mechanism: route semantic proof drift into adequacy residuals when a valid finite predicate may not match the intended chapter boundary.
+- Mechanism: keep `artifact_lane` separate from `target_kind` so schema, Lean, process validator, behavior test, benchmark, external-reference, and research-backlog receipts cannot borrow one another's authority.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.
 - Interface: consumers may rely on a proof only when proof lane, command, artifact path, version, and non-claims match their required use.
+- Interface: proof consumers must also respect semantic adequacy state before using a finite predicate to strengthen prose.
 
 Primary invariants:
 
@@ -2987,7 +2996,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
-- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape only.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 112 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 112 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.

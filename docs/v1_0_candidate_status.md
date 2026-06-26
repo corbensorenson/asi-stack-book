@@ -1,6 +1,6 @@
 # v1.0 Candidate Status
 
-Last updated: 2026-06-25
+Last updated: 2026-06-26
 
 This document is the current public-safe status surface for the extended v1.0 improvement goal. It supersedes the older prewriting and v0.2 launch-status documents for current readiness decisions, while those older documents remain useful historical records.
 
@@ -16,7 +16,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
 | Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
-| Schemas and fixtures | 69 JSON Schemas, 68 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_protocol_examples.py` |
+| Schemas and fixtures | 70 JSON Schemas, 69 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_protocol_examples.py` |
 | Visual coverage | Every chapter has at least one Mermaid diagram; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
 | Public site | GitHub Pages renders the live Quarto book | <https://corbensorenson.github.io/asi-stack-book/> |

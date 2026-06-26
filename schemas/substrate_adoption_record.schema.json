@@ -12,10 +12,13 @@
     "negative_controls",
     "proof_boundary",
     "experiment_requirements",
+    "consumer_gate",
+    "axis_ledger",
     "falsification_condition",
     "adoption_state",
     "residuals",
-    "evidence_refs"
+    "evidence_refs",
+    "non_claims"
   ],
   "properties": {
     "substrate_id": { "type": "string", "minLength": 1 },
@@ -26,13 +29,32 @@
     "negative_controls": { "type": "array", "items": { "type": "string" } },
     "proof_boundary": { "type": "string", "minLength": 1 },
     "experiment_requirements": { "type": "array", "items": { "type": "string" } },
+    "consumer_gate": { "type": "string", "minLength": 1 },
+    "axis_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["axis", "status", "evidence_refs", "non_claims"],
+        "properties": {
+          "axis": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": ["unmeasured", "structural_only", "planned", "measured_positive", "measured_negative", "mixed", "blocked", "out_of_scope"]
+          },
+          "evidence_refs": { "type": "array", "items": { "type": "string" } },
+          "non_claims": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
     "falsification_condition": { "type": "string", "minLength": 1 },
     "adoption_state": {
       "type": "string",
-      "enum": ["exploratory", "blocked", "canary", "qualified", "retired", "refuted"]
+      "enum": ["exploratory", "structural_only", "blocked", "canary", "qualified", "qualified_for_scope", "retired", "superseded", "refuted"]
     },
     "residuals": { "type": "array", "items": { "type": "string" } },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

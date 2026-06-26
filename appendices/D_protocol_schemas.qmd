@@ -41,6 +41,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/plan_graph.schema.json`
 - `schemas/planforge_dag.schema.json`
 - `schemas/proof_carrying_claim.schema.json`
+- `schemas/proof_contract_receipt_record.schema.json`
 - `schemas/proof_target_record.schema.json`
 - `schemas/procedural_tool_record.schema.json`
 - `schemas/project_work_contract.schema.json`
@@ -355,13 +356,20 @@ substrate_adoption_record:
   negative_controls: []
   proof_boundary: string
   experiment_requirements: []
+  consumer_gate: string
+  axis_ledger:
+    - axis: string
+      status: unmeasured
+      evidence_refs: []
+      non_claims: []
   falsification_condition: string
   adoption_state: exploratory
   residuals: []
   evidence_refs: []
+  non_claims: []
 ```
 
-This record keeps optional mathematical, search, cyclic, and representation substrates from becoming core architecture before baselines, controls, proof boundaries, experiment requirements, falsification conditions, evidence, and residuals are visible.
+This record keeps optional mathematical, search, cyclic, and representation substrates from becoming core architecture before baselines, controls, proof boundaries, experiment requirements, consumer gates, axis-specific evidence, falsification conditions, evidence, residuals, and non-claims are visible.
 
 ## Cyclic Memory Contract
 
@@ -1249,6 +1257,36 @@ proof_carrying_claim:
 
 This record makes proof or justification claims tiered and auditable, including interpretation mapping, verifier result, limitations, downgrade behavior, and ledger impact.
 
+## Proof Contract Receipt Record
+
+```yaml
+proof_contract_receipt_record:
+  receipt_id: string
+  source_project: string
+  contract_family: string
+  engineering_object: string
+  finite_model: string
+  theorem_refs: []
+  proof_status: external_source_reported
+  source_version: string
+  content_fingerprint: string
+  deterministic_fields: []
+  verifier_command: string
+  verifier_result: not_run
+  resolver_status: source_reported
+  replay_status: not_run
+  consumer_gate:
+    consumer_id: string
+    allowed_uses: []
+    blocked_uses: []
+    required_downstream_evidence: []
+  failure_behavior: string
+  non_claims: []
+  evidence_refs: []
+```
+
+This record packages theorem-linked structural facts as receipts with finite-model scope, theorem references, proof status, fingerprints, deterministic fields, resolver/replay status, consumer permissions, failure behavior, evidence references, and explicit non-claims. It records receipt shape only; it does not imply external theorem replay, model-quality evidence, runtime evidence, or substrate adoption.
+
 ## Proof Target Record
 
 ```yaml
@@ -1257,16 +1295,21 @@ proof_target_record:
   chapter_id: string
   lean_tag: string
   target_kind: schema_contract
+  artifact_lane: schema
   formal_target: string
   artifact_refs: []
   verifier_command: string
   verifier_result: not_run
   support_state_effect: string
+  consumer_requirements: []
+  semantic_adequacy_review:
+    status: planned
+    review_note: string
   limitations: []
   non_claims: []
 ```
 
-This record separates Lean proofs, executable specs, schema contracts, process contracts, and research targets. It keeps verifier status, artifact references, support-state impact, limitations, and non-claims visible before prose can imply formal support.
+This record separates Lean proofs, executable specs, schema contracts, process contracts, and research targets. It keeps artifact lane, verifier status, artifact references, support-state impact, consumer requirements, semantic adequacy status, limitations, and non-claims visible before prose can imply formal support.
 
 ## Reference Trace Record
 

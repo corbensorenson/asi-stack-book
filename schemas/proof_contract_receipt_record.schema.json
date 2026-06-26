@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_contract_receipt_record.schema.json",
+  "title": "Proof Contract Receipt Record",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "source_project",
+    "contract_family",
+    "engineering_object",
+    "finite_model",
+    "theorem_refs",
+    "proof_status",
+    "source_version",
+    "content_fingerprint",
+    "deterministic_fields",
+    "verifier_command",
+    "verifier_result",
+    "resolver_status",
+    "replay_status",
+    "consumer_gate",
+    "failure_behavior",
+    "non_claims",
+    "evidence_refs"
+  ],
+  "properties": {
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "source_project": { "type": "string", "minLength": 1 },
+    "contract_family": { "type": "string", "minLength": 1 },
+    "engineering_object": { "type": "string", "minLength": 1 },
+    "finite_model": { "type": "string", "minLength": 1 },
+    "theorem_refs": { "type": "array", "items": { "type": "string" } },
+    "proof_status": {
+      "type": "string",
+      "enum": ["local_proved", "external_resolved", "external_source_reported", "not_run", "blocked", "unknown"]
+    },
+    "source_version": { "type": "string", "minLength": 1 },
+    "content_fingerprint": { "type": "string", "minLength": 1 },
+    "deterministic_fields": { "type": "array", "items": { "type": "string" } },
+    "verifier_command": { "type": "string", "minLength": 1 },
+    "verifier_result": {
+      "type": "string",
+      "enum": ["pass", "fail", "not_run", "blocked", "out_of_scope"]
+    },
+    "resolver_status": {
+      "type": "string",
+      "enum": ["resolved_local", "resolved_external", "source_reported", "missing", "stale", "not_run", "blocked"]
+    },
+    "replay_status": {
+      "type": "string",
+      "enum": ["replayed", "not_run", "failed", "blocked", "out_of_scope"]
+    },
+    "consumer_gate": {
+      "type": "object",
+      "required": ["consumer_id", "allowed_uses", "blocked_uses", "required_downstream_evidence"],
+      "properties": {
+        "consumer_id": { "type": "string", "minLength": 1 },
+        "allowed_uses": { "type": "array", "items": { "type": "string" } },
+        "blocked_uses": { "type": "array", "items": { "type": "string" } },
+        "required_downstream_evidence": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "failure_behavior": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

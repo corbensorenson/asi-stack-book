@@ -8,11 +8,14 @@
     "chapter_id",
     "lean_tag",
     "target_kind",
+    "artifact_lane",
     "formal_target",
     "artifact_refs",
     "verifier_command",
     "verifier_result",
     "support_state_effect",
+    "consumer_requirements",
+    "semantic_adequacy_review",
     "limitations",
     "non_claims"
   ],
@@ -24,6 +27,10 @@
       "type": "string",
       "enum": ["lean_proof", "executable_spec", "schema_contract", "process_contract", "research_target"]
     },
+    "artifact_lane": {
+      "type": "string",
+      "enum": ["lean", "schema", "process_validator", "behavior_test", "benchmark", "external_reference", "research_backlog"]
+    },
     "formal_target": { "type": "string", "minLength": 1 },
     "artifact_refs": { "type": "array", "items": { "type": "string" } },
     "verifier_command": { "type": "string", "minLength": 1 },
@@ -32,6 +39,19 @@
       "enum": ["pass", "fail", "not_run", "blocked", "out_of_scope"]
     },
     "support_state_effect": { "type": "string", "minLength": 1 },
+    "consumer_requirements": { "type": "array", "items": { "type": "string" } },
+    "semantic_adequacy_review": {
+      "type": "object",
+      "required": ["status", "review_note"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "planned", "complete", "blocked", "not_applicable"]
+        },
+        "review_note": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
     "limitations": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },

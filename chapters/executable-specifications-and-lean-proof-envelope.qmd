@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all nine assigned sources, but support remains argument until semantic proof adequacy review, additional artifact audits, source-passage transitions, validated executable-spec behavior, or accepted evidence transitions justify promotion."
-  - "The proof_target_record fixture validates schema/example consistency and the Lean workspace currently implements all 112 manifest proof targets as narrow finite-record predicates; the proof artifact traceability audit checks wiring only, not broad system behavior, source-interpretation correctness, external theorem validation, local proof discovery, deployed enforcement, production security, or benchmark performance."
+  - "The proof_target_record fixture validates schema/example consistency for target kind, artifact lane, verifier state, consumer requirements, semantic adequacy state, limitations, and non-claims; the Lean workspace currently implements all 112 manifest proof targets as narrow finite-record predicates, and the proof artifact traceability audit checks wiring only, not broad system behavior, source-interpretation correctness, external theorem validation, local proof discovery, deployed enforcement, production security, or benchmark performance."
   - "Internal Google Docs sources support architectural/spec design for obligations, claim tiering, capability fields, typed jobs, artifact graphs, support states, residuals, and evidence hierarchy; they do not provide local implementations, security audits, benchmarks, deployments, or runtime traces beyond validated artifacts in this repo."
   - "External Circle project references support theorem-status, receipt, schema, sidecar, finite-cyclic, RoPE, and benchmark-boundary discipline; Circle commands, generated packs, receipt replay, fingerprint checks, sidecar regeneration, and external Circle Lean builds were not rerun or imported as local evidence."
   - "No support-state promotion, raw source publication, model-quality result, deployment proof, performance result, or semantic adequacy proof is implied."
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation` |
 | Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
-| Test state | Proof manifest sync, local Lean build, `AsiStackProofs.ProofEnvelope`, `proof_target_record.valid.json` protocol fixture validation, and `scripts/validate_proof_artifact_audit.py` pass in the current validation gate; Appendix E now generates a proof-target coverage summary, and `docs/proof_artifact_audit.md` records traceability coverage. Semantic proof adequacy review remains planned. |
+| Test state | Proof manifest sync, local Lean build, `AsiStackProofs.ProofEnvelope`, `proof_target_record.valid.json` protocol fixture validation with artifact-lane and semantic-adequacy fields, and `scripts/validate_proof_artifact_audit.py` pass in the current validation gate; Appendix E now generates a proof-target coverage summary, and `docs/proof_artifact_audit.md` records traceability coverage. Semantic proof adequacy review remains planned. |
 
 ## Drafting guardrail
 
@@ -105,13 +105,15 @@ flowchart LR
   H -- "no" --> G
 ```
 
-Each target should record its tag, module, formal target, artifact path, verifier command, verifier result, support-state impact, limitations, and non-claims. A passed schema check can support record shape. A passed Lean build can support a mechanized invariant. Neither can support empirical performance unless an experiment exists.
+Each target should record its tag, module, artifact lane, formal target, artifact path, verifier command, verifier result, support-state impact, consumer requirements, semantic adequacy state, limitations, and non-claims. A passed schema check can support record shape. A passed Lean build can support a mechanized invariant. Neither can support empirical performance unless an experiment exists.
 
 The repository now mechanizes the envelope rule as a finite target-status predicate. In `AsiStackProofs.ProofEnvelope`, an implemented target must carry module-existence and build-passed flags, and a non-operational target is routed to planned or blocked rather than implemented. The proof is a policy invariant over proof-target records; it is not a filesystem crawler, theorem-discovery tool, or coverage audit.
 
 The result is a layered formalization path. First the prose names an invariant. Then the outline assigns a stable `lean:*` tag. Then the proof manifest records the target. Then triage decides whether the target belongs in Lean, a schema, a process validator, a research backlog, or a blocked state. Only then does an implementation artifact matter. This path makes it harder for a future writing run to confuse a desirable theorem with an existing theorem, or an existing theorem with a broad system guarantee.
 
 Every passed artifact should produce a proof/spec receipt. The receipt says what command ran, what artifact was checked, what predicate or schema it covers, what consumer may rely on it, and what claims it explicitly does not support.
+
+The artifact lane is a first-class field because different lanes fail differently. A Lean lane can fail because the module does not build. A schema lane can pass while the represented event never happened. A process-validator lane can check wiring without checking semantics. A behavior-test lane can exercise a path without proving a theorem. A benchmark lane can measure performance while saying nothing about proof. The proof envelope is useful only if those lane differences survive into the fixture and into the prose that consumes it.
 
 ## Interfaces
 
@@ -123,11 +125,14 @@ Minimum fields:
 - `chapter_id`
 - `lean_tag`
 - `target_kind`
+- `artifact_lane`
 - `formal_target`
 - `artifact_refs`
 - `verifier_command`
 - `verifier_result`
 - `support_state_effect`
+- `consumer_requirements`
+- `semantic_adequacy_review`
 - `limitations`
 - `non_claims`
 
@@ -135,7 +140,9 @@ The outline defines proof scope. `proofs/proof_manifest.json` records the genera
 
 The support-state effect remains deliberately narrow. A passed `lake build` can justify saying that a local finite-record predicate builds. It cannot justify saying the source interpretation is correct, the real system enforces the rule, the model behaves well, or the benchmark improved. A passed schema validator can justify saying that a fixture has the required shape. It cannot justify saying the represented event happened. This separation is what makes the proof envelope useful to a living book rather than theatrical.
 
-The interface should carry consumer requirements. A chapter, protocol, or release profile may consume a proof only if the proof lane, command, artifact path, version, and non-claims match what that consumer needs. Otherwise the proof remains true but unusable for that purpose.
+The interface should carry consumer requirements. A chapter, protocol, or release profile may consume a proof only if the proof lane, command, artifact path, version, semantic adequacy state, and non-claims match what that consumer needs. Otherwise the proof remains true but unusable for that purpose.
+
+The semantic adequacy review is not a second proof. It is a record of whether the finite predicate actually matches the chapter boundary it is being asked to support. Until that review exists, the safest support-state effect is narrow: the artifact passed its verifier, but the prose may not borrow more meaning than the predicate states.
 
 ## Invariants
 
@@ -160,17 +167,17 @@ The subtle failure is proof laundering. A valid local predicate, external theore
 
 ## Minimal implementation
 
-The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. It does not prove the target.
+The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, artifact lane, formal target, artifact refs, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. It does not prove the target.
 
 The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage and all 112 are implemented as formal-invariant Lean candidates. The proof artifact traceability audit checks that those targets are wired through manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. Semantic proof adequacy review remains a separate planned check.
 
-The next useful fixture set is a proof/spec receipt suite: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.
+The next useful fixture set is a proof/spec receipt suite: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Proof target record fixture validation | Check that proof target records expose verifier command/result, limitations, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Proof target record fixture validation | Check that proof target records expose artifact lane, verifier command/result, consumer requirements, semantic adequacy state, limitations, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Proof manifest sync test | Check that outline proof tags and `proofs/proof_manifest.json` agree. | implemented by validation; run in this pass |
 | Lake build smoke test | Check that local Lean modules build. | run in this pass |
 | Implemented-target envelope predicate | Prove that an implemented proof target record requires module-existence and build-passed fields. | implemented in `AsiStackProofs.ProofEnvelope`; passing via `cd lean && lake build` |
