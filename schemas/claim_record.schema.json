@@ -3,10 +3,28 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/claim_record.schema.json",
   "title": "Claim Record",
   "type": "object",
-  "required": ["claim_id", "text", "claim_label", "support_state", "source_handles", "tests", "review_status"],
+  "required": [
+    "claim_id",
+    "text",
+    "claim_scope",
+    "claim_label",
+    "support_state",
+    "lifecycle_state",
+    "source_handles",
+    "surface_refs",
+    "tests",
+    "uncertainty",
+    "contradictions",
+    "contradiction_state",
+    "review_status",
+    "revision_history_refs",
+    "promotion_blockers",
+    "non_claims"
+  ],
   "properties": {
     "claim_id": { "type": "string", "minLength": 1 },
     "text": { "type": "string", "minLength": 1 },
+    "claim_scope": { "type": "string", "minLength": 1 },
     "claim_label": {
       "type": "string",
       "enum": [
@@ -32,8 +50,26 @@
         "refuted"
       ]
     },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "recorded",
+        "mapped",
+        "challenged",
+        "revised",
+        "downgraded",
+        "deprecated",
+        "split",
+        "merged",
+        "promoted",
+        "retired"
+      ]
+    },
     "source_handles": { "type": "array", "items": { "type": "string" } },
+    "surface_refs": { "type": "array", "items": { "type": "string" } },
     "tests": { "type": "array", "items": { "type": "string" } },
+    "uncertainty": { "type": "string", "minLength": 1 },
     "evidence_bundle": {
       "type": "object",
       "properties": {
@@ -57,7 +93,14 @@
       "default": {}
     },
     "contradictions": { "type": "array", "items": { "type": "string" }, "default": [] },
-    "review_status": { "type": "string", "enum": ["open", "reviewed", "blocked", "deprecated"] }
+    "contradiction_state": {
+      "type": "string",
+      "enum": ["none", "open", "bounded", "resolved", "refuted", "residualized"]
+    },
+    "review_status": { "type": "string", "enum": ["open", "reviewed", "blocked", "deprecated"] },
+    "revision_history_refs": { "type": "array", "items": { "type": "string" } },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

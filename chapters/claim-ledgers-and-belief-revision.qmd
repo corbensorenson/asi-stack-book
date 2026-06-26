@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -121,19 +121,31 @@ Minimum fields:
 
 - `revision_id`
 - `claim_id`
+- `claim_scope`
+- `lifecycle_state`
 - `prior_support_state`
 - `new_support_state`
 - `evidence_refs`
+- `surface_refs`
 - `contradiction_refs`
+- `contradiction_state`
 - `defeaters`
+- `residual_refs`
 - `revision_reason`
 - `uncertainty`
 - `review_status`
 - `history_refs`
+- `changed_surface_refs`
+- `non_overwrite_attestation`
+- `ledger_effect`
+- `promotion_blockers`
+- `non_claims`
 
 VCM supplies source context. Spinoza verifies or downgrades claims. UAT can review contested claims. Appendix C records book-level claim support while preserving revision history.
 
 The handoff to Spinoza should name the requested tier and the reason the claim deserves stronger treatment. The handoff to tribunal should name the conflict, risk class, dossier boundary, and what action would follow a verdict. Otherwise escalation becomes another way to delay revision.
+
+The public claim and revision schemas now record claim scope, lifecycle state, surface refs, contradiction state, residual refs, changed surfaces, non-overwrite attestation, ledger effect, promotion blockers, and non-claims. Those fields do not extract claims or detect contradictions. They keep a later extractor, editor, or release process from treating a repeated claim as a new unsupported assertion or from quietly improving the tone of a claim whose ledger state did not improve.
 
 ## Invariants
 
@@ -159,7 +171,7 @@ The subtle failure is confidence laundering. A claim can move from appendix to c
 
 A claim-record schema and belief-revision transition example.
 
-The smallest useful implementation is the existing `claim_record` schema plus a `belief_revision_record` schema and fixture. The fixture should demonstrate conservative support-state handling without claiming that an actual contested claim has been resolved. The accompanying Lean module is intentionally narrower than a belief engine: it models finite claim-update records and promotion reviews; a valid update preserves prior evidence and revision-history references; and an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual.
+The smallest useful implementation is the existing `claim_record` schema plus a `belief_revision_record` schema and fixture. The fixture should demonstrate conservative support-state handling, claim scope, surface identity, lifecycle state, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims without claiming that an actual contested claim has been resolved. The accompanying Lean module is intentionally narrower than a belief engine: it models finite claim-update records and promotion reviews; a valid update preserves prior evidence and revision-history references; and an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual.
 
 Those fixtures demonstrate record shape and conservative support-state handling. The Lean predicates do not show that prose claims were extracted correctly, contradictions were detected, or a substantive belief was revised.
 

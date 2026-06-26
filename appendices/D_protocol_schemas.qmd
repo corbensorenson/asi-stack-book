@@ -1266,10 +1266,14 @@ This record governs cognitive loop closure from repeated traces into parameteriz
 claim_record:
   claim_id: string
   text: string
+  claim_scope: string
   claim_label: Design rationale
   support_state: argument
+  lifecycle_state: recorded
   source_handles: []
+  surface_refs: []
   tests: []
+  uncertainty: string
   evidence_bundle:
     source_hash: string
     code_revision: string
@@ -1287,10 +1291,14 @@ claim_record:
     limitations: string
     release_notes: string
   contradictions: []
+  contradiction_state: none
   review_status: open
+  revision_history_refs: []
+  promotion_blockers: []
+  non_claims: []
 ```
 
-Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
+Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Claim scope, lifecycle state, surface refs, contradiction state, revision history, promotion blockers, and non-claims keep repeated prose from laundering confidence. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
 
 ## Evidence Transition Record
 
@@ -1318,18 +1326,24 @@ This record makes support-state movement reviewable. It names the claim, prior a
 belief_revision_record:
   revision_id: string
   claim_id: string
+  revision_action: no_change
   prior_support_state: unsupported
   new_support_state: argument
   evidence_refs: []
   contradiction_refs: []
   defeaters: []
+  residual_refs: []
   revision_reason: string
   uncertainty: string
   review_status: open
   history_refs: []
+  changed_surface_refs: []
+  non_overwrite_attestation: string
+  ledger_effect: string
+  non_claims: []
 ```
 
-This record preserves support-state changes, evidence, contradictions, defeaters, uncertainty, review state, and revision history instead of overwriting prior belief state.
+This record preserves support-state changes, revision action, evidence, contradictions, defeaters, residual refs, uncertainty, changed surfaces, review state, non-overwrite attestation, ledger effect, revision history, and non-claims instead of overwriting prior belief state.
 
 ## Proof-Carrying Claim
 
@@ -1340,15 +1354,21 @@ proof_carrying_claim:
   required_tier: procedure
   interpretation_mapping: string
   justification_artifact: string
+  artifact_validity_state: not_checked
+  semantic_adequacy: narrow
   verifier: string
   verifier_result: not_run
   limitations: []
+  consumer_requirements: []
   downgrade_rule: string
+  claim_validity_effect: no_change
+  residual_route: string
   tribunal_ref: string
   ledger_update: string
+  non_claims: []
 ```
 
-This record makes proof or justification claims tiered and auditable, including interpretation mapping, verifier result, limitations, downgrade behavior, and ledger impact.
+This record makes proof or justification claims tiered and auditable, including interpretation mapping, artifact validity state, semantic adequacy, verifier result, limitations, consumer requirements, downgrade behavior, claim-validity effect, residual route, ledger impact, and non-claims.
 
 ## Proof Contract Receipt Record
 
@@ -1429,20 +1449,29 @@ This record makes an end-to-end architecture trace inspectable without claiming 
 tribunal_review_record:
   review_id: string
   target_ref: string
+  review_state: actions_recorded
   risk_class: medium
+  dossier_boundary: string
   dossier_refs: []
+  reviewer_independence: string
   reviewer_roles: []
   adversarial_probes: []
+  cycle_cap: string
+  prior_review_refs: []
+  unchanged_evidence_guard: string
+  retrieval_expansion_policy: string
   findings: []
   evidence_refs: []
   dissent: []
   unresolved_issues: []
   verdict: revise
   required_actions: []
+  constraint_effects: []
   human_adjudication: string
+  non_claims: []
 ```
 
-This record keeps adversarial review bounded, reproducible, and actionable through dossier refs, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdicts, required actions, and adjudication state.
+This record keeps adversarial review bounded, reproducible, and actionable through review state, dossier boundary, reviewer independence note, dossier refs, reviewer roles, probes, cycle cap, repeated-review guard, retrieval-expansion policy, findings, evidence refs, dissent, unresolved issues, verdicts, required actions, constraint effects, adjudication state, and non-claims.
 
 ## Prototype Phase Record
 

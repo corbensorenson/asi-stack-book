@@ -6,31 +6,46 @@
   "required": [
     "revision_id",
     "claim_id",
+    "revision_action",
     "prior_support_state",
     "new_support_state",
     "evidence_refs",
     "contradiction_refs",
     "defeaters",
+    "residual_refs",
     "revision_reason",
     "uncertainty",
     "review_status",
-    "history_refs"
+    "history_refs",
+    "changed_surface_refs",
+    "non_overwrite_attestation",
+    "ledger_effect",
+    "non_claims"
   ],
   "properties": {
     "revision_id": { "type": "string", "minLength": 1 },
     "claim_id": { "type": "string", "minLength": 1 },
+    "revision_action": {
+      "type": "string",
+      "enum": ["promote", "downgrade", "split", "merge", "deprecate", "residualize", "escalate", "no_change"]
+    },
     "prior_support_state": { "type": "string", "minLength": 1 },
     "new_support_state": { "type": "string", "minLength": 1 },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "contradiction_refs": { "type": "array", "items": { "type": "string" } },
     "defeaters": { "type": "array", "items": { "type": "string" } },
+    "residual_refs": { "type": "array", "items": { "type": "string" } },
     "revision_reason": { "type": "string", "minLength": 1 },
     "uncertainty": { "type": "string", "minLength": 1 },
     "review_status": {
       "type": "string",
       "enum": ["open", "reviewed", "blocked", "deprecated"]
     },
-    "history_refs": { "type": "array", "items": { "type": "string" } }
+    "history_refs": { "type": "array", "items": { "type": "string" } },
+    "changed_surface_refs": { "type": "array", "items": { "type": "string" } },
+    "non_overwrite_attestation": { "type": "string", "minLength": 1 },
+    "ledger_effect": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

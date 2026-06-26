@@ -1,10 +1,18 @@
 {
   "claim_id": "claim-demo-001",
   "text": "Schema validation demonstrates record shape only, not real-world claim support.",
+  "claim_scope": "local public protocol fixture validation",
   "claim_label": "Design rationale",
   "support_state": "argument",
+  "lifecycle_state": "recorded",
   "source_handles": ["appendices/D_protocol_schemas.qmd"],
+  "surface_refs": ["appendices/D_protocol_schemas.qmd", "tests/fixtures/protocol_records/claim_record.valid.json"],
   "tests": ["scripts/validate_protocol_examples.py"],
+  "uncertainty": "Substantive architecture support is not established by this fixture.",
   "contradictions": [],
-  "review_status": "open"
+  "contradiction_state": "none",
+  "review_status": "open",
+  "revision_history_refs": ["tests/fixtures/protocol_records/belief_revision_record.valid.json"],
+  "promotion_blockers": ["no behavioral claim extractor", "no contradiction detector"],
+  "non_claims": ["fixture does not prove claim truth", "fixture does not promote support state"]
 }

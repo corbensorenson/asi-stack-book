@@ -6,28 +6,56 @@
   "required": [
     "review_id",
     "target_ref",
+    "review_state",
     "risk_class",
+    "dossier_boundary",
     "dossier_refs",
+    "reviewer_independence",
     "reviewer_roles",
     "adversarial_probes",
+    "cycle_cap",
+    "prior_review_refs",
+    "unchanged_evidence_guard",
+    "retrieval_expansion_policy",
     "findings",
     "evidence_refs",
     "dissent",
     "unresolved_issues",
     "verdict",
     "required_actions",
-    "human_adjudication"
+    "constraint_effects",
+    "human_adjudication",
+    "non_claims"
   ],
   "properties": {
     "review_id": { "type": "string", "minLength": 1 },
     "target_ref": { "type": "string", "minLength": 1 },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "admitted",
+        "dossier_built",
+        "roles_assigned",
+        "probing",
+        "findings_captured",
+        "verdict_issued",
+        "actions_recorded",
+        "blocked"
+      ]
+    },
     "risk_class": {
       "type": "string",
       "enum": ["low", "medium", "high", "critical"]
     },
+    "dossier_boundary": { "type": "string", "minLength": 1 },
     "dossier_refs": { "type": "array", "items": { "type": "string" } },
+    "reviewer_independence": { "type": "string", "minLength": 1 },
     "reviewer_roles": { "type": "array", "items": { "type": "string" } },
     "adversarial_probes": { "type": "array", "items": { "type": "string" } },
+    "cycle_cap": { "type": "string", "minLength": 1 },
+    "prior_review_refs": { "type": "array", "items": { "type": "string" } },
+    "unchanged_evidence_guard": { "type": "string", "minLength": 1 },
+    "retrieval_expansion_policy": { "type": "string", "minLength": 1 },
     "findings": { "type": "array", "items": { "type": "string" } },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "dissent": { "type": "array", "items": { "type": "string" } },
@@ -37,7 +65,9 @@
       "enum": ["accept", "revise", "reject", "escalate", "blocked"]
     },
     "required_actions": { "type": "array", "items": { "type": "string" } },
-    "human_adjudication": { "type": "string", "minLength": 1 }
+    "constraint_effects": { "type": "array", "items": { "type": "string" } },
+    "human_adjudication": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

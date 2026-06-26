@@ -9,12 +9,18 @@
     "required_tier",
     "interpretation_mapping",
     "justification_artifact",
+    "artifact_validity_state",
+    "semantic_adequacy",
     "verifier",
     "verifier_result",
     "limitations",
+    "consumer_requirements",
     "downgrade_rule",
+    "claim_validity_effect",
+    "residual_route",
     "tribunal_ref",
-    "ledger_update"
+    "ledger_update",
+    "non_claims"
   ],
   "properties": {
     "proof_claim_id": { "type": "string", "minLength": 1 },
@@ -25,15 +31,30 @@
     },
     "interpretation_mapping": { "type": "string", "minLength": 1 },
     "justification_artifact": { "type": "string", "minLength": 1 },
+    "artifact_validity_state": {
+      "type": "string",
+      "enum": ["not_checked", "passed", "failed", "narrow_pass", "mismatch", "timeout"]
+    },
+    "semantic_adequacy": {
+      "type": "string",
+      "enum": ["adequate", "narrow", "inadequate", "unknown"]
+    },
     "verifier": { "type": "string", "minLength": 1 },
     "verifier_result": {
       "type": "string",
       "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
     },
     "limitations": { "type": "array", "items": { "type": "string" } },
+    "consumer_requirements": { "type": "array", "items": { "type": "string" } },
     "downgrade_rule": { "type": "string", "minLength": 1 },
+    "claim_validity_effect": {
+      "type": "string",
+      "enum": ["no_change", "promote_within_scope", "downgrade", "block", "escalate"]
+    },
+    "residual_route": { "type": "string", "minLength": 1 },
     "tribunal_ref": { "type": "string" },
-    "ledger_update": { "type": "string", "minLength": 1 }
+    "ledger_update": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

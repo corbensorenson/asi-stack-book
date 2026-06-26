@@ -1,13 +1,19 @@
 {
   "revision_id": "belief-revision-demo-001",
   "claim_id": "claim-demo-001",
+  "revision_action": "no_change",
   "prior_support_state": "unsupported",
   "new_support_state": "argument",
   "evidence_refs": ["schemas/claim_record.schema.json"],
   "contradiction_refs": [],
   "defeaters": ["no empirical test result is present"],
+  "residual_refs": ["residual://claim-demo-001-no-behavioral-test"],
   "revision_reason": "record shape is documented, but support remains conservative",
   "uncertainty": "fixture does not adjudicate the substantive claim",
   "review_status": "open",
-  "history_refs": ["tests/fixtures/protocol_records/claim_record.valid.json"]
+  "history_refs": ["tests/fixtures/protocol_records/claim_record.valid.json"],
+  "changed_surface_refs": [],
+  "non_overwrite_attestation": "Prior support state and fixture history remain linked.",
+  "ledger_effect": "Keep claim at argument support with residual blockers visible.",
+  "non_claims": ["fixture does not run a belief-revision engine", "fixture does not resolve a contradiction"]
 }

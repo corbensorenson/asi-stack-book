@@ -4,10 +4,16 @@
   "required_tier": "procedure",
   "interpretation_mapping": "The claim concerns local schema-shape validation, not empirical truth.",
   "justification_artifact": "scripts/validate_protocol_examples.py",
+  "artifact_validity_state": "not_checked",
+  "semantic_adequacy": "narrow",
   "verifier": "local dependency-free schema fixture validator",
   "verifier_result": "not_run",
   "limitations": ["fixture alone does not prove the architecture claim", "no theorem is claimed"],
+  "consumer_requirements": ["run protocol fixture validation before citing as implemented shape check"],
   "downgrade_rule": "If validation fails, block promotion and keep support at argument or lower.",
+  "claim_validity_effect": "no_change",
+  "residual_route": "route semantic or verifier mismatch to tribunal review",
   "tribunal_ref": "",
-  "ledger_update": "No support-state promotion is implied by this fixture."
+  "ledger_update": "No support-state promotion is implied by this fixture.",
+  "non_claims": ["fixture does not prove semantic equivalence", "fixture does not discharge a theorem"]
 }

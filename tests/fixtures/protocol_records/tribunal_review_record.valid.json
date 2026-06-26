@@ -1,15 +1,24 @@
 {
   "review_id": "tribunal-demo-001",
   "target_ref": "claim-demo-001",
+  "review_state": "actions_recorded",
   "risk_class": "medium",
+  "dossier_boundary": "fixture files and protocol validator only",
   "dossier_refs": ["tests/fixtures/protocol_records/claim_record.valid.json"],
+  "reviewer_independence": "not_established_for_fixture",
   "reviewer_roles": ["logic critic", "evidence critic", "omission critic"],
   "adversarial_probes": ["check whether fixture validation is being overstated"],
+  "cycle_cap": "one fixture review cycle",
+  "prior_review_refs": [],
+  "unchanged_evidence_guard": "repeated review cannot promote without new evidence or corrected mapping",
+  "retrieval_expansion_policy": "no retrieval expansion in fixture",
   "findings": ["record shape is represented", "substantive evidence is not established"],
   "evidence_refs": ["scripts/validate_protocol_examples.py"],
   "dissent": ["No dissent recorded in this fixture."],
   "unresolved_issues": ["No actual tribunal run has occurred."],
   "verdict": "revise",
   "required_actions": ["keep support state conservative", "record validation results separately"],
-  "human_adjudication": "not_required_for_fixture_shape"
+  "constraint_effects": ["block support-state promotion from fixture alone"],
+  "human_adjudication": "not_required_for_fixture_shape",
+  "non_claims": ["fixture does not prove reviewer independence", "fixture does not prove verdict correctness"]
 }

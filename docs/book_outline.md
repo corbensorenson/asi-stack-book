@@ -1561,6 +1561,7 @@ Draft arc:
 - Mechanism: Treat belief revision as support-state change, downgrade, split, merge, residual creation, or tribunal escalation rather than promotion-only bookkeeping.
 - Mechanism: Track claim lifecycle states such as proposed, recorded, mapped, challenged, revised, downgraded, deprecated, split, merged, promoted, and retired.
 - Mechanism: Preserve ledger identity across chapters, diagrams, appendices, release notes, and reader editions so confidence cannot drift through repetition.
+- Mechanism: Record claim scope, surface refs, contradiction state, residual refs, changed surfaces, non-overwrite attestation, ledger effect, promotion blockers, and non-claims so repeated prose cannot launder confidence.
 - Handoff: Selected high-value claims flow to Spinoza for proof-, citation-, or procedure-carrying justification envelopes.
 - Interface: VCM supplies source context.
 - Interface: Spinoza verifies claims.
@@ -1580,7 +1581,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A claim-record schema and belief-revision transition example.
+- A claim-record schema and belief-revision transition example with lifecycle state, surface identity, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims.
 - Exact Appendix C claim-source mappings for `claim-ledgers-and-belief-revision.core` across Spinoza, VIEA, Coherence Exchange, Aletheia, and UAT; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
@@ -1619,6 +1620,7 @@ Draft arc:
 - Mechanism: Separate neural proposal from verifier judgment, so failed, timed-out, or mismatched verification lowers confidence or escalates instead of becoming a success story.
 - Mechanism: Match justification type to claim type: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, or tribunal review.
 - Mechanism: Record formalization mismatches, failed verification, missing artifacts, unsupported citations, and narrow successful proofs as evidence that bounds the claim rather than decorating it.
+- Mechanism: Separate artifact validity from claim validity with semantic adequacy, consumer requirements, claim-validity effect, residual route, and non-claims, so a narrow proof cannot promote a broader natural-language claim.
 - Handoff: Claims whose mapping, stakes, or evidence conflict exceed one verifier move to UAT.
 - Interface: Claim ledger stores proof status.
 - Interface: GenesisCode and Lean provide formal hooks.
@@ -1638,7 +1640,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A tiered proof-carrying claim schema with one non-philosophical invariant example.
+- A tiered proof-carrying claim schema with one non-philosophical invariant example and explicit artifact-validity, semantic-adequacy, consumer-requirement, claim-validity-effect, residual-route, and non-claim fields.
 - Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, and TreeLLM; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape only.
 - Planned Codex test: Proof artifact presence test.
@@ -1675,6 +1677,7 @@ Draft arc:
 - Mechanism: Preserve review boundaries by requiring dossier-scoped evidence, hard cycle caps, and human adjudication where risk or uncertainty remains.
 - Mechanism: Treat tribunal review as a lifecycle: admission, dossier construction, role assignment, adversarial probing, finding capture, dissent preservation, verdict, required action, and ledger or execution update.
 - Mechanism: Convert tribunal results into machine-readable constraints that can block dispatch, narrow authority, require source fetch, create residuals, or update claim state.
+- Mechanism: Preserve review state, dossier boundary, reviewer independence note, cycle cap, prior review refs, unchanged-evidence guard, retrieval-expansion policy, constraint effects, and non-claims so repeated review cannot launder an unchanged evidence set into acceptance.
 - Handoff: Accepted or blocked outcomes flow back into the claim ledger and execution layers as tier decisions, residuals, required actions, or human sign-off.
 - Interface: Spinoza consumes tribunal results.
 - Interface: Planning escalates risky nodes to tribunal.
@@ -1694,7 +1697,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A tribunal protocol for claim/artifact review with reviewer roles and output schema.
+- A tribunal protocol for claim/artifact review with review lifecycle, dossier boundary, independence note, cycle cap, repeated-review guard, retrieval-expansion policy, reviewer roles, constraint effects, and output schema.
 - Exact Appendix C claim-source mappings for `unified-adaptive-tribunal-and-adversarial-review.core` across UAT, Spinoza, Coherence Exchange, Talos, and Verification Bandwidth; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Implemented protocol validation: `tribunal_review_record` fixture validates public record shape only.
 - Planned Codex test: Adversarial review coverage test.
