@@ -978,26 +978,33 @@ This record distinguishes context admission from context adequacy. It scopes the
 ```yaml
 semantic_atom:
   atom_id: string
+  atom_state: proposed
   source_plan_ref: string
   intent: string
   obligation_refs: []
+  obligation_status: []
   inputs: []
   outputs: []
   constraints: []
   dependencies: []
   assumptions: []
   authority_required: []
+  ir_validity_state: not_checked
   validator: string
   validator_status: not_run
   target: string
+  lowering_state: not_lowered
   target_artifact_ref: string
   lowering_receipt: string
   repair_scope: same_atom
+  repair_ledger_refs: []
+  source_refs: []
+  support_state_effect: record_shape_only
   residuals: []
   non_claims: []
 ```
 
-This record is the small unit of cognitive compilation: one preserved intent fragment with source-plan refs, obligation refs, inputs, outputs, constraints, dependencies, assumptions, authority requirements, validator status, target artifact, lowering receipt, bounded repair target, residuals, and non-claims.
+This record is the small unit of cognitive compilation: one preserved intent fragment with atom state, source-plan refs, obligation refs/status, inputs, outputs, constraints, dependencies, assumptions, authority requirements, IR validity state, validator status, lowering state, target artifact, lowering receipt, bounded repair target, repair-ledger refs, source refs, support-state effect, residuals, and non-claims.
 
 ## Semantic Node Record
 

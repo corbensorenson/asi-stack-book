@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal semantic ir lowering gates
+
+- Strengthened the cognitive-compilation boundary: semantic atom records now validate atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims in addition to source-plan refs, dependencies, validators, target artifact refs, lowering receipts, and repair scope. Updated the Cognitive Compilation chapter, outline, protocol appendix, schema, and fixture so future compiler traces can distinguish parsed/typed/lowered/validated/repaired/blocked states from source-plan parsing, compiler correctness, target lowering, localized-repair behavior, artifact validator coverage, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal stack contract traceability gates
 
 - Strengthened the opening stack contract boundary: layer boundary records now validate chapter refs, traceability state, integration decision, and promotion blockers in addition to lifecycle state, owner, handoff protocol, contract refs, change policy, source refs, support-state effect, and non-claims. Updated the opening chapter, outline, protocol appendix, schema, and fixture so future new-paper and chapter-reorganization runs can decide whether a source updates an existing layer, creates a new contract, merges into an existing chapter, remains source-note-only, or blocks promotion without claiming source-to-layer traceability audits, claim-support audits, implementation evidence, support-state promotion, proof-status promotion, reader artifact, or audio artifact.

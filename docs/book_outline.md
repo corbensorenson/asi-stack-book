@@ -1263,7 +1263,7 @@ Draft arc:
 - Mechanism: Perform incremental repair over IR rather than re-prompting from scratch.
 - Mechanism: Compile IR into jobs, code, schemas, or documents.
 - Mechanism: emit lowering receipts that bind source-plan obligations, semantic atoms, target artifacts, validators, assumptions, and residuals.
-- Mechanism: Preserve source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims so syntactic artifact acceptance cannot stand in for obligation-preserving lowering.
+- Mechanism: Preserve atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims so syntactic artifact acceptance cannot stand in for obligation-preserving lowering.
 - Interface: Planning produces or consumes IR.
 - Interface: Execution receives target-specific artifacts.
 - Interface: Verification checks IR-to-output preservation.
@@ -1286,7 +1286,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic IR sketch and compile/verify/repair loop for one artifact type.
-- Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims.
+- Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, and VIEA intent-to-artifact ledger context; all five local mappings now have reviewed passage references. Support remains `argument` pending compiler traces, source-plan parsing, target-lowering preservation, validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
 - Planned Codex test: Requirement preservation test.
 - Planned Codex test: Incremental repair regression test.

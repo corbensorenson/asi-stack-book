@@ -5,46 +5,87 @@
   "type": "object",
   "required": [
     "atom_id",
+    "atom_state",
     "source_plan_ref",
     "intent",
     "obligation_refs",
+    "obligation_status",
     "inputs",
     "outputs",
     "constraints",
     "dependencies",
     "assumptions",
     "authority_required",
+    "ir_validity_state",
     "validator",
     "validator_status",
     "target",
+    "lowering_state",
     "target_artifact_ref",
     "lowering_receipt",
     "repair_scope",
+    "repair_ledger_refs",
+    "source_refs",
+    "support_state_effect",
     "residuals",
     "non_claims"
   ],
   "properties": {
     "atom_id": { "type": "string", "minLength": 1 },
+    "atom_state": {
+      "type": "string",
+      "enum": ["proposed", "parsed", "typed", "lowered", "validated", "failed", "repaired", "blocked", "retired"]
+    },
     "source_plan_ref": { "type": "string", "minLength": 1 },
     "intent": { "type": "string", "minLength": 1 },
     "obligation_refs": { "type": "array", "items": { "type": "string" } },
+    "obligation_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["obligation_ref", "status", "notes"],
+        "properties": {
+          "obligation_ref": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": ["preserved", "refined", "split", "deferred", "rejected", "unknown", "blocked"]
+          },
+          "notes": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
     "inputs": { "type": "array", "items": { "type": "string" } },
     "outputs": { "type": "array", "items": { "type": "string" } },
     "constraints": { "type": "array", "items": { "type": "string" } },
     "dependencies": { "type": "array", "items": { "type": "string" } },
     "assumptions": { "type": "array", "items": { "type": "string" } },
     "authority_required": { "type": "array", "items": { "type": "string" } },
+    "ir_validity_state": {
+      "type": "string",
+      "enum": ["not_checked", "well_formed", "ill_formed", "blocked", "not_applicable"]
+    },
     "validator": { "type": "string", "minLength": 1 },
     "validator_status": {
       "type": "string",
       "enum": ["not_run", "passed", "failed", "blocked", "residual"]
     },
     "target": { "type": "string", "minLength": 1 },
+    "lowering_state": {
+      "type": "string",
+      "enum": ["not_lowered", "lowered", "failed", "blocked", "not_applicable"]
+    },
     "target_artifact_ref": { "type": "string", "minLength": 1 },
     "lowering_receipt": { "type": "string", "minLength": 1 },
     "repair_scope": {
       "type": "string",
       "enum": ["same_atom", "dependent_atoms", "whole_graph", "human_review"]
+    },
+    "repair_ledger_refs": { "type": "array", "items": { "type": "string" } },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "record_shape_only", "argument_only", "eligible_for_trace_review", "blocks_promotion"]
     },
     "residuals": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }

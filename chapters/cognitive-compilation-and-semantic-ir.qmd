@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All five assigned local raw-cache mappings are passage-reviewed; support remains argument until compiler traces, target lowering, localized repair, or artifact validators exist."
-  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; the semantic_atom fixture now records atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims. No behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Source loading state | source notes and passage-reviewed local raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Test state | `semantic_atom.valid.json` passes protocol fixture validation; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; source-plan parsing, target lowering, localized repair, and artifact validators remain planned. |
+| Test state | `semantic_atom.valid.json` passes protocol fixture validation with atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; source-plan parsing, target lowering, localized repair, and artifact validators remain planned. |
 
 ## Drafting guardrail
 
@@ -102,7 +102,7 @@ flowchart LR
 
 The compiler boundary represents requirements, semantics, dependencies, artifacts, validators, authority requirements, and target constraints explicitly. Incremental repair then operates over IR nodes rather than re-prompting from scratch. Lowering can produce jobs, code, schemas, documents, or proof targets, but every target artifact should preserve the obligations that made the node necessary.
 
-The key object is the semantic atom. A useful atom names its purpose, inputs, outputs, constraints, dependencies, authority requirements, validator, target artifact, and repair policy. A collection of atoms becomes a DAG. The DAG is what planning schedules, VCM loads context for, execution turns into jobs, and the artifact graph audits.
+The key object is the semantic atom. A useful atom names its state, purpose, inputs, outputs, constraints, dependencies, obligation status, authority requirements, IR validity state, validator state, lowering state, target artifact, repair policy, repair ledger refs, source refs, and support-state effect. A collection of atoms becomes a DAG. The DAG is what planning schedules, VCM loads context for, execution turns into jobs, and the artifact graph audits.
 
 A second object is the lowering receipt. A receipt records which semantic atoms produced a target artifact, which obligations were preserved, which assumptions were introduced, which validators passed or failed, and which residuals remain. Without that receipt, a generated file or chapter can look complete while hiding the path by which it lost its obligations.
 
@@ -117,21 +117,28 @@ The interface for Cognitive Compilation and Semantic IR is a typed DAG, not a pr
 Minimum semantic-atom fields:
 
 - `atom_id`
+- `atom_state`
 - `source_plan_ref`
 - `intent`
 - `obligation_refs`
+- `obligation_status`
 - `inputs`
 - `outputs`
 - `constraints`
 - `dependencies`
 - `assumptions`
 - `authority_required`
+- `ir_validity_state`
 - `validator`
 - `validator_status`
 - `target`
+- `lowering_state`
 - `target_artifact_ref`
 - `lowering_receipt`
 - `repair_scope`
+- `repair_ledger_refs`
+- `source_refs`
+- `support_state_effect`
 - `residuals`
 - `non_claims`
 
@@ -139,7 +146,7 @@ The planner owns graph formation and scheduling. The compiler owns preservation 
 
 The boundary should also distinguish four validity questions: whether the source plan is accepted, whether the semantic IR is well formed, whether the lowering is obligation-preserving, and whether the target artifact satisfies its validators. A failure in any one of those states should not be reported as a successful compile.
 
-The public semantic-atom schema now records source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims. That is still only a record shape. It gives later compiler traces a stable place to show which obligations survived lowering, which assumptions were introduced, and which validator state blocks acceptance.
+The public semantic-atom schema now records atom state, source-plan refs, obligation refs, obligation status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims. That is still only a record shape. It gives later compiler traces a stable place to show which obligations survived lowering, which assumptions were introduced, which validator state blocks acceptance, and which repair ledger must change before promotion.
 
 ## Invariants
 
@@ -167,7 +174,7 @@ A semantic IR sketch and compile/verify/repair loop for one artifact type.
 
 The smallest useful implementation is a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
 
-The current schema records one semantic atom shape with obligation refs, assumptions, validator status, target artifact ref, lowering receipt, residuals, and non-claims. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
+The current schema records one semantic atom shape with atom state, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact ref, lowering receipt, repair-ledger refs, source refs, support-state effect, residuals, and non-claims. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
 
 The next useful fixture set is a tiny source plan, its semantic-atom DAG, one lowered artifact, one passing validator receipt, one failing validator receipt, and one localized repair that updates the ledger. That would test the control surface before claiming an autonomous compiler.
 
@@ -175,7 +182,7 @@ The next useful fixture set is a tiny source plan, its semantic-atom DAG, one lo
 
 | Test | Purpose | Status |
 |---|---|---|
-| Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares intent, inputs, outputs, constraints, dependencies, authority, validator, target, and repair scope. | implemented by protocol validation; run in this pass |
+| Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares atom state, intent, obligation status, inputs, outputs, constraints, dependencies, authority, IR validity state, validator state, lowering state, target, repair scope, repair-ledger refs, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | planned; not run |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | planned; not run |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | planned; not run |
