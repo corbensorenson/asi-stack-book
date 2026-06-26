@@ -1,6 +1,9 @@
 {
   "release_id": "2026-06-24-v1-improvement-569129a",
+  "release_state": "pages_deployed",
   "source_commit": "569129a",
+  "audience_profiles": ["ai_agents", "human_researchers"],
+  "canonical_scope": "Public live-book release record for the canonical Quarto/GitHub Pages surface; not a reader, ebook, document, or audio release.",
   "rendered_site": "_site/index.html and GitHub Pages deployment for commit 569129a",
   "scaffold_sync": "python3 scripts/sync_scaffold.py (pass)",
   "proof_manifest_sync": "python3 scripts/sync_proof_manifest.py --check (pass)",
@@ -26,6 +29,30 @@
     "appendices/F_changelog.qmd"
   ],
   "public_url": "https://corbensorenson.github.io/asi-stack-book/?v=569129a",
+  "derived_artifacts": [
+    {
+      "artifact_class": "live_site",
+      "status": "published",
+      "path_or_uri": "https://corbensorenson.github.io/asi-stack-book/?v=569129a",
+      "review_status": "pass",
+      "notes": "GitHub Pages deployment and selected public pages were checked for this live-book commit."
+    },
+    {
+      "artifact_class": "reader_format",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "This live-book release record does not claim EPUB, PDF, DOCX, or reader HTML artifacts."
+    },
+    {
+      "artifact_class": "audio_artifact",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "This live-book release record does not claim MP3, M4B, or audio-embedded EPUB artifacts."
+    }
+  ],
+  "support_state_effect": "release_hygiene_only",
   "residuals": [
     "Chapter core claims remain at argument support unless separately promoted by source-to-claim mapping, prototype evidence, tests, or external literature.",
     "Fifty-six proof targets remain planned across schema, process, and research routes.",

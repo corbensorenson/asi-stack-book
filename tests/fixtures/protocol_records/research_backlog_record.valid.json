@@ -1,14 +1,28 @@
 {
   "backlog_id": "research-backlog-demo-001",
+  "triage_state": "mapped",
   "source_or_gap": "Claim-to-source mapping for Appendix C",
   "access_state": "source_note_available",
   "assigned_chapters": ["open-research-agenda-and-bibliography-plan"],
+  "chapter_action_policy": "Update the existing research-agenda chapter because the gap concerns evidence discipline across the whole book rather than a distinct new architecture layer.",
+  "boundary_decision_rationale": "The item affects source-to-claim bookkeeping and external citation normalization; it should not create a duplicate chapter for each source family.",
   "source_note_state": "available",
   "claim_mapping_state": "partial",
   "passage_review_state": "partial",
   "external_literature_need": ["direct citation checks for external literature named in source documents"],
   "proof_or_test_backlog": ["source-derived claim requires source note or equivalent ingested-source artifact"],
+  "evidence_transition_precondition": [
+    "exact claim-to-source mapping recorded",
+    "direct citation metadata checked before external-literature support",
+    "accepted Appendix C evidence transition recorded before support promotion"
+  ],
   "insertion_decision": "update_existing_chapter",
+  "source_refs": ["docs/source_evidence_audit.md", "appendices/C_claim_evidence_matrix.qmd"],
+  "support_state_effect": "backlog_only",
   "residuals": ["Appendix C remains claim-level argument support until mappings are recorded"],
-  "next_action": "Create claim-to-source mapping records before support-state promotion."
+  "next_action": "Create claim-to-source mapping records before support-state promotion.",
+  "non_claims": [
+    "does not claim external-literature normalization is complete",
+    "does not promote any source-derived support state"
+  ]
 }

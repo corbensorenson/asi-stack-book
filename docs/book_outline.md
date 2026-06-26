@@ -3494,7 +3494,7 @@ Draft arc:
 - Mechanism: Treat conversation-mined packets as author-intent, terminology, lineage, and recovery context only, not as source-derived evidence.
 - Mechanism: Maintain distinct live AI/research scaffolding, frozen research releases, stripped reader editions, companion notes, and audio-script workspaces derived from one validated source state.
 - Mechanism: Require meaningful structural, evidence, proof, schema, source, or publication changes to sync scaffold, sync proof manifest, validate, render, update changelog, commit, push, and verify the public site.
-- Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, public URL if published, and explicit non-claims.
+- Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims.
 - Mechanism: preserve three-audience derivation discipline: AI/research scaffold, human-research live site, and stripped reader/audio editions all derive from one governed source state.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
@@ -3521,7 +3521,7 @@ Draft deliverables:
 
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and public release records.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
-- Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape only; render and validation checks prove publication hygiene, not manuscript quality or claim truth.
+- Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape, release state, audience scope, canonical scope, derived-artifact boundaries, support-state effect, and non-claims only; render and validation checks prove publication hygiene, not manuscript quality, claim truth, reader artifact production, or audio artifact production.
 - A three-audience edition profile with live, research, reader, and audio paths; a reader-edition source generator; an audio-script generator; and an edition-release record schema for future EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB accountability.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
@@ -3555,7 +3555,7 @@ Draft arc:
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
 - Mechanism: Maintain source inventory, source notes, generated bibliography, chapter source queues, and direct-citation status before using a source as support.
-- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence.
+- Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims.
 - Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
@@ -3582,7 +3582,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A research backlog record schema with external literature areas, source-note state, claim-mapping state, proof/test backlog, and insertion/merge rules.
-- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape only; external-literature normalization, direct citation checks, and new-paper triage rehearsals remain incomplete.
+- Implemented repository-level fixture: `research_backlog_record.valid.json` validates backlog-record shape, triage state, chapter action policy, boundary rationale, evidence-transition preconditions, source refs, support-state effect, and non-claims only; external-literature normalization, direct citation checks, evidence transitions, and new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
 - Planned Codex test: New-paper triage scenario.

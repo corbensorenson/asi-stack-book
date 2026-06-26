@@ -5,26 +5,49 @@
   "type": "object",
   "required": [
     "backlog_id",
+    "triage_state",
     "source_or_gap",
     "access_state",
     "assigned_chapters",
+    "chapter_action_policy",
+    "boundary_decision_rationale",
     "source_note_state",
     "claim_mapping_state",
     "passage_review_state",
     "external_literature_need",
     "proof_or_test_backlog",
+    "evidence_transition_precondition",
     "insertion_decision",
+    "source_refs",
+    "support_state_effect",
     "residuals",
-    "next_action"
+    "next_action",
+    "non_claims"
   ],
   "properties": {
     "backlog_id": { "type": "string", "minLength": 1 },
+    "triage_state": {
+      "type": "string",
+      "enum": [
+        "discovered",
+        "inventoried",
+        "source_noted",
+        "mapped",
+        "integrated",
+        "deferred",
+        "blocked",
+        "rejected",
+        "retired"
+      ]
+    },
     "source_or_gap": { "type": "string", "minLength": 1 },
     "access_state": {
       "type": "string",
       "enum": ["available", "source_note_available", "connector_required", "recovery_required", "missing", "private_restricted"]
     },
     "assigned_chapters": { "type": "array", "items": { "type": "string" } },
+    "chapter_action_policy": { "type": "string", "minLength": 1 },
+    "boundary_decision_rationale": { "type": "string", "minLength": 1 },
     "source_note_state": {
       "type": "string",
       "enum": ["none", "planned", "available", "needs_update"]
@@ -39,12 +62,26 @@
     },
     "external_literature_need": { "type": "array", "items": { "type": "string" } },
     "proof_or_test_backlog": { "type": "array", "items": { "type": "string" } },
+    "evidence_transition_precondition": { "type": "array", "items": { "type": "string" } },
     "insertion_decision": {
       "type": "string",
       "enum": ["update_existing_chapter", "propose_new_chapter", "appendix_only", "defer", "reject_duplicate", "blocked"]
     },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "backlog_only",
+        "argument_only",
+        "eligible_for_source_review",
+        "eligible_for_evidence_transition",
+        "blocks_promotion"
+      ]
+    },
     "residuals": { "type": "array", "items": { "type": "string" } },
-    "next_action": { "type": "string", "minLength": 1 }
+    "next_action": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

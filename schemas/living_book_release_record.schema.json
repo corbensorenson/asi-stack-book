@@ -5,7 +5,10 @@
   "type": "object",
   "required": [
     "release_id",
+    "release_state",
     "source_commit",
+    "audience_profiles",
+    "canonical_scope",
     "rendered_site",
     "scaffold_sync",
     "proof_manifest_sync",
@@ -13,12 +16,34 @@
     "validation_status",
     "changelog_refs",
     "public_url",
+    "derived_artifacts",
+    "support_state_effect",
     "residuals",
     "non_claims"
   ],
   "properties": {
     "release_id": { "type": "string", "minLength": 1 },
+    "release_state": {
+      "type": "string",
+      "enum": [
+        "working_tree_fixture",
+        "local_validated",
+        "pushed",
+        "pages_deployed",
+        "tagged_major_version",
+        "blocked",
+        "retired"
+      ]
+    },
     "source_commit": { "type": "string", "minLength": 1 },
+    "audience_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["ai_agents", "human_researchers", "interested_humans"]
+      }
+    },
+    "canonical_scope": { "type": "string", "minLength": 1 },
     "rendered_site": { "type": "string", "minLength": 1 },
     "scaffold_sync": { "type": "string", "minLength": 1 },
     "proof_manifest_sync": { "type": "string", "minLength": 1 },
@@ -29,6 +54,51 @@
     },
     "changelog_refs": { "type": "array", "items": { "type": "string" } },
     "public_url": { "type": "string", "minLength": 1 },
+    "derived_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_class", "status", "path_or_uri", "review_status", "notes"],
+        "properties": {
+          "artifact_class": {
+            "type": "string",
+            "enum": [
+              "live_site",
+              "research_snapshot",
+              "reader_source",
+              "reader_format",
+              "audio_script",
+              "audio_artifact",
+              "companion_material"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_applicable",
+              "not_attempted",
+              "planned",
+              "generated",
+              "rendered",
+              "reviewed",
+              "published",
+              "failed"
+            ]
+          },
+          "path_or_uri": { "type": "string" },
+          "review_status": {
+            "type": "string",
+            "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+          },
+          "notes": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "release_hygiene_only", "eligible_for_claim_review", "blocks_promotion"]
+    },
     "residuals": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },

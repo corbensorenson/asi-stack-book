@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all seven assigned sources, including source-note-only MoECOT/Road To AGI context; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
-  - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, manifest linkage, and structural-update sync predicates only; they do not prove manuscript quality, source interpretation quality, editorial completeness, or GitHub Pages availability."
+  - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest linkage, and structural-update sync predicates only; they do not prove manuscript quality, source interpretation quality, editorial completeness, reader artifact production, audio artifact production, or GitHub Pages availability."
   - "BugBrain is used only as cautionary implementation-lineage context; no build, emulation, flash, bridge, hardware, AGI, or consciousness claim is promoted."
   - "No support-state promotion, manuscript-quality result, rendered-site quality result, reader/audio artifact, MoECOT runtime artifact, benchmark result, autonomous loop-closure implementation, or raw source publication is implied by this drafting pass."
 ---
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`; source-note-only or connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
-| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
+| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; live release records now carry audience scope, derived-artifact boundaries, and support-state effect; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
 
 ## Drafting guardrail
 
@@ -79,7 +79,7 @@ Appendix C now records seven passage-reviewed mappings for this claim. The revie
 | Ratchet and artifact-discipline sources: `benchmaxxing`, `viea` | Benchmark lifecycle, residual reporting, ledgers, regression preservation, anti-Goodhart safeguards, durable artifacts, claim support states, release manifests, feedback records, and workflow-to-tool pressure. | No manuscript-quality, editorial-completeness, source-interpretation-quality, rendered-site-quality, VIEA-runtime, benchmark-validity, or chapter-truth claim. |
 | Procedural and implementation-lineage sources: `cognitive_loop_closure`, `bugbrain` | Repeated workflow proceduralization, tool cards, verification, routing, monitoring, retirement, and explicit build/test/bridge/training documentation discipline. | No autonomous loop-closure implementation, trajectory-mining run, tool-synthesis harness, book-maintenance router, BugBrain build, emulation, flash, bridge, hardware result, AGI result, or consciousness result. |
 | Connector/recovery runtime context: `moecot`, `moecot_md`, `road_to_agi` | Runtime-reference ledgers, readiness gates, replay, promotion blockers, terminology normalization, remaining-work categories, and unreproduced source-reported status boundaries. | Source-note-only or variant use; no MoECOT runtime artifact, reproduced command, benchmark result, readiness result, independent corroboration, or raw source publication. |
-| Local release/proof artifacts: `living_book_release_record.valid.json`, `AsiStackProofs.LivingBook`, validation commands, changelog entries, GitHub Pages deployment | Release-record shape, manifest/proof/scaffold sync discipline, public release records, and finite record-level structural predicates. | No manuscript-quality proof, source-correctness proof, editorial judgment proof, live-site availability proof beyond observed checks, or reader/audio artifact. |
+| Local release/proof artifacts: `living_book_release_record.valid.json`, `AsiStackProofs.LivingBook`, validation commands, changelog entries, GitHub Pages deployment | Release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest/proof/scaffold sync discipline, public release records, and finite record-level structural predicates. | No manuscript-quality proof, source-correctness proof, editorial judgment proof, live-site availability proof beyond observed checks, or reader/audio artifact. |
 
 ## Mechanism
 
@@ -97,7 +97,7 @@ Conversation-mined material has a bounded role: it can preserve author intent, t
 
 The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. Major reader and audio editions are downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
 
-The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
+The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
 
 ## Operating loop
 
@@ -131,7 +131,7 @@ When an AI agent writes from the outline, the outline should behave like a build
 - Tests feed support states.
 - Releases feed GitHub Pages.
 
-The interface is the Living Book Release Record: source commit, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark.
+The interface is the Living Book Release Record: release state, source commit, audience profile, canonical scope, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark or a human-consumption bundle.
 
 The reader-edition interface needs the same discipline: edition profile, source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims. A format listed in a profile is not a release artifact until that record exists.
 
@@ -159,9 +159,9 @@ The subtle failure is publication laundering. A polished reader artifact, render
 
 ## Minimal implementation
 
-The smallest useful implementation is the current public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, a living-book release fixture, and public release records.
+The smallest useful implementation is the current public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, a living-book release fixture, and public release records that distinguish live-site publication from reader, ebook, document, companion, and audio derivatives.
 
-The current fixture and public release records validate release-record shape only. A release record does not prove manuscript completeness, source accuracy, or claim truth.
+The current fixture and public release records validate release-record shape, audience scope, derived-artifact status, and release-hygiene support effects only. A release record does not prove manuscript completeness, source accuracy, claim truth, reader-edition review, or audio production.
 
 The next useful fixture set is a change-packet record: one chapter edit with source IDs, one outline-only change, one proof-manifest shift, one reader-edition generation record, and one blocked release with residuals. That would make the living process auditable without claiming final manuscript quality.
 
@@ -169,7 +169,7 @@ The next useful fixture set is a change-packet record: one chapter edit with sou
 
 | Test | Purpose | Status |
 |---|---|---|
-| Living book release record validation | Validate that release records name commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Living book release record validation | Validate that release records name release state, audience profile, canonical scope, commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Quarto render check | Check that the public book renders locally to HTML. | implemented; run in this pass |
 | Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; run in this pass |
 | Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually in this pass |

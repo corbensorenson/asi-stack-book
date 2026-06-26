@@ -1753,7 +1753,10 @@ This record keeps the prototype roadmap evidence-aware by linking each phase to 
 ```yaml
 living_book_release_record:
   release_id: string
+  release_state: local_validated
   source_commit: string
+  audience_profiles: []
+  canonical_scope: string
   rendered_site: string
   scaffold_sync: string
   proof_manifest_sync: string
@@ -1761,11 +1764,13 @@ living_book_release_record:
   validation_status: pass
   changelog_refs: []
   public_url: string
+  derived_artifacts: []
+  support_state_effect: release_hygiene_only
   residuals: []
   non_claims: []
 ```
 
-This record separates publication hygiene from claim truth. It records commit, render target, scaffold/proof sync, validation commands/status, changelog refs, public URL, residuals, and non-claims for a living-book release.
+This record separates publication hygiene from claim truth and live publication from downstream human-consumption artifacts. It records release state, commit, audience profiles, canonical scope, render target, scaffold/proof sync, validation commands/status, changelog refs, public URL, derived-artifact status, support-state effect, residuals, and non-claims for a living-book release.
 
 ## Edition Release Record
 
@@ -1845,17 +1850,24 @@ This record keeps Project Theseus references public-safe by separating source no
 ```yaml
 research_backlog_record:
   backlog_id: string
+  triage_state: mapped
   source_or_gap: string
   access_state: source_note_available
   assigned_chapters: []
+  chapter_action_policy: string
+  boundary_decision_rationale: string
   source_note_state: available
   claim_mapping_state: partial
   passage_review_state: partial
   external_literature_need: []
   proof_or_test_backlog: []
+  evidence_transition_precondition: []
   insertion_decision: update_existing_chapter
+  source_refs: []
+  support_state_effect: backlog_only
   residuals: []
   next_action: string
+  non_claims: []
 ```
 
-This record turns future-source and missing-evidence management into a reviewable backlog item. It records access state, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, insertion decision, residuals, and next action.
+This record turns future-source and missing-evidence management into a reviewable backlog item. It records triage state, access state, chapter action policy, boundary-decision rationale, source-note state, claim mapping, passage-level review state, external literature work, proof/test backlog, evidence-transition preconditions, insertion decision, source refs, support-state effect, residuals, next action, and non-claims.

@@ -1,6 +1,9 @@
 {
   "release_id": "living-book-release-demo-001",
+  "release_state": "local_validated",
   "source_commit": "local-working-tree",
+  "audience_profiles": ["ai_agents", "human_researchers"],
+  "canonical_scope": "Fixture for live-book publication hygiene; not a tagged research, reader, or audio release.",
   "rendered_site": "_site/index.html",
   "scaffold_sync": "python3 scripts/sync_scaffold.py",
   "proof_manifest_sync": "python3 scripts/sync_proof_manifest.py",
@@ -16,6 +19,30 @@
     "appendices/F_changelog.qmd"
   ],
   "public_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "derived_artifacts": [
+    {
+      "artifact_class": "live_site",
+      "status": "rendered",
+      "path_or_uri": "_site/index.html",
+      "review_status": "not_required",
+      "notes": "Fixture records local HTML render shape only."
+    },
+    {
+      "artifact_class": "reader_format",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "Fixture does not claim EPUB, PDF, DOCX, or reader HTML artifacts."
+    },
+    {
+      "artifact_class": "audio_artifact",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "Fixture does not claim MP3, M4B, or audio-embedded EPUB artifacts."
+    }
+  ],
+  "support_state_effect": "release_hygiene_only",
   "residuals": [
     "fixture does not represent a signed release artifact",
     "GitHub Pages deployment must still be checked per commit"
