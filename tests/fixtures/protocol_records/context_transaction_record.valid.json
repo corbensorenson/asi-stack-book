@@ -8,8 +8,13 @@
   "branch_policy": "copy-on-write for drafting representations",
   "taint_labels": ["no-raw-private-source"],
   "deletion_obligations": ["remove derived page if source note is withdrawn"],
+  "declassification_refs": [],
+  "derivative_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"],
   "contradiction_refs": [],
+  "materialization_state": "materializable",
   "closure_state": "satisfied",
   "faults": [],
-  "audit_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"]
+  "audit_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"],
+  "replay_boundary": "Fixture records the declared transaction shape only; it does not replay a memory store.",
+  "non_claims": ["does not prove branch isolation", "does not prove deletion closure over a live store", "does not prove leak prevention"]
 }

@@ -242,13 +242,18 @@ context_transaction_record:
   branch_policy: string
   taint_labels: []
   deletion_obligations: []
+  declassification_refs: []
+  derivative_refs: []
   contradiction_refs: []
+  materialization_state: materializable
   closure_state: satisfied
   faults: []
   audit_refs: []
+  replay_boundary: string
+  non_claims: []
 ```
 
-This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, deletion closure, taint propagation, contradictions, faults, and audit.
+This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, deletion closure, taint propagation, declassification references, derivatives, materialization state, contradictions, faults, replay boundary, non-claims, and audit.
 
 ## Costed Route Record
 
@@ -808,6 +813,8 @@ semantic_page_certificate:
   cell_type: summary
   source_bindings: []
   derived_from: []
+  transaction_refs: []
+  artifact_refs: []
   representation_kind: string
   loss_contract: string
   omissions: []
@@ -815,10 +822,12 @@ semantic_page_certificate:
   permitted_uses: []
   validity_window: string
   verification_state: adequate_for_drafting
+  revocation_state: active
   residual_risks: []
+  non_claims: []
 ```
 
-This record keeps derived context cells honest by preserving provenance, representation loss, omissions, authority ceiling, permitted uses, validity, verification state, and residual risks.
+This record keeps derived context cells honest by preserving provenance, transaction links, artifact links, representation loss, omissions, authority ceiling, permitted uses, validity, verification state, revocation state, residual risks, and non-claims.
 
 ## Compression Receipt
 
@@ -1111,17 +1120,23 @@ artifact_graph_record:
   parent_job: string
   source_refs: []
   context_refs: []
+  context_transaction_refs: []
+  semantic_certificate_refs: []
   tool_refs: []
   claim_refs: []
   test_refs: []
   audit_events: []
   replay_metadata: string
+  replay_grade: not_run
   environment_assumptions: []
   provenance_status: partial
   replay_limits: []
+  evidence_gate: string
+  residuals: []
+  non_claims: []
 ```
 
-This record turns outputs into durable artifacts with provenance, audit, replay, claim, and test links.
+This record turns outputs into durable artifacts with provenance, context-transaction links, semantic-certificate links, audit, replay grade, claim/test links, evidence gate, residuals, and non-claims.
 
 ## Runtime Adapter Invocation
 

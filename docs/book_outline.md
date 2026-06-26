@@ -1367,15 +1367,18 @@ Draft arc:
 - Mechanism: Use task-relative representation graphs instead of one linear compression ladder.
 - Mechanism: Distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference so each representation kind preserves its use boundary.
 - Mechanism: Treat certificate updates, revocations, stale certificates, and attempted use outside the certificate as auditable state transitions rather than prose edits.
+- Mechanism: link certificates to context transactions and artifact records so derived representations keep their creation/update boundary when they travel into plans, jobs, evidence, or reader editions.
 - Interface: Spinoza consumes claim/evidence cells.
 - Interface: Planning consumes constraints and decisions.
 - Interface: Execution receives only permitted representations.
+- Interface: Artifact graphs consume certificate references when context-derived representations become durable work products.
 
 Primary invariants:
 
 - Authority labels survive summarization.
 - Loss contracts are explicit.
 - A derived cell points back to source bindings.
+- A derived cell points back to the transaction or artifact record that created the representation when that record exists.
 
 Failure modes to cover:
 
@@ -1386,7 +1389,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic-page schema with certificate fields and example source-to-summary derivation.
-- Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape only.
+- Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape, transaction refs, artifact refs, revocation state, and non-claims only.
 - Implemented Lean proof target: valid derived cells carry source bindings, loss contracts, and permitted-use declarations.
 - Implemented Lean proof target: summaries respecting source cells cannot increase source authority ceilings.
 - Exact Appendix C claim-source mappings for the Semantic Pages claim across VCM public-v1 context cells/semantic pages/representation certificates, Verification Bandwidth summary-loss pressure, Spinoza proof/citation/procedure-carrying claim records, Context Engineer structured mission briefs and clearance fields, and editable VCM refinement context; the four local mappings (`vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, conformance artifacts, certificate checker results, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending paired source/derived cells, summary-fidelity tests, omission-completeness checks, certificate truthfulness tests, open-domain formalization evidence, or accepted evidence transitions.
@@ -1425,15 +1428,18 @@ Draft arc:
 - Mechanism: Propagate taint and deletion obligations through derived context.
 - Mechanism: Distinguish view construction from view use: mounts, snapshot, clearance, branch, materialization, actual reads, derivatives, propagated taint, and deletion/declassification obligations.
 - Mechanism: Fail closed with typed faults when mount visibility, snapshot coherence, taint propagation, or deletion closure cannot be established.
+- Mechanism: record materialization state, derivative refs, declassification refs, replay boundary, and non-claims before a context view can feed a durable artifact.
 - Interface: Planning receives consistent views.
 - Interface: Security labels sensitive mounts.
 - Interface: Evidence records contradictions and supersession.
+- Interface: Artifact graphs reference context transactions so work products can recover the exact memory view they consumed.
 
 Primary invariants:
 
 - Snapshots are consistent.
 - Taint propagates to derivatives.
 - Deletion closure is enforced or faulted.
+- Materialization state is explicit before a view is used by a downstream artifact or job.
 
 Failure modes to cover:
 
@@ -1444,7 +1450,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A transaction model for context reads, writes, branches, and deletion closure.
-- Implemented protocol validation: `context_transaction_record` fixture validates public record shape only.
+- Implemented protocol validation: `context_transaction_record` fixture validates public record shape, derivative refs, declassification refs, materialization state, replay boundary, and non-claims only.
 - Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
 - Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Exact Appendix C claim-source mappings for the Context Transactions claim across VCM public-v1 transaction/snapshot/invalidation/deletion semantics, Ladon/Manhattan sensitive-compartment and handle boundaries, Context Engineer clearance-labeled mission contexts and Digital SCIF lifecycle, Black Hole Context Manager memory-budget/drift/freeze/evict patterns, and editable VCM refinement context; the four local mappings (`vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, memory-store artifacts, conformance results, VCM-Bench records, or external corroboration are imported or inspected. Support remains `argument` pending memory-store behavior, mount-visibility tests, branch-isolation checks, deletion-closure harnesses, side-channel validation, context-manager execution, benchmark reproduction, or accepted evidence transitions.
@@ -1780,16 +1786,20 @@ Draft arc:
 - Mechanism: Treat incomplete provenance as a residual while using verified and failed traces as inputs to evidence ledgers, regression suites, and procedural-memory candidates.
 - Mechanism: Distinguish storage identity from evidential continuity: a path records where bytes live, while an artifact node records role, provenance, replay grade, residuals, and claim/test relevance.
 - Mechanism: Treat replay as graded rather than binary: byte-for-byte replay, semantic replay, partial replay, and non-replayability must be declared before artifact reuse can affect evidence state.
+- Mechanism: link artifact nodes to context transaction refs and semantic certificate refs so artifact reuse preserves the memory and representation boundaries it inherited.
+- Mechanism: require replay grade, evidence gate, residuals, and non-claims before an artifact can influence claim support, compression, procedural memory, or release records.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
 - Interface: Procedural memory mines repeated traces.
+- Interface: Reader and release editions consume artifact records only through declared replay grade and evidence gate.
 
 Primary invariants:
 
 - Artifacts have stable identities.
 - Audit logs are append-only or versioned.
 - Replay limits are declared.
+- Replay grade and evidence gate are declared before artifact reuse can affect support state.
 
 Failure modes to cover:
 
@@ -1799,9 +1809,9 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- An artifact graph schema with job, source, context, and evidence edges.
+- An artifact graph schema with job, source, context, context-transaction, semantic-certificate, replay, and evidence edges.
 - Passage-reviewed Appendix C mappings for six local raw-cache sources: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, and `cognitive_loop_closure`; `moecot` remains connector/source-note mapped until durable runtime artifacts, ledgers, logs, benchmark records, or replay records are imported and inspected.
-- Implemented protocol validation: `artifact_graph_record` fixture validates public record shape only.
+- Implemented protocol validation: `artifact_graph_record` fixture validates public record shape, context transaction refs, semantic certificate refs, replay grade, evidence gate, residuals, and non-claims only.
 - Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.
 - Planned Codex test: Audit reconstruction test.

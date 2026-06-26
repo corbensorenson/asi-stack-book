@@ -8,6 +8,8 @@
     "cell_type",
     "source_bindings",
     "derived_from",
+    "transaction_refs",
+    "artifact_refs",
     "representation_kind",
     "loss_contract",
     "omissions",
@@ -15,7 +17,9 @@
     "permitted_uses",
     "validity_window",
     "verification_state",
-    "residual_risks"
+    "revocation_state",
+    "residual_risks",
+    "non_claims"
   ],
   "properties": {
     "page_id": { "type": "string", "minLength": 1 },
@@ -25,6 +29,8 @@
     },
     "source_bindings": { "type": "array", "items": { "type": "string" } },
     "derived_from": { "type": "array", "items": { "type": "string" } },
+    "transaction_refs": { "type": "array", "items": { "type": "string" } },
+    "artifact_refs": { "type": "array", "items": { "type": "string" } },
     "representation_kind": { "type": "string", "minLength": 1 },
     "loss_contract": { "type": "string", "minLength": 1 },
     "omissions": { "type": "array", "items": { "type": "string" } },
@@ -35,7 +41,12 @@
       "type": "string",
       "enum": ["unchecked", "adequate_for_drafting", "adequate_for_local_check", "inadequate_for_verification", "verified"]
     },
-    "residual_risks": { "type": "array", "items": { "type": "string" } }
+    "revocation_state": {
+      "type": "string",
+      "enum": ["active", "stale", "revoked", "superseded", "unknown"]
+    },
+    "residual_risks": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

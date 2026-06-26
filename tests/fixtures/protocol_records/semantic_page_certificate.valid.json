@@ -3,6 +3,8 @@
   "cell_type": "summary",
   "source_bindings": ["sources/source_notes/vcm_public.md"],
   "derived_from": ["vcm://book/source-notes/vcm_public"],
+  "transaction_refs": ["tests/fixtures/protocol_records/context_transaction_record.valid.json"],
+  "artifact_refs": ["tests/fixtures/protocol_records/artifact_graph_record.valid.json"],
   "representation_kind": "public-safe source-note summary",
   "loss_contract": "omits raw source text and does not preserve exact quotation",
   "omissions": ["raw private source text", "unmapped claim-level citations"],
@@ -10,5 +12,7 @@
   "permitted_uses": ["chapter drafting", "source queue routing"],
   "validity_window": "until source note is superseded",
   "verification_state": "adequate_for_drafting",
-  "residual_risks": ["not adequate for support-state promotion without claim-to-source mapping"]
+  "revocation_state": "active",
+  "residual_risks": ["not adequate for support-state promotion without claim-to-source mapping"],
+  "non_claims": ["does not prove summary fidelity", "does not preserve exact quotation", "does not authorize execution"]
 }

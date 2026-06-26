@@ -4,7 +4,7 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "vcm_public"
   - "ladon_manhattan"
@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
-  - "Only protocol schema/fixture validation is implemented; no transactional memory-store tests have been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; the fixture now records declassification refs, derivatives, materialization state, replay boundary, and non-claims, but no transactional memory-store tests have been run for this chapter."
   - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -28,13 +28,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
-| Test state | Context transaction fixture validation and `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
+| Test state | Context transaction fixture validation now includes declassification refs, derivative refs, materialization state, replay boundary, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
 
@@ -102,14 +102,15 @@ flowchart LR
   E --> I["Taint + deletion closure"]
   G --> I
   H --> I
-  I --> J{"Closure satisfied?"}
-  J -- "yes" --> K["Materializable view"]
-  J -- "no" --> L["Fault / quarantine"]
+  I --> J["Derivative refs + declassification refs"]
+  J --> K{"Closure satisfied?"}
+  K -- "yes" --> L["Materializable view"]
+  K -- "no" --> M["Fault / quarantine"]
 ```
 
-The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, taint labels, deletion obligations, contradiction references, closure state, faults, and audit references are coherent enough to replay.
+The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, taint labels, deletion obligations, declassification references, derivative references, contradiction references, materialization state, closure state, faults, replay boundary, non-claims, and audit references are coherent enough to replay.
 
-The record should distinguish view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered.
+The record should distinguish view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered. If the view becomes a durable artifact, the artifact should point back to the transaction rather than merely naming the source files it happened to read.
 
 Immutable events make audit and replay possible. Versioned pages make supersession explicit. Snapshots give a task a coherent read view. Mounts define what can be seen and written. Copy-on-write branches let the system test alternate summaries, repairs, or plans without mutating the committed memory space.
 
@@ -134,12 +135,17 @@ Minimum fields:
 - `branch_policy`
 - `taint_labels`
 - `deletion_obligations`
+- `declassification_refs`
+- `derivative_refs`
 - `contradiction_refs`
+- `materialization_state`
 - `closure_state`
 - `faults`
 - `audit_refs`
+- `replay_boundary`
+- `non_claims`
 
-Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, and faults.
+Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, declassification decisions, materialization state, and faults.
 
 The interface should also make failed materialization ordinary. A context compiler that cannot prove mount visibility, snapshot coherence, taint propagation, or deletion closure should emit a typed fault that planning can route around. Silent best-effort context is the unsafe fallback.
 
@@ -148,6 +154,7 @@ The interface should also make failed materialization ordinary. A context compil
 - Snapshots are consistent.
 - Taint propagates to derivatives.
 - Deletion closure is enforced or faulted.
+- Materialization state is explicit before a view is used by a downstream artifact or job.
 
 The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
 
@@ -167,17 +174,17 @@ The subtle failure is context laundering. A sensitive or unsupported source can 
 
 A transaction model for context reads, writes, branches, and deletion closure.
 
-The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, contradiction refs, closure state, faults, and audit refs. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
+The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, declassification refs, derivative refs, contradiction refs, materialization state, closure state, faults, audit refs, replay boundary, and non-claims. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
 
 The fixture validates only the record surface. The Lean predicates do not prove read-your-writes consistency across a store, branch isolation, deletion closure, or poisoning resistance.
 
-The next useful implementation step is a tiny memory-store fixture set: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, and one declassification record that preserves residual risk. That would test transaction semantics without claiming production memory behavior.
+The next useful implementation step is a tiny memory-store fixture set: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact graph node that records the replay boundary. That would test transaction semantics without claiming production memory behavior.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares operation, snapshot, mounts, read/write sets, branch policy, taint, deletion obligations, contradictions, closure state, faults, and audits. | implemented by protocol validation; run in this pass |
+| Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares operation, snapshot, mounts, read/write sets, branch policy, taint, deletion obligations, declassification refs, derivatives, materialization state, contradictions, closure state, faults, audits, replay boundary, and non-claims. | implemented by protocol validation; run in this pass |
 | Snapshot read predicate | Check that a valid finite snapshot read sees a committed event in its declared view. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Taint propagation predicate | Check that tainted source context produces tainted derived context unless declassification is authorized. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Deletion closure test | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | planned; not run |

@@ -9,14 +9,20 @@
     "parent_job",
     "source_refs",
     "context_refs",
+    "context_transaction_refs",
+    "semantic_certificate_refs",
     "tool_refs",
     "claim_refs",
     "test_refs",
     "audit_events",
     "replay_metadata",
+    "replay_grade",
     "environment_assumptions",
     "provenance_status",
-    "replay_limits"
+    "replay_limits",
+    "evidence_gate",
+    "residuals",
+    "non_claims"
   ],
   "properties": {
     "artifact_id": { "type": "string", "minLength": 1 },
@@ -24,17 +30,26 @@
     "parent_job": { "type": "string", "minLength": 1 },
     "source_refs": { "type": "array", "items": { "type": "string" } },
     "context_refs": { "type": "array", "items": { "type": "string" } },
+    "context_transaction_refs": { "type": "array", "items": { "type": "string" } },
+    "semantic_certificate_refs": { "type": "array", "items": { "type": "string" } },
     "tool_refs": { "type": "array", "items": { "type": "string" } },
     "claim_refs": { "type": "array", "items": { "type": "string" } },
     "test_refs": { "type": "array", "items": { "type": "string" } },
     "audit_events": { "type": "array", "items": { "type": "string" } },
     "replay_metadata": { "type": "string", "minLength": 1 },
+    "replay_grade": {
+      "type": "string",
+      "enum": ["byte_exact", "semantic", "partial", "not_replayable", "not_run"]
+    },
     "environment_assumptions": { "type": "array", "items": { "type": "string" } },
     "provenance_status": {
       "type": "string",
       "enum": ["complete", "partial", "missing", "blocked"]
     },
-    "replay_limits": { "type": "array", "items": { "type": "string" } }
+    "replay_limits": { "type": "array", "items": { "type": "string" } },
+    "evidence_gate": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

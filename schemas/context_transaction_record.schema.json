@@ -13,10 +13,15 @@
     "branch_policy",
     "taint_labels",
     "deletion_obligations",
+    "declassification_refs",
+    "derivative_refs",
     "contradiction_refs",
+    "materialization_state",
     "closure_state",
     "faults",
-    "audit_refs"
+    "audit_refs",
+    "replay_boundary",
+    "non_claims"
   ],
   "properties": {
     "transaction_id": { "type": "string", "minLength": 1 },
@@ -31,13 +36,21 @@
     "branch_policy": { "type": "string", "minLength": 1 },
     "taint_labels": { "type": "array", "items": { "type": "string" } },
     "deletion_obligations": { "type": "array", "items": { "type": "string" } },
+    "declassification_refs": { "type": "array", "items": { "type": "string" } },
+    "derivative_refs": { "type": "array", "items": { "type": "string" } },
     "contradiction_refs": { "type": "array", "items": { "type": "string" } },
+    "materialization_state": {
+      "type": "string",
+      "enum": ["materializable", "not_materialized", "faulted", "blocked", "partial"]
+    },
     "closure_state": {
       "type": "string",
       "enum": ["satisfied", "faulted", "unknown", "not_applicable"]
     },
     "faults": { "type": "array", "items": { "type": "string" } },
-    "audit_refs": { "type": "array", "items": { "type": "string" } }
+    "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "replay_boundary": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

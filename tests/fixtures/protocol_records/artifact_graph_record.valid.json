@@ -4,12 +4,18 @@
   "parent_job": "job-demo-001",
   "source_refs": ["chapters/labor-os-and-typed-jobs.qmd"],
   "context_refs": ["book_structure.json"],
+  "context_transaction_refs": ["tests/fixtures/protocol_records/context_transaction_record.valid.json"],
+  "semantic_certificate_refs": ["tests/fixtures/protocol_records/semantic_page_certificate.valid.json"],
   "tool_refs": ["quarto"],
   "claim_refs": ["claim-demo-001"],
   "test_refs": ["quarto render --to html"],
   "audit_events": ["render requested", "render output path recorded"],
   "replay_metadata": "Run Quarto from repository root with UTF-8 locale.",
+  "replay_grade": "not_run",
   "environment_assumptions": ["Quarto is installed", "book source is present"],
   "provenance_status": "partial",
-  "replay_limits": ["fixture does not prove render was run"]
+  "replay_limits": ["fixture does not prove render was run"],
+  "evidence_gate": "Shape validation only; no promoted claim may rely on this fixture without a real run record.",
+  "residuals": ["no artifact replay packet has been executed"],
+  "non_claims": ["does not prove Quarto render success", "does not prove audit reconstruction", "does not promote claim support"]
 }
