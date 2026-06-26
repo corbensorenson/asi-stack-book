@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal evidence proof support gates
+
+- Strengthened the evidence/proof support boundary across Evidence States and Spinoza Verification: evidence transition records now validate claim surface refs, evidence packet refs, source mapping refs, negative evidence refs, support-state effect, and non-claims; proof-carrying claim records now validate claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims. Updated the chapters, outline, and protocol appendix so future writing runs can distinguish claim support movement and proof envelopes from claim truth, semantic equivalence, verifier quality, citation accuracy, proof discharge, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal capability runtime effect gates
 
 - Strengthened the capability-to-runtime effect pass across Stable Capability Fields and Runtime Adapters: stable capability field records now validate field version, owner, route permission effect, consumer policy, readiness gate refs, source refs, support-state effect, and non-claims; runtime adapter invocation records now validate invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims. Updated the chapters, outline, and protocol appendix so future writing runs can distinguish capability leases and effect receipts from route validity, evaluator integrity, adapter execution, sandbox enforcement, approval-service behavior, rollback success, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.

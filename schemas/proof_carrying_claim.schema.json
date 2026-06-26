@@ -6,13 +6,19 @@
   "required": [
     "proof_claim_id",
     "claim_id",
+    "claim_scope",
     "required_tier",
+    "justification_type",
     "interpretation_mapping",
+    "interpretation_confidence",
     "justification_artifact",
     "artifact_validity_state",
     "semantic_adequacy",
     "verifier",
     "verifier_result",
+    "verifier_artifact_refs",
+    "failed_attempt_refs",
+    "formal_scope",
     "limitations",
     "consumer_requirements",
     "downgrade_rule",
@@ -20,16 +26,27 @@
     "residual_route",
     "tribunal_ref",
     "ledger_update",
+    "source_refs",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "proof_claim_id": { "type": "string", "minLength": 1 },
     "claim_id": { "type": "string", "minLength": 1 },
+    "claim_scope": { "type": "string", "minLength": 1 },
     "required_tier": {
       "type": "string",
       "enum": ["citation", "procedure", "synthetic_test", "formal", "human_review", "unknown"]
     },
+    "justification_type": {
+      "type": "string",
+      "enum": ["formal_proof", "citation_dossier", "procedure_log", "benchmark_artifact", "tribunal_review", "schema_fixture", "unknown"]
+    },
     "interpretation_mapping": { "type": "string", "minLength": 1 },
+    "interpretation_confidence": {
+      "type": "string",
+      "enum": ["unknown", "low", "medium", "high", "mismatch"]
+    },
     "justification_artifact": { "type": "string", "minLength": 1 },
     "artifact_validity_state": {
       "type": "string",
@@ -44,6 +61,9 @@
       "type": "string",
       "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
     },
+    "verifier_artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "failed_attempt_refs": { "type": "array", "items": { "type": "string" } },
+    "formal_scope": { "type": "string", "minLength": 1 },
     "limitations": { "type": "array", "items": { "type": "string" } },
     "consumer_requirements": { "type": "array", "items": { "type": "string" } },
     "downgrade_rule": { "type": "string", "minLength": 1 },
@@ -54,6 +74,17 @@
     "residual_route": { "type": "string", "minLength": 1 },
     "tribunal_ref": { "type": "string" },
     "ledger_update": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

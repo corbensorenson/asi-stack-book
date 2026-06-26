@@ -1524,6 +1524,7 @@ Claim labels and support states are separate. A claim can be a `Hypothesized` cl
 evidence_transition_record:
   transition_id: string
   claim_id: string
+  claim_surface_refs: []
   old_support_state: argument
   new_support_state: argument
   transition_effect: no_change
@@ -1532,19 +1533,23 @@ evidence_transition_record:
   transition_reason: string
   required_artifacts: []
   artifact_refs: []
+  evidence_packet_refs: []
+  source_mapping_refs: []
   verification_command: string
   verification_result: not_run
   negative_results: []
+  negative_evidence_refs: []
   downgrade_triggers: []
   promotion_burden: string
   limitations: []
   review_status: open
   reviewer_independence: string
   changelog_ref: string
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record makes support-state movement reviewable. It names the claim, prior and candidate support states, transition effect, scope boundary, evidence roles, required artifacts, verifier command/result, negative results, downgrade triggers, promotion burden, limitations, reviewer independence, changelog ref, non-claims, and review state before a claim can move.
+This record makes support-state movement reviewable. It names the claim, claim surface refs, prior and candidate support states, transition effect, scope boundary, evidence roles, required artifacts, artifact refs, evidence packets, source mappings, verifier command/result, negative results, negative evidence refs, downgrade triggers, promotion burden, limitations, reviewer independence, changelog ref, support-state effect, non-claims, and review state before a claim can move.
 
 ## Belief Revision Record
 
@@ -1577,13 +1582,19 @@ This record preserves support-state changes, revision action, evidence, contradi
 proof_carrying_claim:
   proof_claim_id: string
   claim_id: string
+  claim_scope: string
   required_tier: procedure
+  justification_type: schema_fixture
   interpretation_mapping: string
+  interpretation_confidence: medium
   justification_artifact: string
   artifact_validity_state: not_checked
   semantic_adequacy: narrow
   verifier: string
   verifier_result: not_run
+  verifier_artifact_refs: []
+  failed_attempt_refs: []
+  formal_scope: string
   limitations: []
   consumer_requirements: []
   downgrade_rule: string
@@ -1591,10 +1602,12 @@ proof_carrying_claim:
   residual_route: string
   tribunal_ref: string
   ledger_update: string
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record makes proof or justification claims tiered and auditable, including interpretation mapping, artifact validity state, semantic adequacy, verifier result, limitations, consumer requirements, downgrade behavior, claim-validity effect, residual route, ledger impact, and non-claims.
+This record makes proof or justification claims tiered and auditable, including claim scope, justification type, interpretation mapping and confidence, artifact validity state, semantic adequacy, verifier result, verifier artifacts, failed attempts, formal scope, limitations, consumer requirements, downgrade behavior, claim-validity effect, source refs, support-state effect, residual route, ledger impact, and non-claims.
 
 ## Proof Contract Receipt Record
 

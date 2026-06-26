@@ -387,8 +387,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.
-- Implemented repository-level fixture: `evidence_transition_record.valid.json` validates transition effect, scope boundary, evidence roles, downgrade triggers, promotion burden, reviewer independence, changelog ref, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
+- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check with claim surface refs, evidence packet refs, source mapping refs, negative evidence refs, support-state effect, and non-claims.
+- Implemented repository-level fixture: `evidence_transition_record.valid.json` validates claim surface refs, transition effect, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer independence, changelog ref, support-state effect, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
 - Planned Codex test: Support-state transition test.
 - Planned Codex test: Claim ledger completeness test.
 - Planned Codex test: Evidence bundle completeness test.
@@ -1646,9 +1646,9 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A tiered proof-carrying claim schema with one non-philosophical invariant example and explicit artifact-validity, semantic-adequacy, consumer-requirement, claim-validity-effect, residual-route, and non-claim fields.
+- A tiered proof-carrying claim schema with one non-philosophical invariant example and explicit claim-scope, justification-type, interpretation-confidence, artifact-validity, semantic-adequacy, verifier-artifact, failed-attempt, formal-scope, consumer-requirement, claim-validity-effect, source-ref, support-state-effect, residual-route, and non-claim fields.
 - Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, and TreeLLM; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
-- Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape only.
+- Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape, claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims only.
 - Planned Codex test: Proof artifact presence test.
 - Planned Codex test: Tier assignment test.
 - Planned Codex test: Formalization mismatch review.

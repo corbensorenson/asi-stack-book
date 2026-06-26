@@ -1,13 +1,19 @@
 {
   "proof_claim_id": "proof-claim-demo-001",
   "claim_id": "claim-demo-001",
+  "claim_scope": "local schema-shape validation envelope only",
   "required_tier": "procedure",
+  "justification_type": "schema_fixture",
   "interpretation_mapping": "The claim concerns local schema-shape validation, not empirical truth.",
+  "interpretation_confidence": "medium",
   "justification_artifact": "scripts/validate_protocol_examples.py",
   "artifact_validity_state": "not_checked",
   "semantic_adequacy": "narrow",
   "verifier": "local dependency-free schema fixture validator",
   "verifier_result": "not_run",
+  "verifier_artifact_refs": ["schemas/proof_carrying_claim.schema.json"],
+  "failed_attempt_refs": [],
+  "formal_scope": "JSON fixture validation only; no theorem or source claim is discharged",
   "limitations": ["fixture alone does not prove the architecture claim", "no theorem is claimed"],
   "consumer_requirements": ["run protocol fixture validation before citing as implemented shape check"],
   "downgrade_rule": "If validation fails, block promotion and keep support at argument or lower.",
@@ -15,5 +21,7 @@
   "residual_route": "route semantic or verifier mismatch to tribunal review",
   "tribunal_ref": "",
   "ledger_update": "No support-state promotion is implied by this fixture.",
+  "source_refs": ["sources/source_notes/spinoza.md", "sources/source_notes/genesiscode.md"],
+  "support_state_effect": "record_shape_only",
   "non_claims": ["fixture does not prove semantic equivalence", "fixture does not discharge a theorem"]
 }

@@ -6,6 +6,7 @@
   "required": [
     "transition_id",
     "claim_id",
+    "claim_surface_refs",
     "old_support_state",
     "new_support_state",
     "transition_effect",
@@ -14,20 +15,25 @@
     "transition_reason",
     "required_artifacts",
     "artifact_refs",
+    "evidence_packet_refs",
+    "source_mapping_refs",
     "verification_command",
     "verification_result",
     "negative_results",
+    "negative_evidence_refs",
     "downgrade_triggers",
     "promotion_burden",
     "limitations",
     "review_status",
     "reviewer_independence",
     "changelog_ref",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "transition_id": { "type": "string", "minLength": 1 },
     "claim_id": { "type": "string", "minLength": 1 },
+    "claim_surface_refs": { "type": "array", "items": { "type": "string" } },
     "old_support_state": {
       "type": "string",
       "enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]
@@ -45,12 +51,15 @@
     "transition_reason": { "type": "string", "minLength": 1 },
     "required_artifacts": { "type": "array", "items": { "type": "string" } },
     "artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "evidence_packet_refs": { "type": "array", "items": { "type": "string" } },
+    "source_mapping_refs": { "type": "array", "items": { "type": "string" } },
     "verification_command": { "type": "string", "minLength": 1 },
     "verification_result": {
       "type": "string",
       "enum": ["pass", "fail", "timeout", "mismatch", "not_run"]
     },
     "negative_results": { "type": "array", "items": { "type": "string" } },
+    "negative_evidence_refs": { "type": "array", "items": { "type": "string" } },
     "downgrade_triggers": { "type": "array", "items": { "type": "string" } },
     "promotion_burden": { "type": "string", "minLength": 1 },
     "limitations": { "type": "array", "items": { "type": "string" } },
@@ -60,6 +69,16 @@
     },
     "reviewer_independence": { "type": "string", "minLength": 1 },
     "changelog_ref": { "type": "string", "minLength": 1 },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
