@@ -42,6 +42,8 @@ This chapter treats context transactions as a required runtime contract, not as 
 
 It follows the certificate chapter because typed cells still need runtime semantics. Provenance and loss contracts are not enough if the memory view is stale, mixed across branches, or derived from tainted material.
 
+This chapter is where context stops being a bag of retrieved text and becomes state. A stateful memory layer has to answer what view was read, what changed, what was hidden, what was tainted, what was deleted, and what derivative obligations now exist.
+
 ## Problem
 
 Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
@@ -50,6 +52,8 @@ The previous chapter gave context representations certificates. This chapter giv
 
 VCM supplies the transaction model. Context Engineer and Ladon add need-to-know and sensitive-mount pressure. Black Hole Context Manager adds practical memory-budget machinery: chunks, drift, mass, freezing, eviction, and critical context preservation.
 
+The central problem is not only "which context is relevant?" It is "which context view is legally, epistemically, temporally, and authority-wise valid for this task?" A high-quality retrieval hit can still be invalid if it came from a revoked source, an expired snapshot, an unauthorized mount, or a tainted derivative.
+
 ## Why existing approaches are insufficient
 
 A retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself.
@@ -57,6 +61,8 @@ A retrieval store cannot guarantee read-your-writes behavior, copy-on-write expe
 Retrieval can return plausible neighbors, but it does not by itself define consistency. A worker may read a mixture of old and new facts, see a source after revocation, miss a contradiction, or consume a summary derived from deleted data. Security labels can also evaporate when context is copied, summarized, embedded, logged, or sent to a tool.
 
 The stack needs database-like discipline without pretending memory is a database table. Context objects are semantic, versioned, compressed, mounted, and task-relative. That makes transaction semantics more important, not less.
+
+Long-context windows can hide this problem by making more material visible at once. More visibility is not the same as a coherent view. A transcript that mixes old summaries, fresh evidence, private notes, and revoked derivatives can be larger while becoming less governable.
 
 ## Core Claim
 
@@ -103,6 +109,8 @@ flowchart LR
 
 The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, taint labels, deletion obligations, contradiction references, closure state, faults, and audit references are coherent enough to replay.
 
+The record should distinguish view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered.
+
 Immutable events make audit and replay possible. Versioned pages make supersession explicit. Snapshots give a task a coherent read view. Mounts define what can be seen and written. Copy-on-write branches let the system test alternate summaries, repairs, or plans without mutating the committed memory space.
 
 Taint should propagate through derived cells unless authorized declassification occurs. Deletion should close over derivatives or fault when closure cannot be proven. Contradictions should become evidence records, not overwritten memory.
@@ -133,6 +141,8 @@ Minimum fields:
 
 Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, and faults.
 
+The interface should also make failed materialization ordinary. A context compiler that cannot prove mount visibility, snapshot coherence, taint propagation, or deletion closure should emit a typed fault that planning can route around. Silent best-effort context is the unsafe fallback.
+
 ## Invariants
 
 - Snapshots are consistent.
@@ -140,6 +150,8 @@ Planning receives consistent views. Security labels sensitive mounts and tainted
 - Deletion closure is enforced or faulted.
 
 The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
+
+Another invariant is branch containment. Experimental summaries, speculative repairs, and alternate plans can branch, but they do not become committed memory unless merge policy, authority, taint, contradiction, and residual checks pass.
 
 ## Failure modes
 
@@ -149,6 +161,8 @@ The deletion invariant is strict: deleted or revoked source material cannot reap
 
 Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale or contradictory reads produce incoherent plans. Deleted data reappearing in summaries creates legal, privacy, and trust failures. These are transaction faults, not mere retrieval imperfections.
 
+The subtle failure is context laundering. A sensitive or unsupported source can be summarized, embedded, cached, or merged until its original restrictions disappear. Transaction records should keep the restriction attached to every derivative or force an explicit declassification decision.
+
 ## Minimal implementation
 
 A transaction model for context reads, writes, branches, and deletion closure.
@@ -156,6 +170,8 @@ A transaction model for context reads, writes, branches, and deletion closure.
 The smallest useful implementation is a `context_transaction_record` schema and fixture. It validates operation, snapshot, mounts, read/write sets, branch policy, taint labels, deletion obligations, contradiction refs, closure state, faults, and audit refs. The accompanying Lean module is intentionally narrower than a store: it models finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
 
 The fixture validates only the record surface. The Lean predicates do not prove read-your-writes consistency across a store, branch isolation, deletion closure, or poisoning resistance.
+
+The next useful implementation step is a tiny memory-store fixture set: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, and one declassification record that preserves residual risk. That would test transaction semantics without claiming production memory behavior.
 
 ## Codex test plan
 
@@ -195,3 +211,5 @@ The crosswalk identifies sources for transactional context semantics and memory-
 Context Transactions, Snapshots, Mounts, and Taint gives VCM runtime semantics. It treats memory as immutable events, versioned pages, coherent snapshots, mounted views, copy-on-write branches, tainted derivatives, deletion obligations, contradiction records, and auditable faults.
 
 The rule is that memory operations must leave a reviewable trace. If a context view cannot satisfy consistency, taint, or deletion closure, it should fault before becoming working context. The next chapter asks a separate question: even when the context view is coherent and authorized, is it adequate for the claim the system is about to make?
+
+The practical standard is that context must fail closed. A system that cannot explain the view it read should not use that view as if it were ordinary memory.

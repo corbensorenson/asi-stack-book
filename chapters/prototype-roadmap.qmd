@@ -56,15 +56,21 @@ This roadmap is sequencing logic, not evidence. A phase milestone, source-report
 
 The previous chapter shows how report-first implementation references can guide the stack without becoming public empirical proof. This chapter turns that caution into build order. The prototype should earn later agency by first making source ingestion, artifact continuity, claim ledgers, validation, and authority stops boringly reliable.
 
+The roadmap is therefore not a schedule. It is a dependency contract for trust. A phase is allowed to unlock later work only when the artifacts that would make that later work inspectable already exist.
+
 ## Problem
 
 The ASI Stack needs a build order that does not create agency before auditability, evidence, and authority controls exist. A prototype that begins with autonomous self-improvement skips the machinery that would make improvement inspectable.
+
+The build order must also prevent partial demos from becoming institutional facts. A useful local trace, agent loop, retrieval store, or benchmark dashboard can guide engineering, but it should not become a capability claim until phase acceptance records say what was run, what passed, what failed, what remains blocked, and what the milestone does not imply.
 
 ## Why existing approaches are insufficient
 
 A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls. It also makes useful prototypes dangerous: once something feels helpful, teams are tempted to skip evidence discipline.
 
 VIEA says durable artifacts first. SCF says replacement and improvement need stable fields. VCM says context admission and adequacy must be visible. PlanForge says plans need typed contracts. Project Theseus says report-first local machinery should gate training and self-evolution.
+
+Prototype roadmaps often hide dependency direction. They list features in an attractive order, but do not say which earlier gates make later agency legitimate. The ASI Stack needs the opposite: every attractive capability should point backward to the evidence, authority, replay, and rollback infrastructure it depends on.
 
 ## Core Claim
 
@@ -77,6 +83,8 @@ No roadmap phase has been accepted, executed, or used to promote a capability cl
 The roadmap should therefore be read less like a product plan and more like a dependency graph for trust. The early phases create the conditions under which later phases can mean anything: sources can be inspected, artifacts can be found again, claims can be downgraded, and authority checks can stop an unsafe action. Later phases are only legitimate when they inherit those conditions. A planner that cannot preserve source provenance is not ready to dispatch work. A runtime that cannot replay actions is not ready to close loops. A replacement system that cannot roll back is not ready to improve itself.
 
 This ordering also protects useful prototypes from their own momentum. A half-working local agent, benchmark harness, context memory, or route scheduler can feel convincing long before it is governable. The phase record slows that down. It says which artifacts exist, which checks passed, which blockers remain, and which claims are still forbidden. That makes the roadmap a pressure surface for better engineering rather than a story that later work was inevitable.
+
+Each phase should have entry criteria and exit criteria. Entry criteria prevent starting a phase when its prerequisites are absent. Exit criteria prevent treating a phase as accepted because it produced an impressive artifact. A phase can produce useful work while still failing exit.
 
 ### Claim-source mapping status
 
@@ -124,6 +132,8 @@ Only after that does the prototype need richer agency. Intent contracts and Plan
 
 The final phases are capability replacement and bounded self-improvement. They require stable capability fields, acceptance gates, regression floors, evaluator integrity, rollback windows, governance rights, and residual accounting. The roadmap does not say that self-improvement is impossible before those pieces exist. It says that before those pieces exist, self-improvement is not an evidence-governed engineering operation in the sense this book cares about.
 
+The roadmap should explicitly carry phase debt. If a phase proceeds with a missing artifact, manual workaround, unreviewed source, or provisional gate, the debt must be recorded with an owner boundary and retirement condition. Otherwise prototypes accumulate hidden assumptions that later phases treat as infrastructure.
+
 ## Interfaces
 
 The interface is the Prototype Phase Record.
@@ -143,6 +153,8 @@ Minimum fields:
 
 Each phase unlocks later layers only after acceptance gates pass. Changelogs and releases document what actually changed. Benchmark and proof chapters decide what the phase is allowed to claim.
 
+The interface should also record dependency edges. A runtime-adapter phase depends on typed jobs, approval receipts, and audit logs. A procedural-memory phase depends on artifact graphs and regression checks. A self-improvement phase depends on SCFs, rollback, protected invariants, evidence ledgers, and independent evaluators. These edges are the roadmap's control surface.
+
 ## Invariants
 
 - Phases have acceptance criteria.
@@ -150,6 +162,8 @@ Each phase unlocks later layers only after acceptance gates pass. Changelogs and
 - Roadmap milestones are not test results.
 - Reported external readiness is not local reproduction.
 - Agency does not precede auditability.
+
+Another invariant is no irreversible unlock from provisional evidence. A phase can allow research use before full acceptance, but it cannot unlock default execution, promotion, self-improvement, or public capability claims while its required gates remain provisional.
 
 ## Failure modes
 
@@ -159,9 +173,13 @@ Each phase unlocks later layers only after acceptance gates pass. Changelogs and
 - Letting operator convenience weaken safety gates.
 - Losing remaining-work items from source-reported roadmaps.
 
+The subtle failure is prototype theater. The project shows a board, dashboard, demo, or generated report that looks like an operating system, while the acceptance gates, replay artifacts, and evidence transitions behind it are missing. The roadmap should make that visible by separating demo output from phase acceptance.
+
 ## Minimal implementation
 
 The smallest useful implementation is a prototype phase schema and fixture. The current fixture records deliverables, gates, blockers, commands, evidence references, non-claims, and status. It does not mean the named phase is complete or that dependent prototypes are unlocked.
+
+The next useful implementation step is a dependency-gate fixture set: one phase blocked by missing source notes, one phase allowed for research but not promotion, one phase with recorded phase debt and retirement condition, and one self-improvement phase blocked because evaluator independence is absent. That would test roadmap semantics without claiming phase completion.
 
 ## Codex test plan
 
@@ -210,3 +228,5 @@ These Lean hooks are implemented as finite-record predicates over phase unlock a
 The prototype should grow as evidence infrastructure grows: source matrix, claim ledger, artifact graph, schemas, plans, context, typed jobs, runtime adapters, routing, readiness, benchmarks, SCFs, and only then bounded self-improvement.
 
 That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The next chapter applies the same rule to the manuscript itself.
+
+The practical standard is that every later capability should be able to point to the earlier records that made it safe to exist. If the pointer is missing, the roadmap should block, narrow, or mark the capability as research-only.

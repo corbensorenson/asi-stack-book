@@ -1309,6 +1309,8 @@ Draft arc:
 - Mechanism: Record immutable memory events.
 - Mechanism: Compile task snapshots with mounts and copy-on-write branches.
 - Mechanism: Propagate taint and deletion obligations through derived context.
+- Mechanism: Distinguish view construction from view use: mounts, snapshot, clearance, branch, materialization, actual reads, derivatives, propagated taint, and deletion/declassification obligations.
+- Mechanism: Fail closed with typed faults when mount visibility, snapshot coherence, taint propagation, or deletion closure cannot be established.
 - Interface: Planning receives consistent views.
 - Interface: Security labels sensitive mounts.
 - Interface: Evidence records contradictions and supersession.
@@ -2080,6 +2082,8 @@ Draft arc:
 - Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
 - Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, verifier, residual channel, fallback path, governance interface, and evidence/cost ledger.
 - Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
+- Mechanism: Separate reconstruction burden, decision burden, and governance burden so compactness is judged by total recorded cost rather than seed size.
+- Mechanism: Require verifier separation and use envelopes so compact cores cannot self-promote their own adequacy for evidence, runtime, or replacement claims.
 - Handoff: Exact reconstruction claims flow to generate-verify-repair receipts, while time-domain acceleration claims flow to fast-generation records.
 - Interface: Compression feeds memory and routing.
 - Interface: Evidence tests downstream utility.
@@ -3152,6 +3156,8 @@ Draft arc:
 - Mechanism: Start with source inventory, source notes, claim ledger, artifact graph, schemas, proof manifest, validation, and release discipline before introducing autonomous action.
 - Mechanism: Add intent contracts, PlanForge DAGs, VCM context records, typed jobs, runtime adapters, audit/replay, procedural memory, routing, readiness gates, benchmark ratchets, and SCF replacement gates in dependency order.
 - Mechanism: Delay recursive self-improvement until evaluator integrity, rollback, residual preservation, governance rights, and evidence-ledger behavior are credible.
+- Mechanism: Give each phase entry criteria, exit criteria, dependency edges, phase debt, and retirement conditions so demos do not become accepted milestones.
+- Mechanism: Prevent irreversible unlocks from provisional evidence; research use can proceed without default execution, promotion, self-improvement, or public capability claims.
 - Interface: Each phase unlocks a later layer.
 - Interface: Evidence gates decide promotion.
 - Interface: Changelog and releases document progress.

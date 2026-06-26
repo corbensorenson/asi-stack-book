@@ -42,17 +42,23 @@ This chapter uses Compact Generative Systems and Ratcheting Generative Systems a
 
 After the personal-hive substrate, compactness becomes an economic and governance question rather than a style preference. The stack can use smaller seeds, summaries, procedures, or generators only when residual burden, verification cost, fallback, and authority remain visible.
 
+Compactness is therefore a state claim, not a word-count claim. A representation is compact only relative to a target, generator, verifier, residual channel, cost ledger, and permitted use.
+
 ## Problem
 
 The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, or human review. A small seed that requires unbounded search is not efficient. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.
 
 CGS gives the book a vocabulary for this problem: seed, rule system, memory/state, residual/error, verification, and governance/generation interface. RGS adds the improvement loop: repeated successful behavior can become verified structure, but failures must stay in residual escrow and regressions must remain protected.
 
+The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
+
 ## Why existing approaches are insufficient
 
 Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
 
 Compactness also does not imply interpretability or safety. A compressed rule can be opaque. A generated output can be plausible but unverified. A local embedded system can be resource-aware but untested. A simulation can be definable but physically infeasible. The stack therefore treats compactness as a contract with residuals, not as an achievement by itself.
+
+Another insufficiency is evaluator capture. A compact generator can appear efficient when it also decides whether its own outputs are adequate. Residual honesty requires an external or at least separately governed verifier whenever the generated result affects claims, tools, memory, or self-improvement.
 
 ## Core Claim
 
@@ -105,6 +111,8 @@ A compact generative system should answer five questions:
 
 The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
 
+The record should separate three burdens: reconstruction burden, decision burden, and governance burden. Reconstruction burden is the cost of producing a usable artifact from the compact seed. Decision burden is the cost of knowing whether the artifact is adequate. Governance burden is the cost of approvals, non-claims, fallback, retirement, and residual review.
+
 ## Interfaces
 
 The interface is the Compact Generative Record.
@@ -126,6 +134,8 @@ Minimum fields:
 
 Routing uses the record to decide whether a compact core is adequate for a task. VCM and semantic pages use it to mark loss and omissions. Evidence layers use it to check downstream utility. Procedural memory uses it to decide whether repeated generated behavior should become a verified tool.
 
+The interface should expose a use envelope. A compact core can be acceptable for drafting, search, simulation, or candidate generation while being unacceptable for final claims, irreversible actions, or autonomous promotion. The same seed can have different authority at different risk tiers.
+
 ## Invariants
 
 - Lossy claims are labeled.
@@ -135,6 +145,8 @@ Routing uses the record to decide whether a compact core is adequate for a task.
 - Compactness does not promote support state without evidence.
 
 The invariant is not "small is good." It is "small is accountable." A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
+
+A second invariant is verifier separation. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
 
 ## Failure modes
 
@@ -146,6 +158,8 @@ The invariant is not "small is good." It is "small is accountable." A compact re
 
 False lossless claims should be downgraded. Hidden residuals should be escrowed. Utility damage should trigger fallback or quarantine. Self-evaluation should be blocked when evaluator independence matters. Recursive modification should be routed through SCF replacement and readiness gates.
 
+The subtle failure is residual displacement. The system appears compact because it moves missing detail into human interpretation, future debugging, hidden retrieval, or undocumented verifier assumptions. The residual channel should name the displacement rather than letting it look like efficiency.
+
 ## Minimal implementation
 
 The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, residuals, verification, governance, leverage, hidden complexity, fallback, and evidence references.
@@ -153,6 +167,8 @@ The smallest useful implementation is a compact generative record and fixture. I
 The current fixture validates that this public contract can be represented consistently. The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
 `AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, plus a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence. These proofs do not implement a codec, generator, verifier, downstream utility test, or fallback harness.
+
+The next useful implementation step is a compact-core comparison fixture: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. That would make the compactness contract concrete without reporting a benchmark.
 
 ## Codex test plan
 
@@ -197,3 +213,5 @@ Compact systems are useful when they generate more value than their hidden burde
 Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The next chapter applies the same rule to compression that claims reconstruction: generation is allowed to be clever only when verification and repair pay the exact remainder.
 
 The result is a simple bridge: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry.
+
+The practical standard is that compactness must survive total-cost accounting. If the seed is smaller but the hidden verification, repair, review, or authority cost grows without a record, the stack has not become more efficient.
