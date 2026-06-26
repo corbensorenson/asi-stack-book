@@ -9,13 +9,25 @@
     "capability_request",
     "candidate_specialists",
     "selected_specialist",
+    "rejected_candidates",
+    "non_selection_evidence",
     "route_shape",
+    "route_receipt",
     "authority_check",
+    "granted_authority_subset",
+    "denied_authority",
     "readiness_check",
+    "context_lease",
+    "tool_lease",
+    "verifier_requirement",
+    "budget",
+    "expiry",
     "cost_quality_reason",
     "fallback_route",
+    "residual_owner",
     "residuals",
-    "ledger_refs"
+    "ledger_refs",
+    "non_claims"
   ],
   "properties": {
     "decision_id": { "type": "string", "minLength": 1 },
@@ -23,22 +35,34 @@
     "capability_request": { "type": "string", "minLength": 1 },
     "candidate_specialists": { "type": "array", "items": { "type": "string" } },
     "selected_specialist": { "type": "string", "minLength": 1 },
+    "rejected_candidates": { "type": "array", "items": { "type": "string" } },
+    "non_selection_evidence": { "type": "array", "items": { "type": "string" } },
     "route_shape": {
       "type": "string",
       "enum": ["single", "parallel", "sequential", "debate", "verification", "reflex", "fallback"]
     },
+    "route_receipt": { "type": "string", "minLength": 1 },
     "authority_check": {
       "type": "string",
       "enum": ["passed", "failed", "not_required", "residual"]
     },
+    "granted_authority_subset": { "type": "array", "items": { "type": "string" } },
+    "denied_authority": { "type": "array", "items": { "type": "string" } },
     "readiness_check": {
       "type": "string",
       "enum": ["ready", "not_ready", "stale", "residual"]
     },
+    "context_lease": { "type": "string", "minLength": 1 },
+    "tool_lease": { "type": "string", "minLength": 1 },
+    "verifier_requirement": { "type": "string", "minLength": 1 },
+    "budget": { "type": "string", "minLength": 1 },
+    "expiry": { "type": "string", "minLength": 1 },
     "cost_quality_reason": { "type": "string", "minLength": 1 },
     "fallback_route": { "type": "string", "minLength": 1 },
+    "residual_owner": { "type": "string", "minLength": 1 },
     "residuals": { "type": "array", "items": { "type": "string" } },
-    "ledger_refs": { "type": "array", "items": { "type": "string" } }
+    "ledger_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

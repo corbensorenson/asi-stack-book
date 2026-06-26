@@ -2005,6 +2005,7 @@ Draft arc:
 - Mechanism: Select the smallest adequate specialist only after capability, authority, readiness, and fallback predicates are explicit.
 - Mechanism: emit route receipts that record selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
 - Mechanism: record non-selection evidence so rejected candidates inform readiness, resource policy, and future routing.
+- Mechanism: Preserve registry epoch, owner, authority envelope, memory/tool lease policies, route limitations, route receipt, residual owner, and non-claims so selected and rejected specialists remain inspectable after the route expires.
 - Handoff: Failed or uncertain routes flow to readiness gates, residual escrow, fallback routes, or tribunal/review rather than ordinary execution.
 - Interface: Planning requests capabilities.
 - Interface: Governance bounds specialists.
@@ -2027,7 +2028,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A router registry with capability metadata, cost, authority, and fallback rules.
+- A router registry with capability metadata, cost, authority, leases, route limitations, route receipts, non-selection evidence, expiry, residual ownership, and fallback rules.
 - Exact Appendix C claim-source mappings for routing heads: five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
 - Planned Codex test: Specialist routing accuracy test.
@@ -2067,6 +2068,7 @@ Draft arc:
 - Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
 - Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
 - Mechanism: expose allowed routes, blocked routes, fallback path, expiry, inherited residuals, and non-claims so canary or diagnostic permission cannot be mistaken for default readiness.
+- Mechanism: Separate evidence state, floor evidence, frontier evidence, diagnostic permissions, and closure conditions so fixture validation, source-reported gates, and reproduced readiness cannot collapse into one status.
 - Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
 - Interface: Routing reads readiness.
 - Interface: Benchmarks update gates.
@@ -2091,7 +2093,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A module lifecycle state machine and residual escrow ledger.
+- A module lifecycle state machine and residual escrow ledger with evidence state, floor/frontier evidence, diagnostic permissions, closure conditions, inherited residuals, expiry, and non-claims.
 - Exact Appendix C claim-source mappings for readiness gates: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected.
 - Implemented protocol validation: `readiness_gate_record` fixture validates public record shape, field identity, workload family, freshness window, route permissions, inherited residuals, fallback path, expiry, and non-claims only.
 - Implemented Lean predicate: promoted decisions require all required gates to pass.
@@ -2132,6 +2134,7 @@ Draft arc:
 - Mechanism: Keep direct MoECOT claims conservative until runtime artifacts, replay records, benchmark records, or reproduced local runs exist.
 - Mechanism: separate source-reported, locally reproduced, externally corroborated, and blocked fields inside each runtime evidence packet.
 - Mechanism: record cold-start-to-handoff traces, including denied routes, failed gates, missing replay refs, unresolved handoffs, and residual branches.
+- Mechanism: Preserve runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims so a runtime name cannot stand in for replay or benchmark evidence.
 - Handoff: A concrete runtime must still land on an owned, leased, or project compute substrate whose reachability does not imply authority.
 - Interface: Routing selects cores.
 - Interface: SCFs govern replacement.

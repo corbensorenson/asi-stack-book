@@ -125,9 +125,14 @@ The interface is the pair of records emitted around each route.
 Specialist Registry Record fields:
 
 - `specialist_id`
+- `registry_epoch`
+- `owner`
 - `capabilities`
+- `authority_envelope`
 - `authority_scope`
+- `memory_lease_policy`
 - `memory_refs`
+- `tool_lease_policy`
 - `tool_permissions`
 - `runtime_tier`
 - `cost_profile`
@@ -136,6 +141,8 @@ Specialist Registry Record fields:
 - `fallback_routes`
 - `residual_refs`
 - `evidence_refs`
+- `route_limitations`
+- `non_claims`
 
 Routing Decision Record fields:
 
@@ -144,17 +151,31 @@ Routing Decision Record fields:
 - `capability_request`
 - `candidate_specialists`
 - `selected_specialist`
+- `rejected_candidates`
+- `non_selection_evidence`
 - `route_shape`
+- `route_receipt`
 - `authority_check`
+- `granted_authority_subset`
+- `denied_authority`
 - `readiness_check`
+- `context_lease`
+- `tool_lease`
+- `verifier_requirement`
+- `budget`
+- `expiry`
 - `cost_quality_reason`
 - `fallback_route`
+- `residual_owner`
 - `residuals`
 - `ledger_refs`
+- `non_claims`
 
 Planning requests capabilities, not personalities. Governance bounds authority. Evidence updates readiness. Execution receives the selected specialist and the authority envelope. Artifact graphs receive the route decision so downstream claims can be traced back to the capability that produced them.
 
 The interface should include a route receipt. It records selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
+
+The public schemas now make that receipt explicit. Specialist registry records carry owner, registry epoch, authority envelope, memory/tool lease policies, route limitations, and non-claims. Routing decision records carry rejected candidates, non-selection evidence, route receipt, granted and denied authority, context/tool leases, verifier requirement, budget, expiry, residual owner, and non-claims. These fields do not prove route quality; they preserve the information a future route-quality test needs.
 
 ## Invariants
 
@@ -184,7 +205,7 @@ The subtle failure is route laundering. A task is routed through a broad special
 
 The smallest useful implementation is not a learned router. It is a registry schema, a routing decision schema, and valid fixtures that make route decisions inspectable.
 
-The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, selected route, route shape, authority check, readiness check, cost-quality reason, fallback, residuals, and ledger references. Passing these fixtures proves only that the records are structurally valid; it does not prove routing accuracy.
+The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, rejected candidates, selected route, route shape, route receipt, authority subset, denied authority, readiness check, leases, verifier requirement, budget, expiry, fallback, residual owner, residuals, and ledger references. Passing these fixtures proves only that the records are structurally valid; it does not prove routing accuracy.
 
 `AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. These proofs do not implement a router, select a specialist, or measure routing quality.
 

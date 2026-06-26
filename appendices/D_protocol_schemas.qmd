@@ -446,9 +446,14 @@ This record separates cyclic adapter, RoPE, phase-bank, and mixer structural fac
 ```yaml
 specialist_registry_record:
   specialist_id: string
+  registry_epoch: string
+  owner: string
   capabilities: []
+  authority_envelope: []
   authority_scope: string
+  memory_lease_policy: string
   memory_refs: []
+  tool_lease_policy: string
   tool_permissions: []
   runtime_tier: string
   cost_profile: string
@@ -457,9 +462,11 @@ specialist_registry_record:
   fallback_routes: []
   residual_refs: []
   evidence_refs: []
+  route_limitations: []
+  non_claims: []
 ```
 
-This record describes a bounded specialist core before it can be routed to. It makes capability, authority, memory, tools, runtime tier, cost, readiness, quality predicates, fallback, residuals, and evidence visible.
+This record describes a bounded specialist core before it can be routed to. It makes registry epoch, owner, capability, authority envelope, memory/tool lease policy, runtime tier, cost, readiness, quality predicates, fallback, residuals, evidence, route limitations, and non-claims visible.
 
 ## Routing Decision Record
 
@@ -470,16 +477,28 @@ routing_decision_record:
   capability_request: string
   candidate_specialists: []
   selected_specialist: string
+  rejected_candidates: []
+  non_selection_evidence: []
   route_shape: single
+  route_receipt: string
   authority_check: passed
+  granted_authority_subset: []
+  denied_authority: []
   readiness_check: ready
+  context_lease: string
+  tool_lease: string
+  verifier_requirement: string
+  budget: string
+  expiry: string
   cost_quality_reason: string
   fallback_route: string
+  residual_owner: string
   residuals: []
   ledger_refs: []
+  non_claims: []
 ```
 
-This record turns router selection into an auditable decision. It separates candidate discovery, selection, route shape, authority check, readiness check, cost-quality reasoning, fallback, residuals, and ledger references.
+This record turns router selection into an auditable decision. It separates candidate discovery, rejected candidates, non-selection evidence, selection, route shape, route receipt, authority subset, denied authority, leases, verifier requirement, budget, expiry, readiness check, cost-quality reasoning, fallback, residual owner, residuals, ledger references, and non-claims.
 
 ## Device Resource Card
 
@@ -722,7 +741,10 @@ readiness_gate_record:
   candidate_state: canary
   workload_family: string
   freshness_window: string
+  evidence_state: fixture_validated
   gate_evidence: []
+  floor_evidence: []
+  frontier_evidence: []
   regression_results: []
   residual_escrow: []
   inherited_residuals: []
@@ -731,15 +753,17 @@ readiness_gate_record:
   quarantine_conditions: []
   allowed_routes: []
   blocked_routes: []
+  diagnostic_permissions: []
   fallback_path: string
   expiry: string
   decision: canary
+  closure_conditions: []
   review_refs: []
   next_review_trigger: string
   non_claims: []
 ```
 
-This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to field identity, workload family, freshness, evidence, regressions, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, review, stale-gate triggers, and non-claims.
+This record governs promotion, quarantine, split, merge, retirement, and retraining decisions by tying lifecycle state to field identity, workload family, freshness, evidence state, floor/frontier evidence, regressions, residual escrow, inherited residuals, authority, route permissions, diagnostic permissions, blockers, quarantine conditions, fallback, expiry, closure conditions, review, stale-gate triggers, and non-claims.
 
 ## Benchmark Ratchet Record
 
@@ -768,21 +792,31 @@ This record turns benchmark pressure into an evidence-gated decision. It preserv
 ```yaml
 moecot_orchestration_record:
   run_id: string
+  runtime_packet_state: design_example
   command_ref: string
   orchestrator_id: string
   route_head: string
   specialist_cores: []
   control_plane_gates: []
+  route_authority_ledger: []
   ledger_refs: []
   readiness_gate_refs: []
   replay_refs: []
+  denied_routes: []
+  failed_gates: []
+  missing_replay_refs: []
   handoff_refs: []
   promotion_blockers: []
   residuals: []
+  source_reported_fields: []
+  locally_reproduced_fields: []
+  externally_corroborated_fields: []
+  blocked_fields: []
   source_claim_state: argument
+  non_claims: []
 ```
 
-This record gives the MoECOT implementation-reference lane a conservative runtime crosswalk: command, compact orchestrator, route head, specialist cores, control-plane gates, ledgers, readiness gates, replay, handoff, blockers, residuals, and source-claim state.
+This record gives the MoECOT implementation-reference lane a conservative runtime crosswalk: packet state, command, compact orchestrator, route head, specialist cores, control-plane gates, route authority ledger, ledgers, readiness gates, replay refs, denied routes, failed gates, missing replay refs, handoff, blockers, residuals, evidence-state field partitions, source-claim state, and non-claims.
 
 ## Context Adequacy Record
 

@@ -123,22 +123,34 @@ The interface is the MoECOT Orchestration Record.
 Minimum fields:
 
 - `run_id`
+- `runtime_packet_state`
 - `command_ref`
 - `orchestrator_id`
 - `route_head`
 - `specialist_cores`
 - `control_plane_gates`
+- `route_authority_ledger`
 - `ledger_refs`
 - `readiness_gate_refs`
 - `replay_refs`
+- `denied_routes`
+- `failed_gates`
+- `missing_replay_refs`
 - `handoff_refs`
 - `promotion_blockers`
 - `residuals`
+- `source_reported_fields`
+- `locally_reproduced_fields`
+- `externally_corroborated_fields`
+- `blocked_fields`
 - `source_claim_state`
+- `non_claims`
 
 Planning emits the command or task. Routing selects specialist cores. Execution runs typed jobs and adapters. Evidence and replay ledgers evaluate runtime changes. SCFs govern whether a runtime lane can become a default route or replacement implementation. Claim discipline decides whether a MoECOT statement is source-reported, locally reproduced, or still a design argument.
 
 The orchestration record should also carry a route authority ledger: who or what authorized the command, which specialist authority envelopes were active, which tools or memory mounts were permitted, and which authority changes were denied. Multi-core orchestration without authority history is just parallel work.
+
+The public schema now records runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. That partition is the chapter's central evidence discipline: a runtime packet can be useful as a design example while still blocked as replay evidence and empty as locally reproduced benchmark evidence.
 
 ## Invariants
 
@@ -168,7 +180,7 @@ The subtle failure is replay theater. The runtime keeps a replay handle for the 
 
 The smallest useful implementation is an orchestration schema and fixture that records the runtime crosswalk without pretending a runtime was executed.
 
-The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, command reference, orchestrator, route head, cores, gates, ledgers, readiness gates, replay, handoff, blockers, residuals, and source-claim state. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
+The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, runtime packet state, command reference, orchestrator, route head, cores, gates, route authority ledger, ledgers, readiness gates, replay, denied routes, failed gates, missing replay refs, handoff, blockers, residuals, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, source-claim state, and non-claims. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
 
 The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, the chapter remains an implementation-reference map.
 

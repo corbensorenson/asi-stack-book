@@ -1,15 +1,25 @@
 {
   "run_id": "moecot-run-demo-001",
+  "runtime_packet_state": "design_example",
   "command_ref": "command://draft-moecot-crosswalk",
   "orchestrator_id": "orchestrator://compact-demo",
   "route_head": "route-head://demo",
   "specialist_cores": ["specialist://source-routing-demo", "specialist://readiness-gate-demo"],
   "control_plane_gates": ["authority check", "readiness check", "source-claim-state check"],
+  "route_authority_ledger": ["command authority: public draft only", "denied authority: runtime benchmark claim"],
   "ledger_refs": ["routing_decision_record.valid.json", "readiness_gate_record.valid.json"],
   "readiness_gate_refs": ["readiness-gate-demo-001"],
   "replay_refs": ["not-run: fixture only"],
+  "denied_routes": ["runtime-benchmark-promotion"],
+  "failed_gates": ["no local replay artifact"],
+  "missing_replay_refs": ["moecot runtime replay log not imported"],
   "handoff_refs": ["chapters/moecot-runtime-and-multi-core-orchestration.qmd"],
   "promotion_blockers": ["MoECOT runtime artifacts have not been imported or reproduced"],
   "residuals": ["fixture records crosswalk shape only"],
-  "source_claim_state": "argument"
+  "source_reported_fields": ["compact orchestrator", "specialist lanes"],
+  "locally_reproduced_fields": [],
+  "externally_corroborated_fields": [],
+  "blocked_fields": ["runtime replay", "benchmark reproduction", "release artifact inspection"],
+  "source_claim_state": "argument",
+  "non_claims": ["fixture does not prove MoECOT runtime behavior", "fixture does not prove benchmark performance"]
 }

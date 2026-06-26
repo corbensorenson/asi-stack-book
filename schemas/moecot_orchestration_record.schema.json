@@ -5,36 +5,59 @@
   "type": "object",
   "required": [
     "run_id",
+    "runtime_packet_state",
     "command_ref",
     "orchestrator_id",
     "route_head",
     "specialist_cores",
     "control_plane_gates",
+    "route_authority_ledger",
     "ledger_refs",
     "readiness_gate_refs",
     "replay_refs",
+    "denied_routes",
+    "failed_gates",
+    "missing_replay_refs",
     "handoff_refs",
     "promotion_blockers",
     "residuals",
-    "source_claim_state"
+    "source_reported_fields",
+    "locally_reproduced_fields",
+    "externally_corroborated_fields",
+    "blocked_fields",
+    "source_claim_state",
+    "non_claims"
   ],
   "properties": {
     "run_id": { "type": "string", "minLength": 1 },
+    "runtime_packet_state": {
+      "type": "string",
+      "enum": ["design_example", "source_reported", "imported_artifact", "locally_reproduced", "blocked"]
+    },
     "command_ref": { "type": "string", "minLength": 1 },
     "orchestrator_id": { "type": "string", "minLength": 1 },
     "route_head": { "type": "string", "minLength": 1 },
     "specialist_cores": { "type": "array", "items": { "type": "string" } },
     "control_plane_gates": { "type": "array", "items": { "type": "string" } },
+    "route_authority_ledger": { "type": "array", "items": { "type": "string" } },
     "ledger_refs": { "type": "array", "items": { "type": "string" } },
     "readiness_gate_refs": { "type": "array", "items": { "type": "string" } },
     "replay_refs": { "type": "array", "items": { "type": "string" } },
+    "denied_routes": { "type": "array", "items": { "type": "string" } },
+    "failed_gates": { "type": "array", "items": { "type": "string" } },
+    "missing_replay_refs": { "type": "array", "items": { "type": "string" } },
     "handoff_refs": { "type": "array", "items": { "type": "string" } },
     "promotion_blockers": { "type": "array", "items": { "type": "string" } },
     "residuals": { "type": "array", "items": { "type": "string" } },
+    "source_reported_fields": { "type": "array", "items": { "type": "string" } },
+    "locally_reproduced_fields": { "type": "array", "items": { "type": "string" } },
+    "externally_corroborated_fields": { "type": "array", "items": { "type": "string" } },
+    "blocked_fields": { "type": "array", "items": { "type": "string" } },
     "source_claim_state": {
       "type": "string",
       "enum": ["argument", "source_reported", "imported_artifact", "locally_reproduced", "blocked"]
-    }
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

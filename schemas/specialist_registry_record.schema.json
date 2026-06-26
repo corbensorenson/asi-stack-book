@@ -5,9 +5,14 @@
   "type": "object",
   "required": [
     "specialist_id",
+    "registry_epoch",
+    "owner",
     "capabilities",
+    "authority_envelope",
     "authority_scope",
+    "memory_lease_policy",
     "memory_refs",
+    "tool_lease_policy",
     "tool_permissions",
     "runtime_tier",
     "cost_profile",
@@ -15,13 +20,20 @@
     "quality_predicates",
     "fallback_routes",
     "residual_refs",
-    "evidence_refs"
+    "evidence_refs",
+    "route_limitations",
+    "non_claims"
   ],
   "properties": {
     "specialist_id": { "type": "string", "minLength": 1 },
+    "registry_epoch": { "type": "string", "minLength": 1 },
+    "owner": { "type": "string", "minLength": 1 },
     "capabilities": { "type": "array", "items": { "type": "string" } },
+    "authority_envelope": { "type": "array", "items": { "type": "string" } },
     "authority_scope": { "type": "string", "minLength": 1 },
+    "memory_lease_policy": { "type": "string", "minLength": 1 },
     "memory_refs": { "type": "array", "items": { "type": "string" } },
+    "tool_lease_policy": { "type": "string", "minLength": 1 },
     "tool_permissions": { "type": "array", "items": { "type": "string" } },
     "runtime_tier": { "type": "string", "minLength": 1 },
     "cost_profile": { "type": "string", "minLength": 1 },
@@ -32,7 +44,9 @@
     "quality_predicates": { "type": "array", "items": { "type": "string" } },
     "fallback_routes": { "type": "array", "items": { "type": "string" } },
     "residual_refs": { "type": "array", "items": { "type": "string" } },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "route_limitations": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

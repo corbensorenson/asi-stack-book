@@ -12,7 +12,10 @@
     "candidate_state",
     "workload_family",
     "freshness_window",
+    "evidence_state",
     "gate_evidence",
+    "floor_evidence",
+    "frontier_evidence",
     "regression_results",
     "residual_escrow",
     "inherited_residuals",
@@ -21,9 +24,11 @@
     "quarantine_conditions",
     "allowed_routes",
     "blocked_routes",
+    "diagnostic_permissions",
     "fallback_path",
     "expiry",
     "decision",
+    "closure_conditions",
     "review_refs",
     "next_review_trigger",
     "non_claims"
@@ -46,7 +51,13 @@
     },
     "workload_family": { "type": "string", "minLength": 1 },
     "freshness_window": { "type": "string", "minLength": 1 },
+    "evidence_state": {
+      "type": "string",
+      "enum": ["not_run", "source_reported", "fixture_validated", "locally_reproduced", "expired", "blocked"]
+    },
     "gate_evidence": { "type": "array", "items": { "type": "string" } },
+    "floor_evidence": { "type": "array", "items": { "type": "string" } },
+    "frontier_evidence": { "type": "array", "items": { "type": "string" } },
     "regression_results": { "type": "array", "items": { "type": "string" } },
     "residual_escrow": { "type": "array", "items": { "type": "string" } },
     "inherited_residuals": { "type": "array", "items": { "type": "string" } },
@@ -55,12 +66,14 @@
     "quarantine_conditions": { "type": "array", "items": { "type": "string" } },
     "allowed_routes": { "type": "array", "items": { "type": "string" } },
     "blocked_routes": { "type": "array", "items": { "type": "string" } },
+    "diagnostic_permissions": { "type": "array", "items": { "type": "string" } },
     "fallback_path": { "type": "string", "minLength": 1 },
     "expiry": { "type": "string", "minLength": 1 },
     "decision": {
       "type": "string",
       "enum": ["reject", "quarantine", "shadow", "canary", "qualify", "default", "retire", "rerun"]
     },
+    "closure_conditions": { "type": "array", "items": { "type": "string" } },
     "review_refs": { "type": "array", "items": { "type": "string" } },
     "next_review_trigger": { "type": "string", "minLength": 1 },
     "non_claims": { "type": "array", "items": { "type": "string" } }

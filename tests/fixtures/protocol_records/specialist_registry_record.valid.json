@@ -1,8 +1,13 @@
 {
   "specialist_id": "specialist://source-routing-demo",
+  "registry_epoch": "fixture-epoch-001",
+  "owner": "book-maintenance-agent",
   "capabilities": ["source-note lookup", "chapter-to-source routing"],
+  "authority_envelope": ["read tracked public source notes", "write no external state"],
   "authority_scope": "read_public_book_sources_only",
+  "memory_lease_policy": "source-note references only; no private raw source publication",
   "memory_refs": ["sources/source_notes"],
+  "tool_lease_policy": "read-only repository inspection for fixture",
   "tool_permissions": ["read repository files"],
   "runtime_tier": "local-analysis",
   "cost_profile": "low-latency local lookup; no external action",
@@ -10,5 +15,7 @@
   "quality_predicates": ["must preserve source IDs", "must not promote support state without evidence"],
   "fallback_routes": ["human review", "residual record"],
   "residual_refs": ["residual://routing-demo-no-live-benchmark"],
-  "evidence_refs": ["sources/source_notes/octopus_router.md", "sources/source_notes/rmi.md"]
+  "evidence_refs": ["sources/source_notes/octopus_router.md", "sources/source_notes/rmi.md"],
+  "route_limitations": ["canary only", "no learned-router result", "no authority-enforcement result"],
+  "non_claims": ["fixture does not prove specialist quality", "fixture does not prove runtime readiness"]
 }

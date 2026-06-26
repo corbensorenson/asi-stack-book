@@ -126,7 +126,10 @@ Minimum fields:
 - `candidate_state`
 - `workload_family`
 - `freshness_window`
+- `evidence_state`
 - `gate_evidence`
+- `floor_evidence`
+- `frontier_evidence`
 - `regression_results`
 - `residual_escrow`
 - `inherited_residuals`
@@ -135,14 +138,18 @@ Minimum fields:
 - `quarantine_conditions`
 - `allowed_routes`
 - `blocked_routes`
+- `diagnostic_permissions`
 - `fallback_path`
 - `expiry`
 - `decision`
+- `closure_conditions`
 - `review_refs`
 - `next_review_trigger`
 - `non_claims`
 
 Routing reads `current_state`, `authority_scope`, `allowed_routes`, `blocked_routes`, and `promotion_blockers`. Benchmark ratchets update `gate_evidence`, `regression_results`, and `residual_escrow`. SCF replacement transactions use the record as part of qualification and rollback. Artifact graphs preserve the ledger references so future decisions can distinguish "not tested" from "tested and failed" from "tested in a narrower context."
+
+The public schema now separates evidence state, floor evidence, frontier evidence, diagnostic permissions, and closure conditions. This keeps canary or diagnostic permission from becoming ordinary route permission and keeps stale or source-reported evidence from being confused with reproduced readiness.
 
 The lifecycle states should be explicit enough for routers and auditors to consume: draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded. The exact names can vary, but ordinary execution must not depend on prose interpretation of a benchmark note.
 
@@ -175,7 +182,7 @@ The subtle failure is gate laundering. A target fails readiness under one name, 
 
 The smallest useful implementation is a readiness gate schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
 
-The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, inherited residuals, allowed and blocked routes, fallback path, expiry, and non-claims. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
+The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, evidence state, floor evidence, frontier evidence, inherited residuals, allowed and blocked routes, diagnostic permissions, fallback path, expiry, closure conditions, and non-claims. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
 
 `AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, plus a bounded quarantine predicate blocking ordinary route selection for quarantined targets. These proofs do not implement benchmark evaluation, residual escrow storage, lifecycle transitions, or routing enforcement.
 
