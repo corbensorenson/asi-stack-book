@@ -1,5 +1,6 @@
 {
   "intent_id": "intent-demo-001",
+  "intake_state": "validated_for_command",
   "request_summary": "Prepare a public-safe chapter revision.",
   "desired_outcome": "Improve source-specific prose without promoting evidence state.",
   "allowed_means": ["edit tracked Quarto files", "add public-safe schemas"],
@@ -10,5 +11,8 @@
   "evidence_requirements": ["record validation commands"],
   "escalation_conditions": ["missing source text for a source-derived claim"],
   "stop_conditions": ["validation failure that cannot be resolved locally"],
-  "open_ambiguities": ["none for this fixture"]
+  "open_ambiguities": ["none for this fixture"],
+  "bounded_defaults": ["public-safe drafting defaults apply only to tracked book files"],
+  "recontract_triggers": ["new source-derived claim needs raw text review", "side effect beyond public draft edit is requested"],
+  "non_claims": ["fixture does not prove user satisfaction", "fixture does not prove execution behavior"]
 }

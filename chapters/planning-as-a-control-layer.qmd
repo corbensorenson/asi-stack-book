@@ -152,16 +152,25 @@ Minimum fields:
 - `context_requests`
 - `tool_requirements`
 - `authority_requirements`
+- `authority_budget`
 - `risk_budget`
 - `compute_budget`
 - `verification_plan`
 - `replanning_policy`
+- `replanning_history`
 - `stop_conditions`
+- `node_lifecycle_states`
+- `blocked_nodes`
+- `dispatch_receipts`
+- `residual_register`
 - `dispatch_state`
+- `non_claims`
 
 Alignment filters goals before planning. VCM supplies context packets. Routing consumes capability requirements. Execution receives typed jobs. Evidence records the plan's assumptions, residuals, verification results, and replanning events.
 
 The plan graph is also the handoff between cognition and scheduling. It should say which nodes are exploratory, which are executable, which require approval, which are blocked, and which are evidence-only. Without that state, downstream execution has to infer whether a node is a thought, a task, a request, or a permission grant.
+
+The public schema now forces the graph to name authority budget, replanning history, node lifecycle states, blocked nodes, dispatch receipts, residual register, and non-claims. Those fields do not prove decomposition quality or dependency correctness. They make the plan's dispatch boundary reviewable and give later tests a stable target.
 
 A dispatch receipt should be produced when a node lowers into a job:
 
@@ -203,9 +212,9 @@ Another failure is plan theater: a graph that looks organized but does not contr
 
 ## Minimal implementation
 
-A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.
+A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, authority budget, risk and compute budgets, verification plan, replanning policy, replanning history, stop conditions, node lifecycle states, blocked-node records, dispatch receipts, residual register, non-claims, and failure behavior.
 
-The smallest useful implementation is a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, and dispatch state. It does not prove the plan is good.
+The smallest useful implementation is a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, dispatch receipts, residuals, non-claims, and dispatch state. It does not prove the plan is good.
 
 The schema and fixture make the planning surface explicit. They do not prove that a graph is acyclic, optimal, complete, or safe to dispatch.
 
@@ -215,7 +224,7 @@ The next useful implementation step is a tiny plan-dispatch fixture with one val
 
 | Test | Purpose | Status |
 |---|---|---|
-| Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority, budgets, verification, replanning, stop conditions, and dispatch state. | implemented by protocol validation; run in this pass |
+| Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority budget, risk and compute budgets, verification, replanning history, stop conditions, lifecycle states, dispatch receipts, residuals, non-claims, and dispatch state. | implemented by protocol validation; run in this pass |
 | Authority inheritance finite-record proof | Check that a modeled plan node inherits the parent contract authority ceiling unless governance lowers it. | implemented in `AsiStackProofs.Planning`; runtime replanning test not run |
 | Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; planner harness not run |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |

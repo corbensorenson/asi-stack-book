@@ -12,12 +12,19 @@
     "context_requests",
     "tool_requirements",
     "authority_requirements",
+    "authority_budget",
     "risk_budget",
     "compute_budget",
     "verification_plan",
     "replanning_policy",
+    "replanning_history",
     "stop_conditions",
-    "dispatch_state"
+    "node_lifecycle_states",
+    "blocked_nodes",
+    "dispatch_receipts",
+    "residual_register",
+    "dispatch_state",
+    "non_claims"
   ],
   "properties": {
     "plan_id": { "type": "string", "minLength": 1 },
@@ -28,15 +35,38 @@
     "context_requests": { "type": "array", "items": { "type": "string" } },
     "tool_requirements": { "type": "array", "items": { "type": "string" } },
     "authority_requirements": { "type": "array", "items": { "type": "string" } },
+    "authority_budget": { "type": "string", "minLength": 1 },
     "risk_budget": { "type": "string", "minLength": 1 },
     "compute_budget": { "type": "string", "minLength": 1 },
     "verification_plan": { "type": "array", "items": { "type": "string" } },
     "replanning_policy": { "type": "string", "minLength": 1 },
+    "replanning_history": { "type": "array", "items": { "type": "string" } },
     "stop_conditions": { "type": "array", "items": { "type": "string" } },
+    "node_lifecycle_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "proposed",
+          "blocked_context",
+          "blocked_authority",
+          "blocked_dependency",
+          "blocked_verification",
+          "dispatchable",
+          "dispatched",
+          "replanned",
+          "stopped"
+        ]
+      }
+    },
+    "blocked_nodes": { "type": "array", "items": { "type": "string" } },
+    "dispatch_receipts": { "type": "array", "items": { "type": "string" } },
+    "residual_register": { "type": "array", "items": { "type": "string" } },
     "dispatch_state": {
       "type": "string",
       "enum": ["draft", "blocked", "dispatchable", "running", "complete", "residual"]
-    }
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

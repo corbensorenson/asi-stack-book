@@ -1,18 +1,26 @@
 {
   "contract_id": "command-demo-001",
   "intent_id": "intent-demo-001",
+  "validation_state": "validated_for_planning",
   "role": "book-maintenance-agent",
   "objective": "Revise a public-safe chapter while preserving evidence discipline.",
   "context_refs": ["docs/book_outline.md", "sources/source_notes/viea.md"],
+  "field_provenance": ["objective:user_confirmed", "constraints:policy_imposed", "context_refs:source_derived"],
+  "field_confidence": ["confirmed", "policy_imposed", "source_derived"],
   "constraints": ["do not fabricate source content", "do not promote support states without evidence"],
   "procedure": ["read assigned source notes", "edit chapter prose", "run validation"],
   "allowed_means": ["edit tracked Quarto and schema files", "run local validators"],
   "forbidden_means": ["publish raw private source text", "claim unrun tests passed"],
+  "bounded_defaults": ["when no support transition exists, keep evidence level at argument"],
   "output_contract": "A committed chapter revision with matching protocol docs.",
   "verification": ["validate_book.py passes", "quarto render passes"],
   "failure_behavior": ["emit residual on missing source text", "block dispatch on missing approval"],
   "authority_ceiling": "write_public_book_only",
+  "authority_basis": "explicit book-editing request plus repository workflow rules",
   "required_approvals": ["none for public-safe local draft edits"],
   "expected_artifacts": ["chapter diff", "schema fixture", "validation summary"],
-  "feedback_route": "appendices/F_changelog.qmd"
+  "feedback_route": "appendices/F_changelog.qmd",
+  "recontract_points": ["new publication target", "private source quotation", "support-state promotion"],
+  "dispatch_blockers": ["missing source text for source-derived claim", "unresolved validation failure"],
+  "non_claims": ["fixture does not prove prompt-injection resistance", "fixture does not prove semantic extraction quality"]
 }

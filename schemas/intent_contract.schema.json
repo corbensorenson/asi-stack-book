@@ -5,6 +5,7 @@
   "type": "object",
   "required": [
     "intent_id",
+    "intake_state",
     "request_summary",
     "desired_outcome",
     "allowed_means",
@@ -15,10 +16,17 @@
     "evidence_requirements",
     "escalation_conditions",
     "stop_conditions",
-    "open_ambiguities"
+    "open_ambiguities",
+    "bounded_defaults",
+    "recontract_triggers",
+    "non_claims"
   ],
   "properties": {
     "intent_id": { "type": "string", "minLength": 1 },
+    "intake_state": {
+      "type": "string",
+      "enum": ["draft", "field_complete", "blocked_ambiguity", "validated_for_command", "superseded"]
+    },
     "request_summary": { "type": "string", "minLength": 1 },
     "desired_outcome": { "type": "string", "minLength": 1 },
     "allowed_means": { "type": "array", "items": { "type": "string" } },
@@ -29,7 +37,10 @@
     "evidence_requirements": { "type": "array", "items": { "type": "string" } },
     "escalation_conditions": { "type": "array", "items": { "type": "string" } },
     "stop_conditions": { "type": "array", "items": { "type": "string" } },
-    "open_ambiguities": { "type": "array", "items": { "type": "string" } }
+    "open_ambiguities": { "type": "array", "items": { "type": "string" } },
+    "bounded_defaults": { "type": "array", "items": { "type": "string" } },
+    "recontract_triggers": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

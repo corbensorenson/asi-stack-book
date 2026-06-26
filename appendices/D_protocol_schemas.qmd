@@ -78,29 +78,38 @@ Example fixtures for implemented schema checks are tracked in `tests/fixtures/pr
 command_contract:
   contract_id: string
   intent_id: string
+  validation_state: validated_for_planning
   role: string
   objective: string
   context_refs: []
+  field_provenance: []
+  field_confidence: []
   constraints: []
   procedure: []
   allowed_means: []
   forbidden_means: []
+  bounded_defaults: []
   output_contract: string
   verification: []
   failure_behavior: []
   authority_ceiling: string
+  authority_basis: string
   required_approvals: []
   expected_artifacts: []
   feedback_route: string
+  recontract_points: []
+  dispatch_blockers: []
+  non_claims: []
 ```
 
-This record turns a request into an operational command with explicit objective, context, constraints, allowed means, output, verification, failure behavior, authority, approvals, artifacts, and feedback route.
+This record turns a request into an operational command with explicit objective, context, constraints, allowed means, output, verification, failure behavior, authority, approvals, artifacts, field provenance, bounded defaults, dispatch blockers, re-contract points, non-claims, and feedback route.
 
 ## Intent Contract
 
 ```yaml
 intent_contract:
   intent_id: string
+  intake_state: validated_for_command
   request_summary: string
   desired_outcome: string
   allowed_means: []
@@ -112,9 +121,12 @@ intent_contract:
   escalation_conditions: []
   stop_conditions: []
   open_ambiguities: []
+  bounded_defaults: []
+  recontract_triggers: []
+  non_claims: []
 ```
 
-This record translates natural-language purpose into a bounded contract before planning or execution.
+This record translates natural-language purpose into a bounded contract before planning or execution, including intake state, bounded defaults, re-contract triggers, and explicit non-claims.
 
 ## Intent-to-Execution Trace
 
@@ -126,14 +138,19 @@ intent_execution_trace:
   plan_graph: string
   typed_jobs: []
   authority_transitions: []
+  handoff_receipts: []
+  dispatch_receipts: []
   artifacts: []
   verification_records: []
   delivery_or_deployment: string
   feedback_refs: []
+  recontract_events: []
+  stop_or_fault_state: string
   residuals: []
+  non_claims: []
 ```
 
-This record preserves the chain from intent to command, plan, job, authority transition, artifact, verification, delivery, feedback, and residuals.
+This record preserves the chain from intent to command, plan, job, authority transition, handoff receipt, dispatch receipt, artifact, verification, delivery, feedback, re-contract event, stop/fault state, residual, and explicit non-claim.
 
 ## Layer Boundary Record
 
@@ -165,15 +182,22 @@ plan_graph:
   context_requests: []
   tool_requirements: []
   authority_requirements: []
+  authority_budget: string
   risk_budget: string
   compute_budget: string
   verification_plan: []
   replanning_policy: string
+  replanning_history: []
   stop_conditions: []
+  node_lifecycle_states: []
+  blocked_nodes: []
+  dispatch_receipts: []
+  residual_register: []
   dispatch_state: dispatchable
+  non_claims: []
 ```
 
-This record keeps planning separate from memory, reasoning, and execution while making assumptions, dependencies, context, tools, budgets, verification, replanning, and dispatch state explicit.
+This record keeps planning separate from memory, reasoning, and execution while making assumptions, dependencies, context, tools, authority budget, risk budget, compute budget, verification, replanning history, lifecycle states, blocked nodes, dispatch receipts, residual register, non-claims, and dispatch state explicit.
 
 ## PlanForge DAG
 

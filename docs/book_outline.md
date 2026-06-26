@@ -1009,6 +1009,7 @@ Draft arc:
 - Mechanism: Attach result artifacts back to the claim and evidence ledger.
 - Mechanism: Separate desire, authorization, means, and acceptance so helpful overrun becomes a re-contract request rather than silent execution authority.
 - Mechanism: Preserve authority deltas and re-contract points when planning discovers missing approval, inadequate context, unverifiable output, budget pressure, or forbidden means.
+- Mechanism: Record intake state, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, and explicit non-claims so trace-shape validation is not mistaken for execution evidence.
 - Interface: Intent contracts feed planning.
 - Interface: Execution consumes typed jobs derived from contracts.
 - Interface: Evidence records contract satisfaction.
@@ -1027,8 +1028,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A command-contract schema and one end-to-end intent-to-artifact trace.
-- Implemented protocol validation: `command_contract` and `intent_execution_trace` fixtures validate public record shape only.
+- Intent-contract, command-contract, and intent-to-execution trace schemas with one public-safe intent-to-artifact trace shape.
+- Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the core intent-to-execution claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, and MoECOT runtime-reference context; four local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`) now have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending contract-completeness tests, constraint-preservation tests, artifact-traceability tests, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
 - Planned Codex test: Contract field completeness test.
 - Planned Codex test: Constraint preservation test.
@@ -1067,6 +1068,7 @@ Draft arc:
 - Mechanism: Mark field confidence and missing/inferred authority so planning can distinguish authorized means from inferred defaults, draft-only routes, clarifications, and residuals.
 - Mechanism: Track command validation states: draft, field-complete, conflict-detected, authority-inferred, dispatch-blocked, validated-for-planning, and superseded.
 - Mechanism: Attach field provenance and confidence states: confirmed, policy-imposed, source-derived, defaulted, inferred, and missing.
+- Mechanism: Preserve bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims as first-class fields so future parser and dispatcher tests can distinguish record shape from enforcement.
 - Interface: Planning consumes structured commands.
 - Interface: Execution enforces output contracts.
 - Interface: Verification checks stated failure behavior.
@@ -1090,7 +1092,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A canonical command-contract template used by future chapter drafting and experiment prompts.
-- Implemented protocol validation: `command_contract` fixture validates public record shape only.
+- Implemented protocol validation: `command_contract` fixture validates public record shape only, including validation state, field provenance, field confidence, bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the core command-contract claim across Software Magic Grimoire command-envelope vocabulary, VIEA structured command layers, GenesisCode protocol/effect boundaries, Cognitive Compilation source-plan/S-IR lowering, and Talos typed-job contract discipline; all five local mappings (`software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`) now have reviewed passage references. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, or accepted evidence transitions.
 - Planned Codex test: Command schema validation test.
 - Planned Codex test: Failure-behavior declaration test.
@@ -1132,6 +1134,7 @@ Draft arc:
 - Mechanism: Preserve stop conditions, authority ceilings, and alternative-route status during replanning; only dispatchable nodes with satisfied constraints lower into typed jobs.
 - Mechanism: Track plan node lifecycle states: proposed, blocked-context, blocked-authority, blocked-dependency, blocked-verification, dispatchable, dispatched, replanned, and stopped.
 - Mechanism: Emit dispatch receipts with satisfied constraints, context refs, authority basis, verification plan, replanning history, and typed-job refs.
+- Mechanism: Preserve authority budget, replanning history, blocked-node records, residual register, and non-claims so a candidate graph cannot masquerade as governed dispatch.
 - Interface: Alignment filters goals.
 - Interface: VCM supplies context packets.
 - Interface: Routing selects specialists.
@@ -1155,8 +1158,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A plan graph format with dependencies, context requests, risk budgets, and stop conditions.
-- Implemented protocol validation: `plan_graph` fixture validates public record shape only.
+- A plan graph format with dependencies, context requests, authority budget, risk budgets, stop conditions, lifecycle states, dispatch receipts, blocked-node records, and residual register.
+- Implemented protocol validation: `plan_graph` fixture validates public record shape only, including authority budget, replanning history, lifecycle states, blocked nodes, dispatch receipts, residual register, and non-claims.
 - Exact Appendix C claim-source mappings for the planning-control claim across PlanForge planning middleware, VIEA orchestration/runtime spine, Cognitive Compilation source-plan/S-IR pipeline, Software Magic Grimoire spell-stack workflow discipline, and MoECOT runtime-reference context; the four local mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`) now have reviewed passage references. `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, runtime replanning traces, or accepted evidence transitions.
 - Planned Codex test: Decomposition accuracy test.
 - Planned Codex test: Dependency ordering test.

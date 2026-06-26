@@ -10,11 +10,16 @@
     "plan_graph",
     "typed_jobs",
     "authority_transitions",
+    "handoff_receipts",
+    "dispatch_receipts",
     "artifacts",
     "verification_records",
     "delivery_or_deployment",
     "feedback_refs",
-    "residuals"
+    "recontract_events",
+    "stop_or_fault_state",
+    "residuals",
+    "non_claims"
   ],
   "properties": {
     "trace_id": { "type": "string", "minLength": 1 },
@@ -23,11 +28,16 @@
     "plan_graph": { "type": "string", "minLength": 1 },
     "typed_jobs": { "type": "array", "items": { "type": "string" } },
     "authority_transitions": { "type": "array", "items": { "type": "string" } },
+    "handoff_receipts": { "type": "array", "items": { "type": "string" } },
+    "dispatch_receipts": { "type": "array", "items": { "type": "string" } },
     "artifacts": { "type": "array", "items": { "type": "string" } },
     "verification_records": { "type": "array", "items": { "type": "string" } },
     "delivery_or_deployment": { "type": "string", "minLength": 1 },
     "feedback_refs": { "type": "array", "items": { "type": "string" } },
-    "residuals": { "type": "array", "items": { "type": "string" } }
+    "recontract_events": { "type": "array", "items": { "type": "string" } },
+    "stop_or_fault_state": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

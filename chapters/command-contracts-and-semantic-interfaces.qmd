@@ -140,24 +140,34 @@ Minimum fields:
 
 - `contract_id`
 - `intent_id`
+- `validation_state`
 - `role`
 - `objective`
 - `context_refs`
+- `field_provenance`
+- `field_confidence`
 - `constraints`
 - `procedure`
 - `allowed_means`
 - `forbidden_means`
+- `bounded_defaults`
 - `output_contract`
 - `verification`
 - `failure_behavior`
 - `authority_ceiling`
+- `authority_basis`
 - `required_approvals`
 - `expected_artifacts`
 - `feedback_route`
+- `recontract_points`
+- `dispatch_blockers`
+- `non_claims`
 
 Planning consumes the structured command. Execution enforces allowed means and output contracts. Verification checks the declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.
 
 This interface is deliberately narrower than natural language. It does not attempt to preserve every nuance of the request; it preserves the operational fields that downstream layers need to avoid guessing. The raw request can remain attached for review, but the structured fields control dispatch.
+
+The public schema now records validation state, field provenance, field confidence, bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims. That is still only a protocol surface. It does not prove that a semantic extractor found the fields correctly, that hostile context was blocked, or that a dispatcher enforced the result. It gives those future tests stable hooks.
 
 Each field should carry confidence/provenance metadata:
 
@@ -200,7 +210,7 @@ The subtle failure is field laundering: a vague sentence is copied into a formal
 
 A canonical command-contract template used by future chapter drafting and experiment prompts.
 
-The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate constraints, output, verification, approvals, and failure behavior without claiming the command has been executed.
+The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate validation state, field provenance, field confidence, constraints, bounded defaults, output, verification, approvals, authority basis, re-contract points, dispatch blockers, non-claims, and failure behavior without claiming the command has been executed.
 
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 

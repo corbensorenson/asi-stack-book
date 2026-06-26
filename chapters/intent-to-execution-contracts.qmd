@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "viea"
   - "talos"
@@ -27,13 +27,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`; supporting: `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery without local raw passage review: `moecot` |
-| Test state | `intent_execution_trace.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; behavioral execution, replay, and artifact-satisfaction tests remain planned. |
+| Test state | `intent_contract.valid.json` and `intent_execution_trace.valid.json` pass protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; behavioral execution, replay, and artifact-satisfaction tests remain planned. |
 
 ## Drafting guardrail
 
@@ -112,6 +112,8 @@ This is why the book treats feedback as part of execution, not as a postscript. 
 
 The trace should also preserve re-contract points. If planning discovers that the original objective is underspecified, the required tool exceeds authority, the context is inadequate, the verifier cannot check the output, or the cost exceeds budget, the correct move is not creative completion. It is re-contract, escalation, deferral, or refusal.
 
+The updated public record shape makes that refusal path explicit. Intent contracts now carry an intake state, bounded defaults, re-contract triggers, and non-claims. The execution trace carries handoff receipts, dispatch receipts, re-contract events, stop or fault state, and non-claims. Those fields do not make the trace executable. They make it harder for a future implementation, reviewer, or chapter-writing run to confuse "the record was shaped correctly" with "the work was authorized, run, verified, or accepted."
+
 ## Interfaces
 
 The interface is the Intent-to-Execution Trace.
@@ -120,19 +122,27 @@ The interface is the Intent-to-Execution Trace.
 - Execution consumes typed jobs derived from contracts.
 - Evidence records contract satisfaction.
 
-Minimum fields:
+Minimum interface fields span the parent intent contract and the execution trace:
 
 - `trace_id`
 - `intent_contract`
+- `intake_state`
 - `command_contract`
 - `plan_graph`
 - `typed_jobs`
 - `authority_transitions`
+- `handoff_receipts`
+- `dispatch_receipts`
 - `artifacts`
 - `verification_records`
 - `delivery_or_deployment`
 - `feedback_refs`
+- `recontract_events`
+- `stop_or_fault_state`
 - `residuals`
+- `bounded_defaults`
+- `recontract_triggers`
+- `non_claims`
 
 Intent contracts feed planning. Command contracts bind procedure and outputs. Plan graphs decompose the work. Typed jobs carry executable units. Authority transitions control side effects. Verification records decide whether the artifact satisfies the original intent.
 
@@ -162,9 +172,9 @@ The subtle failure is helpful overrun. The system goes beyond the contract becau
 
 A command-contract schema and one end-to-end intent-to-artifact trace.
 
-The smallest useful implementation is a `command_contract` schema plus an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, artifact, verification record, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
+The smallest useful implementation is an `intent_contract` schema, a `command_contract` schema, and an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, handoff receipt, dispatch receipt, artifact, verification record, re-contract event, stop or fault state, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
 
-Those two records are implemented only as public protocol artifacts. They can validate that the trace names the required links; they cannot show that the links were executed, authorized, accepted, or useful.
+Those records are implemented only as public protocol artifacts. They can validate that the trace names the required links and non-claims; they cannot show that the links were executed, authorized, accepted, or useful.
 
 The next useful implementation step is a two-path vertical-slice fixture: one contract that lowers into a permitted job and accepted artifact, and one contract that stops because authority, context, approval, verifier, or budget is missing. That would exercise preservation and stop conditions without claiming behavioral execution.
 
@@ -172,7 +182,7 @@ The next useful implementation step is a two-path vertical-slice fixture: one co
 
 | Test | Purpose | Status |
 |---|---|---|
-| Intent-to-execution trace fixture validation | Check that the trace fixture matches the public schema and preserves the required chain fields. | implemented by protocol validation; run in this pass |
+| Intent and trace fixture validation | Check that the intent and trace fixtures match the public schemas and preserve intake state, handoff receipts, dispatch receipts, re-contract triggers, stop/fault state, residuals, and non-claims. | implemented by protocol validation; run in this pass |
 | Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | planned; not run |
 | Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | planned; not run |
 | Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | planned; not run |

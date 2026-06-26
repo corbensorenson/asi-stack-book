@@ -6,38 +6,71 @@
   "required": [
     "contract_id",
     "intent_id",
+    "validation_state",
     "role",
     "objective",
     "context_refs",
+    "field_provenance",
+    "field_confidence",
     "constraints",
     "procedure",
     "allowed_means",
     "forbidden_means",
+    "bounded_defaults",
     "output_contract",
     "verification",
     "failure_behavior",
     "authority_ceiling",
+    "authority_basis",
     "required_approvals",
     "expected_artifacts",
-    "feedback_route"
+    "feedback_route",
+    "recontract_points",
+    "dispatch_blockers",
+    "non_claims"
   ],
   "properties": {
     "contract_id": { "type": "string", "minLength": 1 },
     "intent_id": { "type": "string", "minLength": 1 },
+    "validation_state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "field_complete",
+        "conflict_detected",
+        "authority_inferred",
+        "dispatch_blocked",
+        "validated_for_planning",
+        "superseded"
+      ]
+    },
     "role": { "type": "string", "minLength": 1 },
     "objective": { "type": "string", "minLength": 1 },
     "context_refs": { "type": "array", "items": { "type": "string" } },
+    "field_provenance": { "type": "array", "items": { "type": "string" } },
+    "field_confidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["confirmed", "policy_imposed", "source_derived", "defaulted", "inferred", "missing"]
+      }
+    },
     "constraints": { "type": "array", "items": { "type": "string" } },
     "procedure": { "type": "array", "items": { "type": "string" } },
     "allowed_means": { "type": "array", "items": { "type": "string" } },
     "forbidden_means": { "type": "array", "items": { "type": "string" } },
+    "bounded_defaults": { "type": "array", "items": { "type": "string" } },
     "output_contract": { "type": "string", "minLength": 1 },
     "verification": { "type": "array", "items": { "type": "string" } },
     "failure_behavior": { "type": "array", "items": { "type": "string" } },
     "authority_ceiling": { "type": "string", "minLength": 1 },
+    "authority_basis": { "type": "string", "minLength": 1 },
     "required_approvals": { "type": "array", "items": { "type": "string" } },
     "expected_artifacts": { "type": "array", "items": { "type": "string" } },
-    "feedback_route": { "type": "string", "minLength": 1 }
+    "feedback_route": { "type": "string", "minLength": 1 },
+    "recontract_points": { "type": "array", "items": { "type": "string" } },
+    "dispatch_blockers": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

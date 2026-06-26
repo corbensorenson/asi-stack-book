@@ -5,9 +5,14 @@
   "plan_graph": "plan-demo-001",
   "typed_jobs": ["job-demo-001"],
   "authority_transitions": ["authority-demo-001"],
+  "handoff_receipts": ["intent-demo-001 -> command-demo-001", "command-demo-001 -> plan-demo-001"],
+  "dispatch_receipts": ["plan-demo-001/load-source-context -> job-demo-001"],
   "artifacts": ["artifact://public-safe-chapter-revision"],
   "verification_records": ["verification://local-render-required"],
   "delivery_or_deployment": "not_deployed_by_fixture",
   "feedback_refs": ["appendices/F_changelog.qmd"],
-  "residuals": ["fixture validates trace shape only; no execution result is claimed"]
+  "recontract_events": ["none in fixture"],
+  "stop_or_fault_state": "not_applicable_shape_only_fixture",
+  "residuals": ["fixture validates trace shape only; no execution result is claimed"],
+  "non_claims": ["fixture does not prove the job ran", "fixture does not prove artifact acceptance"]
 }
