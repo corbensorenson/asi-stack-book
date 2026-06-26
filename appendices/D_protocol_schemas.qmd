@@ -1537,6 +1537,9 @@ claim_record:
   claim_label: Design rationale
   support_state: argument
   lifecycle_state: recorded
+  source_mapping_status: none
+  source_mapping_refs: []
+  evidence_readiness_state: shape_validated
   source_handles: []
   surface_refs: []
   tests: []
@@ -1561,11 +1564,13 @@ claim_record:
   contradiction_state: none
   review_status: open
   revision_history_refs: []
+  required_next_evidence: []
   promotion_blockers: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Claim scope, lifecycle state, surface refs, contradiction state, revision history, promotion blockers, and non-claims keep repeated prose from laundering confidence. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
+Claim labels and support states are separate. A claim can be a `Hypothesized` claim with `argument` support, or a `Measured` claim with `synthetic-test-backed` support after a recorded test run. Claim scope, lifecycle state, source-mapping status, source-mapping refs, evidence-readiness state, surface refs, contradiction state, revision history, required next evidence, promotion blockers, support-state effect, and non-claims keep repeated prose from laundering confidence. Conversation-mined author intent can explain lineage and drafting intent, but it is not by itself source-derived evidence.
 
 ## Evidence Transition Record
 
@@ -1574,9 +1579,11 @@ evidence_transition_record:
   transition_id: string
   claim_id: string
   claim_surface_refs: []
+  claim_record_refs: []
   old_support_state: argument
   new_support_state: argument
   transition_effect: no_change
+  transition_validity_state: shape_validated
   scope_boundary: string
   evidence_roles: []
   transition_reason: string
@@ -1592,13 +1599,15 @@ evidence_transition_record:
   promotion_burden: string
   limitations: []
   review_status: open
+  reviewer_refs: []
   reviewer_independence: string
+  acceptance_blockers: []
   changelog_ref: string
   support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record makes support-state movement reviewable. It names the claim, claim surface refs, prior and candidate support states, transition effect, scope boundary, evidence roles, required artifacts, artifact refs, evidence packets, source mappings, verifier command/result, negative results, negative evidence refs, downgrade triggers, promotion burden, limitations, reviewer independence, changelog ref, support-state effect, non-claims, and review state before a claim can move.
+This record makes support-state movement reviewable. It names the claim, claim surface refs, claim record refs, prior and candidate support states, transition effect, transition validity state, scope boundary, evidence roles, required artifacts, artifact refs, evidence packets, source mappings, verifier command/result, negative results, negative evidence refs, downgrade triggers, promotion burden, limitations, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, non-claims, and review state before a claim can move.
 
 ## Belief Revision Record
 

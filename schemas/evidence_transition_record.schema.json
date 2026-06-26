@@ -7,9 +7,11 @@
     "transition_id",
     "claim_id",
     "claim_surface_refs",
+    "claim_record_refs",
     "old_support_state",
     "new_support_state",
     "transition_effect",
+    "transition_validity_state",
     "scope_boundary",
     "evidence_roles",
     "transition_reason",
@@ -25,7 +27,9 @@
     "promotion_burden",
     "limitations",
     "review_status",
+    "reviewer_refs",
     "reviewer_independence",
+    "acceptance_blockers",
     "changelog_ref",
     "support_state_effect",
     "non_claims"
@@ -34,6 +38,7 @@
     "transition_id": { "type": "string", "minLength": 1 },
     "claim_id": { "type": "string", "minLength": 1 },
     "claim_surface_refs": { "type": "array", "items": { "type": "string" } },
+    "claim_record_refs": { "type": "array", "items": { "type": "string" } },
     "old_support_state": {
       "type": "string",
       "enum": ["unsupported", "argument", "source-derived", "prototype-backed", "synthetic-test-backed", "empirical-test-backed", "external-literature-backed", "deprecated", "refuted"]
@@ -45,6 +50,17 @@
     "transition_effect": {
       "type": "string",
       "enum": ["no_change", "upward", "downward", "deprecated", "refuted"]
+    },
+    "transition_validity_state": {
+      "type": "string",
+      "enum": [
+        "not_checked",
+        "shape_validated",
+        "artifact_validated",
+        "review_accepted",
+        "rejected",
+        "blocked"
+      ]
     },
     "scope_boundary": { "type": "string", "minLength": 1 },
     "evidence_roles": { "type": "array", "items": { "type": "string" } },
@@ -67,7 +83,9 @@
       "type": "string",
       "enum": ["open", "accepted", "rejected", "needs_review"]
     },
+    "reviewer_refs": { "type": "array", "items": { "type": "string" } },
     "reviewer_independence": { "type": "string", "minLength": 1 },
+    "acceptance_blockers": { "type": "array", "items": { "type": "string" } },
     "changelog_ref": { "type": "string", "minLength": 1 },
     "support_state_effect": {
       "type": "string",

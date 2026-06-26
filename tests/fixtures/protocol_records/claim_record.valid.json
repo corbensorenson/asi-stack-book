@@ -5,6 +5,9 @@
   "claim_label": "Design rationale",
   "support_state": "argument",
   "lifecycle_state": "recorded",
+  "source_mapping_status": "none",
+  "source_mapping_refs": [],
+  "evidence_readiness_state": "shape_validated",
   "source_handles": ["appendices/D_protocol_schemas.qmd"],
   "surface_refs": ["appendices/D_protocol_schemas.qmd", "tests/fixtures/protocol_records/claim_record.valid.json"],
   "tests": ["scripts/validate_protocol_examples.py"],
@@ -13,6 +16,8 @@
   "contradiction_state": "none",
   "review_status": "open",
   "revision_history_refs": ["tests/fixtures/protocol_records/belief_revision_record.valid.json"],
-  "promotion_blockers": ["no behavioral claim extractor", "no contradiction detector"],
+  "required_next_evidence": ["claim-specific source mapping", "accepted evidence transition before support-state promotion"],
+  "promotion_blockers": ["no behavioral claim extractor", "no contradiction detector", "no accepted evidence transition"],
+  "support_state_effect": "record_shape_only",
   "non_claims": ["fixture does not prove claim truth", "fixture does not promote support state"]
 }

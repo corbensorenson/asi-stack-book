@@ -10,6 +10,9 @@
     "claim_label",
     "support_state",
     "lifecycle_state",
+    "source_mapping_status",
+    "source_mapping_refs",
+    "evidence_readiness_state",
     "source_handles",
     "surface_refs",
     "tests",
@@ -18,7 +21,9 @@
     "contradiction_state",
     "review_status",
     "revision_history_refs",
+    "required_next_evidence",
     "promotion_blockers",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
@@ -66,6 +71,29 @@
         "retired"
       ]
     },
+    "source_mapping_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "source_note_mapped",
+        "raw_passage_reviewed",
+        "evidence_packet_mapped",
+        "blocked",
+        "deprecated"
+      ]
+    },
+    "source_mapping_refs": { "type": "array", "items": { "type": "string" } },
+    "evidence_readiness_state": {
+      "type": "string",
+      "enum": [
+        "not_ready",
+        "shape_validated",
+        "mapped_for_review",
+        "ready_for_transition_review",
+        "blocked",
+        "deprecated"
+      ]
+    },
     "source_handles": { "type": "array", "items": { "type": "string" } },
     "surface_refs": { "type": "array", "items": { "type": "string" } },
     "tests": { "type": "array", "items": { "type": "string" } },
@@ -99,7 +127,18 @@
     },
     "review_status": { "type": "string", "enum": ["open", "reviewed", "blocked", "deprecated"] },
     "revision_history_refs": { "type": "array", "items": { "type": "string" } },
+    "required_next_evidence": { "type": "array", "items": { "type": "string" } },
     "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

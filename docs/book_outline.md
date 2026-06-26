@@ -364,7 +364,7 @@ Draft arc:
 - Mechanism: Separate claim label from support state with evidence transition records so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.
 - Mechanism: Require source notes before promoting claims to source-derived.
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
-- Mechanism: emit evidence receipts that lock artifact role, claim scope, transition effect, evidence role, verification command or review, downgrade triggers, promotion burden, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
+- Mechanism: emit evidence receipts that lock artifact role, claim scope, claim-record linkage, source-mapping status, evidence-readiness state, transition effect, transition validity state, evidence role, verification command or review, reviewer refs, downgrade triggers, promotion burden, acceptance blockers, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
 - Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
@@ -387,8 +387,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check with claim surface refs, evidence packet refs, source mapping refs, negative evidence refs, support-state effect, and non-claims.
-- Implemented repository-level fixture: `evidence_transition_record.valid.json` validates claim surface refs, transition effect, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer independence, changelog ref, support-state effect, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
+- A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check with source mapping status, source mapping refs, evidence readiness state, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, reviewer refs, acceptance blockers, support-state effect, and non-claims.
+- Implemented repository-level fixture: `claim_record.valid.json` validates source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims only; `evidence_transition_record.valid.json` validates claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims only; claim-ledger completeness, evidence bundle completeness, accepted transition review, and changelog audits remain planned.
 - Planned Codex test: Support-state transition test.
 - Planned Codex test: Claim ledger completeness test.
 - Planned Codex test: Evidence bundle completeness test.

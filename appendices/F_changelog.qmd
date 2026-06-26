@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal claim evidence readiness gates
+
+- Strengthened the claim/evidence readiness boundary: claim records now validate source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims; evidence transition records now validate claim record refs, transition validity state, reviewer refs, acceptance blockers, support-state effect, and non-claims in addition to claim surface refs, transition effect, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer independence, and changelog refs. Updated the Evidence States chapter, outline, protocol appendix, schemas, and fixtures so future writing runs can distinguish claim-shape validation, source-mapping readiness, transition validity, accepted review, and support-state promotion without claiming substantive claim truth, evidence-bundle completeness, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal context transaction validity gates
 
 - Strengthened the context transaction boundary: context transaction records now validate transaction validity state, isolation state, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims in addition to transaction state, snapshots, mounts, read/write sets, branch policy, taint propagation, deletion closure, declassification refs, derivatives, materialization state, faults, replay boundary, context ABI refs, source refs, and audit refs. Updated the Context Transactions chapter, outline, protocol appendix, schema, and fixture so future memory-store work can distinguish fixture-shape validation from store validation, branch isolation, deletion-closure behavior, replay, support-state promotion, reader artifact, or audio artifact.
