@@ -961,6 +961,8 @@ Draft arc:
 - Mechanism: Turn recurring command patterns into reusable templates.
 - Mechanism: Treat software words as coordination primitives.
 - Mechanism: Bind semantic interfaces to schemas and tests.
+- Mechanism: Treat command contracts as semantic firewalls: retrieved context, examples, prior conversation, and style notes can inform work but cannot override explicit objective, constraints, authority, verification, or failure behavior.
+- Mechanism: Mark field confidence and missing/inferred authority so planning can distinguish authorized means from inferred defaults, draft-only routes, clarifications, and residuals.
 - Interface: Planning consumes structured commands.
 - Interface: Execution enforces output contracts.
 - Interface: Verification checks stated failure behavior.
@@ -1016,6 +1018,8 @@ Draft arc:
 - Mechanism: Compile goals into strategic, tactical, and runtime plans.
 - Mechanism: Represent assumptions, task graph, dependency graph, required context, required tools, worker requirements, authority requirements, risk budget, compute budget, verification plan, replanning policy, stopping conditions, and failure behavior.
 - Mechanism: Delegate execution through typed contracts.
+- Mechanism: Treat the plan graph as a refusal-friendly control artifact: missing context, blocked dependencies, authority overreach, exhausted budgets, and failed predicates become residuals before side effects.
+- Mechanism: Preserve stop conditions, authority ceilings, and alternative-route status during replanning; only dispatchable nodes with satisfied constraints lower into typed jobs.
 - Interface: Alignment filters goals.
 - Interface: VCM supplies context packets.
 - Interface: Routing selects specialists.
@@ -1572,6 +1576,8 @@ Draft arc:
 - Insufficiency: Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
 - Mechanism: Convert accepted plans and required actions into typed job packets with contract lock, lifecycle state, permissions, approval gates, expected artifacts, failure behavior, audit trail, and replay expectations.
 - Mechanism: Keep orchestration, workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay as separate execution boundaries.
+- Mechanism: Preserve job parentage from command contract to plan node, approval record, adapter, artifact, residual, and replay declaration so useful work cannot be laundered into governed execution without receipts.
+- Mechanism: Separate delivery from evidence-ready completion: a job can produce output while still missing approval, verification, artifact capture, audit events, or replay metadata.
 - Handoff: Delivered, failed, or blocked jobs flow into artifact graphs as durable work products and audit traces.
 - Interface: Planning dispatches jobs.
 - Interface: Security mediates permissions.

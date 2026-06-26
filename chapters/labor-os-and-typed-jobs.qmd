@@ -42,6 +42,8 @@ This chapter treats typed jobs as the execution contract for work, not as proof 
 
 Placed after tribunal review, this chapter is the first execution translation point. Reviewed claims, accepted plans, and unresolved required actions cannot remain conversational objects; they must become bounded work packets whose state, authority, approvals, and failure behavior can be inspected.
 
+The typed job is where the stack stops planning and starts owing receipts. A plan node describes intended work; a job packet records authorized work with lifecycle, permission, approval, artifact, and replay obligations attached.
+
 ## Problem
 
 Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
@@ -50,6 +52,8 @@ The previous chapters decide what should be believed and reviewed. Execution beg
 
 A job is the unit that keeps agency bounded. It carries a contract, lifecycle state, inputs, outputs, permissions, approval state, runtime adapter, failure behavior, audit events, and replay status.
 
+This makes jobs the execution-side partner of command contracts. Commands expose the semantic fields; plans decompose those fields; jobs bind each dispatchable node to an execution state that can be approved, denied, audited, retried, or retired.
+
 ## Why existing approaches are insufficient
 
 Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
@@ -57,6 +61,8 @@ Chat outputs do not provide deterministic job lifecycle, tool isolation, auditab
 Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
 
 GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
+
+Agent swarms often fail at this boundary. They start many plausible subtasks but lose the lifecycle state, permission scope, parent contract, or artifact trail that would let a reviewer know which work was authorized and which work merely happened. A Labor OS should make unauthorized work hard to start and unlogged work hard to hide.
 
 ## Core Claim
 
@@ -104,6 +110,8 @@ The lifecycle should be explicit enough to reject invalid transitions. A job can
 
 The execution layer should not merge all subfunctions into one agent. Orchestration, secure workspace setup, access control, adapter invocation, artifact capture, adjudication, delivery, feedback, and replay are different boundaries.
 
+Typed jobs should also preserve parentage. A reviewer should be able to trace each job back to a command contract, plan node, approval record if required, runtime adapter, produced artifact, and residual. If that chain breaks, the job may still be useful work, but it should not count as governed execution.
+
 ## Interfaces
 
 The interface is the Typed Job.
@@ -129,6 +137,8 @@ Minimum fields:
 
 Planning dispatches jobs. Security mediates permissions. Runtime adapters perform effects. Artifact graphs receive outputs, logs, and replay metadata.
 
+The job interface should carry enough state for other layers to refuse it. Security can reject missing permissions. Approval can block high-impact work. Runtime adapters can reject unsupported capabilities. Artifact graphs can mark incomplete provenance. Evidence can refuse to treat delivery as support until adjudication and replay fields exist.
+
 ## Invariants
 
 - Every job has type and lifecycle state.
@@ -136,6 +146,8 @@ Planning dispatches jobs. Security mediates permissions. Runtime adapters perfor
 - Human approval gates block high-impact jobs.
 
 The approval invariant is non-negotiable: a job requiring approval cannot execute because a planner or model predicts approval would be granted. The approval record is part of the job state.
+
+A second invariant is effect accountability. Every external effect should have an adapter reference, permission basis, audit event, and replay or non-replay declaration. Otherwise the labor OS has produced side effects without a work record.
 
 ## Failure modes
 
@@ -145,6 +157,8 @@ The approval invariant is non-negotiable: a job requiring approval cannot execut
 
 Tool overreach is a permission failure. Unlogged side effects are audit failures. Chaotic agent swarms are lifecycle failures: work escapes the job boundary and becomes unreviewable. Each should block dispatch or force quarantine.
 
+The subtle failure is completion laundering. A job can be marked done because an output exists, even though required approval, verification, artifact capture, or replay metadata is missing. Delivery should not be the same state as evidence-ready completion.
+
 ## Minimal implementation
 
 A typed-job schema with lifecycle states and permission checks.
@@ -152,6 +166,8 @@ A typed-job schema with lifecycle states and permission checks.
 The smallest useful implementation is the expanded `typed_job` schema and fixture. It validates lifecycle, approval, failure behavior, permissions, audit events, and replay status without claiming a real job was executed.
 
 The fixture validates the job record surface. `AsiStackProofs.TypedJobs` adds a bounded transition predicate for declared lifecycle moves and a bounded approval predicate showing that an approval-required job cannot be allowed to run without an approval record. This does not prove an adapter permission check, scheduler implementation, approval-service integration, or replay result.
+
+The next useful implementation step is a small lifecycle harness over fixture jobs: one valid transition path, one invalid transition, one missing approval, one missing permission, and one delivered-but-not-evidence-ready job. That would exercise the labor-OS boundary without claiming a deployed scheduler.
 
 ## Codex test plan
 
@@ -191,3 +207,5 @@ The crosswalk identifies sources for labor-OS execution discipline. Four local r
 Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The reviewed sources justify the typed-work boundary; they do not show a working scheduler, permission service, approval service, adapter runner, or replay system here.
 
 The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The next chapter follows the job's output into the artifact graph, where work becomes durable memory instead of a disappearing side effect.
+
+The handoff to artifacts should be mandatory. A job that leaves no artifact, audit event, residual, or replay declaration has not become part of the living stack's memory, even if it produced a useful answer.

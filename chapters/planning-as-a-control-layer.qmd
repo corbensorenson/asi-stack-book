@@ -42,6 +42,8 @@ This chapter treats planning as a bounded control artifact. The repo validates a
 
 It follows command contracts because explicit commands are still inert until the stack decides what work should exist, what order it belongs in, and which boundaries must be consulted before dispatch.
 
+Planning is therefore the stack's first refusal-friendly layer after command intake. A plan can expose a missing dependency, overbroad tool request, impossible budget, or violated stop condition before the system spends authority. That makes plans useful even when they do not execute.
+
 ## Problem
 
 Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
@@ -50,6 +52,8 @@ Planning begins after the command contract is explicit. Its job is to decide wha
 
 The planner is therefore a control layer, not a general cognition blob. It turns contracts into dispatchable structure while preserving constraints and leaving execution authority to downstream gates.
 
+The planner's job is not to be clever at any cost. Its job is to keep the action surface legible: what is being attempted, why this order, what context is needed, which tools are requested, what authority is missing, how success will be checked, and where the work must stop.
+
 ## Why existing approaches are insufficient
 
 Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
@@ -57,6 +61,8 @@ Planning cannot be collapsed into memory, reasoning, or execution because each l
 A memory layer retrieves context; it should not silently create work. A reasoning layer evaluates claims; it should not silently spend tool authority. An execution layer runs jobs; it should not be the first place dependencies and stop conditions are discovered. When these roles collapse, scope creep looks like initiative, tool overreach looks like competence, and replanning after failure becomes ad hoc.
 
 Planning also needs to be separate from final answers because plans are cheap to reject. A bad plan can be repaired before side effects occur. A bad execution may need rollback, audit, or incident handling.
+
+Collapsing planning into execution also hides opportunity for review. A human, tribunal, router, or verifier can inspect a plan graph before a tool call exists. Once the tool call runs, the system has moved from deliberation into effects.
 
 ## Core Claim
 
@@ -105,6 +111,8 @@ The control layer compiles accepted work into strategic, tactical, and runtime p
 
 The planner should be allowed to say "I do not have enough context," "this dependency is cyclic," "this tool exceeds authority," or "this budget cannot satisfy the quality predicate." Those outputs are useful plan residuals, not failures to be hidden.
 
+Planning should preserve alternatives without pretending all alternatives are approved. A plan may list candidate routes, but only dispatchable nodes with satisfied constraints, authority, context, and verification plans should lower into typed jobs. The rest remain options, residuals, or review items.
+
 ## Interfaces
 
 The interface is the Plan Graph.
@@ -133,6 +141,8 @@ Minimum fields:
 
 Alignment filters goals before planning. VCM supplies context packets. Routing consumes capability requirements. Execution receives typed jobs. Evidence records the plan's assumptions, residuals, verification results, and replanning events.
 
+The plan graph is also the handoff between cognition and scheduling. It should say which nodes are exploratory, which are executable, which require approval, which are blocked, and which are evidence-only. Without that state, downstream execution has to infer whether a node is a thought, a task, a request, or a permission grant.
+
 ## Invariants
 
 - Plans expose constraints and stop conditions.
@@ -140,6 +150,8 @@ Alignment filters goals before planning. VCM supplies context packets. Routing c
 - Tool selection is justified by task requirements.
 
 A plan node inherits the parent command's authority ceiling unless governance narrows or explicitly changes it. Runtime replanning may change order, route, or decomposition, but it cannot broaden the authority boundary by calling itself adaptation.
+
+Stop-condition preservation is equally important. Replanning after failure may find a new path, but it should not erase the condition that told the original plan when to stop, escalate, or ask for review.
 
 ## Failure modes
 
@@ -149,6 +161,8 @@ A plan node inherits the parent command's authority ceiling unless governance na
 
 Scope creep occurs when a plan adds goals that were never accepted. Planning without replanning means failures create improvisation instead of controlled repair. Tool choice exceeding authority or budget means the plan is not dispatchable, even if the work would be useful.
 
+Another failure is plan theater: a graph that looks organized but does not control dispatch. If dependencies, authority, context demand, and verification are not checked before jobs are created, the graph is documentation rather than a control layer.
+
 ## Minimal implementation
 
 A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.
@@ -156,6 +170,8 @@ A plan graph format with assumptions, task graph, dependencies, context and tool
 The smallest useful implementation is a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, and dispatch state. It does not prove the plan is good.
 
 The schema and fixture make the planning surface explicit. They do not prove that a graph is acyclic, optimal, complete, or safe to dispatch.
+
+The next useful implementation step is a tiny plan-dispatch fixture with one valid node, one blocked dependency, one missing-context node, one authority-exceeding tool request, and one replanning event that preserves the original stop condition. That would demonstrate control-layer semantics without claiming planner quality.
 
 ## Codex test plan
 
@@ -197,3 +213,5 @@ The crosswalk identifies sources for the planning/control boundary. Four mapping
 Planning as a Control Layer converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, verification, stop conditions, and replanning policy before execution begins.
 
 This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The next chapter specializes that graph into a schedulable DAG so efficiency claims have to name capability tiers, verification burdens, and residual costs.
+
+The later typed-job chapter depends on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation.

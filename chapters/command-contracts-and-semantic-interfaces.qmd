@@ -41,6 +41,8 @@ This chapter treats prompt language as an operational interface only when it is 
 
 It follows the execution-trace chapter by zooming into the first machine-readable handoff: the command surface that lets planning proceed without guessing what the user meant or what authority was granted.
 
+This chapter is where the stack stops treating language as a vibe and starts treating it as an interface. The prior intent contract says what was authorized; the command contract says how that authorization is shaped into fields that planners, validators, and job runners can actually inspect.
+
 ## Problem
 
 The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
@@ -49,6 +51,8 @@ The previous chapter turns intent into a trace. This chapter defines the control
 
 A command contract is not a prettier prompt. It is the smallest artifact that lets a planner, verifier, tool runner, reviewer, or later agent understand what kind of work has been authorized and what would count as failure.
 
+The key property is contract precedence. Helpful context, style notes, examples, retrieved passages, and prior conversation can inform the work, but they should not silently rewrite objective, constraints, authority, verification, or failure behavior. The command contract is the semantic firewall between useful context and operational permission.
+
 ## Why existing approaches are insufficient
 
 Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
@@ -56,6 +60,8 @@ Prompt prose often hides objectives, constraints, output contracts, and failure 
 Free-form prompts are useful for exploration, but they are weak as operational boundaries. They mix discovery, design, implementation, verification, and recovery into one text blob. They also invite hidden instruction conflicts: a context fragment can smuggle a command that overrides the actual contract unless explicit fields dominate implicit prose.
 
 GenesisCode adds a useful analogy from software: privileged effects and control responses need recognizable protocol shapes. In the ASI Stack, a command must expose output and verification requirements before it can be lowered into planning or execution.
+
+Unstructured prompts also make error recovery harder. If a result fails, the system cannot tell whether the failure came from a bad objective, missing context, invalid procedure, unsupported tool, weak verification, or ambiguous output contract. A semantic interface makes failures addressable instead of merely disappointing.
 
 ## Core Claim
 
@@ -102,6 +108,8 @@ The command contract should be compact enough to write often and typed enough to
 
 Promptcraft remains useful, but only inside this envelope. The command can include a procedure or style, yet those instructions cannot override explicit constraints, authority ceilings, source boundaries, or required verification.
 
+The contract should also mark field confidence. Some fields are exact, some are inferred, some are defaulted, and some are missing. A planner should be able to distinguish "the user authorized this means" from "the system inferred a likely means" before it creates work. Missing or inferred authority should route to clarification, draft-only output, or residual rather than dispatch.
+
 ## Interfaces
 
 The interface is the Command Contract.
@@ -131,6 +139,8 @@ Minimum fields:
 
 Planning consumes the structured command. Execution enforces allowed means and output contracts. Verification checks the declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.
 
+This interface is deliberately narrower than natural language. It does not attempt to preserve every nuance of the request; it preserves the operational fields that downstream layers need to avoid guessing. The raw request can remain attached for review, but the structured fields control dispatch.
+
 ## Invariants
 
 - A command exposes output and verification requirements.
@@ -138,6 +148,8 @@ Planning consumes the structured command. Execution enforces allowed means and o
 - Implicit instructions do not override explicit constraints.
 
 The override rule is central: context can inform a command, but it cannot silently replace explicit constraints. If a source, tool, user message, or retrieved note conflicts with the command contract, the system should emit a conflict residual instead of choosing the most fluent interpretation.
+
+A related invariant is output-test coupling. A command with no artifact expectation or verification rule is not ready for governed planning, because the downstream system cannot know what success or failure should look like.
 
 ## Failure modes
 
@@ -147,6 +159,8 @@ The override rule is central: context can inform a command, but it cannot silent
 
 Semantic ambiguity produces false agreement: everyone thinks the command is clear until the artifact arrives. Prompt injection through context attacks the contract boundary. An unspecified output contract makes verification subjective. All three should become missing-contract or conflict records before planning proceeds.
 
+The subtle failure is field laundering: a vague sentence is copied into a formal field, making it look structured without becoming testable. A contract field should be concrete enough that a later verifier can say whether it was satisfied, violated, or left residual.
+
 ## Minimal implementation
 
 A canonical command-contract template used by future chapter drafting and experiment prompts.
@@ -154,6 +168,8 @@ A canonical command-contract template used by future chapter drafting and experi
 The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate constraints, output, verification, approvals, and failure behavior without claiming the command has been executed.
 
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
+
+The next useful implementation step is a small command-conflict fixture set: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. That would let the book demonstrate contract precedence without claiming full prompt-security behavior.
 
 ## Codex test plan
 
@@ -192,3 +208,5 @@ The crosswalk identifies sources for the command-envelope vocabulary and lowerin
 Command Contracts and Semantic Interfaces gives the stack an operational language. It compresses intent into fields that planners, tools, validators, and reviewers can all read without inheriting hidden authority.
 
 The chapter's discipline is explicitness under compression: make commands short enough to use, but structured enough that failure, verification, and authority remain visible. With the command surface explicit, the next chapter can ask how accepted work becomes a governed plan before any side effect occurs.
+
+The handoff is precise: planning may decompose the command, but it may not turn context into authority, style into requirement, or helpful inference into permission. That is how the stack keeps language useful without letting it become ambient control.
