@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "talos"
   - "viea"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -52,6 +52,8 @@ Typed jobs are still inert until a runtime adapter performs an effect. This chap
 
 Talos supplies the controlled runtime and approval discipline. Ladon supplies handle-mediated authority and secret isolation. GenesisCode supplies capability boundaries and effect logs. Theseus Operator OS adds the operator-surface requirement: mutating actions should be visible, bounded, and revocable.
 
+The adapter boundary is where the stack stops being interpretive. A claim can be wrong without changing the world. A plan can be flawed without deleting a file. A route can be inefficient without spending money. Once an adapter runs, the system may have produced an external fact. This chapter exists to make that transition narrow, auditable, and reversible where possible.
+
 ## Why existing approaches are insufficient
 
 Tool calling without a permission and approval model turns reasoning errors into side effects.
@@ -63,6 +65,8 @@ The right boundary is not "never call tools." It is "call tools through adapters
 This chapter is where intention stops being enough. A typed job can describe what should happen, and a plan can explain why it should happen, but neither one should receive ambient authority. The adapter grants a narrow effect lease: this capability, for this target, under this sandbox, with this approval state, producing this evidence and these residuals. Anything outside that lease is a denial, escalation, or new request.
 
 Human approval should also be treated as a structured artifact, not a vague blessing. The record should say what was approved, by whom or by which role, under what scope, for which risk tier, and with what expiration or revocation path. Otherwise approval becomes a ritual that hides responsibility instead of a control surface that can be audited.
+
+Approval is not a transfer of authorship. A human may approve a bounded action without approving every downstream reuse of the result, every future route that resembles it, or every policy update trained on it. The approval artifact should therefore expire, name the approved target, and state whether reuse, publication, deployment, or training use is permitted.
 
 ## Core Claim
 
@@ -113,6 +117,25 @@ High-impact actions include irreversible deployments, external messages, monetar
 
 The adapter's evidence is as important as the effect. A successful call should leave enough receipt material for replay, review, or incident response. A failed call should leave the denied capability, policy reason, residual, and recovery path. A partially reversible call should say which part can be rolled back and which part becomes an external residual. That discipline lets procedural-memory chapters later learn from tool use without turning every successful-looking action into a reusable procedure.
 
+The invocation lifecycle is:
+
+```{mermaid}
+sequenceDiagram
+  participant Job as Typed job
+  participant Adapter as Runtime adapter
+  participant Policy as Policy/approval
+  participant Tool as Tool or service
+  participant Ledger as Artifact graph
+  Job->>Adapter: Request capability and target
+  Adapter->>Policy: Check permission, risk, scope, expiry
+  Policy-->>Adapter: Deny, approve, or require escalation
+  Adapter->>Tool: Invoke only within approved lease
+  Tool-->>Adapter: Effect, error, or partial result
+  Adapter->>Ledger: Receipt, rollback handle, residuals, audit refs
+```
+
+The lifecycle keeps three artifacts separate: the job request, the approval decision, and the effect receipt. Merging them is a common source of overclaiming. A job request is not approval. Approval is not proof that the effect succeeded. A successful effect is not permission to promote the route, reuse the procedure, or discard rollback obligations.
+
 ## Interfaces
 
 The interface is the Runtime Adapter Invocation.
@@ -142,11 +165,27 @@ Execution owns adapters. Security mediates secrets and authority handles. Eviden
 
 The adapter interface is also the point where human control stays attached to automation. A planner may request a high-impact action, but the adapter must know whether approval is missing, stale, insufficiently scoped, or contradicted by a newer policy. A security kernel may provide an opaque handle, but the adapter must not expose the secret bytes back into model context. The artifact graph may store the result, but it should store the permission and approval boundary with it.
 
+The effect receipt should distinguish:
+
+| Receipt field | Purpose |
+|---|---|
+| `pre_state_ref` | Identifies the state or artifact before the effect, when available. |
+| `post_state_ref` | Identifies the state or artifact after the effect, when available. |
+| `external_side_effects` | Records messages, deployments, payments, API calls, hardware actions, or institutional changes. |
+| `rollback_handle` | Names the concrete rollback mechanism if one exists. |
+| `irreversible_residuals` | States what cannot be undone. |
+| `verification_refs` | Links to checks that the effect matched the contract. |
+| `incident_refs` | Links to denial, exception, or partial-failure records. |
+
+This receipt structure keeps "tool call succeeded" from becoming a broad evidence claim. The adapter can report a successful API response while still leaving verification, rollback, or incident obligations open.
+
 ## Invariants
 
 - No adapter executes beyond granted scope.
 - High-impact actions require approval.
 - Rollback handles are captured when available.
+- Approval scope expires and does not authorize unrelated reuse.
+- Effect receipts separate request, approval, execution, verification, and rollback state.
 
 No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
@@ -155,6 +194,8 @@ No adapter invocation is valid unless the parent job permissions include the ada
 - Tool overreach.
 - Approval bypass.
 - Irreversible deployment without rollback.
+- Approval laundering, where a narrow human approval is reused as broad authorization.
+- Receipt laundering, where a successful tool response is treated as verified task success.
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
@@ -174,6 +215,8 @@ The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` 
 | Adapter permission predicate | Check that adapter capability is included in the parent job's permissions. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Approval gate rejection predicate | Check that high-impact adapter calls without approval are rejected. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |
+| Approval-scope expiry test | Check that stale, underscoped, or reused approvals deny later high-impact invocations. | planned; not run |
+| Effect-receipt completeness test | Check that pre-state, post-state, side effects, verification refs, rollback handles, and irreversible residuals are represented before route promotion. | planned; not run |
 
 Fixture-shape validation and two bounded Lean predicates are implemented. The remaining tests require an adapter harness, sandbox, parent job permission lookup against real jobs, high-impact classification, logged approval decisions, and effect receipts.
 

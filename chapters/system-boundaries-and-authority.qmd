@@ -4,7 +4,7 @@ chapter_id: "system-boundaries-and-authority"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "viea"
   - "scf"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -51,6 +51,8 @@ The previous chapter routes cognition by cost and quality. That only works if ro
 
 Authority is not a mood, trust score, or model reputation. It is a typed capability attached to a principal, layer, tool, field, artifact, or handoff, bounded by a ceiling and revoked through an auditable path. VIEA needs this to keep intent-to-execution from becoming intent-to-side-effect. SCF needs it so replacement implementations cannot inherit broader powers by occupying a stable capability slot. Talos needs it so typed jobs and tool permissions stay inside a control plane. Ladon/Manhattan and GenesisCode sharpen the same point: secrets, effects, patches, and executors need explicit gates.
 
+The chapter's practical purpose is to make refusal and escalation normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence is the boundary this chapter protects.
+
 ## Why existing approaches are insufficient
 
 Informal ownership boundaries let planning authority, memory access, tool use, and deployment authority blur into each other.
@@ -58,6 +60,8 @@ Informal ownership boundaries let planning authority, memory access, tool use, a
 Prompt rules and role labels are too weak to carry authority. "You are an assistant" does not say whether the system can read a private source, call a shell, modify a file, push a commit, spend money, disclose a secret, update an evaluator, or approve its own replacement. Tool wrappers help, but only if the wrapper is part of a typed authority model rather than a list of convenient function names.
 
 The recurring failure is permission collapse. Read access becomes write access. Planning becomes execution. A source summary becomes authorization. A benchmark result becomes promotion authority. A generated patch becomes accepted code. The ASI Stack treats each collapse as a missing transition record, not as an inevitable side effect of autonomy.
+
+Permission collapse becomes more dangerous when the system improves itself. A replacement implementation may be better at the task while accidentally receiving the old implementation's privileged handles. A learned policy may be cheaper while granting itself approval shortcuts. A router may send a request to a powerful specialist because the specialist can do the work, not because the caller may authorize it. Authority records are the counterweight: capability answers "can"; authority answers "may."
 
 ## Core Claim
 
@@ -106,6 +110,25 @@ The record has four jobs. First, it says who or what is asking. Second, it names
 
 This model also keeps authority out of semantic similarity. A model may infer that an action is helpful. That inference is not a grant. A retrieved document may contain instructions. That text is not a grant. A specialist may be high quality. Quality is not a grant. The grant is a record issued by governance or an authorized caller under a bounded delegation rule.
 
+Authority has a lifecycle:
+
+```{mermaid}
+stateDiagram-v2
+  [*] --> Requested
+  Requested --> Denied: over ceiling or missing grant
+  Requested --> Granted: scoped approval
+  Granted --> Delegated: bounded handoff
+  Delegated --> Used: adapter/effect call
+  Used --> Receipted: effect receipt
+  Granted --> Revoked: policy or expiry
+  Delegated --> Revoked: policy or expiry
+  Revoked --> Denied: later use attempt
+  Receipted --> [*]
+  Denied --> [*]
+```
+
+The lifecycle makes expiry and revocation part of the normal path. A grant is not a permanent property of a model or layer. It is scoped to a principal, operation, target boundary, time or epoch, approval state, and evidence obligation. Delegation can narrow that scope but should not silently widen it.
+
 ## Interfaces
 
 The interface is an Authority Transition Record.
@@ -131,11 +154,26 @@ Minimum fields:
 
 Governance issues ceilings and grants. Planning and routing may request handoffs but do not thereby authorize them. Execution checks permissions before side effects. Evidence records denials, confused-deputy attempts, revocations, and authorized effects. SCF replacement later reuses the same interface: a new implementation can enter a stable field only through a transition that preserves the field's authority ceiling.
 
+The transition record should classify the permission being requested. At minimum, the book should distinguish:
+
+| Permission class | Example | Boundary rule |
+|---|---|---|
+| read | inspect a source, schema, log, or memory cell | Does not permit disclosure, mutation, or execution. |
+| transform | summarize, compile, translate, or derive an artifact | Carries provenance and taint obligations. |
+| disclose | show, publish, export, or transmit information | Requires audience and policy checks. |
+| write | modify a file, ledger, memory cell, branch, or artifact | Requires target-scoped write grant and audit. |
+| execute | call a tool, runtime, service, or adapter | Requires capability grant and effect receipt. |
+| approve | authorize a high-impact action or promotion | Requires independent authority and cannot be self-issued. |
+
+These classes are intentionally mundane. Most authority failures are mundane too: the system does something plausible under the wrong permission class. The record forces the mismatch into view.
+
 ## Invariants
 
 - Authority never expands silently.
 - Read permission is not write permission.
 - Tool execution requires an explicit grant.
+- Delegated authority can narrow but not silently widen the caller's ceiling.
+- Approval authority is separate from execution authority.
 
 The operational invariant is monotone by default: transitions preserve or lower authority unless an explicit governance grant raises it. A layer can carry information across a boundary only under the permission class granted for that information. Reading source text, quoting source text, transforming source text, using it as behavioral instruction, and taking an external action are different permissions.
 
@@ -144,6 +182,8 @@ The operational invariant is monotone by default: transitions preserve or lower 
 - Authority creep.
 - Confused-deputy tool calls.
 - Memory access treated as action approval.
+- Stale grants used after expiry or revocation.
+- Replacement implementations inheriting handles that were qualified only for an older implementation.
 
 The confused-deputy pattern is central. A low-authority layer can ask a higher-authority tool to do something that the layer itself could not do. Without a transition record, the tool may inherit the user's broad session power rather than the requester's narrow grant. Memory creates a parallel failure: seeing a secret, policy, or instruction is mistaken for permission to disclose or execute it. The fix is to bind every operation to the requester's ceiling, not merely to the tool's raw capability.
 
@@ -159,6 +199,7 @@ The smallest useful implementation is an `authority_transition_record` schema pl
 | Authority ceiling finite-record proof | Check that a valid modeled transition cannot raise active authority unless a governance grant is present. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
 | Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | planned; not run |
 | Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | planned; not run |
+| Revocation propagation test | Check that expired or revoked grants fail later transition records, including delegated and replacement contexts. | planned; not run |
 
 ### Formalization hooks
 

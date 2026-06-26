@@ -4,7 +4,7 @@ chapter_id: "the-efficient-asi-hypothesis"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "viea"
   - "rmi"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -54,6 +54,8 @@ The previous chapter says that ASI is a stack. This chapter says why that matter
 
 The efficient-ASI hypothesis is therefore not "small models are enough" and not "scale is unnecessary." It is a claim about allocation. The stack should spend cognition where the current contract demands it, compile repeated work into durable tools or memories, preserve fallback paths, and make the unpaid residual visible. RMI supplies the ratchet language, CGS supplies the smallest-adequate-structure language, BBVCA v9 supplies exact repair and rate honesty, and Simulation Scaling supplies the reminder that feasibility is always contract-relative.
 
+Efficiency in this book is always three-sided. A route must say what quality it preserved, what cost it paid, and what residual it left behind. Any two-sided account is suspect. Low cost without quality is failure. High quality without cost accounting is not an efficiency claim. Low cost and high apparent quality without residual accounting is often just deferred work.
+
 ## Why existing approaches are insufficient
 
 Parameter count alone does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort.
@@ -61,6 +63,8 @@ Parameter count alone does not explain routing, context selectivity, procedural 
 A scale-only account has no native place to record why a cheap route was adequate, why a costly route was necessary, what quality predicate was satisfied, what verification was skipped, or what residual burden remains. It also makes benchmarks too easy to misuse. A benchmark gain can represent genuine capability, prompt overfitting, hidden context cost, more human correction, a larger model invoked in the background, or a compression decision that moved complexity into an uncounted repair stream.
 
 The stack needs a route ledger for the same reason it needs a claim ledger: without a record, success is ambiguous. A useful efficiency claim names the task contract, quality predicate, chosen route, rejected lower-cost routes, verification result, fallback route, residual obligations, and final cost. Without those fields, "efficient" becomes an aesthetic judgment rather than an architecture property.
+
+The insufficiency is especially sharp in self-improving systems. If a system can rewrite prompts, compile tools, cache procedures, add specialists, or change routing policy, then it can also make its own efficiency look better by moving costs out of view. The route ledger blocks that move by keeping verification, fallback, repair, human review, and regression costs attached to the route that caused them.
 
 ## Core Claim
 
@@ -114,6 +118,18 @@ RMI gives the route decision a ratchet: solved work should become regression cov
 
 The output is not a vague "use the cheapest model" policy. It is a record that explains why a route was adequate for a task and what it failed to discharge.
 
+The ledger also gives efficiency a set of outcome states:
+
+| Outcome | Meaning | Promotion consequence |
+|---|---|---|
+| `adequate_minimum` | The selected route satisfied the predicate, lower-cost authorized candidates were absent or failed, and residuals are recorded. | Candidate for tool, memory, regression, or field qualification. |
+| `adequate_overkill` | The result passed, but a lower-cost route was not examined or not recorded. | Useful output; no efficiency promotion. |
+| `cheap_brittle` | The route was low cost but failed quality, verification, or residual checks. | Residual escrow and fallback route required. |
+| `hidden_cost` | The visible route passed, but repair, verification, context, or human-review cost was omitted. | Efficiency claim blocked until accounting is complete. |
+| `unsafe_saving` | The route saved cost by bypassing authority, approval, verification, or rollback. | Quarantine or denial, not promotion. |
+
+These are not benchmark results. They are accounting states. They let a future implementation report that a route was useful without pretending it was efficient, or report that a route was efficient without hiding the work that made it safe enough to use.
+
 ## Interfaces
 
 The interface is the Costed Route Record.
@@ -138,11 +154,25 @@ Minimum fields:
 
 Planning supplies the task contract and quality predicate. Routing proposes candidate routes. Governance checks authority ceilings. Execution produces the artifact. Evidence decides whether the cost/quality result is strong enough to compile into a tool, regression, memory, or capability field. Any open obligation remains attached to the route record.
 
+A complete record should also distinguish cost classes:
+
+- model/runtime cost
+- context construction cost
+- verification cost
+- repair cost
+- human-review cost
+- regression-maintenance cost
+- rollback or residual cost
+
+This distinction matters because different layers can optimize different costs while making the whole system worse. A router may reduce model tokens by increasing context-packaging burden. A compressor may reduce storage while increasing repair. A policy update may reduce latency while increasing human review. The stack should count the total contract cost, not only the cheapest visible meter.
+
 ## Invariants
 
 - Efficiency claims include quality and cost.
 - Compression exposes residuals.
 - Fallback routes remain available.
+- Verification and repair costs remain attached to the route that made them necessary.
+- No route may be called efficient by bypassing authority or approval gates.
 
 The strongest invariant is comparative: a route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so. If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.
 
@@ -166,6 +196,7 @@ The smallest useful implementation is a `costed_route_record` schema plus one va
 | Minimum viable route test | Check whether a lower-cost authorized route fails the declared quality predicate before a higher-cost route is selected. | planned; not run |
 | Residual burden accounting test | Check that unresolved obligations remain attached to the route record instead of being hidden inside a success label. | planned; not run |
 | Utility-preserving compression test | Check whether a compressed or generated representation preserves the downstream task utility claimed for it. | planned; not run |
+| Hidden-cost audit | Check that verification, repair, context, human-review, regression, and rollback costs are represented before an efficiency claim is promoted. | planned; not run |
 
 ### Formalization hooks
 

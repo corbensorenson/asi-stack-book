@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -49,6 +49,8 @@ The central distinction is between **generation capacity** and **verification ba
 
 The layer receives context packets from VCM, claims from the reasoning layer, and risk labels from governance. It emits an adequacy state: sufficient for drafting, sufficient for local consistency checks, insufficient for verification, or escalated to tribunal/proof review. The output is not more prose. The output is a decision about whether the currently loaded context can support the kind of claim the system is about to make.
 
+That decision is local to a claim. A packet can be adequate for writing a chapter summary and inadequate for promoting a safety claim. It can be adequate for checking one citation and inadequate for comparing two long specifications. It can be adequate for a low-risk planning note and inadequate for a governance decision. Adequacy is therefore not a property of context in general; it is a property of a context/claim/verification-mode triple.
+
 ## Why existing approaches are insufficient
 
 Adding tokens can increase distractors, attention interference, and unverified summary burden.
@@ -56,6 +58,8 @@ Adding tokens can increase distractors, attention interference, and unverified s
 The `verification_bandwidth` source frames this as a two-body problem: rigorous comparison requires enough effective workspace to hold the compared units together. If one document, codebase, or specification dominates the active workspace, it can suppress the ability to check another. If consistency is checked only through a chain of local summaries, non-adjacent contradictions can survive by transitive decay.
 
 RAG and long context are therefore necessary infrastructure, not proof. They help place material near the model, but they do not certify that the model jointly verified all relevant constraints. Tree-structured representation, VCM pages, and Spinoza-style claim ledgers are useful only if they expose what was compared, what was summarized, what was left as residual, and what claim class the packet is allowed to support.
+
+The same warning applies to elegant diagrams, dense source notes, and high-quality summaries. They may improve retrieval and understanding, but they also create a temptation to confuse coverage with comparison. Verification bandwidth asks the system to name the comparison it actually performed.
 
 ## Core Claim
 
@@ -97,6 +101,20 @@ The adequacy record models verification as constrained by semantic-unit coverage
 
 The practical rule is simple: if the system cannot name the semantic units that must be jointly checked, it cannot claim verification. If the units are too large for joint checking, the system may still draft, summarize, or propose a claim, but the claim ledger must mark the verification state as inadequate, summary-derived, or escalated.
 
+The adequacy states used by this chapter are deliberately operational:
+
+| Adequacy state | Meaning | Allowed use |
+|---|---|---|
+| `absent` | Required source units are not loaded or not identified. | No source-derived claim. |
+| `drafting_only` | Enough context exists to write or orient, but not to verify the target claim. | Prose draft, source queue, residual. |
+| `local_check` | A narrow fact, citation, schema, or local consistency relation was checked. | Bounded claim with narrow support note. |
+| `joint_check` | Required semantic units were compared in the declared mode. | Candidate for support promotion if other gates pass. |
+| `summary_derived` | The claim rests on summaries or compressed packets with known loss. | Cannot exceed the summary's evidence ceiling. |
+| `escalated` | The context is inadequate for the claim and has been routed to retrieval, split review, tribunal, proof, or human review. | No promotion until the escalation returns evidence. |
+| `contradicted` | The adequacy pass found a conflict that matters to the target claim. | Revision, downgrade, or refutation path. |
+
+This table does not measure a model's true attention. It gives the stack a public vocabulary for refusing overconfident prose.
+
 ## Interfaces
 
 The interface for this chapter is a compact adequacy record that travels with the context packet and the claim it supports.
@@ -117,11 +135,25 @@ Minimum fields:
 
 Planning consumes the adequacy state before assigning review effort. VCM uses it to decide whether retrieval, summarization, or splitting is required. Spinoza-style claim ledgers use it to block support-state promotion when the context packet is adequate for drafting but not for verification.
 
+The record should also name the comparison mode:
+
+- direct source lookup
+- pairwise semantic-unit comparison
+- schema or fixture validation
+- proof-checker result
+- tribunal/adversarial review
+- human review
+- summary-only review
+
+Naming the mode prevents an adequacy state from becoming vague confidence. A claim may be locally checked by schema validation and still be unverified as an empirical claim. A proof-checker result may verify a finite predicate and still leave open whether the predicate models the real system. The interface should preserve that difference.
+
 ## Invariants
 
 - Adequacy is explicit.
 - More context is not treated as proof.
 - High-risk claims pay verification tax.
+- Adequacy is scoped to a target claim and verification mode.
+- Summary-derived support cannot exceed the declared loss and residual record.
 
 These invariants are deliberately weaker than a theorem about model cognition. The book does not claim to know a model's true internal workspace. It claims that a governed stack should expose the boundary conditions under which a claim was produced, and should refuse to treat context length as evidence when the comparison task was not actually performed.
 
@@ -130,6 +162,8 @@ These invariants are deliberately weaker than a theorem about model cognition. T
 - Attention interference.
 - False confidence from large context.
 - Verification skipped for cost reasons.
+- Adequacy laundering, where a context packet adequate for drafting is reused as if it were adequate for support promotion.
+- Mode confusion, where a local schema or proof check is treated as an empirical or deployment result.
 
 Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Each failure should emit a residual record, not merely a lower confidence score.
 
@@ -149,6 +183,7 @@ The existing artifact is narrower: a `context_adequacy_record` schema and fixtur
 | Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
 | Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | planned; not run |
 | Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | planned; not run |
+| Mode-confusion audit | Check that schema, proof, summary, human-review, and empirical modes are not used to support broader claims than they actually verify. | planned; not run |
 
 Only the fixture-shape check is implemented. The other tests require a synthetic contradiction suite, logged prompts or deterministic checkers, and claim-ledger outcomes.
 

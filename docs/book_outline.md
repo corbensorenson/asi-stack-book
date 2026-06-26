@@ -120,6 +120,7 @@ Draft arc:
 - Mechanism: Frame the raw LLM as a semantic-compression and generation component inside the larger governed system, not as the whole agent.
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
+- Mechanism: Treat layer contracts as the stable object when adding, moving, merging, or revising chapters.
 - Interface: Alignment and governance constrain every downstream layer.
 - Interface: Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
 - Interface: Recursive improvement is a governed transition, not an ambient property of intelligence.
@@ -129,12 +130,14 @@ Primary invariants:
 - Layer boundaries remain explicit.
 - Claims carry support states.
 - Reasoning ability never implies execution authority.
+- New capability evidence enters through layer contracts rather than narrative enthusiasm.
 
 Failure modes to cover:
 
 - Anthology drift.
 - Monolith drift.
 - Evidence inflation before source notes or tests exist.
+- Chapter growth that adds ideas without assigning ownership, artifacts, invariants, or non-claims.
 
 Draft deliverables:
 
@@ -143,6 +146,7 @@ Draft deliverables:
 - Planned Codex test: Layer-boundary audit.
 - Planned Codex test: Source-to-layer traceability review.
 - Planned Codex test: Claim-support label audit.
+- Planned Codex test: Contract-change triage.
 
 Lean proof targets:
 
@@ -175,6 +179,8 @@ Draft arc:
 - Mechanism: Turn repeated cognition into durable artifacts, tools, or procedural memory.
 - Mechanism: Model efficiency through the seed/router/search/generator/verifier/residual loop plus memory and governance.
 - Mechanism: Expose residual burden when routing or compression is incomplete.
+- Mechanism: Classify route outcomes as adequate minimum, adequate overkill, cheap brittle, hidden cost, or unsafe saving.
+- Mechanism: Account for model/runtime, context construction, verification, repair, human-review, regression, rollback, and residual costs together.
 - Interface: Planning requests capability profiles.
 - Interface: Routing selects specialists.
 - Interface: Evidence decides whether efficiency claims survived quality and cost tests.
@@ -184,6 +190,8 @@ Primary invariants:
 - Efficiency claims include quality and cost.
 - Compression exposes residuals.
 - Fallback routes remain available.
+- Verification and repair costs remain attached to the route that made them necessary.
+- No route may be called efficient by bypassing authority or approval gates.
 
 Failure modes to cover:
 
@@ -198,6 +206,7 @@ Draft deliverables:
 - Planned Codex test: Minimum viable route test.
 - Planned Codex test: Residual burden accounting test.
 - Planned Codex test: Utility-preserving compression test.
+- Planned Codex test: Hidden-cost audit.
 
 Lean proof targets:
 
@@ -229,6 +238,8 @@ Draft arc:
 - Mechanism: Define principals, authorities, ceilings, grants, revocations, and handoff contracts.
 - Mechanism: Separate knowledge access from action authority.
 - Mechanism: Represent missing authority as a detectable failure rather than implicit permission.
+- Mechanism: Model grant lifecycle as requested, denied, granted, delegated, used, receipted, expired, or revoked.
+- Mechanism: Distinguish read, transform, disclose, write, execute, and approve permissions.
 - Interface: Governance issues ceilings.
 - Interface: Execution checks permissions.
 - Interface: Evidence records authority-related failures.
@@ -238,12 +249,16 @@ Primary invariants:
 - Authority never expands silently.
 - Read permission is not write permission.
 - Tool execution requires an explicit grant.
+- Delegated authority can narrow but not silently widen the caller's ceiling.
+- Approval authority is separate from execution authority.
 
 Failure modes to cover:
 
 - Authority creep.
 - Confused-deputy tool calls.
 - Memory access treated as action approval.
+- Stale grants used after expiry or revocation.
+- Replacement implementations inheriting handles that were qualified only for an older implementation.
 
 Draft deliverables:
 
@@ -252,6 +267,7 @@ Draft deliverables:
 - Planned Codex test: Authority ceiling preservation test.
 - Planned Codex test: Permission separation test.
 - Planned Codex test: Confused-deputy scenario.
+- Planned Codex test: Revocation propagation test.
 
 Lean proof targets:
 
@@ -1399,6 +1415,8 @@ Draft arc:
 - Mechanism: Model verification as bounded by mutual information, representation quality, and attention budget.
 - Mechanism: Require adequacy labels for context packets.
 - Mechanism: Route high-risk claims to stronger verification instead of more context alone.
+- Mechanism: Scope adequacy to a specific context, target claim, risk level, and verification mode.
+- Mechanism: Use explicit adequacy states: absent, drafting-only, local-check, joint-check, summary-derived, escalated, or contradicted.
 - Interface: VCM declares adequacy.
 - Interface: Spinoza checks claims.
 - Interface: Planning decides escalation when adequacy is insufficient.
@@ -1408,12 +1426,16 @@ Primary invariants:
 - Adequacy is explicit.
 - More context is not treated as proof.
 - High-risk claims pay verification tax.
+- Adequacy is scoped to a target claim and verification mode.
+- Summary-derived support cannot exceed the declared loss and residual record.
 
 Failure modes to cover:
 
 - Attention interference.
 - False confidence from large context.
 - Verification skipped for cost reasons.
+- Adequacy laundering, where a context packet adequate for drafting is reused as if it were adequate for support promotion.
+- Mode confusion, where a local schema or proof check is treated as an empirical or deployment result.
 
 Draft deliverables:
 
@@ -1423,6 +1445,7 @@ Draft deliverables:
 - Planned Codex test: Distractor resistance test.
 - Planned Codex test: Adequacy labeling test.
 - Planned Codex test: Verification escalation test.
+- Planned Codex test: Mode-confusion audit.
 
 Lean proof targets:
 
@@ -1740,6 +1763,8 @@ Draft arc:
 - Mechanism: Map typed jobs to runtime adapters with declared target type, capability, permission requirement, sandbox mode, authority handle, approval state, input/output contract, and effect receipt.
 - Mechanism: Fail closed for high-impact actions without approval and return rollback handles or residuals for the artifact graph.
 - Mechanism: Treat approval as a scoped, expiring, reviewable artifact and adapter execution as a narrow effect lease rather than ambient tool authority.
+- Mechanism: Keep job request, approval decision, effect receipt, verification result, rollback handle, and irreversible residuals as separate artifacts.
+- Mechanism: Treat approval as scoped to target, risk tier, expiration, permitted reuse, and revocation path.
 - Handoff: Repeated adapter traces and repair patterns become candidates for procedural memory only after evidence and regression checks exist.
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.
@@ -1750,12 +1775,16 @@ Primary invariants:
 - No adapter executes beyond granted scope.
 - High-impact actions require approval.
 - Rollback handles are captured when available.
+- Approval scope expires and does not authorize unrelated reuse.
+- Effect receipts separate request, approval, execution, verification, and rollback state.
 
 Failure modes to cover:
 
 - Tool overreach.
 - Approval bypass.
 - Irreversible deployment without rollback.
+- Approval laundering, where a narrow human approval is reused as broad authorization.
+- Receipt laundering, where a successful tool response is treated as verified task success.
 
 Draft deliverables:
 
@@ -1765,6 +1794,8 @@ Draft deliverables:
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
 - Planned Codex test: Rollback handle capture test.
+- Planned Codex test: Approval-scope expiry test.
+- Planned Codex test: Effect-receipt completeness test.
 
 Lean proof targets:
 

@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -49,6 +49,8 @@ The book needs one architecture frame for advanced AI systems that must plan, re
 The first boundary is conceptual. An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress. Those are components and measurements. The architecture is the set of contracts that decides how intent becomes work, how memory becomes context, how reasoning becomes claims, how claims become authority, how authority becomes execution, and how execution becomes evidence for future change.
 
 This chapter therefore opens the book by fixing the unit of analysis. The unit is not "the model." The unit is a governed stack of cooperating layers. Each layer has a responsibility, an interface, a durable artifact, an invariant, a failure mode, and a promotion rule. Later chapters can add details only because this chapter says what it means for the details to compose.
+
+That frame also gives the reader a way to judge the rest of the book. A new mechanism belongs in the stack only when it lowers confusion at a boundary: it clarifies who owns a decision, what artifact crosses the interface, which authority is available, which evidence state is possible, and what rollback path exists if the mechanism fails. If it cannot answer those questions, it may still be an idea, but it is not yet an architectural layer.
 
 ## Why existing approaches are insufficient
 
@@ -127,6 +129,24 @@ The raw LLM sits inside that contract as a powerful semantic machine. It can com
 
 The living-book workflow mirrors the architecture. Source queues prevent context drift. Claim states prevent evidence inflation. Proof targets prevent vague formalism. Render and validation gates prevent the public book from drifting away from the repository that defines it.
 
+The layer contract has a lifecycle:
+
+```{mermaid}
+flowchart LR
+  A["Source idea or implementation pressure"] --> B["Assign owner layer"]
+  B --> C["Define interface artifact"]
+  C --> D["Declare authority ceiling"]
+  D --> E["Name invariant and failure mode"]
+  E --> F["Attach evidence gate"]
+  F --> G{"Validated surface exists?"}
+  G -- "yes" --> H["Candidate for promotion"]
+  G -- "no" --> I["Design rationale or residual"]
+  H --> J["Regression, proof, schema, or runtime trace"]
+  I --> F
+```
+
+This lifecycle is intentionally conservative. It lets the book absorb new papers, code, diagrams, and proofs without renumbering the architecture around every new artifact. The stable object is the contract. Prose can improve, chapters can move, and implementations can be replaced, but the contract must continue to say what the layer owns and what it is not allowed to claim.
+
 ## Interfaces
 
 The interface is the Layer Boundary Record.
@@ -148,12 +168,15 @@ The upstream interface accepts human purposes, institutional constraints, safety
 
 This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
 
+The book should therefore be edited like a stack, not like a table of contents. When a future paper arrives, the first question is not "does this deserve a chapter?" The first question is "which contract does this change?" If it changes no contract, it may become a source note, example, caveat, or appendix entry. If it changes a contract, the outline, chapter, schema, proof target, and crosswalk should move together.
+
 ## Invariants
 
 - Layer boundaries remain explicit.
 - Claims carry support states.
 - Reasoning ability never implies execution authority.
 - Improvement routes back through governance instead of bypassing it.
+- New capability evidence enters through layer contracts rather than narrative enthusiasm.
 
 ## Failure modes
 
@@ -161,6 +184,7 @@ This interface also makes chapter insertion and reordering safer. A new chapter 
 - Monolith drift.
 - Evidence inflation before source notes or tests exist.
 - Authority and evidence becoming ambient properties of "the model."
+- Chapter growth that adds ideas without assigning ownership, artifacts, invariants, or non-claims.
 
 ## Minimal implementation
 
@@ -173,6 +197,7 @@ The smallest useful implementation is a stack map, a layer boundary schema, one 
 | Layer-boundary record validation | Check that the layer boundary fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | planned; not run |
 | Claim-support label audit | Check that chapter claims have labels, support states, and gaps. | planned; not run |
+| Contract-change triage | Check whether a new source changes an existing layer contract, creates a new one, or only supplies lineage/context. | planned; not run |
 
 ### Formalization hooks
 
