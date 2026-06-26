@@ -6,27 +6,46 @@
   "required": [
     "request_id",
     "task_id",
+    "request_validity",
     "semantic_address",
     "version",
     "mount",
     "snapshot_id",
+    "resolution_validity",
     "representation_contract",
     "authority_labels",
+    "materialization_validity",
     "admission_state",
     "adequacy_state",
     "fault_state",
     "materialization_ref",
-    "audit_refs"
+    "support_boundary",
+    "lease_expiry",
+    "residuals",
+    "audit_refs",
+    "non_claims"
   ],
   "properties": {
     "request_id": { "type": "string", "minLength": 1 },
     "task_id": { "type": "string", "minLength": 1 },
+    "request_validity": {
+      "type": "string",
+      "enum": ["well_formed", "malformed", "blocked", "unknown"]
+    },
     "semantic_address": { "type": "string", "minLength": 1 },
     "version": { "type": "string", "minLength": 1 },
     "mount": { "type": "string", "minLength": 1 },
     "snapshot_id": { "type": "string", "minLength": 1 },
+    "resolution_validity": {
+      "type": "string",
+      "enum": ["resolved", "unresolved", "stale", "revoked", "unknown"]
+    },
     "representation_contract": { "type": "string", "minLength": 1 },
     "authority_labels": { "type": "array", "items": { "type": "string" } },
+    "materialization_validity": {
+      "type": "string",
+      "enum": ["materialized", "denied", "expired", "unsafe", "not_materialized"]
+    },
     "admission_state": {
       "type": "string",
       "enum": ["admitted", "deferred", "denied", "ask", "retry"]
@@ -40,7 +59,11 @@
       "enum": ["none", "typed_fault", "residual", "quarantine"]
     },
     "materialization_ref": { "type": "string", "minLength": 1 },
-    "audit_refs": { "type": "array", "items": { "type": "string" } }
+    "support_boundary": { "type": "string", "minLength": 1 },
+    "lease_expiry": { "type": "string", "minLength": 1 },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

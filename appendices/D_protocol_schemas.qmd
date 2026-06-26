@@ -207,18 +207,23 @@ planforge_dag:
   parent_plan: string
   nodes: []
   edges: []
+  scheduling_states: []
   capability_tiers: []
   context_requests: []
+  adequacy_contracts: []
   quality_predicates: []
   verification_requirements: []
   budget_limits: []
   route_assignments: []
+  merge_conditions: []
+  assumption_refs: []
   escalation_policy: string
   residuals: []
   cost_quality_ledger: []
+  non_claims: []
 ```
 
-This record specializes planning into dependency-aware, cost-aware, tier-routed work with explicit verification burdens, escalation policy, residuals, and cost-quality accounting.
+This record specializes planning into dependency-aware, cost-aware, tier-routed work with explicit scheduling states, adequacy contracts, verification burdens, merge conditions, assumption refs, escalation policy, residuals, cost-quality accounting, and non-claims.
 
 ## Context Packet
 
@@ -238,20 +243,27 @@ context_packet:
 context_abi_record:
   request_id: string
   task_id: string
+  request_validity: well_formed
   semantic_address: string
   version: string
   mount: string
   snapshot_id: string
+  resolution_validity: resolved
   representation_contract: string
   authority_labels: []
+  materialization_validity: materialized
   admission_state: admitted
   adequacy_state: adequate
   fault_state: none
   materialization_ref: string
+  support_boundary: string
+  lease_expiry: string
+  residuals: []
   audit_refs: []
+  non_claims: []
 ```
 
-This record is the stable ABI between planning, durable memory, context compilation, execution, and audit. It distinguishes admission from adequacy and makes typed faults visible.
+This record is the stable ABI between planning, durable memory, context compilation, execution, and audit. It distinguishes request validity, resolution validity, materialization validity, admission, adequacy, support boundary, lease expiry, residuals, and typed faults.
 
 ## Context Transaction Record
 
@@ -838,18 +850,26 @@ This record distinguishes context admission from context adequacy. It can say a 
 ```yaml
 semantic_atom:
   atom_id: string
+  source_plan_ref: string
   intent: string
+  obligation_refs: []
   inputs: []
   outputs: []
   constraints: []
   dependencies: []
+  assumptions: []
   authority_required: []
   validator: string
+  validator_status: not_run
   target: string
+  target_artifact_ref: string
+  lowering_receipt: string
   repair_scope: same_atom
+  residuals: []
+  non_claims: []
 ```
 
-This record is the small unit of cognitive compilation: one preserved intent fragment with inputs, outputs, constraints, dependencies, authority requirements, a validator, and a bounded repair target.
+This record is the small unit of cognitive compilation: one preserved intent fragment with source-plan refs, obligation refs, inputs, outputs, constraints, dependencies, assumptions, authority requirements, validator status, target artifact, lowering receipt, bounded repair target, residuals, and non-claims.
 
 ## Semantic Node Record
 

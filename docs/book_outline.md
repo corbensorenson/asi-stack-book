@@ -1203,6 +1203,7 @@ Draft arc:
 - Mechanism: Merge redundant branches and escalate only when predicates fail.
 - Mechanism: Give each node both a work contract and an adequacy contract so schedulability depends on authority, context, quality predicate, verification, and failure behavior.
 - Mechanism: Track scheduling states such as ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, and merged.
+- Mechanism: Preserve scheduling state, adequacy contracts, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims so cheap branches cannot hide displaced verification, repair, or human cleanup.
 - Interface: Routing consumes capability annotations.
 - Interface: VCM consumes context requests.
 - Interface: Evidence records cost/quality results.
@@ -1221,7 +1222,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A DAG schema with node-level capability and verification annotations.
+- A DAG schema with node-level capability, scheduling state, adequacy contracts, verification annotations, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims.
 - Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
 - Implemented Lean proof target: a dispatchable finite indexed plan-graph record carries an acyclicity certificate and ordered member dependency edges.
 - Exact Appendix C claim-source mappings for the PlanForge DAG claim across PlanForge DAG/MVI scheduling, PlanForge compiler-architecture framing, Coherence Exchange speculative intelligence-arbitrage framing, Cognitive Compilation semantic-DAG routing/repair, TokenMana resource-governance pressure, and MoECOT runtime-reference context; the four local mappings (`planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`) now have reviewed passage references. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. Support remains `argument` pending deployed scheduler runs, route traces, tier-adequacy tests, cost-quality results, or accepted evidence transitions.
@@ -1259,6 +1260,7 @@ Draft arc:
 - Mechanism: Perform incremental repair over IR rather than re-prompting from scratch.
 - Mechanism: Compile IR into jobs, code, schemas, or documents.
 - Mechanism: emit lowering receipts that bind source-plan obligations, semantic atoms, target artifacts, validators, assumptions, and residuals.
+- Mechanism: Preserve source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims so syntactic artifact acceptance cannot stand in for obligation-preserving lowering.
 - Interface: Planning produces or consumes IR.
 - Interface: Execution receives target-specific artifacts.
 - Interface: Verification checks IR-to-output preservation.
@@ -1281,7 +1283,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantic IR sketch and compile/verify/repair loop for one artifact type.
-- Implemented protocol validation: `semantic_atom` fixture validates public record shape only.
+- Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, and VIEA intent-to-artifact ledger context; all five local mappings now have reviewed passage references. Support remains `argument` pending compiler traces, source-plan parsing, target-lowering preservation, validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
 - Planned Codex test: Requirement preservation test.
 - Planned Codex test: Incremental repair regression test.
@@ -1320,6 +1322,7 @@ Draft arc:
 - Mechanism: Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
 - Mechanism: Separate request validity, resolution validity, materialization validity, and adequacy validity so well-formed requests, resolved references, authorized packets, and verification-adequate packets remain distinct states.
 - Mechanism: Emit context receipts with request, resolution, materialization, authority labels, support boundary, lease expiration, fault state, and residuals for replayable audits.
+- Mechanism: Preserve request validity, resolution validity, materialization validity, support boundary, lease expiry, residuals, and non-claims so "context available" cannot collapse request, authority, and adequacy into one state.
 - Interface: Planning requests context.
 - Interface: VCM compiles packets.
 - Interface: Execution receives authority-appropriate context.
@@ -1338,7 +1341,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A context ABI table covering address, version, mount, snapshot, representation, and fault operations.
+- A context ABI table covering request validity, address, version, mount, snapshot, resolution validity, representation, materialization validity, support boundary, lease expiry, residuals, and fault operations.
 - Implemented protocol validation: `context_abi_record` fixture validates public record shape only.
 - Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
 - Exact Appendix C claim-source mappings for the Virtual Context ABI claim across VCM public-v1 control-plane/ABI vocabulary, Context Engineer context-supply-chain pressure, Verification Bandwidth adequacy limits, VIEA context allocation and execution-spine integration, editable VCM refinement context, and MoECOT runtime-reference context; the four local mappings (`vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`) now have reviewed passage references. `vcm_editable` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending resolver behavior, adequacy classification, context compiler traces, VCM conformance artifacts, model-facing results, benchmark reproduction, or accepted evidence transitions.

@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -127,21 +127,30 @@ Minimum fields:
 
 - `request_id`
 - `task_id`
+- `request_validity`
 - `semantic_address`
 - `version`
 - `mount`
 - `snapshot_id`
+- `resolution_validity`
 - `representation_contract`
 - `authority_labels`
+- `materialization_validity`
 - `admission_state`
 - `adequacy_state`
 - `fault_state`
 - `materialization_ref`
+- `support_boundary`
+- `lease_expiry`
+- `residuals`
 - `audit_refs`
+- `non_claims`
 
 Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
 
 The interface should produce context receipts. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
+
+The public schema now records request validity, resolution validity, materialization validity, support boundary, lease expiry, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
 
 ## Invariants
 
@@ -167,7 +176,7 @@ The subtle failure is context lease drift. A packet created for drafting or revi
 
 A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
 
-The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of address, version, mount, snapshot, representation, authority, admission, adequacy, fault, materialization, and audit fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
+The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of request validity, address, version, mount, snapshot, resolution validity, representation, authority, materialization validity, admission, adequacy, fault, materialization, support boundary, lease expiry, residual, audit, and non-claim fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
 
 The record is an executable shape constraint. The Lean predicates cannot prove that a real semantic address resolver is correct, that a materialization is adequate, or that a deployed context service emits every required fault.
 

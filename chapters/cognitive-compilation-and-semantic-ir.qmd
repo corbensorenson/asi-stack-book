@@ -117,19 +117,29 @@ The interface for Cognitive Compilation and Semantic IR is a typed DAG, not a pr
 Minimum semantic-atom fields:
 
 - `atom_id`
+- `source_plan_ref`
 - `intent`
+- `obligation_refs`
 - `inputs`
 - `outputs`
 - `constraints`
 - `dependencies`
+- `assumptions`
 - `authority_required`
 - `validator`
+- `validator_status`
 - `target`
+- `target_artifact_ref`
+- `lowering_receipt`
 - `repair_scope`
+- `residuals`
+- `non_claims`
 
 The planner owns graph formation and scheduling. The compiler owns preservation of obligations across lowering. The executor owns side effects. The verifier owns acceptance or rejection. Keeping those roles separate is what prevents an impressive generated artifact from silently overwriting its own requirements.
 
 The boundary should also distinguish four validity questions: whether the source plan is accepted, whether the semantic IR is well formed, whether the lowering is obligation-preserving, and whether the target artifact satisfies its validators. A failure in any one of those states should not be reported as a successful compile.
+
+The public semantic-atom schema now records source-plan refs, obligation refs, assumptions, validator status, target artifact refs, lowering receipts, residuals, and non-claims. That is still only a record shape. It gives later compiler traces a stable place to show which obligations survived lowering, which assumptions were introduced, and which validator state blocks acceptance.
 
 ## Invariants
 
@@ -157,7 +167,7 @@ A semantic IR sketch and compile/verify/repair loop for one artifact type.
 
 The smallest useful implementation is a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
 
-The current schema records one semantic atom shape. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
+The current schema records one semantic atom shape with obligation refs, assumptions, validator status, target artifact ref, lowering receipt, residuals, and non-claims. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
 
 The next useful fixture set is a tiny source plan, its semantic-atom DAG, one lowered artifact, one passing validator receipt, one failing validator receipt, and one localized repair that updates the ledger. That would test the control surface before claiming an autonomous compiler.
 

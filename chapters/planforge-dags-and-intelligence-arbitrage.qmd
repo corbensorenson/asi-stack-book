@@ -4,7 +4,7 @@ chapter_id: "planforge-dags-and-intelligence-arbitrage"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "planforge"
   - "planforge_compiler_arch"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -129,19 +129,26 @@ Minimum fields:
 - `parent_plan`
 - `nodes`
 - `edges`
+- `scheduling_states`
 - `capability_tiers`
 - `context_requests`
+- `adequacy_contracts`
 - `quality_predicates`
 - `verification_requirements`
 - `budget_limits`
 - `route_assignments`
+- `merge_conditions`
+- `assumption_refs`
 - `escalation_policy`
 - `residuals`
 - `cost_quality_ledger`
+- `non_claims`
 
 Routing consumes capability annotations. VCM consumes context requests. Evidence records cost, quality, residuals, and verification. Cognitive Compilation can later lower DAG nodes into semantic atoms or target-specific jobs.
 
 The interface should also record scheduling state: ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, or merged. These states let later layers distinguish work that has not started from work that cannot responsibly proceed.
+
+The public schema now records scheduling states, adequacy contracts, merge conditions, assumption refs, and non-claims. Those fields make efficiency claims harder to launder: a cheap node must still say which adequacy contract it satisfies, which assumptions it depends on, and what merge conditions prevent incompatible branch outputs from looking successful.
 
 ## Invariants
 
@@ -167,7 +174,7 @@ The subtle failure is arbitrage laundering. The system reports lower cost by ass
 
 A DAG schema with node-level capability and verification annotations.
 
-The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, capability tiers, quality predicates, verification requirements, budget limits, route assignments, escalation policy, residuals, and a cost-quality ledger. The accompanying Lean module is intentionally narrower than a scheduler: it models finite indexed plan graphs, requires a dispatchable graph record to carry an acyclicity certificate plus ordered dependency edges, and requires failed quality predicates to route to escalation or residual under a valid node-outcome predicate.
+The smallest useful implementation is a `planforge_dag` schema and fixture. It should validate node and edge presence, scheduling states, capability tiers, context requests, adequacy contracts, quality predicates, verification requirements, budget limits, route assignments, merge conditions, assumption refs, escalation policy, residuals, a cost-quality ledger, and non-claims. The accompanying Lean module is intentionally narrower than a scheduler: it models finite indexed plan graphs, requires a dispatchable graph record to carry an acyclicity certificate plus ordered dependency edges, and requires failed quality predicates to route to escalation or residual under a valid node-outcome predicate.
 
 That fixture establishes the fields that a later scheduler must fill. The Lean predicates do not prove that an external planner constructed the graph correctly, that the selected tier is adequate, or that a cheaper route preserves quality.
 

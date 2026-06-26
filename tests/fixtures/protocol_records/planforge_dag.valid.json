@@ -3,13 +3,18 @@
   "parent_plan": "plan-demo-001",
   "nodes": ["load-source-context", "revise-chapter", "validate-render"],
   "edges": ["load-source-context -> revise-chapter", "revise-chapter -> validate-render"],
+  "scheduling_states": ["load-source-context: ready", "revise-chapter: blocked_by_dependency", "validate-render: blocked_by_dependency"],
   "capability_tiers": ["load-source-context: retrieval", "revise-chapter: synthesis", "validate-render: deterministic"],
   "context_requests": ["sources/source_notes/viea.md", "chapters/intent-to-execution-contracts.qmd"],
+  "adequacy_contracts": ["source context adequate for drafting only", "render result adequate for local HTML build only"],
   "quality_predicates": ["chapter keeps evidence support conservative", "render succeeds"],
   "verification_requirements": ["source-note check", "schema validation", "Quarto render"],
   "budget_limits": ["public-safe text only", "no benchmark claim without run record"],
   "route_assignments": ["retrieval to file reads", "validation to scripts", "render to Quarto"],
+  "merge_conditions": ["do not merge branch outputs with conflicting source boundaries"],
+  "assumption_refs": ["fixture assumes required files exist locally"],
   "escalation_policy": "failed quality predicate emits residual or escalates for review",
   "residuals": ["acyclicity is not mechanically checked by this schema fixture"],
-  "cost_quality_ledger": ["fixture records intended cost-quality fields only"]
+  "cost_quality_ledger": ["fixture records intended cost-quality fields only"],
+  "non_claims": ["fixture does not prove scheduler behavior", "fixture does not prove cost savings"]
 }

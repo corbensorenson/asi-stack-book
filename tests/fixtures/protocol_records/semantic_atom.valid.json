@@ -1,12 +1,20 @@
 {
   "atom_id": "chapter-section-001",
+  "source_plan_ref": "plan-demo-001",
   "intent": "Draft a source-bounded mechanism section for cognitive compilation.",
+  "obligation_refs": ["preserve source boundaries", "do not promote support state"],
   "inputs": ["command contract", "source notes"],
   "outputs": ["mechanism prose", "mermaid diagram"],
   "constraints": ["Do not promote support state.", "Preserve source boundaries."],
   "dependencies": ["chapter-claim"],
+  "assumptions": ["source notes are public-safe summaries"],
   "authority_required": ["write_repo_file"],
   "validator": "quarto render --to html",
+  "validator_status": "not_run",
   "target": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-  "repair_scope": "same_atom"
+  "target_artifact_ref": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+  "lowering_receipt": "receipt://semantic-atom-demo-001",
+  "repair_scope": "same_atom",
+  "residuals": ["fixture does not lower an actual source plan"],
+  "non_claims": ["fixture does not prove compiler correctness", "fixture does not prove localized repair"]
 }
