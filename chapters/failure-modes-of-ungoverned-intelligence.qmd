@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim now has exact source-note mappings for all assigned sources in Appendix C, and seven of nine mappings carry reviewed local raw-cache passage references; `vcm_editable` and `moecot` remain connector-only/source-note mapped, while scenario coverage and failure-detector evidence remain incomplete."
-  - "The failure_boundary_map fixture validates schema/example consistency only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain unimplemented."
+  - "The failure_boundary_map fixture validates schema/example consistency, failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain unimplemented."
   - "The implemented FailureModes Lean predicates cover finite-record invariant failure and unbounded-authority detection only; they do not prove deployed failure detection or containment."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot` |
-| Test state | `failure_boundary_map.valid.json` passes protocol fixture validation, and `AsiStackProofs.FailureModes` builds locally; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain planned. |
+| Test state | `failure_boundary_map.valid.json` passes protocol fixture validation with failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims, and `AsiStackProofs.FailureModes` builds locally; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios remain planned. |
 
 ## Drafting guardrail
 
@@ -113,7 +113,7 @@ flowchart TB
   H -. "claim support state" .-> I
 ```
 
-The map classifies failures by layer, then binds each one to an invariant and a planned falsification test. That binding is the reason the taxonomy belongs near the front of the book: later chapters are not allowed to introduce mechanisms as impressive machinery alone. They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.
+The map classifies failures by layer and failure class, then binds each one to affected contracts, an invariant, and a planned falsification test. That binding is the reason the taxonomy belongs near the front of the book: later chapters are not allowed to introduce mechanisms as impressive machinery alone. They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.
 
 The map is deliberately layered. SCF identifies replacement and evaluator-capture risks when implementations, contracts, or governance procedures mutate. VCM identifies context admission, authority binding, taint, revocation, and summary self-promotion risks. Talos identifies tool isolation, typed-job, approval-gate, and replay failures. Spinoza identifies false certainty, failed verification, contradiction, and belief-revision failures. The Field of God source is not used here as empirical safety evidence; it preserves the deeper governance concern that power should not erase agency, dignity, plurality, and contestability.
 
@@ -133,7 +133,9 @@ The interface is a Failure Boundary Map.
 Minimum fields:
 
 - `failure_id`
+- `failure_class`
 - `layer`
+- `affected_contract_refs`
 - `boundary_event_state`
 - `severity`
 - `reversibility`
@@ -145,9 +147,12 @@ Minimum fields:
 - `evidence_record`
 - `receipt_refs`
 - `downstream_owner`
+- `promotion_blocker`
 - `escape_path`
 - `normalization_guard`
 - `learning_path`
+- `source_refs`
+- `support_state_effect`
 - `residual_risk`
 - `non_claims`
 
@@ -155,7 +160,7 @@ This interface lets later chapters prove that their machinery is not decorative.
 
 The interface should emit failure receipts for both blocked and realized failures. A blocked failure receipt is not a result claim; it is a trace that the boundary was exercised and what evidence would be needed to trust it later.
 
-The public schema now records boundary event state, severity, reversibility, recurrence count, receipt references, escape path, normalization guard, learning path, and non-claims. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, and whether the run produced learning obligations rather than a smoother success story.
+The public schema now records failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt references, promotion blocker, escape path, normalization guard, learning path, source refs, support-state effect, and non-claims. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, whether source mappings justify the taxonomy, and whether the run produced learning obligations rather than a smoother success story.
 
 ## Invariants
 
@@ -180,7 +185,7 @@ The subtle failure is failure laundering. A run fails a boundary, then the narra
 
 ## Minimal implementation
 
-The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure, its event state, severity, reversibility, recurrence, protected invariant, receipt, containment path, normalization guard, learning path, and boundary owner.
+The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure class, affected contracts, event state, severity, reversibility, recurrence, protected invariant, receipt, promotion blocker, containment path, normalization guard, learning path, source refs, support-state effect, and boundary owner.
 
 The next useful fixture set is a failure-receipt suite: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 
@@ -188,7 +193,7 @@ The next useful fixture set is a failure-receipt suite: one blocked authority cr
 
 | Test | Purpose | Status |
 |---|---|---|
-| Failure boundary map validation | Check that the failure fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Failure boundary map validation | Check that the failure fixture matches the public schema, including failure class, affected contracts, promotion blocker, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Invariant-failure finite-record proof | Check that a modeled component with a failed required invariant cannot be promoted. | implemented in `AsiStackProofs.FailureModes`; runtime promotion gate not run |
 | Authority creep scenario | Check that a proposed action exceeding the requester ceiling is denied or escalated with an audit record. | planned; not run |
 | Context pollution scenario | Check that quoted or retrieved content cannot become behavioral control without an authority grant. | planned; not run |

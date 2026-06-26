@@ -303,7 +303,7 @@ Draft arc:
 - Mechanism: Map every failure to an invariant and a planned falsification test.
 - Mechanism: Use failures to motivate boundaries in later chapters.
 - Mechanism: treat failures and near misses as boundary events with receipts, owners, containment actions, severity, recurrence, escape path, and downstream learning path.
-- Mechanism: Preserve boundary event state, severity, reversibility, recurrence count, receipt refs, normalization guard, learning path, residual risk, and non-claims so near misses and repeated failures do not vanish into a narrower success narrative.
+- Mechanism: Preserve failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt refs, promotion blocker, normalization guard, learning path, source refs, support-state effect, residual risk, and non-claims so near misses and repeated failures do not vanish into a narrower success narrative.
 - Interface: Governance limits authority creep.
 - Interface: VCM limits context pollution.
 - Interface: Verification limits false certainty.
@@ -327,7 +327,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A layered failure taxonomy tied to invariants, source queues, future tests, boundary event state, severity, reversibility, recurrence, receipts, normalization guards, learning paths, residuals, and non-claims.
+- A layered failure taxonomy tied to invariants, source queues, future tests, failure class, affected contracts, boundary event state, severity, reversibility, recurrence, receipts, promotion blockers, normalization guards, learning paths, source refs, support-state effect, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; seven local mappings (`scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`) now have reviewed raw-cache passage references, while `vcm_editable` and `moecot` remain connector-only/source-note mapped. Support remains `argument` pending scenario tests or deployed detector evidence.
 - Planned Codex test: Authority creep scenario.
 - Planned Codex test: Context pollution scenario.

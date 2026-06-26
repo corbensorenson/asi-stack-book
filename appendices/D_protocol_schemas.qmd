@@ -1182,7 +1182,9 @@ This record makes boundary crossings explicit. It distinguishes a request from a
 ```yaml
 failure_boundary_map:
   failure_id: string
+  failure_class: context_pollution
   layer: string
+  affected_contract_refs: []
   boundary_event_state: blocked
   severity: medium
   reversibility: reversible
@@ -1194,14 +1196,17 @@ failure_boundary_map:
   evidence_record: string
   receipt_refs: []
   downstream_owner: string
+  promotion_blocker: string
   escape_path: string
   normalization_guard: string
   learning_path: string
+  source_refs: []
+  support_state_effect: record_shape_only
   residual_risk: []
   non_claims: []
 ```
 
-This record maps a named failure to the boundary that should detect, contain, preserve evidence, prevent normalization, and feed learning obligations from blocked failures, near misses, repeated failures, or realized failures.
+This record maps a named failure to the boundary that should detect, contain, preserve evidence, prevent normalization, and feed learning obligations from blocked failures, near misses, repeated failures, or realized failures. It keeps failure class, affected contracts, promotion blockers, source refs, support-state effect, and non-claims visible so a failure taxonomy cannot become a support-state promotion by implication.
 
 ## Constitutional Predicate Record
 

@@ -5,7 +5,9 @@
   "type": "object",
   "required": [
     "failure_id",
+    "failure_class",
     "layer",
+    "affected_contract_refs",
     "boundary_event_state",
     "severity",
     "reversibility",
@@ -17,15 +19,35 @@
     "evidence_record",
     "receipt_refs",
     "downstream_owner",
+    "promotion_blocker",
     "escape_path",
     "normalization_guard",
     "learning_path",
+    "source_refs",
+    "support_state_effect",
     "residual_risk",
     "non_claims"
   ],
   "properties": {
     "failure_id": { "type": "string", "minLength": 1 },
+    "failure_class": {
+      "type": "string",
+      "enum": [
+        "goal_misbinding",
+        "authority_creep",
+        "context_pollution",
+        "evaluator_drift",
+        "tool_overreach",
+        "residual_hiding",
+        "benchmark_capture",
+        "claim_overpromotion",
+        "resource_misbudget",
+        "self_improvement_loop",
+        "other"
+      ]
+    },
     "layer": { "type": "string", "minLength": 1 },
+    "affected_contract_refs": { "type": "array", "items": { "type": "string" } },
     "boundary_event_state": {
       "type": "string",
       "enum": ["blocked", "realized", "near_miss", "repeated", "escalated", "resolved"]
@@ -46,9 +68,15 @@
     "evidence_record": { "type": "string", "minLength": 1 },
     "receipt_refs": { "type": "array", "items": { "type": "string" } },
     "downstream_owner": { "type": "string", "minLength": 1 },
+    "promotion_blocker": { "type": "string", "minLength": 1 },
     "escape_path": { "type": "string", "minLength": 1 },
     "normalization_guard": { "type": "string", "minLength": 1 },
     "learning_path": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "record_shape_only", "argument_only", "eligible_for_scenario_review", "blocks_promotion"]
+    },
     "residual_risk": { "type": "array", "items": { "type": "string" } },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },

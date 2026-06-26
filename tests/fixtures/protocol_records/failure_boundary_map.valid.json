@@ -1,6 +1,8 @@
 {
   "failure_id": "context-pollution-demo",
+  "failure_class": "context_pollution",
   "layer": "memory_context",
+  "affected_contract_refs": ["schemas/context_packet.schema.json", "schemas/context_abi_record.schema.json"],
   "boundary_event_state": "blocked",
   "severity": "medium",
   "reversibility": "reversible",
@@ -12,9 +14,12 @@
   "evidence_record": "claim-ledger residual",
   "receipt_refs": ["receipt://context-pollution-demo-denial"],
   "downstream_owner": "virtual-context-abi",
+  "promotion_blocker": "Do not promote the run, chapter claim, or context subsystem until the tainted-content denial and authority boundary are preserved as evidence.",
   "escape_path": "keep source content quarantined as evidence and require a separate authority grant for action",
   "normalization_guard": "repeat occurrences escalate review instead of becoming accepted context behavior",
   "learning_path": "add a negative example to context admission and command-contract tests",
+  "source_refs": ["sources/source_notes/vcm_public.md", "sources/source_notes/talos.md"],
+  "support_state_effect": "record_shape_only",
   "residual_risk": ["The fixture does not model adversarial paraphrase."],
   "non_claims": ["fixture does not prove context-pollution containment", "fixture does not prove detector coverage"]
 }
