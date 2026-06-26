@@ -160,22 +160,26 @@ layer_boundary_record:
   lifecycle_state: fixture_validated
   owner: string
   responsibility: string
+  chapter_refs: []
+  traceability_state: claim_mapped
   input_artifacts: []
   output_artifacts: []
   authority_ceiling: string
   handoff_protocol: string
   contract_refs: []
   change_policy: string
+  integration_decision: owns_layer
   owned_invariants: []
   failure_modes: []
   evidence_gates: []
   downstream_interfaces: []
+  promotion_blockers: []
   source_refs: []
   support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record gives each stack layer a bounded lifecycle state, owner, responsibility, input/output surface, authority ceiling, handoff protocol, contract refs, change policy, invariant set, failure model, evidence gate, downstream interface, source refs, support-state effect, and explicit non-claims.
+This record gives each stack layer a bounded lifecycle state, owner, chapter refs, traceability state, responsibility, input/output surface, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariant set, failure model, evidence gate, downstream interface, promotion blockers, source refs, support-state effect, and explicit non-claims.
 
 ## Plan Graph
 

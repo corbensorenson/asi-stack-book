@@ -116,7 +116,7 @@ Draft arc:
 
 - Problem: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 - Insufficiency: A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
-- Mechanism: Define each layer by lifecycle state, owner, responsibility, interface, artifact, handoff protocol, authority ceiling, invariant, failure mode, evidence gate, source refs, support-state effect, and non-claim.
+- Mechanism: Define each layer by lifecycle state, owner, chapter refs, traceability state, responsibility, interface, artifact, handoff protocol, authority ceiling, invariant, failure mode, evidence gate, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 - Mechanism: Frame the raw LLM as a semantic-compression and generation component inside the larger governed system, not as the whole agent.
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
@@ -142,7 +142,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
-- Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, handoff protocol, contract refs, change policy, source refs, support-state effect, and non-claims only; source-to-layer traceability and claim-support audits remain planned.
+- Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only; source-to-layer traceability and claim-support audits remain planned.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
 - Planned Codex test: Layer-boundary audit.
 - Planned Codex test: Source-to-layer traceability review.

@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
-  - "The layer_boundary_record fixture and stack-boundary Lean proofs validate narrow record/proof surfaces only; the fixture now records lifecycle state, owner, handoff protocol, contract refs, change policy, source refs, support-state effect, and non-claims. Source-to-layer traceability and claim-support audits remain planned."
+  - "The layer_boundary_record fixture and stack-boundary Lean proofs validate narrow record/proof surfaces only; the fixture now records lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims. Source-to-layer traceability and claim-support audits remain planned."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; connector-only/source-note mapped: `moecot` |
-| Test state | `layer_boundary_record.valid.json` passes protocol fixture validation for lifecycle state, owner, handoff protocol, contract refs, change policy, source refs, support-state effect, and non-claims; stack-boundary Lean hooks build locally; source-to-layer traceability and claim-support audits remain planned. |
+| Test state | `layer_boundary_record.valid.json` passes protocol fixture validation for lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims; stack-boundary Lean hooks build locally; source-to-layer traceability and claim-support audits remain planned. |
 
 ## Drafting guardrail
 
@@ -121,7 +121,7 @@ The diagram is intentionally circular at the end. Self-improvement is not outsid
 
 The stack frame begins by refusing to let any one component inherit every role. VIEA supplies the intent-to-execution spine, BeastBrain supplies the local stateful stack vocabulary, Aletheia supplies the evidence and uncertainty layer, Talos supplies the labor/execution layer, MoECOT supplies an implementation-reference runtime, and SCF supplies the replacement boundary. Together they point to the same architectural rule: a capability is governed by the contracts around it, not by the model name inside it.
 
-A layer contract is the mechanism that makes that rule concrete. The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what lifecycle state is this layer in, who owns the boundary, what responsibility does the layer own, what artifact does it emit, how does handoff work, what authority does it have and lack, what invariant must survive implementation changes, and what evidence would justify promotion, replacement, or rollback.
+A layer contract is the mechanism that makes that rule concrete. The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what lifecycle state is this layer in, who owns the boundary, which chapters currently carry it, what responsibility does the layer own, what artifact does it emit, how does handoff work, what authority does it have and lack, what invariant must survive implementation changes, what new-source integration decision applies, and what evidence would justify promotion, replacement, or rollback.
 
 Those questions are the book's defense against anthology drift. Each paper can introduce a mechanism, but the mechanism enters the stack only by naming its responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim. Source queues keep future writing runs context-loaded, and evidence states keep clearer prose from turning into stronger support without the corresponding artifact.
 
@@ -157,23 +157,27 @@ Minimum fields:
 - `lifecycle_state`
 - `owner`
 - `responsibility`
+- `chapter_refs`
+- `traceability_state`
 - `input_artifacts`
 - `output_artifacts`
 - `authority_ceiling`
 - `handoff_protocol`
 - `contract_refs`
 - `change_policy`
+- `integration_decision`
 - `owned_invariants`
 - `failure_modes`
 - `evidence_gates`
 - `downstream_interfaces`
+- `promotion_blockers`
 - `source_refs`
 - `support_state_effect`
 - `non_claims`
 
 The upstream interface accepts human purposes, institutional constraints, safety requirements, and explicit authority grants. The downstream interface emits stable obligations, boundaries, evidence labels, and governance constraints. If an adjacent layer cannot identify its input artifact or authority ceiling, the right behavior is not improvisation. It is a missing-contract record.
 
-This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.
+This interface also makes chapter insertion and reordering safer. A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary. `chapter_refs`, `traceability_state`, `integration_decision`, and `promotion_blockers` make that decision explicit enough for a future writing run to update the outline without hand-renumbering the book or creating anthology drift.
 
 The book should therefore be edited like a stack, not like a table of contents. When a future paper arrives, the first question is not "does this deserve a chapter?" The first question is "which contract does this change?" If it changes no contract, it may become a source note, example, caveat, or appendix entry. If it changes a contract, the outline, chapter, schema, proof target, and crosswalk should move together.
 
@@ -195,13 +199,13 @@ The book should therefore be edited like a stack, not like a table of contents. 
 
 ## Minimal implementation
 
-The smallest useful implementation is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, source refs, support-state effect, and non-claim.
+The smallest useful implementation is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, invariants, failure modes, evidence gates, downstream interfaces, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, chapter refs, traceability state, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariants, failure modes, evidence gates, downstream interfaces, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | planned; not run |
 | Claim-support label audit | Check that chapter claims have labels, support states, and gaps. | planned; not run |
 | Contract-change triage | Check whether a new source changes an existing layer contract, creates a new one, or only supplies lineage/context. | planned; not run |

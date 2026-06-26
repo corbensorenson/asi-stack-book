@@ -3,16 +3,28 @@
   "lifecycle_state": "fixture_validated",
   "owner": "living-book evidence layer",
   "responsibility": "Keep claim labels, support states, evidence artifacts, and promotion gates separate.",
+  "chapter_refs": [
+    "evidence-states-and-claim-discipline",
+    "spinoza-verification-and-proof-carrying-claims",
+    "benchmark-ratchets-and-anti-goodhart-evidence"
+  ],
+  "traceability_state": "claim_mapped",
   "input_artifacts": ["source notes", "proof outputs", "test results", "chapter drafts"],
   "output_artifacts": ["claim records", "evidence transition records", "changelog entries"],
   "authority_ceiling": "may record support state; may not promote without required artifact",
   "handoff_protocol": "claims hand off through evidence transition records with explicit artifacts, review status, and non-claims",
   "contract_refs": ["schemas/claim_record.schema.json", "schemas/evidence_transition_record.schema.json"],
   "change_policy": "schema, proof, source, or support-state changes require scaffold/proof sync, validation, changelog, and render before publication",
+  "integration_decision": "owns_layer",
   "owned_invariants": ["no fabricated source support", "no fabricated test results", "negative results remain visible"],
   "failure_modes": ["citation laundering", "support-state inflation", "silent deletion of failed claims"],
   "evidence_gates": ["source mapping", "proof verifier", "test command", "review status"],
   "downstream_interfaces": ["appendices/C_claim_evidence_matrix.qmd", "schemas/evidence_transition_record.schema.json"],
+  "promotion_blockers": [
+    "missing source mapping",
+    "failed verifier result",
+    "unreviewed support-state transition"
+  ],
   "source_refs": ["sources/source_notes/benchmaxxing.md", "sources/source_notes/spinoza.md", "sources/source_notes/viea.md"],
   "support_state_effect": "record_shape_only",
   "non_claims": ["does not prove a claim true", "does not measure ASI capability"]
