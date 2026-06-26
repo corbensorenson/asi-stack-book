@@ -42,6 +42,8 @@ This chapter treats claims as ledger records, not as truth because they appear i
 
 Placed after Verification Bandwidth, this chapter is where adequacy records become belief-management inputs. The stack does not ask prose to remember what it implied. It writes each material claim into a record that can be supported, challenged, downgraded, split, merged, or handed to Spinoza and UAT.
 
+That move is deliberately humble. A ledger does not make the system true; it makes the system accountable for what it has said. It turns belief from a tone into an object that can be inspected, revised, and refused.
+
 ## Problem
 
 The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
@@ -50,6 +52,8 @@ The VCM chapters decide what context is admitted and adequate. Reasoning now nee
 
 In the book itself, Appendix C is the public claim ledger. The architecture should generalize that discipline: prose is an output view, not the place where belief state lives.
 
+The ledger also has to record absence. A claim can lack evidence, have expired evidence, rely on contested evidence, or depend on a source that is not yet loaded. Those are different states. If they collapse into "uncertain," future agents cannot decide whether to fetch a source, run a test, ask a tribunal, or downgrade the claim.
+
 ## Why existing approaches are insufficient
 
 A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
@@ -57,6 +61,8 @@ A model can generate plausible prose without maintaining why it believes a claim
 A fluent answer can contain assumptions that were never extracted, contradictions that were never linked, and claims that keep their confident tone after evidence weakens. Belief inertia is the epistemic version of technical debt: a claim remains in circulation because no artifact forces it to be revised.
 
 Aletheia and UAT both push against this failure by decomposing outputs into propositions, preserving unsupported or inferred states, and routing uncertainty to review. The claim ledger gives those states a durable home.
+
+Another insufficiency is cross-output drift. The same claim can appear in a chapter, diagram, appendix, release note, and future reader edition with slightly different wording. Without a ledger identity, the system cannot tell whether those are restatements of one claim, narrower variants, or accidental contradictions.
 
 ## Core Claim
 
@@ -97,6 +103,8 @@ flowchart LR
 
 The mechanism is a sequence rather than a checklist. Generated or extracted claims become ledger entries; each entry receives provenance, support state, uncertainty, evidence refs, and contradiction refs; and later evidence can revise the entry without erasing the prior state. When a contradiction is unresolved, the ledger preserves it and blocks support-state promotion instead of smoothing it into prose.
 
+The lifecycle should be explicit: proposed, recorded, mapped, challenged, revised, downgraded, deprecated, split, merged, promoted, or retired. These are ledger events, not editorial moods. A source note, proof result, tribunal verdict, benchmark record, or failed replication can all become revision causes, but none of them should overwrite the history they changed.
+
 The ledger separates claim text, claim label, support state, evidence refs, uncertainty, contradictions, revision reason, and review status. A claim can remain useful while unsupported, speculative, contradicted, or blocked, but it must be labeled accordingly.
 
 Belief revision is not just promotion. It includes downgrade, deprecation, split, merge, contradiction preservation, and residual creation. Negative evidence is an asset because it prevents the system from relearning the same false confidence.
@@ -125,6 +133,8 @@ Minimum fields:
 
 VCM supplies source context. Spinoza verifies or downgrades claims. UAT can review contested claims. Appendix C records book-level claim support while preserving revision history.
 
+The handoff to Spinoza should name the requested tier and the reason the claim deserves stronger treatment. The handoff to tribunal should name the conflict, risk class, dossier boundary, and what action would follow a verdict. Otherwise escalation becomes another way to delay revision.
+
 ## Invariants
 
 - Claims are separable from prose.
@@ -132,6 +142,8 @@ VCM supplies source context. Spinoza verifies or downgrades claims. UAT can revi
 - Revision history is not overwritten.
 
 The non-overwrite invariant is central. New evidence can change the current state, but it cannot erase the fact that a prior state existed, which evidence supported it, and why it changed.
+
+A second invariant is regenerated prose discipline. If published text changes the meaning, support state, or scope of a ledgered claim, the ledger must change too. Reader editions can simplify scaffolding, but they cannot silently upgrade confidence or remove residuals that are material to the claim.
 
 ## Failure modes
 
@@ -141,6 +153,8 @@ The non-overwrite invariant is central. New evidence can change the current stat
 
 Untracked assumptions should become claims or residuals. Belief inertia should trigger review when contradictions or stronger evidence arrive. Contradiction deletion is unacceptable: contradictions can be resolved, bounded, or refuted, but they should remain linked.
 
+The subtle failure is confidence laundering. A claim can move from appendix to chapter to summary to release note, sounding more settled each time even though its support state never changed. Ledger IDs, revision reasons, and support-state labels should stop that drift.
+
 ## Minimal implementation
 
 A claim-record schema and belief-revision transition example.
@@ -148,6 +162,8 @@ A claim-record schema and belief-revision transition example.
 The smallest useful implementation is the existing `claim_record` schema plus a `belief_revision_record` schema and fixture. The fixture should demonstrate conservative support-state handling without claiming that an actual contested claim has been resolved. The accompanying Lean module is intentionally narrower than a belief engine: it models finite claim-update records and promotion reviews; a valid update preserves prior evidence and revision-history references; and an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual.
 
 Those fixtures demonstrate record shape and conservative support-state handling. The Lean predicates do not show that prose claims were extracted correctly, contradictions were detected, or a substantive belief was revised.
+
+The next useful implementation step is a tiny extraction-and-revision fixture set: one prose paragraph with two extracted claims, one unsupported assumption recorded as a residual, one contradiction linked to both claims, one downgrade event, and one tribunal escalation. That would test ledger mechanics without claiming automated belief revision.
 
 ## Codex test plan
 
@@ -188,3 +204,5 @@ The crosswalk identifies sources for claim-ledger and belief-revision discipline
 Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history. The reviewed sources justify the ledger boundary; they do not yet show a working extractor, contradiction detector, or belief-revision engine in this repo.
 
 The chapter's rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise. The next chapter takes selected ledger claims and asks what kind of proof, citation, procedure, or justification artifact would be required before their tier can rise.
+
+The practical test is whether a future agent can edit the book without losing epistemic identity. If a claim changes, the ledger should know. If a claim repeats, the ledger should know. If a claim becomes weaker, the prose should not keep sounding stronger.

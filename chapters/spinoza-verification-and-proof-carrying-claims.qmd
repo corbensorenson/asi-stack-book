@@ -41,6 +41,8 @@ This chapter treats proof-carrying claims as a verification envelope, not as pro
 
 Coming immediately after claim ledgers, this chapter raises the bar for the subset of claims that matter enough to justify proof, citation, or procedure artifacts. It bridges from recorded support state to the question of what must be checked before that state can improve.
 
+Proof-carrying language is useful only when it creates an obligation to inspect. A proof label, citation bundle, theorem reference, or procedure log should make a claim easier to challenge, not harder to question.
+
 ## Problem
 
 The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
@@ -49,6 +51,8 @@ Claim ledgers store epistemic state. Spinoza defines the verification lane that 
 
 The chapter is deliberately bounded. It does not assume open-domain autoformalization is solved. It defines how the stack handles proof, justification, timeout, mismatch, downgrade, and escalation.
 
+The starting point is the ledger, not the proof tool. A claim first needs identity, scope, support state, and requested tier. Only then can a verifier decide whether a proof, citation dossier, executable procedure, or review path is the right kind of justification.
+
 ## Why existing approaches are insufficient
 
 Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.
@@ -56,6 +60,8 @@ Neural generation alone cannot guarantee semantic consistency, source grounding,
 A model can propose a formal-looking argument that does not mean what the original claim meant. It can cite sources that do not support the claim. It can produce a proof sketch with a hidden gap. It can time out and still sound confident. These are not rare edge cases; they are the normal boundary between generation and verification.
 
 GenesisCode contributes the obligation-envelope view: accepted artifacts should carry tests, proofs, provenance, or capability policies. Verification Bandwidth adds that high-risk claims may need stronger verification rather than more context.
+
+The formalization channel is itself a risk surface. A theorem can be valid while the interpretation mapping is wrong, too narrow, or missing the claim's most important natural-language condition. That is why the mapping belongs in the record, not in the verifier's hidden assumptions.
 
 ## Core Claim
 
@@ -97,6 +103,8 @@ flowchart LR
 
 The verification path is tiered. The model may propose a claim, mapping, proof sketch, citation dossier, or procedure, but promotion depends on a separate verifier result and a recorded justification artifact. A failed proof, timeout, or ambiguous interpretation is not neutral decoration; it writes a downgrade, block, residual, or tribunal route back to the claim ledger.
 
+A proof-carrying claim should support multiple justification kinds. Some claims need formal proof. Some need source citations. Some need executable procedures, replay logs, or benchmark artifacts. Some need a tribunal because the interpretation or stakes are contested. The common rule is not "everything becomes Lean." The rule is that the justification type must match the claim and its requested tier.
+
 A proof-carrying claim contains the claim, required tier, interpretation mapping, justification artifact, verifier, verifier result, limitations, downgrade rule, and residuals. Formal proof is one tier, not the default expectation for every claim.
 
 The most important behavior is downgrade discipline. Failed, timed-out, or mismatched verification should never become a promotional story. It should lower the support state, block promotion, or route the claim to tribunal review.
@@ -125,6 +133,8 @@ Minimum fields:
 
 The claim ledger stores proof status. GenesisCode and Lean provide formal hooks where the claim is formal enough. UAT handles adversarial review where the mapping, evidence, or stakes require multiple reviewers.
 
+The interface should also separate artifact validity from claim validity. A valid proof artifact can still support only a narrow formal target. A valid citation can still support only a limited reading. A replay log can still depend on environment assumptions. The ledger update should say what moved and what did not.
+
 ## Invariants
 
 - Proof tier is explicit.
@@ -132,6 +142,8 @@ The claim ledger stores proof status. GenesisCode and Lean provide formal hooks 
 - Unsupported claims remain marked speculative or blocked.
 
 The tier invariant is strict: a claim cannot occupy a formal or verified tier merely because a proof was attempted. It needs a justification artifact appropriate to the tier and a recorded verifier result.
+
+Failed verification is evidence too. A failed proof, timeout, mismatch, missing artifact, or unsupported citation should create a durable record that blocks repetition of the same promotional attempt unless the mapping, evidence, or artifact changes.
 
 ## Failure modes
 
@@ -141,6 +153,8 @@ The tier invariant is strict: a claim cannot occupy a formal or verified tier me
 
 Certified delusion happens when the artifact looks formal but certifies the wrong thing. Invalid formalization means the mapping between natural-language claim and formal object is untrusted. Missing justification means the tier is unsupported. Each failure should downgrade or block the claim.
 
+Verification theater is the broader failure. The chapter name, theorem tag, citation count, or procedure log becomes a symbol of rigor while the actual support boundary remains unchanged. The proof-carrying record should force the system to say exactly which claim, tier, mapping, and limitation the artifact covers.
+
 ## Minimal implementation
 
 A tiered proof-carrying claim schema with one non-philosophical invariant example.
@@ -148,6 +162,8 @@ A tiered proof-carrying claim schema with one non-philosophical invariant exampl
 The smallest useful implementation is a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
 
 The fixture validates the envelope: tier, mapping, artifact ref, verifier name, verifier result field, limitations, downgrade rule, tribunal ref, and ledger update. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
+
+The next useful implementation step is a mismatch fixture set: one formal target that passes but supports only a narrower claim, one failed verifier result that blocks promotion, one missing citation artifact that downgrades a source-derived claim, and one contested interpretation routed to tribunal. That would exercise the envelope without claiming verifier quality.
 
 ## Codex test plan
 
@@ -186,3 +202,5 @@ The crosswalk identifies sources for proof-carrying and justification-carrying c
 Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures. The reviewed sources justify the envelope pattern; they do not show an implemented verifier, semantic-equivalence checker, or open-domain formalizer in this repo.
 
 The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it. The next chapter handles the cases where one verifier or one artifact is not enough and the claim needs adversarial, role-separated review.
+
+The practical rule is that rigor must be consumable. A future reader, reviewer, or agent should be able to inspect the record and see why a claim's tier did or did not move.

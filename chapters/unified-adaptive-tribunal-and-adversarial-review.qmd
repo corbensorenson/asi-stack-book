@@ -41,6 +41,8 @@ This chapter treats tribunal review as a bounded escalation protocol. The repo v
 
 Following Spinoza, tribunal review covers claims whose risk, ambiguity, or evidence conflict cannot be handled by a single verifier result. It is deliberately more expensive than ordinary revision, so it belongs at escalation points: proof mismatch, high-risk artifact, contested source base, or unresolved safety consequence.
 
+Review is a scarce governance resource. The stack should not route every uncertain sentence to a tribunal, and it should not let high-risk claims avoid tribunal review because the ordinary verifier produced fluent confidence.
+
 ## Problem
 
 Complex claims and artifacts need adversarial review that is more structured than one model critique.
@@ -49,6 +51,8 @@ Claim ledgers preserve belief state. Spinoza attempts verification. UAT is the e
 
 The tribunal is not a truth oracle. UAT's own source discipline is retrieval-bounded: automated review can only judge against the dossier, logic, omissions, and declared constraints it receives. That limitation is a feature because it keeps review claims scoped.
 
+The tribunal's job is therefore conditional judgment. Given this dossier, these roles, these probes, these constraints, and these unresolved issues, what can the stack responsibly do next: accept, revise, downgrade, quarantine, expand retrieval, ask a human, or block?
+
 ## Why existing approaches are insufficient
 
 Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
@@ -56,6 +60,8 @@ Single-pass self-review misses blind spots, evaluator drift, and consensus witho
 One reviewer often shares the generator's blind spots. Multiple reviewers can still collapse into consensus theater if they see the same prompt, optimize for agreement, or fail to preserve dissent. Critique without action is also cheap: a review that finds issues but does not route them into revision, downgrade, residuals, or human adjudication is decoration.
 
 The point is targeted escalation. Most claims should not pay tribunal cost. High-risk claims, contested claims, safety-relevant artifacts, and proof-mismatch cases should.
+
+More reviewers are not automatically better. If they share the same context, same failure mode, same incentive, or same hidden evidence gap, review can amplify confidence without adding independent pressure. The protocol has to record role separation, dossier boundaries, dissent, and required actions so the review is not merely social proof.
 
 ## Core Claim
 
@@ -97,6 +103,8 @@ flowchart LR
 
 The review mechanism is a bounded protocol. A target claim or artifact enters with dossier refs, risk class, reviewer roles, and adversarial probes; findings cite evidence; dissent and unresolved issues remain first-class; and the verdict carries required actions plus human-adjudication state. Agreement only matters when it can be tied back to the dossier and the ledger.
 
+The lifecycle is admission, dossier construction, role assignment, adversarial probing, finding capture, dissent preservation, verdict, required action, and ledger or execution update. Each stage can fail. A missing dossier should block review. Missing roles should block high-risk acceptance. Findings without evidence should remain hypotheses. A verdict without required action should not unblock work that still has unresolved issues.
+
 Reviewer roles should be explicit: logic critic, citation critic, omission critic, safety critic, implementation critic, or domain reviewer. The review dossier should be explicit too; reviewers should not invent hidden evidence outside the declared boundary unless the protocol allows a retrieval expansion.
 
 The output is not only a verdict. It includes reviewer findings, evidence refs, dissent, unresolved issues, required actions, and whether human adjudication is required. That is what makes critique actionable.
@@ -127,6 +135,8 @@ Minimum fields:
 
 Spinoza consumes tribunal results for tier decisions. Planning escalates risky nodes to tribunal. Evidence records reviewer outcomes, unresolved issues, and required actions.
 
+Execution layers should receive tribunal outcomes as machine-readable constraints, not advice in prose. A required action can block dispatch, narrow authority, demand a source fetch, require a human approval, create a residual, or update a claim state. If the outcome cannot affect the next action, the review has not been integrated.
+
 ## Invariants
 
 - Dissent is preserved.
@@ -134,6 +144,8 @@ Spinoza consumes tribunal results for tier decisions. Planning escalates risky n
 - High-risk reviews are reproducible enough to audit.
 
 Dissent preservation matters because the future system may later receive evidence that makes the minority view correct. Consensus requires evidence refs, not just agreement. Reproducibility requires the review dossier, roles, probes, and hard stop conditions to be visible enough to audit.
+
+Scope control is another invariant. The tribunal cannot quietly expand beyond its dossier and then present the result as dossier-bounded review. If retrieval expands, the new sources, search terms, admission rules, and residual gaps have to be recorded.
 
 ## Failure modes
 
@@ -143,6 +155,8 @@ Dissent preservation matters because the future system may later receive evidenc
 
 Reviewer collusion can be literal or structural: identical prompts, shared context leakage, or shared blind spots. Consensus theater produces agreement without evidence. Critique without action leaves problems in place. Each failure should block acceptance or create required actions.
 
+The subtle failure is review laundering. A claim rejected by the ledger or verifier can be sent to reviewers until the language sounds balanced enough to pass, even though no new evidence or corrected mapping appeared. Tribunal records should make repeated review attempts and unchanged evidence visible.
+
 ## Minimal implementation
 
 A tribunal protocol for claim/artifact review with reviewer roles and output schema.
@@ -150,6 +164,8 @@ A tribunal protocol for claim/artifact review with reviewer roles and output sch
 The smallest useful implementation is a `tribunal_review_record` schema and fixture. It should show reviewer roles, dossier refs, adversarial probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human-adjudication state.
 
 That fixture validates the review envelope. It does not prove that reviewers were independent, that adversarial probes found the right issues, or that a verdict was correct.
+
+The next useful implementation step is a contested-claim fixture set: one high-risk claim that cannot be accepted without tribunal review, one tribunal record with preserved dissent and required actions, one verdict that expands retrieval rather than promoting the claim, and one repeated review attempt blocked because the evidence set did not change. That would test the escalation semantics without claiming reviewer quality.
 
 ## Codex test plan
 
@@ -188,3 +204,5 @@ The crosswalk identifies sources for tribunal review, tier consequences, audit p
 Unified Adaptive Tribunal and Adversarial Review gives the stack a structured escalation protocol. It coordinates reviewer roles, bounded dossiers, adversarial probes, evidence-linked findings, dissent, unresolved issues, verdicts, required actions, and human adjudication. The reviewed sources justify the review-record and escalation boundary; they do not show reviewer independence, verdict correctness, or a working tribunal pipeline in this repo.
 
 The chapter's limit is as important as its mechanism: a tribunal can improve review discipline, but it cannot manufacture evidence outside its dossier without explicitly expanding the investigation. The next chapter moves from reasoning to execution: accepted work must become typed jobs, artifacts, runtime effects, and procedural memory rather than disappearing into another answer.
+
+The practical standard is that review must change the state of the system. It should block, narrow, revise, escalate, or record residual uncertainty. If nothing changes except the presence of a critique paragraph, the tribunal layer has failed.
