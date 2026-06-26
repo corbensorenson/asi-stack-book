@@ -250,53 +250,70 @@ context_packet:
 context_abi_record:
   request_id: string
   task_id: string
+  lifecycle_state: materialized
   request_validity: well_formed
   semantic_address: string
   version: string
   mount: string
+  mount_scope: []
   snapshot_id: string
   resolution_validity: resolved
+  resolver_policy: string
   representation_contract: string
   authority_labels: []
+  authority_ceiling: string
   materialization_validity: materialized
   admission_state: admitted
   adequacy_state: adequate
+  adequacy_requirement: string
   fault_state: none
   materialization_ref: string
+  consumer_policy: string
   support_boundary: string
   lease_expiry: string
+  replay_boundary: string
+  source_refs: []
   residuals: []
   audit_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record is the stable ABI between planning, durable memory, context compilation, execution, and audit. It distinguishes request validity, resolution validity, materialization validity, admission, adequacy, support boundary, lease expiry, residuals, and typed faults.
+This record is the stable ABI between planning, durable memory, context compilation, execution, and audit. It distinguishes lifecycle state, request validity, mount scope, resolution validity, resolver policy, materialization validity, admission, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and typed faults.
 
 ## Context Transaction Record
 
 ```yaml
 context_transaction_record:
   transaction_id: string
+  transaction_state: committed
   operation: derive
   snapshot_id: string
+  snapshot_boundary: string
   mounts: []
+  mount_policy: string
   read_set: []
   write_set: []
   branch_policy: string
   taint_labels: []
+  taint_propagation: propagated
   deletion_obligations: []
+  rollback_or_deletion_closure: string
   declassification_refs: []
   derivative_refs: []
   contradiction_refs: []
   materialization_state: materializable
   closure_state: satisfied
   faults: []
+  context_abi_refs: []
+  source_refs: []
   audit_refs: []
   replay_boundary: string
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, deletion closure, taint propagation, declassification references, derivatives, materialization state, contradictions, faults, replay boundary, non-claims, and audit.
+This record gives context memory transactional semantics for reads, writes, derivations, branches, commits, transaction state, snapshot boundary, mount policy, deletion closure, taint propagation, declassification references, derivatives, context ABI refs, source refs, materialization state, contradictions, faults, replay boundary, support-state effect, non-claims, and audit.
 
 ## Costed Route Record
 
@@ -920,16 +937,26 @@ This record gives the MoECOT implementation-reference lane a conservative runtim
 
 ```yaml
 context_adequacy_record:
+  adequacy_id: string
   target_claim_id: string
+  claim_scope: string
+  context_packet_ref: string
+  context_scope: string
+  risk_tier: high
   semantic_units: []
   compression_path: []
   verification_mode: pairwise_grinding
-  adequacy_state: adequate_for_local_check
+  adequacy_state: local_check
   residual_risks: []
+  negative_evidence: []
   required_escalation: []
+  verification_artifact_refs: []
+  audit_refs: []
+  support_state_effect: blocks_promotion
+  non_claims: []
 ```
 
-This record distinguishes context admission from context adequacy. It can say a packet is usable for drafting or local consistency checks without claiming it is adequate for support-state promotion.
+This record distinguishes context admission from context adequacy. It scopes the claim, context packet, verification mode, risk tier, negative evidence, escalation requirement, verification artifacts, audit refs, and support-state effect so a packet usable for drafting or local checking cannot be reused as support-state promotion evidence.
 
 ## Semantic Atom
 

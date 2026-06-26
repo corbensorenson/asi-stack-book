@@ -1,9 +1,19 @@
 {
+  "adequacy_id": "context-adequacy-demo-001",
   "target_claim_id": "verification-bandwidth-and-context-adequacy.core",
+  "claim_scope": "chapter core claim only; not a measured model-capacity law",
+  "context_packet_ref": "tests/fixtures/protocol_records/context_abi_record.valid.json",
+  "context_scope": "two synthetic semantic units in the fixture only",
+  "risk_tier": "high",
   "semantic_units": ["source-a-contract", "source-b-constraint"],
   "compression_path": ["raw excerpts", "semantic-unit inventory"],
   "verification_mode": "pairwise_grinding",
-  "adequacy_state": "adequate_for_local_check",
+  "adequacy_state": "local_check",
   "residual_risks": ["No empirical contradiction-rate benchmark has been run."],
-  "required_escalation": ["tribunal review before support-state promotion"]
+  "negative_evidence": ["No distractor-resistance or escalation-harness result exists for this fixture."],
+  "required_escalation": ["tribunal review before support-state promotion"],
+  "verification_artifact_refs": ["tests/fixtures/protocol_records/context_adequacy_record.valid.json"],
+  "audit_refs": ["docs/source_readiness_report.md"],
+  "support_state_effect": "blocks_promotion",
+  "non_claims": ["fixture does not measure verification bandwidth", "fixture does not prove contradiction detection"]
 }

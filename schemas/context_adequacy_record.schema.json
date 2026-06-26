@@ -4,28 +4,85 @@
   "title": "Context Adequacy Record",
   "type": "object",
   "required": [
+    "adequacy_id",
     "target_claim_id",
+    "claim_scope",
+    "context_packet_ref",
+    "context_scope",
+    "risk_tier",
     "semantic_units",
     "compression_path",
     "verification_mode",
     "adequacy_state",
     "residual_risks",
-    "required_escalation"
+    "negative_evidence",
+    "required_escalation",
+    "verification_artifact_refs",
+    "audit_refs",
+    "support_state_effect",
+    "non_claims"
   ],
   "properties": {
+    "adequacy_id": { "type": "string", "minLength": 1 },
     "target_claim_id": { "type": "string", "minLength": 1 },
+    "claim_scope": { "type": "string", "minLength": 1 },
+    "context_packet_ref": { "type": "string", "minLength": 1 },
+    "context_scope": { "type": "string", "minLength": 1 },
+    "risk_tier": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical", "unknown"]
+    },
     "semantic_units": { "type": "array", "items": { "type": "string" } },
     "compression_path": { "type": "array", "items": { "type": "string" } },
     "verification_mode": {
       "type": "string",
-      "enum": ["none", "drafting", "local_consistency", "pairwise_grinding", "tribunal", "formal"]
+      "enum": [
+        "none",
+        "drafting",
+        "local_consistency",
+        "direct_source_lookup",
+        "pairwise_grinding",
+        "schema_or_fixture",
+        "proof_checker",
+        "tribunal",
+        "adversarial_review",
+        "human_review",
+        "summary_only",
+        "formal"
+      ]
     },
     "adequacy_state": {
       "type": "string",
-      "enum": ["unknown", "adequate_for_drafting", "adequate_for_local_check", "inadequate_for_verification", "escalated"]
+      "enum": [
+        "absent",
+        "drafting_only",
+        "local_check",
+        "joint_check",
+        "summary_derived",
+        "escalated",
+        "contradicted",
+        "unknown",
+        "adequate_for_drafting",
+        "adequate_for_local_check",
+        "inadequate_for_verification"
+      ]
     },
     "residual_risks": { "type": "array", "items": { "type": "string" } },
-    "required_escalation": { "type": "array", "items": { "type": "string" } }
+    "negative_evidence": { "type": "array", "items": { "type": "string" } },
+    "required_escalation": { "type": "array", "items": { "type": "string" } },
+    "verification_artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

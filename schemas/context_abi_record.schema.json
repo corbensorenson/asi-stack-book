@@ -6,28 +6,41 @@
   "required": [
     "request_id",
     "task_id",
+    "lifecycle_state",
     "request_validity",
     "semantic_address",
     "version",
     "mount",
+    "mount_scope",
     "snapshot_id",
     "resolution_validity",
+    "resolver_policy",
     "representation_contract",
     "authority_labels",
+    "authority_ceiling",
     "materialization_validity",
     "admission_state",
     "adequacy_state",
+    "adequacy_requirement",
     "fault_state",
     "materialization_ref",
+    "consumer_policy",
     "support_boundary",
     "lease_expiry",
+    "replay_boundary",
+    "source_refs",
     "residuals",
     "audit_refs",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "request_id": { "type": "string", "minLength": 1 },
     "task_id": { "type": "string", "minLength": 1 },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["proposed", "requested", "resolved", "materialized", "faulted", "expired", "retired"]
+    },
     "request_validity": {
       "type": "string",
       "enum": ["well_formed", "malformed", "blocked", "unknown"]
@@ -35,13 +48,16 @@
     "semantic_address": { "type": "string", "minLength": 1 },
     "version": { "type": "string", "minLength": 1 },
     "mount": { "type": "string", "minLength": 1 },
+    "mount_scope": { "type": "array", "items": { "type": "string" } },
     "snapshot_id": { "type": "string", "minLength": 1 },
     "resolution_validity": {
       "type": "string",
       "enum": ["resolved", "unresolved", "stale", "revoked", "unknown"]
     },
+    "resolver_policy": { "type": "string", "minLength": 1 },
     "representation_contract": { "type": "string", "minLength": 1 },
     "authority_labels": { "type": "array", "items": { "type": "string" } },
+    "authority_ceiling": { "type": "string", "minLength": 1 },
     "materialization_validity": {
       "type": "string",
       "enum": ["materialized", "denied", "expired", "unsafe", "not_materialized"]
@@ -54,15 +70,29 @@
       "type": "string",
       "enum": ["adequate", "missing", "conflicting", "unsafe", "unknown", "unsatisfiable", "inadequate"]
     },
+    "adequacy_requirement": { "type": "string", "minLength": 1 },
     "fault_state": {
       "type": "string",
       "enum": ["none", "typed_fault", "residual", "quarantine"]
     },
     "materialization_ref": { "type": "string", "minLength": 1 },
+    "consumer_policy": { "type": "string", "minLength": 1 },
     "support_boundary": { "type": "string", "minLength": 1 },
     "lease_expiry": { "type": "string", "minLength": 1 },
+    "replay_boundary": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
     "residuals": { "type": "array", "items": { "type": "string" } },
     "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

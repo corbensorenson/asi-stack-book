@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` and `moecot` remain connector/source-note mapped, and support remains argument until resolver, context compiler, adequacy classifier, or VCM conformance tests exist."
-  - "Only protocol schema/fixture validation is implemented; no VCM resolver or context compiler tests have been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; the fixture now records lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims, but no VCM resolver or context compiler tests have been run for this chapter."
   - "Lean coverage is limited to finite context-reference and lookup records; real resolver, adequacy classifier, and context compiler behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | Context ABI fixture validation and `AsiStackProofs.VirtualContextABI` finite-record proofs are implemented; resolver and compiler tests remain planned. |
+| Test state | Context ABI fixture validation now includes lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims; `AsiStackProofs.VirtualContextABI` finite-record proofs are implemented; resolver and compiler tests remain planned. |
 
 ## Drafting guardrail
 
@@ -127,30 +127,39 @@ Minimum fields:
 
 - `request_id`
 - `task_id`
+- `lifecycle_state`
 - `request_validity`
 - `semantic_address`
 - `version`
 - `mount`
+- `mount_scope`
 - `snapshot_id`
 - `resolution_validity`
+- `resolver_policy`
 - `representation_contract`
 - `authority_labels`
+- `authority_ceiling`
 - `materialization_validity`
 - `admission_state`
 - `adequacy_state`
+- `adequacy_requirement`
 - `fault_state`
 - `materialization_ref`
+- `consumer_policy`
 - `support_boundary`
 - `lease_expiry`
+- `replay_boundary`
+- `source_refs`
 - `residuals`
 - `audit_refs`
+- `support_state_effect`
 - `non_claims`
 
 Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
 
 The interface should produce context receipts. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
 
-The public schema now records request validity, resolution validity, materialization validity, support boundary, lease expiry, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
+The public schema now records lifecycle state, request validity, resolution validity, resolver policy, mount scope, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
 
 ## Invariants
 
@@ -176,7 +185,7 @@ The subtle failure is context lease drift. A packet created for drafting or revi
 
 A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
 
-The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of request validity, address, version, mount, snapshot, resolution validity, representation, authority, materialization validity, admission, adequacy, fault, materialization, support boundary, lease expiry, residual, audit, and non-claim fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
+The smallest useful implementation is a `context_abi_record` schema and fixture. It validates the shape of lifecycle state, request validity, address, version, mount, mount scope, snapshot, resolution validity, resolver policy, representation, authority, authority ceiling, materialization validity, admission, adequacy, adequacy requirement, fault, materialization, consumer policy, support boundary, lease expiry, replay boundary, source refs, residual, audit, support-state effect, and non-claim fields. The accompanying Lean module is intentionally narrower than a VCM service: it models finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
 
 The record is an executable shape constraint. The Lean predicates cannot prove that a real semantic address resolver is correct, that a materialization is adequate, or that a deployed context service emits every required fault.
 
@@ -186,7 +195,7 @@ The next useful implementation step is a resolver fixture set: one valid request
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context ABI fixture validation | Check that the context ABI fixture includes request, address, version, mount, snapshot, representation contract, authority labels, admission, adequacy, fault, materialization, and audit fields. | implemented by protocol validation; run in this pass |
+| Context ABI fixture validation | Check that the context ABI fixture includes lifecycle state, request, address, version, mount scope, snapshot, resolver policy, representation contract, authority ceiling, admission, adequacy requirement, fault, materialization, consumer policy, replay boundary, source refs, support-state effect, and audit fields. | implemented by protocol validation; run in this pass |
 | Snapshot-bound reference predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
 | Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
 | Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |

@@ -1344,8 +1344,8 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A context ABI table covering request validity, address, version, mount, snapshot, resolution validity, representation, materialization validity, support boundary, lease expiry, residuals, and fault operations.
-- Implemented protocol validation: `context_abi_record` fixture validates public record shape only.
+- A context ABI table covering lifecycle state, request validity, address, version, mount scope, snapshot, resolution validity, resolver policy, representation, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, residuals, and fault operations.
+- Implemented protocol validation: `context_abi_record` fixture validates public record shape, lifecycle state, resolver policy, mount scope, authority ceiling, adequacy requirement, replay boundary, source refs, support-state effect, and non-claims only.
 - Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
 - Exact Appendix C claim-source mappings for the Virtual Context ABI claim across VCM public-v1 control-plane/ABI vocabulary, Context Engineer context-supply-chain pressure, Verification Bandwidth adequacy limits, VIEA context allocation and execution-spine integration, editable VCM refinement context, and MoECOT runtime-reference context; the four local mappings (`vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`) now have reviewed passage references. `vcm_editable` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending resolver behavior, adequacy classification, context compiler traces, VCM conformance artifacts, model-facing results, benchmark reproduction, or accepted evidence transitions.
 - Planned Codex test: Admission vs adequacy test.
@@ -1468,7 +1468,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A transaction model for context reads, writes, branches, and deletion closure.
-- Implemented protocol validation: `context_transaction_record` fixture validates public record shape, derivative refs, declassification refs, materialization state, replay boundary, and non-claims only.
+- Implemented protocol validation: `context_transaction_record` fixture validates public record shape, transaction state, snapshot boundary, mount policy, taint propagation, rollback/deletion closure, derivative refs, declassification refs, context ABI refs, source refs, materialization state, replay boundary, support-state effect, and non-claims only.
 - Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
 - Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Exact Appendix C claim-source mappings for the Context Transactions claim across VCM public-v1 transaction/snapshot/invalidation/deletion semantics, Ladon/Manhattan sensitive-compartment and handle boundaries, Context Engineer clearance-labeled mission contexts and Digital SCIF lifecycle, Black Hole Context Manager memory-budget/drift/freeze/evict patterns, and editable VCM refinement context; the four local mappings (`vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, memory-store artifacts, conformance results, VCM-Bench records, or external corroboration are imported or inspected. Support remains `argument` pending memory-store behavior, mount-visibility tests, branch-isolation checks, deletion-closure harnesses, side-channel validation, context-manager execution, benchmark reproduction, or accepted evidence transitions.
@@ -1529,9 +1529,9 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A context adequacy rubric and verification-bandwidth warning states.
+- A context adequacy rubric and verification-bandwidth warning states with claim scope, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims.
 - Exact Appendix C claim-source mappings for `verification-bandwidth-and-context-adequacy.core` across Verification Bandwidth, VCM public v1, Spinoza, TreeLLM, and editable VCM; four local raw-cache mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped.
-- Implemented protocol validation: `context_adequacy_record` fixture validates public record shape only.
+- Implemented protocol validation: `context_adequacy_record` fixture validates public record shape, claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims only.
 - Planned Codex test: Distractor resistance test.
 - Planned Codex test: Adequacy labeling test.
 - Planned Codex test: Verification escalation test.

@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped. Support remains argument until contradiction-rate, distractor-resistance, adequacy-labeling, or escalation-harness tests exist."
-  - "Only protocol schema/fixture validation is implemented; no contradiction-rate or adequacy benchmark has been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; the fixture now records claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims, but no contradiction-rate or adequacy benchmark has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
 | Source loading state | passage-reviewed local raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/source-note mapped: `vcm_editable` |
-| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; contradiction-rate, distractor-resistance, and escalation-harness tests remain planned. |
+| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation with claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; contradiction-rate, distractor-resistance, and escalation-harness tests remain planned. |
 
 ## Drafting guardrail
 
@@ -125,13 +125,23 @@ The interface for this chapter is a compact adequacy record that travels with th
 
 Minimum fields:
 
+- `adequacy_id`
 - `target_claim_id`
+- `claim_scope`
+- `context_packet_ref`
+- `context_scope`
+- `risk_tier`
 - `semantic_units`
 - `compression_path`
 - `verification_mode`
 - `adequacy_state`
 - `residual_risks`
+- `negative_evidence`
 - `required_escalation`
+- `verification_artifact_refs`
+- `audit_refs`
+- `support_state_effect`
+- `non_claims`
 
 Planning consumes the adequacy state before assigning review effort. VCM uses it to decide whether retrieval, summarization, or splitting is required. Spinoza-style claim ledgers use it to block support-state promotion when the context packet is adequate for drafting but not for verification.
 
@@ -173,13 +183,13 @@ A context adequacy rubric and verification-bandwidth warning states.
 
 The smallest useful implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
 
-The existing artifact is narrower: a `context_adequacy_record` schema and fixture. It records semantic units, compression path, verification mode, adequacy state, residual risks, and escalation requirements, but it does not measure verification performance.
+The existing artifact is narrower: a `context_adequacy_record` schema and fixture. It records adequacy identity, target claim, claim scope, context packet ref, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims, but it does not measure verification performance.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, semantic units, compression path, verification mode, adequacy state, residual risks, and escalation requirements. | implemented by protocol validation; run in this pass |
+| Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, claim scope, context packet, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
 | Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | planned; not run |
 | Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | planned; not run |

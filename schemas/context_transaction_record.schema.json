@@ -5,37 +5,56 @@
   "type": "object",
   "required": [
     "transaction_id",
+    "transaction_state",
     "operation",
     "snapshot_id",
+    "snapshot_boundary",
     "mounts",
+    "mount_policy",
     "read_set",
     "write_set",
     "branch_policy",
     "taint_labels",
+    "taint_propagation",
     "deletion_obligations",
+    "rollback_or_deletion_closure",
     "declassification_refs",
     "derivative_refs",
     "contradiction_refs",
     "materialization_state",
     "closure_state",
     "faults",
+    "context_abi_refs",
+    "source_refs",
     "audit_refs",
     "replay_boundary",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "transaction_id": { "type": "string", "minLength": 1 },
+    "transaction_state": {
+      "type": "string",
+      "enum": ["opened", "committed", "faulted", "rolled_back", "retired"]
+    },
     "operation": {
       "type": "string",
       "enum": ["read", "write", "derive", "branch", "commit", "delete", "declassify"]
     },
     "snapshot_id": { "type": "string", "minLength": 1 },
+    "snapshot_boundary": { "type": "string", "minLength": 1 },
     "mounts": { "type": "array", "items": { "type": "string" } },
+    "mount_policy": { "type": "string", "minLength": 1 },
     "read_set": { "type": "array", "items": { "type": "string" } },
     "write_set": { "type": "array", "items": { "type": "string" } },
     "branch_policy": { "type": "string", "minLength": 1 },
     "taint_labels": { "type": "array", "items": { "type": "string" } },
+    "taint_propagation": {
+      "type": "string",
+      "enum": ["propagated", "declassified", "blocked", "unknown", "not_applicable"]
+    },
     "deletion_obligations": { "type": "array", "items": { "type": "string" } },
+    "rollback_or_deletion_closure": { "type": "string", "minLength": 1 },
     "declassification_refs": { "type": "array", "items": { "type": "string" } },
     "derivative_refs": { "type": "array", "items": { "type": "string" } },
     "contradiction_refs": { "type": "array", "items": { "type": "string" } },
@@ -48,8 +67,20 @@
       "enum": ["satisfied", "faulted", "unknown", "not_applicable"]
     },
     "faults": { "type": "array", "items": { "type": "string" } },
+    "context_abi_refs": { "type": "array", "items": { "type": "string" } },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
     "audit_refs": { "type": "array", "items": { "type": "string" } },
     "replay_boundary": { "type": "string", "minLength": 1 },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
