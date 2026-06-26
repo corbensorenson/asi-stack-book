@@ -43,17 +43,23 @@ This chapter uses the Circle Calculus source family as proof-boundary context fo
 
 The previous chapter says optional substrates need baselines before adoption. This chapter supplies the narrower transport layer for one class of substrate evidence: finite structural facts that can travel with proof references, deterministic fields, receipts, and non-claims. The contract does not decide that the substrate is useful; it prevents a useful structural fact from losing its boundary on the way to memory, routing, compression, or runtime decisions.
 
+The receipt is a passport for a structural fact, not a promotion ticket for a substrate. It lets a downstream consumer know what was proven, how to check the package boundary, and which claims remain outside the proof.
+
 ## Problem
 
 The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
 
 The hard problem is authority transfer. A finite cyclic-address proof can be valid and still say nothing about language-model quality, runtime, memory, context length, deployment safety, or ASI capability. The ASI Stack therefore needs a contract boundary that lets downstream systems consume structural facts while preserving the limits of those facts.
 
+Proof authority and consumer authority are separate. A theorem can authorize a structural statement; it does not authorize a routing decision, architecture adoption, benchmark promotion, or reader-facing capability claim. Those later moves need their own workloads, baselines, metrics, and evidence artifacts.
+
 ## Why existing approaches are insufficient
 
 Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims. Without those fields, a reader cannot tell whether a claim is a Lean theorem, a Python fixture, a generated report, a model benchmark, or a design hypothesis.
 
 The key insufficiency is theorem laundering: a finite structural result gets repeated as if it were evidence for quality or deployment behavior. This chapter blocks that move by requiring each proof-carrying contract to carry its own consumer gate and non-claim boundary.
+
+Another insufficiency is stale proof reference drift. The text may preserve a theorem name while the external project changes the declaration, proof policy, sidecar schema, or generated artifact. A contract needs version, hash, resolver status, validation command, and failure behavior so staleness becomes visible.
 
 ## Core Claim
 
@@ -101,6 +107,8 @@ Operationally, the layer should produce artifacts that can be inspected without 
 
 The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. That formalization is intentionally silent about whether any named external theorem ID resolves.
 
+The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
+
 ## Interfaces
 
 - Lean and proof manifests supply theorem status.
@@ -109,6 +117,8 @@ The repository now mechanizes the smallest boundary that can be stated without i
 - The evidence matrix records claim boundaries and support states.
 
 The interface lets adjacent layers compose without absorbing each other's authority. Coil memory can consume a freshness or coverage receipt as a structural guardrail. Cyclic mixers can consume a phase-bank or collision receipt as a diagnostic. Evidence ledgers should still demand workloads, baselines, metrics, and run artifacts before quality or runtime claims move.
+
+A useful receipt records theorem refs, proof policy, source version, content fingerprint, deterministic fields, verifier command, resolver status, consumer requirements, failure behavior, and non-claims. If any of those are missing, the receipt can still be discussed as design context, but downstream use should remain blocked or residual.
 
 ## Invariants
 
@@ -121,6 +131,8 @@ The proof-contract invariants keep structural receipts from inflating into quali
 
 The strongest invariant is non-claim preservation. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
 
+Another invariant is consumer specificity. A receipt accepted for one consumer does not automatically transfer to another consumer with different workloads, numeric tolerances, threat model, or evidence standard.
+
 ## Failure modes
 
 - Theorem laundering into quality claims.
@@ -130,11 +142,15 @@ The strongest invariant is non-claim preservation. A proof-carrying receipt must
 
 Theorem laundering should block support-state promotion. Stale theorem IDs should remain residuals until a resolver or external build confirms them. Missing baselines should prevent downstream adoption. Exact finite models should stay distinct from numerical diagnostics and real-valued deployment behavior.
 
+The subtle failure is proof cargo-culting: diagrams, theorem names, and receipt tables appear rigorous enough that the reader stops asking what the theorem actually says. The antidote is a consumer gate that states the exact downstream claim being blocked or allowed.
+
 ## Minimal implementation
 
 The smallest useful implementation is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.
 
 The current implementation has two public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, and requiring workload, baseline, metric, and evidence artifacts before downstream promotion. A Circle-specific contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
+
+The next useful implementation step is a local surrogate contract pack: one valid receipt with a resolvable local theorem reference, one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence. That would test transfer semantics without importing private or unrun Circle results.
 
 ## Codex test plan
 
@@ -176,3 +192,5 @@ The crosswalk preserves external proof authority. `circle_calculus_core` supplie
 Circle Calculus and proof-carrying AI contracts are valuable because they let finite structural facts travel with theorem IDs, receipts, fingerprints, validation commands, and non-claims. Their job is boundary preservation.
 
 The ASI Stack should consume those contracts as structural guardrails, not as model-quality evidence. Downstream promotion still requires workloads, ordinary baselines, negative controls, metrics, and replayable result artifacts. The next chapter applies that receipt boundary to memory and recurrence, where the central risk is mistaking slot coverage for semantic adequacy.
+
+The practical standard is simple: a proof receipt should make overclaiming harder. If a receipt makes it easier to sell a substrate result that was not tested, the contract boundary failed.

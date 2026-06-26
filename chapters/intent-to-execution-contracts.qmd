@@ -41,6 +41,8 @@ This chapter treats execution as a governed trace, not as a successful response.
 
 It opens Part II by turning Part I's governance boundary into an operational spine. The system can now ask not only whether a request is admissible, but how that request becomes planned, authorized, executed, verified, and fed back without losing its original constraints.
 
+The contract is an authority-preserving lease over work. It says what the system is allowed to try, which means are forbidden, what result would count as satisfaction, which side effects require approval, and when the system must come back to the human or governance layer instead of improvising.
+
 ## Problem
 
 Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
@@ -49,6 +51,8 @@ Part I produced governed intent: purpose, authority ceilings, protected invarian
 
 This chapter is the bridge between governance and cognition. Planning, memory, routing, execution, and evidence can only do disciplined work if the request they receive has a durable identity, constraints, acceptance conditions, side-effect limits, and an artifact trace.
 
+The bridge has to separate desire, authorization, means, and acceptance. A human may want an outcome without authorizing every path to that outcome. A plan may find a clever means that violates the contract. An artifact may be useful without satisfying the acceptance predicate. Treating those as separate fields keeps execution from expanding beyond intent.
+
 ## Why existing approaches are insufficient
 
 A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
@@ -56,6 +60,8 @@ A model response is not an execution contract; it lacks lifecycle, acceptance, a
 The common failure is to treat fluent text as completed work. A response can sound responsive while hiding missing approvals, untracked source boundaries, unverifiable artifacts, unexecuted tests, or side effects that were never authorized. Talos sharpens the point: work should enter a job lifecycle, not a loose conversational state. GenesisCode adds the software version of the same boundary: proposals, effects, replay logs, and obligations must be separated.
 
 The stack needs a contract boundary because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
+
+The missing-field case is just as important as the filled-field case. If the contract does not specify authority, acceptance, allowed tools, failure behavior, or approval path, downstream layers should not silently infer permissive defaults. They should emit clarification requests, draft-only routes, residuals, or blocked states.
 
 ## Core Claim
 
@@ -104,6 +110,8 @@ The trace is append-only at the level that matters: each transition either produ
 
 This is why the book treats feedback as part of execution, not as a postscript. Result artifacts should update claims, regression suites, tools, and future plans. Failures should become residuals, not disappear into the next prompt.
 
+The trace should also preserve re-contract points. If planning discovers that the original objective is underspecified, the required tool exceeds authority, the context is inadequate, the verifier cannot check the output, or the cost exceeds budget, the correct move is not creative completion. It is re-contract, escalation, deferral, or refusal.
+
 ## Interfaces
 
 The interface is the Intent-to-Execution Trace.
@@ -128,6 +136,8 @@ Minimum fields:
 
 Intent contracts feed planning. Command contracts bind procedure and outputs. Plan graphs decompose the work. Typed jobs carry executable units. Authority transitions control side effects. Verification records decide whether the artifact satisfies the original intent.
 
+The interface should record authority deltas at every lowering step. Intent may authorize a goal; command contracts narrow procedure; plans allocate tasks; jobs request tools; runtime adapters ask for effects. Each step can preserve, narrow, expire, deny, or require approval. It cannot silently widen.
+
 ## Invariants
 
 - Contract constraints survive compilation.
@@ -135,6 +145,8 @@ Intent contracts feed planning. Command contracts bind procedure and outputs. Pl
 - Artifacts remain linked to source intent.
 
 The key invariant is preservation across compilation: the plan, job, artifact, and verification record must still be traceable to the parent intent. If the system cannot show that lineage, it has not executed the intent; it has only produced something near it.
+
+A second invariant is acceptance separability. Producing an artifact, running a tool, or satisfying a subtask is not the same as satisfying the parent intent. The trace must keep local completion separate from contract satisfaction.
 
 ## Failure modes
 
@@ -144,6 +156,8 @@ The key invariant is preservation across compilation: the plan, job, artifact, a
 
 The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Each failure should block promotion until the trace is repaired.
 
+The subtle failure is helpful overrun. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
+
 ## Minimal implementation
 
 A command-contract schema and one end-to-end intent-to-artifact trace.
@@ -151,6 +165,8 @@ A command-contract schema and one end-to-end intent-to-artifact trace.
 The smallest useful implementation is a `command_contract` schema plus an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, artifact, verification record, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
 
 Those two records are implemented only as public protocol artifacts. They can validate that the trace names the required links; they cannot show that the links were executed, authorized, accepted, or useful.
+
+The next useful implementation step is a two-path vertical-slice fixture: one contract that lowers into a permitted job and accepted artifact, and one contract that stops because authority, context, approval, verifier, or budget is missing. That would exercise preservation and stop conditions without claiming behavioral execution.
 
 ## Codex test plan
 
@@ -189,3 +205,5 @@ The crosswalk identifies sources for the trace vocabulary. Four local source map
 Intent-to-Execution Contracts is the stack's first operational handoff. It turns human intent into a traceable chain of contracts, plans, jobs, artifacts, verification, feedback, and residuals.
 
 The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action. The next chapter narrows from the whole trace to the command language that makes the first machine-readable handoff precise.
+
+The practical standard is that a downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract.

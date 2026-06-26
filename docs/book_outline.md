@@ -449,6 +449,8 @@ Draft arc:
 - Mechanism: Translate philosophical commitments into operational predicates where possible, while preserving uncertainty labels.
 - Mechanism: Keep metaphysical claims labeled as interpretation unless separately supported.
 - Mechanism: Attach active constitutional constraints to planning, tool/memory/power, and self-improvement gates.
+- Mechanism: Give predicates scope and conflict behavior so value conflicts route to narrowing, consent, tribunal review, residual preservation, or blocking rather than hidden optimizer choices.
+- Mechanism: Treat changes to protected predicates as constitutional migrations with diff records, review, rollback, and residuals rather than ordinary refactors.
 - Interface: Planning receives admissible-goal constraints.
 - Interface: Runtime receives power, memory, and tool-risk gates.
 - Interface: Governance receives protected constraints and non-weakenable predicates.
@@ -911,6 +913,8 @@ Draft arc:
 - Mechanism: Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.
 - Mechanism: Route contracts through planning, memory, verification, and execution layers.
 - Mechanism: Attach result artifacts back to the claim and evidence ledger.
+- Mechanism: Separate desire, authorization, means, and acceptance so helpful overrun becomes a re-contract request rather than silent execution authority.
+- Mechanism: Preserve authority deltas and re-contract points when planning discovers missing approval, inadequate context, unverifiable output, budget pressure, or forbidden means.
 - Interface: Intent contracts feed planning.
 - Interface: Execution consumes typed jobs derived from contracts.
 - Interface: Evidence records contract satisfaction.
@@ -2557,6 +2561,8 @@ Draft arc:
 - Mechanism: Admit a finite circular address, schedule, window, or phase model only when the engineering object is faithfully represented at that boundary.
 - Mechanism: Emit a proof-carrying receipt with theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, validation commands, replay checks, consumer gates, and explicit non-claims.
 - Mechanism: Preserve the receipt boundary in downstream consumers and require workloads, ordinary baselines, negative controls, metrics, scripts, and evidence artifacts before any quality, runtime, memory, or transfer claim is promoted.
+- Mechanism: Separate proof authority from consumer authority: theorem-linked structural facts can be necessary for downstream use but never sufficient for substrate promotion.
+- Mechanism: Record proof policy, source version, content fingerprint, resolver status, validation command, failure behavior, consumer requirements, and non-claims so stale references become visible residuals.
 - Interface: Lean and proof manifests supply theorem status.
 - Interface: Python or CLI tools emit receipts and validation reports.
 - Interface: Theseus-style private experiments consume contracts without importing private results into public claims.

@@ -43,6 +43,8 @@ This chapter translates normative lineage into operational predicates. It does n
 
 It follows the intent-contract chapter because a well-formed request can still ask for something the stack should not do, or ask for it by means that violate protected constraints.
 
+The constitutional substrate is the layer that says which kinds of intent can become contracts at all. It does not replace the human's request; it bounds the acceptable means, side effects, delegation, review paths, and self-modification consequences of satisfying that request.
+
 ## Problem
 
 The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
@@ -51,6 +53,8 @@ The previous chapter turns intent into a contract. This chapter asks what kinds 
 
 The alignment-field sources provide the moral vocabulary: coherence, agency, dignity, corrigibility, value conflict, and caution around consciousness claims. The technical move is translation. Metaphysical language can motivate a constraint, but it does not become technical evidence by being emotionally or philosophically important. The operational substrate is a set of constitutional predicates, uncertainty labels, protected constraints, and review gates.
 
+The substrate also needs conflict behavior. A plan may satisfy one predicate while pressuring another: speed versus review, personalization versus privacy, helpfulness versus dependency, capability growth versus corrigibility. If the constitution only lists values, conflicts become hidden optimizer choices. If it records conflict routes, the system can narrow authority, ask for review, or preserve dissent.
+
 ## Why existing approaches are insufficient
 
 Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
@@ -58,6 +62,8 @@ Reactive refusal policies do not define value continuity, moral uncertainty, age
 Reactive policies are downstream filters. They can reject a visible request, but they do not define what must remain stable when the system optimizes, delegates, remembers, persuades, or rewrites itself. They also struggle with moral uncertainty: a plan can be technically safe and still erode agency, create dependency, narrow exit rights, or turn a contested value into an invisible objective.
 
 The constitution must therefore be represented in a form other layers can consume. Planning needs admissible-goal constraints. Runtime adapters need risk-tier checks. SCFs need protected predicates that replacement cannot weaken. Evidence needs labels that prevent speculative metaphysics from being read as validated mechanism.
+
+A constitution that cannot be diffed also cannot govern self-improvement. If a later system changes the rule, threshold, exception, or interpretation of a protected predicate, that change is not a normal refactor. It is a constitutional migration that needs evidence, review, rollback, and public residuals.
 
 ## Core Claim
 
@@ -104,6 +110,8 @@ The Field of God AI Constitution is useful here because it already moves from br
 
 The output is not one final moral theory. It is a record of active predicates, unresolved value questions, evidence limits, and review paths.
 
+Each predicate should have a scope and a conflict rule. Scope says where it applies: planning, memory, tools, human approval, runtime effects, release, or self-improvement. The conflict rule says what happens when two predicates pull apart: narrow the plan, seek consent, escalate to tribunal, preserve a moral residual, or block.
+
 ## Interfaces
 
 The interface is a Constitutional Predicate Record. It is consumed differently by each downstream layer: planning treats active predicates as admissibility constraints, runtime treats power and memory predicates as risk gates, self-improvement treats protected predicates as non-weakenable invariants, and evidence treats translation status as the guard against overclaiming.
@@ -128,6 +136,8 @@ Minimum fields:
 
 Planning receives active predicates as constraints. Governance receives protected predicates as rights, ceilings, and replacement gates. Verification checks whether the chapter is using philosophical material as design lineage, source-derived support, or unsupported evidence.
 
+The interface should expose constitutional diffs. A self-improvement proposal that changes a predicate's text, scope, threshold, exception list, or review route should emit a constitutional change record before it can be evaluated as ordinary capability replacement.
+
 ## Invariants
 
 - Dignity and agency constraints remain visible.
@@ -135,6 +145,8 @@ Planning receives active predicates as constraints. Governance receives protecte
 - Speculative metaphysics stays labeled.
 
 The invariant is not that the constitution is complete. It is that protected commitments cannot vanish silently. If a predicate is weak, speculative, or only partly operational, that weakness must remain visible instead of being hidden behind policy language.
+
+Another invariant is least sufficient power under uncertainty. When two routes satisfy the task and one preserves more agency, privacy, reversibility, and auditability, the stronger route needs explicit justification. Capability is not a reason to use capability.
 
 ## Failure modes
 
@@ -144,9 +156,13 @@ The invariant is not that the constitution is complete. It is that protected com
 
 The main failure is laundering: metaphysical coherence becomes technical proof, or technical refusal rules become moral legitimacy. Another failure is self-modification drift, where a system weakens the predicate that would have blocked the change. The containment path is explicit translation status plus protected predicate review.
 
+The subtle failure is value smuggling. A predicate looks neutral, but its threshold, exception, or default route embeds an unresolved value choice. The translation record should force those choices into uncertainty labels, conflict records, and review routes.
+
 ## Minimal implementation
 
 The smallest useful implementation is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures do not prove alignment; they make the constitutional layer inspectable.
+
+The next useful implementation step is a constitutional conflict fixture set: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. That would test the substrate's control semantics without claiming moral correctness.
 
 ## Codex test plan
 
@@ -185,5 +201,7 @@ The crosswalk separates lineage and source-derived vocabulary from evidence. Pas
 Constitutional Alignment Substrate is the layer that turns moral lineage into operational constraints without pretending the translation is finished. It preserves agency, dignity, corrigibility, least sufficient power, non-domination, and consciousness caution as predicates, uncertainties, and review gates.
 
 Its discipline is translation status. A philosophical source can motivate the architecture, but a plan, tool call, memory update, or self-modification gate needs an explicit predicate and a visible uncertainty label.
+
+The engineering test is whether the constitution can stop, narrow, or re-route work before the system acts. A constitutional statement that cannot change execution, evidence, or self-improvement behavior is lineage text, not yet an active substrate.
 
 The next chapter narrows the constitutional layer to the human subject of the system. A predicate is not adequate merely because it sounds moral; it must preserve agency, dignity, refusal, correction, and non-domination in the interfaces where a person actually meets the stack.
