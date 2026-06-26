@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -42,6 +42,8 @@ open_evidence_gaps:
 This chapter treats cyclic adapters, phase banks, RoPE certifiers, and cyclic mixers as optional substrate candidates. It does not claim better perplexity, longer context, faster runtime, lower memory, training stability, or deployment readiness.
 
 The previous chapter applies structural contracts to memory and recurrence. This chapter applies the same boundary to model-internal cyclic structure: adapters, phase banks, position encodings, route heads, and mixers. The core question is not whether a cyclic invariant exists; it is whether that invariant survives contact with baselines, kernels, parameter accounting, failure cases, and workload metrics.
+
+The adoption object is a tradeoff packet. A cyclic proposal should say which structural receipt it has, which workload it targets, which ordinary baselines it faces, which resource costs it pays, and which non-claims must follow it.
 
 ## Problem
 
@@ -58,6 +60,8 @@ Circle AI Architectures gives the right rule: use cyclic structure where the dat
 That rule is a defense against aesthetic adoption. Cyclic structure can be beautiful and still wrong for the workload. A phase bank can be exactly described and still hurt optimization. A mixer can reduce parameters and still run poorly on available hardware. A RoPE receipt can distinguish positions inside its declared model and still say nothing about whether a trained model uses longer context well. The chapter keeps those cases separate so structural clarity does not become performance mythology.
 
 The adoption question is therefore comparative. What does the cyclic candidate do better than dense layers, LoRA variants, ordinary RoPE, learned positional encodings, recurrent memory, state-space models, or nonperiodic controls? What does it make worse? Which hardware shape does it assume? Which alias or load diagnostic would block it? Without those answers, the cyclic substrate can remain a research candidate but not a default route.
+
+The insufficiency is cross-ledger spending. A substrate wins a structural ledger entry, then spends that win as if it were a quality result, runtime result, memory result, or hardware result. The chapter should force each ledger to earn its own evidence.
 
 ## Core Claim
 
@@ -84,6 +88,8 @@ Cyclic mixer adoption is where structural proof, parameter accounting, and hardw
 A Cyclic Mixer Evaluation Record keeps those layers separated. It can report a structural invariant, receipt boundary, alias/load diagnostics, parameter accounting, and hardware notes while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
 
 The record should make three ledgers visible at once. The structural ledger names the invariant and receipt boundary. The resource ledger names parameters, kernel shape, memory, latency, and hardware assumptions. The empirical ledger names baselines, metrics, failures, and adoption state. A strong cyclic proposal eventually has to survive all three; a result in one ledger should not silently spend credit in another.
+
+A RoPE or cyclic-mixer receipt should also name its consumer policy. Some consumers may accept a structural receipt for diagnostic use, reject it for quality promotion, or require a benchmark before canary routing. Without consumer policy, a receipt can be technically valid and operationally misused.
 
 ```{mermaid}
 flowchart LR
@@ -131,6 +137,8 @@ Minimum fields:
 
 Semantic representation chapters define when cyclic structure is actually present. Routing heads may consume cyclic features only inside declared authority and evidence boundaries. Resource economics accounts for parameters, kernels, memory, and latency. Proof contracts and prototype experiments keep structural facts separate from performance results.
 
+The interface should carry a hardware refusal path. If a cyclic design assumes kernels, layouts, or precision behavior that the deployment substrate cannot provide, the evaluation record should block adoption or narrow scope rather than hiding the mismatch behind parameter counts.
+
 ## Invariants
 
 - Equivariance is not model quality.
@@ -140,6 +148,8 @@ Semantic representation chapters define when cyclic structure is actually presen
 - Real-valued RoPE claims are separated from exact integer phase-bank claims.
 
 The invariant is boundary preservation. A structural receipt can be valuable even when no quality claim is made; it becomes dangerous only when readers mistake it for a broader result.
+
+Another invariant is baseline symmetry. A cyclic candidate and its ordinary baselines should face the same workload, metric, data condition, hardware notes, and fallback policy before a tradeoff is called favorable.
 
 ## Failure modes
 
@@ -151,11 +161,15 @@ The invariant is boundary preservation. A structural receipt can be valuable eve
 
 Each failure should block adoption beyond structural use. The substrate can remain a candidate, but it should not become a default route until ordinary baselines and tradeoff metrics exist.
 
+The subtle failure is cyclic favoritism. The cyclic candidate gets theorem language, tuned hyperparameters, or custom hardware assumptions while the baseline is treated as a straw target. That is not an adoption test; it is an advocacy setup.
+
 ## Minimal implementation
 
 The smallest useful implementation is a cyclic mixer evaluation schema and fixture. The current fixture records structural invariant, proof or receipt boundary, alias and load diagnostics, parameter accounting, hardware notes, baselines, required metrics, adoption state, non-claims, and evidence references.
 
 Passing the fixture does not prove a mixer works. It proves the book can represent the adoption boundary without laundering structural facts into performance claims.
+
+The next useful fixture set is a tradeoff packet: one structural receipt accepted for diagnostics, one quality-promotion request rejected for missing baselines, one hardware mismatch that blocks deployment scope, and one canary route allowed only after baseline-symmetric metrics exist.
 
 ## Codex test plan
 
@@ -195,3 +209,5 @@ The crosswalk keeps cyclic mixer evidence partitioned. `coilra_multicoil_rope` s
 Cyclic structure can be an excellent substrate when the workload actually contains cyclic structure and the evidence boundary is preserved. It is not a general magic advantage.
 
 CoilRA, MultiCoil RoPE, and cyclic mixers therefore remain optional specialist substrates until structural receipts, baselines, diagnostics, metrics, and failure cases justify adoption. With Part III's routing, compression, representation, simulation, and substrate boundaries in place, the book can turn to the proof and evidence envelope that decides which claims are allowed to harden.
+
+The practical standard is that cyclic structure should make evaluation more precise, not more permissive. If the receipt makes it easier to overclaim than to reject the candidate, the evaluation boundary is wrong.

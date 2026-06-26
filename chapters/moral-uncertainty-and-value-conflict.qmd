@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -41,6 +41,8 @@ open_evidence_gaps:
 This chapter records value conflict instead of resolving it by prose. It does not claim a complete moral theory or a tested conflict-resolution system.
 
 It follows agency and corrigibility because preserved rights will sometimes point in different directions. A governed stack needs a way to act under unresolved tension without deleting the tension from the record.
+
+The mechanism is not moral omniscience. It is authority control under uncertainty: the system narrows, delays, reviews, or leases action when values remain unresolved.
 
 ## Problem
 
@@ -61,6 +63,8 @@ The failure is false consensus: the system acts as if a contested value question
 Moral residuals are not embarrassing leftovers. They are part of the safety interface. If a plan helps one stakeholder while burdening another, trades truthfulness against privacy, or reduces short-term harm while creating dependency, the unresolved part belongs in the artifact trail. A system that can keep residuals visible can choose smaller actions, preserve appeal paths, or revisit the decision when new evidence arrives. A system that hides them turns uncertainty into invisible optimization pressure.
 
 The chapter therefore treats moral disagreement as an input to control, not as a rhetorical defect. A conflict record can narrow authority, require a reversible action, set an expiry, request tribunal review, or prevent self-modification from weakening a protected commitment. The point is not to paralyze the stack. It is to let the stack act only at the level of authority the conflict record can justify.
+
+The insufficiency of reward-only treatment is that it converts disagreement into a hidden coefficient. Once hidden, the conflict cannot trigger appeal, expiry, dissent preservation, or narrowed authority.
 
 ## Core Claim
 
@@ -90,6 +94,8 @@ The conflict record classifies the conflict by value type, stakeholder, reversib
 The tribunal path is not automatic consensus. It is a way to preserve disagreement, expose unsupported premises, and decide whether the system has enough authority to act.
 
 Bounded decisions are the practical middle state. They say: the system may do this much, under these constraints, for this duration, with these parties notified, while preserving these dissenting premises and revisit conditions. That is different from declaring the values reconciled. It is also different from refusing all action. The record lets the system make a limited move while preserving the unresolved obligation that caused the conflict.
+
+A bounded decision should be a lease, not a settlement. The lease records permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
 
 ```{mermaid}
 flowchart LR
@@ -135,6 +141,8 @@ Alignment emits conflict records. Planning uses them as constraints. Evidence re
 
 Those interfaces matter downstream. Governance rights need the conflict record so affected parties can audit or contest the decision. Replacement and self-improvement need it so a future version cannot quietly delete the unresolved obligation. Benchmark and policy-learning chapters need it so reward pressure does not convert a temporary bounded choice into a permanent value claim.
 
+The interface should distinguish unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise. These are different states with different authority effects.
+
 ## Invariants
 
 - Unresolved conflicts remain visible.
@@ -142,6 +150,8 @@ Those interfaces matter downstream. Governance rights need the conflict record s
 - Speculative moral theory cannot silently authorize action.
 
 The key invariant is visibility. A conflict can be decided, deferred, escalated, or bounded, but it should not be erased by the shape of the reward function or the fluency of the answer.
+
+Another invariant is authority narrowing under unresolved high-stakes conflict. When uncertainty is serious and review is incomplete, the system should not gain broader action rights merely because a decision is operationally convenient.
 
 ## Failure modes
 
@@ -151,9 +161,13 @@ The key invariant is visibility. A conflict can be decided, deferred, escalated,
 
 Review theater is the dangerous version of governance: a tribunal is run, but no decision record, dissent, evidence limit, or revisit condition survives. That produces legitimacy without accountability.
 
+The subtle failure is conflict laundering. A bounded decision is later cited as if the underlying values were resolved, allowing the temporary action to harden into policy, benchmark objective, or self-modification permission.
+
 ## Minimal implementation
 
 The smallest useful implementation is a `value_conflict_record` schema plus a scenario fixture. It should validate conflict visibility and review escalation; it should not claim to solve moral philosophy.
+
+The next useful fixture set is a decision-lease suite: one reversible low-stakes bounded decision, one high-stakes escalation, one denied action, one deferred action with revisit trigger, and one conflict-laundering attempt blocked from policy promotion.
 
 ## Codex test plan
 
@@ -193,3 +207,5 @@ Moral Uncertainty and Value Conflict prevents the stack from turning contested v
 Its discipline is recordkeeping under disagreement: name the conflict, name the stakeholders, choose a review path, bound the action, and preserve the residual.
 
 The next chapter turns that residual into governance rights. When disagreement remains, the system needs durable ways to audit, appeal, exit, fork, or preserve dissent instead of burying conflict inside an optimized action.
+
+The practical standard is that unresolved value conflict should reduce unwarranted authority. If conflict records become a way to rationalize stronger action without review, the layer has inverted its purpose.

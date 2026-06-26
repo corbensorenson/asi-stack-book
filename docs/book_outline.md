@@ -283,16 +283,19 @@ Draft arc:
 - Mechanism: Classify failures by layer.
 - Mechanism: Map every failure to an invariant and a planned falsification test.
 - Mechanism: Use failures to motivate boundaries in later chapters.
+- Mechanism: treat failures and near misses as boundary events with receipts, owners, containment actions, severity, recurrence, escape path, and downstream learning path.
 - Interface: Governance limits authority creep.
 - Interface: VCM limits context pollution.
 - Interface: Verification limits false certainty.
 - Interface: Execution limits side effects.
+- Interface: emit failure receipts for blocked and realized failures without treating blocked failures as solved safety properties.
 
 Primary invariants:
 
 - Every risk maps to at least one boundary.
 - Evaluator integrity is protected.
 - Negative evidence stays visible.
+- Repeated failures do not become normal behavior by disappearing from records or routing around detectors.
 
 Failure modes to cover:
 
@@ -300,6 +303,7 @@ Failure modes to cover:
 - Memory poisoning.
 - Tool/action overreach.
 - Compression that hides residual complexity.
+- Failure laundering: a run fails a boundary, then the narrative shifts to a narrower success metric while the denial or residual disappears.
 
 Draft deliverables:
 
@@ -563,22 +567,26 @@ Draft arc:
 - Mechanism: Escalate high-stakes or unresolved conflicts to tribunal or human review while preserving dissent and unsupported premises.
 - Mechanism: Record bounded decisions, revisit conditions, and residual moral uncertainty.
 - Mechanism: Treat moral residuals as control inputs that can narrow authority, require reversible action, set expiry, preserve dissent, or trigger review instead of being optimized away.
+- Mechanism: treat bounded decisions as leases with permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
 - Interface: Alignment produces conflict records.
 - Interface: Planning carries conflict constraints with the plan.
 - Interface: Governance decides review routes and authority boundaries.
 - Interface: Evidence records review outcomes, dissent, unsupported premises, and residual uncertainty.
+- Interface: distinguish unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise.
 
 Primary invariants:
 
 - Unresolved conflicts remain visible.
 - High-stakes conflicts require stronger review.
 - Speculative moral theory cannot silently authorize action.
+- Unresolved high-stakes conflict narrows authority rather than broadening it for convenience.
 
 Failure modes to cover:
 
 - Value flattening.
 - False consensus.
 - Review theater without decision records.
+- Conflict laundering: a bounded temporary decision hardens into policy, benchmark objective, or self-modification permission.
 
 Draft deliverables:
 
@@ -2720,10 +2728,12 @@ Draft arc:
 - Mechanism: Attach receipt boundaries, alias diagnostics, load diagnostics, parameter accounting, hardware-kernel notes, and real-valued-versus-discretized limits before interpreting model behavior.
 - Mechanism: Promote the substrate only after quality, runtime, memory, parameter, transfer, and failure-case tradeoffs are measured against ordinary baselines and negative controls.
 - Mechanism: Keep structural, resource, and empirical ledgers separate so exact cyclic facts, parameter accounting, and measured workload behavior cannot spend evidence credit for one another.
+- Mechanism: use cyclic tradeoff packets with structural receipts, workload target, baseline set, resource costs, consumer policy, hardware refusal path, adoption state, and non-claims.
 - Interface: Semantic representation chapters define when cyclic structure is actually present.
 - Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.
 - Interface: Proof contracts and prototype experiments keep structural facts separate from performance results.
+- Interface: consumers can accept a structural receipt for diagnostics, reject it for quality promotion, or require benchmark evidence before canary routing.
 
 Primary invariants:
 
@@ -2732,6 +2742,7 @@ Primary invariants:
 - Winding is not discarded when it is required to avoid aliasing.
 - Hardware-friendly sizes and kernel costs are recorded.
 - Real-valued RoPE claims are separated from exact integer phase-bank claims.
+- Baseline symmetry is required before a cyclic tradeoff is called favorable.
 
 Failure modes to cover:
 
@@ -2739,6 +2750,7 @@ Failure modes to cover:
 - Exact finite proofs are overclaimed for real-valued RoPE deployments.
 - Lower parameter count comes with worse quality or runtime.
 - Phase aliases are hidden by residue-only diagnostics.
+- Cyclic favoritism: theorem language, tuned hyperparameters, or custom hardware assumptions benefit the cyclic candidate while baselines are weakened.
 
 Draft deliverables:
 
@@ -2792,21 +2804,26 @@ Draft arc:
 - Mechanism: Route candidates to Lean predicates, executable schemas, fixture validators, process contracts, research targets, blocked targets, or retired targets according to what can actually be checked.
 - Mechanism: Keep semantic proof adequacy as a separate review from build success, schema success, source interpretation, deployed enforcement, model quality, or benchmark evidence.
 - Mechanism: Treat the proof envelope as a lane discipline: Lean proves finite predicates, schemas validate record shape, process validators check wiring, tests exercise behavior, and benchmarks measure performance without collapsing those artifacts into one support state.
+- Mechanism: emit proof/spec receipts with command, artifact path, predicate or schema covered, consumer requirements, limitations, and explicit non-claims.
+- Mechanism: route semantic proof drift into adequacy residuals when a valid finite predicate may not match the intended chapter boundary.
 - Interface: Outline defines proof scope.
 - Interface: Lean modules implement selected invariants.
 - Interface: Validation checks proof-manifest consistency.
+- Interface: consumers may rely on a proof only when proof lane, command, artifact path, version, and non-claims match their required use.
 
 Primary invariants:
 
 - No theorem is claimed proven without `lake build`.
 - Proof tags remain stable.
 - Broad claims are decomposed before formalization.
+- Formal artifacts require semantic adequacy notes before strengthening prose beyond their finite predicates.
 
 Failure modes to cover:
 
 - Formalization theater.
 - Unstable proof target names.
 - Claiming proof from prose.
+- Proof laundering: valid local predicates, external theorem ids, generated receipts, or schema passes promote broader claims whose semantics were not formalized.
 
 Draft deliverables:
 

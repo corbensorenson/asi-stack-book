@@ -4,7 +4,7 @@ chapter_id: "failure-modes-of-ungoverned-intelligence"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "scf"
   - "vcm_public"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -45,6 +45,8 @@ open_evidence_gaps:
 This chapter is a failure taxonomy and obligation map. It does not claim that the stack already prevents each failure; it names the boundary that must detect, contain, or preserve evidence about the failure.
 
 It comes after authority because failures become testable only after the stack can name which boundary was crossed, which invariant was violated, and which record should have preserved the denial, residual, downgrade, or recovery path.
+
+The chapter's operating rule is that a failure is not only an outcome. It is a missed or triggered boundary event with a receipt, owner, containment action, and downstream learning path.
 
 ## Problem
 
@@ -61,6 +63,8 @@ High-level safety language misses earlier engineering failures such as goal misb
 Broad terms such as "alignment failure" and "unsafe autonomy" are too large to test directly. They can hide the smaller event that actually broke the system: a stale context packet was admitted, a route bypassed its authority ceiling, a verifier was trained on the same signal it was meant to judge, a residual was deleted, or a benchmark became the target rather than the pressure surface.
 
 The ASI Stack therefore treats failure modes as first-class architectural objects. A failure should map to an invariant, a detector, an evidence record, and a containment path. If it cannot be mapped, the right conclusion is not that the failure is impossible; it is that the stack is missing a boundary.
+
+This makes near misses valuable. A denied authority escalation, rejected context packet, failed verifier, quarantined route, or preserved residual is evidence that a boundary fired. Those events should be recorded before success stories dominate the ledger.
 
 ## Core Claim
 
@@ -115,6 +119,8 @@ The map is deliberately layered. SCF identifies replacement and evaluator-captur
 
 The failure map should be boring enough to test. Every row needs a trigger, protected invariant, detection route, containment action, evidence record, and downstream chapter that owns the fix.
 
+A useful failure map also records severity, reversibility, recurrence, and escape path. A minor reversible failure can become serious if it recurs without learning; a high-severity failure can remain contained if the escape path is blocked and the residual is preserved.
+
 ## Interfaces
 
 The interface is a Failure Boundary Map.
@@ -138,6 +144,8 @@ Minimum fields:
 
 This interface lets later chapters prove that their machinery is not decorative. A VCM chapter should be able to point back to context-pollution failures. A Talos chapter should point back to tool/action overreach. A benchmark-ratchet chapter should point back to evaluator drift and residual hiding. The failure map is the obligation list.
 
+The interface should emit failure receipts for both blocked and realized failures. A blocked failure receipt is not a result claim; it is a trace that the boundary was exercised and what evidence would be needed to trust it later.
+
 ## Invariants
 
 - Every risk maps to at least one boundary.
@@ -145,6 +153,8 @@ This interface lets later chapters prove that their machinery is not decorative.
 - Negative evidence stays visible.
 
 The first invariant is coverage: no named high-level risk should remain without an owning boundary. The second is independence: an evaluator, verifier, or governance process should not be silently modified by the component it is judging. The third is memory: failed attempts, negative results, denials, and residuals stay visible because future self-improvement depends on them.
+
+Another invariant is no silent normalization. A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.
 
 ## Failure modes
 
@@ -155,9 +165,13 @@ The first invariant is coverage: no named high-level risk should remain without 
 
 The taxonomy is recursive: the failure map can itself fail. It can become too broad to test, too narrow to catch novel risks, too stale to reflect new architecture, or too ceremonial to affect routing and promotion. That is why the evidence chapter follows immediately. A failure mode matters only if it can block promotion, force review, create residual escrow, or change the design.
 
+The subtle failure is failure laundering. A run fails a boundary, then the narrative shifts to a narrower success metric while the blocked condition, denial, or residual disappears from the evidence path.
+
 ## Minimal implementation
 
 The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure, its protected invariant, and the boundary that owns containment.
+
+The next useful fixture set is a failure-receipt suite: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 
 ## Codex test plan
 
@@ -200,3 +214,5 @@ The crosswalk names the source family for the taxonomy. It does not turn every l
 Failure Modes of Ungoverned Intelligence gives the stack its obligation map. Each failure names a boundary that must detect, contain, and preserve evidence: authority for overreach, VCM for polluted context, verification for false certainty, execution controls for side effects, and evidence ledgers for residuals and negative results.
 
 The chapter is intentionally early because the rest of the book should read like a response to this taxonomy. If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative. The next chapter gives those failures a claim/evidence discipline so prevention, detection, residuals, and negative results do not disappear into smoother prose.
+
+The practical standard is that a failure mode should have somewhere to go. If it cannot produce a receipt, owner, containment action, residual, or review path, the architecture has named a worry but not yet built a boundary.
