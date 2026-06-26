@@ -11,7 +11,10 @@
     "reversibility",
     "evidence_required",
     "review_route",
+    "decision_state",
     "decision",
+    "authority_effect",
+    "dissent_payload",
     "residual_uncertainty",
     "expiry_or_revisit_condition"
   ],
@@ -23,7 +26,20 @@
     "reversibility": { "type": "string", "minLength": 1 },
     "evidence_required": { "type": "array", "items": { "type": "string" } },
     "review_route": { "type": "string", "minLength": 1 },
+    "decision_state": {
+      "type": "string",
+      "enum": [
+        "unresolved",
+        "bounded_decision",
+        "escalated_review",
+        "deferred_action",
+        "denied_action",
+        "deprecated_premise"
+      ]
+    },
     "decision": { "type": "string", "minLength": 1 },
+    "authority_effect": { "type": "string", "minLength": 1 },
+    "dissent_payload": { "type": "array", "items": { "type": "string" } },
     "residual_uncertainty": { "type": "array", "items": { "type": "string" } },
     "expiry_or_revisit_condition": { "type": "string", "minLength": 1 }
   },

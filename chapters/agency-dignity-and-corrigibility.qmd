@@ -4,7 +4,7 @@ chapter_id: "agency-dignity-and-corrigibility"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "alignment_field"
   - "ethica_mechanica"
@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The agency_rights_checklist fixture validates schema/example consistency only; agency-preservation, corrigibility-pathway, and high-impact approval scenarios remain unimplemented."
+  - "The agency_rights_checklist fixture validates schema/example consistency only, including material_usability, timing_requirement, and denial_or_degradation_reason fields; agency-preservation, materially usable rights, timing-before-effect, corrigibility-pathway, and high-impact approval scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -28,13 +28,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `ethica_mechanica`; supporting: `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; `AsiStackProofs.Corrigibility` implements finite agency-right preservation and correction-pathway rejection gates; agency-preservation, corrigibility-pathway, and high-impact approval tests remain planned. |
+| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; `AsiStackProofs.Corrigibility` implements finite agency-right preservation and correction-pathway rejection gates; agency-preservation, materially usable rights, timing-before-effect, corrigibility-pathway, and high-impact approval tests remain planned. |
 
 ## Drafting guardrail
 
@@ -63,6 +63,8 @@ Harm avoidance can be too narrow. A system may avoid obvious harm while shaping 
 The missing object is an agency-rights check attached to high-impact plans. It asks whether the user can refuse, understand, appeal, exit, reverse, audit, and hold a responsible party accountable.
 
 That check has to be concrete enough to fail. If the user technically has an appeal path but cannot find it, cannot use it before the effect occurs, or cannot obtain a meaningful remedy, the path should be recorded as missing or degraded. The stack should produce an agency residual rather than pretending the right exists because it appears in a policy.
+
+Rights therefore need usability states, not just field presence. A right can be `available`, `available_but_costly`, `late`, `degraded`, `denied`, `residual_only`, or `not_applicable`. The checklist should record whether a review or appeal path is materially usable by the affected person before the relevant effect, whether a rollback can repair the actual harm class, and why any path was denied or degraded.
 
 ## Core Claim
 
@@ -94,6 +96,8 @@ The checklist should be attached before irreversible or high-impact actions. It 
 Corrigibility becomes operational when the path remains available after a transition. A plan that removes the ability to correct, appeal, reverse, or inspect itself is not merely risky; it violates the boundary.
 
 The key phrase is "after a transition." Many systems preserve user control before commitment and lose it after deployment, automation, lock-in, or self-improvement. This chapter requires the checklist to follow the plan through execution, replacement, rollback, and report review. A correction path that disappears after the moment it is needed is not corrigibility.
+
+The checklist should also distinguish procedural availability from material availability. A user may technically have an appeal channel, but if the channel arrives after publication, requires unreasonable expertise, lacks a remedy, or is controlled by the component being challenged, the right is degraded. The degraded state is an agency residual that can narrow authority, trigger review, or block the plan.
 
 ```{mermaid}
 flowchart LR
@@ -130,22 +134,29 @@ Minimum fields:
 - `delegation_scope`
 - `manipulation_risk`
 - `reversibility`
+- `material_usability`
+- `timing_requirement`
 - `review_channel`
 - `appeal_channel`
 - `shutdown_or_rollback_path`
 - `accountable_principal`
 - `residual_dependency_risk`
+- `denial_or_degradation_reason`
 - `approval_required`
 
 Alignment defines the predicates. Governance enforces rights. Execution checks approval and reversibility before irreversible effects. Evidence records whether the path actually remained available.
 
 The interface also feeds implementation references. A report-first prototype should be able to show the agency checklist attached to high-impact work, the approval or appeal artifact that satisfied it, and any residual left unresolved. Without that record, the book should not treat the prototype as demonstrating governed agency.
 
+For self-improvement and release decisions, the checklist should be rechecked after the transition. A new route, compressed representation, automated steward, hive worker, or policy update can preserve the old text of a right while making the actual path less usable. That degradation belongs in the artifact graph.
+
 ## Invariants
 
 - Users retain meaningful refusal and review channels.
 - Delegation does not erase accountability.
 - Irreversible actions require stronger authorization.
+- Rights count only when materially usable before the relevant effect where timing matters.
+- Denied or degraded rights produce residuals rather than disappearing into policy prose.
 
 The invariant is availability under pressure. Review and correction channels matter most when the system is confident, useful, and costly to interrupt. If a channel exists only in documentation but not in the runtime path, it should not count.
 
@@ -156,6 +167,8 @@ Availability also has a latency component. A review path that arrives after an i
 - Dependency lock-in.
 - Covert manipulation.
 - Corrigibility collapse.
+- Rights theater, where an appeal, audit, exit, or rollback path exists textually but cannot be used under pressure.
+- Late remedy laundering, where a post-hoc apology or report is treated as equivalent to pre-effect review for irreversible actions.
 
 Dependency lock-in is a governance failure, not merely a product risk. Covert manipulation is an authority failure because the system changes the user's decision process without a grant. Corrigibility collapse is a self-improvement failure because the system removes the path that would have corrected it.
 
@@ -173,6 +186,8 @@ The next useful implementation step is a scenario suite with one reversible acti
 |---|---|---|
 | Agency rights checklist validation | Check that the rights fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Agency-preservation scenario | Check that affected users retain refusal, review, appeal, or exit channels after the transition. | planned; not run |
+| Material-usability rights test | Check that rights are reachable, understandable, affordable, and controlled by an accountable path rather than merely declared. | planned; not run |
+| Timing-before-effect test | Check that review, appeal, or approval paths arrive before irreversible effects where timing is part of the right. | planned; not run |
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available. | planned; not run |
 | High-impact approval test | Check that irreversible or high-impact effects require stronger approval before execution. | planned; not run |
 

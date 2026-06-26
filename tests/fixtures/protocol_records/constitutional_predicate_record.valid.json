@@ -5,8 +5,10 @@
   "operational_test": "Reject a higher-power route when a lower-power authorized route satisfies the quality predicate.",
   "protected_scope": ["planning", "tool_use", "self_improvement"],
   "translation_status": "partial",
+  "conflict_behavior": "Narrow the plan or route to review when least-sufficient-power conflicts with another protected predicate.",
   "uncertainty": ["This fixture does not settle moral philosophy."],
   "review_route": "human review for high-impact exceptions",
   "self_modification_rule": "A self-modification cannot weaken this predicate without governance review.",
+  "migration_policy": "Predicate text, scope, thresholds, exceptions, or review route require a constitutional migration record.",
   "non_claims": ["This fixture is not evidence of aligned behavior."]
 }

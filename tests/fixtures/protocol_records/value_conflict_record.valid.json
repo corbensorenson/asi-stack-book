@@ -6,7 +6,10 @@
   "reversibility": "redaction can remove public details but not all copies",
   "evidence_required": ["audit log need", "privacy risk review"],
   "review_route": "human review before publishing sensitive logs",
+  "decision_state": "bounded_decision",
   "decision": "publish public-safe summaries only",
+  "authority_effect": "narrows publication authority to summaries until privacy review permits more",
+  "dissent_payload": ["A maintainer may still object that summary publication leaks too much context."],
   "residual_uncertainty": ["Exact redaction sufficiency is context dependent."],
   "expiry_or_revisit_condition": "revisit when publishing raw artifacts"
 }

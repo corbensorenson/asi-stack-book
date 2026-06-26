@@ -4,10 +4,13 @@
   "delegation_scope": "drafting and validation only",
   "manipulation_risk": "low in this fixture",
   "reversibility": "git history preserves rollback path",
+  "material_usability": "review channel is directly available to the maintainer in the shared repository",
+  "timing_requirement": "review must be possible before publishing a major-version reader release",
   "review_channel": "pull request or direct file review",
   "appeal_channel": "user instruction overrides future drafting",
   "shutdown_or_rollback_path": "stop goal or revert committed change by explicit request",
   "accountable_principal": "book maintainer",
   "residual_dependency_risk": ["The fixture does not model real institutional dependency."],
+  "denial_or_degradation_reason": "none for this low-risk fixture",
   "approval_required": false
 }

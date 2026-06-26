@@ -9,11 +9,14 @@
     "delegation_scope",
     "manipulation_risk",
     "reversibility",
+    "material_usability",
+    "timing_requirement",
     "review_channel",
     "appeal_channel",
     "shutdown_or_rollback_path",
     "accountable_principal",
     "residual_dependency_risk",
+    "denial_or_degradation_reason",
     "approval_required"
   ],
   "properties": {
@@ -22,11 +25,14 @@
     "delegation_scope": { "type": "string", "minLength": 1 },
     "manipulation_risk": { "type": "string", "minLength": 1 },
     "reversibility": { "type": "string", "minLength": 1 },
+    "material_usability": { "type": "string", "minLength": 1 },
+    "timing_requirement": { "type": "string", "minLength": 1 },
     "review_channel": { "type": "string", "minLength": 1 },
     "appeal_channel": { "type": "string", "minLength": 1 },
     "shutdown_or_rollback_path": { "type": "string", "minLength": 1 },
     "accountable_principal": { "type": "string", "minLength": 1 },
     "residual_dependency_risk": { "type": "array", "items": { "type": "string" } },
+    "denial_or_degradation_reason": { "type": "string", "minLength": 1 },
     "approval_required": { "type": "boolean" }
   },
   "additionalProperties": false

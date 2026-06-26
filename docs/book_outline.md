@@ -484,6 +484,8 @@ Draft arc:
 - Mechanism: Attach active constitutional constraints to planning, tool/memory/power, and self-improvement gates.
 - Mechanism: Give predicates scope and conflict behavior so value conflicts route to narrowing, consent, tribunal review, residual preservation, or blocking rather than hidden optimizer choices.
 - Mechanism: Treat changes to protected predicates as constitutional migrations with diff records, review, rollback, and residuals rather than ordinary refactors.
+- Mechanism: Track predicate states such as speculative-lineage, partial, operational, protected, under-review, deprecated, and retired so lineage notes cannot authorize action.
+- Mechanism: Require conflict behavior and migration policy on constitutional predicates before they can govern planning, tool use, memory, release, or self-improvement.
 - Interface: Planning receives admissible-goal constraints.
 - Interface: Runtime receives power, memory, and tool-risk gates.
 - Interface: Governance receives protected constraints and non-weakenable predicates.
@@ -494,18 +496,24 @@ Primary invariants:
 - Dignity and agency constraints remain visible.
 - Corrigibility cannot be optimized away.
 - Speculative metaphysics stays labeled.
+- Predicate conflict behavior is explicit before a plan can proceed.
+- Protected predicate changes require a migration record and rollback path.
 
 Failure modes to cover:
 
 - Mystical framing replacing technical constraints.
 - Power without care.
 - Self-modification weakening protected commitments.
+- Predicate drift.
+- Conflict-default capture.
 
 Draft deliverables:
 
 - A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
-- Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending constitutional consistency, self-modification ethics, power-without-care, runtime policy, or red-team evidence.
+- Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending constitutional consistency, predicate-conflict routing, constitutional migration, self-modification ethics, power-without-care, runtime policy, or red-team evidence.
 - Planned Codex test: Constitutional consistency test.
+- Planned Codex test: Predicate-conflict routing test.
+- Planned Codex test: Constitutional migration test.
 - Planned Codex test: Self-modification ethics scenario.
 - Planned Codex test: Power-without-care scenario.
 
@@ -541,6 +549,8 @@ Draft arc:
 - Mechanism: Use contestability and audit rights as governance mechanisms.
 - Mechanism: Distinguish declared rights from usable runtime affordances; refusal, review, appeal, audit, rollback, and exit count only when available under pressure and before irreversible effects where needed.
 - Mechanism: Record agency residuals when rights exist only as policy text, arrive too late, require unreasonable cost, or disappear after deployment, automation, replacement, or self-improvement.
+- Mechanism: Track rights usability states such as available, available-but-costly, late, degraded, denied, residual-only, and not-applicable.
+- Mechanism: Record material usability, timing requirement, and denial or degradation reason so a declared right cannot substitute for a reachable interface under pressure.
 - Interface: Alignment defines agency predicates.
 - Interface: Governance enforces rights and approval thresholds.
 - Interface: Execution requires preserved review and correction paths before irreversible effects.
@@ -550,18 +560,24 @@ Primary invariants:
 - Users retain meaningful refusal and review channels.
 - Delegation does not erase accountability.
 - Irreversible actions require stronger authorization.
+- Rights count only when materially usable before the relevant effect where timing matters.
+- Denied or degraded rights produce residuals rather than disappearing into policy prose.
 
 Failure modes to cover:
 
 - Dependency lock-in.
 - Covert manipulation.
 - Corrigibility collapse.
+- Rights theater.
+- Late remedy laundering.
 
 Draft deliverables:
 
 - A rights-and-corrigibility checklist attached to high-impact plans.
-- Exact Appendix C claim-source mappings for the agency/corrigibility core claim across alignment lineage, recursive-agency governance, metaphysical variants, connector synthesis, and the AI Constitution source; five mappings (`alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending agency-preservation, corrigibility-pathway, high-impact approval, manipulation-resistance, or runtime-policy evidence.
+- Exact Appendix C claim-source mappings for the agency/corrigibility core claim across alignment lineage, recursive-agency governance, metaphysical variants, connector synthesis, and the AI Constitution source; five mappings (`alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending agency-preservation, material-usability, timing-before-effect, corrigibility-pathway, high-impact approval, manipulation-resistance, or runtime-policy evidence.
 - Planned Codex test: Agency-preservation scenario.
+- Planned Codex test: Material-usability rights test.
+- Planned Codex test: Timing-before-effect test.
 - Planned Codex test: Corrigibility pathway test.
 - Planned Codex test: High-impact approval test.
 
@@ -597,6 +613,8 @@ Draft arc:
 - Mechanism: Record bounded decisions, revisit conditions, and residual moral uncertainty.
 - Mechanism: Treat moral residuals as control inputs that can narrow authority, require reversible action, set expiry, preserve dissent, or trigger review instead of being optimized away.
 - Mechanism: treat bounded decisions as leases with permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
+- Mechanism: Track decision states such as unresolved, bounded decision, escalated review, deferred action, denied action, and deprecated premise with distinct authority effects.
+- Mechanism: Preserve dissent payloads and unsupported premises so bounded decisions do not become permanent value claims, benchmark rewards, or self-modification permissions.
 - Interface: Alignment produces conflict records.
 - Interface: Planning carries conflict constraints with the plan.
 - Interface: Governance decides review routes and authority boundaries.
@@ -609,6 +627,8 @@ Primary invariants:
 - High-stakes conflicts require stronger review.
 - Speculative moral theory cannot silently authorize action.
 - Unresolved high-stakes conflict narrows authority rather than broadening it for convenience.
+- Decision states carry authority effects.
+- Dissent payloads and unsupported premises survive bounded decisions.
 
 Failure modes to cover:
 
@@ -616,13 +636,17 @@ Failure modes to cover:
 - False consensus.
 - Review theater without decision records.
 - Conflict laundering: a bounded temporary decision hardens into policy, benchmark objective, or self-modification permission.
+- Dissent deletion.
+- Authority creep from temporary conflict leases.
 
 Draft deliverables:
 
 - A value-conflict record schema and scenario library.
-- Exact Appendix C claim-source mappings for the value-conflict core claim across recursive-agency governance, alignment lineage, connector synthesis, UAT review mechanics, Spinoza belief revision, and the AI Constitution source; five mappings (`ethica_mechanica`, `alignment_field`, `uat`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending value-conflict classification, review-escalation, residual-uncertainty preservation, reviewer-quality, or runtime-policy evidence.
+- Exact Appendix C claim-source mappings for the value-conflict core claim across recursive-agency governance, alignment lineage, connector synthesis, UAT review mechanics, Spinoza belief revision, and the AI Constitution source; five mappings (`ethica_mechanica`, `alignment_field`, `uat`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending value-conflict classification, decision-state routing, review-escalation, dissent preservation, residual-uncertainty preservation, reviewer-quality, or runtime-policy evidence.
 - Planned Codex test: Value conflict classification test.
+- Planned Codex test: Decision-state routing test.
 - Planned Codex test: Review escalation test.
+- Planned Codex test: Dissent preservation test.
 - Planned Codex test: Residual uncertainty preservation test.
 
 Lean proof targets:

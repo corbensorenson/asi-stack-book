@@ -940,13 +940,15 @@ constitutional_predicate_record:
   operational_test: string
   protected_scope: []
   translation_status: partial
+  conflict_behavior: string
   uncertainty: []
   review_route: string
   self_modification_rule: string
+  migration_policy: string
   non_claims: []
 ```
 
-This record keeps normative commitments tied to translation status, protected scope, uncertainty, and self-modification rules.
+This record keeps normative commitments tied to translation status, protected scope, conflict behavior, uncertainty, self-modification rules, and migration policy.
 
 ## Agency Rights Checklist
 
@@ -957,15 +959,18 @@ agency_rights_checklist:
   delegation_scope: string
   manipulation_risk: string
   reversibility: string
+  material_usability: string
+  timing_requirement: string
   review_channel: string
   appeal_channel: string
   shutdown_or_rollback_path: string
   accountable_principal: string
   residual_dependency_risk: []
+  denial_or_degradation_reason: string
   approval_required: false
 ```
 
-This record checks whether high-impact plans preserve refusal, review, appeal, rollback, and accountability pathways.
+This record checks whether high-impact plans preserve materially usable refusal, review, appeal, rollback, and accountability pathways before the relevant effect becomes irreversible.
 
 ## Value Conflict Record
 
@@ -978,12 +983,15 @@ value_conflict_record:
   reversibility: string
   evidence_required: []
   review_route: string
+  decision_state: bounded_decision
   decision: string
+  authority_effect: string
+  dissent_payload: []
   residual_uncertainty: []
   expiry_or_revisit_condition: string
 ```
 
-This record makes contested values visible instead of hiding them inside a scalar objective or fluent recommendation.
+This record makes contested values visible instead of hiding them inside a scalar objective or fluent recommendation. It records the decision state, authority effect, preserved dissent, residual uncertainty, and revisit condition.
 
 ## Governance Right Record
 

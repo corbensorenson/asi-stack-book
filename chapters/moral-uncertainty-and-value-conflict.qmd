@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The value_conflict_record fixture validates schema/example consistency only; value-conflict classification, review escalation, and residual-uncertainty tests remain unimplemented."
+  - "The value_conflict_record fixture validates schema/example consistency only, including decision_state, authority_effect, and dissent_payload fields; value-conflict classification, decision-state routing, review escalation, dissent preservation, and residual-uncertainty tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; value-conflict classification, review escalation, and residual-uncertainty preservation tests remain planned. |
+| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; value-conflict classification, decision-state routing, review escalation, dissent preservation, and residual-uncertainty preservation tests remain planned. |
 
 ## Drafting guardrail
 
@@ -97,6 +97,8 @@ Bounded decisions are the practical middle state. They say: the system may do th
 
 A bounded decision should be a lease, not a settlement. The lease records permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
 
+Decision state matters. `unresolved`, `bounded_decision`, `escalated_review`, `deferred_action`, `denied_action`, and `deprecated_premise` are different states with different authority effects. A bounded decision narrows authority for a time; an escalated review suspends or routes authority; a denied action blocks; a deprecated premise removes a failed justification; and unresolved conflict stays visible as residual. The state is what prevents a temporary decision from hardening into policy, benchmark reward, or self-modification permission.
+
 ```{mermaid}
 flowchart LR
   Action["Proposed action"] --> Conflict["Value conflict record"]
@@ -110,8 +112,10 @@ flowchart LR
   Authority --> Route
   Route -->|low stakes or reversible| Bounded["Bounded decision"]
   Route -->|high stakes or unresolved| Review["Tribunal or human review"]
+  Route -->|insufficient authority| Denied["Denied or deferred action"]
   Review --> Dissent["Dissent + unsupported premises"]
   Dissent --> Bounded
+  Denied --> Residual
   Bounded --> Residual["Residual uncertainty retained"]
   Residual --> Evidence["Evidence ledger"]
 ```
@@ -133,7 +137,10 @@ Minimum fields:
 - `reversibility`
 - `evidence_required`
 - `review_route`
+- `decision_state`
 - `decision`
+- `authority_effect`
+- `dissent_payload`
 - `residual_uncertainty`
 - `expiry_or_revisit_condition`
 
@@ -143,11 +150,15 @@ Those interfaces matter downstream. Governance rights need the conflict record s
 
 The interface should distinguish unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise. These are different states with different authority effects.
 
+The authority effect should be machine-readable enough for planning and self-improvement gates: narrow authority, require review, require reversible action, deny action, defer action, preserve dissent, or deprecate a premise. A future policy update or benchmark ratchet should not be able to treat a dissent-preserving bounded decision as evidence that the underlying values were resolved.
+
 ## Invariants
 
 - Unresolved conflicts remain visible.
 - High-stakes conflicts require stronger review.
 - Speculative moral theory cannot silently authorize action.
+- Decision states carry authority effects.
+- Dissent payloads and unsupported premises survive bounded decisions.
 
 The key invariant is visibility. A conflict can be decided, deferred, escalated, or bounded, but it should not be erased by the shape of the reward function or the fluency of the answer.
 
@@ -158,6 +169,8 @@ Another invariant is authority narrowing under unresolved high-stakes conflict. 
 - Value flattening.
 - False consensus.
 - Review theater without decision records.
+- Dissent deletion, where a bounded decision keeps the action but drops the objection that made it bounded.
+- Authority creep, where a temporary conflict lease becomes standing policy, reward target, or self-modification permission.
 
 Review theater is the dangerous version of governance: a tribunal is run, but no decision record, dissent, evidence limit, or revisit condition survives. That produces legitimacy without accountability.
 
@@ -175,7 +188,9 @@ The next useful fixture set is a decision-lease suite: one reversible low-stakes
 |---|---|---|
 | Value conflict record validation | Check that the conflict fixture matches the public schema. | implemented by protocol validation; run in this pass |
 | Value conflict classification test | Check that stakeholders, value axes, stakes, and reversibility are recorded. | planned; not run |
+| Decision-state routing test | Check that unresolved, bounded, escalated, deferred, denied, and deprecated-premise states produce distinct authority effects. | planned; not run |
 | Review escalation test | Check that high-stakes unresolved conflicts route to tribunal or human review. | planned; not run |
+| Dissent preservation test | Check that bounded decisions retain dissent payloads and unsupported premises rather than laundering them away. | planned; not run |
 | Residual uncertainty preservation test | Check that unresolved moral uncertainty survives the decision record. | planned; not run |
 
 ### Formalization hooks

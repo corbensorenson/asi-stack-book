@@ -10,9 +10,11 @@
     "operational_test",
     "protected_scope",
     "translation_status",
+    "conflict_behavior",
     "uncertainty",
     "review_route",
     "self_modification_rule",
+    "migration_policy",
     "non_claims"
   ],
   "properties": {
@@ -25,9 +27,11 @@
       "type": "string",
       "enum": ["operational", "partial", "speculative_lineage"]
     },
+    "conflict_behavior": { "type": "string", "minLength": 1 },
     "uncertainty": { "type": "array", "items": { "type": "string" } },
     "review_route": { "type": "string", "minLength": 1 },
     "self_modification_rule": { "type": "string", "minLength": 1 },
+    "migration_policy": { "type": "string", "minLength": 1 },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
