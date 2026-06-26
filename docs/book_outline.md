@@ -673,6 +673,8 @@ Draft arc:
 - Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
 - Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
 - Mechanism: Pair broad route proposers with narrow validators that check field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings.
+- Mechanism: Treat the SCF as capability-identity memory: field identity, evaluator policy, regression floors, lifecycle history, incidents, and rollback obligations survive implementation replacement.
+- Mechanism: Make qualification leases reviewable and aging: benchmark epoch, source corpus, hardware profile, threat model, incident triggers, and requalification duties can expire or downgrade route status.
 - Interface: Planning sees semantic capability boundaries.
 - Interface: Execution sees authorized routes.
 - Interface: Evidence and governance see qualification claims, regressions, incidents, lifecycle state, evaluator policy, and recovery paths.
@@ -1739,6 +1741,8 @@ Draft arc:
 - Insufficiency: Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
 - Mechanism: Use artifact traces to detect recurring loops only after enough comparable examples exist to avoid anecdotal toolification.
 - Mechanism: Abstract invariant structure, discover parameters, record preconditions/postconditions, synthesize candidate tools, verify them, attach regressions and monitoring, then promote, quarantine, revise, or retire.
+- Mechanism: Treat procedural memory as verified reuse, not habit: comparable successes, near misses, failures, negative examples, scope limits, and retirement criteria must travel with the tool card.
+- Mechanism: Bind generated tools back to SCF boundaries and benchmark floors so tool promotion, routing, monitoring, and retirement remain governed by field identity and regression evidence.
 - Handoff: Verified procedural tools become routable candidates for Part III, while failed or uncertain loops remain residuals.
 - Interface: Artifact graph supplies traces.
 - Interface: Routing selects new tools.
@@ -2784,6 +2788,8 @@ Draft arc:
 - Mechanism: Generate regression floors, holdout checks, transfer checks, mutation checks, contamination checks, and public-calibration notes before using a benchmark to move readiness or claim support.
 - Mechanism: Move residual failures into escrow, convert saturated tasks into regression floors, and create harder frontier tasks only when the prior evidence boundary survives review.
 - Mechanism: Record source-reported, synthetic, empirical, negative, and inconclusive results as distinct evidence states rather than cleanup notes.
+- Mechanism: Separate book-build checks, schema fixtures, synthetic examples, source-reported results, reproduced benchmarks, and empirical capability results before allowing any support-state movement.
+- Mechanism: Attach ratchets to SCF boundaries and procedural tools so benchmark history preserves field-specific floors, tool retirement pressure, and claim-specific evidence scope.
 - Interface: Routing and SCFs use readiness gates.
 - Interface: Evidence matrix records support movement.
 - Interface: Changelog records evidence changes.

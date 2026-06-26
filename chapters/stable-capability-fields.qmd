@@ -42,6 +42,8 @@ This chapter treats Stable Capability Fields as a governed substitution boundary
 
 It follows governance rights because rights cannot survive implementation churn unless the capability boundary has a stable identity, stable authority ceiling, and explicit replacement policy.
 
+This chapter is also the stack's first memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a way to say what must stay the same while implementations change. An SCF is that continuity record.
+
 ## Problem
 
 The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
@@ -50,6 +52,8 @@ The previous chapter makes rights technical. This chapter gives the system a way
 
 SCF supplies the core distinction: a field is the durable semantic boundary; an implementation is a replaceable realization of that boundary. The field carries identity, interface, authority ceiling, evaluator policy, qualification context, route validity, state-migration obligations, evidence, lifecycle state, and recovery paths. That separation is what lets recursive improvement be bounded instead of ambient.
 
+The practical point is that capability names should not be allowed to drift faster than evidence. If "planner," "retriever," "verifier," or "runtime adapter" means a different authority surface after every upgrade, the rest of the stack cannot reason about safety, regressions, or replacement. The field fixes the question before candidates compete to answer it.
+
 ## Why existing approaches are insufficient
 
 Plugin replacement and model swapping do not define identity, authority, qualification evidence, or rollback semantics.
@@ -57,6 +61,8 @@ Plugin replacement and model swapping do not define identity, authority, qualifi
 Replacing a model, tool, prompt, adapter, or specialist can look like an ordinary upgrade while changing the actual capability. A faster implementation may drop edge cases. A stronger model may gain broader authority through a route that was only meant for a narrow field. A new evaluator may be easier to satisfy. A migration may preserve outputs while corrupting hidden state. None of these failures is visible if the system treats "use the new one" as the whole upgrade protocol.
 
 SCF makes the upgrade question testable: does this candidate satisfy the same field contract, under this qualification context, without expanding authority, losing regressions, capturing the evaluator, or destroying rollback?
+
+Without that test, a system can suffer capability amnesia. It remembers that a component was replaced, but not what the old component was obligated to preserve, which regressions mattered, which authority ceiling applied, or which evaluator was trusted at the time. SCFs keep those obligations attached to the field rather than scattered across release notes.
 
 ## Core Claim
 
@@ -100,6 +106,8 @@ The field record separates identity from implementation. Qualification claims bi
 
 Qualification is scoped, not global. A candidate can be qualified for one domain, risk tier, authority ceiling, hardware context, benchmark epoch, or user population without being qualified everywhere. Its evidence should be append-only enough that later readers can reconstruct what was known when it was promoted.
 
+Qualification should also age. A candidate qualified under one benchmark epoch, source corpus, hardware profile, permission tier, or threat model should not remain default forever by inertia. The field record should make review intervals, expiration conditions, incident triggers, and requalification duties visible so stability does not become stagnation.
+
 The route proposer may be broad and heuristic; the route validator must be narrow and explicit. It checks field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings before the candidate can become the default route.
 
 ## Interfaces
@@ -129,6 +137,8 @@ Minimum fields:
 
 Planning requests a field by semantic boundary and capability profile. Execution invokes only authorized routes. Evidence records qualification, regressions, incidents, appeals, and lifecycle transitions. Governance decides whether a field can broaden authority or change evaluator policy.
 
+The same field record becomes an anchor for procedural memory and benchmark ratchets. A generated tool should know which field it is trying to satisfy. A benchmark result should know which field boundary it evaluates. A replacement transaction should know which field authority ceiling it may not silently widen.
+
 ## Invariants
 
 - Replacement cannot expand authority by default.
@@ -138,6 +148,8 @@ Planning requests a field by semantic boundary and capability profile. Execution
 
 The strongest invariant is identity binding: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
 
+A second invariant is evidence locality. Qualification evidence belongs to a field, an implementation artifact, and a context together. Moving one of those three pieces without rechecking the others should downgrade the route to shadow, canary, or residual rather than preserving default status by name.
+
 ## Failure modes
 
 - Field identity drift.
@@ -146,9 +158,13 @@ The strongest invariant is identity binding: replacing an implementation must no
 
 Field identity drift happens when the name stays stable while the behavior changes. Evaluator capture happens when the candidate influences the policy or measurement that qualifies it. Authority expansion happens when a more capable implementation inherits a route that was safe only for a weaker one. Each should block default promotion until a replacement transaction records the residual and review path.
 
+The quiet failure is orphaned regression memory. A field may accumulate tests and incidents over time, but an upgrade can leave them behind if the suite is stored with an implementation instead of the field. The SCF should keep regression floors at the field boundary so future candidates inherit the obligation to preserve them.
+
 ## Minimal implementation
 
 The smallest useful implementation is the existing `stable_capability_field` schema expanded with lifecycle, qualification context, evaluator policy, route validity, evidence references, state migration, and rollback metadata. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
+
+The next useful implementation step is a field history fixture: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification context, and one rollback path. That fixture would make identity, lifecycle, and evidence aging concrete without claiming a deployed route validator.
 
 ## Codex test plan
 
@@ -186,3 +202,5 @@ The crosswalk identifies the sources for field identity and lifecycle vocabulary
 Stable Capability Fields are the stack's upgrade sockets. They let a capability improve by changing implementations while preserving semantic identity, authority ceilings, evaluator policy, evidence, route validity, and rollback.
 
 This chapter makes self-improvement possible without making every upgrade a constitutional event. The next chapter turns field updates into explicit replacement transactions.
+
+The later learning chapters depend on this discipline. Procedural memory needs SCFs so new tools inherit a field boundary rather than becoming free-floating automation. Benchmark ratchets need SCFs so evidence improves a named capability instead of a vague sense of progress.

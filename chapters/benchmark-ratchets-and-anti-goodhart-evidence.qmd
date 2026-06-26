@@ -49,9 +49,13 @@ This chapter does not report benchmark success. Source-reported benchmark comman
 
 The previous chapter says what a proof or executable spec can certify. This chapter says what a measured result must carry before it can move a capability claim. A green test, leaderboard number, source-reported command, or local fixture is not enough by itself; the stack needs run records, baselines, regressions, residuals, anti-Goodhart checks, and promotion decisions that remain visible after the result is summarized.
 
+This chapter is the public evidence counterpart to procedural memory. Procedural memory asks what the system may reuse. Benchmark ratchets ask what the system may believe about the reused capability. Both are memory systems, and both can fail by forgetting negative cases.
+
 ## Problem
 
 Capability claims need pressure, but fixed benchmarks can become traps. A system can overfit a public style, erase regressions, optimize cheap metrics, or confuse saturation with general competence. Benchmaxxing reframes benchmarks as temporary pressure surfaces. RMI adds residual escrow and regression floors.
+
+The benchmark ratchet exists to make progress cumulative without making claims inflationary. A frontier should push the system into new work. Once the frontier becomes easy, it should become a floor. The score matters less than the transition record that says what improved, what stayed fragile, and what must never regress silently.
 
 ## Why existing approaches are insufficient
 
@@ -60,6 +64,8 @@ Benchmarks can saturate, be gamed, erase regressions, or fail to represent real 
 The important distinction is between a benchmark as an event and a benchmark as a managed instrument. An event produces a score. An instrument produces a history: what was tried, what changed, what regressed, what saturated, what transferred, and what still failed. The score can be useful, but only the history can support governance. Without that history, the system has no way to tell whether it learned the capability, learned the test, learned a presentation pattern, or merely found a path around the measurement.
 
 Goodhart pressure also appears before anyone is acting maliciously. If the easiest visible metric is speed, the system may drop verification work. If the easiest visible metric is pass rate, the system may avoid difficult cases. If the easiest visible metric is a public benchmark, the system may shape memory, examples, prompts, and training pressure around that surface until the benchmark stops measuring the thing it was meant to measure. A ratchet is the countermeasure: every success preserves a floor, exposes residuals, and asks for a harder frontier instead of turning one number into a broad capability claim.
+
+This also protects the reader. A living book can accumulate validation badges, generated fixtures, source notes, and local renders, but those are not interchangeable forms of evidence. The ratchet record should tell the reader whether a result is a book-build check, schema fixture, synthetic example, source-reported benchmark, reproduced benchmark, or empirical capability result.
 
 ## Core Claim
 
@@ -112,6 +118,8 @@ The record should track benchmark state, baseline, command, environment, mastery
 
 In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. The book's evidence discipline depends on this mundane bookkeeping.
 
+The ratchet should also name the capability field it pressures. Without an SCF boundary, benchmark success can attach to a vague product, model, or agent identity and then survive migrations it was never meant to cover. With an SCF boundary, the benchmark can preserve a regression floor for the specific capability that earned it.
+
 ## Interfaces
 
 The Benchmark Ratchet Record is the interface between evaluation, readiness gates, Appendix C, prototype phases, and the changelog. It carries enough evidence metadata for downstream layers to distinguish a reproduced result, a source-reported result, a synthetic fixture, a failed run, and an unattempted target.
@@ -135,6 +143,8 @@ Minimum fields:
 
 Routing and SCFs consume readiness. Appendix C records support movement only when evidence permits it. The changelog records evidence changes. Prototype roadmap phases cannot use benchmark success as evidence without the run record.
 
+Procedural memory consumes benchmark ratchets as retirement pressure. If a generated tool fails a preserved floor, it should be revised, quarantined, or retired. If a benchmark saturates, it may still guard the tool as a regression even when it no longer justifies a stronger claim.
+
 ## Invariants
 
 - No test success is claimed without execution.
@@ -142,6 +152,8 @@ Routing and SCFs consume readiness. Appendix C records support movement only whe
 - Regressions are preserved.
 - Saturated benchmarks become regression floors, not permanent definitions of intelligence.
 - Negative and inconclusive results remain visible.
+
+The strongest invariant is claim specificity. A benchmark can support only the claim it actually measured, under the recorded conditions. Broader readiness, deployment safety, model quality, or ASI-progress claims require their own evidence.
 
 ## Failure modes
 
@@ -153,9 +165,13 @@ Routing and SCFs consume readiness. Appendix C records support movement only whe
 
 Each failure blocks promotion or downgrades support state until the evidence boundary is repaired.
 
+A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in the book because it was historically important, even after it stops applying pressure. The ratchet should preserve it as a regression floor or historical note while making clear that it no longer defines the frontier.
+
 ## Minimal implementation
 
 The smallest useful implementation is a benchmark ratchet schema and fixture. The current fixture records the shape of a benchmark-evidence decision without pretending any benchmark has been run.
+
+The next useful implementation step is a toy ratchet ledger with one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. That would demonstrate support-state restraint without claiming empirical capability.
 
 ## Codex test plan
 
@@ -196,3 +212,5 @@ These Lean hooks are implemented as finite-record predicates over capability-pro
 Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.
 
 The next chapter asks how that pressure changes future behavior. Policy optimization is allowed to learn from rewards, preferences, verifier outputs, and benchmark signals only when the update preserves provenance, rollback, and governance gates.
+
+The durable rule is that benchmarks should improve memory, not erase it. A good ratchet makes the next system harder to fool and easier to compare; a bad one gives the next system a number to optimize and a story to overclaim.

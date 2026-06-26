@@ -45,6 +45,8 @@ This chapter treats procedural memory as a governed promotion path from traces t
 
 Closing Part II, this chapter converts execution history into future execution capacity. It does not assume that every successful trace deserves automation; it asks which repeated, bounded, verified patterns are mature enough to become routable tools in Part III.
 
+That makes procedural memory different from habit. A habit repeats because it worked before. Procedural memory repeats because the stack has preserved traces, extracted a stable invariant, named the parameters, checked failures, and attached regression and retirement rules. The difference matters because a self-improving system will otherwise turn yesterday's lucky path into tomorrow's default behavior.
+
 ## Problem
 
 Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -53,6 +55,8 @@ The execution layer produces traces. Cognitive loop closure asks which repeated 
 
 This chapter closes Part II because procedural memory is the handoff to routing and readiness. Once a loop becomes a tool, the router can select it, readiness gates can govern it, and benchmark ratchets can preserve its floor.
 
+The loop-closure question is therefore not "can this be automated?" but "what evidence would make this safe to reuse?" Some traces should remain examples. Some should become checklists. Some should become scripts or tools. Some should become warnings. The promotion path must keep those categories separate.
+
 ## Why existing approaches are insufficient
 
 Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
@@ -60,6 +64,8 @@ Agents waste cognition and introduce inconsistency when recurring workflows are 
 Repeated improvisation wastes tokens, time, and reviewer attention. It also creates drift: the same task is solved differently each time, with different hidden assumptions and different failure modes. But the opposite failure is premature toolification: turning one lucky trace into a routable tool before preconditions, parameters, risks, and regressions are known.
 
 The efficient stack needs three modes: interpretation for novel work, compiled-tool mode for verified recurring procedures, and failsafe/reflex mode for safety-critical responses. Moving between modes requires evidence.
+
+Current agent systems often blur those modes. A workflow gets repeated because it is convenient, copied into a prompt because it seems useful, and later invoked as if it were validated procedure. The ASI Stack should make that transition explicit: comparable traces first, abstraction second, verification third, routable memory last.
 
 ## Core Claim
 
@@ -107,6 +113,8 @@ The loop-closure path starts with safe traces that preserve provenance, failures
 
 A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
+Negative examples are part of the memory, not clutter. A loop detector that only sees successes will overgeneralize; a tool card without failed cases cannot say where the procedure stops. The record should preserve near misses, rejected traces, and residuals so the future router knows when not to use the tool.
+
 Loop closure is reasoning compression. It turns many successful trajectories into one parameterized procedure, but only when the verification burden has been paid.
 
 ## Interfaces
@@ -136,6 +144,8 @@ Minimum fields:
 
 Artifact graphs supply traces. Routing selects verified tools. Evidence tests utility and regressions. Readiness gates decide promotion, quarantine, revision, or retirement.
 
+SCFs give the generated tool a capability boundary; benchmark ratchets give it a floor to preserve; artifact graphs give it lineage; readiness gates decide whether it can be selected. Without those interfaces, procedural memory becomes a private shortcut instead of a governed stack layer.
+
 ## Invariants
 
 - Only verified loops become tools.
@@ -143,6 +153,8 @@ Artifact graphs supply traces. Routing selects verified tools. Evidence tests ut
 - Tool promotion records residuals and regressions.
 
 The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
+
+A second invariant is scope fidelity. The generated tool may be narrower than the traces that inspired it, but it should not be broader unless new evidence justifies the expansion. Tool cards should prefer small verified envelopes over broad automation that is hard to falsify.
 
 ## Failure modes
 
@@ -152,6 +164,8 @@ The promotion invariant is simple: only verified loops become routable tools. A 
 
 Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Each failure should keep the tool in draft, residual, quarantine, or retired state.
 
+Another failure is tool immortality. A procedure that was once verified can become stale when sources change, APIs shift, benchmarks saturate, or governance rules tighten. Retirement criteria and monitoring are therefore part of memory, not administrative cleanup.
+
 ## Minimal implementation
 
 A loop closure pipeline from trace detection to verified tool record.
@@ -159,6 +173,8 @@ A loop closure pipeline from trace detection to verified tool record.
 The smallest useful implementation is a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
 The fixture validates only a candidate tool-card shape. It does not prove repeated traces exist, that invariant abstraction is correct, that the tool works, or that regression checks passed.
+
+The next useful implementation step is a miniature trace set with three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
 
 ## Codex test plan
 
@@ -201,3 +217,5 @@ The crosswalk identifies sources for loop closure, procedural memory, ratchets, 
 Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. This pass tightened the source crosswalk, but it did not generate a tool or run the loop-closure pipeline.
 
 The chapter's discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
+
+The same discipline returns in Part IV as benchmark ratchets. A procedure that becomes easier to run must also become easier to test, regress, retire, and explain. Otherwise memory increases capability faster than governance can remember why it trusted the capability in the first place.
