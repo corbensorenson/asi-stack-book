@@ -43,6 +43,8 @@ This chapter treats artifacts as provenance-bearing work products, not as automa
 
 After typed jobs, the stack needs a memory surface for work itself. This chapter records what a job produced, where it came from, which claims or tests it touches, and which parts can be replayed before the architecture allows those outputs to become evidence, context, or procedural substrate.
 
+The key distinction is between storage and evidential continuity. A file path says where bytes live. An artifact node says what role those bytes played, which job created them, which sources and tools shaped them, what can be reconstructed, and what remains uncertain. The living book should preserve that distinction because later chapters depend on it: compressed artifacts, semantic nodes, benchmark records, reader editions, and prototype reports all become safer when they inherit an explicit artifact history instead of a loose folder convention.
+
 ## Problem
 
 The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
@@ -51,6 +53,8 @@ Typed jobs produce outputs. The stack needs those outputs to become artifacts wi
 
 Talos treats evidence, logs, and replay as execution primitives. GenesisCode adds effect logs, semantic patches, provenance hashes, and obligation artifacts. Cognitive Loop Closure uses repeated artifact traces as the substrate for future tools.
 
+This is not only a software-engineering hygiene issue. It is an alignment boundary. A system that can alter documents, invoke tools, route tasks, summarize sources, or rewrite its own procedures must leave inspectable work products behind. Without artifact continuity, review becomes forensic guesswork and self-improvement becomes memory without accountability.
+
 ## Why existing approaches are insufficient
 
 If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
@@ -58,6 +62,8 @@ If outputs are not tied to inputs, tools, context, claims, and logs, later verif
 Untraceable output cannot support promoted claims. Non-replayable workflows cannot be debugged or improved. Provenance gaps make it impossible to tell whether an artifact came from a source, a tool, a model guess, a human edit, or a stale context packet.
 
 The artifact graph is the system's memory of work. It does not guarantee truth, but it makes verification possible by preserving what happened.
+
+Ordinary repositories, chat transcripts, and build directories only partially solve this. They preserve fragments, but they usually do not encode claim relevance, source scope, replay limits, or promotion blockers as first-class fields. The artifact graph is the layer that makes those fragments usable by evidence ledgers, regression suites, and future agents without requiring every reader to infer the workflow from prose.
 
 ## Core Claim
 
@@ -103,6 +109,8 @@ The artifact record attaches identity to work product history. It links parent j
 
 Artifacts should have stable IDs and versioned revisions. Audit logs should be append-only or versioned. Replay metadata should declare what can be replayed, what cannot, and which environment assumptions matter.
 
+Replay should be graded rather than binary. Some artifacts can be reconstructed byte for byte from recorded inputs and deterministic tools. Some can be replayed semantically, where the same obligations are checked even if nondeterministic text differs. Some can only be partially replayed because an external service, source snapshot, human decision, or environment state is missing. The record should name that grade and expose the residual instead of treating partial replay as success.
+
 The graph is also an improvement substrate. Repeated traces can become procedural memory. Failed traces can become residuals. Verified artifacts can become regression coverage.
 
 ## Interfaces
@@ -131,6 +139,8 @@ Minimum fields:
 
 VCM references artifacts as context cells. Evidence consumes logs and test links. Procedural memory mines repeated traces. Claim ledgers decide whether an artifact can support a claim.
 
+A consumer should not have to parse a narrative paragraph to know whether an artifact is reusable. It should see a structured record: source refs for epistemic scope, context refs for memory scope, tool refs for authority scope, replay metadata for reproducibility scope, and claim/test links for evidence scope. That makes the artifact graph the handoff format between execution, memory, evidence, compression, and release engineering.
+
 ## Invariants
 
 - Artifacts have stable identities.
@@ -147,6 +157,8 @@ An artifact with missing required provenance cannot support a promoted claim. It
 
 Untraceable output becomes a residual. Non-replayable workflows must declare replay limits. Provenance gaps block evidence promotion until repaired or explicitly bounded.
 
+The subtle failure mode is convenience laundering. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
+
 ## Minimal implementation
 
 An artifact graph schema with job, source, context, and evidence edges.
@@ -154,6 +166,8 @@ An artifact graph schema with job, source, context, and evidence edges.
 The smallest useful implementation is an `artifact_graph_record` schema and fixture. It validates parent job, source/context/tool/claim/test refs, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 
 That fixture validates the shape of an artifact node. `AsiStackProofs.ArtifactGraph` adds a bounded predicate requiring produced artifacts to carry parent-job and source/context references, plus a bounded promotion-blocking predicate for missing required provenance. This does not prove the referenced render, replay, audit path, or provenance completeness of any produced artifact.
+
+The next implementation step is not a larger schema for its own sake. It is a tiny replay packet: one produced artifact, one parent job, one source/context set, one tool path, one replay declaration, one residual declaration, and one claim/test link. That packet would let the book demonstrate the difference between a record that is merely stored and a record that is evidence-ready.
 
 ## Codex test plan
 
@@ -195,3 +209,5 @@ The crosswalk identifies sources for artifact provenance, audit, replay, and loo
 Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products. Each artifact should carry identity, parent job, source/context/tool links, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits. The source crosswalk is now tighter: the six local-cache architecture sources have passage-reviewed mappings, while the implementation-reference MoECOT mapping remains bounded by connector/source-note availability.
 
 This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain. The next chapter moves to the most dangerous boundary in the execution layer: the adapter that turns a job into an external effect.
+
+The later compression and semantic-representation chapters depend on this contract. A compressed artifact can only be trusted relative to the full artifact and replay record it points back to. A semantic node can only be grounded relative to the artifact or source record it cites. The graph is therefore not a storage accessory; it is the continuity layer that lets the stack improve without losing the chain of responsibility.

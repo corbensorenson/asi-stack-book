@@ -42,6 +42,8 @@ This chapter uses RankFold/NeuralFold and RankFold Compressor as compression-arc
 
 After fast generation, the compression question returns to stored artifacts. A cheaper representation is not a cheaper source of truth; it is a routed candidate that must preserve full-artifact fallback, probe results, residual coding, and utility boundaries for each task.
 
+This chapter therefore treats compression as an evidential firewall, not a storage trick. The system may choose a smaller representation for a task, but the smaller representation does not inherit every property of the full artifact. It earns only the properties that its reconstruction contract, residual ledger, probes, and downstream utility checks actually support.
+
 ## Problem
 
 The stack will store source documents, artifacts, logs, benchmark traces, models, simulations, and generated outputs. Storage and transfer cost matter, but artifact compression is dangerous when it damages semantics, loses decoder determinism, hides residual coding cost, or makes fallback so common that the apparent savings disappear.
@@ -53,6 +55,8 @@ RankFold/NeuralFold is useful here because it treats artifacts as candidates for
 Storage savings are not enough. A compressed artifact must be useful for the task that wants it. A low-rank transform can optimize reconstruction error while increasing encoded residual cost. A tensor representation can be elegant while losing exact file reconstruction. A write-once archive can amortize expensive encoding, but that assumption fails for hot artifacts that must be rewritten or queried constantly.
 
 The book therefore treats artifact compression as a routed representation choice. A task can use a compressed artifact only after the relevant probe passes; otherwise it routes to the full artifact or records a residual.
+
+This routing view prevents a common category error. Compression ratio, reconstruction adequacy, task utility, and operational cost are different ledgers. A record can have an excellent serialized size and still be useless for a retrieval task. It can preserve enough meaning for summarization while failing exact reconstruction. It can decode correctly while costing so much at read time that the system should not use it on the hot path.
 
 ## Core Claim
 
@@ -104,6 +108,8 @@ The record should distinguish four claims that are often collapsed:
 
 Each claim can fail separately. The architecture should preserve that separation instead of letting a good ratio imply task utility or a useful lossy representation imply exact reconstruction.
 
+The operational rule is simple: compression can save cost only inside a declared use envelope. The record should say which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact. A compressed artifact without those fields is a cost experiment, not an evidence-bearing representation.
+
 ## Interfaces
 
 The interface is the Compressed Artifact Record.
@@ -125,6 +131,8 @@ Minimum fields:
 
 Artifact graphs store compressed and full references. Routing selects the representation by task and probe. Evidence records ratio, latency, residual size, decoder determinism, utility, and fallback frequency. Resource economics decides whether encoding cost is justified by the access pattern.
 
+The artifact graph matters here because the compressed record should never stand alone. It should point back to the preserved full artifact, the codec manifest, the source/job that produced it, and any evaluation artifacts used to justify routing. That connection gives later readers and agents a way to distinguish source-reported compression lineage from locally reproduced compression behavior.
+
 ## Invariants
 
 - Fallback path is known.
@@ -145,11 +153,15 @@ The strongest invariant is decode accountability: if the system cannot say what 
 
 Probe failure should route to the full artifact. Rare-case damage should become a regression. Hidden encoder cost should move into resource accounting. Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.
 
+The most dangerous failure is silent narrowing. A compressed representation may work on common examples and still erase rare clauses, unusual diagrams, edge-case source formatting, or provenance details that matter for governance. The stack should treat those misses as residuals, not as acceptable noise, unless the task explicitly declares them irrelevant.
+
 ## Minimal implementation
 
 The smallest useful implementation is a compressed artifact schema and fixture. The current fixture validates that a record names method, reconstruction contract, ratio claim state, codec parameters, residual coding, probe plan, fallback, decode determinism, utility tests, and non-claims.
 
 Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
+
+The next useful implementation step is a toy corpus with deliberately adversarial artifacts: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, this chapter remains a design rationale with executable record-shape checks only.
 
 ## Codex test plan
 
@@ -190,3 +202,5 @@ Artifact compression is a routing decision under evidence. A compressed artifact
 RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The next chapter turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.
 
 The bridge is that semantic representation is also compression. It compresses meaning, paths, and relations rather than bytes, so its probe must ask whether the represented meaning is grounded enough for the task.
+
+The governance stance is the same in both chapters: never let an elegant representation outrun its fallback path. Compression earns authority one task, one probe, and one residual ledger at a time.

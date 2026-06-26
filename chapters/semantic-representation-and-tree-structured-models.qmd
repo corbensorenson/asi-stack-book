@@ -45,17 +45,23 @@ This chapter treats TreeLLM as a representation proposal, not a proven model-siz
 
 Following artifact compression, semantic representation shifts the compression question from bytes to meaning. A tree or graph can make concepts easier to route and inspect, but only if provenance, permitted use, adequacy limits, hierarchy changes, and residual uncertainty remain attached.
 
+The chapter's central discipline is semantic leasing. A semantic node is allowed to represent a concept for a bounded purpose, under a declared grounding state, with reviewable provenance and a revocation or supersession path. It is not a permanent claim that the system has captured the concept itself.
+
 ## Problem
 
 The ASI Stack needs representations that are easier to inspect, update, route, and verify than opaque token continuations alone. A model can generate fluent claims while hiding which concepts, sources, relations, and assumptions it used. Tree-structured or graph-structured representations are attractive because they can expose paths, provenance, hierarchy, and residual attributes.
 
 But explicit structure can also become false confidence. A semantic graph can be incomplete, biased, brittle, stale, or treated as an unreviewed authority source. The problem is to use semantic structure as an optional substrate with tests, not as a substitute for grounding.
 
+The stack should want semantic structure because it can make some work cheaper to inspect, not because it makes meaning magically settled. A good semantic representation reduces the distance between sources, claims, plans, proofs, and explanations. A bad one hides the same uncertainty behind a cleaner shape.
+
 ## Why existing approaches are insufficient
 
 Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths. Yet hand-built ontologies and semantic graphs do not automatically solve grounding either. They can make a system look explainable while encoding the same uncertainties in a different form.
 
 Verification Bandwidth adds a second pressure: a representation must be adequate for the checks it is asked to support. A short semantic token may help routing or retrieval, but it can also lose the constraints needed for verification. Cognitive Compilation adds the operational view: semantic atoms and IR are useful only when typed, validated, and repairable.
+
+This is why hierarchy is not enough. A parent-child relation can support navigation while still failing grounding. A graph traversal can explain a route while still omitting a decisive source constraint. A semantic token can be compact while still too lossy for adjudication. The architecture must test the represented use, not admire the representation.
 
 ## Core Claim
 
@@ -113,6 +119,8 @@ A semantic representation should preserve:
 
 This lets the stack use tree or graph structure for retrieval, analogy, explanation, compilation, and verification while keeping hierarchy changes auditable.
 
+The three gates are grounding, adequacy, and interoperability. Grounding asks what source or artifact supports the node. Adequacy asks whether the node preserves enough constraints for the current task. Interoperability asks whether the node can be consumed by VCM, Spinoza, planning, compilation, or evidence layers without hidden translation loss. A semantic representation should not be promoted because one gate passed while the others remain untested.
+
 ## Interfaces
 
 The interface is the Semantic Node Record.
@@ -135,6 +143,8 @@ Minimum fields:
 
 VCM stores semantic pages. Spinoza consumes semantic claims only with evidence and downgrade paths. Cognitive Compilation lowers goals into semantic atoms. Compression layers measure whether semantic tokens preserve enough information for target tasks. Routing treats a representation substrate as optional until tests justify using it.
 
+That interface makes semantic representation a shared boundary rather than a private model feature. If a node is used by a planner, the planner should know its permitted uses and residual uncertainty. If it is used by a proof-carrying claim layer, the layer should see its provenance and downgrade path. If it is used by compression or retrieval, the route should expose which constraints were preserved and which were dropped.
+
 ## Invariants
 
 - Semantic nodes are grounded or labeled speculative.
@@ -155,11 +165,15 @@ The strongest invariant is provenance: a grounded node must say what grounds it.
 
 Brittleness should trigger residuals and versioning. False explainability should downgrade claims. Hierarchy drift should preserve supersession links. Canonical graph capture should route through governance and audit. Verification loss should be recorded as a context-adequacy failure.
 
+The most subtle failure is authority migration. A semantic graph may begin as a helpful index, then slowly become the thing later agents cite instead of sources, artifacts, or tests. The stack should counter that drift by requiring grounded nodes to keep provenance links active and by treating ungrounded or stale nodes as hypotheses, not as claims.
+
 ## Minimal implementation
 
 The smallest useful implementation is a semantic node schema and fixture. The current fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 
 Passing the fixture does not prove a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
+
+The next useful implementation step is a small grounded domain where source passages, artifact nodes, semantic nodes, and claim records can be compared. A future test should deliberately update the hierarchy, remove or supersede a source, and check whether downstream uses notice the change. Until then, the schema and Lean predicates show record discipline only, not representation adequacy.
 
 ## Codex test plan
 
@@ -202,3 +216,5 @@ Semantic structure is useful when it makes concepts, paths, provenance, versions
 Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated. The next chapter asks how much any of these representation choices should cost, and when the stack must spend more to verify rather than less to answer.
 
 That cost question is not secondary. A representation that saves tokens but increases verification burden, human repair, or downstream failure is not cheaper for the governed system.
+
+The durable principle is that meaning has to stay attached to evidence. Semantic structure can help the stack move faster, but only when each node carries the limits of its own authority.

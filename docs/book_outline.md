@@ -1621,6 +1621,8 @@ Draft arc:
 - Insufficiency: If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
 - Mechanism: Record artifacts as stable, versioned nodes with parent job, source/context/tool refs, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
 - Mechanism: Treat incomplete provenance as a residual while using verified and failed traces as inputs to evidence ledgers, regression suites, and procedural-memory candidates.
+- Mechanism: Distinguish storage identity from evidential continuity: a path records where bytes live, while an artifact node records role, provenance, replay grade, residuals, and claim/test relevance.
+- Mechanism: Treat replay as graded rather than binary: byte-for-byte replay, semantic replay, partial replay, and non-replayability must be declared before artifact reuse can affect evidence state.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
@@ -2245,6 +2247,8 @@ Draft arc:
 - Insufficiency: Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.
 - Mechanism: Treat compressed artifacts as routed representation candidates with preserved full-artifact fallback, reconstruction contract, codec parameters, residual coding, probe plan, decode determinism, utility tests, and non-claims.
 - Mechanism: Separate representation, reconstruction, compression-ratio, and downstream-utility claims so one passing property cannot promote the others.
+- Mechanism: Keep compression, reconstruction, residual, utility, cost, and fallback ledgers separate so a smaller representation cannot silently become a stronger evidence object.
+- Mechanism: Require compressed records to state the declared use envelope, probe boundary, fallback trigger, and non-claims before downstream agents can use the compressed form.
 - Handoff: Semantic representation inherits the same probe discipline, but the risk shifts from bit-level reconstruction to grounding and hierarchy drift.
 - Interface: Artifact graph stores compressed and full references.
 - Interface: Routing selects representation by task.
@@ -2298,6 +2302,8 @@ Draft arc:
 - Insufficiency: Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.
 - Mechanism: Treat semantic nodes as scoped representation leases with concept labels, provenance, hierarchy/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, versioning, and evaluation refs.
 - Mechanism: Use tree or graph structure for retrieval, planning, compilation, and explanation only where grounding, adequacy, interoperability, and baseline comparisons justify the route.
+- Mechanism: Separate grounding, adequacy, and interoperability gates so hierarchy or compact semantic tokens cannot stand in for source support, task fit, or cross-layer usability.
+- Mechanism: Preserve provenance and supersession links so semantic graphs remain indexes and working representations rather than unreviewed authority sources.
 - Handoff: Resource economics decides when semantic compression is actually cheaper after verification burden, repair, and downstream failures are counted.
 - Interface: Spinoza uses semantic claims.
 - Interface: VCM stores semantic pages.
