@@ -47,6 +47,8 @@ This chapter defines the boundary for self-improvement. It does not report auton
 
 It closes Part I as a gate, not as a triumph claim. The book can discuss self-improving systems only after it has named the fields, transactions, security boundaries, protected predicates, and evidence ledgers that keep improvement from becoming self-ratification.
 
+That framing matters because self-improvement is the highest-stakes version of ordinary maintenance. The stack should want better components, but it should not let a component redefine the proof that it is better, widen the authority it receives, or erase the audit trail that would have caught the regression.
+
 ## Problem
 
 The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
@@ -55,6 +57,8 @@ The previous chapters define stable fields and replacement transactions. Recursi
 
 This chapter closes Part I by turning governance into a constraint on future growth. Part II can now describe planning, memory, reasoning, and execution without pretending those mechanisms are allowed to improve themselves freely.
 
+The self-improvement boundary is therefore a continuity contract. The system may change implementations, tools, policies, prompts, data, routes, or architecture only while preserving the invariants that made the previous system governable.
+
 ## Why existing approaches are insufficient
 
 Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
@@ -62,6 +66,8 @@ Treating self-improvement as automatic capability growth ignores evaluator integ
 Unbounded self-improvement makes the evaluator part of the optimization target. A system that can change its own gates, benchmarks, memory, authority ceilings, or constitutional predicates can make itself look better without becoming safer or more capable. Theseus adds a practical engineering pattern: use an intervention ladder and allow teacher or architecture changes only after cheaper interventions and evidence walls are exhausted. Benchmaxxing and RMI add the ratchet: protect regressions, residuals, and lifecycle discipline while moving the frontier.
 
 The boundary is therefore not "never self-improve." It is "self-improve only through governed, reversible, evidence-gated transitions whose evaluators and protected invariants are not controlled by the candidate."
+
+The important distinction is proposal versus promotion. A system can propose its own patch, benchmark, route, or architecture change. Promotion requires a different authority path: independent evaluation, preserved regression floors, protected-invariant review, approval, monitor window, and rollback.
 
 ## Core Claim
 
@@ -116,6 +122,8 @@ The proposal must identify the observed wall or residual, the field being change
 
 The passage review tightens the boundary of this claim. SCF supports the need for stable meanings, authority/state/evidence continuity, evaluator separation, goalpost separation, and non-universal rollback. Benchmaxxing and RMI support the intervention ladder and regression floor. VIEA and Talos support artifact, evidence, audit, replay, residual, and feedback records around work. Alignment Field material remains normative caution about agency, moral scope, and align-before-amplify risk. None of those passages demonstrate that this repository has run an autonomous self-improvement loop or that a candidate can safely evaluate itself.
 
+Security and resource records should travel with the transition. A proposal that saves cost by dropping verification, widens a secret handle, weakens a SCIF lifecycle, increases hidden human repair burden, or depends on unreproduced benchmark evidence is not merely incomplete; it is trying to improve by moving a boundary.
+
 Autonomy should be phased. The early stack can propose changes, produce evidence packets, and ask for review. More autonomous replacement should wait until evaluators, readiness gates, rollback paths, and governance logs are credible.
 
 ## Interfaces
@@ -144,6 +152,8 @@ Minimum fields:
 
 SCFs define replaceable units. Evidence ratchets and readiness gates decide whether a proposal can move. Alignment supplies protected constraints. Governance decides whether approval can be delegated.
 
+The transition should be readable as a chain of custody: residual or wall, proposed change, authority used, budget spent, evidence collected, independent evaluator, protected-invariant result, approval decision, canary behavior, rollback status, and final lifecycle state. If any link is missing, the transition remains research or quarantine.
+
 ## Invariants
 
 - Self-improvement cannot weaken protected invariants.
@@ -151,6 +161,8 @@ SCFs define replaceable units. Evidence ratchets and readiness gates decide whet
 - Every accepted change remains auditable.
 
 The decisive invariant is non-self-ratification: the candidate may not be the sole judge of whether it should replace the current component. If independent evaluation is unavailable, the transition can still be researched, but it cannot be promoted as governed self-improvement.
+
+A second invariant is boundary monotonicity unless explicitly reviewed. The change cannot silently broaden authority, relax security rules, reduce verification budget, weaken rollback, or retire regressions. Any such move is a separate governance question, not an implementation detail.
 
 ## Failure modes
 
@@ -160,9 +172,13 @@ The decisive invariant is non-self-ratification: the candidate may not be the so
 
 Recursive evaluator capture is the core failure: the system improves its ability to pass its own gate. Constitutional weakening removes the predicates that would have blocked the change. Irreversible flawed upgrades turn a failed experiment into a new baseline. These are not acceptable residuals for a default route; they require quarantine or rollback.
 
+The subtle failure is acceleration pressure. A self-improvement loop can argue that the next change will make evaluation easier, cheaper, or more accurate later. The stack should treat that as debt, not evidence. Future verification cannot justify present promotion unless a protected gate explicitly allows the deferral.
+
 ## Minimal implementation
 
 The smallest useful implementation is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
+
+The next useful implementation step is a canary-transition fixture with one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. That would make the self-improvement boundary concrete without claiming self-improvement success.
 
 ## Codex test plan
 
@@ -204,3 +220,5 @@ The crosswalk distinguishes source-reported readiness and self-evolution design 
 Recursive Self-Improvement Boundaries defines the stack's rule for changing itself. Self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback.
 
 This is the handoff from Part I to the operational stack. Planning, memory, reasoning, execution, routing, and compression can become powerful only if their future changes remain auditable, bounded, and reversible.
+
+The operating principle is that improvement must preserve governability. A faster, cheaper, or more capable system that weakens receipts, budgets, security boundaries, or evaluator independence has not improved the ASI Stack described in this book.

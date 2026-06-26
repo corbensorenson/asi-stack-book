@@ -786,6 +786,8 @@ Draft arc:
 - Mechanism: Use handles rather than exposing secrets; return handle status and decisions without secret bytes.
 - Mechanism: Separate model-visible context from privileged substitution inside approved boundaries.
 - Mechanism: Run high-risk tasks inside compartmentalized Digital SCIF context containers with lifecycle and residual leak-risk records.
+- Mechanism: Bind handles to purpose, destination, action, time window, approval, logging, and revocation so authority cannot become ambient context or be reused after the lease expires.
+- Mechanism: Treat sanitized outputs as security artifacts with removal notes and residual leak-risk records; summaries can still leak derived sensitive information.
 - Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
 - Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
 - Interface: Governance audits sensitive transitions through Authority Use Receipts.
@@ -841,6 +843,8 @@ Draft arc:
 - Mechanism: Require a cheaper-intervention ladder and evidence packet before teacher edits, architecture edits, or parameter growth.
 - Mechanism: Separate proposing, evaluating, approving, committing, monitoring, rollback, and retirement.
 - Mechanism: Delay autonomous replacement until evaluators, readiness gates, governance logs, and rollback paths are credible.
+- Mechanism: Treat security and resource boundary changes as first-class governance questions: a self-improvement proposal cannot silently widen handles, weaken SCIF lifecycle, cut verification budget, relax rollback, or retire regressions.
+- Mechanism: Record self-improvement transitions as chain-of-custody artifacts from residual/wall through authority used, budget spent, evidence collected, independent evaluation, protected-invariant result, approval, canary, rollback, and lifecycle state.
 - Interface: SCFs define replaceable units and authority ceilings.
 - Interface: Evidence ratchets, readiness gates, and replacement transactions provide gates.
 - Interface: Alignment and governance supply protected constraints, approval boundaries, and non-self-ratification rules.
@@ -2372,6 +2376,8 @@ Draft arc:
 - Insufficiency: Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.
 - Mechanism: Record value hypothesis, risk class, capacity pool, cost estimate, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence refs.
 - Mechanism: Let budgets choose dispatch, escalation, deferral, scope reduction, rejection, or residual accounting without disabling protected verification or safety gates.
+- Mechanism: Treat security overhead, approval overhead, replay cost, human review, repair burden, and non-action costs as budget fields rather than invisible externalities.
+- Mechanism: Prevent efficiency laundering: cheaper routes that shift work into future debugging, hidden human repair, lost evidence, or unrecorded security risk must emit residual costs or be rejected.
 - Handoff: Simulation, mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.
 - Interface: Planning allocates budgets.
 - Interface: Routing chooses costed specialists.

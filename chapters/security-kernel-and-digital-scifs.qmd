@@ -42,6 +42,8 @@ This chapter narrows security claims to handle-mediated authority and compartmen
 
 It follows replacement because capability churn is not safe if new implementations can carry secrets, privileged context, or authority across boundaries that the old implementation was never allowed to cross.
 
+This chapter is the stack's least-exposure rule. Capability can grow, routes can change, and tools can become more useful, but privileged material should not become ordinary context just because the system is good at using it. Secrets, sensitive context, and authority handles need their own boundary language.
+
 ## Problem
 
 High-agency systems need security boundaries for secrets, context, permissions, and tool calls.
@@ -50,6 +52,8 @@ The agency paradox is straightforward: useful AI systems need to act through cre
 
 This chapter therefore treats security as a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
 
+The security goal is not to make the model morally trustworthy with secrets. It is to make the secret path structurally narrower than the reasoning path. The model can propose, justify, and receive sanitized results; the kernel decides what is substituted, where, for how long, and under which audit record.
+
 ## Why existing approaches are insufficient
 
 Putting secrets or privileged context into model-visible text invites leakage, prompt injection, and authority confusion.
@@ -57,6 +61,8 @@ Putting secrets or privileged context into model-visible text invites leakage, p
 The `ladon_manhattan` source gives the credential pattern: use blind handles, keep secrets in a vault or enclave, and inject them only at the authorized execution boundary. The `context_engineer` source gives the context pattern: treat context as a supply chain, compile mission briefs, enforce clearance, run sensitive work in an ephemeral compartment, then commit only sanitized outputs.
 
 Neither pattern is a complete security proof. Software compartments can leak through logs, traces, screenshots, side channels, summaries, or overly broad handle permissions. The book's claim is narrower: credential bytes and privileged context should not be casually placed in model-visible text when a handle-mediated boundary can do the job.
+
+The same caution applies to context. A mission brief should be enough for the task, not a convenience dump of everything nearby. If a context packet contains privileged facts that the task does not need, the failure has already happened before the model acts.
 
 ## Core Claim
 
@@ -104,6 +110,8 @@ Handles are not magic. A handle must carry scope: permitted destination, action 
 
 The passage review sharpens the claim boundary: keeping secret bytes out of model-visible context can reduce direct disclosure by prompt injection, but it does not prove isolation, side-channel safety, log hygiene, UI safety, or containment of every derived summary. Alignment-field material belongs here only as a warning about power, consent, agency, and confinement; it is not a security proof.
 
+The boundary should also distinguish request visibility from substitution visibility. The model may see that a payment handle, deployment token, private source, or personal record is available under policy; it should not see the underlying material unless the task requires model-visible reasoning over that material and a SCIF admits it. Even then, the commit path should be sanitized by default.
+
 ## Interfaces
 
 The public interface is an Authority Use Receipt, not a prompt convention. It records the purpose, handle, clearance, destination, approved action, SCIF lifecycle, sanitized output, residual leak risk, and revocation path without placing the underlying secret in the transcript.
@@ -128,6 +136,8 @@ Minimum fields:
 
 The planner can request a capability, but the security kernel decides whether the request is authorized. The executor can complete the action, but only inside the approved boundary. The claim ledger can later see that the action happened without needing the raw secret.
 
+That receipt becomes the bridge to resource economics and self-improvement. Budgets should account for secure execution overhead instead of cutting it away. Self-improvement transitions should not be able to broaden handle scope, weaken SCIF lifecycle rules, or change audit policy without governance review.
+
 ## Invariants
 
 - Secrets are not directly model-visible.
@@ -135,6 +145,8 @@ The planner can request a capability, but the security kernel decides whether th
 - Privilege substitution is auditable.
 
 The strongest invariant is ignorance: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
+
+A second invariant is purpose binding. A handle authorized for one destination, action, time window, or job cannot be reused as ambient authority by a later plan, summary, tool, or self-improvement proposal. Reuse requires a new receipt or an explicit lease that says reuse is allowed.
 
 ## Failure modes
 
@@ -144,9 +156,13 @@ The strongest invariant is ignorance: if the model never receives the secret byt
 
 The common trap is treating handles as safe while granting them unbounded use. A second trap is committing too much of the SCIF transcript back into ordinary memory. A third is assuming software isolation defeats hardware, browser, clipboard, screenshot, logging, and timing channels. Each trap should be visible in the threat model and residual risk field.
 
+Another failure is sanitized-output laundering. A summary can carry enough derived information to reconstruct or misuse sensitive context even when the raw secret never appears. The sanitized commit should therefore record what was removed, what was retained, and which residual leak risks remain.
+
 ## Minimal implementation
 
 The smallest useful implementation is a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
+
+The next useful implementation step is a leak-path fixture set: one allowed handle substitution, one denied destination, one overbroad SCIF context request, one sanitized summary with residual leak risk, and one attempted handle reuse after expiration. That would exercise the boundary without claiming production containment.
 
 ## Codex test plan
 
@@ -181,3 +197,5 @@ The crosswalk names the security/context sources. It does not claim that Ladon, 
 ## Summary
 
 Security Kernel and Digital SCIFs is the stack's least-exposure boundary for secrets and privileged context. The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The next maturity step is a toy handle-substitution fixture, then a stricter threat model for logs, summaries, and side channels.
+
+The same principle returns later as budget discipline and self-improvement discipline. Protected power has a cost, and a system may not declare itself improved by making that cost invisible.
