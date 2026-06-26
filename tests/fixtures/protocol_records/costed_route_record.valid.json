@@ -1,18 +1,24 @@
 {
   "task_id": "route-demo-001",
+  "route_state": "candidate",
+  "task_contract_ref": "intent://demo-drafting-task",
   "quality_predicate": "Draft must preserve listed constraints and pass local review.",
   "authority_ceiling": "write_public_book_only",
   "candidate_routes": ["small-editor", "source-loaded-editor", "human-review"],
   "selected_route": "source-loaded-editor",
   "rejected_lower_cost_routes": ["small-editor: lacked source-note context"],
   "verification_result": "partial",
+  "outcome_state": "not_evaluated",
   "cost_accounting": {
     "estimated_tokens": 4000,
     "estimated_time_seconds": 120,
     "tool_cost_units": 1
   },
+  "cost_classes": ["model/runtime", "context construction", "verification", "human review", "residual"],
+  "hidden_cost_checks": ["source context loaded", "verification cost not measured", "human review not performed"],
   "residual_obligations": ["Run full chapter-level test before promotion."],
   "fallback_route": "human-review",
   "promotion_candidate": false,
+  "support_state_effect": "record_shape_only",
   "non_claims": ["This fixture is not an efficiency benchmark."]
 }

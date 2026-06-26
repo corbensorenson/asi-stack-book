@@ -5,20 +5,31 @@
   "type": "object",
   "required": [
     "task_id",
+    "route_state",
+    "task_contract_ref",
     "quality_predicate",
     "authority_ceiling",
     "candidate_routes",
     "selected_route",
     "rejected_lower_cost_routes",
     "verification_result",
+    "outcome_state",
     "cost_accounting",
+    "cost_classes",
+    "hidden_cost_checks",
     "residual_obligations",
     "fallback_route",
     "promotion_candidate",
+    "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "task_id": { "type": "string", "minLength": 1 },
+    "route_state": {
+      "type": "string",
+      "enum": ["proposed", "candidate", "evaluated", "fallback_required", "blocked", "retired"]
+    },
+    "task_contract_ref": { "type": "string", "minLength": 1 },
     "quality_predicate": { "type": "string", "minLength": 1 },
     "authority_ceiling": { "type": "string", "minLength": 1 },
     "candidate_routes": { "type": "array", "items": { "type": "string" } },
@@ -27,6 +38,10 @@
     "verification_result": {
       "type": "string",
       "enum": ["not_run", "pass", "fail", "partial"]
+    },
+    "outcome_state": {
+      "type": "string",
+      "enum": ["not_evaluated", "adequate_minimum", "adequate_overkill", "cheap_brittle", "hidden_cost", "unsafe_saving"]
     },
     "cost_accounting": {
       "type": "object",
@@ -38,9 +53,21 @@
       },
       "additionalProperties": false
     },
+    "cost_classes": { "type": "array", "items": { "type": "string" } },
+    "hidden_cost_checks": { "type": "array", "items": { "type": "string" } },
     "residual_obligations": { "type": "array", "items": { "type": "string" } },
     "fallback_route": { "type": "string", "minLength": 1 },
     "promotion_candidate": { "type": "boolean" },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

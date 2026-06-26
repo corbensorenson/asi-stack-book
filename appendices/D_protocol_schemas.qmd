@@ -157,18 +157,25 @@ This record preserves the chain from intent to command, plan, job, authority tra
 ```yaml
 layer_boundary_record:
   layer_id: string
+  lifecycle_state: fixture_validated
+  owner: string
   responsibility: string
   input_artifacts: []
   output_artifacts: []
   authority_ceiling: string
+  handoff_protocol: string
+  contract_refs: []
+  change_policy: string
   owned_invariants: []
   failure_modes: []
   evidence_gates: []
   downstream_interfaces: []
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record gives each stack layer a bounded responsibility, input/output surface, authority ceiling, invariant set, failure model, evidence gate, downstream interface, and explicit non-claims.
+This record gives each stack layer a bounded lifecycle state, owner, responsibility, input/output surface, authority ceiling, handoff protocol, contract refs, change policy, invariant set, failure model, evidence gate, downstream interface, source refs, support-state effect, and explicit non-claims.
 
 ## Plan Graph
 
@@ -296,23 +303,29 @@ This record gives context memory transactional semantics for reads, writes, deri
 ```yaml
 costed_route_record:
   task_id: string
+  route_state: candidate
+  task_contract_ref: string
   quality_predicate: string
   authority_ceiling: string
   candidate_routes: []
   selected_route: string
   rejected_lower_cost_routes: []
   verification_result: partial
+  outcome_state: not_evaluated
   cost_accounting:
     estimated_tokens: 0
     estimated_time_seconds: 0
     tool_cost_units: 0
+  cost_classes: []
+  hidden_cost_checks: []
   residual_obligations: []
   fallback_route: string
   promotion_candidate: false
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record keeps efficiency claims tied to route choice, quality predicates, cost accounting, residual obligations, and fallback behavior.
+This record keeps efficiency claims tied to route state, task contract, route choice, quality predicates, outcome state, cost accounting, cost classes, hidden-cost checks, residual obligations, fallback behavior, support-state effect, and non-claims.
 
 ## Resource Budget Record
 

@@ -20,7 +20,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and nine of ten mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
-  - "The costed_route_record fixture validates schema/example consistency only; record-level Lean predicates exist, but route-search completeness, residual-burden measurement, and utility-preserving compression tests remain unimplemented."
+  - "The costed_route_record fixture validates schema/example consistency only; the fixture now records route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims. Record-level Lean predicates exist, but route-search completeness, residual-burden measurement, and utility-preserving compression tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; passage-reviewed local raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector-only/source-note mapped: `moecot` |
-| Test state | `costed_route_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Efficiency` implements finite route-comparison and residual-promotion predicates; route-search, residual-burden, and utility-preserving compression tests remain planned. |
+| Test state | `costed_route_record.valid.json` passes protocol fixture validation for route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims; `AsiStackProofs.Efficiency` implements finite route-comparison and residual-promotion predicates; route-search, residual-burden, and utility-preserving compression tests remain planned. |
 
 ## Drafting guardrail
 
@@ -141,16 +141,23 @@ The interface is the Costed Route Record.
 Minimum fields:
 
 - `task_id`
+- `route_state`
+- `task_contract_ref`
 - `quality_predicate`
 - `authority_ceiling`
 - `candidate_routes`
 - `selected_route`
 - `rejected_lower_cost_routes`
 - `verification_result`
+- `outcome_state`
 - `cost_accounting`
+- `cost_classes`
+- `hidden_cost_checks`
 - `residual_obligations`
 - `fallback_route`
 - `promotion_candidate`
+- `support_state_effect`
+- `non_claims`
 
 Planning supplies the task contract and quality predicate. Routing proposes candidate routes. Governance checks authority ceilings. Execution produces the artifact. Evidence decides whether the cost/quality result is strong enough to compile into a tool, regression, memory, or capability field. Any open obligation remains attached to the route record.
 
@@ -186,13 +193,13 @@ The failure pattern is not only wasting compute. It is misaccounting. Cheap infe
 
 ## Minimal implementation
 
-The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, predicate, route choices, cost accounting, verification result, residual obligations, and fallback.
+The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Costed route record validation | Check that the route fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Costed route record validation | Check that the route fixture records route state, task contract, quality predicate, authority ceiling, route candidates, selected route, rejected lower-cost routes, verification result, outcome state, cost accounting, cost classes, hidden-cost checks, residual obligations, fallback, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
 | Minimum viable route test | Check whether a lower-cost authorized route fails the declared quality predicate before a higher-cost route is selected. | planned; not run |
 | Residual burden accounting test | Check that unresolved obligations remain attached to the route record instead of being hidden inside a success label. | planned; not run |
 | Utility-preserving compression test | Check whether a compressed or generated representation preserves the downstream task utility claimed for it. | planned; not run |
