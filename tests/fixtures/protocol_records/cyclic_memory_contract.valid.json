@@ -1,14 +1,23 @@
 {
   "contract_id": "cyclic-memory-demo-001",
   "memory_target": "toy cyclic memory contract for alias visibility",
+  "memory_authority_scope": "diagnostic structural guardrail only; does not widen source authority or adequacy",
+  "vcm_packet_refs": ["vcm://demo/context-packet"],
   "slot_count": 8,
   "residue_policy": "record slot index modulo slot_count",
   "winding_policy": "record wrap count or provenance when slots are reused",
+  "state_carry_boundary": "fixture records finite slot bookkeeping only",
   "freshness_window": "fixture only; no KV cache tested",
+  "stale_read_policy": "stale reads fail closed or enter residual escrow",
   "coverage_claim": "structural coverage is not semantic coverage",
   "recurrence_schedule": "bounded fixture schedule",
   "loop_exit_condition": "stop after declared budget or route to residual",
   "fallback_attention": "ordinary local or content-gated attention",
+  "admission_state": "structural_guardrail",
+  "baseline_refs": ["ordinary attention", "FIFO or LRU memory", "slot-only control"],
+  "probe_requirements": ["alias probe", "stale-read probe", "recurrence-exit probe"],
+  "authority_non_widening": "mapped slots inherit the original context authority, lease, permitted use, and adequacy boundary",
+  "residuals": ["no KV-cache certifier or learned-memory workload has been run"],
   "non_claims": ["no retrieval quality claim", "no speed or memory claim"],
   "evidence_refs": ["sources/source_notes/coil_attention_memory.md"]
 }

@@ -6,28 +6,85 @@
   "required": [
     "simulation_id",
     "claim_id",
+    "contract_version",
+    "claim_class",
     "scope",
     "fidelity_standard",
+    "fidelity_state",
     "temporal_semantics",
+    "input_assumptions",
     "demand_estimate",
+    "resource_bill",
     "capacity_bottlenecks",
+    "omitted_variables",
     "approximation_liberties",
+    "instrumentation_effects",
     "supported_claim_boundary",
+    "observed_result_boundary",
+    "transfer_decision",
+    "support_state_effect",
+    "failure_behavior",
     "residual_risks",
-    "evidence_refs"
+    "evidence_refs",
+    "non_claims"
   ],
   "properties": {
     "simulation_id": { "type": "string", "minLength": 1 },
     "claim_id": { "type": "string", "minLength": 1 },
+    "contract_version": { "type": "string", "minLength": 1 },
+    "claim_class": {
+      "type": "string",
+      "enum": [
+        "unit_invariant",
+        "benchmark_comparison",
+        "feasibility_estimate",
+        "scenario_exploration",
+        "safety_rehearsal",
+        "speculative_thought_experiment"
+      ]
+    },
     "scope": { "type": "string", "minLength": 1 },
     "fidelity_standard": { "type": "string", "minLength": 1 },
+    "fidelity_state": {
+      "type": "string",
+      "enum": ["declared", "under_specified", "blocked", "not_applicable"]
+    },
     "temporal_semantics": { "type": "string", "minLength": 1 },
+    "input_assumptions": { "type": "array", "items": { "type": "string" } },
     "demand_estimate": { "type": "array", "items": { "type": "string" } },
+    "resource_bill": { "type": "array", "items": { "type": "string" } },
     "capacity_bottlenecks": { "type": "array", "items": { "type": "string" } },
+    "omitted_variables": { "type": "array", "items": { "type": "string" } },
     "approximation_liberties": { "type": "array", "items": { "type": "string" } },
+    "instrumentation_effects": { "type": "array", "items": { "type": "string" } },
     "supported_claim_boundary": { "type": "string", "minLength": 1 },
+    "observed_result_boundary": { "type": "string", "minLength": 1 },
+    "transfer_decision": {
+      "type": "string",
+      "enum": [
+        "transfer_within_boundary",
+        "reduced_scope",
+        "residualized",
+        "blocked",
+        "scenario_only",
+        "speculative_only",
+        "not_evaluated"
+      ]
+    },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "record_shape_only",
+        "argument_only",
+        "eligible_for_bounded_evidence_review",
+        "blocks_promotion"
+      ]
+    },
+    "failure_behavior": { "type": "string", "minLength": 1 },
     "residual_risks": { "type": "array", "items": { "type": "string" } },
-    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

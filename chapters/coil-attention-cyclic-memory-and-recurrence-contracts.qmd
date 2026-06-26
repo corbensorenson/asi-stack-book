@@ -14,7 +14,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
-  - "The cyclic_memory_contract fixture validates schema/example consistency and `AsiStackProofs.CoilAttentionMemory` implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo."
+  - "The cyclic_memory_contract fixture validates schema/example consistency for memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims; `AsiStackProofs.CoilAttentionMemory` implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo."
   - "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence."
   - "VCM material is used only for governed context/addressability, authority, adequacy/admission, taint, revocation, invalidation, audit, and residency boundaries; it does not support recurrence quality, retrieval quality, long-context performance, or learned memory behavior."
   - "No support-state promotion, raw source publication, downstream model-quality result, retrieval-quality result, long-context result, performance result, memory-savings result, or transfer-result claim is implied by this drafting pass."
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `coil_attention_memory`, `circle_ai_contract_suite`; supporting: `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; `vcm_public` uses local raw cache, while Circle and Theseus transfer mappings use pinned local Circle project passages; no Circle/Theseus commands or generated contract artifacts were run/imported here |
-| Test state | `cyclic_memory_contract.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.CoilAttentionMemory` implements finite alias-boundary and coverage/freshness quality-promotion gates; alias, sparse-coverage, recurrence-exit, and freshness behavior tests remain planned. |
+| Test state | `cyclic_memory_contract.valid.json` passes repository-level protocol fixture validation for memory authority, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims; `AsiStackProofs.CoilAttentionMemory` implements finite alias-boundary and coverage/freshness quality-promotion gates; alias, sparse-coverage, recurrence-exit, and freshness behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -83,7 +83,7 @@ Appendix C now records passage-reviewed mappings for all four assigned sources. 
 
 Cyclic memory becomes useful when it exposes mistakes that ordinary long-context language hides. `coil_attention_memory` supplies the structural contract family: residue plus winding, freshness windows, sparse-coverage gaps, recurrence budgets, loop exits, and alias diagnostics. The Circle contract suite supplies theorem-linked receipt language, Theseus transfer keeps structural smoke checks separate from learned-model claims, and VCM keeps context adequacy, authority, taint, invalidation, and admission separate from memory success.
 
-A Cyclic Memory Contract records the finite facts that can be checked while preserving the non-claim that those facts do not prove retrieval, reasoning, speed, memory reduction, or longer usable context.
+A Cyclic Memory Contract records the finite facts that can be checked while preserving the non-claim that those facts do not prove retrieval, reasoning, speed, memory reduction, or longer usable context. It also records the governing context authority, VCM packet refs, state-carry boundary, admission state, baseline obligations, probe requirements, residuals, and the rule that mapping context into cyclic structures cannot widen authority.
 
 The contract is especially useful at the boundary between VCM and model internals. VCM can say what context object was admitted, which authority labels and adequacy labels came with it, and which versions or taints matter. The cyclic-memory contract can then say how that object was represented in slots, windows, recurrence schedules, and fallback paths. Neither layer gets to claim semantic success alone; together they make the evidence trail inspectable.
 
@@ -106,10 +106,12 @@ The contract should record:
 
 - Residue and winding, not residue alone.
 - Provenance for reused slots.
+- VCM packet refs, memory-authority scope, and state-carry boundary.
 - Freshness and stale-read policy.
 - Sparse coverage and uncovered lags.
 - Recurrence depth, active work, loop exits, and overthinking boundary.
 - Fallback to ordinary, local, global, or content-gated attention.
+- Admission state, baseline refs, probe requirements, residuals, and non-widening authority policy.
 - Non-claims about retrieval, reasoning, speed, and quality.
 
 This makes cyclic structure useful as a diagnostic and governance layer without asking it to carry unsupported semantic claims.
@@ -126,14 +128,23 @@ Minimum fields:
 
 - `contract_id`
 - `memory_target`
+- `memory_authority_scope`
+- `vcm_packet_refs`
 - `slot_count`
 - `residue_policy`
 - `winding_policy`
+- `state_carry_boundary`
 - `freshness_window`
+- `stale_read_policy`
 - `coverage_claim`
 - `recurrence_schedule`
 - `loop_exit_condition`
 - `fallback_attention`
+- `admission_state`
+- `baseline_refs`
+- `probe_requirements`
+- `authority_non_widening`
+- `residuals`
 - `non_claims`
 - `evidence_refs`
 
@@ -167,7 +178,7 @@ The subtle failure is structural adequacy laundering. A system proves that a slo
 
 ## Minimal implementation
 
-The smallest useful implementation is a cyclic memory contract schema and fixture. The current fixture records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback, non-claims, and evidence references.
+The smallest useful implementation is a cyclic memory contract schema and fixture. The current fixture records memory target, memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness window, stale-read policy, coverage claim, recurrence schedule, loop exit, fallback, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references.
 
 Passing the fixture does not prove a memory system works. It proves the book can represent the structural claim without blurring it into model quality.
 
@@ -177,7 +188,7 @@ The next useful fixture set is a trio of traces: one slot reuse with winding pre
 
 | Test | Purpose | Status |
 |---|---|---|
-| Cyclic memory contract fixture validation | Validate that a memory contract records slot count, residue and winding policies, freshness window, coverage claim, recurrence schedule, loop exit, fallback attention, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Cyclic memory contract fixture validation | Validate that a memory contract records memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness and stale-read policy, coverage claim, recurrence schedule, loop exit, fallback attention, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Cyclic alias visibility test | Check that reused slots record winding or provenance. | planned; not run |
 | Sparse coverage gap test | Check that uncovered lags are recorded and routed to fallback. | planned; not run |
 | Recurrence budget and exit test | Check that recurrence schedules include active work limits and exit conditions. | planned; not run |

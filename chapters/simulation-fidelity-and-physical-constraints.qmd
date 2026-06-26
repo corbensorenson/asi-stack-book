@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned simulation-fidelity sources; support remains at argument until a physical-computation audit, simulation benchmark, feasibility calculator, independent external literature review, or accepted evidence transition exists."
-  - "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, resource-bound sanity check, approximation audit, or external literature review has been run."
+  - "The simulation_contract_record fixture validates schema/example consistency for contract version, claim class, fidelity state, assumptions, omitted variables, resource bill, instrumentation effects, transfer decision, support-state effect, failure behavior, and non-claims only; no physical-computation audit, simulation benchmark, feasibility calculator, resource-bound sanity check, approximation audit, or external literature review has been run."
   - "Simulation Scaling is treated as internal theoretical synthesis and design framing, not as reproduced physics evidence or an independent literature audit."
   - "Alignment Field is used only for normative/speculative boundary handling around simulation scenarios; it is not physics or simulation evidence, and consciousness/metaphysical claims remain speculative."
   - "No support-state promotion, raw source publication, physical feasibility result, simulator result, or benchmark-transfer result is implied by this drafting pass."
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `simulation_scaling`; supporting: `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `simulation_scaling`, `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field`; raw source text is not published. |
-| Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.SimulationFidelity` implements finite claim-field and fidelity-support predicates; fidelity, resource-bound, approximation-audit, and feasibility tests remain planned. |
+| Test state | `simulation_contract_record.valid.json` passes repository-level protocol fixture validation for contract version, claim class, declared fidelity state, assumptions, omitted variables, resource bill, instrumentation effects, transfer decision, support-state effect, failure behavior, and non-claims; `AsiStackProofs.SimulationFidelity` implements finite claim-field and fidelity-support predicates; fidelity, resource-bound, approximation-audit, and feasibility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -85,7 +85,7 @@ Appendix C now records passage-reviewed mappings for all five assigned sources. 
 
 Simulation is a substrate only after it becomes an instrument with a declared contract. `simulation_scaling` supplies the feasibility frame: scope, clockspeed, fidelity, temporal semantics, efficiency, and bottlenecks have to be named before a result can mean anything. CGS and RankFold/NeuralFold add the hidden-burden warning: a compact simulator or stored trace can hide complexity in residuals, manifests, reconstruction checks, or storage costs. TokenMana adds the budget pressure, and `alignment_field` keeps speculative agency and metaphysical claims from becoming engineering evidence.
 
-A Simulation Contract Record makes that boundary inspectable. It records the simulated target, the fidelity promise, the resource bill, the approximation liberties, and the exact claim boundary the simulation is allowed to support.
+A Simulation Contract Record makes that boundary inspectable. It records the simulated target, contract version, claim class, fidelity promise, assumptions, omitted variables, resource bill, approximation liberties, instrumentation effects, transfer decision, failure behavior, support-state effect, non-claims, and the exact claim boundary the simulation is allowed to support.
 
 The record also separates three uses that are often conflated. A simulation can be a unit-test surface for a local invariant, a benchmark surface for comparing systems under declared approximations, or a scenario surface for exploring possible risks. These uses have different evidential weight. Unit tests can check a narrow transition. Benchmarks can compare behavior inside the environment. Scenarios can organize imagination and red-team thinking. None of those automatically proves physical feasibility, open-world transfer, or moral significance.
 
@@ -108,12 +108,17 @@ flowchart LR
 The record should specify:
 
 - Scope: what system, variables, agents, or degrees of freedom are represented.
+- Claim class: invariant check, benchmark comparison, feasibility estimate, scenario exploration, safety rehearsal, or speculative thought experiment.
 - Fidelity standard: what accuracy or abstraction level is required.
+- Fidelity state: declared, under-specified, blocked, or not applicable.
 - Temporal semantics: real-time, faster-than-real-time, offline, or event-driven.
+- Input assumptions and omitted variables.
 - Demand estimate: compute, memory, bandwidth, storage, latency, and energy assumptions.
+- Resource bill and instrumentation effects.
 - Capacity bottlenecks: the limiting physical or infrastructure resources.
 - Approximation liberties: simplifications, omissions, and model mismatches.
 - Claim boundary: what the simulation can and cannot support.
+- Transfer decision, support-state effect, failure behavior, residual risks, and non-claims.
 
 This turns simulation from a vague substrate into a bounded experimental instrument.
 
@@ -129,15 +134,27 @@ Minimum fields:
 
 - `simulation_id`
 - `claim_id`
+- `contract_version`
+- `claim_class`
 - `scope`
 - `fidelity_standard`
+- `fidelity_state`
 - `temporal_semantics`
+- `input_assumptions`
 - `demand_estimate`
+- `resource_bill`
 - `capacity_bottlenecks`
+- `omitted_variables`
 - `approximation_liberties`
+- `instrumentation_effects`
 - `supported_claim_boundary`
+- `observed_result_boundary`
+- `transfer_decision`
+- `support_state_effect`
+- `failure_behavior`
 - `residual_risks`
 - `evidence_refs`
+- `non_claims`
 
 Benchmarks record fidelity limits. Resource budgets account for simulation cost. Evidence states prevent approximate simulations from supporting claims beyond their contract. Prototype roadmaps use the record to decide whether a simulation is a useful test surface or just an attractive metaphor.
 
@@ -169,7 +186,7 @@ The subtle failure is simulation laundering. A synthetic environment is used to 
 
 ## Minimal implementation
 
-The smallest useful implementation is a simulation contract schema and fixture. The current fixture records scope, fidelity, time semantics, demand, bottlenecks, approximations, supported claim boundary, residuals, and evidence references.
+The smallest useful implementation is a simulation contract schema and fixture. The current fixture records contract version, claim class, scope, fidelity state, time semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximations, instrumentation effects, supported claim boundary, observed-result boundary, transfer decision, support-state effect, failure behavior, residuals, evidence references, and non-claims.
 
 Passing the fixture does not show feasibility. It makes the feasibility claim inspectable.
 
@@ -179,7 +196,7 @@ The next useful fixture set is a simulation receipt suite: one unit-invariant re
 
 | Test | Purpose | Status |
 |---|---|---|
-| Simulation contract record fixture validation | Validate that a simulation claim records scope, fidelity, temporal semantics, demand, bottlenecks, approximation liberties, supported boundary, residual risks, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Simulation contract record fixture validation | Validate that a simulation claim records contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Fidelity declaration test | Check that every simulation claim declares scope, fidelity, and temporal semantics. | planned; not run |
 | Resource-bound sanity check | Check that demand and capacity bottlenecks are named before feasibility is claimed. | planned; not run |
 | Simulation approximation audit | Check that conclusions do not exceed approximation and fidelity boundaries. | planned; not run |

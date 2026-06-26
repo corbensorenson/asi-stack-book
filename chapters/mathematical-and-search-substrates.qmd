@@ -21,7 +21,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all eleven assigned mathematical/search-substrate sources; support remains at argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, local Circle builds, Mamba comparisons, or accepted evidence transitions exist."
-  - "The substrate_adoption_record fixture validates schema/example consistency for adoption state, consumer gate, axis ledger, and non-claims only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, local Circle build, Circle sidecar run, or Theseus transfer consumer run has been executed from this repo."
+  - "The substrate_adoption_record fixture validates schema/example consistency for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, local Circle build, Circle sidecar run, or Theseus transfer consumer run has been executed from this repo."
   - "Temporal Coil, Circle, and Theseus references include source-reported or local-project process/fixture context, but this repo did not rerun or import their artifacts as validated book evidence."
   - "TreeLLM and CoilLattice claims are treated as speculative representation-substrate proposals until a verified token format, implementation, compression result, reasoning benchmark, or grounding benchmark exists."
   - "Mamba is used only as external sequence-substrate context from the public arXiv abstract/metadata; no local Mamba training, serving, benchmark, routing, or downstream-quality result is implied."
@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`; connector/recovery: `coilmoecot` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; local raw-cache mappings exist for `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, and `simulation_scaling`; `coilmoecot` is connector/source-note reviewed because its raw cache is an auth-gate placeholder; Circle and Theseus mappings use pinned local-project references; `ext_mamba_2023` uses public arXiv abstract/metadata and a local source note; raw private source text is not published. |
-| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for record shape, consumer gate, axis ledger, and non-claims; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
 
 ## Drafting guardrail
 
@@ -98,7 +98,7 @@ Appendix C now records passage-reviewed mappings for all eleven assigned sources
 
 Substrate adoption is a promotion protocol, not a catalog entry. GenesisCode keeps proposals behind a small-kernel, capability, replay, and obligation boundary. Temporal Coil Research says cyclic mechanisms need manifest-driven A/B variants and multiseed readouts before they are believed. Cognitive Compilation and TreeLLM show how compiler IR and semantic graphs can become candidate substrates without becoming authority sources. Simulation Scaling and Mamba keep resource and sequence-backbone claims separate from downstream quality, while Circle and CoilMoECOT keep cyclic specialists optional until proof boundaries and benchmark gates are real.
 
-A Substrate Adoption Record turns that discipline into a routing object. It asks what the substrate is for, what baseline it must beat, what would falsify it, what proof or structural facts are actually available, which consumers may read it, which claim axes remain unmeasured, and whether the correct state is exploratory, structural-only, canary, qualified-for-scope, retired, superseded, or blocked.
+A Substrate Adoption Record turns that discipline into a routing object. It asks what the substrate is for, what baseline it must beat, what would falsify it, what proof or structural facts are actually available, which consumers may read it, which claim axes remain unmeasured, what routing permission follows, which ordinary substrate remains the fallback, and whether the correct state is exploratory, structural-only, canary, qualified-for-scope, retired, superseded, or blocked.
 
 The important move is from fascination to accountability. A coil, calculus, state-space layer, graph substrate, compiler IR, or cyclic backend is not evaluated by how suggestive it feels. It is evaluated by a declared workload and by the failure cases that would stop adoption. If the substrate only has a structural proof, the record says structural-only. If it has a benchmark plan but no run, the axis ledger says planned or unmeasured. If it fails a baseline, the failure becomes part of the research memory instead of disappearing into the next promising variant.
 
@@ -121,12 +121,13 @@ The record should separate:
 - Substrate identity and intended use.
 - Expected advantage.
 - Required baselines and negative controls.
+- Baseline obligations such as shared workload, metric definitions, data conditions, hardware notes, and fallback policy.
 - Proof or structural facts, if any.
 - Workload, metric, script, and report requirements.
-- Consumer gate and allowed uses.
+- Consumer gate, consumer policy, and routing-permission effect.
 - Axis ledger for structural, speed, memory, routing, compression, search, verifier, and downstream-quality claims.
 - Falsification condition.
-- Adoption decision and residuals.
+- Adoption decision, fallback substrate, retirement or supersession path, support-state effect, and residuals.
 - Explicit non-claims.
 
 This lets the architecture keep a library of promising substrates without turning the library into a mythology.
@@ -155,13 +156,19 @@ Minimum fields:
 - `intended_use`
 - `expected_advantage`
 - `baseline_refs`
+- `baseline_obligations`
 - `negative_controls`
 - `proof_boundary`
 - `experiment_requirements`
 - `consumer_gate`
+- `consumer_policy`
 - `axis_ledger`
 - `falsification_condition`
 - `adoption_state`
+- `routing_permission_effect`
+- `fallback_substrate`
+- `retirement_or_supersession_path`
+- `support_state_effect`
 - `residuals`
 - `evidence_refs`
 - `non_claims`
@@ -199,7 +206,7 @@ The subtle failure is theorem spillover. A proof of an address, phase, recurrenc
 
 ## Minimal implementation
 
-The smallest useful implementation is a substrate adoption schema and fixture. The current fixture records the candidate, intended use, advantage, baselines, negative controls, proof boundary, experiment requirements, consumer gate, axis ledger, falsification condition, adoption state, residuals, evidence references, and non-claims.
+The smallest useful implementation is a substrate adoption schema and fixture. The current fixture records the candidate, intended use, advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate and policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, residuals, evidence references, and non-claims.
 
 Passing the fixture does not prove a substrate. It prevents the book from describing adoption without the fields that adoption requires.
 
@@ -209,7 +216,7 @@ The next useful fixture set is a substrate-adoption trace: exploratory registrat
 
 | Test | Purpose | Status |
 |---|---|---|
-| Substrate adoption record fixture validation | Validate that a candidate substrate records intended use, expected advantage, baselines, negative controls, proof boundary, experiment requirements, consumer gate, axis ledger, falsification condition, adoption state, residuals, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Substrate adoption record fixture validation | Validate that a candidate substrate records intended use, expected advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate/policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement or supersession path, support-state effect, residuals, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |

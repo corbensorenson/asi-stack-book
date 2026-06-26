@@ -4,10 +4,12 @@
   "intended_use": "Candidate feature family for future A/B tests",
   "expected_advantage": "May expose periodic structure when the workload actually contains it",
   "baseline_refs": ["coil off", "ordinary dense or learned baseline"],
+  "baseline_obligations": ["same workload", "same metric definitions", "same hardware notes"],
   "negative_controls": ["wrong-period control", "nonperiodic control"],
   "proof_boundary": "no local proof or benchmark has been run",
   "experiment_requirements": ["multiseed readout", "isolated component variants", "promotion metrics"],
   "consumer_gate": "May be used for research planning only; cannot feed routing, compression, model-quality, or performance claims without workload evidence.",
+  "consumer_policy": "Consumers may cite this record for exploratory planning and blocked-axis tracking only.",
   "axis_ledger": [
     {
       "axis": "structure",
@@ -24,6 +26,10 @@
   ],
   "falsification_condition": "No improvement against baselines or confounded wins after controls",
   "adoption_state": "exploratory",
+  "routing_permission_effect": "planning_only",
+  "fallback_substrate": "ordinary dense or learned baseline remains the default",
+  "retirement_or_supersession_path": "retire or narrow the substrate if controls fail, workloads do not match, or a simpler baseline dominates",
+  "support_state_effect": "record_shape_only",
   "residuals": ["no temporal-coil A/B artifacts imported"],
   "evidence_refs": ["sources/source_notes/temporal_coil_research.md"],
   "non_claims": ["no substrate promotion", "no runtime improvement", "no model-quality improvement"]

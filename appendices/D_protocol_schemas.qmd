@@ -372,18 +372,30 @@ This record makes fast-generation mode selection auditable. It separates propose
 simulation_contract_record:
   simulation_id: string
   claim_id: string
+  contract_version: string
+  claim_class: scenario_exploration
   scope: string
   fidelity_standard: string
+  fidelity_state: declared
   temporal_semantics: string
+  input_assumptions: []
   demand_estimate: []
+  resource_bill: []
   capacity_bottlenecks: []
+  omitted_variables: []
   approximation_liberties: []
+  instrumentation_effects: []
   supported_claim_boundary: string
+  observed_result_boundary: string
+  transfer_decision: not_evaluated
+  support_state_effect: record_shape_only
+  failure_behavior: string
   residual_risks: []
   evidence_refs: []
+  non_claims: []
 ```
 
-This record bounds simulation claims by scope, fidelity, temporal semantics, demand, bottlenecks, approximations, supported claim boundary, residual risks, and evidence references.
+This record bounds simulation claims by contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximations, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.
 
 ## Substrate Adoption Record
 
@@ -394,10 +406,12 @@ substrate_adoption_record:
   intended_use: string
   expected_advantage: string
   baseline_refs: []
+  baseline_obligations: []
   negative_controls: []
   proof_boundary: string
   experiment_requirements: []
   consumer_gate: string
+  consumer_policy: string
   axis_ledger:
     - axis: string
       status: unmeasured
@@ -405,12 +419,16 @@ substrate_adoption_record:
       non_claims: []
   falsification_condition: string
   adoption_state: exploratory
+  routing_permission_effect: planning_only
+  fallback_substrate: string
+  retirement_or_supersession_path: string
+  support_state_effect: record_shape_only
   residuals: []
   evidence_refs: []
   non_claims: []
 ```
 
-This record keeps optional mathematical, search, cyclic, and representation substrates from becoming core architecture before baselines, controls, proof boundaries, experiment requirements, consumer gates, axis-specific evidence, falsification conditions, evidence, residuals, and non-claims are visible.
+This record keeps optional mathematical, search, cyclic, and representation substrates from becoming core architecture before baselines, baseline obligations, controls, proof boundaries, experiment requirements, consumer gates/policies, axis-specific evidence, routing-permission effects, fallback substrates, falsification and retirement paths, support-state effects, residuals, evidence, and non-claims are visible.
 
 ## Cyclic Memory Contract
 
@@ -418,19 +436,28 @@ This record keeps optional mathematical, search, cyclic, and representation subs
 cyclic_memory_contract:
   contract_id: string
   memory_target: string
+  memory_authority_scope: string
+  vcm_packet_refs: []
   slot_count: 0
   residue_policy: string
   winding_policy: string
+  state_carry_boundary: string
   freshness_window: string
+  stale_read_policy: string
   coverage_claim: string
   recurrence_schedule: string
   loop_exit_condition: string
   fallback_attention: string
+  admission_state: structural_guardrail
+  baseline_refs: []
+  probe_requirements: []
+  authority_non_widening: string
+  residuals: []
   non_claims: []
   evidence_refs: []
 ```
 
-This record captures finite cyclic-memory, sparse-coverage, freshness, and recurrence facts without converting them into retrieval, reasoning, speed, memory, or quality claims.
+This record captures finite cyclic-memory, sparse-coverage, freshness, and recurrence facts, plus VCM chain-of-custody, state-carry boundaries, admission state, baselines, probes, non-widening authority, and residuals, without converting them into retrieval, reasoning, speed, memory, or quality claims.
 
 ## Cyclic Mixer Evaluation Record
 
@@ -438,20 +465,30 @@ This record captures finite cyclic-memory, sparse-coverage, freshness, and recur
 cyclic_mixer_evaluation_record:
   evaluation_id: string
   substrate_id: string
+  workload_target: string
   structural_invariant: string
+  receipt_refs: []
   proof_or_receipt_boundary: string
   alias_diagnostics: []
   load_diagnostics: []
   parameter_accounting: string
   hardware_kernel_notes: []
+  hardware_refusal_path: string
   baseline_refs: []
+  baseline_symmetry_policy: string
+  negative_controls: []
+  resource_costs: []
   metrics_required: []
+  metrics_status: not_run
+  tradeoff_packet_ref: string
+  consumer_policy: string
   adoption_state: structural_only
+  adoption_decision_rationale: string
   non_claims: []
   evidence_refs: []
 ```
 
-This record separates cyclic adapter, RoPE, phase-bank, and mixer structural facts from quality, runtime, memory, context-length, and deployment claims, while requiring baselines and tradeoff metrics before adoption.
+This record separates cyclic adapter, RoPE, phase-bank, and mixer structural facts from quality, runtime, memory, context-length, and deployment claims, while requiring workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet refs, consumer policy, and adoption rationale before adoption.
 
 ## Specialist Registry Record
 

@@ -2675,7 +2675,7 @@ Draft arc:
 - Mechanism: Use the contract to decide whether a simulation supports a unit invariant, a bounded benchmark, a roadmap constraint, or only a speculative scenario note.
 - Mechanism: Route failed or under-specified simulation claims into residuals, reduced scope, or blocked status instead of treating approximate worlds as ground truth.
 - Mechanism: Treat simulation as a translation problem whose results can travel back only along the declared variables, omissions, bottlenecks, and fidelity boundary.
-- Mechanism: emit fidelity receipts that record contract version, assumptions, omitted variables, resource bill, observed result, claim boundary, transfer decision, and instrumentation effects.
+- Mechanism: emit fidelity receipts that record contract version, claim class, fidelity state, assumptions, omitted variables, resource bill, observed result boundary, claim boundary, transfer decision, support-state effect, failure behavior, instrumentation effects, and non-claims.
 - Interface: Efficiency theory uses resource constraints.
 - Interface: Benchmarks record fidelity limits.
 - Interface: Alignment scenarios avoid unbounded simulation claims.
@@ -2698,7 +2698,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A simulation-fidelity checklist and cost/fidelity table for experiment design.
-- Implemented repository-level fixture: `simulation_contract_record.valid.json` validates the simulation-contract record shape only; no feasibility calculator, simulation benchmark, or external physical-computation audit exists yet.
+- Implemented repository-level fixture: `simulation_contract_record.valid.json` validates the simulation-contract record shape, claim class, fidelity state, transfer decision, support-state effect, failure behavior, instrumentation effects, and non-claims only; no feasibility calculator, simulation benchmark, or external physical-computation audit exists yet.
 - Planned Codex test: Fidelity declaration test.
 - Planned Codex test: Resource-bound sanity check.
 - Planned Codex test: Simulation approximation audit.
@@ -2743,7 +2743,7 @@ Draft arc:
 - Interface: Evidence compares against baselines.
 - Interface: Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records.
 - Interface: maintain an axis ledger for structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality.
-- Interface: require consumer gates so a substrate record can support structural discussion without supporting routing, compression, runtime, or model-quality promotion.
+- Interface: require consumer gates, consumer policies, routing-permission effects, fallback substrates, and retirement/supersession paths so a substrate record can support structural discussion without supporting routing, compression, runtime, or model-quality promotion.
 
 Primary invariants:
 
@@ -2765,7 +2765,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A technical-substrate appendix plan with experiment matrix and adoption gates.
-- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, consumer gate, axis ledger, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
+- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
@@ -2865,7 +2865,7 @@ Draft arc:
 - Mechanism: Expose alias, freshness, coverage, active-token, work-saving, fallback, stale-read, and loop-exit fields as auditable outputs with explicit non-claims.
 - Mechanism: Preserve VCM authority and adequacy labels while comparing slot-only, slot-plus-winding, FIFO, LRU, content-gated, ordinary attention, and ordinary memory baselines before promoting retrieval, reasoning, speed, or memory claims.
 - Mechanism: Keep structural memory facts separate from useful-memory claims, so freshness, coverage, and exits become diagnostic guardrails rather than retrieval-quality evidence.
-- Mechanism: treat cyclic and sparse memory contracts as admission-control structures with VCM packet chain-of-custody, recurrence work budgets, and workload-evaluation eligibility.
+- Mechanism: treat cyclic and sparse memory contracts as admission-control structures with memory-authority scope, VCM packet chain-of-custody, state-carry boundaries, stale-read policy, recurrence work budgets, baseline obligations, non-widening authority, and workload-evaluation eligibility.
 - Interface: VCM context traces expose context adequacy and authority labels.
 - Interface: Attention and memory modules consume contract fields as diagnostic guardrails.
 - Interface: Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads.
@@ -2892,7 +2892,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
-- Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-memory workload exists yet.
+- Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape, memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-memory workload exists yet.
 - Planned Codex test: Cyclic alias visibility test
 - Planned Codex test: Sparse coverage gap test
 - Planned Codex test: Recurrence budget and exit test
@@ -2928,7 +2928,7 @@ Draft arc:
 - Mechanism: Attach receipt boundaries, alias diagnostics, load diagnostics, parameter accounting, hardware-kernel notes, and real-valued-versus-discretized limits before interpreting model behavior.
 - Mechanism: Promote the substrate only after quality, runtime, memory, parameter, transfer, and failure-case tradeoffs are measured against ordinary baselines and negative controls.
 - Mechanism: Keep structural, resource, and empirical ledgers separate so exact cyclic facts, parameter accounting, and measured workload behavior cannot spend evidence credit for one another.
-- Mechanism: use cyclic tradeoff packets with structural receipts, workload target, baseline set, resource costs, consumer policy, hardware refusal path, adoption state, and non-claims.
+- Mechanism: use cyclic tradeoff packets with structural receipts, workload target, receipt refs, baseline set, baseline-symmetry policy, negative controls, resource costs, metrics status, consumer policy, hardware refusal path, adoption rationale, and non-claims.
 - Interface: Semantic representation chapters define when cyclic structure is actually present.
 - Interface: Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries.
 - Interface: Resource-economics chapters account for parameters, kernels, memory, and latency.
@@ -2955,7 +2955,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
-- Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
+- Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape, workload target, receipt refs, hardware refusal path, baseline symmetry, negative controls, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, and non-claims only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
 - Planned Codex test: RoPE receipt boundary test
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic
