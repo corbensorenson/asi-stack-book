@@ -3301,7 +3301,7 @@ Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 - Insufficiency: Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
-- Mechanism: Represent the integrated stack as a Reference Trace Record that names intent, authority chain, layer handoffs, emitted artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims.
+- Mechanism: Represent the integrated stack as a Reference Trace Record that names trace state, execution boundary, intent, parent artifacts, authority chain/deltas, layer handoffs, emitted artifacts, evidence updates/deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims.
 - Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, compression/procedural loop closure, and SCF improvement gates without collapsing layer boundaries.
 - Mechanism: Show the artifact emitted by each layer: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, residual, or capability-field transition.
 - Mechanism: Identify where authority can stop, narrow, reroute, quarantine, rollback, or require review before downstream work proceeds.
@@ -3326,7 +3326,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
-- Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape only; no integrated runtime trace harness, artifact continuity audit, or authority stop-condition checker exists yet.
+- Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims only; no integrated runtime trace harness, artifact continuity audit, or authority stop-condition checker exists yet.
 - Planned Codex test: End-to-end intent trace test.
 - Planned Codex test: Artifact continuity audit.
 - Planned Codex test: Authority stop-condition test.

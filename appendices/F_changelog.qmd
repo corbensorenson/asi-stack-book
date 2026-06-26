@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal reference trace delta gates
+
+- Strengthened the integrated-reference trace boundary: reference trace records now validate trace state, execution boundary, parent artifact refs, authority deltas, evidence deltas, residual deltas, promotion blockers, source refs, support-state effect, and non-claims in addition to intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, and validation commands. Updated the Integrated Reference Architecture chapter, outline, protocol appendix, schema, and fixture so future dry-run traces can distinguish conceptual fixtures, replayable traces, blocked paths, and runtime evidence without claiming deployed stack execution, artifact continuity, authority-stop enforcement, report replay, support-state promotion, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal replacement transaction state gates
 
 - Strengthened the capability replacement boundary: replacement transaction records now validate transaction state, canary scope, monitor status, promotion blockers, source refs, support-state effect, and non-claims in addition to identity preservation, evaluator independence, residual escrow, rollback plan, rollback receipt, approval, and decision. Updated the replacement chapter, outline, protocol appendix, schema, and fixture so future self-improvement work can distinguish proposed/shadow/canary/default/rollback states from regression preservation, rollback dry-run evidence, monitor-window success, deployed replacement, support-state promotion, proof-status promotion, runtime result, reader artifact, or audio artifact.

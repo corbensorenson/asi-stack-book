@@ -5,28 +5,53 @@
   "type": "object",
   "required": [
     "trace_id",
+    "trace_state",
+    "execution_boundary",
     "intent_ref",
+    "parent_artifact_refs",
     "authority_chain",
+    "authority_deltas",
     "layer_handoffs",
     "artifacts",
     "evidence_updates",
+    "evidence_deltas",
+    "residual_deltas",
     "stop_conditions",
     "missing_contracts",
     "validation_commands",
+    "promotion_blockers",
+    "source_refs",
     "support_state_effect",
     "non_claims"
   ],
   "properties": {
     "trace_id": { "type": "string", "minLength": 1 },
+    "trace_state": {
+      "type": "string",
+      "enum": ["conceptual", "fixture_validated", "dry_run", "replayed", "blocked", "retired"]
+    },
+    "execution_boundary": {
+      "type": "string",
+      "enum": ["conceptual_only", "fixture_only", "dry_run", "runtime_trace", "replay", "external_report"]
+    },
     "intent_ref": { "type": "string", "minLength": 1 },
+    "parent_artifact_refs": { "type": "array", "items": { "type": "string" } },
     "authority_chain": { "type": "array", "items": { "type": "string" } },
+    "authority_deltas": { "type": "array", "items": { "type": "string" } },
     "layer_handoffs": { "type": "array", "items": { "type": "string" } },
     "artifacts": { "type": "array", "items": { "type": "string" } },
     "evidence_updates": { "type": "array", "items": { "type": "string" } },
+    "evidence_deltas": { "type": "array", "items": { "type": "string" } },
+    "residual_deltas": { "type": "array", "items": { "type": "string" } },
     "stop_conditions": { "type": "array", "items": { "type": "string" } },
     "missing_contracts": { "type": "array", "items": { "type": "string" } },
     "validation_commands": { "type": "array", "items": { "type": "string" } },
-    "support_state_effect": { "type": "string", "minLength": 1 },
+    "promotion_blockers": { "type": "array", "items": { "type": "string" } },
+    "source_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "record_shape_only", "argument_only", "eligible_for_trace_review", "blocks_promotion"]
+    },
     "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false

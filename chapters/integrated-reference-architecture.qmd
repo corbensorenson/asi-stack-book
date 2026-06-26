@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "viea"
   - "scf"
@@ -30,7 +30,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twenty assigned sources, including source-note-only review for MoECOT and VCM Editable plus pinned local Theseus project-file references; support remains argument until integrated trace artifacts, tests, reproduced reports, or accepted evidence transitions justify promotion."
-  - "The reference_trace_record fixture validates schema/example consistency and AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace harness, authority stop-condition checker, artifact continuity audit, deployed runtime, or report replay has been run."
+  - "The reference_trace_record fixture validates schema/example consistency, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace harness, authority stop-condition checker, artifact continuity audit, deployed runtime, or report replay has been run."
   - "Local Theseus project references are report-first implementation context only; no current Theseus reports, dashboards, commands, board steps, compiler proof, or benchmark ledgers were rerun or independently inspected from this repository."
   - "No support-state promotion, integrated runtime claim, benchmark success, model-quality result, deployment readiness, or raw source publication is implied."
 ---
@@ -43,13 +43,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
+| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
 
 ## Drafting guardrail
 
@@ -139,7 +139,7 @@ The important feature is that every participant emits something durable enough f
 - Artifacts and evidence ledgers provide continuity.
 - SCF gates control improvement.
 
-The interface is the Reference Trace Record: a finite public record of intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
+The interface is the Reference Trace Record: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
 A useful trace record is not merely chronological. It records parentage, authority deltas, evidence deltas, and residual deltas. Parentage says which artifact produced the next artifact. Authority deltas say whether authority narrowed, expired, escalated, or was denied. Evidence deltas say which claim state changed, if any. Residual deltas say what risk or missing work survived the handoff. Without those deltas, the trace becomes a log of events rather than an architecture record.
 
@@ -167,7 +167,7 @@ The subtle failure is integration theater: every layer name appears in the diagr
 
 ## Minimal implementation
 
-The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
+The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
 The next useful implementation step is a tiny dry-run trace set with one approved flow and one blocked flow. The approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. The blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. That would still be a fixture, not a runtime result, but it would make the architecture's stop conditions executable.
 
@@ -175,7 +175,7 @@ The next useful implementation step is a tiny dry-run trace set with one approve
 
 | Test | Purpose | Status |
 |---|---|---|
-| Reference trace record fixture validation | Validate that an end-to-end trace record names intent, authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Reference trace record fixture validation | Validate that an end-to-end trace record names trace state, execution boundary, intent, parent artifacts, authority chain/deltas, layer handoffs, artifacts, evidence updates/deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | End-to-end intent trace test | Execute or replay a demo from intent to plan, context, claim, job, artifact, and evidence record with stable IDs at every layer. | planned; not run |
 | Artifact continuity audit | Check that every handoff cites parent artifacts, authority refs, evidence refs, residuals, and missing-contract records where needed. | planned; not run |
 | Authority stop-condition test | Check that missing authorization, violated stop conditions, or unaccepted residuals block execution rather than becoming silent warnings. | planned; not run |

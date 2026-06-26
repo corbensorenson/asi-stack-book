@@ -1,10 +1,20 @@
 {
   "trace_id": "reference-trace-demo-001",
+  "trace_state": "fixture_validated",
+  "execution_boundary": "fixture_only",
   "intent_ref": "intent://living-book-fixture-boundary-pass",
+  "parent_artifact_refs": [
+    "book_structure.json",
+    "docs/book_outline.md"
+  ],
   "authority_chain": [
     "human goal authorizes book maintenance",
     "publication validation gates public-surface changes",
     "support-state discipline blocks unsupported promotion"
+  ],
+  "authority_deltas": [
+    "book maintenance authority does not grant claim promotion authority",
+    "publication authority does not grant runtime execution authority"
   ],
   "layer_handoffs": [
     "intent contract -> chapter revision",
@@ -21,6 +31,14 @@
     "fixture validation records shape only",
     "Quarto render records publication viability"
   ],
+  "evidence_deltas": [
+    "record-shape validation added",
+    "no claim support state increased"
+  ],
+  "residual_deltas": [
+    "end-to-end runtime trace remains planned",
+    "artifact continuity audit remains planned"
+  ],
   "stop_conditions": [
     "validation failure",
     "missing source note for a source-derived claim",
@@ -33,7 +51,13 @@
     "python3 scripts/validate_protocol_examples.py",
     "quarto render --to html"
   ],
-  "support_state_effect": "keeps integrated architecture support at argument until trace harnesses exist",
+  "promotion_blockers": [
+    "no integrated runtime trace harness",
+    "no artifact continuity audit",
+    "no authority stop-condition checker"
+  ],
+  "source_refs": ["sources/source_notes/viea.md", "sources/source_notes/scf.md", "sources/source_notes/vcm_public.md"],
+  "support_state_effect": "record_shape_only",
   "non_claims": [
     "does not prove the full ASI Stack is implemented",
     "does not report runtime deployment results"

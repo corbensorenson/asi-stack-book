@@ -1708,19 +1708,27 @@ This record separates Lean proofs, executable specs, schema contracts, process c
 ```yaml
 reference_trace_record:
   trace_id: string
+  trace_state: fixture_validated
+  execution_boundary: fixture_only
   intent_ref: string
+  parent_artifact_refs: []
   authority_chain: []
+  authority_deltas: []
   layer_handoffs: []
   artifacts: []
   evidence_updates: []
+  evidence_deltas: []
+  residual_deltas: []
   stop_conditions: []
   missing_contracts: []
   validation_commands: []
-  support_state_effect: string
+  promotion_blockers: []
+  source_refs: []
+  support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record makes an end-to-end architecture trace inspectable without claiming the full runtime exists. It records authority chain, layer handoffs, artifacts, evidence updates, stop conditions, missing contracts, validation commands, support-state effect, and non-claims.
+This record makes an end-to-end architecture trace inspectable without claiming the full runtime exists. It records trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims.
 
 ## Tribunal Review Record
 
