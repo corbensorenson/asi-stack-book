@@ -4,7 +4,7 @@ chapter_id: "procedural-memory-and-cognitive-loop-closure"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only, and support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
-  - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, or regression harness has been run for this chapter."
+  - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, procedure-qualification, negative-example preservation, or regression harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,13 +31,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/source-note mapped only: `moecot` |
-| Test state | Procedural tool fixture validation implemented; `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates; loop-detection and regression behavior tests remain planned. |
+| Test state | Procedural tool fixture validation implemented; `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates; loop-detection, procedure-qualification, negative-example preservation, retirement-trigger, and regression behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -97,19 +97,21 @@ RMI and RGS connect this path to the broader ratchet: benchmark pressure creates
 
 ```{mermaid}
 flowchart LR
-  A["Artifact traces"] --> B["Loop detector"]
+  A["Candidate traces"] --> B["Loop cluster"]
   B --> C["Invariant abstraction"]
   C --> D["Parameter discovery"]
-  D --> E["Tool synthesis"]
-  E --> F["Verification + regressions"]
-  F --> G{"Promote?"}
-  G -- "yes" --> H["Tool registry"]
-  G -- "no" --> I["Residual / retire"]
-  H --> J["Routing + monitoring"]
+  D --> E["Tool candidate"]
+  E --> F["Verification + negative examples"]
+  F --> G{"Qualified reuse?"}
+  G -- "yes" --> H["Routable tool card"]
+  G -- "no" --> I["Quarantine / residual / retire"]
+  H --> J["SCF, benchmark floor, monitoring"]
   I --> J
 ```
 
 The loop-closure path starts with safe traces that preserve provenance, failures, residuals, and replay limits. Comparable traces justify detection; detection leads to invariant abstraction, parameter discovery, preconditions, postconditions, and then candidate synthesis. Verification, regressions, monitoring, and retirement criteria decide whether the candidate becomes routable, remains in quarantine, returns to revision, or is retired.
+
+The chapter's state machine should be explicit enough for a future implementation to refuse reuse. A trace starts as a `candidate_trace`, becomes a `loop_cluster` only when there are comparable cases, becomes a `tool_candidate` only after the invariant and parameters are named, becomes `verified_reuse` only after checks and negative examples bound the envelope, becomes `routable` only through an SCF/readiness gate, and can later be `quarantined` or `retired`. The existing public fixture validates the smaller `procedural_tool_record` shape; these states define the fuller procedure-qualification discipline the next harness should implement.
 
 A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
@@ -124,6 +126,8 @@ The interface is the Procedural Tool Record.
 - Artifact graph supplies traces.
 - Routing selects new tools.
 - Evidence tests utility and regressions.
+
+A fuller Procedure Qualification Packet should sit around the record when the tool is being promoted. It should include the candidate trace set, rejected traces, near misses, abstraction rationale, parameter-discovery notes, precondition and postcondition evidence, SCF target, benchmark floor, risk tier, authority requirement, monitoring signal, retirement trigger, and explicit non-claims. The packet is not a success badge; it is the material a gate needs in order to say yes, no, quarantine, or retire.
 
 Minimum fields:
 
@@ -151,6 +155,8 @@ SCFs give the generated tool a capability boundary; benchmark ratchets give it a
 - Only verified loops become tools.
 - Parameters and assumptions are explicit.
 - Tool promotion records residuals and regressions.
+- Negative examples stay attached to the reusable procedure.
+- Retirement triggers are part of the tool, not later maintenance notes.
 
 The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
 
@@ -161,6 +167,8 @@ A second invariant is scope fidelity. The generated tool may be narrower than th
 - Premature toolification.
 - Hidden assumptions.
 - Procedural memory poisoning.
+- Anecdote closure, where one appealing trace becomes a tool without a comparable cluster.
+- Route drift, where a verified tool is reused outside its SCF, benchmark floor, or authority envelope.
 
 Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Each failure should keep the tool in draft, residual, quarantine, or retired state.
 
@@ -176,14 +184,19 @@ The fixture validates only a candidate tool-card shape. It does not prove repeat
 
 The next useful implementation step is a miniature trace set with three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
 
+That harness should also prove a negative path: a candidate with a missing near-miss, stale precondition, failed benchmark floor, or retired SCF stays in quarantine. The book does not need a large production loop detector to demonstrate the discipline; it needs a small public-safe fixture that shows how reuse can be denied.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Procedural tool fixture validation | Check that the procedural-tool fixture matches the public schema and declares source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring, residuals, regressions, lifecycle, and retirement criteria. | implemented by protocol validation; run in this pass |
 | Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | planned; not run |
+| Procedure qualification state test | Check that a trace cannot jump from candidate trace to routable tool without loop clustering, abstraction, parameter discovery, verification, and readiness review. | planned; not run |
+| Negative-example preservation test | Check that near misses, rejected traces, and failures remain attached to the candidate and narrow its scope. | planned; not run |
 | Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | planned; not run |
 | Verified tool regression test | Check that failed regression blocks routable promotion. | planned; not run |
+| Retirement trigger test | Check that stale preconditions, failed floors, or SCF retirement move a routable tool to quarantine or retired state. | planned; not run |
 
 Only fixture-shape validation is implemented. The remaining tests need repeated traces, synthesized tool candidates, regression cases, and routing/retirement decisions.
 

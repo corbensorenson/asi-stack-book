@@ -1860,6 +1860,8 @@ Draft arc:
 - Mechanism: Abstract invariant structure, discover parameters, record preconditions/postconditions, synthesize candidate tools, verify them, attach regressions and monitoring, then promote, quarantine, revise, or retire.
 - Mechanism: Treat procedural memory as verified reuse, not habit: comparable successes, near misses, failures, negative examples, scope limits, and retirement criteria must travel with the tool card.
 - Mechanism: Bind generated tools back to SCF boundaries and benchmark floors so tool promotion, routing, monitoring, and retirement remain governed by field identity and regression evidence.
+- Mechanism: Track procedure-qualification states such as candidate trace, loop cluster, tool candidate, verified reuse, routable, quarantined, and retired so a useful trace cannot jump directly into reusable behavior.
+- Mechanism: Emit a Procedure Qualification Packet with candidate traces, rejected traces, near misses, abstraction rationale, parameter-discovery notes, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and explicit non-claims.
 - Handoff: Verified procedural tools become routable candidates for Part III, while failed or uncertain loops remain residuals.
 - Interface: Artifact graph supplies traces.
 - Interface: Routing selects new tools.
@@ -1870,12 +1872,16 @@ Primary invariants:
 - Only verified loops become tools.
 - Parameters and assumptions are explicit.
 - Tool promotion records residuals and regressions.
+- Negative examples stay attached to the reusable procedure.
+- Retirement triggers are part of the tool definition.
 
 Failure modes to cover:
 
 - Premature toolification.
 - Hidden assumptions.
 - Procedural memory poisoning.
+- Anecdote closure, where one appealing trace becomes a tool without a comparable trace cluster.
+- Route drift outside the SCF, benchmark floor, or authority envelope.
 
 Draft deliverables:
 
@@ -1883,8 +1889,11 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for procedural memory: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Planned Codex test: Loop detection test.
+- Planned Codex test: Procedure qualification state test.
+- Planned Codex test: Negative-example preservation test.
 - Planned Codex test: Tool abstraction test.
 - Planned Codex test: Verified tool regression test.
+- Planned Codex test: Retirement trigger test.
 
 Lean proof targets:
 
@@ -2969,6 +2978,8 @@ Draft arc:
 - Mechanism: Record source-reported, synthetic, empirical, negative, and inconclusive results as distinct evidence states rather than cleanup notes.
 - Mechanism: Separate book-build checks, schema fixtures, synthetic examples, source-reported results, reproduced benchmarks, and empirical capability results before allowing any support-state movement.
 - Mechanism: Attach ratchets to SCF boundaries and procedural tools so benchmark history preserves field-specific floors, tool retirement pressure, and claim-specific evidence scope.
+- Mechanism: Use explicit benchmark evidence states such as candidate metric, schema-fixture pass, synthetic probe, source-reported, locally reproduced, regression floor, frontier probe, contaminated, blocked, and retired so fixture/build/source status cannot masquerade as empirical capability evidence.
+- Mechanism: Emit a Benchmark Ratchet Packet with evidence class, benchmark ownership, run command, environment, baseline, public-calibration boundary, contamination surface, hidden/transfer status, exact movable claim, exact non-claims, reviewer decision, residual escrow, and support-state effect.
 - Interface: Routing and SCFs use readiness gates.
 - Interface: Evidence matrix records support movement.
 - Interface: Changelog records evidence changes.
@@ -2978,12 +2989,16 @@ Primary invariants:
 - No test success is claimed without execution.
 - Synthetic and empirical evidence remain distinct.
 - Regressions are preserved.
+- Source-reported, synthetic, fixture, reproduced, and empirical results remain separate evidence classes.
+- Saturated benchmarks become regression floors rather than broad readiness claims.
 
 Failure modes to cover:
 
 - Benchmark overfitting.
 - Hidden regression deletion.
 - Claim support inflation.
+- Evidence-class collapse.
+- Floor/frontier inversion.
 
 Draft deliverables:
 
@@ -2991,6 +3006,9 @@ Draft deliverables:
 - Implemented repository-level fixture: `benchmark_ratchet_record.valid.json` validates benchmark-ratchet record shape only; no benchmark run, contamination audit, hidden-transfer test, or regression-preservation test exists yet.
 - Planned Codex test: Saturation detection test.
 - Planned Codex test: Hidden benchmark transfer test.
+- Planned Codex test: Contamination audit test.
+- Planned Codex test: Floor/frontier split test.
+- Planned Codex test: Source-reported boundary test.
 - Planned Codex test: Regression preservation test.
 
 Lean proof targets:
@@ -3249,6 +3267,8 @@ Draft arc:
 - Mechanism: Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
 - Mechanism: Treat source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims as separate evidence categories so Theseus remains an implementation reference rather than laundered capability evidence.
 - Mechanism: Extend the report crosswalk to human-control artifacts: originating intent contract, approval receipt, agency checklist, rollback/shutdown path, operator work-board item, and review residual.
+- Mechanism: Track Theseus report evidence states such as source-note-only, report-imported, artifact-missing, replay-ready, replay-failed, locally-reproduced, runtime-blocked, and archived-lineage.
+- Mechanism: Emit a Theseus Report Packet with intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims.
 - Interface: The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
 - Interface: Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
 - Interface: Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
@@ -3262,6 +3282,8 @@ Primary invariants:
 - Private experiments and public calibration remain separated.
 - Unknown task kinds are blocked rather than guessed.
 - Architecture changes follow the intervention ladder.
+- Latest-file status never overwrites report lineage.
+- Current-state claims require current artifacts, not historical source-note lineage.
 
 Failure modes to cover:
 
@@ -3271,14 +3293,19 @@ Failure modes to cover:
 - Architecture churn outruns residual diagnosis.
 - Remote work proceeds without allowlists, TTLs, or kill switches.
 - Local prototype results are overclaimed as public evidence.
+- Report-state drift.
+- Missing-artifact smoothing.
 
 Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
 - Implemented repository-level fixture: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only; no live Theseus report bundle, replay command, benchmark environment, or current gate output has been imported or rerun.
+- Planned Codex test: Report-bundle completeness test
+- Planned Codex test: Replay-readiness test
 - Planned Codex test: Theseus report crosswalk completeness test
 - Planned Codex test: Architecture gate mapping test
 - Planned Codex test: Work-board improvement contract test
+- Planned Codex test: Artifact-gap audit
 - Planned Codex test: Self-evolution intervention ladder audit
 
 Lean proof targets:

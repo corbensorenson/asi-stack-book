@@ -4,7 +4,7 @@ chapter_id: "project-theseus-as-report-first-implementation-reference"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_plan_compiler"
@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all six assigned Theseus sources using pinned local project-file references; support remains argument until current reports, replay commands, benchmark environments, public-safe artifacts, or accepted evidence transitions justify promotion."
-  - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates only; no live Theseus report bundle, replay command, benchmark environment, current gate output, work-board step, or transfer-lane consumer has been imported or rerun."
+  - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates only; no live Theseus report bundle, replay command, benchmark environment, current gate output, work-board step, artifact-gap audit, or transfer-lane consumer has been imported or rerun."
   - "Theseus implementation references are report-first context only; source-reported snapshots, dashboards, compiler status, gate state, self-evolution machinery, board state, and transfer-lane reports are not promoted without current artifacts."
   - "No support-state promotion, benchmark result, model-quality result, deployment readiness, public-compute readiness, autonomous-improvement success, or raw source publication is implied."
 ---
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` |
 | Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
-| Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.TheseusReference` implements finite implementation-reference artifact-surface and gate-before-promotion predicates; report crosswalk, architecture-gate mapping, work-board, and self-evolution ladder audits remain planned. |
+| Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.TheseusReference` implements finite implementation-reference artifact-surface and gate-before-promotion predicates; report crosswalk, report-bundle completeness, replay-readiness, architecture-gate mapping, work-board, artifact-gap, and self-evolution ladder audits remain planned. |
 
 ## Drafting guardrail
 
@@ -86,6 +86,8 @@ Theseus is useful here because it makes the stack operationally visible. The whi
 
 The operator OS adds the human-control surface. Work does not disappear into a dashboard; it becomes board state, command vocabulary, node eligibility, hook output, feedback route, and safety-visible control. The Circle transfer lane adds a second boundary: deterministic structural fixtures can shape private experiments, but they cannot become model-quality evidence without named workloads, baselines, metrics, scripts, and reports.
 
+The evidence ladder should stay visible in every Theseus reference: `source_note_only`, `report_imported`, `artifact_missing`, `replay_ready`, `replay_failed`, `locally_reproduced`, `runtime_blocked`, and `archived_lineage`. These states let the book use Theseus as implementation guidance without pretending that a historical note, a dashboard panel, a local report, and a reproduced command have the same evidential weight. The current crosswalk fixture only validates a public-safe row; it does not import a live bundle or advance any row on that ladder.
+
 The implementation-reference view is two coupled loops: the Theseus report loop that turns pressure into governed structure, and the Circle transfer lane that can supply deterministic contract fixtures without becoming model-quality evidence.
 
 ```{mermaid}
@@ -94,7 +96,8 @@ flowchart LR
   Plan --> Route["Octopus router and bounded arms"]
   Route --> Work["SymLiquid, tools, Hive task kinds"]
   Work --> Reports["Reports, ledgers, traces, work board"]
-  Reports --> Gate["Architecture, resource, promotion, and safety gates"]
+  Reports --> Evidence["Evidence state and missing-artifact row"]
+  Evidence --> Gate["Architecture, resource, promotion, and safety gates"]
   Gate --> Residual["Residual escrow and intervention ladder"]
   Residual --> Structure["Tool, adapter, checkpoint, or smallest source change"]
   Structure --> Goal
@@ -119,6 +122,8 @@ That distinction is the public safety valve. Source-note lineage can explain why
 
 The interface is the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
 
+For future ingestion, the crosswalk should be wrapped in a Theseus Report Packet. The packet should name the originating intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims. A packet can be source-note-only, imported, replay-ready, reproduced, failed, blocked, or archived. Only reproduced or otherwise accepted evidence transitions should affect Appendix C.
+
 The crosswalk should also name the human-control artifacts where they exist: originating intent contract, approval receipt, agency checklist, rollback or shutdown path, operator work-board item, and review residual. Those fields keep implementation detail connected to the alignment and governance layers instead of letting Part IV become a purely technical appendix.
 
 ## Invariants
@@ -131,6 +136,8 @@ The Theseus invariants preserve the boundary between report-first implementation
 - Private experiments and public calibration remain separated.
 - Unknown task kinds are blocked rather than guessed.
 - Architecture changes follow the intervention ladder.
+- Latest-file status never overwrites report lineage.
+- Current-state claims require current artifacts, not historical source-note lineage.
 
 The strongest invariant is report primacy: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
 
@@ -144,6 +151,8 @@ A second invariant is currentness. A pinned source file can support design linea
 - Architecture churn outruns residual diagnosis.
 - Remote work proceeds without allowlists, TTLs, or kill switches.
 - Local prototype results are overclaimed as public evidence.
+- Report-state drift, where an imported or historical report is narrated as a current reproduced run.
+- Missing-artifact smoothing, where absent commands, environment notes, checksums, or permissions disappear from the public boundary.
 
 Each failure should produce a residual, blocked promotion, or missing-artifact row. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
 
@@ -157,14 +166,19 @@ The current fixture validates only that public-safe crosswalk shape. It does not
 
 The next useful implementation step is a public-safe miniature report bundle. It should include one goal contract, one plan/compiler artifact, one work-board item, one gate record, one residual, one non-claim, and one review note. That would let the book demonstrate report-first discipline without exposing private runs or implying general capability evidence.
 
+The miniature bundle should deliberately include one missing artifact and one replay-blocked artifact. Those negative rows would make the test useful: a report-first system is credible not because every row is green, but because the absent and blocked rows survive the summary and prevent stronger claims.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
 | Theseus report crosswalk fixture validation | Validate that a report-first reference row names source reports, config/tool refs, gates, residuals, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Report-bundle completeness test | Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported. | planned; not run |
+| Replay-readiness test | Check that replay-ready rows name command, environment, input boundary, artifact checksum, expected output class, and failure behavior. | planned; not run |
 | Theseus report crosswalk completeness test | Import a public-safe Theseus report bundle and verify that every cited report, config, gate, residual, and missing artifact maps to a stack layer. | planned; not run |
 | Architecture gate mapping test | Check that each Theseus gate maps to an ASI Stack promotion, rollback, quarantine, or residual-retention decision. | planned; not run |
 | Work-board improvement contract test | Check that a work-board item declares objective, gate, evidence artifact, residual, owner, and completion criterion before being treated as progress. | planned; not run |
+| Artifact-gap audit | Check that missing commands, environment notes, checksums, publication permissions, or private artifacts stay visible and block support movement. | planned; not run |
 | Self-evolution intervention ladder audit | Check that proposed self-evolution interventions are ordered by risk and authority and cannot skip the required review level. | planned; not run |
 
 The implemented row validates fixture/schema consistency only. The remaining rows require imported or reproduced Theseus report artifacts; they are not reported benchmark or readiness results. When a Theseus audit is implemented, this chapter should link to the command, fixture, report bundle, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.

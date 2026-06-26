@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-26"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -22,7 +22,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twelve assigned sources, including source-note-only review for connector/recovery sources; support remains argument until run records, benchmark artifacts, contamination audits, regression-preservation tests, hidden-transfer tests, local Theseus report verification, or accepted evidence transitions justify promotion."
-  - "The benchmark_ratchet_record fixture validates schema/example consistency and AsiStackProofs.BenchmarkRatchets implements finite record predicates only; no benchmark run, hidden holdout, mutation test, transfer check, contamination audit, regression preservation test, source-reported benchmark replay, or current Theseus report verification has been run."
+  - "The benchmark_ratchet_record fixture validates schema/example consistency and AsiStackProofs.BenchmarkRatchets implements finite record predicates only; no benchmark run, hidden holdout, mutation test, transfer check, contamination audit, floor/frontier split audit, regression preservation test, source-reported benchmark replay, or current Theseus report verification has been run."
   - "Connector/recovery mappings for Coherence Exchange, MoECOT, and Road To AGI were reviewed against source notes only because raw connector text is not published here; they remain planning/status context rather than benchmark evidence."
   - "No support-state promotion, benchmark success, runtime readiness, model quality, deployment readiness, or raw source publication is implied."
 ---
@@ -35,13 +35,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-26 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence and saturated-benchmark higher-readiness gates; saturation, transfer, and regression-preservation behavior tests remain planned. |
+| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence and saturated-benchmark higher-readiness gates; saturation, transfer, contamination-audit, floor/frontier split, source-reported-boundary, and regression-preservation behavior tests remain planned. |
 
 ## Drafting guardrail
 
@@ -96,22 +96,25 @@ Appendix C now records twelve passage-reviewed mappings for this chapter. Those 
 
 A benchmark ratchet turns a result into an evidence-state transition, not a celebration. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
 
+The ratchet needs evidence states that are harder to confuse than a single pass/fail flag: `candidate_metric`, `schema_fixture_pass`, `synthetic_probe`, `source_reported`, `locally_reproduced`, `regression_floor`, `frontier_probe`, `contaminated`, `blocked`, and `retired`. These states are not all encoded as separate fields in the current minimal schema, but the chapter needs them as drafting and implementation vocabulary so future agents cannot spend a fixture pass as benchmark evidence or a source-reported command as local reproduction.
+
 The ratchet has two memories. The first is a regression memory: once a behavior matters, later systems must keep passing it or explicitly explain why the requirement changed. The second is a frontier memory: once a benchmark stops applying pressure, it should be retired into a floor and replaced by harder, less predictable work. The stack therefore does not ask whether a benchmark is "solved" in the abstract. It asks what the benchmark is allowed to prove now, what it must continue to guard, and what new pressure is needed next.
 
 This creates an asymmetry that is useful for governance. Failure can immediately create a residual, a diagnosis, a regression, or a blocked promotion. Success only opens a review path. To become evidence, success must survive baseline comparison, negative-result accounting, hidden or transfer checks where appropriate, contamination review, and a claim-specific promotion decision. That asymmetry is deliberate: it is cheaper to record uncertainty than to repair an overpromoted capability.
 
 ```{mermaid}
 flowchart LR
-  A["Benchmark frontier"] --> B["Run record + baseline"]
-  B --> C["Mastery, saturation, and wall diagnosis"]
-  C --> D["Residual escrow + negative results"]
-  D --> E["Regression floor"]
-  E --> F["Holdout, transfer, mutation, and contamination checks"]
-  F --> G{"Promote readiness or claims?"}
-  G -- "yes" --> H["Harder frontier + preserved floor"]
-  G -- "no" --> I["Blocked promotion / residual queue"]
-  H --> J["Claim/evidence matrix"]
-  I --> J
+  A["Candidate metric or frontier"] --> B["Evidence-state classification"]
+  B --> C["Run record, baseline, environment"]
+  C --> D["Mastery, saturation, wall diagnosis"]
+  D --> E["Residual escrow + negative results"]
+  E --> F["Regression floor and harder frontier split"]
+  F --> G["Holdout, transfer, mutation, contamination"]
+  G --> H{"Promote readiness or claims?"}
+  H -- "yes" --> I["Scoped support-state transition"]
+  H -- "no" --> J["Blocked promotion / residual queue"]
+  I --> K["Claim/evidence matrix"]
+  J --> K
 ```
 
 The record should track benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
@@ -141,6 +144,8 @@ Minimum fields:
 - `support_state_effect`
 - `negative_results`
 
+The operational packet around those fields should also name the evidence class, benchmark ownership, public-calibration boundary, contamination surface, hidden/transfer status, fixture-vs-run distinction, exact claim that could move, exact claim that cannot move, and the reviewer or automation that made the promotion decision. If any of those are unknown, the packet can still be useful, but it cannot move a support state.
+
 Routing and SCFs consume readiness. Appendix C records support movement only when evidence permits it. The changelog records evidence changes. Prototype roadmap phases cannot use benchmark success as evidence without the run record.
 
 Procedural memory consumes benchmark ratchets as retirement pressure. If a generated tool fails a preserved floor, it should be revised, quarantined, or retired. If a benchmark saturates, it may still guard the tool as a regression even when it no longer justifies a stronger claim.
@@ -152,6 +157,8 @@ Procedural memory consumes benchmark ratchets as retirement pressure. If a gener
 - Regressions are preserved.
 - Saturated benchmarks become regression floors, not permanent definitions of intelligence.
 - Negative and inconclusive results remain visible.
+- Source-reported, synthetic, fixture, reproduced, and empirical results never collapse into one evidence class.
+- Public-calibration boundaries are preserved even when a benchmark is useful for orientation.
 
 The strongest invariant is claim specificity. A benchmark can support only the claim it actually measured, under the recorded conditions. Broader readiness, deployment safety, model quality, or ASI-progress claims require their own evidence.
 
@@ -162,6 +169,8 @@ The strongest invariant is claim specificity. A benchmark can support only the c
 - Claim support inflation.
 - Source-reported results presented as reproduced results.
 - Public-calibration leakage.
+- Evidence-class collapse, where a schema fixture, book-build check, synthetic probe, or source-reported command is narrated like empirical capability evidence.
+- Floor/frontier inversion, where a saturated regression floor is used to justify broad readiness while the new frontier remains untested.
 
 Each failure blocks promotion or downgrades support state until the evidence boundary is repaired.
 
@@ -173,6 +182,8 @@ The smallest useful implementation is a benchmark ratchet schema and fixture. Th
 
 The next useful implementation step is a toy ratchet ledger with one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. That would demonstrate support-state restraint without claiming empirical capability.
 
+The toy ledger should include one intentionally contaminated case and one source-reported-only case. Those cases are useful because they force the harness to preserve evidence boundaries: contamination creates a blocked or quarantine decision, and source-reported status remains source-reported until the exact command, environment, data boundary, and artifacts are imported or rerun.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
@@ -180,6 +191,9 @@ The next useful implementation step is a toy ratchet ledger with one passing run
 | Benchmark ratchet record fixture validation | Validate that a ratchet record names benchmark state, run refs, baselines, saturation, residual escrow, anti-Goodhart checks, promotion decision, support effect, and negative results. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Saturation detection test | Check that saturated benchmarks move to regression rather than broad promotion. | planned; not run |
 | Hidden benchmark transfer test | Check that transfer and contamination fields exist before support promotion. | planned; not run |
+| Contamination audit test | Check that suspected leakage, public-calibration spending, or benchmark-answer exposure blocks or quarantines promotion. | planned; not run |
+| Floor/frontier split test | Check that a saturated benchmark can become a regression floor while a different frontier remains required for stronger claims. | planned; not run |
+| Source-reported boundary test | Check that source-reported commands or benchmark summaries cannot be marked locally reproduced without imported artifacts and replay metadata. | planned; not run |
 | Regression preservation test | Check that promoted capabilities keep prior regression refs. | planned; not run |
 
 ### Formalization hooks
