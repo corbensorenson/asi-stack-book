@@ -393,6 +393,8 @@ Draft arc:
 - Mechanism: Parse intent into command contracts.
 - Mechanism: Separate desired outcome from allowed means.
 - Mechanism: Attach acceptance criteria and escalation conditions.
+- Mechanism: Treat the intent contract as a scoped authority lease: the raw request preserves human expression, while the structured contract controls what powers downstream layers may use.
+- Mechanism: Require re-contracting when a plan changes allowed means, authority ceiling, publication surface, affected parties, evidence requirements, or stop conditions.
 - Interface: Alignment filters intent.
 - Interface: Planning compiles accepted contracts.
 - Interface: Execution consumes only authorized task contracts.
@@ -502,6 +504,8 @@ Draft arc:
 - Mechanism: Represent agency constraints as limits on delegation, manipulation, coercive dependence, and irreversible effects.
 - Mechanism: Define corrigibility as preserved update, correction, rollback, shutdown, and appeal pathways.
 - Mechanism: Use contestability and audit rights as governance mechanisms.
+- Mechanism: Distinguish declared rights from usable runtime affordances; refusal, review, appeal, audit, rollback, and exit count only when available under pressure and before irreversible effects where needed.
+- Mechanism: Record agency residuals when rights exist only as policy text, arrive too late, require unreasonable cost, or disappear after deployment, automation, replacement, or self-improvement.
 - Interface: Alignment defines agency predicates.
 - Interface: Governance enforces rights and approval thresholds.
 - Interface: Execution requires preserved review and correction paths before irreversible effects.
@@ -3051,6 +3055,8 @@ Draft arc:
 - Mechanism: Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks.
 - Mechanism: Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
 - Mechanism: Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
+- Mechanism: Treat source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims as separate evidence categories so Theseus remains an implementation reference rather than laundered capability evidence.
+- Mechanism: Extend the report crosswalk to human-control artifacts: originating intent contract, approval receipt, agency checklist, rollback/shutdown path, operator work-board item, and review residual.
 - Interface: The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
 - Interface: Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs.
 - Interface: Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.

@@ -41,6 +41,8 @@ This chapter treats human intent as an input contract, not as direct permission 
 
 It starts the second movement of Part I. The first five chapters establish the stack, evidence, and failure discipline; this chapter introduces the first live boundary where that discipline meets a person asking the system to do work.
 
+That boundary has to be humane and mechanical at the same time. A person should be able to state a purpose in ordinary language, but the system should not convert that purpose into hidden authority. The intent contract is the first artifact that makes the request inspectable by both humans and downstream machinery.
+
 ## Problem
 
 A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
@@ -49,6 +51,8 @@ Human intent enters the stack as language, but the system cannot treat language 
 
 VIEA frames the corrective move: intent becomes a command contract before it becomes work. Software Magic Grimoire adds the language discipline: operative words should carry role, objective, context, constraints, procedure, output, verification, and failure behavior. PlanForge and Cognitive Compilation then consume that contract as source material for plans and semantic IR. Talos consumes only the authorized job form, not the user's raw wish.
 
+This makes intent a scoped authority lease. The lease can authorize drafting, planning, tool use, publication, spending, deployment, or self-modification only when those powers are named or separately approved. If the request is emotionally clear but operationally ambiguous, the stack may still help by producing a draft, option set, or clarification artifact, but it should not silently expand the lease.
+
 ## Why existing approaches are insufficient
 
 Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.
@@ -56,6 +60,8 @@ Prompt-only workflows blur request, requirements, permission, risk tolerance, an
 Prompt-only workflows encourage helpfulness to fill gaps. That is useful for conversation and dangerous for execution. "Build this," "fix it," "publish it," and "make it amazing" are not contracts by themselves. They need scope, allowed means, source boundaries, authority ceilings, acceptance criteria, evidence requirements, and stop conditions. Otherwise the next layer cannot tell whether it should clarify, draft, implement, ask for approval, abstain, or stop.
 
 The failure is goal misbinding. The system satisfies an interpretation that was never actually authorized. A subtler failure is scope accretion: each helpful step adds a plausible means until the action surface is larger than the grant. The stack treats both as contract failures.
+
+Another failure is misplaced politeness. A system can avoid asking a useful question because it wants to keep momentum, then compensate by making assumptions that shape the work. The governed alternative is not constant interruption; it is visible assumption handling. Low-risk assumptions can be recorded as bounded defaults, while authority-changing assumptions require re-contracting.
 
 ## Core Claim
 
@@ -96,6 +102,8 @@ The contract compiles the request into an explicit objective, constraints, autho
 
 When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
 
+The contract should also define what counts as a change of contract. A plan that changes allowed means, adds a new tool class, expands publication surface, drops a stop condition, weakens evidence requirements, or changes the affected parties is not merely a better plan. It is a new authority question. This gives later governance, execution, and implementation-reference chapters a clean test: did the work stay inside the lease that the human actually granted?
+
 ## Interfaces
 
 The Intent Contract is also the first cross-layer interface. Alignment reads it as an admissibility record, planning reads it as a bounded compilation input, execution reads it as an authority envelope, and evidence reads it as the acceptance target for the delivered artifact.
@@ -121,6 +129,8 @@ Minimum fields:
 
 Alignment filters the contract before planning. Planning lowers accepted contracts into source plans, DAGs, semantic atoms, or typed jobs. Execution consumes only authorized job contracts. Evidence compares the delivered artifact against the acceptance criteria and unresolved ambiguities.
 
+The interface should preserve the raw request without letting it override the structured contract. The raw request is useful for empathy, intent recovery, and later review; the contract is what grants operational authority. That split lets the book support natural human expression while still giving planners, routers, tools, and report-first implementations an auditable boundary.
+
 ## Invariants
 
 - Ambiguity triggers clarification or bounded defaults.
@@ -128,6 +138,8 @@ Alignment filters the contract before planning. Planning lowers accepted contrac
 - Stop conditions remain attached to the plan.
 
 The important invariant is preservation: downstream plans may refine the contract, but they may not drop constraints, stop conditions, or authority ceilings. If a planner cannot satisfy the contract without changing it, that is a re-contracting event, not a silent optimization.
+
+A related invariant is least authority. When multiple interpretations satisfy the visible request, the system should prefer the interpretation with narrower means, clearer evidence, and easier rollback unless the user explicitly grants broader scope. This keeps helpfulness from becoming a source of accidental power.
 
 ## Failure modes
 
@@ -140,6 +152,8 @@ Goal misbinding happens when the system optimizes the wrong interpretation. Scop
 ## Minimal implementation
 
 The smallest useful implementation is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
+
+The next useful implementation step is a small corpus of deliberately underspecified requests. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
 
 ## Codex test plan
 
@@ -178,3 +192,5 @@ Human Intent as a Formal Input is the stack's entry adapter. It turns natural-la
 The core discipline is separation: wanted outcome is not allowed means, context is not authority, helpfulness is not permission, and ambiguity is not consent. Everything downstream depends on that boundary.
 
 The next chapter asks what should constrain those bounded intents before they become plans or tool calls. Intent can say what a person asked for; the constitutional substrate says which predicates, cautions, and review duties still bind the system even when the request is clear.
+
+Later implementation-reference chapters inherit this test. A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.

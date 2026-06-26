@@ -43,17 +43,23 @@ This chapter uses Project Theseus sources as report-first implementation referen
 
 The previous chapter defines the integrated trace as a design target. This chapter narrows that target into an implementation-reference boundary: Theseus can show what report-first machinery should look like, but reports, ledgers, configs, gates, and work-board records must remain distinct from public proof of capability. A dashboard can orient the reader; only artifacts can carry a claim.
 
+This chapter also closes a loop opened in Part I. Human intent and agency rights are not abstract front matter if an implementation can show the contract, approval, report, residual, and gate trail for real work. Conversely, an implementation reference that cannot show those artifacts may still inspire design, but it should not be treated as governed evidence.
+
 ## Problem
 
 The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. Project Theseus is useful because its source notes describe pressure loops, plan compiler contracts, architecture gates, work boards, residual escrow, and self-evolution controls as reportable machinery.
 
 The boundary is just as important as the reference. A report-first architecture can guide this book, but the public repo cannot claim current Theseus benchmark performance, training readiness, or self-evolution safety unless the relevant reports, commands, environment notes, and publication permissions are present here.
 
+The implementation-reference role is therefore narrower and more useful than a prototype success story. Theseus gives the book a vocabulary for operating local machinery: pressure, attempt, residual, diagnosis, report, gate, work board, checkpoint, and smallest safe intervention. The living book can adopt that vocabulary while still refusing to launder private or source-reported status into public evidence.
+
 ## Why existing approaches are insufficient
 
 A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system. Dashboards and summaries are especially risky because they can hide the run record that should carry the claim.
 
 This chapter therefore treats reports, ledgers, configs, and work-board entries as the authority surface. Dashboard prose is a view over those artifacts, not a substitute for them.
+
+A report-first implementation is especially important for self-improving systems because the tempting story is always "the loop improved itself." The governed story has to be more specific: which pressure was admitted, which authority lease allowed the attempt, which artifact changed, which gate passed or failed, which residual remained, and which human review path stayed available.
 
 ## Core Claim
 
@@ -102,6 +108,8 @@ flowchart LR
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
 
+That distinction is the public safety valve. Source-note lineage can explain why a mechanism appears in the book. Imported reports can show what a local system recorded. Reproduced runs can support a narrower evidence transition. Missing artifacts keep claims from moving. Public non-claims prevent readers and future agents from treating a local implementation reference as a general capability result.
+
 ## Interfaces
 
 - The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces.
@@ -110,6 +118,8 @@ Operationally, the layer should produce artifacts that can be inspected without 
 - Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
 
 The interface is the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
+
+The crosswalk should also name the human-control artifacts where they exist: originating intent contract, approval receipt, agency checklist, rollback or shutdown path, operator work-board item, and review residual. Those fields keep implementation detail connected to the alignment and governance layers instead of letting Part IV become a purely technical appendix.
 
 ## Invariants
 
@@ -124,6 +134,8 @@ The Theseus invariants preserve the boundary between report-first implementation
 
 The strongest invariant is report primacy: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
 
+A second invariant is currentness. A pinned source file can support design lineage, but it cannot prove today's dashboard state, benchmark result, model quality, safety gate, or readiness status. Current-state claims require current artifacts, commands, environment notes, and publication permission.
+
 ## Failure modes
 
 - Latest-file report overwrites history.
@@ -135,11 +147,15 @@ The strongest invariant is report primacy: if a claim relies on a run, gate, ben
 
 Each failure should produce a residual, blocked promotion, or missing-artifact row. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
 
+Another failure is operator invisibility. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
+
 ## Minimal implementation
 
 The smallest useful implementation is a Theseus report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
 
 The current fixture validates only that public-safe crosswalk shape. It does not import a current Theseus report bundle or reproduce a benchmark.
+
+The next useful implementation step is a public-safe miniature report bundle. It should include one goal contract, one plan/compiler artifact, one work-board item, one gate record, one residual, one non-claim, and one review note. That would let the book demonstrate report-first discipline without exposing private runs or implying general capability evidence.
 
 ## Codex test plan
 
@@ -180,3 +196,5 @@ The crosswalk keeps the reference public-safe. The whitepaper supplies the RMI/r
 Project Theseus gives the book a concrete report-first implementation reference: pressure, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance.
 
 The public boundary is strict. Until current reports, commands, environments, and permissioned artifacts are imported or reproduced, Theseus remains a design/reference source for the ASI Stack rather than public empirical proof of capability. The next chapter converts that caution into a build order: evidence infrastructure first, capability growth second, self-improvement last.
+
+That caution is what makes the reference valuable. The chapter shows what kind of implementation evidence the stack should want, while keeping the public book honest about what it actually has.

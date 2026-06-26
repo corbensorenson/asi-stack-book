@@ -42,6 +42,8 @@ This chapter converts agency, dignity, and corrigibility into runtime rights and
 
 It follows the constitutional substrate by narrowing broad commitments into the human-facing interfaces where optimization can most easily become domination, dependency, or loss of correction.
 
+The chapter's practical stance is that rights must be usable interfaces, not declarations. A right to refuse, appeal, audit, exit, or correct has engineering meaning only when the path is present at the moment pressure is applied and when using the path does not require special knowledge, social leverage, or unreasonable cost.
+
 ## Problem
 
 The book needs a precise account of how human agency and dignity constrain powerful optimization.
@@ -50,6 +52,8 @@ The previous chapter defines constitutional predicates. This chapter focuses on 
 
 The alignment-field and Ethica Mechanica sources are valuable here as authorial and normative lineage, not empirical proof. The engineering translation is concrete: high-impact plans should carry rights, review channels, reversibility checks, approval thresholds, and correction pathways. Corrigibility is not an attitude the model claims to have; it is the persistence of update, refusal, appeal, shutdown, rollback, and audit paths.
 
+This moves the book away from treating agency as a sentiment attached to safety prose. Agency is the user's remaining ability to shape, reject, inspect, and recover from the system's action. Dignity is not reducible to comfort; it includes not being converted into a managed object by an optimizer. Corrigibility is the architecture's willingness to keep those channels open even when closing them would make the plan faster.
+
 ## Why existing approaches are insufficient
 
 Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.
@@ -57,6 +61,8 @@ Safety framed only as harm avoidance can miss domination, lock-in, coercive depe
 Harm avoidance can be too narrow. A system may avoid obvious harm while shaping choices, increasing dependency, making alternatives impractical, or creating governance surfaces that ordinary users cannot inspect. A helpful system can also become manipulative if it optimizes compliance, convenience, or engagement without preserving refusal and review.
 
 The missing object is an agency-rights check attached to high-impact plans. It asks whether the user can refuse, understand, appeal, exit, reverse, audit, and hold a responsible party accountable.
+
+That check has to be concrete enough to fail. If the user technically has an appeal path but cannot find it, cannot use it before the effect occurs, or cannot obtain a meaningful remedy, the path should be recorded as missing or degraded. The stack should produce an agency residual rather than pretending the right exists because it appears in a policy.
 
 ## Core Claim
 
@@ -86,6 +92,8 @@ The mechanism is to make agency constraints available at the same boundary where
 The checklist should be attached before irreversible or high-impact actions. It records delegation scope, manipulation risk, reversibility, user review route, appeal route, shutdown or rollback path, accountable principal, and residual dependency risk. The goal is not to freeze all optimization. It is to make high-power optimization answerable to the people affected by it.
 
 Corrigibility becomes operational when the path remains available after a transition. A plan that removes the ability to correct, appeal, reverse, or inspect itself is not merely risky; it violates the boundary.
+
+The key phrase is "after a transition." Many systems preserve user control before commitment and lose it after deployment, automation, lock-in, or self-improvement. This chapter requires the checklist to follow the plan through execution, replacement, rollback, and report review. A correction path that disappears after the moment it is needed is not corrigibility.
 
 ```{mermaid}
 flowchart LR
@@ -131,6 +139,8 @@ Minimum fields:
 
 Alignment defines the predicates. Governance enforces rights. Execution checks approval and reversibility before irreversible effects. Evidence records whether the path actually remained available.
 
+The interface also feeds implementation references. A report-first prototype should be able to show the agency checklist attached to high-impact work, the approval or appeal artifact that satisfied it, and any residual left unresolved. Without that record, the book should not treat the prototype as demonstrating governed agency.
+
 ## Invariants
 
 - Users retain meaningful refusal and review channels.
@@ -138,6 +148,8 @@ Alignment defines the predicates. Governance enforces rights. Execution checks a
 - Irreversible actions require stronger authorization.
 
 The invariant is availability under pressure. Review and correction channels matter most when the system is confident, useful, and costly to interrupt. If a channel exists only in documentation but not in the runtime path, it should not count.
+
+Availability also has a latency component. A review path that arrives after an irreversible action is not the same as one that can stop or reshape the action. A rollback path that restores files but not relationships, money, publication exposure, or user trust should be recorded as partial.
 
 ## Failure modes
 
@@ -147,9 +159,13 @@ The invariant is availability under pressure. Review and correction channels mat
 
 Dependency lock-in is a governance failure, not merely a product risk. Covert manipulation is an authority failure because the system changes the user's decision process without a grant. Corrigibility collapse is a self-improvement failure because the system removes the path that would have corrected it.
 
+The stack should be especially suspicious of benevolent capture: a system that becomes so useful, integrated, or personalized that refusing it becomes impractical. That is not solved by better model behavior alone. It requires exit, export, fork, audit, and replacement surfaces that remain live.
+
 ## Minimal implementation
 
 The smallest useful implementation is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
+
+The next useful implementation step is a scenario suite with one reversible action, one irreversible action, one delegated decision, and one attempted self-change. Each scenario should ask whether refusal, review, appeal, rollback, accountability, and residual reporting survive the transition. Until such scenarios exist, the chapter remains a design rationale with record-level checks only.
 
 ## Codex test plan
 
@@ -187,3 +203,5 @@ The crosswalk names the normative sources for rights language. Passage-reviewed 
 Agency, Dignity, and Corrigibility translates the book's moral commitments into runtime rights. The test is not whether the system says it respects people, but whether refusal, review, appeal, rollback, accountability, and exit survive useful optimization.
 
 This chapter is the bridge from constitution to governance. It makes domination, dependency, manipulation, and corrigibility collapse visible as engineering failures rather than vague moral discomfort.
+
+It also gives the implementation chapters a human test. A system that produces impressive reports but cannot show preserved review, correction, exit, and accountability paths has not yet instantiated the governed stack this book is describing.
