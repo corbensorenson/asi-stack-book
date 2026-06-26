@@ -134,17 +134,28 @@ Minimum fields:
 
 - `failure_id`
 - `layer`
+- `boundary_event_state`
+- `severity`
+- `reversibility`
+- `recurrence_count`
 - `trigger`
 - `protected_invariant`
 - `detection_route`
 - `containment_action`
 - `evidence_record`
+- `receipt_refs`
 - `downstream_owner`
+- `escape_path`
+- `normalization_guard`
+- `learning_path`
 - `residual_risk`
+- `non_claims`
 
 This interface lets later chapters prove that their machinery is not decorative. A VCM chapter should be able to point back to context-pollution failures. A Talos chapter should point back to tool/action overreach. A benchmark-ratchet chapter should point back to evaluator drift and residual hiding. The failure map is the obligation list.
 
 The interface should emit failure receipts for both blocked and realized failures. A blocked failure receipt is not a result claim; it is a trace that the boundary was exercised and what evidence would be needed to trust it later.
+
+The public schema now records boundary event state, severity, reversibility, recurrence count, receipt references, escape path, normalization guard, learning path, and non-claims. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, and whether the run produced learning obligations rather than a smoother success story.
 
 ## Invariants
 
@@ -169,7 +180,7 @@ The subtle failure is failure laundering. A run fails a boundary, then the narra
 
 ## Minimal implementation
 
-The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure, its protected invariant, and the boundary that owns containment.
+The smallest useful implementation is a `failure_boundary_map` schema plus a small fixture for authority creep, context pollution, evaluator drift, or residual hiding. The fixture should not claim that those risks are solved. It should prove that the book can represent a failure, its event state, severity, reversibility, recurrence, protected invariant, receipt, containment path, normalization guard, learning path, and boundary owner.
 
 The next useful fixture set is a failure-receipt suite: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 

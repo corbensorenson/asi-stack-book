@@ -6,14 +6,23 @@
   "required": [
     "right_id",
     "right_type",
+    "request_state",
     "holder",
     "scope",
     "required_artifacts",
+    "material_available",
+    "material_withheld",
     "safety_constraints",
     "access_path",
     "denial_or_redaction_reason",
+    "appeal_path",
+    "expiry_or_revisit",
+    "challenged_party_independence",
     "preservation_rule",
-    "test_hook"
+    "preservation_obligation",
+    "receipt_refs",
+    "test_hook",
+    "non_claims"
   ],
   "properties": {
     "right_id": { "type": "string", "minLength": 1 },
@@ -21,14 +30,26 @@
       "type": "string",
       "enum": ["audit", "exit", "fork", "appeal", "dissent"]
     },
+    "request_state": {
+      "type": "string",
+      "enum": ["requested", "granted", "redacted", "partially_granted", "denied", "appealed", "preserved"]
+    },
     "holder": { "type": "string", "minLength": 1 },
     "scope": { "type": "string", "minLength": 1 },
     "required_artifacts": { "type": "array", "items": { "type": "string" } },
+    "material_available": { "type": "array", "items": { "type": "string" } },
+    "material_withheld": { "type": "array", "items": { "type": "string" } },
     "safety_constraints": { "type": "array", "items": { "type": "string" } },
     "access_path": { "type": "string", "minLength": 1 },
     "denial_or_redaction_reason": { "type": "string" },
+    "appeal_path": { "type": "string", "minLength": 1 },
+    "expiry_or_revisit": { "type": "string", "minLength": 1 },
+    "challenged_party_independence": { "type": "string", "minLength": 1 },
     "preservation_rule": { "type": "string", "minLength": 1 },
-    "test_hook": { "type": "string", "minLength": 1 }
+    "preservation_obligation": { "type": "string", "minLength": 1 },
+    "receipt_refs": { "type": "array", "items": { "type": "string" } },
+    "test_hook": { "type": "string", "minLength": 1 },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

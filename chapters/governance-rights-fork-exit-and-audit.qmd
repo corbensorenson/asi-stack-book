@@ -130,18 +130,29 @@ Minimum fields:
 
 - `right_id`
 - `right_type`
+- `request_state`
 - `holder`
 - `scope`
 - `required_artifacts`
+- `material_available`
+- `material_withheld`
 - `safety_constraints`
 - `access_path`
 - `denial_or_redaction_reason`
+- `appeal_path`
+- `expiry_or_revisit`
+- `challenged_party_independence`
 - `preservation_rule`
+- `preservation_obligation`
+- `receipt_refs`
 - `test_hook`
+- `non_claims`
 
 Governance issues rights. SCFs preserve rights across replacement. Execution and memory systems produce audit artifacts. Evidence checks whether the right was materially usable rather than merely declared.
 
 Material usability is the interface standard. A declared audit right is weak if records are missing, unreadable, unauthenticated, or controlled only by the challenged party. A declared exit path is weak if exports omit the state needed to continue elsewhere. A declared fork right is weak if it has no reproducible boundary or if it silently discards safety obligations. The record does not solve institutional governance by itself, but it gives later validators something concrete to inspect.
+
+The public schema now records request state, material available, material withheld, appeal path, expiry or revisit condition, challenged-party independence, preservation obligation, receipt references, and non-claims. Those fields keep a rights record from collapsing into policy text. They ask whether the holder can actually obtain usable material, see what was withheld, challenge the decision somewhere other than the authority being challenged, and preserve the receipt across later transitions.
 
 The interface should distinguish access failure, justified denial, redacted access, partial export, portable export, contested decision, and preserved dissent. Treating all non-success states as a generic refusal makes rights impossible to audit.
 
@@ -167,7 +178,7 @@ The subtle failure is rights theater. The system publishes rights language, but 
 
 ## Minimal implementation
 
-The smallest useful implementation is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts and an access path.
+The smallest useful implementation is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
 
 The next useful fixture set is a rights receipt suite: one complete audit response, one justified redaction with appeal path, one exit export with portable state, and one fork request denied because safety obligations cannot transfer. That would test material usability without claiming institutional governance.
 

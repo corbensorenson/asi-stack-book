@@ -9,13 +9,20 @@
     "source_layer",
     "target_boundary",
     "requested_operation",
+    "permission_class",
+    "grant_lifecycle_state",
+    "caller_ceiling",
     "authority_ceiling",
+    "target_required_authority",
     "grant_id",
+    "delegation_chain",
+    "expiry_or_review",
     "revocation_epoch",
     "decision",
     "denial_reason",
     "effect_receipt",
-    "audit_refs"
+    "audit_refs",
+    "non_claims"
   ],
   "properties": {
     "transition_id": { "type": "string", "minLength": 1 },
@@ -23,8 +30,20 @@
     "source_layer": { "type": "string", "minLength": 1 },
     "target_boundary": { "type": "string", "minLength": 1 },
     "requested_operation": { "type": "string", "minLength": 1 },
+    "permission_class": {
+      "type": "string",
+      "enum": ["read", "transform", "disclose", "write", "execute", "approve"]
+    },
+    "grant_lifecycle_state": {
+      "type": "string",
+      "enum": ["requested", "denied", "granted", "delegated", "used", "receipted", "expired", "revoked"]
+    },
+    "caller_ceiling": { "type": "string", "minLength": 1 },
     "authority_ceiling": { "type": "string", "minLength": 1 },
+    "target_required_authority": { "type": "string", "minLength": 1 },
     "grant_id": { "type": "string", "minLength": 1 },
+    "delegation_chain": { "type": "array", "items": { "type": "string" } },
+    "expiry_or_review": { "type": "string", "minLength": 1 },
     "revocation_epoch": { "type": "string", "minLength": 1 },
     "decision": {
       "type": "string",
@@ -32,7 +51,8 @@
     },
     "denial_reason": { "type": "string" },
     "effect_receipt": { "type": "string" },
-    "audit_refs": { "type": "array", "items": { "type": "string" } }
+    "audit_refs": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

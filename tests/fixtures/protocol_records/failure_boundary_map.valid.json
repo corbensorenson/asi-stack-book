@@ -1,11 +1,20 @@
 {
   "failure_id": "context-pollution-demo",
   "layer": "memory_context",
+  "boundary_event_state": "blocked",
+  "severity": "medium",
+  "reversibility": "reversible",
+  "recurrence_count": 1,
   "trigger": "Quoted source text is treated as behavioral instruction.",
   "protected_invariant": "Source content may inform claims but cannot grant action authority.",
   "detection_route": "taint and authority-label audit",
   "containment_action": "deny instruction use and preserve source as quoted evidence only",
   "evidence_record": "claim-ledger residual",
+  "receipt_refs": ["receipt://context-pollution-demo-denial"],
   "downstream_owner": "virtual-context-abi",
-  "residual_risk": ["The fixture does not model adversarial paraphrase."]
+  "escape_path": "keep source content quarantined as evidence and require a separate authority grant for action",
+  "normalization_guard": "repeat occurrences escalate review instead of becoming accepted context behavior",
+  "learning_path": "add a negative example to context admission and command-contract tests",
+  "residual_risk": ["The fixture does not model adversarial paraphrase."],
+  "non_claims": ["fixture does not prove context-pollution containment", "fixture does not prove detector coverage"]
 }

@@ -4,11 +4,18 @@
   "source_layer": "planning",
   "target_boundary": "repository-file-write",
   "requested_operation": "edit public chapter source",
+  "permission_class": "write",
+  "grant_lifecycle_state": "receipted",
+  "caller_ceiling": "write_public_book_only",
   "authority_ceiling": "write_public_book_only",
+  "target_required_authority": "tracked_file_write",
   "grant_id": "grant://demo-write-book",
+  "delegation_chain": ["human-request -> book-maintenance-agent -> repository-write"],
+  "expiry_or_review": "end_of_current_book_editing_pass",
   "revocation_epoch": "not_revoked",
   "decision": "allow",
   "denial_reason": "",
   "effect_receipt": "receipt://chapter-edit-demo",
-  "audit_refs": ["git://working-tree-demo"]
+  "audit_refs": ["git://working-tree-demo"],
+  "non_claims": ["fixture does not prove deployed authorization enforcement", "fixture does not prove confused-deputy resistance"]
 }

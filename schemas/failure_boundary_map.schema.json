@@ -6,24 +6,51 @@
   "required": [
     "failure_id",
     "layer",
+    "boundary_event_state",
+    "severity",
+    "reversibility",
+    "recurrence_count",
     "trigger",
     "protected_invariant",
     "detection_route",
     "containment_action",
     "evidence_record",
+    "receipt_refs",
     "downstream_owner",
-    "residual_risk"
+    "escape_path",
+    "normalization_guard",
+    "learning_path",
+    "residual_risk",
+    "non_claims"
   ],
   "properties": {
     "failure_id": { "type": "string", "minLength": 1 },
     "layer": { "type": "string", "minLength": 1 },
+    "boundary_event_state": {
+      "type": "string",
+      "enum": ["blocked", "realized", "near_miss", "repeated", "escalated", "resolved"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "reversibility": {
+      "type": "string",
+      "enum": ["reversible", "partially_reversible", "irreversible", "unknown"]
+    },
+    "recurrence_count": { "type": "number" },
     "trigger": { "type": "string", "minLength": 1 },
     "protected_invariant": { "type": "string", "minLength": 1 },
     "detection_route": { "type": "string", "minLength": 1 },
     "containment_action": { "type": "string", "minLength": 1 },
     "evidence_record": { "type": "string", "minLength": 1 },
+    "receipt_refs": { "type": "array", "items": { "type": "string" } },
     "downstream_owner": { "type": "string", "minLength": 1 },
-    "residual_risk": { "type": "array", "items": { "type": "string" } }
+    "escape_path": { "type": "string", "minLength": 1 },
+    "normalization_guard": { "type": "string", "minLength": 1 },
+    "learning_path": { "type": "string", "minLength": 1 },
+    "residual_risk": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": false
 }

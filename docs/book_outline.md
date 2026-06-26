@@ -240,6 +240,7 @@ Draft arc:
 - Mechanism: Represent missing authority as a detectable failure rather than implicit permission.
 - Mechanism: Model grant lifecycle as requested, denied, granted, delegated, used, receipted, expired, or revoked.
 - Mechanism: Distinguish read, transform, disclose, write, execute, and approve permissions.
+- Mechanism: Preserve caller ceiling, target-required authority, delegation chain, expiry/review condition, audit receipts, and non-claims so a capable tool cannot launder broader permission through a lower-authority requester.
 - Interface: Governance issues ceilings.
 - Interface: Execution checks permissions.
 - Interface: Evidence records authority-related failures.
@@ -262,7 +263,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A small authority schema and transition table used by chapter examples and future Lean proofs.
+- A small authority schema and transition table used by chapter examples and future Lean proofs, including permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, audit refs, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` pending denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts.
 - Planned Codex test: Authority ceiling preservation test.
 - Planned Codex test: Permission separation test.
@@ -300,6 +301,7 @@ Draft arc:
 - Mechanism: Map every failure to an invariant and a planned falsification test.
 - Mechanism: Use failures to motivate boundaries in later chapters.
 - Mechanism: treat failures and near misses as boundary events with receipts, owners, containment actions, severity, recurrence, escape path, and downstream learning path.
+- Mechanism: Preserve boundary event state, severity, reversibility, recurrence count, receipt refs, normalization guard, learning path, residual risk, and non-claims so near misses and repeated failures do not vanish into a narrower success narrative.
 - Interface: Governance limits authority creep.
 - Interface: VCM limits context pollution.
 - Interface: Verification limits false certainty.
@@ -323,7 +325,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A layered failure taxonomy tied to invariants, source queues, and future tests.
+- A layered failure taxonomy tied to invariants, source queues, future tests, boundary event state, severity, reversibility, recurrence, receipts, normalization guards, learning paths, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; seven local mappings (`scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`) now have reviewed raw-cache passage references, while `vcm_editable` and `moecot` remain connector-only/source-note mapped. Support remains `argument` pending scenario tests or deployed detector evidence.
 - Planned Codex test: Authority creep scenario.
 - Planned Codex test: Context pollution scenario.
@@ -680,6 +682,7 @@ Draft arc:
 - Mechanism: Treat fork/exit as preserved escape hatches against lock-in while preserving source, privacy, and safety obligations.
 - Mechanism: Treat material usability and recorded denial semantics as part of the right, so an audit, exit, fork, or dissent path is not merely a declared policy aspiration.
 - Mechanism: emit rights receipts that record request, holder, scope, material available, material withheld, denial/redaction reason, appeal path, expiry, and preservation obligation.
+- Mechanism: Require challenged-party independence and receipt preservation so the authority being challenged is not the only keeper of the record, denial reason, appeal path, or export state.
 - Interface: Governance issues rights.
 - Interface: SCFs preserve rights across replacement.
 - Interface: Memory/security/execution systems produce evidence for audit, export, revocation, and contestability.
@@ -701,7 +704,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A governance-rights table with required artifacts, authorities, and failure tests.
+- A governance-rights table with required artifacts, request states, material availability, withheld-material reasons, appeal paths, challenged-party independence, preservation obligations, receipt refs, authorities, and failure tests.
 - Exact Appendix C claim-source mappings for the governance-rights core claim across recursive governance, connector synthesis, alignment lineage, security-bound authority, Spinoza review discipline, UAT adversarial review, and the AI Constitution source; six mappings (`ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending audit-record availability, exit-path preservation, fork-right safety, authority-boundary, or deployed governance evidence.
 - Planned Codex test: Audit-record availability test.
 - Planned Codex test: Exit-path preservation test.

@@ -1,12 +1,21 @@
 {
   "right_id": "audit-demo-001",
   "right_type": "audit",
+  "request_state": "granted",
   "holder": "book maintainer",
   "scope": "public book publication workflow",
   "required_artifacts": ["git commit", "validation output summary", "GitHub Pages run"],
+  "material_available": ["commit hash", "validator names", "render output path"],
+  "material_withheld": ["private raw source exports"],
   "safety_constraints": ["do not publish private raw source exports"],
   "access_path": "GitHub repository and Pages workflow logs",
   "denial_or_redaction_reason": "",
+  "appeal_path": "open a repository issue or request maintainer review",
+  "expiry_or_revisit": "revisit on next major release profile",
+  "challenged_party_independence": "records are preserved in git and GitHub workflow logs rather than only in the challenged runtime",
   "preservation_rule": "future publication changes must keep validation and changelog records",
-  "test_hook": "audit-record availability test"
+  "preservation_obligation": "retain public validation and changelog artifacts across release profiles",
+  "receipt_refs": ["receipt://audit-demo-001"],
+  "test_hook": "audit-record availability test",
+  "non_claims": ["fixture does not prove institutional auditability", "fixture does not prove exit or fork path availability"]
 }
