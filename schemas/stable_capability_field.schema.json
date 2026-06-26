@@ -13,21 +13,26 @@
     "implementations",
     "lifecycle_state",
     "qualification_context",
+    "qualification_status",
     "qualification_lease",
+    "qualification_lease_status",
     "qualification_predicates",
     "evaluator_policy",
     "evaluator_independence",
     "route_validity",
+    "route_scope",
     "route_permission_effect",
     "consumer_policy",
     "evidence_refs",
     "readiness_gate_refs",
+    "field_history_refs",
     "incident_refs",
     "review_triggers",
     "state_migration",
     "regression_suite",
     "rollback_plan",
     "rollback_obligations",
+    "default_route_blockers",
     "source_refs",
     "support_state_effect",
     "non_claims"
@@ -45,6 +50,10 @@
       "enum": ["shadow", "canary", "qualified", "default", "deprecated", "retired", "quarantined"]
     },
     "qualification_context": { "type": "string", "minLength": 1 },
+    "qualification_status": {
+      "type": "string",
+      "enum": ["not_evaluated", "evidence_mapped", "qualified_for_scope", "stale", "failed", "blocked"]
+    },
     "qualification_lease": {
       "type": "object",
       "required": ["epoch", "expires_on", "review_triggers"],
@@ -55,6 +64,10 @@
       },
       "additionalProperties": false
     },
+    "qualification_lease_status": {
+      "type": "string",
+      "enum": ["fixture_only", "active", "review_due", "expired", "revoked", "blocked"]
+    },
     "qualification_predicates": { "type": "array", "items": { "type": "string" } },
     "evaluator_policy": { "type": "string", "minLength": 1 },
     "evaluator_independence": { "type": "string", "minLength": 1 },
@@ -62,6 +75,7 @@
       "type": "string",
       "enum": ["unchecked", "valid", "invalid", "residual"]
     },
+    "route_scope": { "type": "string", "minLength": 1 },
     "route_permission_effect": {
       "type": "string",
       "enum": ["none", "shadow_only", "canary_only", "qualified_for_scope", "default_allowed", "blocks_routing"]
@@ -69,12 +83,14 @@
     "consumer_policy": { "type": "string", "minLength": 1 },
     "evidence_refs": { "type": "array", "items": { "type": "string" } },
     "readiness_gate_refs": { "type": "array", "items": { "type": "string" } },
+    "field_history_refs": { "type": "array", "items": { "type": "string" } },
     "incident_refs": { "type": "array", "items": { "type": "string" } },
     "review_triggers": { "type": "array", "items": { "type": "string" } },
     "state_migration": { "type": "string", "minLength": 1 },
     "regression_suite": { "type": "array", "items": { "type": "string" } },
     "rollback_plan": { "type": "string", "minLength": 1 },
     "rollback_obligations": { "type": "array", "items": { "type": "string" } },
+    "default_route_blockers": { "type": "array", "items": { "type": "string" } },
     "source_refs": { "type": "array", "items": { "type": "string" } },
     "support_state_effect": {
       "type": "string",

@@ -745,10 +745,10 @@ Draft arc:
 - Mechanism: Bind qualification claims to exact artifacts and scoped qualification contexts.
 - Mechanism: Represent lifecycle states such as shadow, canary, qualified, default, deprecated, and retired.
 - Mechanism: Attach qualification context such as epoch, domain, risk budget, hardware, authority tier, and benchmark state.
-- Mechanism: Record a qualification lease with epoch, expiry, review triggers, incidents, rollback obligations, and non-claims so qualified routes can age, downgrade, or force requalification.
+- Mechanism: Record qualification status and a qualification lease/status with epoch, expiry, review triggers, incidents, rollback obligations, and non-claims so qualified routes can age, downgrade, or force requalification.
 - Mechanism: Pair broad route proposers with narrow validators that check field identity, claims, leases, profiles, grants, state paths, composition certificates, and authority ceilings.
 - Mechanism: Treat the SCF as capability-identity memory: field identity, evaluator policy, regression floors, lifecycle history, incidents, and rollback obligations survive implementation replacement.
-- Mechanism: Make qualification leases reviewable and aging: benchmark epoch, source corpus, hardware profile, threat model, incident triggers, and requalification duties can expire or downgrade route status.
+- Mechanism: Make qualification leases reviewable and aging: benchmark epoch, source corpus, hardware profile, threat model, incident triggers, field history refs, default-route blockers, and requalification duties can expire or downgrade route status.
 - Interface: Planning sees semantic capability boundaries.
 - Interface: Execution sees authorized routes.
 - Interface: Evidence and governance see qualification claims, regressions, incidents, lifecycle state, evaluator policy, and recovery paths.
@@ -770,7 +770,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context, qualification lease, evaluator independence, evidence, route validity, route permission effect, consumer policy, readiness gate refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, and non-claims.
+- An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context/status, qualification lease/status, evaluator independence, evidence, route validity/scope, route permission effect, consumer policy, readiness gate refs, field history refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, default-route blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
 - Planned Codex test: Qualification predicate test.
 - Planned Codex test: Route validity test.

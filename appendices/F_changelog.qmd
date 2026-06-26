@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal stable capability lease gates
+
+- Strengthened the Stable Capability Field boundary: SCF records now validate qualification status, qualification lease status, route scope, field history refs, default-route blockers, source refs, support-state effect, and non-claims in addition to field version, owner, lifecycle, evaluator independence, route validity, route permission effect, consumer policy, readiness refs, regression suite, migration, and rollback obligations. Updated the Stable Capability Fields chapter, outline, protocol appendix, schema, and fixture so future routing/replacement work can distinguish canary/residual/fixture-only capability records from qualified default routes, route-validity tests, evaluator-integrity evidence, rollback-readiness evidence, support-state promotion, reader artifact, or audio artifact.
+
 ## 2026-06-26 - v1.0 improvement goal compact burden status gates
 
 - Strengthened the compact-generative residual-honesty boundary: compact generative records now validate generation status, verification status, fallback status, residual-burden status, promotion blockers, source refs, support-state effect, and non-claims in addition to seed/rule/memory, residual channel, correction mechanism, verifier independence, governance, authority boundary, use envelope, burden/cost ledgers, hidden-complexity risks, fallback path, promotion state, and retirement condition. Updated the Compact Generative Systems chapter, outline, protocol appendix, schema, and fixture so future compactness work can distinguish conceptual compact cores from generation runs, verifier results, fallback behavior, residual-burden measurements, downstream utility, compact-adequacy proof, support-state promotion, reader artifact, or audio artifact.

@@ -1328,30 +1328,35 @@ stable_capability_field:
   implementations: []
   lifecycle_state: canary
   qualification_context: string
+  qualification_status: evidence_mapped
   qualification_lease:
     epoch: string
     expires_on: string
     review_triggers: []
+  qualification_lease_status: fixture_only
   qualification_predicates: []
   evaluator_policy: string
   evaluator_independence: string
   route_validity: residual
+  route_scope: string
   route_permission_effect: canary_only
   consumer_policy: string
   evidence_refs: []
   readiness_gate_refs: []
+  field_history_refs: []
   incident_refs: []
   review_triggers: []
   state_migration: string
   regression_suite: []
   rollback_plan: string
   rollback_obligations: []
+  default_route_blockers: []
   source_refs: []
   support_state_effect: record_shape_only
   non_claims: []
 ```
 
-This record separates a durable semantic capability boundary from replaceable implementations, while keeping field version, owner, authority, qualification lease, evaluator policy, evaluator independence, route validity, route permission effect, consumer policy, readiness gates, source refs, support-state effect, evidence, incidents, review triggers, regression, migration, rollback obligations, and non-claims visible.
+This record separates a durable semantic capability boundary from replaceable implementations, while keeping field version, owner, authority, qualification status, qualification lease/status, evaluator policy, evaluator independence, route validity/scope, route permission effect, consumer policy, readiness gates, field history refs, source refs, support-state effect, evidence, incidents, review triggers, regression, migration, rollback obligations, default-route blockers, and non-claims visible.
 
 ## Replacement Transaction
 
