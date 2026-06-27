@@ -210,7 +210,7 @@ The smallest useful implementation is an `authority_transition_record` schema pl
 
 ## Beyond the State of the Art
 
-The mature version of System Boundaries and Authority is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of System Boundaries and Authority is an authority type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.
 
 At that end state, the chapter's claim becomes an operational contract: Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals. The mature surface would include:
 
