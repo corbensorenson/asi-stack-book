@@ -147,6 +147,7 @@ def main() -> None:
         "`It remains beyond the chapter's present support state`",
         "`The public schema now records`",
         "`None of those passages show`",
+        "`The evidence map is narrower now`",
         "`The Lean coverage stays at`",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         "browser smoke validation can exercise every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports`, including reading-mode control visibility and horizontal-overflow checks, when Playwright/Chrome is available",

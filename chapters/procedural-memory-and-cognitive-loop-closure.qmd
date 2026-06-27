@@ -256,7 +256,7 @@ The source set covers loop closure, procedural memory, ratchets, regressions, an
 
 ## Summary
 
-Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The evidence map is narrower now, but the book still has not generated a tool or run the loop-closure pipeline.
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a ledger boundary: the sources and mappings explain what such closure requires, while tool generation, procedure qualification, retirement tests, and a full loop-closure run remain unexecuted.
 
 The discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
 

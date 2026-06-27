@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal summary evidence-boundary polish
+
+- Reworked repeated `The evidence map is narrower now` Summary-section formulas across Routing Heads and Specialist Cores, Runtime Adapters, Tool Permissions, and Human Approval, and Procedural Memory and Cognitive Loop Closure. The revised summaries now name the actual evidence boundary for each layer: route-quality tests and safety evaluations remain future work, adapter traces and effect receipts have not run, and loop-closure/tool-generation execution remains unexecuted. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic summary formula, and refreshed the v1.0 status manuscript scale to 178,171 chapter words excluding YAML and 185,670 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mature support-claim prose polish
 
 - Reworked repeated `This is a target architecture, not a current-result claim` and `It remains beyond the chapter's present support state` formulas across 3 high-stakes `Beyond the State of the Art` sections into chapter-specific evidence-boundary prose for capability replacement, recursive self-improvement, and the security kernel. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject those generic support-boundary sentences, and refreshed the v1.0 status manuscript scale to 178,136 chapter words excluding YAML and 185,635 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
