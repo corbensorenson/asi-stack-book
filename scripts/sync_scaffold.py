@@ -531,12 +531,12 @@ It is not a claim that every source has been ingested, summarized, citation-norm
 
 External and third-party sources are not the second half of Appendix G. They live in their own top-level appendix: [Appendix H, External Sources by Other Authors](H_external_sources.qmd).
 
-## Ownership At A Glance
+## Appendix Identity
 
-| Source ownership question | Where it belongs |
+| Field | Boundary |
 |---|---|
-| Corben-authored, Corben-supplied, recovered, or local project material | Appendix G |
-| Third-party papers, documentation, outside projects, or non-Corben references | Appendix H |
+| This appendix contains | Corben-authored, Corben-supplied, recovered, and local project source records. |
+| This appendix excludes | Third-party papers, documentation, outside projects, and other non-Corben references; those live in the separate Appendix H. |
 
 ## Appendix Scope
 
@@ -570,12 +570,12 @@ This is an independent top-level appendix for external sources by other authors.
 
 A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 
-## Ownership At A Glance
+## Appendix Identity
 
-| Source ownership question | Where it belongs |
+| Field | Boundary |
 |---|---|
-| Corben-authored, Corben-supplied, recovered, or local project material | Appendix G |
-| Third-party papers, documentation, outside projects, or non-Corben references | Appendix H |
+| This appendix contains | Third-party papers, documentation, outside projects, and other external sources by authors other than Corben. |
+| This appendix excludes | Corben-authored, Corben-supplied, recovered, and local project source records; those live in the separate Appendix G. |
 
 ## Appendix Scope
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal appendix-local source identity
+
+- Replaced the shared generated `Ownership At A Glance` table in Appendix G and Appendix H with appendix-local `Appendix Identity` tables so Appendix G reads only as Corben-authored, Corben-supplied, recovered, and local project sources, while Appendix H reads only as third-party papers, documentation, outside projects, and other external sources by authors other than Corben. Tightened `scripts/validate_source_appendices.py`, the outline, README, and v1.0 status guard so future scaffold syncs preserve the two top-level appendices instead of making external literature look like a second part of Appendix G. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal reader-spine meta-language ratchet
 
 - Reworked reader-facing chapter prose across 25 chapters so the generated human-reader manuscript no longer contains `this chapter` or `the chapter` self-reference in chapter bodies after live-only scaffolding is stripped. Added `reader_spine_validation.blocked_meta_phrases` to `editions/release_profiles.json` and tightened `scripts/validate_reader_spine.py` so generated reader chapters now fail if those phrases return. Refreshed the v1.0 status manuscript scale to 183,692 chapter words excluding YAML and 191,191 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
