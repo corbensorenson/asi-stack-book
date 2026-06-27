@@ -47,9 +47,9 @@ That move is deliberately humble. A ledger does not make the system true; it mak
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Once verification adequacy is visible, claims need a durable home. This chapter turns important statements into ledgered objects that can be updated, contradicted, downgraded, split, merged, or retired without losing their identity.
+Once verification adequacy is visible, claims need a durable home. This chapter turns important statements into ledgered objects that can be supported, challenged, downgraded, split, merged, promoted, or retired without losing their identity.
 
-The reader should see this as the book's memory for belief. Prose can change, but the claim ledger should remember what was asserted, what supported it, what challenged it, and what changed. That is how a living book avoids becoming a polished record of forgotten assumptions.
+The reader should see this as the book's memory for belief. Prose can change, but the claim ledger should remember what was asserted, what supported it, what challenged it, and why it changed. That is how a living book avoids becoming a polished record of forgotten assumptions.
 :::
 
 ## Problem
@@ -187,16 +187,19 @@ The next useful implementation step is a tiny extraction-and-revision fixture se
 
 ## Beyond the State of the Art
 
-The mature version of Claim Ledgers and Belief Revision is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is an epistemic version-control system. It does not merely annotate chapters with confidence labels. It gives every material claim a durable identity, provenance, support state, uncertainty record, contradiction state, surface references, revision history, promotion blockers, and escalation path.
 
-At that end state, the chapter's claim becomes an operational contract: Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history. The mature surface would include:
+At that end state, prose is a view over the ledger rather than the source of belief. A claim can appear in a chapter, diagram, appendix, release note, reader edition, benchmark report, or runtime artifact without losing its identity. If new evidence weakens it, every surface that depends on the claim can be found. If a contradiction appears, the ledger can downgrade, split, merge, deprecate, residualize, or route the claim to Spinoza, UAT, or human review.
 
-- Operating mechanism: Extract claims into structured records; Attach evidence tier, provenance, and uncertainty; Revise beliefs when contradictions or stronger evidence appear.
-- Stack interface: VCM supplies source context; Spinoza verifies claims; Evidence matrix records book-level claims.
-- Preserved invariants: Claims are separable from prose; Contradictions remain linked; Revision history is not overwritten.
-- Failure closure: detect and route failure modes such as Untracked assumptions; Belief inertia; Contradiction deletion to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Claim Ledgers and Belief Revision, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Claim extraction and registration tools that separate claim identity, scope, wording variants, source refs, evidence refs, and support-state effects.
+- Revision records for promotion, downgrade, split, merge, contradiction, deprecation, retirement, source expiry, failed test, proof result, and tribunal verdict.
+- Contradiction and defeater graphs that keep conflicts visible until they are resolved, bounded, refuted, or preserved as residuals.
+- Surface synchronization across chapters, diagrams, appendices, release records, reader editions, audio scripts, and generated site views.
+- Release gates that reject confidence laundering when prose, summaries, or publication artifacts sound stronger than the ledger permits.
+
+For this chapter, beyond the state of the art means that belief becomes an auditable artifact with history. The stack can change its mind without pretending it was always right, and it can write beautifully without letting beautiful prose upgrade evidence. This remains a target architecture. The support state should not rise until claim extractors, contradiction fixtures, revision checkers, surface-sync gates, and review traces exist for this end state.
 
 ## Codex test plan
 

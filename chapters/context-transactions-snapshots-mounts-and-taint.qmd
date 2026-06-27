@@ -47,9 +47,9 @@ This chapter is where context stops being a bag of retrieved text and becomes st
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Typed context cells still need runtime semantics. This chapter treats context like a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, or denied. Without those semantics, even well-labeled memory can become stale or mixed across incompatible tasks.
+Typed context cells still need runtime semantics. This chapter treats context like a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, declassified, or denied. Without those semantics, even well-labeled memory can become stale, mixed across incompatible tasks, or derived from material that should no longer be used.
 
-The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, and what was tainted, the system cannot honestly explain its own reasoning surface.
+The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface.
 :::
 
 ## Problem
@@ -203,16 +203,19 @@ The next useful implementation step is a tiny memory-store fixture set: one cohe
 
 ## Beyond the State of the Art
 
-The mature version of Context Transactions, Snapshots, Mounts, and Taint is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a transactional memory substrate for AI context. It does not treat memory as a vector store with annotations. It treats every context view as the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries.
 
-At that end state, the chapter's claim becomes an operational contract: VCM should use transactional memory semantics: immutable events, versioned pages, snapshots, mounts, taint, temporal validity, and deletion closure. The mature surface would include:
+At that end state, every materialized context view can explain itself. It can show which immutable events were visible, which branch was used, which mounts were readable or writable, which cells were actually read, which derivatives were created, which taint labels propagated, which deletion obligations closed, which contradictions were recorded, and why a view was allowed to feed a job, artifact, claim, or release.
 
-- Operating mechanism: Record immutable memory events; Compile task snapshots with mounts and copy-on-write branches; Propagate taint and deletion obligations through derived context.
-- Stack interface: Planning receives consistent views; Security labels sensitive mounts; Evidence records contradictions and supersession.
-- Preserved invariants: Snapshots are consistent; Taint propagates to derivatives; Deletion closure is enforced or faulted.
-- Failure closure: detect and route failure modes such as Memory poisoning; Stale or contradictory reads; Deleted data reappearing in derived summaries to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Context Transactions, Snapshots, Mounts, and Taint, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A context event store with immutable writes, versioned pages, pinned snapshots, copy-on-write branches, and merge policies.
+- Mount and isolation policies for public memory, private notes, source caches, secret handles, Digital SCIF material, and task-local scratch space.
+- Taint propagation and declassification records that follow sensitive, suspect, private, revoked, or unsupported material through every derived cell.
+- Deletion-closure and revocation checks that fault when deleted material survives in summaries, embeddings, artifacts, or cached packets.
+- Replay and audit tools that reconstruct a context view and its derivative obligations before a claim or artifact is promoted.
+
+For this chapter, beyond the state of the art means that AI memory becomes governable state. The stack can experiment, branch, summarize, and forget without losing the obligations attached to what it read. This remains a target architecture. The support state should not rise until memory-store behavior, mount visibility, branch isolation, deletion closure, taint propagation, and replay tests exist for this end state.
 
 ## Codex test plan
 

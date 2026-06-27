@@ -48,9 +48,9 @@ The ABI is the context layer's syscall surface. A planner should ask for context
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Cognitive compilation needs context, but context should not arrive as an accidental transcript dump. This chapter defines the interface between durable memory and model-visible working context: what may be mounted, what scope it has, how it expires, and what a consumer may infer from it.
+Cognitive compilation needs context, but context should not arrive as an accidental transcript dump. This chapter defines the interface between durable memory and the working context a model is allowed to see: what may be mounted, which version is being used, how long the materialization lasts, and what the consumer may infer from it.
 
-The human intuition is simple: memory access is a contract. A model should not treat retrieved text, private notes, old plans, or source packets as interchangeable context. The ABI gives memory a boundary so later reasoning can be audited instead of reconstructed from vibes.
+The human intuition is simple: memory access is a contract. Retrieved text, private notes, old plans, source packets, and summaries are not interchangeable just because they fit in a prompt. The ABI gives context a boundary so later reasoning can be replayed, faulted, or refused instead of reconstructed from vibes.
 :::
 
 ## Problem
@@ -201,16 +201,19 @@ The next useful implementation step is a resolver fixture set: one valid request
 
 ## Beyond the State of the Art
 
-The mature version of Virtual Context ABI is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary.
 
-At that end state, the chapter's claim becomes an operational contract: Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations. The mature surface would include:
+At that end state, a model never receives anonymous "relevant context." It receives a materialization receipt. The receipt says what was requested, what resolved, what representation was built, which authority labels apply, which uses are permitted, when the lease expires, whether the packet is adequate for the target claim, and which fault or residual remains. If any of those states are missing, the system asks, abstains, retries, escalates, or records a typed fault rather than hallucinating a usable memory view.
 
-- Operating mechanism: Separate durable memory from active context; Compile task-relative context packets through an ABI; Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable; Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
-- Stack interface: Planning requests context; VCM compiles packets; Execution receives authority-appropriate context.
-- Preserved invariants: Addresses and versions are stable; Context adequacy is distinct from admission; Faults are typed and visible.
-- Failure closure: detect and route failure modes such as Flat transcript memory; Stale context; Silent unsafe fit to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Virtual Context ABI, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A resolver for semantic addresses, immutable versions, mounts, snapshots, and representation contracts.
+- A context compiler that emits leased materializations with authority labels, support boundaries, consumer policies, audit refs, and non-claims.
+- Typed fault behavior for missing, stale, conflicting, revoked, unauthorized, infeasible, unsafe, unknown, or inadequate context.
+- Admission/adequacy separation, so drafting-acceptable packets cannot silently become verification evidence.
+- Replay tools that reconstruct the exact context view used by a plan, job, claim, artifact, or release.
+
+For this chapter, beyond the state of the art means that context becomes an auditable interface instead of prompt stuffing. The stack can answer not only what the model saw, but why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work. This remains a target architecture. The support state should not rise until resolver behavior, context compiler traces, adequacy labels, conformance tests, and runtime audit records exist for this end state.
 
 ## Codex test plan
 

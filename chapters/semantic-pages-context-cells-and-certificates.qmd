@@ -47,9 +47,9 @@ The certificate is the border control for meaning. It prevents a compact cell fr
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The Virtual Context ABI says how context enters the working surface. This chapter asks what the pieces of that context are allowed to mean. Semantic pages and context cells are compact units with provenance, loss boundaries, confidence, and certificates attached.
+The Virtual Context ABI says how context enters the working surface. This chapter asks what the pieces of that context are allowed to mean. Semantic pages and context cells are compact units with provenance, loss boundaries, permitted uses, confidence limits, and certificates attached.
 
-For the reader, the key idea is that summaries are not free. A summary can be useful only if the system records what it preserved, what it compressed away, and what downstream claims are allowed to rely on it. Otherwise compact context becomes a quiet source of evidence loss.
+For the reader, the key idea is that summaries are not free. A summary can be useful only if the system records what it preserved, what it compressed away, and which downstream claims may rely on it. Otherwise compact context becomes a quiet source of evidence loss and accidental authority.
 :::
 
 ## Problem
@@ -184,16 +184,19 @@ The next useful implementation step is a paired-cell fixture set: one source exc
 
 ## Beyond the State of the Art
 
-The mature version of Semantic Pages, Context Cells, and Certificates is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a representation-certification system for context. It does not merely summarize sources. It turns raw sources, exact excerpts, planning briefs, redacted instructions, claim cells, contradiction pairs, and derived inferences into typed objects whose permitted use, loss, authority, and provenance remain attached wherever the object travels.
 
-At that end state, the chapter's claim becomes an operational contract: VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates. The mature surface would include:
+At that end state, the same source can produce several honest cells: an exact evidence excerpt, a lossy planning brief, a redacted execution packet, a contradiction-checking pair, and a reader-edition paraphrase. Each cell carries a certificate saying what it is, what it came from, what was omitted, which transaction created it, which artifact carries it, what authority ceiling survived, what use is permitted, and what residual risk remains.
 
-- Operating mechanism: Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells; Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses; Use task-relative representation graphs instead of one linear compression ladder.
-- Stack interface: Spinoza consumes claim/evidence cells; Planning consumes constraints and decisions; Execution receives only permitted representations.
-- Preserved invariants: Authority labels survive summarization; Loss contracts are explicit; A derived cell points back to source bindings.
-- Failure closure: detect and route failure modes such as Summary overconfidence; Provenance loss; Authority escalation via compression to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Semantic Pages, Context Cells, and Certificates, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A typed semantic-page model for claims, constraints, decisions, corrections, events, artifacts, source excerpts, summaries, and derived cells.
+- Representation certificates for exact carriage, lossy summary, redaction, abstraction, translation, and derived inference.
+- Certificate lifecycle records for creation, update, revocation, stale use, blocked use, and source-driven correction.
+- Use gates that prevent planning summaries from becoming citations, evidence excerpts from leaking into unauthorized workers, or reader paraphrases from becoming proof support.
+- Certificate checkers that compare source cells and derived cells before support-state promotion, publication, or execution use.
+
+For this chapter, beyond the state of the art means that compact context becomes safer as it moves, because every representation carries its own boundary conditions. This remains a target architecture. The support state should not rise until paired source/derived cells, certificate truthfulness checks, summary-fidelity tests, omission audits, and downstream use gates exist for this end state.
 
 ## Codex test plan
 

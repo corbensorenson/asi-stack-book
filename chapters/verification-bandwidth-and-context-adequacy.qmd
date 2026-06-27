@@ -44,9 +44,9 @@ It follows transactions because a coherent, authorized context view can still be
 ::: {.asi-human-only}
 ## Human Reading Path
 
-A coherent memory view can still be insufficient. This chapter separates having context from being able to verify with it. The stack needs to know when the available context, attention, time, tools, and reviewer capacity are adequate for the claim being made.
+A coherent memory view can still be insufficient. This chapter separates having context from being able to verify with it. The stack needs to know when the available context, attention, time, tools, comparison method, and reviewer capacity are adequate for the claim being made.
 
-For a human reader, this is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, or escalate instead of sounding certain.
+For a human reader, this is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, split, or escalate instead of sounding certain.
 :::
 
 ## Problem
@@ -195,16 +195,19 @@ The existing artifact is narrower: a `context_adequacy_record` schema and fixtur
 
 ## Beyond the State of the Art
 
-The mature version of Verification Bandwidth and Context Adequacy is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a verification-capacity control plane. It does not reward a system for loading more text. It asks whether the loaded semantic units, representations, tools, reviewers, and comparison mode are strong enough for the exact claim, risk level, and support-state effect being requested.
 
-At that end state, the chapter's claim becomes an operational contract: Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate. The mature surface would include:
+At that end state, every important claim has an adequacy record before it receives a stronger support label. The record names the source units, compression path, verification mode, negative evidence, residual risks, and escalation route. A context packet adequate for orientation can remain drafting-only; a packet adequate for one local citation can still be inadequate for a cross-document safety claim; a proof check over a finite predicate can stay separate from an empirical deployment claim.
 
-- Operating mechanism: Model verification as bounded by mutual information, representation quality, and attention budget; Require adequacy labels for context packets; Route high-risk claims to stronger verification instead of more context alone.
-- Stack interface: VCM declares adequacy; Spinoza checks claims; Planning decides escalation when adequacy is insufficient.
-- Preserved invariants: Adequacy is explicit; More context is not treated as proof; High-risk claims pay verification tax.
-- Failure closure: detect and route failure modes such as Attention interference; False confidence from large context; Verification skipped for cost reasons to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Verification Bandwidth and Context Adequacy, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Adequacy classifiers scoped to target claim, risk tier, context packet, semantic-unit set, compression path, and verification mode.
+- Warning states for absent context, drafting-only context, local checks, joint checks, summary-derived support, escalated review, and contradicted claims.
+- Contradiction-rate and distractor-resistance test suites that measure when longer context hides rather than resolves conflicts.
+- Escalation routes to stronger retrieval, split-context review, Spinoza proof envelopes, UAT review, human review, or residual preservation.
+- Claim-ledger gates that block support-state promotion when the verification mode is narrower than the claim being made.
+
+For this chapter, beyond the state of the art means that the stack stops treating context length as epistemic strength. It budgets verification as a scarce resource and records when that budget is insufficient. This remains a target architecture. The support state should not rise until adequacy classifiers, contradiction suites, escalation traces, and claim-ledger promotion gates exist for this end state.
 
 ## Codex test plan
 
