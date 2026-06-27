@@ -239,7 +239,7 @@ The crosswalk identifies sources for proof-carrying and justification-carrying c
 
 ## Summary
 
-Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures. The reviewed sources justify the envelope pattern; they do not show an implemented verifier, semantic-equivalence checker, or open-domain formalizer in this repo.
+Spinoza Verification and Proof-Carrying Claims turns high-value claims into auditable objects. It separates proposal from verification, names the required tier, attaches justification artifacts, records verifier results, and downgrades or escalates failures. The sources justify the envelope pattern, but this repo has not yet supplied the implemented verifier, semantic-equivalence checker, or open-domain formalizer that would make the envelope behavior operational.
 
 The chapter's conservative stance is essential: proof-carrying architecture is valuable only when failed proofs, verifier timeouts, and formalization mismatches lower confidence instead of decorating it. The next chapter handles the cases where one verifier or one artifact is not enough and the claim needs adversarial, role-separated review.
 

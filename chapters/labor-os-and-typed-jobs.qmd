@@ -274,7 +274,7 @@ The crosswalk identifies sources for labor-OS execution discipline. Four local r
 
 ## Summary
 
-Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The reviewed sources justify the typed-work boundary; they do not show a working scheduler, permission service, approval service, adapter runner, or replay system here.
+Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The sources justify treating execution as typed work, but this repo still lacks the scheduler, permission service, approval service, adapter runner, and replay system that would turn the boundary into runtime evidence.
 
 The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The next chapter follows the job's output into the artifact graph, where work becomes durable memory instead of a disappearing side effect.
 
