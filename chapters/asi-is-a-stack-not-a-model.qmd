@@ -226,7 +226,7 @@ This doctrine remains a target architecture, not a current-result claim. The cha
 
 | Test | Purpose | Status |
 |---|---|---|
-| Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, chapter refs, traceability state, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariants, failure modes, evidence gates, downstream interfaces, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, chapter refs, traceability state, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariants, failure modes, evidence gates, downstream interfaces, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | planned; not run |
 | Claim-support label audit | Check that chapter claims have labels, support states, and gaps. | planned; not run |
 | Contract-change triage | Check whether a new source changes an existing layer contract, creates a new one, or only supplies lineage/context. | planned; not run |

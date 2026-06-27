@@ -206,7 +206,7 @@ This governed transaction protocol remains a target architecture, not a current-
 
 | Test | Purpose | Status |
 |---|---|---|
-| Intent and trace fixture validation | Check that the intent and trace fixtures match the public schemas and preserve intake state, handoff receipts, dispatch receipts, re-contract triggers, stop/fault state, residuals, and non-claims. | implemented by protocol validation; run in this pass |
+| Intent and trace fixture validation | Check that the intent and trace fixtures match the public schemas and preserve intake state, handoff receipts, dispatch receipts, re-contract triggers, stop/fault state, residuals, and non-claims. | implemented by protocol validation; validated locally |
 | Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | planned; not run |
 | Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | planned; not run |
 | Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | planned; not run |

@@ -213,7 +213,7 @@ This verification-budget layer remains a target architecture, not a current-resu
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, claim scope, context packet, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, claim scope, context packet, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
 | Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | planned; not run |
 | Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | planned; not run |

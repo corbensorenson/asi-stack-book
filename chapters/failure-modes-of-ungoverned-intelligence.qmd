@@ -214,7 +214,7 @@ This failure-radar layer remains a target architecture, not a current-result cla
 
 | Test | Purpose | Status |
 |---|---|---|
-| Failure boundary map validation | Check that the failure fixture matches the public schema, including failure class, affected contracts, promotion blocker, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Failure boundary map validation | Check that the failure fixture matches the public schema, including failure class, affected contracts, promotion blocker, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Invariant-failure finite-record proof | Check that a modeled component with a failed required invariant cannot be promoted. | implemented in `AsiStackProofs.FailureModes`; runtime promotion gate not run |
 | Authority creep scenario | Check that a proposed action exceeding the requester ceiling is denied or escalated with an audit record. | planned; not run |
 | Context pollution scenario | Check that quoted or retrieved content cannot become behavioral control without an authority grant. | planned; not run |

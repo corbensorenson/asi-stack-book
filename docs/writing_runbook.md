@@ -88,6 +88,8 @@ Each chapter must maintain these sections:
 
 The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`, including guards against generic mature-endpoint boilerplate, generic evidence-gate caveats, generated summary boilerplate, source-crosswalk boilerplate, scaffold placeholders, and too-thin `Minimum Viable Implementation` or `Beyond the State of the Art` sections. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist. `Minimum Viable Implementation` should name the smallest honest slice; `Beyond the State of the Art` should name the chapter-specific mature product-level end state without implying that the end state has already been implemented.
 
+`book_structure.json` carries both `minimal_implementation` and `beyond_state_of_art` for every chapter. Treat those fields as the source-of-truth implementation endpoints when adding, moving, merging, or redrafting chapters. The minimum field answers, "what can we honestly build first?" The beyond field answers, "what does the final product-level surface look like once this idea is fully operational, governed, evidence-bearing, and composed with the rest of the ASI stack?" New chapters should not pass validation until both fields are specific enough to guide writing, proofs, tests, and release-triage work.
+
 ## Claim Labels
 
 Claim labels describe what kind of statement is being made. Support states describe what currently supports it.

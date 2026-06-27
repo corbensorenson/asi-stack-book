@@ -241,7 +241,7 @@ This accountable execution layer remains a target architecture, not a current-re
 
 | Test | Purpose | Status |
 |---|---|---|
-| Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; run in this pass |
+| Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; validated locally |
 | Typed job lifecycle predicate | Check that a transition record marked valid uses the declared finite lifecycle relation. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
 | Human approval gate predicate | Check that an approval-required job cannot be allowed to run before approval is recorded. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |

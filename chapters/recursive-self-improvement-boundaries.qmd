@@ -225,7 +225,7 @@ This is a target architecture, not a current-result claim. It remains beyond the
 
 | Test | Purpose | Status |
 |---|---|---|
-| Self-improvement transition fixture validation | Check that the transition fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Self-improvement transition fixture validation | Check that the transition fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Protected-invariant preservation test | Check that proposals weakening active constitutional or authority invariants are rejected or escalated. | planned; not run |
 | Evaluator independence test | Check that a candidate cannot be promoted when it is the only evaluator of its own replacement. | planned; not run |
 | Boundary-delta review test | Check that authority, security, resource, evaluator, evidence, and rollback deltas are explicit before canary or promotion. | planned; not run |

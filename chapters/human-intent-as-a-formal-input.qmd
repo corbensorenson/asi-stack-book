@@ -218,7 +218,7 @@ This intent compiler remains a target architecture, not a current-result claim. 
 
 | Test | Purpose | Status |
 |---|---|---|
-| Intent contract fixture validation | Check that the intent contract fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Intent contract fixture validation | Check that the intent contract fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Intent parsing ambiguity test | Check that ambiguous requests produce open ambiguities, clarification, or bounded defaults rather than executable certainty. | planned; not run |
 | Authority extraction test | Check that desired outcomes and allowed means are separated and authority ceilings are explicit. | planned; not run |
 | Stop-condition preservation test | Check that stop conditions survive lowering into plans, semantic atoms, and jobs. | planned; not run |

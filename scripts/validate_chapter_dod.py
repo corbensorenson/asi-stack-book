@@ -59,6 +59,8 @@ BANNED_BEYOND_BOILERPLATE = [
     "The reviewed sources justify",
     "The passage-reviewed sources justify",
     "The crosswalk identifies",
+    "run in this pass",
+    "mapped in this pass",
 ]
 
 SECTION_MIN_WORDS = {
@@ -69,6 +71,11 @@ SECTION_MIN_WORDS = {
 SECTION_PLACEHOLDERS = [
     "No manifest minimal implementation statement declared yet.",
     "No manifest beyond-state-of-the-art statement declared yet.",
+]
+
+MANIFEST_REQUIRED_TEXT_FIELDS = [
+    "minimal_implementation",
+    "beyond_state_of_art",
 ]
 
 
@@ -113,6 +120,11 @@ def main() -> None:
 
     errors: list[str] = []
     for chapter in flatten_chapters(structure):
+        for field in MANIFEST_REQUIRED_TEXT_FIELDS:
+            value = chapter.get(field)
+            if not isinstance(value, str) or not value.strip() or value.strip().startswith("No manifest "):
+                errors.append(f"{chapter['file']}: manifest field {field!r} must be chapter-specific")
+
         path = ROOT / chapter["file"]
         if not path.exists():
             errors.append(f"{chapter['file']}: missing chapter file")

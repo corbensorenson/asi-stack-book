@@ -201,7 +201,7 @@ This constitutional constraint compiler remains a target architecture, not a cur
 
 | Test | Purpose | Status |
 |---|---|---|
-| Constitutional predicate fixture validation | Check that the predicate fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Constitutional predicate fixture validation | Check that the predicate fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Constitutional consistency test | Check that active predicates do not authorize mutually incompatible actions without a conflict record. | planned; not run |
 | Predicate-conflict routing test | Check that predicate conflicts route to narrowing, consent, review, residual preservation, or blocking rather than hidden optimizer defaults. | planned; not run |
 | Constitutional migration test | Check that changes to predicate text, scope, thresholds, exceptions, conflict behavior, or review route require a migration record and rollback path. | planned; not run |

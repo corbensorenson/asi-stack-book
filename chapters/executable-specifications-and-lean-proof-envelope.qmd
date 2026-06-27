@@ -203,8 +203,8 @@ In that final product, the stack could depend on mechanized record-level claims 
 | Test | Purpose | Status |
 |---|---|---|
 | Proof target record fixture validation | Check that proof target records expose artifact lane, verifier command/result, consumer requirements, semantic adequacy state, limitations, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| Proof manifest sync test | Check that outline proof tags and `proofs/proof_manifest.json` agree. | implemented by validation; run in this pass |
-| Lake build smoke test | Check that local Lean modules build. | run in this pass |
+| Proof manifest sync test | Check that outline proof tags and `proofs/proof_manifest.json` agree. | implemented by validation; validated locally |
+| Lake build smoke test | Check that local Lean modules build. | validated locally |
 | Implemented-target envelope predicate | Prove that an implemented proof target record requires module-existence and build-passed fields. | implemented in `AsiStackProofs.ProofEnvelope`; passing via `cd lean && lake build` |
 | Non-operational target routing predicate | Prove that a non-operational proof target remains planned or blocked rather than implemented. | implemented in `AsiStackProofs.ProofEnvelope`; passing via `cd lean && lake build` |
 | Proof target coverage summary | Classify proof targets by status, triage class, and recommended route. | implemented in generated Appendix E; checked by `python3 scripts/validate_proof_readiness.py` |

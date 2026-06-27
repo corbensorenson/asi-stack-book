@@ -209,7 +209,7 @@ This proof-carrying-claim discipline remains a target architecture, not a curren
 
 | Test | Purpose | Status |
 |---|---|---|
-| Proof-carrying claim fixture validation | Check that the proof-carrying claim fixture matches the public schema and records claim scope, tier, justification type, interpretation mapping/confidence, artifact ref, verifier, result field, verifier artifacts, failed attempts, formal scope, limitations, downgrade rule, tribunal ref, ledger update, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Proof-carrying claim fixture validation | Check that the proof-carrying claim fixture matches the public schema and records claim scope, tier, justification type, interpretation mapping/confidence, artifact ref, verifier, result field, verifier artifacts, failed attempts, formal scope, limitations, downgrade rule, tribunal ref, ledger update, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Proof artifact presence test | Check that promoted formal or verified claims carry an appropriate artifact reference. | planned; not run |
 | Tier assignment test | Check that support tiers match verifier result and limitations. | planned; not run |
 | Formalization mismatch review | Check that claims with uncertain interpretation mapping route to residual or tribunal review. | planned; not run |

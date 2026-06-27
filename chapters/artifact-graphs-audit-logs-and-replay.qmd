@@ -208,7 +208,7 @@ This replayable artifact graph remains a target architecture, not a current-resu
 
 | Test | Purpose | Status |
 |---|---|---|
-| Artifact graph fixture validation | Check that the artifact fixture matches the public schema and declares parent job, source/context/context-transaction/semantic-certificate/tool/claim/test refs, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims. | implemented by protocol validation; run in this pass |
+| Artifact graph fixture validation | Check that the artifact fixture matches the public schema and declares parent job, source/context/context-transaction/semantic-certificate/tool/claim/test refs, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims. | implemented by protocol validation; validated locally |
 | Artifact traceability predicate | Check that produced artifact records expose parent job and source/context references. | implemented in `AsiStackProofs.ArtifactGraph`; checked by Lean build |
 | Missing provenance promotion predicate | Check that missing required provenance blocks promoted-claim support. | implemented in `AsiStackProofs.ArtifactGraph`; checked by Lean build |
 | Audit reconstruction test | Check that audit events are sufficient to reconstruct the execution path. | planned; not run |

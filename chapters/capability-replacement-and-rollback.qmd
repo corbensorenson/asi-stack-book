@@ -216,7 +216,7 @@ This is a target architecture, not a current-result claim. It remains beyond the
 
 | Test | Purpose | Status |
 |---|---|---|
-| Replacement transaction fixture validation | Check that the replacement fixture matches the public schema, including transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Replacement transaction fixture validation | Check that the replacement fixture matches the public schema, including transaction state, identity preservation, evaluator independence, canary scope, monitor status, rollback receipt, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Replacement commit finite-record proof | Check that a modeled replacement promotion requires qualification evidence and rollback metadata. | implemented in `AsiStackProofs.Replacement`; runtime replacement test not run |
 | Failed-regression finite-record proof | Check that a modeled replacement with a failed regression cannot be promoted. | implemented in `AsiStackProofs.Replacement`; regression-suite coverage test not run |
 | Regression preservation test | Check that known regressions remain attached to the candidate decision. | planned; not run |

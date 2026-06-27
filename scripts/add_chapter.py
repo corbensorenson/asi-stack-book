@@ -80,6 +80,7 @@ def main() -> None:
         "invariants": [],
         "failure_modes": [],
         "minimal_implementation": "No manifest minimal implementation statement declared yet.",
+        "beyond_state_of_art": "No manifest beyond-state-of-the-art statement declared yet.",
         "codex_tests": ["Layer claim falsification test"],
     }
     chapters.insert(insert_at, chapter)

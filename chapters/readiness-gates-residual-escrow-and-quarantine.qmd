@@ -214,7 +214,7 @@ This readiness lifecycle remains a target architecture, not a current-result cla
 
 | Test | Purpose | Status |
 |---|---|---|
-| Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, field identity, lifecycle states, workload family, freshness window, evidence, regression results, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, decision, reviews, next trigger, and non-claims. | implemented by protocol validation; run in this pass |
+| Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, field identity, lifecycle states, workload family, freshness window, evidence, regression results, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, decision, reviews, next trigger, and non-claims. | implemented by protocol validation; validated locally |
 | Readiness gate promotion predicate | Check that promoted decisions require all required gates to pass. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
 | Quarantine ordinary-route predicate | Check that quarantined targets cannot be selected for ordinary execution routes. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
 | Readiness transition enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness. | planned; not run |

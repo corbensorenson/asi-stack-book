@@ -214,7 +214,7 @@ This procedural-memory loop remains a target architecture, not a current-result 
 
 | Test | Purpose | Status |
 |---|---|---|
-| Procedural tool fixture validation | Check that the procedural-tool fixture matches the public schema and declares source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring, residuals, regressions, lifecycle, and retirement criteria. | implemented by protocol validation; run in this pass |
+| Procedural tool fixture validation | Check that the procedural-tool fixture matches the public schema and declares source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring, residuals, regressions, lifecycle, and retirement criteria. | implemented by protocol validation; validated locally |
 | Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | planned; not run |
 | Procedure qualification state test | Check that a trace cannot jump from candidate trace to routable tool without loop clustering, abstraction, parameter discovery, verification, and readiness review. | planned; not run |
 | Negative-example preservation test | Check that near misses, rejected traces, and failures remain attached to the candidate and narrow its scope. | planned; not run |

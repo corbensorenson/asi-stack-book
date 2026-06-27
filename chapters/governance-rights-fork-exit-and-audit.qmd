@@ -209,7 +209,7 @@ This contestability infrastructure remains a target architecture, not a current-
 
 | Test | Purpose | Status |
 |---|---|---|
-| Governance right record validation | Check that the right fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Governance right record validation | Check that the right fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Audit-record availability test | Check that required audit artifacts exist and can be accessed or redacted with a reason. | planned; not run |
 | Exit-path preservation test | Check that export, revocation, and continuity paths remain materially usable. | planned; not run |
 | Fork-right safety test | Check that forking preserves source, privacy, and safety obligations instead of bypassing them. | planned; not run |

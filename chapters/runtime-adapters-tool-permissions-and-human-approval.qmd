@@ -250,7 +250,7 @@ This lease-bound action surface remains a target architecture, not a current-res
 
 | Test | Purpose | Status |
 |---|---|---|
-| Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, invocation state, impact class, risk tier, approval scope/expiry, authority handle, inputs, effect lease, receipt refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, invocation state, impact class, risk tier, approval scope/expiry, authority handle, inputs, effect lease, receipt refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Adapter permission predicate | Check that adapter capability is included in the parent job's permissions. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Approval gate rejection predicate | Check that high-impact adapter calls without approval are rejected. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | planned; not run |

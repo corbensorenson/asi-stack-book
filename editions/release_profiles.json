@@ -11,7 +11,7 @@
       "label": "Reader-facing chapter spine",
       "primary_audiences": ["interested_humans", "human_researchers"],
       "canonical_location": "ordinary chapter prose outside live-only headings",
-      "description": "The coherent human manuscript layer: problem, insufficiency, mechanism, interfaces, invariants, failure modes, minimal implementation discussion, diagrams, summaries, glossary path, and uncertainty that changes claim meaning.",
+      "description": "The coherent human manuscript layer: problem, insufficiency, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art endpoint, diagrams, summaries, glossary path, and uncertainty that changes claim meaning.",
       "edition_policy": "Retained by reader releases and adapted by audio releases. It must remain readable after live-only sections are stripped."
     },
     {
@@ -65,6 +65,7 @@
   ],
   "reader_spine_contract": [
     "Every chapter should remain intelligible from ordinary prose after live-only headings are removed.",
+    "Every chapter should preserve both the minimum viable implementation and the beyond-state-of-the-art endpoint in reader and audio derivatives.",
     "Uncertainty, support-state limits, and caveats that change claim meaning must appear in the reader spine, not only in stripped guardrails or source crosswalks.",
     "Images and diagrams that carry meaning should remain in reader releases and receive spoken-treatment notes for audio releases.",
     "Repeated source matrices, proof hooks, Codex test plans, and guardrail blocks belong in the live/research scaffold, not in the bedtime-reading manuscript.",

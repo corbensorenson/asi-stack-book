@@ -351,9 +351,9 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 ## Beyond the State of the Art
 
-The logical end state is not only a larger implementation of the minimal artifact. It is a mature, governed capability where this chapter's boundary is live in the architecture, evidence-bearing, inspectable, and constrained by the support state recorded in this book.
+{chapter.get('beyond_state_of_art', 'No manifest beyond-state-of-the-art statement declared yet.')}
 
-That end state remains a target, not a current result, until the necessary source mappings, schemas, proofs, tests, runtime traces, and review artifacts exist.
+Treat this endpoint as a target architecture, not a current result. It remains bounded by the support state recorded above until the necessary source mappings, schemas, proofs, tests, runtime traces, review artifacts, or governance records exist.
 
 ## Codex test plan
 

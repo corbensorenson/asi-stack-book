@@ -206,7 +206,7 @@ This adversarial review surface remains a target architecture, not a current-res
 
 | Test | Purpose | Status |
 |---|---|---|
-| Tribunal review fixture validation | Check that the tribunal fixture matches the public schema and records target, risk class, dossier, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human adjudication. | implemented by protocol validation; run in this pass |
+| Tribunal review fixture validation | Check that the tribunal fixture matches the public schema and records target, risk class, dossier, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human adjudication. | implemented by protocol validation; validated locally |
 | Adversarial review coverage test | Check that required reviewer roles and probes exist for high-risk reviews. | planned; not run |
 | Dissent preservation test | Check that minority objections remain attached to the review record. | planned; not run |
 | Consensus evidence test | Check that consensus verdicts cite evidence refs and required actions. | planned; not run |

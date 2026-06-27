@@ -244,7 +244,7 @@ This semantic firewall remains a target architecture, not a current-result claim
 
 | Test | Purpose | Status |
 |---|---|---|
-| Command contract fixture validation | Check that the command-contract fixture contains objective, constraints, output, verification, authority, approvals, artifacts, and failure behavior required by the schema. | implemented by protocol validation; run in this pass |
+| Command contract fixture validation | Check that the command-contract fixture contains objective, constraints, output, verification, authority, approvals, artifacts, and failure behavior required by the schema. | implemented by protocol validation; validated locally |
 | Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | planned; not run |
 | Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | planned; not run |
 | Prompt override scenario | Check that hidden or conflicting context instructions cannot override explicit constraints. | planned; not run |

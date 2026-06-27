@@ -225,7 +225,7 @@ This authority type system remains a target architecture, not a current-result c
 
 | Test | Purpose | Status |
 |---|---|---|
-| Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Authority ceiling finite-record proof | Check that a valid modeled transition cannot raise active authority unless a governance grant is present. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
 | Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | planned; not run |
 | Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | planned; not run |

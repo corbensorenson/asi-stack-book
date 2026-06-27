@@ -206,7 +206,7 @@ This obligation-preserving compiler remains a target architecture, not a current
 
 | Test | Purpose | Status |
 |---|---|---|
-| Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares atom state, intent, obligation status, inputs, outputs, constraints, dependencies, authority, IR validity state, validator state, lowering state, target, repair scope, repair-ledger refs, source refs, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares atom state, intent, obligation status, inputs, outputs, constraints, dependencies, authority, IR validity state, validator state, lowering state, target, repair scope, repair-ledger refs, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | planned; not run |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | planned; not run |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | planned; not run |

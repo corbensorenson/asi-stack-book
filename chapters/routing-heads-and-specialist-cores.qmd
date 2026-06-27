@@ -237,7 +237,7 @@ This specialist-routing surface remains a target architecture, not a current-res
 
 | Test | Purpose | Status |
 |---|---|---|
-| Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; run in this pass |
+| Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; validated locally |
 | Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
 | Authority/readiness route predicate | Check that a selected route satisfies authority and readiness. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
 | Failed-readiness fallback predicate | Check that failed readiness routes to fallback or residual rather than promotion. | implemented in `AsiStackProofs.Routing`; checked by Lean build |

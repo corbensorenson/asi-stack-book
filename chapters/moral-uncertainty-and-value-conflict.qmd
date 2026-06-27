@@ -209,7 +209,7 @@ This value-conflict ledger remains a target architecture, not a current-result c
 
 | Test | Purpose | Status |
 |---|---|---|
-| Value conflict record validation | Check that the conflict fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Value conflict record validation | Check that the conflict fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Value conflict classification test | Check that stakeholders, value axes, stakes, and reversibility are recorded. | planned; not run |
 | Decision-state routing test | Check that unresolved, bounded, escalated, deferred, denied, and deprecated-premise states produce distinct authority effects. | planned; not run |
 | Review escalation test | Check that high-stakes unresolved conflicts route to tribunal or human review. | planned; not run |

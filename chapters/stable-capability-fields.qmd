@@ -212,7 +212,7 @@ This capability-identity market remains a target architecture, not a current-res
 
 | Test | Purpose | Status |
 |---|---|---|
-| Stable capability field fixture validation | Check that the SCF fixture matches the public schema, including field version, owner, qualification status, qualification lease status, evaluator independence, route scope, route permission effect, consumer policy, readiness refs, field history refs, default-route blockers, source refs, support-state effect, rollback obligations, and non-claims. | implemented by protocol validation; run in this pass |
+| Stable capability field fixture validation | Check that the SCF fixture matches the public schema, including field version, owner, qualification status, qualification lease status, evaluator independence, route scope, route permission effect, consumer policy, readiness refs, field history refs, default-route blockers, source refs, support-state effect, rollback obligations, and non-claims. | implemented by protocol validation; validated locally |
 | Qualification predicate finite-record proof | Check that a replacement record is allowed only when the candidate satisfies the field qualification predicate. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime qualification test not run |
 | Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | planned; not run |
 | Authority non-escalation finite-record proof | Check that authority-expanding replacement is rejected when no governance grant is present. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime route enforcement not run |

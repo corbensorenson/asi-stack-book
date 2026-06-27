@@ -220,7 +220,7 @@ This efficiency operating system remains a target architecture, not a current-re
 
 | Test | Purpose | Status |
 |---|---|---|
-| Costed route record validation | Check that the route fixture records route state, task contract, quality predicate, authority ceiling, route candidates, selected route, rejected lower-cost routes, verification result, outcome state, cost accounting, cost classes, hidden-cost checks, residual obligations, fallback, support-state effect, and non-claims. | implemented by protocol validation; run in this pass |
+| Costed route record validation | Check that the route fixture records route state, task contract, quality predicate, authority ceiling, route candidates, selected route, rejected lower-cost routes, verification result, outcome state, cost accounting, cost classes, hidden-cost checks, residual obligations, fallback, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Minimum viable route test | Check whether a lower-cost authorized route fails the declared quality predicate before a higher-cost route is selected. | planned; not run |
 | Residual burden accounting test | Check that unresolved obligations remain attached to the route record instead of being hidden inside a success label. | planned; not run |
 | Utility-preserving compression test | Check whether a compressed or generated representation preserves the downstream task utility claimed for it. | planned; not run |

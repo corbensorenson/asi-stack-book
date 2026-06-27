@@ -212,7 +212,7 @@ This orchestration runtime remains a target architecture, not a current-result c
 
 | Test | Purpose | Status |
 |---|---|---|
-| MoECOT orchestration fixture validation | Check that the orchestration fixture matches the public schema and declares run, command, orchestrator, route head, specialist cores, gates, ledgers, readiness refs, replay refs, handoff refs, blockers, residuals, and source-claim state. | implemented by protocol validation; run in this pass |
+| MoECOT orchestration fixture validation | Check that the orchestration fixture matches the public schema and declares run, command, orchestrator, route head, specialist cores, gates, ledgers, readiness refs, replay refs, handoff refs, blockers, residuals, and source-claim state. | implemented by protocol validation; validated locally |
 | MoECOT source-ingestion gate | Check that MoECOT-specific claims cite inspected source notes or imported artifacts before promotion. | planned; not run |
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
 | Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | planned; not run |

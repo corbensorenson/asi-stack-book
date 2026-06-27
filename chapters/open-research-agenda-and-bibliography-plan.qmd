@@ -215,9 +215,9 @@ In that final product, the bibliography would be active infrastructure: it would
 | Test | Purpose | Status |
 |---|---|---|
 | Research backlog record fixture validation | Validate that a backlog record names source/gap, triage state, access state, source storage policy, public-safety state, assigned chapters, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, source-note state, claim mapping state, external-literature need, proof/test backlog, required pre-drafting work, evidence-transition preconditions, insertion decision, source refs, promotion blockers, support-state effect, residuals, next action, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; run in this pass |
+| Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; validated locally |
 | Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes, exact core-claim mappings, and passage-reviewed mapping refs currently exist for assigned sources; external-literature normalization and evidence transitions remain incomplete |
-| New-paper triage scenario | Check whether a synthetic intake case updates an existing chapter, proposes a new boundary, defers unread external literature, or rejects a duplicate variant without changing support state. | implemented by protocol validation; run in this pass |
+| New-paper triage scenario | Check whether a synthetic intake case updates an existing chapter, proposes a new boundary, defers unread external literature, or rejects a duplicate variant without changing support state. | implemented by protocol validation; validated locally |
 
 ### Formalization hooks
 

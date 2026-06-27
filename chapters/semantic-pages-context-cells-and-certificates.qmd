@@ -202,7 +202,7 @@ This certificate-bearing context layer remains a target architecture, not a curr
 
 | Test | Purpose | Status |
 |---|---|---|
-| Semantic page certificate fixture validation | Check that the certificate fixture matches the public schema and declares bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; run in this pass |
+| Semantic page certificate fixture validation | Check that the certificate fixture matches the public schema and declares bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; validated locally |
 | Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Summary fidelity test | Check that omissions and exactness limits remain visible before evidence use. | planned; not run |

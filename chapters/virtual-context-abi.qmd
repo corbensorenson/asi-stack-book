@@ -219,7 +219,7 @@ This context ABI remains a target architecture, not a current-result claim. Supp
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context ABI fixture validation | Check that the context ABI fixture includes lifecycle state, request, address, version, mount scope, snapshot, resolver policy, representation contract, authority ceiling, admission, adequacy requirement, fault, materialization, consumer policy, replay boundary, source refs, support-state effect, and audit fields. | implemented by protocol validation; run in this pass |
+| Context ABI fixture validation | Check that the context ABI fixture includes lifecycle state, request, address, version, mount scope, snapshot, resolver policy, representation contract, authority ceiling, admission, adequacy requirement, fault, materialization, consumer policy, replay boundary, source refs, support-state effect, and audit fields. | implemented by protocol validation; validated locally |
 | Snapshot-bound reference predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
 | Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
 | Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |

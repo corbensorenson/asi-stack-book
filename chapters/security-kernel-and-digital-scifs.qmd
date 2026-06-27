@@ -198,7 +198,7 @@ This is a target architecture, not a current-result claim. It remains beyond the
 
 | Test | Purpose | Status |
 |---|---|---|
-| Authority use receipt fixture validation | Check that the authority-use receipt fixture matches the public schema. | implemented by protocol validation; run in this pass |
+| Authority use receipt fixture validation | Check that the authority-use receipt fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Secret-handle substitution test | Check that model-visible logs contain only a handle while substitution happens outside the transcript. | planned; not run |
 | Handle lease expiry/reuse test | Check that an expired, revoked, destination-mismatched, or purpose-mismatched handle cannot be reused as ambient authority. | planned; not run |
 | SCIF least-privilege test | Check that a SCIF receives only purpose-limited context, tools, and authority. | planned; not run |

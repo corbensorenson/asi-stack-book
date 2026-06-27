@@ -195,10 +195,10 @@ In that final product, "write the book" would be a governed build goal, not a pr
 | Test | Purpose | Status |
 |---|---|---|
 | Living book release record validation | Validate that release records name release state, audience profile, canonical scope, commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| Quarto render check | Check that the public book renders locally to HTML. | implemented; run in this pass |
-| Reading-mode toggle check | Check that the live-site Human view toggle is included by the generated Quarto config and tracks the reader-release strip-heading policy. | implemented by `scripts/validate_reading_mode_toggle.py`; run in this pass |
-| Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; run in this pass |
-| Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually in this pass |
+| Quarto render check | Check that the public book renders locally to HTML. | implemented; validated locally |
+| Reading-mode toggle check | Check that the live-site Human view toggle is included by the generated Quarto config and tracks the reader-release strip-heading policy. | implemented by `scripts/validate_reading_mode_toggle.py`; validated locally |
+| Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; validated locally |
+| Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually; validated locally |
 
 These checks validate release discipline. They do not validate every chapter claim, source interpretation, or editorial quality judgment.
 

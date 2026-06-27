@@ -248,7 +248,7 @@ This traffic-control layer remains a target architecture, not a current-result c
 
 | Test | Purpose | Status |
 |---|---|---|
-| Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority budget, risk and compute budgets, verification, replanning history, stop conditions, lifecycle states, dispatch receipts, residuals, non-claims, and dispatch state. | implemented by protocol validation; run in this pass |
+| Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority budget, risk and compute budgets, verification, replanning history, stop conditions, lifecycle states, dispatch receipts, residuals, non-claims, and dispatch state. | implemented by protocol validation; validated locally |
 | Authority inheritance finite-record proof | Check that a modeled plan node inherits the parent contract authority ceiling unless governance lowers it. | implemented in `AsiStackProofs.Planning`; runtime replanning test not run |
 | Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; planner harness not run |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |

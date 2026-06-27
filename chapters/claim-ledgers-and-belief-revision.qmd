@@ -205,7 +205,7 @@ This belief-revision ledger remains a target architecture, not a current-result 
 
 | Test | Purpose | Status |
 |---|---|---|
-| Claim and belief-revision fixture validation | Check that claim and belief-revision fixtures match their public schemas and preserve support state, evidence refs, defeaters, uncertainty, review status, and history refs. | implemented by protocol validation; run in this pass |
+| Claim and belief-revision fixture validation | Check that claim and belief-revision fixtures match their public schemas and preserve support state, evidence refs, defeaters, uncertainty, review status, and history refs. | implemented by protocol validation; validated locally |
 | Claim extraction test | Check that prose claims can be represented separately from prose with labels, support states, and provenance. | planned; not run |
 | Contradiction detection test | Check that contradiction refs remain linked instead of being overwritten. | planned; not run |
 | Claim update preservation predicate | Check that finite claim updates preserve prior evidence and revision-history references when those references exist. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
