@@ -112,6 +112,8 @@ flowchart LR
   I --> J["Support-state boundary"]
 ```
 
+**Diagram reading note:** The proof-carrying path starts with a requested tier and an interpretation mapping before any verifier result matters. Pass, fail, timeout, and mismatch all write different ledger effects, so the diagram should be read as downgrade discipline as much as promotion discipline.
+
 The verification path is tiered. The model may propose a claim, mapping, proof sketch, citation dossier, or procedure, but promotion depends on a separate verifier result and a recorded justification artifact. A failed proof, timeout, or ambiguous interpretation is not neutral decoration; it writes a downgrade, block, residual, or tribunal route back to the claim ledger.
 
 A proof-carrying claim should support multiple justification kinds. Some claims need formal proof. Some need source citations. Some need executable procedures, replay logs, or benchmark artifacts. Some need a tribunal because the interpretation or stakes are contested. The common rule is not "everything becomes Lean." The rule is that the justification type must match the claim and its requested tier.

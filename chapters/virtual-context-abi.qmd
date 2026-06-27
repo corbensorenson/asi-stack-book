@@ -121,6 +121,8 @@ flowchart LR
   H --> J
 ```
 
+**Diagram reading note:** The ABI resolves a context request through address, version, mount, snapshot, and representation before deciding whether use is allowed and adequate. Admission and adequacy are separate gates, and a typed fault is a legitimate output rather than a hidden retrieval failure.
+
 The ABI separates durable memory from active context and compiles task-relative packets through stable addresses, versions, mounts, snapshots, representation contracts, authority labels, admission states, adequacy states, and typed faults. Adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, and unsatisfiable are first-class outputs, not comments appended after a best-effort retrieval.
 
 Admission and adequacy are separate. A packet can be admitted for drafting but inadequate for verification. A source can be known but not authorized. A representation can be useful for planning but too lossy for citation or proof. These distinctions need states, not vibes.

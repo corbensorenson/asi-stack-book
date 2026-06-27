@@ -117,6 +117,8 @@ flowchart LR
   K --> L["Adequacy backlog"]
 ```
 
+**Diagram reading note:** The certificate path starts with source cells and records how a derived page was bound, compressed, limited, authorized, and permitted for use. If the representation is not adequate, the flow does not pretend the cell is evidence; it routes to a stronger representation or backlog.
+
 The certificate layer classifies pages as constraints, claims, decisions, corrections, events, artifacts, source excerpts, summaries, or other typed cells. It then attaches source bindings, derivation links, omissions, loss contracts, validity windows, authority ceilings, permitted uses, verification states, and residual risks. Task-relative representation graphs replace a single compression ladder, so the same source can become different representations for planning, evidence, execution, or contradiction review without pretending all representations carry the same authority.
 
 For example, the same source can produce a terse planning brief, a quotation-preserving evidence cell, a redacted execution packet, and a contradiction-checking pair. The certificate tells downstream layers which representation they are holding and which transaction or artifact record is responsible for it.

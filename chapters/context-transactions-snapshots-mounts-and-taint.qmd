@@ -118,6 +118,8 @@ flowchart LR
   K -- "no" --> M["Fault / quarantine"]
 ```
 
+**Diagram reading note:** Read this as a memory transaction, not a retrieval pipeline. A view can branch or commit, but taint and deletion closure must be tracked across derivatives before the view becomes materializable; otherwise the correct output is a fault or quarantine state.
+
 The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, transaction validity state, isolation state, taint labels, deletion obligations, declassification references, derivative references, contradiction references, materialization state, closure state, faults, consumer policy, verification refs, promotion blockers, replay boundary, non-claims, and audit references are coherent enough to replay.
 
 The record should distinguish view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered. If the view becomes a durable artifact, the artifact should point back to the transaction rather than merely naming the source files it happened to read.

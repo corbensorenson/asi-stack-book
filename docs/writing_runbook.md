@@ -63,7 +63,7 @@ Major-version reader and audio work stays downstream of the live book. Generated
 
 When writing chapters, assume the reader spine may become a relaxed human-consumption bundle: reader HTML, EPUB, PDF, DOCX, optional e-reader conversions, and a later audio script. Dense live-only machinery can stay in the live book, but the main prose should carry enough transitions, caveats, diagram explanations, examples, and implementation-horizon sections to survive stripping and narration.
 
-When revising diagrams, add a concise `Diagram reading note` after the primary Mermaid block. The note should explain how to read the boundary, loop, state machine, or evidence flow without claiming that the diagram itself proves implementation, benchmark, safety, or runtime behavior. Foundation chapters are already under this validator ratchet; later parts should converge to the same convention.
+When revising diagrams, add a concise `Diagram reading note` after the primary Mermaid block. The note should explain how to read the boundary, loop, state machine, or evidence flow without claiming that the diagram itself proves implementation, benchmark, safety, or runtime behavior. Part I foundation chapters and Part II planning/memory/reasoning/execution chapters are already under this validator ratchet; later parts should converge to the same convention.
 
 Problem, insufficiency, and summary sections should speak in direct systems language rather than describing "this chapter" as an object. Use layer, boundary, record, contract, evaluator, runtime, route, field, or artifact names so the human-readable spine reads like a book, not scaffold commentary.
 

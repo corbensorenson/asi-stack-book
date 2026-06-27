@@ -20,7 +20,10 @@ MERMAID_LABELED_EDGE_RE = re.compile(
 MERMAID_NODE_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*)\s*(?=[\[\(\{])")
 MERMAID_DECL_RE = re.compile(r"^\s*(participant|actor|boundary|control|entity|database|collections|queue)\s+([A-Za-z][A-Za-z0-9_]*)\b", re.IGNORECASE)
 DIAGRAM_READING_NOTE_RE = re.compile(r"\*\*Diagram reading note:\*\*", re.IGNORECASE)
-DIAGRAM_NOTE_REQUIRED_PARTS = {"foundations-alignment-governance"}
+DIAGRAM_NOTE_REQUIRED_PARTS = {
+    "foundations-alignment-governance",
+    "planning-memory-reasoning-execution",
+}
 
 MIN_DIAGRAM_LINES = 12
 MIN_DIAGRAM_EDGES = 6
@@ -86,7 +89,8 @@ def main() -> None:
                 )
             if part.get("id") in DIAGRAM_NOTE_REQUIRED_PARTS and not DIAGRAM_READING_NOTE_RE.search(text):
                 errors.append(
-                    "Foundation chapter lacks a Diagram reading note for reader/audio accessibility: "
+                    "Chapter in a diagram-note-ratcheted part lacks a Diagram reading note "
+                    "for reader/audio accessibility: "
                     f"{chapter['file']}"
                 )
 
@@ -102,7 +106,7 @@ def main() -> None:
 
     print(
         f"Visual coverage validation passed: {checked} chapter diagrams checked; "
-        f"diagram reading notes required for {len(DIAGRAM_NOTE_REQUIRED_PARTS)} foundation part(s)."
+        f"diagram reading notes required for {len(DIAGRAM_NOTE_REQUIRED_PARTS)} part(s)."
     )
 
 

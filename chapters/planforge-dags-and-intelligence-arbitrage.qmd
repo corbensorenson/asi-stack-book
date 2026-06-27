@@ -119,6 +119,8 @@ flowchart LR
   J --> K
 ```
 
+**Diagram reading note:** The DAG turns a plan into primitive nodes with dependency, capability, budget, risk, and quality predicates attached. The diagram is not a cost-saving proof; it shows where cheap routes, failed predicates, escalation, and residuals must be recorded before any cost-quality claim can be trusted.
+
 The DAG mechanism decomposes goals into primitive nodes, annotates those nodes with capability tier, budget, context request, risk, quality predicate, and verification requirement, then makes merge, cache, escalation, and residual decisions explicit. Redundant branches can be merged only when their predicates and artifacts actually match. Cheap routes can be kept only when verification remains attached.
 
 Every node should carry two contracts: a work contract and an adequacy contract. The work contract names what the node is allowed to do. The adequacy contract names what would make the node's output usable by its dependents. Scheduling without the second contract creates downstream uncertainty rather than progress.

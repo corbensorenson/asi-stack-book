@@ -114,6 +114,8 @@ flowchart LR
   J --> K["Residual docket or closure"]
 ```
 
+**Diagram reading note:** The tribunal flow makes review bounded by a dossier and role set before adversarial probes begin. Evidence-backed consensus, dissent, unresolved issues, and human adjudication all write back to the ledger; the output is not merely a conversational verdict.
+
 The review mechanism is a bounded protocol. A target claim or artifact enters with dossier refs, risk class, reviewer roles, and adversarial probes; findings cite evidence; dissent and unresolved issues remain first-class; and the verdict carries required actions plus human-adjudication state. Agreement only matters when it can be tied back to the dossier and the ledger.
 
 The lifecycle is admission, dossier construction, role assignment, adversarial probing, finding capture, dissent preservation, verdict, required action, and ledger or execution update. Each stage can fail. A missing dossier should block review. Missing roles should block high-risk acceptance. Findings without evidence should remain hypotheses. A verdict without required action should not unblock work that still has unresolved issues.

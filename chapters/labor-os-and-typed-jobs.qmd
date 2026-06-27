@@ -122,6 +122,8 @@ flowchart LR
   J --> K["Feedback + replay status"]
 ```
 
+**Diagram reading note:** The execution flow is a lifecycle gate around work, not a direct line from plan to tool. A typed job is locked, checked, approved when necessary, dispatched through an adapter, and returned with artifact, audit, feedback, and replay state.
+
 The job packet binds work type, inputs, allowed tools, permissions, expected artifacts, approval gates, failure behavior, and replay expectations before dispatch. Dispatch is not a model decision alone; it is a lifecycle transition that can be rejected, quarantined, replayed, or retired. Orchestration, secure workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay stay separate so a failure in one boundary does not disappear into the general idea of "the agent did it."
 
 The lifecycle should be explicit enough to reject invalid transitions. A job can be drafted, locked, awaiting approval, dispatchable, running, adjudicating, delivered, failed, blocked, replayed, or retired. High-impact work should stop at the approval gate until the required record exists.
