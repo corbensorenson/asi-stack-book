@@ -201,6 +201,11 @@ html[data-asi-reading-mode="human"] .asi-support-boundary-human {
   display: inline;
 }
 
+html[data-asi-reading-mode="human"] .asi-support-boundary-human--claim {
+  color: var(--asi-muted);
+  font-size: 0.95em;
+}
+
 html[data-asi-reading-mode="human"] .asi-live-only,
 html[data-asi-reading-mode="human"] .asi-ai-only,
 html[data-asi-reading-mode="ai"] .asi-human-only {

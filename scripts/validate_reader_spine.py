@@ -39,6 +39,9 @@ DEFAULT_BLOCKED_META_PHRASES = [
     "this chapter",
     "the chapter",
 ]
+DEFAULT_BLOCKED_PARAGRAPH_STARTS = [
+    "Evidence boundary: architectural argument.",
+]
 GENERIC_HANDOFF_PHRASES = (
     "the next boundary",
     "the next move",
@@ -204,6 +207,23 @@ def meta_phrase_hits(text: str, phrases: list[str]) -> list[dict[str, object]]:
     return hits
 
 
+def paragraph_start_hits(text: str, starts: list[str]) -> list[dict[str, object]]:
+    hits: list[dict[str, object]] = []
+    paragraphs = re.split(r"\n\s*\n", build_reader_edition.strip_frontmatter(text))
+    line_cursor = 1
+    for paragraph in paragraphs:
+        stripped = paragraph.strip()
+        start_line = line_cursor
+        line_cursor += paragraph.count("\n") + 2
+        if not stripped or stripped.startswith(("#", "|", "!", ":::", "- ", "* ")):
+            continue
+        normalized = re.sub(r"\s+", " ", stripped)
+        for start in starts:
+            if normalized.startswith(start):
+                hits.append({"line": start_line, "phrase": start, "text": normalized[:180]})
+    return hits
+
+
 def normalize_heading(title: str) -> str:
     return re.sub(r"\s+", " ", title.strip()).lower()
 
@@ -244,6 +264,9 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     blocked_meta_phrases = policy.get("blocked_meta_phrases", DEFAULT_BLOCKED_META_PHRASES)
     if not isinstance(blocked_meta_phrases, list) or not all(isinstance(term, str) for term in blocked_meta_phrases):
         raise TypeError("reader_spine_validation.blocked_meta_phrases must be a list of strings")
+    blocked_paragraph_starts = policy.get("blocked_paragraph_starts", DEFAULT_BLOCKED_PARAGRAPH_STARTS)
+    if not isinstance(blocked_paragraph_starts, list) or not all(isinstance(term, str) for term in blocked_paragraph_starts):
+        raise TypeError("reader_spine_validation.blocked_paragraph_starts must be a list of strings")
     required_headings = policy.get("required_reader_headings", DEFAULT_REQUIRED_READER_HEADINGS)
     if not isinstance(required_headings, list) or not all(isinstance(heading, str) for heading in required_headings):
         raise TypeError("reader_spine_validation.required_reader_headings must be a list of strings")
@@ -289,6 +312,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         words = count_reader_words(text)
         term_hits = live_only_term_hits(text, hard_terms)
         meta_hits = meta_phrase_hits(text, blocked_meta_phrases)
+        paragraph_start_hit_records = paragraph_start_hits(text, blocked_paragraph_starts)
         headings = reader_headings(text)
         sections = reader_sections(text)
         section_word_counts: dict[str, int] = {}
@@ -361,6 +385,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 "section_prose_paragraph_violations": section_prose_paragraph_violations,
                 "live_only_term_hits": term_hits,
                 "meta_phrase_hits": meta_hits,
+                "paragraph_start_hits": paragraph_start_hit_records,
                 "missing_reader_headings": missing_headings,
             }
         )
@@ -429,6 +454,11 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 f"{relative}:{hit['line']}: reader meta phrase {hit['phrase']!r} remains "
                 "in generated reader prose."
             )
+        for hit in paragraph_start_hit_records:
+            errors.append(
+                f"{relative}:{hit['line']}: generated reader paragraph starts with "
+                f"{hit['phrase']!r}; keep compact evidence boundaries inline with claim prose."
+            )
 
     for violation in heading_violations:
         errors.append(f"Stripped heading remains in reader edition: {violation}")
@@ -445,6 +475,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         "minimum_section_prose_paragraph_counts": min_section_prose_paragraph_counts,
         "hard_blocked_terms": hard_terms,
         "blocked_meta_phrases": blocked_meta_phrases,
+        "blocked_paragraph_starts": blocked_paragraph_starts,
         "required_reader_headings": required_headings,
         "chapter_count": len(chapter_records),
         "chapter_word_count_min": min(

@@ -48,6 +48,12 @@ CORE_CLAIM_MARKER_RE = re.compile(
     r"support:\s*(?P<support>[^\]]+)\]\s+",
     re.MULTILINE,
 )
+CORE_CLAIM_MARKER_LINE_RE = re.compile(
+    r"^\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
+    r"label:\s*(?P<label>[^,\]]+),\s*"
+    r"support:\s*(?P<support>[^\]]+)\]\s*(?P<claim_text>.*?)\s*$",
+    re.MULTILINE,
+)
 SUPPORT_BOILERPLATE_RE = re.compile(
     r"The claim remains at `argument` support\.|"
     r"The current support state is `argument`\.|"
@@ -185,13 +191,35 @@ def apply_reader_view_blocks(text: str) -> tuple[str, dict[str, int]]:
     return "\n".join(output).strip() + "\n", counts
 
 
+def reader_support_boundary(support: str) -> str:
+    normalized = support.strip().lower()
+    if normalized == "argument":
+        return "evidence boundary: architectural argument"
+    return f"support remains `{support.strip()}`"
+
+
+def append_parenthetical_boundary(claim_text: str, support: str) -> str:
+    claim = claim_text.strip()
+    if not claim:
+        return f"({reader_support_boundary(support)})."
+    boundary = reader_support_boundary(support)
+    if claim[-1:] in ".?!":
+        return f"{claim[:-1]} ({boundary}){claim[-1]}"
+    return f"{claim} ({boundary})."
+
+
 def strip_core_claim_markers(text: str) -> tuple[str, int]:
-    cleaned, count = CORE_CLAIM_MARKER_RE.subn("", text)
+    def replacement(match: re.Match[str]) -> str:
+        return append_parenthetical_boundary(match.group("claim_text"), match.group("support"))
+
+    cleaned, count = CORE_CLAIM_MARKER_LINE_RE.subn(replacement, text)
     return cleaned, count
 
 
 def humanize_support_boilerplate(text: str) -> tuple[str, int]:
-    cleaned, count = SUPPORT_BOILERPLATE_RE.subn(HUMAN_ARGUMENT_BOUNDARY, text)
+    cleaned, count = SUPPORT_BOILERPLATE_RE.subn("", text)
+    cleaned = re.sub(r"(?m)^[ \t]+", "", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, count
 
 

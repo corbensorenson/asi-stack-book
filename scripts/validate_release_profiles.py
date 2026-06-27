@@ -553,6 +553,22 @@ def main() -> None:
             )
         validate_string_list(
             "reader_spine_validation",
+            "blocked_paragraph_starts",
+            spine_policy.get("blocked_paragraph_starts"),
+            errors,
+        )
+        blocked_paragraph_starts = {
+            str(term)
+            for term in spine_policy.get("blocked_paragraph_starts", [])
+            if isinstance(term, str)
+        }
+        if "Evidence boundary: architectural argument." not in blocked_paragraph_starts:
+            errors.append(
+                "reader_spine_validation.blocked_paragraph_starts must reject "
+                "'Evidence boundary: architectural argument.'."
+            )
+        validate_string_list(
+            "reader_spine_validation",
             "required_reader_headings",
             spine_policy.get("required_reader_headings"),
             errors,
@@ -640,7 +656,7 @@ def main() -> None:
             "human_view_core_claim_marker_policy": "hide raw bracketed core-claim markers in Human view while preserving claim text and support-state prose",
             "support_boundary_ai_class": "asi-support-boilerplate-ai",
             "support_boundary_human_class": "asi-support-boundary-human",
-            "human_view_support_boundary_policy": "replace repeated AI/research support-state boilerplate in Human view with a compact evidence-boundary phrase while preserving the original sentence in AI view",
+            "human_view_support_boundary_policy": "hide repeated AI/research support-state boilerplate in Human view and attach a compact evidence-boundary phrase to the core claim while preserving the original sentence in AI view",
             "assistive_description_class": "asi-sr-only",
             "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
             "ai_only_class": "asi-ai-only",

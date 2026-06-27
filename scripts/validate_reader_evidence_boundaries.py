@@ -3,10 +3,10 @@
 
 The live book can strip repeated research scaffolding for the reader edition and
 live Human view, but the generated reader prose must still preserve each
-chapter's core-claim text and support-state boundary. The live source keeps the
+chapter's core-claim text and inline support-state boundary. The live source keeps the
 raw core-claim marker for AI/research auditability; the generated reader source
 must strip that machine marker while preserving the claim prose and plain
-support boundary. This guard checks the generated reader source, not the live
+inline support boundary. This guard checks the generated reader source, not the live
 chapter source alone, so it catches regressions where evidence caveats are
 hidden inside stripped sections.
 """
@@ -99,6 +99,8 @@ def has_plain_support_boundary(section: str, support: str) -> bool:
 
 def normalized_prose(text: str) -> str:
     text = re.sub(CORE_MARKER_RE, "", text)
+    text = re.sub(r"\s*\(evidence boundary:\s*architectural argument\)", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s*\(support remains `?[^)]+`?\)", "", text, flags=re.IGNORECASE)
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
@@ -245,7 +247,7 @@ def main() -> None:
 
     print(
         "Reader evidence-boundary validation passed: "
-        f"{report['chapter_count']} chapters strip raw core claim markers while preserving claim text and support boundaries."
+        f"{report['chapter_count']} chapters strip raw core claim markers while preserving claim text and inline support boundaries."
     )
 
 

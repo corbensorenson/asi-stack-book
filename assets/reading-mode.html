@@ -122,6 +122,17 @@
     });
   }
 
+  function appendHumanSupportBoundaryToClaim(paragraph) {
+    const previous = paragraph.previousElementSibling;
+    if (!previous || previous.getAttribute("data-asi-core-claim") !== "true") return false;
+    if (previous.querySelector(".asi-support-boundary-human--claim")) return true;
+    const boundary = document.createElement("span");
+    boundary.className = "asi-support-boundary-human asi-support-boundary-human--claim";
+    boundary.textContent = " (evidence boundary: architectural argument).";
+    previous.append(boundary);
+    return true;
+  }
+
   function markSupportBoundaryPhrases() {
     document.querySelectorAll("main.content p, #quarto-document-content p").forEach((paragraph) => {
       if (paragraph.querySelector(".asi-support-boilerplate-ai")) return;
@@ -135,16 +146,20 @@
       paragraph.textContent = "";
       let cursor = 0;
       for (const match of text.matchAll(supportBoundaryPattern)) {
+        const movedBoundaryToClaim = match.index === 0 && appendHumanSupportBoundaryToClaim(paragraph);
         if (match.index > cursor) {
           paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
         }
         const aiPhrase = document.createElement("span");
         aiPhrase.className = "asi-support-boilerplate-ai";
         aiPhrase.textContent = match[0];
-        const humanPhrase = document.createElement("span");
-        humanPhrase.className = "asi-support-boundary-human";
-        humanPhrase.textContent = humanSupportBoundary;
-        paragraph.append(aiPhrase, humanPhrase);
+        paragraph.append(aiPhrase);
+        if (!movedBoundaryToClaim) {
+          const humanPhrase = document.createElement("span");
+          humanPhrase.className = "asi-support-boundary-human";
+          humanPhrase.textContent = humanSupportBoundary;
+          paragraph.append(humanPhrase);
+        }
         cursor = match.index + match[0].length;
       }
       if (cursor < text.length) {

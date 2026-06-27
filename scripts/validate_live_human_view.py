@@ -245,6 +245,8 @@ def validate(site_dir: Path) -> dict[str, object]:
             "asi-core-claim-text",
             "const supportBoundaryPattern",
             "Evidence boundary: architectural argument.",
+            "function appendHumanSupportBoundaryToClaim",
+            "asi-support-boundary-human--claim",
             "function markSupportBoundaryPhrases",
             "markSupportBoundaryPhrases()",
             "data-asi-support-boundary",
