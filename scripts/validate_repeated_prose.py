@@ -50,6 +50,7 @@ FORMULAIC_MVI_PHRASES = (
 FORMULAIC_GENERAL_PHRASES = (
     "The public schema now records",
     "None of those passages show",
+    "The reviewed passages sharpen the",
     "The evidence map is narrower now",
 )
 

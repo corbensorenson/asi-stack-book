@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mechanism source-boundary prose polish
+
+- Reworked repeated `The reviewed passages sharpen the` Mechanism-section formulas across Context Transactions, Semantic Pages, and the Virtual Context ABI. The revised mechanism prose now states the actual source boundary for each layer: transactions define a runtime boundary rather than a running memory store, certificates carry narrower evidence than their vocabulary, and the ABI remains a record-level contract rather than evidence of context resolution under load. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic source-boundary opener, and refreshed the v1.0 status manuscript scale to 178,187 chapter words excluding YAML and 185,686 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal summary evidence-boundary polish
 
 - Reworked repeated `The evidence map is narrower now` Summary-section formulas across Routing Heads and Specialist Cores, Runtime Adapters, Tool Permissions, and Human Approval, and Procedural Memory and Cognitive Loop Closure. The revised summaries now name the actual evidence boundary for each layer: route-quality tests and safety evaluations remain future work, adapter traces and effect receipts have not run, and loop-closure/tool-generation execution remains unexecuted. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic summary formula, and refreshed the v1.0 status manuscript scale to 178,171 chapter words excluding YAML and 185,670 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
