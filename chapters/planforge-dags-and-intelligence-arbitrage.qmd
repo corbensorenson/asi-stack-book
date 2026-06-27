@@ -45,6 +45,14 @@ It follows the planning chapter by taking a general plan graph and asking what m
 
 The move from plan to DAG is a move from intention to dispatch discipline. A node is not merely a subtask; it is a bounded work request with dependencies, authority, context demand, quality predicate, budget, route, and failure behavior.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The planning chapter explains why work needs structure. This chapter asks how that structure becomes schedulable. A PlanForge-style DAG gives the system a way to split work, expose dependencies, parallelize where safe, and choose when a cheap route is adequate or an expensive route is justified.
+
+The reader should keep the efficiency chapter in mind here. Intelligence arbitrage is not about always using the cheapest worker. It is about matching task, evidence burden, risk, and capability so the stack can spend attention deliberately and record why the route was acceptable.
+:::
+
 ## Problem
 
 Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.

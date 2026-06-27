@@ -43,6 +43,14 @@ It opens Part II by turning Part I's governance boundary into an operational spi
 
 The contract is an authority-preserving lease over work. It says what the system is allowed to try, which means are forbidden, what result would count as satisfaction, which side effects require approval, and when the system must come back to the human or governance layer instead of improvising.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Part I defined the boundaries that keep capability governed. Part II begins by asking how a real request moves through those boundaries without turning into an untraceable conversation. The answer is an intent-to-execution contract: a path from purpose to plan, artifact, authority check, execution, verification, and feedback.
+
+For a human reader, this is where the book shifts from principles to machinery. A useful AI system should not merely respond well. It should be able to show what request it understood, what work it created, what powers it used, what evidence it produced, and what remains unresolved.
+:::
+
 ## Problem
 
 Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.

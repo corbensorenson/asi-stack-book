@@ -44,6 +44,14 @@ It follows command contracts because explicit commands are still inert until the
 
 Planning is therefore the stack's first refusal-friendly layer after command intake. A plan can expose a missing dependency, overbroad tool request, impossible budget, or violated stop condition before the system spends authority. That makes plans useful even when they do not execute.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Once a command is structured, the stack still has to decide what work should exist. Planning is the layer that turns intent into ordered obligations: dependencies, budgets, risk limits, context needs, tool choices, review points, and stop conditions.
+
+This chapter treats planning as control, not brainstorming. A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, and preserve residual work instead of letting the planner's confidence become execution authority.
+:::
+
 ## Problem
 
 Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.

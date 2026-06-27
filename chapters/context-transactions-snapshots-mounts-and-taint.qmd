@@ -44,6 +44,14 @@ It follows the certificate chapter because typed cells still need runtime semant
 
 This chapter is where context stops being a bag of retrieved text and becomes state. A stateful memory layer has to answer what view was read, what changed, what was hidden, what was tainted, what was deleted, and what derivative obligations now exist.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Typed context cells still need runtime semantics. This chapter treats context like a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, or denied. Without those semantics, even well-labeled memory can become stale or mixed across incompatible tasks.
+
+The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, and what was tainted, the system cannot honestly explain its own reasoning surface.
+:::
+
 ## Problem
 
 Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.

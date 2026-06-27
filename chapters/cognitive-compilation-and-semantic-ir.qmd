@@ -43,6 +43,14 @@ It follows PlanForge because a scheduled DAG still needs an artifact language. S
 
 The compiler is the first layer where a plan stops being merely plausible and becomes inspectable. Its output should let another layer ask: which requirement is this artifact preserving, which authority applies, which validator can reject it, and which repair surface is allowed to change it?
 
+::: {.asi-human-only}
+## Human Reading Path
+
+A scheduled plan is still too loose unless each unit of work has an artifact language. Cognitive compilation gives the stack that language: semantic atoms, obligations, validators, repairs, and target outputs that can be inspected before they become code, prose, schemas, proofs, or tool jobs.
+
+For a human reader, this is the chapter where AI work starts to look less like improvisation and more like compilation. The system is not just generating an answer. It is lowering intent through typed intermediate forms so later layers can repair, verify, replay, or reject specific obligations.
+:::
+
 ## Problem
 
 LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.

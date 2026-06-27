@@ -44,6 +44,14 @@ It follows the ABI chapter by moving inside the materialized packet. Once contex
 
 The certificate is the border control for meaning. It prevents a compact cell from changing role as it moves from planning to evidence, execution, review, or memory.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The Virtual Context ABI says how context enters the working surface. This chapter asks what the pieces of that context are allowed to mean. Semantic pages and context cells are compact units with provenance, loss boundaries, confidence, and certificates attached.
+
+For the reader, the key idea is that summaries are not free. A summary can be useful only if the system records what it preserved, what it compressed away, and what downstream claims are allowed to rely on it. Otherwise compact context becomes a quiet source of evidence loss.
+:::
+
 ## Problem
 
 Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.

@@ -43,6 +43,14 @@ It follows the execution-trace chapter by zooming into the first machine-readabl
 
 This chapter is where the stack stops treating language as a vibe and starts treating it as an interface. The prior intent contract says what was authorized; the command contract says how that authorization is shaped into fields that planners, validators, and job runners can actually inspect.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The previous chapter traced a whole request from intent to execution. This chapter zooms into the first machine-readable handoff: the command contract. It is the point where ordinary language becomes structured enough that planning can proceed without guessing at hidden requirements or hidden authority.
+
+The important move is not to make human language robotic. It is to preserve what matters: role, objective, context, constraints, output, verification, failure behavior, and permission boundary. A good command contract lets the stack be helpful while still knowing when it must ask, refuse, or stop.
+:::
+
 ## Problem
 
 The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.

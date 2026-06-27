@@ -45,6 +45,14 @@ After typed jobs, the stack needs a memory surface for work itself. This chapter
 
 The key distinction is between storage and evidential continuity. A file path says where bytes live. An artifact node says what role those bytes played, which job created them, which sources and tools shaped them, what can be reconstructed, and what remains uncertain. The living book should preserve that distinction because later chapters depend on it: compressed artifacts, semantic nodes, benchmark records, reader editions, and prototype reports all become safer when they inherit an explicit artifact history instead of a loose folder convention.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Typed jobs produce things. This chapter makes those things durable: artifacts, logs, traces, receipts, replay records, and links back to the claims or plans they affect. Without that graph, work disappears into conversation history.
+
+The human reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reader should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable.
+:::
+
 ## Problem
 
 The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.

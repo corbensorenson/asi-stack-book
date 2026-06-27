@@ -44,6 +44,14 @@ Placed after tribunal review, this chapter is the first execution translation po
 
 The typed job is where the stack stops planning and starts owing receipts. A plan node describes intended work; a job packet records authorized work with lifecycle, permission, approval, artifact, and replay obligations attached.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, owner, inputs, outputs, approvals, isolation, logs, and completion criteria.
+
+This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, what evidence they must return, and how their work can be audited or replayed later.
+:::
+
 ## Problem
 
 Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.

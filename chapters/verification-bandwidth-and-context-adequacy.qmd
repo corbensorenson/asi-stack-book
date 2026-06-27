@@ -41,6 +41,14 @@ This chapter treats verification bandwidth as a claim-control boundary, not as a
 
 It follows transactions because a coherent, authorized context view can still be inadequate for the claim at hand. Memory correctness and verification adequacy are different gates.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+A coherent memory view can still be insufficient. This chapter separates having context from being able to verify with it. The stack needs to know when the available context, attention, time, tools, and reviewer capacity are adequate for the claim being made.
+
+For a human reader, this is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, or escalate instead of sounding certain.
+:::
+
 ## Problem
 
 Long context does not automatically provide long-range reasoning or enough verification capacity.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Part II human reading path
+
+- Added Human Reading Path bridges to all 16 Part II chapters using `.asi-human-only` blocks, giving interested readers a continuous route through intent contracts, command interfaces, planning, DAG scheduling, semantic IR, context memory, verification, claim ledgers, adversarial review, typed jobs, artifact replay, runtime adapters, and procedural memory. This strengthens the live Human view and generated reader spine while leaving AI/research scaffolding in the default view and without claiming source-derived support promotion, new tests, ebook artifacts, or audio artifacts.
+
 ## 2026-06-27 - v1.0 improvement goal Part I human reading path
 
 - Added Human Reading Path bridges to all 14 Part I chapters using `.asi-human-only` blocks, giving interested readers a book-like orientation through the foundation sequence while keeping AI/research scaffolding uncluttered in the default view. Strengthened the live Human view and reader-spine contract: reader validation now requires each generated chapter to retain the core reader-facing headings and a higher minimum prose floor after live-only sections are stripped; reader generation removes `.asi-ai-only` fenced blocks and unwraps `.asi-human-only` fenced blocks; and `scripts/validate_live_human_view.py` now checks rendered chapter pages for the reading-mode toggle, live-only headings, and view-mode block classes. This improves the human-readable live and reader paths without claiming a reviewed reader release, ebook, audiobook, support-state promotion, or new source evidence.

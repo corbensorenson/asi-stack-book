@@ -45,6 +45,14 @@ It follows cognitive compilation because semantic atoms need source context, but
 
 The ABI is the context layer's syscall surface. A planner should ask for context through stable addresses, mounts, representation needs, authority labels, and adequacy targets, not by smuggling retrieval instructions into prose.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Cognitive compilation needs context, but context should not arrive as an accidental transcript dump. This chapter defines the interface between durable memory and model-visible working context: what may be mounted, what scope it has, how it expires, and what a consumer may infer from it.
+
+The human intuition is simple: memory access is a contract. A model should not treat retrieved text, private notes, old plans, or source packets as interchangeable context. The ABI gives memory a boundary so later reasoning can be audited instead of reconstructed from vibes.
+:::
+
 ## Problem
 
 Long-horizon agents need a stable interface between durable memory and model-visible working context.
