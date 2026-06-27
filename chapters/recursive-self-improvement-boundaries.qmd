@@ -261,8 +261,8 @@ The crosswalk distinguishes source-reported readiness and self-evolution design 
 
 ## Summary
 
-Recursive Self-Improvement Boundaries defines the stack's rule for changing itself. Self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback.
+Recursive self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback. Improvement is not a special exemption from the stack's rules; it is the hardest case for those rules.
 
 This is the handoff from Part I to the operational stack. Planning, memory, reasoning, execution, routing, and compression can become powerful only if their future changes remain auditable, bounded, and reversible. Part II can now build machinery under a clear condition: every new layer must remain governable when it learns, compiles, routes, or replaces itself.
 
-The operating principle is that improvement must preserve governability. A faster, cheaper, or more capable system that weakens receipts, budgets, security boundaries, or evaluator independence has not improved the ASI Stack described in this book.
+The operating principle is that improvement must preserve governability. A faster, cheaper, or more capable system that weakens receipts, budgets, security boundaries, human rights, or evaluator independence has not improved the ASI Stack. That rule is deliberately demanding because self-improvement compounds whatever the architecture normalizes. If unsupported claims become acceptable, unsupported claims scale. If authority leaks become tolerable, authority leaks scale. If residuals vanish during upgrades, the system becomes less inspectable exactly when it becomes more powerful. Bounded improvement therefore begins by making every operational layer accountable to the governance frame already established.

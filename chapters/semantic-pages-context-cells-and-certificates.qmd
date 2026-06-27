@@ -234,8 +234,8 @@ The semantic-context sources support the cell, page, certificate, provenance, an
 
 ## Summary
 
-Semantic Pages, Context Cells, and Certificates makes context units typed and evidence-carrying. The system can compress and adapt context, but it must keep provenance, loss, authority, permitted use, verification state, and residual risks attached.
+Semantic pages, context cells, and certificates make context units typed and evidence-carrying. The system can compress and adapt context, but it must keep provenance, loss, authority, permitted use, verification state, and residual risks attached.
 
 The antidote to overconfident summaries is a certificate that travels with the representation. A representation can be small, useful, and still honest about what it is not allowed to prove. Those certified units then need runtime semantics: snapshots, mounts, branches, taint, deletion closure, and auditable memory faults.
 
-A certified cell should become harder to misuse as it travels. If the certificate disappears into surrounding prose, the representation has become another unbounded summary.
+A certified cell should become harder to misuse as it travels. If the certificate disappears into surrounding prose, the representation has become another unbounded summary. The deeper point is that compression and retrieval need rights and liabilities, not just embeddings. A summary should carry what it dropped. A cell should know whether it can support a claim, route a task, inform a tool call, or merely orient a human reader. A certificate should let the next layer reject the context before it contaminates a plan, proof attempt, benchmark explanation, or release note.

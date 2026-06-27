@@ -11,7 +11,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Surface | Current state | Evidence |
 |---|---|---|
 | Book structure | 4 parts, 54 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 170,495 chapter words excluding YAML front matter; 177,994 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Manuscript scale | 54 chapter files; 172,363 chapter words excluding YAML front matter; 179,862 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Source appendix ownership | Appendix G is reserved for Corben-authored, supplied, and local source records; Appendix H is reserved for external source records marked `external_literature` | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
@@ -30,7 +30,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 
 - The book order is dynamic and manifest-driven.
 - The outline is a usable source of truth for drafting, source queues, and Lean proof targets.
-- Every manifest chapter exists and has the required chapter contract in order: problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary. The chapter DoD guard also requires the implementation endpoint pair to remain substantive: a smallest honest start plus a mature target state that is not reported as a current result.
+- Every manifest chapter exists and has the required chapter contract in order: problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary. The chapter DoD guard also requires the implementation endpoint pair to remain substantive: a smallest honest start plus a mature target state that is not reported as a current result. Chapter summaries now have a 120-word minimum floor and are checked against self-referential chapter phrasing, mechanical section handoffs, and live crosswalk references.
 - Appendix K is generated from the manifest and machine-checked as a book-wide implementation horizon map: one concrete first-build slice and one mature target endpoint per chapter, in manifest order.
 - Current source-note coverage, source-to-chapter assignment, core claim mapping, and passage-review mapping are internally traceable.
 - Current proof targets are wired through outline tags, generated manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E.

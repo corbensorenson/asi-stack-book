@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal summary floor 120
+
+- Expanded the 28 shortest chapter summaries with chapter-specific synthesis, cleaner handoffs, and explicit evidence boundaries where relevant, then raised `scripts/validate_chapter_dod.py` so every manifest chapter summary must contain at least 120 words while preserving the existing bans on self-referential chapter phrasing, mechanical section handoffs, and live crosswalk references. Updated the site quality standard and v1.0 candidate status to record the stronger reader-facing closing-prose gate. Refreshed the v1.0 status manuscript scale to 172,363 chapter words excluding YAML and 179,862 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal diagram floor 12
 
 - Expanded the thinnest Mermaid mechanism diagrams in 17 chapters with additional residual, monitor, backlog, consumer-decision, or support-boundary states, then raised `scripts/validate_visual_coverage.py` so every chapter diagram must now clear at least 12 non-comment lines in addition to the existing edge, node, and labeled-transition floors. Updated the site quality standard and v1.0 candidate status to record the stronger visual-substance gate. Refreshed the v1.0 status manuscript scale to 170,495 chapter words excluding YAML and 177,994 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

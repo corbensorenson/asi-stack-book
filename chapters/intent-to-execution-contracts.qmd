@@ -236,8 +236,8 @@ The assigned sources establish the trace vocabulary for intent, plan, job, artif
 
 ## Summary
 
-Intent-to-Execution Contracts is the stack's first operational handoff. It turns human intent into a traceable chain of contracts, plans, jobs, artifacts, verification, feedback, and residuals.
+Intent-to-execution contracts are the first operational handoff. They turn human intent into a traceable chain of contracts, plans, jobs, artifacts, verification, feedback, and residuals.
 
 The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action. That trace narrows into the command language that makes the first machine-readable handoff precise.
 
-A downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract.
+A downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract. This is also where the human-facing promise becomes concrete. A person should be able to see how a request was interpreted, which constraints traveled with it, which authority was granted, which assumptions were introduced, and which residuals remained unresolved. That visibility makes later automation less mysterious and more accountable. Planning can decompose the work, memory can supply context, and tools can execute only because the contract gives them a bounded object to inherit rather than an ambient desire to satisfy.
