@@ -226,16 +226,19 @@ The next useful implementation step is a small command-conflict fixture set: one
 
 ## Beyond the State of the Art
 
-The mature version of Command Contracts and Semantic Interfaces is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a semantic control language for governed work. It is not a prompt template library. It is the small, inspectable language that humans, planners, verifiers, job runners, policy layers, and future AI agents use to agree on what the next unit of work means before any execution path opens.
 
-At that end state, the chapter's claim becomes an operational contract: Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior. The mature surface would include:
+At that end state, every command field has provenance, confidence, precedence, and dispatch consequence. A command can carry natural language, examples, style, and source context, but those materials cannot overwrite explicit objective, constraints, authority, output, verification, or failure behavior. Context informs the contract; it does not become a hidden command channel.
 
-- Operating mechanism: Turn recurring command patterns into reusable templates; Treat software words as coordination primitives; Bind semantic interfaces to schemas and tests.
-- Stack interface: Planning consumes structured commands; Execution enforces output contracts; Verification checks stated failure behavior.
-- Preserved invariants: A command exposes output and verification requirements; Failure behavior is declared; Implicit instructions do not override explicit constraints.
-- Failure closure: detect and route failure modes such as Semantic ambiguity; Prompt injection through context; Unspecified output contract to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Command Contracts and Semantic Interfaces, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A typed command vocabulary for objective, scope, context references, constraints, allowed means, forbidden means, output contract, verifier, approval path, failure behavior, feedback route, and non-claims.
+- Field-level provenance that distinguishes confirmed, policy-imposed, source-derived, defaulted, inferred, and missing values.
+- A precedence checker that detects context overrides, vague formal fields, inferred authority, incompatible examples, and output contracts that cannot be verified.
+- Lowering rules that let validated commands become plan inputs, while draft, conflicting, missing, or inferred-authority commands remain clarification requests, review items, or residuals.
+- Reusable command templates for recurring work, each versioned with its expected artifacts, guards, recovery path, and evidence burden.
+
+For this chapter, beyond the state of the art means that command language becomes a semantic firewall. The system can still understand rich human instruction, but it only dispatches the bounded fields that have survived validation. This remains a target architecture. The support state should not rise until parser behavior, conflict checks, override tests, dispatch enforcement, and downstream traces exist and validate this contract.
 
 ## Codex test plan
 

@@ -230,16 +230,19 @@ The next useful implementation step is a tiny plan-dispatch fixture with one val
 
 ## Beyond the State of the Art
 
-The mature version of Planning as a Control Layer is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a live control plane for work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs.
 
-At that end state, the chapter's claim becomes an operational contract: Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects. The mature surface would include:
+At that end state, planning is useful even when nothing executes. The planner can expose that a request is underspecified, a dependency is cyclic, a source is inadequate, a verifier is missing, a tool exceeds authority, a budget cannot support the quality predicate, or a stop condition has fired. Those outputs become plan residuals, not hidden failures.
 
-- Operating mechanism: Compile goals into strategic, tactical, and runtime plans; Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior; Delegate execution through typed contracts.
-- Stack interface: Alignment filters goals; VCM supplies context packets; Routing selects specialists; Execution runs typed jobs.
-- Preserved invariants: Plans expose constraints and stop conditions; Runtime replanning preserves authority limits; Tool selection is justified by task requirements.
-- Failure closure: detect and route failure modes such as Scope creep; Planning without replanning; Tool choice exceeds authority or budget to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Planning as a Control Layer, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Strategic, tactical, and runtime plan views over the same parent contract, each with assumptions, dependencies, context requests, budgets, risk limits, verification plans, and stop conditions.
+- Node lifecycle states that prevent proposed, blocked, exploratory, or review-only nodes from lowering into jobs.
+- Dispatch receipts that bind every job to a plan node, satisfied constraints, authority basis, context packet, verifier, and parent command.
+- Replanning deltas that record what changed after feedback, which obligations were preserved, and which residuals or stop conditions remain.
+- Control dashboards that show blocked context, blocked authority, blocked verifier, budget pressure, dependency pressure, and human approval queues before side effects occur.
+
+For this chapter, beyond the state of the art means that planning becomes the stack's traffic-control layer. It does not merely find a clever route; it keeps candidate work, authorized work, blocked work, and executed work separate under pressure. This remains a target architecture. The support state should not rise until planner schemas, lifecycle enforcement, dispatch tests, replanning traces, and authority-preservation checks exist for this end state.
 
 ## Codex test plan
 

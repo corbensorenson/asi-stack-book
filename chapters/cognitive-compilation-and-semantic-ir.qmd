@@ -188,16 +188,19 @@ The next useful fixture set is a tiny source plan, its semantic-atom DAG, one lo
 
 ## Beyond the State of the Art
 
-The mature version of Cognitive Compilation and Semantic IR is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a compiler toolchain for cognitive work. It turns goals, command contracts, plans, and source context into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy.
 
-At that end state, the chapter's claim becomes an operational contract: Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted. The mature surface would include:
+At that end state, every important artifact has a lowering receipt. The receipt names the source plan, semantic atoms, obligations, assumptions, validators, target constraints, authority requirements, repair scope, support-state effect, and residuals that produced it. A later writer, model, compiler pass, or reviewer can change one node without erasing unrelated obligations or pretending that a syntactic pass is semantic acceptance.
 
-- Operating mechanism: Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly; Perform incremental repair over IR rather than re-prompting from scratch; Compile IR into jobs, code, schemas, or documents.
-- Stack interface: Planning produces or consumes IR; Execution receives target-specific artifacts; Verification checks IR-to-output preservation.
-- Preserved invariants: IR preserves declared requirements; Repair changes are localized and auditable; Target compilation records assumptions.
-- Failure closure: detect and route failure modes such as IR drift; Compiler hallucination; Repair that breaks earlier requirements to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Cognitive Compilation and Semantic IR, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A source-plan language that preserves user intent, constraints, source boundaries, authority limits, quality criteria, and expected artifacts.
+- A semantic IR with typed atoms, dependencies, obligations, validators, assumptions, target hints, repair scopes, and support-state effects.
+- Compiler passes for extraction, normalization, typing, dependency analysis, linting, scheduling, target lowering, validation, and localized repair.
+- Target backends for chapters, diagrams, schemas, code, Lean proof targets, benchmark fixtures, release notes, and runtime job packets.
+- Build-system style traces that show which artifacts are up to date, which validators failed, which obligations changed, and which downstream artifacts must be rebuilt.
+
+For this chapter, beyond the state of the art means that AI-assisted creation becomes obligation-preserving compilation rather than direct generation with after-the-fact review. The mature system can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable. This remains a target architecture. The support state should not rise until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons exist for this end state.
 
 ## Codex test plan
 

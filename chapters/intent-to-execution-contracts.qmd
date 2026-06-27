@@ -188,16 +188,19 @@ The next useful implementation step is a two-path vertical-slice fixture: one co
 
 ## Beyond the State of the Art
 
-The mature version of Intent-to-Execution Contracts is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a contract operating spine for the whole stack, not a larger form of the minimal fixture. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done.
 
-At that end state, the chapter's claim becomes an operational contract: The stack should transform intent into execution contracts before any tool or runtime action occurs. The mature surface would include:
+At that end state, no response is allowed to masquerade as execution. A human, reviewer, runtime, or later AI agent can ask what was requested, what was authorized, which defaults were used, what re-contract events occurred, which jobs ran, which side effects were approved, which artifacts were produced, which validators accepted them, and which residuals remain. The system can pause or stop for missing context, missing approval, missing verifier, budget exhaustion, or violated constraints without treating that stop as conversational failure.
 
-- Operating mechanism: Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback; Route contracts through planning, memory, verification, and execution layers; Attach result artifacts back to the claim and evidence ledger.
-- Stack interface: Intent contracts feed planning; Execution consumes typed jobs derived from contracts; Evidence records contract satisfaction.
-- Preserved invariants: Contract constraints survive compilation; Side effects require explicit execution authority; Artifacts remain linked to source intent.
-- Failure closure: detect and route failure modes such as Response mistaken for completed work; Artifact identity lost; Approval bypass to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would look like a work ledger with contract intelligence:
 
-For Intent-to-Execution Contracts, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Intake contracts preserve user purpose, constraints, rights, authority basis, bounded defaults, stop conditions, and non-claims.
+- Lowering receipts prove that command contracts, plan nodes, typed jobs, runtime calls, artifacts, and verification records still point back to the same parent intent.
+- Runtime gates consume explicit authority transitions rather than inferring permission from helpful prose.
+- Re-contract events are first-class records, so discovered scope changes, approval gaps, verifier gaps, or impossible budgets become new decisions instead of hidden improvisation.
+- Feedback closes into claims, regressions, tools, source notes, and residual ledgers, which lets future work reuse what was learned without inventing a false success record.
+
+For this chapter, beyond the state of the art means that intent becomes a governed transaction protocol for cognition and action. The stack would be able to prove, by trace inspection and later by executable predicates, that a result is not merely useful but contract-linked, authority-preserving, and accepted under the stated criteria. This remains a target architecture. The support state should not rise until the required schemas, proofs, tests, replayed traces, runtime records, and review receipts exist for this specific end state.
 
 ## Codex test plan
 
