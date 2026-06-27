@@ -9,7 +9,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Appendices must be visible as the evidence and governance layer of the book.
 - Support states must be explained before readers encounter major claims.
 - The site must not imply source ingestion or testing is complete when it is not.
-- The top-of-page reading-mode switch must default to `AI view`, persist the reader's selected mode locally, expose an assistive status update for screen readers, and provide `Human view` by hiding the reader-release live-only chapter headings without claiming a reviewed reader artifact exists.
+- The top-of-page reading-mode switch must default to `AI view`, persist the reader's selected mode locally, expose an assistive status update for screen readers, and provide `Human view` by hiding the reader-release live-only chapter headings and their page-TOC entries without claiming a reviewed reader artifact exists.
 - Every manifest chapter must include exactly one `.asi-human-only` `Human Reading Path` bridge after `Drafting guardrail` and before `Problem`, giving interested readers a concise route into the chapter without moving evidence caveats out of the reader spine.
 - Optional `.asi-human-only`, `.asi-ai-only`, and `.asi-live-only` blocks must follow the release profile policy: human-only prose is retained for reader editions, AI/live-only material is hidden or stripped, and meaning-critical caveats stay in the ordinary reader spine.
 

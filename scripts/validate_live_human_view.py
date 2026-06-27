@@ -29,12 +29,15 @@ class HeadingParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.current_level: int | None = None
+        self.current_anchor: str | None = None
         self.current_text: list[str] = []
-        self.headings: list[tuple[int, str]] = []
+        self.headings: list[tuple[int, str, str | None]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if re.fullmatch(r"h[1-6]", tag):
+            attr_map = dict(attrs)
             self.current_level = int(tag[1])
+            self.current_anchor = attr_map.get("data-anchor-id") or attr_map.get("id")
             self.current_text = []
 
     def handle_endtag(self, tag: str) -> None:
@@ -42,8 +45,9 @@ class HeadingParser(HTMLParser):
             return
         text = normalize_html_heading(" ".join(self.current_text))
         if text:
-            self.headings.append((self.current_level, text))
+            self.headings.append((self.current_level, text, self.current_anchor))
         self.current_level = None
+        self.current_anchor = None
         self.current_text = []
 
     def handle_data(self, data: str) -> None:
@@ -111,7 +115,23 @@ def source_view_class_counts(path: Path) -> dict[str, int]:
 def rendered_headings(path: Path) -> set[tuple[int, str]]:
     parser = HeadingParser()
     parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
-    return set(parser.headings)
+    return {(level, text) for level, text, _anchor in parser.headings}
+
+
+def rendered_heading_anchors(path: Path) -> dict[tuple[int, str], str]:
+    parser = HeadingParser()
+    parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
+    return {
+        (level, text): anchor
+        for level, text, anchor in parser.headings
+        if anchor
+    }
+
+
+def rendered_toc_targets(html: str) -> set[str]:
+    targets = set(re.findall(r'data-scroll-target="#([^"]+)"', html))
+    targets.update(re.findall(r'href="#([^"]+)"', html))
+    return targets
 
 
 def rendered_class_counts(path: Path) -> dict[str, int]:
@@ -131,6 +151,7 @@ def validate(site_dir: Path) -> dict[str, object]:
     errors: list[str] = []
     records: list[dict[str, object]] = []
     total_live_headings = 0
+    total_live_toc_targets = 0
     total_view_blocks = {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0}
 
     if not site_dir.exists():
@@ -151,6 +172,7 @@ def validate(site_dir: Path) -> dict[str, object]:
             "source_file": source_file,
             "html_file": str(html_path.relative_to(ROOT)) if html_path.exists() else str(html_path),
             "live_only_heading_count": len(expected),
+            "live_only_toc_target_count": 0,
             "view_mode_blocks": expected_view_classes,
         }
 
@@ -168,6 +190,8 @@ def validate(site_dir: Path) -> dict[str, object]:
             "role=\"status\"",
             "aria-live=\"polite\"",
             "data-asi-reading-mode-status",
+            "data-asi-live-toc-link",
+            "function markLiveTocLinks",
             "AI/research view active.",
             "Human view active.",
             "AI view",
@@ -177,6 +201,8 @@ def validate(site_dir: Path) -> dict[str, object]:
                 errors.append(f"{html_path.relative_to(ROOT)}: missing reading-mode toggle text {needle!r}")
 
         headings = rendered_headings(html_path)
+        heading_anchors = rendered_heading_anchors(html_path)
+        toc_targets = rendered_toc_targets(html)
         missing_headings = sorted(set(expected) - headings)
         if missing_headings:
             record["missing_rendered_live_headings"] = [
@@ -185,6 +211,22 @@ def validate(site_dir: Path) -> dict[str, object]:
             errors.append(
                 f"{html_path.relative_to(ROOT)}: live-only source headings are not present "
                 f"as rendered headings: {record['missing_rendered_live_headings']}"
+            )
+        missing_toc_targets: list[str] = []
+        for key in expected:
+            anchor = heading_anchors.get(key)
+            if not anchor:
+                continue
+            if anchor not in toc_targets:
+                missing_toc_targets.append(f"h{key[0]}:{key[1]} -> #{anchor}")
+        live_toc_count = len(expected) - len(missing_toc_targets)
+        record["live_only_toc_target_count"] = live_toc_count
+        total_live_toc_targets += live_toc_count
+        if missing_toc_targets:
+            record["missing_live_toc_targets"] = missing_toc_targets
+            errors.append(
+                f"{html_path.relative_to(ROOT)}: live-only rendered headings are not present "
+                f"as TOC targets: {missing_toc_targets}"
             )
 
         actual_view_classes = rendered_class_counts(html_path)
@@ -209,6 +251,7 @@ def validate(site_dir: Path) -> dict[str, object]:
         "site_dir": str(site_dir),
         "chapter_count": len(records),
         "live_only_heading_count": total_live_headings,
+        "live_only_toc_target_count": total_live_toc_targets,
         "view_mode_blocks": total_view_blocks,
         "status": "pass" if not errors else "fail",
         "chapter_records": records,
@@ -245,6 +288,7 @@ def main() -> None:
         "Live Human view validation passed: "
         f"{report['chapter_count']} rendered chapter pages, "
         f"{report['live_only_heading_count']} live-only headings available for runtime hiding, "
+        f"{report['live_only_toc_target_count']} live-only TOC targets available for runtime hiding, "
         f"{report['view_mode_blocks']} view-mode blocks rendered."
     )
 

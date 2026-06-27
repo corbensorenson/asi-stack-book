@@ -38,7 +38,17 @@
       .toLowerCase();
   }
 
+  function targetIdFromHash(value) {
+    if (!value || !value.startsWith("#")) return "";
+    try {
+      return decodeURIComponent(value.slice(1));
+    } catch (_) {
+      return value.slice(1);
+    }
+  }
+
   function markLiveSections() {
+    const liveIds = new Set();
     document.querySelectorAll("section").forEach((section) => {
       const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
       if (!heading) return;
@@ -46,7 +56,20 @@
       const key = `${level}:${cleanHeadingText(heading)}`;
       if (liveHeadings.has(key)) {
         section.setAttribute("data-asi-live-section", "true");
+        if (section.id) liveIds.add(section.id);
+        const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+        if (anchorId) liveIds.add(anchorId);
       }
+    });
+    return liveIds;
+  }
+
+  function markLiveTocLinks(liveIds) {
+    document.querySelectorAll('#TOC a[href^="#"], #TOC a[data-scroll-target^="#"]').forEach((link) => {
+      const targetId = targetIdFromHash(link.getAttribute("data-scroll-target") || link.getAttribute("href") || "");
+      if (!liveIds.has(targetId)) return;
+      const item = link.closest("li") || link;
+      item.setAttribute("data-asi-live-toc-link", "true");
     });
   }
 
@@ -107,7 +130,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    markLiveSections();
+    const liveIds = markLiveSections();
+    markLiveTocLinks(liveIds);
     insertToggle();
     setMode(savedMode());
   });

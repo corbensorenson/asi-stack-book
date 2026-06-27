@@ -72,6 +72,8 @@ def main() -> None:
         errors.append("_quarto.yml is missing the generated reading-mode after-body include")
     if 'html[data-asi-reading-mode="human"] section[data-asi-live-section="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
+    if 'html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"]' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode live TOC hide rule")
     if ".asi-sr-only" not in style_text:
         errors.append("assets/styles.scss is missing the assistive-only helper class")
     if 'html[data-asi-reading-mode="human"] .asi-human-only' not in style_text:
@@ -87,6 +89,7 @@ def main() -> None:
         "human_mode": "human",
         "storage_key": "asi-stack-reading-mode",
         "mode_status_selector": "[data-asi-reading-mode-status]",
+        "toc_link_marker": "data-asi-live-toc-link",
         "assistive_description_class": "asi-sr-only",
         "ai_only_class": "asi-ai-only",
         "human_only_class": "asi-human-only",
@@ -103,6 +106,9 @@ def main() -> None:
         "status role": 'role="status"',
         "polite live region": 'aria-live="polite"',
         "mode status selector": "data-asi-reading-mode-status",
+        "toc link marker": "data-asi-live-toc-link",
+        "toc link marker function": "function markLiveTocLinks",
+        "toc link marker call": "markLiveTocLinks(liveIds)",
         "ai status copy": "AI/research view active.",
         "human status copy": "Human view active.",
         "ai button title": "Show the full AI and researcher scaffold",

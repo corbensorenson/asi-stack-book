@@ -159,6 +159,10 @@ html[data-asi-reading-mode="human"] section[data-asi-live-section="true"] {
   display: none !important;
 }
 
+html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"] {
+  display: none !important;
+}
+
 html[data-asi-reading-mode="human"] .asi-live-only,
 html[data-asi-reading-mode="human"] .asi-ai-only,
 html[data-asi-reading-mode="ai"] .asi-human-only {
