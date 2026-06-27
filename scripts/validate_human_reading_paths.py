@@ -20,7 +20,7 @@ import build_reader_edition
 ROOT = Path(__file__).resolve().parents[1]
 HUMAN_CLASS = "asi-human-only"
 HUMAN_HEADING = "## Human Reading Path"
-MIN_BRIDGE_WORDS = 90
+MIN_BRIDGE_WORDS = 95
 MAX_BRIDGE_WORDS = 180
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
