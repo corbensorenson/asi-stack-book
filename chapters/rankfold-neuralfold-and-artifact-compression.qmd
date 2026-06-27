@@ -55,7 +55,7 @@ The useful question is not whether compression is clever. It is whether a consum
 
 Approximation is acceptable only when downstream users know what kind of approximation they received.
 
-Compression should make artifacts cheaper to use without making them harder to doubt.
+Compression should make artifacts cheaper to use without making them harder to doubt. A compressed archive should invite reconstruction, probing, and refusal when the shortcut is too thin.
 :::
 
 ## Problem

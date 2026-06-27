@@ -57,7 +57,7 @@ After routing and readiness gates, the book needs a concrete runtime shape to re
 
 The boundary is important. MoECOT is not treated here as reproduced proof that the architecture works. It is treated as a useful target shape: if a runtime wants to strengthen claims in this book, it should emit command traces, route decisions, specialist lanes, gates, ledgers, replay refs, handoffs, denied paths, and residuals that can be inspected independently. Runtime shape becomes evidence only when records survive inspection.
 
-The runtime ideal is less about clever orchestration than about evidence-rich orchestration.
+The runtime ideal is less about clever orchestration than about evidence-rich orchestration. The useful runtime is the one that leaves enough state behind to debug the handoff.
 :::
 
 ## Problem

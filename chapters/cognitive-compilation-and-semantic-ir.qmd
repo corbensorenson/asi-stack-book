@@ -50,7 +50,7 @@ A scheduled plan is still too loose unless each unit of work has an artifact lan
 
 AI work starts to look less like improvisation and more like compilation here. The system is not just generating an answer. It is lowering intent through typed intermediate forms so later layers can repair, verify, replay, or reject specific obligations. That makes failures local: a broken obligation can be fixed without regenerating the entire work surface.
 
-Compilation gives the stack a handle on partial correctness instead of forcing every review to judge a finished blob.
+Compilation gives the stack a handle on partial correctness instead of forcing every review to judge a finished blob. Intermediate structure makes errors cheaper because they can be localized before output hardens.
 :::
 
 ## Problem
