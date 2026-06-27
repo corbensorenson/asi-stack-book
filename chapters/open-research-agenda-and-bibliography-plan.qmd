@@ -170,7 +170,7 @@ Minimum fields:
 - `next_action`
 - `non_claims`
 
-Appendix G is the appendix for Corben's papers, Corben-supplied materials, recovered project records, and local project records. Appendix H is a separate appendix for external sources and third-party literature. Both appendices surface that ownership split before the source tables so a reader does not have to infer what is Corben/local and what is outside literature. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
+Appendix G is the appendix for Corben's own papers, Corben-supplied materials, recovered project records, and local project records. Appendix H is a separate appendix for external sources by other authors and organizations. Both appendices surface that ownership split before the source tables so a reader does not have to infer what is Corben/local and what is outside literature. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
 Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where each file belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps Corben's corpus and local projects visible, and Appendix H keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
 

@@ -13,7 +13,7 @@ Read these files first:
 4. `docs/book_outline.md`
 5. `sources/source_inventory.json`
 6. `docs/source_readiness_report.md`
-7. `appendices/G_corben_source_corpus.qmd` for Corben's papers, Corben-supplied materials, recovered project records, and local project references, and `appendices/H_external_sources.qmd` for external-literature and third-party references when citations or source placeholders are in scope.
+7. `appendices/G_corben_source_corpus.qmd` for Corben's own papers, Corben-supplied materials, recovered project records, and local project references, and `appendices/H_external_sources.qmd` for external-literature and third-party references by other authors when citations or source placeholders are in scope.
 
 Operating rules:
 - Do not invent source content.

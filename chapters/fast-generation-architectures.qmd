@@ -55,7 +55,7 @@ open_evidence_gaps:
 
 The missing stack layer is the generation substrate that determines how much planning, verification, tool use, reflection, and routing can fit inside a fixed latency and compute budget. No measured speedups are reported here, no third-party benchmark results are reproduced, and the repository does not claim to contain a fast decoding implementation.
 
-The browser-GPT note that motivated this layer is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The support state remains `argument` until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
+The browser-GPT note that motivated this layer is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The acceleration taxonomy stays at `argument` support until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
 
 Coming after generate-verify-repair, fast generation is the time-domain version of the same discipline. A faster path is valuable only when accepted output, verifier cost, repair cost, fallback, memory pressure, and task success improve after the whole route is counted.
 

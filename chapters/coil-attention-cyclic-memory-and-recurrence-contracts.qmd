@@ -80,7 +80,7 @@ The insufficiency is especially sharp at the boundary between finite proofs and 
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.
 
-The claim remains at `argument` support. The passage-reviewed mappings support discussion of cyclic memory slots, winding/provenance, KV freshness, sparse coverage, recurrence schedules, loop exits, transfer gates, governed context boundaries, and explicit non-claims. They do not support learned model-quality, retrieval-quality, long-context, speed, memory-savings, or transfer-result claims in this repository.
+Coil and transfer source mappings ground the discussion of cyclic memory slots, winding/provenance, KV freshness, sparse coverage, recurrence schedules, loop exits, transfer gates, governed context boundaries, and explicit non-claims. They do not support learned model-quality, retrieval-quality, long-context, speed, memory-savings, or transfer-result claims in this repository.
 
 ### Claim-source mapping status
 

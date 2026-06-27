@@ -56,7 +56,9 @@ FORMULAIC_GENERAL_PHRASES = (
     "The interface should also record",
     "None of those passages show",
     "The reviewed passages sharpen the",
+    "The passage-reviewed mappings support discussion",
     "The evidence map is narrower now",
+    "The support state remains `argument`",
 )
 
 

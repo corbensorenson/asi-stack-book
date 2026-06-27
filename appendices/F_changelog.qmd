@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source appendix ownership labels
+
+- Sharpened the generated source-appendix labels so Appendix G now renders as `Corben's Own Sources, Papers, and Local Projects` and Appendix H renders as `External Sources by Other Authors`. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, full-book goal template, project prompt, tracked ASI Stack skill, and repository map so the split is obvious in the appendix titles as well as the scope tables. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal support prose formula polish
+
+- Reworked repeated support-boundary formulas in nine reader-visible chapter passages so generated reader output no longer repeats `The support state remains argument` or `The passage-reviewed mappings support discussion` across chapters. The revised prose names the chapter-specific doctrine, ledger, failure radar, self-improvement endpoint, acceleration taxonomy, Circle contracts, coil contracts, substrate candidates, or simulation boundary while preserving `argument` support and non-claim limits. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, and v1.0 status guard so future drafts reject those formulaic support openers. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal inline reader evidence boundaries
 
 - Reworked generated reader-edition Core Claim handling and live Human view support-boundary placement so repeated AI/research support-state boilerplate is hidden or stripped while the compact evidence boundary is attached inline to the visible claim text instead of opening repeated support paragraphs. Tightened `scripts/validate_reader_spine.py`, `scripts/validate_reader_evidence_boundaries.py`, `scripts/validate_reading_mode_toggle.py`, `scripts/validate_live_human_view.py`, release-profile validation, and public documentation so generated reader chapters reject `Evidence boundary: architectural argument.` as a paragraph opener while preserving the support-state boundary. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

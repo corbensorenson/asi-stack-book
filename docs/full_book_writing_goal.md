@@ -16,7 +16,7 @@ Do not fabricate citations, source content, benchmark results, test results, pro
 
 Implement Lean proofs, executable schemas, or small tests only where the current `proofs/proof_triage.json` route supports it and the predicate is sufficiently operational. Keep schema/process/research targets planned unless real artifacts are added. Record any implemented proof or test in the relevant chapter, Appendix C, appendices, and changelog.
 
-Update source notes, Appendix C, Appendix D/E/G/H/K as needed, keeping Appendix G reserved as its own top-level appendix for Corben's papers, Corben-supplied materials, recovered project records, and local project records and Appendix H reserved as its own top-level appendix for external sources and third-party literature. Do not present H as a second part of G. Keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix H, and Appendix K generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
+Update source notes, Appendix C, Appendix D/E/G/H/K as needed, keeping Appendix G reserved as its own top-level appendix for Corben's own papers, Corben-supplied materials, recovered project records, and local project records and Appendix H reserved as its own top-level appendix for external sources by other authors and organizations. Do not present H as a second part of G. Keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix H, and Appendix K generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
 
 ```bash
 python3 scripts/source_readiness_report.py

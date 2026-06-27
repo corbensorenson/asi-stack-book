@@ -22,10 +22,10 @@ INVENTORY = ROOT / "sources" / "source_inventory.json"
 APPENDIX_G = ROOT / "appendices" / "G_corben_source_corpus.qmd"
 APPENDIX_H = ROOT / "appendices" / "H_external_sources.qmd"
 ROW_ID_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|", re.MULTILINE)
-APPENDIX_G_TITLE = "Corben's Sources, Papers, and Local Projects"
-APPENDIX_H_TITLE = "External Sources and Third-Party Literature"
-APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben's sources, papers, and local projects |"
-APPENDIX_H_IDENTITY = "| Appendix identity | Appendix H: external sources and third-party literature |"
+APPENDIX_G_TITLE = "Corben's Own Sources, Papers, and Local Projects"
+APPENDIX_H_TITLE = "External Sources by Other Authors"
+APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben's own sources, papers, and local projects |"
+APPENDIX_H_IDENTITY = "| Appendix identity | Appendix H: external sources by other authors |"
 APPENDIX_G_OWNERSHIP_RULE = "| Ownership rule | If Corben wrote it, supplied it, recovered it from his project history, or built it in a local project, it belongs here; if another author, organization, or outside project produced it, it belongs in Appendix H. |"
 APPENDIX_H_OWNERSHIP_RULE = "| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |"
 APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
@@ -37,7 +37,7 @@ OLD_SHARED_H_ROW = "| Third-party papers, documentation, outside projects, or no
 APPENDIX_G_CONTAINS_ROW = "| This appendix contains | Corben-authored papers, Corben-supplied materials, recovered project records, and local project source records. |"
 APPENDIX_G_EXCLUDES_ROW = "| This appendix excludes | Third-party papers, documentation, outside projects, and other non-Corben references; those live in the separate Appendix H. |"
 APPENDIX_H_CONTAINS_ROW = "| This appendix contains | Third-party papers, documentation, outside projects, and other external sources by authors other than Corben. |"
-APPENDIX_H_EXCLUDES_ROW = "| This appendix excludes | Corben's papers, Corben-supplied materials, recovered project records, and local project source records; those live in the separate Appendix G. |"
+APPENDIX_H_EXCLUDES_ROW = "| This appendix excludes | Corben's own papers, Corben-supplied materials, recovered project records, and local project source records; those live in the separate Appendix G. |"
 
 
 def fail(errors: list[str]) -> None:

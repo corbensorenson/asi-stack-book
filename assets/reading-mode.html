@@ -27,6 +27,7 @@
     "3:formalization hooks"
   ]);
   const coreClaimMarkerPattern = /^\[([A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+)\]\s+(.+)$/;
+  const coreClaimSupportPattern = /support:\s*([^\]]+)$/i;
   const supportBoundaryPattern = /(The claim remains at argument support\.|The current support state is argument\.|The current support state is argument, so the claim should be read as a design rationale unless a later evidence bundle promotes it\.)/g;
   const humanSupportBoundary = "Evidence boundary: architectural argument.";
 
@@ -110,6 +111,8 @@
       const text = (paragraph.textContent || "").replace(/\s+/g, " ").trim();
       const match = text.match(coreClaimMarkerPattern);
       if (!match) return;
+      const supportMatch = match[1].match(coreClaimSupportPattern);
+      const support = supportMatch ? supportMatch[1].trim().toLowerCase() : "";
       paragraph.setAttribute("data-asi-core-claim", "true");
       paragraph.textContent = "";
       const marker = document.createElement("span");
@@ -118,7 +121,13 @@
       const claim = document.createElement("span");
       claim.className = "asi-core-claim-text";
       claim.textContent = match[2];
-      paragraph.append(marker, claim);
+      const boundary = document.createElement("span");
+      boundary.className = "asi-support-boundary-human asi-support-boundary-human--claim";
+      boundary.textContent =
+        support === "argument"
+          ? " (evidence boundary: architectural argument)."
+          : ` (support remains ${support}).`;
+      paragraph.append(marker, claim, boundary);
     });
   }
 
