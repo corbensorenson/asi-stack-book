@@ -208,7 +208,7 @@ The current fixture covers only the receipt side of that implementation: receipt
 
 The mature version of Generate-Verify-Repair Compression is a governed compression service that refuses to treat approximate generation as storage savings until exactness, loss, repair, fallback, and final rate are all accounted for. Its product surface is a receipt ledger that lets later layers decide whether a smaller representation is lawful for the task they are about to perform.
 
-The operational contract is that generated compression can save space only after verification and repair account for the exact remainder, fallback, metadata, interface cost, and final serialized rate. A mature implementation would make that contract visible through:
+The operational contract is that generated compression can save space only after verification and repair account for the exact remainder, fallback, metadata, interface cost, and final serialized rate. The compression receipt surface proves that accounting through:
 
 - Operating mechanism: a public law-family registry, artifact-specific seed records, bounded search declarations, region verifiers, exact repair streams, literal fallback triggers, entropy/final-serialization records, interface-cost accounting, and decode receipts that replay generator plus repairs under the reconstruction contract.
 - Evidence surface: every receipt separates candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, negative-rate, and quarantined states, while preserving proxy-rate estimates separately from final serialized size and recorded decode behavior.

@@ -205,7 +205,7 @@ The next useful implementation step is a small corpus of deliberately underspeci
 
 The mature version of Human Intent as a Formal Input is an intent compiler that turns human goals into bounded command contracts. It preserves goals, constraints, authority, evidence requirements, artifacts, stop conditions, ambiguity, and consent so downstream capability cannot treat a loose request as unlimited permission.
 
-The operational contract is that human intent enters as a structured agreement, not a prompt-shaped wish: goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. A mature implementation would make that contract visible through:
+The operational contract is that human intent enters as a structured agreement, not a prompt-shaped wish: goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. The intent compiler carries that contract through:
 
 - Operating mechanism: Parse intent into command contracts; Separate desired outcome from allowed means; Attach acceptance criteria and escalation conditions.
 - Stack interface: Alignment filters intent; Planning compiles accepted contracts; Execution consumes only authorized task contracts.

@@ -256,7 +256,7 @@ The registry should allow experimental entries such as `multi_seed_diffusion` or
 
 The mature version of Fast Generation Architectures is a governed generation-mode control plane. It lets the stack choose among slow, fast, speculative, parallel, recurrent, cached, and hybrid generation routes without allowing raw throughput to masquerade as capability or evidence.
 
-The operational contract is that faster generation becomes routable only when task risk, accepted-output quality, verifier cost, fallback rate, latency, compute, memory, and serving pressure are measured together. A mature implementation would make that contract visible through:
+The operational contract is that faster generation becomes routable only when task risk, accepted-output quality, verifier cost, fallback rate, latency, compute, memory, and serving pressure are measured together. The generation-mode controller makes that tradeoff visible in:
 
 - Operating mechanism: a generation-mode registry, task-risk classifier, VCM context admission check, PlanForge mode selector, draft source, verifier, acceptance predicate, accepted-output ledger, repair/fallback route, memory and serving-pressure record, and promotion gate for each accelerated path.
 - Evidence surface: benchmark records distinguish proposed tokens or spans, accepted tokens or spans, wall-clock time, verifier cost, repair cost, fallback frequency, memory pressure, useful solution per second, baseline comparison, quality result, and non-claims.

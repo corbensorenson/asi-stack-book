@@ -212,7 +212,7 @@ The smallest useful implementation is an `authority_transition_record` schema pl
 
 The mature version of System Boundaries and Authority is an authority type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.
 
-The operational contract is that authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes. A mature implementation would make that contract visible through:
+The operational contract is that authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes. The authority type system exposes that contract in:
 
 - Operating mechanism: Define principals, authorities, ceilings, grants, revocations, and handoff contracts; Separate knowledge access from action authority; Represent missing authority as a detectable failure rather than implicit permission.
 - Stack interface: Governance issues ceilings; Execution checks permissions; Evidence records authority-related failures.

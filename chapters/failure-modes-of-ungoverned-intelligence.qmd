@@ -201,7 +201,7 @@ The next useful fixture set is a failure-receipt suite: one blocked authority cr
 
 The mature version of Failure Modes of Ungoverned Intelligence is a failure-radar and routing layer for the book's whole architecture. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior.
 
-The operational contract is that ungoverned intelligence is monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language. A mature implementation would make that contract visible through:
+The operational contract is that ungoverned intelligence is monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language. The failure-radar layer makes that contract observable in:
 
 - Operating mechanism: Classify failures by layer; Map every failure to an invariant and a planned falsification test; Use failures to motivate boundaries in later chapters.
 - Stack interface: Governance limits authority creep; VCM limits context pollution; Verification limits false certainty; Execution limits side effects.

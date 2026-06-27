@@ -207,7 +207,7 @@ The next useful implementation step is a toy budget ledger with one low-risk dis
 
 The mature version of Resource Economics and Token Budgets is a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review.
 
-The operational contract is that cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden. A mature implementation would make that contract visible through:
+The operational contract is that cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden. The budget operating system accounts for that contract in:
 
 - Operating mechanism: budget records price value hypothesis, risk class, capacity pool, budget state, model/tool/storage/human-review cost, verification tax, protected overhead, serving pressure, displaced costs, safety gates, quality predicate, escalation rule, and residuals before ordinary dispatch.
 - Evidence surface: cost savings are accepted only with quality results, verifier cost, repair burden, fallback frequency, human-review load, evidence loss, privacy exposure, rollback difficulty, memory pressure, and baseline comparison visible.

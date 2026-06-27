@@ -222,7 +222,7 @@ The next useful implementation step is a small grounded domain where source pass
 
 The mature version of Semantic Representation and Tree-Structured Models is a semantic leasing layer. It gives the stack editable concept structure without letting a clean graph become a substitute for sources, proofs, artifacts, or tests.
 
-The operational contract is that semantic structure is leased for a task only when provenance, grounding, utility, interoperability, supersession, and consumer permissions are explicit. A mature implementation would make that contract visible through:
+The operational contract is that semantic structure is leased for a task only when provenance, grounding, utility, interoperability, supersession, and consumer permissions are explicit. The semantic leasing layer carries that contract in:
 
 - Operating mechanism: semantic node records carry concept labels, provenance, parent/child/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, version, supersession links, consumer policies, evaluation refs, and quarantine or retirement state.
 - Evidence surface: grounding, adequacy, interoperability, utility, baseline comparison, hierarchy migration, and human-explanation claims remain separate; a node can be useful for routing while still disallowed for proof, citation, audit, or claim support.

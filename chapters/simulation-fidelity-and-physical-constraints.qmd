@@ -204,7 +204,7 @@ The next useful fixture set is a simulation receipt suite: one unit-invariant re
 
 The mature version of Simulation Fidelity and Physical Constraints is a simulation claim-transport layer. It lets the stack run synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models while preventing their results from traveling farther than their scope, fidelity, resources, and omissions allow.
 
-The operational contract is that a simulation result travels only as far as its fidelity standard, scope, assumptions, omitted variables, resource bill, and transfer decision allow. A mature implementation would make that contract visible through:
+The operational contract is that a simulation result travels only as far as its fidelity standard, scope, assumptions, omitted variables, resource bill, and transfer decision allow. The simulation claim-transport layer carries that limit through:
 
 - Operating mechanism: simulation contracts record claim class, scope, fidelity standard, temporal semantics, demand estimate, resource bill, capacity bottlenecks, assumptions, omitted variables, approximation liberties, instrumentation effects, supported-claim boundary, observed-result boundary, transfer decision, residual risks, and non-claims.
 - Evidence surface: invariant checks, benchmark comparisons, feasibility estimates, safety rehearsals, scenario explorations, and speculative thought experiments remain distinct evidence classes with different support-state effects.
