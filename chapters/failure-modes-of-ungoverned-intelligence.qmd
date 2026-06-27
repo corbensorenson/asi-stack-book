@@ -218,7 +218,7 @@ Ungoverned intelligence should be monitored through ordinary stack breakdowns be
 - Operating mechanism: Classify failures by layer; Map every failure to an invariant and a planned falsification test; Use failures to motivate boundaries in later chapters.
 - Stack interface: Governance limits authority creep; VCM limits context pollution; Verification limits false certainty; Execution limits side effects.
 - Preserved invariants: Every risk maps to at least one boundary; Evaluator integrity is protected; Negative evidence stays visible.
-- Failure closure: detect and route failure modes such as Evaluator capture; Memory poisoning; Tool/action overreach; Compression that hides residual complexity to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Incident closure: evaluator capture, memory poisoning, tool overreach, and compression that hides residual complexity should produce quarantine, rollback, escalation, residual records, or SCF review before they can normalize.
 
 This failure-radar layer remains a target architecture, not a current-result claim. The chapter should stay at `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
 

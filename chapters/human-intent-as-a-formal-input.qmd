@@ -222,7 +222,7 @@ Human intent enters the mature stack as a structured agreement, not a prompt-sha
 - Operating mechanism: Parse intent into command contracts; Separate desired outcome from allowed means; Attach acceptance criteria and escalation conditions.
 - Stack interface: Alignment filters intent; Planning compiles accepted contracts; Execution consumes only authorized task contracts.
 - Preserved invariants: Ambiguity triggers clarification or bounded defaults; Intent contracts expose authority limits; Stop conditions remain attached to the plan.
-- Failure closure: detect and route failure modes such as Goal misbinding; Scope creep; Implicit permission to act to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Intent closure: goal misbinding, scope creep, and implicit permission to act should stop at intake review, re-confirmation, denial, escalation, or residual records before planning treats the request as authorized.
 
 This intent compiler remains a target architecture, not a current-result claim. Keep intent formalization at `argument` until intent-parser fixtures, ambiguity and stop-condition tests, authorization handoff traces, scope-creep probes, and acceptance-criteria checks show that downstream execution cannot turn desire into unbounded permission.
 

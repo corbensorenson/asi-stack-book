@@ -24,6 +24,8 @@ FORMULAIC_BEYOND_PHRASES = (
     "Support should stay at",
     "At that mature boundary",
     "In that final product",
+    "Failure closure:",
+    "detect and route failure modes such as",
 )
 FORMULAIC_MVI_PHRASES = (
     "The next useful implementation step is",

@@ -232,7 +232,7 @@ Every major claim should carry both a claim label and a support state, and every
 - Operating mechanism: Use Appendix C as the claim ledger; Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed; Require source notes before promoting claims to source-derived; Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 - Stack interface: Drafting updates claims; Experiments update evidence; Changelog records evidence movement.
 - Preserved invariants: No fabricated source support; No fabricated test results; Negative and inconclusive results remain visible.
-- Failure closure: detect and route failure modes such as Support-state inflation; Citation laundering; Silent removal of failed claims to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Evidence closure: support-state inflation, citation laundering, and silent removal of failed claims should become ledger corrections, demotions, residual records, or review escalations rather than confidence creep.
 
 This evidence ledger remains a target architecture, not a current-result claim. The support state remains `argument` until claim-transition records, passage-reviewed source notes, evidence-bundle fixtures, citation-laundering checks, proof-scope audits, and changelog-linked reviews demonstrate that labels move only when their artifacts justify movement.
 

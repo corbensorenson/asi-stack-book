@@ -210,7 +210,7 @@ A stable capability field preserves identity, interface, authority ceiling, qual
 - Operating mechanism: Separate field identity from implementation; Bind qualification claims to exact artifacts; Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired; Require route validity and evaluator integrity before promotion.
 - Stack interface: Planning requests field capabilities; Execution invokes authorized routes; Evidence records qualification and regression results.
 - Preserved invariants: Replacement cannot expand authority by default; Evaluator integrity is protected; Qualification context is explicit and time-bound; Rollback remains available after failed mutation.
-- Failure closure: detect and route failure modes such as Field identity drift; Evaluator capture; Authority expansion during replacement to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Field closure: identity drift, evaluator capture, and authority expansion during replacement should block qualification, force requalification, route rollback, or leave residual records before the field remains default.
 
 This capability-identity market remains a target architecture, not a current-result claim. SCF support should remain `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
 

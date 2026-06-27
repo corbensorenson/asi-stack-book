@@ -227,7 +227,7 @@ Authority becomes typed, bounded, revocable, durable, and attached to concrete p
 - Operating mechanism: Define principals, authorities, ceilings, grants, revocations, and handoff contracts; Separate knowledge access from action authority; Represent missing authority as a detectable failure rather than implicit permission.
 - Stack interface: Governance issues ceilings; Execution checks permissions; Evidence records authority-related failures.
 - Preserved invariants: Authority never expands silently; Read permission is not write permission; Tool execution requires an explicit grant.
-- Failure closure: detect and route failure modes such as Authority creep; Confused-deputy tool calls; Memory access treated as action approval to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Authority closure: authority creep, confused-deputy tool calls, and memory access treated as action approval should become denied handoffs, approval escalation, audit records, or rollback triggers that preserve the caller, requested operation, expired or missing grant, and affected route.
 
 This authority type system remains a target architecture, not a current-result claim. Authority support remains `argument` until missing-grant denials, ceiling-preservation checks, read/write separation fixtures, confused-deputy scenarios, and tool-call traces show that authority cannot expand silently by implication.
 

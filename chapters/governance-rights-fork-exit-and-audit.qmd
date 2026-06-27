@@ -213,7 +213,7 @@ Fork, exit, audit, dissent, appeal, and contestability become technical interfac
 - Operating mechanism: Represent rights as capabilities and required interfaces; Attach audit artifacts to governance decisions; Treat fork/exit as preserved escape hatches against lock-in.
 - Stack interface: Governance issues rights; SCFs preserve rights across replacement; Execution logs evidence for audit.
 - Preserved invariants: Audit records cannot be silently deleted; Exit paths remain materially usable; Fork rights do not bypass safety constraints.
-- Failure closure: detect and route failure modes such as Governance capture; Data hostage-taking; Opaque automated policy updates to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Rights closure: governance capture, data hostage-taking, and opaque automated policy updates should create appeal records, fork or exit support, rollback, escalation, or residuals instead of disappearing into administrative state.
 
 This contestability infrastructure remains a target architecture, not a current-result claim. The rights claim belongs at `argument` until fork/export fixtures, audit-retention checks, appeal and exit-path tests, data-portability reviews, and safety-limited fork scenarios show that rights remain usable without becoming an authority bypass.
 
