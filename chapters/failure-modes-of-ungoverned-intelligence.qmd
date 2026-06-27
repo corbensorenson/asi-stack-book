@@ -267,3 +267,7 @@ Failure Modes of Ungoverned Intelligence gives the stack its obligation map. Eac
 The failure taxonomy appears early because the rest of the book should read like a response to it. If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative. Claim/evidence discipline keeps prevention, detection, residuals, and negative results from disappearing into smoother prose.
 
 A failure mode should have somewhere to go. If it cannot produce a receipt, owner, containment action, residual, or review path, the architecture has named a worry but not yet built a boundary.
+
+## Handoff
+
+Failure records are useful only when the book can say what kind of evidence would repair, preserve, or downgrade them. Evidence States and Claim Discipline therefore follows the failure taxonomy with the support-state machinery that keeps prevention, detection, tests, proofs, source notes, and negative results from collapsing into confidence. The handoff is from naming risk to governing what claims about that risk are allowed to sound like.

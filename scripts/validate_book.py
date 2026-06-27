@@ -25,6 +25,7 @@ REQUIRED = [
     "scripts/validate_reader_evidence_boundaries.py",
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
+    "scripts/validate_chapter_handoffs.py",
     "scripts/validate_source_appendices.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
@@ -371,6 +372,7 @@ def main() -> None:
     run_validator("validate_implementation_horizons.py")
     run_validator("validate_reader_spine.py", "--check")
     run_validator("validate_chapter_dod.py")
+    run_validator("validate_chapter_handoffs.py")
     run_validator("validate_visual_coverage.py")
     run_validator("validate_repeated_prose.py")
     run_validator("validate_source_notes.py")

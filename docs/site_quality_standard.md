@@ -22,6 +22,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Chapter `Invariants` and `Failure modes` sections should be substantial enough to name the preserved boundary and the concrete ways the mechanism can fail. `scripts/validate_chapter_dod.py` requires at least 110 words in both `Invariants` and `Failure modes` for every manifest chapter.
 - Chapter `Minimum Viable Implementation` sections should identify the smallest honest artifact, fixture, trace, schema, or validation slice that can begin the idea without implying capability, safety, benchmark, or runtime success. `scripts/validate_chapter_dod.py` requires at least 125 words in every manifest chapter MVI section, and `scripts/validate_repeated_prose.py` rejects known MVI formulas such as `The next useful implementation step is`, `The next useful fixture set is`, `The next useful fixture is`, `Passing the fixture`, `Passing schema validation only`, `That would`, `without claiming`, `does not prove`, `do not prove`, `proves only`, `prove only`, `cannot prove`, `The accompanying Lean module is`, `The Lean predicates do not`, `These proofs do not implement`, and `The Lean coverage stays at`.
 - Chapter `Beyond the State of the Art` sections should describe the mature product-level endpoint without implying that it already exists. `scripts/validate_chapter_dod.py` requires at least 200 words in every manifest chapter mature-endpoint section, and `scripts/validate_repeated_prose.py` rejects known mature-endpoint formulas such as `At maturity,`, `The mature version is`, `The mature version of`, `The mature product surface would include:`, `The final product surface would include:`, `would expose:`, `The operational contract is`, `Support should stay at`, `At that mature boundary`, `In that final product`, `Failure closure:`, `detect and route failure modes such as`, `This is a target architecture, not a current-result claim`, and `It remains beyond the chapter's present support state`.
+- Ratcheted chapters should close with a reader-facing `Handoff` section after `Summary` that names the next manifest chapter title and explains why the next boundary follows from the current one without using numbered chapter references. `scripts/validate_chapter_handoffs.py` currently enforces this for all Part I chapters.
 
 ## Visual Standards
 
@@ -40,6 +41,7 @@ Before a public update:
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py --check
 python3 scripts/validate_chapter_dod.py
+python3 scripts/validate_chapter_handoffs.py
 python3 scripts/validate_book.py
 python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_human_reading_paths.py

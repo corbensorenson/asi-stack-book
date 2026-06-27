@@ -270,3 +270,7 @@ The crosswalk names the source family for authority control, but it is not itsel
 Governance becomes operational only when authority is a transition system rather than a mood. A layer may propose, read, transform, execute, approve, or deploy only when the matching grant exists and remains within the active ceiling. Everything else is a denial, escalation, or missing-authority record.
 
 This boundary is what keeps the efficient stack from becoming a permission leak. Routing can choose a worker, planning can request a handoff, memory can expose context, and GenesisCode-like systems can propose effects, but authority moves only through typed transitions that can be audited, revoked, tested, and later formalized. The boundary also gives later proof and schema work a useful target: not a vague proof that the system is safe, but local invariants about who may do what, under which lease, with which evidence, and with which failure record. Without those transitions, context boundaries, evaluator boundaries, and residual records, the stack fails in predictable ways.
+
+## Handoff
+
+Once authority is explicit, the next question is what goes wrong when it is not. Failure Modes of Ungoverned Intelligence turns the boundary rules into a failure radar: authority creep, context pollution, evaluator capture, evidence inflation, and unbounded execution become detectable architectural problems rather than vague safety concerns. The sequence moves from the positive type system to the negative map that every later layer must answer.
