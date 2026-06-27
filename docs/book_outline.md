@@ -3604,7 +3604,7 @@ Lean proof targets:
 
 ## Source Corpus and External Literature
 
-Appendix G is the generated top-level appendix for Corben-authored, Corben-supplied, and local project records. Appendix H is a separate generated top-level appendix for external literature and third-party references by other authors. Do not present external sources as a second part of Appendix G, and do not present Corben/local records as a section of Appendix H. Both appendices should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
+Appendix G is the generated top-level appendix for Corben-authored, Corben-supplied, recovered, and local project records. Appendix H is a separate generated top-level appendix for external literature and third-party references by other authors. Do not present external sources as a second part of Appendix G, and do not present Corben/local records as a section of Appendix H. Both appendix scope tables must include an ownership-rule row: G is for material Corben wrote, supplied, recovered from his project history, or built locally; H is for sources produced by other authors, organizations, or outside projects. Both appendices should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
 
 ## Author Intent and Architecture Lineage
 

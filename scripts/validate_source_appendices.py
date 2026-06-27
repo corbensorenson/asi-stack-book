@@ -25,6 +25,8 @@ APPENDIX_G_TITLE = "Corben-Authored, Supplied, and Local Sources"
 APPENDIX_H_TITLE = "External Sources by Other Authors"
 APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben-authored, Corben-supplied, and local project sources |"
 APPENDIX_H_IDENTITY = "| Appendix identity | Appendix H: external sources by other authors |"
+APPENDIX_G_OWNERSHIP_RULE = "| Ownership rule | If Corben wrote it, supplied it, recovered it from his project history, or built it in a local project, it belongs here; if another author, organization, or outside project produced it, it belongs in Appendix H. |"
+APPENDIX_H_OWNERSHIP_RULE = "| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |"
 APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
 APPENDIX_H_BOUNDARY = "not a subsection, second half, or continuation of Appendix G"
 
@@ -79,6 +81,10 @@ def main() -> None:
         errors.append("Appendix G is missing its standalone Appendix G identity row.")
     if APPENDIX_H_IDENTITY not in h_text:
         errors.append("Appendix H is missing its standalone Appendix H identity row.")
+    if APPENDIX_G_OWNERSHIP_RULE not in g_text:
+        errors.append("Appendix G is missing the Corben-side ownership rule row.")
+    if APPENDIX_H_OWNERSHIP_RULE not in h_text:
+        errors.append("Appendix H is missing the external-source ownership rule row.")
     if APPENDIX_H_IDENTITY in g_text:
         errors.append("Appendix G should not render Appendix H as a second scope row.")
     if APPENDIX_G_IDENTITY in h_text:

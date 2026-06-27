@@ -536,6 +536,7 @@ External and third-party sources are not the second half of Appendix G. They liv
 | Field | Boundary |
 |---|---|
 | Appendix identity | Appendix G: Corben-authored, Corben-supplied, and local project sources |
+| Ownership rule | If Corben wrote it, supplied it, recovered it from his project history, or built it in a local project, it belongs here; if another author, organization, or outside project produced it, it belongs in Appendix H. |
 | Contains | Source material supplied by Corben, including authored ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. |
 | Excludes | Third-party literature records marked `external_literature`; those belong in Appendix H. |
 | Evidence effect | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
@@ -567,6 +568,7 @@ A listed external source does not claim reproduced experiments, local benchmark 
 | Field | Boundary |
 |---|---|
 | Appendix identity | Appendix H: external sources by other authors |
+| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |
 | Contains | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. |
 | Excludes | Corben-authored, Corben-supplied, and local project records; those belong in Appendix G. |
 | Evidence effect | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
