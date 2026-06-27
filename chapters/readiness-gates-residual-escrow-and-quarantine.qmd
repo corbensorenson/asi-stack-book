@@ -55,6 +55,8 @@ Routing can identify a plausible specialist, but plausibility is not readiness. 
 Uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should keep the residual, expiry, fallback path, and next review condition visible until the evidence catches up. That makes improvement less dramatic but more durable: new capability can approach production without being treated as already safe.
 
 Escrow is useful because it lets the system remember promise without spending it as permission.
+
+The gate protects future adoption from present enthusiasm.
 :::
 
 ## Problem

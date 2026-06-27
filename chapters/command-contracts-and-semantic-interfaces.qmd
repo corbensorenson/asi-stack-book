@@ -51,6 +51,8 @@ An intent-to-execution trace still needs a first machine-readable handoff: the c
 The important move is not to make human language robotic. It is to preserve what matters: role, objective, context, constraints, output, verification, failure behavior, and permission boundary. A good command contract lets the stack be helpful while still knowing when it must ask, refuse, or stop. It also gives later layers something concrete to inspect when a plan drifts from the original purpose. This is the earliest place to catch mismatched expectations.
 
 The contract protects both sides: the person keeps intent legible, and the machine receives bounded work instead of open-ended permission. A clear command is less glamorous than a clever prompt, but it is much easier to govern.
+
+The interface is where helpfulness becomes a bounded obligation.
 :::
 
 ## Problem

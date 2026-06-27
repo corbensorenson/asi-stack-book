@@ -60,6 +60,8 @@ The boundary is important. MoECOT is not treated here as reproduced proof that t
 The runtime ideal is less about clever orchestration than about evidence-rich orchestration. The useful runtime is the one that leaves enough state behind to debug the handoff.
 
 A multi-core system earns architectural relevance by making coordination inspectable after the fact.
+
+The runtime should leave enough receipts for orchestration to be debugged.
 :::
 
 ## Problem

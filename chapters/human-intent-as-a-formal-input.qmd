@@ -53,6 +53,8 @@ Intent is not merely text. It includes requirements, constraints, assumptions, s
 The safest translation of intent is one that exposes ambiguity early enough for correction. Good intent capture slows the first handoff just enough to prevent downstream authority mistakes.
 
 The first contract should protect the requester from the system's eagerness to help.
+
+Intent capture should make the next handoff narrower, not more presumptive.
 :::
 
 ## Problem

@@ -67,6 +67,8 @@ Compression is not the only way speed matters. The generation substrate itself h
 Speed and intelligence need to stay separate. Faster generation can make a stack more usable, but only if accepted output, verification cost, fallback, memory pressure, and task success are counted. Raw tokens per second are not evidence that the system kept the right obligations alive. The useful question is whether the whole governed route delivers correct work sooner. Generation architecture therefore belongs beside evidence and routing, not under a narrow serving benchmark alone.
 
 Fast paths matter most when they preserve the slow obligations that make output usable.
+
+Latency gains count only after acceptance and fallback remain intact.
 :::
 
 ## Problem
