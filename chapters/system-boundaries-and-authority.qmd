@@ -219,7 +219,7 @@ The operational contract is that authority becomes typed, bounded, revocable, an
 - Preserved invariants: Authority never expands silently; Read permission is not write permission; Tool execution requires an explicit grant.
 - Failure closure: detect and route failure modes such as Authority creep; Confused-deputy tool calls; Memory access treated as action approval to quarantine, rollback, escalation, or residual records instead of hidden degradation.
 
-For System Boundaries and Authority, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+This authority type system remains a target architecture, not a current-result claim. Support should stay at `argument` until missing-grant denials, ceiling-preservation checks, read/write separation fixtures, confused-deputy scenarios, and tool-call traces show that authority cannot expand by implication.
 
 ## Codex test plan
 
