@@ -61,6 +61,8 @@ Position encodings, adapters, route heads, and mixers can contain real cyclic or
 
 The book needs a place for CoilRA, MultiCoil RoPE, RoPE position distinguishability, circulant mixers, and block-cyclic adapters that neither dismisses them nor overpromotes them.
 
+The practical problem is adoption scope. A cyclic mixer can be structurally interesting and still wrong for a workload, too costly for deployment, too fragile under sequence shift, or too easy to confuse with a quality improvement. The chapter therefore has to separate exact cyclic facts from evaluation, fallback, routing, and support-state effects before any substrate becomes architecture.
+
 ## Why existing approaches are insufficient
 
 Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated. A passing RoPE certifier is not a context-length result. A circulant mixer law is not a speed result. A lower parameter count is not an adoption proof. Prime or coprime elegance can conflict with hardware-friendly shapes.

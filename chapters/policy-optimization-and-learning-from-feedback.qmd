@@ -86,6 +86,8 @@ Benchmarks, verifiers, human preferences, tool results, context-grounding checks
 
 The hard part is not saying "use reinforcement learning." The hard part is deciding what policy is being updated, what feedback is admissible, how far the update may move, what evidence is required before promotion, and how rollback works when the reward was wrong.
 
+That problem spans more than model weights. A stack can update planning heuristics, router policies, context selection, verification budgets, tool-use preferences, review workflows, or generation modes. Each update surface has different failure modes. Without a typed policy boundary, reward pressure can quietly become governance pressure, and a local improvement can change system behavior beyond the evidence that justified it.
+
 ## Why existing approaches are insufficient
 
 RLHF, preference optimization, and verifier-reward training are often discussed as model fine-tuning recipes. That framing is too narrow for this architecture. The ASI Stack has many policies: planner decomposition, VCM context selection, router expert choice, generation-mode choice, verifier escalation, execution/tool policy, benchmark admission, and SCF promotion decisions.

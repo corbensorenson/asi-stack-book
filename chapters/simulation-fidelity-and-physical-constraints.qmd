@@ -63,6 +63,8 @@ ASI discussions can make simulations sound unlimited: nested worlds, accelerated
 
 In the ASI Stack, simulations are useful only if their contract is visible. A toy simulator can support a narrow unit test. A reduced-fidelity environment can support a benchmark with stated approximations. A high-fidelity world simulation must account for compute, memory, heat, bandwidth, latency, and temporal semantics.
 
+The central pressure is transfer. A result can be true inside a simulator and still fail as evidence for deployment, safety, moral status, physical feasibility, or training economics. The architecture needs simulation records that say what was simulated, what was omitted, what resources were consumed, and which claims are explicitly outside the fidelity boundary.
+
 ## Why existing approaches are insufficient
 
 Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit. Theoretical computability does not imply physical feasibility. A simulation that is useful for one invariant can be misleading for another. A benchmark environment can be convenient while omitting the very constraints a claim depends on.

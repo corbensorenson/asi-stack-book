@@ -64,6 +64,8 @@ Long context and recurrence can fail in quiet ways: stale reads, duplicate reque
 
 The ASI Stack needs memory and attention records that distinguish structural facts from semantic success. A ring buffer can say which slots are live. It cannot prove that the retrieved content is useful. A sparse orbit can say which lags are covered. It cannot prove that arbitrary dependencies were captured.
 
+The problem is not cyclic structure itself; it is claim confusion around cyclic structure. Recurrence can help preserve local state, expose coverage, and create cheap structural checks. It can also hide stale memory, repeated reasoning loops, and false confidence about long-context adequacy. The contract has to make the cheap facts visible while keeping quality claims blocked until retrieval and task evidence exist.
+
 ## Why existing approaches are insufficient
 
 Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work. A residue-only memory slot can hide how many times the address wrapped. A recurrence schedule can reduce active tokens while creating a loop that never exits. A freshness certificate can become false evidence if the task needs semantic coverage rather than slot coverage.

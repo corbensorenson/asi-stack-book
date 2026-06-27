@@ -64,6 +64,8 @@ The stack will store source documents, artifacts, logs, benchmark traces, models
 
 RankFold/NeuralFold is useful here because it treats artifacts as candidates for tensor-centric archival structure while preserving manifest, codec, residual, and reconstruction obligations. BBVCA v9 adds the discipline that exactness requires a reconstruction contract and repair accounting.
 
+The hard problem is deciding when a compressed representation is allowed to stand in for the thing it compresses. Search previews, cold archives, human summaries, source evidence, proof artifacts, and replay logs have different tolerance for loss. A compression layer that ignores those differences can make the book cheaper to store while making it easier to overclaim what was preserved.
+
 ## Why existing approaches are insufficient
 
 Storage savings are not enough. A compressed artifact must be useful for the task that wants it. A low-rank transform can optimize reconstruction error while increasing encoded residual cost. A tensor representation can be elegant while losing exact file reconstruction. A write-once archive can amortize expensive encoding, but that assumption fails for hot artifacts that must be rewritten or queried constantly.

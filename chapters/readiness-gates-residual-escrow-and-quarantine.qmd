@@ -61,6 +61,8 @@ A specialist can be useful without being ready. It can pass a narrow benchmark a
 
 Readiness is the bridge between routing and self-improvement. The router needs to know whether a specialist can be selected. Stable Capability Fields need to know whether an implementation can replace another. Benchmark ratchets need to know whether a result belongs to frontier exploration, regression preservation, or quarantine.
 
+The problem is that readiness is not a mood and not a leaderboard position. It is a lifecycle state with evidence, scope, residuals, monitors, and rollback. A candidate may be excellent for research, acceptable for canary, blocked from default, or quarantined after a regression. Those distinctions must be machine-readable before routing or replacement can be trusted.
+
 ## Why existing approaches are insufficient
 
 A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden. Benchmaxxing treats benchmarks as temporary pressure surfaces, not permanent definitions of intelligence. RMI treats residual escrow as a visible tail of unsolved cases. SCF treats qualification as scoped, defeasible, expiring, and tied to a field boundary.
