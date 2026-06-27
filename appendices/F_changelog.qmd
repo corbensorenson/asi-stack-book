@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source appendix ownership title clarity
+
+- Retitled the generated source ownership appendices so Appendix G now renders as `Corben's Sources, Papers, and Local Projects` and Appendix H renders as `External Sources and Third-Party Literature`. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, full-book goal template, project prompt, tracked ASI Stack skill, repository map, and external-literature policy wording so Corben/local source records and external third-party literature remain visibly separate top-level appendices rather than two parts of a single "sources used" appendix. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal generated reader source-review language
+
+- Extended reader-edition generation so relaxed-reader source rewrites mechanical scaffold terms such as `source crosswalk`, `Codex workflow`, `connector/source-note`, and hyphenated `source-note` forms into source-map, automation, or review-context language, with stripped-heading counts and reader-language transformation counts recorded separately in the generated manifest/checklist. The reader-edition check and reader-spine validator now fail if those terms leak back into generated reader source. Updated release-edition documentation without changing live AI/research scaffolding, claim support states, source mappings, proof results, benchmark results, runtime results, or reader/ebook/audio artifact status.
+
 ## 2026-06-27 - v1.0 improvement goal reader scaffold-language polish
 
 - Removed the remaining generated-reader chapter mentions of `Codex workflow` and `source crosswalk`, replacing them with reader-facing automation/source-map language. Tightened the reader-spine profile and validators so those scaffold phrases now fail in generated reader chapters, and documented the stronger reader-release term boundary. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

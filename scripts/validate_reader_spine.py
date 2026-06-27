@@ -33,6 +33,7 @@ DEFAULT_HARD_TERMS = [
     "claim-source mapping status",
     "formalization hooks",
     "source crosswalk",
+    "source-note",
 ]
 DEFAULT_BLOCKED_META_PHRASES = [
     "this chapter",

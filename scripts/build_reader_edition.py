@@ -27,6 +27,21 @@ FENCED_DIV_CLOSE_RE = re.compile(r"^(:{3,})\s*$")
 AI_ONLY_CLASS = "asi-ai-only"
 HUMAN_ONLY_CLASS = "asi-human-only"
 HUMAN_READING_PATH_HEADING = "## Human Reading Path"
+READER_SCAFFOLD_TERM_REPLACEMENTS = [
+    (re.compile(r"\bCodex workflows\b", re.IGNORECASE), "automation workflows"),
+    (re.compile(r"\bCodex workflow\b", re.IGNORECASE), "automation workflow"),
+    (re.compile(r"\bsource crosswalks\b", re.IGNORECASE), "source maps"),
+    (re.compile(r"\bsource crosswalk\b", re.IGNORECASE), "source map"),
+    (re.compile(r"\bconnector-only/source-note mapped\b", re.IGNORECASE), "connector-only review context"),
+    (re.compile(r"\bconnector/source-note mapped\b", re.IGNORECASE), "connector review context"),
+    (re.compile(r"\bconnector/source-note context\b", re.IGNORECASE), "connector review context"),
+    (re.compile(r"\bconnector/source-note\b", re.IGNORECASE), "connector review"),
+    (re.compile(r"\bsource-noted\b", re.IGNORECASE), "source-reviewed"),
+    (re.compile(r"\bsource-note-only\b", re.IGNORECASE), "source-review-only"),
+    (re.compile(r"\bsource-note-available\b", re.IGNORECASE), "source-review-available"),
+    (re.compile(r"\bsource-note-", re.IGNORECASE), "source-review-"),
+    (re.compile(r"\bsource-note\b", re.IGNORECASE), "source review"),
+]
 CORE_CLAIM_MARKER_RE = re.compile(
     r"^\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
     r"label:\s*(?P<label>[^,\]]+),\s*"
@@ -39,6 +54,11 @@ SUPPORT_BOILERPLATE_RE = re.compile(
     r"The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it\."
 )
 HUMAN_ARGUMENT_BOUNDARY = "Evidence boundary: architectural argument."
+NON_HEADING_TRANSFORM_KEYS = {
+    "core_claim_markers_removed",
+    "support_boilerplate_humanized",
+    "reader_scaffold_terms_humanized",
+}
 
 
 def load_json(path: Path) -> object:
@@ -175,6 +195,15 @@ def humanize_support_boilerplate(text: str) -> tuple[str, int]:
     return cleaned, count
 
 
+def humanize_reader_scaffold_terms(text: str) -> tuple[str, int]:
+    count = 0
+    cleaned = text
+    for pattern, replacement in READER_SCAFFOLD_TERM_REPLACEMENTS:
+        cleaned, replacements = pattern.subn(replacement, cleaned)
+        count += replacements
+    return cleaned, count
+
+
 def find_profile(profile_id: str) -> dict:
     data = load_release_profiles()
     profiles = data.get("profiles", [])
@@ -215,6 +244,7 @@ def clean_file(
     cleaned, view_block_counts = apply_reader_view_blocks(cleaned)
     cleaned, marker_count = strip_core_claim_markers(cleaned)
     cleaned, support_boilerplate_count = humanize_support_boilerplate(cleaned)
+    cleaned, reader_scaffold_terms_count = humanize_reader_scaffold_terms(cleaned)
     if chapter_title:
         cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -224,7 +254,20 @@ def clean_file(
         removed["core_claim_markers_removed"] = marker_count
     if support_boilerplate_count:
         removed["support_boilerplate_humanized"] = support_boilerplate_count
+    if reader_scaffold_terms_count:
+        removed["reader_scaffold_terms_humanized"] = reader_scaffold_terms_count
     return removed
+
+
+def stripped_heading_count(summary: dict[str, object]) -> int:
+    removed_sections = summary.get("removed_sections", {})
+    if not isinstance(removed_sections, dict):
+        return 0
+    return sum(
+        int(count)
+        for key, count in removed_sections.items()
+        if key not in NON_HEADING_TRANSFORM_KEYS
+    )
 
 
 def write_reader_index(output_dir: Path, structure: dict) -> None:
@@ -238,7 +281,7 @@ def write_reader_index(output_dir: Path, structure: dict) -> None:
 
 ## Reader Edition Note
 
-This edition is meant for humans who want the cohesive argument without the live research scaffolding in every chapter. The canonical living book remains the source of truth for source crosswalks, claim/evidence states, proof hooks, schemas, tests, release records, and current residuals.
+This edition is meant for humans who want the cohesive argument without the live research scaffolding in every chapter. The canonical living book remains the source of truth for source maps, claim/evidence states, proof hooks, schemas, tests, release records, and current residuals.
 
 ## Core Thesis
 
@@ -347,9 +390,10 @@ def write_reader_checklist(
         f"- Chapters: {summary['chapters']}",
         f"- Files: {summary['files']}",
         f"- Target formats: {', '.join(summary['formats'])}",
-        f"- Live-only sections removed: {sum(summary['removed_sections'].values())}",
+        f"- Live-only sections removed: {summary.get('stripped_heading_count', stripped_heading_count(summary))}",
         f"- AI-only fenced blocks removed: {summary.get('ai_only_blocks_removed', 0)}",
         f"- Human-only fenced blocks unwrapped: {summary.get('human_only_blocks_unwrapped', 0)}",
+        f"- Reader scaffold terms humanized: {summary.get('reader_scaffold_terms_humanized', 0)}",
         f"- Reader-spine validator: `{spine_script}`",
         f"- Handoff word floor: {min_handoff_words}",
         "",
@@ -450,12 +494,33 @@ def write_reader_companion_notes(
         "## Removed Live-Only Sections",
         "",
     ]
-    if removed_sections:
+    heading_sections = {
+        str(heading): count
+        for heading, count in removed_sections.items()
+        if heading not in NON_HEADING_TRANSFORM_KEYS
+    }
+    if heading_sections:
         lines.extend(["| Heading | Removed count |", "|---|---:|"])
-        for heading, count in sorted(removed_sections.items()):
+        for heading, count in sorted(heading_sections.items()):
             lines.append(f"| `{heading}` | {count} |")
     else:
         lines.append("No live-only sections were removed by the generator.")
+
+    transform_counts = {
+        str(key): count
+        for key, count in removed_sections.items()
+        if key in NON_HEADING_TRANSFORM_KEYS
+    }
+    if transform_counts:
+        lines.extend([
+            "",
+            "## Reader-Language Transformations",
+            "",
+            "| Transform | Count |",
+            "|---|---:|",
+        ])
+        for key, count in sorted(transform_counts.items()):
+            lines.append(f"| `{key}` | {count} |")
 
     lines.extend([
         "",
@@ -518,7 +583,9 @@ def write_reader_manifest(
         "files": summary["files"],
         "content_layer_policy": profile.get("content_layer_policy", {}),
         "stripped_heading_policy": profile.get("strip_headings", []),
+        "stripped_heading_count": summary.get("stripped_heading_count", stripped_heading_count(summary)),
         "removed_sections": summary["removed_sections"],
+        "reader_scaffold_terms_humanized": summary.get("reader_scaffold_terms_humanized", 0),
         "ai_only_blocks_removed": summary.get("ai_only_blocks_removed", 0),
         "human_only_blocks_unwrapped": summary.get("human_only_blocks_unwrapped", 0),
         "reader_review_required": profile.get("reader_review_required", True),
@@ -646,6 +713,12 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "chapters": chapter_count,
         "files": copied_files,
         "removed_sections": removed_totals,
+        "stripped_heading_count": sum(
+            count
+            for key, count in removed_totals.items()
+            if key not in NON_HEADING_TRANSFORM_KEYS
+        ),
+        "reader_scaffold_terms_humanized": removed_totals.get("reader_scaffold_terms_humanized", 0),
         "ai_only_blocks_removed": ai_only_blocks_removed,
         "human_only_blocks_unwrapped": human_only_blocks_unwrapped,
         "formats": profile.get("publication_formats", []),
@@ -699,6 +772,18 @@ def scan_for_view_block_markers(output_dir: Path) -> list[str]:
     return violations
 
 
+def scan_for_reader_scaffold_terms(output_dir: Path) -> list[str]:
+    terms = ("codex workflow", "source crosswalk", "source-note")
+    violations: list[str] = []
+    for path in output_dir.rglob("*.qmd"):
+        text = path.read_text(encoding="utf-8")
+        lowered = text.lower()
+        for term in terms:
+            if term in lowered:
+                violations.append(f"{path.relative_to(output_dir)}: retained reader scaffold term {term!r}")
+    return violations
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="reader_release", help="edition profile id to generate")
@@ -718,8 +803,9 @@ def main() -> None:
             summary = generate(output_dir, args.profile)
             violations = scan_for_stripped_headings(output_dir, strip_headings)
             violations.extend(scan_for_view_block_markers(output_dir))
+            violations.extend(scan_for_reader_scaffold_terms(output_dir))
             if violations:
-                print("Reader edition still contains stripped headings or live view markers:")
+                print("Reader edition still contains stripped headings, live view markers, or scaffold terms:")
                 for violation in violations:
                     print(f" - {violation}")
                 raise SystemExit(1)
@@ -751,7 +837,8 @@ def main() -> None:
             print(
                 "Reader edition check passed: "
                 f"{summary['chapters']} chapters, {summary['files']} files, "
-                f"{sum(summary['removed_sections'].values())} live-only sections removed."
+                f"{summary['stripped_heading_count']} live-only sections removed, "
+                f"{summary.get('reader_scaffold_terms_humanized', 0)} reader scaffold terms humanized."
             )
             return
 

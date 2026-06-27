@@ -77,6 +77,7 @@ READER_REQUIRED_HARD_BLOCKED_TERMS = {
     "claim-source mapping status",
     "formalization hooks",
     "source crosswalk",
+    "source-note",
 }
 AUDIO_FORBIDDEN_STRIPS = {
     (2, "minimum viable implementation"),
