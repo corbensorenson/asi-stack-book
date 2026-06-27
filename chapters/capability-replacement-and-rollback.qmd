@@ -188,7 +188,7 @@ The interface should expose transaction and decision states: proposed, precheck,
 
 The transaction must leave enough information to answer a simple question later: what changed, why was it allowed, what got worse, and how could the system return to the prior state?
 
-Another invariant is evaluator independence. The candidate may supply evidence, but it cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
+Evaluator independence protects the replacement gate. The candidate may supply evidence, but it cannot be the sole evaluator, gatekeeper, or rollback authority for its own promotion.
 
 Promotion also requires scope stability. A candidate can be accepted for one field, workload, permission tier, or context boundary without becoming the default everywhere. The transaction should preserve what was tested, what was not tested, which regressions were tolerated, and which rollback trigger still applies. A replacement that broadens its own scope during promotion is not an upgrade; it is an authority expansion.
 

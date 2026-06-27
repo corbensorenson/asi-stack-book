@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal invariant prose polish
+
+- Reworked repeated invariant-section openers across the human-reader spine so chapters no longer lean on generic formulas such as `Another invariant is`, `A second invariant is`, `The strongest invariant is`, or `The key invariant is`. The revised passages name the chapter-specific preserved boundary directly: claim specificity, evaluator independence, obligation non-erasure, alias honesty, evidence asymmetry, verifier separation, baseline symmetry, least sufficient power, branch containment, traceability, protected overhead, decode accountability, provenance, and related invariants. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, and v1.0 status guard so future invariant sections stay chapter-specific. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal failure-mode prose polish
 
 - Reworked repeated failure-mode openers across the human-reader spine so chapters no longer lean on generic formulas such as `The subtle failure is`, `The subtle failure mode is`, or `Another failure is`. The revised passages name the chapter-specific laundering, drift, theater, rollover, capture, bias, stale-state, or authority failure directly while preserving the same support states and non-claim boundaries. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, and v1.0 status guard so future drafts keep failure sections chapter-specific. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

@@ -177,9 +177,9 @@ The authority effect should be machine-readable enough for planning and self-imp
 - Decision states carry authority effects.
 - Dissent payloads and unsupported premises survive bounded decisions.
 
-The key invariant is visibility. A conflict can be decided, deferred, escalated, or bounded, but it should not be erased by the shape of the reward function or the fluency of the answer.
+Visibility is the key invariant. A conflict can be decided, deferred, escalated, or bounded, but it should not be erased by the shape of the reward function or the fluency of the answer.
 
-Another invariant is authority narrowing under unresolved high-stakes conflict. When uncertainty is serious and review is incomplete, the system should not gain broader action rights merely because a decision is operationally convenient.
+Authority narrowing should follow unresolved high-stakes conflict. When uncertainty is serious and review is incomplete, the system should not gain broader action rights merely because a decision is operationally convenient.
 
 The record must distinguish moral discomfort, unresolved factual uncertainty, stakeholder disagreement, and missing authority instead of compressing them into one residual.
 

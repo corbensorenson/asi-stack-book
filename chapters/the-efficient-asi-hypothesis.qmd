@@ -193,7 +193,7 @@ This distinction matters because different layers can optimize different costs w
 - Verification and repair costs remain attached to the route that made them necessary.
 - No route may be called efficient by bypassing authority or approval gates.
 
-The strongest invariant is comparative: a route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so. If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.
+Comparison is the efficiency hypothesis's strongest invariant: a route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so. If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.
 
 The route ledger also preserves rejected alternatives, because hidden rejections can make an apparently efficient path look cheaper than it was.
 

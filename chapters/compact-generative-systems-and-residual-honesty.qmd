@@ -180,7 +180,7 @@ The interface should also expose who pays for residual work. A compact system ma
 
 The invariant is not "small is good." It is "small is accountable." A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
 
-A second invariant is verifier separation. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
+Verifier separation keeps compactness from becoming self-certification. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
 
 Residual honesty also requires retaining the expensive reference path when the compact path becomes the default.
 

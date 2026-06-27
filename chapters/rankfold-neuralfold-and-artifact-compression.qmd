@@ -201,7 +201,7 @@ Compression decisions should be allowed to differ across these patterns. A slow 
 - Admission state is task-relative and access-pattern-relative.
 - A compressed artifact cannot replace the full artifact as evidence unless the exact replay or declared-use gate passed.
 
-The strongest invariant is decode accountability: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
+Decode accountability is the compression chapter's hardest invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
 Admission is always relative to use. A compressed artifact may be adequate for preview, search, routing, or approximate planning while remaining inadequate for proof, legal review, source interpretation, or final release. The record should preserve which use was admitted, which verifier accepted it, which residual remained, and which fallback was available. Compression without a use-specific boundary becomes a quiet replacement of evidence with convenience.
 

@@ -186,7 +186,7 @@ The failure-mode record keeps failure class, affected contract refs, boundary ev
 
 The first invariant is coverage: no named high-level risk should remain without an owning boundary. The second is independence: an evaluator, verifier, or governance process should not be silently modified by the component it is judging. The third is memory: failed attempts, negative results, denials, and residuals stay visible because future self-improvement depends on them.
 
-Another invariant is no silent normalization. A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.
+Silent normalization must stay forbidden. A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.
 
 Failure ownership also cannot transfer quietly; the receiving layer must accept the residual before the risk can move.
 

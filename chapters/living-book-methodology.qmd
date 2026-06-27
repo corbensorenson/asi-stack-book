@@ -157,9 +157,9 @@ The methodology invariants protect the book from confusing publication activity 
 - No fabricated test results.
 - Deprecated claims remain visible.
 
-The strongest invariant is evidence separation. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
+Evidence separation is the living-book invariant that prevents false completion. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
 
-Another invariant is stable addressability. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
+Stable addressability lets the book change without losing itself. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
 
 Release records must also preserve what was not reviewed, rendered, proved, tested, or packaged in each version.
 

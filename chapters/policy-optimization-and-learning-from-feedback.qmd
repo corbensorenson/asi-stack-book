@@ -233,7 +233,7 @@ The interface should distinguish training evidence, evaluation evidence, governa
 
 The most important invariant is authority conservation. A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.
 
-Another invariant is proxy humility. Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.
+Proxy humility keeps optimization from outrunning evidence. Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.
 
 ## Failure modes
 

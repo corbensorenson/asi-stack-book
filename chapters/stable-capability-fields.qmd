@@ -183,9 +183,9 @@ The same field record becomes an anchor for procedural memory and benchmark ratc
 - Rollback remains available after failed mutation.
 - Qualification leases expire or downgrade when their review triggers fire.
 
-The strongest invariant is identity binding: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
+Identity binding is the field's strongest invariant: replacing an implementation must not change the field's semantic boundary unless governance explicitly creates a new field or version. Authority is also bound to the field, not inherited from the raw power of the candidate implementation.
 
-A second invariant is evidence locality. Qualification evidence belongs to a field, an implementation artifact, and a context together. Moving one of those three pieces without rechecking the others should downgrade the route to shadow, canary, or residual rather than preserving default status by name.
+Evidence locality keeps qualification from traveling by name alone. Qualification evidence belongs to a field, an implementation artifact, and a context together. Moving one of those three pieces without rechecking the others should downgrade the route to shadow, canary, or residual rather than preserving default status by name.
 
 ## Failure modes
 

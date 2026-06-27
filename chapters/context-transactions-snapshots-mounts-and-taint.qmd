@@ -185,7 +185,7 @@ The record also tells downstream artifacts what kind of memory they inherited. A
 
 The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
 
-Another invariant is branch containment. Experimental summaries, speculative repairs, and alternate plans can branch, but they do not become committed memory unless merge policy, authority, taint, contradiction, and residual checks pass.
+Branch containment protects committed memory. Experimental summaries, speculative repairs, and alternate plans can branch, but they do not become committed memory unless merge policy, authority, taint, contradiction, and residual checks pass.
 
 Mount provenance must remain visible after branching, because a clean-looking derivative can still carry tainted source obligations.
 

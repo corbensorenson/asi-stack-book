@@ -185,7 +185,7 @@ The context-reference schema distinguishes lifecycle state, request validity, re
 
 Address stability is what makes later verification possible: a claim should not depend on "whatever retrieval returned at the time." Snapshot validity is what makes context replay possible. Typed faults are what prevent missing context from being laundered into confident output.
 
-Another invariant is non-widening materialization. A context packet cannot broaden authority, source scope, task scope, or permitted use relative to its request and mount policy. If downstream work needs more, it asks again.
+Non-widening materialization keeps compiled context from becoming ambient permission. A context packet cannot broaden authority, source scope, task scope, or permitted use relative to its request and mount policy. If downstream work needs more, it asks again.
 
 Lease expiry and permitted-use constraints travel with derived views, summaries, citations, and replay packets.
 

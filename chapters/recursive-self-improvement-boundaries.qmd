@@ -195,7 +195,7 @@ The transition should be readable as a chain of custody: residual or wall, propo
 
 The decisive invariant is non-self-ratification: the candidate may not be the sole judge of whether it should replace the current component. If independent evaluation is unavailable, the transition can still be researched, but it cannot be promoted as governed self-improvement.
 
-A second invariant is boundary monotonicity unless explicitly reviewed. The change cannot silently broaden authority, relax security rules, reduce verification budget, weaken rollback, or retire regressions. Any such move is a separate governance question, not an implementation detail.
+Boundary monotonicity should hold unless review explicitly says otherwise. The change cannot silently broaden authority, relax security rules, reduce verification budget, weaken rollback, or retire regressions. Any such move is a separate governance question, not an implementation detail.
 
 ## Failure modes
 

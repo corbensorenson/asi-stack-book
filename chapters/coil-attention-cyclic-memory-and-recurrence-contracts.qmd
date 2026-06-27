@@ -180,9 +180,9 @@ The consumer contract is intentionally narrow. A planner may use freshness and c
 - Stale reads fail closed or enter residual escrow.
 - Contract readiness is not downstream task success.
 
-The strongest invariant is alias honesty: if a slot can refer to more than one historical item, the record must preserve winding or provenance instead of pretending the residue alone is enough.
+Alias honesty governs the cyclic-memory record: if a slot can refer to more than one historical item, the record must preserve winding or provenance instead of pretending the residue alone is enough.
 
-Another invariant is non-widening memory authority. Mapping a governed context packet into slots, recurrence traces, or compressed attention cannot expand its authority, lease, permitted use, or adequacy claim.
+Non-widening memory authority keeps representation changes from becoming policy changes. Mapping a governed context packet into slots, recurrence traces, or compressed attention cannot expand its authority, lease, permitted use, or adequacy claim.
 
 Recurrence traces must preserve refresh, eviction, and exit decisions when later reasoning depends on remembered state.
 

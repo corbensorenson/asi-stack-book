@@ -153,9 +153,9 @@ The Theseus invariants preserve the boundary between report-first implementation
 - Latest-file status never overwrites report lineage.
 - Current-state claims require current artifacts, not historical source-note lineage.
 
-The strongest invariant is report primacy: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
+Report primacy is the Theseus chapter's strongest invariant: if a claim relies on a run, gate, benchmark, or work-board state, the report or replayable artifact must exist before the claim can move.
 
-A second invariant is currentness. A pinned source file can support design lineage, but it cannot prove today's dashboard state, benchmark result, model quality, safety gate, or readiness status. Current-state claims require current artifacts, commands, environment notes, and publication permission.
+Currentness is the boundary on implementation-reference claims. A pinned source file can support design lineage, but it cannot prove today's dashboard state, benchmark result, model quality, safety gate, or readiness status. Current-state claims require current artifacts, commands, environment notes, and publication permission.
 
 ## Failure modes
 

@@ -175,7 +175,7 @@ SCFs give the generated tool a capability boundary; benchmark ratchets give it a
 
 The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
 
-A second invariant is scope fidelity. The generated tool may be narrower than the traces that inspired it, but it should not be broader unless new evidence justifies the expansion. Tool cards should prefer small verified envelopes over broad automation that is hard to falsify.
+Scope fidelity is the tool-memory invariant. The generated tool may be narrower than the traces that inspired it, but it should not be broader unless new evidence justifies the expansion. Tool cards should prefer small verified envelopes over broad automation that is hard to falsify.
 
 ## Failure modes
 

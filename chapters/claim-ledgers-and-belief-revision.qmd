@@ -171,7 +171,7 @@ The public claim and revision schemas now record claim scope, lifecycle state, s
 
 The non-overwrite invariant is central. New evidence can change the current state, but it cannot erase the fact that a prior state existed, which evidence supported it, and why it changed.
 
-A second invariant is regenerated prose discipline. If published text changes the meaning, support state, or scope of a ledgered claim, the ledger must change too. Reader editions can simplify scaffolding, but they cannot silently upgrade confidence or remove residuals that are material to the claim.
+Regenerated prose discipline is part of the ledger contract. If published text changes the meaning, support state, or scope of a ledgered claim, the ledger must change too. Reader editions can simplify scaffolding, but they cannot silently upgrade confidence or remove residuals that are material to the claim.
 
 Ledger identity also survives across editions, so polished prose cannot become a new unsupported claim.
 

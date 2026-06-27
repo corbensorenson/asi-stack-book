@@ -181,9 +181,9 @@ The proof-contract invariants keep structural receipts from inflating into quali
 - Consumer readiness is not downstream success.
 - Non-claims survive transfer into later chapters.
 
-The strongest invariant is non-claim preservation. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
+Non-claim preservation is the proof-contract invariant that matters most. A proof-carrying receipt must not lose its boundaries when it is copied into a later chapter, benchmark card, route decision, or prototype roadmap.
 
-Another invariant is consumer specificity. A receipt accepted for one consumer does not automatically transfer to another consumer with different workloads, numeric tolerances, threat model, or evidence standard.
+Consumer specificity keeps the receipt from becoming universal by accident. A receipt accepted for one consumer does not automatically transfer to another consumer with different workloads, numeric tolerances, threat model, or evidence standard.
 
 ## Failure modes
 

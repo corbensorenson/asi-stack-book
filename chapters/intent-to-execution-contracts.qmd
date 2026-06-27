@@ -164,9 +164,9 @@ The interface should record authority deltas at every lowering step. Intent may 
 - Side effects require explicit execution authority.
 - Artifacts remain linked to source intent.
 
-The key invariant is preservation across compilation: the plan, job, artifact, and verification record must still be traceable to the parent intent. If the system cannot show that lineage, it has not executed the intent; it has only produced something near it.
+Preservation across compilation is the key invariant: the plan, job, artifact, and verification record must still be traceable to the parent intent. If the system cannot show that lineage, it has not executed the intent; it has only produced something near it.
 
-A second invariant is acceptance separability. Producing an artifact, running a tool, or satisfying a subtask is not the same as satisfying the parent intent. The trace must keep local completion separate from contract satisfaction.
+Acceptance separability keeps local work from impersonating contract satisfaction. Producing an artifact, running a tool, or satisfying a subtask is not the same as satisfying the parent intent. The trace must keep local completion separate from contract satisfaction.
 
 Residual obligations also survive acceptance, so later repair cannot treat partial success as closed intent.
 

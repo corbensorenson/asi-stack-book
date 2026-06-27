@@ -190,7 +190,7 @@ Each phase record should be readable by both a builder and a release reviewer. T
 - Reported external readiness is not local reproduction.
 - Agency does not precede auditability.
 
-Another invariant is no irreversible unlock from provisional evidence. A phase can allow research use before full acceptance, but it cannot unlock default execution, promotion, self-improvement, or public capability claims while its required gates remain provisional.
+Provisional evidence cannot unlock irreversible authority. A phase can allow research use before full acceptance, but it cannot unlock default execution, promotion, self-improvement, or public capability claims while its required gates remain provisional.
 
 The roadmap must preserve dependency order. Evidence infrastructure precedes capability claims; replayable artifacts precede support-state promotion; constrained adapters precede broad tool autonomy; independent evaluation precedes self-improvement. A later phase may be explored in a sandbox, but it cannot be treated as accepted architecture while prerequisite ledgers, schemas, tests, and review records are missing. This keeps enthusiasm from becoming release policy.
 

@@ -62,6 +62,10 @@ FORMULAIC_GENERAL_PHRASES = (
     "The subtle failure is",
     "The subtle failure mode is",
     "Another failure is",
+    "Another invariant is",
+    "A second invariant is",
+    "The strongest invariant is",
+    "The key invariant is",
 )
 
 

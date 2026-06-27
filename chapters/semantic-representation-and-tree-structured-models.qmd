@@ -204,7 +204,7 @@ This table is a guardrail against graph-authority drift. A node may be perfectly
 - Shared semantic graphs remain indexes and working representations, not independent source authorities.
 - Consumer use is scoped by grounding, adequacy, interoperability, and permitted-use fields.
 
-The strongest invariant is provenance: a grounded node must say what grounds it. If no provenance exists, the node can still be useful as a hypothesis or planning construct, but it must not masquerade as verified knowledge.
+Provenance is the semantic-representation invariant: a grounded node must say what grounds it. If no provenance exists, the node can still be useful as a hypothesis or planning construct, but it must not masquerade as verified knowledge.
 
 Consumer-specific adequacy must remain visible, because one useful representation can still be unsafe for another downstream use.
 

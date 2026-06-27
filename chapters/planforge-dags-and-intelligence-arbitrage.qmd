@@ -172,7 +172,7 @@ The PlanForge scheduling record exposes scheduling states, adequacy contracts, m
 
 The efficiency invariant is bounded by verification: cost savings do not count if they delete required checks. A low-tier route can be correct only if the node's quality predicate and escalation policy remain intact.
 
-Another invariant is dependency honesty. A node cannot be marked ready because its predecessor emitted text; it becomes ready only when the predecessor's required artifact, authority state, context state, and quality predicate are satisfied or explicitly waived by governance.
+Dependency honesty keeps the DAG from becoming decorative. A node cannot be marked ready because its predecessor emitted text; it becomes ready only when the predecessor's required artifact, authority state, context state, and quality predicate are satisfied or explicitly waived by governance.
 
 The scheduler must also preserve blocked work. A blocked node, rejected route, exhausted budget, failed predicate, or unresolved residual is part of the plan state, not clutter to hide. Intelligence arbitrage is only governable when the DAG records why cheap work was accepted, why expensive work was escalated, and why some work should not proceed yet. Hidden blocking converts scheduling into improvisation.
 

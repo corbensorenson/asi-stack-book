@@ -167,7 +167,7 @@ The reference-architecture invariants keep an end-to-end trace from becoming a s
 - Artifacts remain traceable.
 - Self-improvement follows evidence and authority gates.
 
-The strongest invariant is continuity under authority. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
+Continuity under authority is the strongest integration invariant. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
 
 Completeness is also an invariant. A blank field in the trace must mean "not applicable" or "not yet available," not "the system forgot to ask." Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.
 

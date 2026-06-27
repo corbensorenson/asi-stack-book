@@ -168,9 +168,9 @@ That receipt becomes the bridge to resource economics and self-improvement. Budg
 - Handle leases expire or revoke instead of becoming ambient authority.
 - Sanitized commits record retained material and residual leak risk.
 
-The strongest invariant is ignorance: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
+Model ignorance is the security kernel's strongest invariant: if the model never receives the secret bytes, it cannot be directly instructed to reveal those bytes. This does not solve every leak channel. It narrows one important class of failure and forces the remaining risks into explicit boundary, logging, and side-channel analysis.
 
-A second invariant is purpose binding. A handle authorized for one destination, action, time window, or job cannot be reused as ambient authority by a later plan, summary, tool, or self-improvement proposal. Reuse requires a new receipt or an explicit lease that says reuse is allowed.
+Purpose binding keeps handles narrow. A handle authorized for one destination, action, time window, or job cannot be reused as ambient authority by a later plan, summary, tool, or self-improvement proposal. Reuse requires a new receipt or an explicit lease that says reuse is allowed.
 
 ## Failure modes
 

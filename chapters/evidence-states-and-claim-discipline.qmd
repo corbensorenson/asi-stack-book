@@ -203,9 +203,9 @@ The interface should distinguish evidence roles: lineage, motivation, terminolog
 - No fabricated test results.
 - Negative and inconclusive results remain visible.
 
-The strongest invariant is asymmetric: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found. This is why Appendix C deliberately remains conservative after source-note coverage improves. Source notes are necessary context, not automatic claim promotion.
+Asymmetry is the strongest evidence-state rule: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found. This is why Appendix C deliberately remains conservative after source-note coverage improves. Source notes are necessary context, not automatic claim promotion.
 
-Another invariant is scope non-expansion. A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.
+Scope non-expansion follows from that asymmetry. A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.
 
 Promotion records also preserve downgraded and rejected transitions, so failed evidence attempts remain part of later interpretation.
 

@@ -182,7 +182,7 @@ The lifecycle states should be explicit enough for routers and auditors to consu
 
 The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.
 
-Another invariant is transition monotonicity over evidence. A target can move to a stronger state only by adding adequate gate evidence or by narrowing its permitted scope. It cannot become more routable by losing records.
+Transition monotonicity over evidence keeps readiness from being laundered. A target can move to a stronger state only by adding adequate gate evidence or by narrowing its permitted scope. It cannot become more routable by losing records.
 
 ## Failure modes
 

@@ -205,7 +205,7 @@ This receipt is what prevents completion laundering. A job can be delivered whil
 
 The approval invariant is non-negotiable: a job requiring approval cannot execute because a planner or model predicts approval would be granted. The approval record is part of the job state.
 
-A second invariant is effect accountability. Every external effect should have an adapter reference, permission basis, audit event, and replay or non-replay declaration. Otherwise the labor OS has produced side effects without a work record.
+Effect accountability keeps typed labor from becoming ambient action. Every external effect should have an adapter reference, permission basis, audit event, and replay or non-replay declaration. Otherwise the labor OS has produced side effects without a work record.
 
 ## Failure modes
 

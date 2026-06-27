@@ -180,7 +180,7 @@ The interface should distinguish access failure, justified denial, redacted acce
 
 The invariant is practical availability. A right that cannot be exercised under realistic conditions is not preserved. A right that bypasses safety constraints is not a right; it is an authority leak.
 
-Another invariant is challenged-party independence. The challenged authority may be part of the review path, but it cannot be the only place where the record, denial reason, or appeal path exists.
+Challenged-party independence protects review. The challenged authority may be part of the review path, but it cannot be the only place where the record, denial reason, or appeal path exists.
 
 The rights layer must also preserve continuity across upgrades. A user should not lose audit, appeal, export, or fork paths because a model, memory system, policy engine, or steward agent was replaced. Rights attach to the field and the governed relationship, not to one convenient implementation. If a replacement cannot carry the rights receipt forward, the replacement is not ready for default use.
 

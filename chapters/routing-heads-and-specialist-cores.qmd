@@ -204,7 +204,7 @@ The public schemas now make that receipt explicit. Specialist registry records c
 
 The important invariant is that selection and authorization are different predicates. A specialist can be the best semantic match and still be disallowed because its authority scope, readiness state, or evidence state is inadequate for the task.
 
-Another invariant is least-capable adequate routing. The router should not select a stronger, broader, or more privileged specialist unless the task's risk, context demand, verifier requirement, or fallback policy justifies it.
+Least-capable adequate routing keeps specialist selection governed. The router should not select a stronger, broader, or more privileged specialist unless the task's risk, context demand, verifier requirement, or fallback policy justifies it.
 
 Specialist retirement and readiness downgrade remain routable states, so old capability does not silently stay in circulation.
 
