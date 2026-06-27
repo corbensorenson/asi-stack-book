@@ -267,3 +267,7 @@ The result is a lifecycle discipline for modular intelligence: promote only with
 That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.
 
 A readiness decision should still be understandable after the module changes names. If evidence, residuals, scope, expiry, and quarantine permissions do not survive that change, the lifecycle layer is not yet governing promotion.
+
+## Handoff
+
+Readiness gates define what evidence a module owes before ordinary routing, but the architecture still needs a concrete runtime reference that can emit those records. MoECOT Runtime and Multi-Core Orchestration occupies that implementation-reference role. It shows how route heads, specialist cores, fail-closed gates, ledgers, replay hooks, denied routes, and promotion blockers would have to appear in one orchestrated system.

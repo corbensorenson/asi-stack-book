@@ -270,3 +270,7 @@ The job is to make that implementation lane useful and honest: concrete enough t
 That transition matters because compression only helps the stack when the runtime can still say what was routed, what was verified, what became residual, and what remained too weak for promotion.
 
 A runtime reference should make future reproduction easier. If a reader cannot tell what to replay, what was denied, what evidence state each field has, and what is still blocked, the implementation reference is not yet doing architectural work.
+
+## Handoff
+
+A runtime reference is only useful when it can land on real compute without confusing reachability for authority. Personal Compute Hives and Federated Edge Intelligence moves that concern from abstract orchestration to owned and leased devices. It asks how phones, laptops, desktops, NAS machines, project runners, and rented nodes can join work under identity, privacy, locality, cost, energy, and revocation constraints.

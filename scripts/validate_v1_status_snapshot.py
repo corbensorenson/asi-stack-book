@@ -141,7 +141,7 @@ def main() -> None:
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
         "browser Human-view gate checks rendered Mermaid SVG visibility",
-        "| Chapter handoffs | All 30 Part I and Part II chapters now end with manifest-driven `Handoff` sections that name the next manifest chapter title and avoid numbered chapter references; Parts III and IV remain ratchet targets |",
+        "| Chapter handoffs | All 45 Part I, Part II, and Part III chapters now end with manifest-driven `Handoff` sections that name the next manifest chapter title and avoid numbered chapter references; Part IV remains a ratchet target |",
         "`The book needs a place`",
         "`Failure closure:`",
         "`detect and route failure modes such as`",

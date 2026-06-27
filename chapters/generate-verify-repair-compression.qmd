@@ -263,3 +263,7 @@ Generate-Verify-Repair Compression turns compression into a bargain the stack ca
 The discipline is residual honesty. A generator is useful only when the stack pays for what it fails to generate, checks the result against a declared reconstruction contract, and records when literal storage was better. The same accounting then moves from stored artifacts to time: faster generation is useful only after verification, fallback, and accepted-output costs are counted.
 
 In other words, a faster generator inherits the same burden as a smaller representation: proposed output is cheap only if the verifier can afford to decide what should be accepted.
+
+## Handoff
+
+Generate-verify-repair receipts expose the cost of reconstructing stored artifacts; the same accounting applies when the system generates output over time. Fast Generation Architectures moves from compressed representation to accelerated inference and drafting. It asks which generation mode is allowed, what verifier accepts, what fallback costs, and whether speed still improves the governed task after rejected output and repair are counted.

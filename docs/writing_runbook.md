@@ -65,7 +65,7 @@ When writing chapters, assume the reader spine may become a relaxed human-consum
 
 When revising diagrams, add a concise `Diagram reading note` after the primary Mermaid block. The note should explain how to read the boundary, loop, state machine, or evidence flow without claiming that the diagram itself proves implementation, benchmark, safety, or runtime behavior. Every chapter is under this validator ratchet.
 
-When revising chapter endings, add or preserve `## Handoff` sections only where the handoff ratchet has been enabled. A good handoff should come after `Summary`, name the next manifest chapter title exactly, avoid numbered chapter references, and explain the architectural reason the next boundary follows. Parts I and II are currently under this ratchet through `python3 scripts/validate_chapter_handoffs.py`; later parts should converge as their endings are polished.
+When revising chapter endings, add or preserve `## Handoff` sections only where the handoff ratchet has been enabled. A good handoff should come after `Summary`, name the next manifest chapter title exactly, avoid numbered chapter references, and explain the architectural reason the next boundary follows. Parts I, II, and III are currently under this ratchet through `python3 scripts/validate_chapter_handoffs.py`; Part IV should converge as its ending sequence is polished.
 
 Problem, insufficiency, and summary sections should speak in direct systems language rather than describing "this chapter" as an object. Use layer, boundary, record, contract, evaluator, runtime, route, field, or artifact names so the human-readable spine reads like a book, not scaffold commentary.
 

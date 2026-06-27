@@ -265,3 +265,7 @@ Residual honesty is what keeps compactness from becoming a trick. It lets a comp
 The result is a simple bridge: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry.
 
 Compactness has to survive total-cost accounting. If the seed is smaller but the hidden verification, repair, review, or authority cost grows without a record, the stack has not become more efficient.
+
+## Handoff
+
+Compact systems become sharper when the claim changes from useful generation to exact reconstruction. Generate-Verify-Repair Compression takes residual honesty into that stricter setting. It requires a generator, declared reconstruction contract, verifier, repair stream, literal fallback, consumer policy, and cost ledger so a smaller representation cannot claim exactness unless the missing remainder is actually paid.

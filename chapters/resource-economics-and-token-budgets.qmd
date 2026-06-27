@@ -275,3 +275,7 @@ Budget pressure becomes an explicit record so the stack can save cost where it i
 The handoff is deliberate: simulation, cyclic mixers, and mathematical substrates are not adopted because they look elegant or cheap. They have to enter through resource, fidelity, baseline, and evidence contracts.
 
 The same rule governs self-improvement. A system may not call itself more efficient by moving verification, security, or human repair cost out of sight.
+
+## Handoff
+
+Resource budgets decide what the stack can afford to try, but some experiments are only meaningful inside a bounded model of the world. Simulation Fidelity and Physical Constraints defines that boundary. It treats simulation as an instrument with clocks, approximations, bottlenecks, omitted physics, transfer rules, and non-claims, so cheap exploration cannot silently become deployment evidence.

@@ -337,3 +337,7 @@ Fast Generation Architectures defines the ASI Stack's generation substrate. Its 
 That makes fast generation a bridge between compression, routing, execution, evidence, and the external inference-acceleration literature. PlanForge selects the route, VCM supplies context, the generator drafts, Spinoza verifies, Talos artifactizes, Benchmaxxing measures, and SCF decides whether the capability is ready. Speculative decoding, MTP, Medusa/EAGLE-style drafting, lookahead, early exit, state-space substrates, KV-cache serving, and diffusion LLMs now have source-note anchors. Multi-seed diffusion and hybrid AR/MTP/diffusion systems remain research directions until the work earns stronger support. The argument narrows from generation modes to compressed artifacts: how a cheaper representation is routed only when probes and fallback make it safe enough for the task.
 
 The bridge is intentionally conservative: speed becomes an architecture win only when the accepted-output ledger survives contact with verification bandwidth, memory pressure, fallback cost, and downstream task success.
+
+## Handoff
+
+Fast generation reduces time pressure at the output boundary, but stored and routed artifacts still need compression contracts of their own. RankFold, NeuralFold, and Artifact Compression narrows the focus to reusable artifacts: how archive forms, deterministic decode checks, probes, fallback, utility, and cost accounting decide whether a compressed artifact can safely replace or accompany its fuller source.
