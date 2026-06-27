@@ -521,7 +521,7 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
                 status=qmd_escape(status),
             )
         )
-    text = f"""# Corben's Sources and Local Projects
+    text = f"""# Corben-Authored, Supplied, and Local Sources
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
@@ -535,7 +535,7 @@ External and third-party sources are not the second half of Appendix G. They liv
 
 | Field | Boundary |
 |---|---|
-| Appendix identity | Appendix G: Corben's sources and local projects |
+| Appendix identity | Appendix G: Corben-authored, supplied, and local sources |
 | Contains | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. |
 | Excludes | Third-party literature records marked `external_literature`; those belong in Appendix H. |
 | Evidence effect | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
@@ -558,7 +558,7 @@ External and third-party sources are not the second half of Appendix G. They liv
 
 This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
 
-This is an independent top-level appendix for external sources by other authors. It is not a subsection, second half, or continuation of Appendix G. It contains only third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources live in their own top-level appendix: [Appendix G, Corben's Sources and Local Projects](G_corben_source_corpus.qmd).
+This is an independent top-level appendix for external sources by other authors. It is not a subsection, second half, or continuation of Appendix G. It contains only third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources live in their own top-level appendix: [Appendix G, Corben-Authored, Supplied, and Local Sources](G_corben_source_corpus.qmd).
 
 A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 

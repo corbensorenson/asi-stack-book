@@ -3567,7 +3567,7 @@ Draft arc:
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
 - Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
-- Interface: Appendix G is an independent top-level appendix for Corben's sources and local projects.
+- Interface: Appendix G is an independent top-level appendix for Corben-authored, Corben-supplied, and local project sources.
 - Interface: Appendix H is an independent top-level appendix for external literature and third-party references by other authors.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.
@@ -3604,7 +3604,7 @@ Lean proof targets:
 
 ## Source Corpus and External Literature
 
-Appendix G is the generated top-level appendix for Corben's authored/supplied sources and local project records. Appendix H is a separate generated top-level appendix for external literature and third-party references by other authors. Do not present external sources as a second part of Appendix G, and do not present Corben/local records as a section of Appendix H. Both appendices should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
+Appendix G is the generated top-level appendix for Corben-authored, Corben-supplied, and local project records. Appendix H is a separate generated top-level appendix for external literature and third-party references by other authors. Do not present external sources as a second part of Appendix G, and do not present Corben/local records as a section of Appendix H. Both appendices should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
 
 ## Author Intent and Architecture Lineage
 
