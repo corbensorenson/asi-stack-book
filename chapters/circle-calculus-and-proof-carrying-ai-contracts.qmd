@@ -67,7 +67,7 @@ Proof authority and consumer authority are separate. A theorem can authorize a s
 
 Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims. Without those fields, a reader cannot tell whether a claim is a Lean theorem, a Python fixture, a generated report, a model benchmark, or a design hypothesis.
 
-The key insufficiency is theorem laundering: a finite structural result gets repeated as if it were evidence for quality or deployment behavior. This chapter blocks that move by requiring each proof-carrying contract to carry its own consumer gate and non-claim boundary.
+The key insufficiency is theorem laundering: a finite structural result gets repeated as if it were evidence for quality or deployment behavior. The proof-carrying contract blocks that move by carrying its own consumer gate and non-claim boundary.
 
 Another insufficiency is stale proof reference drift. The text may preserve a theorem name while the external project changes the declaration, proof policy, sidecar schema, or generated artifact. A contract needs version, hash, resolver status, validation command, and failure behavior so staleness becomes visible.
 

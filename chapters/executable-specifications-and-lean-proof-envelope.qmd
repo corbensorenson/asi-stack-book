@@ -77,7 +77,7 @@ The hard part is not enthusiasm for proof; it is choosing the right unit of proo
 
 This also protects readers from a subtle form of evidence inflation. A Lean module may prove a record invariant, while a schema validates fields, while a test exercises behavior, while a benchmark measures performance. Those artifacts can all be valuable, but they do not collapse into one kind of support. If the book cannot state which lane a claim belongs to, the claim is not ready for stronger evidence language.
 
-The insufficiency is semantic proof drift. A finite predicate can be correct and still be the wrong predicate for the chapter's intended boundary. That gap belongs in a semantic adequacy review, not in the Lean build status.
+The insufficiency is semantic proof drift. A finite predicate can be correct and still be the wrong predicate for the intended ASI Stack boundary. That gap belongs in a semantic adequacy review, not in the Lean build status.
 
 ## Core Claim
 

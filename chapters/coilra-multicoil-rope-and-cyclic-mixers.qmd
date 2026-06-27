@@ -65,7 +65,7 @@ Position encodings, adapters, route heads, and mixers can contain real cyclic or
 
 CoilRA, MultiCoil RoPE, RoPE position distinguishability, circulant mixers, and block-cyclic adapters need a bounded evaluation lane that neither dismisses them nor overpromotes them.
 
-The practical problem is adoption scope. A cyclic mixer can be structurally interesting and still wrong for a workload, too costly for deployment, too fragile under sequence shift, or too easy to confuse with a quality improvement. The chapter therefore has to separate exact cyclic facts from evaluation, fallback, routing, and support-state effects before any substrate becomes architecture.
+The practical problem is adoption scope. A cyclic mixer can be structurally interesting and still wrong for a workload, too costly for deployment, too fragile under sequence shift, or too easy to confuse with a quality improvement. The evaluation lane therefore has to separate exact cyclic facts from evaluation, fallback, routing, and support-state effects before any substrate becomes architecture.
 That separation matters because cyclic machinery is attractive precisely where it compresses structure into elegant math; without evidence boundaries, elegance can become a shortcut around baseline comparison, ablation, and workload-specific refusal.
 
 ## Why existing approaches are insufficient
@@ -74,11 +74,11 @@ Parameter-count, equivariance, or exact phase facts can be mistaken for better m
 
 Circle AI Architectures gives the right rule: use cyclic structure where the data, model, or computation really has phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic structure, or geometry-aware structure. Otherwise use ordinary baselines.
 
-That rule is a defense against aesthetic adoption. Cyclic structure can be beautiful and still wrong for the workload. A phase bank can be exactly described and still hurt optimization. A mixer can reduce parameters and still run poorly on available hardware. A RoPE receipt can distinguish positions inside its declared model and still say nothing about whether a trained model uses longer context well. The chapter keeps those cases separate so structural clarity does not become performance mythology.
+That rule is a defense against aesthetic adoption. Cyclic structure can be beautiful and still wrong for the workload. A phase bank can be exactly described and still hurt optimization. A mixer can reduce parameters and still run poorly on available hardware. A RoPE receipt can distinguish positions inside its declared model and still say nothing about whether a trained model uses longer context well. Separate ledgers keep those cases apart so structural clarity does not become performance mythology.
 
 The adoption question is therefore comparative. What does the cyclic candidate do better than dense layers, LoRA variants, ordinary RoPE, learned positional encodings, recurrent memory, state-space models, or nonperiodic controls? What does it make worse? Which hardware shape does it assume? Which alias or load diagnostic would block it? Without those answers, the cyclic substrate can remain a research candidate but not a default route.
 
-The insufficiency is cross-ledger spending. A substrate wins a structural ledger entry, then spends that win as if it were a quality result, runtime result, memory result, or hardware result. The chapter should force each ledger to earn its own evidence.
+The insufficiency is cross-ledger spending. A substrate wins a structural ledger entry, then spends that win as if it were a quality result, runtime result, memory result, or hardware result. Each ledger should have to earn its own evidence.
 
 ## Core Claim
 

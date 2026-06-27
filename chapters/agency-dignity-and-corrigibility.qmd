@@ -82,7 +82,7 @@ That check has to be concrete enough to fail. If the user technically has an app
 
 Rights therefore need usability states, not just field presence. A right can be `available`, `available_but_costly`, `late`, `degraded`, `denied`, `residual_only`, or `not_applicable`. The checklist should record whether a review or appeal path is materially usable by the affected person before the relevant effect, whether a rollback can repair the actual harm class, and why any path was denied or degraded.
 
-That usability requirement keeps the chapter from treating rights language as decoration. A right that cannot be exercised at the moment of impact is not an operational constraint; it is a residual the system must surface. The engineering question is therefore not whether the architecture says it respects agency, but whether the affected person still has a working handle on the system when that handle matters.
+That usability requirement keeps rights language from becoming decoration. A right that cannot be exercised at the moment of impact is not an operational constraint; it is a residual the system must surface. The engineering question is therefore not whether the architecture says it respects agency, but whether the affected person still has a working handle on the system when that handle matters.
 
 ## Core Claim
 
@@ -113,7 +113,7 @@ The checklist should be attached before irreversible or high-impact actions. It 
 
 Corrigibility becomes operational when the path remains available after a transition. A plan that removes the ability to correct, appeal, reverse, or inspect itself is not merely risky; it violates the boundary.
 
-The key phrase is "after a transition." Many systems preserve user control before commitment and lose it after deployment, automation, lock-in, or self-improvement. This chapter requires the checklist to follow the plan through execution, replacement, rollback, and report review. A correction path that disappears after the moment it is needed is not corrigibility.
+The key phrase is "after a transition." Many systems preserve user control before commitment and lose it after deployment, automation, lock-in, or self-improvement. The checklist must follow the plan through execution, replacement, rollback, and report review. A correction path that disappears after the moment it is needed is not corrigibility.
 
 The checklist should also distinguish procedural availability from material availability. A user may technically have an appeal channel, but if the channel arrives after publication, requires unreasonable expertise, lacks a remedy, or is controlled by the component being challenged, the right is degraded. The degraded state is an agency residual that can narrow authority, trigger review, or block the plan.
 

@@ -74,7 +74,7 @@ A tool call is not just cognition. It can delete a file, spend money, send a mes
 
 The right boundary is not "never call tools." It is "call tools through adapters whose capabilities, approval requirements, authority handles, result evidence, and rollback options are explicit."
 
-This chapter is where intention stops being enough. A typed job can describe what should happen, and a plan can explain why it should happen, but neither one should receive ambient authority. The adapter grants a narrow effect lease: this capability, for this target, under this sandbox, with this approval state, producing this evidence and these residuals. Anything outside that lease is a denial, escalation, or new request.
+Runtime adaptation is where intention stops being enough. A typed job can describe what should happen, and a plan can explain why it should happen, but neither one should receive ambient authority. The adapter grants a narrow effect lease: this capability, for this target, under this sandbox, with this approval state, producing this evidence and these residuals. Anything outside that lease is a denial, escalation, or new request.
 
 Human approval should also be treated as a structured artifact, not a vague blessing. The record should say what was approved, by whom or by which role, under what scope, for which risk tier, and with what expiration or revocation path. Otherwise approval becomes a ritual that hides responsibility instead of a control surface that can be audited.
 

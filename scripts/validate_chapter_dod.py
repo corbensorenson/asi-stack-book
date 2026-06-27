@@ -100,6 +100,17 @@ PROBLEM_BANNED_PATTERNS = [
     ),
 ]
 
+INSUFFICIENCY_BANNED_PATTERNS = [
+    (
+        "self-referential chapter phrase",
+        re.compile(r"\b(?:this|the) chapter(?:'s)?\b", re.IGNORECASE),
+    ),
+    (
+        "reader-direction meta phrase",
+        re.compile(r"\bthe reader should treat this chapter\b", re.IGNORECASE),
+    ),
+]
+
 SECTION_MIN_WORDS = {
     "## Problem": 130,
     "## Why existing approaches are insufficient": 130,
@@ -274,6 +285,14 @@ def main() -> None:
             if match:
                 errors.append(
                     f"{chapter['file']}: ## Problem contains {label}: {match.group(0)!r}"
+                )
+
+        insufficiency = section_body(text, "## Why existing approaches are insufficient")
+        for label, pattern in INSUFFICIENCY_BANNED_PATTERNS:
+            match = pattern.search(insufficiency)
+            if match:
+                errors.append(
+                    f"{chapter['file']}: ## Why existing approaches are insufficient contains {label}: {match.group(0)!r}"
                 )
 
         expected = {
