@@ -131,6 +131,8 @@ flowchart LR
   J --> K
 ```
 
+**Diagram reading note:** The ratchet converts benchmark work into an evidence-state decision, not a celebration of a score. Residuals, regressions, holdouts, transfer checks, mutation, contamination, and negative results all gate whether readiness or a claim can move.
+
 The record should track benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
 
 In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. The book's evidence discipline depends on this mundane bookkeeping.

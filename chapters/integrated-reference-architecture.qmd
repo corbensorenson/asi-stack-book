@@ -145,6 +145,8 @@ sequenceDiagram
   S->>G: promote, rollback, quarantine, or require review
 ```
 
+**Diagram reading note:** The reference trace is an end-to-end handoff chain, not a single agent loop. Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.
+
 The important feature is that every participant emits something durable enough for another participant to inspect. If the planner fails, the plan DAG should show where. If memory fails, the context packet should expose stale, missing, or unauthorized material. If routing fails, the residual record should survive. If execution fails, the audit log should make the failure replayable. If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.
 
 ## Interfaces

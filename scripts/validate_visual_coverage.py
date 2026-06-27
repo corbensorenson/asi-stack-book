@@ -24,6 +24,7 @@ DIAGRAM_NOTE_REQUIRED_PARTS = {
     "foundations-alignment-governance",
     "planning-memory-reasoning-execution",
     "routing-compression-representation-substrates",
+    "evidence-implementation-living-book",
 }
 
 MIN_DIAGRAM_LINES = 12

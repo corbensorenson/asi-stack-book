@@ -121,6 +121,8 @@ flowchart LR
   Boundary -. "blocks overclaim" .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
 ```
 
+**Diagram reading note:** The Theseus loop is report-first: pressure becomes contracts, routes, work, reports, gate review, residuals, and the smallest next intervention. The Circle transfer lane can contribute structural receipts, but the claim-boundary ledger blocks quality, speed, context, or ASI claims without workload evidence.
+
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
 
 That distinction is the public safety valve. Source-note lineage can explain why a mechanism appears in the book. Imported reports can show what a local system recorded. Reproduced runs can support a narrower evidence transition. Missing artifacts keep claims from moving. Public non-claims prevent readers and future agents from treating a local implementation reference as a general capability result.

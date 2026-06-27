@@ -120,6 +120,8 @@ flowchart LR
   I --> J["Appendix E and proof manifest"]
 ```
 
+**Diagram reading note:** The proof envelope starts by triaging whether a claim has an operational predicate at all. Lean modules, schemas, fixtures, validators, blocked targets, and residuals are separate lanes, and a passing artifact updates only the narrow proof/spec state it actually checks.
+
 Each target should record its tag, module, artifact lane, formal target, artifact path, verifier command, verifier result, support-state impact, consumer requirements, semantic adequacy state, limitations, and non-claims. A passed schema check can support record shape. A passed Lean build can support a mechanized invariant. Neither can support empirical performance unless an experiment exists.
 
 The repository now mechanizes the envelope rule as a finite target-status predicate. In `AsiStackProofs.ProofEnvelope`, an implemented target must carry module-existence and build-passed flags, and a non-operational target is routed to planned or blocked rather than implemented. The proof is a policy invariant over proof-target records; it is not a filesystem crawler, theorem-discovery tool, or coverage audit.

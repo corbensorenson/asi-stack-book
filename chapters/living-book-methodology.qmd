@@ -130,6 +130,8 @@ flowchart LR
   Validate -. "failure blocks release" .-> Draft
 ```
 
+**Diagram reading note:** The living-book loop treats sources, notes, drafts, claims, proofs, validation, release, editions, and residuals as one publication ratchet. Dashed edges mark non-claim boundaries: no note means no source-derived support, no run means no result, and a target format is not itself an artifact.
+
 This loop is the book's own version of benchmark ratcheting and cognitive loop closure. Repeated maintenance work should become scripts, validators, schemas, or proof modules. But the same rule applies as everywhere else in the stack: do not close a loop until it is parameterized, testable, and safe to reuse.
 
 When an AI agent writes from the outline, the outline should behave like a build plan. It names source queues, proof tags, expected mechanisms, failure modes, and deliverables so a future writing pass can update the right chapter or add a new one without renumbering the book by hand.
