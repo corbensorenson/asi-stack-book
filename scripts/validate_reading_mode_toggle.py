@@ -74,6 +74,10 @@ def main() -> None:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
     if 'html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live TOC hide rule")
+    if '[data-asi-human-toc-link="true"]' not in style_text:
+        errors.append("assets/styles.scss is missing the Human Reading Path TOC hide rule")
+    if 'html[data-asi-reading-mode="human"] [data-asi-ai-toc-link="true"]' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode AI/live block TOC hide rule")
     if 'html[data-asi-reading-mode="human"] main.content .header-section-number' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode body section-number hide rule")
     if 'html[data-asi-reading-mode="human"] #TOC .header-section-number' not in style_text:
@@ -95,8 +99,10 @@ def main() -> None:
         "url_query_parameter": "view",
         "mode_status_selector": "[data-asi-reading-mode-status]",
         "toc_link_marker": "data-asi-live-toc-link",
+        "human_toc_link_marker": "data-asi-human-toc-link",
+        "ai_toc_link_marker": "data-asi-ai-toc-link",
         "assistive_description_class": "asi-sr-only",
-        "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections",
+        "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
         "ai_only_class": "asi-ai-only",
         "human_only_class": "asi-human-only",
         "live_only_class": "asi-live-only",
@@ -120,6 +126,10 @@ def main() -> None:
         "polite live region": 'aria-live="polite"',
         "mode status selector": "data-asi-reading-mode-status",
         "toc link marker": "data-asi-live-toc-link",
+        "human TOC link marker": "data-asi-human-toc-link",
+        "AI TOC link marker": "data-asi-ai-toc-link",
+        "view-mode TOC marker function": "function markViewModeTocLinks",
+        "view-mode TOC marker call": "markViewModeTocLinks()",
         "toc link marker function": "function markLiveTocLinks",
         "toc link marker call": "markLiveTocLinks(liveIds)",
         "ai status copy": "AI/research view active.",

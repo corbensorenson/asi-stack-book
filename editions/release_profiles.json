@@ -281,12 +281,14 @@
     "url_query_parameter": "view",
     "mode_status_selector": "[data-asi-reading-mode-status]",
     "toc_link_marker": "data-asi-live-toc-link",
+    "human_toc_link_marker": "data-asi-human-toc-link",
+    "ai_toc_link_marker": "data-asi-ai-toc-link",
     "assistive_description_class": "asi-sr-only",
-    "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections",
+    "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
     "ai_only_class": "asi-ai-only",
     "human_only_class": "asi-human-only",
     "live_only_class": "asi-live-only",
-    "reader_release_processing": "Reader generation strips .asi-ai-only fenced div blocks, unwraps .asi-human-only fenced div blocks, and strips the live-only headings listed in reader_release.strip_headings.",
+    "reader_release_processing": "Reader generation strips .asi-ai-only fenced div blocks, unwraps .asi-human-only fenced div blocks as unheaded prose, and strips the live-only headings listed in reader_release.strip_headings.",
     "chapter_contract": "Every chapter's ordinary prose must remain reader-facing. Optional .asi-human-only blocks may provide chapter-specific human prose digests; optional .asi-ai-only or .asi-live-only blocks must not carry meaning-critical caveats absent from the reader spine."
   },
   "audio_manuscript_policy": {

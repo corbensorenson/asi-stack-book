@@ -11,7 +11,7 @@
     },
     [humanMode]: {
       button: "Human view",
-      status: "Human view active. Repeated live-research sections are hidden and Human Reading Path bridges are visible."
+      status: "Human view active. Repeated live-research sections are hidden and human-facing bridge prose is visible."
     }
   };
   const liveHeadings = new Set([
@@ -71,6 +71,33 @@
       if (!liveIds.has(targetId)) return;
       const item = link.closest("li") || link;
       item.setAttribute("data-asi-live-toc-link", "true");
+    });
+  }
+
+  function idsForSections(selector) {
+    const ids = new Set();
+    document.querySelectorAll(selector).forEach((section) => {
+      if (section.id) ids.add(section.id);
+      const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return;
+      const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+      if (anchorId) ids.add(anchorId);
+    });
+    return ids;
+  }
+
+  function markViewModeTocLinks() {
+    const markerMap = [
+      [idsForSections(".asi-human-only"), "data-asi-human-toc-link"],
+      [idsForSections(".asi-ai-only, .asi-live-only"), "data-asi-ai-toc-link"]
+    ];
+    document.querySelectorAll('#TOC a[href^="#"], #TOC a[data-scroll-target^="#"]').forEach((link) => {
+      const targetId = targetIdFromHash(link.getAttribute("data-scroll-target") || link.getAttribute("href") || "");
+      markerMap.forEach(([ids, marker]) => {
+        if (!ids.has(targetId)) return;
+        const item = link.closest("li") || link;
+        item.setAttribute(marker, "true");
+      });
     });
   }
 
@@ -142,7 +169,7 @@
     control.setAttribute("aria-describedby", "asi-reading-mode-description");
     control.innerHTML = [
       '<span class="asi-reading-mode__label">Reading mode</span>',
-      '<span id="asi-reading-mode-description" class="asi-sr-only">AI view shows the full live research scaffold. Human view hides repeated workflow sections and shows chapter Human Reading Path bridges.</span>',
+      '<span id="asi-reading-mode-description" class="asi-sr-only">AI view shows the full live research scaffold. Human view hides repeated workflow sections and shows human-facing bridge prose.</span>',
       '<button type="button" data-asi-reading-choice="ai" aria-pressed="true" title="Show the full AI and researcher scaffold">AI view</button>',
       '<button type="button" data-asi-reading-choice="human" aria-pressed="false" title="Read the human-facing chapter prose">Human view</button>',
       '<span class="asi-sr-only" role="status" aria-live="polite" data-asi-reading-mode-status></span>'
@@ -160,6 +187,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const liveIds = markLiveSections();
     markLiveTocLinks(liveIds);
+    markViewModeTocLinks();
     insertToggle();
     setMode(initialMode());
   });

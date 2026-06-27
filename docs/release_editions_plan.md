@@ -140,7 +140,7 @@ The reader release removes repeated live-workflow sections by heading:
 
 The reader release keeps the core prose and diagrams. If an uncertainty caveat changes the meaning of a claim, keep it in the narrative rather than relying on a stripped guardrail block.
 
-The live-site `Human view` uses this same heading list at render time. `.asi-live-only` and `.asi-ai-only` blocks are hidden in Human view; matching page-TOC entries are hidden with the same runtime marker; visible section numbers are hidden so filtered chapters do not show numbering gaps; `.asi-human-only` Human Reading Path blocks are hidden in AI view and shown in Human view; `?view=human` and `?view=ai` deep-link directly into the chosen projection. If these strip rules or mode-linking rules change, update the reading-mode asset and run:
+The live-site `Human view` uses this same heading list at render time. `.asi-live-only` and `.asi-ai-only` blocks are hidden in Human view; matching page-TOC entries are hidden with runtime markers; visible section numbers are hidden so filtered chapters do not show numbering gaps; `.asi-human-only` bridge blocks are hidden in AI view, shown as unheaded lead-in prose in Human view, and omitted from the page TOC because they are internal reader scaffolding rather than navigable manuscript sections; `?view=human` and `?view=ai` deep-link directly into the chosen projection. If these strip rules or mode-linking rules change, update the reading-mode asset and run:
 
 ```bash
 python3 scripts/validate_reading_mode_toggle.py
@@ -149,7 +149,7 @@ quarto render --to html
 python3 scripts/validate_live_human_view.py
 ```
 
-`scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain exactly one `Human Reading Path` heading without view-mode markers.
+`scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain the bridge prose without the source-only `Human Reading Path` heading or view-mode markers.
 
 `scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if stripped headings remain, if view-mode markers leak into generated reader source, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, if a required reader heading is missing, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
 

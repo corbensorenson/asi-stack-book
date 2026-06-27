@@ -26,6 +26,7 @@ FENCED_DIV_OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
 FENCED_DIV_CLOSE_RE = re.compile(r"^(:{3,})\s*$")
 AI_ONLY_CLASS = "asi-ai-only"
 HUMAN_ONLY_CLASS = "asi-human-only"
+HUMAN_READING_PATH_HEADING = "## Human Reading Path"
 
 
 def load_json(path: Path) -> object:
@@ -58,8 +59,24 @@ def strip_sections(text: str, strip_headings: set[tuple[int, str]]) -> tuple[str
     output: list[str] = []
     removed: dict[str, int] = {}
     skip_level: int | None = None
+    preserved_block_fence: int | None = None
 
     for line in lines:
+        if preserved_block_fence is not None:
+            output.append(line)
+            close_match = FENCED_DIV_CLOSE_RE.match(line)
+            if close_match and len(close_match.group(1)) >= preserved_block_fence:
+                preserved_block_fence = None
+            continue
+
+        open_match = FENCED_DIV_OPEN_RE.match(line)
+        if skip_level is not None and open_match:
+            classes = fenced_div_classes(open_match.group(2))
+            if HUMAN_ONLY_CLASS in classes:
+                preserved_block_fence = len(open_match.group(1))
+                output.append(line)
+                continue
+
         match = HEADING_RE.match(line)
         level = len(match.group(1)) if match else None
         title = normalize_heading_title(match.group(2)) if match else ""
@@ -121,8 +138,13 @@ def apply_reader_view_blocks(text: str) -> tuple[str, dict[str, int]]:
         close_match = FENCED_DIV_CLOSE_RE.match(line)
         if close_match and stack:
             _, action = stack.pop()
+            if action == "unwrap" and not parent_is_stripped() and output and output[-1].strip():
+                output.append("")
             if action not in {"strip", "unwrap"} and not parent_is_stripped():
                 output.append(line)
+            continue
+
+        if stack and stack[-1][1] == "unwrap" and line.strip() == HUMAN_READING_PATH_HEADING:
             continue
 
         if not parent_is_stripped():
@@ -160,10 +182,17 @@ def profile_strip_headings(profile: dict) -> set[tuple[int, str]]:
     return result
 
 
-def clean_file(src: Path, dst: Path, strip_headings: set[tuple[int, str]]) -> dict[str, int]:
+def clean_file(
+    src: Path,
+    dst: Path,
+    strip_headings: set[tuple[int, str]],
+    chapter_title: str | None = None,
+) -> dict[str, int]:
     text = src.read_text(encoding="utf-8")
     cleaned, removed = strip_sections(text, strip_headings)
     cleaned, view_block_counts = apply_reader_view_blocks(cleaned)
+    if chapter_title:
+        cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(cleaned, encoding="utf-8")
     removed.update({key: count for key, count in view_block_counts.items() if count})
@@ -538,7 +567,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     for part in flatten_parts(structure):
         for chapter in part.get("chapters", []):
             src = ROOT / chapter["file"]
-            removed = clean_file(src, output_dir / chapter["file"], strip_headings)
+            removed = clean_file(src, output_dir / chapter["file"], strip_headings, str(chapter["title"]))
             copied_files += 1
             chapter_count += 1
             for key, count in removed.items():

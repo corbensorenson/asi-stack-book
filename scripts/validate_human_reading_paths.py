@@ -117,6 +117,15 @@ def word_count(text: str) -> int:
     return len(WORD_RE.findall(re.sub(r"```.*?```", " ", text, flags=re.DOTALL)))
 
 
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text.strip())
+
+
+def reader_bridge_text(block_text: str) -> str:
+    lines = [line for line in block_text.splitlines() if line.strip() != HUMAN_HEADING]
+    return normalize_text("\n".join(lines))
+
+
 def heading_line(text: str, heading: str) -> int | None:
     for index, line in enumerate(text.splitlines(), start=1):
         if line.strip() == heading:
@@ -195,10 +204,17 @@ def validate_generated_reader(chapters: list[dict]) -> list[str]:
                 continue
             text = path.read_text(encoding="utf-8", errors="ignore")
             heading_count = text.count(HUMAN_HEADING)
-            if heading_count != 1:
-                errors.append(f"{relative}: generated reader chapter has {heading_count} Human Reading Path headings.")
+            if heading_count != 0:
+                errors.append(f"{relative}: generated reader chapter should hide Human Reading Path heading, found {heading_count}.")
             if f".{HUMAN_CLASS}" in text:
                 errors.append(f"{relative}: generated reader chapter still contains .{HUMAN_CLASS} marker.")
+            source_text = (ROOT / relative).read_text(encoding="utf-8", errors="ignore")
+            source_blocks = extract_human_blocks(source_text)
+            if len(source_blocks) == 1:
+                expected_bridge = reader_bridge_text(str(source_blocks[0]["text"]))
+                snippet = expected_bridge[:120]
+                if snippet and snippet not in normalize_text(text):
+                    errors.append(f"{relative}: generated reader chapter lost Human Reading Path bridge prose.")
     return errors
 
 

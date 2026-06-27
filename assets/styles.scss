@@ -163,6 +163,11 @@ html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"] {
   display: none !important;
 }
 
+[data-asi-human-toc-link="true"],
+html[data-asi-reading-mode="human"] [data-asi-ai-toc-link="true"] {
+  display: none !important;
+}
+
 html[data-asi-reading-mode="human"] main.content .header-section-number,
 html[data-asi-reading-mode="human"] #TOC .header-section-number {
   display: none !important;
@@ -186,7 +191,7 @@ html[data-asi-reading-mode="human"] .asi-human-only {
 }
 
 html[data-asi-reading-mode="human"] .asi-human-only h2 {
-  margin-top: 0.35rem;
+  display: none !important;
 }
 
 @media (max-width: 640px) {
