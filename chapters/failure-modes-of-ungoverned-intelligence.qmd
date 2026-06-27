@@ -127,6 +127,8 @@ flowchart TB
   H -. "claim support state" .-> I
 ```
 
+**Diagram reading note:** The failure chain is a routing map for responsibility. Each risk is connected to the boundary that should detect it, contain it, or preserve the residual, so the taxonomy becomes a repair interface rather than a dramatic list.
+
 The map classifies failures by layer and failure class, then binds each one to affected contracts, an invariant, and a planned falsification test. That binding is the reason the taxonomy belongs near the front of the book: later chapters are not allowed to introduce mechanisms as impressive machinery alone. They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.
 
 The map is deliberately layered. SCF identifies replacement and evaluator-capture risks when implementations, contracts, or governance procedures mutate. VCM identifies context admission, authority binding, taint, revocation, and summary self-promotion risks. Talos identifies tool isolation, typed-job, approval-gate, and replay failures. Spinoza identifies false certainty, failed verification, contradiction, and belief-revision failures. The Field of God source is not used here as empirical safety evidence; it preserves the deeper governance concern that power should not erase agency, dignity, plurality, and contestability.

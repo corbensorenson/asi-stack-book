@@ -132,6 +132,8 @@ flowchart LR
   Block --> Evidence
 ```
 
+**Diagram reading note:** The preservation check treats audit, exit, fork, dissent, and redaction as runtime obligations. A governance transition may proceed only when those rights survive the transition; missing or unsafe rights block, redact with reason, or escalate.
+
 ## Interfaces
 
 The interface is a Governance Right Record. It is the point where political ideals become inspectable runtime obligations: who holds the right, what scope it covers, what artifacts are required, what access path exists, what safety constraints apply, what redaction reason is allowed, and how the right survives replacement.

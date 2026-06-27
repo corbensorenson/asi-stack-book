@@ -11,3 +11,4 @@ Diagram rules:
 - Diagrams should explain interfaces, artifacts, authority boundaries, evidence states, or lifecycle transitions.
 - Do not use decorative diagrams that imply unrecorded proof, benchmark, or implementation status.
 - Keep labels short enough to survive mobile rendering.
+- Pair primary chapter diagrams with a `Diagram reading note` so Human view, reader editions, and future audio scripts have a concise prose walkthrough of the visual boundary.

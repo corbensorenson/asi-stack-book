@@ -19,6 +19,8 @@ MERMAID_LABELED_EDGE_RE = re.compile(
 )
 MERMAID_NODE_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*)\s*(?=[\[\(\{])")
 MERMAID_DECL_RE = re.compile(r"^\s*(participant|actor|boundary|control|entity|database|collections|queue)\s+([A-Za-z][A-Za-z0-9_]*)\b", re.IGNORECASE)
+DIAGRAM_READING_NOTE_RE = re.compile(r"\*\*Diagram reading note:\*\*", re.IGNORECASE)
+DIAGRAM_NOTE_REQUIRED_PARTS = {"foundations-alignment-governance"}
 
 MIN_DIAGRAM_LINES = 12
 MIN_DIAGRAM_EDGES = 6
@@ -82,6 +84,11 @@ def main() -> None:
                     f"minimum lines={MIN_DIAGRAM_LINES}, edges={MIN_DIAGRAM_EDGES}, "
                     f"nodes={MIN_DIAGRAM_NODES}, labeled_edges={MIN_LABELED_EDGES})"
                 )
+            if part.get("id") in DIAGRAM_NOTE_REQUIRED_PARTS and not DIAGRAM_READING_NOTE_RE.search(text):
+                errors.append(
+                    "Foundation chapter lacks a Diagram reading note for reader/audio accessibility: "
+                    f"{chapter['file']}"
+                )
 
     index = (ROOT / "index.qmd").read_text(encoding="utf-8", errors="ignore")
     hero = ROOT / "assets" / "images" / "asi-stack-hero.png"
@@ -93,7 +100,10 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    print(f"Visual coverage validation passed: {checked} chapter diagrams checked.")
+    print(
+        f"Visual coverage validation passed: {checked} chapter diagrams checked; "
+        f"diagram reading notes required for {len(DIAGRAM_NOTE_REQUIRED_PARTS)} foundation part(s)."
+    )
 
 
 if __name__ == "__main__":

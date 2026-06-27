@@ -122,6 +122,8 @@ flowchart LR
   K --> D
 ```
 
+**Diagram reading note:** The route ledger starts with the task contract, quality predicate, and authority ceiling before it selects any route. The cheap path is valid only when verification passes; partial results loop back as residuals and fallback work rather than being counted as efficiency.
+
 The route ledger turns "use minimum viable intelligence" into a reviewable decision rather than a slogan. The system tries to spend only the cognition the contract demands, but it must also say which cheaper routes were rejected, which stronger route remains available, and what residual burden survives the result. Repeated cognition should harden into durable artifacts, tools, procedural memory, specialist arms, or regression tests. Compression should be counted only after the verifier and repair path expose what the compact representation did not carry.
 
 RMI gives the route decision a ratchet: solved work should become regression coverage, reusable tools, specialist arms, or procedural memory; unsolved work should become residual escrow rather than narrative success. CGS gives the route decision its compactness test: a small seed, rule system, memory, residual, verifier, and governance interface is useful only when it remains adequate for the target. BBVCA v9 gives the compression analogue: generated structure is counted only after verification and exact repair. Simulation Scaling prevents the architecture from treating simulated or synthetic evaluation as free; scope, fidelity, clockspeed, and bottlenecks have to be in the contract.

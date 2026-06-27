@@ -118,6 +118,8 @@ sequenceDiagram
   K->>L: record handle use, policy, result, residuals
 ```
 
+**Diagram reading note:** The sequence keeps secret bytes out of ordinary model context. The planner requests handle use, the kernel checks scope, the vault injects secrets only inside the isolated SCIF, and the redaction/audit path returns sanitized evidence plus residual risk.
+
 The mechanism is least exposure. Handles replace secret bytes in model-visible context. Privileged substitution happens only inside an approved execution boundary. High-risk work runs inside compartmentalized context containers whose lifecycle, sanitized output, residual leak risk, and audit trail remain visible after the task ends.
 
 Handles are not magic. A handle must carry scope: permitted destination, action type, time window, spending or rate limit, user approval state, logging rule, and revocation path. A SCIF must carry lifecycle: spawn, inject, execute, sanitize, zeroize, commit, and audit.

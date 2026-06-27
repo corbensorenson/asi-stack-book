@@ -117,6 +117,8 @@ flowchart LR
   J --> K
 ```
 
+**Diagram reading note:** The support-state gate blocks confidence from moving just because prose improved. A claim can rise only through a mapped source transition, validated proof/test artifact, or recorded negative result pathway, and every movement updates the public ledger.
+
 Appendix C is the public claim ledger, but the ledger is not a shortcut around review. Claim labels and support states remain separate so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed. Source notes are prerequisites for source-derived movement, not automatic promotion. Test-backed movement requires an evidence bundle with the command, environment, result, limitations, and negative or inconclusive results where they exist.
 
 The claim record carries the pre-transition state: whether the claim has no mapping, a source-note map, reviewed raw passages, an evidence packet, a blocked mapping, or a deprecated surface. It also carries the evidence-readiness state and the next evidence required before review. The transition record then decides whether that readiness changes support. A shape-valid fixture can show that the record is well formed; it cannot accept the transition for the reader.
