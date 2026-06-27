@@ -89,6 +89,13 @@ SUMMARY_BANNED_PATTERNS = [
     ),
 ]
 
+PROBLEM_BANNED_PATTERNS = [
+    (
+        "self-referential chapter phrase",
+        re.compile(r"\b(?:this|in this) chapter\b", re.IGNORECASE),
+    ),
+]
+
 SECTION_MIN_WORDS = {
     "## Minimum Viable Implementation": 60,
     "## Beyond the State of the Art": 90,
@@ -248,6 +255,14 @@ def main() -> None:
             if match:
                 errors.append(
                     f"{chapter['file']}: ## Summary contains {label}: {match.group(0)!r}"
+                )
+
+        problem = section_body(text, "## Problem")
+        for label, pattern in PROBLEM_BANNED_PATTERNS:
+            match = pattern.search(problem)
+            if match:
+                errors.append(
+                    f"{chapter['file']}: ## Problem contains {label}: {match.group(0)!r}"
                 )
 
         expected = {

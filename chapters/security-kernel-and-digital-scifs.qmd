@@ -58,7 +58,7 @@ High-agency systems need security boundaries for secrets, context, permissions, 
 
 The agency paradox is straightforward: useful AI systems need to act through credentials, tools, files, networks, and privileged context, but the model context is the wrong place to put secrets or broad authority. If a model can see a credential, a prompt injection can ask for it. If a low-tier worker receives a whole memory dump, it can leak, misuse, or overfit to irrelevant privileged information.
 
-This chapter therefore treats security as a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
+Security therefore becomes a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
 
 The security goal is not to make the model morally trustworthy with secrets. It is to make the secret path structurally narrower than the reasoning path. The model can propose, justify, and receive sanitized results; the kernel decides what is substituted, where, for how long, and under which audit record. That division lets the stack use power without turning all power into model context.
 

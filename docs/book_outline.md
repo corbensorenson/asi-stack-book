@@ -44,6 +44,8 @@ The ordinary chapter prose is the reader-facing spine. It must still make sense 
 
 Every chapter must include both `Minimum Viable Implementation` and `Beyond the State of the Art`. The minimal section defines the smallest public-safe artifact or validated slice that can start the chapter's idea honestly. The beyond-SOTA section defines the mature logical conclusion of the idea: the final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. The beyond-SOTA section is a target architecture, not a claim of current implementation; it must preserve the chapter's recorded support state until proof, test, source, benchmark, or runtime artifacts justify promotion.
 
+Appendix J, `Implementation Horizons`, is generated from the same manifest fields and should be used as the book-wide build-horizon map during full-book writing runs. If a chapter is added, moved, merged, or split, update `book_structure.json`, rerun `python3 scripts/sync_scaffold.py`, and confirm the appendix still shows a precise minimum slice and mature endpoint for every chapter.
+
 The live site exposes this separation through a reading-mode toggle. `AI view` shows the reader spine plus the live/research scaffold. `Human view` hides the same live-only headings used by the reader-release profile. Each chapter must maintain exactly one `.asi-human-only` `Human Reading Path` bridge after `Drafting guardrail` and before `Problem` so interested readers get a concise orientation without turning the project into a second manuscript. The source heading is a machine-checkable marker; live Human view and generated reader editions present the bridge as unheaded lead-in prose and hide its page-TOC entry. `.asi-ai-only` and `.asi-live-only` fenced divs are reserved for AI/research scaffolding that should disappear from Human view and reader releases. Reader generation unwraps human-only blocks and removes AI-only blocks.
 
 Major-version reader and audio editions are derivatives of the live book, not parallel manuscripts. Use `editions/release_profiles.json` as the machine-readable contract for content layers, strip rules, release gates, target formats, generated manifests, human-consumption bundle gates, and non-claims.
@@ -3559,13 +3561,14 @@ Draft arc:
 
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
-- Mechanism: Maintain source inventory, source notes, generated bibliography, chapter source queues, and direct-citation status before using a source as support.
+- Mechanism: Maintain source inventory, source notes, the generated Corben source-corpus appendix, the generated external-literature appendix, chapter source queues, and direct-citation status before using a source as support.
 - Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims.
 - Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
 - Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
-- Interface: Appendix G lists corpus and external literature queue.
+- Interface: Appendix G lists Corben's source corpus.
+- Interface: Appendix K lists external literature and third-party references.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.
 
@@ -3586,7 +3589,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
+- A split source-corpus and external-literature plan plus a research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
 - Implemented repository-level fixtures: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; `new_paper_triage_scenario.valid.json` validates synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate intake decisions only. External-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and live new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
@@ -3599,9 +3602,9 @@ Lean proof targets:
 | `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
 | `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
 
-## Bibliography and Source Corpus
+## Source Corpus and External Literature
 
-Appendix G is the generated bibliography and source-corpus map. It should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should be added only when bibliographic metadata is recorded and the source is actually used.
+Appendix G is the generated Corben/source-corpus map. Appendix K is the generated external-literature and third-party reference map. Both should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix K and should be added only when bibliographic metadata is recorded and the source is actually used.
 
 ## Author Intent and Architecture Lineage
 

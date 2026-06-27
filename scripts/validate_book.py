@@ -37,6 +37,8 @@ REQUIRED = [
     "appendices/E_codex_test_specs.qmd",
     "appendices/F_changelog.qmd",
     "appendices/I_release_editions.qmd",
+    "appendices/J_implementation_horizons.qmd",
+    "appendices/K_external_literature.qmd",
 ]
 
 BAD_PHRASES = [

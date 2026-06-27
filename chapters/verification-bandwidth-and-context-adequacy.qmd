@@ -53,7 +53,7 @@ This is a warning against long-context theater. More text in the window does not
 
 Long context does not automatically provide long-range reasoning or enough verification capacity.
 
-The central distinction is between **generation capacity** and **verification bandwidth**. A model may have enough context to mention two documents, summarize them, or weave them into plausible prose while still lacking enough active workspace to compare the relevant semantic units in detail. In this chapter, context is adequate only relative to a target claim, a set of semantic units, a verification task, and a declared risk level.
+The central distinction is between **generation capacity** and **verification bandwidth**. A model may have enough context to mention two documents, summarize them, or weave them into plausible prose while still lacking enough active workspace to compare the relevant semantic units in detail. Context is adequate only relative to a target claim, a set of semantic units, a verification task, and a declared risk level.
 
 The layer receives context packets from VCM, claims from the reasoning layer, and risk labels from governance. It emits an adequacy state: sufficient for drafting, sufficient for local consistency checks, insufficient for verification, or escalated to tribunal/proof review. The output is not more prose. The output is a decision about whether the currently loaded context can support the kind of claim the system is about to make.
 

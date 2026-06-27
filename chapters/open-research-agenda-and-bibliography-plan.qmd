@@ -161,9 +161,9 @@ Minimum fields:
 - `next_action`
 - `non_claims`
 
-Appendix G lists the corpus and external literature queue. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
+Appendix G lists Corben's source corpus. Appendix K lists external literature and third-party references. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
-Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the broader corpus visible. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
+Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the supplied corpus visible, and Appendix K keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
 
 When a future agent receives a new paper, the interface should produce a triage decision before prose changes: update existing chapter, propose new chapter, route to appendix, keep in backlog, or reject as out of scope. The decision should name the boundary it affects and the evidence it could change. That makes dynamic chapters possible without forcing manual renumbering or turning the outline into a catchall.
 
@@ -189,19 +189,19 @@ Another failure is backlog rot. If every uncertain item becomes permanent "futur
 
 ## Minimum Viable Implementation
 
-The research agenda starts as a research backlog record. The repository fixture makes future source ingestion and chapter insertion reviewable, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, run a new-paper scenario, or promote mapped claims to stronger support states.
+The research agenda starts as a split source-corpus and external-literature plan plus a research backlog record. The repository fixture makes future source ingestion and chapter insertion reviewable, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, run a new-paper scenario, or promote mapped claims to stronger support states.
 
 The next useful implementation step is a live rehearsal against a user-provided AI paper or artifact. The synthetic fixture set now covers update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions, but it deliberately avoids claiming that any particular future source has been evaluated.
 
 ## Beyond the State of the Art
 
-The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, and which claims still cannot move.
+The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben's source corpus with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move.
 
 At that mature boundary, every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source would have a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.
 
 The mature product surface would include:
 
-- A normalized source inventory tied to source notes, Appendix G, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
+- A normalized source inventory tied to source notes, Appendix G, Appendix K, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
 - Intake scenarios for update-existing, propose-new-chapter, defer-external-literature, merge/split, reject-duplicate, supersede-variant, recover-missing-source, and block-private-source cases.
 - Citation verification that distinguishes direct reading, source-note review, metadata-only external context, private/local context, connector-only access, and unread references.
 - Research backlog records with next actions small enough to execute: fetch, cache, read, write note, verify citation, add fixture, formalize predicate, run benchmark, update chapter, or close.
@@ -230,7 +230,7 @@ These Lean hooks are implemented as finite-record predicates over source-derived
 
 ## Source crosswalk
 
-This chapter intentionally keeps a broad source set because it governs the backlog for the whole book. Appendix G remains the generated corpus map. Appendix H remains author-intent and lineage context, not evidence.
+This chapter intentionally keeps a broad source set because it governs the backlog for the whole book. Appendix G remains the generated Corben/source-corpus map. Appendix K remains the generated external-literature map. Appendix H remains author-intent and lineage context, not evidence.
 
 Priority backlog:
 

@@ -57,7 +57,7 @@ That promise is central to the living-book format. The manuscript can improve ev
 
 The living book needs a shared language for what kind of claim is being made and what currently supports it.
 
-The previous chapter names failure modes. This chapter gives the book a way to keep those failures from turning into confident prose. A living technical book is dangerous if every revision makes claims sound cleaner while their support state stays invisible. The same problem appears in AI systems: hypotheses, design rationales, source-derived statements, proofs, tests, and measurements get blended into a single fluent surface.
+The previous layer names failure modes. The claim discipline keeps those failures from turning into confident prose. A living technical book is dangerous if every revision makes claims sound cleaner while their support state stays invisible. The same problem appears in AI systems: hypotheses, design rationales, source-derived statements, proofs, tests, and measurements get blended into a single fluent surface.
 
 The book therefore treats evidence discipline as an architectural layer, not as editorial housekeeping. Each important claim must say what kind of claim it is and what currently supports it. A source note may justify a source-derived discussion. A Lean module may justify a mechanized invariant. A synthetic fixture may justify a narrow test-backed claim. None of those automatically proves the others, and none should borrow confidence from the reader's trust in the surrounding prose.
 

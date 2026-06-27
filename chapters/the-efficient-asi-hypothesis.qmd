@@ -58,7 +58,7 @@ The important distinction is between thrift and recklessness. The book is not ar
 
 The architecture needs a non-scale-only theory for how capability can increase without spending maximal cognition on every subtask.
 
-The previous chapter says that ASI is a stack. This chapter says why that matters economically. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.
+The previous layer says that ASI is a stack. That matters economically. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.
 
 The efficient-ASI hypothesis is therefore not "small models are enough" and not "scale is unnecessary." It is a claim about allocation. The stack should spend cognition where the current contract demands it, compile repeated work into durable tools or memories, preserve fallback paths, and make the unpaid residual visible. RMI supplies the ratchet language, CGS supplies the smallest-adequate-structure language, BBVCA v9 supplies exact repair and rate honesty, and Simulation Scaling supplies the reminder that feasibility is always contract-relative.
 

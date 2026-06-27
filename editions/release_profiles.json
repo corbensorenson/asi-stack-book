@@ -27,8 +27,8 @@
       "label": "Evidence and source matrices",
       "primary_audiences": ["ai_agents", "human_researchers"],
       "canonical_location": "appendices, source notes, release records, schemas, proof manifest, and test fixtures",
-      "description": "The audit layer for sources, claim/evidence states, protocol schemas, Codex tests, release records, bibliography, changelog, and lineage.",
-      "edition_policy": "Retained by live and research releases. Reader releases keep selected human-useful appendices such as glossary and bibliography while omitting dense matrices unless a major release explicitly includes them."
+      "description": "The audit layer for sources, claim/evidence states, protocol schemas, Codex tests, release records, Corben source corpus, external literature, changelog, and lineage.",
+      "edition_policy": "Retained by live and research releases. Reader releases keep selected human-useful appendices such as glossary, Corben's source corpus, and external literature while omitting dense matrices unless a major release explicitly includes them."
     },
     {
       "id": "machine_contracts",
@@ -220,7 +220,7 @@
       "minimal implementation discussion",
       "technical diagrams and images",
       "chapter summaries",
-      "glossary and bibliography"
+      "glossary, Corben's source corpus, and external literature"
     ],
     "continuity_requirements": [
       "Do not put a caveat that changes claim meaning only inside a stripped live-only section.",
@@ -375,7 +375,9 @@
         "appendices/F_changelog.qmd",
         "appendices/G_bibliography.qmd",
         "appendices/H_author_intent_and_lineage.qmd",
-        "appendices/I_release_editions.qmd"
+        "appendices/I_release_editions.qmd",
+        "appendices/J_implementation_horizons.qmd",
+        "appendices/K_external_literature.qmd"
       ],
       "strip_headings": [],
       "release_gate": [
@@ -421,7 +423,9 @@
         "appendices/F_changelog.qmd",
         "appendices/G_bibliography.qmd",
         "appendices/H_author_intent_and_lineage.qmd",
-        "appendices/I_release_editions.qmd"
+        "appendices/I_release_editions.qmd",
+        "appendices/J_implementation_horizons.qmd",
+        "appendices/K_external_literature.qmd"
       ],
       "strip_headings": [],
       "release_gate": [
@@ -440,7 +444,7 @@
       "label": "Reader Release",
       "primary_audiences": ["interested_humans"],
       "purpose": "Major-version human manuscript for e-readers and relaxed reading, derived from the living book while removing AI/research workflow scaffolding.",
-      "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, and bibliography path.",
+      "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, Corben source-corpus path, and external-literature path.",
       "content_layer_policy": {
         "retain": ["reader_spine"],
         "strip_or_summarize": ["live_research_scaffold", "evidence_matrices", "machine_contracts"],
@@ -452,7 +456,8 @@
       "reader_review_required": true,
       "include_appendices": [
         "appendices/B_glossary.qmd",
-        "appendices/G_bibliography.qmd"
+        "appendices/G_bibliography.qmd",
+        "appendices/K_external_literature.qmd"
       ],
       "strip_headings": [
         { "level": 2, "title": "Chapter status" },

@@ -54,7 +54,7 @@ Some representations may be compressed by storing a lawful generator plus exact 
 
 The compression chapters sit where the efficient-ASI thesis becomes concrete. If the system can store a compact generator plus a small exact remainder, it can reuse structure instead of carrying every detail at full cost. But compression rhetoric is dangerous: a compact story is not a compressor, and a generated approximation is not exact reconstruction.
 
-This chapter defines the contract that keeps the idea honest. A compressed artifact must name what is public, what is transmitted, what the generator produces, what verification checked, what repair residuals restore, what the fallback is, and what rate accounting was used. Without those fields, the stack has not compressed anything governable; it has only renamed loss.
+The governing contract keeps the idea honest. A compressed artifact must name what is public, what is transmitted, what the generator produces, what verification checked, what repair residuals restore, what the fallback is, and what rate accounting was used. Without those fields, the stack has not compressed anything governable; it has only renamed loss.
 
 The important shift is from "compression as result" to "compression as a transaction." The transaction begins with a reconstruction contract and ends with one of several states: exact, lossy-with-declared-loss, repaired, literal fallback, negative rate result, or quarantined. Each state is useful if it is honest. The only bad state is one that lets an approximation masquerade as exactness.
 

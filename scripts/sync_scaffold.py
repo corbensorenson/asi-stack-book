@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Synchronize generated book structure from `book_structure.json`.
 
-The manifest is the ordering source of truth. `_quarto.yml`, Appendix A, and
-Appendix C are generated from it. Chapter files are created only when missing
+The manifest is the ordering source of truth. `_quarto.yml` and generated
+appendices are derived from it. Chapter files are created only when missing
 unless `--rewrite-chapters` is passed.
 """
 
@@ -426,29 +426,40 @@ def bibliography_status(record: dict, connector_records: dict[str, dict], cache_
     return f"{status}; citation not normalized"
 
 
-def external_citation_rows(records: list[dict], structure: dict) -> list[str]:
+def is_external_literature(record: dict) -> bool:
+    return record.get("priority") == "external_literature"
+
+
+def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
     assignments = chapter_assignments(structure)
     rows = []
     for record in records:
-        if record.get("priority") != "external_literature":
+        if not is_external_literature(record):
             continue
         citation = record.get("citation_label")
         arxiv_id = record.get("arxiv_id")
-        if not citation or not arxiv_id:
-            continue
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
         doi = record.get("doi", "")
-        link = f"[arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+        if citation and arxiv_id:
+            record_ref = f"{qmd_escape(citation)}; [arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+        elif citation:
+            record_ref = f"{qmd_escape(citation)}; [source]({qmd_escape(record.get('url', ''))})"
+        elif arxiv_id:
+            record_ref = f"[arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+        else:
+            record_ref = f"[source]({qmd_escape(record.get('url', ''))})"
         if doi:
-            link = f"{link}; DOI `{qmd_escape(doi)}`"
+            record_ref = f"{record_ref}; DOI `{qmd_escape(doi)}`"
         note_status = "source note available" if (SOURCE_NOTES / f"{record['id']}.md").exists() else "source note pending"
         rows.append(
-            "| `{id}` | {citation} | {link} | {targets} | {note_status} |".format(
+            "| `{id}` | {title} | {record_ref} | `{layer}` | {targets} | {note_status} | {notes} |".format(
                 id=qmd_escape(record.get("id", "")),
-                citation=qmd_escape(citation),
-                link=link,
+                title=qmd_escape(record.get("title", "")),
+                record_ref=record_ref,
+                layer=qmd_escape(record.get("layer", "")),
                 targets=qmd_escape(current_targets),
                 note_status=qmd_escape(note_status),
+                notes=qmd_escape(record.get("notes", "")),
             )
         )
     return rows
@@ -495,6 +506,8 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
     cache_records = read_cache_records()
     rows = []
     for record in records:
+        if is_external_literature(record):
+            continue
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
         status = bibliography_status(record, connector_records, cache_records)
         rows.append(
@@ -508,30 +521,39 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
                 status=qmd_escape(status),
             )
         )
-    external_rows = external_citation_rows(records, structure)
-    external_section = ""
-    if external_rows:
-        external_section = f"""
-## Source-Noted External Literature Records
-
-These records have stable source IDs and primary arXiv metadata. This section does not claim reproduced experiments, local benchmark results, or support-state promotion.
-
-| Source ID | Citation label | Primary record | Current use | Source-note state |
-|---|---|---|---|---|
-{chr(10).join(external_rows)}
-"""
-    text = f"""# Bibliography and Source Corpus
+    text = f"""# Corben's Source Corpus
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
-It is a working bibliography for the supplied ASI Stack source corpus. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+It is the working bibliography for Corben's supplied ASI Stack corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
 
-## Primary ASI Stack Source Corpus
+External and third-party references are separated into Appendix K so readers and future agents can see what is Corben's corpus and what is outside literature.
 
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|
 {chr(10).join(rows)}
-{external_section}
+
+## Citation Policy
+
+- Use stable source IDs for supplied corpus references until full citation metadata exists.
+- Do not infer authors, dates, venues, versions, or publication status from titles alone.
+- Do not cite a source as supporting a claim until its text has been ingested and a source note exists.
+- Keep speculative or design-synthesis claims labeled as `argument` until source, prototype, or test evidence justifies promotion.
+"""
+    (ROOT / "appendices" / "G_bibliography.qmd").write_text(text, encoding="utf-8")
+
+    external_rows = external_literature_rows(records, structure)
+    external_text = f"""# External Literature and References
+
+This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
+
+These are third-party papers, documentation records, and outside references used for comparison, grounding, or future literature review. They are not Corben's source corpus. A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
+
+## Source-Noted External Literature Records
+
+| Source ID | Title | Citation or primary record | Layer | Current use | Source-note state | Notes |
+|---|---|---|---|---|---|---|
+{chr(10).join(external_rows)}
 
 ## External Literature Queue
 
@@ -550,14 +572,14 @@ Third-party references should be added only when bibliographic metadata is recor
 | Policy optimization and learning from feedback | External comparison for PPO/RLHF, GRPO/RLVR, DPO-style preference optimization, verifier rewards, reward hacking, reasoning-budget RL, and control-policy RL for planners, routers, VCM, execution, and generation modes. | initial source records and source notes added; no local reproduction or support-state promotion |
 | Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | queued; no citation recorded |
 
-## Citation Policy
+## External Citation Policy
 
-- Use stable source IDs for supplied corpus references until full citation metadata exists.
-- Do not infer authors, dates, venues, versions, or publication status from titles alone.
-- Do not cite a source as supporting a claim until its text has been ingested and a source note exists.
-- Keep speculative or design-synthesis claims labeled as `argument` until source, prototype, or test evidence justifies promotion.
+- Keep outside literature separate from Corben's supplied corpus.
+- Do not cite an external source as supporting a claim until the source text has been read and a source note or equivalent review artifact exists.
+- Do not report reproduced external results unless the reproduction artifact, command, environment, and result record exist.
+- Keep third-party documentation, papers, and benchmarks at their recorded support boundary.
 """
-    (ROOT / "appendices" / "G_bibliography.qmd").write_text(text, encoding="utf-8")
+    (ROOT / "appendices" / "K_external_literature.qmd").write_text(external_text, encoding="utf-8")
 
 
 def write_claim_matrix(structure: dict) -> None:
@@ -667,6 +689,52 @@ Current generated coverage: {len(chapters)} chapter core claims, {total_claim_ma
 {support_rows}
 """
     (ROOT / "appendices" / "C_claim_evidence_matrix.qmd").write_text(text, encoding="utf-8")
+
+
+def write_implementation_horizons(structure: dict) -> None:
+    sections: list[str] = []
+    total = 0
+    for part in structure.get("parts", []):
+        rows = []
+        for chapter in part.get("chapters", []):
+            total += 1
+            rows.append(
+                "| `{id}` | {title} | {minimum} | {beyond} | `{support}` |".format(
+                    id=qmd_escape(chapter.get("id", "")),
+                    title=qmd_escape(chapter.get("title", "")),
+                    minimum=qmd_escape(
+                        chapter.get(
+                            "minimal_implementation",
+                            "No manifest minimal implementation statement declared yet.",
+                        )
+                    ),
+                    beyond=qmd_escape(
+                        chapter.get(
+                            "beyond_state_of_art",
+                            "No manifest beyond-state-of-the-art statement declared yet.",
+                        )
+                    ),
+                    support=qmd_escape(chapter.get("evidence_level", "argument")),
+                )
+            )
+        sections.append(
+            "## {title}\n\n"
+            "| Chapter ID | Chapter | Minimum viable implementation | Beyond the state of the art | Support state |\n"
+            "|---|---|---|---|---|\n"
+            "{rows}\n".format(title=qmd_escape(part.get("title", "")), rows="\n".join(rows))
+        )
+
+    text = f"""# Implementation Horizons
+
+This appendix is generated from `book_structure.json`. It is the book-wide build horizon: each chapter has one smallest honest implementation slice and one mature product-level endpoint.
+
+The minimum viable implementation column is not a claim that the implementation already exists. The beyond-state-of-the-art column is a target architecture, not a current-result claim. Support-state movement still requires the source mappings, schemas, proofs, tests, benchmark records, runtime traces, review receipts, or governance artifacts recorded elsewhere in the book.
+
+Current generated coverage: {total} chapter implementation horizons.
+
+{chr(10).join(sections)}
+"""
+    (ROOT / "appendices" / "J_implementation_horizons.qmd").write_text(text, encoding="utf-8")
 
 
 def ensure_glossary() -> None:
@@ -798,6 +866,7 @@ def main() -> None:
     write_source_matrix(records, structure)
     write_bibliography(records, structure)
     write_claim_matrix(structure)
+    write_implementation_horizons(structure)
     ensure_glossary()
     ensure_protocol_schemas()
     write_test_specs(structure)

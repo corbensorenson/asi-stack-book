@@ -16,7 +16,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - All 54 outline chapters exist as manuscript drafts across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
-- `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
+- `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix J, and Appendix K are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, and no live-only scaffolding after stripping.
@@ -51,9 +51,11 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
-| [appendices/G_bibliography.qmd](appendices/G_bibliography.qmd) | Generated bibliography and source-corpus appendix. |
+| [appendices/G_bibliography.qmd](appendices/G_bibliography.qmd) | Generated appendix for Corben's supplied ASI Stack source corpus. |
 | [appendices/H_author_intent_and_lineage.qmd](appendices/H_author_intent_and_lineage.qmd) | Public-safe author-intent and architecture-lineage appendix. |
 | [appendices/I_release_editions.qmd](appendices/I_release_editions.qmd) | Live-book explanation of reader, research, and audio edition paths. |
+| [appendices/J_implementation_horizons.qmd](appendices/J_implementation_horizons.qmd) | Generated implementation-horizon matrix. |
+| [appendices/K_external_literature.qmd](appendices/K_external_literature.qmd) | Generated external-literature and third-party reference appendix. |
 | [proofs/proof_manifest.json](proofs/proof_manifest.json) | Generated Lean proof target manifest. |
 | [docs/repository_map.md](docs/repository_map.md) | Repository layout and ownership map. |
 | [docs/publication_readiness.md](docs/publication_readiness.md) | Public-readiness checklist and known blockers. |

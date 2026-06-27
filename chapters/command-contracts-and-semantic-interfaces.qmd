@@ -55,7 +55,7 @@ The important move is not to make human language robotic. It is to preserve what
 
 The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
 
-The previous chapter turns intent into a trace. This chapter defines the control language inside that trace. Software Magic Grimoire supplies the vocabulary: technical words compress mechanisms, responsibilities, workflows, failure shadows, and next actions. VIEA supplies the contract shape: role, objective, context, constraints, procedure, output, verification, and failure behavior.
+The previous layer turns intent into a trace. The control language inside that trace is the command contract. Software Magic Grimoire supplies the vocabulary: technical words compress mechanisms, responsibilities, workflows, failure shadows, and next actions. VIEA supplies the contract shape: role, objective, context, constraints, procedure, output, verification, and failure behavior.
 
 A command contract is not a prettier prompt. It is the smallest artifact that lets a planner, verifier, tool runner, reviewer, or later agent understand what kind of work has been authorized and what would count as failure.
 

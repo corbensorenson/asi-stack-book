@@ -56,11 +56,11 @@ This is the stack's narrow waist for action. A plan can be brilliant and a job c
 
 Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
 
-Typed jobs are still inert until a runtime adapter performs an effect. This chapter defines the boundary where work touches tools, APIs, filesystems, services, hardware, fabrication targets, organizational workflows, or deployment environments. The adapter is where permissions, sandboxing, approvals, secrets, result evidence, and rollback handles must be enforced.
+Typed jobs are still inert until a runtime adapter performs an effect. The runtime adapter is the boundary where work touches tools, APIs, filesystems, services, hardware, fabrication targets, organizational workflows, or deployment environments. The adapter is where permissions, sandboxing, approvals, secrets, result evidence, and rollback handles must be enforced.
 
 Talos supplies the controlled runtime and approval discipline. Ladon supplies handle-mediated authority and secret isolation. GenesisCode supplies capability boundaries and effect logs. Theseus Operator OS adds the operator-surface requirement: mutating actions should be visible, bounded, and revocable.
 
-The adapter boundary is where the stack stops being interpretive. A claim can be wrong without changing the world. A plan can be flawed without deleting a file. A route can be inefficient without spending money. Once an adapter runs, the system may have produced an external fact. This chapter exists to make that transition narrow, auditable, and reversible where possible.
+The adapter boundary is where the stack stops being interpretive. A claim can be wrong without changing the world. A plan can be flawed without deleting a file. A route can be inefficient without spending money. Once an adapter runs, the system may have produced an external fact. That transition should be narrow, auditable, and reversible where possible.
 
 ## Why existing approaches are insufficient
 

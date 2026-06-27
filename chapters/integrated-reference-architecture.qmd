@@ -71,7 +71,7 @@ This is the synthesis checkpoint. The question is not whether every implementati
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
 
-This chapter is the end-to-end integration point. It receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. Its job is to show how those pieces compose without pretending that composition is already implemented or proven.
+The end-to-end integration point receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. The job is to show how those pieces compose without pretending that composition is already implemented or proven.
 
 The integration question has two halves. The happy path asks whether intent can become an artifact without losing context, authority, or evidence. The blocked path asks whether missing authorization, inadequate context, failed verification, excessive residual, or evaluator capture actually stops the flow. A reference architecture that cannot explain the blocked path is not governed; it is only sequenced.
 

@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     "docs/book_outline.md",
     "editions/release_profiles.json",
     "appendices/I_release_editions.qmd",
+    "appendices/K_external_literature.qmd",
     "proofs/proof_manifest.json",
     "scripts/build_reader_edition.py",
     "scripts/render_reader_formats.py",

@@ -333,7 +333,7 @@ def write_reader_checklist(
         "- [ ] Read the generated manuscript for chapter-to-chapter continuity.",
         "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
         "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
-        "- [ ] Check that glossary and bibliography are sufficient for interested human readers.",
+        "- [ ] Check that glossary, Corben source-corpus appendix, and external-literature appendix are sufficient for interested human readers.",
         f"- [ ] Review `{companion_path}` for omitted dense material and e-reader/audio companion needs.",
         "- [ ] Record residuals and non-claims in an edition release record.",
         "",

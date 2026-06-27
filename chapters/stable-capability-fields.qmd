@@ -56,7 +56,7 @@ This is the bridge from governance into recursive improvement. The book can allo
 
 The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
 
-The previous chapter makes rights technical. This chapter gives the system a way to improve components without moving the target under those rights. A capability must have a stable meaning before it can be routed to, qualified, replaced, rolled back, or governed. Otherwise every implementation change is also a semantic change, and no one can tell whether the system improved or merely redefined success.
+The previous layer makes rights technical. Stable capability fields let the system improve components without moving the target under those rights. A capability must have a stable meaning before it can be routed to, qualified, replaced, rolled back, or governed. Otherwise every implementation change is also a semantic change, and no one can tell whether the system improved or merely redefined success.
 
 SCF supplies the core distinction: a field is the durable semantic boundary; an implementation is a replaceable realization of that boundary. The field carries identity, interface, authority ceiling, evaluator policy, qualification context, route validity, state-migration obligations, evidence, lifecycle state, and recovery paths. That separation is what lets recursive improvement be bounded instead of ambient.
 

@@ -56,7 +56,7 @@ Summaries are not free. A summary can be useful only if the system records what 
 
 Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
 
-The ABI says how context is requested and materialized. This chapter says what the materialized units are. VCM should not treat every context object as interchangeable text. It should distinguish claims, constraints, decisions, corrections, events, artifacts, source excerpts, summaries, and derived cells.
+The ABI says how context is requested and materialized. The materialized units are semantic pages and context cells. VCM should not treat every context object as interchangeable text. It should distinguish claims, constraints, decisions, corrections, events, artifacts, source excerpts, summaries, and derived cells.
 
 Each derived representation needs a certificate: where it came from, what it omits, what authority labels survived, what it can be used for, and what kind of verification it can support. Without that certificate, a summary becomes a trust-me blob.
 

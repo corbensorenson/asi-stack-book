@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source corpus split
+
+- Split the generated bibliography surface into Appendix G, `Corben's Source Corpus`, for supplied/authored/local ASI Stack source records and Appendix K, `External Literature and References`, for third-party papers, docs, and outside references marked `external_literature`. Updated the scaffold generator, manifest, release profiles, README, repository map, release docs, open-research chapter, source-of-truth outline, full-book goal template, and ASI Stack skill so future writing runs keep "mine/supplied corpus" distinct from external literature. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal implementation horizon appendix
+
+- Added Appendix J, `Implementation Horizons`, as a scaffold-generated book-wide matrix of each chapter's minimum viable implementation and beyond-state-of-the-art endpoint from `book_structure.json`. Wired the appendix into live/research release profiles, repository validation, the writing runbook, the full-book goal template, the source-of-truth outline, and the tracked ASI Stack skill so future writing runs can load the first-build slice and mature product endpoint for every chapter dynamically. Also strengthened `scripts/validate_chapter_dod.py` against self-referential `Problem` openings and polished the affected reader-facing problem prose. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal reader title validation
 
 - Strengthened `scripts/validate_reader_spine.py` so generated reader chapters must begin with their manifest titles and must not retain the source-only `Human Reading Path` marker. Updated reader-release docs to record that the human-readable derivative preserves chapter titles while keeping bridge prose unheaded. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.

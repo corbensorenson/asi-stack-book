@@ -56,7 +56,7 @@ The human analogy is version control for what the model gets to see. If a future
 
 Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
 
-The previous chapter gave context representations certificates. This chapter gives the memory system runtime semantics. Long-horizon work needs snapshots that are coherent enough to replay, mounts that define what memory is visible, branches that support experiments, taint that follows sensitive or suspect sources, and deletion closure that prevents derived summaries from resurrecting removed data.
+The previous layer gave context representations certificates. The memory system also needs runtime semantics. Long-horizon work needs snapshots that are coherent enough to replay, mounts that define what memory is visible, branches that support experiments, taint that follows sensitive or suspect sources, and deletion closure that prevents derived summaries from resurrecting removed data.
 
 VCM supplies the transaction model. Context Engineer and Ladon add need-to-know and sensitive-mount pressure. Black Hole Context Manager adds practical memory-budget machinery: chunks, drift, mass, freezing, eviction, and critical context preservation.
 

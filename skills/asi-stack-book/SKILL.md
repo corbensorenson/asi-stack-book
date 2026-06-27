@@ -22,7 +22,7 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 
 1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `docs/book_outline.md`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
 2. Read `docs/source_readiness_report.md` if source ingestion or drafting depends on source availability.
-3. Read `appendices/G_bibliography.qmd` when drafting citations, source-corpus references, or external-literature placeholders.
+3. Read `appendices/G_bibliography.qmd` when drafting Corben/source-corpus references; read `appendices/K_external_literature.qmd` when drafting external-literature or third-party citation context.
 4. Use the source loading queues in `docs/book_outline.md` to decide which primary, supporting, variant, connector, or recovery sources are in scope.
 5. Inspect the relevant chapters and appendices before editing.
 6. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
@@ -66,7 +66,9 @@ Read `references/triage.md` when deciding whether to update an existing chapter 
 - Follow the outline's source queues before drafting: primary sources first, supporting sources second, variants for version comparison, connector/recovery sources as explicit blockers until loaded.
 - Use conversation-derived context to preserve architecture intent and deduplicate concepts, but keep it out of source-derived support unless the corresponding source text is actually loaded.
 - Keep `proofs/proof_manifest.json` generated from outline `lean:*` proof tags.
-- Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, source crosswalk, and summary.
+- Every chapter should maintain: problem, insufficiency of current approaches, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary.
+- `Minimum Viable Implementation` should name the smallest honest artifact or validated slice that can start the idea without overstating it; `Beyond the State of the Art` should name the mature product-level logical conclusion of the idea without implying that the end state has already been implemented or validated.
+- Treat Appendix J, `Implementation Horizons`, as the generated book-wide view of the manifest's first-build and mature-endpoint fields.
 - Every chapter should contain at least one Mermaid diagram that explains an interface, lifecycle, evidence flow, state transition, or boundary. Keep diagrams technical and do not use them to imply unrecorded proof, benchmark, or implementation status.
 
 ## Validation
