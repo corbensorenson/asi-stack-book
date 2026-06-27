@@ -199,9 +199,9 @@ Failure ownership also cannot transfer quietly; the receiving layer must accept 
 
 The taxonomy is recursive: the failure map can itself fail. It can become too broad to test, too narrow to catch novel risks, too stale to reflect new architecture, or too ceremonial to affect routing and promotion. That is why the evidence chapter follows immediately. A failure mode matters only if it can block promotion, force review, create residual escrow, or change the design.
 
-The subtle failure is failure laundering. A run fails a boundary, then the narrative shifts to a narrower success metric while the blocked condition, denial, or residual disappears from the evidence path.
+Failure laundering is the failure-mode chapter's own warning label. A run fails a boundary, then the narrative shifts to a narrower success metric while the blocked condition, denial, or residual disappears from the evidence path.
 
-Another failure is stale containment: a mitigation remains listed after the architecture changed enough that it no longer reaches the risk.
+Stale containment is equally dangerous: a mitigation remains listed after the architecture changed enough that it no longer reaches the risk.
 
 ## Minimum Viable Implementation
 

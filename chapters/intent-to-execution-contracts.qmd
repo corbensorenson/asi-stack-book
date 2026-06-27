@@ -180,9 +180,9 @@ Contract closure requires an explicit acceptance state, not merely the absence o
 
 The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Each failure should block promotion until the trace is repaired.
 
-The subtle failure is helpful overrun. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
+Helpful overrun is the contract failure that feels productive. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
 
-Another failure is stale acceptance, where an old approval is reused after the artifact, tool, or risk tier changed.
+Stale acceptance appears when an old approval is reused after the artifact, tool, or risk tier changed.
 
 ## Minimum Viable Implementation
 

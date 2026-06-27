@@ -245,7 +245,7 @@ Another invariant is proxy humility. Optimizing a proxy cannot promote the targe
 
 Each failure should block promotion or force rollback. If the reward is ambiguous, the update remains experimental. If the verifier can be gamed, the verifier enters residual escrow. If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.
 
-The subtle failure is reward laundering. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
+Reward laundering is the policy-optimization failure. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
 
 ## Minimum Viable Implementation
 

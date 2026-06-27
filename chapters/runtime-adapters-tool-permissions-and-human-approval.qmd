@@ -231,7 +231,7 @@ The adapter boundary must preserve separation between request, approval, executi
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
-Another failure is approval ambiguity. A human says yes to one concrete action, but the system treats that yes as permission for a broader class of edits, deployments, payments, messages, or follow-up actions. The adapter should not infer durable authority from conversational trust. It should require a fresh lease or an explicit policy grant when the target, risk, cost, data exposure, or external effect changes.
+Approval ambiguity is the adapter-level version of authority drift. A human says yes to one concrete action, but the system treats that yes as permission for a broader class of edits, deployments, payments, messages, or follow-up actions. The adapter should not infer durable authority from conversational trust. It should require a fresh lease or an explicit policy grant when the target, risk, cost, data exposure, or external effect changes.
 
 ## Minimum Viable Implementation
 

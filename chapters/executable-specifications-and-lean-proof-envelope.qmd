@@ -182,9 +182,9 @@ The proof boundary also preserves artifact class. A schema pass, Python fixture,
 
 Each failure should downgrade the target or move it to schema/process/research status.
 
-The subtle failure is proof laundering. A valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
+Proof laundering starts when a valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
 
-Another failure is orphaned formality. A proof target exists, but the prose no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to claims, limitation prose, generated manifests, and audit records.
+Orphaned formality is the opposite failure. A proof target exists, but the prose no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to claims, limitation prose, generated manifests, and audit records.
 
 ## Minimum Viable Implementation
 

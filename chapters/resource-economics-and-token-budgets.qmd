@@ -201,7 +201,7 @@ A second invariant is protected overhead. Safety gates, evidence requirements, a
 
 Cost-cut verification should block or escalate. Load synchronization should trigger capacity smoothing or scheduling changes. Resource hoarding should be visible in the ledger. Human repair burden should count as cost. Speculative market language should remain optional until executable records and tests exist.
 
-The subtle failure is efficiency laundering. A route may look cheaper because it shifts work into future debugging, human review, hidden context reconstruction, or unrecorded security risk. The budget record should count those displaced costs as residuals rather than letting the route appear efficient.
+Efficiency laundering returns at the budget layer. A route may look cheaper because it shifts work into future debugging, human review, hidden context reconstruction, or unrecorded security risk. The budget record should count those displaced costs as residuals rather than letting the route appear efficient.
 
 ## Minimum Viable Implementation
 

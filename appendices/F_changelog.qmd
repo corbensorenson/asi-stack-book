@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal failure-mode prose polish
+
+- Reworked repeated failure-mode openers across the human-reader spine so chapters no longer lean on generic formulas such as `The subtle failure is`, `The subtle failure mode is`, or `Another failure is`. The revised passages name the chapter-specific laundering, drift, theater, rollover, capture, bias, stale-state, or authority failure directly while preserving the same support states and non-claim boundaries. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, and v1.0 status guard so future drafts keep failure sections chapter-specific. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source appendix ownership labels
 
 - Sharpened the generated source-appendix labels so Appendix G now renders as `Corben's Own Sources, Papers, and Local Projects` and Appendix H renders as `External Sources by Other Authors`. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, full-book goal template, project prompt, tracked ASI Stack skill, and repository map so the split is obvious in the appendix titles as well as the scope tables. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

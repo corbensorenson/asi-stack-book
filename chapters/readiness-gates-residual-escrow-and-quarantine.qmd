@@ -194,7 +194,7 @@ Another invariant is transition monotonicity over evidence. A target can move to
 
 Premature promotion should create a rollback or quarantine transaction. Residual hiding should create a belief-revision or tribunal-review issue. Regression after merge should preserve the old floor as a regression benchmark. Stale gate reuse should block promotion until the relevant checks are rerun. Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.
 
-The subtle failure is gate laundering. A target fails readiness under one name, is wrapped or merged under another, and then re-enters ordinary routing without carrying the failed gate and residual escrow forward.
+Gate laundering is the readiness failure that defeats quarantine. A target fails readiness under one name, is wrapped or merged under another, and then re-enters ordinary routing without carrying the failed gate and residual escrow forward.
 
 ## Minimum Viable Implementation
 

@@ -184,9 +184,9 @@ The scheduler must also preserve blocked work. A blocked node, rejected route, e
 
 Wrong tier selection produces cheap wrong work. Dependency cycles make a graph appear planned while it cannot dispatch. Economic optimization overriding safety is the Goodhart version of planning: the scheduler optimizes cost while silently erasing quality or authority requirements. Each failure should emit a residual, not a successful schedule.
 
-The subtle failure is arbitrage laundering. The system reports lower cost by assigning hard work to cheap nodes, then moves verification, repair, and human cleanup outside the ledger. The cost-quality ledger should count that displacement before calling the DAG efficient.
+Arbitrage laundering is the planning-economics failure. The system reports lower cost by assigning hard work to cheap nodes, then moves verification, repair, and human cleanup outside the ledger. The cost-quality ledger should count that displacement before calling the DAG efficient.
 
-Another failure is orphaned dependency repair, where a downstream fix makes the schedule pass while the broken upstream assumption remains active.
+Orphaned dependency repair leaves a different kind of residue, where a downstream fix makes the schedule pass while the broken upstream assumption remains active.
 
 ## Minimum Viable Implementation
 

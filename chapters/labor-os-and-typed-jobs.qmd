@@ -217,7 +217,7 @@ A second invariant is effect accountability. Every external effect should have a
 
 Tool overreach is a permission failure. Unlogged side effects are audit failures. Chaotic agent swarms are lifecycle failures: work escapes the job boundary and becomes unreviewable. Each should block dispatch or force quarantine.
 
-The subtle failure is completion laundering. A job can be marked done because an output exists, even though required approval, verification, artifact capture, or replay metadata is missing. Delivery should not be the same state as evidence-ready completion.
+Completion laundering is the typed-job failure. A job can be marked done because an output exists, even though required approval, verification, artifact capture, or replay metadata is missing. Delivery should not be the same state as evidence-ready completion.
 
 ## Minimum Viable Implementation
 

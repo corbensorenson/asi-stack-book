@@ -217,9 +217,9 @@ Another invariant is negative-control memory. The ordinary baseline, simple abla
 
 Each failure should produce a downgrade, residual, or blocked promotion. Negative results are useful; hidden negative results are architectural debt.
 
-The subtle failure is theorem spillover. A proof of an address, phase, recurrence, or structural property is used to imply speed, search quality, compression, or reasoning quality that the theorem never measured.
+Theorem spillover is the search-substrate overclaim. A proof of an address, phase, recurrence, or structural property is used to imply speed, search quality, compression, or reasoning quality that the theorem never measured.
 
-Another failure is substrate capture. A mathematically elegant candidate becomes so central to the story that ordinary baselines, simpler alternatives, and negative controls are treated as distractions. The adoption process should resist that by requiring workload fit, falsification conditions, comparable baselines, and explicit retirement triggers. Interesting structure earns a place in the stack only by surviving contact with the tasks it claims to help.
+Substrate capture is the organizational version of the same mistake. A mathematically elegant candidate becomes so central to the story that ordinary baselines, simpler alternatives, and negative controls are treated as distractions. The adoption process should resist that by requiring workload fit, falsification conditions, comparable baselines, and explicit retirement triggers. Interesting structure earns a place in the stack only by surviving contact with the tasks it claims to help.
 
 ## Minimum Viable Implementation
 

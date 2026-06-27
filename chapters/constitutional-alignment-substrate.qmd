@@ -178,9 +178,9 @@ Another invariant is least sufficient power under uncertainty. When two routes s
 - Predicate drift, where thresholds, exceptions, or review routes change without a migration record.
 - Conflict-default capture, where an unresolved value conflict is silently routed to the system's most convenient default.
 
-The main failure is laundering: metaphysical coherence becomes technical proof, or technical refusal rules become moral legitimacy. Another failure is self-modification drift, where a system weakens the predicate that would have blocked the change. The containment path is explicit translation status plus protected predicate review.
+The main failure is laundering: metaphysical coherence becomes technical proof, or technical refusal rules become moral legitimacy. Self-modification drift is the paired hazard, where a system weakens the predicate that would have blocked the change. The containment path is explicit translation status plus protected predicate review.
 
-The subtle failure is value smuggling. A predicate looks neutral, but its threshold, exception, or default route embeds an unresolved value choice. The translation record should force those choices into uncertainty labels, conflict records, and review routes.
+Value smuggling is harder to see. A predicate looks neutral, but its threshold, exception, or default route embeds an unresolved value choice. The translation record should force those choices into uncertainty labels, conflict records, and review routes.
 
 ## Minimum Viable Implementation
 

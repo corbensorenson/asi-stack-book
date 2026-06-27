@@ -200,9 +200,9 @@ Promotion also requires scope stability. A candidate can be accepted for one fie
 
 Regression deletion is the classic false improvement: the candidate does better on the frontier while forgetting what the stack already knew. Rollback impossibility turns a bad canary into permanent damage. Self-judged replacement lets a component rewrite the evidence used to approve it. Each failure blocks promotion.
 
-The subtle failure is rollback theater. The transaction contains a rollback field, but no executable path, state-compatibility check, trigger condition, or responsible owner exists when the monitor window fails.
+Rollback theater is the replacement-layer failure that looks safest on paper. The transaction contains a rollback field, but no executable path, state-compatibility check, trigger condition, or responsible owner exists when the monitor window fails.
 
-Another failure is frontier bias. A candidate looks better on new tasks, so the system forgets old obligations that are less exciting but still required: rights preservation, cost ceilings, context restrictions, reproducibility, logging, and human approval behavior. Replacement review should make boring regressions as visible as impressive gains. Otherwise the stack ratchets toward novelty while quietly losing governability.
+Frontier bias pushes the same transaction in the other direction. A candidate looks better on new tasks, so the system forgets old obligations that are less exciting but still required: rights preservation, cost ceilings, context restrictions, reproducibility, logging, and human approval behavior. Replacement review should make boring regressions as visible as impressive gains. Otherwise the stack ratchets toward novelty while quietly losing governability.
 
 ## Minimum Viable Implementation
 

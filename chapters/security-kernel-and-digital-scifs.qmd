@@ -182,7 +182,7 @@ A second invariant is purpose binding. A handle authorized for one destination, 
 
 The common trap is treating handles as safe while granting them unbounded use. A second trap is committing too much of the SCIF transcript back into ordinary memory. A third is assuming software isolation defeats hardware, browser, clipboard, screenshot, logging, and timing channels. Each trap should be visible in the threat model and residual risk field.
 
-Another failure is sanitized-output laundering. A summary can carry enough derived information to reconstruct or misuse sensitive context even when the raw secret never appears. The sanitized commit should therefore record what was removed, what was retained, and which residual leak risks remain.
+Sanitized-output laundering is a security-kernel failure, not a writing nicety. A summary can carry enough derived information to reconstruct or misuse sensitive context even when the raw secret never appears. The sanitized commit should therefore record what was removed, what was retained, and which residual leak risks remain.
 
 ## Minimum Viable Implementation
 

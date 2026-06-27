@@ -182,9 +182,9 @@ The graph must also preserve parentage. A derived artifact should keep links to 
 
 Untraceable output becomes a residual. Non-replayable workflows must declare replay limits. Provenance gaps block evidence promotion until repaired or explicitly bounded.
 
-The subtle failure mode is convenience laundering. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
+Convenience laundering is the quiet artifact-graph failure. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
 
-Another failure is replay exaggeration. A workflow may be partially reproducible, environment-dependent, or intentionally non-replayable for privacy or security reasons. Treating that partial replay as full reproduction inflates evidence. Replay grade, environment assumptions, missing inputs, and irreversible effects should remain visible so future agents know whether they can rerun, audit, or only inspect the record.
+Replay exaggeration creates a different distortion. A workflow may be partially reproducible, environment-dependent, or intentionally non-replayable for privacy or security reasons. Treating that partial replay as full reproduction inflates evidence. Replay grade, environment assumptions, missing inputs, and irreversible effects should remain visible so future agents know whether they can rerun, audit, or only inspect the record.
 
 ## Minimum Viable Implementation
 

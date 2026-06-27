@@ -197,9 +197,9 @@ Mount provenance must remain visible after branching, because a clean-looking de
 
 Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale or contradictory reads produce incoherent plans. Deleted data reappearing in summaries creates legal, privacy, and trust failures. These are transaction faults, not mere retrieval imperfections.
 
-The subtle failure is context laundering. A sensitive or unsupported source can be summarized, embedded, cached, or merged until its original restrictions disappear. Transaction records should keep the restriction attached to every derivative or force an explicit declassification decision.
+Context laundering is the memory-side failure. A sensitive or unsupported source can be summarized, embedded, cached, or merged until its original restrictions disappear. Transaction records should keep the restriction attached to every derivative or force an explicit declassification decision.
 
-Another failure is snapshot fiction. The system behaves as if it read one coherent context view, but the answer actually blends stale pages, live edits, unauthorized mounts, and summaries with different loss profiles. That makes replay impossible and can make contradiction handling look arbitrary. A context transaction should either produce a coherent view with declared faults or refuse to materialize as ordinary working memory.
+Snapshot fiction makes the problem operational. The system behaves as if it read one coherent context view, but the answer actually blends stale pages, live edits, unauthorized mounts, and summaries with different loss profiles. That makes replay impossible and can make contradiction handling look arbitrary. A context transaction should either produce a coherent view with declared faults or refuse to materialize as ordinary working memory.
 
 ## Minimum Viable Implementation
 

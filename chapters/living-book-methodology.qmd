@@ -171,9 +171,9 @@ Release records must also preserve what was not reviewed, rendered, proved, test
 
 Public-site divergence should block release. Outline/manifest drift should be caught by scaffold and proof-manifest sync. Speculation ambiguity should be fixed in Appendix C, chapter guardrails, and changelog entries rather than smoothed over in prose.
 
-The subtle failure is publication laundering. A polished reader artifact, rendered website, or successful build is treated as if it proved source interpretation, architecture quality, or empirical claims. Release quality and claim support are related, but they are not the same evidence state.
+Publication laundering is the living-book failure. A polished reader artifact, rendered website, or successful build is treated as if it proved source interpretation, architecture quality, or empirical claims. Release quality and claim support are related, but they are not the same evidence state.
 
-Another failure is automation drift, where a validator continues to pass after the writing contract it was meant to enforce has changed.
+Automation drift can then preserve the wrong contract, where a validator continues to pass after the writing contract it was meant to enforce has changed.
 
 ## Minimum Viable Implementation
 

@@ -220,7 +220,7 @@ A related invariant is output-test coupling. A command with no artifact expectat
 
 Semantic ambiguity produces false agreement: everyone thinks the command is clear until the artifact arrives. Prompt injection through context attacks the contract boundary. An unspecified output contract makes verification subjective. All three should become missing-contract or conflict records before planning proceeds.
 
-The subtle failure is field laundering: a vague sentence is copied into a formal field, making it look structured without becoming testable. A contract field should be concrete enough that a later verifier can say whether it was satisfied, violated, or left residual.
+Field laundering appears when a vague sentence is copied into a formal field, making it look structured without becoming testable. A contract field should be concrete enough that a later verifier can say whether it was satisfied, violated, or left residual.
 
 ## Minimum Viable Implementation
 

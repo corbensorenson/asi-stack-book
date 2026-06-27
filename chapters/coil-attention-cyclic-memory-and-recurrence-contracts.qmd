@@ -196,7 +196,7 @@ Recurrence traces must preserve refresh, eviction, and exit decisions when later
 
 Alias hiding should block or mark residual risk. Recurrence loops should hit an exit. Sparse gaps should route to local or content-gated repair. Freshness should remain a structural fact, not a semantic success claim. Missing baselines should block quality promotion.
 
-The subtle failure is structural adequacy laundering. A system proves that a slot is fresh, a sparse lag is covered, or a recurrence loop exits, then uses that structural fact as if it proved task adequacy. The ledger should force an explicit bridge from structure to workload before promotion.
+Structural adequacy laundering is the core cyclic-memory trap. A system proves that a slot is fresh, a sparse lag is covered, or a recurrence loop exits, then uses that structural fact as if it proved task adequacy. The ledger should force an explicit bridge from structure to workload before promotion.
 
 ## Minimum Viable Implementation
 

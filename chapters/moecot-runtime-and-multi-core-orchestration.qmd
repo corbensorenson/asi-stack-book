@@ -196,7 +196,7 @@ Another invariant is evidence-state separation. A run record can be complete as 
 
 Overclaiming is contained by claim labels and support states. Branding is contained by schemas, fixtures, and reproducible commands. Traceability loss is contained by orchestration records. Authority mutation is contained by control-plane gates and SCF replacement transactions. Replay bias is contained by residual escrow and regression suites.
 
-The subtle failure is replay theater. The runtime keeps a replay handle for the successful path while failed gates, denied routes, human interventions, missing sources, and residual cases never enter replay. A governed runtime should preserve the inconvenient branches too.
+Replay theater is the runtime failure that turns orchestration into a success narrative. The runtime keeps a replay handle for the successful path while failed gates, denied routes, human interventions, missing sources, and residual cases never enter replay. A governed runtime should preserve the inconvenient branches too.
 
 ## Minimum Viable Implementation
 

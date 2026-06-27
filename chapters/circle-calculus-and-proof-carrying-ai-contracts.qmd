@@ -194,9 +194,9 @@ Another invariant is consumer specificity. A receipt accepted for one consumer d
 
 Theorem laundering should block support-state promotion. Stale theorem IDs should remain residuals until a resolver or external build confirms them. Missing baselines should prevent downstream adoption. Exact finite models should stay distinct from numerical diagnostics and real-valued deployment behavior.
 
-The subtle failure is proof cargo-culting: diagrams, theorem names, and receipt tables appear rigorous enough that the reader stops asking what the theorem actually says. The antidote is a consumer gate that states the exact downstream claim being blocked or allowed.
+Proof cargo-culting is the dangerous reader-facing failure: diagrams, theorem names, and receipt tables appear rigorous enough that the reader stops asking what the theorem actually says. The antidote is a consumer gate that states the exact downstream claim being blocked or allowed.
 
-Another failure is receipt drift, where the proof receipt remains attached after the contract fields it certified have changed.
+Receipts can also drift when the proof receipt remains attached after the contract fields it certified have changed.
 
 ## Minimum Viable Implementation
 

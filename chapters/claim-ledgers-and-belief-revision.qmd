@@ -185,9 +185,9 @@ Supersession must name the replaced claim, not merely publish a cleaner successo
 
 Untracked assumptions should become claims or residuals. Belief inertia should trigger review when contradictions or stronger evidence arrive. Contradiction deletion is unacceptable: contradictions can be resolved, bounded, or refuted, but they should remain linked.
 
-The subtle failure is confidence laundering. A claim can move from appendix to chapter to summary to release note, sounding more settled each time even though its support state never changed. Ledger IDs, revision reasons, and support-state labels should stop that drift.
+Confidence laundering is the ledger failure to watch. A claim can move from appendix to chapter to summary to release note, sounding more settled each time even though its support state never changed. Ledger IDs, revision reasons, and support-state labels should stop that drift.
 
-Another failure is stale contradiction handling. The ledger records a conflict once, but no owner, review trigger, or downgrade path keeps it active. The system then keeps citing the stronger version because the contradiction is technically stored but operationally ignored.
+Stale contradiction handling creates a second path to overconfidence. The ledger records a conflict once, but no owner, review trigger, or downgrade path keeps it active. The system then keeps citing the stronger version because the contradiction is technically stored but operationally ignored.
 
 ## Minimum Viable Implementation
 

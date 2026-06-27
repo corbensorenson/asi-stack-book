@@ -59,6 +59,9 @@ FORMULAIC_GENERAL_PHRASES = (
     "The passage-reviewed mappings support discussion",
     "The evidence map is narrower now",
     "The support state remains `argument`",
+    "The subtle failure is",
+    "The subtle failure mode is",
+    "Another failure is",
 )
 
 

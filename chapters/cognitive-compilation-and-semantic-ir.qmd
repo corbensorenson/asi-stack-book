@@ -186,7 +186,7 @@ Another invariant is obligation non-erasure. A compilation pass may refine, spli
 
 The hardest failure is semantic under-specification: a graph can be perfectly typed and still omit the thing the human cared about. The second failure is validator scarcity: prose, diagrams, and policy documents often lack executable checks. The third is overhead: for small tasks, the compiler can cost more than direct generation. The stack should therefore route only tasks whose risk, complexity, reuse, or repair burden justifies compilation.
 
-The subtle failure is compilation laundering. A generated artifact is accepted because it passed a syntactic schema, even though the semantic obligations that justified the artifact were never lowered, checked, or carried into the receipt.
+Compilation laundering happens when a generated artifact is accepted because it passed a syntactic schema, even though the semantic obligations that justified the artifact were never lowered, checked, or carried into the receipt.
 
 ## Minimum Viable Implementation
 

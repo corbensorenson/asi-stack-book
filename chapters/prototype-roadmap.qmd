@@ -202,9 +202,9 @@ The roadmap must preserve dependency order. Evidence infrastructure precedes cap
 - Letting operator convenience weaken safety gates.
 - Losing remaining-work items from source-reported roadmaps.
 
-The subtle failure is prototype theater. The project shows a board, dashboard, demo, or generated report that looks like an operating system, while the acceptance gates, replay artifacts, and evidence transitions behind it are missing. The roadmap should make that visible by separating demo output from phase acceptance.
+Prototype theater is the roadmap failure. The project shows a board, dashboard, demo, or generated report that looks like an operating system, while the acceptance gates, replay artifacts, and evidence transitions behind it are missing. The roadmap should make that visible by separating demo output from phase acceptance.
 
-Another failure is milestone compression. Several hard gates are collapsed into one label such as "agentic runtime" or "self-improvement," allowing missing source ingestion, schema validation, proof adequacy, security review, and rollback duties to disappear. The roadmap should decompose impressive milestones into small acceptance records so a future agent can continue the work without inheriting a vague permission to build everything at once.
+Milestone compression can make that theater durable. Several hard gates are collapsed into one label such as "agentic runtime" or "self-improvement," allowing missing source ingestion, schema validation, proof adequacy, security review, and rollback duties to disappear. The roadmap should decompose impressive milestones into small acceptance records so a future agent can continue the work without inheriting a vague permission to build everything at once.
 
 ## Minimum Viable Implementation
 

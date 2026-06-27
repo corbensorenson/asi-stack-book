@@ -179,9 +179,9 @@ Completeness is also an invariant. A blank field in the trace must mean "not app
 
 Untraceable handoffs should create missing-contract records. Planning/execution collapse should preserve the failed plan, runtime artifact, and residual. Self-improvement without evaluator integrity should stop at the SCF gate.
 
-The subtle failure is integration theater: every layer name appears in the diagram, but the actual run still depends on informal summaries, ambient authority, unversioned context, dashboard prose, or unverifiable benchmark claims. A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.
+Integration theater is the reference-architecture failure: every layer name appears in the diagram, but the actual run still depends on informal summaries, ambient authority, unversioned context, dashboard prose, or unverifiable benchmark claims. A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.
 
-Another failure is trace fragmentation, where each layer records locally valid receipts that cannot be joined into one accountable run.
+Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.
 
 ## Minimum Viable Implementation
 

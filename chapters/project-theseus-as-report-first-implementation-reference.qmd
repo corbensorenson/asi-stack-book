@@ -170,7 +170,7 @@ A second invariant is currentness. A pinned source file can support design linea
 
 Each failure should produce a residual, blocked promotion, or missing-artifact row. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
 
-Another failure is operator invisibility. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
+Operator invisibility breaks the implementation-reference value. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
 
 ## Minimum Viable Implementation
 

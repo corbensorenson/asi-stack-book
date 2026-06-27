@@ -199,9 +199,9 @@ Replay packets also preserve mount faults so later auditors can distinguish miss
 
 Flat transcript memory loses addresses, versions, and authority labels. Stale context makes a correct old answer look current. Silent unsafe fit is worse than denial because it feeds a worker context it should not see or use. Each should produce a typed fault or residual before the packet is used.
 
-The subtle failure is context lease drift. A packet created for drafting or review is later reused for execution, citation, or self-improvement after its snapshot, authority, or adequacy assumptions no longer hold. The ABI should force a fresh request or residual.
+Context lease drift is the ABI failure. A packet created for drafting or review is later reused for execution, citation, or self-improvement after its snapshot, authority, or adequacy assumptions no longer hold. The ABI should force a fresh request or residual.
 
-Another failure is fault compression, where several typed context faults are summarized into one vague uncertainty note.
+Fault compression weakens the same boundary when several typed context faults are summarized into one vague uncertainty note.
 
 ## Minimum Viable Implementation
 

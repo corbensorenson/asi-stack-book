@@ -226,7 +226,7 @@ Plan provenance must also preserve discarded decompositions when their rejection
 
 Scope creep occurs when a plan adds goals that were never accepted. Planning without replanning means failures create improvisation instead of controlled repair. Tool choice exceeding authority or budget means the plan is not dispatchable, even if the work would be useful.
 
-Another failure is plan theater: a graph that looks organized but does not control dispatch. If dependencies, authority, context demand, and verification are not checked before jobs are created, the graph is documentation rather than a control layer.
+Plan theater is the control-layer failure: a graph that looks organized but does not control dispatch. If dependencies, authority, context demand, and verification are not checked before jobs are created, the graph is documentation rather than a control layer.
 
 ## Minimum Viable Implementation
 
