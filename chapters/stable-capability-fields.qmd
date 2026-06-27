@@ -44,6 +44,14 @@ It follows governance rights because rights cannot survive implementation churn 
 
 This chapter is also the stack's first memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a way to say what must stay the same while implementations change. An SCF is that continuity record.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The governance-rights chapter asks what must survive institutional change. Stable Capability Fields ask what must survive technical change. If a capability is replaced, the surrounding system needs to know what identity, authority, evidence, and rollback obligations stayed stable.
+
+This is the bridge from governance into recursive improvement. The book can allow better implementations only if "better" does not mean the capability silently changed its job, widened its authority, or lost its audit history.
+:::
+
 ## Problem
 
 The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.

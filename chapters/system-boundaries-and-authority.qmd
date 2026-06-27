@@ -43,6 +43,14 @@ This chapter defines the authority vocabulary for the stack. It is not a claim t
 
 It follows the efficiency chapter because the cheapest adequate route is useful only when route selection remains separate from permission to act. Cost, quality, and authority are different ledgers.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The first two chapters say what the stack is and why it might be efficient. This chapter prevents that efficiency from turning into ambient permission. A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.
+
+For a human reader, this is the chapter where "can" and "may" separate. The architecture can contain very capable components, but the system remains governed only if each transition carries an explicit boundary, grant, denial path, and audit trail.
+:::
+
 ## Problem
 
 The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.

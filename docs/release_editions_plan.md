@@ -68,7 +68,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
 - `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`.
-- `scripts/validate_live_human_view.py` runs after `quarto render --to html` and checks that rendered chapter pages include the toggle and live-only headings needed for runtime hiding.
+- `scripts/validate_live_human_view.py` runs after `quarto render --to html` and checks that rendered chapter pages include the toggle, live-only headings needed for runtime hiding, and any source view-mode block classes such as `.asi-human-only`.
 
 ## Reader Edition Generation
 

@@ -46,6 +46,14 @@ This chapter argues for a cost/quality/accounting discipline. It does not claim 
 
 It inherits the stack boundary from the previous chapter and asks the first design question that boundary makes possible: where should cognition be spent, where should it be reused, and where should the remaining burden stay visible?
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The previous chapter defined the stack. This chapter explains why the stack is not just a governance diagram. The efficiency claim is that a good architecture should spend high-cost cognition only where it is needed, reuse prior work when it remains valid, and preserve enough evidence that cheap shortcuts do not become hidden errors.
+
+The important distinction is between thrift and recklessness. The book is not arguing that every task should be made cheap. It is arguing that cost, quality, authority, uncertainty, and residual work should be visible together, so a system can choose the smallest adequate route without pretending that adequacy has been proved when it has not.
+:::
+
 ## Problem
 
 The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.

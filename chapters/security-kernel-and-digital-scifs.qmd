@@ -44,6 +44,14 @@ It follows replacement because capability churn is not safe if new implementatio
 
 This chapter is the stack's least-exposure rule. Capability can grow, routes can change, and tools can become more useful, but privileged material should not become ordinary context just because the system is good at using it. Secrets, sensitive context, and authority handles need their own boundary language.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Replacement and rollback protect the shape of a capability. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem.
+
+The chapter's central move is to make sensitive context an explicit boundary instead of a prompt convention. A system should not handle secrets, approvals, or protected memory unless the access path, clearance, receipt, and denial behavior are visible.
+:::
+
 ## Problem
 
 High-agency systems need security boundaries for secrets, context, permissions, and tool calls.

@@ -51,6 +51,19 @@ class HeadingParser(HTMLParser):
             self.current_text.append(data)
 
 
+class ClassCounter(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.classes: dict[str, int] = {}
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        for name, value in attrs:
+            if name != "class" or value is None:
+                continue
+            for css_class in value.split():
+                self.classes[css_class] = self.classes.get(css_class, 0) + 1
+
+
 def load_structure() -> dict:
     value = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
     if not isinstance(value, dict):
@@ -87,10 +100,27 @@ def source_live_heading_keys(path: Path, strip_headings: set[tuple[int, str]]) -
     return keys
 
 
+def source_view_class_counts(path: Path) -> dict[str, int]:
+    text = path.read_text(encoding="utf-8")
+    return {
+        css_class: len(re.findall(rf"\.{re.escape(css_class)}\b", text))
+        for css_class in ("asi-human-only", "asi-ai-only", "asi-live-only")
+    }
+
+
 def rendered_headings(path: Path) -> set[tuple[int, str]]:
     parser = HeadingParser()
     parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
     return set(parser.headings)
+
+
+def rendered_class_counts(path: Path) -> dict[str, int]:
+    parser = ClassCounter()
+    parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
+    return {
+        css_class: parser.classes.get(css_class, 0)
+        for css_class in ("asi-human-only", "asi-ai-only", "asi-live-only")
+    }
 
 
 def validate(site_dir: Path) -> dict[str, object]:
@@ -101,6 +131,7 @@ def validate(site_dir: Path) -> dict[str, object]:
     errors: list[str] = []
     records: list[dict[str, object]] = []
     total_live_headings = 0
+    total_view_blocks = {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0}
 
     if not site_dir.exists():
         errors.append(f"Rendered site directory is missing: {site_dir.relative_to(ROOT)}")
@@ -110,13 +141,17 @@ def validate(site_dir: Path) -> dict[str, object]:
         source_path = ROOT / source_file
         html_path = site_dir / Path(source_file).with_suffix(".html")
         expected = source_live_heading_keys(source_path, strip_headings)
+        expected_view_classes = source_view_class_counts(source_path)
         total_live_headings += len(expected)
+        for css_class, count in expected_view_classes.items():
+            total_view_blocks[css_class] += count
 
         record: dict[str, object] = {
             "chapter_id": chapter.get("id", ""),
             "source_file": source_file,
             "html_file": str(html_path.relative_to(ROOT)) if html_path.exists() else str(html_path),
             "live_only_heading_count": len(expected),
+            "view_mode_blocks": expected_view_classes,
         }
 
         if not html_path.exists():
@@ -146,6 +181,20 @@ def validate(site_dir: Path) -> dict[str, object]:
                 f"as rendered headings: {record['missing_rendered_live_headings']}"
             )
 
+        actual_view_classes = rendered_class_counts(html_path)
+        missing_view_classes: list[str] = []
+        for css_class, expected_count in expected_view_classes.items():
+            if actual_view_classes.get(css_class, 0) < expected_count:
+                missing_view_classes.append(
+                    f"{css_class}: expected {expected_count}, rendered {actual_view_classes.get(css_class, 0)}"
+                )
+        if missing_view_classes:
+            record["missing_rendered_view_classes"] = missing_view_classes
+            errors.append(
+                f"{html_path.relative_to(ROOT)}: source view-mode blocks did not survive render: "
+                f"{missing_view_classes}"
+            )
+
         records.append(record)
 
     return {
@@ -154,6 +203,7 @@ def validate(site_dir: Path) -> dict[str, object]:
         "site_dir": str(site_dir),
         "chapter_count": len(records),
         "live_only_heading_count": total_live_headings,
+        "view_mode_blocks": total_view_blocks,
         "status": "pass" if not errors else "fail",
         "chapter_records": records,
         "errors": errors,
@@ -188,7 +238,8 @@ def main() -> None:
     print(
         "Live Human view validation passed: "
         f"{report['chapter_count']} rendered chapter pages, "
-        f"{report['live_only_heading_count']} live-only headings available for runtime hiding."
+        f"{report['live_only_heading_count']} live-only headings available for runtime hiding, "
+        f"{report['view_mode_blocks']} view-mode blocks rendered."
     )
 
 

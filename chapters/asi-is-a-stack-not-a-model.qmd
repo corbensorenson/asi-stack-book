@@ -42,6 +42,14 @@ This chapter sets the unit of analysis for the book. It is an architecture argum
 
 The opening sequence of Part I is ordered deliberately. This chapter names the system as a stack, the next chapter explains why that stack can be efficient, the authority chapter prevents efficiency from becoming permission leakage, the failure chapter names what breaks without those boundaries, and the evidence chapter governs how any of those claims may later move.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Read this chapter as the book's contract with you. It says that the subject is not a single magic model, and it is not a loose pile of agent tricks. The subject is a governed system whose parts must say what they own, what they may do, what evidence they create, and how they can be stopped or replaced.
+
+That frame matters because the rest of the book keeps adding machinery. Planning, memory, routing, proofs, tools, and self-improvement only stay coherent if they attach to a stable stack boundary. If a later mechanism cannot name its responsibility, artifact, authority ceiling, and failure mode, it is not yet part of the architecture.
+:::
+
 ## Problem
 
 The book needs one architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. Without that frame, every paper in the source corpus can sound like a separate invention. With it, the papers become fragments of a single machine.

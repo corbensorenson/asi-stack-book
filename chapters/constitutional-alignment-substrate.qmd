@@ -45,6 +45,14 @@ It follows the intent-contract chapter because a well-formed request can still a
 
 The constitutional substrate is the layer that says which kinds of intent can become contracts at all. It does not replace the human's request; it bounds the acceptable means, side effects, delegation, review paths, and self-modification consequences of satisfying that request.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Intent contracts describe what a person or institution asks for. This chapter asks what the system must not abandon even when a local request is clear. A constitution is the layer that carries protected constraints across planning, memory, execution, and self-modification.
+
+For the reader, the key idea is continuity. A system cannot be considered aligned because it obeys one prompt in isolation. It needs constraints that survive context changes, tool calls, policy updates, and attempts to improve itself.
+:::
+
 ## Problem
 
 The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.

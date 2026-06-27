@@ -46,6 +46,14 @@ It follows Stable Capability Fields because the field gives replacement a target
 
 The replacement transaction is the stack's version of a high-risk write. It changes a live capability boundary, so it needs preconditions, a commit protocol, monitor obligations, rollback evidence, and a post-change residual record.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Stable Capability Fields define the boundary. This chapter describes the transaction that crosses it. Replacement is not just swapping one component for another; it is a controlled change with compatibility checks, canary scope, monitoring, rollback, and residual ownership.
+
+For a human reader, the important idea is reversibility. A self-improving system should not be trusted because each new version sounds better. It should be trusted only to the degree that a failed replacement can be detected, contained, and undone.
+:::
+
 ## Problem
 
 Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
