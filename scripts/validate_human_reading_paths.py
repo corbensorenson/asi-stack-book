@@ -22,6 +22,7 @@ HUMAN_CLASS = "asi-human-only"
 HUMAN_HEADING = "## Human Reading Path"
 MIN_BRIDGE_WORDS = 165
 MAX_BRIDGE_WORDS = 180
+MIN_CLOSING_SENTENCE_WORDS = 7
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
 CLOSE_RE = re.compile(r"^(:{3,})\s*$")
@@ -117,6 +118,10 @@ def word_count(text: str) -> int:
     return len(WORD_RE.findall(re.sub(r"```.*?```", " ", text, flags=re.DOTALL)))
 
 
+def sentences(text: str) -> list[str]:
+    return [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+", normalize_text(text)) if sentence.strip()]
+
+
 def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip())
 
@@ -176,6 +181,14 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
             errors.append(f"{relative}: Human Reading Path has {words} words; minimum is {MIN_BRIDGE_WORDS}.")
         if words > MAX_BRIDGE_WORDS:
             errors.append(f"{relative}: Human Reading Path has {words} words; maximum is {MAX_BRIDGE_WORDS}.")
+        bridge_sentences = sentences(bridge_text)
+        if bridge_sentences:
+            closing_words = word_count(bridge_sentences[-1])
+            if closing_words < MIN_CLOSING_SENTENCE_WORDS:
+                errors.append(
+                    f"{relative}: Human Reading Path closing sentence has {closing_words} words; "
+                    f"minimum is {MIN_CLOSING_SENTENCE_WORDS}."
+                )
         if "::: " in block_text or f".{HUMAN_CLASS}" in block_text:
             errors.append(f"{relative}: Human Reading Path text contains a nested fenced-div marker.")
         normalized_block = block_text.lower()

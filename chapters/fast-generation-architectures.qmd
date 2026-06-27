@@ -68,7 +68,7 @@ Speed and intelligence need to stay separate. Faster generation can make a stack
 
 Fast paths matter most when they preserve the slow obligations that make output usable.
 
-Latency gains count only after acceptance and fallback remain intact. Speed becomes progress only when the verifier still wins. Verification protects useful speed.
+Latency gains count only after acceptance and fallback remain intact. Speed becomes progress only when the verifier still wins. Verification protects useful speed by keeping acceleration tied to acceptance.
 :::
 
 ## Problem
