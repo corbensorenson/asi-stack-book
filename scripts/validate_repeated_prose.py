@@ -44,6 +44,9 @@ FORMULAIC_MVI_PHRASES = (
     "The Lean predicates do not",
     "These proofs do not implement",
 )
+FORMULAIC_GENERAL_PHRASES = (
+    "The public schema now records",
+)
 
 
 def strip_frontmatter(text: str) -> str:
@@ -122,9 +125,14 @@ def main() -> None:
     formulaic_openers: list[tuple[str, str]] = []
     formulaic_phrases: list[tuple[str, str]] = []
     formulaic_mvi_phrases: list[tuple[str, str]] = []
+    formulaic_general_phrases: list[tuple[str, str]] = []
     for path in sorted((ROOT / "chapters").glob("*.qmd")):
+        chapter_text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
         for paragraph in normalized_paragraphs(path):
             locations[paragraph].append(str(path.relative_to(ROOT)))
+        for phrase in FORMULAIC_GENERAL_PHRASES:
+            if phrase in chapter_text:
+                formulaic_general_phrases.append((str(path.relative_to(ROOT)), phrase))
         beyond_body = beyond_state_body(path)
         for opener in beyond_state_openers(beyond_body):
             if opener.startswith(FORMULAIC_BEYOND_OPENERS):
@@ -138,7 +146,7 @@ def main() -> None:
                 formulaic_mvi_phrases.append((str(path.relative_to(ROOT)), phrase))
 
     repeats = {paragraph: paths for paragraph, paths in locations.items() if len(paths) > 1}
-    if repeats or formulaic_openers or formulaic_phrases or formulaic_mvi_phrases:
+    if repeats or formulaic_openers or formulaic_phrases or formulaic_mvi_phrases or formulaic_general_phrases:
         if repeats:
             print(f"Repeated long prose paragraphs found: {len(repeats)}")
         for paragraph, paths in sorted(repeats.items(), key=lambda item: (-len(item[1]), item[0])):
@@ -154,6 +162,10 @@ def main() -> None:
         if formulaic_mvi_phrases:
             print(f"Formulaic Minimum Viable Implementation phrases found: {len(formulaic_mvi_phrases)}")
             for path, phrase in formulaic_mvi_phrases:
+                print(f" - {path}: {phrase}")
+        if formulaic_general_phrases:
+            print(f"Formulaic chapter prose phrases found: {len(formulaic_general_phrases)}")
+            for path, phrase in formulaic_general_phrases:
                 print(f" - {path}: {phrase}")
         sys.exit(1)
 

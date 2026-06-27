@@ -173,7 +173,7 @@ Planning requests context by task and semantic address. VCM resolves versions an
 
 The interface should produce context receipts. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
 
-The public schema now records lifecycle state, request validity, resolution validity, resolver policy, mount scope, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
+The context-reference schema distinguishes lifecycle state, request validity, resolution validity, resolver policy, mount scope, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
 
 ## Invariants
 

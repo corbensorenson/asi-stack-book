@@ -163,7 +163,7 @@ Spinoza consumes tribunal results for tier decisions. Planning escalates risky n
 
 Execution layers should receive tribunal outcomes as machine-readable constraints, not advice in prose. A required action can block dispatch, narrow authority, demand a source fetch, require a human approval, create a residual, or update a claim state. If the outcome cannot affect the next action, the review has not been integrated.
 
-The public schema now records review state, dossier boundary, reviewer independence, cycle cap, prior review refs, unchanged-evidence guard, retrieval expansion policy, constraint effects, and non-claims. Those fields do not prove reviewer independence or verdict quality. They make review laundering easier to detect: repeated reviews over the same evidence cannot quietly promote a claim merely because the critique language became smoother.
+The tribunal-review record tracks review state, dossier boundary, reviewer independence, cycle cap, prior review refs, unchanged-evidence guard, retrieval expansion policy, constraint effects, and non-claims. Those fields do not prove reviewer independence or verdict quality. They make review laundering easier to detect: repeated reviews over the same evidence cannot quietly promote a claim merely because the critique language became smoother.
 
 ## Invariants
 

@@ -173,7 +173,7 @@ Minimum fields:
 
 Governance issues ceilings and grants. Planning and routing may request handoffs but do not thereby authorize them. Execution checks permissions before side effects. Evidence records denials, confused-deputy attempts, revocations, and authorized effects. SCF replacement later reuses the same interface: a new implementation can enter a stable field only through a transition that preserves the field's authority ceiling.
 
-The public schema now records permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review condition, and non-claims. These fields do not prove enforcement. They make the exact place where enforcement would be tested visible: did the requested operation match its permission class, did delegation narrow rather than widen the caller's ceiling, did expiry or revocation block later use, and did the effect produce an audit receipt?
+The authority-transition record names permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review condition, and non-claims. These fields do not prove enforcement. They make the exact place where enforcement would be tested visible: did the requested operation match its permission class, did delegation narrow rather than widen the caller's ceiling, did expiry or revocation block later use, and did the effect produce an audit receipt?
 
 The transition record should classify the permission being requested. At minimum, the book should distinguish:
 

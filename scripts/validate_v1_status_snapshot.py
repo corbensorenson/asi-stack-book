@@ -143,6 +143,7 @@ def main() -> None:
         "browser Human-view gate checks rendered Mermaid SVG visibility",
         "`Failure closure:`",
         "`detect and route failure modes such as`",
+        "`The public schema now records`",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         "browser smoke validation can exercise every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports`, including reading-mode control visibility and horizontal-overflow checks, when Playwright/Chrome is available",
         f"must be at least 165 words excluding the source-only heading, must open with at least 8 words, must close with at least 7 words, must avoid known repeated bridge formulas, with the current bridge minimum at {human_min_words} words, opening-sentence minimum at {human_min_opening_words} words, closing-sentence minimum at {human_min_closing_words} words, and targeted template-phrase count at {human_template_phrase_hits}",

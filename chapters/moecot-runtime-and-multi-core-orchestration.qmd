@@ -174,7 +174,7 @@ Planning emits the command or task. Routing selects specialist cores. Execution 
 
 The orchestration record should also carry a route authority ledger: who or what authorized the command, which specialist authority envelopes were active, which tools or memory mounts were permitted, and which authority changes were denied. Multi-core orchestration without authority history is just parallel work.
 
-The public schema now records runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. That partition is the chapter's central evidence discipline: a runtime packet can be useful as a design example while still blocked as replay evidence and empty as locally reproduced benchmark evidence.
+The runtime packet schema separates runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. That partition is the chapter's central evidence discipline: a runtime packet can be useful as a design example while still blocked as replay evidence and empty as locally reproduced benchmark evidence.
 
 ## Invariants
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal interface schema-prose polish
+
+- Reworked repeated `The public schema now records` Interface-section formulas across 9 chapters so each paragraph names the concrete record surface: command contract, failure-mode record, rights-exercise record, runtime packet schema, PlanForge scheduling record, proof-carrying claim record, authority-transition record, tribunal-review record, and context-reference schema. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic interface formula, and refreshed the v1.0 status manuscript scale to 178,123 chapter words excluding YAML and 185,622 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mature closure-bullet polish
 
 - Reworked repeated `Failure closure:` bullets across 26 `Beyond the State of the Art` sections into chapter-specific closure rules for authority, evidence, rights, fields, routing, budgets, fidelity, proof contracts, recurrence, compression, runtime, and related mature endpoints. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject `Failure closure:` and `detect and route failure modes such as`, and refreshed the v1.0 status manuscript scale to 178,124 chapter words excluding YAML and 185,623 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

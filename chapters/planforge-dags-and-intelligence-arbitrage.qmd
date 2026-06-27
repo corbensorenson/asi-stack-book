@@ -164,7 +164,7 @@ Routing consumes capability annotations. VCM consumes context requests. Evidence
 
 The interface should also record scheduling state: ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, or merged. These states let later layers distinguish work that has not started from work that cannot responsibly proceed.
 
-The public schema now records scheduling states, adequacy contracts, merge conditions, assumption refs, and non-claims. Those fields make efficiency claims harder to launder: a cheap node must still say which adequacy contract it satisfies, which assumptions it depends on, and what merge conditions prevent incompatible branch outputs from looking successful.
+The PlanForge scheduling record exposes scheduling states, adequacy contracts, merge conditions, assumption refs, and non-claims. Those fields make efficiency claims harder to launder: a cheap node must still say which adequacy contract it satisfies, which assumptions it depends on, and what merge conditions prevent incompatible branch outputs from looking successful.
 
 ## Invariants
 

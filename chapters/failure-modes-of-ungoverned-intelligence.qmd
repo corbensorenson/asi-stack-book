@@ -174,7 +174,7 @@ This interface lets later chapters prove that their machinery is not decorative.
 
 The interface should emit failure receipts for both blocked and realized failures. A blocked failure receipt is not a result claim; it is a trace that the boundary was exercised and what evidence would be needed to trust it later.
 
-The public schema now records failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt references, promotion blocker, escape path, normalization guard, learning path, source refs, support-state effect, and non-claims. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, whether source mappings justify the taxonomy, and whether the run produced learning obligations rather than a smoother success story.
+The failure-mode record keeps failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt references, promotion blocker, escape path, normalization guard, learning path, source refs, support-state effect, and non-claims in one inspectable surface. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, whether source mappings justify the taxonomy, and whether the run produced learning obligations rather than a smoother success story.
 
 ## Invariants
 

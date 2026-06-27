@@ -166,7 +166,7 @@ The claim ledger stores proof status. GenesisCode and Lean provide formal hooks 
 
 The interface should also separate artifact validity from claim validity. A valid proof artifact can still support only a narrow formal target. A valid citation can still support only a limited reading. A replay log can still depend on environment assumptions. The ledger update should say what moved and what did not.
 
-The public schema now records claim scope, justification type, interpretation confidence, artifact validity state, semantic adequacy, verifier artifact refs, failed-attempt refs, formal scope, consumer requirements, claim-validity effect, residual route, source refs, support-state effect, and non-claims. That makes a narrow proof or citation useful without letting it overrun the claim. A verifier can pass an artifact while the claim receives only a scoped update, no update, downgrade, block, or tribunal escalation.
+The proof-carrying claim record holds claim scope, justification type, interpretation confidence, artifact validity state, semantic adequacy, verifier artifact refs, failed-attempt refs, formal scope, consumer requirements, claim-validity effect, residual route, source refs, support-state effect, and non-claims. That makes a narrow proof or citation useful without letting it overrun the claim. A verifier can pass an artifact while the claim receives only a scoped update, no update, downgrade, block, or tribunal escalation.
 
 ## Invariants
 
