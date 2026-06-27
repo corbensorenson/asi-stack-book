@@ -46,7 +46,7 @@ It follows the efficiency chapter because the cheapest adequate route is useful 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The first two chapters say what the stack is and why it might be efficient. The authority boundary prevents efficiency from turning into ambient permission. A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.
+The stack now has an identity and an efficiency claim to govern the work ahead. The authority boundary prevents efficiency from turning into ambient permission. A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.
 
 Here, "can" and "may" separate. The architecture can contain very capable components, but the system remains governed only if each transition carries an explicit boundary, grant, denial path, and audit trail. That separation lets the stack stay useful while still treating refusal as a successful control outcome.
 

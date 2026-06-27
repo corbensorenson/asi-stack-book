@@ -29,6 +29,18 @@ TEMPLATE_BRIDGE_PHRASES = (
     "The mature version is",
     "the book",
     "this book",
+    "Part I",
+    "Part II",
+    "Part III",
+    "Part IV",
+    "previous chapter",
+    "previous chapters",
+    "previous layers",
+    "first two chapters",
+    "first half",
+    "closing move",
+    "begins by",
+    "ended by",
 )
 
 
