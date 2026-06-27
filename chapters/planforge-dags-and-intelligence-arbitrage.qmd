@@ -242,6 +242,6 @@ The PlanForge source set supports DAG orchestration, intelligence arbitrage, and
 
 PlanForge DAGs and Intelligence Arbitrage turns planning into scheduled, typed work. The system decomposes goals, annotates nodes, routes by minimum adequate capability, verifies quality predicates, and records cost-quality outcomes.
 
-The chapter's efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals. Scheduled work then lowers into semantic IR so artifact generation, validation, and repair have stable addresses.
+The efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals. Scheduled work then lowers into semantic IR so artifact generation, validation, and repair have stable addresses.
 
 A DAG should make blocked work as visible as completed work. If a scheduler cannot say why a node is ready, blocked, merged, escalated, or residualized, it is not yet a control layer.

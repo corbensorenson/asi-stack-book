@@ -248,7 +248,7 @@ The crosswalk gives the source basis for transaction vocabulary. It does not tre
 
 Capability Replacement and Rollback turns improvement into a transaction. It preserves the prior state, candidate evidence, regressions, residuals, approval, monitor window, and rollback path.
 
-The chapter's discipline is floor preservation. The frontier may move only when the existing floor remains visible and recoverable.
+The governing discipline is floor preservation. The frontier may move only when the existing floor remains visible and recoverable.
 
 The security kernel keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross. Replacement must preserve not only behavior, but also the permission shape around that behavior.
 

@@ -253,6 +253,6 @@ The source set covers loop closure, procedural memory, ratchets, regressions, an
 
 Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. This pass tightened the source crosswalk, but it did not generate a tool or run the loop-closure pipeline.
 
-The chapter's discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
+The discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
 
 The same discipline returns in Part IV as benchmark ratchets. A procedure that becomes easier to run must also become easier to test, regress, retire, and explain. Otherwise memory increases capability faster than governance can remember why it trusted the capability in the first place.

@@ -73,6 +73,17 @@ BANNED_BEYOND_BOILERPLATE = [
     "mapped in this pass",
 ]
 
+SUMMARY_BANNED_PATTERNS = [
+    (
+        "self-referential chapter phrase",
+        re.compile(r"\b(?:this|the) chapter(?:'s)?\b", re.IGNORECASE),
+    ),
+    (
+        "mechanical section handoff",
+        re.compile(r"\bthe next section\b", re.IGNORECASE),
+    ),
+]
+
 SECTION_MIN_WORDS = {
     "## Minimum Viable Implementation": 60,
     "## Beyond the State of the Art": 90,
@@ -225,6 +236,14 @@ def main() -> None:
         for phrase in BANNED_BEYOND_BOILERPLATE:
             if phrase in text:
                 errors.append(f"{chapter['file']}: replace generic beyond-SOTA boilerplate phrase: {phrase!r}")
+
+        summary = section_body(text, "## Summary")
+        for label, pattern in SUMMARY_BANNED_PATTERNS:
+            match = pattern.search(summary)
+            if match:
+                errors.append(
+                    f"{chapter['file']}: ## Summary contains {label}: {match.group(0)!r}"
+                )
 
         expected = {
             "chapter_id": chapter["id"],

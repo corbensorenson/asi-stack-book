@@ -243,6 +243,6 @@ The SCF source set supports field identity and lifecycle vocabulary while preser
 
 Stable Capability Fields are the stack's upgrade sockets. They let a capability improve by changing implementations while preserving semantic identity, authority ceilings, evaluator policy, evidence, route validity, and rollback.
 
-This chapter makes self-improvement possible without making every upgrade a constitutional event. Field updates become explicit replacement transactions. The field says what must remain true; the replacement layer says how a candidate proves it remained true before promotion.
+Stable fields make self-improvement possible without making every upgrade a constitutional event. Field updates become explicit replacement transactions. The field says what must remain true; the replacement layer says how a candidate proves it remained true before promotion.
 
 The later learning chapters depend on this discipline. Procedural memory needs SCFs so new tools inherit a field boundary rather than becoming free-floating automation. Benchmark ratchets need SCFs so evidence improves a named capability instead of a vague sense of progress.
