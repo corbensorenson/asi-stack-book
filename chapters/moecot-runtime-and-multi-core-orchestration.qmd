@@ -198,7 +198,7 @@ The next useful fixture set is a public-safe orchestration packet with one accep
 
 The mature version of MoECOT Runtime and Multi-Core Orchestration is a compact, governed runtime that can carry the ASI Stack from command intake through routed execution, replay, handoff, residual escrow, and readiness update without asking the reader to trust the runtime's name. Its product surface is an evidence packet factory.
 
-At that end state, the chapter's claim becomes an operational contract: MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined. The mature surface would include:
+The operational contract is that MoECOT-style orchestration earns implementation-reference status only through public-safe run packets, task ledgers, control-plane gates, replay refs, residual handoffs, and readiness boundaries. A mature implementation would make that contract visible through:
 
 - Operating mechanism: a compact orchestrator receives typed commands, decomposes work, asks the route head for bounded specialist lanes, applies control-plane gates, records authority decisions, runs or denies work, emits task and replay ledgers, and hands off artifacts with residuals and promotion blockers attached.
 - Evidence surface: every run packet distinguishes source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, denied routes, failed gates, missing replay refs, unresolved handoffs, source-claim state, and non-claims.

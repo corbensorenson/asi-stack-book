@@ -199,7 +199,7 @@ The next useful implementation step is a compact-core comparison fixture: one co
 
 The mature version of Compact Generative Systems and Residual Honesty is a compression-and-generation layer that measures total burden, not just visible size. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
 
-At that end state, the chapter's claim becomes an operational contract: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit. The mature surface would include:
+The operational contract is that compactness is useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted. A mature implementation would make that contract visible through:
 
 - Operating mechanism: compact records bind target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before a compact core is trusted.
 - Evidence surface: compactness claims report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risks.

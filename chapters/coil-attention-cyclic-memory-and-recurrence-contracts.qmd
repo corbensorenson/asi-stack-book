@@ -196,7 +196,7 @@ The next useful fixture set is a trio of traces: one slot reuse with winding pre
 
 The mature version of Coil Attention, Cyclic Memory, and Recurrence Contracts is a memory admission and recurrence-control plane. It makes slot, lag, freshness, aliasing, active-work, and loop-exit facts available to the stack without confusing those facts with retrieval quality or reasoning success.
 
-At that end state, the chapter's claim becomes an operational contract: Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality. The mature surface would include:
+The operational contract is that coil memory provides structural guardrails for slots, lag, freshness, coverage, recurrence, and work budgets while leaving retrieval quality and reasoning quality to separate evidence. A mature implementation would make that contract visible through:
 
 - Operating mechanism: cyclic memory contracts bind VCM packet refs, memory-authority scope, residue and winding policies, provenance, state-carry boundaries, freshness windows, stale-read policy, coverage claims, recurrence schedules, work budgets, loop exits, fallback attention, admission state, baseline refs, probe requirements, residuals, and non-claims.
 - Evidence surface: alias visibility, sparse coverage, freshness, recurrence exit, work-saving, retrieval quality, reasoning quality, speed, memory reduction, and long-context utility remain separate ledgers.
