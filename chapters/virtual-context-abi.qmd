@@ -50,7 +50,7 @@ The ABI is the context layer's syscall surface. A planner should ask for context
 
 Cognitive compilation needs context, but context should not arrive as an accidental transcript dump. The Virtual Context ABI defines the interface between durable memory and the working context a model is allowed to see: what may be mounted, which version is being used, how long the materialization lasts, and what the consumer may infer from it.
 
-The human intuition is simple: memory access is a contract. Retrieved text, private notes, old plans, source packets, and summaries are not interchangeable just because they fit in a prompt. The ABI gives context a boundary so later reasoning can be replayed, faulted, or refused instead of reconstructed from vibes.
+Memory access is a contract. Retrieved text, private notes, old plans, source packets, and summaries are not interchangeable just because they fit in a prompt. The ABI gives context a boundary so later reasoning can be replayed, faulted, or refused instead of reconstructed from vibes.
 :::
 
 ## Problem

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Human bridge meta-language polish
+
+- Replaced remaining Human Reading Path bridge meta-language such as `The reader should`, `The human point`, `The human test`, `The human caveat`, and related variants with direct prose. Extended the Human Reading Path validator so future human-only bridges stay closer to book-like narrative instead of explaining themselves as reader scaffolding. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, or audio artifacts changed.
+
 ## 2026-06-27 - v1.0 improvement goal Human bridge cadence polish
 
 - Removed remaining `This chapter` bridge cadence from Human Reading Path blocks and replaced it with direct narrative transitions, so the live Human view and generated reader spine read less like scaffolding and more like a continuous book. Extended the Human Reading Path validator to reject that phrase inside human-only bridges. No claims, sources, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, or audio artifacts changed.

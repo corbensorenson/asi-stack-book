@@ -52,7 +52,7 @@ Readiness is therefore an obligation state, not a score. A target is ready only 
 
 Routing can identify a plausible specialist, but plausibility is not readiness. The readiness gate asks when a route, model, tool, memory packet, procedure, runtime lane, or replacement is allowed to become ordinary execution and when it must stay in shadow, canary, escrow, quarantine, diagnostic use, or review.
 
-The human point is that uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should keep the residual, expiry, fallback path, and next review condition visible until the evidence catches up.
+Uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should keep the residual, expiry, fallback path, and next review condition visible until the evidence catches up.
 :::
 
 ## Problem

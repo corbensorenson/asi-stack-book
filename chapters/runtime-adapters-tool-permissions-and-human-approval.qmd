@@ -49,7 +49,7 @@ This chapter sits after artifact graphs so the reader already has the evidence s
 
 Artifact graphs record work, but runtime adapters create effects. The adapter is the boundary where a typed job may touch tools, files, networks, deployments, payments, messages, credentials, hardware, or other external systems under explicit permission and human approval when needed.
 
-The reader should treat this as the stack's narrow waist for action. A plan can be brilliant and a job can be well typed, but external effect still needs an authority envelope, approval scope, effect lease, pre/post state, incident path, and residual record.
+This is the stack's narrow waist for action. A plan can be brilliant and a job can be well typed, but external effect still needs an authority envelope, approval scope, effect lease, pre/post state, incident path, and residual record.
 :::
 
 ## Problem

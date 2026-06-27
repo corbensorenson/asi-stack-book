@@ -29,6 +29,14 @@ BANNED_BRIDGE_PHRASES = (
     "For a human reader",
     "For the reader",
     "This chapter",
+    "The reader should",
+    "reader should",
+    "The human point",
+    "The human intuition",
+    "The human reason",
+    "The human test",
+    "The human caveat",
+    "The human promise",
 )
 
 
