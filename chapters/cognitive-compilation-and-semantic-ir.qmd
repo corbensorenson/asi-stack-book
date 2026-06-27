@@ -101,7 +101,7 @@ Cognitive Compilation turns planned work into a compiler boundary. Its source pl
 
 This semantic IR pipeline moves from source plan to typed atoms, from atoms to target artifacts, from failed validators back to localized repair, and from accepted outputs into the artifact graph.
 
-The reviewed passages make one architectural move sharper: the compiler is not another prompt template. It is a boundary where obligations become addressable records. Cognitive Compilation supplies the typed S-IR and repair loop; PlanForge supplies scheduling pressure; GenesisCode supplies evidence-carrying acceptance and replay; TreeLLM supplies the intuition that semantic structure should be addressable outside model weights; VIEA supplies the artifact-ledger destination. None of those passages show that this repository can parse arbitrary goals into S-IR, lower S-IR to real artifacts, keep repairs local under load, or beat direct generation.
+The reviewed passages make one architectural move sharper: the compiler is not another prompt template. It is a boundary where obligations become addressable records. Cognitive Compilation supplies the typed S-IR and repair loop; PlanForge supplies scheduling pressure; GenesisCode supplies evidence-carrying acceptance and replay; TreeLLM supplies the intuition that semantic structure should be addressable outside model weights; VIEA supplies the artifact-ledger destination. The current repository still has to demonstrate arbitrary-goal parsing into S-IR, lowering into real artifacts, local repair under load, and any measured advantage over direct generation.
 
 ```{mermaid}
 flowchart LR

@@ -106,7 +106,7 @@ PlanForge specializes the plan graph into a schedulable DAG. The PlanForge sourc
 
 A PlanForge DAG is the cost-quality control surface: every node has to name its capability tier, context request, budget, quality predicate, verification burden, route, escalation path, and residual.
 
-The reviewed passages justify the architecture vocabulary without proving the scheduler. PlanForge supplies the DAG, MVI, scheduling, fallback, and watchdog terms; the compiler-architecture variant sharpens the compiler/orchestration frame but stores source-reported estimates in a compact raw export; Cognitive Compilation adds semantic-DAG scheduling, validator, capability-routing, and localized-repair mechanics; TokenMana keeps the budget surface from collapsing into token counts by adding load, latency, burst, friction, and privacy constraints. None of those passages show this repository selecting tiers, running a scheduler, reproducing source-reported savings, or measuring quality retention.
+The reviewed passages justify the architecture vocabulary without proving the scheduler. PlanForge supplies the DAG, MVI, scheduling, fallback, and watchdog terms; the compiler-architecture variant sharpens the compiler/orchestration frame but stores source-reported estimates in a compact raw export; Cognitive Compilation adds semantic-DAG scheduling, validator, capability-routing, and localized-repair mechanics; TokenMana keeps the budget surface from collapsing into token counts by adding load, latency, burst, friction, and privacy constraints. The unproven work remains concrete: tier selection, an executable scheduler, reproduced savings, and measured quality retention.
 
 ```{mermaid}
 flowchart LR

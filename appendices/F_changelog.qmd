@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mechanism evidence-boundary polish
+
+- Reworked repeated `None of those passages show` Mechanism-section formulas across 5 chapters into chapter-specific evidence-boundary prose for S-IR compilation, context transactions, PlanForge scheduling, context-cell certificates, and the Virtual Context ABI. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic mechanism formula, and refreshed the v1.0 status manuscript scale to 178,108 chapter words excluding YAML and 185,607 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal interface schema-prose polish
 
 - Reworked repeated `The public schema now records` Interface-section formulas across 9 chapters so each paragraph names the concrete record surface: command contract, failure-mode record, rights-exercise record, runtime packet schema, PlanForge scheduling record, proof-carrying claim record, authority-transition record, tribunal-review record, and context-reference schema. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic interface formula, and refreshed the v1.0 status manuscript scale to 178,123 chapter words excluding YAML and 185,622 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
