@@ -41,6 +41,14 @@ BANNED_BRIDGE_PHRASES = (
     "The human promise",
     "The next question is",
 )
+BANNED_TEMPLATE_BRIDGE_PHRASES = (
+    "The useful",
+    "The practical",
+    "The point is",
+    "useful only when",
+    "The mature test",
+    "The mature version is",
+)
 BANNED_BRIDGE_PATTERNS = (
     (re.compile(r"\bchapter\b", re.IGNORECASE), "chapter meta-language"),
 )
@@ -202,6 +210,10 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
         for phrase in BANNED_BRIDGE_PHRASES:
             if phrase.lower() in normalized_block:
                 errors.append(f"{relative}: Human Reading Path uses meta-reader phrase {phrase!r}.")
+        normalized_bridge = bridge_text.lower()
+        for phrase in BANNED_TEMPLATE_BRIDGE_PHRASES:
+            if phrase.lower() in normalized_bridge:
+                errors.append(f"{relative}: Human Reading Path uses repeated bridge formula {phrase!r}.")
         for pattern, label in BANNED_BRIDGE_PATTERNS:
             if pattern.search(block_text):
                 errors.append(f"{relative}: Human Reading Path uses {label}.")

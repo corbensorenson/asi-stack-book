@@ -73,13 +73,13 @@ Benchmark ratchets create improvement pressure that policy updates must govern. 
 
 The distinction is crucial: learning from feedback is not the same as handing the system control over its own goals. A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.
 
-The mature version is less like tuning a single model and more like approving a behavior-change lease. The lease names what may change, what must not change, how regressions are detected, and who can roll it back.
+At its strongest, the loop is less like tuning a single model and more like approving a behavior-change lease. The lease names what may change, what must not change, how regressions are detected, and who can roll it back.
 
 Feedback becomes governance-compatible when improvement remains reversible and evidence-scoped.
 
 The learning loop should update behavior without rewriting the system's authority. Good feedback teaches the policy what to prefer, not what it may ignore.
 
-A better policy is useful only when its new habits remain bounded by older duties. Learning pressure belongs inside the same contract as deployment authority. Deployment still sets boundaries after training pressure changes behavior.
+A better policy deserves adoption only when its new habits remain bounded by older duties. Learning pressure belongs inside the same contract as deployment authority. Deployment still sets boundaries after training pressure changes behavior.
 :::
 
 ## Problem

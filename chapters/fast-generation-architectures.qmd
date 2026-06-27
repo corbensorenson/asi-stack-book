@@ -64,7 +64,7 @@ Coming after generate-verify-repair, fast generation is the time-domain version 
 
 Compression is not the only way speed matters. The generation substrate itself has to be part of the architecture: how much planning, verification, routing, tool use, and repair can fit inside a fixed latency and compute budget. A faster decoder can help the stack, but it can also make weak plans, stale context, or skipped checks fail faster.
 
-Speed and intelligence need to stay separate. Faster generation can make a stack more usable, but only if accepted output, verification cost, fallback, memory pressure, and task success are counted. Raw tokens per second are not evidence that the system kept the right obligations alive. The useful question is whether the whole governed route delivers correct work sooner. Generation architecture therefore belongs beside evidence and routing, not under a narrow serving benchmark alone.
+Speed and intelligence need to stay separate. Faster generation can make a stack more usable, but only if accepted output, verification cost, fallback, memory pressure, and task success are counted. Raw tokens per second are not evidence that the system kept the right obligations alive. The decisive question is whether the whole governed route delivers correct work sooner. Generation architecture therefore belongs beside evidence and routing, not under a narrow serving benchmark alone.
 
 Fast paths matter most when they preserve the slow obligations that make output usable.
 

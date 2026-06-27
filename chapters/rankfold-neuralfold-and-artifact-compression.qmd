@@ -51,7 +51,7 @@ After fast generation, the book returns to stored artifacts. RankFold and Neural
 
 A compressed artifact is not automatically a source of truth. The stack needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
 
-The useful question is not whether compression is clever. It is whether a consumer can tell which property was preserved, which property was lost, and when the full artifact must be retrieved again.
+The hard question is not whether compression is clever. It is whether a consumer can tell which property was preserved, which property was lost, and when the full artifact must be retrieved again.
 
 Approximation is acceptable only when downstream users know what kind of approximation they received.
 

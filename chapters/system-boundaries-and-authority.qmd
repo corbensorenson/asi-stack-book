@@ -50,7 +50,7 @@ The first two chapters say what the stack is and why it might be efficient. The 
 
 Here, "can" and "may" separate. The architecture can contain very capable components, but the system remains governed only if each transition carries an explicit boundary, grant, denial path, and audit trail. That separation lets the stack stay useful while still treating refusal as a successful control outcome.
 
-Authority is therefore a first-class artifact: something granted, scoped, recorded, revoked, and reviewed instead of inferred from capability. The practical payoff is a system that can say no even when it knows how.
+Authority is therefore a first-class artifact: something granted, scoped, recorded, revoked, and reviewed instead of inferred from capability. The payoff is a system that can say no even when it knows how.
 
 That refusal path is part of the system's intelligence, not an interruption of it. Authority is real only when overreach has a recorded stop. That stop makes permission real because denied authority must stay denied.
 :::
