@@ -54,7 +54,7 @@ Compilation gives the stack a handle on partial correctness instead of forcing e
 
 The intermediate form is where vague intent becomes something specific enough to repair.
 
-That repair point is what keeps generation from becoming all-or-nothing.
+That repair point is what keeps generation from becoming all-or-nothing. The IR earns its place by making that repair cheap enough to use.
 :::
 
 ## Problem

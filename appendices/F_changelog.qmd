@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Human bridge floor 160
+
+- Expanded the 47 remaining low-margin `.asi-human-only` Human Reading Path bridges with direct, chapter-specific closing sentences, then raised `scripts/validate_human_reading_paths.py` so every manifest chapter bridge must now keep at least 160 words excluding the source-only heading while remaining below the 180-word cap. Updated the writing runbook, site quality standard, v1.0 status snapshot guard, and v1.0 candidate status so the live Human view and generated reader edition preserve the stronger bridge floor. Refreshed the v1.0 status manuscript scale to 176,794 chapter words excluding YAML and 184,293 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Human bridge floor 150
 
 - Expanded the 38 remaining low-margin `.asi-human-only` Human Reading Path bridges with direct, chapter-specific closing sentences, then raised `scripts/validate_human_reading_paths.py` so every manifest chapter bridge must now keep at least 150 words excluding the source-only heading while remaining below the 180-word cap. Updated the writing runbook, site quality standard, v1.0 status snapshot guard, and v1.0 candidate status so the live Human view and generated reader edition preserve the stronger bridge floor. Refreshed the v1.0 status manuscript scale to 176,336 chapter words excluding YAML and 183,835 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

@@ -56,7 +56,7 @@ The point is to make memory useful without letting every remembered thing become
 
 A good context interface makes refusal as explainable as retrieval. The missing packet, stale snapshot, or forbidden source becomes part of the answer instead of a hidden weakness.
 
-The ABI should make context failure explicit before reasoning depends on it.
+The ABI should make context failure explicit before reasoning depends on it. A broken mount should fail loudly before it shapes action.
 :::
 
 ## Problem
