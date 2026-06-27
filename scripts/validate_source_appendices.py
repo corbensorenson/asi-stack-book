@@ -30,6 +30,9 @@ APPENDIX_G_OWNERSHIP_RULE = "| Ownership rule | If Corben wrote it, supplied it,
 APPENDIX_H_OWNERSHIP_RULE = "| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |"
 APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
 APPENDIX_H_BOUNDARY = "not a subsection, second half, or continuation of Appendix G"
+SOURCE_OWNERSHIP_SECTION = "## Source Ownership Boundary"
+APPENDIX_G_SOURCE_BOUNDARY_NOTE = "This page is the Corben-side source appendix. It should be read as Appendix G only; the external-source appendix is Appendix H."
+APPENDIX_H_SOURCE_BOUNDARY_NOTE = "This page is the external-source appendix. It should be read as Appendix H only; Corben-side records stay in Appendix G."
 APPENDIX_IDENTITY_SECTION = "## Appendix Identity"
 OLD_SHARED_OWNERSHIP_HEADER = "| Source ownership question | Where it belongs |"
 OLD_SHARED_G_ROW = "| Corben-authored, Corben-supplied, recovered, or local project material | Appendix G |"
@@ -86,6 +89,13 @@ def main() -> None:
         errors.append("Appendix G is missing the explicit non-combined source boundary.")
     if APPENDIX_H_BOUNDARY not in h_text:
         errors.append("Appendix H is missing the explicit separate-appendix boundary.")
+    for appendix_name, text in (("Appendix G", g_text), ("Appendix H", h_text)):
+        if SOURCE_OWNERSHIP_SECTION not in text:
+            errors.append(f"{appendix_name} is missing the Source Ownership Boundary section.")
+    if APPENDIX_G_SOURCE_BOUNDARY_NOTE not in g_text:
+        errors.append("Appendix G is missing the explicit G-only source-ownership note.")
+    if APPENDIX_H_SOURCE_BOUNDARY_NOTE not in h_text:
+        errors.append("Appendix H is missing the explicit H-only source-ownership note.")
     if APPENDIX_G_IDENTITY not in g_text:
         errors.append("Appendix G is missing its standalone Appendix G identity row.")
     if APPENDIX_H_IDENTITY not in h_text:

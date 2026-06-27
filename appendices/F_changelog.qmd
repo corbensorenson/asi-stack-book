@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source ownership boundary
+
+- Added generated `Source Ownership Boundary` sections to Appendix G and Appendix H so Appendix G reads as the Corben-side source appendix only and Appendix H reads as the external-source appendix only before either table appears. Tightened `scripts/validate_source_appendices.py`, the v1.0 status guard, README, and outline so future scaffold syncs preserve the two independent top-level source appendices instead of letting external literature look like a second part of Appendix G. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal invariant prose polish
 
 - Reworked repeated invariant-section openers across the human-reader spine so chapters no longer lean on generic formulas such as `Another invariant is`, `A second invariant is`, `The strongest invariant is`, or `The key invariant is`. The revised passages name the chapter-specific preserved boundary directly: claim specificity, evaluator independence, obligation non-erasure, alias honesty, evidence asymmetry, verifier separation, baseline symmetry, least sufficient power, branch containment, traceability, protected overhead, decode accountability, provenance, and related invariants. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, and v1.0 status guard so future invariant sections stay chapter-specific. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
