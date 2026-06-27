@@ -97,18 +97,18 @@ The receipt boundary is the main artifact. It lets the book say "this finite str
 
 ```{mermaid}
 flowchart LR
-  Object["Engineering object"] --> Finite["Finite address, window, phase, or schedule"]
-  Finite --> Theorems["Lean theorem ids and proof status"]
-  Finite --> Fields["Deterministic certificate fields"]
-  Theorems --> Receipt["Proof-carrying receipt"]
-  Fields --> Receipt
-  Receipt --> Consumer["Consumer gate and replay check"]
-  Consumer --> Structural["Structural claim"]
-  Consumer --> Nonclaims["Explicit non-claims"]
-  Structural --> Workload["Optional downstream workload"]
-  Workload --> Metrics["Baselines, controls, metrics, reports"]
-  Metrics --> Promotion["Possible support-state promotion"]
-  Nonclaims -. block .-> Overreach["Quality, speed, context, safety, or ASI claim"]
+  Object["Engineering object"] -- "finite model" --> Finite["Finite address, window, phase, or schedule"]
+  Finite -- "theorem refs" --> Theorems["Lean theorem ids and proof status"]
+  Finite -- "deterministic fields" --> Fields["Deterministic certificate fields"]
+  Theorems -- "attach proof boundary" --> Receipt["Proof-carrying receipt"]
+  Fields -- "attach replay boundary" --> Receipt
+  Receipt -- "consumer checks" --> Consumer["Consumer gate and replay check"]
+  Consumer -- "passes structural gate" --> Structural["Structural claim"]
+  Consumer -- "preserves scope" --> Nonclaims["Explicit non-claims"]
+  Structural -- "may request" --> Workload["Optional downstream workload"]
+  Workload -- "only if run" --> Metrics["Baselines, controls, metrics, reports"]
+  Metrics -- "opens review" --> Promotion["Possible support-state promotion"]
+  Nonclaims -. "blocks overreach" .-> Overreach["Quality, speed, context, safety, or ASI claim"]
 ```
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant theorem references, validation commands, deterministic fields, receipt fingerprints, unsupported axes, and failure conditions.

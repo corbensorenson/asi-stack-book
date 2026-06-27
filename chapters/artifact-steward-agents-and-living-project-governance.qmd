@@ -113,20 +113,20 @@ The `Sunset Review Record` prevents project continuity from becoming project imm
 
 ```{mermaid}
 flowchart TD
-  charter["Artifact Steward Charter\nmission, authority, budget, governance, sunset"] --> intake["Intake\nissues, papers, PRs, failures, user goals"]
-  vcm["Project memory\nsource refs, decisions, taint, open questions"] --> intake
-  intake --> plan["PlanForge roadmap and dependency plan"]
-  plan --> contract["Project Work Contract"]
-  contract --> workers["Humans, agents, CI, hives, rented compute"]
-  workers --> artifacts["Submitted artifacts\ncode, prose, proofs, tests, diagrams"]
-  artifacts --> verify["Verification gates\nreview, tests, proofs, benchmarks, evidence"]
-  verify --> decision["Steward Action Decision"]
-  decision --> ledger["Contribution and evidence ledgers"]
-  decision --> release["Release, rollback, defer, or sunset proposal"]
-  ledger --> vcm
-  release --> vcm
-  charter --> gov["Governance checks\nowner, maintainer, community, guardian"]
-  gov --> decision
+  charter["Artifact Steward Charter\nmission, authority, budget, governance, sunset"] -- "bounds intake" --> intake["Intake\nissues, papers, PRs, failures, user goals"]
+  vcm["Project memory\nsource refs, decisions, taint, open questions"] -- "adds history" --> intake
+  intake -- "prioritize" --> plan["PlanForge roadmap and dependency plan"]
+  plan -- "lower to work" --> contract["Project Work Contract"]
+  contract -- "scoped assignment" --> workers["Humans, agents, CI, hives, rented compute"]
+  workers -- "submit under contract" --> artifacts["Submitted artifacts\ncode, prose, proofs, tests, diagrams"]
+  artifacts -- "must pass" --> verify["Verification gates\nreview, tests, proofs, benchmarks, evidence"]
+  verify -- "decision packet" --> decision["Steward Action Decision"]
+  decision -- "records contribution" --> ledger["Contribution and evidence ledgers"]
+  decision -- "routes outcome" --> release["Release, rollback, defer, or sunset proposal"]
+  ledger -- "updates memory" --> vcm
+  release -- "updates lifecycle" --> vcm
+  charter -- "requires approval" --> gov["Governance checks\nowner, maintainer, community, guardian"]
+  gov -- "approval boundary" --> decision
 ```
 
 The steward's normal action is proposal, not unilateral execution. It may draft work, prepare evidence, request review, run allowed checks, and coordinate accepted contracts. It may not seize ownership, merge protected branches, spend beyond policy, rewrite governance, alter protected source records, change claim support states, or continue a dead project without explicit authority.

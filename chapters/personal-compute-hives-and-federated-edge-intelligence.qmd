@@ -100,19 +100,19 @@ The `Hive Scheduling Decision` is the narrow bridge between the job and the subs
 
 ```{mermaid}
 flowchart TD
-  intent["Human or project intent"] --> plan["PlanForge / Talos job lowering"]
-  plan --> contract["Hive Job Contract"]
-  vcm["VCM context packet\nsource, taint, adequacy, revocation"] --> contract
-  registry["Device Resource Cards\nphones, laptops, GPUs, NAS, rented nodes"] --> filter["Policy filter"]
-  contract --> filter
-  gov["Governance predicates\nconsent, family rules, SCF leases, secret handles"] --> filter
-  filter --> rejected["Rejected nodes\nwith reasons"]
-  filter --> bids["Eligible node bids\ncapability, locality, cost, energy"]
-  bids --> decision["Hive Scheduling Decision"]
-  decision --> approval["Portal approval\nwhen required"]
-  approval --> execute["Bounded execution slot"]
-  execute --> evidence["Artifact, audit, residual, and revocation records"]
-  evidence --> vcm
+  intent["Human or project intent"] -- "compiled request" --> plan["PlanForge / Talos job lowering"]
+  plan -- "job boundary" --> contract["Hive Job Contract"]
+  vcm["VCM context packet\nsource, taint, adequacy, revocation"] -- "permitted context" --> contract
+  registry["Device Resource Cards\nphones, laptops, GPUs, NAS, rented nodes"] -- "available capacity" --> filter["Policy filter"]
+  contract -- "requirements" --> filter
+  gov["Governance predicates\nconsent, family rules, SCF leases, secret handles"] -- "authority limits" --> filter
+  filter -- "policy denial" --> rejected["Rejected nodes\nwith reasons"]
+  filter -- "eligible after policy" --> bids["Eligible node bids\ncapability, locality, cost, energy"]
+  bids -- "selected bid" --> decision["Hive Scheduling Decision"]
+  decision -- "approval needed" --> approval["Portal approval\nwhen required"]
+  approval -- "scoped lease" --> execute["Bounded execution slot"]
+  execute -- "produces record" --> evidence["Artifact, audit, residual, and revocation records"]
+  evidence -- "updates memory" --> vcm
 ```
 
 Those three records are necessary but not sufficient. The full hive protocol also needs a `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease`. A portal card states what a phone, laptop, tablet, headset, browser, or shared display may ask, show, and approve. An approval receipt binds a human or guardian decision to one job boundary and one time window. A job bid records a node's capability, latency, energy, cost, privacy fit, and policy reason after filtering. A federation lease lets a project hive, collaborator hive, rented node, or public compute market borrow bounded capacity without inheriting private network access.

@@ -2,16 +2,18 @@
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
-It is the working bibliography for Corben's supplied ASI Stack corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+This appendix is only for Corben's authored, supplied, or local-project ASI Stack source corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
 
-External and third-party references are separated into Appendix H so readers and future agents can see what is Corben's corpus and what is outside literature.
+It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+
+External and third-party sources are a separate appendix: [Appendix H, External Sources and Literature](H_external_sources.qmd).
 
 ## Ownership Boundary
 
 | Appendix | Contains | Does not contain | Evidence effect |
 |---|---|---|---|
 | Appendix G: Corben's Source Corpus | Corben-supplied or Corben-authored ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes the internal architecture corpus; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: External Literature and References | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Appendix H: External Sources and Literature | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|

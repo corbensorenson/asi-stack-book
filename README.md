@@ -29,7 +29,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
-- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben/source-corpus records and Appendix H contains only external-literature records from `sources/source_inventory.json`.
+- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben's authored/supplied/local source corpus and Appendix H contains only external source records from `sources/source_inventory.json`.
 - `scripts/validate_v1_status_snapshot.py` checks that `docs/v1_0_candidate_status.md` headline counts match current repository artifacts.
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
 - `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.
@@ -55,8 +55,8 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
-| [appendices/G_bibliography.qmd](appendices/G_bibliography.qmd) | Generated appendix for Corben's supplied ASI Stack source corpus. |
-| [appendices/H_external_literature.qmd](appendices/H_external_literature.qmd) | Generated external-literature and third-party reference appendix. |
+| [appendices/G_corben_source_corpus.qmd](appendices/G_corben_source_corpus.qmd) | Generated appendix for Corben's authored, supplied, and local ASI Stack source corpus. |
+| [appendices/H_external_sources.qmd](appendices/H_external_sources.qmd) | Generated appendix for external literature, documentation, benchmarks, and third-party references. |
 | [appendices/I_author_intent_and_lineage.qmd](appendices/I_author_intent_and_lineage.qmd) | Public-safe author-intent and architecture-lineage appendix. |
 | [appendices/J_release_editions.qmd](appendices/J_release_editions.qmd) | Live-book explanation of reader, research, and audio edition paths. |
 | [appendices/K_implementation_horizons.qmd](appendices/K_implementation_horizons.qmd) | Generated implementation-horizon matrix. |

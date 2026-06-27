@@ -18,7 +18,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Use restrained technical styling.
 - Prefer high contrast, readable line length, and stable spacing.
 - Avoid decorative visuals that do not explain the architecture.
-- Diagrams should clarify interfaces, loops, and evidence flow, with enough named states and transitions to explain a mechanism rather than merely satisfy coverage.
+- Diagrams should clarify interfaces, loops, and evidence flow, with enough named states, labeled transitions, and concrete handoffs to explain a mechanism rather than merely satisfy coverage.
 - Tables should remain readable on narrow screens.
 
 ## Release Standards

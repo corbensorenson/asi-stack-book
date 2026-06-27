@@ -139,25 +139,25 @@ flowchart LR
   A["Goal and risk tier"] --> B["PlanForge mode selector"]
   C["VCM context packet"] --> B
   D["Latency, compute, memory budget"] --> B
-  B --> E{"Generation mode"}
-  E --> F["Autoregressive baseline"]
-  E --> G["Speculative or MTP draft"]
-  E --> H["Diffusion or sketch-first pass"]
-  E --> I["Early-exit, state-space, or KV-cache optimized path"]
-  E --> J["Hybrid route"]
-  F --> K["Draft tokens or artifact span"]
-  G --> K
-  H --> K
-  I --> K
-  J --> K
-  K --> L["Verifier and acceptance predicate"]
-  L --> M["Accepted verified output"]
-  L --> N["Fallback, repair, or slower mode"]
-  M --> O["Talos artifact"]
-  N --> P["Rejected work + verifier cost"]
-  O --> P
-  P --> R["Benchmaxxing speed-quality record"]
-  R --> Q["SCF promotion gate"]
+  B -- "select by risk and budget" --> E{"Generation mode"}
+  E -- "slow baseline" --> F["Autoregressive baseline"]
+  E -- "draft route" --> G["Speculative or MTP draft"]
+  E -- "sketch route" --> H["Diffusion or sketch-first pass"]
+  E -- "serving route" --> I["Early-exit, state-space, or KV-cache optimized path"]
+  E -- "composed route" --> J["Hybrid route"]
+  F -- "proposes span" --> K["Draft tokens or artifact span"]
+  G -- "proposes span" --> K
+  H -- "proposes span" --> K
+  I -- "proposes span" --> K
+  J -- "proposes span" --> K
+  K -- "must satisfy" --> L["Verifier and acceptance predicate"]
+  L -- "passes predicate" --> M["Accepted verified output"]
+  L -- "fails or partial" --> N["Fallback, repair, or slower mode"]
+  M -- "accepted artifact" --> O["Talos artifact"]
+  N -- "counts rejected work" --> P["Rejected work + verifier cost"]
+  O -- "records accepted work" --> P
+  P -- "speed-quality accounting" --> R["Benchmaxxing speed-quality record"]
+  R -- "promotion review" --> Q["SCF promotion gate"]
 ```
 
 The mode selector chooses among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid routes by task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability. The route records proposed output separately from accepted output, sends the VCM packet into the selected generator, routes accepted spans through Spinoza, Talos, Benchmaxxing, and SCF gates, and keeps multi-seed diffusion or hybrid AR/MTP/diffusion ideas as research hypotheses until source-specific experiments or stronger evidence transitions exist.

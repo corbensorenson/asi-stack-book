@@ -40,8 +40,8 @@ REQUIRED = [
     "appendices/C_claim_evidence_matrix.qmd",
     "appendices/E_codex_test_specs.qmd",
     "appendices/F_changelog.qmd",
-    "appendices/G_bibliography.qmd",
-    "appendices/H_external_literature.qmd",
+    "appendices/G_corben_source_corpus.qmd",
+    "appendices/H_external_sources.qmd",
     "appendices/J_release_editions.qmd",
     "appendices/K_implementation_horizons.qmd",
 ]

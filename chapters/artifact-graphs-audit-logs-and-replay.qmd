@@ -103,18 +103,18 @@ An Artifact Graph Record is the durable node at that boundary. It is not a claim
 
 ```{mermaid}
 flowchart LR
-  A["Typed job"] --> B["Artifact node"]
-  B --> C["Source refs"]
-  B --> D["Context refs"]
-  D --> E["Context transaction refs"]
-  E --> F["Semantic certificate refs"]
-  B --> G["Tool / adapter refs"]
-  B --> H["Audit events"]
-  B --> I["Replay metadata + grade"]
-  B --> J["Claim + test links"]
-  H --> K["Evidence gate"]
-  I --> K
-  J --> K
+  A["Typed job"] -- "produces bounded work" --> B["Artifact node"]
+  B -- "cites source lineage" --> C["Source refs"]
+  B -- "names context use" --> D["Context refs"]
+  D -- "materialized by" --> E["Context transaction refs"]
+  E -- "bounded by" --> F["Semantic certificate refs"]
+  B -- "records effect path" --> G["Tool / adapter refs"]
+  B -- "preserves events" --> H["Audit events"]
+  B -- "declares replay state" --> I["Replay metadata + grade"]
+  B -- "links obligations" --> J["Claim + test links"]
+  H -- "feeds review" --> K["Evidence gate"]
+  I -- "limits reuse" --> K
+  J -- "checks impact" --> K
 ```
 
 The artifact record attaches identity to work product history. It links parent job, sources, context, context transactions, semantic certificates, tools, claims, tests, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims in one node. Incomplete provenance remains visible as a residual, while verified traces and failed traces both become useful: one can support future regression coverage, and the other can prevent repeated failure.

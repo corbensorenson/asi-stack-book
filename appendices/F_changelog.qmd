@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal explicit source appendix split
+
+- Made the existing Appendix G/H source split harder to miss by renaming the generated source-corpus file to `appendices/G_corben_source_corpus.qmd` and the generated external-source file to `appendices/H_external_sources.qmd`. Updated `book_structure.json`, `_quarto.yml` generation, source-appendix validation, publication/book validators, release profiles, README, the master Codex prompt, and the tracked ASI Stack skill so Appendix G is visibly Corben's authored/supplied/local corpus and Appendix H is visibly external sources and literature. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal labeled diagram transitions
+
+- Strengthened `scripts/validate_visual_coverage.py` so a qualifying chapter Mermaid diagram must include at least two labeled transitions in addition to the existing line, edge, and node thresholds. Added explicit transition labels to the artifact graph, personal compute hive, fast generation, Circle proof-contract, artifact steward, and Project Theseus diagrams so their arrows name the governance or evidence handoff instead of merely connecting boxes. Updated the site quality standard, v1.0 status, and generated test-spec text. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, visual proof, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal whole-book Human view validation
 
 - Strengthened `scripts/validate_live_human_view.py` so post-render validation checks that all 67 rendered book pages carry the `AI view` / `Human view` toggle, URL mode contract, and assistive status strings, while preserving the stricter chapter-only checks for live-only heading targets, page-TOC targets, and `.asi-human-only` bridge blocks. Updated the v1.0 status, site-quality standard, writing runbook, release-edition docs, and publication-readiness notes to reflect whole-book toggle coverage. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

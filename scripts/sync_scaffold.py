@@ -525,16 +525,18 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
-It is the working bibliography for Corben's supplied ASI Stack corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+This appendix is only for Corben's authored, supplied, or local-project ASI Stack source corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
 
-External and third-party references are separated into Appendix H so readers and future agents can see what is Corben's corpus and what is outside literature.
+It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
+
+External and third-party sources are a separate appendix: [Appendix H, External Sources and Literature](H_external_sources.qmd).
 
 ## Ownership Boundary
 
 | Appendix | Contains | Does not contain | Evidence effect |
 |---|---|---|---|
 | Appendix G: Corben's Source Corpus | Corben-supplied or Corben-authored ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes the internal architecture corpus; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: External Literature and References | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Appendix H: External Sources and Literature | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|
@@ -547,21 +549,23 @@ External and third-party references are separated into Appendix H so readers and
 - Do not cite a source as supporting a claim until its text has been ingested and a source note exists.
 - Keep speculative or design-synthesis claims labeled as `argument` until source, prototype, or test evidence justifies promotion.
 """
-    (ROOT / "appendices" / "G_bibliography.qmd").write_text(text, encoding="utf-8")
+    (ROOT / "appendices" / "G_corben_source_corpus.qmd").write_text(text, encoding="utf-8")
 
     external_rows = external_literature_rows(records, structure)
-    external_text = f"""# External Literature and References
+    external_text = f"""# External Sources and Literature
 
 This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
 
-These are third-party papers, documentation records, and outside references used for comparison, grounding, or future literature review. They are not Corben's source corpus. A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
+This appendix is only for third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben's authored, supplied, and local-project corpus is a separate appendix: [Appendix G, Corben's Source Corpus](G_corben_source_corpus.qmd).
+
+A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 
 ## Ownership Boundary
 
 | Appendix | Contains | Does not contain | Evidence effect |
 |---|---|---|---|
 | Appendix G: Corben's Source Corpus | Corben-supplied or Corben-authored ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes the internal architecture corpus; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: External Literature and References | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Appendix H: External Sources and Literature | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben's supplied/authored corpus and local project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 ## Source-Noted External Literature Records
 
@@ -593,7 +597,7 @@ Third-party references should be added only when bibliographic metadata is recor
 - Do not report reproduced external results unless the reproduction artifact, command, environment, and result record exist.
 - Keep third-party documentation, papers, and benchmarks at their recorded support boundary.
 """
-    (ROOT / "appendices" / "H_external_literature.qmd").write_text(external_text, encoding="utf-8")
+    (ROOT / "appendices" / "H_external_sources.qmd").write_text(external_text, encoding="utf-8")
 
 
 def write_claim_matrix(structure: dict) -> None:
@@ -861,7 +865,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | Source evidence traceability audit | `python3 scripts/validate_source_evidence_audit.py` | Checks that assigned source/chapter pairs, source notes, chapter listings, and claim-source mappings stay aligned, and reports passage-review coverage. | Passing this check proves source-note/mapping consistency only; it does not quote private passages or promote any support state. |
 | Proof target coverage summary | Generated by `python3 scripts/sync_scaffold.py` from `proofs/proof_triage.json`; checked by `python3 scripts/validate_proof_readiness.py`. | Publishes the current count of proof targets by status, triage class, and recommended route. | Passing the validator proves coverage/accounting consistency only; it does not prove broad chapter claims, source interpretation, model quality, deployed enforcement, or benchmark performance. |
 | Repeated prose validation | `python3 scripts/validate_repeated_prose.py` | Checks chapter files for exact repeated long prose paragraphs that indicate template-shaped drafting. | Passing this check proves only that exact repeated long paragraphs are absent; it is not a full editorial review. |
-| Visual coverage validation | `python3 scripts/validate_visual_coverage.py` | Checks that every chapter has at least one Mermaid diagram and that the landing page references the hero image asset. | Passing this check proves visual coverage only; it does not prove the diagrams are complete or promote chapter claims. |
+| Visual coverage validation | `python3 scripts/validate_visual_coverage.py` | Checks that every chapter has at least one substantive Mermaid diagram with enough lines, edges, nodes, and labeled transitions, and that the landing page references the hero image asset. | Passing this check proves visual coverage only; it does not prove the diagrams are complete or promote chapter claims. |
 
 {proof_coverage.rstrip()}
 """

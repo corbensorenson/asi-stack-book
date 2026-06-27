@@ -10,12 +10,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 MERMAID_BLOCK_RE = re.compile(r"```(?:\{mermaid\}|mermaid)\s*\n(.*?)\n```", re.DOTALL)
 MERMAID_EDGE_RE = re.compile(r"(-->|---|-.->|==>|->>|-->>|-\)|--\)|-x|--x|--o)")
+MERMAID_LABELED_EDGE_RE = re.compile(
+    r"("
+    r"[-.=]+\s*(?:\"[^\"]+\"|\|[^|]+\|)\s*[-.=]*>"
+    r"|[-.=]+>\|[^|]+\|"
+    r"|\b[A-Za-z][A-Za-z0-9_]*\s*[-]+>>\s*[A-Za-z][A-Za-z0-9_]*\s*:"
+    r")"
+)
 MERMAID_NODE_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*)\s*(?=[\[\(\{])")
 MERMAID_DECL_RE = re.compile(r"^\s*(participant|actor|boundary|control|entity|database|collections|queue)\s+([A-Za-z][A-Za-z0-9_]*)\b", re.IGNORECASE)
 
 MIN_DIAGRAM_LINES = 10
 MIN_DIAGRAM_EDGES = 6
 MIN_DIAGRAM_NODES = 7
+MIN_LABELED_EDGES = 2
 
 
 def fail(errors: list[str]) -> None:
@@ -24,28 +32,30 @@ def fail(errors: list[str]) -> None:
     sys.exit(1)
 
 
-def diagram_stats(block: str) -> tuple[int, int, int]:
+def diagram_stats(block: str) -> tuple[int, int, int, int]:
     lines = [
         line.strip()
         for line in block.splitlines()
         if line.strip() and not line.strip().startswith("%%")
     ]
     edges = sum(len(MERMAID_EDGE_RE.findall(line)) for line in lines)
+    labeled_edges = sum(len(MERMAID_LABELED_EDGE_RE.findall(line)) for line in lines)
     nodes: set[str] = set()
     for line in lines:
         nodes.update(MERMAID_NODE_RE.findall(line))
         declaration = MERMAID_DECL_RE.match(line)
         if declaration:
             nodes.add(declaration.group(2))
-    return len(lines), edges, len(nodes)
+    return len(lines), edges, len(nodes), labeled_edges
 
 
 def is_substantive_diagram(block: str) -> bool:
-    line_count, edge_count, node_count = diagram_stats(block)
+    line_count, edge_count, node_count, labeled_edge_count = diagram_stats(block)
     return (
         line_count >= MIN_DIAGRAM_LINES
         and edge_count >= MIN_DIAGRAM_EDGES
         and node_count >= MIN_DIAGRAM_NODES
+        and labeled_edge_count >= MIN_LABELED_EDGES
     )
 
 
@@ -68,8 +78,9 @@ def main() -> None:
                 errors.append(
                     "Chapter Mermaid diagram is too thin: "
                     f"{chapter['file']} "
-                    f"(best lines={best[0]}, edges={best[1]}, nodes={best[2]}; "
-                    f"minimum lines={MIN_DIAGRAM_LINES}, edges={MIN_DIAGRAM_EDGES}, nodes={MIN_DIAGRAM_NODES})"
+                    f"(best lines={best[0]}, edges={best[1]}, nodes={best[2]}, labeled_edges={best[3]}; "
+                    f"minimum lines={MIN_DIAGRAM_LINES}, edges={MIN_DIAGRAM_EDGES}, "
+                    f"nodes={MIN_DIAGRAM_NODES}, labeled_edges={MIN_LABELED_EDGES})"
                 )
 
     index = (ROOT / "index.qmd").read_text(encoding="utf-8", errors="ignore")

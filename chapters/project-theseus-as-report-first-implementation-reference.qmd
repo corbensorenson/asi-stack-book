@@ -102,21 +102,21 @@ The implementation-reference view is two coupled loops: the Theseus report loop 
 
 ```{mermaid}
 flowchart LR
-  Goal["Goal, benchmark, or operator task"] --> Plan["Plan compiler contract and semantic IR"]
-  Plan --> Route["Octopus router and bounded arms"]
-  Route --> Work["SymLiquid, tools, Hive task kinds"]
-  Work --> Reports["Reports, ledgers, traces, work board"]
-  Reports --> Evidence["Evidence state and missing-artifact row"]
-  Evidence --> Gate["Architecture, resource, promotion, and safety gates"]
-  Gate --> Residual["Residual escrow and intervention ladder"]
-  Residual --> Structure["Tool, adapter, checkpoint, or smallest source change"]
-  Structure --> Goal
+  Goal["Goal, benchmark, or operator task"] -- "compiled request" --> Plan["Plan compiler contract and semantic IR"]
+  Plan -- "route under bounds" --> Route["Octopus router and bounded arms"]
+  Route -- "dispatch work" --> Work["SymLiquid, tools, Hive task kinds"]
+  Work -- "emit reports" --> Reports["Reports, ledgers, traces, work board"]
+  Reports -- "public-safe packet" --> Evidence["Evidence state and missing-artifact row"]
+  Evidence -- "gate review" --> Gate["Architecture, resource, promotion, and safety gates"]
+  Gate -- "blocked or partial" --> Residual["Residual escrow and intervention ladder"]
+  Residual -- "smallest intervention" --> Structure["Tool, adapter, checkpoint, or smallest source change"]
+  Structure -- "new pressure" --> Goal
 
-  Circle["Circle finite contract pack"] --> Transfer["Theseus Circle transfer lane"]
-  Transfer --> Fixtures["Private workload design and structural smokes"]
-  Fixtures --> Boundary["Claim-boundary ledger"]
-  Boundary --> Gate
-  Boundary -. blocks .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
+  Circle["Circle finite contract pack"] -- "structural receipts" --> Transfer["Theseus Circle transfer lane"]
+  Transfer -- "private design only" --> Fixtures["Private workload design and structural smokes"]
+  Fixtures -- "separate claim scope" --> Boundary["Claim-boundary ledger"]
+  Boundary -- "constrains review" --> Gate
+  Boundary -. "blocks overclaim" .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
 ```
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
