@@ -256,4 +256,4 @@ Virtual Context ABI is the stack's memory/context contract. It keeps durable mem
 
 The chapter's rule is simple: context that cannot be addressed, versioned, authorized, represented, and faulted should not be silently treated as usable memory. The next chapter moves inside the materialized packet and asks what each page, cell, and summary must carry so compressed context does not impersonate evidence.
 
-The practical standard is that context access should be replayable. If a future auditor cannot reconstruct why the model saw a packet, what it was allowed to mean, and when its authority expired, the ABI did not do its job.
+Context access should be replayable. If a future auditor cannot reconstruct why the model saw a packet, what it was allowed to mean, and when its authority expired, the ABI did not do its job.

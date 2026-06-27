@@ -240,4 +240,4 @@ Intent-to-Execution Contracts is the stack's first operational handoff. It turns
 
 The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action. The next chapter narrows from the whole trace to the command language that makes the first machine-readable handoff precise.
 
-The practical standard is that a downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract.
+A downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract.

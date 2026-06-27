@@ -256,4 +256,4 @@ Context Transactions, Snapshots, Mounts, and Taint gives VCM runtime semantics. 
 
 The rule is that memory operations must leave a reviewable trace. If a context view cannot satisfy consistency, taint, or deletion closure, it should fault before becoming working context. The next chapter asks a separate question: even when the context view is coherent and authorized, is it adequate for the claim the system is about to make?
 
-The practical standard is that context must fail closed. A system that cannot explain the view it read should not use that view as if it were ordinary memory.
+Context must fail closed. A system that cannot explain the view it read should not use that view as if it were ordinary memory.

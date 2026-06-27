@@ -255,4 +255,4 @@ The chapter's job is to make that implementation lane useful and honest: concret
 
 That transition matters because compression only helps the stack when the runtime can still say what was routed, what was verified, what became residual, and what remained too weak for promotion.
 
-The practical standard is that a runtime reference should make future reproduction easier. If a reader cannot tell what to replay, what was denied, what evidence state each field has, and what is still blocked, the implementation reference is not yet doing architectural work.
+A runtime reference should make future reproduction easier. If a reader cannot tell what to replay, what was denied, what evidence state each field has, and what is still blocked, the implementation reference is not yet doing architectural work.

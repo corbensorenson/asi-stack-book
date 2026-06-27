@@ -244,4 +244,4 @@ Cyclic memory contracts make structural facts visible: residue, winding, freshne
 
 This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved. The next chapter applies the same boundary to adapters, RoPE-style phase banks, and cyclic mixers, where parameter counts and exact phase facts are easy to overread.
 
-The practical standard is that a memory contract should make the cheap fact and the hard claim impossible to confuse. Slot freshness, coverage, and loop exit are cheap facts; retrieval quality, reasoning quality, and useful long context are hard claims.
+A memory contract should make the cheap fact and the hard claim impossible to confuse. Slot freshness, coverage, and loop exit are cheap facts; retrieval quality, reasoning quality, and useful long context are hard claims.

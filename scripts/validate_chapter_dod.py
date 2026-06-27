@@ -61,6 +61,7 @@ BANNED_BEYOND_BOILERPLATE = [
     "The crosswalk identifies",
     "A mature implementation would make that contract visible through",
     "The smallest useful implementation is",
+    "The practical standard is",
     "The current fixture",
     "The fixture should",
     "The schema validates",
