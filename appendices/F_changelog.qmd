@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Human bridge transition polish
+
+- Replaced the repeated `The next question is` transition formula in Human Reading Path bridges with chapter-specific prose for the efficiency hypothesis, PlanForge DAGs, semantic context cells, Spinoza verification, and personal compute hives. Extended `scripts/validate_human_reading_paths.py` and the writing runbook so future bridges avoid that repeated cadence. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.
+
 ## 2026-06-27 - v1.0 improvement goal Human bridge self-reference polish
 
 - Removed remaining self-referential `chapter` phrasing from Human Reading Path bridge bodies across the affected chapters so the live Human view and generated reader spine read more like continuous book prose. Strengthened `scripts/validate_human_reading_paths.py` to catch case variants and future `chapter` meta-language inside bridge bodies, and updated the writing runbook and site-quality standard to document the rule. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.

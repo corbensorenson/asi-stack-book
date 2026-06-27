@@ -37,6 +37,7 @@ BANNED_BRIDGE_PHRASES = (
     "The human test",
     "The human caveat",
     "The human promise",
+    "The next question is",
 )
 BANNED_BRIDGE_PATTERNS = (
     (re.compile(r"\bchapter\b", re.IGNORECASE), "chapter meta-language"),
