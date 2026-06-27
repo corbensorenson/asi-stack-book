@@ -512,8 +512,12 @@ def main() -> None:
                 "reader_evidence_boundary_validation.report_path must be "
                 "build/reader_evidence_boundaries_report.json."
             )
-        if evidence_boundary_policy.get("required_core_claim_marker") is not True:
-            errors.append("reader_evidence_boundary_validation.required_core_claim_marker must be true.")
+        if evidence_boundary_policy.get("required_live_source_core_claim_marker") is not True:
+            errors.append("reader_evidence_boundary_validation.required_live_source_core_claim_marker must be true.")
+        if evidence_boundary_policy.get("strip_raw_reader_core_claim_marker") is not True:
+            errors.append("reader_evidence_boundary_validation.strip_raw_reader_core_claim_marker must be true.")
+        if evidence_boundary_policy.get("required_reader_claim_text") is not True:
+            errors.append("reader_evidence_boundary_validation.required_reader_claim_text must be true.")
         if evidence_boundary_policy.get("required_plain_support_boundary") is not True:
             errors.append("reader_evidence_boundary_validation.required_plain_support_boundary must be true.")
         purpose = evidence_boundary_policy.get("purpose")
@@ -540,6 +544,8 @@ def main() -> None:
             "toc_link_marker": "data-asi-live-toc-link",
             "human_toc_link_marker": "data-asi-human-toc-link",
             "ai_toc_link_marker": "data-asi-ai-toc-link",
+            "core_claim_marker_class": "asi-core-claim-marker",
+            "human_view_core_claim_marker_policy": "hide raw bracketed core-claim markers in Human view while preserving claim text and support-state prose",
             "assistive_description_class": "asi-sr-only",
             "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
             "ai_only_class": "asi-ai-only",

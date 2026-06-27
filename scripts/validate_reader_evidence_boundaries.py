@@ -3,9 +3,12 @@
 
 The live book can strip repeated research scaffolding for the reader edition and
 live Human view, but the generated reader prose must still preserve each
-chapter's core-claim label and support state. This guard checks the generated
-reader source, not the live chapter source alone, so it catches regressions
-where evidence caveats are hidden inside stripped sections.
+chapter's core-claim text and support-state boundary. The live source keeps the
+raw core-claim marker for AI/research auditability; the generated reader source
+must strip that machine marker while preserving the claim prose and plain
+support boundary. This guard checks the generated reader source, not the live
+chapter source alone, so it catches regressions where evidence caveats are
+hidden inside stripped sections.
 """
 
 from __future__ import annotations
@@ -27,6 +30,12 @@ CORE_MARKER_RE = re.compile(
     r"\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
     r"label:\s*(?P<label>[^,\]]+),\s*"
     r"support:\s*(?P<support>[^\]]+)\]"
+)
+CORE_MARKER_LINE_RE = re.compile(
+    r"^\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
+    r"label:\s*(?P<label>[^,\]]+),\s*"
+    r"support:\s*(?P<support>[^\]]+)\]\s*(?P<claim_text>.*?)\s*$",
+    re.MULTILINE,
 )
 
 
@@ -50,7 +59,7 @@ def flatten_chapters(structure: dict) -> list[dict[str, object]]:
 
 def markers_for_chapter(text: str, chapter_id: str) -> list[dict[str, str]]:
     markers: list[dict[str, str]] = []
-    for match in CORE_MARKER_RE.finditer(text):
+    for match in CORE_MARKER_LINE_RE.finditer(text):
         if match.group("chapter_id") != chapter_id:
             continue
         markers.append(
@@ -58,6 +67,7 @@ def markers_for_chapter(text: str, chapter_id: str) -> list[dict[str, str]]:
                 "label": match.group("label").strip(),
                 "support": match.group("support").strip(),
                 "marker": match.group(0),
+                "claim_text": match.group("claim_text").strip(),
             }
         )
     return markers
@@ -78,6 +88,17 @@ def has_plain_support_boundary(section: str, support: str) -> bool:
         rf"support state remains `?{support}`?",
     ]
     return any(re.search(pattern, normalized) for pattern in patterns)
+
+
+def normalized_prose(text: str) -> str:
+    text = re.sub(CORE_MARKER_RE, "", text)
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def contains_claim_text(section: str, claim_text: str) -> bool:
+    if not claim_text.strip():
+        return False
+    return normalized_prose(claim_text) in normalized_prose(section)
 
 
 def validate_generated_reader(output_dir: Path) -> dict[str, object]:
@@ -110,6 +131,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         reader_text = reader_path.read_text(encoding="utf-8", errors="ignore")
         source_markers = markers_for_chapter(source_text, chapter_id)
         reader_markers = markers_for_chapter(reader_text, chapter_id)
+        reader_raw_marker_count = len(CORE_MARKER_RE.findall(reader_text))
         reader_core = core_claim_section(reader_text)
 
         record: dict[str, object] = {
@@ -117,7 +139,8 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             "file": relative,
             "manifest_support": expected_support,
             "source_marker_count": len(source_markers),
-            "reader_marker_count": len(reader_markers),
+            "reader_raw_marker_count": reader_raw_marker_count,
+            "reader_claim_text_retained": False,
             "plain_support_boundary": False,
         }
 
@@ -125,31 +148,32 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             errors.append(f"{relative}: expected one live-source core claim marker, found {len(source_markers)}.")
             records.append(record)
             continue
-        if len(reader_markers) != 1:
-            errors.append(f"{relative}: expected one generated-reader core claim marker, found {len(reader_markers)}.")
+        if reader_markers or reader_raw_marker_count:
+            errors.append(
+                f"{relative}: generated reader chapter retained {reader_raw_marker_count} raw core claim marker(s)."
+            )
             records.append(record)
             continue
 
         source_marker = source_markers[0]
-        reader_marker = reader_markers[0]
         record["source_label"] = source_marker["label"]
-        record["reader_label"] = reader_marker["label"]
         record["source_support"] = source_marker["support"]
-        record["reader_support"] = reader_marker["support"]
+        record["source_claim_text"] = source_marker["claim_text"]
 
-        if source_marker != reader_marker:
+        if source_marker["support"] != expected_support:
             errors.append(
-                f"{relative}: generated reader core marker differs from live source marker "
-                f"{source_marker['marker']!r} != {reader_marker['marker']!r}."
-            )
-        if reader_marker["support"] != expected_support:
-            errors.append(
-                f"{relative}: generated reader support {reader_marker['support']!r} "
+                f"{relative}: live source marker support {source_marker['support']!r} "
                 f"does not match manifest evidence_level {expected_support!r}."
             )
         if not reader_core:
             errors.append(f"{relative}: generated reader chapter is missing a Core Claim section.")
         else:
+            claim_text_retained = contains_claim_text(reader_core, source_marker["claim_text"])
+            record["reader_claim_text_retained"] = claim_text_retained
+            if not claim_text_retained:
+                errors.append(
+                    f"{relative}: generated reader Core Claim section lacks the live source claim text after marker stripping."
+                )
             plain_boundary = has_plain_support_boundary(reader_core, expected_support)
             record["plain_support_boundary"] = plain_boundary
             if not plain_boundary:
@@ -207,7 +231,7 @@ def main() -> None:
 
     print(
         "Reader evidence-boundary validation passed: "
-        f"{report['chapter_count']} chapters preserve core claim markers and support boundaries."
+        f"{report['chapter_count']} chapters strip raw core claim markers while preserving claim text and support boundaries."
     )
 
 

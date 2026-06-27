@@ -349,11 +349,15 @@ async function validateChapterPage(page, fileUrl, pageId) {
   await page.goto(`${fileUrl}?view=human`, { waitUntil: "domcontentloaded" });
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
+  await page.waitForSelector(".asi-core-claim-marker", { state: "attached", timeout: 5000 });
 
   const liveSections = await page.locator('section[data-asi-live-section="true"]').count();
   const humanBlocks = await page.locator(".asi-human-only").count();
+  const claimMarkers = await page.locator(".asi-core-claim-marker").count();
   const liveVisibleHuman = await visibleCount(page, 'section[data-asi-live-section="true"]');
   const humanVisibleHuman = await visibleCount(page, ".asi-human-only");
+  const claimMarkersVisibleHuman = await visibleCount(page, ".asi-core-claim-marker");
+  const claimTextVisibleHuman = await visibleCount(page, ".asi-core-claim-text");
   const liveTocVisibleHuman = await visibleCount(page, '#TOC [data-asi-live-toc-link="true"]');
   const humanStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const humanLayout = await validateResponsiveLayout(page, pageId, "human");
@@ -362,8 +366,11 @@ async function validateChapterPage(page, fileUrl, pageId) {
   record.checks.human_url_mode = {
     live_sections: liveSections,
     human_blocks: humanBlocks,
+    core_claim_markers: claimMarkers,
     visible_live_sections: liveVisibleHuman,
     visible_human_blocks: humanVisibleHuman,
+    visible_core_claim_markers: claimMarkersVisibleHuman,
+    visible_core_claim_text: claimTextVisibleHuman,
     visible_live_toc_links: liveTocVisibleHuman,
     status_text: humanStatus || "",
     layout: humanLayout,
@@ -372,21 +379,26 @@ async function validateChapterPage(page, fileUrl, pageId) {
 
   if (liveSections <= 0) throw new Error(`${pageId}: no live-only sections were marked.`);
   if (humanBlocks <= 0) throw new Error(`${pageId}: no human-only bridge block rendered.`);
+  if (claimMarkers <= 0) throw new Error(`${pageId}: no core claim markers were wrapped for reading-mode control.`);
   if (liveVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${liveVisibleHuman} live-only sections visible.`);
   if (liveTocVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${liveTocVisibleHuman} live-only TOC links visible.`);
   if (humanVisibleHuman <= 0) throw new Error(`${pageId}: Human view did not show the human-only bridge.`);
+  if (claimMarkersVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${claimMarkersVisibleHuman} raw core claim markers visible.`);
+  if (claimTextVisibleHuman <= 0) throw new Error(`${pageId}: Human view hid the core claim text with the marker.`);
   if (!(humanStatus || "").includes("Human view active.")) throw new Error(`${pageId}: Human view status text did not update.`);
 
   await page.locator('[data-asi-reading-choice="ai"]').click();
   await waitForMode(page, "ai");
   const liveVisibleAi = await visibleCount(page, 'section[data-asi-live-section="true"]');
   const humanVisibleAi = await visibleCount(page, ".asi-human-only");
+  const claimMarkersVisibleAi = await visibleCount(page, ".asi-core-claim-marker");
   const aiStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const aiLayout = await validateResponsiveLayout(page, pageId, "ai");
   const aiDiagrams = await validateRenderedDiagrams(page, pageId, "ai");
   record.checks.ai_click_mode = {
     visible_live_sections: liveVisibleAi,
     visible_human_blocks: humanVisibleAi,
+    visible_core_claim_markers: claimMarkersVisibleAi,
     status_text: aiStatus || "",
     url: page.url(),
     layout: aiLayout,
@@ -394,6 +406,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
   };
   if (liveVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore live-only sections.`);
   if (humanVisibleAi !== 0) throw new Error(`${pageId}: AI view left ${humanVisibleAi} human-only bridge blocks visible.`);
+  if (claimMarkersVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore raw core claim markers.`);
   if (!page.url().includes("view=ai")) throw new Error(`${pageId}: AI click did not update the URL mode.`);
   if (!(aiStatus || "").includes("AI/research view active.")) throw new Error(`${pageId}: AI view status text did not update.`);
 
@@ -411,11 +424,13 @@ async function validateChapterPage(page, fileUrl, pageId) {
   record.checks.ai_url_mode = {
     visible_live_sections: await visibleCount(page, 'section[data-asi-live-section="true"]'),
     visible_human_blocks: await visibleCount(page, ".asi-human-only"),
+    visible_core_claim_markers: await visibleCount(page, ".asi-core-claim-marker"),
     layout: await validateResponsiveLayout(page, pageId, "ai-url"),
     diagrams: await validateRenderedDiagrams(page, pageId, "ai-url"),
   };
   if (record.checks.ai_url_mode.visible_live_sections <= 0) throw new Error(`${pageId}: ?view=ai did not show live-only sections.`);
   if (record.checks.ai_url_mode.visible_human_blocks !== 0) throw new Error(`${pageId}: ?view=ai did not hide human bridge blocks.`);
+  if (record.checks.ai_url_mode.visible_core_claim_markers <= 0) throw new Error(`${pageId}: ?view=ai did not show raw core claim markers.`);
 
   return record;
 }

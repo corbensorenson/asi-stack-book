@@ -26,6 +26,7 @@
     "3:claim-source mapping status",
     "3:formalization hooks"
   ]);
+  const coreClaimMarkerPattern = /^\[([A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+)\]\s+(.+)$/;
 
   document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
 
@@ -98,6 +99,24 @@
         const item = link.closest("li") || link;
         item.setAttribute(marker, "true");
       });
+    });
+  }
+
+  function markCoreClaimMarkers() {
+    document.querySelectorAll("main.content p, #quarto-document-content p").forEach((paragraph) => {
+      if (paragraph.querySelector(".asi-core-claim-marker")) return;
+      const text = (paragraph.textContent || "").replace(/\s+/g, " ").trim();
+      const match = text.match(coreClaimMarkerPattern);
+      if (!match) return;
+      paragraph.setAttribute("data-asi-core-claim", "true");
+      paragraph.textContent = "";
+      const marker = document.createElement("span");
+      marker.className = "asi-core-claim-marker";
+      marker.textContent = `[${match[1]}] `;
+      const claim = document.createElement("span");
+      claim.className = "asi-core-claim-text";
+      claim.textContent = match[2];
+      paragraph.append(marker, claim);
     });
   }
 
@@ -188,6 +207,7 @@
     const liveIds = markLiveSections();
     markLiveTocLinks(liveIds);
     markViewModeTocLinks();
+    markCoreClaimMarkers();
     insertToggle();
     setMode(initialMode());
   });

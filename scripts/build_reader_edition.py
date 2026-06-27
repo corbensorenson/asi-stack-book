@@ -27,6 +27,12 @@ FENCED_DIV_CLOSE_RE = re.compile(r"^(:{3,})\s*$")
 AI_ONLY_CLASS = "asi-ai-only"
 HUMAN_ONLY_CLASS = "asi-human-only"
 HUMAN_READING_PATH_HEADING = "## Human Reading Path"
+CORE_CLAIM_MARKER_RE = re.compile(
+    r"^\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
+    r"label:\s*(?P<label>[^,\]]+),\s*"
+    r"support:\s*(?P<support>[^\]]+)\]\s+",
+    re.MULTILINE,
+)
 
 
 def load_json(path: Path) -> object:
@@ -153,6 +159,11 @@ def apply_reader_view_blocks(text: str) -> tuple[str, dict[str, int]]:
     return "\n".join(output).strip() + "\n", counts
 
 
+def strip_core_claim_markers(text: str) -> tuple[str, int]:
+    cleaned, count = CORE_CLAIM_MARKER_RE.subn("", text)
+    return cleaned, count
+
+
 def find_profile(profile_id: str) -> dict:
     data = load_release_profiles()
     profiles = data.get("profiles", [])
@@ -191,11 +202,14 @@ def clean_file(
     text = src.read_text(encoding="utf-8")
     cleaned, removed = strip_sections(text, strip_headings)
     cleaned, view_block_counts = apply_reader_view_blocks(cleaned)
+    cleaned, marker_count = strip_core_claim_markers(cleaned)
     if chapter_title:
         cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(cleaned, encoding="utf-8")
     removed.update({key: count for key, count in view_block_counts.items() if count})
+    if marker_count:
+        removed["core_claim_markers_removed"] = marker_count
     return removed
 
 
