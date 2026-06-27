@@ -56,6 +56,14 @@ This chapter uses source-note material for VCM, Talos, Octopus Router, RMI, Toke
 
 After MoECOT gives the book a runtime evidence shape, this chapter asks where that runtime can live. The answer is not "any reachable device." It is a policy-bounded hive where portals, workers, stores, rented nodes, and project machines participate only through explicit identity, data, tool, network, approval, and revocation records.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The runtime chapter asks what an orchestrator should emit. This chapter asks where such orchestration can safely live. A personal compute hive is not every device the system can reach; it is a governed federation of portals, workers, storage, rented nodes, and project machines.
+
+For the reader, the practical question is consent and containment. Edge intelligence becomes useful only when work placement respects data locality, owner policy, cost, privacy, rollback, and authority boundaries instead of treating personal hardware as free ambient compute.
+:::
+
 ## Problem
 
 A governed ASI stack needs a place to live. If the stack is only a cloud service, it inherits the cloud provider's boundaries, cost model, availability, surveillance risk, and authority assumptions. If it is only a local application, it cannot coordinate the phones, laptops, desktops, network storage, old machines, workshop computers, rented nodes, and project machines that already form the practical substrate of a person's work.

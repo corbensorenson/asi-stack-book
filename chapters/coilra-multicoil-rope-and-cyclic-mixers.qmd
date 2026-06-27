@@ -45,6 +45,14 @@ The previous chapter applies structural contracts to memory and recurrence. This
 
 The adoption object is a tradeoff packet. A cyclic proposal should say which structural receipt it has, which workload it targets, which ordinary baselines it faces, which resource costs it pays, and which non-claims must follow it.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Part III closes by applying the same discipline inside model mechanisms: cyclic adapters, phase banks, RoPE variants, route heads, and mixers. These may become useful substrate candidates, but the book treats them as candidates until baselines, diagnostics, and failure cases exist.
+
+The chapter's job is to keep mechanism and evidence separate. A cyclic mixer can be interesting as structure, but it does not become better context, faster inference, lower memory, or stronger reasoning until the stack can show the relevant artifact and boundary.
+:::
+
 ## Problem
 
 Position encodings, adapters, route heads, and mixers can contain real cyclic or block-cyclic structure. When they do, proofs and structural diagnostics can prevent confusion about residues, winding, collisions, load, parameter counts, and shift-equivariance. But those structural facts are not model-quality facts.

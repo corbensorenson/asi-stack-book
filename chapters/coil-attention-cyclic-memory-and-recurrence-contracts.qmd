@@ -44,6 +44,14 @@ The previous chapter defines how proof-carrying receipts preserve finite structu
 
 The chapter is therefore about admission control for memory structures. A cyclic or sparse mechanism may be allowed to participate in a task only when its structural contract matches the task's authority, freshness, coverage, and fallback requirements.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Proof-carrying receipts become especially important for memory and recurrence, where structural language can sound like semantic understanding. This chapter asks how cyclic memory, sparse coverage, freshness, lag, and recurrence schedules should be recorded before anyone treats them as reasoning quality.
+
+The human caveat is that a fresh slot is not a true belief, and a covered lag is not a solved task. Recurrence contracts should preserve structural facts while leaving semantic claims to verification and evidence.
+:::
+
 ## Problem
 
 Long context and recurrence can fail in quiet ways: stale reads, duplicate requests, uncovered lags, alias collisions, non-terminating loops, overthinking, or hidden work. Coil Attention and Memory contributes a useful frame: finite cyclic structures can make some of these hazards visible, but visibility is not the same thing as quality.

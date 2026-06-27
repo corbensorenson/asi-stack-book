@@ -48,6 +48,14 @@ Closing the compression/resource cluster, this chapter asks whether the stack ac
 
 This chapter is the cost counterpart to the security kernel. Least exposure, verification, review, replay, and rollback all consume resources. A governed stack has to budget for those costs explicitly rather than letting local optimization make them disappear.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The previous chapters offer cheaper routes, smaller artifacts, faster generation, and richer representations. This chapter asks whether those moves actually saved anything after verification, repair, fallback, memory pressure, human review, and risk are counted.
+
+The book's efficiency thesis depends on this accounting. A route is not efficient because it looks cheap at the model boundary. It is efficient only when the full system cost and the remaining residual burden are visible.
+:::
+
 ## Problem
 
 ASI architecture consumes scarce resources: tokens, context, verifier time, model calls, tool time, storage, latency, human attention, review capacity, and risk budget. If those resources are implicit, the system will overspend expensive cognition on low-value tasks, cut verification when it is most needed, and overload at synchronized demand spikes.

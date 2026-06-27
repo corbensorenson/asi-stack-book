@@ -59,6 +59,14 @@ The browser-GPT note that motivated this chapter is treated as author-intent and
 
 Coming after generate-verify-repair, fast generation is the time-domain version of the same discipline. A faster path is valuable only when accepted output, verifier cost, repair cost, fallback, memory pressure, and task success improve after the whole route is counted.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Compression is not the only way speed matters. This chapter looks at the generation substrate itself: how much planning, verification, routing, and tool use can fit inside a fixed latency and compute budget.
+
+The reader should separate speed from intelligence. Faster generation can make a stack more usable, but only if it preserves verification and authority boundaries. Raw tokens per second are not a substitute for evidence that the system kept the right obligations alive.
+:::
+
 ## Problem
 
 The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.

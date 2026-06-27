@@ -46,6 +46,14 @@ Opening Part III, this chapter receives the verified procedures and specialist c
 
 The route is a lease, not a preference. It grants a specialist a task-local envelope for context, tools, budget, evidence obligation, and fallback behavior, and it expires when the task or route state ends.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Part II ended by turning repeated work into procedural memory. Part III begins by asking which capability should handle the next piece of work. Routing is the layer that chooses among specialists, cores, tools, memories, and procedures without letting selection become unbounded authority.
+
+For a human reader, this chapter is about assignment under constraint. A route is not just a recommendation. It should carry scope, readiness, authority, residual burden, and a reason why this capability is adequate for this task right now.
+:::
+
 ## Problem
 
 The stack cannot route every task to one general cognitive core and still claim local authority, local memory, readiness-aware selection, or clean rollback. The more tasks the system accepts, the more it needs a way to say which bounded capability should act, what it is allowed to see, what tools it may use, what evidence qualifies it, and where the result should go if the route fails.

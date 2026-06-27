@@ -47,6 +47,14 @@ Following artifact compression, semantic representation shifts the compression q
 
 The chapter's central discipline is semantic leasing. A semantic node is allowed to represent a concept for a bounded purpose, under a declared grounding state, with reviewable provenance and a revocation or supersession path. It is not a permanent claim that the system has captured the concept itself.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Artifact compression asks how to store and route outputs. Semantic representation asks how to structure meaning itself. Trees, graphs, and typed semantic tokens can make concepts easier to inspect, route, and revise, but they also introduce new ways to lose context.
+
+For the reader, this chapter is about representation discipline. A semantic tree is useful only if provenance, permitted use, adequacy limits, hierarchy changes, and residual uncertainty travel with it.
+:::
+
 ## Problem
 
 The ASI Stack needs representations that are easier to inspect, update, route, and verify than opaque token continuations alone. A model can generate fluent claims while hiding which concepts, sources, relations, and assumptions it used. Tree-structured or graph-structured representations are attractive because they can expose paths, provenance, hierarchy, and residual attributes.

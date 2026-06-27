@@ -50,6 +50,14 @@ Following readiness gates, this chapter asks what a concrete runtime would have 
 
 The implementation-reference role is deliberately narrow. MoECOT can organize what runtime evidence should look like, but a runtime name is not itself a runtime result. The book should be able to ingest a MoECOT packet without trusting MoECOT branding.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+After routing and readiness gates, the book needs a concrete runtime shape to reason about. This chapter uses MoECOT as implementation-reference context for the kind of multi-core orchestration record the stack would need: specialist lanes, ledgers, replay hooks, handoff state, residuals, and readiness evidence.
+
+The boundary is important. MoECOT is not treated here as reproduced proof that the architecture works. It is treated as a useful target shape: if a runtime wants to strengthen claims in this book, these are the kinds of artifacts it should emit.
+:::
+
 ## Problem
 
 The book needs at least one concrete runtime shape for the architecture it describes. Otherwise the stack can become a set of persuasive layers without a believable operational surface. A governed ASI stack needs a compact orchestrator, specialist lanes, control-plane gates, ledgers, replay, handoff, and readiness boundaries that line up with the rest of the book.

@@ -47,6 +47,14 @@ After routing, readiness determines whether a semantically plausible route is al
 
 Readiness is therefore an obligation state, not a score. A target is ready only for a scope, authority envelope, freshness window, workload family, and fallback path. Outside that envelope, the same target is unready until a new gate says otherwise.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Routing can identify a plausible specialist, but plausibility is not readiness. This chapter asks when a route, model, tool, memory packet, or procedure is allowed to become ordinary execution and when it must stay in escrow, quarantine, canary, or review.
+
+The human point is that uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should hold the residual explicitly until the evidence catches up.
+:::
+
 ## Problem
 
 A specialist can be useful without being ready. It can pass a narrow benchmark and still hide residual failures. It can improve on the frontier and regress on the floor. It can be safe in canary and unsafe as default. The stack therefore needs lifecycle states that are stricter than "available" and richer than a single score.

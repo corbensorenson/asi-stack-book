@@ -40,6 +40,14 @@ This chapter uses BBVCA v9 as the primary discipline for contract-relative gener
 
 Following compact generative systems, this chapter handles the stricter case where compressed generation claims reconstruction. If a generator fails to carry the whole target, the exact remainder must be paid as repair, fallback, or negative rate evidence rather than hidden inside a success story.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Compact generative systems can save work only if their failures are accounted for. This chapter handles the stricter case: a generator claims it can reconstruct an artifact, and the verifier must decide what is exact, what needs repair, and what burden remains.
+
+For a human reader, the core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth.
+:::
+
 ## Problem
 
 Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.

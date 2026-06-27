@@ -44,6 +44,14 @@ After the personal-hive substrate, compactness becomes an economic and governanc
 
 Compactness is therefore a state claim, not a word-count claim. A representation is compact only relative to a target, generator, verifier, residual channel, cost ledger, and permitted use.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Once the stack has routed work onto governed compute, compactness becomes tempting. This chapter explains why smaller seeds, summaries, procedures, or generators are useful only when the remaining burden is honest.
+
+The human test is whether compactness moves complexity or merely hides it. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, and what residual cost it leaves for future readers or agents.
+:::
+
 ## Problem
 
 The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, or human review. A small seed that requires unbounded search is not efficient. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.

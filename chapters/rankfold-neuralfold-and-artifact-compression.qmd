@@ -44,6 +44,14 @@ After fast generation, the compression question returns to stored artifacts. A c
 
 This chapter therefore treats compression as an evidential firewall, not a storage trick. The system may choose a smaller representation for a task, but the smaller representation does not inherit every property of the full artifact. It earns only the properties that its reconstruction contract, residual ledger, probes, and downstream utility checks actually support.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+After fast generation, the book returns to stored artifacts. RankFold and NeuralFold are treated as compression-architecture ideas: ways to represent large artifacts more cheaply while preserving routes back to the full object when needed.
+
+The human caveat is that a compressed artifact is not automatically a source of truth. The stack needs fallback, probes, residual coding, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
+:::
+
 ## Problem
 
 The stack will store source documents, artifacts, logs, benchmark traces, models, simulations, and generated outputs. Storage and transfer cost matter, but artifact compression is dangerous when it damages semantics, loses decoder determinism, hides residual coding cost, or makes fallback so common that the apparent savings disappear.

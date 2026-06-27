@@ -45,6 +45,14 @@ The previous chapter says optional substrates need baselines before adoption. Th
 
 The receipt is a passport for a structural fact, not a promotion ticket for a substrate. It lets a downstream consumer know what was proven, how to check the package boundary, and which claims remain outside the proof.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+The previous chapter says optional substrates need baselines and boundaries. Circle Calculus narrows that idea to proof-carrying structural facts: finite claims that can move through the stack with receipt references, deterministic fields, and replay expectations.
+
+For the reader, this is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, and what the result does not imply.
+:::
+
 ## Problem
 
 The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
