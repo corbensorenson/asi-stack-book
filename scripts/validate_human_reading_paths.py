@@ -38,6 +38,9 @@ BANNED_BRIDGE_PHRASES = (
     "The human caveat",
     "The human promise",
 )
+BANNED_BRIDGE_PATTERNS = (
+    (re.compile(r"\bchapter\b", re.IGNORECASE), "chapter meta-language"),
+)
 
 
 def load_structure() -> dict:
@@ -164,9 +167,13 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
             errors.append(f"{relative}: Human Reading Path has {words} words; maximum is {MAX_BRIDGE_WORDS}.")
         if "::: " in block_text or f".{HUMAN_CLASS}" in block_text:
             errors.append(f"{relative}: Human Reading Path text contains a nested fenced-div marker.")
+        normalized_block = block_text.lower()
         for phrase in BANNED_BRIDGE_PHRASES:
-            if phrase in block_text:
+            if phrase.lower() in normalized_block:
                 errors.append(f"{relative}: Human Reading Path uses meta-reader phrase {phrase!r}.")
+        for pattern, label in BANNED_BRIDGE_PATTERNS:
+            if pattern.search(block_text):
+                errors.append(f"{relative}: Human Reading Path uses {label}.")
         for forbidden in ("## Chapter status", "## Drafting guardrail", "## Codex test plan", "## Source crosswalk"):
             if forbidden in block_text:
                 errors.append(f"{relative}: Human Reading Path contains live-only heading {forbidden!r}.")
