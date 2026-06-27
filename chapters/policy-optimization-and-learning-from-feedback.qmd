@@ -66,6 +66,14 @@ The previous chapter turns benchmark pressure into evidence records. This chapte
 
 The policy update is a behavior-change lease. It grants a candidate policy limited authority to act under a target layer, evaluation scope, drift bound, rollback condition, and monitor window before it can become ordinary behavior.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Benchmark ratchets create pressure to improve. Policy optimization is how that pressure can update planning, routing, context selection, verification, execution, or review behavior without letting reward become authority.
+
+For a human reader, the distinction is crucial. Learning from feedback is not the same as handing the system control over its own goals. A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.
+:::
+
 ## Problem
 
 Benchmarks, verifiers, human preferences, tool results, context-grounding checks, and governance violations all produce feedback. A living ASI stack needs a disciplined way to turn that feedback into future behavior. Without that layer, the book can explain how to measure, review, and gate capabilities, but not how the system learns which behaviors to repeat, suppress, shorten, route, verify, or retire.

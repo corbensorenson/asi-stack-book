@@ -59,6 +59,14 @@ The previous chapter introduced artifact stewardship as a bounded continuity lay
 
 The reference architecture is therefore not an orchestration diagram with more boxes. It is the book's test of compositional honesty. If a layer claims to improve the system, the trace should show what authority it received, what artifact it emitted, what residual it left, and which later layer was allowed to depend on it.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+After the book has named every major layer, this chapter puts the machine back together. It traces how intent, planning, memory, routing, verification, execution, evidence, benchmarks, and improvement should cooperate in one inspectable flow.
+
+For a human reader, this is the synthesis checkpoint. The question is not whether every implementation exists yet. The question is whether a future implementation could produce a trace clear enough to show what happened, why it was allowed, what evidence changed, and where the system stopped.
+:::
+
 ## Problem
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.

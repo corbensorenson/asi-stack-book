@@ -51,6 +51,14 @@ The previous chapter says what a proof or executable spec can certify. This chap
 
 This chapter is the public evidence counterpart to procedural memory. Procedural memory asks what the system may reuse. Benchmark ratchets ask what the system may believe about the reused capability. Both are memory systems, and both can fail by forgetting negative cases.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Executable specs say what a narrow artifact can certify. Benchmarks ask how measured performance should change future behavior without becoming a game. This chapter treats benchmarks as ratchets: they can move a floor forward only when regressions, scope, baselines, and negative results remain visible.
+
+The reader should watch for the anti-Goodhart theme. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support.
+:::
+
 ## Problem
 
 Capability claims need pressure, but fixed benchmarks can become traps. A system can overfit a public style, erase regressions, optimize cheap metrics, or confuse saturation with general competence. Benchmaxxing reframes benchmarks as temporary pressure surfaces. RMI adds residual escrow and regression floors.

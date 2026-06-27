@@ -49,6 +49,14 @@ Part III ended by separating structural receipts from model-quality claims. Part
 
 The proof envelope is a translation layer. It translates prose claims into proof targets, schema targets, validator targets, benchmark targets, or blocked research targets, then records the exact kind of artifact that exists.
 
+::: {.asi-human-only}
+## Human Reading Path
+
+Part III ended by warning that elegant substrates and structural receipts do not prove broad capability. Part IV begins by making that warning operational. Some claims should become schemas, some tests, some Lean predicates, and some should remain open research questions.
+
+For a human reader, this chapter is the book's proof etiquette. Formal language is useful only when the artifact exists, the verifier passes, and the claim boundary is narrow enough to understand. A proof envelope should clarify what is checked, not decorate an argument with borrowed certainty.
+:::
+
 ## Problem
 
 The book contains many claims that sound formal: authority boundaries, support-state transitions, capability replacement, context adequacy, job lifecycles, proof-carrying claims, and cyclic contracts. Some of these can become Lean proofs. Some should remain JSON Schemas or process contracts. Some are research questions.
