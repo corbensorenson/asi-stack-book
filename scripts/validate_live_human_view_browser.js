@@ -23,11 +23,14 @@ function parseArgs(argv) {
     site: DEFAULT_SITE,
     report: DEFAULT_REPORT,
     strict: false,
+    allChapters: false,
   };
   for (let index = 2; index < argv.length; index += 1) {
     const value = argv[index];
     if (value === "--strict") {
       args.strict = true;
+    } else if (value === "--all-chapters") {
+      args.allChapters = true;
     } else if (value === "--site") {
       args.site = path.resolve(argv[++index]);
     } else if (value === "--report") {
@@ -51,16 +54,8 @@ function renderedPath(siteDir, sourceFile) {
   return path.join(siteDir, sourceFile.replace(/\.qmd$/, ".html"));
 }
 
-function samplePages(structure) {
-  const chapters = flattenChapters(structure);
-  const indexes = new Set([0, Math.floor(chapters.length / 2), chapters.length - 1]);
-  const pages = [...indexes]
-    .filter((index) => chapters[index])
-    .map((index) => ({
-      kind: "chapter",
-      id: chapters[index].id,
-      sourceFile: chapters[index].file,
-    }));
+function appendixTogglePages(structure) {
+  const pages = [];
   for (const appendixId of ["corben-source-corpus", "external-sources-and-literature"]) {
     const appendix = (structure.appendices || []).find((record) => record.id === appendixId);
     if (appendix) {
@@ -68,6 +63,29 @@ function samplePages(structure) {
     }
   }
   return pages;
+}
+
+function pagesForValidation(structure, allChapters) {
+  const chapters = flattenChapters(structure);
+  if (allChapters) {
+    return chapters
+      .map((chapter) => ({
+        kind: "chapter",
+        id: chapter.id,
+        sourceFile: chapter.file,
+      }))
+      .concat(appendixTogglePages(structure));
+  }
+
+  const indexes = new Set([0, Math.floor(chapters.length / 2), chapters.length - 1]);
+  return [...indexes]
+    .filter((index) => chapters[index])
+    .map((index) => ({
+      kind: "chapter",
+      id: chapters[index].id,
+      sourceFile: chapters[index].file,
+    }))
+    .concat(appendixTogglePages(structure));
 }
 
 function candidateModuleRoots() {
@@ -248,7 +266,8 @@ async function validateAppendixPage(page, fileUrl, pageId) {
 
 async function runBrowserValidation(playwright, args) {
   const structure = loadJson("book_structure.json");
-  const pages = samplePages(structure);
+  const pageSelection = args.allChapters ? "all-chapters" : "sample";
+  const pages = pagesForValidation(structure, args.allChapters);
   const missing = pages
     .map((record) => renderedPath(args.site, record.sourceFile))
     .filter((htmlPath) => !fs.existsSync(htmlPath));
@@ -276,7 +295,10 @@ async function runBrowserValidation(playwright, args) {
   return {
     schema_version: "0.1",
     status: "pass",
+    page_selection: pageSelection,
     site_dir: args.site,
+    validated_pages: records,
+    // Backward-compatible alias for consumers created before --all-chapters.
     sampled_pages: records,
     non_claims: [
       "This browser smoke test validates rendered reading-mode interaction only.",
@@ -307,7 +329,9 @@ function writeReport(reportPath, report) {
   try {
     const report = await runBrowserValidation(playwright, args);
     writeReport(args.report, report);
-    console.log(`Live Human view browser validation passed: ${report.sampled_pages.length} rendered pages exercised.`);
+    console.log(
+      `Live Human view browser validation passed: ${report.validated_pages.length} rendered pages exercised (${report.page_selection}).`
+    );
   } catch (error) {
     const message = error && error.stack ? error.stack : String(error);
     writeReport(args.report, {

@@ -60,7 +60,7 @@ python3 scripts/validate_repeated_prose.py
 (cd lean && lake build)
 quarto render --to html
 python3 scripts/validate_live_human_view.py
-node scripts/validate_live_human_view_browser.js
+node scripts/validate_live_human_view_browser.js --all-chapters
 ```
 
 The drafting agent should read `docs/book_outline.md`, then source notes for the chapters in scope, then raw source text only when needed. Handoff packets and conversation-mined material remain author-intent and recovery context, not source-derived evidence.

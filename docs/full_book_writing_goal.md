@@ -44,7 +44,7 @@ python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
 python3 scripts/validate_live_human_view.py
-node scripts/validate_live_human_view_browser.js
+node scripts/validate_live_human_view_browser.js --all-chapters
 ```
 
 Final deliverable: a rendered, public-safe v1.0-candidate living-book manuscript with an honest report of completed chapter improvements, added visuals, support-state promotions, implemented proofs/tests, reader-edition readiness, audio-script readiness, missing evidence, unresolved source gaps, and remaining release risks.

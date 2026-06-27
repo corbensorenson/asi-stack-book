@@ -716,7 +716,7 @@ def main() -> None:
                 "python3 scripts/validate_book.py",
                 "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
                 "python3 scripts/validate_live_human_view.py",
-                "node scripts/validate_live_human_view_browser.js",
+                "node scripts/validate_live_human_view_browser.js --all-chapters",
             ],
             errors,
         )
