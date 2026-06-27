@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Human bridge depth pass
+
+- Expanded the thinnest Human Reading Path bridges with chapter-specific prose so the live Human view and generated reader edition carry a stronger human-readable orientation before technical sections resume. Raised `scripts/validate_human_reading_paths.py` to require at least 80 words per bridge and updated the site-quality standard to document the stronger bridge-depth expectation. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal backward transition polish
 
 - Replaced remaining mechanical `The previous chapter`, `The previous layer`, and `This is also the book` transition formulas across reader-facing bridge/problem prose with chapter-specific architectural transitions. Strengthened `scripts/validate_chapter_dod.py` so future `Problem` openings avoid those backward-handoff formulas, and updated the writing runbook to document the rule. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
