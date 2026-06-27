@@ -46,7 +46,7 @@ open_evidence_gaps:
 
 MoECOT is treated here as implementation-reference context, not as reproduced runtime evidence. Connector access and source notes establish that the whitepaper is readable and relevant. They do not establish local benchmark results, production safety, or current implementation readiness.
 
-Following readiness gates, this chapter asks what a concrete runtime would have to emit before it could strengthen any book claim. MoECOT is useful here as an evidence-packet target: routes, specialist lanes, ledgers, replay refs, handoff state, residuals, and promotion blockers must become inspectable artifacts before they become evidence.
+Following readiness gates, a concrete runtime has to emit artifacts before it can strengthen any book claim. MoECOT is useful here as an evidence-packet target: routes, specialist lanes, ledgers, replay refs, handoff state, residuals, and promotion blockers must become inspectable artifacts before they become evidence.
 
 The implementation-reference role is deliberately narrow. MoECOT can organize what runtime evidence should look like, but a runtime name is not itself a runtime result. The book should be able to ingest a MoECOT packet without trusting MoECOT branding.
 
@@ -172,7 +172,7 @@ Planning emits the command or task. Routing selects specialist cores. Execution 
 
 The orchestration record should also carry a route authority ledger: who or what authorized the command, which specialist authority envelopes were active, which tools or memory mounts were permitted, and which authority changes were denied. Multi-core orchestration without authority history is just parallel work.
 
-The runtime packet schema separates runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. That partition is the chapter's central evidence discipline: a runtime packet can be useful as a design example while still blocked as replay evidence and empty as locally reproduced benchmark evidence.
+The runtime packet schema separates runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims. That partition is the central evidence discipline: a runtime packet can be useful as a design example while still blocked as replay evidence and empty as locally reproduced benchmark evidence.
 
 ## Invariants
 
@@ -204,7 +204,7 @@ The first MoECOT-facing artifact is an orchestration schema and fixture that rec
 
 The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, runtime packet state, command reference, orchestrator, route head, cores, gates, route authority ledger, ledgers, readiness gates, replay, denied routes, failed gates, missing replay refs, handoff, blockers, residuals, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, source-claim state, and non-claims. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
 
-The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, the chapter remains an implementation-reference map.
+The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, MoECOT remains an implementation-reference map.
 
 A public-safe orchestration packet would test the evidence shape while leaving live MoECOT deployment unclaimed: one accepted command, one denied route, one missing replay reference, one residual handoff, and one promotion blocker.
 

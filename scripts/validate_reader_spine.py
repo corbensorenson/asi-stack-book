@@ -32,6 +32,10 @@ DEFAULT_HARD_TERMS = [
     "claim-source mapping status",
     "formalization hooks",
 ]
+DEFAULT_BLOCKED_META_PHRASES = [
+    "this chapter",
+    "the chapter",
+]
 DEFAULT_REQUIRED_READER_HEADINGS = [
     "Problem",
     "Why existing approaches are insufficient",
@@ -98,6 +102,19 @@ def live_only_term_hits(text: str, terms: list[str]) -> list[dict[str, object]]:
     return hits
 
 
+def meta_phrase_hits(text: str, phrases: list[str]) -> list[dict[str, object]]:
+    hits: list[dict[str, object]] = []
+    patterns = []
+    for phrase in phrases:
+        escaped = re.escape(phrase).replace(r"\ ", r"\s+")
+        patterns.append((phrase, re.compile(rf"\b{escaped}\b", re.IGNORECASE)))
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        for phrase, pattern in patterns:
+            if pattern.search(line):
+                hits.append({"line": lineno, "phrase": phrase, "text": line.strip()})
+    return hits
+
+
 def normalize_heading(title: str) -> str:
     return re.sub(r"\s+", " ", title.strip()).lower()
 
@@ -127,6 +144,9 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     hard_terms = policy.get("hard_blocked_terms", DEFAULT_HARD_TERMS)
     if not isinstance(hard_terms, list) or not all(isinstance(term, str) for term in hard_terms):
         raise TypeError("reader_spine_validation.hard_blocked_terms must be a list of strings")
+    blocked_meta_phrases = policy.get("blocked_meta_phrases", DEFAULT_BLOCKED_META_PHRASES)
+    if not isinstance(blocked_meta_phrases, list) or not all(isinstance(term, str) for term in blocked_meta_phrases):
+        raise TypeError("reader_spine_validation.blocked_meta_phrases must be a list of strings")
     required_headings = policy.get("required_reader_headings", DEFAULT_REQUIRED_READER_HEADINGS)
     if not isinstance(required_headings, list) or not all(isinstance(heading, str) for heading in required_headings):
         raise TypeError("reader_spine_validation.required_reader_headings must be a list of strings")
@@ -148,6 +168,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         text = path.read_text(encoding="utf-8")
         words = count_reader_words(text)
         term_hits = live_only_term_hits(text, hard_terms)
+        meta_hits = meta_phrase_hits(text, blocked_meta_phrases)
         headings = reader_headings(text)
         first = first_heading(text)
         title_ok = first == (1, expected_title)
@@ -165,6 +186,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 "source_marker_heading_count": source_marker_heading_count,
                 "word_count_after_strip": words,
                 "live_only_term_hits": term_hits,
+                "meta_phrase_hits": meta_hits,
                 "missing_reader_headings": missing_headings,
             }
         )
@@ -192,6 +214,11 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 f"{relative}:{hit['line']}: live-only term {hit['term']!r} remains "
                 "in generated reader prose."
             )
+        for hit in meta_hits:
+            errors.append(
+                f"{relative}:{hit['line']}: reader meta phrase {hit['phrase']!r} remains "
+                "in generated reader prose."
+            )
 
     for violation in heading_violations:
         errors.append(f"Stripped heading remains in reader edition: {violation}")
@@ -204,6 +231,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         "profile": "reader_release",
         "minimum_chapter_word_count": min_words,
         "hard_blocked_terms": hard_terms,
+        "blocked_meta_phrases": blocked_meta_phrases,
         "required_reader_headings": required_headings,
         "chapter_count": len(chapter_records),
         "chapter_word_count_min": min(

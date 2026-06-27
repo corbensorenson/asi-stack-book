@@ -43,7 +43,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter defines the boundary for self-improvement. It does not report autonomous improvement success, teacher independence, or current readiness unless the corresponding gate artifacts are inspected or reproduced.
+Bounded self-improvement needs an explicit boundary. Autonomous improvement success, teacher independence, or current readiness is not reported unless the corresponding gate artifacts are inspected or reproduced.
 
 It closes Part I as a gate, not as a triumph claim. The book can discuss self-improving systems only after it has named the fields, transactions, security boundaries, protected predicates, and evidence ledgers that keep improvement from becoming self-ratification.
 
@@ -145,7 +145,7 @@ Security and resource records should travel with the transition. A proposal that
 
 Autonomy should be phased. The early stack can propose changes, produce evidence packets, and ask for review. More autonomous replacement should wait until evaluators, readiness gates, rollback paths, and governance logs are credible.
 
-This phased posture is why the chapter closes Part I instead of opening with a promise of runaway growth. The architecture earns autonomy by making lower-risk transitions boring, inspectable, and reversible first.
+This phased posture avoids opening with a promise of runaway growth. The architecture earns autonomy by making lower-risk transitions boring, inspectable, and reversible first.
 
 ## Interfaces
 

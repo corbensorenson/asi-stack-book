@@ -42,11 +42,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter is a failure taxonomy and obligation map. It does not claim that the stack already prevents each failure; it names the boundary that must detect, contain, or preserve evidence about the failure.
+The failure taxonomy is an obligation map. It does not claim that the stack already prevents each failure; it names the boundary that must detect, contain, or preserve evidence about the failure.
 
 It comes after authority because failures become testable only after the stack can name which boundary was crossed, which invariant was violated, and which record should have preserved the denial, residual, downgrade, or recovery path.
 
-The chapter's operating rule is that a failure is not only an outcome. It is a missed or triggered boundary event with a receipt, owner, containment action, and downstream learning path.
+The operating rule is that a failure is not only an outcome. It is a missed or triggered boundary event with a receipt, owner, containment action, and downstream learning path.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -84,7 +84,7 @@ This makes near misses valuable. A denied authority escalation, rejected context
 
 [failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
-The claim remains at `argument` support. Seven local raw-cache mappings now carry reviewed passage references: SCF for lifecycle, authority, evaluator, route, and self-ratification risks; VCM for context, taint, stale-state, and authority-boundary risks; Talos for execution, tool-control, audit, replay, and secret-boundary risks; Spinoza for verification and downgrade risks; Field of God for philosophical governance lineage; VIEA for durable artifact, residual, and claim-ledger failures; and Simulation Scaling for resource-contract failures. `vcm_editable` and `moecot` remain connector-only/source-note mapped. This chapter uses those sources as architecture vocabulary, not as empirical incident evidence or detector/prevention evidence.
+The claim remains at `argument` support. Seven local raw-cache mappings now carry reviewed passage references: SCF for lifecycle, authority, evaluator, route, and self-ratification risks; VCM for context, taint, stale-state, and authority-boundary risks; Talos for execution, tool-control, audit, replay, and secret-boundary risks; Spinoza for verification and downgrade risks; Field of God for philosophical governance lineage; VIEA for durable artifact, residual, and claim-ledger failures; and Simulation Scaling for resource-contract failures. `vcm_editable` and `moecot` remain connector-only/source-note mapped. Those sources supply architecture vocabulary, not empirical incident evidence or detector/prevention evidence.
 
 ### Claim-source mapping status
 
@@ -222,7 +222,7 @@ Ungoverned intelligence should be monitored through ordinary stack breakdowns be
 - Preserved invariants: Every risk maps to at least one boundary; Evaluator integrity is protected; Negative evidence stays visible.
 - Incident closure: evaluator capture, memory poisoning, tool overreach, and compression that hides residual complexity should produce quarantine, rollback, escalation, residual records, or SCF review before they can normalize.
 
-This failure-radar layer remains a target architecture, not a current-result claim. The chapter should stay at `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
+This failure-radar layer remains a target architecture, not a current-result claim. The support state remains `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
 
 ## Codex test plan
 

@@ -39,9 +39,9 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats artifacts as provenance-bearing work products, not as automatic evidence. Six local-cache source mappings have been passage-reviewed for the architecture surface; `moecot` remains connector/source-note mapped. The repo validates an artifact-graph fixture and proves two finite Lean predicates over provenance records, but it has not run a replay engine, audit reconstruction harness, produced-artifact checker, or provenance completeness service for this chapter.
+Artifacts are provenance-bearing work products, not automatic evidence. Six local-cache source mappings have been passage-reviewed for the architecture surface; `moecot` remains connector/source-note mapped. The repo validates an artifact-graph fixture and proves two finite Lean predicates over provenance records, but it has not run a replay engine, audit reconstruction harness, produced-artifact checker, or provenance completeness service for this layer.
 
-After typed jobs, the stack needs a memory surface for work itself. This chapter records what a job produced, where it came from, which claims or tests it touches, and which parts can be replayed before the architecture allows those outputs to become evidence, context, or procedural substrate.
+After typed jobs, the stack needs a memory surface for work itself. The artifact graph records what a job produced, where it came from, which claims or tests it touches, and which parts can be replayed before the architecture allows those outputs to become evidence, context, or procedural substrate.
 
 The key distinction is between storage and evidential continuity. A file path says where bytes live. An artifact node says what role those bytes played, which job created them, which sources and tools shaped them, what can be reconstructed, and what remains uncertain. The living book should preserve that distinction because later chapters depend on it: compressed artifacts, semantic nodes, benchmark records, reader editions, and prototype reports all become safer when they inherit an explicit artifact history instead of a loose folder convention.
 
@@ -210,7 +210,7 @@ A work-product evidence graph needs:
 - Evidence gates that prevent artifacts with missing provenance, missing context transactions, missing certificates, or failed checks from promoting claims.
 - Query tools that find every claim, test, chapter, release artifact, and procedural candidate affected by a changed artifact.
 
-This replayable artifact graph remains a target architecture, not a current-result claim. Leave the chapter at `argument` until produced artifacts, audit reconstructions, replay attempts, provenance-completeness checks, and claim/test link validation show that work is remembered as structured evidence rather than as folders full of outputs.
+This replayable artifact graph remains a target architecture, not a current-result claim. Leave support at `argument` until produced artifacts, audit reconstructions, replay attempts, provenance-completeness checks, and claim/test link validation show that work is remembered as structured evidence rather than as folders full of outputs.
 
 ## Codex test plan
 

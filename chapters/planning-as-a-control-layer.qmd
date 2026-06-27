@@ -38,7 +38,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats planning as a bounded control artifact. The repo validates a draft plan-graph fixture, but it does not yet validate plan quality, dependency soundness, authority preservation under replanning, or successful execution.
+Planning is a bounded control artifact. The repo validates a draft plan-graph fixture, but it does not yet validate plan quality, dependency soundness, authority preservation under replanning, or successful execution.
 
 It follows command contracts because explicit commands are still inert until the stack decides what work should exist, what order it belongs in, and which boundaries must be consulted before dispatch.
 
@@ -86,7 +86,7 @@ This is why planning needs dispatch states. A plan node can be valuable as an id
 
 [planning-as-a-control-layer.core, label: Design rationale, support: argument] Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
 
-The claim remains at `argument` support. PlanForge supplies decomposition, dependency, tier, and scheduler vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; MoECOT remains an implementation-reference route rather than local evidence for this chapter.
+The claim remains at `argument` support. PlanForge supplies decomposition, dependency, tier, and scheduler vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; MoECOT remains an implementation-reference route rather than local evidence for planning behavior.
 
 ### Claim-source mapping status
 

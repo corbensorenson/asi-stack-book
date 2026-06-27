@@ -53,9 +53,9 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter records a missing stack layer: the generation substrate that determines how much planning, verification, tool use, reflection, and routing can fit inside a fixed latency and compute budget. It does not report measured speedups, reproduce third-party benchmark results, or claim that the repository contains a fast decoding implementation.
+The missing stack layer is the generation substrate that determines how much planning, verification, tool use, reflection, and routing can fit inside a fixed latency and compute budget. No measured speedups are reported here, no third-party benchmark results are reproduced, and the repository does not claim to contain a fast decoding implementation.
 
-The browser-GPT note that motivated this chapter is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The chapter's support state remains `argument` until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
+The browser-GPT note that motivated this layer is treated as author-intent and literature-queue context. Selected external primary papers have now been source-noted for the taxonomy, but their reported speedups, model-quality claims, code artifacts, and hardware results remain source-reported. The support state remains `argument` until reproduced tests, stronger external-literature promotion criteria, or accepted evidence transitions justify movement.
 
 Coming after generate-verify-repair, fast generation is the time-domain version of the same discipline. A faster path is valuable only when accepted output, verifier cost, repair cost, fallback, memory pressure, and task success improve after the whole route is counted.
 
@@ -191,7 +191,7 @@ The taxonomy is deliberately plural. The stack should not collapse all speed wor
 
 ## Interfaces
 
-The chapter's interface is a generation-mode record.
+The interface is a generation-mode record.
 
 - PlanForge chooses the generation mode.
 - VCM supplies the bounded context packet.
@@ -292,7 +292,7 @@ This generation-mode control plane remains a target architecture, not a current-
 | Risk-tiered decoding enforcement test | Ensure high-risk tasks route to slower verified modes when policy requires it. | planned; not run |
 | KV-cache throughput accounting test | Separate aggregate serving throughput, memory pressure, and single-request verified output. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows are a backlog for turning the chapter from design rationale into prototype-backed or external-literature-backed claims.
+The implemented row validates fixture/schema consistency only. The remaining rows are a backlog for turning the design rationale into prototype-backed or external-literature-backed claims.
 
 ## Formalization hooks
 
@@ -328,7 +328,7 @@ These Lean hooks are implemented as finite-record predicates over promotion fiel
 | `ext_llada_2025` | Source-note large masked-diffusion language modeling. | source note available; reported results not reproduced |
 | `ext_scaling_dllms_2026` | Source-note diffusion LLM speed-quality evaluation. | source note available; reported results not reproduced |
 
-The external literature queue is now partially mined for the chapter's selected primary papers. It is still not complete: code artifacts, exact experimental sections, later variants, and implementation-specific claims must be inspected before the book can summarize reported speedups in detail or promote support beyond `argument`.
+The external literature queue is now partially mined for the selected primary papers. It is still not complete: code artifacts, exact experimental sections, later variants, and implementation-specific claims must be inspected before the book can summarize reported speedups in detail or promote support beyond `argument`.
 
 ## Summary
 

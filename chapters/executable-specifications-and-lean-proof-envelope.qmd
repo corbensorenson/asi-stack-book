@@ -43,7 +43,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter distinguishes executable contracts, tests, and Lean proofs. A theorem is not proven because the prose says so; a proof target is implemented only when the corresponding artifact exists and the verifier passes.
+Executable contracts, tests, and Lean proofs occupy different lanes. A theorem is not proven because the prose says so; a proof target is implemented only when the corresponding artifact exists and the verifier passes.
 
 Part III ended by separating structural receipts from model-quality claims. Part IV begins by generalizing that discipline: every formal-looking statement needs a declared artifact lane. Some claims become Lean predicates, some become schema fixtures, some become process validators, and some remain research targets until the architecture can state an operational predicate without pretending that broad ASI behavior has been proven.
 
@@ -87,7 +87,7 @@ The claim remains at `argument` support. This repository currently has a Lean wo
 
 ### Claim-source mapping status
 
-Appendix C now records passage-reviewed mappings for all nine assigned sources. The mappings justify this chapter's proof-envelope priorities as design rationale only: small operational predicates, typed records, evidence artifacts, support-state boundaries, route/authority/lifecycle checks, and explicit non-claims. They do not promote the chapter beyond `argument` support.
+Appendix C now records passage-reviewed mappings for all nine assigned sources. The mappings justify proof-envelope priorities as design rationale only: small operational predicates, typed records, evidence artifacts, support-state boundaries, route/authority/lifecycle checks, and explicit non-claims. They do not promote the claim beyond `argument` support.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -159,7 +159,7 @@ The support-state effect remains deliberately narrow. A passed `lake build` can 
 
 The interface should carry consumer requirements. A chapter, protocol, or release profile may consume a proof only if the proof lane, command, artifact path, version, semantic adequacy state, and non-claims match what that consumer needs. Otherwise the proof remains true but unusable for that purpose.
 
-The semantic adequacy review is not a second proof. It is a record of whether the finite predicate actually matches the chapter boundary it is being asked to support. Until that review exists, the safest support-state effect is narrow: the artifact passed its verifier, but the prose may not borrow more meaning than the predicate states.
+The semantic adequacy review is not a second proof. It is a record of whether the finite predicate actually matches the boundary it is being asked to support. Until that review exists, the safest support-state effect is narrow: the artifact passed its verifier, but the prose may not borrow more meaning than the predicate states.
 
 ## Invariants
 
@@ -184,7 +184,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 The subtle failure is proof laundering. A valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
 
-Another failure is orphaned formality. A proof target exists, but the chapter no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to chapter claims, limitation prose, generated manifests, and audit records.
+Another failure is orphaned formality. A proof target exists, but the prose no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to claims, limitation prose, generated manifests, and audit records.
 
 ## Minimum Viable Implementation
 

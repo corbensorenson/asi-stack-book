@@ -38,11 +38,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter uses RankFold/NeuralFold and RankFold Compressor as compression-architecture sources. It does not report compression ratios, lossless reconstruction, or implementation performance because this repository has not run a compressor, decoder, or benchmark corpus.
+RankFold/NeuralFold and RankFold Compressor are compression-architecture sources. They do not report compression ratios, lossless reconstruction, or implementation performance for this repository because no compressor, decoder, or benchmark corpus has been run here.
 
 After fast generation, the compression question returns to stored artifacts. A cheaper representation is not a cheaper source of truth; it is a routed candidate that must preserve full-artifact fallback, probe results, residual coding, and utility boundaries for each task.
 
-This chapter therefore treats compression as an evidential firewall, not a storage trick. The system may choose a smaller representation for a task, but the smaller representation does not inherit every property of the full artifact. It earns only the properties that its reconstruction contract, residual ledger, probes, and downstream utility checks actually support.
+Compression therefore becomes an evidential firewall, not a storage trick. The system may choose a smaller representation for a task, but the smaller representation does not inherit every property of the full artifact. It earns only the properties that its reconstruction contract, residual ledger, probes, and downstream utility checks actually support.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -225,7 +225,7 @@ A minimal artifact-compression lane is a compressed artifact record. The reposit
 
 The fixture is not a compressor result. It gives the public book an executable contract for evaluating one later.
 
-A toy corpus with deliberately adversarial artifacts should follow: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, this chapter remains a design rationale with executable record-shape checks only.
+A toy corpus with deliberately adversarial artifacts should follow: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, artifact compression remains a design rationale with executable record-shape checks only.
 
 ## Beyond the State of the Art
 
@@ -272,7 +272,7 @@ These Lean hooks are implemented as finite-record predicates over artifact-use a
 | `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
 | `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | source note available; local raw cache available |
 
-The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold` supplies the mature artifact-archive framing, `rankfold_compressor` preserves low-rank/tensor lineage, `bbvca_v9` supplies reconstruction and rate-accounting discipline, `cgs` supplies residual honesty, and `bugbrain` keeps edge-resource constraints visible. The chapter should not use any of them to report ratios until a decoder and benchmark harness exist.
+The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold` supplies the mature artifact-archive framing, `rankfold_compressor` preserves low-rank/tensor lineage, `bbvca_v9` supplies reconstruction and rate-accounting discipline, `cgs` supplies residual honesty, and `bugbrain` keeps edge-resource constraints visible. None of them should be used to report ratios until a decoder and benchmark harness exist.
 
 ## Summary
 

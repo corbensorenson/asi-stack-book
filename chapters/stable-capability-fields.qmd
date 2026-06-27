@@ -38,11 +38,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats Stable Capability Fields as a governed substitution boundary. It does not claim that SCF safety properties are implemented here beyond the schema fixture and any explicitly built proofs.
+Stable Capability Fields are governed substitution boundaries. No SCF safety property is claimed implemented here beyond the schema fixture and any explicitly built proofs.
 
 It follows governance rights because rights cannot survive implementation churn unless the capability boundary has a stable identity, stable authority ceiling, and explicit replacement policy.
 
-This chapter is also the stack's first memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a way to say what must stay the same while implementations change. An SCF is that continuity record.
+This is the stack's first memory system for capability identity. Before the book can talk about replacing components, compiling repeated work into tools, or ratcheting benchmarks, it needs a way to say what must stay the same while implementations change. An SCF is that continuity record.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -84,7 +84,7 @@ This matters because the most dangerous upgrade failures can look successful loc
 
 [stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.
 
-The claim remains at `argument` support. SCF supplies reviewed passage support for field identity, qualification, route validation, authority ceilings, lifecycle, state migration, and rollback vocabulary. VIEA supplies reviewed artifact, support-state, residual, regression, routing, and permission-envelope context. Talos supplies reviewed job, evidence, proof-bundle, replay, and uncertainty context. Ladon/Manhattan supplies reviewed handle, permission-check, controlled-injection, and compartment context. `moecot` remains connector-only/source-note mapped. The chapter does not treat source-reported executable fragments, runtime behavior, or benchmark claims as locally verified.
+The claim remains at `argument` support. SCF supplies reviewed passage support for field identity, qualification, route validation, authority ceilings, lifecycle, state migration, and rollback vocabulary. VIEA supplies reviewed artifact, support-state, residual, regression, routing, and permission-envelope context. Talos supplies reviewed job, evidence, proof-bundle, replay, and uncertainty context. Ladon/Manhattan supplies reviewed handle, permission-check, controlled-injection, and compartment context. `moecot` remains connector-only/source-note mapped. Source-reported executable fragments, runtime behavior, or benchmark claims are not treated as locally verified.
 
 ### Claim-source mapping status
 

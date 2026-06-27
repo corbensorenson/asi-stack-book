@@ -38,7 +38,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter sets the unit of analysis for the book. It is an architecture argument, not a claim that any one implementation already achieves ASI, safety, or empirical efficiency. Source notes shape the vocabulary; Appendix C still controls support-state movement.
+The unit of analysis is the governed stack. This is an architecture argument, not a claim that any one implementation already achieves ASI, safety, or empirical efficiency. Source notes shape the vocabulary; Appendix C still controls support-state movement.
 
 The opening sequence of Part I is ordered deliberately. This opening names the system as a stack, the efficiency layer explains why that stack can be efficient, the authority layer prevents efficiency from becoming permission leakage, the failure layer names what breaks without those boundaries, and the evidence layer governs how any of those claims may later move.
 
@@ -230,7 +230,7 @@ The target doctrine is deliberately simple: efficient ASI is a governed stack of
 - Preserved invariants: Layer boundaries remain explicit; Claims carry support states; Reasoning ability never implies execution authority.
 - Architectural closure: anthology drift, monolith drift, and evidence inflation should produce boundary records, source-note blockers, residuals, or rollback decisions rather than silent degradation.
 
-This doctrine remains a target architecture, not a current-result claim. The chapter should stay at `argument` until layer-boundary records, source-to-layer reviews, handoff-denial fixtures, traceability audits, and governed replacement examples show that stack separation survives real integration pressure.
+This doctrine remains a target architecture, not a current-result claim. The support state remains `argument` until layer-boundary records, source-to-layer reviews, handoff-denial fixtures, traceability audits, and governed replacement examples show that stack separation survives real integration pressure.
 
 ## Codex test plan
 

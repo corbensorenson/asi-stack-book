@@ -39,11 +39,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter governs how claims move. It does not promote a claim because prose became clearer, a source note exists nearby, or a validator passed an unrelated fixture.
+Claim movement is governed explicitly. A claim is not promoted because prose became clearer, a source note exists nearby, or a validator passed an unrelated fixture.
 
 It follows the failure chapter because the book itself has the same failure surface as the systems it describes: clearer text can hide missing evidence, a nearby citation can launder a stronger claim, and a narrow proof can be rhetorically expanded beyond its formal scope.
 
-The chapter's control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, in which evidence role, with which claim record, by which command or review, with which acceptance blockers, with which limitations, with which downgrade triggers, and with which negative or inconclusive results still attached.
+The control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, in which evidence role, with which claim record, by which command or review, with which acceptance blockers, with which limitations, with which downgrade triggers, and with which negative or inconclusive results still attached.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -83,7 +83,7 @@ The insufficiency is scope drift. A source may support terminology but not the m
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
-The claim remains at `argument` support. Appendix C now records a claim-level source-note map for the support this chapter draws from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. Five mappings now have reviewed local raw-cache passage references in the manifest. Coherence Exchange remains connector-only and source-note mapped. The map and partial passage review make the evidence bridge more inspectable, but they do not by themselves promote the claim. Promotion still requires the remaining review boundary to be closed and an accepted evidence transition or executed test/proof artifact with declared scope.
+The claim remains at `argument` support. Appendix C now records a claim-level source-note map for support drawn from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. Five mappings now have reviewed local raw-cache passage references in the manifest. Coherence Exchange remains connector-only and source-note mapped. The map and partial passage review make the evidence bridge more inspectable, but they do not by themselves promote the claim. Promotion still requires the remaining review boundary to be closed and an accepted evidence transition or executed test/proof artifact with declared scope.
 
 | Source | Claim-level contribution | Limit |
 |---|---|---|

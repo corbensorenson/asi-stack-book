@@ -36,9 +36,9 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter uses BBVCA v9 as the primary discipline for contract-relative generate-verify-repair compression. It does not claim that this repository contains a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture validates the public record shape, and the Lean module proves only two finite reconstruction/verification predicates.
+BBVCA v9 supplies the primary discipline for contract-relative generate-verify-repair compression. This repository does not claim to contain a working codec, reproduced compression ratios, or a successful bounded-search implementation. The `compression_receipt` fixture validates the public record shape, and the Lean module proves only two finite reconstruction/verification predicates.
 
-Following compact generative systems, this chapter handles the stricter case where compressed generation claims reconstruction. If a generator fails to carry the whole target, the exact remainder must be paid as repair, fallback, or negative rate evidence rather than hidden inside a success story.
+Following compact generative systems, generate-verify-repair handles the stricter case where compressed generation claims reconstruction. If a generator fails to carry the whole target, the exact remainder must be paid as repair, fallback, or negative rate evidence rather than hidden inside a success story.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -74,7 +74,7 @@ A second issue is consumer honesty. A downstream layer may not care about exact 
 
 [generate-verify-repair-compression.core, label: Design rationale, support: argument] Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
 
-The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - BBVCA_v9_final_public_release, Big Bang Volumetric Compression Architecture, Compact Generative Systems, and RankFold + NeuralFold - gives the chapter its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
+The claim is architectural: it says how this layer should be shaped if the whole system is expected to remain governed under growth. The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it. The assigned source set - BBVCA_v9_final_public_release, Big Bang Volumetric Compression Architecture, Compact Generative Systems, and RankFold + NeuralFold - gives this layer its vocabulary and comparison points, but the public manuscript keeps source-derived support separate from the draft itself.
 
 ### Claim-source mapping status
 
@@ -234,7 +234,7 @@ This generate-verify-repair pipeline remains a target architecture, not a curren
 | Bounded-search failure test | Force the generator past its declared search budget and check that the result falls back, quarantines, or stays unpromoted. | planned; not run |
 | Consumer-policy enforcement test | Check that lossy, preview, or orientation receipts cannot feed exact replay, proof, audit, citation, benchmark, or training consumers without a stronger receipt. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require a real generator, verifier, repair stream, fallback criterion, and rate comparison; they are not reported results. When a codec test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require a real generator, verifier, repair stream, fallback criterion, and rate comparison; they are not reported results. When a codec test is implemented, the manuscript should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 

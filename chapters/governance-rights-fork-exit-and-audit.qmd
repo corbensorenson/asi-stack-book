@@ -39,7 +39,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats fork, exit, audit, and dissent as technical rights. It does not claim that any institution or deployed system already provides those rights; the repo currently validates record shape only.
+Fork, exit, audit, and dissent are technical rights. That framing does not claim that any institution or deployed system already provides those rights; the repo currently validates record shape only.
 
 It follows the value-conflict chapter because unresolved disagreement is not useful unless affected people can inspect the record, challenge it, leave, fork where safe, or preserve dissent without depending on the authority being challenged.
 
@@ -85,7 +85,7 @@ The rights layer also prevents governance from becoming a black box around its o
 
 [governance-rights-fork-exit-and-audit.core, label: Design rationale, support: argument] Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
 
-The claim remains at `argument` support. Ethica Mechanica supplies the strongest reviewed fork/exit/audit lineage; Alignment Field and the AI Constitution supply reviewed non-domination, consent, contestability, reversibility, and auditability constraints; Ladon/Manhattan supplies reviewed authority-boundary mechanics; and Spinoza/UAT supply reviewed governance-review discipline. Coherence Exchange remains useful connector-only synthesis without a durable local raw-cache export here. The chapter turns that source language into interfaces without presenting it as implemented governance.
+The claim remains at `argument` support. Ethica Mechanica supplies the strongest reviewed fork/exit/audit lineage; Alignment Field and the AI Constitution supply reviewed non-domination, consent, contestability, reversibility, and auditability constraints; Ladon/Manhattan supplies reviewed authority-boundary mechanics; and Spinoza/UAT supply reviewed governance-review discipline. Coherence Exchange remains useful connector-only synthesis without a durable local raw-cache export here. The source language becomes interface language without being presented as implemented governance.
 
 ### Claim-source mapping status
 
@@ -103,11 +103,11 @@ Appendix C maps this core governance-rights claim to every assigned source note.
 
 ## Mechanism
 
-Governance rights become real only when they have access paths, artifacts, preservation rules, and denial semantics. This chapter treats audit, exit, fork, dissent, and contestability as capabilities that the runtime must preserve across policy updates, memory changes, authority use, and capability replacement.
+Governance rights become real only when they have access paths, artifacts, preservation rules, and denial semantics. Audit, exit, fork, dissent, and contestability are capabilities that the runtime must preserve across policy updates, memory changes, authority use, and capability replacement.
 
 Each right is represented as a capability with an owner, scope, artifact requirement, safety constraint, access path, preservation rule, and test. Audit requires durable records attached to governance decisions. Exit requires export, revocation, and continuity paths. Fork requires a reproducible boundary that preserves source, privacy, and safety obligations. Dissent requires a channel that cannot be silently deleted by the authority being challenged.
 
-SCFs later depend on this chapter: capability replacement must preserve protected governance rights across implementation changes.
+SCFs later depend on this rights layer: capability replacement must preserve protected governance rights across implementation changes.
 
 The rights record is therefore a bridge between governance and runtime state. It says which logs must survive, which memory exports are allowed, which secrets must remain sealed, which dependencies must be portable, and which decision can be contested after a model, policy, tool, or capability field changes. That bridge matters because governance failure often looks like ordinary maintenance: a migration drops old logs, an update changes appeal semantics, a new integration captures user data, or a replacement implementation removes an export hook. The stack treats those as rights-preservation failures, not as harmless refactors.
 

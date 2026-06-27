@@ -37,9 +37,9 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats proof-carrying claims as a verification envelope, not as proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture, but the fixture's verifier result is not a passed theorem or empirical validation.
+Proof-carrying claims are a verification envelope, not proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture, but the fixture's verifier result is not a passed theorem or empirical validation.
 
-Coming immediately after claim ledgers, this chapter raises the bar for the subset of claims that matter enough to justify proof, citation, or procedure artifacts. It bridges from recorded support state to the question of what must be checked before that state can improve.
+After claim ledgers, the bar rises for the subset of claims that matter enough to justify proof, citation, or procedure artifacts. The bridge runs from recorded support state to the question of what must be checked before that state can improve.
 
 Proof-carrying language is useful only when it creates an obligation to inspect. A proof label, citation bundle, theorem reference, or procedure log should make a claim easier to challenge, not harder to question.
 
@@ -59,7 +59,7 @@ The stack needs a way to move selected claims from generated prose toward audita
 
 Claim ledgers store epistemic state. Spinoza defines the verification lane that can move selected claims toward stronger support tiers. Its key separation is proposer versus verifier: neural systems can propose hypotheses, proof sketches, citations, or formalization attempts, but a separate structured process decides whether the claim's tier is justified.
 
-The chapter is deliberately bounded. It does not assume open-domain autoformalization is solved. It defines how the stack handles proof, justification, timeout, mismatch, downgrade, and escalation.
+The verification envelope is deliberately bounded. It does not assume open-domain autoformalization is solved. It defines how the stack handles proof, justification, timeout, mismatch, downgrade, and escalation.
 
 The starting point is the ledger, not the proof tool. A claim first needs identity, scope, support state, and requested tier. Only then can a verifier decide whether a proof, citation dossier, executable procedure, or review path is the right kind of justification.
 
@@ -184,7 +184,7 @@ A verification record must also preserve scope. The artifact should say which cl
 
 Certified delusion happens when the artifact looks formal but certifies the wrong thing. Invalid formalization means the mapping between natural-language claim and formal object is untrusted. Missing justification means the tier is unsupported. Each failure should downgrade or block the claim.
 
-Verification theater is the broader failure. The chapter name, theorem tag, citation count, or procedure log becomes a symbol of rigor while the actual support boundary remains unchanged. The proof-carrying record should force the system to say exactly which claim, tier, mapping, and limitation the artifact covers.
+Verification theater is the broader failure. A title, theorem tag, citation count, or procedure log becomes a symbol of rigor while the actual support boundary remains unchanged. The proof-carrying record should force the system to say exactly which claim, tier, mapping, and limitation the artifact covers.
 
 Another failure is stale proof reuse after the natural-language claim has broadened beyond the formal target.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal reader-spine meta-language ratchet
+
+- Reworked reader-facing chapter prose across 25 chapters so the generated human-reader manuscript no longer contains `this chapter` or `the chapter` self-reference in chapter bodies after live-only scaffolding is stripped. Added `reader_spine_validation.blocked_meta_phrases` to `editions/release_profiles.json` and tightened `scripts/validate_reader_spine.py` so generated reader chapters now fail if those phrases return. Refreshed the v1.0 status manuscript scale to 183,692 chapter words excluding YAML and 191,191 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal human bridge sequencing ratchet
 
 - Reworked Human Reading Path bridge prose that still opened from part/chapter sequencing scaffolds such as `Part I`, `Part II`, `previous layers`, `first half`, and `closing move`, replacing those openings with direct architecture-language transitions about authority, intent intake, bounded self-improvement, execution contracts, procedural memory, routing, resource economics, cyclic mechanisms, proof envelopes, and the research agenda. Tightened `scripts/validate_human_reading_paths.py`, the v1.0 status snapshot guard, the site quality standard, and the writing runbook so future human bridges reject those sequencing formulas while preserving the live `AI view` / `Human view` projection and generated reader-edition unwrapping, and refreshed the v1.0 status manuscript scale to 183,820 chapter words excluding YAML and 191,319 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

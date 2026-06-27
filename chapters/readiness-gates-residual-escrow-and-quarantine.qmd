@@ -41,7 +41,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter uses passage-reviewed local raw-cache text for RMI, Benchmaxxing, SCF, Octopus Router, and Cognitive Loop Closure, plus passage-reviewed local public-project text for the three Theseus sources. MoECOT remains connector/source-note mapped only. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted. The repo now proves two finite Lean predicates over readiness records, but it has not implemented a lifecycle engine or rerun any readiness gate.
+The readiness-gate layer uses passage-reviewed local raw-cache text for RMI, Benchmaxxing, SCF, Octopus Router, and Cognitive Loop Closure, plus passage-reviewed local public-project text for the three Theseus sources. MoECOT remains connector/source-note mapped only. The Theseus architecture gate reports a historical gate snapshot, but this repository has not rerun Theseus commands or verified current reports, so no current-readiness claim is promoted. The repo now proves two finite Lean predicates over readiness records, but it has not implemented a lifecycle engine or rerun any readiness gate.
 
 After routing, readiness determines whether a semantically plausible route is allowed to become ordinary execution. The route can be correct as a match and still fail as a governed choice because evidence is stale, regressions are unresolved, scope is too broad, or residuals need quarantine.
 
@@ -79,7 +79,7 @@ The missing primitive is a transition record. A lifecycle move should say what c
 
 [readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained.
 
-The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but this chapter does not claim that any particular module currently passes those gates.
+The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but no particular module is claimed to currently pass those gates.
 
 ### Claim-source mapping status
 

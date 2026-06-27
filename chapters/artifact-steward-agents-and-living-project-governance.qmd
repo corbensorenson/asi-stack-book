@@ -53,7 +53,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter should not be read as a claim that autonomous project managers are safe, legally authorized, or ready to control funds. It argues for a bounded project-steward layer with explicit work contracts, evidence gates, treasury limits, contribution records, governance checks, and sunset paths. It now has source notes for several adjacent systems and risks, but those notes are used as substrate and failure-mode context. They do not prove that the steward design is implemented, lawful, financially safe, or capture-resistant.
+The project-steward layer should not be read as a claim that autonomous project managers are safe, legally authorized, or ready to control funds. It argues for bounded stewardship with explicit work contracts, evidence gates, treasury limits, contribution records, governance checks, and sunset paths. It now has source notes for several adjacent systems and risks, but those notes are used as substrate and failure-mode context. They do not prove that the steward design is implemented, lawful, financially safe, or capture-resistant.
 
 Policy updates keep learning inside gates. The same rule applies to projects themselves: durable artifacts can have memory, roadmaps, workers, funds, releases, and feedback loops, but none of those surfaces gives an AI steward ownership. Stewardship is a continuity interface, not a sovereignty claim.
 
@@ -271,7 +271,7 @@ The steward should not merge protected branches, spend funds, change governance,
 
 This repository now contains the record-level first step for that implementation: `artifact_steward_charter.schema.json`, `project_work_contract.schema.json`, `contribution_ledger_entry.schema.json`, `steward_action_decision.schema.json`, and `sunset_review_record.schema.json`, each with a matching valid fixture. These fixtures validate public record shape only; they do not execute a steward.
 
-The repository also now contains `treasury_policy_record.schema.json` and `event_taint_record.schema.json`, each with a matching valid fixture. These close two record-shape gaps in the chapter but do not connect to a wallet, run a treasury engine, scan workflows, or prove event-intake safety.
+The repository also now contains `treasury_policy_record.schema.json` and `event_taint_record.schema.json`, each with a matching valid fixture. These close two record-shape gaps in the steward layer but do not connect to a wallet, run a treasury engine, scan workflows, or prove event-intake safety.
 
 ## Beyond the State of the Art
 

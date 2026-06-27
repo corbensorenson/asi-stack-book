@@ -60,7 +60,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats policy optimization as a governed update mechanism for the stack, not as evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated the chapter is local-only author-intent context. The external RL papers named here now have stable source records, primary arXiv metadata, and conservative source notes; they support method-family context only, not support-state promotion or local training claims.
+Policy optimization is a governed update mechanism for the stack, not evidence that any model, router, planner, verifier, or context policy has improved. The browser-GPT packet that motivated this layer is local-only author-intent context. The external RL papers named here now have stable source records, primary arXiv metadata, and conservative source notes; they support method-family context only, not support-state promotion or local training claims.
 
 Benchmark ratchets turn evaluation pressure into evidence records. Policy optimization asks how that pressure may change future behavior without letting reward become authority. A policy update is allowed to propose better planning, routing, context selection, verification, execution, or generation only when admissible feedback, drift bounds, evaluations, rollback, and governance gates are recorded.
 
@@ -108,7 +108,7 @@ The claim remains at `argument` support. The assigned ASI Stack sources support 
 
 ### Claim-source mapping status
 
-Appendix C now records twenty-seven passage-reviewed mappings for this chapter. The internal ASI Stack mappings use local raw-cache passages for benchmark pressure, modular ratcheting, verifier tiers, context adequacy, execution feedback, planner and router policy targets, SCF governance, resource pressure, and procedural loop closure. `moecot` remains source-note-only implementation-reference context because raw connector text is not published here. The external method-family records use public arXiv abstract/metadata references plus conservative source notes; they are taxonomy and risk context, not reproduced experiments.
+Appendix C now records twenty-seven passage-reviewed mappings for policy optimization. The internal ASI Stack mappings use local raw-cache passages for benchmark pressure, modular ratcheting, verifier tiers, context adequacy, execution feedback, planner and router policy targets, SCF governance, resource pressure, and procedural loop closure. `moecot` remains source-note-only implementation-reference context because raw connector text is not published here. The external method-family records use public arXiv abstract/metadata references plus conservative source notes; they are taxonomy and risk context, not reproduced experiments.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -166,11 +166,11 @@ The external literature named in the browser packet is best organized by what th
 | Reasoning-budget and latency-aware RL | Learn when to think, stop, retrieve, verify, use tools, or switch generation modes. | Source-noted via `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, and `ext_rlhf_limitations_2023`; no local reasoning-budget run |
 | Control-policy RL | Train planner, router, VCM, execution, and generation-mode policies rather than only answer style. | Planned ASI Stack experiments |
 
-This chapter should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
+Policy optimization should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
 
 The method-family list is therefore subordinate to governance. PPO-like, DPO-like, GRPO-like, RLVR-like, or custom control-policy updates all need the same record: target policy, reward boundary, drift limit, evaluation suite, failure probes, rollback, and promotion gate.
 
-The chapter should make the target policy explicit before naming an optimizer.
+The target policy should be explicit before an optimizer is named.
 
 | Stack layer | Policy that can be optimized | Reward boundary |
 |---|---|---|
@@ -302,7 +302,7 @@ These Lean hooks are implemented as finite-record predicates over policy-update 
 
 ## Source-noted external literature
 
-The following sources were added as stable external-literature records with primary arXiv metadata and conservative source notes. They remain method-family context. They do not promote this chapter above `argument`, and none of their reported training results has been reproduced here.
+The following sources were added as stable external-literature records with primary arXiv metadata and conservative source notes. They remain method-family context. They do not promote the claim above `argument`, and none of their reported training results has been reproduced here.
 
 | Area | Source records | Current use |
 |---|---|---|

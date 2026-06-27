@@ -39,7 +39,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter treats simulation claims as contract-relative design constraints. It does not make new physics claims, reproduce physical-computation literature, or claim that any simulation benchmark has been run in this repository.
+Simulation claims are contract-relative design constraints. This layer does not make new physics claims, reproduce physical-computation literature, or claim that any simulation benchmark has been run in this repository.
 
 This is the closing realism check for the preceding resource-economics chapter. Resource budgets say what the stack can afford; simulation contracts say what an experiment is actually allowed to mean. The handoff matters because a cheap synthetic world can be useful for a narrow invariant while still being too abstract, too slow, too lossy, or too physically expensive for a stronger claim.
 
@@ -81,7 +81,7 @@ Fidelity is therefore relative to the intended claim. A low-fidelity simulator c
 
 [simulation-fidelity-and-physical-constraints.core, label: Design rationale, support: argument] Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
 
-The claim remains at `argument` support. The passage-reviewed mappings support discussion of contract-relative simulation demand and bottlenecks, but this chapter does not claim independent physical validation, feasibility calculation, or simulation performance.
+The claim remains at `argument` support. The passage-reviewed mappings support discussion of contract-relative simulation demand and bottlenecks, but they do not claim independent physical validation, feasibility calculation, or simulation performance.
 
 ### Claim-source mapping status
 
@@ -240,7 +240,7 @@ This simulation claim-transport layer remains a target architecture, not a curre
 | Resource-bound sanity check | Check that demand and capacity bottlenecks are named before feasibility is claimed. | planned; not run |
 | Simulation approximation audit | Check that conclusions do not exceed approximation and fidelity boundaries. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require simulation claims, resource estimates, and a review harness; they are not reported feasibility results. When a simulation-audit test is implemented, this chapter should link to the command, fixture, assumptions, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented row validates fixture/schema consistency only. The remaining rows require simulation claims, resource estimates, and a review harness; they are not reported feasibility results. When a simulation-audit test is implemented, the manuscript should link to the command, fixture, assumptions, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
