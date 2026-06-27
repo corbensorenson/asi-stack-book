@@ -61,7 +61,7 @@ The runtime ideal is less about clever orchestration than about evidence-rich or
 
 A multi-core system earns architectural relevance by making coordination inspectable after the fact.
 
-The runtime should leave enough receipts for orchestration to be debugged. Receipts are the runtime's answer to hidden coordination.
+The runtime should leave enough receipts for orchestration to be debugged. Receipts are the runtime's answer to hidden coordination after execution ends.
 :::
 
 ## Problem

@@ -20,7 +20,7 @@ import build_reader_edition
 ROOT = Path(__file__).resolve().parents[1]
 HUMAN_CLASS = "asi-human-only"
 HUMAN_HEADING = "## Human Reading Path"
-MIN_BRIDGE_WORDS = 165
+MIN_BRIDGE_WORDS = 170
 MAX_BRIDGE_WORDS = 180
 MIN_OPENING_SENTENCE_WORDS = 8
 MIN_CLOSING_SENTENCE_WORDS = 7

@@ -55,7 +55,7 @@ The architecture stays humane by preserving unresolved value as a first-class re
 
 Some ambiguity is not waste; it is the record of obligations that remain alive.
 
-The stack stays honest by carrying those obligations forward. Unresolved value conflict should remain visible inside the work record.
+The stack stays honest by carrying those obligations forward. Unresolved value conflict should remain visible inside the work record as evidence.
 :::
 
 ## Problem
