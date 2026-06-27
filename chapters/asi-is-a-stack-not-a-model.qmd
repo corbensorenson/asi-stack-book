@@ -209,6 +209,19 @@ The book should therefore be edited like a stack, not like a table of contents. 
 
 The smallest useful implementation is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 
+## Beyond the State of the Art
+
+The mature version of ASI Is a Stack, Not a Model is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model. The mature surface would include:
+
+- Operating mechanism: Define each layer by responsibility, interface, artifact, invariant, and failure mode; Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system; Treat the whole book as a reference architecture rather than a collection of standalone papers; Use source queues and evidence states to keep future writing runs context-loaded and honest.
+- Stack interface: Alignment and governance constrain every downstream layer; Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts; Recursive improvement is a governed transition, not an ambient property of intelligence.
+- Preserved invariants: Layer boundaries remain explicit; Claims carry support states; Reasoning ability never implies execution authority.
+- Failure closure: detect and route failure modes such as Anthology drift; Monolith drift; Evidence inflation before source notes or tests exist to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For ASI Is a Stack, Not a Model, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

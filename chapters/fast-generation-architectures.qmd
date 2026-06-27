@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-27"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -43,7 +43,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-27 |
 | Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -251,6 +251,19 @@ The first executable version should not attempt to implement every acceleration 
 The current `generation_mode_record` fixture validates only the record shape: task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, output accounting fields, promotion decision, measurement status, metric definitions, evidence references, and non-claims. It intentionally records `not_run`, `not measured`, and `not_evaluated` for the demo route.
 
 The registry should allow experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair`, but those entries must remain unroutable or experimental until source notes and tests exist.
+
+## Beyond the State of the Art
+
+The mature version of Fast Generation Architectures is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden. The mature surface would include:
+
+- Operating mechanism: Separate raw generation speed from effective verified tokens per second and useful solution per second; Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability; Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode; Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates; Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
+- Stack interface: PlanForge chooses the generation mode; VCM supplies the bounded context packet; The generator emits draft tokens, sketches, spans, or candidates; Spinoza or a verifier checks acceptance predicates; Talos turns accepted output into artifacts; Benchmaxxing records speed-quality evidence; SCF governs whether a mode is promoted, quarantined, or left experimental.
+- Preserved invariants: No fast generation mode is promoted on raw tokens per second alone; Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback; Accepted output is counted separately from proposed output; High-risk tasks can require slower verified generation even when a faster mode exists; Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion.
+- Failure closure: detect and route failure modes such as Speed hides lower answer quality or higher repair cost; The verifier becomes the true bottleneck; Draft heads, diffusion sketches, or cached continuations drift out of distribution; Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains; Multi-seed generation increases sample count without improving useful solution per second; Fallback is omitted after rejection or uncertainty to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Fast Generation Architectures, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

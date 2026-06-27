@@ -4,7 +4,7 @@ chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -194,6 +194,19 @@ The current fixture validates that this public contract can be represented consi
 `AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, plus a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence. These proofs do not implement a codec, generator, verifier, downstream utility test, or fallback harness.
 
 The next useful implementation step is a compact-core comparison fixture: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. That would make the compactness contract concrete without reporting a benchmark.
+
+## Beyond the State of the Art
+
+The mature version of Compact Generative Systems and Residual Honesty is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit. The mature surface would include:
+
+- Operating mechanism: Define compact generative cores and their residuals; Use the seed/router/search/generator/verifier/residual loop as the default compression-control model; Treat the raw LLM as a compressed generative engine, not as the entire intelligent system; Separate lawful generation from exact remainder; Record where compactness fails.
+- Stack interface: Compression feeds memory and routing; Evidence tests downstream utility; Procedural memory turns repeated generation into tools.
+- Preserved invariants: Lossy claims are labeled; Residual burden is visible; Fallback exists when compact generation fails.
+- Failure closure: detect and route failure modes such as False lossless claims; Hidden residual complexity; Compactness that damages utility to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Compact Generative Systems and Residual Honesty, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

@@ -81,11 +81,12 @@ Each chapter must maintain these sections:
 - Invariants
 - Failure modes
 - Minimal implementation
+- Beyond the State of the Art
 - Codex test plan
 - Source crosswalk
 - Summary
 
-The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist.
+The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist. `Minimal implementation` should name the smallest honest slice; `Beyond the State of the Art` should name the mature product-level end state without implying that the end state has already been implemented.
 
 ## Claim Labels
 

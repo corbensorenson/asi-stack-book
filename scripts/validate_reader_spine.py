@@ -41,6 +41,7 @@ DEFAULT_REQUIRED_READER_HEADINGS = [
     "Invariants",
     "Failure modes",
     "Minimal implementation",
+    "Beyond the State of the Art",
     "Summary",
 ]
 

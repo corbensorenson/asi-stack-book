@@ -4,7 +4,7 @@ chapter_id: "moecot-runtime-and-multi-core-orchestration"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | chapter draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -193,6 +193,19 @@ The `moecot_orchestration_record` schema is intentionally conservative. It recor
 The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, the chapter remains an implementation-reference map.
 
 The next useful fixture set is a public-safe orchestration packet with one accepted command, one denied route, one missing replay reference, one residual handoff, and one promotion blocker. That would test the evidence packet shape without claiming a live MoECOT deployment.
+
+## Beyond the State of the Art
+
+The mature version of MoECOT Runtime and Multi-Core Orchestration is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined. The mature surface would include:
+
+- Operating mechanism: Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts; Keep direct MoECOT claims conservative until the primary source is ingested; Map MoECOT mechanisms to other stack layers rather than making it a separate silo.
+- Stack interface: Routing selects cores; SCFs govern replacement; Evidence and replay ledgers evaluate runtime changes.
+- Preserved invariants: MoECOT claims stay at argument level until source notes exist; Implementation evidence is separated from design argument; Runtime promotion follows readiness gates.
+- Failure closure: detect and route failure modes such as Overclaiming unavailable source content; Treating implementation branding as architecture proof; Losing cross-layer traceability to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For MoECOT Runtime and Multi-Core Orchestration, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

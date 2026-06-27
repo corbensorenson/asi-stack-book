@@ -349,6 +349,12 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 {chapter.get('minimal_implementation', 'No manifest minimal implementation statement declared yet.')}
 
+## Beyond the State of the Art
+
+The logical end state is not only a larger implementation of the minimal artifact. It is a mature, governed capability where this chapter's boundary is live in the architecture, evidence-bearing, inspectable, and constrained by the support state recorded in this book.
+
+That end state remains a target, not a current result, until the necessary source mappings, schemas, proofs, tests, runtime traces, and review artifacts exist.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

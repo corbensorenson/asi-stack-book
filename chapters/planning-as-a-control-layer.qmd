@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "planforge"
   - "viea"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -227,6 +227,19 @@ The smallest useful implementation is a `plan_graph` schema and fixture. It vali
 The schema and fixture make the planning surface explicit. They do not prove that a graph is acyclic, optimal, complete, or safe to dispatch.
 
 The next useful implementation step is a tiny plan-dispatch fixture with one valid node, one blocked dependency, one missing-context node, one authority-exceeding tool request, and one replanning event that preserves the original stop condition. That would demonstrate control-layer semantics without claiming planner quality.
+
+## Beyond the State of the Art
+
+The mature version of Planning as a Control Layer is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects. The mature surface would include:
+
+- Operating mechanism: Compile goals into strategic, tactical, and runtime plans; Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior; Delegate execution through typed contracts.
+- Stack interface: Alignment filters goals; VCM supplies context packets; Routing selects specialists; Execution runs typed jobs.
+- Preserved invariants: Plans expose constraints and stop conditions; Runtime replanning preserves authority limits; Tool selection is justified by task requirements.
+- Failure closure: detect and route failure modes such as Scope creep; Planning without replanning; Tool choice exceeds authority or budget to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Planning as a Control Layer, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

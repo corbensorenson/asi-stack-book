@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -50,7 +50,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -242,6 +242,19 @@ The smallest useful implementation is `policy_optimization_record.schema.json` w
 The fixture records update state, target layer, policy ref, policy delta summary, training mode, feedback source, feedback admissibility, reward or preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gate refs, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, promotion decision, measurement status, support-state effect, residuals, and non-claims. It validates the record shape only. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
 
 The next useful fixture set is a policy-delta trace: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.
+
+## Beyond the State of the Art
+
+The mature version of Policy Optimization and Learning from Feedback is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted. The mature surface would include:
+
+- Operating mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, or generation mode; Record the feedback source: human preference, verifier reward, benchmark result, tool result, context-grounding check, governance check, or latency/resource signal; Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked; Constrain the update with drift bounds, evidence gates, rollback plans, and residual accounting; Evaluate for task success, regressions, reward hacking, authority compliance, and cost before promotion.
+- Stack interface: Benchmarks and verifiers produce reward or preference signals; VCM and artifact graphs preserve the training/evaluation context and evidence references; Talos records training, tool, and evaluation artifacts; Spinoza and UAT audit reward meaning, verifier failures, and reward-hacking probes; SCF gates decide promotion, quarantine, rollback, or continued experiment status.
+- Preserved invariants: Reward is not evidence unless the verifier and evaluation boundary are recorded; Policy updates cannot expand authority by training side effect; A faster or shorter policy is not promoted unless task success and regressions are preserved; Reward hacking probes are part of the update record, not optional commentary; Rollback remains available for promoted updates.
+- Failure closure: detect and route failure modes such as Reward hacking or verifier gaming; Over-optimization for preference style rather than truth or task success; Planner/router/context policies learning hidden shortcuts; Latency rewards suppressing needed verification; Policy drift crossing SCF authority or readiness boundaries to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Policy Optimization and Learning from Feedback, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

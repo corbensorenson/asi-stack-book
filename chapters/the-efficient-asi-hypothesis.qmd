@@ -203,6 +203,19 @@ The failure pattern is not only wasting compute. It is misaccounting. Cheap infe
 
 The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
 
+## Beyond the State of the Art
+
+The mature version of The Efficient ASI Hypothesis is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals. The mature surface would include:
+
+- Operating mechanism: Use minimum viable intelligence for subtasks; Turn repeated cognition into durable artifacts, tools, or procedural memory; Model efficiency through the seed/router/search/generator/verifier/residual loop plus memory and governance; Expose residual burden when routing or compression is incomplete.
+- Stack interface: Planning requests capability profiles; Routing selects specialists; Evidence decides whether efficiency claims survived quality and cost tests.
+- Preserved invariants: Efficiency claims include quality and cost; Compression exposes residuals; Fallback routes remain available.
+- Failure closure: detect and route failure modes such as Cheap inference mistaken for intelligence; Critical context compressed away; Benchmark gains that increase hidden residual burden to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For The Efficient ASI Hypothesis, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

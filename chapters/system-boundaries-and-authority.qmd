@@ -208,6 +208,19 @@ The confused-deputy pattern is central. A low-authority layer can ask a higher-a
 
 The smallest useful implementation is an `authority_transition_record` schema plus a valid fixture for an allowed handoff and later fixtures for missing-grant and confused-deputy denials. It should stay small enough to support Lean and test work: principal, requested operation, permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review, decision, effect receipt, audit references, and non-claims.
 
+## Beyond the State of the Art
+
+The mature version of System Boundaries and Authority is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Authority should be modeled as a typed, bounded capability attached to layers, fields, tools, artifacts, and principals. The mature surface would include:
+
+- Operating mechanism: Define principals, authorities, ceilings, grants, revocations, and handoff contracts; Separate knowledge access from action authority; Represent missing authority as a detectable failure rather than implicit permission.
+- Stack interface: Governance issues ceilings; Execution checks permissions; Evidence records authority-related failures.
+- Preserved invariants: Authority never expands silently; Read permission is not write permission; Tool execution requires an explicit grant.
+- Failure closure: detect and route failure modes such as Authority creep; Confused-deputy tool calls; Memory access treated as action approval to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For System Boundaries and Authority, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

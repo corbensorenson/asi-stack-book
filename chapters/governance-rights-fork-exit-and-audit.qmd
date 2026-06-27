@@ -192,6 +192,19 @@ The smallest useful implementation is a `governance_right_record` schema plus fi
 
 The next useful fixture set is a rights receipt suite: one complete audit response, one justified redaction with appeal path, one exit export with portable state, and one fork request denied because safety obligations cannot transfer. That would test material usability without claiming institutional governance.
 
+## Beyond the State of the Art
+
+The mature version of Governance Rights: Fork, Exit, and Audit is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals. The mature surface would include:
+
+- Operating mechanism: Represent rights as capabilities and required interfaces; Attach audit artifacts to governance decisions; Treat fork/exit as preserved escape hatches against lock-in.
+- Stack interface: Governance issues rights; SCFs preserve rights across replacement; Execution logs evidence for audit.
+- Preserved invariants: Audit records cannot be silently deleted; Exit paths remain materially usable; Fork rights do not bypass safety constraints.
+- Failure closure: detect and route failure modes such as Governance capture; Data hostage-taking; Opaque automated policy updates to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Governance Rights: Fork, Exit, and Audit, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

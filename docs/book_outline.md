@@ -29,6 +29,7 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 - Which sources should be mined for each chapter and part.
 - Which claims should become Lean proofs, executable specs, or tests.
 - How a minimal implementation can grow from artifact graph to governed capability replacement.
+- What the beyond-state-of-the-art logical conclusion of each chapter looks like when the idea matures into a governed, evidence-bearing product surface.
 - How the living book acts as an evidence ratchet instead of a static anthology.
 
 ## Audience and Edition Spine
@@ -40,6 +41,8 @@ Future writing runs should serve three audiences from one canonical source tree:
 - Interested human readers need a coherent manuscript for EPUB, PDF, DOCX, e-reader, and audio consumption without repeated live-workflow scaffolding.
 
 The ordinary chapter prose is the reader-facing spine. It must still make sense after live-only headings such as `Chapter status`, `Drafting guardrail`, `Codex test plan`, `Source crosswalk`, `Claim-source mapping status`, and `Formalization hooks` are stripped. Meaning-critical caveats, uncertainty, and support-state limits belong in the spine, not only in a stripped guardrail or source-crosswalk section.
+
+Every chapter must include both `Minimal implementation` and `Beyond the State of the Art`. The minimal section defines the smallest public-safe artifact or validated slice that can start the chapter's idea honestly. The beyond-SOTA section defines the mature logical conclusion of the idea: the final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. The beyond-SOTA section is a target architecture, not a claim of current implementation; it must preserve the chapter's recorded support state until proof, test, source, benchmark, or runtime artifacts justify promotion.
 
 The live site exposes this separation through a reading-mode toggle. `AI view` shows the reader spine plus the live/research scaffold. `Human view` hides the same live-only headings used by the reader-release profile. Each chapter must maintain exactly one `.asi-human-only` `Human Reading Path` bridge after `Drafting guardrail` and before `Problem` so interested readers get a concise orientation without turning the project into a second manuscript. `.asi-ai-only` and `.asi-live-only` fenced divs are reserved for AI/research scaffolding that should disappear from Human view and reader releases. Reader generation unwraps human-only blocks and removes AI-only blocks.
 

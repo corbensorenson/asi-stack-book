@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-27"
 primary_sources:
   - "field_of_god_ai_constitution"
   - "scf"
@@ -43,7 +43,7 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-27 |
 | Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, and GitHub self-hosted runners |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -259,6 +259,19 @@ The first implementation should be deliberately small:
 This minimum viable hive can run as a local experiment without pretending to be a complete personal cloud. Its value is that it makes the missing control records visible.
 
 This repository now contains the record-level first step for that experiment: `device_resource_card.schema.json`, `portal_card.schema.json`, `hive_job_contract.schema.json`, `hive_job_bid.schema.json`, `hive_scheduling_decision.schema.json`, `hive_approval_receipt.schema.json`, and `hive_federation_lease.schema.json`, each with a matching valid fixture. These fixtures prove only that the public record shapes can be validated by the local protocol validator.
+
+## Beyond the State of the Art
+
+The mature version of Personal Compute Hives and Federated Edge Intelligence is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority. The mature surface would include:
+
+- Operating mechanism: Represent persons, devices, portals, workers, stores, datasets, tools, jobs, and external hives with signed identity and policy cards; Classify jobs by data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirement before scheduling; Let eligible devices bid on work after policy filtering, then choose the best lawful node rather than the fastest reachable node; Treat phones, laptops, tablets, dashboards, and headsets as portals; desktops, NAS boxes, old machines, workshop computers, and rented nodes as bounded workers or stores; Represent device roles, family-sensitive portals, public project jobs, and hive memory classes separately so owned substrate does not collapse into surveillance or botnet behavior; Use portal cards, approval receipts, job bids, federation leases, sandbox manifests, artifact manifests, evidence bundles, payment or credit records, reputation records, and revocations as the Hive-to-Hive protocol surface; Preserve audit records, data-placement decisions, approval events, and residuals for every cross-device or cross-hive action.
+- Stack interface: VCM declares what context is needed and what data may move; Talos and PlanForge lower tasks into typed jobs with resource, authority, and verification requirements; Octopus/RMI routing and TokenMana-style resource records score eligible devices and rented nodes; Field-of-God and SCF governance define family, child, privacy, physical-tool, and federation membranes; Project hives and artifact stewards interact through explicit job contracts, sandbox manifests, evidence bundles, and revocation paths.
+- Preserved invariants: Reachability is not authority; Policy filtering precedes optimization; External work receives sandboxed job slots, not private network access; Family and child-facing portals preserve dignity, consent boundaries, and parent/guardian review for sensitive transitions; Secrets remain handles and approvals, not strings in model context; Every temporary federation link has an expiration, revocation path, and audit record.
+- Failure closure: detect and route failure modes such as Personal hive becomes a botnet or malware execution surface; Family governance becomes surveillance; Rented or public project compute leaks private data; Wrong-device scheduling drains batteries, overheats machines, exposes data, or bypasses approvals; Identity confusion grants child, guest, agent, or project authority to the wrong principal; Hive memory becomes an ungoverned swamp of artifacts, logs, models, and personal data to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Personal Compute Hives and Federated Edge Intelligence, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

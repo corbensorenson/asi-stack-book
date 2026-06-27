@@ -190,6 +190,19 @@ The smallest useful implementation is an `agency_rights_checklist` schema plus a
 
 The next useful implementation step is a scenario suite with one reversible action, one irreversible action, one delegated decision, and one attempted self-change. Each scenario should ask whether refusal, review, appeal, rollback, accountability, and residual reporting survive the transition. Until such scenarios exist, the chapter remains a design rationale with record-level checks only.
 
+## Beyond the State of the Art
+
+The mature version of Agency, Dignity, and Corrigibility is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements. The mature surface would include:
+
+- Operating mechanism: Represent agency constraints as limits on delegation and manipulation; Define corrigibility as preserved update and shutdown pathways; Use contestability and audit rights as governance mechanisms.
+- Stack interface: Alignment defines agency predicates; Governance enforces rights; Execution requires approvals for irreversible effects.
+- Preserved invariants: Users retain meaningful refusal and review channels; Delegation does not erase accountability; Irreversible actions require stronger authorization.
+- Failure closure: detect and route failure modes such as Dependency lock-in; Covert manipulation; Corrigibility collapse to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Agency, Dignity, and Corrigibility, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

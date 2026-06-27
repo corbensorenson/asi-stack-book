@@ -4,7 +4,7 @@ chapter_id: "semantic-pages-context-cells-and-certificates"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "vcm_public"
   - "verification_bandwidth"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -181,6 +181,19 @@ The smallest useful implementation is a `semantic_page_certificate` schema and f
 That validation proves only that the certificate names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
 
 The next useful implementation step is a paired-cell fixture set: one source excerpt, one transaction record, one planning summary with loss recorded, one evidence cell preserving exact wording, one redacted execution cell with a lower authority ceiling, one stale certificate invalidated by source revocation, one artifact node that carries the derived cell, and one attempted use outside the certificate blocked. That would test certificate semantics without claiming summary fidelity.
+
+## Beyond the State of the Art
+
+The mature version of Semantic Pages, Context Cells, and Certificates is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates. The mature surface would include:
+
+- Operating mechanism: Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells; Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses; Use task-relative representation graphs instead of one linear compression ladder.
+- Stack interface: Spinoza consumes claim/evidence cells; Planning consumes constraints and decisions; Execution receives only permitted representations.
+- Preserved invariants: Authority labels survive summarization; Loss contracts are explicit; A derived cell points back to source bindings.
+- Failure closure: detect and route failure modes such as Summary overconfidence; Provenance loss; Authority escalation via compression to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Semantic Pages, Context Cells, and Certificates, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

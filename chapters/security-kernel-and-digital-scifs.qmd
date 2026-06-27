@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -47,9 +47,9 @@ This chapter is the stack's least-exposure rule. Capability can grow, routes can
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Replacement and rollback protect the shape of a capability. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem.
+Replacement and rollback protect the shape of a capability. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem. A replacement that changes what it can see or do has changed the security boundary, even if its public interface still looks familiar.
 
-The chapter's central move is to make sensitive context an explicit boundary instead of a prompt convention. A system should not handle secrets, approvals, or protected memory unless the access path, clearance, receipt, and denial behavior are visible.
+The chapter's central move is to make sensitive context an explicit boundary instead of a prompt convention. A system should not handle secrets, approvals, or protected memory unless the access path, clearance, receipt, and denial behavior are visible. Human trust comes from knowing where the authority was used, not from hoping the model was careful with invisible power.
 :::
 
 ## Problem
@@ -60,7 +60,7 @@ The agency paradox is straightforward: useful AI systems need to act through cre
 
 This chapter therefore treats security as a kernel boundary. The AI may request use of an authority, but the authority is mediated by handles, policy checks, context compilation, Digital SCIFs, and auditable substitution points. The model should know what it is allowed to do, not necessarily the secret bytes that make the action possible.
 
-The security goal is not to make the model morally trustworthy with secrets. It is to make the secret path structurally narrower than the reasoning path. The model can propose, justify, and receive sanitized results; the kernel decides what is substituted, where, for how long, and under which audit record.
+The security goal is not to make the model morally trustworthy with secrets. It is to make the secret path structurally narrower than the reasoning path. The model can propose, justify, and receive sanitized results; the kernel decides what is substituted, where, for how long, and under which audit record. That division lets the stack use power without turning all power into model context.
 
 ## Why existing approaches are insufficient
 
@@ -71,6 +71,8 @@ The `ladon_manhattan` source gives the credential pattern: use blind handles, ke
 Neither pattern is a complete security proof. Software compartments can leak through logs, traces, screenshots, side channels, summaries, or overly broad handle permissions. The book's claim is narrower: credential bytes and privileged context should not be casually placed in model-visible text when a handle-mediated boundary can do the job.
 
 The same caution applies to context. A mission brief should be enough for the task, not a convenience dump of everything nearby. If a context packet contains privileged facts that the task does not need, the failure has already happened before the model acts.
+
+This is why security belongs before the self-improvement boundary. A system that can modify itself must not be allowed to improve by making privileged context cheaper to move, easier to summarize, or less visible in logs. Reduced friction is not automatically reduced risk.
 
 ## Core Claim
 
@@ -121,6 +123,8 @@ The useful security object is a lease, not a label. A handle should move through
 The passage review sharpens the claim boundary: keeping secret bytes out of model-visible context can reduce direct disclosure by prompt injection, but it does not prove isolation, side-channel safety, log hygiene, UI safety, or containment of every derived summary. Alignment-field material belongs here only as a warning about power, consent, agency, and confinement; it is not a security proof.
 
 The boundary should also distinguish request visibility from substitution visibility. The model may see that a payment handle, deployment token, private source, or personal record is available under policy; it should not see the underlying material unless the task requires model-visible reasoning over that material and a SCIF admits it. Even then, the commit path should be sanitized by default.
+
+The important design habit is to treat every privilege as leased. A handle, clearance, memory shard, or tool permission should have a purpose, destination, time window, revocation path, and receipt. If a later plan cannot explain why the lease still applies, the authority should expire rather than persist as ambient capability.
 
 ## Interfaces
 
@@ -180,6 +184,16 @@ The smallest useful implementation is a fake-secret fixture: an agent sees only 
 
 The next useful implementation step is a leak-path fixture set: one allowed handle substitution, one denied destination, one overbroad SCIF context request, one sanitized summary with residual leak risk, and one attempted handle reuse after expiration. That would exercise the boundary without claiming production containment.
 
+## Beyond the State of the Art
+
+The mature version of Security Kernel and Digital SCIFs is a least-exposure operating layer for high-agency AI. The model can reason about a task, request authority, and receive sanitized results, but secrets, protected memory, credentials, private sources, and privileged actions live behind leases, handles, clearance checks, compartment lifecycles, and audit receipts.
+
+In that end state, sensitive work has a visible lifecycle: request, denial or scoped approval, context admission, substitution, execution, sanitization, zeroization, commit, residual leak-risk classification, expiry, and revocation. The product surface does not ask users or researchers to trust that the model was careful. It shows which authority was used, which material was withheld, which output was sanitized, which logs are available, and which residual risks remain.
+
+Beyond current practice, the kernel would make security costs part of system accounting. A cheaper route that drops isolation, logging, approval, sanitization, or side-channel review would not count as an efficiency improvement; it would be a boundary delta requiring governance review. Prompt injection, summary leakage, stale handle reuse, SCIF bypass, and overbroad context admission would become testable failure paths rather than after-the-fact incident narratives.
+
+This is a target architecture, not a current-result claim. It remains beyond the chapter's present support state until handle-substitution fixtures, expiry/reuse tests, SCIF least-privilege tests, sanitized-output residual tests, prompt-injection scenarios, threat-model records, and runtime traces exist and validate the boundary.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
@@ -217,4 +231,4 @@ The crosswalk names the security/context sources. It does not claim that Ladon, 
 
 Security Kernel and Digital SCIFs is the stack's least-exposure boundary for secrets and privileged context. The core design is conservative and practical: do not put secrets and privileged context where the model can freely transform them. Put them behind handles, clearance checks, ephemeral compartments, and audit receipts. The next maturity step is a toy handle-substitution fixture, then a stricter threat model for logs, summaries, and side channels.
 
-The same principle returns later as budget discipline and self-improvement discipline. Protected power has a cost, and a system may not declare itself improved by making that cost invisible.
+The same principle returns later as budget discipline and self-improvement discipline. Protected power has a cost, and a system may not declare itself improved by making that cost invisible. The next chapter treats any change to those security costs or authority leases as a boundary delta, not an implementation detail.

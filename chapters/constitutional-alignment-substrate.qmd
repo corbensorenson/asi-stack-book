@@ -184,6 +184,19 @@ The smallest useful implementation is a `constitutional_predicate_record` schema
 
 The next useful implementation step is a constitutional conflict fixture set: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. That would test the substrate's control semantics without claiming moral correctness.
 
+## Beyond the State of the Art
+
+The mature version of Constitutional Alignment Substrate is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes. The mature surface would include:
+
+- Operating mechanism: Translate philosophical commitments into operational predicates where possible; Keep metaphysical claims labeled as interpretation unless separately supported; Attach constitutional constraints to planning and replacement gates.
+- Stack interface: Planning receives admissible-goal constraints; Governance receives protected constraints; Verification checks whether normative claims exceed evidence.
+- Preserved invariants: Dignity and agency constraints remain visible; Corrigibility cannot be optimized away; Speculative metaphysics stays labeled.
+- Failure closure: detect and route failure modes such as Mystical framing replacing technical constraints; Power without care; Self-modification weakening protected commitments to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Constitutional Alignment Substrate, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

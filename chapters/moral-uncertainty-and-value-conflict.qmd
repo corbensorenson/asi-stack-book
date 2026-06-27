@@ -192,6 +192,19 @@ The smallest useful implementation is a `value_conflict_record` schema plus a sc
 
 The next useful fixture set is a decision-lease suite: one reversible low-stakes bounded decision, one high-stakes escalation, one denied action, one deferred action with revisit trigger, and one conflict-laundering attempt blocked from policy promotion.
 
+## Beyond the State of the Art
+
+The mature version of Moral Uncertainty and Value Conflict is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions. The mature surface would include:
+
+- Operating mechanism: Classify conflicts by value type, stakeholder, reversibility, and evidence requirement; Escalate unresolved conflicts to tribunal or human review; Record decisions and residual moral uncertainty.
+- Stack interface: Alignment produces conflict records; Planning uses conflict constraints; Evidence records review outcomes.
+- Preserved invariants: Unresolved conflicts remain visible; High-stakes conflicts require stronger review; Speculative moral theory cannot silently authorize action.
+- Failure closure: detect and route failure modes such as Value flattening; False consensus; Review theater without decision records to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Moral Uncertainty and Value Conflict, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

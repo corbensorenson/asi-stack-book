@@ -195,6 +195,19 @@ The smallest useful implementation is the existing `stable_capability_field` sch
 
 The next useful implementation step is a field history fixture: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. That fixture would make identity, lifecycle, and evidence aging concrete without claiming a deployed route validator.
 
+## Beyond the State of the Art
+
+The mature version of Stable Capability Fields is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy. The mature surface would include:
+
+- Operating mechanism: Separate field identity from implementation; Bind qualification claims to exact artifacts; Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired; Require route validity and evaluator integrity before promotion.
+- Stack interface: Planning requests field capabilities; Execution invokes authorized routes; Evidence records qualification and regression results.
+- Preserved invariants: Replacement cannot expand authority by default; Evaluator integrity is protected; Qualification context is explicit and time-bound; Rollback remains available after failed mutation.
+- Failure closure: detect and route failure modes such as Field identity drift; Evaluator capture; Authority expansion during replacement to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Stable Capability Fields, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

@@ -4,7 +4,7 @@ chapter_id: "command-contracts-and-semantic-interfaces"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "software_magic_grimoire"
   - "viea"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -223,6 +223,19 @@ The smallest useful implementation is a `command_contract` schema and fixture. T
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 
 The next useful implementation step is a small command-conflict fixture set: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. That would let the book demonstrate contract precedence without claiming full prompt-security behavior.
+
+## Beyond the State of the Art
+
+The mature version of Command Contracts and Semantic Interfaces is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior. The mature surface would include:
+
+- Operating mechanism: Turn recurring command patterns into reusable templates; Treat software words as coordination primitives; Bind semantic interfaces to schemas and tests.
+- Stack interface: Planning consumes structured commands; Execution enforces output contracts; Verification checks stated failure behavior.
+- Preserved invariants: A command exposes output and verification requirements; Failure behavior is declared; Implicit instructions do not override explicit constraints.
+- Failure closure: detect and route failure modes such as Semantic ambiguity; Prompt injection through context; Unspecified output contract to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Command Contracts and Semantic Interfaces, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

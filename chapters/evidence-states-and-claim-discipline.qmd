@@ -213,6 +213,19 @@ The smallest useful implementation is `schemas/claim_record.schema.json`, `schem
 
 The next useful fixture set is an evidence-receipt suite: one lineage-only source, one direct-support source, one failed verification, one schema-only validation, one finite Lean predicate, and one benchmark result whose scope is deliberately narrower than the prose claim.
 
+## Beyond the State of the Art
+
+The mature version of Evidence States and Claim Discipline is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition. The mature surface would include:
+
+- Operating mechanism: Use Appendix C as the claim ledger; Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed; Require source notes before promoting claims to source-derived; Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
+- Stack interface: Drafting updates claims; Experiments update evidence; Changelog records evidence movement.
+- Preserved invariants: No fabricated source support; No fabricated test results; Negative and inconclusive results remain visible.
+- Failure closure: detect and route failure modes such as Support-state inflation; Citation laundering; Silent removal of failed claims to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Evidence States and Claim Discipline, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

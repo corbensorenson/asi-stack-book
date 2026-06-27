@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "rmi"
   - "benchmaxxing"
@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -195,6 +195,19 @@ The `readiness_gate_record` schema validates the shape of that record, including
 `AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, plus a bounded quarantine predicate blocking ordinary route selection for quarantined targets. These proofs do not implement benchmark evaluation, residual escrow storage, lifecycle transitions, or routing enforcement.
 
 The next useful fixture set is a lifecycle trace: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation. That would test gate semantics without claiming module quality.
+
+## Beyond the State of the Art
+
+The mature version of Readiness Gates, Residual Escrow, and Quarantine is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained. The mature surface would include:
+
+- Operating mechanism: Maintain readiness states and promotion gates; Record residual failures in escrow; Quarantine modules with safety, regression, or scope failures.
+- Stack interface: Routing reads readiness; Benchmarks update gates; SCFs govern replacement.
+- Preserved invariants: Promotion requires gate evidence; Residuals are not deleted on promotion; Quarantine blocks ordinary routing.
+- Failure closure: detect and route failure modes such as Premature promotion; Residual hiding; Untracked regression after merge to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Readiness Gates, Residual Escrow, and Quarantine, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

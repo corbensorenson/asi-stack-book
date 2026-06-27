@@ -20,6 +20,7 @@ REQUIRED_SECTIONS = [
     "## Invariants",
     "## Failure modes",
     "## Minimal implementation",
+    "## Beyond the State of the Art",
     "## Codex test plan",
     "## Source crosswalk",
     "## Summary",

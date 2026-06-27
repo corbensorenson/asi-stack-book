@@ -201,6 +201,19 @@ The smallest useful implementation is an `intent_contract` schema plus examples 
 
 The next useful implementation step is a small corpus of deliberately underspecified requests. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
 
+## Beyond the State of the Art
+
+The mature version of Human Intent as a Formal Input is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions. The mature surface would include:
+
+- Operating mechanism: Parse intent into command contracts; Separate desired outcome from allowed means; Attach acceptance criteria and escalation conditions.
+- Stack interface: Alignment filters intent; Planning compiles accepted contracts; Execution consumes only authorized task contracts.
+- Preserved invariants: Ambiguity triggers clarification or bounded defaults; Intent contracts expose authority limits; Stop conditions remain attached to the plan.
+- Failure closure: detect and route failure modes such as Goal misbinding; Scope creep; Implicit permission to act to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Human Intent as a Formal Input, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+
 ## Codex test plan
 
 | Test | Purpose | Status |

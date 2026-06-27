@@ -4,7 +4,7 @@ chapter_id: "generate-verify-repair-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "bbvca_v9"
   - "bbvca_main"
@@ -26,7 +26,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `bbvca_v9`, `bbvca_main`, `cgs`, `rankfold_neuralfold` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -203,6 +203,19 @@ The smallest useful implementation is not a new universal codec. It is a tiny re
 The current fixture covers only the receipt side of that implementation: receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims. A prototype claim remains unpromoted until code, command, environment, corpus, and result are recorded.
 
 `AsiStackProofs.GenerateVerifyRepair` adds a bounded reconstruction predicate requiring an exact claim to satisfy `generator output + repair residual = target`, plus a bounded failed-verification predicate blocking exactness promotion. These proofs do not implement a codec, verifier, search procedure, repair stream, rate accounting experiment, or corpus result.
+
+## Beyond the State of the Art
+
+The mature version of Generate-Verify-Repair Compression is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails. The mature surface would include:
+
+- Operating mechanism: Generate from seeded local laws; Verify against target; Repair mismatches with exact residual mechanisms and record rate discipline.
+- Stack interface: Evidence measures reconstruction and utility; Routing chooses compressed or full representation; VCM uses summaries with loss contracts.
+- Preserved invariants: Verification precedes exactness claims; Repair cost is counted; Search bounds are explicit.
+- Failure closure: detect and route failure modes such as Unbounded search; Verification skipped; Repair larger than original data to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Generate-Verify-Repair Compression, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

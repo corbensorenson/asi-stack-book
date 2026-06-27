@@ -5,7 +5,7 @@ The book should read like a serious systems architecture text.
 ## Manuscript Standards
 
 - The book must explain one architecture, not collect isolated papers.
-- Each chapter must state the layer's problem, mechanism, interfaces, invariants, failure modes, minimal implementation, test plan, and source crosswalk.
+- Each chapter must state the layer's problem, mechanism, interfaces, invariants, failure modes, minimal implementation, beyond-state-of-the-art end state, test plan, and source crosswalk.
 - Each chapter must satisfy the machine-checked scaffold DoD in `scripts/validate_chapter_dod.py`.
 - Philosophical material must be translated into engineering-compatible constraints, claims, and failure modes.
 - Speculative material must remain visibly speculative.

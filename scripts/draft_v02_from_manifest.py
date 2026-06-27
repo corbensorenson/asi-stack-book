@@ -452,6 +452,17 @@ def build_chapter(chapter: dict, part: dict, part_index: int, chapter_index: int
     lines.append(
         "\nThe implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded."
     )
+    lines.append("\n## Beyond the State of the Art\n")
+    lines.append(
+        "The logical end state is not merely the minimal artifact at larger scale. It is a mature capability boundary that the rest of the stack can rely on: live interfaces, explicit authority, durable evidence, preserved invariants, visible residuals, and reviewable upgrade paths."
+    )
+    lines.append(
+        f"\nFor this chapter, that means the claim becomes operational rather than aspirational: {chapter['core_claim']} "
+        "The end state should show how the mechanism works under real workload pressure, how it composes with neighboring layers, how it fails closed, and how support-state promotion is earned instead of assumed."
+    )
+    lines.append(
+        "\nThis section is a target architecture, not a current result. It should remain bounded by the chapter's evidence state until the relevant proofs, tests, source mappings, runtime traces, benchmark records, or governance artifacts exist."
+    )
     lines.append("\n## Codex test plan\n")
     lines.append(test_table(chapter))
     lines.append(

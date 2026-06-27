@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -191,6 +191,19 @@ The smallest useful implementation is a benchmark ratchet schema and fixture. Th
 The next useful implementation step is a toy ratchet ledger with one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. That would demonstrate support-state restraint without claiming empirical capability.
 
 The toy ledger should include one intentionally contaminated case and one source-reported-only case. Those cases are useful because they force the harness to preserve evidence boundaries: contamination creates a blocked or quarantine decision, and source-reported status remains source-reported until the exact command, environment, data boundary, and artifacts are imported or rerun.
+
+## Beyond the State of the Art
+
+The mature version of Benchmark Ratchets and Anti-Goodhart Evidence is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure. The mature surface would include:
+
+- Operating mechanism: Track benchmark mastery thresholds and saturation; Generate regressions and hidden checks; Move residual failures into escrow and new frontier tasks; Record negative and inconclusive results as evidence, not cleanup.
+- Stack interface: Routing and SCFs use readiness gates; Evidence matrix records support movement; Changelog records evidence changes.
+- Preserved invariants: No test success is claimed without execution; Synthetic and empirical evidence remain distinct; Regressions are preserved.
+- Failure closure: detect and route failure modes such as Benchmark overfitting; Hidden regression deletion; Claim support inflation to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Benchmark Ratchets and Anti-Goodhart Evidence, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

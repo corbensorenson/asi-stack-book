@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "viea"
   - "scf"
@@ -43,7 +43,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -178,6 +178,19 @@ The subtle failure is integration theater: every layer name appears in the diagr
 The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
 The next useful implementation step is a tiny dry-run trace set with one approved flow and one blocked flow. The approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. The blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. That would still be a fixture, not a runtime result, but it would make the architecture's stop conditions executable.
+
+## Beyond the State of the Art
+
+The mature version of Integrated Reference Architecture is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. The mature surface would include:
+
+- Operating mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement; Show the compression loop embedded inside the broader governance, memory, routing, and verification stack; Show which artifact each layer emits; Identify where authority can stop or reroute the process.
+- Stack interface: All stack layers participate; Artifacts and evidence ledgers provide continuity; SCF gates control improvement.
+- Preserved invariants: No layer bypasses governance; Artifacts remain traceable; Self-improvement follows evidence and authority gates.
+- Failure closure: detect and route failure modes such as Untraceable handoffs; Planning/execution collapse; Self-improvement without evaluator integrity to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Integrated Reference Architecture, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

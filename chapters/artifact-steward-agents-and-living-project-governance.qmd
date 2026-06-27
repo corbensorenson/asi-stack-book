@@ -4,7 +4,7 @@ chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-25"
+last_updated: "2026-06-27"
 primary_sources:
   - "viea"
   - "talos"
@@ -44,7 +44,7 @@ open_evidence_gaps:
 | Chapter ID | `artifact-steward-agents-and-living-project-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-06-25 |
+| Last updated | 2026-06-27 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -264,6 +264,19 @@ The steward should not merge protected branches, spend funds, change governance,
 This repository now contains the record-level first step for that implementation: `artifact_steward_charter.schema.json`, `project_work_contract.schema.json`, `contribution_ledger_entry.schema.json`, `steward_action_decision.schema.json`, and `sunset_review_record.schema.json`, each with a matching valid fixture. These fixtures validate public record shape only; they do not execute a steward.
 
 The repository also now contains `treasury_policy_record.schema.json` and `event_taint_record.schema.json`, each with a matching valid fixture. These close two record-shape gaps in the chapter but do not connect to a wallet, run a treasury engine, scan workflows, or prove event-intake safety.
+
+## Beyond the State of the Art
+
+The mature version of Artifact Steward Agents and Living Project Governance is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Every durable artifact should be able to carry a bounded steward agent that preserves mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset policy across the artifact lifecycle while acting only through explicit work contracts, verification gates, treasury limits, contribution ledgers, and governance rules. The mature surface would include:
+
+- Operating mechanism: Bind a steward to an artifact mission, non-goals, authority ceiling, governance model, budget policy, evidence requirements, and sunset criteria; Run an explicit lifecycle from inception to bootstrap, build, release, maintenance, governance, decline, and archive instead of treating stewardship as one long task list; Convert roadmap goals into project work contracts with required outputs, allowed tools, forbidden tools, worker requirements, budget, verification, payment, and reputation fields; Orchestrate humans, agents, personal hives, project hives, CI runners, rented compute, reviewers, and maintainers through typed jobs and evidence bundles; Use treasury policy and event-taint records to keep spending and untrusted repository events inside explicit review boundaries; Separate reputation, governance shares, economic credits, authorship, review credit, and evidence credit so contribution, voting, money, and truth claims cannot collapse into one gameable token; Move across manual, assisted, bounded-autonomous, community-governed, and sunset modes only through charter, policy, evidence, rollback, and approval records; Treat webhooks, issues, pull requests, comments, worker outputs, benchmark artifacts, and release events as typed and tainted intake until the steward records review.
+- Stack interface: VCM preserves project memory, source documents, decisions, issues, releases, and unresolved questions; PlanForge and Talos turn goals into milestones, issues, jobs, reviews, artifacts, and releases; Spinoza, Benchmaxxing, and evidence ledgers decide whether submitted work changes claim or readiness state; TokenMana and treasury policies bound spending, compute rental, bounties, and recurring operations; SCF, governance rights, and constitutional predicates prevent steward authority from replacing owner, maintainer, contributor, or community authority.
+- Preserved invariants: The steward is not the owner; Mission, non-goals, and sunset criteria remain durable; Spending is a bounded actuator governed by treasury policy; Untrusted issues, pull requests, comments, and worker outputs enter as tainted context until reviewed; Major governance changes require explicit proposal, review, delay, quorum, appeal, or guardian paths; A project that no longer has value, users, maintainers, or funds can enter sunset mode rather than continuing activity for its own sake.
+- Failure closure: detect and route failure modes such as Mission drift from optimizing activity rather than purpose; Treasury drain through low-value compute, bounty spam, or runaway recurring costs; Contribution gaming and reputation capture; Governance capture by large holders, early maintainers, or steward-controlled scoring; Agentic workflow injection through untrusted repository event context; AI maintainer monopoly that makes the project opaque to humans; Zombie project continuation after user value disappears to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Artifact Steward Agents and Living Project Governance, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 

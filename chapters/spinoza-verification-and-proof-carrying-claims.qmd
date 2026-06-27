@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -188,6 +188,19 @@ The smallest useful implementation is a `proof_carrying_claim` schema and fixtur
 The fixture validates the envelope: claim scope, tier, justification type, mapping, interpretation confidence, artifact ref, artifact validity state, semantic adequacy, verifier name, verifier result field, verifier artifact refs, failed-attempt refs, formal scope, limitations, consumer requirements, downgrade rule, claim-validity effect, residual route, tribunal ref, ledger update, source refs, support-state effect, and non-claims. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
 
 The next useful implementation step is a mismatch fixture set: one formal target that passes but supports only a narrower claim, one failed verifier result that blocks promotion, one missing citation artifact that downgrades a source-derived claim, and one contested interpretation routed to tribunal. That would exercise the envelope without claiming verifier quality.
+
+## Beyond the State of the Art
+
+The mature version of Spinoza Verification and Proof-Carrying Claims is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+
+At that end state, the chapter's claim becomes an operational contract: Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers. The mature surface would include:
+
+- Operating mechanism: Separate heuristic proposal from symbolic or structured interrogation; Attach formal interpretation mappings, proof bundles, or citation-backed dossiers; Downgrade or escalate claims that cannot meet their required tier.
+- Stack interface: Claim ledger stores proof status; GenesisCode and Lean provide formal hooks; UAT provides adversarial review.
+- Preserved invariants: Proof tier is explicit; A justification artifact is required for promoted claims; Unsupported claims remain marked speculative or blocked.
+- Failure closure: detect and route failure modes such as Certified delusion; Invalid formalization; Justification artifact missing to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+
+For Spinoza Verification and Proof-Carrying Claims, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
 ## Codex test plan
 
