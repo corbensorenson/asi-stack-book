@@ -194,6 +194,8 @@ Theorem laundering should block support-state promotion. Stale theorem IDs shoul
 
 The subtle failure is proof cargo-culting: diagrams, theorem names, and receipt tables appear rigorous enough that the reader stops asking what the theorem actually says. The antidote is a consumer gate that states the exact downstream claim being blocked or allowed.
 
+Another failure is receipt drift, where the proof receipt remains attached after the contract fields it certified have changed.
+
 ## Minimum Viable Implementation
 
 The first transportable Circle artifact is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.

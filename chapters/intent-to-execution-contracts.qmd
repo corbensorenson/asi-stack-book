@@ -180,6 +180,8 @@ The first failure is especially dangerous for a living book: a chapter can be dr
 
 The subtle failure is helpful overrun. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
 
+Another failure is stale acceptance, where an old approval is reused after the artifact, tool, or risk tier changed.
+
 ## Minimum Viable Implementation
 
 A command-contract schema and one end-to-end intent-to-artifact trace.

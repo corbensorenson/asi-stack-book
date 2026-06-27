@@ -196,6 +196,8 @@ A refusal to verify under too little bandwidth is a valid outcome, not a failure
 
 Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Each failure should emit a residual record, not merely a lower confidence score.
 
+Another failure is verification debt rollover, where skipped checks are repeatedly deferred until they look like accepted risk.
+
 ## Minimum Viable Implementation
 
 A context adequacy rubric and verification-bandwidth warning states.

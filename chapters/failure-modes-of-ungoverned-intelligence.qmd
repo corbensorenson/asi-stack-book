@@ -199,6 +199,8 @@ The taxonomy is recursive: the failure map can itself fail. It can become too br
 
 The subtle failure is failure laundering. A run fails a boundary, then the narrative shifts to a narrower success metric while the blocked condition, denial, or residual disappears from the evidence path.
 
+Another failure is stale containment: a mitigation remains listed after the architecture changed enough that it no longer reaches the risk.
+
 ## Minimum Viable Implementation
 
 The first failure artifact should be a `failure_boundary_map` schema plus a small example for authority creep, context pollution, evaluator drift, or residual hiding. That example must not claim that those risks are solved. It should prove only that the book can represent a failure class, affected contracts, event state, severity, reversibility, recurrence, protected invariant, receipt, promotion blocker, containment path, normalization guard, learning path, source refs, support-state effect, and boundary owner.

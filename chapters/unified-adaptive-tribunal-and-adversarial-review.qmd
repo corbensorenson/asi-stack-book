@@ -187,6 +187,10 @@ Reviewer collusion can be literal or structural: identical prompts, shared conte
 
 The subtle failure is review laundering. A claim rejected by the ledger or verifier can be sent to reviewers until the language sounds balanced enough to pass, even though no new evidence or corrected mapping appeared. Tribunal records should make repeated review attempts and unchanged evidence visible.
 
+Another failure is role collapse, where advocate, critic, judge, and release owner become functionally the same authority.
+
+That collapse should force escalation before the verdict can bind downstream routing.
+
 ## Minimum Viable Implementation
 
 A tribunal protocol for claim/artifact review with reviewer roles and output schema.
