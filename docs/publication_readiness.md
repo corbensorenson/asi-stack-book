@@ -1,6 +1,6 @@
 # Publication Readiness
 
-Last audited: 2026-06-25
+Last audited: 2026-06-27
 
 This file tracks whether the public repository is ready for the next major phase: finalizing and evidence-gating the v1.0 candidate. The current snapshot is summarized in `docs/v1_0_candidate_status.md`.
 
@@ -19,7 +19,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The major-version release ladder exists at `docs/major_version_release_runbook.md` so live/research, reader, e-reader/document, and audio artifacts have an explicit sequence.
 - The current v1.0 candidate snapshot exists at `docs/v1_0_candidate_status.md`.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, and `companion_notes.md` under ignored `build/`; `scripts/validate_release_profiles.py` validates profile definitions; `scripts/validate_reader_spine.py` checks that the generated human-reader spine remains substantial and structurally complete after live-only scaffolding is stripped; and `scripts/validate_live_human_view.py` checks the rendered GitHub Pages chapter surface after HTML render.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, and `companion_notes.md` under ignored `build/`; `scripts/validate_release_profiles.py` validates profile definitions; `scripts/validate_human_reading_paths.py` checks one Human Reading Path bridge per manifest chapter and generated-reader retention; `scripts/validate_reader_spine.py` checks that the generated human-reader spine remains substantial and structurally complete after live-only scaffolding is stripped; and `scripts/validate_live_human_view.py` checks the rendered GitHub Pages chapter surface after HTML render.
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders and record actual local outcomes in `reader_render_report.json` without implying publication.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and pronunciation glossary under ignored `build/` without claiming audio exists.
 - Future major-version research, reader, and audio releases have a dedicated public-safe record schema at `schemas/edition_release_record.schema.json`.
@@ -34,6 +34,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, and every core claim now has an exact source-note mapping in Appendix C.
 - Appendix C now records exact source-note mappings for all 54 core claims without promoting support states.
 - All 54 chapters have manuscript drafts from the source-of-truth manifest and hand drafting passes, kept at conservative support states.
+- All 54 chapters have `.asi-human-only` Human Reading Path bridges that are hidden from default AI view, visible in live Human view, and unwrapped into generated reader editions.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
@@ -64,6 +65,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_publication.py`.
 - Run `python3 scripts/validate_release_profiles.py`.
 - Run `python3 scripts/build_reader_edition.py --check`.
+- Run `python3 scripts/validate_human_reading_paths.py`.
 - Run `python3 scripts/validate_reader_spine.py --check`.
 - Run `python3 scripts/render_reader_formats.py --check`.
 - Run `python3 scripts/build_audio_script.py --check` when preparing an audio script or checking the full edition path.
@@ -87,4 +89,5 @@ The public repository is presentable when:
 - Rendered site links are live.
 - Validation scripts pass locally.
 - Edition profiles validate, the reader-edition derivation check passes, the reader-spine check passes, and the rendered live Human view check passes.
+- Human Reading Path coverage validates for every manifest chapter and generated reader chapter.
 - The working tree is clean after commit and push.

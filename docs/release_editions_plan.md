@@ -12,7 +12,7 @@ The living book is the canonical source. Major-version editions are derived arti
 | Human researchers | complete technical argument, auditability, source and claim traceability, known residuals | live book and frozen research releases |
 | Interested human readers | coherent narrative, e-reader/PDF/DOCX formatting, images and diagrams, bibliography, minimal workflow clutter | reader releases and audio releases |
 
-The live GitHub Pages site also provides a reading-mode switch. `AI view` is the default canonical live-book view with chapter status, source crosswalks, proof hooks, Codex tests, and guardrails. `Human view` hides the same live-only chapter headings used by the reader-release strip policy so interested readers can stay on the site and read the prose spine without downloading an EPUB, PDF, or DOCX. Future chapters may also use `.asi-human-only` fenced divs for human-specific prose digests and `.asi-ai-only` fenced divs for live research notes; reader generation unwraps the human blocks and removes the AI-only blocks. This on-site view is a convenience projection; it is not a reviewed major-version reader artifact.
+The live GitHub Pages site also provides a reading-mode switch. `AI view` is the default canonical live-book view with chapter status, source crosswalks, proof hooks, Codex tests, and guardrails. `Human view` hides the same live-only chapter headings used by the reader-release strip policy so interested readers can stay on the site and read the prose spine without downloading an EPUB, PDF, or DOCX. Every manifest chapter now carries one `.asi-human-only` `Human Reading Path` bridge for human-specific orientation; reader generation unwraps those blocks and removes `.asi-ai-only` live research notes. This on-site view is a convenience projection; it is not a reviewed major-version reader artifact.
 
 ## Content Layers
 
@@ -63,6 +63,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, view-block cleanup, and stripped live-only scaffolding.
+- `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
@@ -139,13 +140,16 @@ The reader release removes repeated live-workflow sections by heading:
 
 The reader release keeps the core prose and diagrams. If an uncertainty caveat changes the meaning of a claim, keep it in the narrative rather than relying on a stripped guardrail block.
 
-The live-site `Human view` uses this same heading list at render time. Optional `.asi-live-only` and `.asi-ai-only` blocks are hidden in Human view; optional `.asi-human-only` blocks are hidden in AI view. If these strip rules change, update the reading-mode asset and run:
+The live-site `Human view` uses this same heading list at render time. `.asi-live-only` and `.asi-ai-only` blocks are hidden in Human view; `.asi-human-only` Human Reading Path blocks are hidden in AI view and shown in Human view. If these strip rules change, update the reading-mode asset and run:
 
 ```bash
 python3 scripts/validate_reading_mode_toggle.py
+python3 scripts/validate_human_reading_paths.py
 quarto render --to html
 python3 scripts/validate_live_human_view.py
 ```
+
+`scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain exactly one `Human Reading Path` heading without view-mode markers.
 
 `scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if stripped headings remain, if view-mode markers leak into generated reader source, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, if a required reader heading is missing, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
 
