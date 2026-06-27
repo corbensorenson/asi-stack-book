@@ -198,6 +198,10 @@ The first corrigibility artifact is an `agency_rights_checklist` schema plus a f
 
 The next useful implementation step is a scenario suite with one reversible action, one irreversible action, one delegated decision, and one attempted self-change. Each scenario should ask whether refusal, review, appeal, rollback, accountability, and residual reporting survive the transition. Until such scenarios exist, the chapter remains a design rationale with record-level checks only.
 
+The minimum should treat silence as a failed right: if the record cannot show who may object, the action is not ready.
+
+A reviewer should be able to replay the fixture and see whether correction changed the outcome or merely produced a note.
+
 ## Beyond the State of the Art
 
 The mature version of Agency, Dignity, and Corrigibility is a human-control interface layer. It makes correction, refusal, appeal, explanation, consent, delegation, reversal, and repair materially available instead of treating human dignity as a value statement with no operating surface.

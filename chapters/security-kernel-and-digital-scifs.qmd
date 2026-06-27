@@ -190,6 +190,8 @@ The security kernel can begin with a fake-secret fixture: an agent sees only `ha
 
 The next useful implementation step is a leak-path fixture set: one allowed handle substitution, one denied destination, one overbroad SCIF context request, one sanitized summary with residual leak risk, and one attempted handle reuse after expiration. That would exercise the boundary without claiming production containment.
 
+The minimum passes only if denial and expiration are ordinary outcomes, not exceptional error paths.
+
 ## Beyond the State of the Art
 
 The mature version of Security Kernel and Digital SCIFs is a least-exposure operating layer for high-agency AI. The model can reason about a task, request authority, and receive sanitized results, but secrets, protected memory, credentials, private sources, and privileged actions live behind leases, handles, clearance checks, compartment lifecycles, and audit receipts.

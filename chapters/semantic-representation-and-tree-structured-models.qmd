@@ -226,6 +226,8 @@ Passing the fixture does not prove a semantic graph works. It gives the book a s
 
 The next useful implementation step is a small grounded domain where source passages, artifact nodes, semantic nodes, and claim records can be compared. A future test should deliberately update the hierarchy, remove or supersede a source, and check whether downstream uses notice the change. Until then, the schema and Lean predicates show record discipline only, not representation adequacy.
 
+The minimum should include one consumer that refuses a node whose provenance or grounding state is insufficient.
+
 ## Beyond the State of the Art
 
 The mature version of Semantic Representation and Tree-Structured Models is a semantic leasing layer. It gives the stack editable concept structure without letting a clean graph become a substitute for sources, proofs, artifacts, or tests.

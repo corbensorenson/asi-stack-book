@@ -203,6 +203,8 @@ The first failure artifact should be a `failure_boundary_map` schema plus a smal
 
 The next useful fixture set is a failure-receipt suite: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 
+That suite is still diagnostic, not preventive. It proves only that recurring failure can leave a routeable record.
+
 ## Beyond the State of the Art
 
 The mature version of Failure Modes of Ungoverned Intelligence is a failure-radar and routing layer for the book's whole architecture. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior.

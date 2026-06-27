@@ -200,6 +200,10 @@ The next useful fixture set is a decision-lease suite: one reversible low-stakes
 
 The value-conflict fixture records explicit stakeholder refs, disputed value axes, decision scope, reversibility, review owner, lease expiry, residual obligation, and non-claims. Passing it would prove only that value conflict can be represented and routed without disappearing into a scalar objective.
 
+The minimum should include at least one unresolved conflict that remains unresolved on purpose.
+
+Downstream routes must carry that unresolved status before acting, so the conflict remains part of the work record.
+
 ## Beyond the State of the Art
 
 The mature version of Moral Uncertainty and Value Conflict is a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward.

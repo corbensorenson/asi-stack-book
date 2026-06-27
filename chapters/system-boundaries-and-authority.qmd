@@ -214,6 +214,8 @@ The first useful authority artifact is an `authority_transition_record` schema p
 
 The first negative fixture should be as important as the allowed one. A route that has context but lacks authority, or a caller that delegates beyond its ceiling, should produce a denial record before any downstream layer can treat the handoff as executable.
 
+The minimum should also preserve the denial reason, so later planning cannot reinterpret absence of authority as missing context.
+
 ## Beyond the State of the Art
 
 The mature version of System Boundaries and Authority is an authority type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.

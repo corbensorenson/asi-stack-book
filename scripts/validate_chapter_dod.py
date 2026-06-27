@@ -105,7 +105,7 @@ SECTION_MIN_WORDS = {
     "## Interfaces": 130,
     "## Invariants": 90,
     "## Failure modes": 90,
-    "## Minimum Viable Implementation": 90,
+    "## Minimum Viable Implementation": 125,
     "## Beyond the State of the Art": 90,
     "## Summary": 120,
 }

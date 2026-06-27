@@ -215,6 +215,8 @@ Passing the fixture does not show feasibility. It makes the feasibility claim in
 
 The next useful fixture set is a simulation receipt suite: one unit-invariant result, one benchmark result with approximation limits, one scenario-only result, one blocked transfer because a bottleneck is missing, and one downgraded claim after instrumentation cost is recorded.
 
+The minimum should make downgrade a normal result, since a simulation that only confirms claims is not yet evidence discipline.
+
 ## Beyond the State of the Art
 
 The mature version of Simulation Fidelity and Physical Constraints is a simulation claim-transport layer. It lets the stack run synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models while preventing their results from traveling farther than their scope, fidelity, resources, and omissions allow.

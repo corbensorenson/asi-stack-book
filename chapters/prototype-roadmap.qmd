@@ -209,6 +209,10 @@ The roadmap becomes executable through a prototype phase record. The repository 
 
 The next useful implementation step is a dependency-gate fixture set: one phase blocked by missing source notes, one phase allowed for research but not promotion, one phase with recorded phase debt and retirement condition, and one self-improvement phase blocked because evaluator independence is absent. That would test roadmap semantics without claiming phase completion.
 
+The minimum should let a blocked phase stay useful by naming the exact artifact that would unblock it.
+
+The phase record should also name who may retire the phase if the unblock condition never arrives.
+
 ## Beyond the State of the Art
 
 The logical end state is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review.
