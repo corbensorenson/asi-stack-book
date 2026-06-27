@@ -69,7 +69,7 @@ The policy update is a behavior-change lease. It grants a candidate policy limit
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Benchmark ratchets create improvement pressure that policy updates must govern. Policy optimization is how that pressure can update planning, routing, context selection, verification, execution, or review behavior without letting reward become authority.
+Benchmark ratchets create improvement pressure that policy updates must govern carefully. Policy optimization is how that pressure can update planning, routing, context selection, verification, execution, or review behavior without letting reward become authority.
 
 The distinction is crucial: learning from feedback is not the same as handing the system control over its own goals. A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.
 

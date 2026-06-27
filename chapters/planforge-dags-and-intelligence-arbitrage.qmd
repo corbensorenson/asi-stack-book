@@ -48,7 +48,7 @@ The move from plan to DAG is a move from intention to dispatch discipline. A nod
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Planning as a control layer explains why work needs structure. PlanForge turns that structure into a schedulable object. A DAG gives the system a way to split work, expose dependencies, parallelize where safe, and choose when a cheap route is adequate or an expensive route is justified.
+Planning as a control layer explains why work needs explicit structure. PlanForge turns that structure into a schedulable object. A DAG gives the system a way to split work, expose dependencies, parallelize where safe, and choose when a cheap route is adequate or an expensive route is justified.
 
 The efficiency logic matters here. Intelligence arbitrage is not about always using the cheapest worker. It is about matching task, evidence burden, risk, and capability so the stack can spend attention deliberately and record why the route was acceptable. A good route is economical because it is adequate, not adequate because it is cheap.
 
