@@ -164,6 +164,12 @@ def validate(site_dir: Path) -> dict[str, object]:
             "asi-stack-reading-mode",
             "data-asi-reading-choice=\"ai\"",
             "data-asi-reading-choice=\"human\"",
+            "control.setAttribute(\"aria-describedby\", \"asi-reading-mode-description\")",
+            "role=\"status\"",
+            "aria-live=\"polite\"",
+            "data-asi-reading-mode-status",
+            "AI/research view active.",
+            "Human view active.",
             "AI view",
             "Human view",
         ):

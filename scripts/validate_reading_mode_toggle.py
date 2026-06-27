@@ -72,6 +72,10 @@ def main() -> None:
         errors.append("_quarto.yml is missing the generated reading-mode after-body include")
     if 'html[data-asi-reading-mode="human"] section[data-asi-live-section="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
+    if ".asi-sr-only" not in style_text:
+        errors.append("assets/styles.scss is missing the assistive-only helper class")
+    if 'html[data-asi-reading-mode="human"] .asi-human-only' not in style_text:
+        errors.append("assets/styles.scss is missing the Human view Human Reading Path emphasis rule")
     for css_class in ("asi-ai-only", "asi-human-only", "asi-live-only"):
         if css_class not in style_text:
             errors.append(f"assets/styles.scss is missing the {css_class} view-mode class")
@@ -81,6 +85,9 @@ def main() -> None:
         "static_validator": "scripts/validate_live_human_view.py",
         "default_mode": "ai",
         "human_mode": "human",
+        "storage_key": "asi-stack-reading-mode",
+        "mode_status_selector": "[data-asi-reading-mode-status]",
+        "assistive_description_class": "asi-sr-only",
         "ai_only_class": "asi-ai-only",
         "human_only_class": "asi-human-only",
         "live_only_class": "asi-live-only",
@@ -88,6 +95,24 @@ def main() -> None:
     for key, value in expected_policy.items():
         if policy.get(key) != value:
             errors.append(f"live_human_view_policy.{key} must be {value!r}")
+
+    required_asset_strings = {
+        "storage key": 'const storageKey = "asi-stack-reading-mode"',
+        "assistive description": 'control.setAttribute("aria-describedby", "asi-reading-mode-description")',
+        "assistive helper": 'class="asi-sr-only"',
+        "status role": 'role="status"',
+        "polite live region": 'aria-live="polite"',
+        "mode status selector": "data-asi-reading-mode-status",
+        "ai status copy": "AI/research view active.",
+        "human status copy": "Human view active.",
+        "ai button title": "Show the full AI and researcher scaffold",
+        "human button title": "Read the human-facing chapter prose",
+        "active button aria label": "active",
+        "switch button aria label": "Switch to",
+    }
+    for label, needle in required_asset_strings.items():
+        if needle not in include_text:
+            errors.append(f"assets/reading-mode.html is missing {label}: {needle!r}")
 
     actual = set(re.findall(r'"([23]:[a-z0-9][^"]+)"', include_text))
     if actual != expected:

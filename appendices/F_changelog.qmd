@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal persistent human view polish
+
+- Strengthened the live reading-mode surface: the toggle now has explicit assistive description text, screen-reader status updates for active mode changes, clearer button labels, a recorded local-storage contract, and Human view styling for `Human Reading Path` bridges. Updated the release profile, reading-mode validator, rendered Human view validator, release docs, release appendix, site-quality standard, publication-readiness checklist, and README so the AI/researcher view and interested-human view remain a maintained public-site contract. This improves the live human-readable projection without claiming a reviewed reader release, ebook, audiobook, support-state promotion, or new proof/test result.
+
 ## 2026-06-27 - v1.0 improvement goal human reading path gate
 
 - Added `scripts/validate_human_reading_paths.py` and wired it into the book/publication validation path so every manifest chapter must keep exactly one `.asi-human-only` Human Reading Path bridge after `Drafting guardrail` and before `Problem`. The validator also derives a temporary reader edition and checks that generated reader chapters retain one ordinary `Human Reading Path` heading without view-mode markers. Updated the reader, release, site-quality, writing-runbook, outline, and publication-readiness docs so future writing runs preserve the three-audience live book model without claiming support-state promotion, new proof/test results, reader artifacts, ebooks, or audio artifacts.

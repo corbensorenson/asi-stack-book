@@ -12,7 +12,7 @@ The living book is the canonical source. Major-version editions are derived arti
 | Human researchers | complete technical argument, auditability, source and claim traceability, known residuals | live book and frozen research releases |
 | Interested human readers | coherent narrative, e-reader/PDF/DOCX formatting, images and diagrams, bibliography, minimal workflow clutter | reader releases and audio releases |
 
-The live GitHub Pages site also provides a reading-mode switch. `AI view` is the default canonical live-book view with chapter status, source crosswalks, proof hooks, Codex tests, and guardrails. `Human view` hides the same live-only chapter headings used by the reader-release strip policy so interested readers can stay on the site and read the prose spine without downloading an EPUB, PDF, or DOCX. Every manifest chapter now carries one `.asi-human-only` `Human Reading Path` bridge for human-specific orientation; reader generation unwraps those blocks and removes `.asi-ai-only` live research notes. This on-site view is a convenience projection; it is not a reviewed major-version reader artifact.
+The live GitHub Pages site also provides a persistent reading-mode switch. `AI view` is the default canonical live-book view with chapter status, source crosswalks, proof hooks, Codex tests, and guardrails. `Human view` hides the same live-only chapter headings used by the reader-release strip policy so interested readers can stay on the site and read the prose spine without downloading an EPUB, PDF, or DOCX. Every manifest chapter now carries one `.asi-human-only` `Human Reading Path` bridge for human-specific orientation; reader generation unwraps those blocks and removes `.asi-ai-only` live research notes. This on-site view is a convenience projection; it is not a reviewed major-version reader artifact.
 
 ## Content Layers
 
@@ -68,8 +68,8 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
-- `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`.
-- `scripts/validate_live_human_view.py` runs after `quarto render --to html` and checks that rendered chapter pages include the toggle, live-only headings needed for runtime hiding, and any source view-mode block classes such as `.asi-human-only`.
+- `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`, uses the recorded local-storage key, and exposes the assistive description/status contract.
+- `scripts/validate_live_human_view.py` runs after `quarto render --to html` and checks that rendered chapter pages include the toggle, assistive status strings, live-only headings needed for runtime hiding, and any source view-mode block classes such as `.asi-human-only`.
 
 ## Reader Edition Generation
 
