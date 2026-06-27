@@ -116,13 +116,17 @@ Each Prototype Phase Record therefore answers four questions: what becomes possi
 
 ```{mermaid}
 flowchart LR
-  A["Phase proposal"] --> B["Deliverables"]
-  B --> C["Acceptance gates"]
-  C --> D{"Gates pass?"}
-  D -- "yes" --> E["Unlock dependent phase"]
-  D -- "no" --> F["Block / residual / revise"]
-  E --> G["Release notes + evidence refs"]
-  F --> G
+  A["Backlog item or chapter need"] --> B["Phase proposal"]
+  B --> C["Entry criteria"]
+  C --> D["Required artifacts"]
+  D --> E["Acceptance gates"]
+  E --> F{"Gates pass?"}
+  F -- "yes" --> G["Unlock dependent phase"]
+  F -- "no" --> H["Block, residualize, or revise"]
+  G --> I["Release notes and evidence refs"]
+  H --> J["Residual ledger and next action"]
+  I --> K["Capability allowed to compose"]
+  J --> B
 ```
 
 Recommended phase order:

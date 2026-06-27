@@ -109,13 +109,21 @@ A MoECOT Orchestration Record is the minimum public boundary for that mapping. I
 
 ```{mermaid}
 flowchart LR
-  A["Command or task"] --> B["Compact orchestrator"]
-  B --> C["Route head"]
-  C --> D["Specialist cores"]
-  D --> E["Control-plane gates"]
-  E --> F["Run, task, and replay ledgers"]
-  F --> G["Handoff or delivery"]
-  G --> H["Residuals and readiness updates"]
+  A["Command contract"] --> B["Compact orchestrator"]
+  B --> C{"Route head selects lane"}
+  C --> D1["Planning / code / proof core"]
+  C --> D2["Memory / retrieval core"]
+  C --> D3["Execution adapter core"]
+  D1 --> E["Control-plane gates"]
+  D2 --> E
+  D3 --> E
+  E --> F["Run and task ledger"]
+  F --> G["Replay references"]
+  G --> H{"Gate result"}
+  H -- "accepted" --> I["Handoff or delivery"]
+  H -- "blocked" --> J["Residual escrow"]
+  I --> K["Readiness update"]
+  J --> K
 ```
 
 The runtime should not be one all-powerful agent. The compact orchestrator coordinates; the route head selects; specialist lanes do bounded work; control-plane gates fail closed; ledgers preserve evidence; replay tests the path; handoff makes ownership explicit; readiness records decide whether future routes should trust the same lane.

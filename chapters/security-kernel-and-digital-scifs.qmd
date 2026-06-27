@@ -103,6 +103,7 @@ sequenceDiagram
   participant K as Security kernel
   participant S as Secret vault
   participant C as Digital SCIF
+  participant R as Redaction filter
   participant L as Audit ledger
   U->>K: authorize policy and scope
   P->>K: request handle use, destination, purpose
@@ -110,7 +111,8 @@ sequenceDiagram
   K-->>P: decision and handle status, not secret bytes
   K->>C: spawn isolated context
   S->>C: inject secret only inside boundary
-  C->>K: return sanitized result and residual leak risk
+  C->>R: send raw result for sanitization
+  R->>K: return sanitized result and residual leak risk
   K->>L: record handle use, policy, result, residuals
 ```
 

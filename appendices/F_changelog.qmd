@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal diagram substance guard
+
+- Strengthened `scripts/validate_visual_coverage.py` from a Mermaid presence check into a diagram-substance gate that requires enough meaningful lines, transitions, and labeled nodes for every manifest chapter. Expanded the MoECOT runtime, verification bandwidth, prototype roadmap, and open research agenda diagrams so they show the relevant route/gate/backlog lifecycles instead of minimal chains. Updated the site quality standard to document that diagrams must explain mechanisms, not merely exist. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source appendix adjacency
 
 - Reordered the source appendices so Appendix G is `Corben's Source Corpus` and Appendix H is `External Literature and References`, then shifted author-intent, release-edition, and implementation-horizon appendices to I, J, and K respectively. Updated the manifest, generated scaffold, release profiles, validators, README, outline, open-research chapter, and tracked ASI Stack skill so readers and future agents see the source-ownership boundary immediately. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

@@ -117,13 +117,17 @@ New AI papers should enter through this same gate. If a paper gives better vocab
 ```{mermaid}
 flowchart LR
   A["New source or gap"] --> B["Inventory record"]
-  B --> C["Source note / access status"]
-  C --> D{"Existing boundary?"}
-  D -- "yes" --> E["Update chapter source queue"]
-  D -- "no" --> F["Propose precise chapter"]
-  E --> G["Claim/evidence mapping"]
-  F --> G
-  G --> H["Proof/test/backlog item"]
+  B --> C["Access and storage policy"]
+  C --> D["Source note or backlog state"]
+  D --> E{"Existing boundary?"}
+  E -- "yes" --> F["Update chapter source queue"]
+  E -- "no" --> G["Propose precise chapter"]
+  E -- "defer" --> H["External literature queue"]
+  F --> I["Claim/evidence mapping"]
+  G --> I
+  H --> J["Backlog item with non-claims"]
+  I --> K["Proof/test/backlog item"]
+  J --> K
 ```
 
 The record should track source id, access state, source storage policy, public-safety state, assigned chapters, chapter-decision refs, deduplication state, merge/split policy, source-note state, claim-mapping state, passage-review state, external-literature need, proof/test backlog, pre-drafting requirements, insertion decision, promotion blockers, and residuals.

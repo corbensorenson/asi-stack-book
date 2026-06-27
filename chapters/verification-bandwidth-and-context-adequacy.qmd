@@ -97,12 +97,15 @@ The mechanism turns context loading into an explicit adequacy contract. A contex
 flowchart LR
   A["Source units"] --> B["VCM packet"]
   B --> C["Semantic-unit inventory"]
-  C --> D{"Joint verification possible?"}
-  D -- "yes" --> E["Adequate for target claim"]
-  D -- "no" --> F["Inadequate or summary-only"]
-  F --> G["Escalate: retrieve, split, tribunal, proof, or human review"]
-  E --> H["Claim ledger support remains bounded by declared mode"]
-  G --> H
+  C --> D["Compression and loss record"]
+  D --> E{"Joint verification possible?"}
+  E -- "yes" --> F["Adequate for target claim"]
+  E -- "no" --> G["Inadequate or summary-only"]
+  G --> H["Escalate retrieval or split review"]
+  H --> I["Tribunal, proof, or human review"]
+  F --> J["Bounded claim-ledger support"]
+  I --> J
+  J --> K["Residuals and downgrade path"]
 ```
 
 The adequacy record models verification as constrained by semantic-unit coverage, representation quality, compression path, attention budget, and the actual comparison mode applied. Every context packet should carry an adequacy label for the target claim or task. High-risk claims route to stronger verification, split context, retrieval, tribunal review, proof work, or human review instead of receiving more context and a stronger-sounding answer.
