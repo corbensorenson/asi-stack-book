@@ -521,22 +521,22 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
                 status=qmd_escape(status),
             )
         )
-    text = f"""# Corben-Authored, Corben-Supplied, and Local Project Sources
+    text = f"""# Corben's Sources and Local Projects
 
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
-This is the Corben-side source corpus, not a general "sources used" appendix. It is only for Corben-authored, Corben-supplied, or local-project ASI Stack sources: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
+This is the Corben-side source appendix, not a general "sources used" appendix. It is only for material that belongs on Corben's side of the corpus: Corben-authored papers, Corben-supplied papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
 
 It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
 
-External and third-party sources are not the second half of this appendix. They live in a separate appendix: [Appendix H, External Sources and Literature](H_external_sources.qmd).
+External and third-party sources are not the second half of this appendix. They live in a separate appendix: [Appendix H, External Sources by Other Authors](H_external_sources.qmd).
 
 ## Ownership Boundary
 
 | Appendix | Contains | Does not contain | Evidence effect |
 |---|---|---|---|
-| Appendix G: Corben-authored, Corben-supplied, and local project sources | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes Corben-owned or Corben-supplied architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: External sources and literature | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben-authored, Corben-supplied, and local-project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Appendix G: Corben's sources and local projects | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
+| Appendix H: external sources by other authors | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben-authored, Corben-supplied, and local-project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|
@@ -552,11 +552,11 @@ External and third-party sources are not the second half of this appendix. They 
     (ROOT / "appendices" / "G_corben_source_corpus.qmd").write_text(text, encoding="utf-8")
 
     external_rows = external_literature_rows(records, structure)
-    external_text = f"""# External Sources and Literature
+    external_text = f"""# External Sources by Other Authors
 
 This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
 
-This is the external-source appendix, not a subsection or second half of Appendix G. It is only for third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources are a separate appendix: [Appendix G, Corben-Authored, Corben-Supplied, and Local Project Sources](G_corben_source_corpus.qmd).
+This is the external-source appendix, not a subsection or second half of Appendix G. It is only for third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources are a separate appendix: [Appendix G, Corben's Sources and Local Projects](G_corben_source_corpus.qmd).
 
 A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 
@@ -564,8 +564,8 @@ A listed external source does not claim reproduced experiments, local benchmark 
 
 | Appendix | Contains | Does not contain | Evidence effect |
 |---|---|---|---|
-| Appendix G: Corben-authored, Corben-supplied, and local project sources | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes Corben-owned or Corben-supplied architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: External sources and literature | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben-authored, Corben-supplied, and local-project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Appendix G: Corben's sources and local projects | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
+| Appendix H: external sources by other authors | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben-authored, Corben-supplied, and local-project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 ## Source-Noted External Literature Records
 

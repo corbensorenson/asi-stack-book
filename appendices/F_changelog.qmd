@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal appendix source ownership titles
+
+- Renamed the generated human-facing source appendix titles so Appendix G now renders as `Corben's Sources and Local Projects`, while Appendix H renders as `External Sources by Other Authors`. Updated the scaffold generator, source-appendix validator, manifest, README, outline, release docs, project prompt, tracked ASI Stack skill, release profiles, repository map, publication readiness, and v1.0 status snapshot guard so the public book makes the source-ownership boundary obvious without changing stable appendix file paths. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal failure-mode floor 110
 
 - Expanded the thinnest chapter `Failure modes` sections with concrete failure consequences for stale containment, stakeholder erasure, stale acceptance, orphaned dependency repair, context lease drift, stale-cell reuse, verification debt, stale proof reuse, role collapse, simulation laundering, receipt drift, alias blindness, trace fragmentation, and automation drift. Raised `scripts/validate_chapter_dod.py` so every manifest chapter failure-mode section must now keep at least 110 words. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger concrete-risk floor. Refreshed the v1.0 status manuscript scale to 177,792 chapter words excluding YAML and 185,291 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

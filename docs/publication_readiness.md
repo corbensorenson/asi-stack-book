@@ -39,7 +39,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
 - The GitHub Pages workflow runs the expanded live-book gate before deployment: generated-scaffold freshness, chapter DoD, outline/manifest consistency, implementation-horizon consistency, reading-mode toggle, Human Reading Path, source-appendix ownership, v1.0 status snapshot freshness, reader-spine, reader-edition, reader-format setup, audio-script setup, visual coverage, proof/source audits, schemas, protocol fixtures, repeated-prose, Lean, Quarto render, and rendered live Human-view validation.
-- Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, the Corben source corpus, external literature, lineage, release editions, and implementation horizons.
+- Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, Corben's sources/local projects, external literature by other authors, lineage, release editions, and implementation horizons.
 - JSON schemas, protocol example fixtures, public release records, and the Lean workspace have local validation commands.
 - A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.

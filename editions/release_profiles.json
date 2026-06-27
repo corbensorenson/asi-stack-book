@@ -27,8 +27,8 @@
       "label": "Evidence and source matrices",
       "primary_audiences": ["ai_agents", "human_researchers"],
       "canonical_location": "appendices, source notes, release records, schemas, proof manifest, and test fixtures",
-      "description": "The audit layer for sources, claim/evidence states, protocol schemas, Codex tests, release records, Corben-authored/supplied/local sources, external literature, changelog, and lineage.",
-      "edition_policy": "Retained by live and research releases. Reader releases keep selected human-useful appendices such as glossary, Corben-authored/supplied/local sources, and external literature while omitting dense matrices unless a major release explicitly includes them."
+      "description": "The audit layer for sources, claim/evidence states, protocol schemas, Codex tests, release records, Corben's authored/supplied sources and local projects, external literature by other authors, changelog, and lineage.",
+      "edition_policy": "Retained by live and research releases. Reader releases keep selected human-useful appendices such as glossary, Corben's sources/local projects, and external literature by other authors while omitting dense matrices unless a major release explicitly includes them."
     },
     {
       "id": "machine_contracts",
@@ -220,7 +220,7 @@
       "minimal implementation discussion",
       "technical diagrams and images",
       "chapter summaries",
-      "glossary, Corben-authored/supplied/local sources, and external literature"
+      "glossary, Corben's sources/local projects, and external literature by other authors"
     ],
     "continuity_requirements": [
       "Do not put a caveat that changes claim meaning only inside a stripped live-only section.",
@@ -455,7 +455,7 @@
       "label": "Reader Release",
       "primary_audiences": ["interested_humans"],
       "purpose": "Major-version human manuscript for e-readers and relaxed reading, derived from the living book while removing AI/research workflow scaffolding.",
-      "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, Corben-authored/supplied/local source path, and external-literature path.",
+      "source_policy": "Generated from tracked Quarto source at a tagged commit. The generator strips live-only sections by heading name and keeps the narrative, diagrams, glossary, Corben's sources/local projects path, and external-literature-by-other-authors path.",
       "content_layer_policy": {
         "retain": ["reader_spine"],
         "strip_or_summarize": ["live_research_scaffold", "evidence_matrices", "machine_contracts"],

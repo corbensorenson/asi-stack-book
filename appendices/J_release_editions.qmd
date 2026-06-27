@@ -18,7 +18,7 @@ The project serves all three audiences by separating layers inside one canonical
 |---|---|---|
 | `reader_spine` | Ordinary chapter prose outside live-only headings. | Retain for reader releases and adapt for audio. |
 | `live_research_scaffold` | Chapter status, drafting guardrails, Codex test plans, proof hooks, source crosswalks, and claim-source mapping sections. | Retain for live/research releases; strip or summarize for reader/audio releases. |
-| `evidence_matrices` | Appendices, source notes, schemas, release records, proof manifest, test specs, the Corben source corpus, external literature, implementation horizons, changelog, and lineage. | Retain for live/research releases; include selected human-useful appendices in reader releases. |
+| `evidence_matrices` | Appendices, source notes, schemas, release records, proof manifest, test specs, Corben's sources/local projects, external literature by other authors, implementation horizons, changelog, and lineage. | Retain for live/research releases; include selected human-useful appendices in reader releases. |
 | `machine_contracts` | `book_structure.json`, `docs/book_outline.md`, inventories, schemas, scripts, Lean modules, and validation commands. | Canonical for AI/writing agents; exclude from reader/audio manuscripts except when explained in prose. |
 | `release_derivatives` | Ignored build workspaces and explicitly recorded release artifacts. | Non-canonical outputs; record only artifacts that were actually generated or rendered. |
 | `audio_adaptation` | Audio-script and future audio release workspaces. | Derive from a reviewed reader release, not directly from the live book. |
