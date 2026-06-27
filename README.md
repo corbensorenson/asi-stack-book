@@ -29,6 +29,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
+- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben/source-corpus records and Appendix H contains only external-literature records from `sources/source_inventory.json`.
 - Current source-note coverage, exact claim-source mappings, and passage-reviewed mappings are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted evidence transitions justify promotion.
 - A protocol schema fixture check is implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
@@ -71,6 +72,7 @@ python3 scripts/source_readiness_report.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_human_reading_paths.py
+python3 scripts/validate_source_appendices.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

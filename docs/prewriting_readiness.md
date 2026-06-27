@@ -44,6 +44,7 @@ python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_human_reading_paths.py
+python3 scripts/validate_source_appendices.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check

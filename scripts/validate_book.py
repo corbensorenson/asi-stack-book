@@ -23,6 +23,7 @@ REQUIRED = [
     "scripts/validate_reading_mode_toggle.py",
     "scripts/validate_human_reading_paths.py",
     "scripts/validate_live_human_view.py",
+    "scripts/validate_source_appendices.py",
     "scripts/validate_proof_artifact_audit.py",
     "scripts/validate_source_evidence_audit.py",
     "scripts/build_reader_edition.py",
@@ -358,6 +359,7 @@ def main() -> None:
     validate_publication_surface()
     run_validator("validate_reading_mode_toggle.py")
     run_validator("validate_human_reading_paths.py")
+    run_validator("validate_source_appendices.py")
     run_validator("validate_reader_spine.py", "--check")
     run_validator("validate_chapter_dod.py")
     run_validator("validate_visual_coverage.py")
