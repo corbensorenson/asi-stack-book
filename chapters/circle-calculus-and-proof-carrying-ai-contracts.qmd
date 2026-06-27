@@ -52,7 +52,7 @@ Optional substrates need baselines before their structure can travel safely into
 
 This is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, who may consume it, and what the result does not imply. That makes formal work useful without letting theorem language overrun the evidence boundary. The discipline is strongest when the formal artifact is boring, replayable, and narrow. Narrow proof is valuable because it tells the rest of the system exactly where not to overclaim.
 
-The receipt should make a limited guarantee easier to trust and easier to refuse. Trust begins where the contract names its own edge.
+The receipt should make a limited guarantee easier to trust and easier to refuse. Trust begins where the contract names its own edge clearly enough.
 :::
 
 ## Problem
