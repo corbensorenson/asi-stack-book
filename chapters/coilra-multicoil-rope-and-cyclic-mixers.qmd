@@ -63,7 +63,7 @@ The comparison record decides whether the mechanism becomes architecture or orna
 
 Position encodings, adapters, route heads, and mixers can contain real cyclic or block-cyclic structure. When they do, proofs and structural diagnostics can prevent confusion about residues, winding, collisions, load, parameter counts, and shift-equivariance. But those structural facts are not model-quality facts.
 
-The book needs a place for CoilRA, MultiCoil RoPE, RoPE position distinguishability, circulant mixers, and block-cyclic adapters that neither dismisses them nor overpromotes them.
+CoilRA, MultiCoil RoPE, RoPE position distinguishability, circulant mixers, and block-cyclic adapters need a bounded evaluation lane that neither dismisses them nor overpromotes them.
 
 The practical problem is adoption scope. A cyclic mixer can be structurally interesting and still wrong for a workload, too costly for deployment, too fragile under sequence shift, or too easy to confuse with a quality improvement. The chapter therefore has to separate exact cyclic facts from evaluation, fallback, routing, and support-state effects before any substrate becomes architecture.
 That separation matters because cyclic machinery is attractive precisely where it compresses structure into elegant math; without evidence boundaries, elegance can become a shortcut around baseline comparison, ablation, and workload-specific refusal.

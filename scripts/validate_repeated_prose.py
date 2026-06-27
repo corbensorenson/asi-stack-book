@@ -48,6 +48,7 @@ FORMULAIC_MVI_PHRASES = (
     "The Lean coverage stays at",
 )
 FORMULAIC_GENERAL_PHRASES = (
+    "The book needs a place",
     "The public schema now records",
     "The interface should also record",
     "None of those passages show",

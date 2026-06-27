@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal problem framing prose polish
+
+- Reworked repeated `The book needs a place` Problem-section formulas in Mathematical and Search Substrates and CoilRA, MultiCoil RoPE, and Cyclic Mixers. The revised problem openings now frame optional substrates as evaluation lanes and comparative holding areas in the architecture rather than as meta commentary about the manuscript. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic problem formula, and refreshed the v1.0 status manuscript scale to 178,196 chapter words excluding YAML and 185,695 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal interface state-prose polish
 
 - Reworked repeated `The interface should also record` Interface-section formulas across Mathematical and Search Substrates, PlanForge DAGs and Intelligence Arbitrage, and Prototype Roadmap. The revised interface prose now names the owning record directly: Substrate Adoption Records carry axis ledgers, PlanForge records carry scheduling state as a first-class value, and Prototype Phase Records carry dependency edges. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic interface opener, and refreshed the v1.0 status manuscript scale to 178,197 chapter words excluding YAML and 185,696 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

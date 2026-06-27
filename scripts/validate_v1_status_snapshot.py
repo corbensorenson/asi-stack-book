@@ -141,6 +141,7 @@ def main() -> None:
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
         "browser Human-view gate checks rendered Mermaid SVG visibility",
+        "`The book needs a place`",
         "`Failure closure:`",
         "`detect and route failure modes such as`",
         "`This is a target architecture, not a current-result claim`",
