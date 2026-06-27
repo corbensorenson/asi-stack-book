@@ -267,4 +267,4 @@ The mature habit is reversible progress: every promoted capability should leave 
 
 ## Handoff
 
-Replacement becomes dangerous when it moves secrets, permissions, or privileged context across a boundary that the old capability was not allowed to cross. Security Kernel and Digital SCIFs follows because rollback and qualification are not enough if authority-bearing material can leak through logs, prompts, summaries, memory, or tool adapters. The next boundary makes protected power handle-bound, auditable, and absent by default.
+Replacement becomes dangerous when it moves secrets, permissions, or privileged context across a boundary that the old capability was not allowed to cross. Security Kernel and Digital SCIFs follows because rollback and qualification are not enough if authority-bearing material can leak through logs, prompts, summaries, memory, or tool adapters. Protected power must become handle-bound, auditable, and absent by default.

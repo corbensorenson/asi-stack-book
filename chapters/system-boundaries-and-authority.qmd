@@ -273,4 +273,4 @@ This boundary is what keeps the efficient stack from becoming a permission leak.
 
 ## Handoff
 
-Once authority is explicit, the next question is what goes wrong when it is not. Failure Modes of Ungoverned Intelligence turns the boundary rules into a failure radar: authority creep, context pollution, evaluator capture, evidence inflation, and unbounded execution become detectable architectural problems rather than vague safety concerns. The sequence moves from the positive type system to the negative map that every later layer must answer.
+Once authority is explicit, the architecture needs a map of what breaks when authority is missing, vague, or exceeded. Failure Modes of Ungoverned Intelligence turns the boundary rules into a failure radar: authority creep, context pollution, evaluator capture, evidence inflation, and unbounded execution become detectable architectural problems rather than vague safety concerns. The sequence moves from the positive type system to the negative map that every later layer must answer.

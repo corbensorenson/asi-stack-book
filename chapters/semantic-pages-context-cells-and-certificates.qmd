@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 This chapter treats summaries and context cells as evidence-bounded representations. The repo validates a semantic page certificate fixture and implements narrow finite-record Lean predicates for derived-cell certificate completeness and source-to-summary authority non-escalation. It does not yet test summary fidelity, omission detection, certificate truthfulness, or support-state promotion from certificates.
 
-It follows the ABI chapter by moving inside the materialized packet. Once context can be addressed and faulted, the next question is what each compact unit is allowed to mean.
+It follows the ABI chapter by moving inside the materialized packet. Once context can be addressed and faulted, each compact unit needs a declared meaning, permitted use, and evidence boundary.
 
 The certificate is the border control for meaning. It prevents a compact cell from changing role as it moves from planning to evidence, execution, review, or memory.
 

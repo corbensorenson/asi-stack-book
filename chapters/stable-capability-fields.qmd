@@ -257,4 +257,4 @@ Later learning and routing layers depend on this discipline. Procedural memory n
 
 ## Handoff
 
-Stable fields define what must remain true across implementation changes; Capability Replacement and Rollback defines how a candidate earns the right to replace the current implementation. The handoff moves from identity to transaction: qualification evidence, regression floors, residual escrow, monitor windows, rollback ownership, and authority deltas decide whether improvement can become a governed state change.
+Stable fields define what must remain true across implementation changes; Capability Replacement and Rollback defines how a candidate earns the right to replace the current implementation. Durable identity becomes a replacement transaction: qualification evidence, regression floors, residual escrow, monitor windows, rollback ownership, and authority deltas decide whether improvement can become a governed state change.

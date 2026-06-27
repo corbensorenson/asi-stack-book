@@ -20,6 +20,14 @@ SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)
 NEXT_HEADING_RE = re.compile(r"^##\s+", re.MULTILINE)
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 NUMBERED_CHAPTER_RE = re.compile(r"\bchapter\s+\d+\b", re.IGNORECASE)
+GENERIC_HANDOFF_PHRASES = (
+    "the next boundary",
+    "the next move",
+    "the next question",
+    "the handoff is",
+    "the handoff moves",
+    "this is the handoff",
+)
 
 MIN_HANDOFF_WORDS = 45
 
@@ -85,6 +93,10 @@ def main() -> None:
             )
         if NUMBERED_CHAPTER_RE.search(body):
             errors.append(f"{chapter['file']}: ## Handoff uses a numbered chapter reference.")
+        normalized_body = body.lower()
+        for phrase in GENERIC_HANDOFF_PHRASES:
+            if phrase in normalized_body:
+                errors.append(f"{chapter['file']}: ## Handoff uses generic transition formula {phrase!r}.")
         if next_chapter is None:
             if "book" not in body.lower():
                 errors.append(f"{chapter['file']}: final handoff should close the book-level arc.")

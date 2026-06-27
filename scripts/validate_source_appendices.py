@@ -29,6 +29,9 @@ APPENDIX_G_OWNERSHIP_RULE = "| Ownership rule | If Corben wrote it, supplied it,
 APPENDIX_H_OWNERSHIP_RULE = "| Ownership rule | If another author, organization, or outside project produced it, it belongs here; Corben-authored papers, Corben-supplied materials, recovered project history, and local-project records stay in Appendix G. |"
 APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
 APPENDIX_H_BOUNDARY = "not a subsection, second half, or continuation of Appendix G"
+OWNERSHIP_GLANCE_SECTION = "## Ownership At A Glance"
+OWNERSHIP_GLANCE_G_ROW = "| Corben-authored, Corben-supplied, recovered, or local project material | Appendix G |"
+OWNERSHIP_GLANCE_H_ROW = "| Third-party papers, documentation, outside projects, or non-Corben references | Appendix H |"
 
 
 def fail(errors: list[str]) -> None:
@@ -85,6 +88,13 @@ def main() -> None:
         errors.append("Appendix G is missing the Corben-side ownership rule row.")
     if APPENDIX_H_OWNERSHIP_RULE not in h_text:
         errors.append("Appendix H is missing the external-source ownership rule row.")
+    for appendix_name, text in (("Appendix G", g_text), ("Appendix H", h_text)):
+        if OWNERSHIP_GLANCE_SECTION not in text:
+            errors.append(f"{appendix_name} is missing the Ownership At A Glance section.")
+        if OWNERSHIP_GLANCE_G_ROW not in text:
+            errors.append(f"{appendix_name} is missing the Appendix G ownership-at-a-glance row.")
+        if OWNERSHIP_GLANCE_H_ROW not in text:
+            errors.append(f"{appendix_name} is missing the Appendix H ownership-at-a-glance row.")
     if APPENDIX_H_IDENTITY in g_text:
         errors.append("Appendix G should not render Appendix H as a second scope row.")
     if APPENDIX_G_IDENTITY in h_text:
