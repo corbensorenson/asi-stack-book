@@ -249,3 +249,7 @@ Semantic pages, context cells, and certificates make context units typed and evi
 The antidote to overconfident summaries is a certificate that travels with the representation. A representation can be small, useful, and still honest about what it is not allowed to prove. Those certified units then need runtime semantics: snapshots, mounts, branches, taint, deletion closure, and auditable memory faults.
 
 A certified cell should become harder to misuse as it travels. If the certificate disappears into surrounding prose, the representation has become another unbounded summary. The deeper point is that compression and retrieval need rights and liabilities, not just embeddings. A summary should carry what it dropped. A cell should know whether it can support a claim, route a task, inform a tool call, or merely orient a human reader. A certificate should let the next layer reject the context before it contaminates a plan, proof attempt, benchmark explanation, or release note.
+
+## Handoff
+
+Certified cells make individual context units honest, yet long-lived memory also needs runtime rules for snapshots, mounts, branches, deletion closure, contradiction handling, and taint propagation. Context Transactions, Snapshots, Mounts, and Taint supplies those semantics. It explains how context changes become durable events rather than silent edits that later plans or claims mistake for stable knowledge.

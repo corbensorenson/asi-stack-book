@@ -271,3 +271,7 @@ The Virtual Context ABI is the memory/context contract. It keeps durable memory 
 The rule is simple: context that cannot be addressed, versioned, authorized, represented, and faulted should not be silently treated as usable memory. The materialized packet then needs internal rules for what each page, cell, and summary must carry so compressed context does not impersonate evidence.
 
 Context access should be replayable. If a future auditor cannot reconstruct why the model saw a packet, what it was allowed to mean, and when its authority expired, the ABI did not do its job. This is one of the central differences between ordinary context engineering and governed context. The goal is not simply to fit more material into a prompt or retrieve more relevant snippets. The goal is to make context an authorized, versioned, lossy-or-lossless, evidence-bounded object whose misuse can be detected. Only then can memory support planning, verification, tool use, and self-improvement without becoming an invisible source of overconfidence.
+
+## Handoff
+
+The ABI names memory handles and access rules, but the materialized context still has to carry provenance, compression loss, authority, and permitted uses at a smaller unit of work. Semantic Pages, Context Cells, and Certificates gives those packets internal structure. It turns retrieved or compressed material into inspectable cells whose evidence limits can travel with the representation instead of disappearing into prompt text.

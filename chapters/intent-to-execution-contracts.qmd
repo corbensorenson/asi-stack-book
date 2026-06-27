@@ -249,3 +249,7 @@ Intent-to-execution contracts are the first operational handoff. They turn human
 The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action. That trace narrows into the command language that makes the first machine-readable handoff precise.
 
 A downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract. This is also where the human-facing promise becomes concrete. A person should be able to see how a request was interpreted, which constraints traveled with it, which authority was granted, which assumptions were introduced, and which residuals remained unresolved. That visibility makes later automation less mysterious and more accountable. Planning can decompose the work, memory can supply context, and tools can execute only because the contract gives them a bounded object to inherit rather than an ambient desire to satisfy.
+
+## Handoff
+
+Intent contracts preserve purpose, authority, and residuals across the first translation from human request to governed work. The next boundary has to make that translation compact enough for machines to validate without turning language into hidden permission. Command Contracts and Semantic Interfaces supplies that operational language: fields, defaults, failure behavior, and verification duties that planners can consume without guessing what the human meant.

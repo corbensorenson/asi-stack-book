@@ -301,3 +301,7 @@ Runtime adapters, tool permissions, and human approval form the effects boundary
 The rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. In this repository, the evidence stops at the record and source-mapping boundary: no adapter trace, approval service, sandbox run, or effect receipt has been executed yet. Once real effect traces accumulate, the system can ask which recurring patterns deserve to become procedural memory.
 
 That conservative boundary is what lets execution become useful without becoming ambient power. A tool call should know which job authorized it, which input fields it received, which sandbox or approval lease constrained it, what changed, what failed, and what remains irreversible. Human approval is not a decorative click; it is a scoped transition with expiry, evidence, and review duties. When those receipts exist, repeated success can later be abstracted into tools. Without those receipts, automation may look efficient while destroying the evidence needed to govern it.
+
+## Handoff
+
+Runtime receipts create the evidence needed to decide whether repeated work should become reusable procedure. Procedural Memory and Cognitive Loop Closure takes those traces and asks which loops can be safely abstracted, parameterized, verified, registered, monitored, and retired. The boundary prevents habit from masquerading as learning: a pattern becomes memory only when its scope, failures, regressions, and retirement triggers are visible.

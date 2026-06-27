@@ -267,3 +267,7 @@ Context transactions, snapshots, mounts, and taint give VCM runtime semantics. M
 The rule is that memory operations must leave a reviewable trace. If a context view cannot satisfy consistency, taint, or deletion closure, it should fault before becoming working context. A separate adequacy question follows: even when the context view is coherent and authorized, is it adequate for the claim the system is about to make?
 
 Context must fail closed. A system that cannot explain the view it read should not use that view as if it were ordinary memory. That failure behavior is what makes long-lived memory compatible with governed intelligence. Without it, every summary, cached artifact, copied page, and derived note becomes a possible authority leak or stale belief. With it, memory can support ambitious planning while still preserving deletion closure, contradiction handling, provenance, and replay. The stack can then distinguish a valid memory operation from an adequate epistemic basis, which is the move needed before claims can be allowed to sound stronger.
+
+## Handoff
+
+Valid context operations are necessary, but they do not automatically give enough evidence for a claim. Verification Bandwidth and Context Adequacy separates coherent access from adequate understanding. It asks whether the system has enough time, comparison method, tools, reviewer bandwidth, and contradiction search for the claim at hand, so memory validity does not inflate into epistemic confidence.

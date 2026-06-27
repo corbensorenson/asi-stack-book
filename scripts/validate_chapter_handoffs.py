@@ -9,7 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 
-HANDOFF_REQUIRED_PARTS = {"foundations-alignment-governance"}
+HANDOFF_REQUIRED_PARTS = {
+    "foundations-alignment-governance",
+    "planning-memory-reasoning-execution",
+}
 HANDOFF_HEADING_RE = re.compile(r"^## Handoff\s*$", re.MULTILINE)
 SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)
 NEXT_HEADING_RE = re.compile(r"^##\s+", re.MULTILINE)

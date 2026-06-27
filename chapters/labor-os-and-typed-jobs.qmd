@@ -287,3 +287,7 @@ Labor OS and Typed Jobs turns plans into controlled work. It gives each executab
 The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The job's output then enters the artifact graph, where work becomes durable memory instead of a disappearing side effect.
 
 The handoff to artifacts should be mandatory. A job that leaves no artifact, audit event, residual, or replay declaration has not become part of the living stack's memory, even if it produced a useful answer.
+
+## Handoff
+
+Typed jobs give execution a bounded work unit, but the stack still needs a durable record of what each job produced, read, changed, and failed to prove. Artifact Graphs, Audit Logs, and Replay supplies that continuity layer. It makes outputs, sources, context transactions, tools, audit events, replay limits, and residuals part of the system's memory rather than leftovers around the work.

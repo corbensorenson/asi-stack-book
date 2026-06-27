@@ -254,3 +254,7 @@ Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products
 This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain. From there the execution layer reaches its most dangerous boundary: the adapter that turns a job into an external effect.
 
 The later compression and semantic-representation chapters depend on this contract. A compressed artifact can only be trusted relative to the full artifact and replay record it points back to. A semantic node can only be grounded relative to the artifact or source record it cites. The graph is therefore not a storage accessory; it is the continuity layer that lets the stack improve without losing the chain of responsibility.
+
+## Handoff
+
+Artifact graphs preserve internal continuity, but some jobs must cross the boundary into tools, runtimes, deployments, filesystems, networks, or human-approved effects. Runtime Adapters, Tool Permissions, and Human Approval governs that edge. It separates request, approval, invocation, effect receipt, verification, rollback handle, and irreversible residual so external action remains traceable after it leaves the artifact graph.

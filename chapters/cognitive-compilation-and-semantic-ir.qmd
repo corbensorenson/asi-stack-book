@@ -253,3 +253,7 @@ Cognitive Compilation and Semantic IR gives the stack a compiler boundary betwee
 The practical claim is modest: the stack needs an artifact between intent and execution. That artifact should be typed enough to schedule, validate, repair, replay, and audit. Until a prototype exists, this remains design rationale; once a small semantic-atom schema and repair fixture exist, individual implementation claims can begin moving through the evidence ledger. Compiled work then depends on the virtual context substrate that supplies the right memory and evidence to those atoms.
 
 A compiled artifact should be explainable through its obligations. If the system cannot point from target output back to source plan, semantic atoms, validators, lowering assumptions, and residuals, it has generated an artifact rather than compiled one.
+
+## Handoff
+
+Semantic IR can only preserve obligations when the context feeding those obligations is addressable, authorized, and reviewable. Virtual Context ABI defines that memory boundary. It gives compiled work stable context handles, versions, mounts, snapshots, representation contracts, adequacy signals, and fault behavior so semantic atoms do not inherit invisible memory or stale evidence.

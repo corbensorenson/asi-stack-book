@@ -256,3 +256,7 @@ Claim Ledgers and Belief Revision makes belief state durable. Claims are separat
 The rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise. The ledger then asks selected claims what kind of proof, citation, procedure, or justification artifact would be required before their tier can rise.
 
 The practical test is whether a future agent can edit the book without losing epistemic identity. If a claim changes, the ledger should know. If a claim repeats, the ledger should know. If a claim becomes weaker, the prose should not keep sounding stronger.
+
+## Handoff
+
+Claim ledgers preserve belief identity, but high-value claims still need stronger artifacts than ordinary notes when promotion would affect planning, governance, benchmarks, or external action. Spinoza Verification and Proof-Carrying Claims raises that boundary. It turns selected claims into proof-carrying envelopes with required tiers, verifier results, downgrades, timeouts, mismatches, and explicit refusal paths.

@@ -289,3 +289,7 @@ Command contracts and semantic interfaces give the stack an operational language
 The discipline is explicitness under compression: make commands short enough to use, but structured enough that failure, verification, and authority remain visible. With the command surface explicit, accepted work can become a governed plan before any side effect occurs.
 
 The handoff is precise: planning may decompose the command, but it may not turn context into authority, style into requirement, or helpful inference into permission. That is how the stack keeps language useful without letting it become ambient control. A command should also be boring enough for machines to reject. Missing fields, invalid grants, unsupported assumptions, expired context, and unsafe effects should be ordinary validation failures. That is the practical value of the interface: it reduces the amount of judgment required before the system can say no, ask for clarification, escalate, or continue under a narrower contract.
+
+## Handoff
+
+Once a command exposes objective, constraints, output contract, verification, and failure behavior, the stack can ask how accepted work becomes a controlled sequence rather than a single leap into action. Planning as a Control Layer takes the validated command surface and turns it into dependencies, budgets, context requests, authority limits, blocked-node records, and stop conditions before any executable job exists.

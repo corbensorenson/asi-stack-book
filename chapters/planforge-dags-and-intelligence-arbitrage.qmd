@@ -255,3 +255,7 @@ PlanForge DAGs and intelligence arbitrage turn planning into scheduled, typed wo
 The efficiency claim stays conservative: intelligence arbitrage is a design principle until reproducible scheduler experiments show cost and quality results. The architecture still benefits now because every node must name its tier, verification burden, budget, escalation path, and residuals. Scheduled work then lowers into semantic IR so artifact generation, validation, and repair have stable addresses.
 
 A DAG should make blocked work as visible as completed work. If a scheduler cannot say why a node is ready, blocked, merged, escalated, or residualized, it is not yet a control layer. The important promise is not that a DAG is automatically smarter than a prompt. The promise is that it gives the stack a surface where intelligence can be budgeted, compared, retried, and audited. That is where arbitrage becomes governable: a cheaper worker is useful only when its acceptance predicate and fallback are visible, and a stronger worker is justified only when the graph shows the cost of not escalating.
+
+## Handoff
+
+DAG scheduling gives work an order and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.
