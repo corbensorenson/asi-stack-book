@@ -19,7 +19,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
-- `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, and no live-only scaffolding after stripping.
+- `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, chapter-specific Handoff continuity, and no live-only scaffolding after stripping.
 - `scripts/validate_reader_evidence_boundaries.py` checks that every generated reader chapter strips raw live core-claim markers and repeated support boilerplate while preserving the claim text and a compact plain-language support-state boundary in the Core Claim section.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.

@@ -252,6 +252,7 @@
     "script": "scripts/validate_reader_spine.py",
     "report_path": "build/reader_spine_report.json",
     "minimum_chapter_word_count": 1200,
+    "minimum_handoff_word_count": 45,
     "hard_blocked_terms": [
       "drafting guardrail",
       "codex test plan",
@@ -272,9 +273,10 @@
       "Failure modes",
       "Minimum Viable Implementation",
       "Beyond the State of the Art",
-      "Summary"
+      "Summary",
+      "Handoff"
     ],
-    "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine after live-only scaffolding is stripped."
+    "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine and chapter-specific Handoff continuity after live-only scaffolding is stripped."
   },
   "reader_evidence_boundary_validation": {
     "script": "scripts/validate_reader_evidence_boundaries.py",

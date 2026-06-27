@@ -68,6 +68,7 @@ READER_REQUIRED_HEADINGS = {
     "Minimum Viable Implementation",
     "Beyond the State of the Art",
     "Summary",
+    "Handoff",
 }
 AUDIO_FORBIDDEN_STRIPS = {
     (2, "minimum viable implementation"),
@@ -474,6 +475,9 @@ def main() -> None:
         minimum = spine_policy.get("minimum_chapter_word_count")
         if not isinstance(minimum, int) or minimum < 1000:
             errors.append("reader_spine_validation.minimum_chapter_word_count must be an integer >= 1000.")
+        minimum_handoff = spine_policy.get("minimum_handoff_word_count")
+        if not isinstance(minimum_handoff, int) or minimum_handoff < 45:
+            errors.append("reader_spine_validation.minimum_handoff_word_count must be an integer >= 45.")
         validate_string_list(
             "reader_spine_validation",
             "hard_blocked_terms",

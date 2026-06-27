@@ -36,6 +36,14 @@ DEFAULT_BLOCKED_META_PHRASES = [
     "this chapter",
     "the chapter",
 ]
+GENERIC_HANDOFF_PHRASES = (
+    "the next boundary",
+    "the next move",
+    "the next question",
+    "the handoff is",
+    "the handoff moves",
+    "this is the handoff",
+)
 DEFAULT_REQUIRED_READER_HEADINGS = [
     "Problem",
     "Why existing approaches are insufficient",
@@ -47,7 +55,13 @@ DEFAULT_REQUIRED_READER_HEADINGS = [
     "Minimum Viable Implementation",
     "Beyond the State of the Art",
     "Summary",
+    "Handoff",
 ]
+DEFAULT_MIN_HANDOFF_WORDS = 45
+HANDOFF_HEADING_RE = re.compile(r"^## Handoff\s*$", re.MULTILINE)
+SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)
+NEXT_HEADING_RE = re.compile(r"^##\s+", re.MULTILINE)
+NUMBERED_CHAPTER_RE = re.compile(r"\bchapter\s+\d+\b", re.IGNORECASE)
 
 
 def load_structure() -> dict:
@@ -136,6 +150,14 @@ def first_heading(text: str) -> tuple[int, str] | None:
     return None
 
 
+def section_body_after(text: str, match: re.Match[str]) -> str:
+    tail = text[match.end() :]
+    next_heading = NEXT_HEADING_RE.search(tail)
+    if next_heading:
+        return tail[: next_heading.start()].strip()
+    return tail.strip()
+
+
 def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     structure = load_structure()
     profile = build_reader_edition.find_profile("reader_release")
@@ -151,6 +173,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     if not isinstance(required_headings, list) or not all(isinstance(heading, str) for heading in required_headings):
         raise TypeError("reader_spine_validation.required_reader_headings must be a list of strings")
     normalized_required_headings = [normalize_heading(heading) for heading in required_headings]
+    min_handoff_words = int(policy.get("minimum_handoff_word_count", DEFAULT_MIN_HANDOFF_WORDS))
 
     strip_headings = build_reader_edition.profile_strip_headings(profile)
     heading_violations = build_reader_edition.scan_for_stripped_headings(output_dir, strip_headings)
@@ -158,9 +181,11 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
 
     chapter_records: list[dict[str, object]] = []
     errors: list[str] = []
-    for chapter in flatten_chapters(structure):
+    chapters = flatten_chapters(structure)
+    for index, chapter in enumerate(chapters):
         relative = chapter["file"]
         expected_title = chapter["title"]
+        next_chapter = chapters[index + 1] if index + 1 < len(chapters) else None
         path = output_dir / relative
         if not path.exists():
             errors.append(f"Generated reader chapter missing: {relative}")
@@ -173,6 +198,28 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         first = first_heading(text)
         title_ok = first == (1, expected_title)
         source_marker_heading_count = text.count("Human Reading Path")
+        handoff_matches = list(HANDOFF_HEADING_RE.finditer(text))
+        summary_match = SUMMARY_HEADING_RE.search(text)
+        handoff_word_count = 0
+        handoff_after_summary = False
+        handoff_names_next = False
+        handoff_closes_book = False
+        handoff_numbered_chapter_ref = False
+        handoff_generic_phrase_hits: list[str] = []
+        if len(handoff_matches) == 1:
+            handoff_after_summary = bool(summary_match and handoff_matches[0].start() > summary_match.start())
+            handoff_body = section_body_after(text, handoff_matches[0])
+            handoff_word_count = len(WORD_RE.findall(handoff_body))
+            handoff_numbered_chapter_ref = bool(NUMBERED_CHAPTER_RE.search(handoff_body))
+            lowered_handoff = handoff_body.lower()
+            handoff_generic_phrase_hits = [
+                phrase for phrase in GENERIC_HANDOFF_PHRASES if phrase in lowered_handoff
+            ]
+            if next_chapter is None:
+                handoff_closes_book = "book" in lowered_handoff
+            else:
+                next_title = str(next_chapter.get("title", "")).strip()
+                handoff_names_next = bool(next_title and next_title in handoff_body)
         missing_headings = [
             required_headings[index]
             for index, normalized in enumerate(normalized_required_headings)
@@ -184,6 +231,13 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 "expected_title": expected_title,
                 "first_heading": {"level": first[0], "title": first[1]} if first else None,
                 "source_marker_heading_count": source_marker_heading_count,
+                "handoff_section_count": len(handoff_matches),
+                "handoff_after_summary": handoff_after_summary,
+                "handoff_word_count": handoff_word_count,
+                "handoff_names_next_chapter": handoff_names_next if next_chapter is not None else None,
+                "handoff_closes_book": handoff_closes_book if next_chapter is None else None,
+                "handoff_numbered_chapter_ref": handoff_numbered_chapter_ref,
+                "handoff_generic_phrase_hits": handoff_generic_phrase_hits,
                 "word_count_after_strip": words,
                 "live_only_term_hits": term_hits,
                 "meta_phrase_hits": meta_hits,
@@ -199,6 +253,31 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             errors.append(
                 f"{relative}: source-only Human Reading Path marker remains in reader edition."
             )
+        if len(handoff_matches) != 1:
+            errors.append(
+                f"{relative}: reader spine must contain exactly one Handoff section; "
+                f"found {len(handoff_matches)}."
+            )
+        else:
+            if not handoff_after_summary:
+                errors.append(f"{relative}: reader Handoff section must appear after Summary.")
+            if handoff_word_count < min_handoff_words:
+                errors.append(
+                    f"{relative}: reader Handoff has {handoff_word_count} words; "
+                    f"minimum is {min_handoff_words}."
+                )
+            if handoff_numbered_chapter_ref:
+                errors.append(f"{relative}: reader Handoff uses a numbered chapter reference.")
+            for phrase in handoff_generic_phrase_hits:
+                errors.append(f"{relative}: reader Handoff uses generic transition formula {phrase!r}.")
+            if next_chapter is None:
+                if not handoff_closes_book:
+                    errors.append(f"{relative}: final reader Handoff should close the book-level arc.")
+            elif not handoff_names_next:
+                next_title = str(next_chapter.get("title", "")).strip()
+                errors.append(
+                    f"{relative}: reader Handoff must name next manifest chapter title {next_title!r}."
+                )
         if words < min_words:
             errors.append(
                 f"{relative}: reader spine has {words} words after stripping; "
@@ -230,6 +309,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "profile": "reader_release",
         "minimum_chapter_word_count": min_words,
+        "minimum_handoff_word_count": min_handoff_words,
         "hard_blocked_terms": hard_terms,
         "blocked_meta_phrases": blocked_meta_phrases,
         "required_reader_headings": required_headings,
