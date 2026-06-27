@@ -8,7 +8,7 @@ This repository is organized around the living book and its validation loop.
 | `_quarto.yml` | Generated Quarto configuration. | tracked; do not hand-edit |
 | `index.qmd`, `preface.qmd` | Front matter for the rendered book. | tracked |
 | `chapters/` | Chapter source files. | tracked |
-| `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, Corben source corpus, author-intent lineage, release editions, implementation horizons, and external literature. | tracked |
+| `appendices/` | Generated and curated appendices: source matrix, glossary, claims, schemas, tests, changelog, Corben source corpus, external literature, author-intent lineage, release editions, and implementation horizons. | tracked |
 | `docs/book_outline.md` | Full-book drafting outline, source loading queues, and Lean proof target source of truth. | tracked |
 | `docs/v1_0_candidate_status.md` | Current v1.0 candidate snapshot, remaining evidence gaps, and release gate. | tracked |
 | `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
