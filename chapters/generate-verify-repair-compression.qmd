@@ -254,7 +254,7 @@ The crosswalk is intentionally version-sensitive. `bbvca_v9` is the preferred so
 
 ## Summary
 
-Generate-Verify-Repair Compression defines one boundary in the ASI Stack: Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails. Its job is to make a capability more governable, not merely more impressive.
+Generate-Verify-Repair Compression turns compression into a bargain the stack can audit. It may store a compact generator, but only if the verifier can check reconstruction, the repair stream can pay the exact remainder, and the ledger can admit when literal storage was cheaper and safer.
 
 The chapter's discipline is residual honesty. A generator is useful only when the stack pays for what it fails to generate, checks the result against a declared reconstruction contract, and records when literal storage was better. The next chapter moves that same accounting from stored artifacts to time: faster generation is useful only after verification, fallback, and accepted-output costs are counted.
 

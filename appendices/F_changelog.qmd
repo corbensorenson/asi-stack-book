@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal generated-summary cleanup
+
+- Removed the remaining generated summary phrase `defines one boundary in the ASI Stack` from Cognitive Compilation and Semantic IR, Verification Bandwidth and Context Adequacy, Generate-Verify-Repair Compression, and Integrated Reference Architecture. Each chapter summary now closes with chapter-specific reader-facing language about compiler boundaries, verification scarcity, auditable compression, and integrated trace composition. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal evidence-gate caveat guard
 
 - Extended `scripts/validate_chapter_dod.py` to reject the generic evidence-gate caveat patterns removed from the chapter `Beyond the State of the Art` sections, including the old catchall source/schema/proof/test/benchmark/runtime/governance list and the repeated "For this chapter..." target-end-state opening. Updated the writing runbook to document the guard. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

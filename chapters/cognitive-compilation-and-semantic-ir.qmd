@@ -236,7 +236,7 @@ The crosswalk identifies sources for compiler framing, semantic representation, 
 
 ## Summary
 
-Cognitive Compilation and Semantic IR defines one boundary in the ASI Stack: Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted. Its job is to make a capability more governable, not merely more impressive.
+Cognitive Compilation and Semantic IR gives the stack a compiler boundary between intention and artifact. It asks the system to stop treating generation as one opaque act and instead lower goals into semantic atoms, obligations, validators, repair locations, and target backends that can be scheduled and audited.
 
 The chapter's practical claim is modest: the stack needs an artifact between intent and execution. That artifact should be typed enough to schedule, validate, repair, replay, and audit. Until a prototype exists, this remains design rationale; once a small semantic-atom schema and repair fixture exist, individual implementation claims can begin moving through the evidence ledger. The next chapter shifts from compiled work to the virtual context substrate that supplies the right memory and evidence to those atoms.
 

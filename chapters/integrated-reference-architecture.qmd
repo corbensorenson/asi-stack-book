@@ -246,7 +246,7 @@ The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow,
 
 ## Summary
 
-Integrated Reference Architecture defines one boundary in the ASI Stack: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. Its job is to make a capability more governable, not merely more impressive.
+Integrated Reference Architecture is where the book stops describing layers in isolation and asks whether they compose into one inspectable machine. The reference trace has to carry typed handoffs, authority stops, artifacts, evidence updates, residuals, and self-improvement gates from the first request to the final change record.
 
 The architecture is coherent only if a reader can follow a request from human intent to evidence-backed change. This chapter gives that trace a shape: governance approves the command, planning compiles it, memory bounds the working context, routing selects capability, verification checks claims and residuals, execution produces artifacts, evidence records outcomes, and SCF gates decide whether improvement is allowed.
 
