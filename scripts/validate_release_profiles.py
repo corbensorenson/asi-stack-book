@@ -634,9 +634,27 @@ def main() -> None:
         release_gate = live_book.get("release_gate", [])
         if (
             not isinstance(release_gate, list)
+            or "python3 scripts/validate_reading_mode_toggle.py" not in release_gate
+        ):
+            errors.append("live_book release_gate must include validate_reading_mode_toggle.py.")
+        if (
+            not isinstance(release_gate, list)
+            or "python3 scripts/validate_human_reading_paths.py" not in release_gate
+        ):
+            errors.append("live_book release_gate must include validate_human_reading_paths.py.")
+        if (
+            not isinstance(release_gate, list)
             or "python3 scripts/validate_live_human_view.py" not in release_gate
         ):
             errors.append("live_book release_gate must include validate_live_human_view.py after HTML render.")
+
+    if reader:
+        release_gate = reader.get("release_gate", [])
+        if (
+            not isinstance(release_gate, list)
+            or "python3 scripts/validate_human_reading_paths.py" not in release_gate
+        ):
+            errors.append("reader_release release_gate must include validate_human_reading_paths.py.")
 
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):

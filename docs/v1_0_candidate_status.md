@@ -1,6 +1,6 @@
 # v1.0 Candidate Status
 
-Last updated: 2026-06-26
+Last updated: 2026-06-27
 
 This document is the current public-safe status surface for the extended v1.0 improvement goal. It supersedes the older prewriting and v0.2 launch-status documents for current readiness decisions, while those older documents remain useful historical records.
 
@@ -19,6 +19,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Schemas and fixtures | 70 JSON Schemas, 69 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_protocol_examples.py` |
 | Visual coverage | Every chapter has at least one Mermaid diagram; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
+| Live Human view | The GitHub Pages book has a persistent `AI view` / `Human view` switch; all 54 chapters have exactly one Human Reading Path bridge; Human view hides live-only headings, matching page-TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
 | Public site | GitHub Pages renders the live Quarto book | <https://corbensorenson.github.io/asi-stack-book/> |
 
 ## What The Current Candidate Proves
@@ -29,6 +30,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - Current source-note coverage, source-to-chapter assignment, core claim mapping, and passage-review mapping are internally traceable.
 - Current proof targets are wired through outline tags, generated manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E.
 - Current schemas and example fixtures validate record shape for the protocol surfaces created so far.
+- The live site can project the same source into the default AI/research surface and a cleaner Human view without creating a parallel manuscript.
 - The live book renders locally and through GitHub Pages when the publication workflow passes.
 
 ## What It Does Not Prove
@@ -37,8 +39,8 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - It does not prove that source interpretation is semantically adequate for support-state promotion.
 - It does not prove that the finite-record Lean predicates are the best formalization of each intended chapter boundary.
 - It does not reproduce MoECOT, Theseus, Circle, Talos, VCM, PlanForge, policy-optimization, compression, routing, benchmark, or simulation results.
-- It does not generate or publish EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
-- It does not replace a final human editorial read for continuity, exposition, pedagogy, and reader-edition quality.
+- It does not generate, review, or publish EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
+- The live Human view is a convenience projection, not a reviewed reader-release manuscript and not a substitute for final human editorial review.
 
 ## Remaining Work Before v1.0 Evidence Release
 
@@ -49,7 +51,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - Import or reproduce any prototype, benchmark, Circle, Theseus, MoECOT, VCM, Talos, PlanForge, compression, routing, or policy-training artifact before using it as stronger evidence.
 - Generate and review reader-edition artifacts only after a tagged live-book candidate passes the live/research gate.
 - Generate audio scripts and audio artifacts only from a reviewed reader edition and record exact produced artifacts.
-- Complete a final reader-facing editorial pass to reduce remaining scaffolding feel without weakening evidence boundaries.
+- Complete a final reader-facing editorial pass over both the generated reader manuscript and representative live Human view chapters to reduce remaining scaffolding feel without weakening evidence boundaries.
 
 ## Candidate Gate
 
@@ -62,6 +64,8 @@ python3 scripts/validate_proof_artifact_audit.py
 python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
+python3 scripts/validate_reading_mode_toggle.py
+python3 scripts/validate_human_reading_paths.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
