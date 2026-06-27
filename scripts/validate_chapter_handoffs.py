@@ -13,6 +13,7 @@ HANDOFF_REQUIRED_PARTS = {
     "foundations-alignment-governance",
     "planning-memory-reasoning-execution",
     "routing-compression-representation-substrates",
+    "evidence-implementation-living-book",
 }
 HANDOFF_HEADING_RE = re.compile(r"^## Handoff\s*$", re.MULTILINE)
 SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)

@@ -265,3 +265,7 @@ Benchmarks are pressure surfaces, not truth machines. They become useful when ev
 That pressure changes future behavior only if policy optimization preserves provenance, rollback, and governance gates while learning from rewards, preferences, verifier outputs, and benchmark signals.
 
 The durable rule is that benchmarks should improve memory, not erase it. A good ratchet makes the next system harder to fool and easier to compare; a bad one gives the next system a number to optimize and a story to overclaim. The stack should therefore treat a benchmark as a governed evidence event: environment, seed, task, baseline, metric, failure cases, residuals, and downgrade triggers all matter. Anti-Goodhart discipline is not pessimism. It is how the system keeps learning signals useful after models, planners, and policies begin adapting to them. Once benchmarks become ratchets, policy optimization can update behavior without turning every reward into truth or every score into permission.
+
+## Handoff
+
+Benchmark ratchets create pressure, but pressure becomes system change only through an update mechanism. Policy Optimization and Learning from Feedback defines that learning actuator. It records target layer, reward boundary, feedback admissibility, verifier refs, holdouts, drift limits, rollback, monitor windows, governance gates, and residuals so reward, preference, benchmark, or verifier signals cannot become authority by training side effect.
