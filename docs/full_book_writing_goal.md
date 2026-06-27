@@ -6,7 +6,7 @@ Use this when starting or resuming a long-running goal to improve the whole book
 
 Run an extended end-to-end improvement pass on **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** to turn the current v0.2 manuscript baseline into a final-draft-quality v1.0 candidate.
 
-Treat `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs. Treat `book_structure.json` as the source of truth for part/chapter order, stable chapter IDs, and the first-build/mature-endpoint fields published into Appendix J, `Implementation Horizons`. Use the `asi-stack-book` skill and follow the living-book workflow.
+Treat `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs. Treat `book_structure.json` as the source of truth for part/chapter order, stable chapter IDs, and the first-build/mature-endpoint fields published into Appendix K, `Implementation Horizons`. Use the `asi-stack-book` skill and follow the living-book workflow.
 
 For every chapter in scope, produce cohesive systems-architecture prose rather than a paper-by-paper anthology. Preserve the required chapter contract: problem, insufficiency of existing approaches, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, Codex test plan, source crosswalk, and summary. The minimum viable implementation must name the smallest honest artifact or validated slice that can start the idea without promoting the chapter claim. The beyond-SOTA section must name the mature product-level logical conclusion without claiming it already exists: final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. Mine the assigned source notes and available raw/cache/connector sources before making source-derived claims. Create missing source notes when a chapter depends on a source that has not yet been mined.
 
@@ -16,7 +16,7 @@ Do not fabricate citations, source content, benchmark results, test results, pro
 
 Implement Lean proofs, executable schemas, or small tests only where the current `proofs/proof_triage.json` route supports it and the predicate is sufficiently operational. Keep schema/process/research targets planned unless real artifacts are added. Record any implemented proof or test in the relevant chapter, Appendix C, appendices, and changelog.
 
-Update source notes, Appendix C, Appendix D/E/G/K as needed, and keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix J, and Appendix K generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
+Update source notes, Appendix C, Appendix D/E/G/K as needed, and keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix K, and Appendix H generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
 
 ```bash
 python3 scripts/source_readiness_report.py

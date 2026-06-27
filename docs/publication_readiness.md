@@ -15,7 +15,7 @@ This file tracks whether the public repository is ready for the next major phase
 - The Project Theseus and Circle Calculus mining report exists at `docs/local_project_mining_theseus_circle.md`.
 - The fast-generation context ingestion report exists at `docs/fast_generation_context_ingestion_report.md`.
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
-- The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/I_release_editions.qmd`.
+- The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/J_release_editions.qmd`.
 - The major-version release ladder exists at `docs/major_version_release_runbook.md` so live/research, reader, e-reader/document, and audio artifacts have an explicit sequence.
 - The current v1.0 candidate snapshot exists at `docs/v1_0_candidate_status.md`.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.

@@ -527,7 +527,7 @@ This appendix is generated from `sources/source_inventory.json` and current chap
 
 It is the working bibliography for Corben's supplied ASI Stack corpus: authored papers, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature. It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
 
-External and third-party references are separated into Appendix K so readers and future agents can see what is Corben's corpus and what is outside literature.
+External and third-party references are separated into Appendix H so readers and future agents can see what is Corben's corpus and what is outside literature.
 
 | Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |
 |---|---|---|---|---|---|---|
@@ -579,7 +579,7 @@ Third-party references should be added only when bibliographic metadata is recor
 - Do not report reproduced external results unless the reproduction artifact, command, environment, and result record exist.
 - Keep third-party documentation, papers, and benchmarks at their recorded support boundary.
 """
-    (ROOT / "appendices" / "K_external_literature.qmd").write_text(external_text, encoding="utf-8")
+    (ROOT / "appendices" / "H_external_literature.qmd").write_text(external_text, encoding="utf-8")
 
 
 def write_claim_matrix(structure: dict) -> None:
@@ -734,7 +734,7 @@ Current generated coverage: {total} chapter implementation horizons.
 
 {chr(10).join(sections)}
 """
-    (ROOT / "appendices" / "J_implementation_horizons.qmd").write_text(text, encoding="utf-8")
+    (ROOT / "appendices" / "K_implementation_horizons.qmd").write_text(text, encoding="utf-8")
 
 
 def ensure_glossary() -> None:

@@ -58,7 +58,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 ## Tracked Source Files
 
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
-- `appendices/I_release_editions.qmd` publishes the model inside the live book.
+- `appendices/J_release_editions.qmd` publishes the model inside the live book.
 - `docs/major_version_release_runbook.md` gives the operational sequence for live, research, reader, ebook/document, and audio release work.
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.

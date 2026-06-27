@@ -17,7 +17,7 @@ Public status: raw packet is local-only and ignored by git. This report is the p
 
 | Area | Public update |
 |---|---|
-| Living book method | Added conversation context handling rules to the outline, runbook, workflow, skill, and Appendix H. |
+| Living book method | Added conversation context handling rules to the outline, runbook, workflow, skill, and Appendix I. |
 | Evidence taxonomy | Added claim labels separate from support states and introduced an evidence-bundle schema path. |
 | Compression | Made the seed/router/search/generator/verifier/residual loop explicit in the efficiency and CGS chapters. |
 | Planning | Strengthened planning as strategic, tactical, and runtime control with full output-contract fields. |
@@ -25,7 +25,7 @@ Public status: raw packet is local-only and ignored by git. This report is the p
 | SCF | Added lifecycle states and time-bound qualification context. |
 | Execution | Added execution subfunctions and multi-runtime target coverage. |
 | Benchmarking | Added negative and inconclusive result retention as evidence. |
-| Lineage | Added Appendix H for author intent and architecture lineage. |
+| Lineage | Added Appendix I for author intent and architecture lineage. |
 
 ## Concepts Already Covered By Existing Chapters
 

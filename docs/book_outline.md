@@ -44,7 +44,7 @@ The ordinary chapter prose is the reader-facing spine. It must still make sense 
 
 Every chapter must include both `Minimum Viable Implementation` and `Beyond the State of the Art`. The minimal section defines the smallest public-safe artifact or validated slice that can start the chapter's idea honestly. The beyond-SOTA section defines the mature logical conclusion of the idea: the final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. The beyond-SOTA section is a target architecture, not a claim of current implementation; it must preserve the chapter's recorded support state until proof, test, source, benchmark, or runtime artifacts justify promotion.
 
-Appendix J, `Implementation Horizons`, is generated from the same manifest fields and should be used as the book-wide build-horizon map during full-book writing runs. If a chapter is added, moved, merged, or split, update `book_structure.json`, rerun `python3 scripts/sync_scaffold.py`, and confirm the appendix still shows a precise minimum slice and mature endpoint for every chapter.
+Appendix K, `Implementation Horizons`, is generated from the same manifest fields and should be used as the book-wide build-horizon map during full-book writing runs. If a chapter is added, moved, merged, or split, update `book_structure.json`, rerun `python3 scripts/sync_scaffold.py`, and confirm the appendix still shows a precise minimum slice and mature endpoint for every chapter.
 
 The live site exposes this separation through a reading-mode toggle. `AI view` shows the reader spine plus the live/research scaffold. `Human view` hides the same live-only headings used by the reader-release profile. Each chapter must maintain exactly one `.asi-human-only` `Human Reading Path` bridge after `Drafting guardrail` and before `Problem` so interested readers get a concise orientation without turning the project into a second manuscript. The source heading is a machine-checkable marker; live Human view and generated reader editions present the bridge as unheaded lead-in prose and hide its page-TOC entry. `.asi-ai-only` and `.asi-live-only` fenced divs are reserved for AI/research scaffolding that should disappear from Human view and reader releases. Reader generation unwraps human-only blocks and removes AI-only blocks.
 
@@ -3568,7 +3568,7 @@ Draft arc:
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
 - Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
 - Interface: Appendix G lists Corben's source corpus.
-- Interface: Appendix K lists external literature and third-party references.
+- Interface: Appendix H lists external literature and third-party references.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.
 
@@ -3604,11 +3604,11 @@ Lean proof targets:
 
 ## Source Corpus and External Literature
 
-Appendix G is the generated Corben/source-corpus map. Appendix K is the generated external-literature and third-party reference map. Both should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix K and should be added only when bibliographic metadata is recorded and the source is actually used.
+Appendix G is the generated Corben/source-corpus map. Appendix H is the generated external-literature and third-party reference map. Both should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
 
 ## Author Intent and Architecture Lineage
 
-Appendix H is the curated, public-safe home for conversation-mined author intent, architecture lineage, terminology decisions, and recovery tasks. It should not quote private conversation wording verbatim and should not promote claims to source-derived support state.
+Appendix I is the curated, public-safe home for conversation-mined author intent, architecture lineage, terminology decisions, and recovery tasks. It should not quote private conversation wording verbatim and should not promote claims to source-derived support state.
 
 ## Missing or Recovery Source Queue
 

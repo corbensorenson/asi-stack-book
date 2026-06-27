@@ -59,7 +59,7 @@ The starter scaffold had the correct architecture layers but packed several dist
 - `moecot` remains a must-load authenticated source before implementation-reference claims move beyond argument level. The outline includes a MoECOT chapter so the future writing goal has a precise place to mine it.
 - Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are no longer treated as missing-only recovery items. They now have source records and chapter routes, but still need source notes before claim support states move beyond `argument`.
 - Genesis Engine/Foundry, fuller BBVCA detail, Spinoza development details, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.
-- Conversation-derived author intent should be routed through `appendices/H_author_intent_and_lineage.qmd` and `docs/conversation_context_ingestion_report.md`, not copied verbatim into chapters.
+- Conversation-derived author intent should be routed through `appendices/I_author_intent_and_lineage.qmd` and `docs/conversation_context_ingestion_report.md`, not copied verbatim into chapters.
 
 ## Evidence Discipline
 

@@ -161,9 +161,9 @@ Minimum fields:
 - `next_action`
 - `non_claims`
 
-Appendix G lists Corben's source corpus. Appendix K lists external literature and third-party references. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
+Appendix G lists Corben's source corpus. Appendix H lists external literature and third-party references. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
-Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the supplied corpus visible, and Appendix K keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
+Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the supplied corpus visible, and Appendix H keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
 
 When a future agent receives a new paper, the interface should produce a triage decision before prose changes: update existing chapter, propose new chapter, route to appendix, keep in backlog, or reject as out of scope. The decision should name the boundary it affects and the evidence it could change. That makes dynamic chapters possible without forcing manual renumbering or turning the outline into a catchall.
 
@@ -201,7 +201,7 @@ At that mature boundary, every paper, project, local note, external reference, c
 
 The mature product surface would include:
 
-- A normalized source inventory tied to source notes, Appendix G, Appendix K, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
+- A normalized source inventory tied to source notes, Appendix G, Appendix H, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
 - Intake scenarios for update-existing, propose-new-chapter, defer-external-literature, merge/split, reject-duplicate, supersede-variant, recover-missing-source, and block-private-source cases.
 - Citation verification that distinguishes direct reading, source-note review, metadata-only external context, private/local context, connector-only access, and unread references.
 - Research backlog records with next actions small enough to execute: fetch, cache, read, write note, verify citation, add fixture, formalize predicate, run benchmark, update chapter, or close.
@@ -230,7 +230,7 @@ These Lean hooks are implemented as finite-record predicates over source-derived
 
 ## Source crosswalk
 
-This chapter intentionally keeps a broad source set because it governs the backlog for the whole book. Appendix G remains the generated Corben/source-corpus map. Appendix K remains the generated external-literature map. Appendix H remains author-intent and lineage context, not evidence.
+This chapter intentionally keeps a broad source set because it governs the backlog for the whole book. Appendix G remains the generated Corben/source-corpus map. Appendix H remains the generated external-literature map. Appendix I remains author-intent and lineage context, not evidence.
 
 Priority backlog:
 
