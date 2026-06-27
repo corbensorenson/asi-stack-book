@@ -87,6 +87,7 @@ python3 scripts/validate_protocol_examples.py
 python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
+python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_book.py
 quarto render --to html
 ```
@@ -119,6 +120,7 @@ python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
+python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/validate_book.py
