@@ -43,6 +43,8 @@ BANNED_BRIDGE_PHRASES = (
     "The human caveat",
     "The human promise",
     "The next question is",
+    "the book",
+    "this book",
 )
 BANNED_TEMPLATE_BRIDGE_PHRASES = (
     "The useful",

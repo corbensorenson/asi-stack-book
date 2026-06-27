@@ -51,11 +51,11 @@ The chapter's operating rule is that a failure is not only an outcome. It is a m
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Once the book has named boundaries and authority, it has to say what happens when those boundaries fail. The failure model is not a catalog of dramatic disaster scenarios. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
+Once the architecture has named boundaries and authority, it has to say what happens when those boundaries fail. The failure model is not a catalog of dramatic disaster scenarios. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
 
 The operating need is diagnostic clarity. If a system cannot say whether a failure came from authority creep, memory contamination, hidden optimization pressure, weak evidence, or ungoverned replacement, then it cannot learn from the failure without creating new ambiguity. A failure mode matters when the architecture gives it somewhere to go.
 
-The book treats failure analysis as design input, not retrospective blame.
+The stack treats failure analysis as design input, not retrospective blame.
 
 The goal is a system that can fail legibly enough to be repaired. A legible failure is already safer than a hidden success story that no one can audit.
 
