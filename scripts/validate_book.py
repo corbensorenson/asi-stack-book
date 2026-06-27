@@ -21,6 +21,7 @@ REQUIRED = [
     "scripts/validate_release_profiles.py",
     "scripts/validate_reader_spine.py",
     "scripts/validate_reading_mode_toggle.py",
+    "scripts/validate_live_human_view.py",
     "scripts/validate_proof_artifact_audit.py",
     "scripts/validate_source_evidence_audit.py",
     "scripts/build_reader_edition.py",

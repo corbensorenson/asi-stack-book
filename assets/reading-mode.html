@@ -16,6 +16,8 @@
     "3:formalization hooks"
   ]);
 
+  document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(savedMode()));
+
   function cleanHeadingText(heading) {
     const clone = heading.cloneNode(true);
     clone.querySelectorAll(".header-section-number, .anchorjs-link, .quarto-appendix-heading").forEach((node) => node.remove());
@@ -38,8 +40,12 @@
     });
   }
 
+  function normalizeMode(mode) {
+    return mode === humanMode ? humanMode : aiMode;
+  }
+
   function setMode(mode) {
-    const nextMode = mode === humanMode ? humanMode : aiMode;
+    const nextMode = normalizeMode(mode);
     document.documentElement.setAttribute("data-asi-reading-mode", nextMode);
     try {
       window.localStorage.setItem(storageKey, nextMode);

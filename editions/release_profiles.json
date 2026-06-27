@@ -250,14 +250,36 @@
   "reader_spine_validation": {
     "script": "scripts/validate_reader_spine.py",
     "report_path": "build/reader_spine_report.json",
-    "minimum_chapter_word_count": 300,
+    "minimum_chapter_word_count": 1200,
     "hard_blocked_terms": [
       "drafting guardrail",
       "codex test plan",
       "claim-source mapping status",
       "formalization hooks"
     ],
+    "required_reader_headings": [
+      "Problem",
+      "Why existing approaches are insufficient",
+      "Core Claim",
+      "Mechanism",
+      "Interfaces",
+      "Invariants",
+      "Failure modes",
+      "Minimal implementation",
+      "Summary"
+    ],
     "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine after live-only scaffolding is stripped."
+  },
+  "live_human_view_policy": {
+    "toggle_asset": "assets/reading-mode.html",
+    "static_validator": "scripts/validate_live_human_view.py",
+    "default_mode": "ai",
+    "human_mode": "human",
+    "ai_only_class": "asi-ai-only",
+    "human_only_class": "asi-human-only",
+    "live_only_class": "asi-live-only",
+    "reader_release_processing": "Reader generation strips .asi-ai-only fenced div blocks, unwraps .asi-human-only fenced div blocks, and strips the live-only headings listed in reader_release.strip_headings.",
+    "chapter_contract": "Every chapter's ordinary prose must remain reader-facing. Optional .asi-human-only blocks may provide chapter-specific human prose digests; optional .asi-ai-only or .asi-live-only blocks must not carry meaning-critical caveats absent from the reader spine."
   },
   "audio_manuscript_policy": {
     "derived_from_profile": "reader_release",
@@ -357,7 +379,8 @@
         "python3 scripts/validate_protocol_examples.py",
         "python3 scripts/validate_repeated_prose.py",
         "cd lean && lake build",
-        "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html"
+        "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
+        "python3 scripts/validate_live_human_view.py"
       ],
       "non_claims": [
         "The live book is not automatically final-draft prose.",

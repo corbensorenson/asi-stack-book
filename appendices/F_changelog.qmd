@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal human view quality gates
+
+- Strengthened the live Human view and reader-spine contract: reader validation now requires each generated chapter to retain the core reader-facing headings and a higher minimum prose floor after live-only sections are stripped; reader generation now removes `.asi-ai-only` fenced blocks and unwraps `.asi-human-only` fenced blocks for future chapter-specific human prose digests; the live profile, Pages workflow, docs, and appendix now include `scripts/validate_live_human_view.py` as a post-render check that every rendered chapter page carries the reading-mode toggle and live-only headings needed for runtime hiding. This adds quality gates and scaffolding for human-readable chapter renderings without claiming a reviewed reader release, ebook, audiobook, support-state promotion, or new source evidence.
+
 ## 2026-06-26 - v1.0 improvement goal live reading mode toggle
 
 - Added a live-site reading-mode switch that defaults to `AI view` and offers `Human view` by hiding the same live-only chapter sections used by the reader-release strip policy. Wired the switch through the generated Quarto scaffold, added styling and a post-render toggle asset, documented the boundary in the release-editions docs, release appendix, living-book methodology chapter, site quality standard, and README, and added `scripts/validate_reading_mode_toggle.py` to keep the toggle aligned with `reader_release.strip_headings`. This provides an on-site human-reader projection without claiming a reviewed EPUB/PDF/DOCX, audiobook, support-state promotion, or major-version reader release.

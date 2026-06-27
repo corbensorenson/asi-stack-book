@@ -45,6 +45,9 @@ jobs:
       - name: Render HTML
         run: quarto render --to html
 
+      - name: Validate live Human view
+        run: python3 scripts/validate_live_human_view.py
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

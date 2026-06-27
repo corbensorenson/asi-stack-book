@@ -47,9 +47,17 @@ def reader_strip_keys() -> set[str]:
     return keys
 
 
+def live_human_view_policy() -> dict:
+    data = load_json(PROFILES)
+    if not isinstance(data, dict) or not isinstance(data.get("live_human_view_policy"), dict):
+        raise TypeError("editions/release_profiles.json must define live_human_view_policy")
+    return data["live_human_view_policy"]
+
+
 def main() -> None:
     errors: list[str] = []
     expected = reader_strip_keys()
+    policy = live_human_view_policy()
 
     include_text = READING_MODE_INCLUDE.read_text(encoding="utf-8", errors="ignore") if READING_MODE_INCLUDE.exists() else ""
     style_text = STYLES.read_text(encoding="utf-8", errors="ignore") if STYLES.exists() else ""
@@ -64,6 +72,22 @@ def main() -> None:
         errors.append("_quarto.yml is missing the generated reading-mode after-body include")
     if 'html[data-asi-reading-mode="human"] section[data-asi-live-section="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
+    for css_class in ("asi-ai-only", "asi-human-only", "asi-live-only"):
+        if css_class not in style_text:
+            errors.append(f"assets/styles.scss is missing the {css_class} view-mode class")
+
+    expected_policy = {
+        "toggle_asset": "assets/reading-mode.html",
+        "static_validator": "scripts/validate_live_human_view.py",
+        "default_mode": "ai",
+        "human_mode": "human",
+        "ai_only_class": "asi-ai-only",
+        "human_only_class": "asi-human-only",
+        "live_only_class": "asi-live-only",
+    }
+    for key, value in expected_policy.items():
+        if policy.get(key) != value:
+            errors.append(f"live_human_view_policy.{key} must be {value!r}")
 
     actual = set(re.findall(r'"([23]:[a-z0-9][^"]+)"', include_text))
     if actual != expected:

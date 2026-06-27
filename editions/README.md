@@ -9,7 +9,7 @@ This directory defines how major versions of the living book become audience-spe
 - `reader_release`: a cleaned human manuscript path for EPUB, PDF, DOCX, and HTML.
 - `audio_release`: a narration-ready path derived from the reviewed reader release.
 
-The same file also defines the content-layer contract: reader-facing chapter spine, live research scaffold, evidence matrices, machine-readable contracts, release derivatives, audio adaptation, and companion material. Future writing runs should keep meaning-critical prose in the reader spine and put repeatable source/proof/test machinery in live-only sections that the release profiles can remove or summarize.
+The same file also defines the content-layer contract: reader-facing chapter spine, live research scaffold, evidence matrices, machine-readable contracts, release derivatives, audio adaptation, and companion material. It also records the live Human view policy used by the GitHub Pages toggle. Future writing runs should keep meaning-critical prose in the reader spine and put repeatable source/proof/test machinery in live-only sections that the release profiles can remove or summarize.
 
 Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a reviewed release script instead.
 
@@ -17,6 +17,7 @@ Validate the profile definitions with:
 
 ```bash
 python3 scripts/validate_release_profiles.py
+python3 scripts/validate_reading_mode_toggle.py
 ```
 
 Create or check a derived reader-edition draft with:

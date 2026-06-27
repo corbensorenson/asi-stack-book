@@ -72,6 +72,7 @@ python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
+python3 scripts/validate_live_human_view.py
 ```
 
 Before describing a state as a v1.0 evidence release, also record the accepted evidence transitions, rendered reader artifacts if any, audio artifacts if any, and release records that actually exist.

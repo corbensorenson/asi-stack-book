@@ -22,6 +22,10 @@ DEFAULT_OUTPUT = ROOT / "build" / "reader_edition"
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
+FENCED_DIV_OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
+FENCED_DIV_CLOSE_RE = re.compile(r"^(:{3,})\s*$")
+AI_ONLY_CLASS = "asi-ai-only"
+HUMAN_ONLY_CLASS = "asi-human-only"
 
 
 def load_json(path: Path) -> object:
@@ -76,6 +80,57 @@ def strip_sections(text: str, strip_headings: set[tuple[int, str]]) -> tuple[str
     return "\n".join(output).strip() + "\n", removed
 
 
+def fenced_div_classes(attributes: str) -> set[str]:
+    return {match.group(1) for match in re.finditer(r"\.([A-Za-z0-9_-]+)", attributes)}
+
+
+def apply_reader_view_blocks(text: str) -> tuple[str, dict[str, int]]:
+    """Remove live-AI-only blocks and unwrap human-only blocks for reader source.
+
+    The live HTML toggle can use fenced divs such as `::: {.asi-human-only}` and
+    `::: {.asi-ai-only}` for future chapter-specific reader adaptations. Reader
+    releases should keep the human-only prose without carrying live CSS classes,
+    and they should drop AI/research-only prose entirely.
+    """
+
+    output: list[str] = []
+    stack: list[tuple[int, str]] = []
+    counts = {"ai_only_blocks_removed": 0, "human_only_blocks_unwrapped": 0}
+
+    def parent_is_stripped() -> bool:
+        return any(action == "strip" for _, action in stack)
+
+    for line in text.splitlines():
+        open_match = FENCED_DIV_OPEN_RE.match(line)
+        if open_match:
+            classes = fenced_div_classes(open_match.group(2))
+            if AI_ONLY_CLASS in classes:
+                action = "strip"
+                counts["ai_only_blocks_removed"] += 1
+            elif HUMAN_ONLY_CLASS in classes:
+                action = "unwrap"
+                counts["human_only_blocks_unwrapped"] += 1
+            else:
+                action = "keep"
+            suppress_open = action in {"strip", "unwrap"} or parent_is_stripped()
+            stack.append((len(open_match.group(1)), action))
+            if not suppress_open:
+                output.append(line)
+            continue
+
+        close_match = FENCED_DIV_CLOSE_RE.match(line)
+        if close_match and stack:
+            _, action = stack.pop()
+            if action not in {"strip", "unwrap"} and not parent_is_stripped():
+                output.append(line)
+            continue
+
+        if not parent_is_stripped():
+            output.append(line)
+
+    return "\n".join(output).strip() + "\n", counts
+
+
 def find_profile(profile_id: str) -> dict:
     data = load_release_profiles()
     profiles = data.get("profiles", [])
@@ -108,8 +163,10 @@ def profile_strip_headings(profile: dict) -> set[tuple[int, str]]:
 def clean_file(src: Path, dst: Path, strip_headings: set[tuple[int, str]]) -> dict[str, int]:
     text = src.read_text(encoding="utf-8")
     cleaned, removed = strip_sections(text, strip_headings)
+    cleaned, view_block_counts = apply_reader_view_blocks(cleaned)
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(cleaned, encoding="utf-8")
+    removed.update({key: count for key, count in view_block_counts.items() if count})
     return removed
 
 
@@ -231,6 +288,8 @@ def write_reader_checklist(
         f"- Files: {summary['files']}",
         f"- Target formats: {', '.join(summary['formats'])}",
         f"- Live-only sections removed: {sum(summary['removed_sections'].values())}",
+        f"- AI-only fenced blocks removed: {summary.get('ai_only_blocks_removed', 0)}",
+        f"- Human-only fenced blocks unwrapped: {summary.get('human_only_blocks_unwrapped', 0)}",
         "",
         "## Required Gate",
         "",
@@ -395,6 +454,8 @@ def write_reader_manifest(
         "content_layer_policy": profile.get("content_layer_policy", {}),
         "stripped_heading_policy": profile.get("strip_headings", []),
         "removed_sections": summary["removed_sections"],
+        "ai_only_blocks_removed": summary.get("ai_only_blocks_removed", 0),
+        "human_only_blocks_unwrapped": summary.get("human_only_blocks_unwrapped", 0),
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
         "companion_notes": summary.get(
@@ -455,6 +516,8 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     write_reader_index(output_dir, structure)
 
     removed_totals: dict[str, int] = {}
+    ai_only_blocks_removed = 0
+    human_only_blocks_unwrapped = 0
     copied_files = 1
     for front_file in structure.get("front_matter", []):
         if front_file == "index.qmd":
@@ -464,7 +527,12 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
             removed = clean_file(src, output_dir / front_file, strip_headings)
             copied_files += 1
             for key, count in removed.items():
-                removed_totals[key] = removed_totals.get(key, 0) + count
+                if key == "ai_only_blocks_removed":
+                    ai_only_blocks_removed += count
+                elif key == "human_only_blocks_unwrapped":
+                    human_only_blocks_unwrapped += count
+                else:
+                    removed_totals[key] = removed_totals.get(key, 0) + count
 
     chapter_count = 0
     for part in flatten_parts(structure):
@@ -474,7 +542,12 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
             copied_files += 1
             chapter_count += 1
             for key, count in removed.items():
-                removed_totals[key] = removed_totals.get(key, 0) + count
+                if key == "ai_only_blocks_removed":
+                    ai_only_blocks_removed += count
+                elif key == "human_only_blocks_unwrapped":
+                    human_only_blocks_unwrapped += count
+                else:
+                    removed_totals[key] = removed_totals.get(key, 0) + count
 
     for appendix in profile.get("include_appendices", []):
         src = ROOT / appendix
@@ -482,7 +555,12 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
             removed = clean_file(src, output_dir / appendix, strip_headings)
             copied_files += 1
             for key, count in removed.items():
-                removed_totals[key] = removed_totals.get(key, 0) + count
+                if key == "ai_only_blocks_removed":
+                    ai_only_blocks_removed += count
+                elif key == "human_only_blocks_unwrapped":
+                    human_only_blocks_unwrapped += count
+                else:
+                    removed_totals[key] = removed_totals.get(key, 0) + count
 
     write_quarto(output_dir, structure, profile)
     summary = {
@@ -491,6 +569,8 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "chapters": chapter_count,
         "files": copied_files,
         "removed_sections": removed_totals,
+        "ai_only_blocks_removed": ai_only_blocks_removed,
+        "human_only_blocks_unwrapped": human_only_blocks_unwrapped,
         "formats": profile.get("publication_formats", []),
     }
     checklist_path = write_reader_checklist(
@@ -523,6 +603,16 @@ def scan_for_stripped_headings(output_dir: Path, strip_headings: set[tuple[int, 
     return violations
 
 
+def scan_for_view_block_markers(output_dir: Path) -> list[str]:
+    violations: list[str] = []
+    for path in output_dir.rglob("*.qmd"):
+        text = path.read_text(encoding="utf-8")
+        for marker in (f".{AI_ONLY_CLASS}", f".{HUMAN_ONLY_CLASS}"):
+            if marker in text:
+                violations.append(f"{path.relative_to(output_dir)}: retained reader-view marker {marker}")
+    return violations
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="reader_release", help="edition profile id to generate")
@@ -541,8 +631,9 @@ def main() -> None:
             output_dir = Path(temp_dir)
             summary = generate(output_dir, args.profile)
             violations = scan_for_stripped_headings(output_dir, strip_headings)
+            violations.extend(scan_for_view_block_markers(output_dir))
             if violations:
-                print("Reader edition still contains stripped headings:")
+                print("Reader edition still contains stripped headings or live view markers:")
                 for violation in violations:
                     print(f" - {violation}")
                 raise SystemExit(1)

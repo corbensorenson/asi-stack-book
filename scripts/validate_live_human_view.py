@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""Validate the rendered live-site Human view surface after Quarto render.
+
+This is a static rendered-HTML check. It verifies that every rendered chapter
+page includes the reading-mode toggle asset and that the live-only headings in
+the chapter source are present in HTML at levels the runtime script can mark
+and hide in Human view. It does not claim that a reviewed reader release,
+ebook, or audiobook exists.
+"""
+
+from __future__ import annotations
+
+import argparse
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+import json
+import re
+import sys
+from pathlib import Path
+
+import build_reader_edition
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_SITE = ROOT / "_site"
+DEFAULT_REPORT = ROOT / "build" / "live_human_view_report.json"
+
+
+class HeadingParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.current_level: int | None = None
+        self.current_text: list[str] = []
+        self.headings: list[tuple[int, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if re.fullmatch(r"h[1-6]", tag):
+            self.current_level = int(tag[1])
+            self.current_text = []
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.current_level is None or tag != f"h{self.current_level}":
+            return
+        text = normalize_html_heading(" ".join(self.current_text))
+        if text:
+            self.headings.append((self.current_level, text))
+        self.current_level = None
+        self.current_text = []
+
+    def handle_data(self, data: str) -> None:
+        if self.current_level is not None:
+            self.current_text.append(data)
+
+
+def load_structure() -> dict:
+    value = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise TypeError("book_structure.json must contain an object")
+    return value
+
+
+def flatten_chapters(structure: dict) -> list[dict]:
+    chapters: list[dict] = []
+    for part in structure.get("parts", []):
+        if not isinstance(part, dict):
+            continue
+        for chapter in part.get("chapters", []):
+            if isinstance(chapter, dict):
+                chapters.append(chapter)
+    return chapters
+
+
+def normalize_html_heading(title: str) -> str:
+    normalized = re.sub(r"\s+", " ", title.strip())
+    normalized = re.sub(r"^\d+(\.\d+)*\s+", "", normalized)
+    return normalized.lower()
+
+
+def source_live_heading_keys(path: Path, strip_headings: set[tuple[int, str]]) -> list[tuple[int, str]]:
+    keys: list[tuple[int, str]] = []
+    for line in build_reader_edition.strip_frontmatter(path.read_text(encoding="utf-8")).splitlines():
+        match = build_reader_edition.HEADING_RE.match(line)
+        if not match:
+            continue
+        key = (len(match.group(1)), build_reader_edition.normalize_heading_title(match.group(2)))
+        if key in strip_headings:
+            keys.append(key)
+    return keys
+
+
+def rendered_headings(path: Path) -> set[tuple[int, str]]:
+    parser = HeadingParser()
+    parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
+    return set(parser.headings)
+
+
+def validate(site_dir: Path) -> dict[str, object]:
+    structure = load_structure()
+    profile = build_reader_edition.find_profile("reader_release")
+    strip_headings = build_reader_edition.profile_strip_headings(profile)
+
+    errors: list[str] = []
+    records: list[dict[str, object]] = []
+    total_live_headings = 0
+
+    if not site_dir.exists():
+        errors.append(f"Rendered site directory is missing: {site_dir.relative_to(ROOT)}")
+
+    for chapter in flatten_chapters(structure):
+        source_file = str(chapter.get("file", ""))
+        source_path = ROOT / source_file
+        html_path = site_dir / Path(source_file).with_suffix(".html")
+        expected = source_live_heading_keys(source_path, strip_headings)
+        total_live_headings += len(expected)
+
+        record: dict[str, object] = {
+            "chapter_id": chapter.get("id", ""),
+            "source_file": source_file,
+            "html_file": str(html_path.relative_to(ROOT)) if html_path.exists() else str(html_path),
+            "live_only_heading_count": len(expected),
+        }
+
+        if not html_path.exists():
+            errors.append(f"{source_file}: rendered chapter HTML is missing at {html_path}")
+            records.append(record)
+            continue
+
+        html = html_path.read_text(encoding="utf-8", errors="ignore")
+        for needle in (
+            "asi-stack-reading-mode",
+            "data-asi-reading-choice=\"ai\"",
+            "data-asi-reading-choice=\"human\"",
+            "AI view",
+            "Human view",
+        ):
+            if needle not in html:
+                errors.append(f"{html_path.relative_to(ROOT)}: missing reading-mode toggle text {needle!r}")
+
+        headings = rendered_headings(html_path)
+        missing_headings = sorted(set(expected) - headings)
+        if missing_headings:
+            record["missing_rendered_live_headings"] = [
+                f"h{level}:{title}" for level, title in missing_headings
+            ]
+            errors.append(
+                f"{html_path.relative_to(ROOT)}: live-only source headings are not present "
+                f"as rendered headings: {record['missing_rendered_live_headings']}"
+            )
+
+        records.append(record)
+
+    return {
+        "schema_version": "0.1",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "site_dir": str(site_dir),
+        "chapter_count": len(records),
+        "live_only_heading_count": total_live_headings,
+        "status": "pass" if not errors else "fail",
+        "chapter_records": records,
+        "errors": errors,
+        "non_claims": [
+            "This static check validates rendered live-site Human view wiring only.",
+            "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
+        ],
+    }
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--site", default=str(DEFAULT_SITE), help="rendered Quarto site directory")
+    parser.add_argument("--report", help="optional JSON report path")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    report = validate(Path(args.site))
+    if args.report:
+        path = Path(args.report)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+
+    if report["status"] != "pass":
+        print("Live Human view validation failed:")
+        for error in report["errors"]:
+            print(f" - {error}")
+        sys.exit(1)
+
+    print(
+        "Live Human view validation passed: "
+        f"{report['chapter_count']} rendered chapter pages, "
+        f"{report['live_only_heading_count']} live-only headings available for runtime hiding."
+    )
+
+
+if __name__ == "__main__":
+    main()

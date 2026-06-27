@@ -8,7 +8,7 @@ The living book has three audiences:
 
 The public GitHub Pages book remains the canonical live artifact. Major versions can produce additional editions, but those editions are derived from the live source rather than maintained as independent books.
 
-The live site now has two reading modes. `AI view` is the default canonical view with the full live/research scaffold. `Human view` hides the same repeated live-only chapter sections used by the reader-release strip policy, so a reader can stay on the site and read the prose spine without downloading a separate EPUB, PDF, or DOCX. This is a convenience projection of the live book, not a reviewed major-version reader release.
+The live site now has two reading modes. `AI view` is the default canonical view with the full live/research scaffold. `Human view` hides the same repeated live-only chapter sections used by the reader-release strip policy, so a reader can stay on the site and read the prose spine without downloading a separate EPUB, PDF, or DOCX. Future chapters can also use `.asi-human-only` fenced divs for human-specific prose digests and `.asi-ai-only` fenced divs for AI/research-only notes; reader generation unwraps the human blocks and removes the AI-only blocks. This is a convenience projection of the live book, not a reviewed major-version reader release.
 
 ## Content Layers
 
@@ -81,7 +81,7 @@ The reader release strips live-only sections by heading name:
 
 It keeps the main argument, diagrams, problem statements, mechanisms, interfaces, invariants, failure modes, minimal implementation discussion, summaries, glossary, and bibliography path. The result should read as a book while still preserving uncertainty in the prose itself.
 
-The live-site `Human view` uses the same strip-heading list at render time. `scripts/validate_reading_mode_toggle.py` checks that the toggle asset and generated Quarto config stay aligned with `reader_release.strip_headings`.
+The live-site `Human view` uses the same strip-heading list at render time. `scripts/validate_reading_mode_toggle.py` checks that the toggle asset, view-mode classes, release policy, and generated Quarto config stay aligned with `reader_release.strip_headings`. `scripts/validate_live_human_view.py` runs after HTML render and checks that each rendered chapter page includes the toggle and the live-only headings needed for runtime hiding.
 
 The generator is:
 
@@ -93,9 +93,9 @@ python3 scripts/build_reader_edition.py
 
 It writes derived Quarto source under `build/reader_edition/`, which is ignored by git. The generated manuscript is a candidate for human review, not the canonical source of truth.
 
-`scripts/validate_reader_spine.py --check` derives the manuscript in a temporary workspace and checks that every chapter still has a substantial human-readable spine after live-only scaffolding is removed. A non-check run writes `build/reader_spine_report.json` for major-version review; that report is local and does not claim any ebook or audio artifact exists.
+`scripts/validate_reader_spine.py --check` derives the manuscript in a temporary workspace and checks that every chapter still has a substantial human-readable spine, required reader headings, no retained view-mode markers, and no live-only scaffolding after stripping. A non-check run writes `build/reader_spine_report.json` for major-version review; that report is local and does not claim any ebook or audio artifact exists.
 
-The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, removed section counts, review requirement, e-reader quality checks, optional downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md`, which records continuity, typography, figure, EPUB, DOCX, PDF, optional AZW3/MOBI, companion-note, residual, and release-record checks. `companion_notes.md` records stripped live-only section counts and reader/audio treatment tasks for dense material. These generated files do not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
+The generated reader workspace includes `reader_manifest.json` with the source profile, target formats, content-layer policy, stripped-heading policy, view-block processing counts, review requirement, e-reader quality checks, optional downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md`, which records continuity, typography, figure, EPUB, DOCX, PDF, optional AZW3/MOBI, companion-note, residual, and release-record checks. `companion_notes.md` records stripped live-only section counts and reader/audio treatment tasks for dense material. These generated files do not imply that EPUB, PDF, DOCX, or HTML artifacts have been rendered.
 
 Reader format renders can be attempted and recorded with:
 

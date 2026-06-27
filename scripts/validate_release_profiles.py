@@ -28,6 +28,7 @@ REQUIRED_TOP_LEVEL_POLICIES = {
     "human_consumption_bundle_policy",
     "reader_manuscript_policy",
     "reader_spine_validation",
+    "live_human_view_policy",
     "audio_manuscript_policy",
 }
 REQUIRED_RELEASE_LADDER_STAGES = {
@@ -55,6 +56,17 @@ READER_REQUIRED_STRIPS = {
     (2, "formalization hooks"),
     (3, "claim-source mapping status"),
     (3, "formalization hooks"),
+}
+READER_REQUIRED_HEADINGS = {
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Interfaces",
+    "Invariants",
+    "Failure modes",
+    "Minimal implementation",
+    "Summary",
 }
 
 
@@ -425,17 +437,52 @@ def main() -> None:
         if not isinstance(report_path, str) or report_path != "build/reader_spine_report.json":
             errors.append("reader_spine_validation.report_path must be build/reader_spine_report.json.")
         minimum = spine_policy.get("minimum_chapter_word_count")
-        if not isinstance(minimum, int) or minimum < 100:
-            errors.append("reader_spine_validation.minimum_chapter_word_count must be an integer >= 100.")
+        if not isinstance(minimum, int) or minimum < 1000:
+            errors.append("reader_spine_validation.minimum_chapter_word_count must be an integer >= 1000.")
         validate_string_list(
             "reader_spine_validation",
             "hard_blocked_terms",
             spine_policy.get("hard_blocked_terms"),
             errors,
         )
+        validate_string_list(
+            "reader_spine_validation",
+            "required_reader_headings",
+            spine_policy.get("required_reader_headings"),
+            errors,
+        )
+        required_headings = set(spine_policy.get("required_reader_headings", []))
+        missing_reader_headings = READER_REQUIRED_HEADINGS - required_headings
+        if missing_reader_headings:
+            errors.append(
+                "reader_spine_validation.required_reader_headings missing "
+                f"{sorted(missing_reader_headings)}."
+            )
         purpose = spine_policy.get("purpose")
         if not isinstance(purpose, str) or not purpose.strip():
             errors.append("reader_spine_validation.purpose must be a non-empty string.")
+
+    live_human_policy = data.get("live_human_view_policy")
+    if isinstance(live_human_policy, dict):
+        expected_values = {
+            "toggle_asset": "assets/reading-mode.html",
+            "static_validator": "scripts/validate_live_human_view.py",
+            "default_mode": "ai",
+            "human_mode": "human",
+            "ai_only_class": "asi-ai-only",
+            "human_only_class": "asi-human-only",
+            "live_only_class": "asi-live-only",
+        }
+        for key, expected in expected_values.items():
+            if live_human_policy.get(key) != expected:
+                errors.append(f"live_human_view_policy.{key} must be {expected!r}.")
+        for path_key in ("toggle_asset", "static_validator"):
+            value = live_human_policy.get(path_key)
+            if isinstance(value, str) and value and not (ROOT / value).exists():
+                errors.append(f"live_human_view_policy.{path_key} does not exist: {value}")
+        for key in ("reader_release_processing", "chapter_contract"):
+            if not isinstance(live_human_policy.get(key), str) or not live_human_policy[key].strip():
+                errors.append(f"live_human_view_policy.{key} must be a non-empty string.")
 
     audio_policy = data.get("audio_manuscript_policy")
     if isinstance(audio_policy, dict):
@@ -576,6 +623,15 @@ def main() -> None:
             or "python3 scripts/validate_reader_spine.py --check" not in release_gate
         ):
             errors.append("reader_release release_gate must include validate_reader_spine.py --check.")
+
+    live_book = profiles_by_id.get("live_book")
+    if live_book:
+        release_gate = live_book.get("release_gate", [])
+        if (
+            not isinstance(release_gate, list)
+            or "python3 scripts/validate_live_human_view.py" not in release_gate
+        ):
+            errors.append("live_book release_gate must include validate_live_human_view.py after HTML render.")
 
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):

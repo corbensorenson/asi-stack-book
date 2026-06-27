@@ -32,6 +32,17 @@ DEFAULT_HARD_TERMS = [
     "claim-source mapping status",
     "formalization hooks",
 ]
+DEFAULT_REQUIRED_READER_HEADINGS = [
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Interfaces",
+    "Invariants",
+    "Failure modes",
+    "Minimal implementation",
+    "Summary",
+]
 
 
 def load_structure() -> dict:
@@ -82,6 +93,19 @@ def live_only_term_hits(text: str, terms: list[str]) -> list[dict[str, object]]:
     return hits
 
 
+def normalize_heading(title: str) -> str:
+    return re.sub(r"\s+", " ", title.strip()).lower()
+
+
+def reader_headings(text: str) -> set[str]:
+    headings: set[str] = set()
+    for line in build_reader_edition.strip_frontmatter(text).splitlines():
+        match = build_reader_edition.HEADING_RE.match(line)
+        if match:
+            headings.add(normalize_heading(match.group(2)))
+    return headings
+
+
 def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     structure = load_structure()
     profile = build_reader_edition.find_profile("reader_release")
@@ -90,9 +114,14 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     hard_terms = policy.get("hard_blocked_terms", DEFAULT_HARD_TERMS)
     if not isinstance(hard_terms, list) or not all(isinstance(term, str) for term in hard_terms):
         raise TypeError("reader_spine_validation.hard_blocked_terms must be a list of strings")
+    required_headings = policy.get("required_reader_headings", DEFAULT_REQUIRED_READER_HEADINGS)
+    if not isinstance(required_headings, list) or not all(isinstance(heading, str) for heading in required_headings):
+        raise TypeError("reader_spine_validation.required_reader_headings must be a list of strings")
+    normalized_required_headings = [normalize_heading(heading) for heading in required_headings]
 
     strip_headings = build_reader_edition.profile_strip_headings(profile)
     heading_violations = build_reader_edition.scan_for_stripped_headings(output_dir, strip_headings)
+    view_marker_violations = build_reader_edition.scan_for_view_block_markers(output_dir)
 
     chapter_records: list[dict[str, object]] = []
     errors: list[str] = []
@@ -104,17 +133,29 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         text = path.read_text(encoding="utf-8")
         words = count_reader_words(text)
         term_hits = live_only_term_hits(text, hard_terms)
+        headings = reader_headings(text)
+        missing_headings = [
+            required_headings[index]
+            for index, normalized in enumerate(normalized_required_headings)
+            if normalized not in headings
+        ]
         chapter_records.append(
             {
                 "file": relative,
                 "word_count_after_strip": words,
                 "live_only_term_hits": term_hits,
+                "missing_reader_headings": missing_headings,
             }
         )
         if words < min_words:
             errors.append(
                 f"{relative}: reader spine has {words} words after stripping; "
                 f"minimum is {min_words}."
+            )
+        if missing_headings:
+            errors.append(
+                f"{relative}: reader spine is missing required headings after stripping: "
+                + ", ".join(missing_headings)
             )
         for hit in term_hits:
             errors.append(
@@ -124,6 +165,8 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
 
     for violation in heading_violations:
         errors.append(f"Stripped heading remains in reader edition: {violation}")
+    for violation in view_marker_violations:
+        errors.append(f"Reader view marker remains in reader edition: {violation}")
 
     return {
         "schema_version": "0.1",
@@ -131,6 +174,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         "profile": "reader_release",
         "minimum_chapter_word_count": min_words,
         "hard_blocked_terms": hard_terms,
+        "required_reader_headings": required_headings,
         "chapter_count": len(chapter_records),
         "chapter_word_count_min": min(
             (int(record["word_count_after_strip"]) for record in chapter_records),

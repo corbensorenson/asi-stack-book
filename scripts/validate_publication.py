@@ -24,6 +24,7 @@ REQUIRED_FILES = [
     "scripts/render_reader_formats.py",
     "scripts/validate_reader_spine.py",
     "scripts/validate_reading_mode_toggle.py",
+    "scripts/validate_live_human_view.py",
     "scripts/validate_release_profiles.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
@@ -40,6 +41,7 @@ REQUIRED_README_STRINGS = [
     "scripts/build_reader_edition.py",
     "scripts/render_reader_formats.py",
     "scripts/validate_reader_spine.py",
+    "scripts/validate_live_human_view.py",
     "scripts/validate_publication.py",
     "Do not report a theorem as proven unless",
 ]

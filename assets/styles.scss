@@ -147,6 +147,12 @@ html[data-asi-reading-mode="human"] section[data-asi-live-section="true"] {
   display: none !important;
 }
 
+html[data-asi-reading-mode="human"] .asi-live-only,
+html[data-asi-reading-mode="human"] .asi-ai-only,
+html[data-asi-reading-mode="ai"] .asi-human-only {
+  display: none !important;
+}
+
 html[data-asi-reading-mode="human"] .asi-reading-mode {
   box-shadow: 0 6px 18px rgba(36, 95, 115, 0.12);
 }

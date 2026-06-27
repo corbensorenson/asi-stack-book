@@ -19,11 +19,11 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `_quarto.yml`, Appendix A, Appendix C, and Appendix G are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
-- `scripts/validate_reader_spine.py` checks that the generated reader manuscript keeps a substantial human-readable spine after live-only scaffolding is stripped.
+- `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, and no live-only scaffolding after stripping.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
-- The live GitHub Pages site includes a top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, while `Human view` hides the same repeated chapter sections used by the reader-release strip policy.
+- The live GitHub Pages site includes a top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, while `Human view` hides the same repeated chapter sections used by the reader-release strip policy. Optional `.asi-human-only` and `.asi-ai-only` fenced blocks let future chapters carry mode-specific prose without forking the manuscript.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -74,6 +74,7 @@ python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
 quarto render --to html
+python3 scripts/validate_live_human_view.py
 ```
 
 For Lean proof work:
@@ -93,6 +94,7 @@ The project uses one canonical source tree with explicit content layers:
 
 - The reader-facing chapter spine is ordinary prose, diagrams, examples, uncertainty, and summaries that should still read well after live-only headings are removed.
 - The live research scaffold contains source crosswalks, guardrails, Codex tests, formalization hooks, claim mappings, and other audit machinery for AIs and researchers.
+- The live Human view uses the same reader-strip policy on the GitHub Pages site, while future `.asi-human-only` blocks are retained for reader editions and `.asi-ai-only` blocks are removed from them.
 - Companion material records how diagrams, tables, code, schemas, and omitted dense matrices should be handled for e-reader, document, and audio releases.
 - Release derivatives such as EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB exist only after generation or render, review, and release-record entry.
 

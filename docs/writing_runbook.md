@@ -53,15 +53,17 @@ Write every chapter for three audiences without maintaining three separate books
 
 - AIs and writing agents use the live-only scaffolding: status tables, drafting guardrails, source queues, claim/evidence states, proof hooks, schemas, and test plans.
 - Human researchers use the complete live book, including matrices, source crosswalks, residuals, and appendices.
-- Interested human readers use generated reader and audio editions derived from the same source after live-only scaffolding is stripped.
+- Interested human readers use the live-site `Human view` and generated reader/audio editions derived from the same source after live-only scaffolding is stripped.
 
 The reader-facing spine is the prose outside the headings listed in `editions/release_profiles.json` under `reader_release.strip_headings`. Do not put a caveat that changes the meaning of a claim only inside `Drafting guardrail`, `Source crosswalk`, `Codex test plan`, `Formalization hooks`, or `Claim-source mapping status`, because those sections are removed from reader and audio editions. Keep essential uncertainty in the main prose.
+
+Use `.asi-human-only` fenced divs only when a chapter needs a human-specific digest or bridge that would clutter the AI/research view. Use `.asi-ai-only` or `.asi-live-only` fenced divs only for scaffold material that should disappear from Human view and reader releases. Reader generation unwraps human-only blocks and removes AI-only blocks; neither block type should be used to hide support-state limits from any audience.
 
 Major-version reader and audio work stays downstream of the live book. Generated reader workspaces include `READER_RELEASE_CHECKLIST.md` and `companion_notes.md`; generated audio workspaces include `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Use those files to review continuity, e-reader behavior, spoken treatment of diagrams/tables/code, and release-record residuals before claiming EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
 
 When writing chapters, assume the reader spine may become a relaxed human-consumption bundle: reader HTML, EPUB, PDF, DOCX, optional e-reader conversions, and a later audio script. Dense live-only machinery can stay in the live book, but the main prose should carry enough transitions, caveats, diagram explanations, and examples to survive stripping and narration.
 
-Run `python3 scripts/validate_reader_spine.py --check` before treating a generated reader manuscript as a major-version candidate. The check verifies that the human-readable layer survives stripping and that live-only terms do not leak into chapter prose.
+Run `python3 scripts/validate_reader_spine.py --check` before treating a generated reader manuscript as a major-version candidate. The check verifies that the human-readable layer survives stripping, retains required chapter sections, and that live-only terms do not leak into chapter prose. After rendering the live site, run `python3 scripts/validate_live_human_view.py` to check that rendered chapter pages carry the Human view toggle.
 
 When a tagged major version is actually being packaged, follow `docs/major_version_release_runbook.md`. It is the release sequence for live/research, reader, ebook/document, and audio artifacts.
 
