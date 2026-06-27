@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source appendix ownership wording
+
+- Renamed the generated human-facing Appendix G title to `Corben's Sources and Local Projects` while keeping Appendix H as `External Sources by Other Authors` and keeping the stable appendix file paths. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, release-edition wording, full-book goal template, project prompt, and tracked ASI Stack skill so Appendix G reads as Corben's corpus/local-project appendix and Appendix H reads as the outside-author appendix. Refreshed the v1.0 status manuscript scale to 178,181 chapter words excluding YAML and 185,680 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Part IV mature-endpoint polish
 
 - Reworked repeated Part IV `Beyond the State of the Art` formulas across 9 chapters and the manifest-sourced Appendix K implementation horizons, replacing `At that mature boundary` and `In that final product` constructions with chapter-specific mature endpoint prose. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject those formulas, and refreshed the v1.0 status manuscript scale to 178,175 chapter words excluding YAML and 185,674 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

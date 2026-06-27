@@ -21,9 +21,9 @@ INVENTORY = ROOT / "sources" / "source_inventory.json"
 APPENDIX_G = ROOT / "appendices" / "G_corben_source_corpus.qmd"
 APPENDIX_H = ROOT / "appendices" / "H_external_sources.qmd"
 ROW_ID_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|", re.MULTILINE)
-APPENDIX_G_TITLE = "Corben-Authored, Supplied, and Local Sources"
+APPENDIX_G_TITLE = "Corben's Sources and Local Projects"
 APPENDIX_H_TITLE = "External Sources by Other Authors"
-APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben-authored, supplied, and local sources |"
+APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben's sources and local projects |"
 APPENDIX_H_IDENTITY = "| Appendix identity | Appendix H: external sources by other authors |"
 APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
 APPENDIX_H_BOUNDARY = "not a subsection, second half, or continuation of Appendix G"
@@ -98,9 +98,9 @@ def main() -> None:
     if external_in_g:
         errors.append(f"Appendix G includes external-literature ids: {sorted(external_in_g)}")
     if corpus_in_h:
-        errors.append(f"Appendix H includes Corben-authored, Corben-supplied, or local project source ids: {sorted(corpus_in_h)}")
+        errors.append(f"Appendix H includes Corben-side corpus or local project source ids: {sorted(corpus_in_h)}")
     if missing_from_g:
-        errors.append(f"Appendix G is missing Corben-authored, Corben-supplied, or local project source ids: {sorted(missing_from_g)}")
+        errors.append(f"Appendix G is missing Corben-side corpus or local project source ids: {sorted(missing_from_g)}")
     if missing_from_h:
         errors.append(f"Appendix H is missing external-literature ids: {sorted(missing_from_h)}")
 
@@ -116,7 +116,7 @@ def main() -> None:
 
     print(
         "Source appendix ownership validation passed: "
-        f"{len(corpus_ids)} Corben-authored, Corben-supplied, or local project source records in Appendix G, "
+        f"{len(corpus_ids)} Corben-side corpus or local project source records in Appendix G, "
         f"{len(external_ids)} external-literature records by other authors in Appendix H."
     )
 
