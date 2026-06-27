@@ -50,6 +50,10 @@ ALLOWED_CLAIM_LABELS = {
 BANNED_BEYOND_BOILERPLATE = [
     "is not the minimal artifact with more scale",
     "It is the chapter's idea turned into a product-grade",
+    "For this chapter, beyond the state of the art means",
+    "source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts",
+    "This remains a target architecture. The support state should not rise until",
+    "Its support state should not rise until the source mappings",
 ]
 
 SECTION_MIN_WORDS = {

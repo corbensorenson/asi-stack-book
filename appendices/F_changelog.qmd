@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal evidence-gate caveat guard
+
+- Extended `scripts/validate_chapter_dod.py` to reject the generic evidence-gate caveat patterns removed from the chapter `Beyond the State of the Art` sections, including the old catchall source/schema/proof/test/benchmark/runtime/governance list and the repeated "For this chapter..." target-end-state opening. Updated the writing runbook to document the guard. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Part IV evidence-gate caveat polish
 
 - Replaced repeated beyond-SOTA support-state caveat phrasing across the Part IV proof, benchmark, policy-learning, stewardship, integrated-architecture, Theseus-reference, roadmap, living-book, and bibliography chapters. The mature endpoints now close on chapter-specific evidence boundaries: semantic proof adequacy, benchmark ratchets, governed learning actuators, steward coordination without seizure, integration trace kernels, falsifiable Theseus report bundles, phase-gated implementation progress without claim laundering, living-book audit preservation, and source-graph updates without unread-source support. Support states remain `argument`; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
