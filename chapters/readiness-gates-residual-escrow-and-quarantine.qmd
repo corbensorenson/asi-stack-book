@@ -208,7 +208,7 @@ A lifecycle trace should exercise gate semantics while leaving module quality un
 
 Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.
 
-The operational contract is that readiness is a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. The readiness control plane records that lifecycle in:
+Readiness becomes a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. The readiness control plane records that lifecycle in:
 
 - Operating mechanism: readiness records for draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded states, each scoped to a field identity, workload family, freshness window, authority envelope, allowed routes, blocked routes, diagnostic permissions, fallback path, and expiry.
 - Evidence surface: separate gate evidence, floor evidence, frontier evidence, regression results, inherited residuals, promotion blockers, closure conditions, review refs, and next review triggers so a module can improve on the frontier without losing the floor.

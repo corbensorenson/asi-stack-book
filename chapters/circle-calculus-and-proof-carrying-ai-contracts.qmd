@@ -208,7 +208,7 @@ The next build slice should be a local surrogate contract pack: one valid receip
 
 In its finished form, Circle proof-carrying contracts act as a proof-contract transport service. It moves finite structural facts through the ASI Stack with theorem references, deterministic fields, fingerprints, resolver state, replay commands, consumer gates, and non-claims intact.
 
-The operational contract is that proof-carrying AI contracts transport finite structural facts as theorem-linked receipts, while consumer gates preserve validation commands, fingerprints, resolver state, and explicit non-claims. The proof-contract transport lane preserves that contract in:
+Proof-carrying AI contracts transport finite structural facts as theorem-linked receipts, while consumer gates preserve validation commands, fingerprints, resolver state, and explicit non-claims. The proof-contract transport lane keeps those receipt boundaries visible in:
 
 - Operating mechanism: contract packs bind engineering object, finite model, proof boundary, theorem refs, proof status, source version, content fingerprint, deterministic fields, verifier command, resolver status, replay status, consumer gate, consumer state, staleness policy, failure behavior, support-state effect, evidence refs, and non-claims.
 - Evidence surface: theorem-linked, dictionary-bound, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, and superseded receipt states are transport states, not model-quality states.

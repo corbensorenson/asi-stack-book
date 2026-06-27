@@ -229,7 +229,7 @@ A toy corpus with deliberately adversarial artifacts should follow: ordinary pro
 
 Artifact compression needs an admission system before compressed forms can enter the stack. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.
 
-The operational contract is that compressed artifacts are candidates for specific uses, not replacements for the original, until probes, decode behavior, residual coding, fallback, and consumer policy accept them. The artifact-admission lane evaluates that contract through:
+Compressed artifacts are candidates for specific uses, not replacements for the original, until probes, decode behavior, residual coding, fallback, and consumer policy accept them. The artifact-admission lane evaluates that boundary through:
 
 - Operating mechanism: artifact graphs preserve the full object, compression manifests, codec parameters, residual streams, metadata cost, decode determinism assumptions, probe plans, admission state, fallback trigger, and declared use envelope for each compressed candidate.
 - Evidence surface: records separate representation, reconstruction, compression-ratio, downstream-utility, latency, exact-replay, fallback-frequency, and decoder-drift claims so one passing property cannot promote the others.

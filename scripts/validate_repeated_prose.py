@@ -20,6 +20,7 @@ FORMULAIC_BEYOND_PHRASES = (
     "The mature product surface would include:",
     "The final product surface would include:",
     "would expose:",
+    "The operational contract is",
 )
 FORMULAIC_MVI_PHRASES = (
     "The next useful implementation step is",

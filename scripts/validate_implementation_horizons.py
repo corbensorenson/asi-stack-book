@@ -38,7 +38,8 @@ ARTIFACT_SIGNAL_RE = re.compile(
 )
 MATURE_SIGNAL_RE = re.compile(
     r"\b(mature version|logical end state|mature boundary|product-level endpoint|"
-    r"product surface|end state|operational contract|target architecture)\b",
+    r"product surface|end state|operational contract|target architecture|"
+    r"mature\s+[A-Za-z0-9_-]+)\b",
     re.IGNORECASE,
 )
 PLACEHOLDER_RE = re.compile(
