@@ -1,12 +1,12 @@
 # v0.2 Manuscript Status
 
-Last updated: 2026-06-25
+Last updated: 2026-06-27
 
 This file records the current state of the first complete manuscript pass for **The ASI Stack**.
 
 Current v1.0 candidate readiness is tracked in `docs/v1_0_candidate_status.md`. This file remains a historical status document for the v0.2 baseline and early improvement pass.
 
-Current repository scale after the v1.0 candidate improvement pass: 54 chapter files, 112,603 chapter words excluding YAML front matter, and 119,341 raw chapter-file words including metadata and live scaffolding.
+Current repository scale after the v1.0 candidate improvement pass: 54 chapter files, 174,706 chapter words excluding YAML front matter, and 183,272 raw chapter-file words including metadata and live scaffolding.
 
 ## Completed in v0.2
 
@@ -16,7 +16,7 @@ Current repository scale after the v1.0 candidate improvement pass: 54 chapter f
 - Every chapter exposes formalization hooks from the existing proof targets.
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.
 - The public landing page has a generated text-free hero image and an editable Mermaid reference-architecture diagram.
-- Source notes now exist for all 101 public-safe source records currently used by the book, including the original backbone notes, internal Google Docs sources, public/local Project Theseus records, Circle Calculus records, Field of God constitution records, external literature records, and official documentation records.
+- Source notes now exist for all 101 public-safe source records currently used by the book, including the original backbone notes, internal Google Docs sources, public/local Project Theseus records, Circle Calculus records, Field of God constitution records, external literature records, and official documentation records. The `sources/source_notes/` directory also contains a README and template that are not source records.
 - The stack-boundary Lean proof targets are implemented in `AsiStackProofs.StackBoundaries`.
 - The efficiency/minimum-viable-route Lean proof targets are implemented in `AsiStackProofs.Efficiency` as narrow finite-record predicates for listed lower-cost route exclusion and residual-record requirements.
 - The authority-ceiling Lean proof targets are implemented in `AsiStackProofs.Authority` as narrow finite-record predicates for no-grant ceiling preservation and missing-grant denial.

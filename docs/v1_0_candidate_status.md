@@ -11,12 +11,12 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Surface | Current state | Evidence |
 |---|---|---|
 | Book structure | 4 parts, 54 manifest-driven chapters, 9 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 112,603 chapter words excluding YAML front matter; 119,341 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
-| Source inventory | 101 public-safe source records and 101 public source notes | `sources/source_inventory.json`; `sources/source_notes/` |
+| Manuscript scale | 54 chapter files; 174,706 chapter words excluding YAML front matter; 183,272 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
 | Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
-| Schemas and fixtures | 70 JSON Schemas, 69 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_protocol_examples.py` |
+| Schemas and fixtures | 71 JSON Schemas, 70 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_schemas.py`; `python3 scripts/validate_protocol_examples.py` |
 | Visual coverage | Every chapter has at least one Mermaid diagram; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
 | Live Human view | The GitHub Pages book has a persistent `AI view` / `Human view` switch; all 54 chapters have exactly one Human Reading Path bridge; bridge prose is guarded against meta-reader scaffolding; Human view hides live-only headings, matching page-TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
