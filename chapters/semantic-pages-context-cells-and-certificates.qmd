@@ -50,6 +50,8 @@ The certificate is the border control for meaning. It prevents a compact cell fr
 The Virtual Context ABI says how context enters the working surface. Semantic pages and context cells define what the pieces of that context are allowed to mean: compact units with provenance, loss boundaries, permitted uses, confidence limits, and certificates attached. The point is not to make memory ornate. It is to stop reused context from becoming an unlabeled authority.
 
 Summaries are not free. A summary can be useful only if the system records what it preserved, what it compressed away, and which downstream claims may rely on it. Otherwise compact context becomes a quiet source of evidence loss and accidental authority. Certificates make that loss visible before a later layer mistakes convenience for truth. Good context units should be small enough to move, explicit enough to audit, and humble enough to expire.
+
+The certificate is the small piece of paper that keeps context from pretending to be source.
 :::
 
 ## Problem

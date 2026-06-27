@@ -53,6 +53,8 @@ Typed jobs produce things. Artifact graphs make those things durable: artifacts,
 The reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits. The artifact graph turns memory from a pile of outputs into an accountable work history. Every durable artifact should make its own review path easier.
 
 Durability matters because future trust depends on recoverable context, not memory of confidence. The graph lets later reviewers reconstruct why an output deserved attention.
+
+Good artifacts should make tomorrow's audit less dependent on today's explanation.
 :::
 
 ## Problem

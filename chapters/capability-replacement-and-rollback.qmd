@@ -54,6 +54,8 @@ Stable Capability Fields define the boundary. Replacement is the transaction tha
 Reversibility is the trust boundary. A self-improving system should not be trusted because each new version sounds better. It should be trusted only to the degree that a failed replacement can be detected, contained, and undone. Until then, improvement should stay in shadow, canary, quarantine, or research state rather than quietly becoming the default path.
 
 Rollback turns ambition into an inspectable experiment instead of an irreversible bet. A replacement that cannot be unwound has already spent more trust than it earned.
+
+Every upgrade should leave a path back to the last known accountable state.
 :::
 
 ## Problem

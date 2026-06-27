@@ -59,6 +59,8 @@ Executable specs say what a narrow artifact can certify. Benchmarks ask how meas
 The anti-Goodhart theme matters throughout this layer. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support. The point is to make improvement cumulative without letting the scoreboard become the mission. A failed benchmark should teach as much as a win when the ledger is honest.
 
 The measured frontier should become a disciplined memory, not a target to exploit. A benchmark only strengthens the stack when it keeps failures useful after success.
+
+A ratchet should make regression harder to hide, not merely victory easier to announce.
 :::
 
 ## Problem
