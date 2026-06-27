@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mechanism and end-state floors
+
+- Audited all manifest chapter `Mechanism` and `Beyond the State of the Art` sections, then raised `scripts/validate_chapter_dod.py` so every manifest chapter mechanism section must keep at least 300 words and every mature-endpoint section must keep at least 200 words. The current manuscript already clears those floors, so this pass preserves existing mechanism depth and mature-endpoint substance without adding new source claims. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger central-architecture and product-end-state floors. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal insufficiency floor 130
 
 - Expanded the thinnest `Why existing approaches are insufficient` section in Prototype Roadmap with a dependency-discipline sentence that keeps the roadmap grounded as an engineering sequence rather than ambition prose. Raised `scripts/validate_chapter_dod.py` so every manifest chapter insufficiency section must now keep at least 130 words. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger insufficiency floor. Refreshed the v1.0 status manuscript scale to 177,988 chapter words excluding YAML and 185,487 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
