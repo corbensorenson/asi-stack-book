@@ -26,6 +26,8 @@ FORMULAIC_BEYOND_PHRASES = (
     "In that final product",
     "Failure closure:",
     "detect and route failure modes such as",
+    "This is a target architecture, not a current-result claim",
+    "It remains beyond the chapter's present support state",
 )
 FORMULAIC_MVI_PHRASES = (
     "The next useful implementation step is",

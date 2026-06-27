@@ -200,7 +200,7 @@ In that end state, sensitive work has a visible lifecycle: request, denial or sc
 
 Beyond current practice, the kernel would make security costs part of system accounting. A cheaper route that drops isolation, logging, approval, sanitization, or side-channel review would not count as an efficiency improvement; it would be a boundary delta requiring governance review. Prompt injection, summary leakage, stale handle reuse, SCIF bypass, and overbroad context admission would become testable failure paths rather than after-the-fact incident narratives.
 
-This is a target architecture, not a current-result claim. It remains beyond the chapter's present support state until handle-substitution fixtures, expiry/reuse tests, SCIF least-privilege tests, sanitized-output residual tests, prompt-injection scenarios, threat-model records, and runtime traces exist and validate the boundary.
+The security chapter's current evidence boundary is narrower than that product surface. Its support state remains `argument` until handle-substitution fixtures, expiry/reuse tests, least-privilege SCIF scenarios, sanitized-output residual tests, prompt-injection cases, threat-model records, and runtime traces show the boundary working before the kernel can be described as validated rather than specified.
 
 ## Codex test plan
 

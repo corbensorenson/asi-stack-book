@@ -143,6 +143,8 @@ def main() -> None:
         "browser Human-view gate checks rendered Mermaid SVG visibility",
         "`Failure closure:`",
         "`detect and route failure modes such as`",
+        "`This is a target architecture, not a current-result claim`",
+        "`It remains beyond the chapter's present support state`",
         "`The public schema now records`",
         "`None of those passages show`",
         "`The Lean coverage stays at`",
