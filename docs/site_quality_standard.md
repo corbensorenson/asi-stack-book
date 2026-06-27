@@ -27,7 +27,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Use restrained technical styling.
 - Prefer high contrast, readable line length, and stable spacing.
 - Avoid decorative visuals that do not explain the architecture.
-- Diagrams should clarify interfaces, loops, and evidence flow, with enough named states, labeled transitions, and concrete handoffs to explain a mechanism rather than merely satisfy coverage. Chapter Mermaid diagrams must clear the substantive visual floor enforced by `scripts/validate_visual_coverage.py`, including at least 12 non-comment lines.
+- Diagrams should clarify interfaces, loops, and evidence flow, with enough named states, labeled transitions, and concrete handoffs to explain a mechanism rather than merely satisfy coverage. Chapter Mermaid diagrams must clear the substantive visual floor enforced by `scripts/validate_visual_coverage.py`, including at least 12 non-comment lines, and the real-browser Human-view gate should confirm that each rendered chapter exposes at least one visible nonblank Mermaid SVG in both Human and AI projections.
 - Tables should remain readable on narrow screens and should not widen the page; wide generated tables may scroll inside the content column.
 
 ## Release Standards

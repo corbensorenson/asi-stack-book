@@ -112,6 +112,7 @@ def main() -> None:
         f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates |",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
+        "browser Human-view gate checks rendered Mermaid SVG visibility",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         "browser smoke validation can exercise every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports`, including reading-mode control visibility and horizontal-overflow checks, when Playwright/Chrome is available",
         f"must be at least 165 words excluding the source-only heading, with the current minimum at {human_min_words} words",

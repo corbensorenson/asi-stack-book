@@ -279,6 +279,71 @@ async function validateResponsiveLayout(page, pageId, mode) {
   return metrics;
 }
 
+async function validateRenderedDiagrams(page, pageId, mode) {
+  const collectMetrics = () =>
+    page.evaluate(() => {
+      const diagrams = Array.from(document.querySelectorAll('.cell-output-display svg[id^="mermaid"], svg[id^="mermaid"]')).map(
+        (diagram) => {
+          const rect = diagram.getBoundingClientRect();
+          const style = window.getComputedStyle(diagram);
+          const contentCount = diagram.querySelectorAll("path, rect, polygon, circle, ellipse, line, text, g.node, g.edgePath").length;
+          const textCount = diagram.querySelectorAll("text").length;
+          const visible =
+            style.display !== "none" &&
+            style.visibility !== "hidden" &&
+            rect.width > 80 &&
+            rect.height > 20 &&
+            contentCount > 5;
+          return {
+            id: diagram.id || "",
+            width: rect.width,
+            height: rect.height,
+            visible,
+            content_count: contentCount,
+            text_count: textCount,
+          };
+        }
+      );
+      return {
+        diagram_count: diagrams.length,
+        visible_diagram_count: diagrams.filter((diagram) => diagram.visible).length,
+        diagrams,
+      };
+    });
+
+  try {
+    await page.waitForFunction(
+      () =>
+        Array.from(document.querySelectorAll('.cell-output-display svg[id^="mermaid"], svg[id^="mermaid"]')).some(
+          (diagram) => {
+            const rect = diagram.getBoundingClientRect();
+            const style = window.getComputedStyle(diagram);
+            const contentCount = diagram.querySelectorAll("path, rect, polygon, circle, ellipse, line, text, g.node, g.edgePath").length;
+            return (
+              style.display !== "none" &&
+              style.visibility !== "hidden" &&
+              rect.width > 80 &&
+              rect.height > 20 &&
+              contentCount > 5
+            );
+          }
+        ),
+      null,
+      { timeout: 7000 }
+    );
+  } catch (error) {
+    const metrics = await collectMetrics();
+    throw new Error(`${pageId}: ${mode} view did not render a visible Mermaid diagram before timeout: ${JSON.stringify(metrics)}`);
+  }
+
+  const metrics = await collectMetrics();
+
+  if (metrics.visible_diagram_count < 1) {
+    throw new Error(`${pageId}: ${mode} view has no visible rendered Mermaid diagram.`);
+  }
+  return metrics;
+}
+
 async function validateChapterPage(page, fileUrl, pageId) {
   const record = { page_id: pageId, url: fileUrl, checks: {} };
   await page.goto(`${fileUrl}?view=human`, { waitUntil: "domcontentloaded" });
@@ -292,6 +357,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
   const liveTocVisibleHuman = await visibleCount(page, '#TOC [data-asi-live-toc-link="true"]');
   const humanStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const humanLayout = await validateResponsiveLayout(page, pageId, "human");
+  const humanDiagrams = await validateRenderedDiagrams(page, pageId, "human");
 
   record.checks.human_url_mode = {
     live_sections: liveSections,
@@ -301,6 +367,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_live_toc_links: liveTocVisibleHuman,
     status_text: humanStatus || "",
     layout: humanLayout,
+    diagrams: humanDiagrams,
   };
 
   if (liveSections <= 0) throw new Error(`${pageId}: no live-only sections were marked.`);
@@ -316,12 +383,14 @@ async function validateChapterPage(page, fileUrl, pageId) {
   const humanVisibleAi = await visibleCount(page, ".asi-human-only");
   const aiStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const aiLayout = await validateResponsiveLayout(page, pageId, "ai");
+  const aiDiagrams = await validateRenderedDiagrams(page, pageId, "ai");
   record.checks.ai_click_mode = {
     visible_live_sections: liveVisibleAi,
     visible_human_blocks: humanVisibleAi,
     status_text: aiStatus || "",
     url: page.url(),
     layout: aiLayout,
+    diagrams: aiDiagrams,
   };
   if (liveVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore live-only sections.`);
   if (humanVisibleAi !== 0) throw new Error(`${pageId}: AI view left ${humanVisibleAi} human-only bridge blocks visible.`);
@@ -343,6 +412,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_live_sections: await visibleCount(page, 'section[data-asi-live-section="true"]'),
     visible_human_blocks: await visibleCount(page, ".asi-human-only"),
     layout: await validateResponsiveLayout(page, pageId, "ai-url"),
+    diagrams: await validateRenderedDiagrams(page, pageId, "ai-url"),
   };
   if (record.checks.ai_url_mode.visible_live_sections <= 0) throw new Error(`${pageId}: ?view=ai did not show live-only sections.`);
   if (record.checks.ai_url_mode.visible_human_blocks !== 0) throw new Error(`${pageId}: ?view=ai did not hide human bridge blocks.`);
@@ -417,7 +487,7 @@ async function runBrowserValidation(playwright, args) {
     // Backward-compatible alias for consumers created before --all-chapters.
     sampled_pages: records,
     non_claims: [
-      "This browser smoke test validates rendered reading-mode interaction only.",
+      "This browser smoke test validates rendered reading-mode interaction, responsive layout fit, and rendered Mermaid visibility only.",
       "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
     ],
   };
