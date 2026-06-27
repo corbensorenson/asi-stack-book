@@ -70,6 +70,14 @@ READER_REQUIRED_HEADINGS = {
     "Summary",
     "Handoff",
 }
+READER_REQUIRED_HARD_BLOCKED_TERMS = {
+    "drafting guardrail",
+    "codex test plan",
+    "codex workflow",
+    "claim-source mapping status",
+    "formalization hooks",
+    "source crosswalk",
+}
 AUDIO_FORBIDDEN_STRIPS = {
     (2, "minimum viable implementation"),
     (2, "beyond the state of the art"),
@@ -484,6 +492,17 @@ def main() -> None:
             spine_policy.get("hard_blocked_terms"),
             errors,
         )
+        hard_blocked_terms = {
+            str(term).lower()
+            for term in spine_policy.get("hard_blocked_terms", [])
+            if isinstance(term, str)
+        }
+        missing_hard_terms = READER_REQUIRED_HARD_BLOCKED_TERMS - hard_blocked_terms
+        if missing_hard_terms:
+            errors.append(
+                "reader_spine_validation.hard_blocked_terms missing "
+                f"{sorted(missing_hard_terms)}."
+            )
         validate_string_list(
             "reader_spine_validation",
             "required_reader_headings",

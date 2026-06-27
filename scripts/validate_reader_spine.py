@@ -29,8 +29,10 @@ DEFAULT_MIN_WORDS = 300
 DEFAULT_HARD_TERMS = [
     "drafting guardrail",
     "codex test plan",
+    "codex workflow",
     "claim-source mapping status",
     "formalization hooks",
+    "source crosswalk",
 ]
 DEFAULT_BLOCKED_META_PHRASES = [
     "this chapter",

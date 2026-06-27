@@ -262,7 +262,7 @@ The first implementation can be a repository-local steward with no spending auth
 
 - A `PROJECT_STEWARD.yml` charter with mission, non-goals, maintainers, authority ceiling, evidence policy, budget policy set to zero or proposal-only, and sunset criteria.
 - A `work_contracts/` directory or issue template for proposed work contracts.
-- A steward bot or Codex workflow that labels issues, drafts plans, opens proposed work contracts, summarizes pull requests, requests CI, and updates decision logs.
+- A steward bot or automation workflow that labels issues, drafts plans, opens proposed work contracts, summarizes pull requests, requests CI, and updates decision logs.
 - A contribution ledger that records authorship, review, evidence, compensation status, governance effects, and conflicts separately.
 - A release evidence checklist that blocks support-state, readiness, or release claims unless required artifacts exist.
 - A sunset review template.
