@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal MVI Lean-coverage prose polish
+
+- Reworked repeated `The Lean coverage stays at` Minimum Viable Implementation formulas across 4 chapters into chapter-specific proof-boundary prose for claim ledgers, transactional context, semantic page certificates, and the Virtual Context ABI. Tightened `scripts/validate_repeated_prose.py` so future MVI sections reject that generic Lean-coverage opener. The v1.0 status manuscript scale remains 178,108 chapter words excluding YAML and 185,607 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mechanism evidence-boundary polish
 
 - Reworked repeated `None of those passages show` Mechanism-section formulas across 5 chapters into chapter-specific evidence-boundary prose for S-IR compilation, context transactions, PlanForge scheduling, context-cell certificates, and the Virtual Context ABI. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic mechanism formula, and refreshed the v1.0 status manuscript scale to 178,108 chapter words excluding YAML and 185,607 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

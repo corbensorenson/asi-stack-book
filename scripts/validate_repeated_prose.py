@@ -43,6 +43,7 @@ FORMULAIC_MVI_PHRASES = (
     "The accompanying Lean module is",
     "The Lean predicates do not",
     "These proofs do not implement",
+    "The Lean coverage stays at",
 )
 FORMULAIC_GENERAL_PHRASES = (
     "The public schema now records",

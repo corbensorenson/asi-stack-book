@@ -185,7 +185,7 @@ Another failure is stale-cell reuse after source revocation, where a derived pag
 
 A semantic-page schema with certificate fields and example source-to-summary derivation.
 
-A minimal context-cell certificate is a `semantic_page_certificate` schema and fixture. It validates source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. The Lean coverage stays at certificate boundaries: finite certificate records, source cells, and summary cells; a valid derived cell must declare source bindings, a loss contract, and permitted uses; and a summary that respects its source cells cannot raise its authority ceiling above any source.
+A minimal context-cell certificate is a `semantic_page_certificate` schema and fixture. It validates source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. The proof slice is limited to certificate structure: finite certificate records, source cells, and summary cells; a valid derived cell must declare source bindings, a loss contract, and permitted uses; and a summary that respects its source cells cannot raise its authority ceiling above any source.
 
 Certificate validation confirms only that the record names source bindings, loss, permitted use, and residual risk. Factual preservation, omission completeness, and certificate truthfulness remain semantic review obligations beyond the Lean predicates.
 
