@@ -30,7 +30,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
-- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben's sources and local projects, while Appendix H is a separate external-source appendix for records by other authors generated from `sources/source_inventory.json`.
+- `scripts/validate_source_appendices.py` checks that Appendix G and Appendix H are independent top-level appendices: G contains only Corben's sources and local projects, while H contains only external-source records by other authors generated from `sources/source_inventory.json`.
 - `scripts/validate_v1_status_snapshot.py` checks that `docs/v1_0_candidate_status.md` headline counts match current repository artifacts.
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
 - `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.

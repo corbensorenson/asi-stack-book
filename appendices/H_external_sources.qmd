@@ -2,16 +2,18 @@
 
 This appendix is generated from source records marked `external_literature` in `sources/source_inventory.json`.
 
-This is the external-source appendix, not a subsection or second half of Appendix G. It is only for third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources are a separate appendix: [Appendix G, Corben's Sources and Local Projects](G_corben_source_corpus.qmd).
+This is an independent top-level appendix for external sources by other authors. It is not a subsection, second half, or continuation of Appendix G. It contains only third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben-authored, Corben-supplied, and local-project sources live in their own top-level appendix: [Appendix G, Corben's Sources and Local Projects](G_corben_source_corpus.qmd).
 
 A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 
-## Ownership Boundary
+## Appendix Scope
 
-| Appendix | Contains | Does not contain | Evidence effect |
-|---|---|---|---|
-| Appendix G: Corben's sources and local projects | Corben-authored or Corben-supplied ASI Stack papers, local-project source routes, implementation references, recovered notes, variants, and public-safe corpus records. | Third-party literature records marked `external_literature`. | Organizes Corben-side architecture material; it does not promote any claim unless the source note, Appendix C mapping, and evidence transition support that move. |
-| Appendix H: external sources by other authors | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. | Corben-authored, Corben-supplied, and local-project records. | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
+| Field | Boundary |
+|---|---|
+| Appendix identity | Appendix H: external sources by other authors |
+| Contains | Third-party papers, official documentation, outside benchmarks, and other non-Corben references used for comparison or grounding. |
+| Excludes | Corben-authored, Corben-supplied, and local-project records; those belong in Appendix G. |
+| Evidence effect | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
 ## Source-Noted External Literature Records
 

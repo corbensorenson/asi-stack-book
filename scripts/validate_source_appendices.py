@@ -23,10 +23,10 @@ APPENDIX_H = ROOT / "appendices" / "H_external_sources.qmd"
 ROW_ID_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|", re.MULTILINE)
 APPENDIX_G_TITLE = "Corben's Sources and Local Projects"
 APPENDIX_H_TITLE = "External Sources by Other Authors"
-APPENDIX_G_ROW = "Appendix G: Corben's sources and local projects"
-APPENDIX_H_ROW = "Appendix H: external sources by other authors"
-APPENDIX_G_BOUNDARY = 'not a general "sources used" appendix'
-APPENDIX_H_BOUNDARY = "not a subsection or second half of Appendix G"
+APPENDIX_G_IDENTITY = "| Appendix identity | Appendix G: Corben's sources and local projects |"
+APPENDIX_H_IDENTITY = "| Appendix identity | Appendix H: external sources by other authors |"
+APPENDIX_G_BOUNDARY = 'not a combined "sources used" appendix'
+APPENDIX_H_BOUNDARY = "not a subsection, second half, or continuation of Appendix G"
 
 
 def fail(errors: list[str]) -> None:
@@ -68,17 +68,21 @@ def main() -> None:
     ):
         if f"# {title}" not in text:
             errors.append(f"{path.relative_to(ROOT)} is missing title {title!r}.")
-        if "## Ownership Boundary" not in text:
-            errors.append(f"{path.relative_to(ROOT)} is missing the ownership-boundary section.")
-        if APPENDIX_G_ROW not in text:
-            errors.append(f"{path.relative_to(ROOT)} is missing the Appendix G ownership row.")
-        if APPENDIX_H_ROW not in text:
-            errors.append(f"{path.relative_to(ROOT)} is missing the Appendix H ownership row.")
+        if "## Appendix Scope" not in text:
+            errors.append(f"{path.relative_to(ROOT)} is missing the appendix-scope section.")
 
     if APPENDIX_G_BOUNDARY not in g_text:
-        errors.append("Appendix G is missing the explicit non-combined-sources boundary.")
+        errors.append("Appendix G is missing the explicit non-combined source boundary.")
     if APPENDIX_H_BOUNDARY not in h_text:
         errors.append("Appendix H is missing the explicit separate-appendix boundary.")
+    if APPENDIX_G_IDENTITY not in g_text:
+        errors.append("Appendix G is missing its standalone Appendix G identity row.")
+    if APPENDIX_H_IDENTITY not in h_text:
+        errors.append("Appendix H is missing its standalone Appendix H identity row.")
+    if APPENDIX_H_IDENTITY in g_text:
+        errors.append("Appendix G should not render Appendix H as a second scope row.")
+    if APPENDIX_G_IDENTITY in h_text:
+        errors.append("Appendix H should not render Appendix G as a second scope row.")
 
     unknown_g = g_ids - all_ids
     unknown_h = h_ids - all_ids
