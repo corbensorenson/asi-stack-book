@@ -51,13 +51,9 @@ Proof-carrying receipts become especially important for memory and recurrence, w
 
 A fresh slot is not a true belief, and a covered lag is not a solved task. Recurrence contracts should preserve structural facts, authority limits, and fallback paths while leaving semantic claims to verification and evidence.
 
-That boundary lets cyclic memory remain useful without overselling it. Structural guarantees can improve admission and fallback decisions while still requiring separate tests for retrieval quality, reasoning quality, and task success.
+That boundary lets cyclic memory remain useful without overselling it. Structural guarantees can improve admission, fallback, and routing decisions while still requiring separate tests for retrieval quality, reasoning quality, and task success. A loop earns trust when freshness, coverage, lag, exit conditions, and downgrade paths are visible to later consumers.
 
-The contract protects the idea by refusing to let structure impersonate understanding.
-
-Useful recurrence should make memory easier to audit, not harder to question. A cycle earns trust only when freshness, coverage, lag, and fallback are visible.
-
-The loop becomes architectural only when its guarantees stay separate from its hopes. Recurrence needs a contract before memory can be trusted. Contracts keep loops honest.
+The contract protects the idea by refusing to let structure impersonate understanding. Useful recurrence should make memory easier to audit, not harder to question. The loop becomes architectural when its guarantees stay separate from its hopes, and when each later use can tell whether it is relying on a proven structural fact, a useful heuristic, or an untested expectation.
 :::
 
 ## Problem

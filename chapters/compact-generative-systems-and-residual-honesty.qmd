@@ -51,13 +51,9 @@ Once the stack has routed work onto governed compute, compactness becomes tempti
 
 The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, what costs are counted, and what residual work it leaves for future reviewers or agents.
 
-Honest compactness is therefore a governance problem as much as an efficiency problem. The smaller object has to carry enough receipts for the rest of the stack to know when it is safe to use.
+Honest compactness is therefore a governance problem as much as an efficiency problem. The smaller object has to carry enough receipts for the stack to know when it is safe to use and when the full artifact must return. A summary, seed, or generator should lower cost without hiding its unpaid remainder.
 
-Compact forms earn trust by preserving the path back to what they compressed. A summary, seed, or generator should lower cost without hiding its unpaid remainder.
-
-The residual is the price tag that keeps compactness from becoming self-deception.
-
-A compact object should make its unpaid work easier to see. Residual visibility keeps compression honest.
+Compact forms earn trust by preserving the path back to what they compressed. The residual is the price tag that keeps compactness from becoming self-deception: what must be checked, regenerated, expanded, compared, or refused. A compact object is best when it makes unpaid work visible, not when it makes omission harder.
 :::
 
 ## Problem

@@ -47,17 +47,15 @@ Planning is therefore the stack's first refusal-friendly layer after command int
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Once a command is structured, the stack still has to decide what work should exist. Planning is the layer that turns intent into ordered obligations: dependencies, budgets, risk limits, context needs, tool choices, review points, and stop conditions.
+Once a command is structured, the stack has to decide what work should exist. Planning turns intent into obligations: dependencies, budgets, risk limits, context needs, tool choices, review points, and stop conditions.
 
 Planning is control, not brainstorming. A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, and preserve residual work instead of letting the planner's confidence become execution authority.
 
-This is why the plan must be an artifact. It should show dependencies, assumptions, blocked paths, missing context, and stop conditions before any runtime adapter is allowed to touch the world.
+The plan must be an artifact. It should show dependencies, assumptions, blocked paths, missing context, and stop conditions before any runtime adapter touches the world.
 
-Good planning reduces surprise by making the future work surface visible while changes are still cheap. The plan earns trust when it exposes what must be refused, deferred, or reviewed.
+Good planning reduces surprise by making the future work surface visible while changes are still cheap. The plan earns trust when it exposes what must be refused, deferred, reviewed, or split into a safer path. It should make the negative space legible: tools not granted, context not loaded, claims not made, and approvals still waiting.
 
-That visibility is what turns planning into governance rather than a prettier brainstorm.
-
-A plan governs best when it names the work it will not do. Visible exclusions keep work bounded.
+That visibility turns planning into governance rather than a prettier brainstorm. A plan governs best when it names the work it will not do and leaves later layers structure to enforce that choice.
 :::
 
 ## Problem

@@ -51,11 +51,9 @@ The replacement transaction is the stack's version of a high-risk write. It chan
 
 Stable Capability Fields define the boundary. Replacement is the transaction that crosses it. It is not just swapping one component for another; it is a controlled change with compatibility checks, canary scope, monitoring, rollback, and residual ownership. The field says what must remain true; the transaction says whether the candidate has earned the right to become ordinary infrastructure.
 
-Reversibility is the trust boundary. A self-improving system should not be trusted because each new version sounds better. It should be trusted only to the degree that a failed replacement can be detected, contained, and undone. Until then, improvement should stay in shadow, canary, quarantine, or research state rather than quietly becoming the default path.
+Reversibility is the trust boundary. A self-improving system should not be trusted because each new version sounds better, compiles faster, or wins a local comparison. It should be trusted only to the degree that failure can be detected, contained, explained, and undone. Until those records exist, improvement belongs in shadow, canary, quarantine, or research state rather than quietly becoming the default path.
 
-Rollback turns ambition into an inspectable experiment instead of an irreversible bet. A replacement that cannot be unwound has already spent more trust than it earned.
-
-Every upgrade should leave a path back to the last known accountable state. Rollback is the right to say that improvement failed. That right disciplines ambition.
+Rollback turns ambition into an inspectable experiment instead of an irreversible bet. It preserves the last known accountable state while the candidate proves compatibility, safety envelope, and residual ownership. A replacement that cannot be unwound has already spent more trust than it earned. The right to say improvement failed is what keeps self-improvement from becoming self-ratification.
 :::
 
 ## Problem
