@@ -473,6 +473,7 @@ def main() -> None:
             "mode_status_selector": "[data-asi-reading-mode-status]",
             "toc_link_marker": "data-asi-live-toc-link",
             "assistive_description_class": "asi-sr-only",
+            "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections",
             "ai_only_class": "asi-ai-only",
             "human_only_class": "asi-human-only",
             "live_only_class": "asi-live-only",

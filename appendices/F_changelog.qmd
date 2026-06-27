@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal human view numbering polish
+
+- Polished the live Human view so filtered chapters no longer display Quarto section numbers with gaps left by hidden live/research scaffold sections. Human view now hides rendered section numbers in chapter headings and page-TOC links while AI view preserves the fully numbered research surface. Updated release-profile metadata, reading-mode validation, release docs, release appendix, site-quality standard, publication-readiness notes, and README. This improves on-site human readability without claiming a reviewed reader release, ebook, audiobook, support-state promotion, or new proof/test result.
+
 ## 2026-06-27 - v1.0 improvement goal human view TOC cleanup
 
 - Extended the live reading-mode projection so Human view hides page-TOC entries that point to live-only scaffold sections, not just the body sections themselves. The reading-mode asset now marks matching TOC entries from rendered section anchors, the stylesheet hides them in Human view, release-profile metadata records the TOC marker, and the reading-mode/rendered-site validators check the contract. Updated release docs, the release-editions appendix, site-quality standard, publication-readiness notes, and README so interested-human navigation no longer advertises hidden AI/research scaffold headings. No support-state promotion, new proof/test result, reader artifact, ebook, or audio artifact is claimed.

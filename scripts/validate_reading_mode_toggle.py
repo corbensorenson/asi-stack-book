@@ -74,6 +74,10 @@ def main() -> None:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
     if 'html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live TOC hide rule")
+    if 'html[data-asi-reading-mode="human"] main.content .header-section-number' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode body section-number hide rule")
+    if 'html[data-asi-reading-mode="human"] #TOC .header-section-number' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode TOC section-number hide rule")
     if ".asi-sr-only" not in style_text:
         errors.append("assets/styles.scss is missing the assistive-only helper class")
     if 'html[data-asi-reading-mode="human"] .asi-human-only' not in style_text:
@@ -91,6 +95,7 @@ def main() -> None:
         "mode_status_selector": "[data-asi-reading-mode-status]",
         "toc_link_marker": "data-asi-live-toc-link",
         "assistive_description_class": "asi-sr-only",
+        "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections",
         "ai_only_class": "asi-ai-only",
         "human_only_class": "asi-human-only",
         "live_only_class": "asi-live-only",
