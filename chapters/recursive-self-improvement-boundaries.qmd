@@ -131,7 +131,7 @@ flowchart LR
   O --> P
 ```
 
-**Diagram reading note:** The self-improvement path starts from a wall or residual and moves through cheaper interventions before any stronger change is considered. Boundary-delta review, protected invariants, evaluator independence, replacement, governance approval, monitoring, and rollback all stand between a proposal and promotion.
+**How to read the self improvement gate:** The self-improvement path starts from a wall or residual and moves through cheaper interventions before any stronger change is considered. Boundary-delta review, protected invariants, evaluator independence, replacement, governance approval, monitoring, and rollback all stand between a proposal and promotion.
 
 The transition record separates proposing, evaluating, approving, committing, monitoring, rolling back, and retiring. It names the improvement proposal, protected invariants, and evidence gates before a candidate can become the new default. More autonomous replacement is deliberately delayed until evaluators, readiness gates, governance logs, and rollback paths are credible enough to make the transition inspectable.
 

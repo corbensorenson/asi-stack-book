@@ -117,7 +117,7 @@ flowchart LR
   J -- "checks impact" --> K
 ```
 
-**Diagram reading note:** The artifact node is the hub where work product history becomes reviewable: sources, context transactions, certificates, tools, audit events, replay metadata, claims, and tests all converge there. The evidence gate limits reuse based on what the artifact record can actually support.
+**Reading the artifact graph:** The artifact node is the hub where work product history becomes reviewable: sources, context transactions, certificates, tools, audit events, replay metadata, claims, and tests all converge there. The evidence gate limits reuse based on what the artifact record can actually support.
 
 The artifact record attaches identity to work product history. It links parent job, sources, context, context transactions, semantic certificates, tools, claims, tests, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims in one node. Incomplete provenance remains visible as a residual, while verified traces and failed traces both become useful: one can support future regression coverage, and the other can prevent repeated failure.
 

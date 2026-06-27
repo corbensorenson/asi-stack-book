@@ -130,7 +130,7 @@ flowchart LR
   J --> K
 ```
 
-**Diagram reading note:** The MoECOT record is a runtime evidence packet, not proof that a runtime exists here. The route head selects specialist lanes, control-plane gates decide acceptance or blockage, and both handoff and residual escrow update readiness only through recorded ledgers and replay references.
+**Reading the MoECOT runtime record:** The MoECOT record is a runtime evidence packet, not proof that a runtime exists here. The route head selects specialist lanes, control-plane gates decide acceptance or blockage, and both handoff and residual escrow update readiness only through recorded ledgers and replay references.
 
 The runtime should not be one all-powerful agent. The compact orchestrator coordinates; the route head selects; specialist lanes do bounded work; control-plane gates fail closed; ledgers preserve evidence; replay tests the path; handoff makes ownership explicit; readiness records decide whether future routes should trust the same lane.
 

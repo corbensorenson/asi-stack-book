@@ -114,7 +114,7 @@ flowchart LR
   J --> K["Residual docket or closure"]
 ```
 
-**Diagram reading note:** The tribunal flow makes review bounded by a dossier and role set before adversarial probes begin. Evidence-backed consensus, dissent, unresolved issues, and human adjudication all write back to the ledger; the output is not merely a conversational verdict.
+**Reading the tribunal review flow:** The tribunal flow makes review bounded by a dossier and role set before adversarial probes begin. Evidence-backed consensus, dissent, unresolved issues, and human adjudication all write back to the ledger; the output is not merely a conversational verdict.
 
 The review mechanism is a bounded protocol. A target claim or artifact enters with dossier refs, risk class, reviewer roles, and adversarial probes; findings cite evidence; dissent and unresolved issues remain first-class; and the verdict carries required actions plus human-adjudication state. Agreement only matters when it can be tied back to the dossier and the ledger.
 

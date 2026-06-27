@@ -122,7 +122,7 @@ flowchart LR
   J --> K["Retirement or requalification trigger"]
 ```
 
-**Diagram reading note:** The loop-closure path turns repeated traces into a candidate procedure only after invariant abstraction, parameter discovery, verification, and negative examples. Qualified reuse creates a routable tool card; failed qualification preserves quarantine, residual, retirement, and requalification routes.
+**Reading the loop closure path:** The loop-closure path turns repeated traces into a candidate procedure only after invariant abstraction, parameter discovery, verification, and negative examples. Qualified reuse creates a routable tool card; failed qualification preserves quarantine, residual, retirement, and requalification routes.
 
 The loop-closure path starts with safe traces that preserve provenance, failures, residuals, and replay limits. Comparable traces justify detection; detection leads to invariant abstraction, parameter discovery, preconditions, postconditions, and then candidate synthesis. Verification, regressions, monitoring, and retirement criteria decide whether the candidate becomes routable, remains in quarantine, returns to revision, or is retired.
 

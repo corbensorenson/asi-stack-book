@@ -120,7 +120,7 @@ flowchart LR
   J --> K["Claim label or backlog update"]
 ```
 
-**Diagram reading note:** A simulation claim must pass through scope, fidelity, time semantics, demand, and bottleneck checks before it can support an experiment or benchmark. If the contract is infeasible for the claim, the output becomes a reduced-scope result, residual, or blocked claim rather than physical evidence.
+**What the simulation fidelity gate shows:** A simulation claim must pass through scope, fidelity, time semantics, demand, and bottleneck checks before it can support an experiment or benchmark. If the contract is infeasible for the claim, the output becomes a reduced-scope result, residual, or blocked claim rather than physical evidence.
 
 The record should specify:
 

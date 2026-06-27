@@ -111,7 +111,7 @@ flowchart LR
   K --> L
 ```
 
-**Diagram reading note:** The compression path is exact only when generation, local verification, repair residuals, fallback decisions, and rate accounting are all counted in the receipt. A mismatch is not a failure to hide; it becomes a repair stream, literal fallback, or negative result.
+**Reading the repair compression loop:** The compression path is exact only when generation, local verification, repair residuals, fallback decisions, and rate accounting are all counted in the receipt. A mismatch is not a failure to hide; it becomes a repair stream, literal fallback, or negative result.
 
 The process is contract-relative: a public law family and artifact-specific seed generate candidate regions; verification compares those regions to the declared target; mismatches become exact repair residuals or literal fallback; and rate accounting includes law IDs, seeds, interfaces, repairs, metadata, and proxy/final-rate gaps. Exactness is a property of the full receipt, not the generator alone.
 

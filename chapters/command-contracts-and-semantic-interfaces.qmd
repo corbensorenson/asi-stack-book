@@ -120,7 +120,7 @@ flowchart LR
   K --> B
 ```
 
-**Diagram reading note:** The flow shows a request being narrowed into contract fields before planning receives it. The loop from missing failure behavior back to extraction is the key: incomplete contracts should be repaired or clarified instead of silently becoming hidden authority.
+**How to read the command contract flow:** The flow shows a request being narrowed into contract fields before planning receives it. The loop from missing failure behavior back to extraction is the key: incomplete contracts should be repaired or clarified instead of silently becoming hidden authority.
 
 The mechanism turns recurring command patterns into reusable templates and treats software words as coordination primitives. Field names such as objective, constraint, output, verification, authority, approval, and failure behavior are not decoration; they are routing handles for the rest of the stack. Binding those handles to schemas and tests is what lets later layers distinguish an authorized instruction from useful prose nearby.
 

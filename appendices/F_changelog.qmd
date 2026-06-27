@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal diagram walkthrough labels
+
+- Replaced the repeated chapter-wide `Diagram reading note` label with chapter-specific diagram walkthrough labels across all 54 chapters, using labels such as `How to read the route ledger`, `Reading the context ABI`, and `What the benchmark ratchet shows` so the live Human view and generated reader edition keep the accessibility walkthroughs without a template-shaped repeated prefix. Tightened `scripts/validate_visual_coverage.py` so diagram walkthrough labels must use accepted reader-facing forms and remain unique across chapters, and tightened `scripts/validate_repeated_prose.py` so the old generic label cannot return. Refreshed the v1.0 status manuscript scale to 184,042 chapter words excluding YAML and 191,541 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source ownership boundary
 
 - Added generated `Source Ownership Boundary` sections to Appendix G and Appendix H so Appendix G reads as the Corben-side source appendix only and Appendix H reads as the external-source appendix only before either table appears. Tightened `scripts/validate_source_appendices.py`, the v1.0 status guard, README, and outline so future scaffold syncs preserve the two independent top-level source appendices instead of letting external literature look like a second part of Appendix G. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

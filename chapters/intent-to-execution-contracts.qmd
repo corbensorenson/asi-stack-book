@@ -112,7 +112,7 @@ flowchart LR
   H --> K
 ```
 
-**Diagram reading note:** Read the trace left to right as a responsibility handoff: intent becomes contracts, contracts become jobs, and the approval gate can deny or escalate work before any tool runs. Both the successful artifact path and the residual path end in the evidence ledger, because an honest execution system records blocked work as carefully as completed work.
+**How to read the execution trace:** Read the trace left to right as a responsibility handoff: intent becomes contracts, contracts become jobs, and the approval gate can deny or escalate work before any tool runs. Both the successful artifact path and the residual path end in the evidence ledger, because an honest execution system records blocked work as carefully as completed work.
 
 The trace represents command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback. Each transition routes the contract through the layer that actually owns the next responsibility: planning decomposes, memory supplies bounded context, verification checks acceptance, execution causes side effects only under authority, and evidence attaches the result back to claims, regressions, and residuals.
 

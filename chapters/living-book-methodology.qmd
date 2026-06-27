@@ -130,7 +130,7 @@ flowchart LR
   Validate -. "failure blocks release" .-> Draft
 ```
 
-**Diagram reading note:** The living-book loop treats sources, notes, drafts, claims, proofs, validation, release, editions, and residuals as one publication ratchet. Dashed edges mark non-claim boundaries: no note means no source-derived support, no run means no result, and a target format is not itself an artifact.
+**What the living book ratchet shows:** The living-book loop treats sources, notes, drafts, claims, proofs, validation, release, editions, and residuals as one publication ratchet. Dashed edges mark non-claim boundaries: no note means no source-derived support, no run means no result, and a target format is not itself an artifact.
 
 This loop is the book's own version of benchmark ratcheting and cognitive loop closure. Repeated maintenance work should become scripts, validators, schemas, or proof modules. But the same rule applies as everywhere else in the stack: do not close a loop until it is parameterized, testable, and safe to reuse.
 

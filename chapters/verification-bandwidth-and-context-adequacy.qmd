@@ -114,7 +114,7 @@ flowchart LR
   J --> K["Residuals and downgrade path"]
 ```
 
-**Diagram reading note:** The adequacy flow asks whether the loaded packet can jointly verify the target claim, not merely whether more context was supplied. If joint verification is impossible, the route moves to retrieval, split review, tribunal, proof, or human review while support remains bounded.
+**Reading the verification adequacy flow:** The adequacy flow asks whether the loaded packet can jointly verify the target claim, not merely whether more context was supplied. If joint verification is impossible, the route moves to retrieval, split review, tribunal, proof, or human review while support remains bounded.
 
 The adequacy record models verification as constrained by semantic-unit coverage, representation quality, compression path, attention budget, and the actual comparison mode applied. Every context packet should carry an adequacy label for the target claim or task. High-risk claims route to stronger verification, split context, retrieval, tribunal review, proof work, or human review instead of receiving more context and a stronger-sounding answer.
 

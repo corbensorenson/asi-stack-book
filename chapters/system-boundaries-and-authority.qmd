@@ -116,7 +116,7 @@ flowchart LR
   J --> K["Evidence ledger"]
 ```
 
-**Diagram reading note:** The authority path treats denial as a real outcome, not a failed user experience. A request crosses the boundary only when both the ceiling and grant checks pass, and either path leaves an effect or denial receipt for the evidence ledger.
+**How to read the authority gate:** The authority path treats denial as a real outcome, not a failed user experience. A request crosses the boundary only when both the ceiling and grant checks pass, and either path leaves an effect or denial receipt for the evidence ledger.
 
 The transition record makes principals, ceilings, grants, revocations, and handoff contracts explicit before an effect can occur. It also separates knowledge access from action authority. A layer may know that an operation would be helpful, or may read text that requests the operation, without receiving the grant to execute it. Missing authority therefore becomes a detectable denial or escalation record rather than implicit permission.
 

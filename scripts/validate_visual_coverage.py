@@ -19,7 +19,14 @@ MERMAID_LABELED_EDGE_RE = re.compile(
 )
 MERMAID_NODE_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*)\s*(?=[\[\(\{])")
 MERMAID_DECL_RE = re.compile(r"^\s*(participant|actor|boundary|control|entity|database|collections|queue)\s+([A-Za-z][A-Za-z0-9_]*)\b", re.IGNORECASE)
-DIAGRAM_READING_NOTE_RE = re.compile(r"\*\*Diagram reading note:\*\*", re.IGNORECASE)
+DIAGRAM_WALKTHROUGH_RE = re.compile(
+    r"\*\*((?:"
+    r"How to read (?:the|this) [^:\n*]{3,80}|"
+    r"Reading (?:the|this) [^:\n*]{3,80}|"
+    r"What (?:the|this) [^:\n*]{3,80} shows"
+    r")):\*\*",
+    re.IGNORECASE,
+)
 DIAGRAM_NOTE_REQUIRED_PARTS = {
     "foundations-alignment-governance",
     "planning-memory-reasoning-execution",
@@ -71,6 +78,7 @@ def main() -> None:
 
     structure = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
     checked = 0
+    diagram_labels: dict[str, list[str]] = {}
     for part in structure.get("parts", []):
         for chapter in part.get("chapters", []):
             path = ROOT / chapter["file"]
@@ -89,12 +97,22 @@ def main() -> None:
                     f"minimum lines={MIN_DIAGRAM_LINES}, edges={MIN_DIAGRAM_EDGES}, "
                     f"nodes={MIN_DIAGRAM_NODES}, labeled_edges={MIN_LABELED_EDGES})"
                 )
-            if part.get("id") in DIAGRAM_NOTE_REQUIRED_PARTS and not DIAGRAM_READING_NOTE_RE.search(text):
+            label_matches = DIAGRAM_WALKTHROUGH_RE.findall(text)
+            if part.get("id") in DIAGRAM_NOTE_REQUIRED_PARTS and not label_matches:
                 errors.append(
-                    "Chapter in a diagram-note-ratcheted part lacks a Diagram reading note "
+                    "Chapter in a diagram-note-ratcheted part lacks a diagram walkthrough note "
                     "for reader/audio accessibility: "
                     f"{chapter['file']}"
                 )
+            for label in label_matches:
+                diagram_labels.setdefault(label.lower(), []).append(chapter["file"])
+
+    for label, files in sorted(diagram_labels.items()):
+        if len(files) > 1:
+            errors.append(
+                "Diagram walkthrough label is reused; make labels chapter-specific: "
+                f"{label!r} in {', '.join(files)}"
+            )
 
     index = (ROOT / "index.qmd").read_text(encoding="utf-8", errors="ignore")
     hero = ROOT / "assets" / "images" / "asi-stack-hero.png"
@@ -108,7 +126,7 @@ def main() -> None:
 
     print(
         f"Visual coverage validation passed: {checked} chapter diagrams checked; "
-        f"diagram reading notes required for {len(DIAGRAM_NOTE_REQUIRED_PARTS)} part(s)."
+        f"diagram walkthrough notes required for {len(DIAGRAM_NOTE_REQUIRED_PARTS)} part(s)."
     )
 
 

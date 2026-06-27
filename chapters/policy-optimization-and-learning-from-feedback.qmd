@@ -137,7 +137,7 @@ flowchart LR
   J --> K
 ```
 
-**Diagram reading note:** Feedback does not update behavior until admissibility, target policy, reward boundary, drift bound, rollback, holdouts, regressions, and reward-hacking probes are visible. Promotion is a governance decision, while failed updates route to quarantine, rollback, or residuals.
+**What the feedback update gate shows:** Feedback does not update behavior until admissibility, target policy, reward boundary, drift bound, rollback, holdouts, regressions, and reward-hacking probes are visible. Promotion is a governance decision, while failed updates route to quarantine, rollback, or residuals.
 
 The record should separate:
 

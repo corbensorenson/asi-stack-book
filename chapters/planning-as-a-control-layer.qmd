@@ -125,7 +125,7 @@ flowchart LR
   I --> L
 ```
 
-**Diagram reading note:** The planner does not execute work; it turns an accepted contract into dependencies, context requests, authority annotations, and a verification plan. Dispatch is only one branch, and runtime feedback can reopen the task graph while residuals are preserved in the plan ledger.
+**How to read the planning control loop:** The planner does not execute work; it turns an accepted contract into dependencies, context requests, authority annotations, and a verification plan. Dispatch is only one branch, and runtime feedback can reopen the task graph while residuals are preserved in the plan ledger.
 
 The control layer compiles accepted work into strategic, tactical, and runtime plans. Strategic planning chooses the broad route. Tactical planning decomposes work and dependencies. Runtime planning creates dispatchable nodes, context requests, authority requirements, budgets, verification plans, replanning policies, stop conditions, and failure behavior. The boundaries matter because execution still happens only through typed contracts downstream, and only authorized runtime layers should request specific tools, adapters, or human approvals.
 

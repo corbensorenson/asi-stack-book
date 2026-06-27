@@ -118,7 +118,7 @@ flowchart LR
   J --> K["Reusable compiler feedback"]
 ```
 
-**Diagram reading note:** The compiler path moves from goal and contract to semantic IR, then to target artifacts, with validators deciding whether the output can enter the artifact graph. Failure does not restart the whole process by default; it routes back to the failed IR boundary for localized repair.
+**Reading the semantic compiler:** The compiler path moves from goal and contract to semantic IR, then to target artifacts, with validators deciding whether the output can enter the artifact graph. Failure does not restart the whole process by default; it routes back to the failed IR boundary for localized repair.
 
 The compiler boundary represents requirements, semantics, dependencies, artifacts, validators, authority requirements, and target constraints explicitly. Incremental repair then operates over IR nodes rather than re-prompting from scratch. Lowering can produce jobs, code, schemas, documents, or proof targets, but every target artifact should preserve the obligations that made the node necessary.
 

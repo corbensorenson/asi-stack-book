@@ -122,7 +122,7 @@ flowchart LR
   J --> K["Requalification trigger"]
 ```
 
-**Diagram reading note:** The gate changes routability without changing the underlying capability identity. Evidence, regressions, residual escrow, authority, scope, lifecycle state, monitoring, and requalification all have to line up before a module becomes ordinary route material.
+**Reading the readiness gate:** The gate changes routability without changing the underlying capability identity. Evidence, regressions, residual escrow, authority, scope, lifecycle state, monitoring, and requalification all have to line up before a module becomes ordinary route material.
 
 Readiness has three inputs. Gate evidence names the source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision. Regression preservation protects a floor that should not be lost while the frontier moves. Residual escrow keeps named failures, edge cases, uncertainties, and blocked obligations attached to the target even when some narrower promotion is allowed.
 

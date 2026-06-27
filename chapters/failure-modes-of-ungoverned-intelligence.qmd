@@ -127,7 +127,7 @@ flowchart TB
   H -. "claim support state" .-> I
 ```
 
-**Diagram reading note:** The failure chain is a routing map for responsibility. Each risk is connected to the boundary that should detect it, contain it, or preserve the residual, so the taxonomy becomes a repair interface rather than a dramatic list.
+**How to read the failure routing map:** The failure chain is a routing map for responsibility. Each risk is connected to the boundary that should detect it, contain it, or preserve the residual, so the taxonomy becomes a repair interface rather than a dramatic list.
 
 The map classifies failures by layer and failure class, then binds each one to affected contracts, an invariant, and a planned falsification test. That binding is the reason the taxonomy belongs near the front of the book: later chapters are not allowed to introduce mechanisms as impressive machinery alone. They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.
 

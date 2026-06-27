@@ -118,7 +118,7 @@ flowchart LR
   J --> K["Consumer decision"]
 ```
 
-**Diagram reading note:** The cyclic-memory contract is a chain-of-custody record from request to slot mapping, winding, coverage, freshness, and recurrence budget. Passing the structural contract admits the representation as a diagnostic guardrail, not as proof of retrieval quality or reasoning success.
+**What the cyclic memory contract shows:** The cyclic-memory contract is a chain-of-custody record from request to slot mapping, winding, coverage, freshness, and recurrence budget. Passing the structural contract admits the representation as a diagnostic guardrail, not as proof of retrieval quality or reasoning success.
 
 The contract should record:
 

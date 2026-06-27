@@ -118,7 +118,7 @@ flowchart LR
   I --> J["Rollback and recovery path"]
 ```
 
-**Diagram reading note:** The SCF path separates the field contract from candidate implementations. A route proposer may nominate a candidate, but the validator checks field identity, authority, qualification context, lifecycle state, evidence, and rollback before any implementation becomes default.
+**How to read the capability field path:** The SCF path separates the field contract from candidate implementations. A route proposer may nominate a candidate, but the validator checks field identity, authority, qualification context, lifecycle state, evidence, and rollback before any implementation becomes default.
 
 The field record separates identity from implementation. Qualification claims bind to exact artifacts and scoped contexts rather than to a generic model or tool name. Lifecycle states such as shadow, canary, qualified, default, deprecated, and retired make promotion reversible and inspectable. Route validity and evaluator integrity are therefore prerequisites for default use, not optional paperwork after the fact.
 

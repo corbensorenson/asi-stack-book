@@ -121,7 +121,7 @@ flowchart LR
   Boundary -. "blocks overclaim" .-> Overclaim["Quality, speed, context, or ASI claims without workload evidence"]
 ```
 
-**Diagram reading note:** The Theseus loop is report-first: pressure becomes contracts, routes, work, reports, gate review, residuals, and the smallest next intervention. The Circle transfer lane can contribute structural receipts, but the claim-boundary ledger blocks quality, speed, context, or ASI claims without workload evidence.
+**What the Theseus report loop shows:** The Theseus loop is report-first: pressure becomes contracts, routes, work, reports, gate review, residuals, and the smallest next intervention. The Circle transfer lane can contribute structural receipts, but the claim-boundary ledger blocks quality, speed, context, or ASI claims without workload evidence.
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.
 

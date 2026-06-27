@@ -123,7 +123,7 @@ flowchart LR
   N --> M
 ```
 
-**Diagram reading note:** The replacement path is a reversible transaction, not a swap. Evidence, authority, qualification, regression floors, residual escrow, canary monitoring, and rollback all have to resolve before promotion can be recorded.
+**How to read the replacement transaction:** The replacement path is a reversible transaction, not a swap. Evidence, authority, qualification, regression floors, residual escrow, canary monitoring, and rollback all have to resolve before promotion can be recorded.
 
 The replacement proposal is itself an artifact. It cannot become a commit merely because the candidate looks better. The transaction runs qualification, regression, authority, residual, and rollback checks before default promotion, and it records failed gates as residuals rather than letting them disappear behind a successful upgrade story.
 

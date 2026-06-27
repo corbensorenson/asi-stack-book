@@ -119,7 +119,7 @@ flowchart LR
   H --> I
 ```
 
-**Diagram reading note:** The compressed artifact is a candidate route, not a replacement for the preserved source artifact. Reconstruction checks, task probes, fallback triggers, and non-claim ledgers decide whether the compressed form is usable for a specific task.
+**What the compressed artifact gate shows:** The compressed artifact is a candidate route, not a replacement for the preserved source artifact. Reconstruction checks, task probes, fallback triggers, and non-claim ledgers decide whether the compressed form is usable for a specific task.
 
 The record should distinguish four claims that are often collapsed:
 

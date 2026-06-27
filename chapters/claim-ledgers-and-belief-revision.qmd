@@ -115,7 +115,7 @@ flowchart LR
   J --> K["Future review trigger"]
 ```
 
-**Diagram reading note:** The ledger path keeps claim text, evidence refs, contradiction scans, revision events, and publication boundaries separate. A contradiction does not disappear when prose is revised; it creates a downgrade, block, revision history, or future review trigger.
+**Reading the claim ledger:** The ledger path keeps claim text, evidence refs, contradiction scans, revision events, and publication boundaries separate. A contradiction does not disappear when prose is revised; it creates a downgrade, block, revision history, or future review trigger.
 
 The mechanism is a sequence rather than a checklist. Generated or extracted claims become ledger entries; each entry receives provenance, support state, uncertainty, evidence refs, and contradiction refs; and later evidence can revise the entry without erasing the prior state. When a contradiction is unresolved, the ledger preserves it and blocks support-state promotion instead of smoothing it into prose.
 

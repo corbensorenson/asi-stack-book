@@ -164,7 +164,7 @@ flowchart LR
   R -- "promotion review" --> Q["SCF promotion gate"]
 ```
 
-**Diagram reading note:** The selector compares generation modes by accepted, verified work rather than proposed tokens alone. Rejected spans, verifier cost, fallback, repair, memory pressure, and promotion review stay in the accounting so speed cannot bypass the quality and evidence gates.
+**What the generation mode selector shows:** The selector compares generation modes by accepted, verified work rather than proposed tokens alone. Rejected spans, verifier cost, fallback, repair, memory pressure, and promotion review stay in the accounting so speed cannot bypass the quality and evidence gates.
 
 The mode selector chooses among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid routes by task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability. The route records proposed output separately from accepted output, sends the VCM packet into the selected generator, routes accepted spans through Spinoza, Talos, Benchmaxxing, and SCF gates, and keeps multi-seed diffusion or hybrid AR/MTP/diffusion ideas as research hypotheses until source-specific experiments or stronger evidence transitions exist.
 

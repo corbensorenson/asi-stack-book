@@ -122,7 +122,7 @@ flowchart LR
   J --> K["Incident monitor or approval audit"]
 ```
 
-**Diagram reading note:** The adapter invocation is the authority chokepoint between a typed job and an external effect. Capability checks, secret handles, approval records, sandboxing, effect receipts, rollback handles, and residuals are all explicit so a tool call cannot masquerade as ungoverned action.
+**Reading the adapter invocation:** The adapter invocation is the authority chokepoint between a typed job and an external effect. Capability checks, secret handles, approval records, sandboxing, effect receipts, rollback handles, and residuals are all explicit so a tool call cannot masquerade as ungoverned action.
 
 The adapter maps a typed job to a declared target type, capability, permission requirement, sandbox mode, and input/output contract. Authority handles stay outside model-visible context until policy, destination, and approval checks authorize use. High-impact actions such as irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional state changes fail closed without approval. Every invocation returns an effect receipt, a rollback handle where one exists, residuals where rollback is unavailable, and audit events for the artifact graph.
 

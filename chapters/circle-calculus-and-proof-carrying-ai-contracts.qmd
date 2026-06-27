@@ -113,7 +113,7 @@ flowchart LR
   Nonclaims -. "blocks overreach" .-> Overreach["Quality, speed, context, safety, or ASI claim"]
 ```
 
-**Diagram reading note:** The receipt flow separates finite structural facts from downstream performance claims. Theorem references and deterministic fields can support a structural claim only within scope; quality, speed, context, safety, and ASI claims remain blocked until workload evidence exists.
+**What the proof receipt flow shows:** The receipt flow separates finite structural facts from downstream performance claims. Theorem references and deterministic fields can support a structural claim only within scope; quality, speed, context, safety, and ASI claims remain blocked until workload evidence exists.
 
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant theorem references, validation commands, deterministic fields, receipt fingerprints, unsupported axes, and failure conditions.
 

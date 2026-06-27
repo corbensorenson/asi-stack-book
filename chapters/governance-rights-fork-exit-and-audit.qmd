@@ -132,7 +132,7 @@ flowchart LR
   Block --> Evidence
 ```
 
-**Diagram reading note:** The preservation check treats audit, exit, fork, dissent, and redaction as runtime obligations. A governance transition may proceed only when those rights survive the transition; missing or unsafe rights block, redact with reason, or escalate.
+**How to read the rights preservation check:** The preservation check treats audit, exit, fork, dissent, and redaction as runtime obligations. A governance transition may proceed only when those rights survive the transition; missing or unsafe rights block, redact with reason, or escalate.
 
 ## Interfaces
 

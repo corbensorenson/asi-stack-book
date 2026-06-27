@@ -114,7 +114,7 @@ flowchart LR
   J --> K["Residual burden audit"]
 ```
 
-**Diagram reading note:** Compactness is useful only when the generator, verifier, residual channel, fallback path, and cost ledger remain visible together. The residual burden audit is the guard against treating a small seed or elegant rule system as if it had carried every hidden cost.
+**Reading the residual burden loop:** Compactness is useful only when the generator, verifier, residual channel, fallback path, and cost ledger remain visible together. The residual burden audit is the guard against treating a small seed or elegant rule system as if it had carried every hidden cost.
 
 A compact generative system should answer five questions:
 

@@ -118,7 +118,7 @@ flowchart LR
   J --> K["Residual escrow or route memory"]
 ```
 
-**Diagram reading note:** The router grants a task-local route lease, not permanent authority to a specialist. Capability fit, authority envelope, readiness, cost, and quality are checked before selection, and both successful selections and rejected routes feed the ledger for future routing memory.
+**Reading the route lease:** The router grants a task-local route lease, not permanent authority to a specialist. Capability fit, authority envelope, readiness, cost, and quality are checked before selection, and both successful selections and rejected routes feed the ledger for future routing memory.
 
 The routing head should stay small. Its job is to select, load, coordinate, verify, and log. Specialist cores carry bounded local capability: tools, local memory, benchmarks, residuals, permissions, runtime tier, and verification contracts. A core can be a model, tool stack, proof checker, planning compiler, retrieval lane, mathematical substrate, human review lane, or composite worker, but it should be registered through the same boundary.
 
