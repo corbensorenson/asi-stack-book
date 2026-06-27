@@ -189,7 +189,7 @@ The subtle failure is residual displacement. The system appears compact because 
 
 Compactness should first appear as a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
 
-The current fixture validates that this public contract can be represented consistently. The record also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
+The repository fixture validates that this public contract can be represented consistently. It also gives later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
 
 `AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, plus a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence. These proofs do not implement a codec, generator, verifier, downstream utility test, or fallback harness.
 

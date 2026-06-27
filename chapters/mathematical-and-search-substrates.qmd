@@ -214,7 +214,7 @@ The subtle failure is theorem spillover. A proof of an address, phase, recurrenc
 
 ## Minimum Viable Implementation
 
-Optional substrates need a substrate adoption schema and fixture. The current fixture records the candidate, intended use, advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate and policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, residuals, evidence references, and non-claims.
+Optional substrates need a substrate adoption record before they can become part of the stack. The repository fixture records the candidate, intended use, advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate and policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, residuals, evidence references, and non-claims.
 
 Passing the fixture does not prove a substrate. It prevents the book from describing adoption without the fields that adoption requires.
 

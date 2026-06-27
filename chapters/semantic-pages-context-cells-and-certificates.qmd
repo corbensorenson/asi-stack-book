@@ -178,7 +178,7 @@ A semantic-page schema with certificate fields and example source-to-summary der
 
 A minimal context-cell certificate is a `semantic_page_certificate` schema and fixture. It validates source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority ceiling, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. The accompanying Lean module is intentionally narrower than a summary evaluator: it models finite certificate records, source cells, and summary cells; a valid derived cell must declare source bindings, a loss contract, and permitted uses; and a summary that respects its source cells cannot raise its authority ceiling above any source.
 
-That validation proves only that the certificate names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
+Certificate validation proves only that the record names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
 
 The next useful implementation step is a paired-cell fixture set: one source excerpt, one transaction record, one planning summary with loss recorded, one evidence cell preserving exact wording, one redacted execution cell with a lower authority ceiling, one stale certificate invalidated by source revocation, one artifact node that carries the derived cell, and one attempted use outside the certificate blocked. That would test certificate semantics without claiming summary fidelity.
 

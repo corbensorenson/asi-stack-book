@@ -180,7 +180,7 @@ The subtle failure is helpful overrun. The system goes beyond the contract becau
 
 A command-contract schema and one end-to-end intent-to-artifact trace.
 
-The intent-to-execution path starts with an `intent_contract` schema, a `command_contract` schema, and an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, handoff receipt, dispatch receipt, artifact, verification record, re-contract event, stop or fault state, and residuals. Passing validation only proves trace shape; it does not prove the work satisfied the intent.
+The intent-to-execution path starts with an `intent_contract` schema, a `command_contract` schema, and an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, handoff receipt, dispatch receipt, artifact, verification record, re-contract event, stop or fault state, and residuals. Validation proves only trace shape; it does not prove the work satisfied the intent.
 
 Those records are implemented only as public protocol artifacts. They can validate that the trace names the required links and non-claims; they cannot show that the links were executed, authorized, accepted, or useful.
 

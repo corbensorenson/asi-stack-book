@@ -207,7 +207,7 @@ The most dangerous failure is silent narrowing. A compressed representation may 
 
 ## Minimum Viable Implementation
 
-A minimal artifact-compression lane is a compressed artifact schema and fixture. The current fixture validates that a record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
+A minimal artifact-compression lane is a compressed artifact record. The repository fixture validates that the record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 
 Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
 

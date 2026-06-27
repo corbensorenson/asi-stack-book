@@ -186,7 +186,7 @@ A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in 
 
 ## Minimum Viable Implementation
 
-A benchmark ratchet starts as a schema and fixture. The current fixture records the shape of a benchmark-evidence decision without pretending any benchmark has been run.
+A benchmark ratchet starts as a benchmark-evidence decision record. The repository fixture captures the fields a later benchmark must supply before it can affect support state, while making clear that no benchmark result is being reported here.
 
 The next useful implementation step is a toy ratchet ledger with one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. That would demonstrate support-state restraint without claiming empirical capability.
 

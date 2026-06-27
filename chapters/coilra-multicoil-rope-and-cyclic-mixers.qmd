@@ -189,7 +189,7 @@ The subtle failure is cyclic favoritism. The cyclic candidate gets theorem langu
 
 ## Minimum Viable Implementation
 
-Cyclic mixer work should start as an evaluation schema and fixture. The current fixture records evaluation state, workload target, structural invariant, receipt refs, proof or receipt boundary, claim partitions, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, source refs, support-state effect, non-claims, and evidence references.
+Cyclic mixer work should start as an evaluation record that separates architecture shape from performance evidence. The repository fixture records evaluation state, workload target, structural invariant, receipt refs, proof or receipt boundary, claim partitions, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, source refs, support-state effect, non-claims, and evidence references.
 
 Passing the fixture does not prove a mixer works. It proves the book can represent the adoption boundary without laundering structural facts into performance claims.
 
