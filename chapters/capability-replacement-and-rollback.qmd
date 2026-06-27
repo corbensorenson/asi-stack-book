@@ -177,7 +177,7 @@ SCF defines the field. Benchmark ratchets and regression suites test behavior. E
 
 The interface also protects later chapters. Security checks whether the replacement crosses a secret or permission boundary. Runtime adapters check whether the replacement changes effect authority. Policy optimization checks whether learning pressure is trying to ratify its own evaluator. The transaction gives each layer a concrete artifact to inspect rather than asking them to trust the word "upgrade."
 
-The interface should expose transaction and decision states: proposed, precheck, shadow, canary, default-candidate, committed, rolled-back, quarantined, superseded, retired, and blocked. These states keep a candidate from becoming default simply because it survived one test. The transaction should also name canary scope, monitor status, promotion blockers, and what the candidate is not allowed to conclude from the fixture: no runtime replacement, no rollback execution, no monitor-window success, and no support-state promotion unless separate evidence exists.
+Transaction and decision states need to be explicit: proposed, precheck, shadow, canary, default-candidate, committed, rolled-back, quarantined, superseded, retired, and blocked. These states keep a candidate from becoming default simply because it survived one test. The transaction should also name canary scope, monitor status, promotion blockers, and what the candidate is not allowed to conclude from the fixture: no runtime replacement, no rollback execution, no monitor-window success, and no support-state promotion unless separate evidence exists.
 
 ## Invariants
 

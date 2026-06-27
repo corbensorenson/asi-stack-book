@@ -156,7 +156,7 @@ Minimum fields:
 
 The certificate is what lets a compact cell remain honest. It says what the cell is, which sources bind it, which transaction created or updated it, which artifact carries it, what was lost, which authority ceiling survived, which uses are permitted, whether verification is adequate, what revocation state applies, and what residual risks remain.
 
-The interface should distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference. Each representation kind has different failure modes and different permitted uses. Calling them all "context" erases the reason for the certificate.
+The certificate keeps representation modes separate: exact carriage, lossy summary, redaction, abstraction, translation, and derived inference. Each representation kind has different failure modes and different permitted uses. Calling them all "context" erases the reason for the certificate.
 
 Different consumers should read the same certificate differently. Planning may use a constraint cell, verification may demand source bindings, execution may require an authority ceiling, and reader editions may preserve only orientation prose. The certificate prevents those uses from collapsing into one undifferentiated summary.
 

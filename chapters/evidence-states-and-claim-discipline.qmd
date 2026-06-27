@@ -195,7 +195,7 @@ Minimum evidence transition fields:
 
 Drafting updates claim text and labels. Source ingestion adds source notes and source-to-claim mappings. Proof and code work adds commands, fixtures, modules, and results. The changelog records meaningful evidence movement. Appendix C remains the public ledger that keeps those transitions visible.
 
-The interface should distinguish evidence roles: lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement. A single artifact can play one role without playing all of them.
+Evidence roles must stay separate: lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement. A single artifact can play one role without playing all of them.
 
 ## Invariants
 

@@ -141,7 +141,7 @@ This turns simulation from a vague substrate into a bounded experimental instrum
 
 When a simulation fails the contract, the right move is not necessarily to abandon it. The system can reduce scope, lower the support claim, expose a residual, add missing resource estimates, or route the result to a speculative scenario lane. The important thing is that the claim moves down to match the fidelity rather than the prose moving up to match the ambition.
 
-The contract should also name instrumentation effects. A simulator that changes behavior through observation, logging, compression, sampling, or intervention has a fidelity cost that belongs in the result, not in a footnote after promotion.
+Instrumentation effects belong in the simulation contract. A simulator that changes behavior through observation, logging, compression, sampling, or intervention has a fidelity cost that belongs in the result, not in a footnote after promotion.
 
 ## Interfaces
 

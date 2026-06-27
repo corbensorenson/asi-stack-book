@@ -166,9 +166,9 @@ Minimum fields:
 
 Routing uses the record to decide whether a compact core is adequate for a task. VCM and semantic pages use it to mark loss and omissions. Evidence layers use it to check downstream utility. Procedural memory uses it to decide whether repeated generated behavior should become a verified tool.
 
-The interface should expose a use envelope. A compact core can be acceptable for drafting, search, simulation, or candidate generation while being unacceptable for final claims, irreversible actions, or autonomous promotion. The same seed can have different authority at different risk tiers.
+Use envelopes belong on the compact-system record. A compact core can be acceptable for drafting, search, simulation, or candidate generation while being unacceptable for final claims, irreversible actions, or autonomous promotion. The same seed can have different authority at different risk tiers.
 
-The interface should also expose who pays for residual work. A compact system may shift effort to verifiers, repair streams, fallback storage, human reviewers, or future runs. If those burdens are not attached to the record, compactness becomes a local win that exports cost to the rest of the stack.
+Residual-cost ownership belongs on the same record. A compact system may shift effort to verifiers, repair streams, fallback storage, human reviewers, or future runs. If those burdens are not attached to the record, compactness becomes a local win that exports cost to the rest of the stack.
 
 ## Invariants
 

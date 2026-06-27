@@ -170,7 +170,7 @@ Material usability is the interface standard. A declared audit right is weak if 
 
 The rights-exercise record carries request state, material available, material withheld, appeal path, expiry or revisit condition, challenged-party independence, preservation obligation, receipt references, and non-claims. Those fields keep a rights record from collapsing into policy text. They ask whether the holder can actually obtain usable material, see what was withheld, challenge the decision somewhere other than the authority being challenged, and preserve the receipt across later transitions.
 
-The interface should distinguish access failure, justified denial, redacted access, partial export, portable export, contested decision, and preserved dissent. Treating all non-success states as a generic refusal makes rights impossible to audit.
+Rights outcomes need separate states: access failure, justified denial, redacted access, partial export, portable export, contested decision, and preserved dissent. Treating all non-success states as a generic refusal makes rights impossible to audit.
 
 ## Invariants
 

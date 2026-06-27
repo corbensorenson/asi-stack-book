@@ -221,7 +221,7 @@ Policy optimization connects to nearly every layer:
 - Governance policy: reward promotion decisions that preserve regression floors, rollback, rights, and auditability.
 - Generation-mode policy: reward verified output quality per wall-clock cost while preserving fallback.
 
-The interface should distinguish training evidence, evaluation evidence, governance evidence, and deployment evidence. A successful training run is not a promotion decision; a promotion decision is not a long-term safety result; a rollback handle is not proof that rollback works until it is exercised or dry-run.
+Training evidence, evaluation evidence, governance evidence, and deployment evidence have to remain separate. A successful training run is not a promotion decision; a promotion decision is not a long-term safety result; a rollback handle is not proof that rollback works until it is exercised or dry-run.
 
 ## Invariants
 

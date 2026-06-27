@@ -157,7 +157,7 @@ The outline defines proof scope. `proofs/proof_manifest.json` records the genera
 
 The support-state effect remains deliberately narrow. A passed `lake build` can justify saying that a local finite-record predicate builds. It cannot justify saying the source interpretation is correct, the real system enforces the rule, the model behaves well, or the benchmark improved. A passed schema validator can justify saying that a fixture has the required shape. It cannot justify saying the represented event happened. This separation is what makes the proof envelope useful to a living book rather than theatrical.
 
-The interface should carry consumer requirements. A chapter, protocol, or release profile may consume a proof only if the proof lane, command, artifact path, version, semantic adequacy state, and non-claims match what that consumer needs. Otherwise the proof remains true but unusable for that purpose.
+Consumer requirements belong beside the proof artifact. A chapter, protocol, or release profile may consume a proof only if the proof lane, command, artifact path, version, semantic adequacy state, and non-claims match what that consumer needs. Otherwise the proof remains true but unusable for that purpose.
 
 The semantic adequacy review is not a second proof. It is a record of whether the finite predicate actually matches the boundary it is being asked to support. Until that review exists, the safest support-state effect is narrow: the artifact passed its verifier, but the prose may not borrow more meaning than the predicate states.
 

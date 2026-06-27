@@ -172,7 +172,7 @@ Minimum fields:
 
 Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, declassification decisions, materialization state, and faults.
 
-The interface should also make failed materialization ordinary. A context compiler that cannot prove mount visibility, snapshot coherence, taint propagation, or deletion closure should emit a typed fault that planning can route around. Silent best-effort context is the unsafe fallback.
+Failed materialization should be an ordinary interface result. A context compiler that cannot prove mount visibility, snapshot coherence, taint propagation, or deletion closure should emit a typed fault that planning can route around. Silent best-effort context is the unsafe fallback.
 
 The record also tells downstream artifacts what kind of memory they inherited. A generated proof attempt, plan, summary, tool call, or release note should be able to point back to the transaction that materialized its context. If that transaction later faults, the dependent artifact should be reviewable rather than silently trusted.
 

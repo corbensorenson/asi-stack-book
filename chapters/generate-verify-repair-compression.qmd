@@ -172,7 +172,7 @@ The consumer policy should be explicit:
 - retrieval hint
 - model-training or benchmark input
 
-These consumers have different tolerance for loss. A representation adequate for routing preview may be disallowed for proof input. A repaired exact receipt may be valid for replay but inefficient for hot-path use. The interface should carry those permissions so compression does not silently widen authority.
+These consumers have different tolerance for loss. A representation adequate for routing preview may be disallowed for proof input. A repaired exact receipt may be valid for replay but inefficient for hot-path use. Those permissions belong on the compression record so compression does not silently widen authority.
 
 ## Invariants
 

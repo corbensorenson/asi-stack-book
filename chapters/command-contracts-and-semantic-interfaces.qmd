@@ -128,7 +128,7 @@ The command contract should be compact enough to write often and typed enough to
 
 Promptcraft remains useful, but only inside this envelope. The command can include a procedure or style, yet those instructions cannot override explicit constraints, authority ceilings, source boundaries, or required verification.
 
-The contract should also mark field confidence. Some fields are exact, some are inferred, some are defaulted, and some are missing. A planner should be able to distinguish "the user authorized this means" from "the system inferred a likely means" before it creates work. Missing or inferred authority should route to clarification, draft-only output, or residual rather than dispatch.
+Field confidence belongs in the command record. Some fields are exact, some are inferred, some are defaulted, and some are missing. A planner should be able to distinguish "the user authorized this means" from "the system inferred a likely means" before it creates work. Missing or inferred authority should route to clarification, draft-only output, or residual rather than dispatch.
 
 Command contracts should move through explicit validation states:
 

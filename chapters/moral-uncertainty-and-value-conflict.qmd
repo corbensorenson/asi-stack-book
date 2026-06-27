@@ -165,7 +165,7 @@ Alignment emits conflict records. Planning uses them as constraints. Evidence re
 
 Those interfaces matter downstream. Governance rights need the conflict record so affected parties can audit or contest the decision. Replacement and self-improvement need it so a future version cannot quietly delete the unresolved obligation. Benchmark and policy-learning chapters need it so reward pressure does not convert a temporary bounded choice into a permanent value claim.
 
-The interface should distinguish unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise. These are different states with different authority effects.
+Value-conflict states are not interchangeable: unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise each carries a different authority effect.
 
 The authority effect should be machine-readable enough for planning and self-improvement gates: narrow authority, require review, require reversible action, deny action, defer action, preserve dissent, or deprecate a premise. A future policy update or benchmark ratchet should not be able to treat a dissent-preserving bounded decision as evidence that the underlying values were resolved.
 

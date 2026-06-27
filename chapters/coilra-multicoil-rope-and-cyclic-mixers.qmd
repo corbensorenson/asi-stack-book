@@ -170,7 +170,7 @@ Minimum fields:
 
 Semantic representation chapters define when cyclic structure is actually present. Routing heads may consume cyclic features only inside declared authority and evidence boundaries. Resource economics accounts for parameters, kernels, memory, and latency. Proof contracts and prototype experiments keep structural facts separate from performance results.
 
-The interface should carry a hardware refusal path. If a cyclic design assumes kernels, layouts, or precision behavior that the deployment substrate cannot provide, the evaluation record should block adoption or narrow scope rather than hiding the mismatch behind parameter counts.
+Hardware refusal belongs in the evaluation record. If a cyclic design assumes kernels, layouts, or precision behavior that the deployment substrate cannot provide, the evaluation record should block adoption or narrow scope rather than hiding the mismatch behind parameter counts.
 
 The record should make rejection ordinary. If alias diagnostics fail, hardware notes are missing, baselines are asymmetric, or metrics remain unrun, routing and architecture consumers should receive a blocked or research-only decision. A cyclic candidate can stay valuable as an experiment without becoming a default substrate.
 

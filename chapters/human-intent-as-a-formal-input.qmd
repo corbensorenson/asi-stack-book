@@ -126,7 +126,7 @@ The contract compiles the request into an explicit objective, constraints, autho
 
 When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
 
-The contract should also define what counts as a change of contract. A plan that changes allowed means, adds a new tool class, expands publication surface, drops a stop condition, weakens evidence requirements, or changes the affected parties is not merely a better plan. It is a new authority question. This gives later governance, execution, and implementation-reference chapters a clean test: did the work stay inside the lease that the human actually granted?
+Contract change rules belong in the intent record. A plan that changes allowed means, adds a new tool class, expands publication surface, drops a stop condition, weakens evidence requirements, or changes the affected parties is not merely a better plan. It is a new authority question. This gives later governance, execution, and implementation-reference chapters a clean test: did the work stay inside the lease that the human actually granted?
 
 Intent intake should use explicit states:
 
@@ -170,7 +170,7 @@ Alignment filters the contract before planning. Planning lowers accepted contrac
 
 The interface should preserve the raw request without letting it override the structured contract. The raw request is useful for empathy, intent recovery, and later review; the contract is what grants operational authority. That split lets the book support natural human expression while still giving planners, routers, tools, and report-first implementations an auditable boundary.
 
-The contract should also emit an Intent Receipt when it lowers:
+Lowering the contract emits an Intent Receipt when it produces:
 
 - `intake_state`
 - `confirmed_assumptions`
