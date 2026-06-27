@@ -271,7 +271,7 @@ The crosswalk prevents semantic representation from becoming a free-floating ont
 
 Semantic structure is useful when it makes concepts, paths, provenance, versions, and uncertainty easier to inspect. It is harmful when it becomes an ontology-shaped authority claim without grounding or tests.
 
-Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated. The next chapter asks how much any of these representation choices should cost, and when the stack must spend more to verify rather than less to answer.
+Tree-structured models therefore enter the ASI Stack as optional representation substrates: useful for routing, context, compilation, and explanation only where grounding, utility, and interoperability are demonstrated. That raises the cost question: how much should any representation choice cost, and when must the stack spend more to verify rather than less to answer?
 
 That cost question is not secondary. A representation that saves tokens but increases verification burden, human repair, or downstream failure is not cheaper for the governed system.
 

@@ -252,6 +252,6 @@ These Lean hooks are implemented as finite-record predicates over phase unlock a
 
 The prototype should grow as evidence infrastructure grows: source matrix, claim ledger, artifact graph, schemas, plans, context, typed jobs, runtime adapters, routing, readiness, benchmarks, SCFs, and only then bounded self-improvement.
 
-That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The next chapter applies the same rule to the manuscript itself.
+That order is intentionally conservative. It asks the project to earn agency by first proving that it can remember sources, preserve artifacts, admit failures, replay checks, and refuse unsupported promotions. The same rule applies to the manuscript itself.
 
 Every later capability should be able to point to the earlier records that made it safe to exist. If the pointer is missing, the roadmap should block, narrow, or mark the capability as research-only.

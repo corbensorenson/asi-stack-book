@@ -264,7 +264,7 @@ The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold`
 
 Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.
 
-RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The next chapter turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.
+RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The focus then turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.
 
 The bridge is that semantic representation is also compression. It compresses meaning, paths, and relations rather than bytes, so its probe must ask whether the represented meaning is grounded enough for the task.
 

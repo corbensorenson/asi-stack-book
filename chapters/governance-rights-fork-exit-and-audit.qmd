@@ -241,6 +241,6 @@ The crosswalk keeps governance rights tied to their source families while preser
 
 Governance Rights: Fork, Exit, and Audit turns contestability into interfaces. The point is not to decorate governance with ideals; it is to make audit, appeal, exit, fork, and dissent survive contact with runtime systems, memory, security, and capability replacement.
 
-The next chapter gives those rights a stable capability boundary. If a capability can be replaced, the user's rights must not depend on the old implementation staying in place. Rights receipts need a capability identity that survives upgrades.
+Those rights need a stable capability boundary. If a capability can be replaced, the user's rights must not depend on the old implementation staying in place. Rights receipts need a capability identity that survives upgrades.
 
 A right should survive the transition that makes it inconvenient. If a model update, policy update, memory migration, or capability replacement removes the path to exercise the right, the governance layer has failed even if the policy text still sounds correct.

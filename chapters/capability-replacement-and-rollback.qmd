@@ -133,7 +133,7 @@ Benchmarks are used as evidence surfaces, not permission slips. If a benchmark s
 
 The transaction should include a rollback receipt even when rollback is not exercised. The receipt records the prior artifact, state migration status, reversible fields, irreversible effects, dry-run status, trigger conditions, and owner. If rollback is impossible, the record should say compensation, fork, quarantine, or residual instead of pretending reversibility. A rollback plan without a receipt is a design intention; it is not rollback readiness.
 
-The receipt is also what prevents replacement from erasing security and governance context. A candidate that preserves benchmark behavior but changes handle scope, audit retention, appeal paths, or review ownership is not the same replacement transaction. It has crossed into the next chapter's security and authority boundary.
+The receipt is also what prevents replacement from erasing security and governance context. A candidate that preserves benchmark behavior but changes handle scope, audit retention, appeal paths, or review ownership is not the same replacement transaction. It has crossed into the security and authority boundary.
 
 ## Interfaces
 
@@ -250,6 +250,6 @@ Capability Replacement and Rollback turns improvement into a transaction. It pre
 
 The chapter's discipline is floor preservation. The frontier may move only when the existing floor remains visible and recoverable.
 
-The next chapter adds the security kernel that keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross. Replacement must preserve not only behavior, but also the permission shape around that behavior.
+The security kernel keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross. Replacement must preserve not only behavior, but also the permission shape around that behavior.
 
 A replacement should be easier to undo than to overclaim. If the record cannot identify the prior artifact, compatibility boundary, rollback trigger, and owner, the candidate is not ready to become default.

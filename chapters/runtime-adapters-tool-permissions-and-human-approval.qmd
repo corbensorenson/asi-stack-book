@@ -287,4 +287,4 @@ The source set anchors the effects boundary: authority handles, approval gates, 
 
 Runtime Adapters, Tool Permissions, and Human Approval is the effects boundary. It maps jobs to adapters, checks permissions, mediates authority handles, enforces approval gates, invokes tools in bounded modes, records effect receipts, and captures rollback or residuals.
 
-The chapter's rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. This pass tightened the evidence crosswalk but did not run an adapter. Once real effect traces accumulate, the next chapter asks which recurring patterns deserve to become procedural memory.
+The chapter's rule is that real-world effects require explicit authority. Planning may propose action; only an authorized adapter may perform it. This pass tightened the evidence crosswalk but did not run an adapter. Once real effect traces accumulate, the system can ask which recurring patterns deserve to become procedural memory.

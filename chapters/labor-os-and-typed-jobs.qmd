@@ -276,6 +276,6 @@ The labor-OS sources support typed execution discipline across lifecycle, permis
 
 Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The sources justify treating execution as typed work, but this repo still lacks the scheduler, permission service, approval service, adapter runner, and replay system that would turn the boundary into runtime evidence.
 
-The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The next chapter follows the job's output into the artifact graph, where work becomes durable memory instead of a disappearing side effect.
+The result is not less autonomy. It is autonomy that can be inspected, approved, replayed, repaired, and improved. The job's output then enters the artifact graph, where work becomes durable memory instead of a disappearing side effect.
 
 The handoff to artifacts should be mandatory. A job that leaves no artifact, audit event, residual, or replay declaration has not become part of the living stack's memory, even if it produced a useful answer.

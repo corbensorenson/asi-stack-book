@@ -252,7 +252,7 @@ The readiness sources support gate state, residual escrow, regression preservati
 
 Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.
 
-The result is a lifecycle discipline for modular intelligence: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution. The next chapter asks what a concrete runtime reference would have to record before this routing and readiness discipline could become operational evidence.
+The result is a lifecycle discipline for modular intelligence: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution. A concrete runtime reference must then record enough detail for this routing and readiness discipline to become operational evidence.
 
 That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.
 

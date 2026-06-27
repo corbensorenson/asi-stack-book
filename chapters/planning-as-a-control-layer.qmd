@@ -285,6 +285,6 @@ The planning/control boundary is supported by four passage-reviewed mappings, wh
 
 Planning as a Control Layer converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, verification, stop conditions, and replanning policy before execution begins.
 
-This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The next chapter specializes that graph into a schedulable DAG so efficiency claims have to name capability tiers, verification burdens, and residual costs.
+This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, verification burdens, and residual costs.
 
 The later typed-job chapter depends on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation.

@@ -242,6 +242,6 @@ The crosswalk keeps memory claims structural. `coil_attention_memory` supplies a
 
 Cyclic memory contracts make structural facts visible: residue, winding, freshness, coverage, recurrence depth, loop exits, and fallback. They do not prove retrieval or reasoning quality.
 
-This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved. The next chapter applies the same boundary to adapters, RoPE-style phase banks, and cyclic mixers, where parameter counts and exact phase facts are easy to overread.
+This chapter keeps coil attention useful by keeping it honest. Structural guardrails can protect the stack only when their non-claims are preserved. The same boundary applies to adapters, RoPE-style phase banks, and cyclic mixers, where parameter counts and exact phase facts are easy to overread.
 
 A memory contract should make the cheap fact and the hard claim impossible to confuse. Slot freshness, coverage, and loop exit are cheap facts; retrieval quality, reasoning quality, and useful long context are hard claims.

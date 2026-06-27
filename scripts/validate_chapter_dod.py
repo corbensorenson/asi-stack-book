@@ -62,6 +62,8 @@ BANNED_BEYOND_BOILERPLATE = [
     "A mature implementation would make that contract visible through",
     "The smallest useful implementation is",
     "The practical standard is",
+    "The next chapter",
+    "the next chapter",
     "The current fixture",
     "The fixture should",
     "The schema validates",
