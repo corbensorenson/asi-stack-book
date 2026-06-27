@@ -11,7 +11,7 @@ Current repository scale after the v1.0 candidate improvement pass: 54 chapter f
 ## Completed in v0.2
 
 - All 54 manifest-driven chapters now have end-to-end manuscript prose.
-- Every chapter retains the required contract: status, drafting guardrail, problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimal implementation, Codex test plan, source crosswalk, and summary.
+- Every chapter retains the required contract: status, drafting guardrail, problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, Codex test plan, source crosswalk, and summary.
 - Every chapter lists source loading state from the source notes, local raw cache, and connector/recovery records currently visible to the repo.
 - Every chapter exposes formalization hooks from the existing proof targets.
 - Chapter support states remain conservative; the drafting pass did not promote claims above their recorded evidence basis.

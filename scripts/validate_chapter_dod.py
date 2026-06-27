@@ -52,6 +52,16 @@ BANNED_BEYOND_BOILERPLATE = [
     "It is the chapter's idea turned into a product-grade",
 ]
 
+SECTION_MIN_WORDS = {
+    "## Minimum Viable Implementation": 60,
+    "## Beyond the State of the Art": 90,
+}
+
+SECTION_PLACEHOLDERS = [
+    "No manifest minimal implementation statement declared yet.",
+    "No manifest beyond-state-of-the-art statement declared yet.",
+]
+
 
 def read_json(path: Path) -> object:
     with path.open(encoding="utf-8") as f:
@@ -74,6 +84,19 @@ def frontmatter_value(text: str, key: str) -> str | None:
     return match.group(1) if match else None
 
 
+def section_body(text: str, heading: str) -> str:
+    match = re.search(rf"^{re.escape(heading)}\s*$", text, flags=re.MULTILINE)
+    if not match:
+        return ""
+    next_heading = re.search(r"^##\s+", text[match.end() :], flags=re.MULTILINE)
+    end = match.end() + next_heading.start() if next_heading else len(text)
+    return text[match.end() : end].strip()
+
+
+def word_count(text: str) -> int:
+    return len(re.findall(r"\b\w+\b", text))
+
+
 def main() -> None:
     structure = read_json(STRUCTURE)
     if not isinstance(structure, dict):
@@ -90,6 +113,20 @@ def main() -> None:
         missing_sections = [section for section in REQUIRED_SECTIONS if section not in text]
         if missing_sections:
             errors.append(f"{chapter['file']}: missing DoD sections: {', '.join(missing_sections)}")
+
+        for section, min_words in SECTION_MIN_WORDS.items():
+            body = section_body(text, section)
+            if not body:
+                continue
+            words = word_count(body)
+            if words < min_words:
+                errors.append(
+                    f"{chapter['file']}: {section} has {words} words; expected at least {min_words}"
+                )
+
+        for placeholder in SECTION_PLACEHOLDERS:
+            if placeholder in text:
+                errors.append(f"{chapter['file']}: replace scaffold placeholder: {placeholder!r}")
 
         for phrase in BANNED_BEYOND_BOILERPLATE:
             if phrase in text:
