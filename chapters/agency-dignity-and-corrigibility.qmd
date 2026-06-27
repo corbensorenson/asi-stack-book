@@ -4,7 +4,7 @@ chapter_id: "agency-dignity-and-corrigibility"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "alignment_field"
   - "ethica_mechanica"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -49,7 +49,7 @@ The chapter's practical stance is that rights must be usable interfaces, not dec
 
 The constitutional chapter names protected constraints. This chapter gives some of those constraints a human shape: people need ways to correct, refuse, inspect, exit, and preserve dignity when powerful systems act around them.
 
-The architecture treats corrigibility as an interface, not a mood. A system is not corrigible because it sounds cooperative. It is corrigible when correction pathways remain available after deployment pressure, memory updates, and capability replacement make correction inconvenient.
+The architecture treats corrigibility as an interface, not a disposition. A system is not corrigible because it sounds cooperative. It is corrigible when correction pathways remain available after deployment pressure, memory updates, and capability replacement make correction inconvenient.
 :::
 
 ## Problem
@@ -60,7 +60,7 @@ The previous chapter defines constitutional predicates. This chapter focuses on 
 
 The alignment-field and Ethica Mechanica sources are valuable here as authorial and normative lineage, not empirical proof. The engineering translation is concrete: high-impact plans should carry rights, review channels, reversibility checks, approval thresholds, and correction pathways. Corrigibility is not an attitude the model claims to have; it is the persistence of update, refusal, appeal, shutdown, rollback, and audit paths.
 
-This moves the book away from treating agency as a sentiment attached to safety prose. Agency is the user's remaining ability to shape, reject, inspect, and recover from the system's action. Dignity is not reducible to comfort; it includes not being converted into a managed object by an optimizer. Corrigibility is the architecture's willingness to keep those channels open even when closing them would make the plan faster.
+This moves the book away from treating agency as a sentiment attached to safety prose. Agency is the user's remaining ability to shape, reject, inspect, and recover from the system's action. Dignity is not reducible to comfort; it includes not being converted into a managed object by an optimizer. Corrigibility is the architecture's willingness to keep those channels open even when closing them would make the plan faster, cheaper, or easier to automate.
 
 ## Why existing approaches are insufficient
 
@@ -73,6 +73,8 @@ The missing object is an agency-rights check attached to high-impact plans. It a
 That check has to be concrete enough to fail. If the user technically has an appeal path but cannot find it, cannot use it before the effect occurs, or cannot obtain a meaningful remedy, the path should be recorded as missing or degraded. The stack should produce an agency residual rather than pretending the right exists because it appears in a policy.
 
 Rights therefore need usability states, not just field presence. A right can be `available`, `available_but_costly`, `late`, `degraded`, `denied`, `residual_only`, or `not_applicable`. The checklist should record whether a review or appeal path is materially usable by the affected person before the relevant effect, whether a rollback can repair the actual harm class, and why any path was denied or degraded.
+
+That usability requirement keeps the chapter from treating rights language as decoration. A right that cannot be exercised at the moment of impact is not an operational constraint; it is a residual the system must surface. The engineering question is therefore not whether the architecture says it respects agency, but whether the affected person still has a working handle on the system when that handle matters.
 
 ## Core Claim
 
