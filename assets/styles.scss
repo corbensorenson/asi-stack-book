@@ -189,6 +189,18 @@ html[data-asi-reading-mode="human"] .asi-core-claim-marker {
   display: none !important;
 }
 
+.asi-support-boundary-human {
+  display: none;
+}
+
+html[data-asi-reading-mode="human"] .asi-support-boilerplate-ai {
+  display: none !important;
+}
+
+html[data-asi-reading-mode="human"] .asi-support-boundary-human {
+  display: inline;
+}
+
 html[data-asi-reading-mode="human"] .asi-live-only,
 html[data-asi-reading-mode="human"] .asi-ai-only,
 html[data-asi-reading-mode="ai"] .asi-human-only {

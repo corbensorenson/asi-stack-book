@@ -27,6 +27,8 @@
     "3:formalization hooks"
   ]);
   const coreClaimMarkerPattern = /^\[([A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+)\]\s+(.+)$/;
+  const supportBoundaryPattern = /(The claim remains at argument support\.|The current support state is argument\.|The current support state is argument, so the claim should be read as a design rationale unless a later evidence bundle promotes it\.)/g;
+  const humanSupportBoundary = "Evidence boundary: architectural argument.";
 
   document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
 
@@ -120,6 +122,37 @@
     });
   }
 
+  function markSupportBoundaryPhrases() {
+    document.querySelectorAll("main.content p, #quarto-document-content p").forEach((paragraph) => {
+      if (paragraph.querySelector(".asi-support-boilerplate-ai")) return;
+      const text = (paragraph.textContent || "").replace(/\s+/g, " ").trim();
+      if (!supportBoundaryPattern.test(text)) {
+        supportBoundaryPattern.lastIndex = 0;
+        return;
+      }
+      supportBoundaryPattern.lastIndex = 0;
+      paragraph.setAttribute("data-asi-support-boundary", "true");
+      paragraph.textContent = "";
+      let cursor = 0;
+      for (const match of text.matchAll(supportBoundaryPattern)) {
+        if (match.index > cursor) {
+          paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
+        }
+        const aiPhrase = document.createElement("span");
+        aiPhrase.className = "asi-support-boilerplate-ai";
+        aiPhrase.textContent = match[0];
+        const humanPhrase = document.createElement("span");
+        humanPhrase.className = "asi-support-boundary-human";
+        humanPhrase.textContent = humanSupportBoundary;
+        paragraph.append(aiPhrase, humanPhrase);
+        cursor = match.index + match[0].length;
+      }
+      if (cursor < text.length) {
+        paragraph.append(document.createTextNode(text.slice(cursor)));
+      }
+    });
+  }
+
   function normalizeMode(mode) {
     return mode === humanMode ? humanMode : aiMode;
   }
@@ -208,6 +241,7 @@
     markLiveTocLinks(liveIds);
     markViewModeTocLinks();
     markCoreClaimMarkers();
+    markSupportBoundaryPhrases();
     insertToggle();
     setMode(initialMode());
   });

@@ -25,6 +25,12 @@ import build_reader_edition
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT = ROOT / "build" / "reader_evidence_boundaries_report.json"
+HUMAN_ARGUMENT_BOUNDARY = "Evidence boundary: architectural argument."
+REPEATED_SUPPORT_BOILERPLATE = (
+    "The claim remains at `argument` support.",
+    "The current support state is `argument`.",
+    "The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it.",
+)
 
 CORE_MARKER_RE = re.compile(
     r"\[(?P<chapter_id>[A-Za-z0-9_-]+)\.core,\s*"
@@ -86,6 +92,7 @@ def has_plain_support_boundary(section: str, support: str) -> bool:
         rf"current support state is `?{support}`?",
         rf"support remains `?{support}`?",
         rf"support state remains `?{support}`?",
+        rf"evidence boundary:\s*architectural {support}",
     ]
     return any(re.search(pattern, normalized) for pattern in patterns)
 
@@ -141,6 +148,9 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             "source_marker_count": len(source_markers),
             "reader_raw_marker_count": reader_raw_marker_count,
             "reader_claim_text_retained": False,
+            "reader_repeated_support_boilerplate_count": sum(
+                reader_text.count(phrase) for phrase in REPEATED_SUPPORT_BOILERPLATE
+            ),
             "plain_support_boundary": False,
         }
 
@@ -154,6 +164,10 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             )
             records.append(record)
             continue
+        if record["reader_repeated_support_boilerplate_count"]:
+            errors.append(
+                f"{relative}: generated reader chapter retained repeated AI/research support boilerplate."
+            )
 
         source_marker = source_markers[0]
         record["source_label"] = source_marker["label"]

@@ -350,14 +350,18 @@ async function validateChapterPage(page, fileUrl, pageId) {
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
   await page.waitForSelector(".asi-core-claim-marker", { state: "attached", timeout: 5000 });
+  await page.waitForSelector(".asi-support-boilerplate-ai", { state: "attached", timeout: 5000 });
 
   const liveSections = await page.locator('section[data-asi-live-section="true"]').count();
   const humanBlocks = await page.locator(".asi-human-only").count();
   const claimMarkers = await page.locator(".asi-core-claim-marker").count();
+  const supportBoilerplate = await page.locator(".asi-support-boilerplate-ai").count();
   const liveVisibleHuman = await visibleCount(page, 'section[data-asi-live-section="true"]');
   const humanVisibleHuman = await visibleCount(page, ".asi-human-only");
   const claimMarkersVisibleHuman = await visibleCount(page, ".asi-core-claim-marker");
   const claimTextVisibleHuman = await visibleCount(page, ".asi-core-claim-text");
+  const supportBoilerplateVisibleHuman = await visibleCount(page, ".asi-support-boilerplate-ai");
+  const supportBoundaryVisibleHuman = await visibleCount(page, ".asi-support-boundary-human");
   const liveTocVisibleHuman = await visibleCount(page, '#TOC [data-asi-live-toc-link="true"]');
   const humanStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const humanLayout = await validateResponsiveLayout(page, pageId, "human");
@@ -367,10 +371,13 @@ async function validateChapterPage(page, fileUrl, pageId) {
     live_sections: liveSections,
     human_blocks: humanBlocks,
     core_claim_markers: claimMarkers,
+    support_boilerplate_phrases: supportBoilerplate,
     visible_live_sections: liveVisibleHuman,
     visible_human_blocks: humanVisibleHuman,
     visible_core_claim_markers: claimMarkersVisibleHuman,
     visible_core_claim_text: claimTextVisibleHuman,
+    visible_support_boilerplate_phrases: supportBoilerplateVisibleHuman,
+    visible_human_support_boundaries: supportBoundaryVisibleHuman,
     visible_live_toc_links: liveTocVisibleHuman,
     status_text: humanStatus || "",
     layout: humanLayout,
@@ -380,11 +387,14 @@ async function validateChapterPage(page, fileUrl, pageId) {
   if (liveSections <= 0) throw new Error(`${pageId}: no live-only sections were marked.`);
   if (humanBlocks <= 0) throw new Error(`${pageId}: no human-only bridge block rendered.`);
   if (claimMarkers <= 0) throw new Error(`${pageId}: no core claim markers were wrapped for reading-mode control.`);
+  if (supportBoilerplate <= 0) throw new Error(`${pageId}: no support-boundary boilerplate was wrapped for reading-mode control.`);
   if (liveVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${liveVisibleHuman} live-only sections visible.`);
   if (liveTocVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${liveTocVisibleHuman} live-only TOC links visible.`);
   if (humanVisibleHuman <= 0) throw new Error(`${pageId}: Human view did not show the human-only bridge.`);
   if (claimMarkersVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${claimMarkersVisibleHuman} raw core claim markers visible.`);
   if (claimTextVisibleHuman <= 0) throw new Error(`${pageId}: Human view hid the core claim text with the marker.`);
+  if (supportBoilerplateVisibleHuman !== 0) throw new Error(`${pageId}: Human view left ${supportBoilerplateVisibleHuman} repeated support boilerplate phrases visible.`);
+  if (supportBoundaryVisibleHuman <= 0) throw new Error(`${pageId}: Human view did not show the compact evidence-boundary phrase.`);
   if (!(humanStatus || "").includes("Human view active.")) throw new Error(`${pageId}: Human view status text did not update.`);
 
   await page.locator('[data-asi-reading-choice="ai"]').click();
@@ -392,6 +402,8 @@ async function validateChapterPage(page, fileUrl, pageId) {
   const liveVisibleAi = await visibleCount(page, 'section[data-asi-live-section="true"]');
   const humanVisibleAi = await visibleCount(page, ".asi-human-only");
   const claimMarkersVisibleAi = await visibleCount(page, ".asi-core-claim-marker");
+  const supportBoilerplateVisibleAi = await visibleCount(page, ".asi-support-boilerplate-ai");
+  const supportBoundaryVisibleAi = await visibleCount(page, ".asi-support-boundary-human");
   const aiStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
   const aiLayout = await validateResponsiveLayout(page, pageId, "ai");
   const aiDiagrams = await validateRenderedDiagrams(page, pageId, "ai");
@@ -399,6 +411,8 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_live_sections: liveVisibleAi,
     visible_human_blocks: humanVisibleAi,
     visible_core_claim_markers: claimMarkersVisibleAi,
+    visible_support_boilerplate_phrases: supportBoilerplateVisibleAi,
+    visible_human_support_boundaries: supportBoundaryVisibleAi,
     status_text: aiStatus || "",
     url: page.url(),
     layout: aiLayout,
@@ -407,6 +421,8 @@ async function validateChapterPage(page, fileUrl, pageId) {
   if (liveVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore live-only sections.`);
   if (humanVisibleAi !== 0) throw new Error(`${pageId}: AI view left ${humanVisibleAi} human-only bridge blocks visible.`);
   if (claimMarkersVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore raw core claim markers.`);
+  if (supportBoilerplateVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore repeated support boilerplate phrases.`);
+  if (supportBoundaryVisibleAi !== 0) throw new Error(`${pageId}: AI view left ${supportBoundaryVisibleAi} compact human evidence-boundary phrases visible.`);
   if (!page.url().includes("view=ai")) throw new Error(`${pageId}: AI click did not update the URL mode.`);
   if (!(aiStatus || "").includes("AI/research view active.")) throw new Error(`${pageId}: AI view status text did not update.`);
 
@@ -425,12 +441,16 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_live_sections: await visibleCount(page, 'section[data-asi-live-section="true"]'),
     visible_human_blocks: await visibleCount(page, ".asi-human-only"),
     visible_core_claim_markers: await visibleCount(page, ".asi-core-claim-marker"),
+    visible_support_boilerplate_phrases: await visibleCount(page, ".asi-support-boilerplate-ai"),
+    visible_human_support_boundaries: await visibleCount(page, ".asi-support-boundary-human"),
     layout: await validateResponsiveLayout(page, pageId, "ai-url"),
     diagrams: await validateRenderedDiagrams(page, pageId, "ai-url"),
   };
   if (record.checks.ai_url_mode.visible_live_sections <= 0) throw new Error(`${pageId}: ?view=ai did not show live-only sections.`);
   if (record.checks.ai_url_mode.visible_human_blocks !== 0) throw new Error(`${pageId}: ?view=ai did not hide human bridge blocks.`);
   if (record.checks.ai_url_mode.visible_core_claim_markers <= 0) throw new Error(`${pageId}: ?view=ai did not show raw core claim markers.`);
+  if (record.checks.ai_url_mode.visible_support_boilerplate_phrases <= 0) throw new Error(`${pageId}: ?view=ai did not show repeated support boilerplate phrases.`);
+  if (record.checks.ai_url_mode.visible_human_support_boundaries !== 0) throw new Error(`${pageId}: ?view=ai did not hide compact human evidence-boundary phrases.`);
 
   return record;
 }

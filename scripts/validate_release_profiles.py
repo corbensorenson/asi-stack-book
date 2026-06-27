@@ -520,6 +520,13 @@ def main() -> None:
             errors.append("reader_evidence_boundary_validation.required_reader_claim_text must be true.")
         if evidence_boundary_policy.get("required_plain_support_boundary") is not True:
             errors.append("reader_evidence_boundary_validation.required_plain_support_boundary must be true.")
+        if evidence_boundary_policy.get("strip_repeated_support_boilerplate") is not True:
+            errors.append("reader_evidence_boundary_validation.strip_repeated_support_boilerplate must be true.")
+        if evidence_boundary_policy.get("human_argument_boundary_phrase") != "Evidence boundary: architectural argument.":
+            errors.append(
+                "reader_evidence_boundary_validation.human_argument_boundary_phrase must be "
+                "'Evidence boundary: architectural argument.'."
+            )
         purpose = evidence_boundary_policy.get("purpose")
         if not isinstance(purpose, str) or not purpose.strip():
             errors.append("reader_evidence_boundary_validation.purpose must be a non-empty string.")
@@ -546,6 +553,9 @@ def main() -> None:
             "ai_toc_link_marker": "data-asi-ai-toc-link",
             "core_claim_marker_class": "asi-core-claim-marker",
             "human_view_core_claim_marker_policy": "hide raw bracketed core-claim markers in Human view while preserving claim text and support-state prose",
+            "support_boundary_ai_class": "asi-support-boilerplate-ai",
+            "support_boundary_human_class": "asi-support-boundary-human",
+            "human_view_support_boundary_policy": "replace repeated AI/research support-state boilerplate in Human view with a compact evidence-boundary phrase while preserving the original sentence in AI view",
             "assistive_description_class": "asi-sr-only",
             "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
             "ai_only_class": "asi-ai-only",

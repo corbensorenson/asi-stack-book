@@ -33,6 +33,12 @@ CORE_CLAIM_MARKER_RE = re.compile(
     r"support:\s*(?P<support>[^\]]+)\]\s+",
     re.MULTILINE,
 )
+SUPPORT_BOILERPLATE_RE = re.compile(
+    r"The claim remains at `argument` support\.|"
+    r"The current support state is `argument`\.|"
+    r"The current support state is `argument`, so the claim should be read as a design rationale unless a later evidence bundle promotes it\."
+)
+HUMAN_ARGUMENT_BOUNDARY = "Evidence boundary: architectural argument."
 
 
 def load_json(path: Path) -> object:
@@ -164,6 +170,11 @@ def strip_core_claim_markers(text: str) -> tuple[str, int]:
     return cleaned, count
 
 
+def humanize_support_boilerplate(text: str) -> tuple[str, int]:
+    cleaned, count = SUPPORT_BOILERPLATE_RE.subn(HUMAN_ARGUMENT_BOUNDARY, text)
+    return cleaned, count
+
+
 def find_profile(profile_id: str) -> dict:
     data = load_release_profiles()
     profiles = data.get("profiles", [])
@@ -203,6 +214,7 @@ def clean_file(
     cleaned, removed = strip_sections(text, strip_headings)
     cleaned, view_block_counts = apply_reader_view_blocks(cleaned)
     cleaned, marker_count = strip_core_claim_markers(cleaned)
+    cleaned, support_boilerplate_count = humanize_support_boilerplate(cleaned)
     if chapter_title:
         cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -210,6 +222,8 @@ def clean_file(
     removed.update({key: count for key, count in view_block_counts.items() if count})
     if marker_count:
         removed["core_claim_markers_removed"] = marker_count
+    if support_boilerplate_count:
+        removed["support_boilerplate_humanized"] = support_boilerplate_count
     return removed
 
 

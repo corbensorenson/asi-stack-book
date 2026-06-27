@@ -84,6 +84,10 @@ def main() -> None:
         errors.append("assets/styles.scss is missing the human-mode TOC section-number hide rule")
     if 'html[data-asi-reading-mode="human"] .asi-core-claim-marker' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode core claim marker hide rule")
+    if 'html[data-asi-reading-mode="human"] .asi-support-boilerplate-ai' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode support-boilerplate hide rule")
+    if 'html[data-asi-reading-mode="human"] .asi-support-boundary-human' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode support-boundary display rule")
     if ".asi-sr-only" not in style_text:
         errors.append("assets/styles.scss is missing the assistive-only helper class")
     if 'html[data-asi-reading-mode="human"] .asi-human-only' not in style_text:
@@ -107,6 +111,9 @@ def main() -> None:
         "ai_toc_link_marker": "data-asi-ai-toc-link",
         "core_claim_marker_class": "asi-core-claim-marker",
         "human_view_core_claim_marker_policy": "hide raw bracketed core-claim markers in Human view while preserving claim text and support-state prose",
+        "support_boundary_ai_class": "asi-support-boilerplate-ai",
+        "support_boundary_human_class": "asi-support-boundary-human",
+        "human_view_support_boundary_policy": "replace repeated AI/research support-state boilerplate in Human view with a compact evidence-boundary phrase while preserving the original sentence in AI view",
         "assistive_description_class": "asi-sr-only",
         "human_view_section_number_policy": "hide rendered section numbers in Human view to avoid numbering gaps left by stripped live-only sections and unheaded bridge prose",
         "ai_only_class": "asi-ai-only",
@@ -142,6 +149,13 @@ def main() -> None:
         "core claim marker class": "asi-core-claim-marker",
         "core claim text class": "asi-core-claim-text",
         "core claim data marker": "data-asi-core-claim",
+        "support boundary regex": "const supportBoundaryPattern",
+        "support boundary replacement copy": "Evidence boundary: architectural argument.",
+        "support boundary function": "function markSupportBoundaryPhrases",
+        "support boundary call": "markSupportBoundaryPhrases()",
+        "support AI class": "asi-support-boilerplate-ai",
+        "support human class": "asi-support-boundary-human",
+        "support data marker": "data-asi-support-boundary",
         "toc link marker function": "function markLiveTocLinks",
         "toc link marker call": "markLiveTocLinks(liveIds)",
         "ai status copy": "AI/research view active.",
