@@ -205,6 +205,8 @@ The strongest invariant is asymmetric: support can move up only when the require
 
 Another invariant is scope non-expansion. A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.
 
+Promotion records also preserve downgraded and rejected transitions, so failed evidence attempts remain part of later interpretation.
+
 ## Failure modes
 
 - Support-state inflation.

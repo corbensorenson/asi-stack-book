@@ -204,6 +204,8 @@ This table is a guardrail against graph-authority drift. A node may be perfectly
 
 The strongest invariant is provenance: a grounded node must say what grounds it. If no provenance exists, the node can still be useful as a hypothesis or planning construct, but it must not masquerade as verified knowledge.
 
+Consumer-specific adequacy must remain visible, because one useful representation can still be unsafe for another downstream use.
+
 ## Failure modes
 
 - Hand-built ontology brittleness.

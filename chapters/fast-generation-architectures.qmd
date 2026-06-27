@@ -235,6 +235,8 @@ The invariants bind speed to governance.
 
 These invariants are intentionally conservative. They do not forbid fast decoding. They prevent fast decoding from laundering unverified output into the stack as if it were a proven capability.
 
+Acceptance logs must retain rejected drafts and repair attempts when they explain latency, quality, or residual risk.
+
 ## Failure modes
 
 Fast generation fails when speed is measured at the wrong boundary.

@@ -185,6 +185,10 @@ Address stability is what makes later verification possible: a claim should not 
 
 Another invariant is non-widening materialization. A context packet cannot broaden authority, source scope, task scope, or permitted use relative to its request and mount policy. If downstream work needs more, it asks again.
 
+Lease expiry and permitted-use constraints travel with derived views, summaries, citations, and replay packets.
+
+Replay packets also preserve mount faults so later auditors can distinguish missing context from accepted context.
+
 ## Failure modes
 
 - Flat transcript memory.

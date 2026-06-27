@@ -159,6 +159,8 @@ The strongest invariant is evidence separation. A source note, schema validation
 
 Another invariant is stable addressability. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
 
+Release records must also preserve what was not reviewed, rendered, proved, tested, or packaged in each version.
+
 ## Failure modes
 
 - Public site diverges from Quarto source.

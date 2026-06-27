@@ -214,6 +214,8 @@ A plan node inherits the parent command's authority ceiling unless governance na
 
 Stop-condition preservation is equally important. Replanning after failure may find a new path, but it should not erase the condition that told the original plan when to stop, escalate, or ask for review.
 
+Plan provenance must also preserve discarded decompositions when their rejection explains risk, cost, authority, or verification burden.
+
 ## Failure modes
 
 - Scope creep.

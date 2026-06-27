@@ -204,6 +204,8 @@ The important invariant is that selection and authorization are different predic
 
 Another invariant is least-capable adequate routing. The router should not select a stronger, broader, or more privileged specialist unless the task's risk, context demand, verifier requirement, or fallback policy justifies it.
 
+Specialist retirement and readiness downgrade remain routable states, so old capability does not silently stay in circulation.
+
 ## Failure modes
 
 - Wrong specialist selection.

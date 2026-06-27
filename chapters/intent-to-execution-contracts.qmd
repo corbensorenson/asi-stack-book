@@ -166,6 +166,10 @@ The key invariant is preservation across compilation: the plan, job, artifact, a
 
 A second invariant is acceptance separability. Producing an artifact, running a tool, or satisfying a subtask is not the same as satisfying the parent intent. The trace must keep local completion separate from contract satisfaction.
 
+Residual obligations also survive acceptance, so later repair cannot treat partial success as closed intent.
+
+Contract closure requires an explicit acceptance state, not merely the absence of an error.
+
 ## Failure modes
 
 - Response mistaken for completed work.

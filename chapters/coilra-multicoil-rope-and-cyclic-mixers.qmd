@@ -187,6 +187,8 @@ The invariant is boundary preservation. A structural receipt can be valuable eve
 
 Another invariant is baseline symmetry. A cyclic candidate and its ordinary baselines should face the same workload, metric, data condition, hardware notes, and fallback policy before a tradeoff is called favorable.
 
+Adoption records also preserve failed comparisons, because an elegant substrate may still lose under governed workload conditions.
+
 ## Failure modes
 
 - Mathematical elegance outruns kernels and baselines.

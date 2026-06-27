@@ -198,6 +198,8 @@ These classes are intentionally mundane. Most authority failures are mundane too
 
 The operational invariant is monotone by default: transitions preserve or lower authority unless an explicit governance grant raises it. A layer can carry information across a boundary only under the permission class granted for that information. Reading source text, quoting source text, transforming source text, using it as behavioral instruction, and taking an external action are different permissions.
 
+A boundary record must make grant expiry, revocation, delegation depth, and denied escalation visible to every downstream consumer.
+
 ## Failure modes
 
 - Authority creep.

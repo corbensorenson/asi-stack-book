@@ -191,6 +191,8 @@ The deletion invariant is strict: deleted or revoked source material cannot reap
 
 Another invariant is branch containment. Experimental summaries, speculative repairs, and alternate plans can branch, but they do not become committed memory unless merge policy, authority, taint, contradiction, and residual checks pass.
 
+Mount provenance must remain visible after branching, because a clean-looking derivative can still carry tainted source obligations.
+
 ## Failure modes
 
 - Memory poisoning.

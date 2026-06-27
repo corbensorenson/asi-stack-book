@@ -176,6 +176,10 @@ Procedural memory consumes benchmark ratchets as retirement pressure. If a gener
 
 The strongest invariant is claim specificity. A benchmark can support only the claim it actually measured, under the recorded conditions. Broader readiness, deployment safety, model quality, or ASI-progress claims require their own evidence.
 
+Ratchets must preserve old baselines and failed attempts so benchmark progress cannot erase regression history.
+
+Evaluator updates also need versioned admission rules before old scores and new scores are compared.
+
 ## Failure modes
 
 - Benchmark overfitting.

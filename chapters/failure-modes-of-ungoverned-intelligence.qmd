@@ -186,6 +186,8 @@ The first invariant is coverage: no named high-level risk should remain without 
 
 Another invariant is no silent normalization. A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.
 
+Failure ownership also cannot transfer quietly; the receiving layer must accept the residual before the risk can move.
+
 ## Failure modes
 
 - Evaluator capture.

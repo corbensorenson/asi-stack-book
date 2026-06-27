@@ -186,6 +186,8 @@ The strongest invariant is alias honesty: if a slot can refer to more than one h
 
 Another invariant is non-widening memory authority. Mapping a governed context packet into slots, recurrence traces, or compressed attention cannot expand its authority, lease, permitted use, or adequacy claim.
 
+Recurrence traces must preserve refresh, eviction, and exit decisions when later reasoning depends on remembered state.
+
 ## Failure modes
 
 - Alias hiding.

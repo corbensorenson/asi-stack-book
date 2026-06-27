@@ -184,6 +184,8 @@ The invariant is not "small is good." It is "small is accountable." A compact re
 
 A second invariant is verifier separation. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
 
+Residual honesty also requires retaining the expensive reference path when the compact path becomes the default.
+
 ## Failure modes
 
 - False lossless claims.
