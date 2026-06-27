@@ -74,6 +74,8 @@ def main() -> None:
         fail(["book_structure.json must contain an object."])
     chapters = flatten_chapters(structure)
     appendices = structure.get("appendices", [])
+    front_matter = structure.get("front_matter", [])
+    book_page_count = len(front_matter) + len(chapters) + len(appendices)
     source_records = load_json(ROOT / "sources" / "source_inventory.json")
     proof_manifest = load_json(ROOT / "proofs" / "proof_manifest.json")
     if not isinstance(source_records, list):
@@ -110,6 +112,7 @@ def main() -> None:
         f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates |",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
+        f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         f"must be at least 110 words excluding the source-only heading, with the current minimum at {human_min_words} words",
     ]
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal whole-book Human view validation
+
+- Strengthened `scripts/validate_live_human_view.py` so post-render validation checks that all 67 rendered book pages carry the `AI view` / `Human view` toggle, URL mode contract, and assistive status strings, while preserving the stricter chapter-only checks for live-only heading targets, page-TOC targets, and `.asi-human-only` bridge blocks. Updated the v1.0 status, site-quality standard, writing runbook, release-edition docs, and publication-readiness notes to reflect whole-book toggle coverage. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal implementation horizon guard
 
 - Added `scripts/validate_implementation_horizons.py` to machine-check that every manifest chapter has a concrete minimum viable implementation and mature beyond-state-of-the-art endpoint, and that generated Appendix K matches `book_structure.json` in manifest order. Wired the guard into publication validation, book validation, the GitHub Pages workflow, README, living update workflow, site quality standard, v1.0 candidate gate, prewriting gate, publication-readiness checklist, and full-book goal template. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, implementation result, reader artifact, ebook, or audio artifact is claimed.

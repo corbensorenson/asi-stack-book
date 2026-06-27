@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Validate the rendered live-site Human view surface after Quarto render.
 
-This is a static rendered-HTML check. It verifies that every rendered chapter
-page includes the reading-mode toggle asset and that the live-only headings in
-the chapter source are present in HTML at levels the runtime script can mark
-and hide in Human view. It does not claim that a reviewed reader release,
-ebook, or audiobook exists.
+This is a static rendered-HTML check. It verifies that every rendered book page
+includes the reading-mode toggle asset, and that chapter live-only headings are
+present in HTML at levels the runtime script can mark and hide in Human view. It
+does not claim that a reviewed reader release, ebook, or audiobook exists.
 """
 
 from __future__ import annotations
@@ -86,6 +85,30 @@ def flatten_chapters(structure: dict) -> list[dict]:
     return chapters
 
 
+def book_pages(structure: dict) -> list[dict[str, object]]:
+    pages: list[dict[str, object]] = []
+    for source_file in structure.get("front_matter", []):
+        if isinstance(source_file, str):
+            pages.append(
+                {
+                    "kind": "front_matter",
+                    "id": Path(source_file).stem,
+                    "title": Path(source_file).stem,
+                    "file": source_file,
+                }
+            )
+    for chapter in flatten_chapters(structure):
+        page = dict(chapter)
+        page["kind"] = "chapter"
+        pages.append(page)
+    for appendix in structure.get("appendices", []):
+        if isinstance(appendix, dict):
+            page = dict(appendix)
+            page["kind"] = "appendix"
+            pages.append(page)
+    return pages
+
+
 def normalize_html_heading(title: str) -> str:
     normalized = re.sub(r"\s+", " ", title.strip())
     normalized = re.sub(r"^\d+(\.\d+)*\s+", "", normalized)
@@ -150,6 +173,7 @@ def validate(site_dir: Path) -> dict[str, object]:
 
     errors: list[str] = []
     records: list[dict[str, object]] = []
+    chapter_records: list[dict[str, object]] = []
     total_live_headings = 0
     total_live_toc_targets = 0
     total_view_blocks = {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0}
@@ -157,18 +181,28 @@ def validate(site_dir: Path) -> dict[str, object]:
     if not site_dir.exists():
         errors.append(f"Rendered site directory is missing: {site_dir.relative_to(ROOT)}")
 
-    for chapter in flatten_chapters(structure):
-        source_file = str(chapter.get("file", ""))
+    for page in book_pages(structure):
+        page_kind = str(page.get("kind", "unknown"))
+        source_file = str(page.get("file", ""))
         source_path = ROOT / source_file
         html_path = site_dir / Path(source_file).with_suffix(".html")
-        expected = source_live_heading_keys(source_path, strip_headings)
-        expected_view_classes = source_view_class_counts(source_path)
+        expected = (
+            source_live_heading_keys(source_path, strip_headings)
+            if source_path.exists() and page_kind == "chapter"
+            else []
+        )
+        expected_view_classes = (
+            source_view_class_counts(source_path)
+            if source_path.exists() and page_kind == "chapter"
+            else {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0}
+        )
         total_live_headings += len(expected)
         for css_class, count in expected_view_classes.items():
             total_view_blocks[css_class] += count
 
         record: dict[str, object] = {
-            "chapter_id": chapter.get("id", ""),
+            "page_kind": page_kind,
+            "page_id": page.get("id", ""),
             "source_file": source_file,
             "html_file": str(html_path.relative_to(ROOT)) if html_path.exists() else str(html_path),
             "live_only_heading_count": len(expected),
@@ -176,8 +210,13 @@ def validate(site_dir: Path) -> dict[str, object]:
             "view_mode_blocks": expected_view_classes,
         }
 
+        if not source_path.exists():
+            errors.append(f"{source_file}: source book page is missing.")
+            records.append(record)
+            continue
+
         if not html_path.exists():
-            errors.append(f"{source_file}: rendered chapter HTML is missing at {html_path}")
+            errors.append(f"{source_file}: rendered book-page HTML is missing at {html_path}")
             records.append(record)
             continue
 
@@ -252,17 +291,21 @@ def validate(site_dir: Path) -> dict[str, object]:
             )
 
         records.append(record)
+        if page_kind == "chapter":
+            chapter_records.append(record)
 
     return {
-        "schema_version": "0.1",
+        "schema_version": "0.2",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "site_dir": str(site_dir),
-        "chapter_count": len(records),
+        "page_count": len(records),
+        "chapter_count": len(chapter_records),
         "live_only_heading_count": total_live_headings,
         "live_only_toc_target_count": total_live_toc_targets,
         "view_mode_blocks": total_view_blocks,
         "status": "pass" if not errors else "fail",
-        "chapter_records": records,
+        "page_records": records,
+        "chapter_records": chapter_records,
         "errors": errors,
         "non_claims": [
             "This static check validates rendered live-site Human view wiring only.",
@@ -294,6 +337,7 @@ def main() -> None:
 
     print(
         "Live Human view validation passed: "
+        f"{report['page_count']} rendered book pages, "
         f"{report['chapter_count']} rendered chapter pages, "
         f"{report['live_only_heading_count']} live-only headings available for runtime hiding, "
         f"{report['live_only_toc_target_count']} live-only TOC targets available for runtime hiding, "
