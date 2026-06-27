@@ -218,7 +218,7 @@ The subtle failure is field laundering: a vague sentence is copied into a formal
 
 A canonical command-contract template used by future chapter drafting and experiment prompts.
 
-The smallest useful implementation is a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate validation state, field provenance, field confidence, constraints, bounded defaults, output, verification, approvals, authority basis, re-contract points, dispatch blockers, non-claims, and failure behavior without claiming the command has been executed.
+The semantic interface begins as a `command_contract` schema and fixture. The fixture should be public-safe and should demonstrate validation state, field provenance, field confidence, constraints, bounded defaults, output, verification, approvals, authority basis, re-contract points, dispatch blockers, non-claims, and failure behavior without claiming the command has been executed.
 
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 

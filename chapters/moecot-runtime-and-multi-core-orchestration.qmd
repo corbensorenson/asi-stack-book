@@ -186,7 +186,7 @@ The subtle failure is replay theater. The runtime keeps a replay handle for the 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is an orchestration schema and fixture that records the runtime crosswalk without pretending a runtime was executed.
+The first MoECOT-facing artifact is an orchestration schema and fixture that records the runtime crosswalk without pretending a runtime was executed.
 
 The `moecot_orchestration_record` schema is intentionally conservative. It records run identity, runtime packet state, command reference, orchestrator, route head, cores, gates, route authority ledger, ledgers, readiness gates, replay, denied routes, failed gates, missing replay refs, handoff, blockers, residuals, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, source-claim state, and non-claims. It gives future MoECOT work a place to attach real artifacts without promoting them prematurely.
 

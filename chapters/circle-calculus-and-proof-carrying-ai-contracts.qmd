@@ -194,7 +194,7 @@ The subtle failure is proof cargo-culting: diagrams, theorem names, and receipt 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.
+The first transportable Circle artifact is a proof or contract record with theorem IDs, proof status, content fingerprint, deterministic fields, validation commands, consumer checks, ordinary baselines, and non-claims.
 
 The current implementation has three public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including receipt state, not-run resolver and replay states, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, and requiring workload, baseline, metric, and evidence artifacts before downstream promotion. A Circle-specific generated contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
 

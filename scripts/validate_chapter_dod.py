@@ -60,6 +60,7 @@ BANNED_BEYOND_BOILERPLATE = [
     "The passage-reviewed sources justify",
     "The crosswalk identifies",
     "A mature implementation would make that contract visible through",
+    "The smallest useful implementation is",
     "run in this pass",
     "mapped in this pass",
 ]

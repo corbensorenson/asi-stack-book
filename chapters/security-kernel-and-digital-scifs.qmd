@@ -180,7 +180,7 @@ Another failure is sanitized-output laundering. A summary can carry enough deriv
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
+The security kernel can begin with a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
 
 The next useful implementation step is a leak-path fixture set: one allowed handle substitution, one denied destination, one overbroad SCIF context request, one sanitized summary with residual leak risk, and one attempted handle reuse after expiration. That would exercise the boundary without claiming production containment.
 

@@ -175,7 +175,7 @@ The subtle failure is proof laundering. A valid local predicate, external theore
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, artifact lane, formal target, artifact refs, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. It does not prove the target.
+The proof envelope begins with the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, artifact lane, formal target, artifact refs, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. It does not prove the target.
 
 The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage and all 112 are implemented as formal-invariant Lean candidates. The proof artifact traceability audit checks that those targets are wired through manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. Semantic proof adequacy review remains a separate planned check.
 

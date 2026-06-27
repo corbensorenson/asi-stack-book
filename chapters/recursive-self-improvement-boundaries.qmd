@@ -207,7 +207,7 @@ The subtle failure is acceleration pressure. A self-improvement loop can argue t
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
+The first self-improvement artifact is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
 
 The next useful implementation step is a canary-transition fixture with one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. That would make the self-improvement boundary concrete without claiming self-improvement success.
 

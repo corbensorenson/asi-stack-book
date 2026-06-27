@@ -180,7 +180,7 @@ The subtle failure is review laundering. A claim rejected by the ledger or verif
 
 A tribunal protocol for claim/artifact review with reviewer roles and output schema.
 
-The smallest useful implementation is a `tribunal_review_record` schema and fixture. It should show review state, dossier boundary, reviewer independence note, reviewer roles, dossier refs, adversarial probes, cycle cap, prior review refs, unchanged-evidence guard, retrieval expansion policy, findings, evidence refs, dissent, unresolved issues, verdict, required actions, constraint effects, human-adjudication state, and non-claims.
+Tribunal review starts with a `tribunal_review_record` schema and fixture. It should show review state, dossier boundary, reviewer independence note, reviewer roles, dossier refs, adversarial probes, cycle cap, prior review refs, unchanged-evidence guard, retrieval expansion policy, findings, evidence refs, dissent, unresolved issues, verdict, required actions, constraint effects, human-adjudication state, and non-claims.
 
 That fixture validates the review envelope. It does not prove that reviewers were independent, that adversarial probes found the right issues, or that a verdict was correct.
 

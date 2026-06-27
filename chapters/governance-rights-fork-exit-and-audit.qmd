@@ -188,7 +188,7 @@ The subtle failure is rights theater. The system publishes rights language, but 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
+The first rights surface is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
 
 The next useful fixture set is a rights receipt suite: one complete audit response, one justified redaction with appeal path, one exit export with portable state, and one fork request denied because safety obligations cannot transfer. That would test material usability without claiming institutional governance.
 

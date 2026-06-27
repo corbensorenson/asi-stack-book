@@ -212,7 +212,7 @@ The most subtle failure is authority migration. A semantic graph may begin as a 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a semantic node schema and fixture. The current fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
+A first semantic representation artifact is a semantic node schema and fixture. The current fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 
 Passing the fixture does not prove a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
 

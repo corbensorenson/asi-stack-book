@@ -197,7 +197,7 @@ Goal misbinding happens when the system optimizes the wrong interpretation. Scop
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
+For intent, the first build is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
 
 The next useful implementation step is a small corpus of deliberately underspecified requests. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
 

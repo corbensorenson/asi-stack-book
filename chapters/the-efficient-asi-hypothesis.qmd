@@ -201,7 +201,7 @@ The failure pattern is not only wasting compute. It is misaccounting. Cheap infe
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
+Start with a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
 
 ## Beyond the State of the Art
 

@@ -237,7 +237,7 @@ The subtle failure is reward laundering. The policy improves the reward, then th
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
+Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
 
 The fixture records update state, target layer, policy ref, policy delta summary, training mode, feedback source, feedback admissibility, reward or preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gate refs, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, promotion decision, measurement status, support-state effect, residuals, and non-claims. It validates the record shape only. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
 

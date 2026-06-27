@@ -189,7 +189,7 @@ Three failures deserve special handling. First, a dominant source can crowd out 
 
 A context adequacy rubric and verification-bandwidth warning states.
 
-The smallest useful implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
+The first adequacy implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
 
 The existing artifact is narrower: a `context_adequacy_record` schema and fixture. It records adequacy identity, target claim, claim scope, context packet ref, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims, but it does not measure verification performance.
 

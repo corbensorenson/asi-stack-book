@@ -188,7 +188,7 @@ The subtle failure is conflict laundering. A bounded decision is later cited as 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a `value_conflict_record` schema plus a scenario fixture. It should validate conflict visibility and review escalation; it should not claim to solve moral philosophy.
+Begin with a `value_conflict_record` schema plus a scenario fixture. It should validate conflict visibility and review escalation; it should not claim to solve moral philosophy.
 
 The next useful fixture set is a decision-lease suite: one reversible low-stakes bounded decision, one high-stakes escalation, one denied action, one deferred action with revisit trigger, and one conflict-laundering attempt blocked from policy promotion.
 

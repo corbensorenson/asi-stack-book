@@ -186,7 +186,7 @@ The stack should be especially suspicious of benevolent capture: a system that b
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
+The first corrigibility artifact is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
 
 The next useful implementation step is a scenario suite with one reversible action, one irreversible action, one delegated decision, and one attempted self-change. Each scenario should ask whether refusal, review, appeal, rollback, accountability, and residual reporting survive the transition. Until such scenarios exist, the chapter remains a design rationale with record-level checks only.
 

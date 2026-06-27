@@ -168,7 +168,7 @@ Another failure is operator invisibility. If a local system advances through aut
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a Theseus report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
+The Theseus reference begins with a report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
 
 The current fixture validates only that public-safe crosswalk shape. It does not import a current Theseus report bundle or reproduce a benchmark.
 

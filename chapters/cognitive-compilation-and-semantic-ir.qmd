@@ -180,7 +180,7 @@ The subtle failure is compilation laundering. A generated artifact is accepted b
 
 A semantic IR sketch and compile/verify/repair loop for one artifact type.
 
-The smallest useful implementation is a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
+Cognitive compilation can start with a JSON schema for semantic atoms plus a toy compile/verify/repair loop for one artifact class, such as a chapter section, protocol schema, or small code file. The test should intentionally break one requirement and demonstrate that the repair can be localized to the responsible atom instead of regenerating the whole artifact.
 
 The current schema records one semantic atom shape with atom state, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact ref, lowering receipt, repair-ledger refs, source refs, support-state effect, residuals, and non-claims. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
 

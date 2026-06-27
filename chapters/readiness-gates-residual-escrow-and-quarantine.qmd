@@ -188,7 +188,7 @@ The subtle failure is gate laundering. A target fails readiness under one name, 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a readiness gate schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
+Readiness can start with a schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
 
 The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, evidence state, floor evidence, frontier evidence, inherited residuals, allowed and blocked routes, diagnostic permissions, fallback path, expiry, closure conditions, and non-claims. Passing validation does not mean a module is ready. It means the book has a public, executable contract for what a readiness decision must name before stronger tests exist.
 

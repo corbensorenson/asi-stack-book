@@ -183,7 +183,7 @@ Verification theater is the broader failure. The chapter name, theorem tag, cita
 
 A tiered proof-carrying claim schema with one non-philosophical invariant example.
 
-The smallest useful implementation is a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
+Spinoza-style verification begins with a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
 
 The fixture validates the envelope: claim scope, tier, justification type, mapping, interpretation confidence, artifact ref, artifact validity state, semantic adequacy, verifier name, verifier result field, verifier artifact refs, failed-attempt refs, formal scope, limitations, consumer requirements, downgrade rule, claim-validity effect, residual route, tribunal ref, ledger update, source refs, support-state effect, and non-claims. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
 

@@ -186,7 +186,7 @@ The subtle failure is structural adequacy laundering. A system proves that a slo
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a cyclic memory contract schema and fixture. The current fixture records memory target, memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness window, stale-read policy, coverage claim, recurrence schedule, loop exit, fallback, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references.
+Cyclic memory should first be represented as a cyclic memory contract schema and fixture. The current fixture records memory target, memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness window, stale-read policy, coverage claim, recurrence schedule, loop exit, fallback, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references.
 
 Passing the fixture does not prove a memory system works. It proves the book can represent the structural claim without blurring it into model quality.
 

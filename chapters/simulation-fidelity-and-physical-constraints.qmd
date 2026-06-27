@@ -194,7 +194,7 @@ The subtle failure is simulation laundering. A synthetic environment is used to 
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a simulation contract schema and fixture. The current fixture records contract version, claim class, scope, fidelity state, time semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximations, instrumentation effects, supported claim boundary, observed-result boundary, transfer decision, support-state effect, failure behavior, residuals, evidence references, and non-claims.
+Simulation fidelity should begin as a simulation contract schema and fixture. The current fixture records contract version, claim class, scope, fidelity state, time semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximations, instrumentation effects, supported claim boundary, observed-result boundary, transfer decision, support-state effect, failure behavior, residuals, evidence references, and non-claims.
 
 Passing the fixture does not show feasibility. It makes the feasibility claim inspectable.
 

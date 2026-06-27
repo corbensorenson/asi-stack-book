@@ -197,7 +197,7 @@ The subtle failure is efficiency laundering. A route may look cheaper because it
 
 ## Minimum Viable Implementation
 
-The smallest useful implementation is a resource budget schema and fixture. The current fixture records value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references.
+The first resource-economics artifact is a resource budget schema and fixture. The current fixture records value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references.
 
 Passing the fixture does not prove load stability or economic optimality. It gives future PlanForge, TokenMana, and benchmark work a shared budget contract.
 

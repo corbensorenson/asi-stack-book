@@ -186,7 +186,7 @@ Another failure is tool immortality. A procedure that was once verified can beco
 
 A loop closure pipeline from trace detection to verified tool record.
 
-The smallest useful implementation is a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
+Procedural memory begins with a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
 The fixture validates only a candidate tool-card shape. It does not prove repeated traces exist, that invariant abstraction is correct, that the tool works, or that regression checks passed.
 
