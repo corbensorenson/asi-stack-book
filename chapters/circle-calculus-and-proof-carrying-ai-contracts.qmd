@@ -50,7 +50,7 @@ The receipt is a passport for a structural fact, not a promotion ticket for a su
 
 The previous chapter says optional substrates need baselines and boundaries. Circle Calculus narrows that idea to proof-carrying structural facts: finite claims that can move through the stack with receipt references, deterministic fields, and replay expectations.
 
-For the reader, this is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, and what the result does not imply.
+For the reader, this is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, who may consume it, and what the result does not imply.
 :::
 
 ## Problem
@@ -202,14 +202,15 @@ The next useful implementation step is a local surrogate contract pack: one vali
 
 ## Beyond the State of the Art
 
-The mature version of Circle Calculus and Proof-Carrying AI Contracts is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Circle Calculus and Proof-Carrying AI Contracts is a proof-contract transport service. It moves finite structural facts through the ASI Stack with theorem references, deterministic fields, fingerprints, resolver state, replay commands, consumer gates, and non-claims intact.
 
 At that end state, the chapter's claim becomes an operational contract: Proof-carrying AI contracts should package finite structural facts as theorem-linked receipts with deterministic fields, consumer gates, validation commands, and explicit non-claims. The mature surface would include:
 
-- Operating mechanism: Model an engineering object as a finite circular address, schedule, window, or phase structure when that model is faithful; Attach theorem IDs, proof status, dictionary IDs, fingerprints, deterministic fields, receipt or replay checks, and non-claims; Require downstream workloads, ordinary baselines, negative controls, and metrics before any quality, runtime, memory, or transfer claim is promoted.
-- Stack interface: Lean and proof manifests supply theorem status; Python or CLI tools emit receipts and validation reports; Theseus-style private experiments consume contracts without importing private results into public claims; The evidence matrix records claim boundaries and support states.
-- Preserved invariants: Proof status is not a model-quality claim; Python tests and diagrams are evidence, not formal proof; Consumer readiness is not downstream success; Non-claims survive transfer into later chapters.
-- Failure closure: detect and route failure modes such as Theorem laundering into quality claims; Stale or failed theorem IDs; Missing baseline or negative-control experiments; Exact finite models mistaken for real-valued deployment behavior to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: contract packs bind engineering object, finite model, proof boundary, theorem refs, proof status, source version, content fingerprint, deterministic fields, verifier command, resolver status, replay status, consumer gate, consumer state, staleness policy, failure behavior, support-state effect, evidence refs, and non-claims.
+- Evidence surface: theorem-linked, dictionary-bound, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, and superseded receipt states are transport states, not model-quality states.
+- Stack interface: Lean and proof manifests expose proof status; Python or CLI tools emit receipts and validation reports; memory, RoPE, cyclic mixer, and substrate chapters consume structural receipts only through consumer gates; Appendix C records support boundaries without importing private or unrun results.
+- Upgrade loop: stale theorem IDs become residuals, fingerprint mismatches block replay, consumer-gate failures prevent downstream use, workload-blocked receipts preserve structural facts without quality promotion, and local surrogate packs can test the transfer semantics before external Circle artifacts are imported.
+- Failure closure: theorem laundering, stale or failed theorem IDs, missing baselines, exact finite models mistaken for real-valued deployment behavior, proof cargo-culting, and lost non-claim boundaries become blocked support movement, resolver failures, replay failures, or residual records.
 
 For Circle Calculus and Proof-Carrying AI Contracts, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

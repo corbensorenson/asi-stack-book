@@ -50,7 +50,7 @@ The adoption object is a tradeoff packet. A cyclic proposal should say which str
 
 Part III closes by applying the same discipline inside model mechanisms: cyclic adapters, phase banks, RoPE variants, route heads, and mixers. These may become useful substrate candidates, but the book treats them as candidates until baselines, diagnostics, and failure cases exist.
 
-The chapter's job is to keep mechanism and evidence separate. A cyclic mixer can be interesting as structure, but it does not become better context, faster inference, lower memory, or stronger reasoning until the stack can show the relevant artifact and boundary.
+The chapter's job is to keep mechanism and evidence separate. A cyclic mixer can be interesting as structure, but it does not become better context, faster inference, lower memory, or stronger reasoning until the stack can show the relevant workload, baseline, metric, artifact, and boundary.
 :::
 
 ## Problem
@@ -197,14 +197,15 @@ The next useful fixture set is a tradeoff packet: one structural receipt accepte
 
 ## Beyond the State of the Art
 
-The mature version of CoilRA, MultiCoil RoPE, and Cyclic Mixers is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of CoilRA, MultiCoil RoPE, and Cyclic Mixers is a cyclic-substrate evaluation lane. It lets the stack test phase, recurrence, residue/winding, relative-position, circulant, and block-cyclic ideas without spending structural proof as if it were quality, runtime, memory, or deployment evidence.
 
 At that end state, the chapter's claim becomes an operational contract: CoilRA, MultiCoil RoPE, and cyclic mixers should be treated as optional specialist substrates whose structural guarantees must be paired with dense, LoRA, RoPE, learned, recurrent, or state-space baselines before adoption. The mature surface would include:
 
-- Operating mechanism: Represent adapter blocks, block-cyclic routes, multiphase features, residue and winding, relative RoPE, and circulant convolution as structural contracts; Attach alias, load, and parameter-accounting diagnostics before interpreting model behavior; Measure quality, runtime, memory, and parameter tradeoffs on ordinary baselines and negative controls before promoting the substrate.
-- Stack interface: Semantic representation chapters define when cyclic structure is actually present; Routing heads or rankers may consume cyclic features only inside declared authority and evidence boundaries; Resource-economics chapters account for parameters, kernels, memory, and latency; Proof contracts and prototype experiments keep structural facts separate from performance results.
-- Preserved invariants: Equivariance is not model quality; Parameter reduction is not an adoption proof; Winding is not discarded when it is required to avoid aliasing; Hardware-friendly sizes and kernel costs are recorded; Real-valued RoPE claims are separated from exact integer phase-bank claims.
-- Failure closure: detect and route failure modes such as Mathematical elegance outruns kernels and baselines; Exact finite proofs are overclaimed for real-valued RoPE deployments; Lower parameter count comes with worse quality or runtime; Phase aliases are hidden by residue-only diagnostics to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: cyclic mixer evaluation records bind workload target, structural invariant, receipt refs, proof/receipt boundary, claim partition, alias and load diagnostics, parameter accounting, hardware kernel notes, hardware refusal path, baseline matrix, baseline symmetry policy, negative controls, resource costs, metrics status, tradeoff packet, consumer policy, adoption state, and non-claims.
+- Evidence surface: exact/discretized RoPE receipts, real-valued numerical diagnostics, parameter counts, quality metrics, runtime metrics, memory metrics, training-stability results, hardware-efficiency claims, and transfer claims remain separate ledgers.
+- Stack interface: semantic representation identifies where cyclic structure is real; routing may consume cyclic features only inside declared evidence and authority boundaries; resource economics prices kernels, memory, and latency; proof contracts preserve structural receipts; substrate adoption decides canary or retirement state.
+- Upgrade loop: diagnostic-only receipts stay structural, missing baselines block quality promotion, hardware mismatches narrow deployment scope, favorable baseline-symmetric tradeoff packets open canary routes, and negative controls or wrong-period failures become residual evidence rather than disappearing.
+- Failure closure: mathematical elegance outrunning kernels, finite proof overclaim for real-valued deployment, parameter savings with worse quality or runtime, hidden phase aliases, asymmetric baselines, omitted wrong-period controls, and cyclic favoritism become blocked adoption, hardware refusal, fallback to ordinary substrates, or quarantine.
 
 For CoilRA, MultiCoil RoPE, and Cyclic Mixers, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

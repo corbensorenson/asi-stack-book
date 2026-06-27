@@ -49,7 +49,7 @@ The chapter is therefore about admission control for memory structures. A cyclic
 
 Proof-carrying receipts become especially important for memory and recurrence, where structural language can sound like semantic understanding. This chapter asks how cyclic memory, sparse coverage, freshness, lag, and recurrence schedules should be recorded before anyone treats them as reasoning quality.
 
-The human caveat is that a fresh slot is not a true belief, and a covered lag is not a solved task. Recurrence contracts should preserve structural facts while leaving semantic claims to verification and evidence.
+The human caveat is that a fresh slot is not a true belief, and a covered lag is not a solved task. Recurrence contracts should preserve structural facts, authority limits, and fallback paths while leaving semantic claims to verification and evidence.
 :::
 
 ## Problem
@@ -194,14 +194,15 @@ The next useful fixture set is a trio of traces: one slot reuse with winding pre
 
 ## Beyond the State of the Art
 
-The mature version of Coil Attention, Cyclic Memory, and Recurrence Contracts is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Coil Attention, Cyclic Memory, and Recurrence Contracts is a memory admission and recurrence-control plane. It makes slot, lag, freshness, aliasing, active-work, and loop-exit facts available to the stack without confusing those facts with retrieval quality or reasoning success.
 
 At that end state, the chapter's claim becomes an operational contract: Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality. The mature surface would include:
 
-- Operating mechanism: Map memory slots, residue, winding, strides, windows, and recurrence schedules into finite circular structures; Expose alias, freshness, coverage, active-token, work-saving, and loop-exit fields as auditable contract outputs; Compare slot-only, slot-plus-winding, FIFO, LRU, content-gated, and ordinary attention or memory baselines before promoting performance claims.
-- Stack interface: VCM context traces expose context adequacy and authority labels; Attention and memory modules consume contract fields as diagnostic guardrails; Benchmark adapters and Theseus transfer lanes decide whether structural facts survive actual workloads; Proof contracts define the finite boundary of the claim.
-- Preserved invariants: Residue-only aliasing remains visible; Full structural coverage is not semantic coverage; Recurrence budgets include exits and guardrails; Stale reads fail closed or enter residual escrow.
-- Failure closure: detect and route failure modes such as Alias hiding; Overthinking or non-terminating recurrence loops; Uncovered sparse-attention lags; Freshness facts treated as retrieval-quality evidence; No ordinary baseline controls to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: cyclic memory contracts bind VCM packet refs, memory-authority scope, residue and winding policies, provenance, state-carry boundaries, freshness windows, stale-read policy, coverage claims, recurrence schedules, work budgets, loop exits, fallback attention, admission state, baseline refs, probe requirements, residuals, and non-claims.
+- Evidence surface: alias visibility, sparse coverage, freshness, recurrence exit, work-saving, retrieval quality, reasoning quality, speed, memory reduction, and long-context utility remain separate ledgers.
+- Stack interface: VCM supplies address, version, authority, adequacy, taint, and lease state; memory modules consume contract fields as diagnostics; proof-contract receipts preserve finite structural facts; benchmark adapters decide whether a structural guardrail improves workload behavior.
+- Upgrade loop: missing winding becomes visible alias risk, stale reads fail closed or enter residual escrow, coverage gaps route to fallback attention, exhausted recurrence budgets exit rather than overthink, and structural-only contracts stay ineligible for retrieval-quality promotion until workload probes pass.
+- Failure closure: alias hiding, non-terminating recurrence, uncovered lags, stale-read misuse, freshness-as-quality laundering, missing ordinary baselines, and authority widening through memory remapping become blocked admission, fallback attention, residual escrow, or downgraded support state.
 
 For Coil Attention, Cyclic Memory, and Recurrence Contracts, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
