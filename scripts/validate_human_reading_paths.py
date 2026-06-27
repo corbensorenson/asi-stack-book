@@ -25,6 +25,10 @@ MAX_BRIDGE_WORDS = 180
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
 CLOSE_RE = re.compile(r"^(:{3,})\s*$")
+BANNED_BRIDGE_PHRASES = (
+    "For a human reader",
+    "For the reader",
+)
 
 
 def load_structure() -> dict:
@@ -151,6 +155,9 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
             errors.append(f"{relative}: Human Reading Path has {words} words; maximum is {MAX_BRIDGE_WORDS}.")
         if "::: " in block_text or f".{HUMAN_CLASS}" in block_text:
             errors.append(f"{relative}: Human Reading Path text contains a nested fenced-div marker.")
+        for phrase in BANNED_BRIDGE_PHRASES:
+            if phrase in block_text:
+                errors.append(f"{relative}: Human Reading Path uses meta-reader phrase {phrase!r}.")
         for forbidden in ("## Chapter status", "## Drafting guardrail", "## Codex test plan", "## Source crosswalk"):
             if forbidden in block_text:
                 errors.append(f"{relative}: Human Reading Path contains live-only heading {forbidden!r}.")

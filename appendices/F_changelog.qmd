@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Human Reading Path prose polish
+
+- Reworked remaining Human Reading Path bridge sentences that addressed `For a human reader` or `For the reader` into direct book prose, improving the live Human view and generated reader spine without changing claims, sources, or evidence states. Added a Human Reading Path validator guard against those meta-reader phrases returning. No support-state promotion, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal fixture-language polish
 
 - Replaced remaining generated fixture-validation wording across implementation sections with chapter-specific artifact, record, and validation-boundary prose. Added a chapter DoD guard against the removed patterns so future chapters keep the minimum-viable implementation sections precise without implying that schema fixtures prove results. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
