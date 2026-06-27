@@ -74,6 +74,8 @@ Benchmark ratchets create pressure to improve. Policy optimization is how that p
 The distinction is crucial: learning from feedback is not the same as handing the system control over its own goals. A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.
 
 The mature version is less like tuning a single model and more like approving a behavior-change lease. The lease names what may change, what must not change, how regressions are detected, and who can roll it back.
+
+Feedback becomes governance-compatible when improvement remains reversible and evidence-scoped.
 :::
 
 ## Problem

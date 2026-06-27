@@ -109,7 +109,7 @@ def main() -> None:
         f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass |",
         f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates |",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
-        f"must be at least 100 words excluding the source-only heading, with the current minimum at {human_min_words} words",
+        f"must be at least 110 words excluding the source-only heading, with the current minimum at {human_min_words} words",
     ]
 
     if len(chapters) != chapter_file_count:
@@ -120,8 +120,8 @@ def main() -> None:
         errors.append("docs/source_evidence_audit.md is missing required summary metrics.")
     if not proof_targets:
         errors.append("proofs/proof_manifest.json is missing proof_target_count.")
-    if human_min_words < 100:
-        errors.append(f"Human Reading Path prose minimum is {human_min_words}, below 100.")
+    if human_min_words < 110:
+        errors.append(f"Human Reading Path prose minimum is {human_min_words}, below 110.")
 
     for fragment in expected_fragments:
         if fragment not in status_text:

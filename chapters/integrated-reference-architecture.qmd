@@ -67,6 +67,8 @@ After every major layer is named, the machine has to come back together. Intent,
 This is the synthesis checkpoint. The question is not whether every implementation exists yet. The question is whether a future implementation could produce a trace clear enough to show what happened, why it was allowed, what evidence changed, and where the system stopped.
 
 The integrated architecture should make composition legible. If the layers only look coherent in a diagram but lose authority, context, evidence, or residuals at the handoffs, integration has failed.
+
+Integration succeeds when the trace remains understandable after every layer has done its work.
 :::
 
 ## Problem

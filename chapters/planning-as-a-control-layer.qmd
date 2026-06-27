@@ -52,6 +52,8 @@ Once a command is structured, the stack still has to decide what work should exi
 Planning is control, not brainstorming. A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, and preserve residual work instead of letting the planner's confidence become execution authority.
 
 This is why the plan must be an artifact. It should show dependencies, assumptions, blocked paths, missing context, and stop conditions before any runtime adapter is allowed to touch the world.
+
+Good planning reduces surprise by making the future work surface visible while changes are still cheap.
 :::
 
 ## Problem
