@@ -6,7 +6,7 @@ The book should read like a serious systems architecture text.
 
 - The book must explain one architecture, not collect isolated papers.
 - Each chapter must state the layer's problem, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, and source crosswalk.
-- The minimum viable implementation must identify the smallest honest artifact, fixture, proof predicate, schema, trace, or validated slice that can start the idea. The beyond-state-of-the-art end state must identify the mature product-level logical conclusion, including how it composes with neighboring layers and what evidence would be required before support-state promotion.
+- The minimum viable implementation must identify the smallest honest artifact, fixture, proof predicate, schema, trace, or validated slice that can start the idea without promoting the chapter claim. The beyond-state-of-the-art end state must identify the mature product-level logical conclusion, including the final product surface, operational contract, evidence flow, governance boundary, failure closure, composition with neighboring layers, and what evidence would be required before support-state promotion.
 - Each chapter must satisfy the machine-checked scaffold DoD in `scripts/validate_chapter_dod.py`.
 - Philosophical material must be translated into engineering-compatible constraints, claims, and failure modes.
 - Speculative material must remain visibly speculative.

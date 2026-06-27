@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal implementation-endpoint contract guard
+
+- Strengthened `scripts/validate_chapter_dod.py` so every chapter must keep the required DoD sections in order, avoid duplicate DoD headings, and preserve substantive signals for both implementation endpoint sections: `Minimum Viable Implementation` as the smallest honest non-promoting start and `Beyond the State of the Art` as a mature target state that is not claimed as a current result. Updated the writing runbook, quality standard, full-book goal template, and v1.0 candidate status to make the minimum-start/final-product pairing explicit. All 54 current chapters already pass the stricter guard; no claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, or audio artifacts changed.
+
 ## 2026-06-27 - v1.0 improvement goal status-count refresh
 
 - Refreshed the current v1.0/v0.2 status surfaces against live repository counts: 54 chapter files, 174,706 chapter words excluding YAML, 183,272 raw chapter-file words, 101 source inventory records with matching source notes, 71 JSON schemas, 70 protocol fixtures, and 1 release record. This fixes public readiness drift without changing claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, or audio artifacts.

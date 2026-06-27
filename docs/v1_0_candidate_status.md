@@ -26,7 +26,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 
 - The book order is dynamic and manifest-driven.
 - The outline is a usable source of truth for drafting, source queues, and Lean proof targets.
-- Every manifest chapter exists and has the required chapter contract: problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary.
+- Every manifest chapter exists and has the required chapter contract in order: problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary. The chapter DoD guard also requires the implementation endpoint pair to remain substantive: a smallest honest start plus a mature target state that is not reported as a current result.
 - Current source-note coverage, source-to-chapter assignment, core claim mapping, and passage-review mapping are internally traceable.
 - Current proof targets are wired through outline tags, generated manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E.
 - Current schemas and example fixtures validate record shape for the protocol surfaces created so far.

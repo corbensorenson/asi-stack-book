@@ -75,6 +75,41 @@ SECTION_MIN_WORDS = {
     "## Beyond the State of the Art": 90,
 }
 
+SECTION_REQUIRED_PATTERNS = {
+    "## Minimum Viable Implementation": [
+        (
+            "smallest honest start",
+            re.compile(
+                r"\b(minimum|minimal|first|smallest|viable|implementation|artifact|schema|fixture|validator|proof|test|trace|record|ledger|slice)\b",
+                re.IGNORECASE,
+            ),
+        ),
+        (
+            "non-promotion caveat",
+            re.compile(
+                r"\b(not|only|planned|remains|support|until|without|does not|should not|must not|unpromoted|argument)\b",
+                re.IGNORECASE,
+            ),
+        ),
+    ],
+    "## Beyond the State of the Art": [
+        (
+            "mature target state",
+            re.compile(
+                r"\b(mature|logical end state|final product|end state|target architecture|product-level endpoint|beyond current practice)\b",
+                re.IGNORECASE,
+            ),
+        ),
+        (
+            "not current result",
+            re.compile(
+                r"\b(target architecture|not a current|remains a target|support should stay|support state|until|not a current-result claim)\b",
+                re.IGNORECASE,
+            ),
+        ),
+    ],
+}
+
 SECTION_PLACEHOLDERS = [
     "No manifest minimal implementation statement declared yet.",
     "No manifest beyond-state-of-the-art statement declared yet.",
@@ -116,6 +151,11 @@ def section_body(text: str, heading: str) -> str:
     return text[match.end() : end].strip()
 
 
+def heading_positions(text: str, heading: str) -> list[int]:
+    pattern = rf"^{re.escape(heading)}\s*$"
+    return [match.start() for match in re.finditer(pattern, text, flags=re.MULTILINE)]
+
+
 def word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
@@ -142,6 +182,26 @@ def main() -> None:
         if missing_sections:
             errors.append(f"{chapter['file']}: missing DoD sections: {', '.join(missing_sections)}")
 
+        section_positions: dict[str, list[int]] = {
+            section: heading_positions(text, section) for section in REQUIRED_SECTIONS
+        }
+        duplicate_sections = [
+            f"{section} ({len(positions)})"
+            for section, positions in section_positions.items()
+            if len(positions) > 1
+        ]
+        if duplicate_sections:
+            errors.append(f"{chapter['file']}: duplicate DoD section headings: {', '.join(duplicate_sections)}")
+
+        present_positions = [
+            (section, positions[0]) for section, positions in section_positions.items() if positions
+        ]
+        if len(present_positions) == len(REQUIRED_SECTIONS):
+            ordered_positions = [position for _, position in present_positions]
+            if ordered_positions != sorted(ordered_positions):
+                expected = " -> ".join(REQUIRED_SECTIONS)
+                errors.append(f"{chapter['file']}: DoD sections must appear in order: {expected}")
+
         for section, min_words in SECTION_MIN_WORDS.items():
             body = section_body(text, section)
             if not body:
@@ -151,6 +211,9 @@ def main() -> None:
                 errors.append(
                     f"{chapter['file']}: {section} has {words} words; expected at least {min_words}"
                 )
+            for label, pattern in SECTION_REQUIRED_PATTERNS.get(section, []):
+                if not pattern.search(body):
+                    errors.append(f"{chapter['file']}: {section} must include a {label} signal")
 
         for placeholder in SECTION_PLACEHOLDERS:
             if placeholder in text:
