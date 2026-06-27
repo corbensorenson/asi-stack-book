@@ -34,7 +34,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, and every core claim now has an exact source-note mapping in Appendix C.
 - Appendix C now records exact source-note mappings for all 54 core claims without promoting support states.
 - All 54 chapters have manuscript drafts from the source-of-truth manifest and hand drafting passes, kept at conservative support states.
-- All 54 chapters have `.asi-human-only` Human Reading Path bridges that are hidden from default AI view, visible as unheaded lead-in prose in live Human view, omitted from the page TOC, and unwrapped without the source-only heading into generated reader editions.
+- All 54 chapters have `.asi-human-only` Human Reading Path bridges that are hidden from default AI view, visible as unheaded lead-in prose in live Human view, omitted from the page TOC, and unwrapped without the source-only heading into generated reader editions. Generated reader chapters now retain manifest titles as their opening heading.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.

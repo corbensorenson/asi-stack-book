@@ -53,15 +53,19 @@ def load_structure() -> dict:
     return value
 
 
-def flatten_chapter_files(structure: dict) -> list[str]:
-    files: list[str] = []
+def flatten_chapters(structure: dict) -> list[dict[str, str]]:
+    chapters: list[dict[str, str]] = []
     for part in structure.get("parts", []):
         if not isinstance(part, dict):
             continue
         for chapter in part.get("chapters", []):
-            if isinstance(chapter, dict) and isinstance(chapter.get("file"), str):
-                files.append(chapter["file"])
-    return files
+            if (
+                isinstance(chapter, dict)
+                and isinstance(chapter.get("file"), str)
+                and isinstance(chapter.get("title"), str)
+            ):
+                chapters.append({"file": chapter["file"], "title": chapter["title"]})
+    return chapters
 
 
 def load_validation_policy() -> dict:
@@ -107,6 +111,14 @@ def reader_headings(text: str) -> set[str]:
     return headings
 
 
+def first_heading(text: str) -> tuple[int, str] | None:
+    for line in build_reader_edition.strip_frontmatter(text).splitlines():
+        match = build_reader_edition.HEADING_RE.match(line)
+        if match:
+            return len(match.group(1)), match.group(2).strip()
+    return None
+
+
 def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     structure = load_structure()
     profile = build_reader_edition.find_profile("reader_release")
@@ -126,7 +138,9 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
 
     chapter_records: list[dict[str, object]] = []
     errors: list[str] = []
-    for relative in flatten_chapter_files(structure):
+    for chapter in flatten_chapters(structure):
+        relative = chapter["file"]
+        expected_title = chapter["title"]
         path = output_dir / relative
         if not path.exists():
             errors.append(f"Generated reader chapter missing: {relative}")
@@ -135,6 +149,9 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         words = count_reader_words(text)
         term_hits = live_only_term_hits(text, hard_terms)
         headings = reader_headings(text)
+        first = first_heading(text)
+        title_ok = first == (1, expected_title)
+        source_marker_heading_count = text.count("Human Reading Path")
         missing_headings = [
             required_headings[index]
             for index, normalized in enumerate(normalized_required_headings)
@@ -143,11 +160,23 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         chapter_records.append(
             {
                 "file": relative,
+                "expected_title": expected_title,
+                "first_heading": {"level": first[0], "title": first[1]} if first else None,
+                "source_marker_heading_count": source_marker_heading_count,
                 "word_count_after_strip": words,
                 "live_only_term_hits": term_hits,
                 "missing_reader_headings": missing_headings,
             }
         )
+        if not title_ok:
+            errors.append(
+                f"{relative}: generated reader chapter must start with manifest title "
+                f"{expected_title!r}; first heading is {first!r}."
+            )
+        if source_marker_heading_count:
+            errors.append(
+                f"{relative}: source-only Human Reading Path marker remains in reader edition."
+            )
         if words < min_words:
             errors.append(
                 f"{relative}: reader spine has {words} words after stripping; "

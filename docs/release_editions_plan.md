@@ -151,7 +151,7 @@ python3 scripts/validate_live_human_view.py
 
 `scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain the bridge prose without the source-only `Human Reading Path` heading or view-mode markers.
 
-`scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if stripped headings remain, if view-mode markers leak into generated reader source, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, if a required reader heading is missing, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
+`scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if generated chapters do not start with their manifest titles, if stripped headings remain, if view-mode markers or source-only Human Reading Path markers leak into generated reader source, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, if a required reader heading is missing, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
 
 ## Reader-Facing Spine
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal reader title validation
+
+- Strengthened `scripts/validate_reader_spine.py` so generated reader chapters must begin with their manifest titles and must not retain the source-only `Human Reading Path` marker. Updated reader-release docs to record that the human-readable derivative preserves chapter titles while keeping bridge prose unheaded. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.
+
 ## 2026-06-27 - v1.0 improvement goal unheaded Human bridge projection
 
 - Refined the live Human view and generated reader edition so source-only `Human Reading Path` headings remain machine-checkable in chapters but no longer surface as normal reader sections: the live page TOC hides internal human bridge links, Human view presents bridge blocks as unheaded lead-in prose, and reader generation unwraps human-only bridge prose without retaining the source marker heading. Updated release-profile policy, validators, and public docs to enforce the cleaner Human-view contract. No claims, source mappings, support states, proof results, benchmark results, runtime results, ebooks, audio artifacts, or source-derived evidence changed.
