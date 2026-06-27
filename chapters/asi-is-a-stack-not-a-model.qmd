@@ -213,7 +213,7 @@ Anthology drift happens when the book becomes a catalog of interesting papers ra
 
 ## Minimum Viable Implementation
 
-A useful first build is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
+A useful first build is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. That bundle is not evidence that the architecture runs; it gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 
 A passing boundary record includes at least one blocked integration path: a reasoning layer trying to execute, an evidence layer trying to promote without artifacts, or a routing layer trying to widen authority. That makes the stack boundary test visible from the beginning.
 

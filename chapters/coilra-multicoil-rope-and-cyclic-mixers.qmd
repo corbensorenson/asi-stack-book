@@ -208,7 +208,7 @@ Another failure is alias blindness, where position collisions are treated as har
 
 Cyclic mixer work should start as an evaluation record that separates architecture shape from performance evidence. The repository fixture records evaluation state, workload target, structural invariant, receipt refs, proof or receipt boundary, claim partitions, alias and load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state and rationale, source refs, support-state effect, non-claims, and evidence references.
 
-The fixture proves only that the adoption boundary can be represented. It does not turn structural facts into performance claims or show that a mixer should be routed into a workload.
+The fixture establishes only that the adoption boundary can be represented. It cannot turn structural facts into performance claims or show that a mixer should be routed into a workload.
 
 The next minimum packet should force the tradeoff: one structural receipt accepted for diagnostics, one quality-promotion request rejected for missing baselines, one hardware mismatch that blocks deployment scope, and one canary route allowed only after baseline-symmetric metrics exist.
 

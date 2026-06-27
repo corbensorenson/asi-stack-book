@@ -196,13 +196,13 @@ Another failure is asymmetric exit. A user may technically leave, but the system
 
 ## Minimum Viable Implementation
 
-The first rights surface is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
+The first rights surface is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should establish that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
 
 A rights receipt suite should make the governance surface tangible: one complete audit response, one justified redaction with appeal path, one exit export with portable state, and one fork request denied because safety obligations cannot transfer. The suite would test material usability while keeping institutional governance unclaimed.
 
 The minimum should make withheld material visible as a recorded limitation, not an invisible absence.
 
-It should also prove that appeal and export routes have their own receipts rather than borrowing the audit receipt.
+It should also show that appeal and export routes have their own receipts rather than borrowing the audit receipt.
 
 ## Beyond the State of the Art
 

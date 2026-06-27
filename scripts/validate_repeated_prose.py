@@ -29,6 +29,11 @@ FORMULAIC_MVI_PHRASES = (
     "Passing schema validation only",
     "That would",
     "without claiming",
+    "does not prove",
+    "do not prove",
+    "proves only",
+    "prove only",
+    "cannot prove",
 )
 
 

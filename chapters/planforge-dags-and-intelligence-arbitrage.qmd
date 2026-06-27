@@ -196,7 +196,7 @@ A DAG schema with node-level capability and verification annotations.
 
 PlanForge starts with a `planforge_dag` schema and fixture. It should validate node and edge presence, scheduling states, capability tiers, context requests, adequacy contracts, quality predicates, verification requirements, budget limits, route assignments, merge conditions, assumption refs, escalation policy, residuals, a cost-quality ledger, and non-claims. The accompanying Lean module is intentionally narrower than a scheduler: it models finite indexed plan graphs, requires a dispatchable graph record to carry an acyclicity certificate plus ordered dependency edges, and requires failed quality predicates to route to escalation or residual under a valid node-outcome predicate.
 
-That fixture establishes the fields that a later scheduler must fill. The Lean predicates do not prove that an external planner constructed the graph correctly, that the selected tier is adequate, or that a cheaper route preserves quality.
+That fixture establishes the fields that a later scheduler must fill. Correct external graph construction, selected-tier adequacy, and cheaper-route quality preservation remain outside the Lean predicates.
 
 A scheduler-state fixture set should carry the first PlanForge stress case: one node ready because dependencies and context are satisfied, one node blocked by missing context, one cheap route rejected because the adequacy predicate fails, one branch merge blocked by conflicting assumptions, and one local repair that does not regenerate the whole DAG. The set would exercise scheduling semantics while leaving scheduler performance unclaimed.
 

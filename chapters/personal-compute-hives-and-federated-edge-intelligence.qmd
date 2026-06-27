@@ -266,7 +266,7 @@ The first implementation should be deliberately small:
 
 This minimum viable hive can run as a local experiment without pretending to be a complete personal cloud. Its value is that it makes the missing control records visible.
 
-This repository now contains the record-level first step for that experiment: `device_resource_card.schema.json`, `portal_card.schema.json`, `hive_job_contract.schema.json`, `hive_job_bid.schema.json`, `hive_scheduling_decision.schema.json`, `hive_approval_receipt.schema.json`, and `hive_federation_lease.schema.json`, each with a matching valid fixture. These fixtures prove only that the public record shapes can be validated by the local protocol validator.
+This repository now contains the record-level first step for that experiment: `device_resource_card.schema.json`, `portal_card.schema.json`, `hive_job_contract.schema.json`, `hive_job_bid.schema.json`, `hive_scheduling_decision.schema.json`, `hive_approval_receipt.schema.json`, and `hive_federation_lease.schema.json`, each with a matching valid fixture. These fixtures establish only that the public record shapes can be validated by the local protocol validator.
 
 ## Beyond the State of the Art
 

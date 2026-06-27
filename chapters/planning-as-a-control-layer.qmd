@@ -230,9 +230,9 @@ Another failure is plan theater: a graph that looks organized but does not contr
 
 A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, authority budget, risk and compute budgets, verification plan, replanning policy, replanning history, stop conditions, node lifecycle states, blocked-node records, dispatch receipts, residual register, non-claims, and failure behavior.
 
-Planning starts with a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, dispatch receipts, residuals, non-claims, and dispatch state. It does not prove the plan is good.
+Planning starts with a `plan_graph` schema and fixture. It validates that a plan has nodes, dependencies, context and tool requirements, authority requirements, budgets, verification, replanning, stop conditions, dispatch receipts, residuals, non-claims, and dispatch state. Plan quality remains unmeasured.
 
-The schema and fixture make the planning surface explicit. They do not prove that a graph is acyclic, optimal, complete, or safe to dispatch.
+The schema and fixture make the planning surface explicit. Acyclicity, optimality, completeness, and dispatch safety still need separate checks.
 
 A tiny plan-dispatch fixture would give the control layer its first executable stop-condition test: one valid node, one blocked dependency, one missing-context node, one authority-exceeding tool request, and one replanning event that preserves the original stop condition. The fixture would demonstrate control-layer semantics while leaving planner quality unclaimed.
 

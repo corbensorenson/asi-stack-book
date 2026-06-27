@@ -194,7 +194,7 @@ An artifact graph schema with job, source, context, and evidence edges.
 
 Artifact continuity begins with an `artifact_graph_record` schema and fixture. It validates parent job, source/context/context-transaction/semantic-certificate/tool/claim/test refs, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims.
 
-That fixture validates the shape of an artifact node. `AsiStackProofs.ArtifactGraph` adds a bounded predicate requiring produced artifacts to carry parent-job and source/context references, plus a bounded promotion-blocking predicate for missing required provenance. This does not prove the referenced render, replay, audit path, or provenance completeness of any produced artifact.
+That fixture validates the shape of an artifact node. `AsiStackProofs.ArtifactGraph` adds a bounded predicate requiring produced artifacts to carry parent-job and source/context references, plus a bounded promotion-blocking predicate for missing required provenance. The referenced render, replay, audit path, and provenance completeness of any produced artifact remain outside that result.
 
 The next implementation step is not a larger schema for its own sake. It is a tiny replay packet: one produced artifact, one parent job, one source/context set, one context transaction, one semantic certificate, one tool path, one replay declaration, one residual declaration, one evidence gate, and one claim/test link. That packet would let the book demonstrate the difference between a record that is merely stored and a record that is evidence-ready.
 

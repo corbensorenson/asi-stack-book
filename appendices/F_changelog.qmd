@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal MVI proof-caveat polish
+
+- Reworked repeated `Minimum Viable Implementation` proof-caveat formulas across 20 chapters, replacing `does not prove`, `do not prove`, `proves only`, `prove only`, and `cannot prove` constructions with chapter-specific evidence-boundary prose. Tightened `scripts/validate_repeated_prose.py` so future MVI sections reject those formulas, and refreshed the v1.0 status manuscript scale to 178,254 chapter words excluding YAML and 185,753 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal MVI caveat polish
 
 - Reworked repeated `Minimum Viable Implementation` caveat formulas across 28 chapters, replacing `That would...` and `without claiming...` constructions with chapter-specific non-promotion language such as unclaimed deployment, quality, benchmark, runtime, scheduler, verifier, and reader-release boundaries. Tightened `scripts/validate_repeated_prose.py` so future MVI sections reject those formulas, and refreshed the v1.0 status manuscript scale to 178,283 chapter words excluding YAML and 185,782 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

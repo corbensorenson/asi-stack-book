@@ -182,7 +182,7 @@ The subtle failure is value smuggling. A predicate looks neutral, but its thresh
 
 ## Minimum Viable Implementation
 
-A tractable constitutional starting point is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures do not prove alignment; they make the constitutional layer inspectable.
+A tractable constitutional starting point is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures make the constitutional layer inspectable; alignment remains a stronger claim requiring evidence beyond record shape.
 
 A constitutional conflict fixture set should follow: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. The set would test the substrate's control semantics while leaving moral correctness outside the result.
 

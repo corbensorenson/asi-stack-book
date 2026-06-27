@@ -203,7 +203,7 @@ Begin with a `value_conflict_record` schema plus a scenario fixture. It should v
 
 A decision-lease suite should be the first concrete value-conflict artifact: one reversible low-stakes bounded decision, one high-stakes escalation, one denied action, one deferred action with revisit trigger, and one conflict-laundering attempt blocked from policy promotion.
 
-The value-conflict fixture records explicit stakeholder refs, disputed value axes, decision scope, reversibility, review owner, lease expiry, residual obligation, and non-claims. Passing it would prove only that value conflict can be represented and routed without disappearing into a scalar objective.
+The value-conflict fixture records explicit stakeholder refs, disputed value axes, decision scope, reversibility, review owner, lease expiry, residual obligation, and non-claims. Passing it would establish only that value conflict can be represented and routed without disappearing into a scalar objective.
 
 The minimum should include at least one unresolved conflict that remains unresolved on purpose.
 
