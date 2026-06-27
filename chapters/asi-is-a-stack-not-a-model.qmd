@@ -213,7 +213,7 @@ The smallest useful implementation is a stack map, a layer boundary schema, one 
 
 The mature version of ASI Is a Stack, Not a Model is a stack operating doctrine in which model weights are one replaceable component inside a governed machine. The product-level endpoint is not a larger agent; it is an architecture where alignment, memory, planning, execution, routing, evidence, compression, and self-improvement remain separate enough to inspect and compose.
 
-At that end state, the chapter's claim becomes an operational contract: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model. The mature surface would include:
+The operational contract is simple: efficient ASI is a governed stack of cooperating layers, not one undifferentiated model. A mature implementation would make that contract visible through:
 
 - Operating mechanism: Define each layer by responsibility, interface, artifact, invariant, and failure mode; Frame the raw LLM as a semantic-compression and generation component inside a larger governed cognitive system; Treat the whole book as a reference architecture rather than a collection of standalone papers; Use source queues and evidence states to keep future writing runs context-loaded and honest.
 - Stack interface: Alignment and governance constrain every downstream layer; Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts; Recursive improvement is a governed transition, not an ambient property of intelligence.

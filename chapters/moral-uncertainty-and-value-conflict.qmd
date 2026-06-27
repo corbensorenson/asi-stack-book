@@ -196,7 +196,7 @@ The next useful fixture set is a decision-lease suite: one reversible low-stakes
 
 The mature version of Moral Uncertainty and Value Conflict is a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward.
 
-At that end state, the chapter's claim becomes an operational contract: Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions. The mature surface would include:
+The operational contract is that value conflict remains a first-class record: unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk cannot be hidden inside a reward function. A mature implementation would make that contract visible through:
 
 - Operating mechanism: Classify conflicts by value type, stakeholder, reversibility, and evidence requirement; Escalate unresolved conflicts to tribunal or human review; Record decisions and residual moral uncertainty.
 - Stack interface: Alignment produces conflict records; Planning uses conflict constraints; Evidence records review outcomes.

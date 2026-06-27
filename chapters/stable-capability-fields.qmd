@@ -199,7 +199,7 @@ The next useful implementation step is a field history fixture: one field, two c
 
 The mature version of Stable Capability Fields is a capability-identity and replacement market for the stack. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
 
-At that end state, the chapter's claim becomes an operational contract: A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy. The mature surface would include:
+The operational contract is that a stable capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change. A mature implementation would make that contract visible through:
 
 - Operating mechanism: Separate field identity from implementation; Bind qualification claims to exact artifacts; Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired; Require route validity and evaluator integrity before promotion.
 - Stack interface: Planning requests field capabilities; Execution invokes authorized routes; Evidence records qualification and regression results.
