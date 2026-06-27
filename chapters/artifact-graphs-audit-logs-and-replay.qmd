@@ -200,11 +200,11 @@ The next implementation step is not a larger schema for its own sake. It is a ti
 
 ## Beyond the State of the Art
 
-The mature version is an evidence graph for work products. It does not merely store files. It records the lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gate for every artifact that the stack may later reuse.
+At maturity, artifact governance becomes an evidence graph for work products. It stores more than files: lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gates travel with every artifact the stack may later reuse.
 
 Inside an evidence graph, artifacts can become context, evidence, regression cases, release inputs, compression targets, procedural-memory traces, or reader-edition material only through declared gates. A path on disk is not enough. The artifact node must say what created it, what sources and context shaped it, what can be replayed, what cannot be replayed, and which claims or tests it is allowed to affect.
 
-The final product surface would include:
+The work-product evidence graph would expose:
 
 - A stable artifact graph with versioned nodes for documents, code, proofs, schemas, diagrams, source notes, reports, benchmark outputs, release records, and runtime receipts.
 - Append-only or versioned audit logs for job events, adapter effects, verification checks, human approvals, failures, and repair attempts.

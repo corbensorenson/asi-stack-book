@@ -259,7 +259,7 @@ The learning endpoint is a governed actuator for behavior change across the enti
 
 At that mature boundary, each update would be a behavior-change lease. The lease would name the target policy, old and new behavior, admissible feedback, reward or preference boundary, update family, drift bound, holdouts, regressions, reward-hacking probes, authority effect, rollback plan, monitor window, deployment scope, evidence packets, residuals, and non-claims. PPO-like, DPO-like, GRPO-like, RLVR-like, context-policy, router-policy, or custom control-policy updates would be implementation choices under this record, not substitutes for governance.
 
-The mature product surface would include:
+The policy-update lease surface would expose:
 
 - A stack-wide policy registry covering planner decomposition, VCM retrieval, router selection, verifier escalation, execution/tool use, generator behavior, generation-mode choice, and governance assistance.
 - Reward-source admission gates that classify human preference, exact verifier output, process rewards, benchmark results, tool outcomes, context-grounding checks, cost signals, and governance checks before training begins.

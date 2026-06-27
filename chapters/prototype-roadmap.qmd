@@ -220,7 +220,7 @@ The roadmap endpoint is a phase-gated build controller for the ASI Stack. The ro
 
 At that mature boundary, every phase would have explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.
 
-The mature product surface would include:
+The prototype roadmap would expose:
 
 - A prototype phase registry spanning source inventory, artifact graph, claim ledger, planning, VCM, typed execution, verification, benchmarks, SCF gates, policy optimization, stewardship, and recursive self-improvement.
 - Dependency gates that distinguish "can research," "can demo," "can integrate," "can promote," and "can release."

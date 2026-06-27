@@ -238,11 +238,11 @@ The next useful implementation step is a tiny plan-dispatch fixture with one val
 
 ## Beyond the State of the Art
 
-The mature version is a live control plane for work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs.
+At maturity, planning becomes a live control plane for work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs.
 
 As a control layer, planning is useful even when nothing executes. The planner can expose that a request is underspecified, a dependency is cyclic, a source is inadequate, a verifier is missing, a tool exceeds authority, a budget cannot support the quality predicate, or a stop condition has fired. Those outputs become plan residuals, not hidden failures.
 
-The final product surface would include:
+The planning control plane would expose:
 
 - Strategic, tactical, and runtime plan views over the same parent contract, each with assumptions, dependencies, context requests, budgets, risk limits, verification plans, and stop conditions.
 - Node lifecycle states that prevent proposed, blocked, exploratory, or review-only nodes from lowering into jobs.

@@ -186,7 +186,7 @@ Project Theseus becomes valuable here only as a public-safe implementation-refer
 
 At that mature boundary, Theseus would provide importable report bundles rather than dashboard impressions. Each bundle would identify the ASI Stack layer it exercises, the command or report source, configuration, environment boundary, artifact checksum, gate result, residual, missing artifact, public claim boundary, and non-claims. A dashboard could visualize those bundles, but the report bundle would be the evidence object.
 
-The mature product surface would include:
+The report-first implementation surface would expose:
 
 - A report-bundle importer that maps plan-compiler artifacts, operator work-board items, architecture gates, benchmark ledgers, residual escrow, self-evolution interventions, and Circle transfer records onto ASI Stack layers.
 - A public/private boundary that marks which artifacts are publishable, summarized, redacted, blocked, source-reported only, or reproduced locally.

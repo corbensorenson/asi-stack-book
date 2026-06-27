@@ -193,11 +193,11 @@ The next useful implementation step is a paired-cell fixture set: one source exc
 
 ## Beyond the State of the Art
 
-The mature version is a representation-certification system for context. It does not merely summarize sources. It turns raw sources, exact excerpts, planning briefs, redacted instructions, claim cells, contradiction pairs, and derived inferences into typed objects whose permitted use, loss, authority, and provenance remain attached wherever the object travels.
+At maturity, semantic pages become a representation-certification system for context. They summarize nothing for free: raw sources, exact excerpts, planning briefs, redacted instructions, claim cells, contradiction pairs, and derived inferences become typed objects whose permitted use, loss, authority, and provenance remain attached wherever the object travels.
 
 With certified context cells, the same source can produce several honest cells: an exact evidence excerpt, a lossy planning brief, a redacted execution packet, a contradiction-checking pair, and a reader-edition paraphrase. Each cell carries a certificate saying what it is, what it came from, what was omitted, which transaction created it, which artifact carries it, what authority ceiling survived, what use is permitted, and what residual risk remains.
 
-The final product surface would include:
+The representation-certificate surface would expose:
 
 - A typed semantic-page model for claims, constraints, decisions, corrections, events, artifacts, source excerpts, summaries, and derived cells.
 - Representation certificates for exact carriage, lossy summary, redaction, abstraction, translation, and derived inference.

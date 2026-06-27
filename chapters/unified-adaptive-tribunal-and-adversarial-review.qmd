@@ -203,11 +203,11 @@ The next useful implementation step is a contested-claim fixture set: one high-r
 
 ## Beyond the State of the Art
 
-The mature version is a review operating system for contested claims and high-risk artifacts. It does not simply ask several models for opinions. It creates a bounded dossier, assigns role-separated reviewers, runs adversarial probes, records evidence-linked findings, preserves dissent, applies cycle caps, and converts verdicts into machine-readable constraints.
+At maturity, adversarial review becomes an operating system for contested claims and high-risk artifacts. It does more than ask several models for opinions: it creates a bounded dossier, assigns role-separated reviewers, runs adversarial probes, records evidence-linked findings, preserves dissent, applies cycle caps, and converts verdicts into machine-readable constraints.
 
 At tribunal scale, review is expensive but actionable. It can accept a claim within a scope, require a source fetch, downgrade a claim, block dispatch, narrow authority, demand a human sign-off, preserve dissent, or create residual work. Re-running the tribunal over unchanged evidence cannot quietly turn rejection into acceptance; the unchanged-evidence guard and prior review refs make that laundering visible.
 
-The final product surface would include:
+The tribunal surface would expose:
 
 - Admission rules that decide when ordinary verification is enough and when tribunal review is required.
 - Dossier construction tools that record retrieval boundaries, excluded evidence, risk class, target scope, and review limits.

@@ -203,11 +203,11 @@ The next useful implementation step is a tiny extraction-and-revision fixture se
 
 ## Beyond the State of the Art
 
-The mature version is an epistemic version-control system. It does not merely annotate chapters with confidence labels. It gives every material claim a durable identity, provenance, support state, uncertainty record, contradiction state, surface references, revision history, promotion blockers, and escalation path.
+At maturity, the claim ledger becomes an epistemic version-control system. It annotates more than confidence labels: every material claim receives durable identity, provenance, support state, uncertainty record, contradiction state, surface references, revision history, promotion blockers, and escalation path.
 
 With a claim ledger in force, prose is a view over the ledger rather than the source of belief. A claim can appear in a chapter, diagram, appendix, release note, reader edition, benchmark report, or runtime artifact without losing its identity. If new evidence weakens it, every surface that depends on the claim can be found. If a contradiction appears, the ledger can downgrade, split, merge, deprecate, residualize, or route the claim to Spinoza, UAT, or human review.
 
-The final product surface would include:
+The claim ledger would expose:
 
 - Claim extraction and registration tools that separate claim identity, scope, wording variants, source refs, evidence refs, and support-state effects.
 - Revision records for promotion, downgrade, split, merge, contradiction, deprecation, retirement, source expiry, failed test, proof result, and tribunal verdict.

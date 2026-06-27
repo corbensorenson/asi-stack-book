@@ -198,7 +198,7 @@ The formal-methods endpoint is a claims control plane for the whole stack. It do
 
 At that mature boundary, every chapter, protocol, release, and runtime module would consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.
 
-The mature product surface would include:
+The proof-envelope surface would expose:
 
 - A generated proof/spec registry fed by the outline, chapter hooks, Appendix E, schemas, Lean modules, validators, and release profiles.
 - Semantic adequacy reviews that ask whether a finite predicate is the right predicate for the prose boundary before any support language strengthens.

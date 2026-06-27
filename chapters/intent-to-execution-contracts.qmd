@@ -194,7 +194,7 @@ The next useful implementation step is a two-path vertical-slice fixture: one co
 
 ## Beyond the State of the Art
 
-The mature version is a contract operating spine for the whole stack, not a larger form of the minimal fixture. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done.
+At maturity, intent-to-execution contracts become the operating spine for the whole stack, not a larger form of the minimal fixture. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done.
 
 Once contracts become the execution spine, no response is allowed to masquerade as execution. A human, reviewer, runtime, or later AI agent can ask what was requested, what was authorized, which defaults were used, what re-contract events occurred, which jobs ran, which side effects were approved, which artifacts were produced, which validators accepted them, and which residuals remain. The system can pause or stop for missing context, missing approval, missing verifier, budget exhaustion, or violated constraints without treating that stop as conversational failure.
 

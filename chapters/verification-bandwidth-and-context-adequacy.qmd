@@ -208,11 +208,11 @@ The existing artifact is narrower: a `context_adequacy_record` schema and fixtur
 
 ## Beyond the State of the Art
 
-The mature version is a verification-capacity control plane. It does not reward a system for loading more text. It asks whether the loaded semantic units, representations, tools, reviewers, and comparison mode are strong enough for the exact claim, risk level, and support-state effect being requested.
+At maturity, verification bandwidth becomes a capacity-control plane. It does not reward a system for loading more text. It asks whether the loaded semantic units, representations, tools, reviewers, and comparison mode are strong enough for the exact claim, risk level, and support-state effect being requested.
 
 When verification capacity is governed, every important claim has an adequacy record before it receives a stronger support label. The record names the source units, compression path, verification mode, negative evidence, residual risks, and escalation route. A context packet adequate for orientation can remain drafting-only; a packet adequate for one local citation can still be inadequate for a cross-document safety claim; a proof check over a finite predicate can stay separate from an empirical deployment claim.
 
-The final product surface would include:
+The verification control plane would expose:
 
 - Adequacy classifiers scoped to target claim, risk tier, context packet, semantic-unit set, compression path, and verification mode.
 - Warning states for absent context, drafting-only context, local checks, joint checks, summary-derived support, escalated review, and contradicted claims.

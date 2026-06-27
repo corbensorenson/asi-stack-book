@@ -232,11 +232,11 @@ The next useful implementation step is a small command-conflict fixture set: one
 
 ## Beyond the State of the Art
 
-The mature version is a semantic control language for governed work. It is not a prompt template library. It is the small, inspectable language that humans, planners, verifiers, job runners, policy layers, and future AI agents use to agree on what the next unit of work means before any execution path opens.
+At maturity, command contracts become the semantic control language for governed work. They are not a prompt-template library; they are the small, inspectable language that humans, planners, verifiers, job runners, policy layers, and future AI agents use to agree on what the next unit of work means before any execution path opens.
 
 Inside the semantic interface, every command field has provenance, confidence, precedence, and dispatch consequence. A command can carry natural language, examples, style, and source context, but those materials cannot overwrite explicit objective, constraints, authority, output, verification, or failure behavior. Context informs the contract; it does not become a hidden command channel.
 
-The final product surface would include:
+The semantic command surface would expose:
 
 - A typed command vocabulary for objective, scope, context references, constraints, allowed means, forbidden means, output contract, verifier, approval path, failure behavior, feedback route, and non-claims.
 - Field-level provenance that distinguishes confirmed, policy-imposed, source-derived, defaulted, inferred, and missing values.

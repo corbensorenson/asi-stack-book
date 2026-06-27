@@ -213,11 +213,11 @@ The next useful implementation step is a resolver fixture set: one valid request
 
 ## Beyond the State of the Art
 
-The mature version is a memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary.
+At maturity, the Virtual Context ABI becomes the memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary.
 
 With a real context ABI, a model never receives anonymous "relevant context." It receives a materialization receipt. The receipt says what was requested, what resolved, what representation was built, which authority labels apply, which uses are permitted, when the lease expires, whether the packet is adequate for the target claim, and which fault or residual remains. If any of those states are missing, the system asks, abstains, retries, escalates, or records a typed fault rather than hallucinating a usable memory view.
 
-The final product surface would include:
+The memory ABI would expose:
 
 - A resolver for semantic addresses, immutable versions, mounts, snapshots, and representation contracts.
 - A context compiler that emits leased materializations with authority labels, support boundaries, consumer policies, audit refs, and non-claims.

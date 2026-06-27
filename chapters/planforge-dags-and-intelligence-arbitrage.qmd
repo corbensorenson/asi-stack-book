@@ -202,11 +202,11 @@ The next useful implementation step is a scheduler-state fixture set: one node r
 
 ## Beyond the State of the Art
 
-The mature version is a governed scheduler and capacity allocator for cognitive work. It does not just draw a DAG. It turns plan nodes into schedulable units with dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior.
+At maturity, PlanForge becomes a governed scheduler and capacity allocator for cognitive work. It draws more than a DAG: plan nodes become schedulable units with dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior.
 
 In a governed DAG scheduler, intelligence arbitrage is measured after verification, repair, merge, human review, and residual cost are counted. A cheap route only counts as adequate when its output satisfies the node's adequacy contract and remains useful to downstream dependents. An expensive route is justified when the risk, context burden, quality predicate, or failure cost demands it. The scheduler is therefore accountable for quality and authority, not just token spend.
 
-The final product surface would include:
+The governed scheduler would expose:
 
 - A DAG compiler that rejects cycles, exposes critical path, identifies parallel branches, marks cacheable work, and localizes repair to affected subgraphs.
 - Per-node adequacy contracts that bind capability tier, input context, verifier strength, fallback route, and downstream acceptance needs.

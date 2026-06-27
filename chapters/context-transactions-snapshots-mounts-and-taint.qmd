@@ -217,11 +217,11 @@ The next useful implementation step is a tiny memory-store fixture set: one cohe
 
 ## Beyond the State of the Art
 
-The mature version is a transactional memory substrate for AI context. It does not treat memory as a vector store with annotations. It treats every context view as the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries.
+At maturity, context management becomes a transactional memory substrate for AI context. Memory is not a vector store with annotations; every context view is the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries.
 
 Under transactional context memory, every materialized context view can explain itself. It can show which immutable events were visible, which branch was used, which mounts were readable or writable, which cells were actually read, which derivatives were created, which taint labels propagated, which deletion obligations closed, which contradictions were recorded, and why a view was allowed to feed a job, artifact, claim, or release.
 
-The final product surface would include:
+The context transaction substrate would expose:
 
 - A context event store with immutable writes, versioned pages, pinned snapshots, copy-on-write branches, and merge policies.
 - Mount and isolation policies for public memory, private notes, source caches, secret handles, Digital SCIF material, and task-local scratch space.
