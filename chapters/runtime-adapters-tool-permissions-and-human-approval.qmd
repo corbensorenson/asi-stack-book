@@ -241,11 +241,11 @@ The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` 
 
 ## Beyond the State of the Art
 
-At maturity, runtime adaptation becomes a capability firewall for external effects. Tools are not exposed as ambient functions; scoped, expiring effect leases go to typed jobs only after target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations are checked.
+Runtime adaptation matures into a capability firewall for external effects. Tools are not exposed as ambient functions; scoped, expiring effect leases go to typed jobs only after target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations are checked.
 
 With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.
 
-The capability-firewall surface would expose:
+A capability-firewall surface needs:
 
 - Adapter contracts for documents, code, APIs, services, databases, deployments, messages, payments, hardware, fabrication, robotics, credentials, and organizational workflows.
 - Permission lookup against parent typed jobs, authority ceilings, secret-handle policies, sandbox modes, and active governance constraints.

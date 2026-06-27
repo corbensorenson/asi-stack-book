@@ -187,7 +187,7 @@ The endpoint is a research operating system that happens to render as a book. Th
 
 At that mature boundary, the book would let a future agent ingest a new AI paper, mine its public-safe content, decide whether to update a chapter or add a precise new one, update the outline and manifest, generate proof/test backlog, draft or revise prose, validate source/evidence boundaries, render the live site, and prepare reader editions without hand-renumbering or hidden support-state changes.
 
-The living-book release surface would expose:
+A living-book release surface needs:
 
 - A manifest-driven book graph where `book_structure.json` controls order and `docs/book_outline.md` controls chapter jobs, source queues, Lean scope, minimum implementation, and beyond-SOTA end states.
 - A tri-audience publication system: default AI/researcher view, on-site Human view, and major-version reader/audio derivatives with recorded strip policies.

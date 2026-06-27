@@ -198,11 +198,11 @@ The next useful fixture set is a tiny source plan, its semantic-atom DAG, one lo
 
 ## Beyond the State of the Art
 
-At maturity, cognitive compilation becomes a compiler toolchain for cognitive work. Goals, command contracts, plans, and source context lower into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy.
+Cognitive compilation reaches product form as a compiler toolchain for cognitive work. Goals, command contracts, plans, and source context lower into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy.
 
 In a cognitive compiler, every important artifact has a lowering receipt. The receipt names the source plan, semantic atoms, obligations, assumptions, validators, target constraints, authority requirements, repair scope, support-state effect, and residuals that produced it. A later writer, model, compiler pass, or reviewer can change one node without erasing unrelated obligations or pretending that a syntactic pass is semantic acceptance.
 
-The semantic compiler toolchain would expose:
+A semantic compiler toolchain needs:
 
 - A source-plan language that preserves user intent, constraints, source boundaries, authority limits, quality criteria, and expected artifacts.
 - A semantic IR with typed atoms, dependencies, obligations, validators, assumptions, target hints, repair scopes, and support-state effects.

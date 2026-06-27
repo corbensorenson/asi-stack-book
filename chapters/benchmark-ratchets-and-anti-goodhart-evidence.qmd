@@ -208,7 +208,7 @@ The benchmark endpoint is an operating system for evaluation, not a leaderboard 
 
 At that mature boundary, benchmarks would be managed as instruments with lifecycle state. A task can begin as a candidate metric, become a frontier probe, graduate into a regression floor, enter contamination review, be retired, or remain blocked. Success would never move a claim by itself; it would open a promotion review that compares baselines, residuals, negative results, holdouts, transfer checks, mutation checks, public-calibration limits, and the exact claim being considered.
 
-The benchmark ratchet surface would expose:
+A benchmark ratchet surface needs:
 
 - A ratchet ledger that records evidence class, command, environment, data boundary, baseline, mastery threshold, saturation state, residual escrow, regression refs, negative results, and promotion decision.
 - Automatic floor/frontier management so solved tasks become regression obligations and new frontier tasks are generated only after the prior evidence boundary survives review.

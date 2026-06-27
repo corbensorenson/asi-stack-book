@@ -13,11 +13,13 @@ FORMULAIC_BEYOND_OPENERS = (
     "The mature version is",
     "The logical end state is",
     "At full build-out,",
+    "At maturity,",
 )
 FORMULAIC_BEYOND_PHRASES = (
     "The mature version of",
     "The mature product surface would include:",
     "The final product surface would include:",
+    "would expose:",
 )
 
 

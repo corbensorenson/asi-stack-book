@@ -229,11 +229,11 @@ The next useful implementation step is a small lifecycle harness over fixture jo
 
 ## Beyond the State of the Art
 
-At maturity, the labor layer becomes an operating system for bounded cognitive work. It refuses ambient "agent" actors and admits work only as typed jobs whose parent contract, plan node, lifecycle state, permission basis, approval record, workspace, adapter route, expected artifact, failure behavior, audit trail, delivery state, and evidence state are explicit.
+The labor layer reaches its mature form as an operating system for bounded cognitive work. It refuses ambient "agent" actors and admits work only as typed jobs whose parent contract, plan node, lifecycle state, permission basis, approval record, workspace, adapter route, expected artifact, failure behavior, audit trail, delivery state, and evidence state are explicit.
 
 In a labor OS, every job can be refused, approved, dispatched, adjudicated, delivered, quarantined, replayed, or retired through declared transitions. Delivery and evidence readiness remain separate: a user-visible output may exist while verification, artifact capture, replay declaration, or residual accounting is still incomplete. That separation prevents useful output from being laundered into governed evidence.
 
-The bounded labor OS would expose:
+A bounded labor OS needs:
 
 - A job lifecycle engine that rejects invalid transitions and preserves parentage from command contract to plan node to approval to adapter to artifact.
 - Permission and approval services that block high-impact work until scoped records exist.

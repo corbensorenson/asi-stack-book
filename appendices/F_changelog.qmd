@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mature endpoint opening polish
+
+- Reworked the remaining repeated `At maturity,` mature-endpoint openings and `would expose:` list lead-ins across 25 `Beyond the State of the Art` sections so the reader-facing product targets read less like shared scaffolding. Tightened `scripts/validate_repeated_prose.py` to reject those formulas alongside the prior mature-endpoint boilerplate, and refreshed the v1.0 status manuscript scale to 178,249 chapter words excluding YAML and 185,748 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mature endpoint formula polish
 
 - Reworked repeated mature-endpoint formulas across 26 `Beyond the State of the Art` sections, replacing `The mature version is...` openings and generic `...product surface would include:` lead-ins with chapter-specific product-surface prose. Tightened `scripts/validate_repeated_prose.py` so mature endpoints now reject `The mature version is`, `The mature version of`, `The mature product surface would include:`, and `The final product surface would include:` patterns, and refreshed the v1.0 status manuscript scale to 178,258 chapter words excluding YAML and 185,757 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

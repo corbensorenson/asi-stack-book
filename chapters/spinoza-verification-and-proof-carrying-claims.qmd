@@ -204,11 +204,11 @@ The next useful implementation step is a mismatch fixture set: one formal target
 
 ## Beyond the State of the Art
 
-At maturity, Spinoza-style verification becomes a justification compiler for high-value claims. It does not make every statement formal. It decides which claims deserve stronger treatment, chooses the right justification type, records the interpretation mapping, runs the relevant verifier or review process, and writes the result back to the claim ledger without overpromoting the natural-language claim.
+Spinoza-style verification reaches product form as a justification compiler for high-value claims. It does not make every statement formal. It decides which claims deserve stronger treatment, chooses the right justification type, records the interpretation mapping, runs the relevant verifier or review process, and writes the result back to the claim ledger without overpromoting the natural-language claim.
 
 In a Spinoza-style verifier, proof-carrying is a tiered workflow rather than a label. A claim can receive a formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal verdict, failed-attempt record, or downgrade route. The system can pass a narrow proof while leaving the broader prose claim unpromoted, or fail a verifier while preserving the failed attempt as evidence against future overclaiming.
 
-The proof-carrying claim surface would expose:
+A proof-carrying claim surface needs:
 
 - A tier-assignment engine that matches claim type, risk, scope, and requested support state to proof, citation, procedure, replay, benchmark, or tribunal justification.
 - Interpretation-mapping records that bind prose claims to formal targets, source propositions, procedure contracts, or replay claims with confidence and limits.
