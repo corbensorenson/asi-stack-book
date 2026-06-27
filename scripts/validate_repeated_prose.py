@@ -34,6 +34,9 @@ FORMULAIC_MVI_PHRASES = (
     "proves only",
     "prove only",
     "cannot prove",
+    "The accompanying Lean module is",
+    "The Lean predicates do not",
+    "These proofs do not implement",
 )
 
 

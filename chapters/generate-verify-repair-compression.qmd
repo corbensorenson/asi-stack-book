@@ -208,7 +208,7 @@ The compression prototype should not start as a new universal codec. It is a tin
 
 The repository fixture covers only the receipt side of that implementation: receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims. A prototype claim remains unpromoted until code, command, environment, corpus, and result are recorded.
 
-`AsiStackProofs.GenerateVerifyRepair` adds a bounded reconstruction predicate requiring an exact claim to satisfy `generator output + repair residual = target`, plus a bounded failed-verification predicate blocking exactness promotion. These proofs do not implement a codec, verifier, search procedure, repair stream, rate accounting experiment, or corpus result.
+`AsiStackProofs.GenerateVerifyRepair` adds a bounded reconstruction predicate requiring an exact claim to satisfy `generator output + repair residual = target`, plus a bounded failed-verification predicate blocking exactness promotion. The open implementation burden remains the codec, verifier, search procedure, repair stream, rate accounting experiment, and corpus result that would turn receipt discipline into measured compression evidence.
 
 ## Beyond the State of the Art
 

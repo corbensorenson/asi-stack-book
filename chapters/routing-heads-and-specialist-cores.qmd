@@ -224,7 +224,7 @@ The first routing artifact should not be a learned router. It is a registry sche
 
 The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, rejected candidates, selected route, route shape, route receipt, authority subset, denied authority, readiness check, leases, verifier requirement, budget, expiry, fallback, residual owner, residuals, and ledger references. Passing these fixtures confirms structural validity only; routing accuracy still requires measured route outcomes.
 
-`AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. These proofs do not implement a router, select a specialist, or measure routing quality.
+`AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. Actual router implementation, specialist selection, and routing-quality measurement remain outside this finite receipt predicate.
 
 A route-receipt suite should make routing discipline visible: one least-capable adequate route, one rejected overprivileged specialist, one missing-readiness fallback, one expired context lease, and one residual owner assigned after failed composition.
 
