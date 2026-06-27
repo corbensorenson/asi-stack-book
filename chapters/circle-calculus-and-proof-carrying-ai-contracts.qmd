@@ -202,7 +202,7 @@ The first transportable Circle artifact is a proof or contract record with theor
 
 The current implementation has three public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including receipt state, not-run resolver and replay states, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, and requiring workload, baseline, metric, and evidence artifacts before downstream promotion. A Circle-specific generated contract pack, theorem resolver, receipt replay, and fingerprint check remain future work.
 
-The next useful implementation step is a local surrogate contract pack: one valid receipt with a resolvable local theorem reference, one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence. That would test transfer semantics without importing private or unrun Circle results.
+The next build slice should be a local surrogate contract pack: one valid receipt with a resolvable local theorem reference, one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence. That slice would test transfer semantics without importing private or unrun Circle results.
 
 ## Beyond the State of the Art
 

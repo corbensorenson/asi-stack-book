@@ -200,7 +200,7 @@ Spinoza-style verification begins with a `proof_carrying_claim` schema and fixtu
 
 The fixture validates the envelope: claim scope, tier, justification type, mapping, interpretation confidence, artifact ref, artifact validity state, semantic adequacy, verifier name, verifier result field, verifier artifact refs, failed-attempt refs, formal scope, limitations, consumer requirements, downgrade rule, claim-validity effect, residual route, tribunal ref, ledger update, source refs, support-state effect, and non-claims. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
 
-The next useful implementation step is a mismatch fixture set: one formal target that passes but supports only a narrower claim, one failed verifier result that blocks promotion, one missing citation artifact that downgrades a source-derived claim, and one contested interpretation routed to tribunal. That would exercise the envelope without claiming verifier quality.
+A mismatch fixture set is the minimum that makes Spinoza useful rather than decorative: one formal target that passes but supports only a narrower claim, one failed verifier result that blocks promotion, one missing citation artifact that downgrades a source-derived claim, and one contested interpretation routed to tribunal. That would exercise the envelope without claiming verifier quality.
 
 ## Beyond the State of the Art
 

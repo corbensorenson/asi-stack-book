@@ -199,7 +199,7 @@ Belief revision starts with the existing `claim_record` schema plus a `belief_re
 
 Those fixtures demonstrate record shape and conservative support-state handling. The Lean predicates do not show that prose claims were extracted correctly, contradictions were detected, or a substantive belief was revised.
 
-The next useful implementation step is a tiny extraction-and-revision fixture set: one prose paragraph with two extracted claims, one unsupported assumption recorded as a residual, one contradiction linked to both claims, one downgrade event, and one tribunal escalation. That would test ledger mechanics without claiming automated belief revision.
+A tiny extraction-and-revision fixture set would make the ledger boundary tangible: one prose paragraph with two extracted claims, one unsupported assumption recorded as a residual, one contradiction linked to both claims, one downgrade event, and one tribunal escalation. That would test ledger mechanics without claiming automated belief revision.
 
 ## Beyond the State of the Art
 

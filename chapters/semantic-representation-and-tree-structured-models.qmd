@@ -224,9 +224,9 @@ The most subtle failure is authority migration. A semantic graph may begin as a 
 
 A first semantic representation artifact is a semantic node record. The repository fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 
-Passing the fixture does not prove a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
+The fixture does not show that a semantic graph works. It gives the book a stable public contract for later grounding and utility tests.
 
-The next useful implementation step is a small grounded domain where source passages, artifact nodes, semantic nodes, and claim records can be compared. A future test should deliberately update the hierarchy, remove or supersede a source, and check whether downstream uses notice the change. Until then, the schema and Lean predicates show record discipline only, not representation adequacy.
+A small grounded domain should be the first real comparison surface: source passages, artifact nodes, semantic nodes, and claim records can then be compared without pretending the graph is generally adequate. A future test should deliberately update the hierarchy, remove or supersede a source, and check whether downstream uses notice the change. Until then, the schema and Lean predicates show record discipline only, not representation adequacy.
 
 The minimum should include one consumer that refuses a node whose provenance or grounding state is insufficient.
 

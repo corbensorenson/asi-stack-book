@@ -225,7 +225,7 @@ The labor OS starts with the expanded `typed_job` schema and fixture. It validat
 
 The fixture validates the job record surface. `AsiStackProofs.TypedJobs` adds a bounded transition predicate for declared lifecycle moves and a bounded approval predicate showing that an approval-required job cannot be allowed to run without an approval record. This does not prove an adapter permission check, scheduler implementation, approval-service integration, or replay result.
 
-The next useful implementation step is a small lifecycle harness over fixture jobs: one valid transition path, one invalid transition, one missing approval, one missing permission, and one delivered-but-not-evidence-ready job. That would exercise the labor-OS boundary without claiming a deployed scheduler.
+A small lifecycle harness over fixture jobs should come before any scheduler claim: one valid transition path, one invalid transition, one missing approval, one missing permission, and one delivered-but-not-evidence-ready job. That would exercise the labor-OS boundary without claiming a deployed scheduler.
 
 ## Beyond the State of the Art
 

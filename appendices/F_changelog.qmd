@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal MVI formula polish
+
+- Reworked repeated `Minimum Viable Implementation` formulas across 45 chapters, replacing `The next useful implementation step is`, `The next useful fixture set is`, `The next useful fixture is`, `Passing the fixture`, and `Passing schema validation only` phrasings with chapter-specific first-build prose while preserving each section's non-promotion boundary. Tightened `scripts/validate_repeated_prose.py` so future writing runs reject those known MVI formulas, and refreshed the v1.0 status manuscript scale to 178,247 chapter words excluding YAML and 185,746 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source appendix title clarity
 
 - Tightened the source appendix labels so Appendix G now renders as `Corben-Authored, Supplied, and Local Sources` while Appendix H remains `External Sources by Other Authors`. Updated the manifest title, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, repository map, publication-readiness notes, project prompt, and tracked ASI Stack skill so the public book makes the Corben-owned/local corpus versus outside-author literature boundary explicit without changing stable appendix file paths. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

@@ -21,6 +21,13 @@ FORMULAIC_BEYOND_PHRASES = (
     "The final product surface would include:",
     "would expose:",
 )
+FORMULAIC_MVI_PHRASES = (
+    "The next useful implementation step is",
+    "The next useful fixture set is",
+    "The next useful fixture is",
+    "Passing the fixture",
+    "Passing schema validation only",
+)
 
 
 def strip_frontmatter(text: str) -> str:
@@ -79,6 +86,14 @@ def beyond_state_body(path: Path) -> str:
     return match.group("body").strip()
 
 
+def minimum_viable_body(path: Path) -> str:
+    text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+    match = re.search(r"^## Minimum Viable Implementation\s*$\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
+    if not match:
+        return ""
+    return match.group("body").strip()
+
+
 def beyond_state_openers(body: str) -> list[str]:
     if not body:
         return []
@@ -90,6 +105,7 @@ def main() -> None:
     locations: dict[str, list[str]] = defaultdict(list)
     formulaic_openers: list[tuple[str, str]] = []
     formulaic_phrases: list[tuple[str, str]] = []
+    formulaic_mvi_phrases: list[tuple[str, str]] = []
     for path in sorted((ROOT / "chapters").glob("*.qmd")):
         for paragraph in normalized_paragraphs(path):
             locations[paragraph].append(str(path.relative_to(ROOT)))
@@ -100,9 +116,13 @@ def main() -> None:
         for phrase in FORMULAIC_BEYOND_PHRASES:
             if phrase in beyond_body:
                 formulaic_phrases.append((str(path.relative_to(ROOT)), phrase))
+        mvi_body = minimum_viable_body(path)
+        for phrase in FORMULAIC_MVI_PHRASES:
+            if phrase in mvi_body:
+                formulaic_mvi_phrases.append((str(path.relative_to(ROOT)), phrase))
 
     repeats = {paragraph: paths for paragraph, paths in locations.items() if len(paths) > 1}
-    if repeats or formulaic_openers or formulaic_phrases:
+    if repeats or formulaic_openers or formulaic_phrases or formulaic_mvi_phrases:
         if repeats:
             print(f"Repeated long prose paragraphs found: {len(repeats)}")
         for paragraph, paths in sorted(repeats.items(), key=lambda item: (-len(item[1]), item[0])):
@@ -114,6 +134,10 @@ def main() -> None:
         if formulaic_phrases:
             print(f"Formulaic Beyond the State of the Art phrases found: {len(formulaic_phrases)}")
             for path, phrase in formulaic_phrases:
+                print(f" - {path}: {phrase}")
+        if formulaic_mvi_phrases:
+            print(f"Formulaic Minimum Viable Implementation phrases found: {len(formulaic_mvi_phrases)}")
+            for path, phrase in formulaic_mvi_phrases:
                 print(f" - {path}: {phrase}")
         sys.exit(1)
 

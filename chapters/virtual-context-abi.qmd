@@ -209,7 +209,7 @@ The context ABI begins as a `context_abi_record` schema and fixture. It validate
 
 The record is an executable shape constraint. The Lean predicates cannot prove that a real semantic address resolver is correct, that a materialization is adequate, or that a deployed context service emits every required fault.
 
-The next useful implementation step is a resolver fixture set: one valid request that resolves to a leased materialization, one mandatory miss that emits a typed fault, one resolved packet rejected for inadequate verification support, one packet denied by mount policy, and one lease-expired reuse attempt blocked. That would test ABI semantics without claiming a deployed VCM service.
+A resolver fixture set would make the ABI's refusal paths visible: one valid request that resolves to a leased materialization, one mandatory miss that emits a typed fault, one resolved packet rejected for inadequate verification support, one packet denied by mount policy, and one lease-expired reuse attempt blocked. That would test ABI semantics without claiming a deployed VCM service.
 
 ## Beyond the State of the Art
 

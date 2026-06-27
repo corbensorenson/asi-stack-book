@@ -208,7 +208,7 @@ Another failure is milestone compression. Several hard gates are collapsed into 
 
 The roadmap becomes executable through a prototype phase record. The repository fixture records deliverables, gates, blockers, commands, evidence references, non-claims, and status. It does not mean the named phase is complete or that dependent prototypes are unlocked.
 
-The next useful implementation step is a dependency-gate fixture set: one phase blocked by missing source notes, one phase allowed for research but not promotion, one phase with recorded phase debt and retirement condition, and one self-improvement phase blocked because evaluator independence is absent. That would test roadmap semantics without claiming phase completion.
+A dependency-gate fixture set should be the roadmap's first executable check: one phase blocked by missing source notes, one phase allowed for research but not promotion, one phase with recorded phase debt and retirement condition, and one self-improvement phase blocked because evaluator independence is absent. That would test roadmap semantics without claiming phase completion.
 
 The minimum should let a blocked phase stay useful by naming the exact artifact that would unblock it.
 

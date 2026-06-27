@@ -198,7 +198,7 @@ PlanForge starts with a `planforge_dag` schema and fixture. It should validate n
 
 That fixture establishes the fields that a later scheduler must fill. The Lean predicates do not prove that an external planner constructed the graph correctly, that the selected tier is adequate, or that a cheaper route preserves quality.
 
-The next useful implementation step is a scheduler-state fixture set: one node ready because dependencies and context are satisfied, one node blocked by missing context, one cheap route rejected because the adequacy predicate fails, one branch merge blocked by conflicting assumptions, and one local repair that does not regenerate the whole DAG. That would exercise scheduling semantics without claiming scheduler performance.
+A scheduler-state fixture set should carry the first PlanForge stress case: one node ready because dependencies and context are satisfied, one node blocked by missing context, one cheap route rejected because the adequacy predicate fails, one branch merge blocked by conflicting assumptions, and one local repair that does not regenerate the whole DAG. That set would exercise scheduling semantics without claiming scheduler performance.
 
 ## Beyond the State of the Art
 

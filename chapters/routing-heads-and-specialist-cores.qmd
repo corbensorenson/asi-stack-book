@@ -226,7 +226,7 @@ The `specialist_registry_record` schema describes a bounded specialist core. The
 
 `AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. These proofs do not implement a router, select a specialist, or measure routing quality.
 
-The next useful fixture set is a route-receipt suite: one least-capable adequate route, one rejected overprivileged specialist, one missing-readiness fallback, one expired context lease, and one residual owner assigned after failed composition.
+A route-receipt suite should make routing discipline visible: one least-capable adequate route, one rejected overprivileged specialist, one missing-readiness fallback, one expired context lease, and one residual owner assigned after failed composition.
 
 ## Beyond the State of the Art
 

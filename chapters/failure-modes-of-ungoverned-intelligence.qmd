@@ -205,7 +205,7 @@ Another failure is stale containment: a mitigation remains listed after the arch
 
 The first failure artifact should be a `failure_boundary_map` schema plus a small example for authority creep, context pollution, evaluator drift, or residual hiding. That example must not claim that those risks are solved. It should prove only that the book can represent a failure class, affected contracts, event state, severity, reversibility, recurrence, protected invariant, receipt, promotion blocker, containment path, normalization guard, learning path, source refs, support-state effect, and boundary owner.
 
-The next useful fixture set is a failure-receipt suite: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
+A failure-receipt suite should be the first diagnostic harness: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 
 That suite is still diagnostic, not preventive. It proves only that recurring failure can leave a routeable record.
 

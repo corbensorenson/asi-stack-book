@@ -190,7 +190,7 @@ The proof envelope begins with the existing generated proof manifest plus a proo
 
 The current local verification gate includes `cd lean && lake build`; passing it proves only the Lean modules in this repository. The proof-envelope module adds a narrow record-level invariant for implemented status and non-operational routing. Appendix E now publishes the generated coverage summary from `proofs/proof_triage.json`: 112 proof targets are covered by triage and all 112 are implemented as formal-invariant Lean candidates. The proof artifact traceability audit checks that those targets are wired through manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. Semantic proof adequacy review remains a separate planned check.
 
-The next useful fixture set is a proof/spec receipt suite: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.
+A proof/spec receipt suite should make the envelope operational: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.
 
 ## Beyond the State of the Art
 

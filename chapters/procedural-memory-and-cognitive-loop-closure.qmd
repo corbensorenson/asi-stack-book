@@ -195,7 +195,7 @@ Procedural memory begins with a `procedural_tool_record` schema and fixture. It 
 
 The fixture validates only a candidate tool-card shape. It does not prove repeated traces exist, that invariant abstraction is correct, that the tool works, or that regression checks passed.
 
-The next useful implementation step is a miniature trace set with three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
+A miniature trace set is the right first loop-closure harness: three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
 
 That harness should also prove a negative path: a candidate with a missing near-miss, stale precondition, failed benchmark floor, or retired SCF stays in quarantine. The book does not need a large production loop detector to demonstrate the discipline; it needs a small public-safe fixture that shows how reuse can be denied.
 

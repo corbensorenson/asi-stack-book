@@ -202,7 +202,7 @@ The highest-risk failure is evidence laundering through bibliography. A source a
 
 The research agenda starts as a split Corben-source-corpus and external-literature plan plus a research backlog record. The repository fixture makes future source ingestion and chapter insertion reviewable, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims, but it does not normalize external literature, perform direct citation checks, run a new-paper scenario, or promote mapped claims to stronger support states.
 
-The next useful implementation step is a live rehearsal against a user-provided AI paper or artifact. The synthetic fixture set now covers update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions, but it deliberately avoids claiming that any particular future source has been evaluated.
+A live rehearsal against a user-provided AI paper or artifact is the next meaningful exercise. The synthetic fixture set now covers update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate decisions, but it deliberately avoids claiming that any particular future source has been evaluated.
 
 ## Beyond the State of the Art
 

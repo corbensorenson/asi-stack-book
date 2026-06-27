@@ -228,7 +228,7 @@ The semantic interface begins as a public-safe `command_contract` record. That r
 
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 
-The next useful implementation step is a small command-conflict fixture set: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. That would let the book demonstrate contract precedence without claiming full prompt-security behavior.
+A small command-conflict fixture set is the right first stress test: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. That set would let the book demonstrate contract precedence without claiming full prompt-security behavior.
 
 ## Beyond the State of the Art
 

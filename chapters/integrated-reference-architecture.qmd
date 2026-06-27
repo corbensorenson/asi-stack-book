@@ -185,7 +185,7 @@ Another failure is trace fragmentation, where each layer records locally valid r
 
 The integrated architecture should first exist as the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
-The next useful implementation step is a tiny dry-run trace set with one approved flow and one blocked flow. The approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. The blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. That would still be a fixture, not a runtime result, but it would make the architecture's stop conditions executable.
+A tiny dry-run trace set is the first integration artifact worth building. One approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. One blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. That would still be a fixture, not a runtime result, but it would make the architecture's stop conditions executable.
 
 ## Beyond the State of the Art
 

@@ -202,7 +202,7 @@ The `readiness_gate_record` schema validates the shape of that record, including
 
 `AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, plus a bounded quarantine predicate blocking ordinary route selection for quarantined targets. These proofs do not implement benchmark evaluation, residual escrow storage, lifecycle transitions, or routing enforcement.
 
-The next useful fixture set is a lifecycle trace: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation. That would test gate semantics without claiming module quality.
+A lifecycle trace should exercise the gate semantics without claiming module quality: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation.
 
 ## Beyond the State of the Art
 

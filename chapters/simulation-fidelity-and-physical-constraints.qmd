@@ -209,9 +209,9 @@ Another failure is parameter overfitting to the sandbox while the physical bottl
 
 Simulation fidelity should begin as a simulation contract record. The repository fixture records contract version, claim class, scope, fidelity state, time semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximations, instrumentation effects, supported claim boundary, observed-result boundary, transfer decision, support-state effect, failure behavior, residuals, evidence references, and non-claims.
 
-Passing the fixture does not show feasibility. It makes the feasibility claim inspectable.
+The fixture does not show feasibility. It makes the feasibility claim inspectable and bounded.
 
-The next useful fixture set is a simulation receipt suite: one unit-invariant result, one benchmark result with approximation limits, one scenario-only result, one blocked transfer because a bottleneck is missing, and one downgraded claim after instrumentation cost is recorded.
+A simulation receipt suite should be the first practical extension: one unit-invariant result, one benchmark result with approximation limits, one scenario-only result, one blocked transfer because a bottleneck is missing, and one downgraded claim after instrumentation cost is recorded.
 
 The minimum should make downgrade a normal result, since a simulation that only confirms claims is not yet evidence discipline.
 

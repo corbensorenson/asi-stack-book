@@ -200,9 +200,9 @@ The subtle failure is structural adequacy laundering. A system proves that a slo
 
 Cyclic memory should first be represented as a cyclic memory contract record. The repository fixture records memory target, memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness window, stale-read policy, coverage claim, recurrence schedule, loop exit, fallback, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references.
 
-Passing the fixture does not prove a memory system works. It proves the book can represent the structural claim without blurring it into model quality.
+The fixture is only a structural receipt. It shows that the book can represent the cyclic-memory claim without blurring it into model quality or runtime memory performance.
 
-The next useful fixture set is a trio of traces: one slot reuse with winding preserved, one stale read blocked or residualized, and one recurrence schedule that exits and falls back. A later workload harness can then ask whether those structural protections improve task behavior.
+A compact trio of traces would extend the minimum: one slot reuse with winding preserved, one stale read blocked or residualized, and one recurrence schedule that exits and falls back. A later workload harness can then ask whether those structural protections improve task behavior.
 
 ## Beyond the State of the Art
 

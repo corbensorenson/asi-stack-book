@@ -197,9 +197,9 @@ The quiet failure is orphaned regression memory. A field may accumulate tests an
 
 ## Minimum Viable Implementation
 
-The first SCF implementation surface is the existing `stable_capability_field` schema expanded with field version, owner, lifecycle, qualification context/status, qualification lease/status, evaluator policy, evaluator independence, route validity/scope, route permission effect, consumer policy, evidence references, readiness gate refs, field history refs, incidents, review triggers, state migration, regression suite, rollback plan, rollback obligations, default-route blockers, source refs, support-state effect, and non-claims. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
+The first SCF implementation surface is the existing `stable_capability_field` schema expanded with field version, owner, lifecycle, qualification context/status, qualification lease/status, evaluator policy, evaluator independence, route validity/scope, route permission effect, consumer policy, evidence references, readiness gate refs, field history refs, incidents, review triggers, state migration, regression suite, rollback plan, rollback obligations, default-route blockers, source refs, support-state effect, and non-claims. Schema validation proves only that the record is shaped correctly; it does not prove a candidate is qualified.
 
-The next useful implementation step is a field history fixture: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. That fixture would make identity, lifecycle, and evidence aging concrete without claiming a deployed route validator.
+A field history fixture should make identity, lifecycle, and evidence aging concrete: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. That fixture would not claim a deployed route validator.
 
 ## Beyond the State of the Art
 

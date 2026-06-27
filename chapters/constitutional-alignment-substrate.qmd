@@ -184,7 +184,7 @@ The subtle failure is value smuggling. A predicate looks neutral, but its thresh
 
 A tractable constitutional starting point is a `constitutional_predicate_record` schema plus fixtures for least-sufficient-power, agency-preservation, and self-modification-freeze predicates. These fixtures do not prove alignment; they make the constitutional layer inspectable.
 
-The next useful implementation step is a constitutional conflict fixture set: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. That would test the substrate's control semantics without claiming moral correctness.
+A constitutional conflict fixture set should follow: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. That set would test the substrate's control semantics without claiming moral correctness.
 
 Each fixture should preserve translation status: source principle, operational predicate, uncertainty label, affected authority, review requirement, and residual. The goal is not to settle ethics in code; it is to prevent constitutional language from bypassing execution gates.
 

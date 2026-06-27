@@ -213,7 +213,7 @@ Transactional context starts as a `context_transaction_record` schema and fixtur
 
 The fixture validates only the record surface. The Lean predicates do not prove read-your-writes consistency across a store, branch isolation, deletion closure, or poisoning resistance.
 
-The next useful implementation step is a tiny memory-store fixture set: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact graph node that records the replay boundary. That would test transaction semantics without claiming production memory behavior.
+A tiny memory-store fixture set would give the transaction model its first behavioral rehearsal: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact graph node that records the replay boundary. That set would test transaction semantics without claiming production memory behavior.
 
 ## Beyond the State of the Art
 

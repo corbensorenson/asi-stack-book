@@ -213,7 +213,7 @@ The subtle failure is acceleration pressure. A self-improvement loop can argue t
 
 The first self-improvement artifact is a `self_improvement_transition` schema plus a rejected or canary-only change record. That record should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
 
-The next useful implementation step is a canary-transition fixture with one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. That would make the self-improvement boundary concrete without claiming self-improvement success.
+A canary-transition fixture is the smallest honest rehearsal: one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. That would make the self-improvement boundary concrete without claiming self-improvement success.
 
 The transition fixture also records who is not allowed to approve the change. A self-improving component may propose evidence, but the acceptance decision needs independent evaluator status, protected-invariant checks, and an explicit non-claim that the transition is only a record-shape test.
 

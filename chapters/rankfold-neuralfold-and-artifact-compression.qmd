@@ -221,9 +221,9 @@ The most dangerous failure is silent narrowing. A compressed representation may 
 
 A minimal artifact-compression lane is a compressed artifact record. The repository fixture validates that the record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 
-Passing the fixture does not prove a compressor works. It proves the public book has an executable contract for evaluating one later.
+The fixture is not a compressor result. It gives the public book an executable contract for evaluating one later.
 
-The next useful implementation step is a toy corpus with deliberately adversarial artifacts: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, this chapter remains a design rationale with executable record-shape checks only.
+A toy corpus with deliberately adversarial artifacts should follow: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, this chapter remains a design rationale with executable record-shape checks only.
 
 ## Beyond the State of the Art
 

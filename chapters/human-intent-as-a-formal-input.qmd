@@ -209,7 +209,7 @@ The deeper failure is contract substitution. The system receives a human purpose
 
 For intent, the first build is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
 
-The next useful implementation step is a small corpus of deliberately underspecified requests. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
+A small corpus of deliberately underspecified requests is the first serious test bed. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
 
 The corpus should include one request that sounds urgent, one that implies trust, one that omits allowed means, and one that conflicts with a policy predicate. Passing the test means the contract preserves ambiguity and refusal paths, not that the system fully understands intent.
 
