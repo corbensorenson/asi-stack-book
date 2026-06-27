@@ -204,7 +204,7 @@ The mature product surface would include:
 - Evaluator-independence gates before readiness promotion, policy learning, capability replacement, or recursive self-improvement.
 - Failure closure for prototype theater, skipped verification, roadmap-as-evidence, operator convenience weakening gates, and lost remaining-work items.
 
-In that final product, a builder could ask the roadmap what to implement next and receive a precise answer: the smallest allowed slice, the evidence needed to advance, and the blocked claims that must not move. This remains a target architecture. The support state should not rise until real phase packets, dependency-gate checks, acceptance reviews, and evidence transitions validate the roadmap machinery.
+In that final product, a builder could ask the roadmap what to implement next and receive a precise answer: the smallest allowed slice, the evidence needed to advance, and the blocked claims that must not move. The phase-gated build controller remains a target architecture until real phase packets, dependency-gate checks, acceptance reviews, and evidence transitions show that roadmap progress changes implementation state without laundering claim strength.
 
 ## Codex test plan
 
