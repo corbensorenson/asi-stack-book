@@ -102,6 +102,7 @@ PROBLEM_BANNED_PATTERNS = [
 
 SECTION_MIN_WORDS = {
     "## Problem": 130,
+    "## Why existing approaches are insufficient": 130,
     "## Interfaces": 130,
     "## Invariants": 110,
     "## Failure modes": 110,
