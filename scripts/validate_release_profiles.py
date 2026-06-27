@@ -114,6 +114,36 @@ def validate_string_list(owner: str, key: str, values: object, errors: list[str]
             errors.append(f"{owner}: {key} entries must be non-empty strings.")
 
 
+def validate_release_gate_sequence(
+    profile_id: str,
+    release_gate: object,
+    required_sequence: list[str],
+    errors: list[str],
+) -> None:
+    if not isinstance(release_gate, list):
+        errors.append(f"{profile_id}: release_gate must be a list before sequence checks.")
+        return
+
+    positions: list[tuple[str, int]] = []
+    for command in required_sequence:
+        try:
+            positions.append((command, release_gate.index(command)))
+        except ValueError:
+            errors.append(f"{profile_id}: release_gate must include `{command}`.")
+
+    if len(positions) != len(required_sequence):
+        return
+
+    for (earlier_command, earlier_index), (later_command, later_index) in zip(
+        positions,
+        positions[1:],
+    ):
+        if earlier_index >= later_index:
+            errors.append(
+                f"{profile_id}: release_gate must run `{earlier_command}` before `{later_command}`."
+            )
+
+
 def validate_content_layer_policy(
     profile_id: str,
     policy: object,
@@ -618,43 +648,37 @@ def main() -> None:
             if required_format not in formats:
                 errors.append(f"reader_release must list {required_format} as a publication format.")
         release_gate = reader.get("release_gate", [])
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/render_reader_formats.py --check" not in release_gate
-        ):
-            errors.append("reader_release release_gate must include render_reader_formats.py --check.")
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/validate_reader_spine.py --check" not in release_gate
-        ):
-            errors.append("reader_release release_gate must include validate_reader_spine.py --check.")
+        validate_release_gate_sequence(
+            "reader_release",
+            release_gate,
+            [
+                "python3 scripts/build_reader_edition.py --check",
+                "python3 scripts/validate_human_reading_paths.py",
+                "python3 scripts/validate_reader_spine.py --check",
+                "python3 scripts/render_reader_formats.py --check",
+            ],
+            errors,
+        )
 
     live_book = profiles_by_id.get("live_book")
     if live_book:
         release_gate = live_book.get("release_gate", [])
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/validate_reading_mode_toggle.py" not in release_gate
-        ):
-            errors.append("live_book release_gate must include validate_reading_mode_toggle.py.")
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/validate_human_reading_paths.py" not in release_gate
-        ):
-            errors.append("live_book release_gate must include validate_human_reading_paths.py.")
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/validate_live_human_view.py" not in release_gate
-        ):
-            errors.append("live_book release_gate must include validate_live_human_view.py after HTML render.")
-
-    if reader:
-        release_gate = reader.get("release_gate", [])
-        if (
-            not isinstance(release_gate, list)
-            or "python3 scripts/validate_human_reading_paths.py" not in release_gate
-        ):
-            errors.append("reader_release release_gate must include validate_human_reading_paths.py.")
+        validate_release_gate_sequence(
+            "live_book",
+            release_gate,
+            [
+                "python3 scripts/sync_scaffold.py",
+                "python3 scripts/sync_proof_manifest.py --check",
+                "python3 scripts/validate_release_profiles.py",
+                "python3 scripts/validate_reading_mode_toggle.py",
+                "python3 scripts/validate_human_reading_paths.py",
+                "python3 scripts/validate_publication.py",
+                "python3 scripts/validate_book.py",
+                "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
+                "python3 scripts/validate_live_human_view.py",
+            ],
+            errors,
+        )
 
     audio = profiles_by_id.get("audio_release")
     if audio and not isinstance(audio.get("narration_rules"), list):
