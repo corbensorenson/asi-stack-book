@@ -50,9 +50,9 @@ That makes procedural memory different from habit. A habit repeats because it wo
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Part II closes by asking what the stack should learn from its own repeated work. Procedural memory is the path from a successful trace to a reusable tool, checklist, workflow, or capability candidate, but only after the evidence and boundaries are mature enough.
+Part II closes by asking what the stack should learn from its own repeated work. Procedural memory is the path from comparable traces to a reusable tool, checklist, workflow, or capability candidate, but only after the evidence and boundaries are mature enough.
 
-The human point is that automation should be earned. A repeated reasoning loop should not be improvised forever, but it also should not be compiled into a default behavior just because it worked once. The stack needs promotion gates so memory becomes capability without becoming unchecked habit.
+The human point is that automation should be earned. A repeated reasoning loop should not be improvised forever, but it also should not become default behavior just because it worked once. The stack needs promotion gates so memory becomes capability without becoming unchecked habit.
 :::
 
 ## Problem
@@ -196,16 +196,19 @@ That harness should also prove a negative path: a candidate with a missing near-
 
 ## Beyond the State of the Art
 
-The mature version of Procedural Memory and Cognitive Loop Closure is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a procedure foundry for verified reusable cognition. It does not merely cache prompts or scripts. It mines artifact traces, clusters comparable work, preserves failures and near misses, abstracts the invariant structure, discovers parameters, synthesizes candidate procedures, verifies regressions, attaches monitoring and retirement rules, and then offers qualified tools to Part III routing.
 
-At that end state, the chapter's claim becomes an operational contract: Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory. The mature surface would include:
+At that end state, procedural memory has states rather than vibes: candidate trace, loop cluster, tool candidate, verified reuse, routable tool, quarantined tool, retired tool. A trace cannot jump straight into routable behavior because it looks elegant. The procedure card must carry source traces, rejected traces, near misses, abstraction rationale, preconditions, postconditions, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and non-claims.
 
-- Operating mechanism: Log safe execution traces; Detect recurring loops; Abstract invariant structure, discover parameters, verify, and publish tools.
-- Stack interface: Artifact graph supplies traces; Routing selects new tools; Evidence tests utility and regressions.
-- Preserved invariants: Only verified loops become tools; Parameters and assumptions are explicit; Tool promotion records residuals and regressions.
-- Failure closure: detect and route failure modes such as Premature toolification; Hidden assumptions; Procedural memory poisoning to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Procedural Memory and Cognitive Loop Closure, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Trace-mining tools over artifact graphs, job receipts, adapter receipts, failures, residuals, and replay records.
+- Loop-clustering logic that requires comparable successes plus negative examples before tool synthesis.
+- Tool-card generation with parameters, assumptions, preconditions, postconditions, risk/runtime tier, authority envelope, monitoring plan, regressions, and retirement criteria.
+- Readiness gates that bind procedural tools to SCF identity, benchmark floors, residual escrow, route limits, and rollback or quarantine paths.
+- Retirement and revision machinery that reacts to stale sources, failed regressions, changed APIs, governance updates, route drift, and tool bloat.
+
+For this chapter, beyond the state of the art means that the stack learns from repetition without letting repetition become ungoverned habit. This remains a target architecture. The support state should not rise until trace sets, loop detectors, tool candidates, regression harnesses, readiness gates, monitoring logs, and retirement traces exist for this end state.
 
 ## Codex test plan
 

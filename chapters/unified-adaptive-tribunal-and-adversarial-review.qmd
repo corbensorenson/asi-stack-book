@@ -46,9 +46,9 @@ Review is a scarce governance resource. The stack should not route every uncerta
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Some claims are too risky, ambiguous, or contested for a single verifier result. This chapter introduces tribunal review as an escalation path: multiple roles, adversarial pressure, independence checks, residuals, and a decision record.
+Some claims are too risky, ambiguous, or contested for a single verifier result. This chapter introduces tribunal review as an escalation path: multiple roles, adversarial pressure, dossier boundaries, independence checks, residuals, and a decision record.
 
-For the reader, the tribunal is not bureaucracy for its own sake. It is the mechanism that prevents the stack from resolving hard disputes by whichever model or metric speaks last. Expensive review is reserved for claims and artifacts whose failure would matter.
+For the reader, the tribunal is not bureaucracy for its own sake. It prevents the stack from resolving hard disputes by whichever model, metric, or reviewer speaks last. Expensive review is reserved for claims and artifacts whose failure would matter.
 :::
 
 ## Problem
@@ -188,16 +188,19 @@ The next useful implementation step is a contested-claim fixture set: one high-r
 
 ## Beyond the State of the Art
 
-The mature version of Unified Adaptive Tribunal and Adversarial Review is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a review operating system for contested claims and high-risk artifacts. It does not simply ask several models for opinions. It creates a bounded dossier, assigns role-separated reviewers, runs adversarial probes, records evidence-linked findings, preserves dissent, applies cycle caps, and converts verdicts into machine-readable constraints.
 
-At that end state, the chapter's claim becomes an operational contract: A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty. The mature surface would include:
+At that end state, tribunal review is expensive but actionable. It can accept a claim within a scope, require a source fetch, downgrade a claim, block dispatch, narrow authority, demand a human sign-off, preserve dissent, or create residual work. Re-running the tribunal over unchanged evidence cannot quietly turn rejection into acceptance; the unchanged-evidence guard and prior review refs make that laundering visible.
 
-- Operating mechanism: Assign reviewer roles and critique objectives; Use adversarial checks for high-risk claims; Record dissent, unresolved issues, and human-adjudication points.
-- Stack interface: Spinoza consumes tribunal results; Planning escalates risky nodes to tribunal; Evidence records reviewer outcomes.
-- Preserved invariants: Dissent is preserved; Consensus requires evidence; High-risk reviews are reproducible enough to audit.
-- Failure closure: detect and route failure modes such as Reviewer collusion; Consensus theater; Critique without action to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Unified Adaptive Tribunal and Adversarial Review, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Admission rules that decide when ordinary verification is enough and when tribunal review is required.
+- Dossier construction tools that record retrieval boundaries, excluded evidence, risk class, target scope, and review limits.
+- Role templates for logic, citation, omission, implementation, security, governance, and domain review.
+- Adversarial-probe workflows with cycle caps, dissent preservation, unresolved-issue records, and human-adjudication hooks.
+- Constraint outputs that can update claim ledgers, block plan dispatch, narrow adapter permissions, require source expansion, or create residuals.
+
+For this chapter, beyond the state of the art means that hard review becomes a governed action surface rather than a conversation about confidence. This remains a target architecture. The support state should not rise until reproducible dossiers, reviewer routing, adversarial-probe logs, dissent tests, consensus evidence checks, and action-linked verdict traces exist for this end state.
 
 ## Codex test plan
 

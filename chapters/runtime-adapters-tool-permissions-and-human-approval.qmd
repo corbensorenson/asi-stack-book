@@ -47,9 +47,9 @@ This chapter sits after artifact graphs so the reader already has the evidence s
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Artifact graphs record work, but runtime adapters create effects. This chapter is the boundary where a typed job may touch tools, files, networks, deployments, payments, messages, or other external systems under explicit permission and human approval when needed.
+Artifact graphs record work, but runtime adapters create effects. This chapter is the boundary where a typed job may touch tools, files, networks, deployments, payments, messages, credentials, hardware, or other external systems under explicit permission and human approval when needed.
 
-The reader should treat this as the stack's narrow waist for action. A plan can be brilliant and a job can be well typed, but external effect still needs an authority envelope, approval scope, pre/post state, incident path, and residual record.
+The reader should treat this as the stack's narrow waist for action. A plan can be brilliant and a job can be well typed, but external effect still needs an authority envelope, approval scope, effect lease, pre/post state, incident path, and residual record.
 :::
 
 ## Problem
@@ -232,16 +232,19 @@ The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` 
 
 ## Beyond the State of the Art
 
-The mature version of Runtime Adapters, Tool Permissions, and Human Approval is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is a capability firewall for external effects. It does not expose tools as ambient functions. It grants scoped, expiring effect leases to typed jobs after checking target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations.
 
-At that end state, the chapter's claim becomes an operational contract: Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture. The mature surface would include:
+At that end state, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.
 
-- Operating mechanism: Map jobs to runtime adapters with declared capabilities; Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists; Require permission checks and approval gates for high-impact actions; Record deployment evidence and rollback handles.
-- Stack interface: Execution owns adapters; Security mediates secrets; Evidence records deployment outcomes.
-- Preserved invariants: No adapter executes beyond granted scope; High-impact actions require approval; Rollback handles are captured when available.
-- Failure closure: detect and route failure modes such as Tool overreach; Approval bypass; Irreversible deployment without rollback to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Runtime Adapters, Tool Permissions, and Human Approval, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- Adapter contracts for documents, code, APIs, services, databases, deployments, messages, payments, hardware, fabrication, robotics, credentials, and organizational workflows.
+- Permission lookup against parent typed jobs, authority ceilings, secret-handle policies, sandbox modes, and active governance constraints.
+- Human approval artifacts with target, scope, risk tier, expiration, reuse rule, revocation path, approver role, and audit refs.
+- Effect receipts with pre/post state, external side effects, rollback handles, irreversible residuals, verification refs, incident refs, and artifact-graph links.
+- Promotion gates that refuse to convert successful tool calls into verified task success without evidence and residual accounting.
+
+For this chapter, beyond the state of the art means that action becomes lease-bound, inspectable, and revocable where possible. The stack can use tools without giving cognition ambient power over the world. This remains a target architecture. The support state should not rise until adapter harnesses, sandbox checks, approval workflows, secret-handle tests, rollback records, and effect-receipt validation exist for this end state.
 
 ## Codex test plan
 

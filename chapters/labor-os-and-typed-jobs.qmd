@@ -47,9 +47,9 @@ The typed job is where the stack stops planning and starts owing receipts. A pla
 ::: {.asi-human-only}
 ## Human Reading Path
 
-After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, owner, inputs, outputs, approvals, isolation, logs, and completion criteria.
+After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, parentage, inputs, outputs, approvals, isolation, logs, failure behavior, and completion criteria.
 
-This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, what evidence they must return, and how their work can be audited or replayed later.
+This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, which gate can stop them, what evidence they must return, and how their work can be audited or replayed later.
 :::
 
 ## Problem
@@ -223,16 +223,19 @@ The next useful implementation step is a small lifecycle harness over fixture jo
 
 ## Beyond the State of the Art
 
-The mature version of Labor OS and Typed Jobs is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is an operating system for bounded cognitive labor. It does not run "agents" as ambient actors. It admits work only as typed jobs whose parent contract, plan node, lifecycle state, permission basis, approval record, workspace, adapter route, expected artifact, failure behavior, audit trail, delivery state, and evidence state are explicit.
 
-At that end state, the chapter's claim becomes an operational contract: The execution layer should convert plans into typed jobs managed by a governed labor operating system. The mature surface would include:
+At that end state, every job can be refused, approved, dispatched, adjudicated, delivered, quarantined, replayed, or retired through declared transitions. Delivery and evidence readiness remain separate: a user-visible output may exist while verification, artifact capture, replay declaration, or residual accounting is still incomplete. That separation prevents useful output from being laundered into governed evidence.
 
-- Operating mechanism: Represent jobs with type, inputs, tools, permissions, expected artifacts, approval gates, and failure behavior; Separate orchestration, secure workspace/logistics, security/access controls, secret isolation, and audit as explicit execution subfunctions; Isolate tools and runtime adapters; Record job lifecycle and evidence artifacts.
-- Stack interface: Planning dispatches jobs; Security mediates permissions; Artifact graph receives outputs.
-- Preserved invariants: Every job has type and lifecycle state; Tool permissions are explicit; Human approval gates block high-impact jobs.
-- Failure closure: detect and route failure modes such as Tool overreach; Unlogged side effects; Infinite or chaotic agent swarms to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Labor OS and Typed Jobs, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A job lifecycle engine that rejects invalid transitions and preserves parentage from command contract to plan node to approval to adapter to artifact.
+- Permission and approval services that block high-impact work until scoped records exist.
+- Workspace and isolation controls for source access, secret handles, tool calls, runtime effects, and audit capture.
+- Completion receipts that separate request, approval, execution, artifact capture, verification, delivery, residuals, and replay/non-replay state.
+- Operator surfaces that show drafted, blocked, awaiting-approval, running, adjudicating, delivered, evidence-ready, quarantined, replayed, and retired work.
+
+For this chapter, beyond the state of the art means that execution becomes accountable manufacturing. Intelligence produces work packets with receipts, not unmanaged activity. This remains a target architecture. The support state should not rise until lifecycle harnesses, permission checks, approval services, adapter runners, completion receipts, and replayable job traces exist for this end state.
 
 ## Codex test plan
 

@@ -48,9 +48,9 @@ The key distinction is between storage and evidential continuity. A file path sa
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Typed jobs produce things. This chapter makes those things durable: artifacts, logs, traces, receipts, replay records, and links back to the claims or plans they affect. Without that graph, work disappears into conversation history.
+Typed jobs produce things. This chapter makes those things durable: artifacts, logs, traces, receipts, replay records, source links, context links, and claim or test links. Without that graph, work disappears into conversation history.
 
-The human reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reader should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable.
+The human reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reader should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits.
 :::
 
 ## Problem
@@ -190,16 +190,19 @@ The next implementation step is not a larger schema for its own sake. It is a ti
 
 ## Beyond the State of the Art
 
-The mature version of Artifact Graphs, Audit Logs, and Replay is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version is an evidence graph for work products. It does not merely store files. It records the lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gate for every artifact that the stack may later reuse.
 
-At that end state, the chapter's claim becomes an operational contract: Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests. The mature surface would include:
+At that end state, artifacts can become context, evidence, regression cases, release inputs, compression targets, procedural-memory traces, or reader-edition material only through declared gates. A path on disk is not enough. The artifact node must say what created it, what sources and context shaped it, what can be replayed, what cannot be replayed, and which claims or tests it is allowed to affect.
 
-- Operating mechanism: Record artifacts as nodes with source, job, context, tool, and evidence links; Capture replay metadata and environment assumptions; Use artifacts as memory and improvement substrate.
-- Stack interface: VCM references artifacts; Evidence consumes logs; Procedural memory mines repeated traces.
-- Preserved invariants: Artifacts have stable identities; Audit logs are append-only or versioned; Replay limits are declared.
-- Failure closure: detect and route failure modes such as Untraceable output; Non-replayable workflow; Provenance gaps to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The final product surface would include:
 
-For Artifact Graphs, Audit Logs, and Replay, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A stable artifact graph with versioned nodes for documents, code, proofs, schemas, diagrams, source notes, reports, benchmark outputs, release records, and runtime receipts.
+- Append-only or versioned audit logs for job events, adapter effects, verification checks, human approvals, failures, and repair attempts.
+- Replay grades for byte-for-byte replay, semantic replay, partial replay, non-replayable work, and unattempted replay.
+- Evidence gates that prevent artifacts with missing provenance, missing context transactions, missing certificates, or failed checks from promoting claims.
+- Query tools that find every claim, test, chapter, release artifact, and procedural candidate affected by a changed artifact.
+
+For this chapter, beyond the state of the art means that the stack remembers work as structured evidence, not as folders full of outputs. This remains a target architecture. The support state should not rise until produced artifacts, audit reconstruction, replay attempts, provenance completeness checks, and claim/test link validation exist for this end state.
 
 ## Codex test plan
 
