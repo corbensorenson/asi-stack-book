@@ -4,7 +4,7 @@ chapter_id: "the-efficient-asi-hypothesis"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "viea"
   - "rmi"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -49,14 +49,14 @@ It inherits the stack boundary from the previous chapter and asks the first desi
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The previous chapter defined the stack. This chapter explains why the stack is not just a governance diagram. The efficiency claim is that a good architecture should spend high-cost cognition only where it is needed, reuse prior work when it remains valid, and preserve enough evidence that cheap shortcuts do not become hidden errors.
+The previous chapter defined the stack. This chapter explains why the stack is not only a governance diagram. A good architecture should spend high-cost cognition where the contract demands it, reuse prior work when it remains valid, and preserve enough evidence that cheap shortcuts do not become hidden errors.
 
-The important distinction is between thrift and recklessness. The book is not arguing that every task should be made cheap. It is arguing that cost, quality, authority, uncertainty, and residual work should be visible together, so a system can choose the smallest adequate route without pretending that adequacy has been proved when it has not.
+The important distinction is between thrift and recklessness. The book is not arguing that every task should be made cheap. It is arguing that cost, quality, authority, uncertainty, and residual work should be visible together, so the system can choose the smallest adequate route without pretending that adequacy has been proved when it has not.
 :::
 
 ## Problem
 
-The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.
+The architecture needs a non-scale-only theory for how capability can increase without spending maximal cognition on every subtask.
 
 The previous chapter says that ASI is a stack. This chapter says why that matters economically. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.
 
@@ -70,7 +70,7 @@ Parameter count alone does not explain routing, context selectivity, procedural 
 
 A scale-only account has no native place to record why a cheap route was adequate, why a costly route was necessary, what quality predicate was satisfied, what verification was skipped, or what residual burden remains. It also makes benchmarks too easy to misuse. A benchmark gain can represent genuine capability, prompt overfitting, hidden context cost, more human correction, a larger model invoked in the background, or a compression decision that moved complexity into an uncounted repair stream.
 
-The stack needs a route ledger for the same reason it needs a claim ledger: without a record, success is ambiguous. A useful efficiency claim names the task contract, quality predicate, chosen route, rejected lower-cost routes, verification result, fallback route, residual obligations, and final cost. Without those fields, "efficient" becomes an aesthetic judgment rather than an architecture property.
+The stack needs a route ledger for the same reason it needs a claim ledger: without a record, success is ambiguous. A useful efficiency claim names the task contract, quality predicate, chosen route, rejected lower-cost routes, verification result, fallback route, residual obligations, and final cost. Without those fields, "efficient" becomes an aesthetic judgment rather than an architecture property. For the human reader, the route ledger is the receipt that distinguishes a genuine saving from a cost that has merely been moved elsewhere.
 
 The insufficiency is especially sharp in self-improving systems. If a system can rewrite prompts, compile tools, cache procedures, add specialists, or change routing policy, then it can also make its own efficiency look better by moving costs out of view. The route ledger blocks that move by keeping verification, fallback, repair, human review, and regression costs attached to the route that caused them.
 
@@ -99,7 +99,7 @@ Appendix C now maps this core claim to every assigned source note. Nine mappings
 
 ## Mechanism
 
-Efficiency becomes meaningful only when the stack records what it chose not to spend. VIEA supplies durable artifacts, workflow-to-tool compilation, residuals, benchmarks, and regression coverage. RMI supplies the ratchet loop and residual escrow. CGS supplies the smallest-adequate-structure question, while BBVCA v9 and RankFold/NeuralFold expose repair and residual costs for compression. Simulation Scaling keeps feasibility tied to scope and fidelity. BeastBrain and MoECOT keep routing and specialist-lane economics visible, and Aletheia prevents verification effort from being counted as optional decoration.
+Efficiency becomes meaningful only when the stack records what it chose not to spend. VIEA keeps work durable through artifacts, feedback, and regression coverage. RMI turns solved and unsolved work into ratchet pressure and residual escrow. CGS asks whether the structure is the smallest adequate one, while BBVCA v9 and RankFold/NeuralFold expose repair and residual costs for compression. Simulation Scaling keeps feasibility tied to scope and fidelity. BeastBrain and MoECOT keep routing and specialist-lane economics visible, and Aletheia prevents verification effort from being counted as optional decoration.
 
 The concrete mechanism is a costed route ledger around a minimum-viable-intelligence decision.
 
@@ -124,7 +124,7 @@ The route ledger turns "use minimum viable intelligence" into a reviewable decis
 
 RMI gives the route decision a ratchet: solved work should become regression coverage, reusable tools, specialist arms, or procedural memory; unsolved work should become residual escrow rather than narrative success. CGS gives the route decision its compactness test: a small seed, rule system, memory, residual, verifier, and governance interface is useful only when it remains adequate for the target. BBVCA v9 gives the compression analogue: generated structure is counted only after verification and exact repair. Simulation Scaling prevents the architecture from treating simulated or synthetic evaluation as free; scope, fidelity, clockspeed, and bottlenecks have to be in the contract.
 
-The output is not a vague "use the cheapest model" policy. It is a record that explains why a route was adequate for a task and what it failed to discharge.
+The output is not a vague "use the cheapest model" policy. It is a record that explains why a route was adequate for a task and what it failed to discharge. A route can be useful while still failing to prove efficiency; a route can be cheap while still creating too much repair; and a route can be powerful while still being wasteful if its output never becomes reusable evidence.
 
 The ledger also gives efficiency a set of outcome states:
 

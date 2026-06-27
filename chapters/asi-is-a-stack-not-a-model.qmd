@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -45,18 +45,18 @@ The opening sequence of Part I is ordered deliberately. This chapter names the s
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Read this chapter as the book's contract with you. It says that the subject is not a single magic model, and it is not a loose pile of agent tricks. The subject is a governed system whose parts must say what they own, what they may do, what evidence they create, and how they can be stopped or replaced.
+Read this chapter as the book's contract with you. The subject is not a magic model and not a loose pile of agent tricks. It is a governed system whose parts must say what they own, what they may do, what evidence they create, and how they can be stopped or replaced.
 
-That frame matters because the rest of the book keeps adding machinery. Planning, memory, routing, proofs, tools, and self-improvement only stay coherent if they attach to a stable stack boundary. If a later mechanism cannot name its responsibility, artifact, authority ceiling, and failure mode, it is not yet part of the architecture.
+That frame matters because the rest of the book keeps adding machinery. Planning, memory, routing, proofs, tools, and self-improvement only stay coherent if they attach to stable boundaries. When a later mechanism cannot name its responsibility, artifact, authority ceiling, and failure mode, the right response is not enthusiasm. It is to treat the mechanism as unfinished architecture.
 :::
 
 ## Problem
 
-The book needs one architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. Without that frame, every paper in the source corpus can sound like a separate invention. With it, the papers become fragments of a single machine.
+The book needs one architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. Without that frame, every paper in the source corpus can sound like a separate invention competing for center stage. With it, the papers become fragments of a single machine.
 
 The first boundary is conceptual. An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress. Those are components and measurements. The architecture is the set of contracts that decides how intent becomes work, how memory becomes context, how reasoning becomes claims, how claims become authority, how authority becomes execution, and how execution becomes evidence for future change.
 
-This chapter therefore opens the book by fixing the unit of analysis. The unit is not "the model." The unit is a governed stack of cooperating layers. Each layer has a responsibility, an interface, a durable artifact, an invariant, a failure mode, and a promotion rule. Later chapters can add details only because this chapter says what it means for the details to compose.
+This chapter therefore fixes the unit of analysis before the book starts adding layers. The unit is not "the model." The unit is a governed stack of cooperating layers. Each layer has a responsibility, an interface, a durable artifact, an invariant, a failure mode, and a promotion rule. Later chapters can add details only because this chapter says what it means for those details to compose.
 
 That frame also gives the reader a way to judge the rest of the book. A new mechanism belongs in the stack only when it lowers confusion at a boundary: it clarifies who owns a decision, what artifact crosses the interface, which authority is available, which evidence state is possible, and what rollback path exists if the mechanism fails. If it cannot answer those questions, it may still be an idea, but it is not yet an architectural layer.
 
@@ -64,9 +64,9 @@ That frame also gives the reader a way to judge the rest of the book. A new mech
 
 A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
 
-The missing piece is not intelligence in the narrow sense. It is system accountability. A fluent model can propose a plan without owning the authority to execute it. A retrieval system can surface a source without proving that the source is current, permitted, or sufficient for the task. A router can choose a specialist without preserving the residual burden created by that choice. A benchmark can improve while hiding new failure cases. None of these failures is fixed by adding more parameters unless the surrounding system records what changed and why it was allowed.
+The missing piece is not intelligence in the narrow sense. It is system accountability. A fluent model can propose a plan without owning the authority to execute it. A retrieval system can surface a source without proving that the source is current, permitted, or sufficient for the task. A router can choose a specialist without preserving the residual burden created by that choice. A benchmark can improve while hiding new failure cases. These failures appear at interfaces, so they need interface records. Adding more parameters may improve a component, but it does not by itself record what changed, who approved it, what evidence exists, or what should happen if the change fails.
 
-The ASI Stack treats those missing contracts as first-class design objects. It does not reject powerful models; it puts them in the right place. A model may be a generator, compressor, critic, planner, router, simulator, or verifier. It should not silently become the constitution, the memory authority, the deployment authority, and the evidence registry at the same time.
+The ASI Stack treats those missing contracts as first-class design objects. It does not reject powerful models; it puts them in the right place. A model may be a generator, compressor, critic, planner, router, simulator, or verifier. It should not silently become the constitution, the memory authority, the deployment authority, the approval body, and the evidence registry at the same time.
 
 ## Core Claim
 
@@ -127,13 +127,13 @@ The diagram is intentionally circular at the end. Self-improvement is not outsid
 
 ## Mechanism
 
-The stack frame begins by refusing to let any one component inherit every role. VIEA supplies the intent-to-execution spine, BeastBrain supplies the local stateful stack vocabulary, Aletheia supplies the evidence and uncertainty layer, Talos supplies the labor/execution layer, MoECOT supplies an implementation-reference runtime, and SCF supplies the replacement boundary. Together they point to the same architectural rule: a capability is governed by the contracts around it, not by the model name inside it.
+The stack frame begins by refusing to let any one component inherit every role. VIEA gives the book its intent-to-execution spine; BeastBrain contributes the local, stateful, system-stack vocabulary; Aletheia sharpens the evidence and uncertainty boundary; Talos gives execution a labor-operating-system shape; MoECOT remains an implementation-reference runtime; and SCF supplies the replacement boundary. Read together, they point to one architectural rule: a capability is governed by the contracts around it, not by the model name inside it.
 
 A layer contract is the mechanism that makes that rule concrete. The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what lifecycle state is this layer in, who owns the boundary, which chapters currently carry it, what responsibility does the layer own, what artifact does it emit, how does handoff work, what authority does it have and lack, what invariant must survive implementation changes, what new-source integration decision applies, and what evidence would justify promotion, replacement, or rollback.
 
 Those questions are the book's defense against anthology drift. Each paper can introduce a mechanism, but the mechanism enters the stack only by naming its responsibility, interface, artifact, invariant, failure mode, evidence gate, and non-claim. Source queues keep future writing runs context-loaded, and evidence states keep clearer prose from turning into stronger support without the corresponding artifact.
 
-The raw LLM sits inside that contract as a powerful semantic machine. It can compress, expand, draft, classify, translate, route, critique, and propose repairs. The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action.
+The raw LLM sits inside that contract as a powerful semantic machine. It can compress, expand, draft, classify, translate, route, critique, and propose repairs. The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action. In other words, the model can move meaning; the stack decides when that movement becomes a claim, job, permission, artifact, or release.
 
 The living-book workflow mirrors the architecture. Source queues prevent context drift. Claim states prevent evidence inflation. Proof targets prevent vague formalism. Render and validation gates prevent the public book from drifting away from the repository that defines it.
 
@@ -242,6 +242,6 @@ The crosswalk is a loading map for future drafting. It does not promote the chap
 
 ## Summary
 
-ASI Is a Stack, Not a Model defines the book's central stance. Advanced AI becomes governable when its cognition is decomposed into layers with typed artifacts, explicit authority, visible evidence, and reversible improvement paths. The goal is not to make the system bureaucratic. The goal is to make each unit of intelligence legible enough that it can be routed, tested, replaced, compressed, or stopped.
+ASI Is a Stack, Not a Model defines the book's central stance. Advanced AI becomes governable when its cognition is decomposed into layers with typed artifacts, explicit authority, visible evidence, and reversible improvement paths. The goal is not bureaucracy. The goal is to make each unit of intelligence legible enough that it can be routed, tested, replaced, compressed, or stopped.
 
 The next chapter turns this stance into the efficiency hypothesis: capability should grow not by spending maximum cognition everywhere, but by routing, reusing, compressing, and verifying cognition at the right boundary.

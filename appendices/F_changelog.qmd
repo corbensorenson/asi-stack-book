@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal opening chapter reader-spine pass
+
+- Polished the reader-facing spine and Human Reading Path bridges for the first three Part I chapters: ASI Is a Stack, The Efficient ASI Hypothesis, and System Boundaries and Authority. The pass clarifies the opening contract, allocation/accounting discipline, and can-versus-may authority boundary while preserving all support states at `argument` and making no new proof, benchmark, source-derived, reader-artifact, or audio-artifact claims.
+
 ## 2026-06-27 - v1.0 improvement goal release gate alignment
 
 - Tightened the major-version readiness gates so the live-book profile, release-profile validator, v1.0 candidate status, living update workflow, release runbook, repository map, prewriting readiness notes, writing runbook, and full-book goal template all require the implemented Human view checks: static reading-mode contract validation, per-chapter Human Reading Path coverage, generated reader-spine checks, and post-render live Human view validation. The release-profile validator now enforces the relevant live and reader gate order instead of checking only command presence. This aligns the public process with the current three-audience site model without claiming a reviewed reader release, ebook, audiobook, support-state promotion, or new proof/test result.
