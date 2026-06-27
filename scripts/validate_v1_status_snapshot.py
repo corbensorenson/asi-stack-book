@@ -109,6 +109,7 @@ def main() -> None:
         f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass |",
         f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates |",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
+        f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
         f"must be at least 110 words excluding the source-only heading, with the current minimum at {human_min_words} words",
     ]
 

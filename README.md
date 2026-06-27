@@ -32,6 +32,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben/source-corpus records and Appendix H contains only external-literature records from `sources/source_inventory.json`.
 - `scripts/validate_v1_status_snapshot.py` checks that `docs/v1_0_candidate_status.md` headline counts match current repository artifacts.
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
+- `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.
 - Current source-note coverage, exact claim-source mappings, and passage-reviewed mappings are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted evidence transitions justify promotion.
 - A protocol schema fixture check is implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
@@ -77,6 +78,7 @@ python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py
+python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

@@ -18,6 +18,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
 | Schemas and fixtures | 71 JSON Schemas, 70 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_schemas.py`; `python3 scripts/validate_protocol_examples.py` |
+| Implementation horizons | 54 generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields | `book_structure.json`; Appendix K; `python3 scripts/validate_implementation_horizons.py` |
 | Visual coverage | Every chapter has at least one substantive Mermaid diagram with enough named states and transitions to explain a mechanism; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
 | Live Human view | The GitHub Pages book has a persistent and shareable `AI view` / `Human view` switch with `?view=ai` and `?view=human`; all 54 chapters have exactly one Human Reading Path bridge; bridge prose is guarded against meta-reader scaffolding and must be at least 110 words excluding the source-only heading, with the current minimum at 110 words; Human view hides live-only headings, matching page-TOC entries, internal Human Reading Path TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
@@ -30,6 +31,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - The book order is dynamic and manifest-driven.
 - The outline is a usable source of truth for drafting, source queues, and Lean proof targets.
 - Every manifest chapter exists and has the required chapter contract in order: problem, insufficiency, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, test plan, source crosswalk, and summary. The chapter DoD guard also requires the implementation endpoint pair to remain substantive: a smallest honest start plus a mature target state that is not reported as a current result.
+- Appendix K is generated from the manifest and machine-checked as a book-wide implementation horizon map: one concrete first-build slice and one mature target endpoint per chapter, in manifest order.
 - Current source-note coverage, source-to-chapter assignment, core claim mapping, and passage-review mapping are internally traceable.
 - Current proof targets are wired through outline tags, generated manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E.
 - Current schemas and example fixtures validate record shape for the protocol surfaces created so far.
@@ -74,6 +76,7 @@ python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py
+python3 scripts/validate_implementation_horizons.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check

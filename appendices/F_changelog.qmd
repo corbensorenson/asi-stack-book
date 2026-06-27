@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal implementation horizon guard
+
+- Added `scripts/validate_implementation_horizons.py` to machine-check that every manifest chapter has a concrete minimum viable implementation and mature beyond-state-of-the-art endpoint, and that generated Appendix K matches `book_structure.json` in manifest order. Wired the guard into publication validation, book validation, the GitHub Pages workflow, README, living update workflow, site quality standard, v1.0 candidate gate, prewriting gate, publication-readiness checklist, and full-book goal template. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, implementation result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Human bridge quality floor
 
 - Expanded 37 low-margin Human Reading Path bridges with chapter-specific transition prose and raised `scripts/validate_human_reading_paths.py` to require at least 110 prose words excluding the source-only heading. Updated the site quality standard, writing runbook, and v1.0 candidate status to record the stronger live Human view contract and refreshed manuscript scale: 169,102 chapter words excluding YAML and 176,601 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

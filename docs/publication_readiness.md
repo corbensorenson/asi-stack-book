@@ -38,7 +38,7 @@ This file tracks whether the public repository is ready for the next major phase
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
-- The GitHub Pages workflow runs the expanded live-book gate before deployment: generated-scaffold freshness, chapter DoD, outline/manifest consistency, reading-mode toggle, Human Reading Path, source-appendix ownership, v1.0 status snapshot freshness, reader-spine, reader-edition, reader-format setup, audio-script setup, visual coverage, proof/source audits, schemas, protocol fixtures, repeated-prose, Lean, Quarto render, and rendered live Human-view validation.
+- The GitHub Pages workflow runs the expanded live-book gate before deployment: generated-scaffold freshness, chapter DoD, outline/manifest consistency, implementation-horizon consistency, reading-mode toggle, Human Reading Path, source-appendix ownership, v1.0 status snapshot freshness, reader-spine, reader-edition, reader-format setup, audio-script setup, visual coverage, proof/source audits, schemas, protocol fixtures, repeated-prose, Lean, Quarto render, and rendered live Human-view validation.
 - Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, Corben's source corpus, external literature, lineage, release editions, and implementation horizons.
 - JSON schemas, protocol example fixtures, public release records, and the Lean workspace have local validation commands.
 - A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
@@ -71,6 +71,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_source_appendices.py`.
 - Run `python3 scripts/validate_v1_status_snapshot.py`.
 - Run `python3 scripts/validate_outline_consistency.py`.
+- Run `python3 scripts/validate_implementation_horizons.py`.
 - Run `python3 scripts/validate_reader_spine.py --check`.
 - Run `python3 scripts/render_reader_formats.py --check`.
 - Run `python3 scripts/build_audio_script.py --check` when preparing an audio script or checking the full edition path.
@@ -96,4 +97,5 @@ The public repository is presentable when:
 - Validation scripts pass locally.
 - Edition profiles validate, the reader-edition derivation check passes, the reader-spine check passes, and the rendered live Human view check passes.
 - Human Reading Path coverage validates for every manifest chapter and generated reader chapter.
+- Implementation horizons validate for every manifest chapter and generated Appendix K row.
 - The working tree is clean after commit and push.

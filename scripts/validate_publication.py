@@ -31,6 +31,7 @@ REQUIRED_FILES = [
     "scripts/validate_source_appendices.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
+    "scripts/validate_implementation_horizons.py",
     "scripts/validate_release_profiles.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
@@ -52,6 +53,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_source_appendices.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
+    "scripts/validate_implementation_horizons.py",
     "scripts/validate_publication.py",
     "Do not report a theorem as proven unless",
 ]
