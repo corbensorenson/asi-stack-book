@@ -48,17 +48,13 @@ The move from plan to DAG is a move from intention to dispatch discipline. A nod
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Planning as a control layer explains why work needs explicit structure. PlanForge turns that structure into a schedulable object. A DAG gives the system a way to split work, expose dependencies, parallelize where safe, and choose when a cheap route is adequate or an expensive route is justified.
+Planning as a control layer explains why work needs explicit structure. PlanForge turns that structure into a schedulable object. A DAG gives the system a way to split work, expose dependencies, parallelize where safe, and choose when a low-cost route is adequate or a costly route is justified.
 
 The efficiency logic matters here. Intelligence arbitrage is not about always using the cheapest worker. It is about matching task, evidence burden, risk, and capability so the stack can spend attention deliberately and record why the route was acceptable. A good route is economical because it is adequate, not adequate because it is cheap.
 
-That routing memory becomes useful later, because future work can reuse the reasoning without inheriting stale permission.
+That routing memory becomes valuable later because future work can reuse the reasoning without inheriting stale permission. The plan earns trust when its route choices remain reviewable after execution, including the rejected cheaper paths and the evidence burden that made them insufficient.
 
-The plan is valuable because its route choices remain reviewable after execution.
-
-Arbitrage becomes legitimate only when adequacy, risk, and cost are all visible.
-
-The cheap route has to explain why it was enough. Arbitrage without adequacy is only discounted failure wearing a cheaper price. Adequacy must be priced before a cheaper route can be trusted.
+Arbitrage becomes legitimate only when adequacy, risk, and cost are visible together. A cheap route has to explain why it was enough; otherwise it is only discounted failure with a lower invoice.
 :::
 
 ## Problem

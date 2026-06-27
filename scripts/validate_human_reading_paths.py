@@ -24,6 +24,9 @@ MIN_BRIDGE_WORDS = 170
 MAX_BRIDGE_WORDS = 180
 MIN_OPENING_SENTENCE_WORDS = 11
 MIN_CLOSING_SENTENCE_WORDS = 11
+SHORT_SENTENCE_WORDS = 13
+TAIL_SENTENCES_CHECKED = 5
+MAX_SHORT_TAIL_SENTENCES = 4
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
 CLOSE_RE = re.compile(r"^(:{3,})\s*$")
@@ -203,6 +206,15 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
                 errors.append(
                     f"{relative}: Human Reading Path closing sentence has {closing_words} words; "
                     f"minimum is {MIN_CLOSING_SENTENCE_WORDS}."
+                )
+            tail_sentence_word_counts = [word_count(sentence) for sentence in bridge_sentences[-TAIL_SENTENCES_CHECKED:]]
+            short_tail_sentences = sum(
+                1 for count in tail_sentence_word_counts if count <= SHORT_SENTENCE_WORDS
+            )
+            if short_tail_sentences > MAX_SHORT_TAIL_SENTENCES:
+                errors.append(
+                    f"{relative}: Human Reading Path ends with {short_tail_sentences} short sentences "
+                    f"in its final {TAIL_SENTENCES_CHECKED}; maximum is {MAX_SHORT_TAIL_SENTENCES}."
                 )
         if "::: " in block_text or f".{HUMAN_CLASS}" in block_text:
             errors.append(f"{relative}: Human Reading Path text contains a nested fenced-div marker.")

@@ -51,13 +51,7 @@ Typed context cells still need runtime semantics before use in memory. Context b
 
 The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface. Each transition should leave a receipt.
 
-Context should therefore behave like accountable state, not like a pile of helpful snippets.
-
-The same discipline that protects code history has to protect cognitive history.
-
-Every later claim depends on knowing which context state was actually active.
-
-The transaction log gives memory a boundary that can be challenged. Taint is useful because it lets downstream work inherit caution. Inherited caution prevents later laundering when context moves across operational boundaries.
+Context should behave like accountable state, not like a pile of helpful snippets. The same discipline that protects code history has to protect cognitive history, because every later claim depends on knowing which context state was actually active. The transaction log gives memory a boundary that can be challenged, while taint lets downstream work inherit caution instead of laundering risky context across operational boundaries.
 :::
 
 ## Problem

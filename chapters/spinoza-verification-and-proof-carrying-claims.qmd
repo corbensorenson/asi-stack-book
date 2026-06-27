@@ -46,17 +46,11 @@ Proof-carrying language is useful only when it creates an obligation to inspect.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Claim ledgers track belief, but verification tests its formal operating envelope. Spinoza-style verification decides when a claim deserves a stronger envelope: citation, procedure, proof, verifier artifact, failed-attempt record, or downgrade. It is the path from fluent assertion toward inspectable justification without pretending every claim can become a theorem.
+Claim ledgers track belief, but verification tests the formal operating envelope around selected claims. Spinoza-style verification decides when a claim deserves a stronger package: citation, procedure, proof, verifier artifact, failed-attempt record, or downgrade. It is the path from fluent assertion toward inspectable justification without pretending every claim can become a theorem.
 
-The important boundary is humility. A proof-carrying claim does not prove the whole architecture. It names the exact claim, artifact, interpretation, tier, and limits. That is what lets rigor help without turning formal language into rhetorical overreach. The stronger the envelope sounds, the more precisely the claim has to say what remains outside it. Precision is the price of stronger language.
+The important boundary is humility. A proof-carrying claim does not prove the whole architecture. It names the exact claim, artifact, interpretation, tier, and limits, then leaves everything else outside the envelope. That is what lets rigor help without turning formal language into rhetorical overreach. The stronger the envelope sounds, the more precisely the claim has to say what remains unverified.
 
-Formal confidence should narrow the claim, not inflate the surrounding story.
-
-The verifier's strength is useful because its boundary is explicit. Verification should make uncertainty smaller and more named, not magically disappear.
-
-A proof-carrying envelope should tighten language before it raises confidence.
-
-The verified claim should become smaller, clearer, and harder to misuse. Verification should lower misuse as much as it raises public confidence.
+Formal confidence should narrow the claim before it raises public confidence. A good verifier makes uncertainty smaller, more named, and harder to misuse; it does not make uncertainty disappear. The proof-carrying envelope earns authority when its boundary is explicit enough that later systems can trust the small verified statement and refuse any broader story built from it during reuse.
 :::
 
 ## Problem

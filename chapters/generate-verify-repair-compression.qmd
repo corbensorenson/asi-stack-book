@@ -47,11 +47,7 @@ Compact generative systems can save work only if their failures are accounted fo
 
 The core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth and which future tasks may safely use it. Compression earns trust only when decompression debt is named.
 
-A smaller artifact is progress only when its missing pieces remain priced and recoverable. Verification and repair keep compression from becoming a polite word for loss.
-
-The receipt matters because compactness earns trust only while recovery remains honest.
-
-Repair turns a shortcut into an accountable compression route. Loss is acceptable only when the repair path is explicit. Repair makes loss accountable instead of hiding it inside compression receipts.
+A smaller artifact is progress only when its missing pieces remain priced and recoverable. Verification and repair keep compression from becoming a polite word for loss, and the receipt matters because compactness earns trust only while recovery remains honest. Repair turns a shortcut into an accountable compression route by making acceptable loss explicit instead of hiding it inside a successful-looking compression record during reuse.
 :::
 
 ## Problem

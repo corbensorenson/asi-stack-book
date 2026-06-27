@@ -57,11 +57,7 @@ After routing and readiness gates, the book needs a concrete runtime shape to re
 
 The boundary is important. MoECOT is not treated here as reproduced proof that the architecture works. It is treated as a useful target shape: if a runtime wants to strengthen claims in this book, it should emit command traces, route decisions, specialist lanes, gates, ledgers, replay refs, handoffs, denied paths, and residuals that can be inspected independently. Runtime shape becomes evidence only when records survive inspection.
 
-The runtime ideal is less about clever orchestration than about evidence-rich orchestration. The right runtime is one that leaves enough durable state behind to debug the handoff.
-
-A multi-core system earns architectural relevance by making coordination inspectable after the fact.
-
-The runtime should leave enough receipts for orchestration to be debugged. Receipts are the runtime's answer to hidden coordination after execution ends.
+The runtime ideal is less about clever orchestration than about evidence-rich orchestration. A multi-core system earns architectural relevance by making coordination inspectable after the fact, with enough durable state to debug the handoff and enough receipts to answer hidden coordination after execution ends. That record also makes failure useful, because orchestration bugs can be tied to routes, gates, and handoffs instead of blamed on a vague agent loop.
 :::
 
 ## Problem

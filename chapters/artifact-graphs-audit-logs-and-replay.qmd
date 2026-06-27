@@ -48,15 +48,11 @@ The key distinction is between storage and evidential continuity. A file path sa
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Typed jobs become trustworthy when their outputs remain traceable after action. Artifact graphs make those things durable: artifacts, logs, traces, receipts, replay records, source links, context links, and claim or test links. Without that graph, work disappears into conversation history.
+Typed jobs become trustworthy when their outputs remain traceable after action. Artifact graphs make those outputs durable: artifacts, logs, traces, receipts, replay records, source links, context links, and claim or test links. Without that graph, work disappears into conversation history.
 
-The reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits. The artifact graph turns memory from a pile of outputs into an accountable work history. Every durable artifact should make its own review path easier.
+The reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits. The artifact graph turns memory from a pile of outputs into an accountable work history.
 
-Durability matters because future trust depends on recoverable context, not memory of confidence. The graph lets later reviewers reconstruct why an output deserved attention.
-
-Good artifacts should make tomorrow's audit less dependent on today's explanation.
-
-Durable traces let future work inherit evidence without inheriting confusion. Without that inheritance rule, audit becomes a story told after the fact.
+Durability matters because future trust depends on recoverable context, not memory of confidence. A good artifact makes its own review path easier by preserving why it deserved attention, which checks touched it, and which limits still apply across revisions and later handoffs. Durable traces let future work inherit evidence without inheriting confusion; without that inheritance rule, audit becomes a story told after the fact.
 :::
 
 ## Problem
