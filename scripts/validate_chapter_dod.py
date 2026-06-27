@@ -69,6 +69,7 @@ BANNED_BEYOND_BOILERPLATE = [
     "The schema validates",
     "Passing validation only",
     "That validation proves only",
+    "This pass",
     "run in this pass",
     "mapped in this pass",
 ]
@@ -81,6 +82,10 @@ SUMMARY_BANNED_PATTERNS = [
     (
         "mechanical section handoff",
         re.compile(r"\bthe next section\b", re.IGNORECASE),
+    ),
+    (
+        "live crosswalk reference",
+        re.compile(r"\bcrosswalk\b", re.IGNORECASE),
     ),
 ]
 

@@ -241,7 +241,7 @@ The assigned sources support the artifact-provenance, audit, replay, and loop-cl
 
 ## Summary
 
-Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products. Each artifact should carry identity, parent job, source/context/tool links, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits. The source crosswalk is now tighter: the six local-cache architecture sources have passage-reviewed mappings, while the implementation-reference MoECOT mapping remains bounded by connector/source-note availability.
+Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products. Each artifact should carry identity, parent job, source/context/tool links, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits. The six local-cache architecture sources have passage-reviewed mappings, while the implementation-reference MoECOT mapping remains bounded by connector/source-note availability.
 
 This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain. From there the execution layer reaches its most dangerous boundary: the adapter that turns a job into an external effect.
 

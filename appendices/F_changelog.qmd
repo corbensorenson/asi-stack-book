@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal durable summary evidence language
+
+- Replaced stale `This pass` wording and summary-level crosswalk references with durable evidence-map language in readiness, procedural-memory, routing, runtime-adapter, and artifact-graph chapters. Added chapter DoD guards against stale run-language and crosswalk references leaking into reader-facing summaries. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.
+
 ## 2026-06-27 - v1.0 improvement goal summary self-reference polish
 
 - Replaced remaining `This chapter`, `The chapter`, and `The chapter's` self-reference in reader-facing summary bodies with direct architectural prose across 24 chapters, including routing, memory, verification, governance, compression, learning, and implementation-reference chapters. Added a summary-specific chapter DoD guard so live AI/research scaffolding can still use `chapter` where appropriate while Human-view summaries avoid generated meta-prose. No claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, audio artifacts, or source-derived evidence changed.
