@@ -94,6 +94,10 @@ PROBLEM_BANNED_PATTERNS = [
         "self-referential chapter phrase",
         re.compile(r"\b(?:this|in this) chapter\b", re.IGNORECASE),
     ),
+    (
+        "mechanical backward handoff",
+        re.compile(r"\bthe previous (?:chapter|layer)\b", re.IGNORECASE),
+    ),
 ]
 
 SECTION_MIN_WORDS = {

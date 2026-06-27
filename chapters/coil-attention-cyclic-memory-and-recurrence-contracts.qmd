@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 This chapter treats cyclic memory, sparse coverage, KV freshness, and recurrence schedules as structural contracts. It does not claim retrieval quality, reasoning quality, longer usable context, speed, memory reduction, or model improvement.
 
-The previous chapter defines how proof-carrying receipts preserve finite structural boundaries. This chapter specializes that receipt discipline for memory and recurrence, where the tempting overclaim is semantic: a slot is fresh, a lag is covered, or a loop exits, therefore the model must remember or reason better. The ASI Stack keeps those facts useful by treating them as guardrails for admission, fallback, and residual handling rather than as task-success evidence.
+Proof-carrying receipts preserve finite structural boundaries. Memory and recurrence need that same receipt discipline because the tempting overclaim is semantic: a slot is fresh, a lag is covered, or a loop exits, therefore the model must remember or reason better. The ASI Stack keeps those facts useful by treating them as guardrails for admission, fallback, and residual handling rather than as task-success evidence.
 
 The chapter is therefore about admission control for memory structures. A cyclic or sparse mechanism may be allowed to participate in a task only when its structural contract matches the task's authority, freshness, coverage, and fallback requirements.
 

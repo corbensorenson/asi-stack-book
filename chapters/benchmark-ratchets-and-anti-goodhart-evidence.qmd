@@ -47,7 +47,7 @@ open_evidence_gaps:
 
 This chapter does not report benchmark success. Source-reported benchmark commands or results remain source-reported until artifacts are imported or reproduced. Local validation in this book checks the book repo, not ASI capability.
 
-The previous chapter says what a proof or executable spec can certify. This chapter says what a measured result must carry before it can move a capability claim. A green test, leaderboard number, source-reported command, or local fixture is not enough by itself; the stack needs run records, baselines, regressions, residuals, anti-Goodhart checks, and promotion decisions that remain visible after the result is summarized.
+Executable specs can say what a proof or schema certifies. Measured results carry a different burden before they can move a capability claim. A green test, leaderboard number, source-reported command, or local fixture is not enough by itself; the stack needs run records, baselines, regressions, residuals, anti-Goodhart checks, and promotion decisions that remain visible after the result is summarized.
 
 This chapter is the public evidence counterpart to procedural memory. Procedural memory asks what the system may reuse. Benchmark ratchets ask what the system may believe about the reused capability. Both are memory systems, and both can fail by forgetting negative cases.
 

@@ -41,7 +41,7 @@ open_evidence_gaps:
 
 This chapter treats cyclic adapters, phase banks, RoPE certifiers, and cyclic mixers as optional substrate candidates. It does not claim better perplexity, longer context, faster runtime, lower memory, training stability, or deployment readiness.
 
-The previous chapter applies structural contracts to memory and recurrence. This chapter applies the same boundary to model-internal cyclic structure: adapters, phase banks, position encodings, route heads, and mixers. The core question is not whether a cyclic invariant exists; it is whether that invariant survives contact with baselines, kernels, parameter accounting, failure cases, and workload metrics.
+Structural contracts already apply to memory and recurrence. The same boundary must reach model-internal cyclic structure: adapters, phase banks, position encodings, route heads, and mixers. The core question is not whether a cyclic invariant exists; it is whether that invariant survives contact with baselines, kernels, parameter accounting, failure cases, and workload metrics.
 
 The adoption object is a tradeoff packet. A cyclic proposal should say which structural receipt it has, which workload it targets, which ordinary baselines it faces, which resource costs it pays, and which non-claims must follow it.
 

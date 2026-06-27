@@ -60,7 +60,7 @@ The point is practical. If a system cannot say whether a failure came from autho
 
 The book needs an explicit failure model before it can make governance, reliability, or self-improvement claims.
 
-The previous layer defines authority boundaries. Those boundaries are not optional. Ungoverned intelligence does not have to fail first as a cinematic catastrophe. It can fail earlier and more quietly through goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, or self-improvement loops that ratify their own evidence.
+Authority boundaries are useful only if their failure modes are visible. Those boundaries are not optional. Ungoverned intelligence does not have to fail first as a cinematic catastrophe. It can fail earlier and more quietly through goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, or self-improvement loops that ratify their own evidence.
 
 The point of a failure taxonomy is not pessimism. It is interface design. Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit. If a later chapter cannot connect its mechanism back to a failure boundary, the mechanism may be interesting, but it has not yet justified its place in the stack.
 

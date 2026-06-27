@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal backward transition polish
+
+- Replaced remaining mechanical `The previous chapter`, `The previous layer`, and `This is also the book` transition formulas across reader-facing bridge/problem prose with chapter-specific architectural transitions. Strengthened `scripts/validate_chapter_dod.py` so future `Problem` openings avoid those backward-handoff formulas, and updated the writing runbook to document the rule. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source corpus split
 
 - Split the generated bibliography surface into Appendix G, `Corben's Source Corpus`, for supplied/authored/local ASI Stack source records and Appendix K, `External Literature and References`, for third-party papers, docs, and outside references marked `external_literature`. Updated the scaffold generator, manifest, release profiles, README, repository map, release docs, open-research chapter, source-of-truth outline, full-book goal template, and ASI Stack skill so future writing runs keep "mine/supplied corpus" distinct from external literature. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

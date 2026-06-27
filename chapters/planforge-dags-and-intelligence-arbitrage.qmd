@@ -57,9 +57,9 @@ The efficiency logic matters here. Intelligence arbitrage is not about always us
 
 Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
 
-The previous layer defined the plan graph as the control artifact. PlanForge-style DAG planning specializes that graph into decomposition, dependency inference, scheduling, model/tool tier assignment, cost accounting, quality predicates, escalation, and residual handling. PlanForge and the compiler-architecture variant both point to the same design pressure: orchestration should be compiled, not chatted through serially.
+Planning is now a control artifact. PlanForge-style DAG planning specializes that graph into decomposition, dependency inference, scheduling, model/tool tier assignment, cost accounting, quality predicates, escalation, and residual handling. PlanForge and the compiler-architecture variant both point to the same design pressure: orchestration should be compiled, not chatted through serially.
 
-This is also the book's first major efficiency mechanism after the Efficient ASI thesis. Intelligence arbitrage is not "use cheaper models whenever possible." It is "assign each node the minimum adequate capability plus the verification burden needed to know that adequacy was enough."
+Intelligence arbitrage is the book's first major efficiency mechanism after the Efficient ASI thesis. It is not "use cheaper models whenever possible." It is "assign each node the minimum adequate capability plus the verification burden needed to know that adequacy was enough."
 
 The hard part is the word adequate. A cheap route is not adequate because it usually works, because the model is confident, or because the node looks simple. Adequacy is relative to the node's inputs, risk class, context requirement, quality predicate, and fallback path.
 
