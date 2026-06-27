@@ -212,7 +212,7 @@ The operational contract is that proof-carrying AI contracts transport finite st
 - Upgrade loop: stale theorem IDs become residuals, fingerprint mismatches block replay, consumer-gate failures prevent downstream use, workload-blocked receipts preserve structural facts without quality promotion, and local surrogate packs can test the transfer semantics before external Circle artifacts are imported.
 - Failure closure: theorem laundering, stale or failed theorem IDs, missing baselines, exact finite models mistaken for real-valued deployment behavior, proof cargo-culting, and lost non-claim boundaries become blocked support movement, resolver failures, replay failures, or residual records.
 
-For Circle Calculus and Proof-Carrying AI Contracts, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+This proof-contract transport layer remains a target architecture, not a current-result claim. Support should stay at `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims are usable without overstating what the proof stack established.
 
 ## Codex test plan
 

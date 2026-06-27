@@ -208,7 +208,7 @@ The operational contract is that readiness is a lifecycle state with evidence, r
 - Upgrade loop: unresolved failures become residual escrow, recurring residuals become benchmark candidates, passed canaries become scoped qualification, stale qualifications expire, and unsafe or misleading modules remain available for diagnostic replay without staying in ordinary routing.
 - Failure closure: premature promotion, residual hiding, untracked regression after merge, stale-gate reuse, over-quarantine, and gate laundering become blocked transitions, rollback transactions, quarantine routes, tribunal issues, or explicit residual records.
 
-For Readiness Gates, Residual Escrow, and Quarantine, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+This readiness lifecycle remains a target architecture, not a current-result claim. Support should stay at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.
 
 ## Codex test plan
 
