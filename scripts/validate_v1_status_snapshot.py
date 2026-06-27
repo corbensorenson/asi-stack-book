@@ -54,8 +54,9 @@ def summary_metric(path: Path, metric: str) -> str | None:
     return match.group(1).strip() if match else None
 
 
-def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int]:
+def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int, int]:
     values: list[int] = []
+    opening_values: list[int] = []
     closing_values: list[int] = []
     for chapter in chapters:
         path = ROOT / str(chapter.get("file", ""))
@@ -67,8 +68,13 @@ def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int]:
         values.append(len(WORD_RE.findall(bridge_text)))
         sentences = [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+", bridge_text) if sentence.strip()]
         if sentences:
+            opening_values.append(len(WORD_RE.findall(sentences[0])))
             closing_values.append(len(WORD_RE.findall(sentences[-1])))
-    return (min(values) if values else 0, min(closing_values) if closing_values else 0)
+    return (
+        min(values) if values else 0,
+        min(opening_values) if opening_values else 0,
+        min(closing_values) if closing_values else 0,
+    )
 
 
 def main() -> None:
@@ -100,7 +106,7 @@ def main() -> None:
     schema_count = len(list((ROOT / "schemas").glob("*.schema.json")))
     fixture_count = len(list((ROOT / "tests" / "fixtures" / "protocol_records").glob("*.json")))
     release_count = len(list((ROOT / "release_records").glob("*.json")))
-    human_min_words, human_min_closing_words = human_bridge_metrics(chapters)
+    human_min_words, human_min_opening_words, human_min_closing_words = human_bridge_metrics(chapters)
 
     assigned_pairs = summary_metric(ROOT / "docs" / "source_evidence_audit.md", "Assigned source/chapter pairs")
     exact_mappings = summary_metric(ROOT / "docs" / "source_evidence_audit.md", "Exact claim-source mappings")
@@ -120,7 +126,7 @@ def main() -> None:
         "browser Human-view gate checks rendered Mermaid SVG visibility",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         "browser smoke validation can exercise every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports`, including reading-mode control visibility and horizontal-overflow checks, when Playwright/Chrome is available",
-        f"must be at least 165 words excluding the source-only heading, must close with at least 7 words, with the current bridge minimum at {human_min_words} words and the current closing-sentence minimum at {human_min_closing_words} words",
+        f"must be at least 165 words excluding the source-only heading, must open with at least 8 words, must close with at least 7 words, with the current bridge minimum at {human_min_words} words, opening-sentence minimum at {human_min_opening_words} words, and closing-sentence minimum at {human_min_closing_words} words",
     ]
 
     if len(chapters) != chapter_file_count:
@@ -133,6 +139,8 @@ def main() -> None:
         errors.append("proofs/proof_manifest.json is missing proof_target_count.")
     if human_min_words < 165:
         errors.append(f"Human Reading Path prose minimum is {human_min_words}, below 165.")
+    if human_min_opening_words < 8:
+        errors.append(f"Human Reading Path opening-sentence minimum is {human_min_opening_words}, below 8.")
     if human_min_closing_words < 7:
         errors.append(f"Human Reading Path closing-sentence minimum is {human_min_closing_words}, below 7.")
 

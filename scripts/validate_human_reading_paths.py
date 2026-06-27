@@ -22,6 +22,7 @@ HUMAN_CLASS = "asi-human-only"
 HUMAN_HEADING = "## Human Reading Path"
 MIN_BRIDGE_WORDS = 165
 MAX_BRIDGE_WORDS = 180
+MIN_OPENING_SENTENCE_WORDS = 8
 MIN_CLOSING_SENTENCE_WORDS = 7
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OPEN_RE = re.compile(r"^(:{3,})\s+\{([^}]*)\}\s*$")
@@ -183,6 +184,12 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
             errors.append(f"{relative}: Human Reading Path has {words} words; maximum is {MAX_BRIDGE_WORDS}.")
         bridge_sentences = sentences(bridge_text)
         if bridge_sentences:
+            opening_words = word_count(bridge_sentences[0])
+            if opening_words < MIN_OPENING_SENTENCE_WORDS:
+                errors.append(
+                    f"{relative}: Human Reading Path opening sentence has {opening_words} words; "
+                    f"minimum is {MIN_OPENING_SENTENCE_WORDS}."
+                )
             closing_words = word_count(bridge_sentences[-1])
             if closing_words < MIN_CLOSING_SENTENCE_WORDS:
                 errors.append(
