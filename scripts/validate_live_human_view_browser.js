@@ -17,6 +17,10 @@ const { pathToFileURL } = require("url");
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_SITE = path.join(ROOT, "_site");
 const DEFAULT_REPORT = path.join(ROOT, "build", "live_human_view_browser_report.json");
+const VIEWPORTS = {
+  desktop: { width: 1280, height: 900 },
+  mobile: { width: 390, height: 844 },
+};
 
 function parseArgs(argv) {
   const args = {
@@ -24,6 +28,7 @@ function parseArgs(argv) {
     report: DEFAULT_REPORT,
     strict: false,
     allChapters: false,
+    allViewports: false,
   };
   for (let index = 2; index < argv.length; index += 1) {
     const value = argv[index];
@@ -31,6 +36,8 @@ function parseArgs(argv) {
       args.strict = true;
     } else if (value === "--all-chapters") {
       args.allChapters = true;
+    } else if (value === "--all-viewports") {
+      args.allViewports = true;
     } else if (value === "--site") {
       args.site = path.resolve(argv[++index]);
     } else if (value === "--report") {
@@ -86,6 +93,16 @@ function pagesForValidation(structure, allChapters) {
       sourceFile: chapters[index].file,
     }))
     .concat(appendixTogglePages(structure));
+}
+
+function viewportsForValidation(allViewports) {
+  if (allViewports) {
+    return [
+      { name: "desktop", size: VIEWPORTS.desktop },
+      { name: "mobile", size: VIEWPORTS.mobile },
+    ];
+  }
+  return [{ name: "desktop", size: VIEWPORTS.desktop }];
 }
 
 function candidateModuleRoots() {
@@ -268,6 +285,7 @@ async function runBrowserValidation(playwright, args) {
   const structure = loadJson("book_structure.json");
   const pageSelection = args.allChapters ? "all-chapters" : "sample";
   const pages = pagesForValidation(structure, args.allChapters);
+  const viewports = viewportsForValidation(args.allViewports);
   const missing = pages
     .map((record) => renderedPath(args.site, record.sourceFile))
     .filter((htmlPath) => !fs.existsSync(htmlPath));
@@ -276,16 +294,24 @@ async function runBrowserValidation(playwright, args) {
   }
 
   const browser = await launchChromium(playwright);
-  const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const records = [];
   try {
-    for (const sample of pages) {
-      const htmlPath = renderedPath(args.site, sample.sourceFile);
-      const fileUrl = pathToFileURL(htmlPath).href;
-      if (sample.kind === "chapter") {
-        records.push(await validateChapterPage(page, fileUrl, sample.id));
-      } else {
-        records.push(await validateAppendixPage(page, fileUrl, sample.id));
+    for (const viewport of viewports) {
+      const page = await browser.newPage({ viewport: viewport.size });
+      try {
+        for (const sample of pages) {
+          const htmlPath = renderedPath(args.site, sample.sourceFile);
+          const fileUrl = pathToFileURL(htmlPath).href;
+          const record =
+            sample.kind === "chapter"
+              ? await validateChapterPage(page, fileUrl, sample.id)
+              : await validateAppendixPage(page, fileUrl, sample.id);
+          record.viewport = viewport.name;
+          record.viewport_size = viewport.size;
+          records.push(record);
+        }
+      } finally {
+        await page.close();
       }
     }
   } finally {
@@ -296,6 +322,8 @@ async function runBrowserValidation(playwright, args) {
     schema_version: "0.1",
     status: "pass",
     page_selection: pageSelection,
+    viewport_selection: args.allViewports ? "all-viewports" : "desktop",
+    viewports: viewports.map((viewport) => ({ name: viewport.name, ...viewport.size })),
     site_dir: args.site,
     validated_pages: records,
     // Backward-compatible alias for consumers created before --all-chapters.
@@ -330,7 +358,7 @@ function writeReport(reportPath, report) {
     const report = await runBrowserValidation(playwright, args);
     writeReport(args.report, report);
     console.log(
-      `Live Human view browser validation passed: ${report.validated_pages.length} rendered pages exercised (${report.page_selection}).`
+      `Live Human view browser validation passed: ${report.validated_pages.length} rendered page-view pairs exercised (${report.page_selection}, ${report.viewport_selection}).`
     );
   } catch (error) {
     const message = error && error.stack ? error.stack : String(error);

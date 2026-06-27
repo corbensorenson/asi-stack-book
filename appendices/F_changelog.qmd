@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal responsive Human view browser gate
+
+- Added `--all-viewports` support to `scripts/validate_live_human_view_browser.js`, with explicit desktop and mobile viewport records in the browser report. Updated the live-book release gate, release-profile validator, README, runbooks, release docs, site-quality standard, publication-readiness notes, and v1.0 status snapshot guard so full local v1 validation now exercises every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports` when browser automation is available. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result beyond rendered reading-mode interaction, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal all-chapter Human view browser gate
 
 - Added `--all-chapters` support to `scripts/validate_live_human_view_browser.js` so the post-render browser check can exercise every manifest chapter plus the split source appendices instead of only representative pages. The report now records the selected page scope and keeps the old `sampled_pages` field as a compatibility alias. Updated the live-book release gate, release-profile validator, README, runbooks, release docs, site-quality standard, publication-readiness notes, and v1.0 status snapshot guard so full local v1 validation uses the all-chapter browser mode while the default command remains available for lighter smoke runs. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result beyond rendered reading-mode interaction, reviewed reader artifact, ebook, or audio artifact is claimed.
