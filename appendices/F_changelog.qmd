@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mature support-boundary polish
+
+- Reworked repeated `Beyond the State of the Art` support-boundary formulas across 40 chapters, replacing `Support should stay at` constructions with chapter-specific evidence-boundary prose while preserving every `argument` support-state limit. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject that formula, and refreshed the v1.0 status manuscript scale to 178,180 chapter words excluding YAML and 185,679 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mature contract polish
 
 - Reworked repeated `Beyond the State of the Art` contract formulas across 26 chapters and the manifest-sourced Appendix K implementation horizons, replacing `The operational contract is` constructions with chapter-specific mature endpoint prose. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject that formula, extended the implementation-horizon validator to accept explicit mature-target nouns without requiring the removed formula, and refreshed the v1.0 status manuscript scale to 178,178 chapter words excluding YAML and 185,677 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

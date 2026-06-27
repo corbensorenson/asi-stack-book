@@ -210,7 +210,7 @@ A semantic compiler toolchain needs:
 - Target backends for chapters, diagrams, schemas, code, Lean proof targets, benchmark fixtures, release notes, and runtime job packets.
 - Build-system style traces that show which artifacts are up to date, which validators failed, which obligations changed, and which downstream artifacts must be rebuilt.
 
-This obligation-preserving compiler remains a target architecture, not a current-result claim. Support should stay at `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
+This obligation-preserving compiler remains a target architecture, not a current-result claim. The evidence state should remain `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
 
 ## Codex test plan
 

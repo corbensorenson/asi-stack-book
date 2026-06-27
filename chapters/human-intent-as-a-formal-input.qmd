@@ -224,7 +224,7 @@ Human intent enters the mature stack as a structured agreement, not a prompt-sha
 - Preserved invariants: Ambiguity triggers clarification or bounded defaults; Intent contracts expose authority limits; Stop conditions remain attached to the plan.
 - Failure closure: detect and route failure modes such as Goal misbinding; Scope creep; Implicit permission to act to quarantine, rollback, escalation, or residual records instead of hidden degradation.
 
-This intent compiler remains a target architecture, not a current-result claim. Support should stay at `argument` until intent-parser fixtures, ambiguity and stop-condition tests, authorization handoff traces, scope-creep probes, and acceptance-criteria checks show that downstream execution cannot turn desire into unbounded permission.
+This intent compiler remains a target architecture, not a current-result claim. Keep intent formalization at `argument` until intent-parser fixtures, ambiguity and stop-condition tests, authorization handoff traces, scope-creep probes, and acceptance-criteria checks show that downstream execution cannot turn desire into unbounded permission.
 
 ## Codex test plan
 

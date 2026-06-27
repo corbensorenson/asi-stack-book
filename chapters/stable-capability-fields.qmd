@@ -212,7 +212,7 @@ A stable capability field preserves identity, interface, authority ceiling, qual
 - Preserved invariants: Replacement cannot expand authority by default; Evaluator integrity is protected; Qualification context is explicit and time-bound; Rollback remains available after failed mutation.
 - Failure closure: detect and route failure modes such as Field identity drift; Evaluator capture; Authority expansion during replacement to quarantine, rollback, escalation, or residual records instead of hidden degradation.
 
-This capability-identity market remains a target architecture, not a current-result claim. Support should stay at `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
+This capability-identity market remains a target architecture, not a current-result claim. SCF support should remain `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
 
 ## Codex test plan
 

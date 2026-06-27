@@ -242,7 +242,7 @@ Semantic structure is leased for a task only when provenance, grounding, utility
 - Upgrade loop: proposed nodes become grounded, adequate-for-task, interoperable, superseded, stale, or quarantined; hierarchy updates preserve old references or record supersession; stale consumer mappings become migration debt rather than silent graph drift.
 - Failure closure: brittle ontologies, false explainability, hierarchy drift, canonical graph capture, semantic-token constraint loss, stale downstream consumers, and semantic laundering become downgrade events, migration records, residuals, quarantine, or source-context fallback.
 
-This semantic leasing layer remains a target architecture, not a current-result claim. Support should stay at `argument` until grounded-node records, hierarchy update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests show that tree-structured representations preserve meaning instead of merely organizing tokens.
+This semantic leasing layer remains a target architecture, not a current-result claim. Semantic representation belongs at `argument` until grounded-node records, hierarchy update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests show that tree-structured representations preserve meaning instead of merely organizing tokens.
 
 ## Codex test plan
 

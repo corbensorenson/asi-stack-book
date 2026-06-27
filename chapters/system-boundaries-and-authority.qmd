@@ -229,7 +229,7 @@ Authority becomes typed, bounded, revocable, durable, and attached to concrete p
 - Preserved invariants: Authority never expands silently; Read permission is not write permission; Tool execution requires an explicit grant.
 - Failure closure: detect and route failure modes such as Authority creep; Confused-deputy tool calls; Memory access treated as action approval to quarantine, rollback, escalation, or residual records instead of hidden degradation.
 
-This authority type system remains a target architecture, not a current-result claim. Support should stay at `argument` until missing-grant denials, ceiling-preservation checks, read/write separation fixtures, confused-deputy scenarios, and tool-call traces show that authority cannot expand by implication.
+This authority type system remains a target architecture, not a current-result claim. Authority support remains `argument` until missing-grant denials, ceiling-preservation checks, read/write separation fixtures, confused-deputy scenarios, and tool-call traces show that authority cannot expand silently by implication.
 
 ## Codex test plan
 

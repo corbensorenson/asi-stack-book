@@ -216,7 +216,7 @@ Proof-carrying AI contracts transport finite structural facts as theorem-linked 
 - Upgrade loop: stale theorem IDs become residuals, fingerprint mismatches block replay, consumer-gate failures prevent downstream use, workload-blocked receipts preserve structural facts without quality promotion, and local surrogate packs can test the transfer semantics before external Circle artifacts are imported.
 - Failure closure: theorem laundering, stale or failed theorem IDs, missing baselines, exact finite models mistaken for real-valued deployment behavior, proof cargo-culting, and lost non-claim boundaries become blocked support movement, resolver failures, replay failures, or residual records.
 
-This proof-contract transport layer remains a target architecture, not a current-result claim. Support should stay at `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims are usable without overstating what the proof stack established.
+This proof-contract transport layer remains a target architecture, not a current-result claim. `argument` remains the right support state until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims are usable without overstating what the proof stack established.
 
 ## Codex test plan
 

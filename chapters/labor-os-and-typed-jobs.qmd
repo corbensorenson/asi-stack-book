@@ -241,7 +241,7 @@ A bounded labor OS needs:
 - Completion receipts that separate request, approval, execution, artifact capture, verification, delivery, residuals, and replay/non-replay state.
 - Operator surfaces that show drafted, blocked, awaiting-approval, running, adjudicating, delivered, evidence-ready, quarantined, replayed, and retired work.
 
-This accountable execution layer remains a target architecture, not a current-result claim. Support should stay at `argument` until lifecycle harnesses, permission checks, approval services, adapter runners, completion receipts, and replayable job traces show that intelligence produces work packets with receipts instead of unmanaged activity.
+This accountable execution layer remains a target architecture, not a current-result claim. Leave typed-job support at `argument` until lifecycle harnesses, permission checks, approval services, adapter runners, completion receipts, and replayable job traces show that intelligence produces work packets with receipts instead of unmanaged activity.
 
 ## Codex test plan
 
