@@ -47,6 +47,11 @@ ALLOWED_CLAIM_LABELS = {
     "Speculative",
 }
 
+BANNED_BEYOND_BOILERPLATE = [
+    "is not the minimal artifact with more scale",
+    "It is the chapter's idea turned into a product-grade",
+]
+
 
 def read_json(path: Path) -> object:
     with path.open(encoding="utf-8") as f:
@@ -85,6 +90,10 @@ def main() -> None:
         missing_sections = [section for section in REQUIRED_SECTIONS if section not in text]
         if missing_sections:
             errors.append(f"{chapter['file']}: missing DoD sections: {', '.join(missing_sections)}")
+
+        for phrase in BANNED_BEYOND_BOILERPLATE:
+            if phrase in text:
+                errors.append(f"{chapter['file']}: replace generic beyond-SOTA boilerplate phrase: {phrase!r}")
 
         expected = {
             "chapter_id": chapter["id"],
