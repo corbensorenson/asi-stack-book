@@ -18,7 +18,7 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 - Protocol schema examples are machine-checked by `scripts/validate_protocol_examples.py`.
 - Major-version reader and audio edition paths are scaffolded with `scripts/build_reader_edition.py`, `scripts/validate_human_reading_paths.py`, `scripts/validate_reader_spine.py`, `scripts/validate_reading_mode_toggle.py`, `scripts/validate_live_human_view.py`, `scripts/build_audio_script.py`, and edition release-record validation.
 - The Lean toolchain is pinned and the implemented evidence-state proofs are wired to the outline/manifest.
-- CI is configured to run validation, render Quarto, and build the Lean workspace.
+- CI is configured to run the expanded live-book gate, render Quarto, validate the rendered Human view, and build the Lean workspace.
 - Stale local handoff trees are quarantined under ignored `_archive/local_context/`.
 
 ## Still Missing Before Claims Can Rise Above Argument
@@ -37,6 +37,7 @@ Before claiming the manuscript is current after a structural or drafting change,
 python3 scripts/source_readiness_report.py
 python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
+python3 scripts/validate_chapter_dod.py
 python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
@@ -50,6 +51,7 @@ python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
+python3 scripts/validate_repeated_prose.py
 (cd lean && lake build)
 quarto render --to html
 python3 scripts/validate_live_human_view.py

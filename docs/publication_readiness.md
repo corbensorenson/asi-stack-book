@@ -39,7 +39,7 @@ This file tracks whether the public repository is ready for the next major phase
 - Per-chapter DoD, source-note, proof-readiness, and repeated-prose validators are wired into `scripts/validate_book.py`.
 - The Lean toolchain is pinned and CI builds the Lean workspace.
 - The GitHub Pages workflow runs the expanded live-book gate before deployment: generated-scaffold freshness, chapter DoD, reading-mode toggle, Human Reading Path, reader-spine, reader-edition, reader-format setup, audio-script setup, visual coverage, proof/source audits, schemas, protocol fixtures, repeated-prose, Lean, Quarto render, and rendered live Human-view validation.
-- Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, bibliography/source corpus, lineage, and release editions.
+- Generated and curated appendices exist for source matrix, claim/evidence matrix, protocol schemas, test specs, changelog, Corben's source corpus, external literature, lineage, release editions, and implementation horizons.
 - JSON schemas, protocol example fixtures, public release records, and the Lean workspace have local validation commands.
 - A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
@@ -61,6 +61,7 @@ Before claiming the public book is current:
 
 - Run `python3 scripts/sync_scaffold.py`.
 - Run `python3 scripts/sync_proof_manifest.py`.
+- Run `python3 scripts/validate_chapter_dod.py`.
 - Run `python3 scripts/validate_proof_artifact_audit.py`.
 - Run `python3 scripts/validate_source_evidence_audit.py`.
 - Run `python3 scripts/validate_publication.py`.
@@ -74,6 +75,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_visual_coverage.py`.
 - Run `python3 scripts/validate_schemas.py`.
 - Run `python3 scripts/validate_protocol_examples.py`.
+- Run `python3 scripts/validate_repeated_prose.py`.
 - Run `(cd lean && lake build)`.
 - Run `quarto render --to html`.
 - Run `python3 scripts/validate_live_human_view.py`.

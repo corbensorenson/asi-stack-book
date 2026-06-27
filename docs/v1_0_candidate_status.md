@@ -10,16 +10,16 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 
 | Surface | Current state | Evidence |
 |---|---|---|
-| Book structure | 4 parts, 54 manifest-driven chapters, 9 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 174,706 chapter words excluding YAML front matter; 183,272 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Book structure | 4 parts, 54 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
+| Manuscript scale | 54 chapter files; 168,086 chapter words excluding YAML front matter; 175,585 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
 | Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
 | Schemas and fixtures | 71 JSON Schemas, 70 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_schemas.py`; `python3 scripts/validate_protocol_examples.py` |
-| Visual coverage | Every chapter has at least one Mermaid diagram; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
+| Visual coverage | Every chapter has at least one substantive Mermaid diagram with enough named states and transitions to explain a mechanism; landing page has a generated visual asset | `python3 scripts/validate_visual_coverage.py` |
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
-| Live Human view | The GitHub Pages book has a persistent and shareable `AI view` / `Human view` switch with `?view=ai` and `?view=human`; all 54 chapters have exactly one Human Reading Path bridge; bridge prose is guarded against meta-reader scaffolding; Human view hides live-only headings, matching page-TOC entries, internal Human Reading Path TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
+| Live Human view | The GitHub Pages book has a persistent and shareable `AI view` / `Human view` switch with `?view=ai` and `?view=human`; all 54 chapters have exactly one Human Reading Path bridge; bridge prose is guarded against meta-reader scaffolding and must be at least 90 words, with the current minimum at 95 words; Human view hides live-only headings, matching page-TOC entries, internal Human Reading Path TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
 | Public site | GitHub Pages renders the live Quarto book | <https://corbensorenson.github.io/asi-stack-book/> |
 
 ## What The Current Candidate Proves
@@ -59,7 +59,9 @@ Before tagging or continuing to describe a state as a v1.0 candidate, run:
 
 ```bash
 python3 scripts/sync_scaffold.py
-python3 scripts/sync_proof_manifest.py
+git diff --exit-code
+python3 scripts/sync_proof_manifest.py --check
+python3 scripts/validate_chapter_dod.py
 python3 scripts/validate_proof_artifact_audit.py
 python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_publication.py
@@ -74,6 +76,7 @@ python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
+python3 scripts/validate_repeated_prose.py
 (cd lean && lake build)
 quarto render --to html
 python3 scripts/validate_live_human_view.py
