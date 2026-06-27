@@ -253,6 +253,32 @@
     "report_path": "build/reader_spine_report.json",
     "minimum_chapter_word_count": 1200,
     "minimum_handoff_word_count": 45,
+    "minimum_section_word_counts": {
+      "Problem": 120,
+      "Why existing approaches are insufficient": 110,
+      "Core Claim": 40,
+      "Mechanism": 300,
+      "Interfaces": 120,
+      "Invariants": 100,
+      "Failure modes": 100,
+      "Minimum Viable Implementation": 110,
+      "Beyond the State of the Art": 180,
+      "Summary": 110,
+      "Handoff": 45
+    },
+    "minimum_section_prose_paragraph_counts": {
+      "Problem": 2,
+      "Why existing approaches are insufficient": 2,
+      "Core Claim": 1,
+      "Mechanism": 4,
+      "Interfaces": 1,
+      "Invariants": 1,
+      "Failure modes": 1,
+      "Minimum Viable Implementation": 2,
+      "Beyond the State of the Art": 3,
+      "Summary": 2,
+      "Handoff": 1
+    },
     "hard_blocked_terms": [
       "drafting guardrail",
       "codex test plan",
@@ -279,7 +305,7 @@
       "Summary",
       "Handoff"
     ],
-    "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine and chapter-specific Handoff continuity after live-only scaffolding is stripped."
+    "purpose": "Derive the reader edition and verify that every generated chapter retains a substantial human-readable spine, section-level prose substance, and chapter-specific Handoff continuity after live-only scaffolding is stripped."
   },
   "reader_evidence_boundary_validation": {
     "script": "scripts/validate_reader_evidence_boundaries.py",

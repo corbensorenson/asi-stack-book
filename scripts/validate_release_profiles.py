@@ -79,6 +79,32 @@ READER_REQUIRED_HARD_BLOCKED_TERMS = {
     "source crosswalk",
     "source-note",
 }
+READER_REQUIRED_SECTION_WORD_FLOORS = {
+    "Problem": 120,
+    "Why existing approaches are insufficient": 110,
+    "Core Claim": 40,
+    "Mechanism": 300,
+    "Interfaces": 120,
+    "Invariants": 100,
+    "Failure modes": 100,
+    "Minimum Viable Implementation": 110,
+    "Beyond the State of the Art": 180,
+    "Summary": 110,
+    "Handoff": 45,
+}
+READER_REQUIRED_SECTION_PROSE_PARAGRAPH_FLOORS = {
+    "Problem": 2,
+    "Why existing approaches are insufficient": 2,
+    "Core Claim": 1,
+    "Mechanism": 4,
+    "Interfaces": 1,
+    "Invariants": 1,
+    "Failure modes": 1,
+    "Minimum Viable Implementation": 2,
+    "Beyond the State of the Art": 3,
+    "Summary": 2,
+    "Handoff": 1,
+}
 AUDIO_FORBIDDEN_STRIPS = {
     (2, "minimum viable implementation"),
     (2, "beyond the state of the art"),
@@ -157,6 +183,27 @@ def validate_release_gate_sequence(
             errors.append(
                 f"{profile_id}: release_gate must run `{earlier_command}` before `{later_command}`."
             )
+
+
+def validate_int_floor_map(
+    owner: str,
+    key: str,
+    value: object,
+    required_floors: dict[str, int],
+    errors: list[str],
+) -> None:
+    if not isinstance(value, dict):
+        errors.append(f"{owner}: {key} must be an object.")
+        return
+    for heading, floor in required_floors.items():
+        actual = value.get(heading)
+        if not isinstance(actual, int) or actual < floor:
+            errors.append(f"{owner}: {key}.{heading} must be an integer >= {floor}.")
+    for heading, actual in value.items():
+        if not isinstance(heading, str) or not heading.strip():
+            errors.append(f"{owner}: {key} headings must be non-empty strings.")
+        if not isinstance(actual, int) or actual < 0:
+            errors.append(f"{owner}: {key}.{heading} must be a non-negative integer.")
 
 
 def validate_content_layer_policy(
@@ -517,6 +564,20 @@ def main() -> None:
                 "reader_spine_validation.required_reader_headings missing "
                 f"{sorted(missing_reader_headings)}."
             )
+        validate_int_floor_map(
+            "reader_spine_validation",
+            "minimum_section_word_counts",
+            spine_policy.get("minimum_section_word_counts"),
+            READER_REQUIRED_SECTION_WORD_FLOORS,
+            errors,
+        )
+        validate_int_floor_map(
+            "reader_spine_validation",
+            "minimum_section_prose_paragraph_counts",
+            spine_policy.get("minimum_section_prose_paragraph_counts"),
+            READER_REQUIRED_SECTION_PROSE_PARAGRAPH_FLOORS,
+            errors,
+        )
         purpose = spine_policy.get("purpose")
         if not isinstance(purpose, str) or not purpose.strip():
             errors.append("reader_spine_validation.purpose must be a non-empty string.")

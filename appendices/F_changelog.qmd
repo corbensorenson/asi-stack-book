@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal reader section-quality floors
+
+- Tightened the generated Human/reader projection by adding section-level word-count floors and substantial prose-paragraph floors to `reader_spine_validation`, then enforcing them in `scripts/validate_reader_spine.py` against the derived reader edition. Updated the release profile validator, README, outline, writing runbook, site-quality standard, release-edition docs, publication-readiness notes, and v1.0 status guard so future chapter edits must keep the stripped human version book-like section by section rather than merely clearing a whole-chapter word count. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source appendix ownership title clarity
 
 - Retitled the generated source ownership appendices so Appendix G now renders as `Corben's Sources, Papers, and Local Projects` and Appendix H renders as `External Sources and Third-Party Literature`. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, full-book goal template, project prompt, tracked ASI Stack skill, repository map, and external-literature policy wording so Corben/local source records and external third-party literature remain visibly separate top-level appendices rather than two parts of a single "sources used" appendix. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

@@ -52,6 +52,8 @@ Major-version reader and audio editions are derivatives of the live book, not pa
 
 When drafting or revising chapters, preserve a continuous reader-facing spine before the live-only sections do their audit work. A future writing goal should be able to strip status blocks, source crosswalks, proof hooks, and Codex test plans while still leaving a coherent EPUB/PDF/DOCX manuscript, live-site Human view, and narration-ready audio script path.
 
+The generated reader spine must now pass section-level quality floors, not only a whole-chapter word count. `scripts/validate_reader_spine.py --check` verifies that every required reader section remains present, clears its minimum word count, and contains enough substantial prose paragraphs after live-only scaffolding is removed. This keeps the live Human view and reader editions from becoming a thin outline wrapped around hidden AI/research machinery.
+
 For major versions, the reader manuscript is the human source for EPUB, PDF, DOCX, reader HTML, and optional downstream e-reader conversions such as AZW3, MOBI, Markdown, or plain text. Audio is downstream of the reviewed reader manuscript, not the live book directly. MP3, M4B, and audio embedded in EPUB require their own script review, spoken-treatment review, package check, and edition release record.
 
 ## Book-Level Throughline

@@ -61,9 +61,37 @@ DEFAULT_REQUIRED_READER_HEADINGS = [
     "Handoff",
 ]
 DEFAULT_MIN_HANDOFF_WORDS = 45
+DEFAULT_MIN_SECTION_WORD_COUNTS = {
+    "Problem": 120,
+    "Why existing approaches are insufficient": 110,
+    "Core Claim": 40,
+    "Mechanism": 300,
+    "Interfaces": 120,
+    "Invariants": 100,
+    "Failure modes": 100,
+    "Minimum Viable Implementation": 110,
+    "Beyond the State of the Art": 180,
+    "Summary": 110,
+    "Handoff": 45,
+}
+DEFAULT_MIN_SECTION_PROSE_PARAGRAPH_COUNTS = {
+    "Problem": 2,
+    "Why existing approaches are insufficient": 2,
+    "Core Claim": 1,
+    "Mechanism": 4,
+    "Interfaces": 1,
+    "Invariants": 1,
+    "Failure modes": 1,
+    "Minimum Viable Implementation": 2,
+    "Beyond the State of the Art": 3,
+    "Summary": 2,
+    "Handoff": 1,
+}
+PROSE_PARAGRAPH_MIN_WORDS = 18
 HANDOFF_HEADING_RE = re.compile(r"^## Handoff\s*$", re.MULTILINE)
 SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)
 NEXT_HEADING_RE = re.compile(r"^##\s+", re.MULTILINE)
+SECTION_HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
 NUMBERED_CHAPTER_RE = re.compile(r"\bchapter\s+\d+\b", re.IGNORECASE)
 
 
@@ -106,6 +134,50 @@ def count_reader_words(text: str) -> int:
         if not line.lstrip().startswith("|") and not line.lstrip().startswith("!")
     ]
     return len(WORD_RE.findall("\n".join(lines)))
+
+
+def count_section_words(text: str) -> int:
+    text = CODE_BLOCK_RE.sub(" ", text)
+    lines = [
+        line
+        for line in text.splitlines()
+        if not line.lstrip().startswith("|") and not line.lstrip().startswith("!")
+    ]
+    return len(WORD_RE.findall("\n".join(lines)))
+
+
+def prose_paragraph_count(text: str) -> int:
+    text = CODE_BLOCK_RE.sub(" ", text)
+    count = 0
+    for block in re.split(r"\n\s*\n", text.strip()):
+        paragraph = block.strip()
+        if not paragraph:
+            continue
+        if paragraph.startswith(("|", "!", ":::", "- ", "* ", "#")):
+            continue
+        if re.match(r"^\d+\.\s", paragraph):
+            continue
+        if len(WORD_RE.findall(paragraph)) >= PROSE_PARAGRAPH_MIN_WORDS:
+            count += 1
+    return count
+
+
+def reader_sections(text: str) -> dict[str, dict[str, str]]:
+    stripped = build_reader_edition.strip_frontmatter(text)
+    matches = list(SECTION_HEADING_RE.finditer(stripped))
+    sections: dict[str, dict[str, str]] = {}
+    for index, match in enumerate(matches):
+        title = match.group(2).strip()
+        start = match.end()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(stripped)
+        sections.setdefault(
+            normalize_heading(title),
+            {
+                "title": title,
+                "body": stripped[start:end].strip(),
+            },
+        )
+    return sections
 
 
 def live_only_term_hits(text: str, terms: list[str]) -> list[dict[str, object]]:
@@ -177,6 +249,26 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         raise TypeError("reader_spine_validation.required_reader_headings must be a list of strings")
     normalized_required_headings = [normalize_heading(heading) for heading in required_headings]
     min_handoff_words = int(policy.get("minimum_handoff_word_count", DEFAULT_MIN_HANDOFF_WORDS))
+    min_section_word_counts = policy.get("minimum_section_word_counts", DEFAULT_MIN_SECTION_WORD_COUNTS)
+    if (
+        not isinstance(min_section_word_counts, dict)
+        or not all(isinstance(key, str) and isinstance(value, int) for key, value in min_section_word_counts.items())
+    ):
+        raise TypeError("reader_spine_validation.minimum_section_word_counts must be an object of integer floors")
+    min_section_prose_paragraph_counts = policy.get(
+        "minimum_section_prose_paragraph_counts",
+        DEFAULT_MIN_SECTION_PROSE_PARAGRAPH_COUNTS,
+    )
+    if (
+        not isinstance(min_section_prose_paragraph_counts, dict)
+        or not all(
+            isinstance(key, str) and isinstance(value, int)
+            for key, value in min_section_prose_paragraph_counts.items()
+        )
+    ):
+        raise TypeError(
+            "reader_spine_validation.minimum_section_prose_paragraph_counts must be an object of integer floors"
+        )
 
     strip_headings = build_reader_edition.profile_strip_headings(profile)
     heading_violations = build_reader_edition.scan_for_stripped_headings(output_dir, strip_headings)
@@ -198,6 +290,27 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         term_hits = live_only_term_hits(text, hard_terms)
         meta_hits = meta_phrase_hits(text, blocked_meta_phrases)
         headings = reader_headings(text)
+        sections = reader_sections(text)
+        section_word_counts: dict[str, int] = {}
+        section_prose_paragraph_counts: dict[str, int] = {}
+        section_word_violations: list[dict[str, object]] = []
+        section_prose_paragraph_violations: list[dict[str, object]] = []
+        for heading, minimum in min_section_word_counts.items():
+            section = sections.get(normalize_heading(heading))
+            section_words = count_section_words(section["body"]) if section else 0
+            section_word_counts[heading] = section_words
+            if section_words < minimum:
+                section_word_violations.append(
+                    {"heading": heading, "word_count": section_words, "minimum": minimum}
+                )
+        for heading, minimum in min_section_prose_paragraph_counts.items():
+            section = sections.get(normalize_heading(heading))
+            paragraph_count = prose_paragraph_count(section["body"]) if section else 0
+            section_prose_paragraph_counts[heading] = paragraph_count
+            if paragraph_count < minimum:
+                section_prose_paragraph_violations.append(
+                    {"heading": heading, "paragraph_count": paragraph_count, "minimum": minimum}
+                )
         first = first_heading(text)
         title_ok = first == (1, expected_title)
         source_marker_heading_count = text.count("Human Reading Path")
@@ -242,6 +355,10 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 "handoff_numbered_chapter_ref": handoff_numbered_chapter_ref,
                 "handoff_generic_phrase_hits": handoff_generic_phrase_hits,
                 "word_count_after_strip": words,
+                "section_word_counts": section_word_counts,
+                "section_prose_paragraph_counts": section_prose_paragraph_counts,
+                "section_word_violations": section_word_violations,
+                "section_prose_paragraph_violations": section_prose_paragraph_violations,
                 "live_only_term_hits": term_hits,
                 "meta_phrase_hits": meta_hits,
                 "missing_reader_headings": missing_headings,
@@ -291,6 +408,17 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
                 f"{relative}: reader spine is missing required headings after stripping: "
                 + ", ".join(missing_headings)
             )
+        for violation in section_word_violations:
+            errors.append(
+                f"{relative}: reader section {violation['heading']!r} has "
+                f"{violation['word_count']} words; minimum is {violation['minimum']}."
+            )
+        for violation in section_prose_paragraph_violations:
+            errors.append(
+                f"{relative}: reader section {violation['heading']!r} has "
+                f"{violation['paragraph_count']} substantial prose paragraphs; "
+                f"minimum is {violation['minimum']}."
+            )
         for hit in term_hits:
             errors.append(
                 f"{relative}:{hit['line']}: live-only term {hit['term']!r} remains "
@@ -313,6 +441,8 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
         "profile": "reader_release",
         "minimum_chapter_word_count": min_words,
         "minimum_handoff_word_count": min_handoff_words,
+        "minimum_section_word_counts": min_section_word_counts,
+        "minimum_section_prose_paragraph_counts": min_section_prose_paragraph_counts,
         "hard_blocked_terms": hard_terms,
         "blocked_meta_phrases": blocked_meta_phrases,
         "required_reader_headings": required_headings,
