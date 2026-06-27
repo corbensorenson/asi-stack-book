@@ -320,6 +320,7 @@ def write_reader_checklist(
     output_dir: Path,
     profile: dict,
     reader_policy: dict,
+    spine_policy: dict,
     companion_policy: dict,
     bundle_policy: dict,
     summary: dict[str, object],
@@ -330,6 +331,8 @@ def write_reader_checklist(
     human_quality_floor = reader_policy.get("human_reader_quality_floor", [])
     downstream_formats = reader_policy.get("optional_downstream_formats", [])
     release_gate = profile.get("release_gate", [])
+    spine_script = str(spine_policy.get("script", "scripts/validate_reader_spine.py"))
+    min_handoff_words = spine_policy.get("minimum_handoff_word_count", "unconfigured")
 
     lines = [
         "# Reader Release Checklist",
@@ -347,6 +350,8 @@ def write_reader_checklist(
         f"- Live-only sections removed: {sum(summary['removed_sections'].values())}",
         f"- AI-only fenced blocks removed: {summary.get('ai_only_blocks_removed', 0)}",
         f"- Human-only fenced blocks unwrapped: {summary.get('human_only_blocks_unwrapped', 0)}",
+        f"- Reader-spine validator: `{spine_script}`",
+        f"- Handoff word floor: {min_handoff_words}",
         "",
         "## Required Gate",
         "",
@@ -359,6 +364,8 @@ def write_reader_checklist(
         "## Reader Review",
         "",
         "- [ ] Read the generated manuscript for chapter-to-chapter continuity.",
+        "- [ ] Confirm every generated chapter has exactly one `Handoff` section after `Summary`.",
+        "- [ ] Confirm non-final Handoffs name the next manifest chapter title and the final Handoff closes the book-level arc.",
         "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
         "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
         "- [ ] Check that glossary, Corben corpus/local-project appendix, and separate external-literature appendix are sufficient for interested human readers.",
@@ -490,6 +497,7 @@ def write_reader_manifest(
     summary: dict[str, object],
     profile: dict,
     reader_policy: dict,
+    spine_policy: dict,
     companion_policy: dict,
     bundle_policy: dict,
 ) -> None:
@@ -515,6 +523,15 @@ def write_reader_manifest(
         "human_only_blocks_unwrapped": summary.get("human_only_blocks_unwrapped", 0),
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
+        "reader_spine_validation": spine_policy,
+        "handoff_continuity_review": {
+            "required": True,
+            "required_section": "Handoff",
+            "required_position": "after Summary",
+            "non_final_rule": "Name the next manifest chapter title.",
+            "final_rule": "Close the book-level arc.",
+            "artifact_status": "review_required"
+        },
         "companion_notes": summary.get(
             "companion_notes",
             companion_policy.get("reader_companion_path", "companion_notes.md"),
@@ -559,6 +576,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     companion_policy = profile_data.get("companion_material_policy", {})
     if not isinstance(companion_policy, dict):
         raise TypeError("companion_material_policy must be an object")
+    spine_policy = profile_data.get("reader_spine_validation", {})
+    if not isinstance(spine_policy, dict):
+        raise TypeError("reader_spine_validation must be an object")
     bundle_policy = profile_data.get("human_consumption_bundle_policy", {})
     if not isinstance(bundle_policy, dict):
         raise TypeError("human_consumption_bundle_policy must be an object")
@@ -634,6 +654,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         output_dir,
         profile,
         reader_policy,
+        spine_policy,
         companion_policy,
         bundle_policy,
         summary,
@@ -641,7 +662,15 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     companion_path = write_reader_companion_notes(output_dir, companion_policy, summary)
     summary["review_checklist"] = checklist_path
     summary["companion_notes"] = companion_path
-    write_reader_manifest(output_dir, summary, profile, reader_policy, companion_policy, bundle_policy)
+    write_reader_manifest(
+        output_dir,
+        summary,
+        profile,
+        reader_policy,
+        spine_policy,
+        companion_policy,
+        bundle_policy,
+    )
     return summary
 
 
@@ -696,6 +725,9 @@ def main() -> None:
                 raise SystemExit(1)
             if not (output_dir / "READER_RELEASE_CHECKLIST.md").exists():
                 raise SystemExit("Reader edition check failed: missing READER_RELEASE_CHECKLIST.md.")
+            checklist_text = (output_dir / "READER_RELEASE_CHECKLIST.md").read_text(encoding="utf-8")
+            if "Handoff" not in checklist_text or "next manifest chapter title" not in checklist_text:
+                raise SystemExit("Reader edition check failed: checklist missing Handoff continuity review.")
             profile_data = load_release_profiles()
             companion_policy = profile_data.get("companion_material_policy", {})
             companion_path = str(
@@ -705,6 +737,17 @@ def main() -> None:
             )
             if not (output_dir / companion_path).exists():
                 raise SystemExit(f"Reader edition check failed: missing {companion_path}.")
+            manifest_path = output_dir / "reader_manifest.json"
+            if not manifest_path.exists():
+                raise SystemExit("Reader edition check failed: missing reader_manifest.json.")
+            manifest = load_json(manifest_path)
+            if not isinstance(manifest, dict):
+                raise SystemExit("Reader edition check failed: reader_manifest.json must contain an object.")
+            if not isinstance(manifest.get("reader_spine_validation"), dict):
+                raise SystemExit("Reader edition check failed: manifest missing reader_spine_validation.")
+            handoff_review = manifest.get("handoff_continuity_review")
+            if not isinstance(handoff_review, dict) or handoff_review.get("required") is not True:
+                raise SystemExit("Reader edition check failed: manifest missing required Handoff review.")
             print(
                 "Reader edition check passed: "
                 f"{summary['chapters']} chapters, {summary['files']} files, "

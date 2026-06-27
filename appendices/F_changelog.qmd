@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal reader workspace handoff review contract
+
+- Extended the reader-edition generator so each generated reader workspace carries the reader-spine validation policy and an explicit Handoff continuity review requirement in `reader_manifest.json`, and the generated `READER_RELEASE_CHECKLIST.md` now asks reviewers to confirm one `Handoff` after `Summary`, next-manifest-title continuity for non-final chapters, and final book-level closure. The generator check now fails if those generated review contracts disappear. Updated release-edition documentation without claiming a reviewed reader artifact, ebook, audio artifact, support-state promotion, benchmark result, runtime result, or new proof result.
+
 ## 2026-06-27 - v1.0 improvement goal reader handoff continuity validation
 
 - Tightened the generated reader-edition spine so `scripts/validate_reader_spine.py --check` now requires every stripped reader chapter to preserve exactly one substantial `Handoff` section after `Summary`, name the next manifest chapter title for non-final chapters, reject numbered chapter references and generic transition formulas, and close the book-level arc in the final chapter. Aligned the release profile, profile validator, README, release-edition docs, site-quality standard, writing runbook, outline, and v1.0 status guard so future reader manuscripts cannot lose chapter-to-chapter continuity during live-scaffold stripping. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
