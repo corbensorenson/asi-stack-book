@@ -28,6 +28,7 @@ CLOSE_RE = re.compile(r"^(:{3,})\s*$")
 BANNED_BRIDGE_PHRASES = (
     "For a human reader",
     "For the reader",
+    "This chapter",
 )
 
 

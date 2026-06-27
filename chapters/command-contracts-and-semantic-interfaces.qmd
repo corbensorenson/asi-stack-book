@@ -46,7 +46,7 @@ This chapter is where the stack stops treating language as a vibe and starts tre
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The previous chapter traced a whole request from intent to execution. This chapter zooms into the first machine-readable handoff: the command contract. It is the point where ordinary language becomes structured enough that planning can proceed without guessing at hidden requirements or hidden authority.
+The previous chapter traced a whole request from intent to execution. The first machine-readable handoff is the command contract. It is the point where ordinary language becomes structured enough that planning can proceed without guessing at hidden requirements or hidden authority.
 
 The important move is not to make human language robotic. It is to preserve what matters: role, objective, context, constraints, output, verification, failure behavior, and permission boundary. A good command contract lets the stack be helpful while still knowing when it must ask, refuse, or stop.
 :::

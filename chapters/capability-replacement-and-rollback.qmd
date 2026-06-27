@@ -49,7 +49,7 @@ The replacement transaction is the stack's version of a high-risk write. It chan
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Stable Capability Fields define the boundary. This chapter describes the transaction that crosses it. Replacement is not just swapping one component for another; it is a controlled change with compatibility checks, canary scope, monitoring, rollback, and residual ownership. The field says what must remain true; the transaction says whether the candidate has earned the right to become ordinary infrastructure.
+Stable Capability Fields define the boundary. Replacement is the transaction that crosses it. It is not just swapping one component for another; it is a controlled change with compatibility checks, canary scope, monitoring, rollback, and residual ownership. The field says what must remain true; the transaction says whether the candidate has earned the right to become ordinary infrastructure.
 
 Reversibility is the trust boundary. A self-improving system should not be trusted because each new version sounds better. It should be trusted only to the degree that a failed replacement can be detected, contained, and undone. Until then, improvement should stay in shadow, canary, quarantine, or research state rather than quietly becoming the default path.
 :::
