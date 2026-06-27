@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal dynamic chapter adjacency workflow
+
+- Added `scripts/chapter_adjacency_report.py` and improved `scripts/add_chapter.py` so manifest-driven chapter additions, moves, merges, and removals have explicit predecessor/current Handoff repair guidance. Updated the README, living update workflow, repository map, and site-quality standard so future agents can keep the book dynamic without hand-renumbering files or searching the whole manuscript for transition repairs. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal reader workspace handoff review contract
 
 - Extended the reader-edition generator so each generated reader workspace carries the reader-spine validation policy and an explicit Handoff continuity review requirement in `reader_manifest.json`, and the generated `READER_RELEASE_CHECKLIST.md` now asks reviewers to confirm one `Handoff` after `Summary`, next-manifest-title continuity for non-final chapters, and final book-level closure. The generator check now fails if those generated review contracts disappear. Updated release-edition documentation without claiming a reviewed reader artifact, ebook, audio artifact, support-state promotion, benchmark result, runtime result, or new proof result.

@@ -34,11 +34,13 @@ python3 scripts/add_chapter.py \
   --title "New AI Topic" \
   --after planning-as-a-control-layer
 
+python3 scripts/chapter_adjacency_report.py --chapter new-ai-topic
 python3 scripts/sync_scaffold.py
+python3 scripts/validate_chapter_handoffs.py
 python3 scripts/validate_book.py
 ```
 
-Then draft the new chapter directly, or intentionally rerun `python3 scripts/draft_v02_from_manifest.py` if you want to refresh the full baseline from the manifest.
+Then draft the new chapter directly, or intentionally rerun `python3 scripts/draft_v02_from_manifest.py` if you want to refresh the full baseline from the manifest. `scripts/add_chapter.py` prints the adjacent Handoff repair notes for the new slot; the adjacency report can be rerun later if the chapter is moved.
 
 ## Reorder, Merge, or Remove Chapters
 
@@ -46,14 +48,16 @@ Edit `book_structure.json` only.
 
 - Reorder: move the chapter object inside the desired part.
 - Move to another part: move the chapter object between part arrays.
-- Merge: move useful source IDs and claims into the surviving chapter, then remove the obsolete chapter object.
+- Merge: move useful source IDs and claims into the surviving chapter, run `python3 scripts/chapter_adjacency_report.py --if-removing <chapter-id>` to identify the predecessor Handoff repair, then remove the obsolete chapter object.
 - Remove: remove the chapter object, then decide whether to keep or delete the old `.qmd` file as archival material.
 
 After edits:
 
 ```bash
+python3 scripts/chapter_adjacency_report.py --chapter <changed-chapter-id>
 python3 scripts/sync_scaffold.py
 python3 scripts/validate_source_evidence_audit.py
+python3 scripts/validate_chapter_handoffs.py
 python3 scripts/validate_book.py
 quarto render --to html
 ```

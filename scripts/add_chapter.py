@@ -31,6 +31,46 @@ def find_part(structure: dict, part_id: str) -> dict:
     raise SystemExit(f"No part found: {part_id}")
 
 
+def flatten_chapters(structure: dict) -> list[dict]:
+    chapters = []
+    for part in structure.get("parts", []):
+        for chapter in part.get("chapters", []):
+            merged = dict(chapter)
+            merged["_part_id"] = part.get("id", "")
+            merged["_part_title"] = part.get("title", "")
+            chapters.append(merged)
+    return chapters
+
+
+def print_handoff_repair_notes(structure: dict, chapter_id: str) -> None:
+    chapters = flatten_chapters(structure)
+    matches = [index for index, chapter in enumerate(chapters) if chapter.get("id") == chapter_id]
+    if not matches:
+        return
+    index = matches[0]
+    chapter = chapters[index]
+    previous_chapter = chapters[index - 1] if index > 0 else None
+    next_chapter = chapters[index + 1] if index + 1 < len(chapters) else None
+
+    print("Handoff repair notes:")
+    if previous_chapter:
+        print(
+            f"- Update `{previous_chapter['file']}` so its `## Handoff` names "
+            f"`{chapter['title']}`."
+        )
+    else:
+        print("- No previous chapter Handoff exists because this is now the first manifest chapter.")
+    if next_chapter:
+        print(
+            f"- Draft `{chapter['file']}` with a `## Handoff` after `## Summary` naming "
+            f"`{next_chapter['title']}`."
+        )
+    else:
+        print(f"- Draft `{chapter['file']}` with a final `## Handoff` that closes the book-level arc.")
+    print(f"- Inspect adjacency with: python3 scripts/chapter_adjacency_report.py --chapter {chapter_id}")
+    print("- Validate with: python3 scripts/validate_chapter_handoffs.py")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Add a chapter entry to book_structure.json.")
     parser.add_argument("--part", required=True, help="Part ID to insert the chapter into.")
@@ -87,10 +127,12 @@ def main() -> None:
 
     if args.dry_run:
         print(json.dumps(chapter, indent=2))
+        print_handoff_repair_notes(structure, chapter_id)
         return
 
     save_structure(structure)
     print(f"Added chapter {chapter_id}. Run: python3 scripts/sync_scaffold.py")
+    print_handoff_repair_notes(structure, chapter_id)
 
 
 if __name__ == "__main__":

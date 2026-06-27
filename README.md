@@ -161,9 +161,10 @@ Useful helpers:
 ```bash
 python3 scripts/add_part.py --title "Part IV - New Research Track"
 python3 scripts/add_chapter.py --part planning-memory-reasoning-execution --title "New AI Topic" --after planning-as-a-control-layer
+python3 scripts/chapter_adjacency_report.py --chapter new-ai-topic
 ```
 
-Quarto generates displayed chapter numbers at render time, so chapters can be inserted, moved, merged, or removed without renumbering files.
+Quarto generates displayed chapter numbers at render time, so chapters can be inserted, moved, merged, or removed without renumbering files. Chapter prose still has manifest-aware Handoffs; after structural edits, use the adjacency report and `python3 scripts/validate_chapter_handoffs.py` to update only the affected neighboring Handoff sections.
 
 ## Manuscript Regeneration
 

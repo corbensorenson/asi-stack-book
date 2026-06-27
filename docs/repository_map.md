@@ -38,6 +38,7 @@ This repository is organized around the living book and its validation loop.
 ## Ownership Rules
 
 - Edit `book_structure.json`, then run `python3 scripts/sync_scaffold.py`.
+- Use `python3 scripts/chapter_adjacency_report.py` after adding, moving, merging, or removing chapters to identify the small set of Handoff sections whose manifest-order prose must be repaired.
 - Edit `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`.
 - Edit public source metadata in `sources/source_inventory.json`; keep raw source text out of git unless publication is explicitly approved.
 - Update `appendices/F_changelog.qmd` for meaningful changes.
