@@ -58,6 +58,7 @@ BANNED_BEYOND_BOILERPLATE = [
     "Its job is to make a capability more governable, not merely more impressive",
     "The reviewed sources justify",
     "The passage-reviewed sources justify",
+    "The crosswalk identifies",
 ]
 
 SECTION_MIN_WORDS = {

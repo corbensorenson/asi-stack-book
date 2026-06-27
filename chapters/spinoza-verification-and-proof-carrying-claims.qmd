@@ -235,7 +235,7 @@ These Lean hooks are implemented as finite-record predicates over formal-tier cl
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | passage-reviewed local raw cache |
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | passage-reviewed local raw cache |
 
-The crosswalk identifies sources for proof-carrying and justification-carrying claim discipline. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. It does not claim that Spinoza verification, GenesisCode obligations, or TreeLLM representations are implemented here.
+The proof-carrying sources support claim envelopes, justification artifacts, verifier boundaries, and downgrade behavior. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. It does not claim that Spinoza verification, GenesisCode obligations, or TreeLLM representations are implemented here.
 
 ## Summary
 

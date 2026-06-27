@@ -279,7 +279,7 @@ These proof hooks are implemented only over finite Lean plan-node records in `As
 | `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache passage-reviewed |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for the planning/control boundary. Four mappings have passage review, but the core claim stays at `argument` because `moecot` remains unreviewed and no planner harness, dependency checker, context-demand test, runtime replanning trace, or reproduced benchmark is recorded.
+The planning/control boundary is supported by four passage-reviewed mappings, while `moecot` remains unreviewed. The core claim stays at `argument` because no planner harness, dependency checker, context-demand test, runtime replanning trace, or reproduced benchmark is recorded.
 
 ## Summary
 

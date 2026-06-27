@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source-crosswalk prose polish
+
+- Replaced the repeated `The crosswalk identifies...` opener across 20 AI/researcher-view source-crosswalk notes with chapter-specific source-boundary language for VCM, verification adequacy, intent traces, procedural memory, MoECOT, runtime adapters, artifact graphs, planning, context transactions, semantic certificates, claim ledgers, command contracts, routing, PlanForge, readiness gates, tribunal review, typed jobs, proof-carrying claims, cognitive compilation, and Stable Capability Fields. Added a DoD guard so the source-crosswalk boilerplate does not return. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal summary boilerplate guard
 
 - Extended `scripts/validate_chapter_dod.py` to reject the generated summary phrases removed in the latest reader-spine cleanup, including `defines one boundary in the ASI Stack`, `Its job is to make a capability more governable, not merely more impressive`, and repeated "reviewed sources justify" caveat openings. Updated the writing runbook to document this summary-boilerplate guard. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

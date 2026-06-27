@@ -246,7 +246,7 @@ These proof hooks are implemented as finite-record predicates. They do not prove
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | passage-reviewed local public-project source |
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | passage-reviewed local public-project source |
 
-The crosswalk identifies sources for readiness gates, residual escrow, regression preservation, and quarantine. This pass tightened the source-to-claim trace for eight mappings, but it did not run a readiness gate, inspect current Theseus report JSON, import MoECOT runtime artifacts, or prove that any current Theseus, MoECOT, or book module passes readiness gates.
+The readiness sources support gate state, residual escrow, regression preservation, and quarantine. This pass tightened the source-to-claim trace for eight mappings, but it did not run a readiness gate, inspect current Theseus report JSON, import MoECOT runtime artifacts, or prove that any current Theseus, MoECOT, or book module passes readiness gates.
 
 ## Summary
 

@@ -240,7 +240,7 @@ These Lean hooks are implemented as finite-record predicates over context-packet
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for context adequacy and verification-capacity vocabulary. Four local mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped. The crosswalk does not claim the proposed contradiction-rate experiment has been run.
+The assigned sources supply the context-adequacy and verification-capacity vocabulary. Four local mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped. The crosswalk does not claim the proposed contradiction-rate experiment has been run.
 
 ## Summary
 

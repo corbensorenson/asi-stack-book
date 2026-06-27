@@ -232,7 +232,7 @@ These Lean hooks are implemented as finite-record predicates over compiled-artif
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
 
-The crosswalk identifies sources for compiler framing, semantic representation, provenance, and artifact-ledger integration. All assigned mappings have passage review, but the core claim stays at `argument` because parser behavior, compiler correctness, target-lowering preservation, validator adequacy, localized-repair performance, and quality/cost improvements remain unimplemented or unmeasured here.
+The compiler source set supports semantic IR, representation, provenance, and artifact-ledger integration. All assigned mappings have passage review, but the core claim stays at `argument` because parser behavior, compiler correctness, target-lowering preservation, validator adequacy, localized-repair performance, and quality/cost improvements remain unimplemented or unmeasured here.
 
 ## Summary
 

@@ -272,7 +272,7 @@ These Lean hooks are implemented as finite-record predicates over command field 
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache passage-reviewed |
 
-The crosswalk identifies sources for the command-envelope vocabulary and lowering pressure. All assigned mappings have passage review, but the core claim stays at `argument` until parser behavior, dispatch behavior, override handling, or empirical productivity/safety evidence is recorded through accepted evidence transitions.
+The command-envelope sources support the chapter's lowering pressure: ordinary instruction must become bounded fields before planning or dispatch can rely on it. All assigned mappings have passage review, but the core claim stays at `argument` until parser behavior, dispatch behavior, override handling, or empirical productivity/safety evidence is recorded through accepted evidence transitions.
 
 ## Summary
 

@@ -248,7 +248,7 @@ These proof hooks are implemented only over finite Lean event/snapshot and taint
 | `black_hole_context_manager` | Black Hole Context Manager | memory_context_lineage | Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 
-The crosswalk identifies sources for transactional context semantics and memory-budget pressure. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and memory-store behavior, mount visibility, branch isolation, deletion closure, side-channel validation, context-manager execution, and benchmark claims remain unpromoted.
+The transaction and taint sources carry the runtime semantics for context state, memory budgets, and deletion obligations. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and memory-store behavior, mount visibility, branch isolation, deletion closure, side-channel validation, context-manager execution, and benchmark claims remain unpromoted.
 
 ## Summary
 
