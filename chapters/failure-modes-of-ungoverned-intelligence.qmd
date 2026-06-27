@@ -4,7 +4,7 @@ chapter_id: "failure-modes-of-ungoverned-intelligence"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "scf"
   - "vcm_public"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -51,9 +51,9 @@ The chapter's operating rule is that a failure is not only an outcome. It is a m
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Once the book has named boundaries and authority, it has to say what happens when those boundaries fail. This chapter is not a catalog of science-fiction disasters. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
+Once the book has named boundaries and authority, it has to say what happens when those boundaries fail. This chapter is not a catalog of dramatic disaster scenarios. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
 
-The point is practical. If a system cannot say whether a failure came from authority creep, memory contamination, hidden optimization pressure, weak evidence, or ungoverned replacement, then it cannot learn from the failure without creating new ambiguity.
+The point is practical. If a system cannot say whether a failure came from authority creep, memory contamination, hidden optimization pressure, weak evidence, or ungoverned replacement, then it cannot learn from the failure without creating new ambiguity. A failure mode becomes useful only when it has somewhere to go in the architecture.
 :::
 
 ## Problem
@@ -62,7 +62,7 @@ The book needs an explicit failure model before it can make governance, reliabil
 
 The previous chapter defines authority boundaries. This chapter explains why those boundaries are not optional. Ungoverned intelligence does not have to fail first as a cinematic catastrophe. It can fail earlier and more quietly through goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, or self-improvement loops that ratify their own evidence.
 
-The point of a failure taxonomy is not pessimism. It is interface design. Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit.
+The point of a failure taxonomy is not pessimism. It is interface design. Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit. If a later chapter cannot connect its mechanism back to a failure boundary, the mechanism may be interesting, but it has not yet justified its place in the stack.
 
 ## Why existing approaches are insufficient
 
@@ -98,7 +98,7 @@ Appendix C now maps this core failure claim to every assigned source note. Seven
 
 ## Mechanism
 
-Failure is treated as a boundary event, not a vibe. SCF identifies replacement, evaluator, migration, dependency, and recovery failures. VCM identifies context admission, taint, revocation, adequacy, and hostile-text failures. Talos identifies job, tool, approval, secret, audit, and replay failures. Spinoza identifies unsupported claims, failed verification, contradiction, and protected-axiom failures. VIEA adds artifact and residual loss, Simulation Scaling adds unbounded simulation claims, MoECOT adds runtime overpromotion, and the Field of God lineage keeps agency and governance harms visible without turning them into empirical safety evidence.
+Failure is treated as a boundary event, not an impression. SCF identifies replacement, evaluator, migration, dependency, and recovery failures. VCM identifies context admission, taint, revocation, adequacy, and hostile-text failures. Talos identifies job, tool, approval, secret, audit, and replay failures. Spinoza identifies unsupported claims, failed verification, contradiction, and protected-axiom failures. VIEA adds artifact and residual loss, Simulation Scaling adds unbounded simulation claims, MoECOT adds runtime overpromotion, and the Field of God lineage keeps agency and governance harms visible without turning them into empirical safety evidence.
 
 A Failure Boundary Map is the mechanism that connects each risk to the boundary that must detect, contain, or preserve evidence about it.
 
