@@ -22,6 +22,8 @@ FORMULAIC_BEYOND_PHRASES = (
     "would expose:",
     "The operational contract is",
     "Support should stay at",
+    "At that mature boundary",
+    "In that final product",
 )
 FORMULAIC_MVI_PHRASES = (
     "The next useful implementation step is",

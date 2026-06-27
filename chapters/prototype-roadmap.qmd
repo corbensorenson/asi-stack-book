@@ -218,7 +218,7 @@ The phase record should also name who may retire the phase if the unblock condit
 
 The roadmap endpoint is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review.
 
-At that mature boundary, every phase would have explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.
+A mature roadmap controller gives every phase explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.
 
 A prototype roadmap needs:
 
@@ -229,7 +229,7 @@ A prototype roadmap needs:
 - Evaluator-independence gates before readiness promotion, policy learning, capability replacement, or recursive self-improvement.
 - Failure closure for prototype theater, skipped verification, roadmap-as-evidence, operator convenience weakening gates, and lost remaining-work items.
 
-In that final product, a builder could ask the roadmap what to implement next and receive a precise answer: the smallest allowed slice, the evidence needed to advance, and the blocked claims that must not move. The phase-gated build controller remains a target architecture until real phase packets, dependency-gate checks, acceptance reviews, and evidence transitions show that roadmap progress changes implementation state without laundering claim strength.
+At build-controller maturity, a builder could ask the roadmap what to implement next and receive a precise answer: the smallest allowed slice, the evidence needed to advance, and the blocked claims that must not move. The phase-gated build controller remains a target architecture until real phase packets, dependency-gate checks, acceptance reviews, and evidence transitions show that roadmap progress changes implementation state without laundering claim strength.
 
 ## Codex test plan
 

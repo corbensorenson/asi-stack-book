@@ -196,7 +196,7 @@ A proof/spec receipt suite should make the envelope operational: one Lean predic
 
 The formal-methods endpoint is a claims control plane for the whole stack. It does not try to prove "ASI safety" or "alignment" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks.
 
-At that mature boundary, every chapter, protocol, release, and runtime module would consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.
+A mature proof envelope makes every chapter, protocol, release, and runtime module consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.
 
 A proof-envelope surface needs:
 
@@ -207,7 +207,7 @@ A proof-envelope surface needs:
 - Receipts for proof, schema, process, behavior, benchmark, and external-reference lanes so future agents can see exactly which authority each artifact carries.
 - Failure closure that routes proof laundering, formalization theater, external-theorem borrowing, stale tags, and claim-from-prose errors into downgrade, quarantine, or adequacy residuals.
 
-In that final product, the stack could depend on mechanized record-level claims without pretending that record-level proofs are deployed enforcement, empirical model quality, benchmark success, or source-truth validation. The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.
+With that envelope in place, the stack could depend on mechanized record-level claims without pretending that record-level proofs are deployed enforcement, empirical model quality, benchmark success, or source-truth validation. The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.
 
 ## Codex test plan
 

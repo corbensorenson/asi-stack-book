@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal Part IV mature-endpoint polish
+
+- Reworked repeated Part IV `Beyond the State of the Art` formulas across 9 chapters and the manifest-sourced Appendix K implementation horizons, replacing `At that mature boundary` and `In that final product` constructions with chapter-specific mature endpoint prose. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject those formulas, and refreshed the v1.0 status manuscript scale to 178,175 chapter words excluding YAML and 185,674 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mature support-boundary polish
 
 - Reworked repeated `Beyond the State of the Art` support-boundary formulas across 40 chapters, replacing `Support should stay at` constructions with chapter-specific evidence-boundary prose while preserving every `argument` support-state limit. Tightened `scripts/validate_repeated_prose.py` so future mature-endpoint sections reject that formula, and refreshed the v1.0 status manuscript scale to 178,180 chapter words excluding YAML and 185,679 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
