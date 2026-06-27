@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source appendix title split
+
+- Tightened the generated source-appendix boundary wording so Appendix G now renders as `Corben-Authored, Supplied, and Local Sources`, while Appendix H remains `External Sources by Other Authors`. Updated the manifest, scaffold generator, source-appendix validator, v1.0 status guard, README, outline, bibliography-plan chapter, full-book goal template, project prompt, and tracked ASI Stack skill so Corben-authored/supplied/local records and outside-author records are visibly separate top-level appendices rather than two parts of one "sources used" appendix. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Human Reading Path closing polish
 
 - Raised the Human Reading Path closing-sentence floor from 7 to 9 words and reworked the clipped bridge endings in Evidence States and Claim Discipline, Recursive Self-Improvement Boundaries, Resource Economics and Token Budgets, and Project Theseus as Report-First Implementation Reference. Updated `scripts/validate_human_reading_paths.py`, the v1.0 status snapshot guard, and writing guidance so Human view bridges close as complete book prose rather than clipped slogans. Refreshed the v1.0 status manuscript scale to 178,246 chapter words excluding YAML and 185,745 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

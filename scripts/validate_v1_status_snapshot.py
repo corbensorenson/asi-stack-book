@@ -134,7 +134,7 @@ def main() -> None:
         f"| Book structure | {len(structure.get('parts', []))} parts, {len(chapters)} manifest-driven chapters, {len(appendices)} appendices |",
         f"| Manuscript scale | {chapter_file_count} chapter files; {body_words:,} chapter words excluding YAML front matter; {raw_words:,} raw chapter-file words including metadata and live scaffolding |",
         f"| Source inventory | {len(source_records)} public-safe source records, each with a matching public source note;",
-        "| Source appendix ownership | Appendix G (`Corben's Sources and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices: G contains Corben's source corpus and local-project records; H contains external records by other authors marked `external_literature` |",
+        "| Source appendix ownership | Appendix G (`Corben-Authored, Supplied, and Local Sources`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices: G contains Corben-authored, Corben-supplied, and local project records; H contains external records by other authors marked `external_literature` |",
         f"| Claim/source traceability | {assigned_pairs} assigned source/chapter pairs, {exact_mappings} exact claim-source mappings, {passage_reviewed} passage-reviewed mappings |",
         f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass |",
         f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates |",
