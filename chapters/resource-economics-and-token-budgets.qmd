@@ -53,7 +53,7 @@ This chapter is the cost counterpart to the security kernel. Least exposure, ver
 
 The previous chapters offer cheaper routes, smaller artifacts, faster generation, and richer representations. This chapter asks whether those moves actually saved anything after verification, repair, fallback, memory pressure, human review, and risk are counted.
 
-The book's efficiency thesis depends on this accounting. A route is not efficient because it looks cheap at the model boundary. It is efficient only when the full system cost and the remaining residual burden are visible.
+The book's efficiency thesis depends on this accounting. A route is not efficient because it looks cheap at the model boundary. It is efficient only when the full system cost, protected overhead, displaced work, and remaining residual burden are visible.
 :::
 
 ## Problem
@@ -205,14 +205,15 @@ The next useful implementation step is a toy budget ledger with one low-risk dis
 
 ## Beyond the State of the Art
 
-The mature version of Resource Economics and Token Budgets is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Resource Economics and Token Budgets is a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review.
 
 At that end state, the chapter's claim becomes an operational contract: The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value. The mature surface would include:
 
-- Operating mechanism: Track task value, uncertainty, cost of error, and inference cost; Use regenerative or budgeted capacity mechanisms where useful; Escalate verification when risk justifies the cost; Separate aggregate serving throughput and memory pressure from single-request verified-output value.
-- Stack interface: Planning allocates budgets; Routing chooses costed specialists; Evidence measures cost-quality tradeoffs; Serving infrastructure reports memory and throughput costs without converting them into quality claims.
-- Preserved invariants: Budgets do not override protected safety gates; High-risk tasks pay verification cost; Cost savings are recorded with quality results; Serving-throughput gains remain separate from verified-output and task-success claims.
-- Failure closure: detect and route failure modes such as Cost-cutting verification away; Load-synchronized degradation; Resource hoarding by low-value tasks; Aggregate serving throughput mistaken for lower single-request risk or better answer quality to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: budget records price value hypothesis, risk class, capacity pool, budget state, model/tool/storage/human-review cost, verification tax, protected overhead, serving pressure, displaced costs, safety gates, quality predicate, escalation rule, and residuals before ordinary dispatch.
+- Evidence surface: cost savings are accepted only with quality results, verifier cost, repair burden, fallback frequency, human-review load, evidence loss, privacy exposure, rollback difficulty, memory pressure, and baseline comparison visible.
+- Stack interface: planning allocates budget and defers or scopes work; routing chooses costed specialists; runtime adapters report actual spend; evidence measures cost-quality tradeoffs; serving infrastructure reports KV-cache and throughput economics without promoting quality claims; governance protects gates that budgets cannot erase.
+- Upgrade loop: cheap routes that preserve evidence become defaults, underfunded high-risk tasks escalate or shrink, synchronized load triggers smoothing, low-value work loses scarce review capacity, and displaced costs remain residuals until measured or accepted under a scoped evidence transition.
+- Failure closure: verification cost-cutting, load-synchronized degradation, low-value resource hoarding, protected-overhead deletion, review-capacity capture, token optimization that increases human repair, and aggregate-throughput overclaim become blocked dispatches, escalations, residual-cost records, or budget-policy updates.
 
 For Resource Economics and Token Budgets, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

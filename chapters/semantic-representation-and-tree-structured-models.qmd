@@ -52,7 +52,7 @@ The chapter's central discipline is semantic leasing. A semantic node is allowed
 
 Artifact compression asks how to store and route outputs. Semantic representation asks how to structure meaning itself. Trees, graphs, and typed semantic tokens can make concepts easier to inspect, route, and revise, but they also introduce new ways to lose context.
 
-For the reader, this chapter is about representation discipline. A semantic tree is useful only if provenance, permitted use, adequacy limits, hierarchy changes, and residual uncertainty travel with it.
+For the reader, this chapter is about representation discipline. A semantic tree is useful only if provenance, permitted use, adequacy limits, hierarchy changes, supersession, and residual uncertainty travel with it.
 :::
 
 ## Problem
@@ -220,14 +220,15 @@ The next useful implementation step is a small grounded domain where source pass
 
 ## Beyond the State of the Art
 
-The mature version of Semantic Representation and Tree-Structured Models is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Semantic Representation and Tree-Structured Models is a semantic leasing layer. It gives the stack editable concept structure without letting a clean graph become a substitute for sources, proofs, artifacts, or tests.
 
 At that end state, the chapter's claim becomes an operational contract: Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability. The mature surface would include:
 
-- Operating mechanism: Represent concepts hierarchically; Attach semantic tokens to provenance and use constraints; Compare tree structures against neural-only baselines.
-- Stack interface: Spinoza uses semantic claims; VCM stores semantic pages; Compression tests representation efficiency.
-- Preserved invariants: Semantic nodes are grounded or labeled speculative; Hierarchy changes are versioned; Representation claims require tests.
-- Failure closure: detect and route failure modes such as Hand-built ontology brittleness; False explainability; Hierarchy drift to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: semantic node records carry concept labels, provenance, parent/child/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, version, supersession links, consumer policies, evaluation refs, and quarantine or retirement state.
+- Evidence surface: grounding, adequacy, interoperability, utility, baseline comparison, hierarchy migration, and human-explanation claims remain separate; a node can be useful for routing while still disallowed for proof, citation, audit, or claim support.
+- Stack interface: VCM stores semantic pages with loss and adequacy contracts; Spinoza consumes only provenance-bearing semantic claims with downgrade paths; cognitive compilation lowers nodes into typed IR; compression tests whether semantic tokens actually reduce burden; human-facing explanations expose non-claims.
+- Upgrade loop: proposed nodes become grounded, adequate-for-task, interoperable, superseded, stale, or quarantined; hierarchy updates preserve old references or record supersession; stale consumer mappings become migration debt rather than silent graph drift.
+- Failure closure: brittle ontologies, false explainability, hierarchy drift, canonical graph capture, semantic-token constraint loss, stale downstream consumers, and semantic laundering become downgrade events, migration records, residuals, quarantine, or source-context fallback.
 
 For Semantic Representation and Tree-Structured Models, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

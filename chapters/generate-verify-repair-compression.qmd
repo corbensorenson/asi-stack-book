@@ -43,9 +43,9 @@ Following compact generative systems, this chapter handles the stricter case whe
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Compact generative systems can save work only if their failures are accounted for. This chapter handles the stricter case: a generator claims it can reconstruct an artifact, and the verifier must decide what is exact, what needs repair, and what burden remains.
+Compact generative systems can save work only if their failures are accounted for. This chapter handles the stricter case: a generator claims it can reconstruct an artifact, so the stack needs a receipt that says what was generated, what was verified, what was repaired, and when literal fallback was cheaper.
 
-For a human reader, the core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth.
+For a human reader, the core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth and which future tasks may safely use it.
 :::
 
 ## Problem
@@ -206,14 +206,15 @@ The current fixture covers only the receipt side of that implementation: receipt
 
 ## Beyond the State of the Art
 
-The mature version of Generate-Verify-Repair Compression is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Generate-Verify-Repair Compression is a governed compression service that refuses to treat approximate generation as storage savings until exactness, loss, repair, fallback, and final rate are all accounted for. Its product surface is a receipt ledger that lets later layers decide whether a smaller representation is lawful for the task they are about to perform.
 
 At that end state, the chapter's claim becomes an operational contract: Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails. The mature surface would include:
 
-- Operating mechanism: Generate from seeded local laws; Verify against target; Repair mismatches with exact residual mechanisms and record rate discipline.
-- Stack interface: Evidence measures reconstruction and utility; Routing chooses compressed or full representation; VCM uses summaries with loss contracts.
-- Preserved invariants: Verification precedes exactness claims; Repair cost is counted; Search bounds are explicit.
-- Failure closure: detect and route failure modes such as Unbounded search; Verification skipped; Repair larger than original data to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: a public law-family registry, artifact-specific seed records, bounded search declarations, region verifiers, exact repair streams, literal fallback triggers, entropy/final-serialization records, interface-cost accounting, and decode receipts that replay generator plus repairs under the reconstruction contract.
+- Evidence surface: every receipt separates candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, negative-rate, and quarantined states, while preserving proxy-rate estimates separately from final serialized size and recorded decode behavior.
+- Stack interface: VCM may use lossy summaries only under declared loss contracts; routing chooses compressed, repaired, or full-artifact paths by consumer policy; artifact graphs preserve law IDs, seeds, repairs, metadata, and fallback artifacts; evidence ledgers reject exactness without verification.
+- Upgrade loop: successful receipts become codec benchmark cases, failed searches become residuals, large repair streams become negative rate evidence, proxy/final-rate drift retrains the proxy or blocks promotion, and recurring literal fallback tells the router to prefer the full artifact.
+- Failure closure: unbounded search, skipped verification, side-information laundering, repair streams larger than originals, consumer-policy leakage, proxy-rate drift, and domain mismatch become quarantine, literal fallback, downgraded support state, or residual records instead of compression folklore.
 
 For Generate-Verify-Repair Compression, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

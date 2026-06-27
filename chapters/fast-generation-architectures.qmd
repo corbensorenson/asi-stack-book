@@ -62,9 +62,9 @@ Coming after generate-verify-repair, fast generation is the time-domain version 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Compression is not the only way speed matters. This chapter looks at the generation substrate itself: how much planning, verification, routing, and tool use can fit inside a fixed latency and compute budget.
+Compression is not the only way speed matters. This chapter looks at the generation substrate itself: how much planning, verification, routing, tool use, and repair can fit inside a fixed latency and compute budget.
 
-The reader should separate speed from intelligence. Faster generation can make a stack more usable, but only if it preserves verification and authority boundaries. Raw tokens per second are not a substitute for evidence that the system kept the right obligations alive.
+The reader should separate speed from intelligence. Faster generation can make a stack more usable, but only if accepted output, verification cost, fallback, memory pressure, and task success are counted. Raw tokens per second are not evidence that the system kept the right obligations alive.
 :::
 
 ## Problem
@@ -254,14 +254,15 @@ The registry should allow experimental entries such as `multi_seed_diffusion` or
 
 ## Beyond the State of the Art
 
-The mature version of Fast Generation Architectures is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Fast Generation Architectures is a governed generation-mode control plane. It lets the stack choose among slow, fast, speculative, parallel, recurrent, cached, and hybrid generation routes without allowing raw throughput to masquerade as capability or evidence.
 
 At that end state, the chapter's claim becomes an operational contract: Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden. The mature surface would include:
 
-- Operating mechanism: Separate raw generation speed from effective verified tokens per second and useful solution per second; Let PlanForge select a generation mode from task requirements, risk tier, latency budget, context shape, and verifier availability; Use draft, verify, repair, fallback, and benchmark records before promoting any accelerated mode; Route VCM context packets into the selected generator and route accepted outputs through Spinoza, Talos, Benchmaxxing, and SCF gates; Treat multi-seed diffusion and hybrid AR, MTP, and diffusion systems as research hypotheses until source-specific experiments or stronger evidence transitions exist.
-- Stack interface: PlanForge chooses the generation mode; VCM supplies the bounded context packet; The generator emits draft tokens, sketches, spans, or candidates; Spinoza or a verifier checks acceptance predicates; Talos turns accepted output into artifacts; Benchmaxxing records speed-quality evidence; SCF governs whether a mode is promoted, quarantined, or left experimental.
-- Preserved invariants: No fast generation mode is promoted on raw tokens per second alone; Every accelerated route names its generation mode, verifier, acceptance predicate, risk tier, and fallback; Accepted output is counted separately from proposed output; High-risk tasks can require slower verified generation even when a faster mode exists; Speculative, diffusion, MTP, and hybrid claims remain at argument level until source-specific tests, reproduced results, or accepted external-literature support justify promotion.
-- Failure closure: detect and route failure modes such as Speed hides lower answer quality or higher repair cost; The verifier becomes the true bottleneck; Draft heads, diffusion sketches, or cached continuations drift out of distribution; Memory bandwidth, KV-cache pressure, or parallel sampling cost erases token-speed gains; Multi-seed generation increases sample count without improving useful solution per second; Fallback is omitted after rejection or uncertainty to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: a generation-mode registry, task-risk classifier, VCM context admission check, PlanForge mode selector, draft source, verifier, acceptance predicate, accepted-output ledger, repair/fallback route, memory and serving-pressure record, and promotion gate for each accelerated path.
+- Evidence surface: benchmark records distinguish proposed tokens or spans, accepted tokens or spans, wall-clock time, verifier cost, repair cost, fallback frequency, memory pressure, useful solution per second, baseline comparison, quality result, and non-claims.
+- Stack interface: PlanForge chooses the mode; VCM supplies bounded context; generators emit drafts, sketches, spans, candidates, or state updates; Spinoza/verifiers accept or reject; Talos artifactizes accepted output; Benchmaxxing records speed-quality evidence; SCF decides whether the mode is default, experimental, quarantined, or retired.
+- Upgrade loop: accepted acceleration paths become routable specialists, rejected drafts become verifier-bottleneck evidence, out-of-distribution drift becomes readiness residuals, serving-layer gains remain resource claims until task success is measured, and high-risk tasks can force slower verified generation even when a faster path exists.
+- Failure closure: quality loss hidden by speed, verifier bottlenecks, draft-head drift, diffusion-sketch uncertainty, KV-cache or memory pressure, multi-seed waste, omitted fallback, and aggregate-throughput overclaim become blocked promotions, fallback routes, benchmark residuals, or quarantine records.
 
 For Fast Generation Architectures, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

@@ -49,7 +49,7 @@ This chapter therefore treats compression as an evidential firewall, not a stora
 
 After fast generation, the book returns to stored artifacts. RankFold and NeuralFold are treated as compression-architecture ideas: ways to represent large artifacts more cheaply while preserving routes back to the full object when needed.
 
-The human caveat is that a compressed artifact is not automatically a source of truth. The stack needs fallback, probes, residual coding, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
+The human caveat is that a compressed artifact is not automatically a source of truth. The stack needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
 :::
 
 ## Problem
@@ -215,14 +215,15 @@ The next useful implementation step is a toy corpus with deliberately adversaria
 
 ## Beyond the State of the Art
 
-The mature version of RankFold, NeuralFold, and Artifact Compression is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of RankFold, NeuralFold, and Artifact Compression is an artifact-admission system. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.
 
 At that end state, the chapter's claim becomes an operational contract: RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding. The mature surface would include:
 
-- Operating mechanism: Use low-rank residual coding or functional preprocessing where appropriate; Probe compressed artifacts before use; Route to full artifacts when probes fail.
-- Stack interface: Artifact graph stores compressed and full references; Routing selects representation by task; Evidence records latency, ratio, and utility.
-- Preserved invariants: Fallback path is known; Residual coding is measured; Downstream utility is tested.
-- Failure closure: detect and route failure modes such as Compression damaging rare critical cases; Probe not representative; Latency gains erased by fallback to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: artifact graphs preserve the full object, compression manifests, codec parameters, residual streams, metadata cost, decode determinism assumptions, probe plans, admission state, fallback trigger, and declared use envelope for each compressed candidate.
+- Evidence surface: records separate representation, reconstruction, compression-ratio, downstream-utility, latency, exact-replay, fallback-frequency, and decoder-drift claims so one passing property cannot promote the others.
+- Stack interface: routing selects by task family and access pattern; resource economics decides whether cold archive, warm retrieval, hot planning, exact replay, preview, benchmark, or audit use justifies the encode/decode cost; evidence ledgers preserve probes and negative results.
+- Upgrade loop: compressed candidates move through not-admitted, cold-archive, preview-only, task-probe-passed, exact-replay-ready, fallback-dominant, and decoder-quarantined states; repeated fallback teaches the router to use the full artifact; deterministic decode failures block exactness.
+- Failure closure: rare-case loss, unrepresentative probes, hidden encoder cost, fallback-dominant latency, floating-point or dependency drift, archive-policy leakage, and evidence substitution become residuals, fallback routes, quarantine, or admission-state downgrades.
 
 For RankFold, NeuralFold, and Artifact Compression, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 
