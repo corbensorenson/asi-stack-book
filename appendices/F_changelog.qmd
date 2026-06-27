@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal status snapshot guard
+
+- Added `scripts/validate_v1_status_snapshot.py` to compare the public v1.0 candidate status counts against current repository artifacts: manifest part/chapter/appendix counts, chapter word counts, source inventory/source notes, source-evidence audit metrics, support-state counts, proof target count, schema/fixture/release-record counts, and Human Reading Path prose minimum. Wired the guard into publication validation, book validation, the GitHub Pages workflow, README, living update workflow, site quality standard, v1.0 candidate gate, prewriting gate, and publication-readiness checklist. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal source appendix ownership guard
 
 - Added `scripts/validate_source_appendices.py` to machine-check that Appendix G contains only Corben/source-corpus records and Appendix H contains only source records marked `external_literature`. Wired the guard into publication validation, book validation, the GitHub Pages workflow, README, living update workflow, site quality standard, v1.0 candidate gate, prewriting gate, and publication-readiness checklist. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "scripts/validate_human_reading_paths.py",
     "scripts/validate_live_human_view.py",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_release_profiles.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
@@ -48,6 +49,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_human_reading_paths.py",
     "scripts/validate_live_human_view.py",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_publication.py",
     "Do not report a theorem as proven unless",
 ]

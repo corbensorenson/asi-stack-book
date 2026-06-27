@@ -22,6 +22,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Release surfaces | Live, research, reader, and audio profiles exist; reader/audio derivation scripts exist | `editions/release_profiles.json`; `docs/major_version_release_runbook.md` |
 | Live Human view | The GitHub Pages book has a persistent and shareable `AI view` / `Human view` switch with `?view=ai` and `?view=human`; all 54 chapters have exactly one Human Reading Path bridge; bridge prose is guarded against meta-reader scaffolding and must be at least 100 words excluding the source-only heading, with the current minimum at 100 words; Human view hides live-only headings, matching page-TOC entries, internal Human Reading Path TOC entries, and rendered section numbers | `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_reading_mode_toggle.py`; `python3 scripts/validate_human_reading_paths.py`; `python3 scripts/validate_live_human_view.py` |
 | Public site | GitHub Pages renders the live Quarto book | <https://corbensorenson.github.io/asi-stack-book/> |
+| Status snapshot freshness | The headline counts in this status document are checked against current repository artifacts | `python3 scripts/validate_v1_status_snapshot.py` |
 
 ## What The Current Candidate Proves
 
@@ -70,6 +71,7 @@ python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_source_appendices.py
+python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
