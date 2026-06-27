@@ -4,7 +4,7 @@ chapter_id: "governance-rights-fork-exit-and-audit"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-26"
+last_updated: "2026-06-27"
 primary_sources:
   - "ethica_mechanica"
   - "coherence_exchange"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-26 |
+| Last updated | 2026-06-27 |
 | Primary source records | `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -48,9 +48,9 @@ The rights are runtime promises only when they have a request path, a response a
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Moral uncertainty creates unresolved obligations. Governance rights are how those obligations remain contestable after systems become large, useful, and difficult to leave. Audit, exit, fork, appeal, and dissent are not decorative ideals here; they are runtime capabilities.
+Moral uncertainty creates unresolved obligations. Governance rights are how those obligations remain contestable after systems become large, useful, and difficult to leave. Audit, exit, fork, appeal, and dissent are not decorative ideals here; they are runtime capabilities. They turn a residual from the previous chapter into something a person or institution can actually use.
 
-The human test is simple: does the right still work when using it is inconvenient for the system operator? If a policy update, memory migration, or capability replacement can quietly remove the path, the right was not part of the architecture.
+The human test is simple: does the right still work when using it is inconvenient for the system operator? If a policy update, memory migration, or capability replacement can quietly remove the path, the right was not part of the architecture. A right needs a receipt, an access path, and an appeal route, not only a sentence in policy text.
 :::
 
 ## Problem
@@ -59,7 +59,7 @@ Powerful AI infrastructure needs rights and mechanisms that prevent governance l
 
 The previous chapter preserves value conflict. This chapter gives affected people and institutions technical rights when governance itself becomes the risk. A system that can update policies, route evidence, manage memory, and execute actions should not require trust in a single opaque control point.
 
-Ethica Mechanica frames governance as contestable recursive correction rather than fixed sovereign authority. The Coherence Exchange contributes fork, exit, audit, and contestability as epistemic-governance concepts that still need a durable line-addressable export. Ladon/Manhattan adds the security lesson: rights are weak if credential use, permission lookup, and execution compartments are invisible to the party whose authority is being exercised. The stack translates those ideas into interfaces.
+Ethica Mechanica frames governance as contestable recursive correction rather than fixed sovereign authority. The Coherence Exchange contributes fork, exit, audit, and contestability as epistemic-governance concepts that still need a durable line-addressable export. Ladon/Manhattan adds the security lesson: rights are weak if credential use, permission lookup, and execution compartments are invisible to the party whose authority is being exercised. The stack translates those ideas into interfaces that lower layers can preserve, deny with reasons, or escalate.
 
 ## Why existing approaches are insufficient
 
@@ -74,6 +74,8 @@ The practical test is whether a right still works when it is inconvenient for th
 This does not mean rights should override every safety boundary. A fork can be denied or narrowed when it would expose private data, secrets, dangerous tools, or obligations that cannot be transferred. An audit can redact protected material. An exit path can preserve legal or safety constraints. The engineering requirement is that denial itself becomes an artifact with scope, reason, authority, and appeal path, rather than disappearing into an opaque refusal.
 
 This is why rights must be tested from the position of the weaker party. The system should be able to answer whether the holder can find the record, authenticate it, export what is portable, challenge what is contested, and see why protected material was withheld.
+
+The rights layer also prevents governance from becoming a black box around its own exceptions. If a denial is legitimate, the record should say what was denied, why, by whom, under which safety or privacy rule, and where the holder can appeal. Opaque refusal may sometimes be necessary at the content boundary; opaque governance should not be the default architecture.
 
 ## Core Claim
 
@@ -105,7 +107,7 @@ SCFs later depend on this chapter: capability replacement must preserve protecte
 
 The rights record is therefore a bridge between governance and runtime state. It says which logs must survive, which memory exports are allowed, which secrets must remain sealed, which dependencies must be portable, and which decision can be contested after a model, policy, tool, or capability field changes. That bridge matters because governance failure often looks like ordinary maintenance: a migration drops old logs, an update changes appeal semantics, a new integration captures user data, or a replacement implementation removes an export hook. The stack treats those as rights-preservation failures, not as harmless refactors.
 
-A governance right should produce a rights receipt. The receipt records the request, holder, scope, artifact set, material available, material withheld, denial or redaction reason, appeal path, expiry, and preservation obligation. That receipt is what lets later SCF replacement, rollback, tribunal review, or audit logic ask whether the right survived the transition.
+A governance right should produce a rights receipt. The receipt records the request, holder, scope, artifact set, material available, material withheld, denial or redaction reason, appeal path, expiry, and preservation obligation. That receipt is what lets later SCF replacement, rollback, tribunal review, or audit logic ask whether the right survived the transition. It is also an anti-capture device: the authority being challenged should not be the only keeper of the record that proves how the challenge was handled.
 
 ```{mermaid}
 flowchart LR
@@ -226,6 +228,6 @@ The crosswalk keeps governance rights tied to their source families while preser
 
 Governance Rights: Fork, Exit, and Audit turns contestability into interfaces. The point is not to decorate governance with ideals; it is to make audit, appeal, exit, fork, and dissent survive contact with runtime systems, memory, security, and capability replacement.
 
-The next chapter gives those rights a stable capability boundary. If a capability can be replaced, the user's rights must not depend on the old implementation staying in place.
+The next chapter gives those rights a stable capability boundary. If a capability can be replaced, the user's rights must not depend on the old implementation staying in place. Rights receipts need a capability identity that survives upgrades.
 
 The practical standard is that a right should survive the transition that makes it inconvenient. If a model update, policy update, memory migration, or capability replacement removes the path to exercise the right, the governance layer has failed even if the policy text still sounds correct.
