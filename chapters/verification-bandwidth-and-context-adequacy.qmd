@@ -185,7 +185,7 @@ These invariants are deliberately weaker than a theorem about model cognition. T
 
 Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Each failure should emit a residual record, not merely a lower confidence score.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A context adequacy rubric and verification-bandwidth warning states.
 

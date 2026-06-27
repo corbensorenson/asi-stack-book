@@ -196,7 +196,7 @@ Regression deletion is the classic false improvement: the candidate does better 
 
 The subtle failure is rollback theater. The transaction contains a rollback field, but no executable path, state-compatibility check, trigger condition, or responsible owner exists when the monitor window fails.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a `replacement_transaction` schema and valid fixture. It validates transaction state, identity preservation, required evidence, evaluator independence, residual escrow, rollback plan, rollback receipt, canary scope, monitor window/status, promotion blockers, source refs, support-state effect, decision, and non-claims, not a claim that a real replacement succeeded.
 

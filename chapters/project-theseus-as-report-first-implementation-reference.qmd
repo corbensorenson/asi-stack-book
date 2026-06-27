@@ -166,7 +166,7 @@ Each failure should produce a residual, blocked promotion, or missing-artifact r
 
 Another failure is operator invisibility. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a Theseus report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
 

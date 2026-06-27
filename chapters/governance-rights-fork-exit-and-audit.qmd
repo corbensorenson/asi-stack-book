@@ -186,7 +186,7 @@ Governance capture occurs when the same authority controls policy, logs, appeal,
 
 The subtle failure is rights theater. The system publishes rights language, but the actual logs, exports, redaction rules, appeal channels, and preservation hooks are unavailable when the right would constrain the system.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a `governance_right_record` schema plus fixtures for audit, exit, and fork. The first fixture should prove only that an audit right has required artifacts, available and withheld material fields, an access path, appeal path, challenged-party independence note, preservation obligation, receipt references, and non-claims.
 

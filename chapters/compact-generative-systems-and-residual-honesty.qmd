@@ -49,7 +49,7 @@ Compactness is therefore a state claim, not a word-count claim. A representation
 
 Once the stack has routed work onto governed compute, compactness becomes tempting. This chapter explains why smaller seeds, summaries, procedures, or generators are useful only when the remaining burden is honest.
 
-The human test is whether compactness moves complexity or merely hides it. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, and what residual cost it leaves for future readers or agents.
+The human test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, what costs are counted, and what residual work it leaves for future readers or agents.
 :::
 
 ## Problem
@@ -185,7 +185,7 @@ False lossless claims should be downgraded. Hidden residuals should be escrowed.
 
 The subtle failure is residual displacement. The system appears compact because it moves missing detail into human interpretation, future debugging, hidden retrieval, or undocumented verifier assumptions. The residual channel should name the displacement rather than letting it look like efficiency.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a compact generative record and fixture. It does not prove that a compact core works. It makes the burden visible: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
 
@@ -197,14 +197,15 @@ The next useful implementation step is a compact-core comparison fixture: one co
 
 ## Beyond the State of the Art
 
-The mature version of Compact Generative Systems and Residual Honesty is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Compact Generative Systems and Residual Honesty is a compression-and-generation layer that measures total burden, not just visible size. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
 
 At that end state, the chapter's claim becomes an operational contract: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit. The mature surface would include:
 
-- Operating mechanism: Define compact generative cores and their residuals; Use the seed/router/search/generator/verifier/residual loop as the default compression-control model; Treat the raw LLM as a compressed generative engine, not as the entire intelligent system; Separate lawful generation from exact remainder; Record where compactness fails.
-- Stack interface: Compression feeds memory and routing; Evidence tests downstream utility; Procedural memory turns repeated generation into tools.
-- Preserved invariants: Lossy claims are labeled; Residual burden is visible; Fallback exists when compact generation fails.
-- Failure closure: detect and route failure modes such as False lossless claims; Hidden residual complexity; Compactness that damages utility to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: compact records bind target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before a compact core is trusted.
+- Evidence surface: compactness claims report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risks.
+- Stack interface: routing uses compact-core readiness and use envelopes; VCM and semantic pages label loss, taint, and omissions; procedural memory turns repeated generated behavior into verified tools; generate-verify-repair records exact remainders; readiness gates decide promotion or quarantine.
+- Upgrade loop: repeated generated successes become tool candidates, failed generations become residual pressure, lossy-but-useful seeds stay scoped to safe uses, non-independent verifiers block promotion, and compact cores that damage utility are retired or routed to fallback.
+- Failure closure: false lossless claims, hidden residual displacement, utility-damaging compression, self-promoting generators, and recursive instability become downgraded claims, residual escrow, blocked promotions, fallback routes, quarantine, or SCF replacement reviews.
 
 For Compact Generative Systems and Residual Honesty, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

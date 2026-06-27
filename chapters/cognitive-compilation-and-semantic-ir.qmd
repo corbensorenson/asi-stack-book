@@ -176,7 +176,7 @@ The hardest failure is semantic under-specification: a graph can be perfectly ty
 
 The subtle failure is compilation laundering. A generated artifact is accepted because it passed a syntactic schema, even though the semantic obligations that justified the artifact were never lowered, checked, or carried into the receipt.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A semantic IR sketch and compile/verify/repair loop for one artifact type.
 

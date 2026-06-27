@@ -345,7 +345,7 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 {bullet_list(chapter.get('failure_modes', []))}
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 {chapter.get('minimal_implementation', 'No manifest minimal implementation statement declared yet.')}
 

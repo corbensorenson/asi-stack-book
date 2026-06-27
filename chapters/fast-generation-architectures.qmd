@@ -242,7 +242,7 @@ Fast generation fails when speed is measured at the wrong boundary.
 
 The multi-seed case is especially important for this book. Multiple candidate trajectories can improve robustness only if selection, verification, and parallel hardware costs are cheap enough to beat a single stronger route. Otherwise, multi-seed generation is just a more expensive way to produce more candidates. The book should keep it as an original research direction, not as an established capability.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A minimal implementation is a generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.
 

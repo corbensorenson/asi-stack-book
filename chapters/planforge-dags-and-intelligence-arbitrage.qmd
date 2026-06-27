@@ -178,7 +178,7 @@ Wrong tier selection produces cheap wrong work. Dependency cycles make a graph a
 
 The subtle failure is arbitrage laundering. The system reports lower cost by assigning hard work to cheap nodes, then moves verification, repair, and human cleanup outside the ledger. The cost-quality ledger should count that displacement before calling the DAG efficient.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A DAG schema with node-level capability and verification annotations.
 

@@ -178,7 +178,7 @@ Untraceable output becomes a residual. Non-replayable workflows must declare rep
 
 The subtle failure mode is convenience laundering. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 An artifact graph schema with job, source, context, and evidence edges.
 

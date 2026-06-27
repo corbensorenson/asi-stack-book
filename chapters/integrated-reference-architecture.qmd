@@ -173,7 +173,7 @@ Untraceable handoffs should create missing-contract records. Planning/execution 
 
 The subtle failure is integration theater: every layer name appears in the diagram, but the actual run still depends on informal summaries, ambient authority, unversioned context, dashboard prose, or unverifiable benchmark claims. A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is the reference flow diagram plus `reference_trace_record.valid.json`. The fixture validates record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 

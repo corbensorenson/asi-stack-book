@@ -205,7 +205,7 @@ Recursive evaluator capture is the core failure: the system improves its ability
 
 The subtle failure is acceleration pressure. A self-improvement loop can argue that the next change will make evaluation easier, cheaper, or more accurate later. The stack should treat that as debt, not evidence. Future verification cannot justify present promotion unless a protected gate explicitly allows the deferral.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a `self_improvement_transition` schema plus a fixture for a rejected or canary-only change. The fixture should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
 

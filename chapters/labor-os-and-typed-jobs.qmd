@@ -211,7 +211,7 @@ Tool overreach is a permission failure. Unlogged side effects are audit failures
 
 The subtle failure is completion laundering. A job can be marked done because an output exists, even though required approval, verification, artifact capture, or replay metadata is missing. Delivery should not be the same state as evidence-ready completion.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A typed-job schema with lifecycle states and permission checks.
 

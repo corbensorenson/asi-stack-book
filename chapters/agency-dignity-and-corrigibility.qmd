@@ -184,7 +184,7 @@ Dependency lock-in is a governance failure, not merely a product risk. Covert ma
 
 The stack should be especially suspicious of benevolent capture: a system that becomes so useful, integrated, or personalized that refusing it becomes impractical. That is not solved by better model behavior alone. It requires exit, export, fork, audit, and replacement surfaces that remain live.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is an `agency_rights_checklist` schema plus a fixture for a high-impact action that requires review and rollback. It should validate the shape of the governance record, not claim the social process is solved.
 

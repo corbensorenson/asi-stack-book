@@ -218,7 +218,7 @@ Scope creep occurs when a plan adds goals that were never accepted. Planning wit
 
 Another failure is plan theater: a graph that looks organized but does not control dispatch. If dependencies, authority, context demand, and verification are not checked before jobs are created, the graph is documentation rather than a control layer.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, authority budget, risk and compute budgets, verification plan, replanning policy, replanning history, stop conditions, node lifecycle states, blocked-node records, dispatch receipts, residual register, non-claims, and failure behavior.
 

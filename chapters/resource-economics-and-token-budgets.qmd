@@ -195,7 +195,7 @@ Cost-cut verification should block or escalate. Load synchronization should trig
 
 The subtle failure is efficiency laundering. A route may look cheaper because it shifts work into future debugging, human review, hidden context reconstruction, or unrecorded security risk. The budget record should count those displaced costs as residuals rather than letting the route appear efficient.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a resource budget schema and fixture. The current fixture records value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references.
 

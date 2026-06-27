@@ -178,7 +178,7 @@ The common trap is treating handles as safe while granting them unbounded use. A
 
 Another failure is sanitized-output laundering. A summary can carry enough derived information to reconstruct or misuse sensitive context even when the raw secret never appears. The sanitized commit should therefore record what was removed, what was retained, and which residual leak risks remain.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a fake-secret fixture: an agent sees only `handle://demo-secret`, a policy engine approves one destination/action pair, a simulated executor substitutes the secret outside model-visible logs, and the audit trace proves that the model transcript contains the handle but not the secret value. That would not prove real security. It would prove the interface shape.
 

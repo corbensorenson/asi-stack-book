@@ -184,7 +184,7 @@ Each failure blocks promotion or downgrades support state until the evidence bou
 
 A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in the book because it was historically important, even after it stops applying pressure. The ratchet should preserve it as a regression floor or historical note while making clear that it no longer defines the frontier.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a benchmark ratchet schema and fixture. The current fixture records the shape of a benchmark-evidence decision without pretending any benchmark has been run.
 

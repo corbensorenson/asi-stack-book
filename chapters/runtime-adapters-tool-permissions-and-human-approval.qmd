@@ -222,7 +222,7 @@ No adapter invocation is valid unless the parent job permissions include the ada
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A runtime-adapter contract with permissions, approval requirements, and result evidence.
 

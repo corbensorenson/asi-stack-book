@@ -19,7 +19,7 @@ REQUIRED_SECTIONS = [
     "## Interfaces",
     "## Invariants",
     "## Failure modes",
-    "## Minimal implementation",
+    "## Minimum Viable Implementation",
     "## Beyond the State of the Art",
     "## Codex test plan",
     "## Source crosswalk",

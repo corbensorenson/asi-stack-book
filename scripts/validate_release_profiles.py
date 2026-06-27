@@ -65,7 +65,7 @@ READER_REQUIRED_HEADINGS = {
     "Interfaces",
     "Invariants",
     "Failure modes",
-    "Minimal implementation",
+    "Minimum Viable Implementation",
     "Beyond the State of the Art",
     "Summary",
 }

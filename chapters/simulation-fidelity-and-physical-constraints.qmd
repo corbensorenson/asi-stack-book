@@ -192,7 +192,7 @@ Each failure should create a residual or downgrade. The correct response to a we
 
 The subtle failure is simulation laundering. A synthetic environment is used to produce a clean result, then the result is described as if the omitted variables, resource bottlenecks, and transfer limits were irrelevant.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a simulation contract schema and fixture. The current fixture records contract version, claim class, scope, fidelity state, time semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximations, instrumentation effects, supported claim boundary, observed-result boundary, transfer decision, support-state effect, failure behavior, residuals, evidence references, and non-claims.
 

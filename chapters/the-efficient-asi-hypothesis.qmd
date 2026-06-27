@@ -199,7 +199,7 @@ The strongest invariant is comparative: a route is minimum viable only relative 
 
 The failure pattern is not only wasting compute. It is misaccounting. Cheap inference mistaken for intelligence produces brittle success. Excessive routing to frontier models hides the fact that no reusable capability was built. Compression can make the route look cheap while moving complexity into uncounted repair. Benchmarks can improve while residual escrow grows. The remedy is not a slogan about scale; it is a ledger that keeps quality, cost, residual, and fallback coupled.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
 

@@ -189,7 +189,7 @@ Field identity drift happens when the name stays stable while the behavior chang
 
 The quiet failure is orphaned regression memory. A field may accumulate tests and incidents over time, but an upgrade can leave them behind if the suite is stored with an implementation instead of the field. The SCF should keep regression floors at the field boundary so future candidates inherit the obligation to preserve them.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is the existing `stable_capability_field` schema expanded with field version, owner, lifecycle, qualification context/status, qualification lease/status, evaluator policy, evaluator independence, route validity/scope, route permission effect, consumer policy, evidence references, readiness gate refs, field history refs, incidents, review triggers, state migration, regression suite, rollback plan, rollback obligations, default-route blockers, source refs, support-state effect, and non-claims. Passing schema validation only proves the record is shaped correctly; it does not prove a candidate is qualified.
 

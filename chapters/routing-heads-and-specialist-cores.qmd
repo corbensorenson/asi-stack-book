@@ -49,9 +49,9 @@ The route is a lease, not a preference. It grants a specialist a task-local enve
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Part II ended by turning repeated work into procedural memory. Part III begins by asking which capability should handle the next piece of work. Routing is the layer that chooses among specialists, cores, tools, memories, and procedures without letting selection become unbounded authority.
+Part II ended by turning repeated work into procedural memory. Part III begins with the next operational question: which bounded capability should handle the next piece of work, and why is it allowed to do so?
 
-For a human reader, this chapter is about assignment under constraint. A route is not just a recommendation. It should carry scope, readiness, authority, residual burden, and a reason why this capability is adequate for this task right now.
+For a human reader, this chapter is about assignment under constraint. A route is not just a recommendation or a load-balancing choice. It is a temporary lease that should carry scope, readiness, authority, context, tools, fallback, residual burden, and a reason why this specialist is adequate for this task right now.
 :::
 
 ## Problem
@@ -209,7 +209,7 @@ Wrong selection should become a residual and a benchmark candidate. Overconfiden
 
 The subtle failure is route laundering. A task is routed through a broad specialist because that is convenient, then the successful output is used to justify broader authority even though the route never proved that narrower specialists were inadequate.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is not a learned router. It is a registry schema, a routing decision schema, and valid fixtures that make route decisions inspectable.
 
@@ -221,14 +221,15 @@ The next useful fixture set is a route-receipt suite: one least-capable adequate
 
 ## Beyond the State of the Art
 
-The mature version of Routing Heads and Specialist Cores is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Routing Heads and Specialist Cores is a governed capability market inside the stack. It is not a bigger tool picker. It is a control boundary that can select among specialists, proof checkers, retrieval lanes, local runtime cores, human review, and fallback routes while preserving the authority, evidence, and residual obligations attached to the choice.
 
 At that end state, the chapter's claim becomes an operational contract: ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority. The mature surface would include:
 
-- Operating mechanism: Register specialists with capabilities, costs, readiness, authority, and memories; Route tasks to the smallest adequate specialist; Fallback or escalate when confidence and readiness are insufficient.
-- Stack interface: Planning requests capabilities; Governance bounds specialists; Evidence updates readiness.
-- Preserved invariants: Specialist authority is local; Routing decisions are logged; Fallback paths remain available.
-- Failure closure: detect and route failure modes such as Wrong specialist selection; Router overconfidence; Specialist authority leak to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+- Operating mechanism: a live specialist registry with registry epochs, capability cards, cost and latency profiles, readiness states, authority envelopes, memory and tool lease policies, route limitations, non-claims, retirement criteria, and fallback routes.
+- Routing surface: route receipts that record selected and rejected candidates, non-selection evidence, granted and denied authority, context leases, tool leases, verifier requirements, budget, expiry, residual owner, and route shape across single, sequential, parallel, adjudicated, verification, and failsafe routes.
+- Stack interface: Planning requests capabilities; governance grants only the task-local authority subset; VCM supplies context leases; readiness gates decide routability; evidence ledgers update specialist quality; artifact graphs preserve route provenance for downstream claims.
+- Upgrade loop: wrong routes become benchmark cases, overbroad routes become least-capable-adequate regressions, repeated successful routes become candidates for procedural memory, and stale or unsafe specialists move through quarantine, split, merge, retire, or retrain states.
+- Failure closure: wrong specialist selection, router overconfidence, authority leak, specialist sprawl, composition hallucination, and route laundering are converted into denied routes, fallback routes, escalation records, quarantine decisions, or residual escrow rather than hidden degradation.
 
 For Routing Heads and Specialist Cores, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
 

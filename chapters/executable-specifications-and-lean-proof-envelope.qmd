@@ -173,7 +173,7 @@ Each failure should downgrade the target or move it to schema/process/research s
 
 The subtle failure is proof laundering. A valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is the existing generated proof manifest plus a proof target schema and fixture. The current fixture validates a record for chapter, Lean tag, target kind, artifact lane, formal target, artifact refs, verifier command/result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. It does not prove the target.
 

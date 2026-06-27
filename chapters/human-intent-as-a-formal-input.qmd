@@ -195,7 +195,7 @@ A related invariant is least authority. When multiple interpretations satisfy th
 
 Goal misbinding happens when the system optimizes the wrong interpretation. Scope creep happens when the system turns an open-ended wish into unbounded work. Implicit permission happens when the system treats a desired outcome as approval for any convenient means. All three should produce a visible residual or clarification path before execution.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.
 

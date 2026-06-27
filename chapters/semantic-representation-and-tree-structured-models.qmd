@@ -210,7 +210,7 @@ Brittleness should trigger residuals and versioning. False explainability should
 
 The most subtle failure is authority migration. A semantic graph may begin as a helpful index, then slowly become the thing later agents cite instead of sources, artifacts, or tests. The stack should counter that drift by requiring grounded nodes to keep provenance links active and by treating ungrounded or stale nodes as hypotheses, not as claims.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a semantic node schema and fixture. The current fixture records provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, and evaluation references.
 

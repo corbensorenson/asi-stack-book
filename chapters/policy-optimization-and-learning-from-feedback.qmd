@@ -235,7 +235,7 @@ Each failure should block promotion or force rollback. If the reward is ambiguou
 
 The subtle failure is reward laundering. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
 

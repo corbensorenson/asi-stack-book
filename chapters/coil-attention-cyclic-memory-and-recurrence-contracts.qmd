@@ -184,7 +184,7 @@ Alias hiding should block or mark residual risk. Recurrence loops should hit an 
 
 The subtle failure is structural adequacy laundering. A system proves that a slot is fresh, a sparse lag is covered, or a recurrence loop exits, then uses that structural fact as if it proved task adequacy. The ledger should force an explicit bridge from structure to workload before promotion.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a cyclic memory contract schema and fixture. The current fixture records memory target, memory-authority scope, VCM packet refs, slot count, residue and winding policies, state-carry boundary, freshness window, stale-read policy, coverage claim, recurrence schedule, loop exit, fallback, admission state, baseline refs, probe requirements, authority non-widening, residuals, non-claims, and evidence references.
 

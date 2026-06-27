@@ -59,9 +59,9 @@ After MoECOT gives the book a runtime evidence shape, this chapter asks where th
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The runtime chapter asks what an orchestrator should emit. This chapter asks where such orchestration can safely live. A personal compute hive is not every device the system can reach; it is a governed federation of portals, workers, storage, rented nodes, and project machines.
+The runtime chapter asks what an orchestrator should emit. This chapter asks where such orchestration can safely live. A personal compute hive is not every device the system can reach; it is a governed federation of portals, workers, storage, rented nodes, family surfaces, and project machines.
 
-For the reader, the practical question is consent and containment. Edge intelligence becomes useful only when work placement respects data locality, owner policy, cost, privacy, rollback, and authority boundaries instead of treating personal hardware as free ambient compute.
+For the reader, the practical question is consent and containment. Edge intelligence becomes useful only when work placement respects data locality, owner policy, family roles, cost, privacy, rollback, approval, and authority boundaries instead of treating personal hardware as free ambient compute.
 :::
 
 ## Problem
@@ -242,7 +242,7 @@ The identity failure is authority confusion. A child, guest, agent, project, or 
 
 The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The response is VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The first implementation should be deliberately small:
 
@@ -262,7 +262,7 @@ This repository now contains the record-level first step for that experiment: `d
 
 ## Beyond the State of the Art
 
-The mature version of Personal Compute Hives and Federated Edge Intelligence is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The mature version of Personal Compute Hives and Federated Edge Intelligence is an owned compute fabric for personal, family, project, and rented capacity. It lets the ASI Stack place work near the right data and device without turning reachability into authority, convenience into surveillance, or cheap compute into a privacy leak.
 
 At that end state, the chapter's claim becomes an operational contract: A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority. The mature surface would include:
 

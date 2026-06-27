@@ -205,7 +205,7 @@ Probe failure should route to the full artifact. Rare-case damage should become 
 
 The most dangerous failure is silent narrowing. A compressed representation may work on common examples and still erase rare clauses, unusual diagrams, edge-case source formatting, or provenance details that matter for governance. The stack should treat those misses as residuals, not as acceptable noise, unless the task explicitly declares them irrelevant.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a compressed artifact schema and fixture. The current fixture validates that a record names task family, access pattern, admission state, method, reconstruction contract, declared use envelope, ratio claim state, codec parameters, metadata costs, residual coding, probe plan, fallback artifact, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims.
 

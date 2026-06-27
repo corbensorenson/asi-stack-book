@@ -183,7 +183,7 @@ Another invariant is no irreversible unlock from provisional evidence. A phase c
 
 The subtle failure is prototype theater. The project shows a board, dashboard, demo, or generated report that looks like an operating system, while the acceptance gates, replay artifacts, and evidence transitions behind it are missing. The roadmap should make that visible by separating demo output from phase acceptance.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is a prototype phase schema and fixture. The current fixture records deliverables, gates, blockers, commands, evidence references, non-claims, and status. It does not mean the named phase is complete or that dependent prototypes are unlocked.
 

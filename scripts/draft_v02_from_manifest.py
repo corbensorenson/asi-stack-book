@@ -443,7 +443,7 @@ def build_chapter(chapter: dict, part: dict, part_index: int, chapter_index: int
         "\nThe mitigation pattern is to convert each failure into an explicit artifact: a rejected handoff, a residual record, a stale-context marker, a failed proof obligation, a benchmark regression, or a human-review queue. "
         "The stack should prefer visible incompleteness over invisible confidence."
     )
-    lines.append("\n## Minimal implementation\n")
+    lines.append("\n## Minimum Viable Implementation\n")
     lines.append(chapter["minimal_implementation"])
     lines.append(
         "\nFor a first implementation, the goal is not to build a full agent around the chapter. The goal is to create the smallest public-safe artifact that can be validated in CI, rendered in the book, and inspected by a future writing or coding run. "

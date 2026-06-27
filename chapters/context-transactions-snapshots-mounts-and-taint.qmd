@@ -191,7 +191,7 @@ Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale
 
 The subtle failure is context laundering. A sensitive or unsupported source can be summarized, embedded, cached, or merged until its original restrictions disappear. Transaction records should keep the restriction attached to every derivative or force an explicit declassification decision.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A transaction model for context reads, writes, branches, and deletion closure.
 

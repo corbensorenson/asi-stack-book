@@ -194,7 +194,7 @@ The failure model is part of the design, not an afterthought. This layer is expe
 
 The most common failure is side-information laundering: moving data into law IDs, parameters, boundaries, or repair streams and then celebrating the seed as small. A second failure is proxy dishonesty: optimizing a cheap proxy objective and never checking the final serialized rate. A third is domain mismatch: forcing volumetric or lawful structure onto data that does not have enough exploitable locality.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A compression record with generator, verification result, repair residual, and fallback threshold.
 

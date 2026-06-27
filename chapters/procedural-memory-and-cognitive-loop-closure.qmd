@@ -182,7 +182,7 @@ Premature toolification creates brittle automation. Hidden assumptions make the 
 
 Another failure is tool immortality. A procedure that was once verified can become stale when sources change, APIs shift, benchmarks saturate, or governance rules tighten. Retirement criteria and monitoring are therefore part of memory, not administrative cleanup.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 A loop closure pipeline from trace detection to verified tool record.
 

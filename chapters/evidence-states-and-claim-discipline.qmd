@@ -207,7 +207,7 @@ Citation laundering is the common failure: a nearby source is used to make an un
 
 The subtle failure is evidence smoothing. A revision improves prose by removing caveats, failed attempts, or open gaps while leaving the support state unchanged. The text becomes easier to read and less true.
 
-## Minimal implementation
+## Minimum Viable Implementation
 
 The smallest useful implementation is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid claim fixture, one valid transition fixture, and the Lean evidence-state proof module. The schema validates claim shape, source-mapping status, evidence-readiness state, required next evidence, transition shape, claim surface refs, claim-record refs, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog linkage, support-state effect, and non-claims. The Lean module proves the narrow support-state invariant in this repository. Neither artifact promotes any chapter claim without claim-specific evidence and accepted review.
 
