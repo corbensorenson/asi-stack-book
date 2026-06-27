@@ -184,6 +184,11 @@ def validate(site_dir: Path) -> dict[str, object]:
         html = html_path.read_text(encoding="utf-8", errors="ignore")
         for needle in (
             "asi-stack-reading-mode",
+            "const queryParam = \"view\"",
+            "function modeFromUrl",
+            "function updateUrlMode",
+            "window.history.replaceState",
+            "{ updateUrl: true }",
             "data-asi-reading-choice=\"ai\"",
             "data-asi-reading-choice=\"human\"",
             "control.setAttribute(\"aria-describedby\", \"asi-reading-mode-description\")",

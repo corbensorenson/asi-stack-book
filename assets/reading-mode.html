@@ -1,6 +1,7 @@
 <script>
 (function () {
   const storageKey = "asi-stack-reading-mode";
+  const queryParam = "view";
   const humanMode = "human";
   const aiMode = "ai";
   const modeCopy = {
@@ -26,7 +27,7 @@
     "3:formalization hooks"
   ]);
 
-  document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(savedMode()));
+  document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
 
   function cleanHeadingText(heading) {
     const clone = heading.cloneNode(true);
@@ -77,13 +78,16 @@
     return mode === humanMode ? humanMode : aiMode;
   }
 
-  function setMode(mode) {
+  function setMode(mode, options = {}) {
     const nextMode = normalizeMode(mode);
     document.documentElement.setAttribute("data-asi-reading-mode", nextMode);
     try {
       window.localStorage.setItem(storageKey, nextMode);
     } catch (_) {
       /* localStorage may be disabled; the page-level state still applies. */
+    }
+    if (options.updateUrl) {
+      updateUrlMode(nextMode);
     }
     document.querySelectorAll("[data-asi-reading-choice]").forEach((button) => {
       const active = button.getAttribute("data-asi-reading-choice") === nextMode;
@@ -94,6 +98,30 @@
     const status = document.querySelector("[data-asi-reading-mode-status]");
     if (status) {
       status.textContent = modeCopy[nextMode].status;
+    }
+  }
+
+  function modeFromUrl() {
+    try {
+      const requested = new URLSearchParams(window.location.search).get(queryParam);
+      return requested === humanMode || requested === aiMode ? requested : "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function initialMode() {
+    return modeFromUrl() || savedMode();
+  }
+
+  function updateUrlMode(mode) {
+    if (!window.history || !window.history.replaceState) return;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set(queryParam, normalizeMode(mode));
+      window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    } catch (_) {
+      /* The mode still changes even if the current URL cannot be rewritten. */
     }
   }
 
@@ -120,7 +148,7 @@
       '<span class="asi-sr-only" role="status" aria-live="polite" data-asi-reading-mode-status></span>'
     ].join("");
     control.querySelectorAll("button").forEach((button) => {
-      button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice")));
+      button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice"), { updateUrl: true }));
     });
     if (target.matches && target.matches("header#title-block-header")) {
       target.insertAdjacentElement("afterend", control);
@@ -133,7 +161,7 @@
     const liveIds = markLiveSections();
     markLiveTocLinks(liveIds);
     insertToggle();
-    setMode(savedMode());
+    setMode(initialMode());
   });
 })();
 </script>

@@ -92,6 +92,7 @@ def main() -> None:
         "default_mode": "ai",
         "human_mode": "human",
         "storage_key": "asi-stack-reading-mode",
+        "url_query_parameter": "view",
         "mode_status_selector": "[data-asi-reading-mode-status]",
         "toc_link_marker": "data-asi-live-toc-link",
         "assistive_description_class": "asi-sr-only",
@@ -106,6 +107,13 @@ def main() -> None:
 
     required_asset_strings = {
         "storage key": 'const storageKey = "asi-stack-reading-mode"',
+        "URL query parameter": 'const queryParam = "view"',
+        "URL mode reader": "function modeFromUrl",
+        "URL mode initializer": "function initialMode",
+        "URL mode updater": "function updateUrlMode",
+        "URLSearchParams reader": "new URLSearchParams(window.location.search)",
+        "history URL replacement": "window.history.replaceState",
+        "toggle URL update": "{ updateUrl: true }",
         "assistive description": 'control.setAttribute("aria-describedby", "asi-reading-mode-description")',
         "assistive helper": 'class="asi-sr-only"',
         "status role": 'role="status"',

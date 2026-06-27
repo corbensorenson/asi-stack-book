@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal shareable Human view URLs
+
+- Added shareable live-site reading-mode URLs: `?view=human` opens a chapter directly in Human view and `?view=ai` opens the default AI/researcher projection, while toggle clicks update the current URL without adding browser-history entries. Recorded the `view` query parameter in the release profile, extended the reading-mode, release-profile, and rendered-site validators to require the URL-mode contract, and updated public docs, the release appendix, README, publication-readiness notes, and v1.0 status. This improves the on-site human-readable projection without claiming a reviewed reader release, ebook, audiobook, support-state promotion, proof result, benchmark result, runtime result, or new source-derived evidence.
+
 ## 2026-06-27 - v1.0 improvement goal implementation-endpoint contract guard
 
 - Strengthened `scripts/validate_chapter_dod.py` so every chapter must keep the required DoD sections in order, avoid duplicate DoD headings, and preserve substantive signals for both implementation endpoint sections: `Minimum Viable Implementation` as the smallest honest non-promoting start and `Beyond the State of the Art` as a mature target state that is not claimed as a current result. Updated the writing runbook, quality standard, full-book goal template, and v1.0 candidate status to make the minimum-start/final-product pairing explicit. All 54 current chapters already pass the stricter guard; no claims, source mappings, support states, proof results, benchmark results, runtime results, reader artifacts, ebooks, or audio artifacts changed.

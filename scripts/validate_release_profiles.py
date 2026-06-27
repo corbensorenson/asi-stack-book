@@ -501,6 +501,7 @@ def main() -> None:
             "default_mode": "ai",
             "human_mode": "human",
             "storage_key": "asi-stack-reading-mode",
+            "url_query_parameter": "view",
             "mode_status_selector": "[data-asi-reading-mode-status]",
             "toc_link_marker": "data-asi-live-toc-link",
             "assistive_description_class": "asi-sr-only",
