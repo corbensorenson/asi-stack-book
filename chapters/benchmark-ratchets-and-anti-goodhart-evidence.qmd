@@ -198,7 +198,7 @@ A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in 
 
 A benchmark ratchet starts as a benchmark-evidence decision record. The repository fixture captures the fields a later benchmark must supply before it can affect support state, while making clear that no benchmark result is being reported here.
 
-A toy ratchet ledger is the smallest concrete extension: one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. Such a ledger would demonstrate support-state restraint without claiming empirical capability.
+A toy ratchet ledger is the smallest concrete extension: one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. Such a ledger would demonstrate support-state restraint while leaving empirical capability unclaimed.
 
 The toy ledger should include one intentionally contaminated case and one source-reported-only case. Those cases are useful because they force the harness to preserve evidence boundaries: contamination creates a blocked or quarantine decision, and source-reported status remains source-reported until the exact command, environment, data boundary, and artifacts are imported or rerun.
 

@@ -174,9 +174,9 @@ Another failure is operator invisibility. If a local system advances through aut
 
 The Theseus reference begins with a report crosswalk record from ASI Stack layer to source reports, configs, gates, residuals, public claim boundary, verification status, and missing artifacts.
 
-The repository fixture validates only that public-safe crosswalk shape. It does not import a current Theseus report bundle or reproduce a benchmark.
+The repository fixture validates only that public-safe crosswalk shape. It imports no current Theseus report bundle and reproduces no benchmark.
 
-A public-safe miniature report bundle would turn the reference boundary into something inspectable. It should include one goal contract, one plan/compiler artifact, one work-board item, one gate record, one residual, one non-claim, and one review note. That would let the book demonstrate report-first discipline without exposing private runs or implying general capability evidence.
+A public-safe miniature report bundle would turn the reference boundary into something inspectable. It should include one goal contract, one plan/compiler artifact, one work-board item, one gate record, one residual, one non-claim, and one review note. The bundle would let the book demonstrate report-first discipline while neither exposing private runs nor implying general capability evidence.
 
 The miniature bundle should deliberately include one missing artifact and one replay-blocked artifact. Those negative rows would make the test useful: a report-first system is credible not because every row is green, but because the absent and blocked rows survive the summary and prevent stronger claims.
 

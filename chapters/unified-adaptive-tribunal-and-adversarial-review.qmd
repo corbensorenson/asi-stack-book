@@ -199,7 +199,7 @@ Tribunal review starts with a `tribunal_review_record` schema and fixture. It sh
 
 That fixture validates the review envelope. It does not prove that reviewers were independent, that adversarial probes found the right issues, or that a verdict was correct.
 
-A contested-claim fixture set should be the tribunal's first operational rehearsal: one high-risk claim that cannot be accepted without tribunal review, one tribunal record with preserved dissent and required actions, one verdict that expands retrieval rather than promoting the claim, and one repeated review attempt blocked because the evidence set did not change. That would test the escalation semantics without claiming reviewer quality.
+A contested-claim fixture set should be the tribunal's first operational rehearsal: one high-risk claim that cannot be accepted without tribunal review, one tribunal record with preserved dissent and required actions, one verdict that expands retrieval rather than promoting the claim, and one repeated review attempt blocked because the evidence set did not change. The set would test the escalation semantics while leaving reviewer quality unclaimed.
 
 ## Beyond the State of the Art
 

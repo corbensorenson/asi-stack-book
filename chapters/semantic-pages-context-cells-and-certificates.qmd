@@ -189,7 +189,7 @@ A minimal context-cell certificate is a `semantic_page_certificate` schema and f
 
 Certificate validation proves only that the record names source bindings, loss, permitted use, and residual risk. The Lean predicates do not prove that the summary preserved the right facts, that omissions are complete, or that the certificate is truthful.
 
-A paired-cell fixture set would make the certificate boundary executable: one source excerpt, one transaction record, one planning summary with loss recorded, one evidence cell preserving exact wording, one redacted execution cell with a lower authority ceiling, one stale certificate invalidated by source revocation, one artifact node that carries the derived cell, and one attempted use outside the certificate blocked. That would test certificate semantics without claiming summary fidelity.
+A paired-cell fixture set would make the certificate boundary executable: one source excerpt, one transaction record, one planning summary with loss recorded, one evidence cell preserving exact wording, one redacted execution cell with a lower authority ceiling, one stale certificate invalidated by source revocation, one artifact node that carries the derived cell, and one attempted use outside the certificate blocked. The set would test certificate semantics while leaving summary fidelity unclaimed.
 
 ## Beyond the State of the Art
 

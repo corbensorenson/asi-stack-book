@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal MVI caveat polish
+
+- Reworked repeated `Minimum Viable Implementation` caveat formulas across 28 chapters, replacing `That would...` and `without claiming...` constructions with chapter-specific non-promotion language such as unclaimed deployment, quality, benchmark, runtime, scheduler, verifier, and reader-release boundaries. Tightened `scripts/validate_repeated_prose.py` so future MVI sections reject those formulas, and refreshed the v1.0 status manuscript scale to 178,283 chapter words excluding YAML and 185,782 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal MVI formula polish
 
 - Reworked repeated `Minimum Viable Implementation` formulas across 45 chapters, replacing `The next useful implementation step is`, `The next useful fixture set is`, `The next useful fixture is`, `Passing the fixture`, and `Passing schema validation only` phrasings with chapter-specific first-build prose while preserving each section's non-promotion boundary. Tightened `scripts/validate_repeated_prose.py` so future writing runs reject those known MVI formulas, and refreshed the v1.0 status manuscript scale to 178,247 chapter words excluding YAML and 185,746 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

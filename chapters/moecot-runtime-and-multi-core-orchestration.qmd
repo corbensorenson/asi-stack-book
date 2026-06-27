@@ -208,7 +208,7 @@ The `moecot_orchestration_record` schema is intentionally conservative. It recor
 
 The next evidence step is not more prose about MoECOT. It is importing or generating public-safe run, task, control-plane, replay, benchmark, and readiness artifacts, then recording whether each is source-reported, locally reproduced, or blocked. Until that packet exists, the chapter remains an implementation-reference map.
 
-A public-safe orchestration packet would test the evidence shape without claiming a live MoECOT deployment: one accepted command, one denied route, one missing replay reference, one residual handoff, and one promotion blocker.
+A public-safe orchestration packet would test the evidence shape while leaving live MoECOT deployment unclaimed: one accepted command, one denied route, one missing replay reference, one residual handoff, and one promotion blocker.
 
 ## Beyond the State of the Art
 

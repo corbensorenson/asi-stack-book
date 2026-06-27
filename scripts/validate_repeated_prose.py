@@ -27,6 +27,8 @@ FORMULAIC_MVI_PHRASES = (
     "The next useful fixture is",
     "Passing the fixture",
     "Passing schema validation only",
+    "That would",
+    "without claiming",
 )
 
 

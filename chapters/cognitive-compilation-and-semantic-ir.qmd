@@ -194,7 +194,7 @@ Cognitive compilation can start with a JSON schema for semantic atoms plus a toy
 
 The current schema records one semantic atom shape with atom state, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact ref, lowering receipt, repair-ledger refs, source refs, support-state effect, residuals, and non-claims. A compiler claim needs more: graph construction, lowering rules, validators, repair traces, and evidence that repairs stay local.
 
-A tiny source plan should anchor the first compiler rehearsal: its semantic-atom DAG, one lowered artifact, one passing validator receipt, one failing validator receipt, and one localized repair that updates the ledger. That would test the control surface before claiming an autonomous compiler.
+A tiny source plan should anchor the first compiler rehearsal: its semantic-atom DAG, one lowered artifact, one passing validator receipt, one failing validator receipt, and one localized repair that updates the ledger. The rehearsal would test the control surface before any autonomous compiler claim is available.
 
 ## Beyond the State of the Art
 

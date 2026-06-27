@@ -190,7 +190,7 @@ The intent-to-execution path starts with an `intent_contract` schema, a `command
 
 Those records are implemented only as public protocol artifacts. They can validate that the trace names the required links and non-claims; they cannot show that the links were executed, authorized, accepted, or useful.
 
-A two-path vertical-slice fixture would make the contract chain visible: one contract that lowers into a permitted job and accepted artifact, and one contract that stops because authority, context, approval, verifier, or budget is missing. That would exercise preservation and stop conditions without claiming behavioral execution.
+A two-path vertical-slice fixture would make the contract chain visible: one contract that lowers into a permitted job and accepted artifact, and one contract that stops because authority, context, approval, verifier, or budget is missing. The slice would exercise preservation and stop conditions while leaving behavioral execution unclaimed.
 
 ## Beyond the State of the Art
 

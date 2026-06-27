@@ -207,7 +207,7 @@ The first resource-economics artifact is a resource budget record. The repositor
 
 The fixture is not a load-stability or economic-optimality result. It gives future PlanForge, TokenMana, and benchmark work a shared budget contract.
 
-A toy budget ledger should be the first executable economics slice: one low-risk dispatch, one high-risk escalation due to insufficient verification budget, one SCIF-secured task whose overhead is protected, and one cheaper route rejected because repair burden or evidence loss exceeds the savings. That would test the budget semantics without claiming economic results.
+A toy budget ledger should be the first executable economics slice: one low-risk dispatch, one high-risk escalation due to insufficient verification budget, one SCIF-secured task whose overhead is protected, and one cheaper route rejected because repair burden or evidence loss exceeds the savings. The ledger would test the budget semantics while leaving economic results unclaimed.
 
 The minimum should show the rejected route alongside the chosen route, because hidden savings are not governed savings.
 

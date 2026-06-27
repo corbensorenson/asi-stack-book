@@ -224,11 +224,11 @@ The subtle failure is field laundering: a vague sentence is copied into a formal
 
 A canonical command-contract template used by future chapter drafting and experiment prompts.
 
-The semantic interface begins as a public-safe `command_contract` record. That record demonstrates validation state, field provenance, field confidence, constraints, bounded defaults, output, verification, approvals, authority basis, re-contract points, dispatch blockers, non-claims, and failure behavior without claiming the command has been executed.
+The semantic interface begins as a public-safe `command_contract` record. That record demonstrates validation state, field provenance, field confidence, constraints, bounded defaults, output, verification, approvals, authority basis, re-contract points, dispatch blockers, non-claims, and failure behavior while leaving command execution unclaimed.
 
 That fixture is not a hardened prompt firewall. It is the first public contract shape that later prompt-injection tests, override tests, and execution traces can target.
 
-A small command-conflict fixture set is the right first stress test: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. That set would let the book demonstrate contract precedence without claiming full prompt-security behavior.
+A small command-conflict fixture set is the right first stress test: one clean command, one missing output contract, one hidden-context override, one inferred-authority case, and one declared failure-behavior case. The set would let the book demonstrate contract precedence while keeping full prompt-security behavior out of scope.
 
 ## Beyond the State of the Art
 

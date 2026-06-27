@@ -202,7 +202,7 @@ The repository fixture validates that this public contract can be represented co
 
 `AsiStackProofs.CompactGenerativeSystems` adds a bounded residual-honesty predicate requiring unresolved obligations to carry residual records, plus a bounded exactness predicate blocking lossy representations from being marked exact without verification evidence. These proofs do not implement a codec, generator, verifier, downstream utility test, or fallback harness.
 
-A compact-core comparison fixture should carry the next slice: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. That would make the compactness contract concrete without reporting a benchmark.
+A compact-core comparison fixture should carry the next slice: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. This comparison would make the compactness contract concrete while reporting no benchmark result.
 
 ## Beyond the State of the Art
 
