@@ -95,3 +95,75 @@ thead th {
 code {
   color: #28313d;
 }
+
+.asi-reading-mode {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.25rem 0 1rem;
+  padding: 0.3rem;
+  border: 1px solid var(--asi-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 18px rgba(24, 32, 42, 0.08);
+}
+
+.asi-reading-mode__label {
+  padding: 0 0.45rem;
+  color: var(--asi-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.asi-reading-mode button {
+  min-width: 5.25rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  background: transparent;
+  color: var(--asi-muted);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.asi-reading-mode button:hover,
+.asi-reading-mode button:focus-visible {
+  border-color: var(--asi-border);
+  color: var(--asi-ink);
+}
+
+.asi-reading-mode button[aria-pressed="true"] {
+  border-color: #214f5f;
+  background: #245f73;
+  color: #ffffff;
+}
+
+html[data-asi-reading-mode="human"] section[data-asi-live-section="true"] {
+  display: none !important;
+}
+
+html[data-asi-reading-mode="human"] .asi-reading-mode {
+  box-shadow: 0 6px 18px rgba(36, 95, 115, 0.12);
+}
+
+@media (max-width: 640px) {
+  .asi-reading-mode {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .asi-reading-mode__label {
+    flex: 1 1 auto;
+  }
+
+  .asi-reading-mode button {
+    min-width: 4.75rem;
+    padding-inline: 0.5rem;
+  }
+}

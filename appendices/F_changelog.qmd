@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-26 - v1.0 improvement goal live reading mode toggle
+
+- Added a live-site reading-mode switch that defaults to `AI view` and offers `Human view` by hiding the same live-only chapter sections used by the reader-release strip policy. Wired the switch through the generated Quarto scaffold, added styling and a post-render toggle asset, documented the boundary in the release-editions docs, release appendix, living-book methodology chapter, site quality standard, and README, and added `scripts/validate_reading_mode_toggle.py` to keep the toggle aligned with `reader_release.strip_headings`. This provides an on-site human-reader projection without claiming a reviewed EPUB/PDF/DOCX, audiobook, support-state promotion, or major-version reader release.
+
 ## 2026-06-26 - v1.0 improvement goal new paper workflow alignment
 
 - Updated the living update workflow, master Codex prompt, README source-discipline section, and public repo ASI Stack Book skill/triage reference to route new AI papers through source storage policy, public-safety policy, research backlog records, synthetic new-paper triage scenario decisions, deduplication state, chapter-decision refs, pre-drafting requirements, evidence-transition preconditions, promotion blockers, validation, and changelog updates before prose or manifest changes. This aligns the human/agent workflow with the new intake fixtures without claiming any live paper intake, source-publication permission, support-state promotion, reader artifact, or audio artifact.

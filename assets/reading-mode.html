@@ -1,0 +1,90 @@
+<script>
+(function () {
+  const storageKey = "asi-stack-reading-mode";
+  const humanMode = "human";
+  const aiMode = "ai";
+  const liveHeadings = new Set([
+    "2:chapter status",
+    "2:drafting guardrail",
+    "2:codex test plan",
+    "2:external literature queue",
+    "2:source crosswalk",
+    "2:claim labels",
+    "2:why codex tests matter",
+    "2:formalization hooks",
+    "3:claim-source mapping status",
+    "3:formalization hooks"
+  ]);
+
+  function cleanHeadingText(heading) {
+    const clone = heading.cloneNode(true);
+    clone.querySelectorAll(".header-section-number, .anchorjs-link, .quarto-appendix-heading").forEach((node) => node.remove());
+    return clone.textContent
+      .replace(/\s+/g, " ")
+      .replace(/^\d+(\.\d+)*\s+/, "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function markLiveSections() {
+    document.querySelectorAll("section").forEach((section) => {
+      const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return;
+      const level = Number(heading.tagName.slice(1));
+      const key = `${level}:${cleanHeadingText(heading)}`;
+      if (liveHeadings.has(key)) {
+        section.setAttribute("data-asi-live-section", "true");
+      }
+    });
+  }
+
+  function setMode(mode) {
+    const nextMode = mode === humanMode ? humanMode : aiMode;
+    document.documentElement.setAttribute("data-asi-reading-mode", nextMode);
+    try {
+      window.localStorage.setItem(storageKey, nextMode);
+    } catch (_) {
+      /* localStorage may be disabled; the page-level state still applies. */
+    }
+    document.querySelectorAll("[data-asi-reading-choice]").forEach((button) => {
+      const active = button.getAttribute("data-asi-reading-choice") === nextMode;
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  function savedMode() {
+    try {
+      return window.localStorage.getItem(storageKey) || aiMode;
+    } catch (_) {
+      return aiMode;
+    }
+  }
+
+  function insertToggle() {
+    const target = document.querySelector("header#title-block-header") || document.querySelector("main.content") || document.querySelector("#quarto-document-content") || document.body;
+    const control = document.createElement("div");
+    control.className = "asi-reading-mode";
+    control.setAttribute("role", "group");
+    control.setAttribute("aria-label", "Reading mode");
+    control.innerHTML = [
+      '<span class="asi-reading-mode__label">Reading mode</span>',
+      '<button type="button" data-asi-reading-choice="ai" aria-pressed="true">AI view</button>',
+      '<button type="button" data-asi-reading-choice="human" aria-pressed="false">Human view</button>'
+    ].join("");
+    control.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice")));
+    });
+    if (target.matches && target.matches("header#title-block-header")) {
+      target.insertAdjacentElement("afterend", control);
+    } else {
+      target.prepend(control);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    markLiveSections();
+    insertToggle();
+    setMode(savedMode());
+  });
+})();
+</script>

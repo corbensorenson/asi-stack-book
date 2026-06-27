@@ -12,6 +12,8 @@ The living book is the canonical source. Major-version editions are derived arti
 | Human researchers | complete technical argument, auditability, source and claim traceability, known residuals | live book and frozen research releases |
 | Interested human readers | coherent narrative, e-reader/PDF/DOCX formatting, images and diagrams, bibliography, minimal workflow clutter | reader releases and audio releases |
 
+The live GitHub Pages site also provides a reading-mode switch. `AI view` is the default canonical live-book view with chapter status, source crosswalks, proof hooks, Codex tests, and guardrails. `Human view` hides the same live-only chapter headings used by the reader-release strip policy so interested readers can stay on the site and read the prose spine without downloading an EPUB, PDF, or DOCX. This on-site view is a convenience projection; it is not a reviewed major-version reader artifact.
+
 ## Content Layers
 
 The live book serves all three audiences by separating content layers instead of maintaining parallel books:
@@ -64,6 +66,8 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
+- `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
+- `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`.
 
 ## Reader Edition Generation
 
@@ -133,6 +137,12 @@ The reader release removes repeated live-workflow sections by heading:
 - `Formalization hooks`
 
 The reader release keeps the core prose and diagrams. If an uncertainty caveat changes the meaning of a claim, keep it in the narrative rather than relying on a stripped guardrail block.
+
+The live-site `Human view` uses this same heading list at render time. If these strip rules change, update the reading-mode asset and run:
+
+```bash
+python3 scripts/validate_reading_mode_toggle.py
+```
 
 `scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if stripped headings remain, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
 

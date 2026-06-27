@@ -95,7 +95,7 @@ The key artifact split is deliberate. `book_structure.json` controls order and s
 
 Conversation-mined material has a bounded role: it can preserve author intent, terminology, lineage, and recovery tasks, but it is not external evidence. Raw sources stay private unless publication is approved. Public claims move only when the evidence artifact exists.
 
-The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. Major reader and audio editions are downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
+The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. The live site can also project a Human view that hides the same repeated live-only sections used by the reader-release strip policy, so interested readers can follow the prose spine without downloading a separate artifact. Major reader and audio editions remain downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
 
 The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
 
@@ -171,6 +171,7 @@ The next useful fixture set is a change-packet record: one chapter edit with sou
 |---|---|---|
 | Living book release record validation | Validate that release records name release state, audience profile, canonical scope, commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Quarto render check | Check that the public book renders locally to HTML. | implemented; run in this pass |
+| Reading-mode toggle check | Check that the live-site Human view toggle is included by the generated Quarto config and tracks the reader-release strip-heading policy. | implemented by `scripts/validate_reading_mode_toggle.py`; run in this pass |
 | Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; run in this pass |
 | Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually in this pass |
 

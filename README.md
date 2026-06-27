@@ -23,6 +23,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
+- The live GitHub Pages site includes a top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, while `Human view` hides the same repeated chapter sections used by the reader-release strip policy.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
@@ -69,6 +70,7 @@ python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
+python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
 quarto render --to html

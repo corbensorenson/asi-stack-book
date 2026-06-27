@@ -231,6 +231,7 @@ def write_quarto(structure: dict) -> None:
         "    theme:",
         "      - cosmo",
         "      - assets/styles.scss",
+        "    include-after-body: assets/reading-mode.html",
         "    link-external-newwindow: true",
         "",
         "execute:",
