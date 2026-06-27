@@ -185,6 +185,8 @@ The key invariant is claim-boundedness. A simulation can be useful and still be 
 
 Another invariant is non-transfer by default. Simulation results do not travel to broader deployment, physical feasibility, moral-status, or safety claims unless the contract explicitly licenses that transfer and records the remaining residuals.
 
+A simulation record must also keep cost and bottlenecks visible. A simulated result can be impossible to scale, too slow to verify, too coarse to support the decision, or too dependent on an omitted physical constraint. These limits are not footnotes; they define what the result is allowed to mean. The architecture should prefer a narrower simulation claim with honest transfer limits over a broad claim that hides the instrument.
+
 ## Failure modes
 
 - Overclaiming nested simulation feasibility.

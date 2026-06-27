@@ -14,6 +14,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Optional `.asi-human-only`, `.asi-ai-only`, and `.asi-live-only` blocks must follow the release profile policy: human-only prose is retained for reader editions, AI/live-only material is hidden or stripped, and meaning-critical caveats stay in the ordinary reader spine.
 - Generated reader chapters must preserve each live chapter's core-claim marker and a plain-language support-state boundary in the Core Claim section, so the Human view and reader releases cannot become more confident than the live evidence state after scaffold stripping.
 - Chapter summaries should close with substantive reader-facing synthesis rather than title restatement or scaffold prose. `scripts/validate_chapter_dod.py` requires every manifest chapter summary to contain at least 120 words and continues to reject self-referential chapter phrasing, mechanical section handoffs, and live crosswalk references.
+- Chapter `Invariants` and `Failure modes` sections should be substantial enough to name the preserved boundary and the concrete ways the mechanism can fail. `scripts/validate_chapter_dod.py` requires at least 90 words in each section for every manifest chapter.
 
 ## Visual Standards
 

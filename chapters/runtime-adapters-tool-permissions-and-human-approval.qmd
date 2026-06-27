@@ -217,6 +217,8 @@ This receipt structure keeps "tool call succeeded" from becoming a broad evidenc
 
 No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
+The adapter boundary must preserve separation between request, approval, execution, and verification. A successful API response is not proof that the task was appropriate, authorized, or successful in the larger plan. Human approval must remain scoped to the named effect, duration, input, and risk class. If the effect is irreversible or externally visible, the record should preserve who approved it, what was known, what rollback was possible, and what residual remains.
+
 ## Failure modes
 
 - Tool overreach.
@@ -226,6 +228,8 @@ No adapter invocation is valid unless the parent job permissions include the ada
 - Receipt laundering, where a successful tool response is treated as verified task success.
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
+
+Another failure is approval ambiguity. A human says yes to one concrete action, but the system treats that yes as permission for a broader class of edits, deployments, payments, messages, or follow-up actions. The adapter should not infer durable authority from conversational trust. It should require a fresh lease or an explicit policy grant when the target, risk, cost, data exposure, or external effect changes.
 
 ## Minimum Viable Implementation
 

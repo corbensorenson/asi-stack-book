@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal invariant and failure-mode floor 90
+
+- Expanded the thinnest chapter `Invariants` and `Failure modes` sections with concrete preserved-boundary, laundering, replay, rollback, authority, proof, context, simulation, compression, and bibliography-failure language, then raised `scripts/validate_chapter_dod.py` so every manifest chapter must now keep at least 90 words in each section. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger boundary/failure-mode floor. Refreshed the v1.0 status manuscript scale to 173,950 chapter words excluding YAML and 181,449 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal summary floor 120
 
 - Expanded the 28 shortest chapter summaries with chapter-specific synthesis, cleaner handoffs, and explicit evidence boundaries where relevant, then raised `scripts/validate_chapter_dod.py` so every manifest chapter summary must contain at least 120 words while preserving the existing bans on self-referential chapter phrasing, mechanical section handoffs, and live crosswalk references. Updated the site quality standard and v1.0 candidate status to record the stronger reader-facing closing-prose gate. Refreshed the v1.0 status manuscript scale to 172,363 chapter words excluding YAML and 179,862 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

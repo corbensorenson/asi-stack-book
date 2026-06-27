@@ -170,6 +170,8 @@ A consumer should not have to parse a narrative paragraph to know whether an art
 
 An artifact with missing required provenance cannot support a promoted claim. It can still exist, but it should be labeled as incomplete, not evidence-ready.
 
+The graph must also preserve parentage. A derived artifact should keep links to the source material, context packet, job contract, tool invocation, review record, and claim or test it affected. If any link is intentionally absent, that absence is a recorded limitation rather than a silent simplification. Reuse inherits those limitations. This is what prevents a useful artifact from becoming free-floating evidence after it moves through summaries, release notes, or future planning.
+
 ## Failure modes
 
 - Untraceable output.
@@ -179,6 +181,8 @@ An artifact with missing required provenance cannot support a promoted claim. It
 Untraceable output becomes a residual. Non-replayable workflows must declare replay limits. Provenance gaps block evidence promotion until repaired or explicitly bounded.
 
 The subtle failure mode is convenience laundering. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
+
+Another failure is replay exaggeration. A workflow may be partially reproducible, environment-dependent, or intentionally non-replayable for privacy or security reasons. Treating that partial replay as full reproduction inflates evidence. Replay grade, environment assumptions, missing inputs, and irreversible effects should remain visible so future agents know whether they can rerun, audit, or only inspect the record.
 
 ## Minimum Viable Implementation
 

@@ -199,6 +199,8 @@ The book should therefore be edited like a stack, not like a table of contents. 
 - Improvement routes back through governance instead of bypassing it.
 - New capability evidence enters through layer contracts rather than narrative enthusiasm.
 
+The central invariant is separability: planning, memory, reasoning, execution, routing, compression, evidence, and governance may cooperate, but none of them may silently absorb the authority or evidence duties of another layer. A model output can propose; it does not execute by being confident. A benchmark can inform; it does not authorize deployment by being high. A proof can certify a finite predicate; it does not imply broad safety. This separation is what lets the architecture inspect a failure without rewriting the whole system.
+
 ## Failure modes
 
 - Anthology drift.
@@ -206,6 +208,8 @@ The book should therefore be edited like a stack, not like a table of contents. 
 - Evidence inflation before source notes or tests exist.
 - Authority and evidence becoming ambient properties of "the model."
 - Chapter growth that adds ideas without assigning ownership, artifacts, invariants, or non-claims.
+
+Anthology drift happens when the book becomes a catalog of interesting papers rather than one architecture. Monolith drift happens when the architecture starts attributing planning, memory, proof, execution, and governance to a single opaque model again. Evidence inflation happens when a design rationale, source note, local proof, or benchmark-shaped intention starts sounding like an implemented result. The practical failure is loss of addressability: no one can say which layer owns the claim, which artifact would test it, which boundary would stop it, or which residual remains.
 
 ## Minimum Viable Implementation
 

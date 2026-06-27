@@ -181,6 +181,8 @@ The interface should also record dependency edges. A runtime-adapter phase depen
 
 Another invariant is no irreversible unlock from provisional evidence. A phase can allow research use before full acceptance, but it cannot unlock default execution, promotion, self-improvement, or public capability claims while its required gates remain provisional.
 
+The roadmap must preserve dependency order. Evidence infrastructure precedes capability claims; replayable artifacts precede support-state promotion; constrained adapters precede broad tool autonomy; independent evaluation precedes self-improvement. A later phase may be explored in a sandbox, but it cannot be treated as accepted architecture while prerequisite ledgers, schemas, tests, and review records are missing. This keeps enthusiasm from becoming release policy.
+
 ## Failure modes
 
 - Building agency before auditability.
@@ -190,6 +192,8 @@ Another invariant is no irreversible unlock from provisional evidence. A phase c
 - Losing remaining-work items from source-reported roadmaps.
 
 The subtle failure is prototype theater. The project shows a board, dashboard, demo, or generated report that looks like an operating system, while the acceptance gates, replay artifacts, and evidence transitions behind it are missing. The roadmap should make that visible by separating demo output from phase acceptance.
+
+Another failure is milestone compression. Several hard gates are collapsed into one label such as "agentic runtime" or "self-improvement," allowing missing source ingestion, schema validation, proof adequacy, security review, and rollback duties to disappear. The roadmap should decompose impressive milestones into small acceptance records so a future agent can continue the work without inheriting a vague permission to build everything at once.
 
 ## Minimum Viable Implementation
 

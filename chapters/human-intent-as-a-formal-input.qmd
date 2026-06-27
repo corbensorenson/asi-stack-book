@@ -199,6 +199,8 @@ A related invariant is least authority. When multiple interpretations satisfy th
 
 Goal misbinding happens when the system optimizes the wrong interpretation. Scope creep happens when the system turns an open-ended wish into unbounded work. Implicit permission happens when the system treats a desired outcome as approval for any convenient means. All three should produce a visible residual or clarification path before execution.
 
+The deeper failure is contract substitution. The system receives a human purpose, then substitutes its own inferred plan, tone preference, or completion heuristic as the governing object. That substitution can feel helpful in a conversation, but it is dangerous in an execution stack because downstream layers inherit a contract the person never granted. Intent handling should therefore make ambiguity, missing authority, and contested assumptions visible before planning or tool use begins.
+
 ## Minimum Viable Implementation
 
 For intent, the first build is an `intent_contract` schema plus examples that transform raw requests into bounded contracts. It should test ambiguity, authority extraction, and stop-condition preservation without pretending to solve full natural-language understanding.

@@ -183,6 +183,8 @@ When a future agent receives a new paper, the interface should produce a triage 
 
 A source may inspire design language before it supports a claim only if the text says so and the evidence state remains unchanged. Inspiration, author intent, source-derived support, implementation evidence, and reproduced results are different states. The agenda exists to keep them from merging.
 
+The agenda must also keep closure visible. A research item should eventually become an ingested source, a rejected source, a deferred backlog record, a new proof/test task, or an explicit out-of-scope decision. Permanent vague curiosity is not a useful state for a living book. The bibliography plan should help future writing runs decide what to read, what to map, what to cite, and what not to use yet.
+
 ## Failure modes
 
 - Citation drift.
@@ -192,6 +194,8 @@ A source may inspire design language before it supports a claim only if the text
 - External references named by source documents becoming citations before direct verification.
 
 Another failure is backlog rot. If every uncertain item becomes permanent "future work," the research agenda stops guiding action. Backlog records should keep next actions small enough to execute: fetch source, write note, verify citation, add fixture, run benchmark, formalize finite predicate, update chapter, or close as out of scope.
+
+The highest-risk failure is evidence laundering through bibliography. A source appears in a queue, then a source matrix, then a chapter source list, and eventually reads like support even though no one reviewed the relevant passages. The agenda should keep queued, unread, source-note-available, passage-reviewed, and evidence-transitioned states distinct. Bibliographic presence is not evidentiary force.
 
 ## Minimum Viable Implementation
 

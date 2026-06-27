@@ -164,6 +164,8 @@ The semantic adequacy review is not a second proof. It is a record of whether th
 - Proof status does not imply model quality or deployment safety.
 - A formal artifact requires a semantic adequacy note before it can strengthen prose beyond its finite predicate.
 
+The proof boundary also preserves artifact class. A schema pass, Python fixture, successful Quarto render, Lean theorem, benchmark result, and human review note are different kinds of evidence. They may support one another, but they cannot substitute for one another without an explicit transition record. That separation keeps formal work from becoming a confidence aesthetic and keeps ordinary tests from being described as proofs.
+
 ## Failure modes
 
 - Formalization theater.
@@ -175,6 +177,8 @@ The semantic adequacy review is not a second proof. It is a record of whether th
 Each failure should downgrade the target or move it to schema/process/research status.
 
 The subtle failure is proof laundering. A valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
+
+Another failure is orphaned formality. A proof target exists, but the chapter no longer explains what it means, the outline no longer routes to it, or the source claim it was supposed to bound has changed. In that case the theorem may still compile while no longer governing the manuscript. Proof artifacts should stay linked to chapter claims, limitation prose, generated manifests, and audit records.
 
 ## Minimum Viable Implementation
 
