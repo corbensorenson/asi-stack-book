@@ -175,16 +175,20 @@ The next useful fixture set is a change-packet record: one chapter edit with sou
 
 ## Beyond the State of the Art
 
-The mature version of Living Book Methodology is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a research operating system that happens to render as a book. The live site would remain the canonical, AI-readable, researcher-auditable surface, while Human view, reader editions, ebook formats, and future audio scripts would be derived projections with explicit strip policies and release records.
 
-At that end state, the chapter's claim becomes an operational contract: The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases. The mature surface would include:
+At that mature boundary, the book would let a future agent ingest a new AI paper, mine its public-safe content, decide whether to update a chapter or add a precise new one, update the outline and manifest, generate proof/test backlog, draft or revise prose, validate source/evidence boundaries, render the live site, and prepare reader editions without hand-renumbering or hidden support-state changes.
 
-- Operating mechanism: Use `book_structure.json` for order and dynamic chapters; Use `docs/book_outline.md` for drafting, source queues, and Lean scope; Treat conversation-mined packets as author-intent and lineage context, not as independent evidence; Use drafting annotations such as [SOURCE], [AUTHOR INTENT], [SYNTHESIS], [EXPERIMENT], and [OPEN] in private notes or source notes when helpful; Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
-- Stack interface: Source ingestion feeds source notes; Drafting feeds claim matrices; Tests feed support states; Releases feed GitHub Pages.
-- Preserved invariants: No fabricated source content; No fabricated test results; Deprecated claims remain visible.
-- Failure closure: detect and route failure modes such as Public site diverges from Quarto source; Outline and manifest drift; Readers cannot tell which claims are speculative to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Living Book Methodology, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A manifest-driven book graph where `book_structure.json` controls order and `docs/book_outline.md` controls chapter jobs, source queues, Lean scope, minimum implementation, and beyond-SOTA end states.
+- A tri-audience publication system: default AI/researcher view, on-site Human view, and major-version reader/audio derivatives with recorded strip policies.
+- Source-ingestion workflows for public papers, private/local notes, Google Drive sources, conversation-mined context, project repositories, external literature, and blocked sources.
+- Claim/evidence ledgers that separate labels, support states, source mappings, tests, proof receipts, benchmark records, release hygiene, and publication quality.
+- Writing skills, runbooks, validators, changelog entries, release profiles, proof manifests, reader-spine checks, and rendered-site checks that keep future drafting agents consistent.
+- Failure closure for fabricated source content, fabricated test results, outline/manifest drift, reader/live divergence, stale proof targets, unsupported citations, and publication laundering.
+
+In that final product, "write the book" would be a governed build goal, not a prompt that overwrites uncertainty. The system would continuously improve prose, proofs, diagrams, schemas, and reader artifacts while preserving non-claims and open gaps. This remains a target architecture. The support state should not rise until the living workflow has real ingestion, drafting, review, release, reader-edition, and evidence-transition records behind it.
 
 ## Codex test plan
 

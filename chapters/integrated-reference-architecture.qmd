@@ -181,16 +181,21 @@ The next useful implementation step is a tiny dry-run trace set with one approve
 
 ## Beyond the State of the Art
 
-The mature version of Integrated Reference Architecture is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is an integration trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated.
 
-At that end state, the chapter's claim becomes an operational contract: The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. The mature surface would include:
+At that mature boundary, every significant run would emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, benchmark ratchets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.
 
-- Operating mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement; Show the compression loop embedded inside the broader governance, memory, routing, and verification stack; Show which artifact each layer emits; Identify where authority can stop or reroute the process.
-- Stack interface: All stack layers participate; Artifacts and evidence ledgers provide continuity; SCF gates control improvement.
-- Preserved invariants: No layer bypasses governance; Artifacts remain traceable; Self-improvement follows evidence and authority gates.
-- Failure closure: detect and route failure modes such as Untraceable handoffs; Planning/execution collapse; Self-improvement without evaluator integrity to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Integrated Reference Architecture, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- End-to-end traces with stable parent artifacts from intent through planning, memory, routing, verification, execution, evidence update, release, and improvement gates.
+- Authority deltas at every handoff: granted, narrowed, expired, denied, escalated, quarantined, or returned for human review.
+- Evidence deltas that say exactly which claim, support state, benchmark floor, proof target, policy update, or readiness gate changed, if any.
+- Residual deltas that preserve missing context, failed verification, contamination, regression, safety debt, unfunded work, governance concern, or unresolved source gap.
+- Stop-condition records for missing contracts, inadequate context, failed proof/spec, failed test, failed benchmark, unaccepted residual, evaluator-integrity concern, or rollback absence.
+- Cross-layer consumers that can reject a trace when a required artifact, source ref, validation command, non-claim, or approval is missing.
+- Failure closure that exposes integration theater: informal summaries, ambient authority, unversioned context, unsupported evidence deltas, and ignored stop conditions become visible defects.
+
+In that final product, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. This remains a target architecture. The support state should not rise until real trace harnesses, blocked-path tests, artifact continuity audits, authority stop-condition checks, and accepted evidence transitions validate the integrated boundary.
 
 ## Codex test plan
 

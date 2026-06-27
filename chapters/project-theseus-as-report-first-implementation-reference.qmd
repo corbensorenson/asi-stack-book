@@ -178,16 +178,21 @@ The miniature bundle should deliberately include one missing artifact and one re
 
 ## Beyond the State of the Art
 
-The mature version of Project Theseus as Report-First Implementation Reference is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a public-safe implementation-reference lab. Project Theseus would remain useful to this book only if its reports, configs, gates, ledgers, work-board entries, residuals, and replay notes can be mined without turning private or local runs into general capability claims.
 
-At that end state, the chapter's claim becomes an operational contract: Project Theseus should be mined as a report-first implementation reference for RMI, showing how pressure, residuals, gates, ledgers, operator work boards, checkpoints, and self-evolution governance can instantiate the ASI stack without promoting local results as general capability claims. The mature surface would include:
+At that mature boundary, Theseus would provide importable report bundles rather than dashboard impressions. Each bundle would identify the ASI Stack layer it exercises, the command or report source, configuration, environment boundary, artifact checksum, gate result, residual, missing artifact, public claim boundary, and non-claims. A dashboard could visualize those bundles, but the report bundle would be the evidence object.
 
-- Operating mechanism: Treat reports and ledgers as the contract, with dashboards as surfaces over those artifacts; Use the loop pressure -> attempt -> residual -> diagnosis -> compression -> verification -> structure -> new pressure as implementation discipline; Gate heavy training and self-evolution through architecture, preflight, resource, and candidate-promotion checks; Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports; Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
-- Stack interface: The plan compiler supplies contracts, semantic IR DAGs, VCM slices, routes, claim targets, and replay traces; Octopus arms, SymLiquid CGS, SparkStream control, and Hive runtime map stack layers into reports and configs; Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback; Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
-- Preserved invariants: The frontier moves while the regression floor holds; Promotion uses external-inference-zero evidence where the local gate requires it; Reports survive the run and are not replaced by dashboard prose; Private experiments and public calibration remain separated; Unknown task kinds are blocked rather than guessed; Architecture changes follow the intervention ladder.
-- Failure closure: detect and route failure modes such as Latest-file report overwrites history; Benchmark overfit becomes capability evidence; Teacher dependence replaces local evidence; Architecture churn outruns residual diagnosis; Remote work proceeds without allowlists, TTLs, or kill switches; Local prototype results are overclaimed as public evidence to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Project Theseus as Report-First Implementation Reference, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A report-bundle importer that maps plan-compiler artifacts, operator work-board items, architecture gates, benchmark ledgers, residual escrow, self-evolution interventions, and Circle transfer records onto ASI Stack layers.
+- A public/private boundary that marks which artifacts are publishable, summarized, redacted, blocked, source-reported only, or reproduced locally.
+- Replay-readiness records with command, environment, input boundary, expected output class, checksum or artifact id, and failure behavior.
+- Gate semantics for heavy training, candidate promotion, teacher use, architecture change, remote work, rented compute, and self-evolution intervention level.
+- Capability matrices that preserve regression floors and residuals instead of narrating local dashboards as general readiness.
+- Operator visibility through durable work boards, node registries, TTLs, kill switches, hooks, feedback reports, and missing-artifact rows.
+- Failure closure for latest-file overwrite, dashboard prose laundering, benchmark overfit, teacher dependence, architecture churn, unsafe remote work, and public overclaiming.
+
+In that final product, Theseus would become a falsifiable implementation reference: every useful report would either support a narrow public boundary or explicitly fail to do so. This remains a target architecture. The support state should not rise until public-safe report bundles are imported or reproduced, missing artifacts stay visible, and the relevant gate and replay checks pass.
 
 ## Codex test plan
 

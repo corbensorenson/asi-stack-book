@@ -183,16 +183,20 @@ The next useful fixture set is a proof/spec receipt suite: one Lean predicate re
 
 ## Beyond the State of the Art
 
-The mature version of Executable Specifications and Lean Proof Envelope is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a formal-claims control plane for the whole stack. It does not try to prove "ASI safety" or "alignment" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks.
 
-At that end state, the chapter's claim becomes an operational contract: Lean proofs and executable specs should target small invariants: authority, support states, SCF replacement, job lifecycle, context adequacy, and residual records. The mature surface would include:
+At that mature boundary, every chapter, protocol, release, and runtime module would consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.
 
-- Operating mechanism: Translate mechanisms into predicates and transition rules; Keep proof manifest generated from the outline; Distinguish scaffolded, implemented, blocked, and retired proof targets.
-- Stack interface: Outline defines proof scope; Lean modules implement selected invariants; Validation checks proof-manifest consistency.
-- Preserved invariants: No theorem is claimed proven without `lake build`; Proof tags remain stable; Broad claims are decomposed before formalization.
-- Failure closure: detect and route failure modes such as Formalization theater; Unstable proof target names; Claiming proof from prose to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Executable Specifications and Lean Proof Envelope, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A generated proof/spec registry fed by the outline, chapter hooks, Appendix E, schemas, Lean modules, validators, and release profiles.
+- Semantic adequacy reviews that ask whether a finite predicate is the right predicate for the prose boundary before any support language strengthens.
+- Consumer gates that block downstream use when artifact lane, command, version, non-claims, or adequacy state do not match the consuming chapter or runtime.
+- Stale-proof and orphan-target detection when a theorem name changes, a schema evolves, a chapter claim moves, or a target remains implemented but no longer maps to the intended boundary.
+- Receipts for proof, schema, process, behavior, benchmark, and external-reference lanes so future agents can see exactly which authority each artifact carries.
+- Failure closure that routes proof laundering, formalization theater, external-theorem borrowing, stale tags, and claim-from-prose errors into downgrade, quarantine, or adequacy residuals.
+
+In that final product, the stack could depend on mechanized record-level claims without pretending that record-level proofs are deployed enforcement, empirical model quality, benchmark success, or source-truth validation. This remains a target architecture. The support state should not rise until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions validate this exact boundary.
 
 ## Codex test plan
 

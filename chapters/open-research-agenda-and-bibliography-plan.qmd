@@ -195,16 +195,20 @@ The next useful implementation step is a live rehearsal against a user-provided 
 
 ## Beyond the State of the Art
 
-The mature version of Open Research Agenda and Bibliography Plan is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, and which claims still cannot move.
 
-At that end state, the chapter's claim becomes an operational contract: The bibliography and research agenda should map source families, external literature queues, missing papers, proof targets, experiment backlogs, and chapter insertion rules. The mature surface would include:
+At that mature boundary, every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source would have a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.
 
-- Operating mechanism: Maintain source inventory, source notes, bibliography, and source-loading queues; Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items; Use triage rules to update chapters or add precise new ones.
-- Stack interface: Appendix G lists corpus and external literature queue; Source notes support chapter drafting; Book outline tells future agents what to mine.
-- Preserved invariants: Do not cite unread sources as support; Do not infer bibliographic metadata; New papers update inventory before chapter claims.
-- Failure closure: detect and route failure modes such as Citation drift; Duplicate chapter creation for overlapping ideas; Missing sources treated as evidence to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Open Research Agenda and Bibliography Plan, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A normalized source inventory tied to source notes, Appendix G, chapter source queues, claim/evidence mappings, proof targets, experiment backlog, and release records.
+- Intake scenarios for update-existing, propose-new-chapter, defer-external-literature, merge/split, reject-duplicate, supersede-variant, recover-missing-source, and block-private-source cases.
+- Citation verification that distinguishes direct reading, source-note review, metadata-only external context, private/local context, connector-only access, and unread references.
+- Research backlog records with next actions small enough to execute: fetch, cache, read, write note, verify citation, add fixture, formalize predicate, run benchmark, update chapter, or close.
+- Chapter-boundary governance so papers are mined for architecture interfaces and failure modes rather than converted one-to-one into chapters.
+- Failure closure for citation drift, duplicate chapter creation, bibliographic hallucination, private result leakage, external-reference laundering, and backlog rot.
+
+In that final product, the bibliography would be active infrastructure: it would tell the book what it is allowed to know and what work must happen next. This remains a target architecture. The support state should not rise until real source-intake runs, citation checks, evidence-transition reviews, and backlog closures validate the research graph.
 
 ## Codex test plan
 

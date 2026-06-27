@@ -245,16 +245,20 @@ The next useful fixture set is a policy-delta trace: one offline preference upda
 
 ## Beyond the State of the Art
 
-The mature version of Policy Optimization and Learning from Feedback is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a governed learning actuator for the entire stack. Policy optimization would not be a fine-tuning side quest attached to the generator. It would be the controlled mechanism by which planners, routers, context selectors, verifiers, execution policies, generation modes, and governance assistants become better without gaining new authority by training side effect.
 
-At that end state, the chapter's claim becomes an operational contract: Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted. The mature surface would include:
+At that mature boundary, each update would be a behavior-change lease. The lease would name the target policy, old and new behavior, admissible feedback, reward or preference boundary, update family, drift bound, holdouts, regressions, reward-hacking probes, authority effect, rollback plan, monitor window, deployment scope, evidence packets, residuals, and non-claims. PPO-like, DPO-like, GRPO-like, RLVR-like, context-policy, router-policy, or custom control-policy updates would be implementation choices under this record, not substitutes for governance.
 
-- Operating mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, or generation mode; Record the feedback source: human preference, verifier reward, benchmark result, tool result, context-grounding check, governance check, or latency/resource signal; Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked; Constrain the update with drift bounds, evidence gates, rollback plans, and residual accounting; Evaluate for task success, regressions, reward hacking, authority compliance, and cost before promotion.
-- Stack interface: Benchmarks and verifiers produce reward or preference signals; VCM and artifact graphs preserve the training/evaluation context and evidence references; Talos records training, tool, and evaluation artifacts; Spinoza and UAT audit reward meaning, verifier failures, and reward-hacking probes; SCF gates decide promotion, quarantine, rollback, or continued experiment status.
-- Preserved invariants: Reward is not evidence unless the verifier and evaluation boundary are recorded; Policy updates cannot expand authority by training side effect; A faster or shorter policy is not promoted unless task success and regressions are preserved; Reward hacking probes are part of the update record, not optional commentary; Rollback remains available for promoted updates.
-- Failure closure: detect and route failure modes such as Reward hacking or verifier gaming; Over-optimization for preference style rather than truth or task success; Planner/router/context policies learning hidden shortcuts; Latency rewards suppressing needed verification; Policy drift crossing SCF authority or readiness boundaries to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Policy Optimization and Learning from Feedback, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A stack-wide policy registry covering planner decomposition, VCM retrieval, router selection, verifier escalation, execution/tool use, generator behavior, generation-mode choice, and governance assistance.
+- Reward-source admission gates that classify human preference, exact verifier output, process rewards, benchmark results, tool outcomes, context-grounding checks, cost signals, and governance checks before training begins.
+- Canary, holdout, and regression suites for each policy layer, including explicit probes for reward hacking, verifier gaming, hidden shortcuts, latency-induced verification loss, and context-grounding collapse.
+- Update leases that expire, roll back, or remain experimental unless SCF and governance gates accept the evidence.
+- Evidence packets that separate training success, evaluation success, governance approval, deployment monitoring, and long-term safety evidence.
+- Failure closure that blocks reward laundering: proxy improvement cannot become task improvement unless target-specific evaluations and residuals support that transition.
+
+In that final product, learning would be continuous but never sovereign. The system could improve its policies while preserving authority conservation, rollback, evidence review, and human/governance control. This remains a target architecture. The support state should not rise until local policy-update harnesses, reward-quality studies, rollout records, rollback dry runs, and accepted evidence transitions validate this exact design.
 
 ## Codex test plan
 

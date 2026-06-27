@@ -191,16 +191,20 @@ The next useful implementation step is a dependency-gate fixture set: one phase 
 
 ## Beyond the State of the Art
 
-The mature version of Prototype Roadmap is not the minimal artifact with more scale. It is the chapter's idea turned into a product-grade, evidence-bearing boundary that the rest of the ASI Stack can depend on under ordinary operation and upgrade pressure.
+The logical end state is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review.
 
-At that end state, the chapter's claim becomes an operational contract: The prototype should grow in staged increments from source matrix and artifact graph to governed capability replacement. The mature surface would include:
+At that mature boundary, every phase would have explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.
 
-- Operating mechanism: Start with source inventory, claim ledger, artifact graph, and validation; Add planner, VCM, typed execution, verification, benchmark ratchets, and SCF gates in order; Delay recursive self-improvement until evaluator and governance integrity are credible.
-- Stack interface: Each phase unlocks a later layer; Evidence gates decide promotion; Changelog and releases document progress.
-- Preserved invariants: Phases have acceptance criteria; Self-improvement is gated; Roadmap milestones are not test results.
-- Failure closure: detect and route failure modes such as Building agency before auditability; Skipping verification because prototypes feel useful; Treating roadmap as evidence to quarantine, rollback, escalation, or residual records instead of hidden degradation.
+The mature product surface would include:
 
-For Prototype Roadmap, this is a target architecture, not a current-result claim. Its support state should not rise until the source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts needed for this specific end state exist and validate the claim.
+- A prototype phase registry spanning source inventory, artifact graph, claim ledger, planning, VCM, typed execution, verification, benchmarks, SCF gates, policy optimization, stewardship, and recursive self-improvement.
+- Dependency gates that distinguish "can research," "can demo," "can integrate," "can promote," and "can release."
+- Acceptance packets with commands, environment notes, artifacts, proof/spec receipts, benchmark ratchets, reviewer refs, residuals, and support-state effects.
+- Phase-debt ledgers for shortcuts, missing sources, missing validators, incomplete tests, unsupported claims, and private artifacts.
+- Evaluator-independence gates before readiness promotion, policy learning, capability replacement, or recursive self-improvement.
+- Failure closure for prototype theater, skipped verification, roadmap-as-evidence, operator convenience weakening gates, and lost remaining-work items.
+
+In that final product, a builder could ask the roadmap what to implement next and receive a precise answer: the smallest allowed slice, the evidence needed to advance, and the blocked claims that must not move. This remains a target architecture. The support state should not rise until real phase packets, dependency-gate checks, acceptance reviews, and evidence transitions validate the roadmap machinery.
 
 ## Codex test plan
 
