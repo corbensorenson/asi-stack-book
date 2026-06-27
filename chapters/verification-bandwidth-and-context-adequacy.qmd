@@ -207,7 +207,7 @@ The final product surface would include:
 - Escalation routes to stronger retrieval, split-context review, Spinoza proof envelopes, UAT review, human review, or residual preservation.
 - Claim-ledger gates that block support-state promotion when the verification mode is narrower than the claim being made.
 
-For this chapter, beyond the state of the art means that the stack stops treating context length as epistemic strength. It budgets verification as a scarce resource and records when that budget is insufficient. This remains a target architecture. The support state should not rise until adequacy classifiers, contradiction suites, escalation traces, and claim-ledger promotion gates exist for this end state.
+This verification-budget layer remains a target architecture, not a current-result claim. Support should stay at `argument` until adequacy classifiers, contradiction suites, escalation traces, and claim-ledger promotion gates show that the stack treats context length as exposure, not epistemic strength, and records when verification is insufficient.
 
 ## Codex test plan
 

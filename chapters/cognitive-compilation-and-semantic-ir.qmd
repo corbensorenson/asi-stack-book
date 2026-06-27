@@ -200,7 +200,7 @@ The final product surface would include:
 - Target backends for chapters, diagrams, schemas, code, Lean proof targets, benchmark fixtures, release notes, and runtime job packets.
 - Build-system style traces that show which artifacts are up to date, which validators failed, which obligations changed, and which downstream artifacts must be rebuilt.
 
-For this chapter, beyond the state of the art means that AI-assisted creation becomes obligation-preserving compilation rather than direct generation with after-the-fact review. The mature system can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable. This remains a target architecture. The support state should not rise until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons exist for this end state.
+This obligation-preserving compiler remains a target architecture, not a current-result claim. Support should stay at `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
 
 ## Codex test plan
 

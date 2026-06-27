@@ -242,7 +242,7 @@ The final product surface would include:
 - Replanning deltas that record what changed after feedback, which obligations were preserved, and which residuals or stop conditions remain.
 - Control dashboards that show blocked context, blocked authority, blocked verifier, budget pressure, dependency pressure, and human approval queues before side effects occur.
 
-For this chapter, beyond the state of the art means that planning becomes the stack's traffic-control layer. It does not merely find a clever route; it keeps candidate work, authorized work, blocked work, and executed work separate under pressure. This remains a target architecture. The support state should not rise until planner schemas, lifecycle enforcement, dispatch tests, replanning traces, and authority-preservation checks exist for this end state.
+This traffic-control layer remains a target architecture, not a current-result claim. Support should stay at `argument` until planner schemas, lifecycle enforcement, dispatch tests, replanning traces, and authority-preservation checks show that candidate work, authorized work, blocked work, and executed work remain separate under pressure.
 
 ## Codex test plan
 

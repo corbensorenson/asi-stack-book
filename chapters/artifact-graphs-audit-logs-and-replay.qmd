@@ -202,7 +202,7 @@ The final product surface would include:
 - Evidence gates that prevent artifacts with missing provenance, missing context transactions, missing certificates, or failed checks from promoting claims.
 - Query tools that find every claim, test, chapter, release artifact, and procedural candidate affected by a changed artifact.
 
-For this chapter, beyond the state of the art means that the stack remembers work as structured evidence, not as folders full of outputs. This remains a target architecture. The support state should not rise until produced artifacts, audit reconstruction, replay attempts, provenance completeness checks, and claim/test link validation exist for this end state.
+This replayable artifact graph remains a target architecture, not a current-result claim. Support should stay at `argument` until produced artifacts, audit reconstructions, replay attempts, provenance-completeness checks, and claim/test link validation show that work is remembered as structured evidence rather than as folders full of outputs.
 
 ## Codex test plan
 

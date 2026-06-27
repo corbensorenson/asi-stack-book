@@ -238,7 +238,7 @@ The final product surface would include:
 - Lowering rules that let validated commands become plan inputs, while draft, conflicting, missing, or inferred-authority commands remain clarification requests, review items, or residuals.
 - Reusable command templates for recurring work, each versioned with its expected artifacts, guards, recovery path, and evidence burden.
 
-For this chapter, beyond the state of the art means that command language becomes a semantic firewall. The system can still understand rich human instruction, but it only dispatches the bounded fields that have survived validation. This remains a target architecture. The support state should not rise until parser behavior, conflict checks, override tests, dispatch enforcement, and downstream traces exist and validate this contract.
+This semantic firewall remains a target architecture, not a current-result claim. Support should stay at `argument` until parser behavior, conflict checks, override tests, dispatch enforcement, and downstream traces show that rich human instruction can be understood without letting unvalidated meaning cross into execution.
 
 ## Codex test plan
 

@@ -203,7 +203,7 @@ The final product surface would include:
 - Downgrade behavior for failed proofs, verifier timeouts, missing artifacts, unsupported citations, and semantic-mapping mismatch.
 - Claim-validity effects that distinguish artifact validity from natural-language support-state movement.
 
-For this chapter, beyond the state of the art means that rigor becomes operationally humble: every proof or justification artifact says exactly what it supports, what it does not support, and what should happen when it fails. This remains a target architecture. The support state should not rise until interpretation examples, verifier outputs, failed-attempt records, mismatch fixtures, and ledger-update traces exist for this end state.
+This proof-carrying-claim discipline remains a target architecture, not a current-result claim. Support should stay at `argument` until interpretation examples, verifier outputs, failed-attempt records, mismatch fixtures, and ledger-update traces show that each proof or justification artifact states what it supports, what it does not support, and what should happen when it fails.
 
 ## Codex test plan
 

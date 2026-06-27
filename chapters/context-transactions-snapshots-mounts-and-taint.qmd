@@ -215,7 +215,7 @@ The final product surface would include:
 - Deletion-closure and revocation checks that fault when deleted material survives in summaries, embeddings, artifacts, or cached packets.
 - Replay and audit tools that reconstruct a context view and its derivative obligations before a claim or artifact is promoted.
 
-For this chapter, beyond the state of the art means that AI memory becomes governable state. The stack can experiment, branch, summarize, and forget without losing the obligations attached to what it read. This remains a target architecture. The support state should not rise until memory-store behavior, mount visibility, branch isolation, deletion closure, taint propagation, and replay tests exist for this end state.
+This governable-memory state layer remains a target architecture, not a current-result claim. Support should stay at `argument` until memory-store behavior, mount visibility, branch isolation, deletion closure, taint propagation, and replay tests show that the stack can branch, summarize, and forget without losing obligations attached to what it read.
 
 ## Codex test plan
 

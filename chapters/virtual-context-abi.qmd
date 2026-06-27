@@ -213,7 +213,7 @@ The final product surface would include:
 - Admission/adequacy separation, so drafting-acceptable packets cannot silently become verification evidence.
 - Replay tools that reconstruct the exact context view used by a plan, job, claim, artifact, or release.
 
-For this chapter, beyond the state of the art means that context becomes an auditable interface instead of prompt stuffing. The stack can answer not only what the model saw, but why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work. This remains a target architecture. The support state should not rise until resolver behavior, context compiler traces, adequacy labels, conformance tests, and runtime audit records exist for this end state.
+This context ABI remains a target architecture, not a current-result claim. Support should stay at `argument` until resolver behavior, context-compiler traces, adequacy labels, conformance tests, and runtime audit records show what the model saw, why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work.
 
 ## Codex test plan
 
