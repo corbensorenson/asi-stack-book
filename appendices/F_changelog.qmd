@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal interface prose polish
+
+- Reworked repeated `The interface is...` openers across chapter `Interfaces` sections into chapter-specific handoff prose so the live Human view and generated reader manuscript read less like a template. Tightened `scripts/validate_repeated_prose.py`, site-quality docs, writing runbook, scaffolded test specs, and v1.0 status guard so future chapter drafts reject `The interface is the`, `The interface is a`, and `The interface is an` as generic interface formulas. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal reader section-quality floors
 
 - Tightened the generated Human/reader projection by adding section-level word-count floors and substantial prose-paragraph floors to `reader_spine_validation`, then enforcing them in `scripts/validate_reader_spine.py` against the derived reader edition. Updated the release profile validator, README, outline, writing runbook, site-quality standard, release-edition docs, publication-readiness notes, and v1.0 status guard so future chapter edits must keep the stripped human version book-like section by section rather than merely clearing a whole-chapter word count. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

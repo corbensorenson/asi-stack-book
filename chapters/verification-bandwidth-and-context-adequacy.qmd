@@ -136,7 +136,7 @@ This table does not measure a model's true attention. It gives the stack a publi
 
 ## Interfaces
 
-The interface is a compact adequacy record that travels with the context packet and the claim it supports.
+Context adequacy is carried by a compact adequacy record that travels with the context packet and the claim it supports.
 
 - VCM declares adequacy.
 - Spinoza checks claims.

@@ -130,7 +130,7 @@ Taint should propagate through derived cells unless authorized declassification 
 
 ## Interfaces
 
-The interface is the Context Transaction Record.
+Context changes travel through the Context Transaction Record.
 
 - Planning receives consistent views.
 - Security labels sensitive mounts.

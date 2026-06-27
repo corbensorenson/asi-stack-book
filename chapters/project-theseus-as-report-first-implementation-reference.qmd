@@ -134,7 +134,7 @@ That distinction is the public safety valve. Source-note lineage can explain why
 - Genesis-style artifact kernels preserve claims, critiques, benchmark results, tool promotions, architecture decisions, and feedback.
 - Capability matrices and benchmark ledgers expose readiness and residuals without turning local reports into public empirical proof.
 
-The interface is the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
+Theseus connects to the book through the Theseus Report Crosswalk Record: stack layer, source reports, config/tool refs, gate refs, residual refs, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.
 
 For future ingestion, the crosswalk should be wrapped in a Theseus Report Packet. The packet should name the originating intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims. A packet can be source-note-only, imported, replay-ready, reproduced, failed, blocked, or archived. Only reproduced or otherwise accepted evidence transitions should affect Appendix C.
 

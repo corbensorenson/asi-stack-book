@@ -153,7 +153,7 @@ The lifecycle keeps three artifacts separate: the job request, the approval deci
 
 ## Interfaces
 
-The interface is the Runtime Adapter Invocation.
+Runtime work reaches tools through the Runtime Adapter Invocation.
 
 - Execution owns adapters.
 - Security mediates secrets.

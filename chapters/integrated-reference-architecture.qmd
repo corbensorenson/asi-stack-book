@@ -155,7 +155,7 @@ The important feature is that every participant emits something durable enough f
 - Artifacts and evidence ledgers provide continuity.
 - SCF gates control improvement.
 
-The interface is the Reference Trace Record: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
+The Reference Trace Record carries the interface: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
 
 A useful trace record is not merely chronological. It records parentage, authority deltas, evidence deltas, and residual deltas. Parentage says which artifact produced the next artifact. Authority deltas say whether authority narrowed, expired, escalated, or was denied. Evidence deltas say which claim state changed, if any. Residual deltas say what risk or missing work survived the handoff. Without those deltas, the trace becomes a log of events rather than an architecture record.
 

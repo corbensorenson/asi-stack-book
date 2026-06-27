@@ -143,7 +143,7 @@ When an AI agent writes from the outline, the outline should behave like a build
 - Tests feed support states.
 - Releases feed GitHub Pages.
 
-The interface is the Living Book Release Record: release state, source commit, audience profile, canonical scope, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark or a human-consumption bundle.
+The Living Book Release Record is the publication interface: release state, source commit, audience profile, canonical scope, rendered site, scaffold sync, proof manifest sync, validation commands, validation status, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims. It makes the publication state inspectable without pretending a release is an empirical benchmark or a human-consumption bundle.
 
 The reader-edition interface needs the same discipline: edition profile, source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims. A format listed in a profile is not a release artifact until that record exists.
 

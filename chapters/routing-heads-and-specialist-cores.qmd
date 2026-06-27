@@ -137,7 +137,7 @@ The decision should also record non-selection. A rejected candidate may be too e
 
 ## Interfaces
 
-The interface is the pair of records emitted around each route.
+Each route emits a paired record set around the routing decision.
 
 Specialist Registry Record fields:
 

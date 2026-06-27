@@ -146,7 +146,7 @@ These states are intentionally pre-execution states. They do not say the work is
 
 ## Interfaces
 
-The interface is the Command Contract.
+Command semantics are carried by the Command Contract.
 
 - Planning consumes structured commands.
 - Execution enforces output contracts.
