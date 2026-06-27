@@ -121,6 +121,8 @@ flowchart TD
   evidence -- "updates memory" --> vcm
 ```
 
+**Diagram reading note:** The hive scheduler filters devices by policy before optimization begins. Phones, storage, local GPUs, rented nodes, portals, and workers are not interchangeable; each selected execution slot needs a scoped lease, approval when required, and evidence back into memory.
+
 Those three records are necessary but not sufficient. The full hive protocol also needs a `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease`. A portal card states what a phone, laptop, tablet, headset, browser, or shared display may ask, show, and approve. An approval receipt binds a human or guardian decision to one job boundary and one time window. A job bid records a node's capability, latency, energy, cost, privacy fit, and policy reason after filtering. A federation lease lets a project hive, collaborator hive, rented node, or public compute market borrow bounded capacity without inheriting private network access.
 
 This mechanism turns household and project machines into a policy-first compute fabric. A phone is primarily a portal and approval surface. A laptop is an interactive worker with limited background availability. A desktop GPU may be a heavy worker. A NAS may be long-term memory, artifact storage, and retrieval infrastructure. Old machines may run background summarization, indexing, or test jobs with low authority. Rented nodes may run public, scrubbed, or synthetic jobs. Project machines may accept work only through explicit contracts. Family devices may expose only age-appropriate portals and guardian-approved transitions.

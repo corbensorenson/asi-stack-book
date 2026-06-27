@@ -113,6 +113,8 @@ flowchart LR
   Nonclaims -. "blocks overreach" .-> Overreach["Quality, speed, context, safety, or ASI claim"]
 ```
 
+**Diagram reading note:** The receipt flow separates finite structural facts from downstream performance claims. Theorem references and deterministic fields can support a structural claim only within scope; quality, speed, context, safety, and ASI claims remain blocked until workload evidence exists.
+
 Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path. A downstream reader or executor should be able to locate the relevant theorem references, validation commands, deterministic fields, receipt fingerprints, unsupported axes, and failure conditions.
 
 The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: receipt state, finite-model scope, proof boundary, proof status, source version, content fingerprint, fingerprint status, resolver status, replay status, consumer permissions, consumer state, staleness policy, failure behavior, source refs, support-state effect, and evidence references. That formalization is intentionally silent about whether any named external theorem ID resolves.

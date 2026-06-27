@@ -119,6 +119,8 @@ flowchart LR
   J --> K["Substrate decision record"]
 ```
 
+**Diagram reading note:** The cyclic mixer path separates structural invariants, proof or receipt boundaries, diagnostics, baselines, controls, and measured tradeoffs. Without measured tradeoffs, the result stays structural-only and feeds a benchmark backlog rather than becoming canary adoption evidence.
+
 The record should separate:
 
 - Structural invariant: phase bank, residue/winding, circulant law, block-cyclic route, or relative-position law.

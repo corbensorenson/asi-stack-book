@@ -23,6 +23,7 @@ DIAGRAM_READING_NOTE_RE = re.compile(r"\*\*Diagram reading note:\*\*", re.IGNORE
 DIAGRAM_NOTE_REQUIRED_PARTS = {
     "foundations-alignment-governance",
     "planning-memory-reasoning-execution",
+    "routing-compression-representation-substrates",
 }
 
 MIN_DIAGRAM_LINES = 12

@@ -127,6 +127,8 @@ flowchart LR
   H --> I
 ```
 
+**Diagram reading note:** A semantic node becomes useful only after provenance, relation structure, tokenization, grounding, and task adequacy are checked. If grounding or adequacy is missing, the route preserves a speculative label and residual rather than treating the graph as final truth.
+
 A semantic representation should preserve:
 
 - Concept identity and label.
