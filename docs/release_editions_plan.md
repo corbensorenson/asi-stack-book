@@ -70,6 +70,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
 - `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`, uses the recorded local-storage key and URL query parameter, hides live-only page-TOC entries and section numbers, and exposes the assistive description/status contract.
 - `scripts/validate_live_human_view.py` runs after `quarto render --to html` and checks that every rendered book page includes the toggle and assistive status strings, and that rendered chapter pages include the live-only headings, TOC targets, and source view-mode block classes such as `.asi-human-only` needed for runtime hiding.
+- `scripts/validate_live_human_view_browser.js` runs after HTML render and, when Playwright/Chrome is available, opens representative rendered pages in a real browser to check `?view=human`, `?view=ai`, local persistence, live-section hiding, TOC hiding, bridge visibility, and AI-view restoration.
 
 ## Reader Edition Generation
 
@@ -147,6 +148,7 @@ python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_human_reading_paths.py
 quarto render --to html
 python3 scripts/validate_live_human_view.py
+node scripts/validate_live_human_view_browser.js
 ```
 
 `scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain the bridge prose without the source-only `Human Reading Path` heading or view-mode markers.

@@ -498,6 +498,8 @@ def main() -> None:
         expected_values = {
             "toggle_asset": "assets/reading-mode.html",
             "static_validator": "scripts/validate_live_human_view.py",
+            "browser_validator": "scripts/validate_live_human_view_browser.js",
+            "browser_report_path": "build/live_human_view_browser_report.json",
             "default_mode": "ai",
             "human_mode": "human",
             "storage_key": "asi-stack-reading-mode",
@@ -515,7 +517,7 @@ def main() -> None:
         for key, expected in expected_values.items():
             if live_human_policy.get(key) != expected:
                 errors.append(f"live_human_view_policy.{key} must be {expected!r}.")
-        for path_key in ("toggle_asset", "static_validator"):
+        for path_key in ("toggle_asset", "static_validator", "browser_validator"):
             value = live_human_policy.get(path_key)
             if isinstance(value, str) and value and not (ROOT / value).exists():
                 errors.append(f"live_human_view_policy.{path_key} does not exist: {value}")
@@ -680,6 +682,7 @@ def main() -> None:
                 "python3 scripts/validate_book.py",
                 "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
                 "python3 scripts/validate_live_human_view.py",
+                "node scripts/validate_live_human_view_browser.js",
             ],
             errors,
         )

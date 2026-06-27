@@ -128,6 +128,7 @@ python3 scripts/render_reader_formats.py --check
 python3 scripts/validate_book.py
 quarto render --to html
 python3 scripts/validate_live_human_view.py
+node scripts/validate_live_human_view_browser.js
 ```
 
 2. Check the reader-edition derivation:

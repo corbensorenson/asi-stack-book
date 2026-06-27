@@ -67,6 +67,9 @@ jobs:
       - name: Validate live Human view
         run: python3 scripts/validate_live_human_view.py
 
+      - name: Browser-smoke live Human view
+        run: node scripts/validate_live_human_view_browser.js
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

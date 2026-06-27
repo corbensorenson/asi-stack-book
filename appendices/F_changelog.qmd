@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal browser-smoke Human view
+
+- Added `scripts/validate_live_human_view_browser.js`, a post-render browser smoke validator for the live `AI view` / `Human view` toggle. When Playwright/Chrome is available it opens representative rendered chapter pages plus Appendix G and Appendix H, checks `?view=human`, `?view=ai`, local mode persistence, live-section hiding, live-TOC hiding, Human Reading Path visibility, and AI-view restoration; when browser automation is unavailable it reports an explicit skip rather than fabricating a browser result. Wired the check into the live-book release profile, GitHub Pages workflow, publication/book validators, status docs, runbooks, and full-book goal template. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime capability result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal explicit source appendix split
 
 - Made the existing Appendix G/H source split harder to miss by renaming the generated source-corpus file to `appendices/G_corben_source_corpus.qmd` and the generated external-source file to `appendices/H_external_sources.qmd`. Updated `book_structure.json`, `_quarto.yml` generation, source-appendix validation, publication/book validators, release profiles, README, the master Codex prompt, and the tracked ASI Stack skill so Appendix G is visibly Corben's authored/supplied/local corpus and Appendix H is visibly external sources and literature. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.

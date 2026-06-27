@@ -275,6 +275,8 @@
   "live_human_view_policy": {
     "toggle_asset": "assets/reading-mode.html",
     "static_validator": "scripts/validate_live_human_view.py",
+    "browser_validator": "scripts/validate_live_human_view_browser.js",
+    "browser_report_path": "build/live_human_view_browser_report.json",
     "default_mode": "ai",
     "human_mode": "human",
     "storage_key": "asi-stack-reading-mode",
@@ -394,7 +396,8 @@
         "python3 scripts/validate_repeated_prose.py",
         "cd lean && lake build",
         "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
-        "python3 scripts/validate_live_human_view.py"
+        "python3 scripts/validate_live_human_view.py",
+        "node scripts/validate_live_human_view_browser.js"
       ],
       "non_claims": [
         "The live book is not automatically final-draft prose.",

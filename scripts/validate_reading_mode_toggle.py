@@ -93,6 +93,8 @@ def main() -> None:
     expected_policy = {
         "toggle_asset": "assets/reading-mode.html",
         "static_validator": "scripts/validate_live_human_view.py",
+        "browser_validator": "scripts/validate_live_human_view_browser.js",
+        "browser_report_path": "build/live_human_view_browser_report.json",
         "default_mode": "ai",
         "human_mode": "human",
         "storage_key": "asi-stack-reading-mode",

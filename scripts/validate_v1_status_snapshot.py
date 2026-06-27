@@ -113,6 +113,7 @@ def main() -> None:
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
+        "browser smoke validation exercises representative rendered pages when Playwright/Chrome is available",
         f"must be at least 110 words excluding the source-only heading, with the current minimum at {human_min_words} words",
     ]
 

@@ -62,6 +62,7 @@ python3 scripts/validate_repeated_prose.py
 (cd lean && lake build)
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html
 python3 scripts/validate_live_human_view.py
+node scripts/validate_live_human_view_browser.js
 ```
 
 ## Reader Gate

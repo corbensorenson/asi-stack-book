@@ -16,7 +16,7 @@ Do not fabricate citations, source content, benchmark results, test results, pro
 
 Implement Lean proofs, executable schemas, or small tests only where the current `proofs/proof_triage.json` route supports it and the predicate is sufficiently operational. Keep schema/process/research targets planned unless real artifacts are added. Record any implemented proof or test in the relevant chapter, Appendix C, appendices, and changelog.
 
-Update source notes, Appendix C, Appendix D/E/G/H/K as needed, keeping Appendix G reserved for Corben's source corpus and Appendix H reserved for external literature. Keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix H, and Appendix K generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
+Update source notes, Appendix C, Appendix D/E/G/H/K as needed, keeping Appendix G reserved for Corben's source corpus and Appendix H reserved for external sources and literature. Keep `_quarto.yml`, Appendix A, Appendix C, Appendix E, Appendix G, Appendix H, and Appendix K generated through `scripts/sync_scaffold.py`. Before reporting completion, run the full launch gate:
 
 ```bash
 python3 scripts/source_readiness_report.py
@@ -25,6 +25,9 @@ python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reading_mode_toggle.py
+python3 scripts/validate_source_appendices.py
+python3 scripts/validate_v1_status_snapshot.py
+python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_human_reading_paths.py
@@ -33,10 +36,14 @@ python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
+python3 scripts/validate_proof_artifact_audit.py
+python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
 (cd lean && lake build)
 quarto render --to html
+python3 scripts/validate_live_human_view.py
+node scripts/validate_live_human_view_browser.js
 ```
 
 Final deliverable: a rendered, public-safe v1.0-candidate living-book manuscript with an honest report of completed chapter improvements, added visuals, support-state promotions, implemented proofs/tests, reader-edition readiness, audio-script readiness, missing evidence, unresolved source gaps, and remaining release risks.

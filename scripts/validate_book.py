@@ -23,6 +23,7 @@ REQUIRED = [
     "scripts/validate_reading_mode_toggle.py",
     "scripts/validate_human_reading_paths.py",
     "scripts/validate_live_human_view.py",
+    "scripts/validate_live_human_view_browser.js",
     "scripts/validate_source_appendices.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
