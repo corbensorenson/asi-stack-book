@@ -52,6 +52,8 @@ Typed context cells still need runtime semantics. Context becomes a transactiona
 The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface. Each transition should leave a receipt.
 
 Context should therefore behave like accountable state, not like a pile of helpful snippets.
+
+The same discipline that protects code history has to protect cognitive history.
 :::
 
 ## Problem

@@ -50,6 +50,8 @@ This chapter is the stack's least-exposure rule. Capability can grow, routes can
 Replacement and rollback protect the shape of a capability. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem. A replacement that changes what it can see or do has changed the security boundary, even if its public interface still looks familiar.
 
 The central move is to make sensitive context an explicit boundary instead of a prompt convention. A system should not handle secrets, approvals, or protected memory unless the access path, clearance, receipt, and denial behavior are visible. Human trust comes from knowing where the authority was used, not from hoping the model was careful with invisible power.
+
+Security is the stack's refusal to let convenience blur protected authority.
 :::
 
 ## Problem

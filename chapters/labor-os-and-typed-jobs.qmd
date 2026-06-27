@@ -52,6 +52,8 @@ After planning, verification, and review, the stack has to turn accepted work in
 This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, which gate can stop them, what evidence they must return, and how their work can be audited or replayed later. A job is small enough to govern and durable enough to inspect.
 
 Typed work turns execution from a personality problem into a recordkeeping and authority problem.
+
+That shift is what makes large-scale AI labor auditable rather than mysterious.
 :::
 
 ## Problem
