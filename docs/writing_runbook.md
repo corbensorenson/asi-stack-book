@@ -86,7 +86,7 @@ Each chapter must maintain these sections:
 - Source crosswalk
 - Summary
 
-The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`, including guards against generic mature-endpoint boilerplate, generic evidence-gate caveats, scaffold placeholders, and too-thin `Minimum Viable Implementation` or `Beyond the State of the Art` sections. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist. `Minimum Viable Implementation` should name the smallest honest slice; `Beyond the State of the Art` should name the chapter-specific mature product-level end state without implying that the end state has already been implemented.
+The scaffold-level contract is enforced by `python3 scripts/validate_chapter_dod.py`, including guards against generic mature-endpoint boilerplate, generic evidence-gate caveats, generated summary boilerplate, scaffold placeholders, and too-thin `Minimum Viable Implementation` or `Beyond the State of the Art` sections. A complete manuscript chapter must also keep source-derived claims mapped to source notes, keep support states honest, and avoid reporting tests, proofs, benchmarks, or external literature unless those artifacts exist. `Minimum Viable Implementation` should name the smallest honest slice; `Beyond the State of the Art` should name the chapter-specific mature product-level end state without implying that the end state has already been implemented.
 
 ## Claim Labels
 

@@ -54,6 +54,10 @@ BANNED_BEYOND_BOILERPLATE = [
     "source mappings, schemas, Lean predicates, tests, benchmark records, runtime traces, review receipts, or governance artifacts",
     "This remains a target architecture. The support state should not rise until",
     "Its support state should not rise until the source mappings",
+    "defines one boundary in the ASI Stack",
+    "Its job is to make a capability more governable, not merely more impressive",
+    "The reviewed sources justify",
+    "The passage-reviewed sources justify",
 ]
 
 SECTION_MIN_WORDS = {

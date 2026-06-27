@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal summary boilerplate guard
+
+- Extended `scripts/validate_chapter_dod.py` to reject the generated summary phrases removed in the latest reader-spine cleanup, including `defines one boundary in the ASI Stack`, `Its job is to make a capability more governable, not merely more impressive`, and repeated "reviewed sources justify" caveat openings. Updated the writing runbook to document this summary-boilerplate guard. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal summary evidence-boundary polish
 
 - Reworked remaining summary-level source caveats in Claim Ledgers and Belief Revision, Verification Bandwidth and Context Adequacy, Spinoza Verification and Proof-Carrying Claims, Unified Adaptive Tribunal and Adversarial Review, and Labor OS and Typed Jobs so the Human view preserves evidence limits without repeated "reviewed sources justify" phrasing. The revisions keep implementation gaps explicit: extractors, contradiction detectors, verifiers, tribunal pipelines, schedulers, approval services, adapters, and replay systems remain unimplemented unless separately recorded. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
