@@ -114,6 +114,8 @@ flowchart LR
   G --> H{"Failure behavior declared?"}
   H -- "yes" --> I["Planning input"]
   H -- "no" --> J["Missing-contract residual"]
+  J --> K["Clarification or contract repair"]
+  K --> B
 ```
 
 The mechanism turns recurring command patterns into reusable templates and treats software words as coordination primitives. Field names such as objective, constraint, output, verification, authority, approval, and failure behavior are not decoration; they are routing handles for the rest of the stack. Binding those handles to schemas and tests is what lets later layers distinguish an authorized instruction from useful prose nearby.

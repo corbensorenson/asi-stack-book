@@ -112,6 +112,8 @@ flowchart LR
   F -- "no" --> H["Quarantine / revise / split / retire"]
   G --> I["Lifecycle ledger"]
   H --> I
+  I --> J["Monitor window"]
+  J --> K["Requalification trigger"]
 ```
 
 Readiness has three inputs. Gate evidence names the source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision. Regression preservation protects a floor that should not be lost while the frontier moves. Residual escrow keeps named failures, edge cases, uncertainties, and blocked obligations attached to the target even when some narrower promotion is allowed.

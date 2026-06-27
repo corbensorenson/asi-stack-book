@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal diagram floor 12
+
+- Expanded the thinnest Mermaid mechanism diagrams in 17 chapters with additional residual, monitor, backlog, consumer-decision, or support-boundary states, then raised `scripts/validate_visual_coverage.py` so every chapter diagram must now clear at least 12 non-comment lines in addition to the existing edge, node, and labeled-transition floors. Updated the site quality standard and v1.0 candidate status to record the stronger visual-substance gate. Refreshed the v1.0 status manuscript scale to 170,495 chapter words excluding YAML and 177,994 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal Human bridge floor 130
 
 - Expanded the 39 thinnest `.asi-human-only` Human Reading Path bridges with chapter-specific closing orientation sentences and raised `scripts/validate_human_reading_paths.py` to require at least 130 prose words excluding the source-only heading. Updated the writing runbook, site quality standard, v1.0 status snapshot guard, and v1.0 candidate status so the live Human view and generated reader edition keep the stronger bridge floor. Refreshed the v1.0 status manuscript scale to 170,371 chapter words excluding YAML and 177,870 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

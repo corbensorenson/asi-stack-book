@@ -119,6 +119,7 @@ flowchart LR
   G --> H["Effect receipt"]
   H --> I["Rollback handle / residual"]
   I --> J["Artifact graph"]
+  J --> K["Incident monitor or approval audit"]
 ```
 
 The adapter maps a typed job to a declared target type, capability, permission requirement, sandbox mode, and input/output contract. Authority handles stay outside model-visible context until policy, destination, and approval checks authorize use. High-impact actions such as irreversible deployments, external messages, monetary transfers, credential use, safety-relevant hardware, and institutional state changes fail closed without approval. Every invocation returns an effect receipt, a rollback handle where one exists, residuals where rollback is unavailable, and audit events for the artifact graph.

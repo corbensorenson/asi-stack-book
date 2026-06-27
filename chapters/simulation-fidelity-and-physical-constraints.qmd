@@ -115,6 +115,7 @@ flowchart LR
   G -- "no" --> I["Residual / reduced scope / blocked claim"]
   H --> J["Evidence boundary"]
   I --> J
+  J --> K["Claim label or backlog update"]
 ```
 
 The record should specify:

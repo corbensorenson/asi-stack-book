@@ -20,7 +20,7 @@ MERMAID_LABELED_EDGE_RE = re.compile(
 MERMAID_NODE_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*)\s*(?=[\[\(\{])")
 MERMAID_DECL_RE = re.compile(r"^\s*(participant|actor|boundary|control|entity|database|collections|queue)\s+([A-Za-z][A-Za-z0-9_]*)\b", re.IGNORECASE)
 
-MIN_DIAGRAM_LINES = 10
+MIN_DIAGRAM_LINES = 12
 MIN_DIAGRAM_EDGES = 6
 MIN_DIAGRAM_NODES = 7
 MIN_LABELED_EDGES = 2

@@ -113,6 +113,7 @@ flowchart LR
   G -- "no" --> I["Fallback, escalation, or residual"]
   H --> J["Routing decision ledger"]
   I --> J
+  J --> K["Residual escrow or route memory"]
 ```
 
 The routing head should stay small. Its job is to select, load, coordinate, verify, and log. Specialist cores carry bounded local capability: tools, local memory, benchmarks, residuals, permissions, runtime tier, and verification contracts. A core can be a model, tool stack, proof checker, planning compiler, retrieval lane, mathematical substrate, human review lane, or composite worker, but it should be registered through the same boundary.

@@ -112,6 +112,8 @@ flowchart LR
   F -- "no" --> H["Structural-only record"]
   G --> I["Readiness gate"]
   H --> I
+  I --> J["Benchmark backlog"]
+  J --> K["Substrate decision record"]
 ```
 
 The record should separate:

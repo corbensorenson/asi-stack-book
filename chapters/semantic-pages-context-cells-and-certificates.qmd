@@ -110,6 +110,7 @@ flowchart LR
   H --> I{"Verification adequate?"}
   I -- "yes" --> J["Context packet or artifact ref"]
   I -- "no" --> K["Residual / stronger representation"]
+  K --> L["Adequacy backlog"]
 ```
 
 The certificate layer classifies pages as constraints, claims, decisions, corrections, events, artifacts, source excerpts, summaries, or other typed cells. It then attaches source bindings, derivation links, omissions, loss contracts, validity windows, authority ceilings, permitted uses, verification states, and residual risks. Task-relative representation graphs replace a single compression ladder, so the same source can become different representations for planning, evidence, execution, or contradiction review without pretending all representations carry the same authority.

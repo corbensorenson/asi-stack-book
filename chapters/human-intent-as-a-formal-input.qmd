@@ -112,6 +112,8 @@ flowchart LR
   G --> H["Command contract or plan source"]
   H --> I["Authorized typed work"]
   I --> J["Artifact, evidence, and feedback"]
+  E --> K["Residual review or clarification loop"]
+  J --> K
 ```
 
 The contract compiles the request into an explicit objective, constraints, authority ceiling, source boundary, acceptance criteria, evidence requirement, and stop condition. Its central move is separation: desired outcome is not allowed means, and a useful interpretation is not permission. The raw request remains useful as context, but execution consumes the bounded contract.

@@ -111,6 +111,7 @@ flowchart LR
   H --> I["Fallback or ratchet pressure"]
   G --> J["Evidence + cost ledger"]
   I --> J
+  J --> K["Residual burden audit"]
 ```
 
 A compact generative system should answer five questions:

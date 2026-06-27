@@ -108,6 +108,8 @@ flowchart LR
   G -- "yes" --> H["Artifact graph + claim ledger"]
   G -- "no" --> I["Localized repair on failed IR nodes"]
   I --> D
+  H --> J["Support boundary recorded"]
+  J --> K["Reusable compiler feedback"]
 ```
 
 The compiler boundary represents requirements, semantics, dependencies, artifacts, validators, authority requirements, and target constraints explicitly. Incremental repair then operates over IR nodes rather than re-prompting from scratch. Lowering can produce jobs, code, schemas, documents, or proof targets, but every target artifact should preserve the obligations that made the node necessary.

@@ -111,6 +111,7 @@ flowchart LR
   F --> I["Claim ledger update"]
   G --> I
   H --> I
+  I --> J["Support-state boundary"]
 ```
 
 The verification path is tiered. The model may propose a claim, mapping, proof sketch, citation dossier, or procedure, but promotion depends on a separate verifier result and a recorded justification artifact. A failed proof, timeout, or ambiguous interpretation is not neutral decoration; it writes a downgrade, block, residual, or tribunal route back to the claim ledger.

@@ -113,6 +113,8 @@ flowchart LR
   G --> H["Revision history"]
   F --> H
   H --> I["Claim ledger"]
+  I --> J["Publication support boundary"]
+  J --> K["Future review trigger"]
 ```
 
 The mechanism is a sequence rather than a checklist. Generated or extracted claims become ledger entries; each entry receives provenance, support state, uncertainty, evidence refs, and contradiction refs; and later evidence can revise the entry without erasing the prior state. When a contradiction is unresolved, the ledger preserves it and blocks support-state promotion instead of smoothing it into prose.

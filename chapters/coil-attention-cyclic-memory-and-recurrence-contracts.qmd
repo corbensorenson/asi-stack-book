@@ -114,6 +114,8 @@ flowchart LR
   F -- "no" --> H["Residual / fallback attention"]
   G --> I["Non-claim boundary"]
   H --> I
+  I --> J["Freshness and coverage ledger"]
+  J --> K["Consumer decision"]
 ```
 
 The contract should record:

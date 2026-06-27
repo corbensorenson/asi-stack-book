@@ -113,6 +113,7 @@ flowchart LR
   G --> I["Ledger update"]
   H --> I
   I --> J["Human adjudication if required"]
+  J --> K["Residual docket or closure"]
 ```
 
 The review mechanism is a bounded protocol. A target claim or artifact enters with dossier refs, risk class, reviewer roles, and adversarial probes; findings cite evidence; dissent and unresolved issues remain first-class; and the verdict carries required actions plus human-adjudication state. Agreement only matters when it can be tied back to the dossier and the ledger.

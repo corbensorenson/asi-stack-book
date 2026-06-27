@@ -113,6 +113,7 @@ flowchart LR
   F --> H
   H -- "yes" --> I["Narrow implemented proof/spec state"]
   H -- "no" --> G
+  I --> J["Appendix E and proof manifest"]
 ```
 
 Each target should record its tag, module, artifact lane, formal target, artifact path, verifier command, verifier result, support-state impact, consumer requirements, semantic adequacy state, limitations, and non-claims. A passed schema check can support record shape. A passed Lean build can support a mechanized invariant. Neither can support empirical performance unless an experiment exists.

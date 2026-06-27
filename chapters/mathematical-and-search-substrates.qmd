@@ -126,6 +126,7 @@ flowchart LR
   G -- "no" --> I["Exploratory, structural-only, or residual"]
   H --> J["Readiness gate"]
   I --> J
+  J --> K["Research backlog or canary plan"]
 ```
 
 The record should separate:

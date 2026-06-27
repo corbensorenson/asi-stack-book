@@ -117,6 +117,7 @@ flowchart LR
   G -- "no" --> I["Quarantine / residual / retire"]
   H --> J["SCF, benchmark floor, monitoring"]
   I --> J
+  J --> K["Retirement or requalification trigger"]
 ```
 
 The loop-closure path starts with safe traces that preserve provenance, failures, residuals, and replay limits. Comparable traces justify detection; detection leads to invariant abstraction, parameter discovery, preconditions, postconditions, and then candidate synthesis. Verification, regressions, monitoring, and retirement criteria decide whether the candidate becomes routable, remains in quarantine, returns to revision, or is retired.
