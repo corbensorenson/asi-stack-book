@@ -11,7 +11,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Surface | Current state | Evidence |
 |---|---|---|
 | Book structure | 4 parts, 54 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 169,601 chapter words excluding YAML front matter; 177,100 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Manuscript scale | 54 chapter files; 169,812 chapter words excluding YAML front matter; 177,311 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Source appendix ownership | Appendix G is reserved for Corben's source corpus; Appendix H is reserved for external source records marked `external_literature` | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
