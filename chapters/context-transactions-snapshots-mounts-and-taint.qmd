@@ -57,7 +57,7 @@ The same discipline that protects code history has to protect cognitive history.
 
 Every later claim depends on knowing which context state was actually active.
 
-The transaction log gives memory a boundary that can be challenged. Taint is useful because it lets downstream work inherit caution.
+The transaction log gives memory a boundary that can be challenged. Taint is useful because it lets downstream work inherit caution. Inherited caution prevents laundering.
 :::
 
 ## Problem
