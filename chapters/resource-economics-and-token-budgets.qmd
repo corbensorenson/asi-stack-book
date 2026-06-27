@@ -53,13 +53,13 @@ This chapter is the cost counterpart to the security kernel. Least exposure, ver
 
 The previous layers offer cheaper routes, smaller artifacts, faster generation, and richer representations. Resource economics asks whether those moves saved anything after verification, repair, fallback, memory pressure, and risk are counted.
 
-The efficiency thesis depends on this accounting. A route is not efficient because it looks cheap at the model boundary. It is efficient only when full system cost, protected overhead, displaced work, and remaining residual burden are visible.
+The efficiency thesis depends on this accounting. A route is not efficient because it looks cheap at the model boundary. It is efficient only when full system cost, protected overhead, displaced work, and residual burden are visible.
 
 Token budgets are policy objects, not just engineering knobs. They decide what may be shortened, what must be reviewed, what cannot be compressed, and which costs are protected from local optimization.
 
 A budget expresses values when it protects work from optimization. Real savings keep margin for checks, reversals, and human attention. Cheapness that erases verification is not efficiency; it is debt moved into the future.
 
-The budget should reveal tradeoffs before they become hidden policy. It should say which latency target is flexible, which review cost is mandatory, which cache is safe, and which shortcut would spend authority the task lacks. Budgets govern. Efficiency is credible after protected costs are paid.
+The budget should reveal tradeoffs before they become hidden policy. It should say which latency target is flexible, which review cost is mandatory, which cache is safe, and which shortcut would spend authority the task lacks. Budgets govern because efficiency is credible after protected costs are paid.
 :::
 
 ## Problem
