@@ -11773,12 +11773,12 @@
             }
           ],
           "mechanism": [
-            "Maintain source inventory, source notes, the Corben-authored/supplied/local source appendix, the external-literature appendix, and source-loading queues.",
+            "Maintain source inventory, source notes, the Corben source-corpus appendix, the separate external-literature appendix, and source-loading queues.",
             "Track recovered and missing items separately: Field of God AI Constitution, Circle Calculus, and Project Theseus/SymLiquid are now local/public project sources; Genesis Engine, Genesis Foundry, BBVCA detail, Spinoza detail, VCM review conflicts, and private empirical results remain recovery or evidence-backlog items.",
             "Use triage rules to update chapters or add precise new ones."
           ],
           "interfaces": [
-            "Appendix G lists Corben-authored, supplied, and local sources, while Appendix H lists external literature and third-party references.",
+            "Appendix G is the Corben-authored, Corben-supplied, and local project source corpus, while Appendix H is a separate appendix for external literature and third-party references.",
             "Source notes support chapter drafting.",
             "Book outline tells future agents what to mine."
           ],
@@ -11792,8 +11792,8 @@
             "Duplicate chapter creation for overlapping ideas.",
             "Missing sources treated as evidence."
           ],
-          "minimal_implementation": "A split Corben-authored/supplied/local source and external-literature plan with source-note backlog and insertion/merge rules.",
-          "beyond_state_of_art": "The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben-authored, supplied, or local sources with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move. At that mature boundary, every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source would have a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.",
+          "minimal_implementation": "A split Corben-source-corpus and external-literature plan with source-note backlog and insertion/merge rules.",
+          "beyond_state_of_art": "The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben-authored, Corben-supplied, or local project sources with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move. At that mature boundary, every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source would have a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.",
           "codex_tests": [
             "Source inventory validation test",
             "Source-note backlog audit",
@@ -11857,7 +11857,7 @@
     },
     {
       "id": "corben-source-corpus",
-      "title": "Corben-Authored, Supplied, and Local Sources",
+      "title": "Corben-Authored, Corben-Supplied, and Local Project Sources",
       "file": "appendices/G_corben_source_corpus.qmd"
     },
     {

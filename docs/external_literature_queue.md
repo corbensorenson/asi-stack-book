@@ -4,7 +4,7 @@ This book currently treats Corben Sorenson's AI papers, local projects, and conv
 
 ## Stance
 
-- `source-derived` means derived from Corben-authored, supplied, or local ASI Stack sources unless a claim explicitly cites third-party literature.
+- `source-derived` means derived from Corben-authored, Corben-supplied, or local project ASI Stack sources unless a claim explicitly cites third-party literature.
 - `external-literature-backed` is reserved for claims backed by recorded third-party sources with bibliographic metadata.
 - Self-authored sources can explain the architecture, motivate design choices, and preserve lineage, but they should not be presented as external validation.
 - Third-party references discovered inside source papers still need to be recorded in this repo before the book relies on them.

@@ -3561,13 +3561,13 @@ Draft arc:
 
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.
 - Insufficiency: A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.
-- Mechanism: Maintain source inventory, source notes, the generated Corben-authored/supplied/local source appendix, the generated external-literature appendix, chapter source queues, and direct-citation status before using a source as support.
+- Mechanism: Maintain source inventory, source notes, the generated Corben source-corpus appendix, the separate generated external-literature appendix, chapter source queues, and direct-citation status before using a source as support.
 - Mechanism: Track recovered, missing, private, connector-gated, external-literature, proof, experiment, and artifact-reproduction items as Research Backlog Records rather than evidence, including triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims.
 - Mechanism: Use triage rules to decide whether a new paper updates an existing boundary, requires a precise new chapter, belongs in an appendix, or should remain unassigned.
 - Mechanism: Preserve merge/insertion rules so overlapping papers mine shared mechanisms without creating duplicate anthology chapters.
 - Mechanism: Track source lifecycle states such as unread, inventoried, cached, source-noted, mapped, passage-reviewed, integrated, tested, mechanized, reproduced, deprecated, and refuted.
 - Mechanism: Require a triage decision before prose changes when a future agent receives a new paper: update existing chapter, propose new chapter, route to appendix, backlog, or reject as out of scope.
-- Interface: Appendix G lists Corben-authored, supplied, and local sources.
+- Interface: Appendix G is the Corben-authored, Corben-supplied, and local project source corpus.
 - Interface: Appendix H lists external literature and third-party references.
 - Interface: Source notes support chapter drafting.
 - Interface: Book outline tells future agents what to mine.
@@ -3589,7 +3589,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A split Corben-authored/supplied/local source and external-literature plan plus a research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
+- A split Corben-source-corpus and external-literature plan plus a research backlog record schema with source storage policy, public-safety state, external literature areas, source-note state, claim-mapping state, deduplication state, chapter-decision refs, proof/test backlog, required pre-drafting work, promotion blockers, and insertion/merge rules.
 - Implemented repository-level fixtures: `research_backlog_record.valid.json` validates backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims only; `new_paper_triage_scenario.valid.json` validates synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate intake decisions only. External-literature normalization, direct citation checks, evidence transitions, public-release permission checks, and live new-paper triage rehearsals remain incomplete.
 - Planned Codex test: Source inventory validation test.
 - Planned Codex test: Source-note backlog audit.
@@ -3604,7 +3604,7 @@ Lean proof targets:
 
 ## Source Corpus and External Literature
 
-Appendix G is the generated map for Corben-authored, supplied, and local sources. Appendix H is the generated external-literature and third-party reference map. Both should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
+Appendix G is the generated Corben-authored, Corben-supplied, and local project source corpus. Appendix H is a separate generated external-literature and third-party reference appendix. Both should remain generated from `sources/source_inventory.json` and `book_structure.json`. External literature should stay in Appendix H and should be added only when bibliographic metadata is recorded and the source is actually used.
 
 ## Author Intent and Architecture Lineage
 

@@ -210,6 +210,8 @@ The confused-deputy pattern is central. A low-authority layer can ask a higher-a
 
 The first useful authority artifact is an `authority_transition_record` schema plus a valid fixture for an allowed handoff and later fixtures for missing-grant and confused-deputy denials. It should stay small enough to support Lean and test work: principal, requested operation, permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review, decision, effect receipt, audit references, and non-claims.
 
+The first negative fixture should be as important as the allowed one. A route that has context but lacks authority, or a caller that delegates beyond its ceiling, should produce a denial record before any downstream layer can treat the handoff as executable.
+
 ## Beyond the State of the Art
 
 The mature version of System Boundaries and Authority is an authority type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.

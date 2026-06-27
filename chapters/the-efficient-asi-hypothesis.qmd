@@ -207,6 +207,8 @@ Another failure is efficiency laundering: the system chooses a faster path, repo
 
 Start with a `costed_route_record` schema plus one valid fixture. It should not claim empirical efficiency. It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.
 
+The next useful fixture is a three-route comparison: one cheap route rejected because verification fails, one expensive route accepted because it satisfies the predicate, and one compressed route blocked because repair burden exceeds savings. Passing that fixture would show accounting discipline only, not an efficiency result.
+
 ## Beyond the State of the Art
 
 The mature version of The Efficient ASI Hypothesis is an efficiency operating system for cognition. It routes, compresses, reuses, verifies, and accounts for work so capability grows by removing waste and preserving residuals, not by assuming that more parameters or more tokens are the only path forward.

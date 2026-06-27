@@ -215,6 +215,8 @@ Anthology drift happens when the book becomes a catalog of interesting papers ra
 
 A useful first build is a stack map, a layer boundary schema, one valid fixture, the generated source crosswalk, and Appendix C. This does not prove the architecture. It gives the rest of the book a typed surface for saying which layer owns which lifecycle state, owner, chapter refs, traceability state, responsibility, artifact, handoff protocol, contract refs, authority ceiling, invariant, integration decision, promotion blockers, source refs, support-state effect, and non-claim.
 
+A passing boundary record includes at least one blocked integration path: a reasoning layer trying to execute, an evidence layer trying to promote without artifacts, or a routing layer trying to widen authority. That makes the stack boundary test visible from the beginning.
+
 ## Beyond the State of the Art
 
 The mature version of ASI Is a Stack, Not a Model is a stack operating doctrine in which model weights are one replaceable component inside a governed machine. The product-level endpoint is not a larger agent; it is an architecture where alignment, memory, planning, execution, routing, evidence, compression, and self-improvement remain separate enough to inspect and compose.

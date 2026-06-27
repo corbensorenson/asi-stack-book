@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal source appendix separation
+
+- Tightened the generated Appendix G/H source boundary so Appendix G now presents as `Corben-Authored, Corben-Supplied, and Local Project Sources`, while Appendix H remains a separate external-source appendix rather than a subsection or second half of G. Updated the scaffold generator, source-appendix validator, manifest, bibliography-plan chapter, outline, README, release docs, project prompt, tracked ASI Stack skill, and v1.0 status snapshot guard to preserve the distinction between Corben-side source material and third-party external literature. Refreshed the v1.0 status manuscript scale to 175,501 chapter words excluding YAML and 183,000 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal MVI floor 90
+
+- Expanded the eight thinnest chapter `Minimum Viable Implementation` sections with concrete first-fixture, negative-fixture, trace, review, authority, and non-promotion boundaries, then raised `scripts/validate_chapter_dod.py` so every manifest chapter MVI section must now keep at least 90 words. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger smallest-honest-build floor. Refreshed the v1.0 status manuscript scale to 175,490 chapter words excluding YAML and 182,989 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal interface floor 130
 
 - Expanded the nine thinnest chapter `Interfaces` sections with consumer-policy, refusal-path, transfer-boundary, residual-burden, certificate-use, and publication-scope handoff language, then raised `scripts/validate_chapter_dod.py` so every manifest chapter `Interfaces` section must now keep at least 130 words. Updated the writing runbook, site quality standard, and v1.0 candidate status to record the stronger systems-handoff floor. Refreshed the v1.0 status manuscript scale to 175,156 chapter words excluding YAML and 182,655 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

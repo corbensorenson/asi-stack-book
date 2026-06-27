@@ -208,6 +208,8 @@ Replacement should start as a `replacement_transaction` schema and valid fixture
 
 The next useful fixture set is a replacement trace: proposal, shadow run, canary with regression floor, failed rollback dry run that blocks default promotion, and a successful rollback receipt for a separate reversible candidate.
 
+That trace should keep boring regressions visible: cost, permissions, logging, context use, human review, and export/fork rights. A candidate that improves frontier task score while weakening any of those fields should remain canary-only or rejected until the regression is repaired.
+
 ## Beyond the State of the Art
 
 The mature version of Capability Replacement and Rollback is a replacement control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects.

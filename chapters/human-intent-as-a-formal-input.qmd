@@ -207,6 +207,8 @@ For intent, the first build is an `intent_contract` schema plus examples that tr
 
 The next useful implementation step is a small corpus of deliberately underspecified requests. Each example should produce a contract, open ambiguities, bounded defaults, and a list of actions that remain unauthorized. That would make the difference between "understood the user" and "received permission to act" visible in test data.
 
+The corpus should include one request that sounds urgent, one that implies trust, one that omits allowed means, and one that conflicts with a policy predicate. Passing the test means the contract preserves ambiguity and refusal paths, not that the system fully understands intent.
+
 ## Beyond the State of the Art
 
 The mature version of Human Intent as a Formal Input is an intent compiler that turns human goals into bounded command contracts. It preserves goals, constraints, authority, evidence requirements, artifacts, stop conditions, ambiguity, and consent so downstream capability cannot treat a loose request as unlimited permission.

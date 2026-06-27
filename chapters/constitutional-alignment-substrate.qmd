@@ -184,6 +184,8 @@ A tractable constitutional starting point is a `constitutional_predicate_record`
 
 The next useful implementation step is a constitutional conflict fixture set: one accepted low-power route, one rejected high-power route, one predicate conflict routed to review, and one self-modification proposal rejected because it weakens a protected predicate. That would test the substrate's control semantics without claiming moral correctness.
 
+Each fixture should preserve translation status: source principle, operational predicate, uncertainty label, affected authority, review requirement, and residual. The goal is not to settle ethics in code; it is to prevent constitutional language from bypassing execution gates.
+
 ## Beyond the State of the Art
 
 The mature version of Constitutional Alignment Substrate is a constitutional constraint compiler for plans, tools, memory, routing, and self-improvement. It turns high-level commitments into inspectable predicates, review hooks, exception records, and downgrade paths without pretending that the constitution itself settles the alignment problem.

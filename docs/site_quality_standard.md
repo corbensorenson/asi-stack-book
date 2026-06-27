@@ -17,6 +17,7 @@ The public GitHub Pages site should be treated as a technical product, not just 
 - Chapter `Problem` sections should give both humans and research agents a substantive entry point by naming the stakes, boundary, and failure pressure for the mechanism. `scripts/validate_chapter_dod.py` requires at least 120 words in every manifest chapter `Problem` section.
 - Chapter `Interfaces` sections should be usable as systems handoff contracts, naming the record surface, consumers, refusal path, and evidence boundary where relevant. `scripts/validate_chapter_dod.py` requires at least 130 words in every manifest chapter `Interfaces` section.
 - Chapter `Invariants` and `Failure modes` sections should be substantial enough to name the preserved boundary and the concrete ways the mechanism can fail. `scripts/validate_chapter_dod.py` requires at least 90 words in each section for every manifest chapter.
+- Chapter `Minimum Viable Implementation` sections should identify the smallest honest artifact, fixture, trace, schema, or validation slice that can begin the idea without implying capability, safety, benchmark, or runtime success. `scripts/validate_chapter_dod.py` requires at least 90 words in every manifest chapter MVI section.
 
 ## Visual Standards
 
