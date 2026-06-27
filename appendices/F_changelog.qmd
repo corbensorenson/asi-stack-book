@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal mature-endpoint prose polish
+
+- Reworked the repeated `Beyond the State of the Art` openers across 38 chapters and the generated implementation-horizon manifest so mature endpoints read as chapter-specific prose instead of formulaic manifest scaffolding. Strengthened `scripts/validate_repeated_prose.py` so future drafting fails if end-state sections reintroduce `The mature version of`, `The logical end state is`, or `At full build-out,` as formulaic openers. Refreshed the v1.0 status manuscript scale to 178,127 chapter words excluding YAML and 185,626 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal independent source appendices
 
 - Reworked the generated Appendix G/H source presentation so Appendix G now renders only its own Corben/local-project scope block and Appendix H renders only its own external-source scope block, instead of showing a shared two-row ownership table in both places. Tightened `scripts/validate_source_appendices.py` so CI fails if either appendix presents the other appendix as a second scope row, and updated the README, outline, full-book goal template, and v1.0 status snapshot wording to describe G and H as independent top-level appendices. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

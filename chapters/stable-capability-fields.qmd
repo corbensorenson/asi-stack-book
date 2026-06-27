@@ -203,7 +203,7 @@ The next useful implementation step is a field history fixture: one field, two c
 
 ## Beyond the State of the Art
 
-The mature version of Stable Capability Fields is a capability-identity and replacement market for the stack. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
+Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
 
 The operational contract is that a stable capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change. The capability-identity layer carries that contract in:
 

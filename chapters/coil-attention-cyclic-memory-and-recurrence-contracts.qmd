@@ -206,7 +206,7 @@ The next useful fixture set is a trio of traces: one slot reuse with winding pre
 
 ## Beyond the State of the Art
 
-The mature version of Coil Attention, Cyclic Memory, and Recurrence Contracts is a memory admission and recurrence-control plane. It makes slot, lag, freshness, aliasing, active-work, and loop-exit facts available to the stack without confusing those facts with retrieval quality or reasoning success.
+Coil memory is useful only when it becomes a memory-admission and recurrence-control plane. It makes slot, lag, freshness, aliasing, active-work, and loop-exit facts available to the stack without confusing those facts with retrieval quality or reasoning success.
 
 The operational contract is that coil memory provides structural guardrails for slots, lag, freshness, coverage, recurrence, and work budgets while leaving retrieval quality and reasoning quality to separate evidence. The recurrence-control plane exposes those guardrails through:
 

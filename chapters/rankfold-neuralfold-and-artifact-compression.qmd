@@ -227,7 +227,7 @@ The next useful implementation step is a toy corpus with deliberately adversaria
 
 ## Beyond the State of the Art
 
-The mature version of RankFold, NeuralFold, and Artifact Compression is an artifact-admission system. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.
+Artifact compression needs an admission system before compressed forms can enter the stack. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.
 
 The operational contract is that compressed artifacts are candidates for specific uses, not replacements for the original, until probes, decode behavior, residual coding, fallback, and consumer policy accept them. The artifact-admission lane evaluates that contract through:
 

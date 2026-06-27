@@ -8,6 +8,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MIN_WORDS = 18
+FORMULAIC_BEYOND_OPENERS = (
+    "The mature version of",
+    "The logical end state is",
+    "At full build-out,",
+)
 
 
 def strip_frontmatter(text: str) -> str:
@@ -58,17 +63,38 @@ def normalized_paragraphs(path: Path) -> list[str]:
     return filtered
 
 
+def beyond_state_openers(path: Path) -> list[str]:
+    text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+    match = re.search(r"^## Beyond the State of the Art\s*$\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
+    if not match:
+        return []
+    body = match.group("body").strip()
+    if not body:
+        return []
+    first_paragraph = body.split("\n\n", 1)[0]
+    return [" ".join(first_paragraph.split())]
+
+
 def main() -> None:
     locations: dict[str, list[str]] = defaultdict(list)
+    formulaic_openers: list[tuple[str, str]] = []
     for path in sorted((ROOT / "chapters").glob("*.qmd")):
         for paragraph in normalized_paragraphs(path):
             locations[paragraph].append(str(path.relative_to(ROOT)))
+        for opener in beyond_state_openers(path):
+            if opener.startswith(FORMULAIC_BEYOND_OPENERS):
+                formulaic_openers.append((str(path.relative_to(ROOT)), opener))
 
     repeats = {paragraph: paths for paragraph, paths in locations.items() if len(paths) > 1}
-    if repeats:
-        print(f"Repeated long prose paragraphs found: {len(repeats)}")
+    if repeats or formulaic_openers:
+        if repeats:
+            print(f"Repeated long prose paragraphs found: {len(repeats)}")
         for paragraph, paths in sorted(repeats.items(), key=lambda item: (-len(item[1]), item[0])):
             print(f" - {len(paths)}x {paths}: {paragraph[:220]}")
+        if formulaic_openers:
+            print(f"Formulaic Beyond the State of the Art openers found: {len(formulaic_openers)}")
+            for path, opener in formulaic_openers:
+                print(f" - {path}: {opener[:220]}")
         sys.exit(1)
 
     print("Repeated prose validation passed.")

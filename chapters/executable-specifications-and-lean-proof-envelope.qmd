@@ -194,7 +194,7 @@ The next useful fixture set is a proof/spec receipt suite: one Lean predicate re
 
 ## Beyond the State of the Art
 
-The logical end state is a formal-claims control plane for the whole stack. It does not try to prove "ASI safety" or "alignment" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks.
+The formal-methods endpoint is a claims control plane for the whole stack. It does not try to prove "ASI safety" or "alignment" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks.
 
 At that mature boundary, every chapter, protocol, release, and runtime module would consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.
 

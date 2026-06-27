@@ -194,7 +194,7 @@ The minimum passes only if denial and expiration are ordinary outcomes, not exce
 
 ## Beyond the State of the Art
 
-The mature version of Security Kernel and Digital SCIFs is a least-exposure operating layer for high-agency AI. The model can reason about a task, request authority, and receive sanitized results, but secrets, protected memory, credentials, private sources, and privileged actions live behind leases, handles, clearance checks, compartment lifecycles, and audit receipts.
+The security kernel's end state is a least-exposure operating layer for high-agency AI. The model can reason about a task, request authority, and receive sanitized results, but secrets, protected memory, credentials, private sources, and privileged actions live behind leases, handles, clearance checks, compartment lifecycles, and audit receipts.
 
 In that end state, sensitive work has a visible lifecycle: request, denial or scoped approval, context admission, substitution, execution, sanitization, zeroization, commit, residual leak-risk classification, expiry, and revocation. The product surface does not ask users or researchers to trust that the model was careful. It shows which authority was used, which material was withheld, which output was sanitized, which logs are available, and which residual risks remain.
 

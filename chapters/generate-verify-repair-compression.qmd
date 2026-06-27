@@ -212,7 +212,7 @@ The repository fixture covers only the receipt side of that implementation: rece
 
 ## Beyond the State of the Art
 
-The mature version of Generate-Verify-Repair Compression is a governed compression service that refuses to treat approximate generation as storage savings until exactness, loss, repair, fallback, and final rate are all accounted for. Its product surface is a receipt ledger that lets later layers decide whether a smaller representation is lawful for the task they are about to perform.
+Generate-verify-repair compression only counts as compression when it refuses to treat approximate generation as storage savings until exactness, loss, repair, fallback, and final rate are all accounted for. Its product surface is a receipt ledger that lets later layers decide whether a smaller representation is lawful for the task they are about to perform.
 
 The operational contract is that generated compression can save space only after verification and repair account for the exact remainder, fallback, metadata, interface cost, and final serialized rate. The compression receipt surface proves that accounting through:
 

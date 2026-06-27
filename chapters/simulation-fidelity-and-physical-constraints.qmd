@@ -217,7 +217,7 @@ The minimum should make downgrade a normal result, since a simulation that only 
 
 ## Beyond the State of the Art
 
-The mature version of Simulation Fidelity and Physical Constraints is a simulation claim-transport layer. It lets the stack run synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models while preventing their results from traveling farther than their scope, fidelity, resources, and omissions allow.
+Simulation becomes useful as a claim-transport layer. It lets the stack run synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models while preventing their results from traveling farther than their scope, fidelity, resources, and omissions allow.
 
 The operational contract is that a simulation result travels only as far as its fidelity standard, scope, assumptions, omitted variables, resource bill, and transfer decision allow. The simulation claim-transport layer carries that limit through:
 

@@ -204,7 +204,7 @@ The toy ledger should include one intentionally contaminated case and one source
 
 ## Beyond the State of the Art
 
-The logical end state is a benchmark operating system, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy.
+The benchmark endpoint is an operating system for evaluation, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy.
 
 At that mature boundary, benchmarks would be managed as instruments with lifecycle state. A task can begin as a candidate metric, become a frontier probe, graduate into a regression floor, enter contamination review, be retired, or remain blocked. Success would never move a claim by itself; it would open a promotion review that compares baselines, residuals, negative results, holdouts, transfer checks, mutation checks, public-calibration limits, and the exact claim being considered.
 

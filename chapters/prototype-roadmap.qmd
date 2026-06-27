@@ -216,7 +216,7 @@ The phase record should also name who may retire the phase if the unblock condit
 
 ## Beyond the State of the Art
 
-The logical end state is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review.
+The roadmap endpoint is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review.
 
 At that mature boundary, every phase would have explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.
 

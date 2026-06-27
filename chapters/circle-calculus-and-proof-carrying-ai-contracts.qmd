@@ -206,7 +206,7 @@ The next useful implementation step is a local surrogate contract pack: one vali
 
 ## Beyond the State of the Art
 
-The mature version of Circle Calculus and Proof-Carrying AI Contracts is a proof-contract transport service. It moves finite structural facts through the ASI Stack with theorem references, deterministic fields, fingerprints, resolver state, replay commands, consumer gates, and non-claims intact.
+In its finished form, Circle proof-carrying contracts act as a proof-contract transport service. It moves finite structural facts through the ASI Stack with theorem references, deterministic fields, fingerprints, resolver state, replay commands, consumer gates, and non-claims intact.
 
 The operational contract is that proof-carrying AI contracts transport finite structural facts as theorem-linked receipts, while consumer gates preserve validation commands, fingerprints, resolver state, and explicit non-claims. The proof-contract transport lane preserves that contract in:
 

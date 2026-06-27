@@ -220,7 +220,7 @@ The minimum should also preserve the denial reason, so later planning cannot rei
 
 ## Beyond the State of the Art
 
-The mature version of System Boundaries and Authority is an authority type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.
+System authority needs a type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.
 
 The operational contract is that authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes. The authority type system exposes that contract in:
 

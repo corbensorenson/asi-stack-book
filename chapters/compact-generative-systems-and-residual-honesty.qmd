@@ -206,7 +206,7 @@ The next useful implementation step is a compact-core comparison fixture: one co
 
 ## Beyond the State of the Art
 
-The mature version of Compact Generative Systems and Residual Honesty is a compression-and-generation layer that measures total burden, not just visible size. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
+Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
 
 The operational contract is that compactness is useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted. The compact-generation ledger exposes that burden in:
 

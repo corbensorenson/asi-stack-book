@@ -212,7 +212,7 @@ That trace should keep boring regressions visible: cost, permissions, logging, c
 
 ## Beyond the State of the Art
 
-The mature version of Capability Replacement and Rollback is a replacement control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects.
+Capability replacement only works as a transaction control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects.
 
 In that end state, a capability can improve continuously without making the system forget what it used to know. Regressions follow the field forward, not the old implementation backward. Failed canaries become residuals. Rollbacks are rehearsed and owned. State migration is classified as reversible, compensatable, forked, or residual rather than treated as an implementation detail. A default route is therefore never just the latest winner; it is the candidate that survived the transaction while preserving the floor.
 

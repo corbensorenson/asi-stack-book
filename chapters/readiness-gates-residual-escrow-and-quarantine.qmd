@@ -206,7 +206,7 @@ The next useful fixture set is a lifecycle trace: draft to shadow, shadow to can
 
 ## Beyond the State of the Art
 
-The mature version of Readiness Gates, Residual Escrow, and Quarantine is a lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.
+Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.
 
 The operational contract is that readiness is a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. The readiness control plane records that lifecycle in:
 
