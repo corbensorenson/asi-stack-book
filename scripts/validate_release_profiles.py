@@ -69,6 +69,10 @@ READER_REQUIRED_HEADINGS = {
     "Beyond the State of the Art",
     "Summary",
 }
+AUDIO_FORBIDDEN_STRIPS = {
+    (2, "minimum viable implementation"),
+    (2, "beyond the state of the art"),
+}
 
 
 def fail(errors: list[str]) -> None:
@@ -725,6 +729,12 @@ def main() -> None:
             errors.append("audio_release.reader_profile_dependency must be reader_release.")
         if audio.get("generated_script_dir") != "build/audio_script":
             errors.append("audio_release.generated_script_dir must be build/audio_script.")
+        forbidden_audio_strips = normalized_strip_set(audio) & AUDIO_FORBIDDEN_STRIPS
+        if forbidden_audio_strips:
+            errors.append(
+                "audio_release must preserve implementation-horizon headings: "
+                f"{sorted(forbidden_audio_strips)}."
+            )
 
     if errors:
         fail(errors)

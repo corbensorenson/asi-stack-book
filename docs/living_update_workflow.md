@@ -174,9 +174,10 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-3. Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, and `build/audio_script/chapter_markers.md`, then replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
-4. Keep the pronunciation glossary current.
-5. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.
-6. Add an `edition_release` record under `release_records/` that lists exactly which audio artifacts were produced and checked.
+3. Confirm the generated `audio_manifest.json` reports a passing implementation-horizon script status, meaning every manifest chapter script keeps both `Minimum Viable Implementation` and `Beyond the State of the Art`.
+4. Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, and `build/audio_script/chapter_markers.md`, then replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
+5. Keep the pronunciation glossary current.
+6. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.
+7. Add an `edition_release` record under `release_records/` that lists exactly which audio artifacts were produced and checked.
 
 The generated audio script is not an audiobook and does not imply that any audio artifact exists.

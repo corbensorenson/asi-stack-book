@@ -108,6 +108,7 @@ Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/comp
 
 Before claiming any audio artifact:
 
+- Verify that `audio_manifest.json` reports a passing implementation-horizon script status for `Minimum Viable Implementation` and `Beyond the State of the Art`.
 - Replace generated table, diagram, image, schema, and code narration notes with reviewed spoken summaries or companion-note references.
 - Spot-check audio against the reviewed script.
 - Verify chapter markers and metadata.

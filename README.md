@@ -24,13 +24,13 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
-- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`.
+- `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
 - The live GitHub Pages site includes a persistent top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, while `Human view` hides the same repeated chapter sections, TOC entries, and section-numbering artifacts used by the reader-release strip policy. Readers can open a chapter directly in either mode with `?view=human` or `?view=ai`. All 54 chapters now carry a `.asi-human-only` Human Reading Path bridge for interested readers, and `.asi-ai-only` blocks remain available for mode-specific research notes without forking the manuscript. The rendered-site validator checks the static HTML hooks, and `scripts/validate_live_human_view_browser.js` exercises representative rendered pages in a real browser when Playwright/Chrome is available.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for source routes that depend on authenticated exports.
 - Source documents are cached locally when available, but raw exports are ignored and not published.
-- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben's authored/supplied/local source corpus and Appendix H contains only external source records from `sources/source_inventory.json`.
+- `scripts/validate_source_appendices.py` checks that Appendix G contains only Corben-authored, supplied, and local source records, while Appendix H contains only external source records from `sources/source_inventory.json`.
 - `scripts/validate_v1_status_snapshot.py` checks that `docs/v1_0_candidate_status.md` headline counts match current repository artifacts.
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
 - `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.
@@ -56,7 +56,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
-| [appendices/G_corben_source_corpus.qmd](appendices/G_corben_source_corpus.qmd) | Generated appendix for Corben's authored, supplied, and local ASI Stack source corpus. |
+| [appendices/G_corben_source_corpus.qmd](appendices/G_corben_source_corpus.qmd) | Generated appendix for Corben-authored, supplied, and local ASI Stack sources. |
 | [appendices/H_external_sources.qmd](appendices/H_external_sources.qmd) | Generated appendix for external literature, documentation, benchmarks, and third-party references. |
 | [appendices/I_author_intent_and_lineage.qmd](appendices/I_author_intent_and_lineage.qmd) | Public-safe author-intent and architecture-lineage appendix. |
 | [appendices/J_release_editions.qmd](appendices/J_release_editions.qmd) | Live-book explanation of reader, research, and audio edition paths. |

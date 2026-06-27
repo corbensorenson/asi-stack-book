@@ -11,9 +11,9 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Surface | Current state | Evidence |
 |---|---|---|
 | Book structure | 4 parts, 54 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 169,830 chapter words excluding YAML front matter; 177,329 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Manuscript scale | 54 chapter files; 169,834 chapter words excluding YAML front matter; 177,333 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
-| Source appendix ownership | Appendix G is reserved for Corben's source corpus; Appendix H is reserved for external source records marked `external_literature` | `python3 scripts/validate_source_appendices.py` |
+| Source appendix ownership | Appendix G is reserved for Corben-authored, supplied, and local source records; Appendix H is reserved for external source records marked `external_literature` | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
 | Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
@@ -55,7 +55,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - Normalize additional external literature where the book currently has queues rather than direct source records and source notes.
 - Import or reproduce any prototype, benchmark, Circle, Theseus, MoECOT, VCM, Talos, PlanForge, compression, routing, or policy-training artifact before using it as stronger evidence.
 - Generate and review reader-edition artifacts only after a tagged live-book candidate passes the live/research gate.
-- Generate audio scripts and audio artifacts only from a reviewed reader edition and record exact produced artifacts.
+- Generate audio scripts and audio artifacts only from a reviewed reader edition, preserve the implementation-horizon sections in the script, and record exact produced artifacts.
 - Continue the final reader-facing editorial pass over both the generated reader manuscript and representative live Human view chapters. Human Reading Path meta-language is now guarded, but full human continuity still requires editorial review without weakening evidence boundaries.
 
 ## Candidate Gate

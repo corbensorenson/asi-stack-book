@@ -22,6 +22,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "build" / "audio_script"
 DEFAULT_READER_TEMP_NAME = "reader_source"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
+IMPLEMENTATION_HORIZON_HEADINGS = (
+    "## Minimum Viable Implementation",
+    "## Beyond the State of the Art",
+)
 
 
 def narration_note(text: str) -> str:
@@ -154,6 +158,45 @@ def write_chapter_markers(output_dir: Path, script_files: list[str]) -> str:
     lines.append("")
     (output_dir / marker_path).write_text("\n".join(lines), encoding="utf-8")
     return marker_path
+
+
+def load_structure() -> dict:
+    value = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise TypeError("book_structure.json must contain an object")
+    return value
+
+
+def flatten_chapters(structure: dict) -> list[dict]:
+    chapters: list[dict] = []
+    for part in structure.get("parts", []):
+        if not isinstance(part, dict):
+            continue
+        for chapter in part.get("chapters", []):
+            if isinstance(chapter, dict):
+                chapters.append(chapter)
+    return chapters
+
+
+def implementation_horizon_script_records(output_dir: Path) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for chapter in flatten_chapters(load_structure()):
+        relative = str(chapter.get("file", ""))
+        script_path = output_dir / Path(relative).with_suffix(".md")
+        text = script_path.read_text(encoding="utf-8", errors="ignore") if script_path.exists() else ""
+        missing = [
+            heading
+            for heading in IMPLEMENTATION_HORIZON_HEADINGS
+            if heading not in text
+        ]
+        records.append(
+            {
+                "chapter_id": chapter.get("id", ""),
+                "script_file": str(script_path.relative_to(output_dir)) if script_path.exists() else str(script_path),
+                "missing_headings": missing,
+            }
+        )
+    return records
 
 
 def write_audio_checklist(
@@ -367,6 +410,12 @@ def generate(output_dir: Path) -> dict[str, object]:
             bundle_policy,
             script_files,
         )
+        implementation_horizon_records = implementation_horizon_script_records(output_dir)
+        implementation_horizon_status = (
+            "pass"
+            if all(not record["missing_headings"] for record in implementation_horizon_records)
+            else "fail"
+        )
 
         manifest = {
             "schema_version": "0.1",
@@ -380,6 +429,8 @@ def generate(output_dir: Path) -> dict[str, object]:
             "script_files": script_files,
             "companion_notes": companion_notes,
             "companion_treatment_summary": treatment_summary,
+            "implementation_horizon_script_status": implementation_horizon_status,
+            "implementation_horizon_script_records": implementation_horizon_records,
             "pronunciation_glossary": "pronunciation_glossary.md",
             "chapter_markers": chapter_markers,
             "audio_review_checklist": review_checklist,
@@ -433,6 +484,16 @@ def main() -> None:
                 raise SystemExit(f"Audio script check failed: missing {companion_path}.")
             if manifest["review_status"] != "review_required":
                 raise SystemExit("Audio script check failed: generated manifest must require review.")
+            if manifest.get("implementation_horizon_script_status") != "pass":
+                missing = [
+                    f"{record['script_file']}: {', '.join(record['missing_headings'])}"
+                    for record in manifest.get("implementation_horizon_script_records", [])
+                    if record.get("missing_headings")
+                ]
+                raise SystemExit(
+                    "Audio script check failed: implementation horizon headings missing: "
+                    + "; ".join(missing)
+                )
             print(
                 "Audio script check passed: "
                 f"{len(manifest['script_files'])} script files generated for review."

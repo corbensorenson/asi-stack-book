@@ -22,7 +22,7 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 
 1. Read `prompts/MASTER_CODEX_PROMPT.md`, `book_structure.json`, `docs/book_outline.md`, `sources/source_inventory.json`, and `docs/living_update_workflow.md`.
 2. Read `docs/source_readiness_report.md` if source ingestion or drafting depends on source availability.
-3. Read `appendices/G_corben_source_corpus.qmd` when drafting Corben/source-corpus references; read `appendices/H_external_sources.qmd` when drafting external-literature or third-party citation context.
+3. Read `appendices/G_corben_source_corpus.qmd` when drafting Corben-authored, supplied, or local source references; read `appendices/H_external_sources.qmd` when drafting external-literature or third-party citation context.
 4. Use the source loading queues in `docs/book_outline.md` to decide which primary, supporting, variant, connector, or recovery sources are in scope.
 5. Inspect the relevant chapters and appendices before editing.
 6. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:

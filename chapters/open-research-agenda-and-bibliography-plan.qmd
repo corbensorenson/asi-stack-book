@@ -167,7 +167,7 @@ Minimum fields:
 - `next_action`
 - `non_claims`
 
-Appendix G lists Corben's source corpus. Appendix H lists external literature and third-party references. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
+Appendix G lists Corben-authored, supplied, and local sources. Appendix H lists external literature and third-party references. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
 Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where the chapter belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps the supplied corpus visible, and Appendix H keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
 
@@ -201,7 +201,7 @@ The next useful implementation step is a live rehearsal against a user-provided 
 
 ## Beyond the State of the Art
 
-The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben's source corpus with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move.
+The logical end state is a source and research graph for the entire ASI Stack. The bibliography would not be an afterthought at the end of the book, and it would not blur Corben-authored, supplied, or local sources with outside literature. It would be the routing table that tells future agents which ideas have sources, which sources have been read, which chapters they affect, which proof or experiment backlogs they create, which material is external, and which claims still cannot move.
 
 At that mature boundary, every paper, project, local note, external reference, conversation-mined packet, recovery item, and missing source would have a public-safety policy, ingestion state, source note, chapter assignments, deduplication status, evidence-transition preconditions, proof/test backlog, citation status, and non-claims. New material would update the research graph before it changes manuscript prose.
 

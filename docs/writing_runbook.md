@@ -61,7 +61,7 @@ Every manifest chapter must contain exactly one `.asi-human-only` `Human Reading
 
 Major-version reader and audio work stays downstream of the live book. Generated reader workspaces include `READER_RELEASE_CHECKLIST.md` and `companion_notes.md`; generated audio workspaces include `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Use those files to review continuity, e-reader behavior, spoken treatment of diagrams/tables/code, and release-record residuals before claiming EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts.
 
-When writing chapters, assume the reader spine may become a relaxed human-consumption bundle: reader HTML, EPUB, PDF, DOCX, optional e-reader conversions, and a later audio script. Dense live-only machinery can stay in the live book, but the main prose should carry enough transitions, caveats, diagram explanations, and examples to survive stripping and narration.
+When writing chapters, assume the reader spine may become a relaxed human-consumption bundle: reader HTML, EPUB, PDF, DOCX, optional e-reader conversions, and a later audio script. Dense live-only machinery can stay in the live book, but the main prose should carry enough transitions, caveats, diagram explanations, examples, and implementation-horizon sections to survive stripping and narration.
 
 Run `python3 scripts/validate_human_reading_paths.py`, `python3 scripts/validate_reader_evidence_boundaries.py --check`, and `python3 scripts/validate_reader_spine.py --check` before treating a generated reader manuscript as a major-version candidate. The checks verify that each source chapter has one Human Reading Path bridge, that generated reader chapters keep it as ordinary prose after the manifest title, that generated reader Core Claim sections preserve live core-claim support boundaries, that the human-readable layer survives stripping, that required chapter sections remain, and that live-only terms do not leak into chapter prose. After rendering the live site, run `python3 scripts/validate_live_human_view.py` to check that every rendered book page carries the Human view toggle and that rendered chapter pages carry the headings and block classes needed for Human view filtering. When browser automation is available, also run `node scripts/validate_live_human_view_browser.js` so representative rendered pages prove URL mode, local persistence, live-section hiding, TOC hiding, bridge visibility, and AI-view restoration in an actual browser.
 
@@ -167,5 +167,7 @@ python3 scripts/build_audio_script.py
 ```
 
 These commands generate source workspaces only. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts until the specific render, conversion, or audio-generation command succeeds and a release record under `release_records/` states the result.
+
+The audio-script check must keep both `Minimum Viable Implementation` and `Beyond the State of the Art` in every chapter script; those sections explain the smallest honest starting slice and the mature target product for listeners as well as readers.
 
 Then commit and push only tracked source, metadata, notes, scripts, and public-safe artifacts.
