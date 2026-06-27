@@ -228,7 +228,7 @@ The next useful implementation step is a small command-conflict fixture set: one
 
 The mature version is a semantic control language for governed work. It is not a prompt template library. It is the small, inspectable language that humans, planners, verifiers, job runners, policy layers, and future AI agents use to agree on what the next unit of work means before any execution path opens.
 
-At that end state, every command field has provenance, confidence, precedence, and dispatch consequence. A command can carry natural language, examples, style, and source context, but those materials cannot overwrite explicit objective, constraints, authority, output, verification, or failure behavior. Context informs the contract; it does not become a hidden command channel.
+Inside the semantic interface, every command field has provenance, confidence, precedence, and dispatch consequence. A command can carry natural language, examples, style, and source context, but those materials cannot overwrite explicit objective, constraints, authority, output, verification, or failure behavior. Context informs the contract; it does not become a hidden command channel.
 
 The final product surface would include:
 

@@ -234,7 +234,7 @@ The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` 
 
 The mature version is a capability firewall for external effects. It does not expose tools as ambient functions. It grants scoped, expiring effect leases to typed jobs after checking target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations.
 
-At that end state, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.
+With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.
 
 The final product surface would include:
 

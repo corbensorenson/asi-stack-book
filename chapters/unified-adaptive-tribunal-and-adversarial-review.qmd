@@ -190,7 +190,7 @@ The next useful implementation step is a contested-claim fixture set: one high-r
 
 The mature version is a review operating system for contested claims and high-risk artifacts. It does not simply ask several models for opinions. It creates a bounded dossier, assigns role-separated reviewers, runs adversarial probes, records evidence-linked findings, preserves dissent, applies cycle caps, and converts verdicts into machine-readable constraints.
 
-At that end state, tribunal review is expensive but actionable. It can accept a claim within a scope, require a source fetch, downgrade a claim, block dispatch, narrow authority, demand a human sign-off, preserve dissent, or create residual work. Re-running the tribunal over unchanged evidence cannot quietly turn rejection into acceptance; the unchanged-evidence guard and prior review refs make that laundering visible.
+At tribunal scale, review is expensive but actionable. It can accept a claim within a scope, require a source fetch, downgrade a claim, block dispatch, narrow authority, demand a human sign-off, preserve dissent, or create residual work. Re-running the tribunal over unchanged evidence cannot quietly turn rejection into acceptance; the unchanged-evidence guard and prior review refs make that laundering visible.
 
 The final product surface would include:
 
