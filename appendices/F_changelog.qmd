@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal interface state-prose polish
+
+- Reworked repeated `The interface should also record` Interface-section formulas across Mathematical and Search Substrates, PlanForge DAGs and Intelligence Arbitrage, and Prototype Roadmap. The revised interface prose now names the owning record directly: Substrate Adoption Records carry axis ledgers, PlanForge records carry scheduling state as a first-class value, and Prototype Phase Records carry dependency edges. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic interface opener, and refreshed the v1.0 status manuscript scale to 178,197 chapter words excluding YAML and 185,696 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal mechanism source-boundary prose polish
 
 - Reworked repeated `The reviewed passages sharpen the` Mechanism-section formulas across Context Transactions, Semantic Pages, and the Virtual Context ABI. The revised mechanism prose now states the actual source boundary for each layer: transactions define a runtime boundary rather than a running memory store, certificates carry narrower evidence than their vocabulary, and the ABI remains a record-level contract rather than evidence of context resolution under load. Tightened `scripts/validate_repeated_prose.py` so future chapter prose rejects that generic source-boundary opener, and refreshed the v1.0 status manuscript scale to 178,187 chapter words excluding YAML and 185,686 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

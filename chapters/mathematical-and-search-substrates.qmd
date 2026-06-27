@@ -188,7 +188,7 @@ Minimum fields:
 
 Routing treats a candidate substrate as a specialist. Compression tests representation efficiency. Evidence compares against baselines. Proof envelopes preserve theorem status. Fast-generation routes may consume substrate evidence, but adoption remains gated by substrate-specific A/B records. Readiness gates decide whether a substrate is exploratory, canary, qualified, or retired.
 
-The interface should also record an axis ledger: structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality. A substrate can pass one axis and fail another without contradiction. A future route may consume only the axes that are both evidenced and allowed by the consumer gate.
+The Substrate Adoption Record carries an axis ledger for structure, speed, memory, routing quality, compression quality, search quality, verifier burden, and downstream task quality. A substrate can pass one axis and fail another without contradiction. A future route may consume only the axes that are both evidenced and allowed by the consumer gate.
 
 ## Invariants
 

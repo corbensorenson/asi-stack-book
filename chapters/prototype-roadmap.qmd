@@ -176,7 +176,7 @@ Minimum fields:
 
 Each phase unlocks later layers only after acceptance gates pass. Changelogs and releases document what actually changed. Benchmark and proof chapters decide what the phase is allowed to claim.
 
-The interface should also record dependency edges. A runtime-adapter phase depends on typed jobs, approval receipts, and audit logs. A procedural-memory phase depends on artifact graphs and regression checks. A self-improvement phase depends on SCFs, rollback, protected invariants, evidence ledgers, and independent evaluators. These edges are the roadmap's control surface.
+Dependency edges belong inside the phase record, not only in the surrounding prose. A runtime-adapter phase depends on typed jobs, approval receipts, and audit logs. A procedural-memory phase depends on artifact graphs and regression checks. A self-improvement phase depends on SCFs, rollback, protected invariants, evidence ledgers, and independent evaluators. These edges are the roadmap's control surface.
 
 Each phase record should be readable by both a builder and a release reviewer. The builder needs next artifacts, blocked dependencies, and validation commands. The reviewer needs non-claims, residuals, and evidence effects. If those readers cannot make different decisions from the same record, the roadmap is only a narrative timeline.
 

@@ -162,7 +162,7 @@ Minimum fields:
 
 Routing consumes capability annotations. VCM consumes context requests. Evidence records cost, quality, residuals, and verification. Cognitive Compilation can later lower DAG nodes into semantic atoms or target-specific jobs.
 
-The interface should also record scheduling state: ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, or merged. These states let later layers distinguish work that has not started from work that cannot responsibly proceed.
+The PlanForge record carries scheduling state as a first-class value: ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, or merged. These states let later layers distinguish work that has not started from work that cannot responsibly proceed.
 
 The PlanForge scheduling record exposes scheduling states, adequacy contracts, merge conditions, assumption refs, and non-claims. Those fields make efficiency claims harder to launder: a cheap node must still say which adequacy contract it satisfies, which assumptions it depends on, and what merge conditions prevent incompatible branch outputs from looking successful.
 

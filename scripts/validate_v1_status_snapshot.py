@@ -146,6 +146,7 @@ def main() -> None:
         "`This is a target architecture, not a current-result claim`",
         "`It remains beyond the chapter's present support state`",
         "`The public schema now records`",
+        "`The interface should also record`",
         "`None of those passages show`",
         "`The reviewed passages sharpen the`",
         "`The evidence map is narrower now`",
