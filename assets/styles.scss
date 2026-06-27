@@ -84,8 +84,20 @@ blockquote {
   color: #344150;
 }
 
+main.content {
+  overflow-wrap: anywhere;
+}
+
 table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
   font-size: 0.94rem;
+}
+
+td,
+th {
+  overflow-wrap: anywhere;
 }
 
 thead th {

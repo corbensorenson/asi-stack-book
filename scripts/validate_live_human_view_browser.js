@@ -200,6 +200,85 @@ async function waitForMode(page, mode) {
   );
 }
 
+async function validateResponsiveLayout(page, pageId, mode) {
+  const metrics = await page.evaluate(() => {
+    const doc = document.documentElement;
+    const body = document.body;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const scrollWidth = Math.max(doc.scrollWidth, body ? body.scrollWidth : 0);
+    const clientWidth = doc.clientWidth;
+    const toggle = document.querySelector(".asi-reading-mode");
+    const toggleRect = toggle ? toggle.getBoundingClientRect() : null;
+    const toggleStyle = toggle ? window.getComputedStyle(toggle) : null;
+    const buttons = Array.from(document.querySelectorAll("[data-asi-reading-choice]")).map((button) => {
+      const rect = button.getBoundingClientRect();
+      const style = window.getComputedStyle(button);
+      return {
+        choice: button.getAttribute("data-asi-reading-choice") || "",
+        text: button.textContent ? button.textContent.trim() : "",
+        visible:
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          rect.width > 0 &&
+          rect.height > 0,
+        rect: {
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          bottom: rect.bottom,
+          width: rect.width,
+          height: rect.height,
+        },
+        clipped_horizontally: rect.left < -1 || rect.right > viewportWidth + 1,
+        text_overflow_px: Math.max(0, button.scrollWidth - button.clientWidth),
+      };
+    });
+    return {
+      viewport_width: viewportWidth,
+      viewport_height: viewportHeight,
+      client_width: clientWidth,
+      scroll_width: scrollWidth,
+      horizontal_overflow_px: Math.max(0, scrollWidth - clientWidth),
+      toggle_visible:
+        Boolean(toggle) &&
+        toggleStyle.display !== "none" &&
+        toggleStyle.visibility !== "hidden" &&
+        toggleRect.width > 0 &&
+        toggleRect.height > 0,
+      toggle_rect: toggleRect
+        ? {
+            left: toggleRect.left,
+            right: toggleRect.right,
+            top: toggleRect.top,
+            bottom: toggleRect.bottom,
+            width: toggleRect.width,
+            height: toggleRect.height,
+          }
+        : null,
+      toggle_clipped_horizontally: toggleRect ? toggleRect.left < -1 || toggleRect.right > viewportWidth + 1 : true,
+      buttons,
+    };
+  });
+
+  if (metrics.horizontal_overflow_px > 2) {
+    throw new Error(`${pageId}: ${mode} view has ${metrics.horizontal_overflow_px}px horizontal page overflow.`);
+  }
+  if (!metrics.toggle_visible) throw new Error(`${pageId}: ${mode} view reading-mode control is not visible.`);
+  if (metrics.toggle_clipped_horizontally) throw new Error(`${pageId}: ${mode} view reading-mode control is clipped horizontally.`);
+  if (metrics.buttons.length < 2) throw new Error(`${pageId}: ${mode} view did not render both reading-mode buttons.`);
+  for (const button of metrics.buttons) {
+    if (!button.visible) throw new Error(`${pageId}: ${mode} view reading-mode button ${button.choice} is not visible.`);
+    if (button.clipped_horizontally) {
+      throw new Error(`${pageId}: ${mode} view reading-mode button ${button.choice} is clipped horizontally.`);
+    }
+    if (button.text_overflow_px > 2) {
+      throw new Error(`${pageId}: ${mode} view reading-mode button ${button.choice} has ${button.text_overflow_px}px text overflow.`);
+    }
+  }
+  return metrics;
+}
+
 async function validateChapterPage(page, fileUrl, pageId) {
   const record = { page_id: pageId, url: fileUrl, checks: {} };
   await page.goto(`${fileUrl}?view=human`, { waitUntil: "domcontentloaded" });
@@ -212,6 +291,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
   const humanVisibleHuman = await visibleCount(page, ".asi-human-only");
   const liveTocVisibleHuman = await visibleCount(page, '#TOC [data-asi-live-toc-link="true"]');
   const humanStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
+  const humanLayout = await validateResponsiveLayout(page, pageId, "human");
 
   record.checks.human_url_mode = {
     live_sections: liveSections,
@@ -220,6 +300,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_human_blocks: humanVisibleHuman,
     visible_live_toc_links: liveTocVisibleHuman,
     status_text: humanStatus || "",
+    layout: humanLayout,
   };
 
   if (liveSections <= 0) throw new Error(`${pageId}: no live-only sections were marked.`);
@@ -234,11 +315,13 @@ async function validateChapterPage(page, fileUrl, pageId) {
   const liveVisibleAi = await visibleCount(page, 'section[data-asi-live-section="true"]');
   const humanVisibleAi = await visibleCount(page, ".asi-human-only");
   const aiStatus = await page.locator("[data-asi-reading-mode-status]").textContent();
+  const aiLayout = await validateResponsiveLayout(page, pageId, "ai");
   record.checks.ai_click_mode = {
     visible_live_sections: liveVisibleAi,
     visible_human_blocks: humanVisibleAi,
     status_text: aiStatus || "",
     url: page.url(),
+    layout: aiLayout,
   };
   if (liveVisibleAi <= 0) throw new Error(`${pageId}: AI view did not restore live-only sections.`);
   if (humanVisibleAi !== 0) throw new Error(`${pageId}: AI view left ${humanVisibleAi} human-only bridge blocks visible.`);
@@ -259,6 +342,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
   record.checks.ai_url_mode = {
     visible_live_sections: await visibleCount(page, 'section[data-asi-live-section="true"]'),
     visible_human_blocks: await visibleCount(page, ".asi-human-only"),
+    layout: await validateResponsiveLayout(page, pageId, "ai-url"),
   };
   if (record.checks.ai_url_mode.visible_live_sections <= 0) throw new Error(`${pageId}: ?view=ai did not show live-only sections.`);
   if (record.checks.ai_url_mode.visible_human_blocks !== 0) throw new Error(`${pageId}: ?view=ai did not hide human bridge blocks.`);
@@ -272,11 +356,15 @@ async function validateAppendixPage(page, fileUrl, pageId) {
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
   const status = await page.locator("[data-asi-reading-mode-status]").textContent();
-  record.checks.human_url_mode = { status_text: status || "" };
+  record.checks.human_url_mode = {
+    status_text: status || "",
+    layout: await validateResponsiveLayout(page, pageId, "human"),
+  };
   if (!(status || "").includes("Human view active.")) throw new Error(`${pageId}: Human view status text did not update.`);
   await page.locator('[data-asi-reading-choice="ai"]').click();
   await waitForMode(page, "ai");
   record.checks.ai_click_url = page.url();
+  record.checks.ai_click_layout = await validateResponsiveLayout(page, pageId, "ai");
   if (!page.url().includes("view=ai")) throw new Error(`${pageId}: AI click did not update appendix URL mode.`);
   return record;
 }
