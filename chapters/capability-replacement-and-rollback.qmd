@@ -263,3 +263,4 @@ The governing discipline is floor preservation. The frontier may move only when 
 The security kernel keeps replacement from becoming a secret, permission, or context leak. Rollback is not meaningful if the candidate can carry privileged material across a boundary that the prior capability was never allowed to cross. Replacement must preserve not only behavior, but also the permission shape around that behavior.
 
 A replacement should be easier to undo than to overclaim. If the record cannot identify the prior artifact, compatibility boundary, rollback trigger, and owner, the candidate is not ready to become default.
+The mature habit is reversible progress: every promoted capability should leave enough evidence, routing context, and authority history for a later steward to understand why the change happened and how to recover if it fails.
