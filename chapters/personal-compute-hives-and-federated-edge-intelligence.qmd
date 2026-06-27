@@ -84,7 +84,7 @@ The ASI Stack requires a different abstraction. The scheduler must understand th
 
 [personal-compute-hives-and-federated-edge-intelligence.core, label: Design rationale, support: argument] A Personal Compute Hive should turn trusted devices, portals, stores, workers, and temporary rented or project nodes into a federated, policy-bounded compute organism whose scheduler routes work by capability, locality, trust, cost, energy, and authority.
 
-The claim is architectural, not empirical. It says that governed personal AI needs this layer in order to preserve authority and locality while using distributed hardware. It does not say that the scheduler is already implemented, that the network is secure, that old devices are always worth using, or that rented nodes can safely touch private data.
+The claim is architectural, not empirical. The current support state is `argument`. It says that governed personal AI needs this layer in order to preserve authority and locality while using distributed hardware. It does not say that the scheduler is already implemented, that the network is secure, that old devices are always worth using, or that rented nodes can safely touch private data.
 
 ### Claim-source mapping status
 

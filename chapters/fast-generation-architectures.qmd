@@ -97,7 +97,7 @@ Those metrics are not enough by themselves, but they point in the right directio
 
 [fast-generation-architectures.core, label: Design rationale, support: argument] Fast generation should be treated as a governed, planner-selected choice among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid modes selected by task risk, quality target, latency budget, compute, memory, and verification burden.
 
-The claim is architectural. It does not say that one acceleration family wins everywhere. It says the generation layer should expose multiple modes behind a policy interface, measure them with accepted-output and task-success metrics, and promote them only when the evidence shows that they improve useful output without hiding verification, memory, or repair costs.
+The claim is architectural. The current support state is `argument`. It does not say that one acceleration family wins everywhere. It says the generation layer should expose multiple modes behind a policy interface, measure them with accepted-output and task-success metrics, and promote them only when the evidence shows that they improve useful output without hiding verification, memory, or repair costs.
 
 ### Claim-source mapping status
 

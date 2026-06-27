@@ -20,6 +20,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, and no live-only scaffolding after stripping.
+- `scripts/validate_reader_evidence_boundaries.py` checks that every generated reader chapter preserves the live core-claim marker and a plain-language support-state boundary in the Core Claim section.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
@@ -79,6 +80,7 @@ python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
+python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
@@ -124,6 +126,7 @@ Generate or check a local reader-edition Quarto source tree:
 ```bash
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_human_reading_paths.py
+python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 ```

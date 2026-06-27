@@ -63,6 +63,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, view-block cleanup, and stripped live-only scaffolding.
+- `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters preserve live core-claim markers and plain-language support-state boundaries.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source.
@@ -78,6 +79,7 @@ Check the reader profile without leaving generated files in the repo:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 ```
 
@@ -146,6 +148,7 @@ The live-site `Human view` uses this same heading list at render time. `.asi-liv
 ```bash
 python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/validate_human_reading_paths.py
+python3 scripts/validate_reader_evidence_boundaries.py --check
 quarto render --to html
 python3 scripts/validate_live_human_view.py
 node scripts/validate_live_human_view_browser.js
@@ -154,6 +157,8 @@ node scripts/validate_live_human_view_browser.js
 `scripts/validate_human_reading_paths.py` checks the source chapters before a reader manuscript is generated: each manifest chapter must have exactly one Human Reading Path bridge, the bridge must appear before the main problem statement, and the generated reader chapter must retain the bridge prose without the source-only `Human Reading Path` heading or view-mode markers.
 
 `scripts/validate_reader_spine.py --check` derives the reader manuscript in a temporary workspace and fails if generated chapters do not start with their manifest titles, if stripped headings remain, if view-mode markers or source-only Human Reading Path markers leak into generated reader source, if hard live-only terms such as `Drafting guardrail` or `Codex test plan` leak into generated chapter prose, if a required reader heading is missing, or if a chapter falls below the configured minimum reader-spine word count. A normal run writes `build/reader_spine_report.json`, which is ignored by git and is useful during major-version review.
+
+`scripts/validate_reader_evidence_boundaries.py --check` derives the reader manuscript in a temporary workspace and fails if a generated chapter loses the live source's core-claim marker, changes the manifest support state, or lacks a plain-language support-state boundary in the generated Core Claim section. A normal run writes `build/reader_evidence_boundaries_report.json`, which is ignored by git and is useful during major-version review.
 
 ## Reader-Facing Spine
 

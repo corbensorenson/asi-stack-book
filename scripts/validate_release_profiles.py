@@ -492,6 +492,34 @@ def main() -> None:
         purpose = spine_policy.get("purpose")
         if not isinstance(purpose, str) or not purpose.strip():
             errors.append("reader_spine_validation.purpose must be a non-empty string.")
+    else:
+        errors.append("editions/release_profiles.json must define reader_spine_validation.")
+
+    evidence_boundary_policy = data.get("reader_evidence_boundary_validation")
+    if isinstance(evidence_boundary_policy, dict):
+        if evidence_boundary_policy.get("script") != "scripts/validate_reader_evidence_boundaries.py":
+            errors.append(
+                "reader_evidence_boundary_validation.script must be "
+                "scripts/validate_reader_evidence_boundaries.py."
+            )
+        report_path = evidence_boundary_policy.get("report_path")
+        if not isinstance(report_path, str) or report_path != "build/reader_evidence_boundaries_report.json":
+            errors.append(
+                "reader_evidence_boundary_validation.report_path must be "
+                "build/reader_evidence_boundaries_report.json."
+            )
+        if evidence_boundary_policy.get("required_core_claim_marker") is not True:
+            errors.append("reader_evidence_boundary_validation.required_core_claim_marker must be true.")
+        if evidence_boundary_policy.get("required_plain_support_boundary") is not True:
+            errors.append("reader_evidence_boundary_validation.required_plain_support_boundary must be true.")
+        purpose = evidence_boundary_policy.get("purpose")
+        if not isinstance(purpose, str) or not purpose.strip():
+            errors.append("reader_evidence_boundary_validation.purpose must be a non-empty string.")
+        script = evidence_boundary_policy.get("script")
+        if isinstance(script, str) and script and not (ROOT / script).exists():
+            errors.append(f"reader_evidence_boundary_validation.script does not exist: {script}")
+    else:
+        errors.append("editions/release_profiles.json must define reader_evidence_boundary_validation.")
 
     live_human_policy = data.get("live_human_view_policy")
     if isinstance(live_human_policy, dict):
@@ -660,6 +688,7 @@ def main() -> None:
             [
                 "python3 scripts/build_reader_edition.py --check",
                 "python3 scripts/validate_human_reading_paths.py",
+                "python3 scripts/validate_reader_evidence_boundaries.py --check",
                 "python3 scripts/validate_reader_spine.py --check",
                 "python3 scripts/render_reader_formats.py --check",
             ],
@@ -678,6 +707,7 @@ def main() -> None:
                 "python3 scripts/validate_release_profiles.py",
                 "python3 scripts/validate_reading_mode_toggle.py",
                 "python3 scripts/validate_human_reading_paths.py",
+                "python3 scripts/validate_reader_evidence_boundaries.py --check",
                 "python3 scripts/validate_publication.py",
                 "python3 scripts/validate_book.py",
                 "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",

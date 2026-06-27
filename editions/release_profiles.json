@@ -272,6 +272,13 @@
     ],
     "purpose": "Derive the reader edition and verify that every generated chapter retains a minimally substantial human-readable spine after live-only scaffolding is stripped."
   },
+  "reader_evidence_boundary_validation": {
+    "script": "scripts/validate_reader_evidence_boundaries.py",
+    "report_path": "build/reader_evidence_boundaries_report.json",
+    "required_core_claim_marker": true,
+    "required_plain_support_boundary": true,
+    "purpose": "Derive the reader edition and verify that every generated chapter preserves the live core-claim marker plus a plain-language support-state boundary in the Core Claim section."
+  },
   "live_human_view_policy": {
     "toggle_asset": "assets/reading-mode.html",
     "static_validator": "scripts/validate_live_human_view.py",
@@ -388,6 +395,7 @@
         "python3 scripts/validate_release_profiles.py",
         "python3 scripts/validate_reading_mode_toggle.py",
         "python3 scripts/validate_human_reading_paths.py",
+        "python3 scripts/validate_reader_evidence_boundaries.py --check",
         "python3 scripts/validate_publication.py",
         "python3 scripts/validate_book.py",
         "python3 scripts/validate_visual_coverage.py",
@@ -477,6 +485,7 @@
       "release_gate": [
         "python3 scripts/build_reader_edition.py --check",
         "python3 scripts/validate_human_reading_paths.py",
+        "python3 scripts/validate_reader_evidence_boundaries.py --check",
         "python3 scripts/validate_reader_spine.py --check",
         "python3 scripts/render_reader_formats.py --check",
         "reader manuscript is manually reviewed for narrative continuity",
