@@ -145,6 +145,8 @@ The interface is the Living Book Release Record: release state, source commit, a
 
 The reader-edition interface needs the same discipline: edition profile, source commit, stripped sections, retained diagrams, format targets, render commands, review state, accessibility notes, audio-script status, and non-claims. A format listed in a profile is not a release artifact until that record exists.
 
+Those interfaces keep the book from treating publication as proof. A successful Pages build, reader-source generation, or audio-script generation is a release artifact with a scope and review state. It can improve accessibility and continuity while leaving evidence support unchanged until a separate evidence transition exists.
+
 ## Invariants
 
 The methodology invariants protect the book from confusing publication activity with evidence: every release can improve prose, diagrams, schemas, or proofs, but it cannot silently upgrade unsupported claims.

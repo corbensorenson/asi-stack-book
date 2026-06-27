@@ -175,6 +175,8 @@ Benchmarks record fidelity limits. Resource budgets account for simulation cost.
 
 The interface should separate claim class: invariant check, benchmark comparison, feasibility estimate, scenario exploration, safety rehearsal, or speculative thought experiment. Each class has a different admissible support state.
 
+The consumer side matters as much as the record shape. A planner may use a simulation to choose a test path, a benchmark harness may use it as a bounded environment, and a claim ledger may use it only inside the supported claim boundary. If transfer is denied, downstream layers should receive a refusal or residual rather than a vague simulated success.
+
 ## Invariants
 
 - Fidelity is declared.

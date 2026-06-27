@@ -102,6 +102,7 @@ PROBLEM_BANNED_PATTERNS = [
 
 SECTION_MIN_WORDS = {
     "## Problem": 120,
+    "## Interfaces": 130,
     "## Invariants": 90,
     "## Failure modes": 90,
     "## Minimum Viable Implementation": 60,

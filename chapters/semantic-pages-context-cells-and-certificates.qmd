@@ -152,6 +152,8 @@ The certificate is what lets a compact cell remain honest. It says what the cell
 
 The interface should distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference. Each representation kind has different failure modes and different permitted uses. Calling them all "context" erases the reason for the certificate.
 
+Different consumers should read the same certificate differently. Planning may use a constraint cell, verification may demand source bindings, execution may require an authority ceiling, and reader editions may preserve only orientation prose. The certificate prevents those uses from collapsing into one undifferentiated summary.
+
 ## Invariants
 
 - Authority labels survive summarization.

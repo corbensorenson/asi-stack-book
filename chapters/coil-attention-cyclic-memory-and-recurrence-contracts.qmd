@@ -170,6 +170,8 @@ VCM context traces expose adequacy and authority labels. Attention and memory mo
 
 The interface should carry baseline obligations too. If a cyclic structure is being evaluated, the record should identify ordinary attention, FIFO, LRU, content-gated, slot-only, or slot-plus-winding baselines before anyone claims improvement. Missing baselines should block quality promotion.
 
+The consumer contract is intentionally narrow. A planner may use freshness and coverage facts to decide whether more context is needed; a verifier may use loop exits and fallback declarations to reject a recurrence trace; a benchmark may use the same record to compare cyclic memory against ordinary attention. None of those consumers may convert structural coverage into semantic adequacy without separate evidence.
+
 ## Invariants
 
 - Residue-only aliasing remains visible.
