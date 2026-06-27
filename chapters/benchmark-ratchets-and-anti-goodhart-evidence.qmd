@@ -56,7 +56,7 @@ This chapter is the public evidence counterpart to procedural memory. Procedural
 
 Executable specs say what a narrow artifact can certify. Benchmarks ask how measured performance should change future behavior without becoming a game. Benchmark ratchets can move a floor forward only when regressions, scope, baselines, and negative results remain visible.
 
-The anti-Goodhart theme matters throughout this layer. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support. The point is to make improvement cumulative without letting the scoreboard become the mission.
+The anti-Goodhart theme matters throughout this layer. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support. The point is to make improvement cumulative without letting the scoreboard become the mission. A failed benchmark should teach as much as a win when the ledger is honest.
 :::
 
 ## Problem

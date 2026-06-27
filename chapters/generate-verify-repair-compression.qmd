@@ -45,7 +45,7 @@ Following compact generative systems, this chapter handles the stricter case whe
 
 Compact generative systems can save work only if their failures are accounted for. The stricter case appears when a generator claims it can reconstruct an artifact, so the stack needs a receipt that says what was generated, what was verified, what was repaired, and when literal fallback was cheaper.
 
-The core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth and which future tasks may safely use it.
+The core idea is rate honesty. If the generator leaves gaps, those gaps are not embarrassing details to hide. They are the repair channel, fallback cost, or negative evidence that tells the stack what the compressed representation is actually worth and which future tasks may safely use it. Compression earns trust only when decompression debt is named.
 :::
 
 ## Problem

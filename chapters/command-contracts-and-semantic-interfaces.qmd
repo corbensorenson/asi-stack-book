@@ -48,7 +48,7 @@ This chapter is where the stack stops treating language as a vibe and starts tre
 
 An intent-to-execution trace still needs a first machine-readable handoff: the command contract. It is the point where ordinary language becomes structured enough that planning can proceed without guessing at hidden requirements or hidden authority.
 
-The important move is not to make human language robotic. It is to preserve what matters: role, objective, context, constraints, output, verification, failure behavior, and permission boundary. A good command contract lets the stack be helpful while still knowing when it must ask, refuse, or stop. It also gives later layers something concrete to inspect when a plan drifts from the original purpose.
+The important move is not to make human language robotic. It is to preserve what matters: role, objective, context, constraints, output, verification, failure behavior, and permission boundary. A good command contract lets the stack be helpful while still knowing when it must ask, refuse, or stop. It also gives later layers something concrete to inspect when a plan drifts from the original purpose. This is the earliest place to catch mismatched expectations.
 :::
 
 ## Problem

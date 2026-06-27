@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal prose-only Human bridge floor
+
+- Tightened `scripts/validate_human_reading_paths.py` so Human Reading Path word counts exclude the source-only heading and apply to the prose that appears in Human view and generated reader editions. Expanded the remaining short bridges and raised the enforced prose-only floor to 100 words across all 54 chapters. Updated the site quality standard, writing runbook, and v1.0 candidate status to record the stronger contract and current manuscript scale: 168,558 chapter words excluding YAML and 176,057 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal status count refresh
 
 - Refreshed the v1.0 candidate manuscript scale after the Human Reading Path bridge expansions: 54 chapter files, 168,402 chapter words excluding YAML front matter, and 175,901 raw chapter-file words including metadata and live scaffolding. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reader artifact, ebook, or audio artifact is claimed.
