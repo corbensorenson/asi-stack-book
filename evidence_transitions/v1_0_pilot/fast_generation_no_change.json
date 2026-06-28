@@ -1,0 +1,108 @@
+{
+  "transition_id": "v1_0_pilot.fast_generation.no_change",
+  "claim_id": "fast-generation-architectures.core",
+  "claim_surface_refs": [
+    "chapters/fast-generation-architectures.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/generation_mode_baseline_harness.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/generation_mode_record.schema.json",
+    "schemas/resource_budget_record.schema.json",
+    "experiments/generation_mode_baselines/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "deterministic generation-mode and resource-budget fixture accounting only; no generation speed, speculative decoding quality, diffusion quality, KV-cache throughput, routing quality, model-quality, useful-solution-per-second performance, or runtime behavior result",
+  "evidence_roles": [
+    "deterministic_harness",
+    "schema_fixture",
+    "external_literature_context",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a deterministic generation-mode baseline harness with valid and expected-invalid fixtures over generation-mode and resource-budget records. It catches missing baseline and negative-control refs, latency-only proxy acceptance, failed-quality promotion, missing fallback behavior for medium-or-higher non-autoregressive modes, resource-budget mismatch, and support-state promotion attempts. External fast-generation source notes also cover speculative decoding, multi-token prediction, Medusa, EAGLE, lookahead decoding, early exit, PagedAttention, state-space alternatives, and diffusion language-model families. These artifacts improve the accounting discipline for comparing generation modes, but they do not run a model, reproduce a paper result, measure speed-quality curves, establish useful-solution-per-second performance, or validate runtime routing.",
+  "required_artifacts": [
+    "autoregressive baseline run with task set, quality metric, residual accounting, and environment record",
+    "speculative decoding or draft-head run with acceptance, rejection, repair, and quality accounting",
+    "diffusion or non-autoregressive generation run with matched baseline and negative control",
+    "KV-cache or serving-throughput measurement with memory pressure and quality boundary",
+    "router-selected generation-mode trace with fallback and risk-tier enforcement",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/generation_mode_baseline_harness.md",
+    "scripts/validate_generation_mode_baselines.py",
+    "experiments/generation_mode_baselines/results/2026-06-28-local.md",
+    "schemas/generation_mode_record.schema.json",
+    "schemas/resource_budget_record.schema.json",
+    "docs/phase5_harness_registry.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#fast-generation-architectures.core",
+    "docs/source_evidence_audit.md#fast-generation-architectures.core",
+    "appendices/H_external_sources.qmd#fast-generation-decoding-substrates-and-serving-acceleration"
+  ],
+  "verification_command": "python3 scripts/validate_generation_mode_baselines.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Fast Generation remains at argument",
+    "generation-mode baseline fixtures are deterministic accounting fixtures",
+    "no model inference benchmark was run",
+    "no speculative decoding, diffusion, early-exit, state-space, or KV-cache throughput result was reproduced",
+    "no useful-solution-per-second performance claim is established"
+  ],
+  "negative_evidence_refs": [
+    "chapters/fast-generation-architectures.qmd",
+    "docs/generation_mode_baseline_harness.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "downgrade_triggers": [
+    "generation mode baseline harness failure",
+    "generation-mode or resource-budget schema drift",
+    "chapter text interpreted as a measured speed or quality result",
+    "latency-only proxy used as a useful-solution-per-second claim",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to deterministic accounting behavior that passed, or after matched model runs, baseline and negative-control records, quality/residual measurements, fallback traces, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "deterministic fixtures do not run an LLM or generation system",
+    "schema validation does not prove acceptance quality or runtime routing",
+    "external source notes provide comparison vocabulary rather than reproduced results",
+    "useful-solution-per-second remains a target metric, not a measured local result",
+    "no independent model-evaluation or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent model-evaluation, benchmarking, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no model inference run",
+    "no matched autoregressive baseline result",
+    "no speculative decoding or diffusion run",
+    "no KV-cache throughput measurement",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-fast-generation-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Fast Generation above argument",
+    "does not prove generation speed",
+    "does not prove model quality",
+    "does not prove useful-solution-per-second performance",
+    "does not prove runtime routing or deployment behavior"
+  ]
+}
