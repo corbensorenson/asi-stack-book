@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 78
+- `source_note_available_uncached`: 81
 
 ## Records
 
@@ -86,6 +86,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_pddl_1998` | PDDL: The Planning Domain Definition Language | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_shop2_2003` | SHOP2: An HTN Planning System | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_integrated_tamp_2020` | Integrated Task and Motion Planning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_behavior_trees_robotics_ai_2017` | Behavior Trees in Robotics and AI: An Introduction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_three_states_plan_fear_2006` | Three States and a Plan: The A.I. of F.E.A.R. | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_autogen_2023` | AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_rag_2020` | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lost_in_middle_2023` | Lost in the Middle: How Language Models Use Long Contexts | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_memgpt_2023` | MemGPT: Towards LLMs as Operating Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

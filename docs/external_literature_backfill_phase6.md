@@ -24,6 +24,9 @@ literature coverage.
 | `ext_pddl_1998` | planning/modeling | Domain/problem separation, action schemas, comparable planning notation, and planner-interface discipline. |
 | `ext_shop2_2003` | planning/HTN | Hierarchical task-network planning, ordered task decomposition, method selection, and competition-result boundaries. |
 | `ext_integrated_tamp_2020` | planning/TAMP | Discrete task planning, continuous feasibility subproblems, motion-planning interfaces, and integration-strategy vocabulary. |
+| `ext_behavior_trees_robotics_ai_2017` | planning/behavior trees | Modular reactive task switching, behavior-tree robustness/safety analysis vocabulary, planning integration, and stochastic outcome accounting. |
+| `ext_three_states_plan_fear_2006` | planning/GOAP | Goal Oriented Action Planning in real-time action games, practical planner constraints, autonomous characters, and squad-behavior composition. |
+| `ext_autogen_2023` | planning/agent orchestration | Conversable multi-agent LLM workflows, human/tool/LLM modes, programmable interaction patterns, and application-level orchestration boundaries. |
 | `ext_rag_2020` | retrieval/context | Retrieval-augmented generation and the boundary between model memory and retrieved evidence. |
 | `ext_lost_in_middle_2023` | retrieval/context | Long-context position sensitivity and the gap between available context and used evidence. |
 | `ext_memgpt_2023` | retrieval/context management | OS-inspired virtual context management, memory tiers, and long-running conversation/document-analysis boundaries. |
@@ -57,7 +60,7 @@ literature coverage.
 - Added public-safe source inventory records.
 - Added matching source notes.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
-- The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, and task-and-motion planning.
+- The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, task-and-motion planning, behavior trees, GOAP/F.E.A.R.-style game planning, and AutoGen-style multi-agent orchestration.
 - The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, and synthetic context-size stress tests.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
@@ -76,7 +79,7 @@ literature coverage.
 
 ## Next Queues
 
-1. Deepen planning coverage with behavior trees, GOAP, broader agent-orchestration sources, and any PlanForge-specific planning-language translation references that become necessary.
+1. Deepen planning coverage with PlanForge-specific planning-language translation references, planner/runtime-adapter comparison records, and any additional orchestration sources needed after chapter-level review.
 2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, provenance-aware RAG, context compression/evaluation, and VCM-specific adapter references.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
 4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.

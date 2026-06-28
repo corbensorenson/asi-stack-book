@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 6 planning-orchestration literature deepening
+
+- Added three primary external planning/orchestration source records and public-safe source notes for Behavior Trees in Robotics and AI, F.E.A.R.-style Goal Oriented Action Planning, and AutoGen multi-agent conversation orchestration. Regenerated Appendix A, Appendix H, and the source-readiness report so the planning queue now has initial source-noted comparison vocabulary for interleaved reasoning/acting, deliberative search, planning-language interfaces, HTN decomposition, task-and-motion planning, behavior trees, GOAP, and multi-agent orchestration. Updated the Phase 6 backfill report, external-literature queue, v1.0 roadmap, focus audit, and status snapshot to record 143 public-safe source records with 84 external records. This is external-literature normalization only; it does not add chapter source assignments, promote Appendix C support states, reproduce any planner, run behavior-tree/GOAP/AutoGen code, create proof/test evidence, claim runtime behavior, or create reader/ebook/document/PDF/audio artifacts.
+
 ## 2026-06-28 - v1.0 manifest claim-label hardening
 
 - Added explicit `claim_label` fields to all 54 chapter records in `book_structure.json`, kept all labels at `Design rationale`, and kept all support states at `argument`. Updated `scripts/add_chapter.py` so new manifest chapters declare a conservative claim label by default, and tightened `scripts/validate_book.py` so missing or invalid `claim_label` and `evidence_level` values fail validation. Updated the v1.0 roadmap, focus audit, status surface, README, and repository map to record the manifest contract. This is a manifest-validation hardening pass only; it does not promote support states, change core claim text, add source-derived evidence, add proof/test/benchmark/runtime results, create reader artifacts, or create release records.
