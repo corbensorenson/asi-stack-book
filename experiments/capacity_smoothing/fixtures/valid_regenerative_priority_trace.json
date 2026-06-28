@@ -1,0 +1,53 @@
+{
+  "scenario_id": "valid_regenerative_priority_trace",
+  "capacity_mode": "regenerative_priority",
+  "capacity_limit": 10,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 4,
+      "refill": 2,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 2,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 3,
+      "decision_refs": [
+        "admit high-risk verification task",
+        "defer low-risk refresh until capacity recovers"
+      ]
+    },
+    {
+      "tick": 1,
+      "starting_capacity": 3,
+      "refill": 2,
+      "admitted_cost": 4,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 3,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 1,
+      "decision_refs": [
+        "admit critical review",
+        "hold low-risk batch"
+      ]
+    },
+    {
+      "tick": 2,
+      "starting_capacity": 1,
+      "refill": 4,
+      "admitted_cost": 2,
+      "admitted_low_risk_cost": 2,
+      "deferred_cost": 0,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 3,
+      "decision_refs": [
+        "admit deferred low-risk work after high-risk queue clears"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, runtime behavior, or economic outcomes."
+  ]
+}

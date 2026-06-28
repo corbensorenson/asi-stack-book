@@ -1,0 +1,24 @@
+{
+  "scenario_id": "invalid_overclaim_load_stability",
+  "capacity_mode": "priority_defer",
+  "capacity_limit": 8,
+  "conclusion": "This proves load stability for TokenMana.",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 3,
+      "refill": 2,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 3,
+      "deferred_cost": 2,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 2,
+      "decision_refs": [
+        "admit bounded low-risk work"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state."
+  ]
+}

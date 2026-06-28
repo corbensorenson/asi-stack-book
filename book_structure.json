@@ -7749,7 +7749,13 @@
             },
             "Budget allocation test",
             "Risk-adjusted verification test",
-            "Load stability scenario",
+            {
+              "name": "Capacity smoothing toy harness",
+              "purpose": "Check deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries.",
+              "status": "implemented; passing via `python3 scripts/validate_capacity_smoothing.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_capacity_smoothing.py`"
+            },
             "KV-cache memory accounting scenario"
           ],
           "lean_module": "AsiStackProofs.ResourceEconomics",

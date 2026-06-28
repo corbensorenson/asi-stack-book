@@ -206,5 +206,28 @@
       "Does not prove budget scheduling, load stability, verification-tax optimization, KV-cache behavior, runtime budget enforcement, or economic outcomes.",
       "Does not promote Appendix C support states."
     ]
+  },
+  {
+    "id": "capacity_smoothing",
+    "name": "Capacity smoothing toy harness",
+    "command": "python3 scripts/validate_capacity_smoothing.py",
+    "script": "scripts/validate_capacity_smoothing.py",
+    "doc": "docs/capacity_smoothing_harness.md",
+    "experiment_dir": "experiments/capacity_smoothing",
+    "fixture_dir": "experiments/capacity_smoothing/fixtures",
+    "result_record": "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 3,
+    "result_summary": "Capacity smoothing toy harness passed: 2 valid fixture(s), 3 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage"
+    ],
+    "non_claims": [
+      "Does not prove TokenMana behavior, scheduler behavior, load stability, review-queue optimization, runtime behavior, human outcomes, or economic outcomes.",
+      "Does not promote Appendix C support states."
+    ]
   }
 ]

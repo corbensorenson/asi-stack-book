@@ -48,6 +48,7 @@ REQUIRED = [
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_generation_mode_baselines.py",
     "scripts/validate_resource_budget_ledgers.py",
+    "scripts/validate_capacity_smoothing.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
@@ -64,6 +65,7 @@ REQUIRED = [
     "docs/benchmark_antigoodhart_harness.md",
     "docs/generation_mode_baseline_harness.md",
     "docs/resource_budget_ledger_harness.md",
+    "docs/capacity_smoothing_harness.md",
     "docs/phase5_harness_registry.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
@@ -75,6 +77,7 @@ REQUIRED = [
     "experiments/phase5_harness_registry.json",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+    "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "evidence_transitions/README.md",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
@@ -539,6 +542,7 @@ def main() -> None:
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_resource_budget_ledgers.py")
+    run_validator("validate_capacity_smoothing.py")
     run_validator("validate_phase5_harness_registry.py")
     print("Book validation passed.")
 

@@ -1,8 +1,12 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Capacity smoothing toy harness
+
+- Added `scripts/validate_capacity_smoothing.py`, deterministic toy capacity fixtures under `experiments/capacity_smoothing/`, `docs/capacity_smoothing_harness.md`, and `experiments/capacity_smoothing/results/2026-06-28-local.md`. The local run passes with 2 valid and 3 expected-invalid fixtures, checking bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries. Wired the harness into `scripts/validate_book.py`, `experiments/phase5_harness_registry.json`, Appendix E generation, the Resource Economics chapter, the Resource Economics no-change evidence record, v1.0 status/roadmap/focus surfaces, README, and repository map. This is toy trace discipline only; it is not TokenMana, a budget scheduler, review-queue optimizer, real load-stability result, runtime result, economic outcome, source-derived evidence transition, support-state promotion, or deployed AI behavior claim.
+
 ## 2026-06-28 - v1.0 Resource Economics no-change record refresh
 
-- Refreshed `evidence_transitions/v1_0_pilot/resource_economics_no_change.json` and `docs/evidence_transition_pilot.md` so the accepted no-change decision now includes the Resource Budget Ledger harness alongside generation-mode/resource-budget accounting. Resource Economics remains at `argument`: deterministic dispatch, escalation, protected-overhead, displaced-cost, review-capacity, evidence-ref, and no-promotion fixtures improve record discipline but do not establish a budget scheduler, review-queue optimizer, load-stability result, verification-tax optimizer, KV-cache or serving benchmark, cost-quality economics, runtime budget enforcement, source-derived evidence transition, support-state promotion, or deployed AI behavior.
+- Refreshed `evidence_transitions/v1_0_pilot/resource_economics_no_change.json` and `docs/evidence_transition_pilot.md` so the accepted no-change decision now includes the Resource Budget Ledger and capacity-smoothing harnesses alongside generation-mode/resource-budget accounting. Resource Economics remains at `argument`: deterministic dispatch, escalation, protected-overhead, displaced-cost, review-capacity, capacity-trace, evidence-ref, and no-promotion fixtures improve record discipline but do not establish a budget scheduler, review-queue optimizer, real load-stability result, verification-tax optimizer, KV-cache or serving benchmark, cost-quality economics, runtime budget enforcement, source-derived evidence transition, support-state promotion, or deployed AI behavior.
 
 ## 2026-06-28 - v1.0 Resource Budget Ledger harness
 

@@ -1,0 +1,25 @@
+{
+  "scenario_id": "invalid_negative_capacity_dispatch",
+  "capacity_mode": "regenerative_priority",
+  "capacity_limit": 6,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 1,
+      "refill": 1,
+      "admitted_cost": 5,
+      "admitted_low_risk_cost": 5,
+      "deferred_cost": 0,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": -3,
+      "decision_refs": [
+        "dispatch all low-risk work despite insufficient capacity"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, runtime behavior, or economic outcomes."
+  ]
+}

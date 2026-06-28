@@ -1,0 +1,25 @@
+{
+  "scenario_id": "invalid_low_risk_hoards_high_risk_capacity",
+  "capacity_mode": "regenerative_priority",
+  "capacity_limit": 10,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 4,
+      "refill": 2,
+      "admitted_cost": 4,
+      "admitted_low_risk_cost": 4,
+      "deferred_cost": 0,
+      "blocked_high_risk_cost": 3,
+      "ending_capacity": 2,
+      "decision_refs": [
+        "admit low-risk batch while critical review waits"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, runtime behavior, or economic outcomes."
+  ]
+}

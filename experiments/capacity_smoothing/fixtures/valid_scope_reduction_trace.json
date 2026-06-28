@@ -1,0 +1,40 @@
+{
+  "scenario_id": "valid_scope_reduction_trace",
+  "capacity_mode": "scope_reduce",
+  "capacity_limit": 8,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 2,
+      "refill": 2,
+      "admitted_cost": 2,
+      "admitted_low_risk_cost": 2,
+      "deferred_cost": 4,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 2,
+      "decision_refs": [
+        "shrink low-risk batch to available capacity",
+        "defer noncritical remainder"
+      ]
+    },
+    {
+      "tick": 1,
+      "starting_capacity": 2,
+      "refill": 3,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 3,
+      "deferred_cost": 1,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 2,
+      "decision_refs": [
+        "admit smaller batch",
+        "leave residual for later capacity"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, runtime behavior, or economic outcomes."
+  ]
+}

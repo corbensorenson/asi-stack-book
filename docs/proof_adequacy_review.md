@@ -68,7 +68,7 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `fast-generation-architectures` | 2 | needs empirical or baseline tests first | Generation-mode accounting harness added; still build matched model workload, baseline, negative-control, quality, residual, and result records before stronger proof. |
 | `rankfold-neuralfold-and-artifact-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `semantic-representation-and-tree-structured-models` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting and deterministic budget-ledger harnesses added; still add scheduler, load-stability, verification-tax, KV-cache, and cost-quality tests. |
+| `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting, deterministic budget-ledger harnesses, and capacity-smoothing toy traces added; still add scheduler, real load-stability, verification-tax, KV-cache, and cost-quality tests. |
 | `simulation-fidelity-and-physical-constraints` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `mathematical-and-search-substrates` | 2 | needs empirical or baseline tests first | Build workload, baseline, and result record before stronger proof. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | research-agenda until artifact import | Import/replay artifacts before adequacy can rise. |
@@ -131,15 +131,18 @@ coverage because every valid generation-mode scenario must carry a matching
 `python3 scripts/validate_resource_budget_ledgers.py`, a deterministic ledger
 harness over Resource Budget Record decisions for low-risk dispatch, high-risk
 escalation, protected-overhead dispatch, displaced-cost residualization,
-evidence refs, and support-state non-promotion.
+review-capacity hoarding, evidence refs, and support-state non-promotion. It
+also adds `python3 scripts/validate_capacity_smoothing.py`, a deterministic toy
+trace harness for bounded regeneration arithmetic, priority deferral, scope
+reduction, overload rejection, and no-promotion boundaries.
 
 This keeps `resource-economics-and-token-budgets` in the `useful but too
 narrow` class. The Lean module still contains finite required-gate and
 high-risk verification-budget predicates, and the harnesses are deterministic
-fixture accounting. They do not implement a budget scheduler, measure load
-stability, optimize verification tax, reproduce KV-cache or serving-memory
-behavior, measure cost-quality economics, or establish runtime budget
-enforcement.
+fixture accounting and toy trace checks. They do not implement a budget
+scheduler, measure real load stability, optimize verification tax, reproduce
+KV-cache or serving-memory behavior, measure cost-quality economics, or
+establish runtime budget enforcement.
 
 ### Claim Ledger And Proof-Carrying Claim Record Envelopes
 
@@ -151,6 +154,6 @@ This keeps both `claim-ledgers-and-belief-revision` and `spinoza-verification-an
 
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority, Planning, Claim Ledger, and Proof-Carrying Claims now have stronger finite-record envelopes; Runtime Adapters now has a synthetic permission harness; Fast Generation now has deterministic baseline-accounting fixtures that define what future model runs must record; and Resource Economics now has deterministic paired budget-accounting plus budget-ledger coverage that is still too narrow for scheduler, load, serving, or economic claims. No increment moves a chapter support state.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority, Planning, Claim Ledger, and Proof-Carrying Claims now have stronger finite-record envelopes; Runtime Adapters now has a synthetic permission harness; Fast Generation now has deterministic baseline-accounting fixtures that define what future model runs must record; and Resource Economics now has deterministic paired budget-accounting, budget-ledger, and capacity-smoothing toy-trace coverage that is still too narrow for scheduler, real load, serving, or economic claims. No increment moves a chapter support state.
 
 No Appendix C support state changes were made.
