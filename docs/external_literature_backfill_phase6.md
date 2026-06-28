@@ -42,6 +42,9 @@ literature coverage.
 | `ext_moe_llm_survey_2024` | routing/MoE survey | LLM MoE taxonomy, algorithmic/systemic design issues, implementation patterns, evaluation practice, and open directions. |
 | `ext_deep_compression_2015` | compression/representation | Pruning, trained quantization, coding, and utility-preservation boundaries. |
 | `ext_lora_2021` | compression/representation | Low-rank adaptation, parameter-efficient updates, and adaptation-boundary vocabulary. |
+| `ext_knowledge_distillation_2015` | compression/distillation | Teacher/student distillation, soft-target transfer, ensemble compression, and behavior-transfer limits. |
+| `ext_gptq_2022` | compression/quantization | Post-training transformer quantization, memory reduction, and accuracy/speed tradeoff boundaries. |
+| `ext_qlora_2023` | compression/quantized adaptation | Quantized LLM finetuning with low-rank adapters, memory-efficient adaptation, and benchmark-claim limits. |
 | `ext_mmlu_2020` | benchmark science | Broad multitask benchmark coverage, uneven performance, and saturation pressure. |
 | `ext_bigbench_2022` | benchmark science | Broad community benchmark tasks, scale trends, calibration, and residual tradeoffs. |
 | `ext_helm_2022` | benchmark science | Multi-scenario, multi-metric, transparent, living evaluation practice. |
@@ -55,7 +58,8 @@ literature coverage.
 - The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, and synthetic context-size stress tests.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, or test results changed.
+- The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, and QLoRA-style quantized finetuning.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, finetuning runs, or test results changed.
 
 ## Non-Claims
 
@@ -72,5 +76,5 @@ literature coverage.
 2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, provenance-aware RAG, context compression/evaluation, and VCM-specific adapter references.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
 4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.
-5. Deepen compression coverage with program synthesis, quantization, distillation, residual coding, and artifact-utility sources.
+5. Deepen compression coverage with program synthesis, residual coding, artifact-utility metrics, compression-regression testing, and representation-learning sources.
 6. Deepen benchmark-science coverage with contamination, hidden-test, saturation, and evaluation-gaming sources.

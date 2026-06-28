@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 72
+- `source_note_available_uncached`: 75
 
 ## Records
 
@@ -104,6 +104,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_moe_llm_survey_2024` | A Survey on Mixture of Experts in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_deep_compression_2015` | Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lora_2021` | LoRA: Low-Rank Adaptation of Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_knowledge_distillation_2015` | Distilling the Knowledge in a Neural Network | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gptq_2022` | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_qlora_2023` | QLoRA: Efficient Finetuning of Quantized LLMs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mmlu_2020` | Measuring Massive Multitask Language Understanding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_bigbench_2022` | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_helm_2022` | Holistic Evaluation of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
