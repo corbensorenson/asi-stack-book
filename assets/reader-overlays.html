@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 24,
+  "operation_count": 25,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -295,6 +295,18 @@
       },
       "content": "The authority record has to name the kind of permission being requested, because the same information can be safe in one permission class and unsafe in another. Reading a source, transforming it into a summary, disclosing it to an audience, writing it into a durable artifact, executing a tool, and approving a high-impact action are different powers. A system that collapses them into a generic access flag has already lost the boundary it needs to enforce.\n\nRead permission lets a layer inspect material without publishing it, mutating it, or acting on it. Transform permission lets a layer derive a new artifact, but it carries provenance and taint obligations. Disclosure permission asks whether the output may be shown, exported, or transmitted to the intended audience. Write permission changes a file, ledger, memory cell, branch, or other durable target and therefore needs target-scoped authority plus audit. Execute permission crosses into a tool, runtime, service, or adapter and should leave an effect receipt. Approval permission is still more constrained: it authorizes a promotion or high-impact action and cannot be self-issued by the actor that benefits from it.\n\nThese classes are deliberately ordinary. Most failures at this layer are ordinary too: a model reads something and treats the text as approval, a planner turns a draft into an action, a tool wrapper lets a low-authority request borrow a broader credential, or a replacement implementation inherits a handle that was qualified for an earlier context. The point of the taxonomy is to make those mistakes visible before they become side effects.",
       "rationale": "Replace the permission-class table with reader prose while preserving the canonical AI/research taxonomy."
+    },
+    {
+      "id": "v1_0.verification_bandwidth.adequacy_states_reader_replace",
+      "target_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Adequacy states",
+        "aliases": []
+      },
+      "content": "Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.\n\nJoint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.\n\nContradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support.",
+      "rationale": "Replace the context-adequacy state table with reader prose while preserving the canonical AI/research adequacy-state matrix."
     }
   ],
   "non_claims": [

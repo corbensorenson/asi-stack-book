@@ -120,7 +120,7 @@ The adequacy record models verification as constrained by semantic-unit coverage
 
 The adequacy rule is deliberately blunt: if the system cannot name the semantic units that must be jointly checked, it cannot claim verification. If the units are too large for joint checking, the system may still draft, summarize, or propose a claim, but the claim ledger must mark the verification state as inadequate, summary-derived, or escalated.
 
-The adequacy states are deliberately operational:
+### Adequacy states
 
 | Adequacy state | Meaning | Allowed use |
 |---|---|---|

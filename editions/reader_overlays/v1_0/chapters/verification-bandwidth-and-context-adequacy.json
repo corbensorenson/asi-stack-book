@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+  "operations": [
+    {
+      "id": "v1_0.verification_bandwidth.adequacy_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Adequacy states"
+      },
+      "rationale": "Replace the context-adequacy state table with reader prose while preserving the canonical AI/research adequacy-state matrix.",
+      "content_lines": [
+        "Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.",
+        "",
+        "Joint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.",
+        "",
+        "Contradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support."
+      ]
+    }
+  ]
+}
