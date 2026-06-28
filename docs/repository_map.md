@@ -21,6 +21,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/plan_execution_contract_harness.md` | Phase 5 plan-execution contract harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/runtime_adapter_permission_harness.md` | Phase 5 runtime adapter permission harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/context_admission_adequacy_harness.md` | Phase 5 context admission/adequacy harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/readiness_residual_harness.md` | Phase 5 readiness/residual gate harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/benchmark_antigoodhart_harness.md` | Phase 5 benchmark anti-Goodhart harness summary, command, local result, and non-claim boundary. | tracked |
@@ -49,7 +50,7 @@ This repository is organized around the living book and its validation loop.
 | `schemas/` | JSON Schemas for protocol records. | tracked |
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `evidence_transitions/` | Evidence-transition review records checked against `schemas/evidence_transition_record.schema.json`. | tracked |
-| `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state, authority, plan-execution, context-admission, readiness/residual, benchmark anti-Goodhart fixtures and result records, and the Phase 5 harness registry. | tracked |
+| `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state, authority, plan-execution, runtime-adapter, context-admission, readiness/residual, benchmark anti-Goodhart fixtures and result records, and the Phase 5 harness registry. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |

@@ -9,9 +9,9 @@ This review classifies the 112 implemented Lean proof targets by adequacy for th
 | Adequacy class | Targets | Meaning |
 |---|---:|---|
 | adequate finite-record invariant | 8 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
-| useful but too narrow | 27 | The predicate is a useful guard, but the chapter needs state-machine, trace, or integration tests before the proof can support the larger boundary. |
+| useful but too narrow | 28 | The predicate is a useful guard, but the chapter needs state-machine, trace, or integration tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 20 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
-| needs executable tests first | 41 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
+| needs executable tests first | 40 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
 | needs empirical or baseline tests first | 10 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise. |
 | research-agenda until artifact import | 6 | The proof target remains a placeholder guard until external/local project artifacts are imported, built, replayed, or otherwise inspected. |
 
@@ -57,7 +57,7 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `unified-adaptive-tribunal-and-adversarial-review` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `labor-os-and-typed-jobs` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `artifact-graphs-audit-logs-and-replay` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `runtime-adapters-tool-permissions-and-human-approval` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `runtime-adapters-tool-permissions-and-human-approval` | 2 | useful but too narrow | Synthetic runtime-adapter permission harness added; still add deployed sandbox, approval-service, secret-handle, rollback-execution, and effect-receipt tests. |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `routing-heads-and-specialist-cores` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
@@ -98,8 +98,14 @@ The second follow-through increment strengthened `AsiStackProofs.Planning` beyon
 
 This moves `planning-as-a-control-layer` from `needs executable tests first` to `useful but too narrow`. The predicate is now closer to the synthetic plan-execution harness, but it remains a finite-record formalization. It still does not establish planner quality, decomposition accuracy, graph completeness, context-demand prediction, route choice, scheduler behavior, deployed execution, or runtime replanning behavior.
 
+### Runtime Adapter Permission Harness
+
+The third follow-through increment did not add Lean code. It added `python3 scripts/validate_runtime_adapter_permissions.py`, a synthetic harness over typed jobs, runtime adapter invocations, and authority-use receipts. The harness checks permission coverage, high-impact approval gates, approval expiry markers, effect receipt presence, rollback-handle or irreversible-residual capture, and authority receipt alignment.
+
+This moves `runtime-adapters-tool-permissions-and-human-approval` from `needs executable tests first` to `useful but too narrow`. The proof target remains finite-record Lean, and the harness remains synthetic fixture behavior. It still does not establish deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, real effect receipt validity, or runtime safety.
+
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority and Planning now have stronger finite-record envelopes, but neither increment moves a chapter support state.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority and Planning now have stronger finite-record envelopes, and Runtime Adapters now has a synthetic permission harness, but no increment moves a chapter support state.
 
 No Appendix C support state changes were made.

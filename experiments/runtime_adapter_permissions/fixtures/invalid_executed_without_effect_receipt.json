@@ -1,0 +1,68 @@
+{
+  "scenario_id": "invalid_executed_without_effect_receipt",
+  "typed_job": {
+    "job_id": "job://runtime/missing-receipt-001",
+    "contract_id": "contract://command/local-draft-update",
+    "job_type": "local_artifact_update",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://local-filesystem",
+    "inputs": ["artifact://draft-before"],
+    "outputs": ["artifact://draft-after"],
+    "permissions": ["filesystem.write", "repo_write"],
+    "approval_state": "not_required",
+    "failure_behavior": ["stop_on_write_error"],
+    "audit_events": ["audit://runtime/missing-receipt-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/missing-receipt-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/missing-receipt-001",
+    "adapter_id": "adapter://local-filesystem",
+    "target_type": "local_file",
+    "capability": "filesystem.write",
+    "permission_required": "filesystem.write",
+    "sandbox_mode": "workspace_write_limited",
+    "impact_class": "low_impact",
+    "risk_tier": "low",
+    "approval_required": false,
+    "approval_record": "not_required",
+    "approval_scope": "not_required",
+    "approval_expiry": "not_required",
+    "authority_handle": "handle://runtime/missing-receipt-001",
+    "inputs": ["artifact://draft-before"],
+    "effect_lease": "lease://runtime/missing-receipt-001",
+    "effect_receipt": "missing",
+    "pre_state_ref": "state://draft-before",
+    "post_state_ref": "state://draft-after",
+    "external_side_effects": [],
+    "verification_refs": [],
+    "rollback_handle": "rollback://restore-draft-before",
+    "irreversible_residuals": [],
+    "incident_refs": [],
+    "audit_refs": [],
+    "residuals": [],
+    "support_state_effect": "argument_only",
+    "non_claims": [
+      "does not execute a real filesystem write",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/missing-receipt-001",
+    "principal": "job://runtime/missing-receipt-001",
+    "purpose": "missing receipt fixture",
+    "destination": "local_file",
+    "allowed_action": "filesystem.write",
+    "clearance": "low",
+    "approval_record": "not_required",
+    "scif_lifecycle": ["spawn", "execute", "audit"],
+    "sanitized_output": "missing",
+    "residual_leak_risk": [],
+    "revocation_path": "revoke://runtime/missing-receipt-001"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not promote any support state"
+  ]
+}

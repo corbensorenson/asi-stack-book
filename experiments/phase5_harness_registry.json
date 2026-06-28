@@ -70,6 +70,29 @@
     ]
   },
   {
+    "id": "runtime_adapter_permissions",
+    "name": "Runtime adapter permission harness",
+    "command": "python3 scripts/validate_runtime_adapter_permissions.py",
+    "script": "scripts/validate_runtime_adapter_permissions.py",
+    "doc": "docs/runtime_adapter_permission_harness.md",
+    "experiment_dir": "experiments/runtime_adapter_permissions",
+    "fixture_dir": "experiments/runtime_adapter_permissions/fixtures",
+    "result_record": "experiments/runtime_adapter_permissions/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Runtime adapter permission harness passed: 2 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "security-kernel-and-digital-scifs",
+      "labor-os-and-typed-jobs",
+      "artifact-graphs-audit-logs-and-replay"
+    ],
+    "non_claims": [
+      "Does not prove deployed adapter behavior, sandbox isolation, approval service quality, secret-handle safety, rollback execution, or runtime behavior.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "context_admission_adequacy",
     "name": "Context admission/adequacy harness",
     "command": "python3 scripts/validate_context_admission_adequacy.py",

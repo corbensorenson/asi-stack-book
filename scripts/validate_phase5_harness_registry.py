@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the v1.0 Phase 5 harness registry.
 
-The registry is a traceability gate for the first executable harness set. It
+The registry is a traceability gate for the executable harness set. It
 checks wiring, fixture counts, result records, and public docs. It does not run
 the harness commands and does not promote support states.
 """

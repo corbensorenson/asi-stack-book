@@ -1,0 +1,68 @@
+{
+  "scenario_id": "invalid_expired_approval",
+  "typed_job": {
+    "job_id": "job://runtime/expired-approval-001",
+    "contract_id": "contract://command/preview-deployment",
+    "job_type": "preview_deployment",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://preview-deployer",
+    "inputs": ["artifact://build-preview"],
+    "outputs": ["deployment://preview-001"],
+    "permissions": ["deploy.preview", "deployment.write"],
+    "approval_state": "approved",
+    "failure_behavior": ["rollback_preview_on_failed_verification"],
+    "audit_events": ["audit://runtime/expired-approval-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/expired-approval-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/expired-approval-001",
+    "adapter_id": "adapter://preview-deployer",
+    "target_type": "preview_environment",
+    "capability": "deploy.preview",
+    "permission_required": "deployment.write",
+    "sandbox_mode": "preview_only",
+    "impact_class": "high_impact",
+    "risk_tier": "high",
+    "approval_required": true,
+    "approval_record": "approval://human/expired-preview",
+    "approval_scope": "preview environment only",
+    "approval_expiry": "expired:2026-01-01",
+    "authority_handle": "handle://runtime/expired-approval-001",
+    "inputs": ["artifact://build-preview"],
+    "effect_lease": "lease://runtime/expired-approval-001",
+    "effect_receipt": "receipt://runtime/expired-approval-001",
+    "pre_state_ref": "state://preview-before",
+    "post_state_ref": "state://preview-after",
+    "external_side_effects": ["created preview deployment deployment://preview-001"],
+    "verification_refs": ["check://preview-health"],
+    "rollback_handle": "rollback://preview-001",
+    "irreversible_residuals": [],
+    "incident_refs": [],
+    "audit_refs": ["audit://runtime/expired-approval-001"],
+    "residuals": [],
+    "support_state_effect": "argument_only",
+    "non_claims": [
+      "does not execute a real deployment",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/expired-approval-001",
+    "principal": "job://runtime/expired-approval-001",
+    "purpose": "expired approval fixture",
+    "destination": "preview_environment",
+    "allowed_action": "deploy.preview",
+    "clearance": "high",
+    "approval_record": "approval://human/expired-preview",
+    "scif_lifecycle": ["spawn", "execute", "audit"],
+    "sanitized_output": "receipt://runtime/expired-approval-001",
+    "residual_leak_risk": [],
+    "revocation_path": "revoke://runtime/expired-approval-001"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not promote any support state"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "scenario_id": "invalid_irreversible_without_residual",
+  "typed_job": {
+    "job_id": "job://runtime/irreversible-001",
+    "contract_id": "contract://command/external-message",
+    "job_type": "external_message",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://external-message",
+    "inputs": ["artifact://message-draft"],
+    "outputs": ["message://sent-001"],
+    "permissions": ["message.send", "external_effect"],
+    "approval_state": "approved",
+    "failure_behavior": ["record_incident_on_delivery_mismatch"],
+    "audit_events": ["audit://runtime/irreversible-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/irreversible-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/irreversible-001",
+    "adapter_id": "adapter://external-message",
+    "target_type": "external_message",
+    "capability": "message.send",
+    "permission_required": "external_effect",
+    "sandbox_mode": "approved_message_only",
+    "impact_class": "irreversible",
+    "risk_tier": "critical",
+    "approval_required": true,
+    "approval_record": "approval://human/message-001",
+    "approval_scope": "send one approved message",
+    "approval_expiry": "valid_through:v1_0_fixture",
+    "authority_handle": "handle://runtime/irreversible-001",
+    "inputs": ["artifact://message-draft"],
+    "effect_lease": "lease://runtime/irreversible-001",
+    "effect_receipt": "receipt://runtime/irreversible-001",
+    "pre_state_ref": "state://message-before",
+    "post_state_ref": "state://message-after",
+    "external_side_effects": ["sent external message message://sent-001"],
+    "verification_refs": ["check://message-delivery"],
+    "rollback_handle": "none",
+    "irreversible_residuals": [],
+    "incident_refs": [],
+    "audit_refs": ["audit://runtime/irreversible-001"],
+    "residuals": [],
+    "support_state_effect": "argument_only",
+    "non_claims": [
+      "does not send a real external message",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/irreversible-001",
+    "principal": "job://runtime/irreversible-001",
+    "purpose": "irreversible message fixture",
+    "destination": "external_message",
+    "allowed_action": "message.send",
+    "clearance": "critical",
+    "approval_record": "approval://human/message-001",
+    "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "audit"],
+    "sanitized_output": "receipt://runtime/irreversible-001",
+    "residual_leak_risk": ["external recipient may retain message"],
+    "revocation_path": "revoke://runtime/irreversible-001"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not promote any support state"
+  ]
+}

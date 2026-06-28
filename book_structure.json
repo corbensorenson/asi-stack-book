@@ -5021,9 +5021,21 @@
           "minimal_implementation": "A runtime-adapter contract with permissions, approval requirements, and result evidence.",
           "beyond_state_of_art": "The mature version is a capability firewall for external effects. It does not expose tools as ambient functions. It grants scoped, expiring effect leases to typed jobs after checking target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations. With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.",
           "codex_tests": [
-            "Adapter permission test",
-            "Approval gate enforcement test",
-            "Rollback handle capture test"
+            {
+              "name": "Adapter permission test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic runtime adapter permission harness"
+            },
+            {
+              "name": "Approval gate enforcement test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic runtime adapter permission harness"
+            },
+            {
+              "name": "Rollback handle capture test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic runtime adapter permission harness; no real rollback execution claim"
+            }
           ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
           "proof_targets": [

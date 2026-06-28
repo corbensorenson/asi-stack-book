@@ -40,6 +40,7 @@ REQUIRED = [
     "scripts/validate_support_state_transitions.py",
     "scripts/validate_authority_transitions.py",
     "scripts/validate_plan_execution_contracts.py",
+    "scripts/validate_runtime_adapter_permissions.py",
     "scripts/validate_context_admission_adequacy.py",
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_benchmark_antigoodhart.py",
@@ -52,6 +53,7 @@ REQUIRED = [
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
     "docs/plan_execution_contract_harness.md",
+    "docs/runtime_adapter_permission_harness.md",
     "docs/context_admission_adequacy_harness.md",
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
@@ -412,6 +414,7 @@ def main() -> None:
     run_validator("validate_support_state_transitions.py")
     run_validator("validate_authority_transitions.py")
     run_validator("validate_plan_execution_contracts.py")
+    run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_context_admission_adequacy.py")
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")

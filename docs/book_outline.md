@@ -1914,9 +1914,7 @@ Draft deliverables:
 - Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape, invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims only.
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
-- Planned Codex test: Rollback handle capture test.
-- Planned Codex test: Approval-scope expiry test.
-- Planned Codex test: Effect-receipt completeness test.
+- Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, and authority-use-receipt consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, and authority receipt alignment. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, or secret-handle evidence.
 
 Lean proof targets:
 

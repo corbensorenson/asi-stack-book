@@ -186,16 +186,16 @@ Acceptance criteria:
 
 ## Phase 4 - Proof Adequacy Review
 
-Status: initial review complete, with two follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, and `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records. System Boundaries and Planning both remain `useful but too narrow` because deployed enforcement, runtime traces, planner quality, and richer integration behavior remain unproven.
+Status: initial review complete, with three follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records, and Runtime Adapters now has a synthetic permission/approval/receipt harness. System Boundaries, Planning, and Runtime Adapters remain `useful but too narrow` because deployed enforcement, runtime traces, planner quality, sandbox behavior, approval-service behavior, and richer integration behavior remain unproven.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
 
 Tasks:
 
 1. Review all 112 Lean proof targets. Initial review completed in `docs/proof_adequacy_review.md`.
-2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Current target counts after the Planning follow-through are 8 adequate finite-record, 27 useful-but-too-narrow, 20 richer-semantics-needed, 41 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
+2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Current target counts after the Runtime Adapter harness follow-through are 8 adequate finite-record, 28 useful-but-too-narrow, 20 richer-semantics-needed, 40 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
 3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it. The follow-through increments updated Lean code, the proof audit, chapter limitation prose, roadmap/status surfaces, and no-change evidence records without changing proof tags or support states.
-4. Add or revise Lean code only where a stronger operational predicate is clear. The current follow-through increments are `AsiStackProofs.Authority` and `AsiStackProofs.Planning`; both remain finite-record envelopes.
+4. Add or revise Lean code only where a stronger operational predicate is clear. The current Lean follow-through increments are `AsiStackProofs.Authority` and `AsiStackProofs.Planning`; both remain finite-record envelopes. Runtime Adapters changed through a synthetic harness, not a new Lean predicate.
 
 Acceptance criteria:
 
@@ -205,7 +205,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: initial harness set complete and registry-validated. Six synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; and the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`. All six are backed by valid plus expected-invalid fixtures under `experiments/`, wired into `scripts/validate_book.py`, and registered in `experiments/phase5_harness_registry.json`; `python3 scripts/validate_phase5_harness_registry.py` checks their docs, commands, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, and non-claim boundaries. No live support state changed.
+Status: initial harness set complete and extended. Seven synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the runtime adapter permission harness in `scripts/validate_runtime_adapter_permissions.py`, documented in `docs/runtime_adapter_permission_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; and the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`. All seven are backed by valid plus expected-invalid fixtures under `experiments/`, wired into `scripts/validate_book.py`, and registered in `experiments/phase5_harness_registry.json`; `python3 scripts/validate_phase5_harness_registry.py` checks their docs, commands, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, and non-claim boundaries. No live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -216,6 +216,7 @@ Start with small deterministic tests that help many chapters:
 | Support-state transition checker | Evidence states; claim ledgers; benchmark ratchets; living-book methodology |
 | Authority non-escalation and permission receipts | System boundaries; security kernel; runtime adapters; labor OS |
 | Plan graph and execution-contract tests | Intent contracts; command contracts; planning; PlanForge; cognitive compilation |
+| Runtime adapter permission and approval tests | Runtime adapters; security kernel; Labor OS; artifact graphs |
 | Context admission versus adequacy tests | Virtual Context ABI; semantic pages; context transactions; verification bandwidth |
 | Readiness gate and residual escrow tests | Routing; readiness gates; MoECOT; prototype roadmap; recursive self-improvement |
 | Benchmark ratchet anti-Goodhart tests | Benchmark ratchets; policy optimization; artifact steward agents |
@@ -238,6 +239,9 @@ Initial completion:
 - `python3 scripts/validate_plan_execution_contracts.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/plan_execution_contracts/results/2026-06-28-local.md`.
 - The plan-execution harness checks synthetic command-contract, plan-graph, PlanForge DAG, semantic-atom, and typed-job consistency only. It does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, benchmark performance, or support-state promotion.
+- `python3 scripts/validate_runtime_adapter_permissions.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
+- The result record is `experiments/runtime_adapter_permissions/results/2026-06-28-local.md`.
+- The runtime adapter permission harness checks synthetic typed-job, runtime-adapter-invocation, and authority-use-receipt consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, and authority receipt alignment only. It does not prove deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, runtime behavior, or support-state promotion.
 - `python3 scripts/validate_context_admission_adequacy.py` passed locally on 2026-06-28 with 3 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/context_admission_adequacy/results/2026-06-28-local.md`.
 - The context admission/adequacy harness checks synthetic context ABI, packet, certificate, transaction, and adequacy consistency only. It does not prove VCM resolver behavior, context compiler behavior, memory-store correctness, summary fidelity, contradiction-rate performance, distractor resistance, model verification bandwidth, runtime behavior, or support-state promotion.
@@ -247,7 +251,7 @@ Initial completion:
 - `python3 scripts/validate_benchmark_antigoodhart.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/benchmark_antigoodhart/results/2026-06-28-local.md`.
 - The benchmark anti-Goodhart harness checks synthetic benchmark-ratchet, policy-optimization, and steward-action consistency only. It does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or support-state promotion.
-- `python3 scripts/validate_phase5_harness_registry.py` records the six-harness set in `experiments/phase5_harness_registry.json` and validates traceability across command scripts, fixture counts, public harness docs, result records, Appendix E, the v1.0 status/roadmap surfaces, primary chapter IDs, and `scripts/validate_book.py`.
+- `python3 scripts/validate_phase5_harness_registry.py` records the seven-harness set in `experiments/phase5_harness_registry.json` and validates traceability across command scripts, fixture counts, public harness docs, result records, Appendix E, the v1.0 status/roadmap surfaces, primary chapter IDs, and `scripts/validate_book.py`.
 - The registry is evidence plumbing only. It does not rerun the harnesses, prove runtime behavior, validate benchmark quality, or promote any support state.
 
 Next Phase 5 evidence work should move from synthetic record gates toward replayable empirical slices or imported prototype traces where the source artifacts are available and public-safe.

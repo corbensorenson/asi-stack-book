@@ -1,0 +1,68 @@
+{
+  "scenario_id": "invalid_high_impact_without_approval",
+  "typed_job": {
+    "job_id": "job://runtime/unapproved-deploy-001",
+    "contract_id": "contract://command/preview-deployment",
+    "job_type": "preview_deployment",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://preview-deployer",
+    "inputs": ["artifact://build-preview"],
+    "outputs": ["deployment://preview-001"],
+    "permissions": ["deploy.preview", "deployment.write"],
+    "approval_state": "not_required",
+    "failure_behavior": ["rollback_preview_on_failed_verification"],
+    "audit_events": ["audit://runtime/unapproved-deploy-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/unapproved-deploy-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/unapproved-deploy-001",
+    "adapter_id": "adapter://preview-deployer",
+    "target_type": "preview_environment",
+    "capability": "deploy.preview",
+    "permission_required": "deployment.write",
+    "sandbox_mode": "preview_only",
+    "impact_class": "high_impact",
+    "risk_tier": "high",
+    "approval_required": false,
+    "approval_record": "not_required",
+    "approval_scope": "not_required",
+    "approval_expiry": "not_required",
+    "authority_handle": "handle://runtime/unapproved-deploy-001",
+    "inputs": ["artifact://build-preview"],
+    "effect_lease": "lease://runtime/unapproved-deploy-001",
+    "effect_receipt": "receipt://runtime/unapproved-deploy-001",
+    "pre_state_ref": "state://preview-before",
+    "post_state_ref": "state://preview-after",
+    "external_side_effects": ["created preview deployment deployment://preview-001"],
+    "verification_refs": ["check://preview-health"],
+    "rollback_handle": "rollback://preview-001",
+    "irreversible_residuals": [],
+    "incident_refs": [],
+    "audit_refs": ["audit://runtime/unapproved-deploy-001"],
+    "residuals": [],
+    "support_state_effect": "argument_only",
+    "non_claims": [
+      "does not execute a real deployment",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/unapproved-deploy-001",
+    "principal": "job://runtime/unapproved-deploy-001",
+    "purpose": "unapproved high impact fixture",
+    "destination": "preview_environment",
+    "allowed_action": "deploy.preview",
+    "clearance": "high",
+    "approval_record": "not_required",
+    "scif_lifecycle": ["spawn", "execute", "audit"],
+    "sanitized_output": "receipt://runtime/unapproved-deploy-001",
+    "residual_leak_risk": [],
+    "revocation_path": "revoke://runtime/unapproved-deploy-001"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not promote any support state"
+  ]
+}
