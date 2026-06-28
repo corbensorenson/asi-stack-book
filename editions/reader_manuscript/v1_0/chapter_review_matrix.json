@@ -10,14 +10,14 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "not_started": 28,
-    "spot_checked": 26
+    "not_started": 24,
+    "spot_checked": 30
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 7,
-    "none": 30,
+    "no_immediate_action": 11,
+    "none": 26,
     "reader_overlay_active": 20
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
@@ -260,13 +260,15 @@
       "live_file": "chapters/stable-capability-fields.qmd",
       "generated_reader_file": "build/reader_edition/chapters/stable-capability-fields.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup removed repeated continuity cadence. It now names reversible qualification cleanly and needs no reader-only overlay in this pass.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -281,13 +283,15 @@
       "live_file": "chapters/capability-replacement-and-rollback.qmd",
       "generated_reader_file": "build/reader_edition/chapters/capability-replacement-and-rollback.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter clearly distinguishes candidate improvement from accepted replacement, keeps rollback receipts and monitor-window caveats visible, and needs no immediate reader-only overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -302,13 +306,15 @@
       "live_file": "chapters/security-kernel-and-digital-scifs.qmd",
       "generated_reader_file": "build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter preserves the least-exposure security argument around handles, SCIF lifecycle, sanitized commits, residual leak risk, and non-claim boundaries without needing an overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -323,13 +329,15 @@
       "live_file": "chapters/recursive-self-improvement-boundaries.qmd",
       "generated_reader_file": "build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter closes Part I with a coherent bounded-improvement gate: protected invariants, evaluator independence, boundary-delta review, monitor windows, rollback, and non-self-ratification remain visible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",

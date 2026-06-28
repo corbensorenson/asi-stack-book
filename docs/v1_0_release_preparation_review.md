@@ -71,8 +71,8 @@ Results:
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
 - `docs/reader_chapter_review_matrix.md` records the manifest-synced
-  54-chapter reader-review queue: 26 `spot_checked`, 28 `not_started`, 20
-  active-overlay chapters, 7 no-immediate-action decisions, 3 companion-note
+  54-chapter reader-review queue: 30 `spot_checked`, 24 `not_started`, 20
+  active-overlay chapters, 11 no-immediate-action decisions, 3 companion-note
   candidates, 1 curated-manuscript candidate, and release blockers on every
   row.
 
@@ -102,7 +102,7 @@ Results:
 
 1. A validated live-book candidate needs to be selected and tagged.
 2. The generated reader manuscript needs full human continuity review; the
-   current matrix still has 28 `not_started` chapter rows and release blockers
+   current matrix still has 24 `not_started` chapter rows and release blockers
    on every row.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
