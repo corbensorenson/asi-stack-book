@@ -10,11 +10,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 34 |
-| review_status:spot_checked | 20 |
+| review_status:reviewed | 38 |
+| review_status:spot_checked | 16 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 47 |
+| disposition:no_immediate_action | 50 |
 | disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
@@ -56,10 +56,10 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | reviewed | full_chapter_review | 6 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |

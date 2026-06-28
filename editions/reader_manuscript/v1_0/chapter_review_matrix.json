@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 34,
-    "spot_checked": 20
+    "reviewed": 38,
+    "spot_checked": 16
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 47,
+    "no_immediate_action": 50,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -789,17 +789,16 @@
       "live_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
       "generated_reader_file": "build/reader_edition/chapters/compact-generative-systems-and-residual-honesty.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter preserves compactness as burden accounting: reconstruction, decision, governance, verifier independence, fallback, and residual costs stay visible.",
+      "review_notes": "Full generated-reader chapter review recorded. Compactness remains framed as burden accounting: reconstruction, decision, governance, verifier independence, fallback, residual displacement, use envelopes, and non-promotion boundaries stay visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -812,17 +811,17 @@
       "live_file": "chapters/generate-verify-repair-compression.qmd",
       "generated_reader_file": "build/reader_edition/chapters/generate-verify-repair-compression.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter review recorded. The existing overlay makes compression-receipt states readable while preserving exactness, repair residuals, literal fallback, proxy/final rate separation, consumer-policy boundaries, and negative-rate evidence.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -835,17 +834,17 @@
       "live_file": "chapters/fast-generation-architectures.qmd",
       "generated_reader_file": "build/reader_edition/chapters/fast-generation-architectures.qmd",
       "overlay_operation_count": 2,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter review recorded. The existing overlays convert dense metric and taxonomy material into prose while preserving proposed/accepted output separation, verifier cost, fallback, memory pressure, task success, and promotion evidence.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -858,17 +857,17 @@
       "live_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
       "generated_reader_file": "build/reader_edition/chapters/rankfold-neuralfold-and-artifact-compression.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter review recorded. The existing overlay makes admission states readable while preserving full-artifact fallback, representation/reconstruction/ratio/utility split, residual coding, decode determinism, access-pattern policy, and artifact-evidence non-claims.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
