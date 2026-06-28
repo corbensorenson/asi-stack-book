@@ -82,6 +82,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The record should",
     "The response is",
     "The stack should",
+    "This is why",
     "The subtle failure is",
     "The subtle failure mode is",
     "Another failure is",

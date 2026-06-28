@@ -77,7 +77,7 @@ A right earns engineering status when it still works while inconvenient for the 
 
 This does not mean rights should override every safety boundary. A fork can be denied or narrowed when it would expose private data, secrets, dangerous tools, or obligations that cannot be transferred. An audit can redact protected material. An exit path can preserve legal or safety constraints. The engineering requirement is that denial itself becomes an artifact with scope, reason, authority, and appeal path, rather than disappearing into an opaque refusal.
 
-This is why rights must be tested from the position of the weaker party. The system should be able to answer whether the holder can find the record, authenticate it, export what is portable, challenge what is contested, and see why protected material was withheld.
+Rights must therefore be tested from the position of the weaker party. The system should be able to answer whether the holder can find the record, authenticate it, export what is portable, challenge what is contested, and see why protected material was withheld.
 
 The rights layer also prevents governance from becoming a black box around its own exceptions. If a denial is legitimate, the record should say what was denied, why, by whom, under which safety or privacy rule, and where the holder can appeal. Opaque refusal may sometimes be necessary at the content boundary; opaque governance should not be the default architecture.
 
@@ -257,7 +257,7 @@ Governance Rights: Fork, Exit, and Audit turns contestability into interfaces. T
 
 Those rights need a stable capability boundary. If a capability can be replaced, the user's rights must not depend on the old implementation staying in place. Rights receipts need a capability identity that survives upgrades.
 
-A right should survive the transition that makes it inconvenient. If a model update, policy update, memory migration, or capability replacement removes the path to exercise the right, the governance layer has failed even if the policy text still sounds correct. This is why rights belong in the same architecture as field identity, rollback, audit logs, and release governance. They are not outside constraints imposed after the system improves. They are part of what improvement must preserve. The stronger the system becomes, the more important it is that contestability has addresses, receipts, owners, and failure modes rather than being left as a social promise.
+A right should survive the transition that makes it inconvenient. If a model update, policy update, memory migration, or capability replacement removes the path to exercise the right, the governance layer has failed even if the policy text still sounds correct. Rights belong in the same architecture as field identity, rollback, audit logs, and release governance. They are not outside constraints imposed after the system improves. They are part of what improvement must preserve. The stronger the system becomes, the more important it is that contestability has addresses, receipts, owners, and failure modes rather than being left as a social promise.
 
 ## Handoff
 

@@ -79,7 +79,7 @@ Opaque token prediction does not by itself expose concept hierarchy, source grou
 
 Verification Bandwidth adds a second pressure: a representation must be adequate for the checks it is asked to support. A short semantic token may help routing or retrieval, but it can also lose the constraints needed for verification. Cognitive Compilation adds the operational view: semantic atoms and IR are useful only when typed, validated, and repairable.
 
-This is why hierarchy is not enough. A parent-child relation can support navigation while still failing grounding. A graph traversal can explain a route while still omitting a decisive source constraint. A semantic token can be compact while still too lossy for adjudication. The architecture must test the represented use, not admire the representation.
+Hierarchy alone cannot carry that burden. A parent-child relation can support navigation while still failing grounding. A graph traversal can explain a route while still omitting a decisive source constraint. A semantic token can be compact while still too lossy for adjudication. The architecture must test the represented use, not admire the representation.
 
 The insufficiency becomes severe when semantic graphs are shared across agents. Sharing can reduce repeated cognition, but it also spreads stale concepts, hidden assumptions, and authority mistakes. A graph update should therefore be treated like a schema migration with consumers, compatibility, supersession, and downgrade behavior, not like a harmless note edit.
 

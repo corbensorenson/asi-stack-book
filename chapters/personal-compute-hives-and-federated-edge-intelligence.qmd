@@ -142,7 +142,7 @@ The point of the hive is not to make every device interchangeable. It is to stop
 | Workshop computer | CAD/CAM, fabrication, robotics, sensors, local physical tools | physical-world actions require stronger approval and operator presence |
 | Rented or public node | burst compute, public tests, synthetic workloads, rented inference | no private memory or secrets unless a stronger contract proves the exposure is lawful |
 
-This is why the hive vocabulary separates portals, workers, stores, and authorities. A phone can approve a job that runs on the desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public or synthetic work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device.
+The hive vocabulary therefore separates portals, workers, stores, and authorities. A phone can approve a job that runs on the desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public or synthetic work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device.
 
 ## Interfaces
 

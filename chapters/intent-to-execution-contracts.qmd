@@ -118,7 +118,7 @@ The trace represents command contracts with inputs, constraints, artifacts, tool
 
 The trace is append-only at the level that matters: each transition either produces the next artifact or records why it could not. If a contract cannot be planned, that is a residual. If a job cannot run because approval is missing, that is a residual. If an artifact is produced but verification fails, that is a residual with a repair path.
 
-This is why the book treats feedback as part of execution, not as a postscript. Result artifacts should update claims, regression suites, tools, and future plans. Failures should become residuals, not disappear into the next prompt.
+Feedback belongs inside execution, not after it. Result artifacts should update claims, regression suites, tools, and future plans. Failures should become residuals, not disappear into the next prompt.
 
 The trace should also preserve re-contract points. If planning discovers that the original objective is underspecified, the required tool exceeds authority, the context is inadequate, the verifier cannot check the output, or the cost exceeds budget, the correct move is not creative completion. It is re-contract, escalation, deferral, or refusal.
 

@@ -80,7 +80,7 @@ Planning also needs to be separate from final answers because plans are cheap to
 
 Collapsing planning into execution also hides opportunity for review. A human, tribunal, router, or verifier can inspect a plan graph before a tool call exists. Once the tool call runs, the system has moved from deliberation into effects.
 
-This is why planning needs dispatch states. A plan node can be valuable as an idea, dependency, question, or risk note without being ready to become a job. If every node is treated as executable, the graph becomes a work generator instead of a boundary.
+Planning therefore needs dispatch states. A plan node can be valuable as an idea, dependency, question, or risk note without being ready to become a job. If every node is treated as executable, the graph becomes a work generator instead of a boundary.
 
 ## Core Claim
 
