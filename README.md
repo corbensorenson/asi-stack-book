@@ -28,6 +28,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_reader_evidence_boundaries.py` checks that every generated reader chapter strips raw live core-claim markers and repeated support boilerplate while preserving the claim text and a compact inline plain-language support-state boundary in the Core Claim section.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders, snapshot successful format outputs under ignored `build/reader_edition/format_artifacts/`, and write a local `reader_render_report.json` with actual outcomes.
+- `scripts/inspect_reader_format_artifacts.py` can structurally inspect ignored local HTML/EPUB/DOCX reader snapshots for required files, EPUB/DOCX container integrity, media counts, and obvious live-scaffold leaks without treating them as release artifacts.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
 - `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_runtime_adapter_permissions.py`, `scripts/validate_context_admission_adequacy.py`, `scripts/validate_readiness_residual_gates.py`, and `scripts/validate_benchmark_antigoodhart.py` run synthetic gate harnesses for support-state conservatism, authority non-escalation, plan/contract/job consistency, runtime-adapter permission/approval/receipt discipline, context admission/adequacy consistency, readiness/residual custody, and benchmark anti-Goodhart discipline; `experiments/phase5_harness_registry.json` plus `scripts/validate_phase5_harness_registry.py` keep the harness set wired to docs, fixtures, result records, Appendix E, and book validation. These are executable or traceability checks over fixtures and records, not claim promotions or deployed-runtime evidence.
@@ -170,6 +171,7 @@ Render selected reader-edition formats and record actual local outcomes:
 ```bash
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 

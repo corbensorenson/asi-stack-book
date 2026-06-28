@@ -71,7 +71,7 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Reader continuity audit | 54 chapters, 0 high-priority and 3 medium-priority heuristic review rows | The audit gives Phase 2 a deterministic human-review queue without claiming release readiness; `docs/reader_continuity_review.md` records the first manual decisions for the three medium rows. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
 | Reader overlay operations | 33 active | The opening-chapter semantic overlay pilot, Efficient ASI table-to-prose pass, Human Intent table-to-prose pass, System Boundaries table-to-prose pass, Evidence States table-to-prose pass, Personal Compute Hives table/prose pass, Command Contracts table-to-prose pass, Planning table-to-prose pass, Verification Bandwidth table-to-prose pass, Runtime Adapters table-to-prose pass, Labor OS table-to-prose pass, Circle Contracts table/prose pass, Generate-Verify-Repair table-to-prose pass, Fast Generation table/code-to-prose pass, RankFold/NeuralFold table-to-prose pass, Mathematical and Search Substrates table-to-prose pass, Policy Optimization table-to-prose pass, Artifact Steward Agents table/prose pass, Executable Specifications prose pass, and Semantic Representation table-to-prose pass are active; broader reader continuity review and chapter-by-chapter overlays remain open. |
-| Reader format readiness | HTML, EPUB, DOCX setup checks pass; a local dry run rendered all three and snapshotted 61 HTML files, 1 EPUB, and 1 DOCX under ignored `build/reader_edition/format_artifacts/` | `docs/reader_format_dry_run.md` records local render outcomes, not reviewed or published release artifacts. |
+| Reader format readiness | HTML, EPUB, DOCX setup checks pass; a local dry run rendered all three and snapshotted 61 HTML files, 1 EPUB, and 1 DOCX under ignored `build/reader_edition/format_artifacts/`; structural inspection passed for the local snapshots | `docs/reader_format_dry_run.md` records local render and structural-inspection outcomes, not reviewed or published release artifacts. |
 | Audio script readiness | 59 script files generated for review | The check confirms script generation, not audio existence or review. |
 | GitHub Pages workflow | Latest checked runs passing | Public deployment mechanics are healthy. |
 
@@ -147,7 +147,7 @@ These are not failures. They are the correct next frontier after a strong scaffo
 | P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with seven synthetic behavior-gate harnesses now wired into validation and registry-checked. | 152 Appendix E chapter rows remain planned/not run. | Next executable test harnesses should move toward replayable empirical slices or imported prototype traces with command, environment, result, and non-claim boundaries. |
 | P0 | Proof adequacy follow-through | 112 Lean targets build, the initial adequacy review classifies the target set, Authority has a record-aware allow/deny/escalate decision envelope, Planning has a record-aware dispatchable/blocked/replanned control envelope, and Runtime Adapters has a synthetic permission/approval/receipt harness. | Most targets remain useful-but-narrow or require richer state semantics, executable tests, empirical baselines, or imported artifacts before they can strengthen prose. | Continue one cluster at a time: implement a stronger predicate/test path or record an explicit no-promotion decision without support-state promotion. |
 | P1 | External literature normalization | Fast-generation, policy-optimization, hives, and artifact-steward external records exist. | Alignment, governance/evals, planning, memory/RAG, formal methods, routing/MoE, compression, and benchmark science remain queued. | Add citation-normalized source records and source notes only after reading the sources. |
-| P1 | Reader release dry run | Reader generation and HTML/EPUB/DOCX setup checks pass; `docs/reader_format_dry_run.md` records a local HTML/EPUB/DOCX dry run with ignored snapshots. | No actual reviewed reader artifact, PDF artifact, or release record is recorded. | Inspect representative local snapshots, continue full reader review, then create an edition release record only if review passes. |
+| P1 | Reader release dry run | Reader generation and HTML/EPUB/DOCX setup checks pass; `docs/reader_format_dry_run.md` records a local HTML/EPUB/DOCX dry run and structural inspection with ignored snapshots. | No actual reviewed reader artifact, PDF artifact, or release record is recorded. | Perform manual layout/navigation inspection on representative local snapshots, continue full reader review, then create an edition release record only if review passes. |
 | P1 | Visual and diagram quality | Every chapter has a Mermaid diagram and walkthrough note; the first mobile screenshot pass improved dense Mermaid readability with contained diagram scrolling. | Validation proves coverage, not full explanatory excellence or e-reader artifact quality. | Continue manual diagram review during reader-release work, especially fast-generation and recursive-improvement split decisions. |
 | P1 | Public-site UX/accessibility | Pages deploy and Human view validates. | Site quality beyond mechanics needs human inspection. | Browser screenshots and manual notes for landing page, nav, mobile reading, table overflow, toggle clarity, and diagram legibility. |
 | P2 | Citation and bibliography polish | Source ownership is clear. | 59 Corben/local records still use stable source IDs rather than normalized citation metadata. | Citation-normalization pass where metadata is actually known, preserving unknowns honestly. |
@@ -249,14 +249,15 @@ Do not cite a source from memory. Add a source record, read it, create a source 
 
 ### 6. Release Artifact Dry Run
 
-The first local HTML/EPUB/DOCX dry run is recorded in
-`docs/reader_format_dry_run.md`. It produced ignored snapshots for review, not a
-release. The continuing sequence is:
+The first local HTML/EPUB/DOCX dry run and structural artifact inspection are
+recorded in `docs/reader_format_dry_run.md`. They produced ignored snapshots
+and a local inspection report for review, not a release. The continuing sequence
+is:
 
 1. Generate the reader source.
 2. Review the generated reader manuscript and delta report.
-3. Inspect the local HTML, EPUB, and DOCX snapshots for navigation, figures,
-   tables, diagrams, wrapping, and bibliography behavior.
+3. Manually inspect the local HTML, EPUB, and DOCX snapshots for navigation,
+   figures, tables, diagrams, wrapping, and bibliography behavior.
 4. Attempt PDF only when dependencies support it.
 5. Record exact produced artifacts only after they exist, have been reviewed,
    and have an edition release record.
@@ -308,7 +309,7 @@ The best next sequence is:
 3. First executable test harnesses for support transitions, authority, planning, runtime adapters, context adequacy, readiness gates, and benchmark ratchets.
 4. Proof adequacy review across all 112 Lean targets.
 5. External literature backfill for alignment/governance/planning/memory/formal-methods/routing/compression/benchmark areas.
-6. Reader release dry-run inspection of the actual local HTML/EPUB/DOCX snapshots, followed by PDF only if dependencies support it.
+6. Manual reader release dry-run inspection of the actual local HTML/EPUB/DOCX snapshots, followed by PDF only if dependencies support it.
 7. Visual and public-site quality review.
 8. Audio script review and eventual audio artifact generation only after the reviewed reader release exists.
 

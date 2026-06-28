@@ -101,10 +101,11 @@ Attempt specific formats and record actual local outcomes:
 
 ```bash
 python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
-Successful format attempts are snapshotted under ignored `build/reader_edition/format_artifacts/` for local review and summarized in `build/reader_edition/reader_render_report.json`. PDF is optional until local Quarto PDF dependencies are present. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not canonical sources.
+Successful format attempts are snapshotted under ignored `build/reader_edition/format_artifacts/` for local review and summarized in `build/reader_edition/reader_render_report.json`; structural artifact inspection writes `build/reader_edition/reader_artifact_inspection_report.json`. PDF is optional until local Quarto PDF dependencies are present. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not canonical sources.
 
 ## Audio Gate
 

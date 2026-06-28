@@ -105,9 +105,10 @@ Reader format renders can be attempted and recorded with:
 ```bash
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 ```
 
-That helper writes `reader_render_report.json` in the generated reader workspace and snapshots successful formats under `build/reader_edition/format_artifacts/` for local review. The report records local render outcomes only; it is not a major-version release record.
+Those helpers write `reader_render_report.json` in the generated reader workspace, snapshot successful formats under `build/reader_edition/format_artifacts/` for local review, and can write `reader_artifact_inspection_report.json` after structural inspection. These reports record local render and inspection outcomes only; they are not major-version release records.
 
 The reader-facing spine is the ordinary chapter prose outside the stripped headings. Any uncertainty that changes the meaning of a claim belongs in that spine, not only in a guardrail, source crosswalk, proof hook, or test-plan section that a reader edition removes.
 

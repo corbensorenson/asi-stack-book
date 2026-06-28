@@ -76,6 +76,7 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and inline plain-language support-state boundaries.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders, snapshots successful format outputs under ignored `build/reader_edition/format_artifacts/`, and writes `reader_render_report.json` with actual local outcomes.
+- `scripts/inspect_reader_format_artifacts.py` structurally inspects ignored local HTML/EPUB/DOCX snapshots for expected files, EPUB/DOCX container integrity, media counts, and obvious live-scaffold leaks.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source, and its check verifies that chapter scripts preserve the minimum-viable and beyond-state-of-the-art implementation horizons.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
@@ -134,10 +135,11 @@ For a recorded local render attempt, use:
 ```bash
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
-This writes `build/reader_edition/reader_render_report.json` and snapshots successful formats under `build/reader_edition/format_artifacts/` for local review. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.
+This writes `build/reader_edition/reader_render_report.json`, snapshots successful formats under `build/reader_edition/format_artifacts/` for local review, and can write `build/reader_edition/reader_artifact_inspection_report.json` after structural inspection. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.
 
 Optional downstream formats such as Markdown, plain text, MOBI, or AZW3 can be produced from the reviewed reader source or reviewed EPUB with external tools. They should be listed in a release record only after generation and spot-checking.
 

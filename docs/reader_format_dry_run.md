@@ -45,12 +45,37 @@ The EPUB snapshot was 8.4 MB in the local dry-run workspace. The DOCX snapshot
 was 6.5 MB in the local dry-run workspace. These files are ignored build
 outputs, not tracked release artifacts.
 
+## Structural Inspection
+
+Command:
+
+```bash
+python3 scripts/inspect_reader_format_artifacts.py
+```
+
+Result:
+
+```text
+Reader artifact inspection report wrote: /Users/corbensorenson/Documents/AI_book/build/reader_edition/reader_artifact_inspection_report.json
+Reader artifact inspection passed: 61 HTML files, 62 EPUB XHTML entries, 59 DOCX media entries.
+```
+
+The ignored local inspection report at
+`build/reader_edition/reader_artifact_inspection_report.json` records:
+
+| Format | Structural checks passed |
+|---|---|
+| HTML | 61 total HTML files, 59 rendered reader-site HTML files, 54 chapter files, required index/preface/source-appendix/opening-chapter files present, no live-only heading leaks detected in reader-site HTML, and no raw core-claim marker leaks detected in reader-site HTML. |
+| EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 128 entries, 62 XHTML entries, and 60 image entries. |
+| DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 75 entries, 59 embedded media entries, 18,440 paragraph markers, book title present, and compact evidence-boundary text present. |
+
 ## Review State
 
 The dry run establishes only that the current generated reader source can be
-rendered locally to HTML, EPUB, and DOCX on this machine. It does not establish
-that the reader manuscript has been reviewed as a book, that diagrams and tables
-are optimal for e-readers, that navigation and bibliography behavior have been
+rendered locally to HTML, EPUB, and DOCX on this machine and that the resulting
+local snapshots pass basic structural inspection. It does not establish that the
+reader manuscript has been reviewed as a book, that diagrams and tables are
+optimal for e-readers, that navigation and bibliography behavior have been
 manually accepted, or that any artifact is suitable for publication.
 
 PDF was not attempted in this dry run. Audio generation was not attempted.

@@ -169,6 +169,8 @@ python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
+python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 ```
 
 For an audio-script candidate after the reader manuscript is reviewed:
@@ -178,7 +180,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-These commands generate source workspaces only. `scripts/render_reader_formats.py --formats ...` can create ignored local snapshots for review, but do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts as release artifacts until the specific render, conversion, or audio-generation command succeeds, the artifact is reviewed where required, and a release record under `release_records/` states the result.
+These commands generate source workspaces and local review snapshots only. `scripts/render_reader_formats.py --formats ...` can create ignored local snapshots for review, and `scripts/inspect_reader_format_artifacts.py` can structurally inspect them, but do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts as release artifacts until the specific render, conversion, or audio-generation command succeeds, the artifact is reviewed where required, and a release record under `release_records/` states the result.
 
 The audio-script check must keep both `Minimum Viable Implementation` and `Beyond the State of the Art` in every chapter script; those sections explain the smallest honest starting slice and the mature target product for listeners as well as readers.
 

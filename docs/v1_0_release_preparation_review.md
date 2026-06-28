@@ -21,6 +21,7 @@ python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
 python3 scripts/build_audio_script.py --check
 ```
 
@@ -45,6 +46,12 @@ Results:
   recorded 61 HTML artifacts, 1 EPUB artifact, and 1 DOCX artifact with matching
   local snapshots under `build/reader_edition/format_artifacts/`. These snapshots
   are ignored review outputs, not release artifacts.
+- Reader format artifact inspection passed for the local snapshots: 61 HTML
+  files, 59 rendered reader-site HTML files, 54 chapter HTML files, no live-only
+  heading or raw core-claim marker leaks detected in reader-site HTML, 62 EPUB
+  XHTML entries, 60 EPUB image entries, and 59 DOCX media entries. The ignored
+  local report is
+  `build/reader_edition/reader_artifact_inspection_report.json`.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -58,9 +65,9 @@ Results:
 - Generated reader and audio workspaces under `build/` are ignored review
   workspaces, not durable release artifacts.
 - The local reader-format dry run demonstrates that HTML, EPUB, and DOCX can
-  render from the current generated reader source on this machine. It does not
-  approve those artifacts for publication, and no PDF or audio artifact was
-  attempted in that dry run.
+  render from the current generated reader source on this machine and pass basic
+  structural inspection. It does not approve those artifacts for publication,
+  and no PDF or audio artifact was attempted in that dry run.
 - The v1.0 reader overlay set now has opening-chapter, Personal Compute Hives,
   Human Intent, System Boundaries, Evidence States, Verification Bandwidth, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Efficient ASI, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Executable Specifications, Policy
   Optimization, Artifact Steward Agents, and Semantic Representation operations.
@@ -72,10 +79,11 @@ Results:
 2. The generated reader manuscript needs full human continuity review.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
-4. The local HTML, EPUB, and DOCX snapshots need representative artifact
-   inspection and full reader-manuscript review before any release record can
-   name them as reviewed artifacts; PDF still depends on local PDF output
-   configuration and dependencies and was not attempted in the dry run.
+4. The local HTML, EPUB, and DOCX snapshots still need manual representative
+   layout/navigation inspection and full reader-manuscript review before any
+   release record can name them as reviewed artifacts; PDF still depends on
+   local PDF output configuration and dependencies and was not attempted in the
+   dry run.
 5. An edition release record must list exact produced artifacts, commands,
    review state, failures, and residuals.
 6. Audio scripts need human review of diagrams, tables, code, schemas, source
@@ -89,5 +97,6 @@ Results:
   but no EPUB, DOCX, PDF, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifact
   is claimed as published or release-ready.
 - No reader release, audiobook release, or edition release record is complete.
-- Passing readiness checks does not prove human editorial quality, source
-  interpretation, proof adequacy, benchmark behavior, or any chapter claim.
+- Passing readiness and structural artifact checks does not prove human
+  editorial quality, layout quality, source interpretation, proof adequacy,
+  benchmark behavior, or any chapter claim.
