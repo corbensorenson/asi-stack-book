@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivatives, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims, but no transactional memory-store tests have been run for this chapter."
+  - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness rejects open deletion obligations that are materialized or made evidence-ready and checks context-ABI/transaction snapshot references, but no transactional memory-store tests have been run for this chapter."
   - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
-| Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs are implemented; memory-store tests remain planned. |
+| Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs and `python3 scripts/validate_context_admission_adequacy.py` synthetic deletion-closure and transaction-reference gates are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
 
@@ -234,10 +234,10 @@ This governable-memory state layer is still an architectural target. Keep the me
 | Context transaction fixture validation | Check that the transaction fixture matches the public schema and declares transaction state, transaction validity state, operation, snapshot boundary, mounts, mount policy, read/write sets, branch policy, isolation state, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivatives, materialization state, contradictions, closure state, faults, context ABI refs, source refs, audits, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Snapshot read predicate | Check that a valid finite snapshot read sees a committed event in its declared view. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Taint propagation predicate | Check that tainted source context produces tainted derived context unless declassification is authorized. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
-| Deletion closure test | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | planned; not run |
+| Synthetic deletion-closure harness | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no memory-store claim |
 | Memory-store conformance test | Check read-your-writes, branch isolation, mount visibility, and committed-event replay in an executable store harness. | planned; not run |
 
-The fixture-shape check and finite-record proof predicates are implemented. Store consistency, branch isolation, and deletion closure require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
+The fixture-shape check, finite-record proof predicates, and synthetic deletion-closure harness are implemented. Store consistency, branch isolation, deployed deletion closure, and replay behavior still require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
 
 ### Formalization hooks
 

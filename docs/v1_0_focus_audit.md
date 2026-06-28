@@ -33,6 +33,7 @@ python3 scripts/validate_protocol_examples.py
 python3 scripts/validate_support_state_transitions.py
 python3 scripts/validate_authority_transitions.py
 python3 scripts/validate_plan_execution_contracts.py
+python3 scripts/validate_context_admission_adequacy.py
 python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_book.py
@@ -48,8 +49,8 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Manifest parts | 4 | The book has a stable four-part architecture. |
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
-| Chapter body words | 183,859 | The book is already full-length; the main risk is not shortness. |
-| Raw chapter-file words | 191,379 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
+| Chapter body words | 184,031 | The book is already full-length; the main risk is not shortness. |
+| Raw chapter-file words | 191,536 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
 | Source records | 122 | The corpus is substantial, with 59 Corben/local records and 63 external records by current appendices. |
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
@@ -58,9 +59,9 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Lean proof targets | 112 implemented finite-record targets | Traceability is complete; semantic adequacy remains unreviewed. |
 | Protocol schemas | 71 | Record shapes are well-covered. |
 | Protocol fixtures | 70 valid fixtures | Fixture validation is broad but not a substitute for runtime tests. |
-| Test appendix rows | 223 | Appendix E now has 213 chapter-level rows plus 10 repository-level check rows. |
-| Planned/unrun chapter test rows | 182 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
-| Implemented test/proof/check rows in Appendix E | 41 | Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, Lean build, or proof/source traceability mechanics. |
+| Test appendix rows | 224 | Appendix E now has 213 chapter-level rows plus 11 repository-level check rows. |
+| Planned/unrun chapter test rows | 175 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
+| Implemented test/proof/check rows in Appendix E | 49 | Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, Lean build, or proof/source traceability mechanics. |
 | Reader spine | 54 chapters, minimum 1960 words | The generated reader source is structurally substantial. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
 | Reader overlay operations | 2 active | The first opening-chapter semantic overlay pilot is active; broader reader continuity review and chapter-by-chapter overlays remain open. |
@@ -137,7 +138,7 @@ These are not failures. They are the correct next frontier after a strong scaffo
 |---|---|---|---|---|
 | P0 | Human-reader continuity review | Generated reader spine is substantial and mechanically clean. | No reviewed human-reader manuscript exists. | A reviewed `build/reader_edition/` pass with chapter-level overlay operations or canonical prose edits for real problems found. |
 | P0 | Claim-to-mechanism support review | 461 mappings are exact and passage-reviewed. | No accepted evidence transitions have promoted claims above `argument`. | Evidence transition records for a small number of narrow claims, or explicit decisions to keep them at `argument`. |
-| P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with three synthetic behavior-gate harnesses now wired into validation. | 182 Appendix E chapter rows remain planned/not run. | Next executable test harnesses with command, environment, result, and non-claim boundaries. |
+| P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with four synthetic behavior-gate harnesses now wired into validation. | 175 Appendix E chapter rows remain planned/not run. | Next executable test harnesses with command, environment, result, and non-claim boundaries. |
 | P0 | Proof adequacy review | 112 Lean targets build and trace. | All are finite-record predicates; adequacy has not been reviewed. | `docs/proof_adequacy_review.md` or an equivalent audit classifying each target as adequate, too narrow, too broad, or needing a stronger model. |
 | P1 | External literature normalization | Fast-generation, policy-optimization, hives, and artifact-steward external records exist. | Alignment, governance/evals, planning, memory/RAG, formal methods, routing/MoE, compression, and benchmark science remain queued. | Add citation-normalized source records and source notes only after reading the sources. |
 | P1 | Reader release dry run | Reader generation and HTML/EPUB/DOCX setup checks pass. | No actual reviewed reader artifact is recorded. | Render reader HTML/EPUB/DOCX, record actual local outcomes, inspect representative chapters, then create an edition release record only if review passes. |

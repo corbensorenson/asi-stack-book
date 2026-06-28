@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until paired source/derived cells, summary-fidelity tests, or certificate truthfulness checks exist."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records transaction links, artifact links, revocation state, and non-claims, but no summary-fidelity or authority-preservation behavior test has been run for this chapter."
+  - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness checks certificate authority ceilings, stale/revoked certificate blocking, summary omission/loss fields, and weak-verification blocking, but no semantic summary-fidelity evaluator has been run for this chapter."
   - "Lean coverage is limited to finite certificate and source/summary authority records; summary fidelity and truthful-certificate checks remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `verification_bandwidth`, `spinoza`, `context_engineer`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`; connector/source-note only: `vcm_editable` |
-| Test state | Semantic page certificate fixture validation now includes transaction refs, artifact refs, revocation state, and non-claims; `AsiStackProofs.ContextCertificates` finite-record proofs are implemented; summary-fidelity tests remain planned. |
+| Test state | Semantic page certificate fixture validation now includes transaction refs, artifact refs, revocation state, and non-claims; `AsiStackProofs.ContextCertificates` finite-record proofs and `python3 scripts/validate_context_admission_adequacy.py` synthetic certificate-use gates are implemented; semantic summary-fidelity tests remain planned. |
 
 ## Drafting guardrail
 
@@ -216,10 +216,11 @@ This certificate-bearing context layer is still proposed architecture. Certifica
 | Semantic page certificate fixture validation | Check that the certificate fixture matches the public schema and declares bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; validated locally |
 | Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
-| Summary fidelity test | Check that omissions and exactness limits remain visible before evidence use. | planned; not run |
+| Summary fidelity boundary harness | Check that lossy/summary certificates declare omissions and cannot support evidence-ready use when verification is weak or stale. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no semantic fidelity claim |
+| Summary fidelity evaluator | Check that omissions and exactness limits match paired source and derived cells. | planned; not run |
 | Certificate truthfulness test | Check that certificate declarations match paired source and derived cells. | planned; not run |
 
-The fixture-shape check and finite-record proof predicates are implemented. Fidelity, omission completeness, and certificate truthfulness require paired source/derived cells and an evaluator that can reject unsupported representations.
+The fixture-shape check, finite-record proof predicates, and synthetic certificate-use harness are implemented. Fidelity, omission completeness, and certificate truthfulness still require paired source/derived cells and an evaluator that can reject unsupported representations.
 
 ### Formalization hooks
 

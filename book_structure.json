@@ -3431,9 +3431,21 @@
           "beyond_state_of_art": "The mature version is a memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary. With a real context ABI, a model never receives anonymous \"relevant context.\" It receives a materialization receipt. The receipt says what was requested, what resolved, what representation was built, which authority labels apply, which uses are permitted, when the lease expires, whether the packet is adequate for the target claim, and which fault or residual remains. If any of those states are missing, the system asks, abstains, retries, escalates, or records a typed fault rather than hallucinating a usable memory view.",
           "codex_tests": [
             "Address/version stability test",
-            "Admission vs adequacy test",
-            "Conflict adequacy classification test",
-            "Context fault behavior test"
+            {
+              "name": "Admission vs adequacy test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness"
+            },
+            {
+              "name": "Conflict adequacy classification test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness; no adjudication claim"
+            },
+            {
+              "name": "Context fault behavior test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness; no deployed resolver claim"
+            }
           ],
           "lean_module": "AsiStackProofs.VirtualContextABI",
           "proof_targets": [
@@ -3591,7 +3603,11 @@
           "codex_tests": [
             "Certificate completeness test",
             "Authority preservation test",
-            "Summary fidelity test"
+            {
+              "name": "Summary fidelity test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ContextCertificates",
           "proof_targets": [
@@ -3748,7 +3764,11 @@
           "codex_tests": [
             "Read-your-writes snapshot test",
             "Taint propagation test",
-            "Deletion closure test"
+            {
+              "name": "Deletion closure test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness; no memory-store claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ContextTransactions",
           "proof_targets": [
@@ -3901,8 +3921,16 @@
           "beyond_state_of_art": "The mature version is a verification-capacity control plane. It does not reward a system for loading more text. It asks whether the loaded semantic units, representations, tools, reviewers, and comparison mode are strong enough for the exact claim, risk level, and support-state effect being requested. When verification capacity is governed, every important claim has an adequacy record before it receives a stronger support label. The record names the source units, compression path, verification mode, negative evidence, residual risks, and escalation route. A context packet adequate for orientation can remain drafting-only; a packet adequate for one local citation can still be inadequate for a cross-document safety claim; a proof check over a finite predicate can stay separate from an empirical deployment claim.",
           "codex_tests": [
             "Distractor resistance test",
-            "Adequacy labeling test",
-            "Verification escalation test"
+            {
+              "name": "Adequacy labeling test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim"
+            },
+            {
+              "name": "Verification escalation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness; no deployed escalation claim"
+            }
           ],
           "lean_module": "AsiStackProofs.VerificationBandwidth",
           "proof_targets": [

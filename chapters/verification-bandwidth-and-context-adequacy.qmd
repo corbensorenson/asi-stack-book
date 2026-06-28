@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped. Support remains argument until contradiction-rate, distractor-resistance, adequacy-labeling, or escalation-harness tests exist."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims, but no contradiction-rate or adequacy benchmark has been run for this chapter."
+  - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness checks admitted-but-inadequate context, escalation requirements, conflict blocking, and mode-confusion cases, but no contradiction-rate, distractor-resistance, or adequacy benchmark has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
 | Source loading state | passage-reviewed local raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/source-note mapped: `vcm_editable` |
-| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation with claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; contradiction-rate, distractor-resistance, and escalation-harness tests remain planned. |
+| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation with claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; `python3 scripts/validate_context_admission_adequacy.py` implements synthetic adequacy-label and escalation gates; contradiction-rate and distractor-resistance tests remain planned. |
 
 ## Drafting guardrail
 
@@ -230,11 +230,11 @@ This verification-budget layer is still a target architecture. Verification-band
 |---|---|---|
 | Context adequacy fixture validation | Check that the adequacy fixture matches the public schema and declares target claim, claim scope, context packet, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
-| Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | planned; not run |
-| Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | planned; not run |
+| Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no model verification-bandwidth claim |
+| Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed escalation claim |
 | Mode-confusion audit | Check that schema, proof, summary, human-review, and empirical modes are not used to support broader claims than they actually verify. | planned; not run |
 
-Only the fixture-shape check is implemented. The other tests require a synthetic contradiction suite, logged prompts or deterministic checkers, and claim-ledger outcomes.
+The fixture-shape check, finite-record proof predicates, and synthetic context admission/adequacy harness are implemented. Distractor resistance, contradiction-rate measurement, semantic adequacy classification, and deployed claim-ledger outcomes still require a synthetic contradiction suite, logged prompts or deterministic checkers, and reviewable claim-ledger results.
 
 ### Formalization hooks
 

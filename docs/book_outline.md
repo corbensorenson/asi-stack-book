@@ -1360,9 +1360,10 @@ Draft deliverables:
 - Implemented protocol validation: `context_abi_record` fixture validates public record shape, lifecycle state, resolver policy, mount scope, authority ceiling, adequacy requirement, replay boundary, source refs, support-state effect, and non-claims only.
 - Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
 - Exact Appendix C claim-source mappings for the Virtual Context ABI claim across VCM public-v1 control-plane/ABI vocabulary, Context Engineer context-supply-chain pressure, Verification Bandwidth adequacy limits, VIEA context allocation and execution-spine integration, editable VCM refinement context, and MoECOT runtime-reference context; the four local mappings (`vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`) now have reviewed passage references. `vcm_editable` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending resolver behavior, adequacy classification, context compiler traces, VCM conformance artifacts, model-facing results, benchmark reproduction, or accepted evidence transitions.
-- Planned Codex test: Admission vs adequacy test.
-- Planned Codex test: Conflict adequacy classification test.
+- Implemented synthetic Codex test: Admission vs adequacy test via `python3 scripts/validate_context_admission_adequacy.py`; deployed adequacy classifier remains open.
+- Implemented synthetic Codex test: Conflict adequacy classification test via `python3 scripts/validate_context_admission_adequacy.py`; conflict adjudication remains open.
 - Implemented Lean proof target: mandatory context misses produce typed faults instead of best-effort packets.
+- Implemented synthetic Codex test: Context fault behavior test via `python3 scripts/validate_context_admission_adequacy.py`; deployed resolver conformance remains open.
 - Planned Codex test: deployed resolver conformance test.
 
 Lean proof targets:
@@ -1423,7 +1424,7 @@ Draft deliverables:
 - Implemented Lean proof target: valid derived cells carry source bindings, loss contracts, and permitted-use declarations.
 - Implemented Lean proof target: summaries respecting source cells cannot increase source authority ceilings.
 - Exact Appendix C claim-source mappings for the Semantic Pages claim across VCM public-v1 context cells/semantic pages/representation certificates, Verification Bandwidth summary-loss pressure, Spinoza proof/citation/procedure-carrying claim records, Context Engineer structured mission briefs and clearance fields, and editable VCM refinement context; the four local mappings (`vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, conformance artifacts, certificate checker results, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending paired source/derived cells, summary-fidelity tests, omission-completeness checks, certificate truthfulness tests, open-domain formalization evidence, or accepted evidence transitions.
-- Planned Codex test: Summary fidelity test.
+- Implemented synthetic Codex test: Summary fidelity boundary test via `python3 scripts/validate_context_admission_adequacy.py`; semantic fidelity evaluator remains open.
 - Planned Codex test: certificate truthfulness test.
 
 Lean proof targets:
@@ -1484,7 +1485,7 @@ Draft deliverables:
 - Implemented Lean proof target: valid finite snapshot reads see committed events in their declared view.
 - Implemented Lean proof target: tainted sources produce tainted derivatives unless declassification is authorized.
 - Exact Appendix C claim-source mappings for the Context Transactions claim across VCM public-v1 transaction/snapshot/invalidation/deletion semantics, Ladon/Manhattan sensitive-compartment and handle boundaries, Context Engineer clearance-labeled mission contexts and Digital SCIF lifecycle, Black Hole Context Manager memory-budget/drift/freeze/evict patterns, and editable VCM refinement context; the four local mappings (`vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, memory-store artifacts, conformance results, VCM-Bench records, or external corroboration are imported or inspected. Support remains `argument` pending memory-store behavior, mount-visibility tests, branch-isolation checks, deletion-closure harnesses, side-channel validation, context-manager execution, benchmark reproduction, or accepted evidence transitions.
-- Planned Codex test: Deletion closure test.
+- Implemented synthetic Codex test: Deletion closure test via `python3 scripts/validate_context_admission_adequacy.py`; deployed memory-store deletion closure remains open.
 - Planned Codex test: memory-store conformance test.
 
 Lean proof targets:
@@ -1545,8 +1546,8 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for `verification-bandwidth-and-context-adequacy.core` across Verification Bandwidth, VCM public v1, Spinoza, TreeLLM, and editable VCM; four local raw-cache mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped.
 - Implemented protocol validation: `context_adequacy_record` fixture validates public record shape, claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims only.
 - Planned Codex test: Distractor resistance test.
-- Planned Codex test: Adequacy labeling test.
-- Planned Codex test: Verification escalation test.
+- Implemented synthetic Codex test: Adequacy labeling test via `python3 scripts/validate_context_admission_adequacy.py`; model verification-bandwidth measurement remains open.
+- Implemented synthetic Codex test: Verification escalation test via `python3 scripts/validate_context_admission_adequacy.py`; deployed escalation remains open.
 - Planned Codex test: Mode-confusion audit.
 
 Lean proof targets:

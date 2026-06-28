@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` and `moecot` remain connector/source-note mapped, and support remains argument until resolver, context compiler, adequacy classifier, or VCM conformance tests exist."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims, but no VCM resolver or context compiler tests have been run for this chapter."
+  - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness checks admission/adequacy separation, conflict classification, fault-state preservation, stale-certificate blocking, deletion-closure blocking, and mode-confusion cases, but no VCM resolver or context compiler tests have been run for this chapter."
   - "Lean coverage is limited to finite context-reference and lookup records; real resolver, adequacy classifier, and context compiler behavior remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | Context ABI fixture validation now includes lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims; `AsiStackProofs.VirtualContextABI` finite-record proofs are implemented; resolver and compiler tests remain planned. |
+| Test state | Context ABI fixture validation now includes lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims; `AsiStackProofs.VirtualContextABI` finite-record proofs and `python3 scripts/validate_context_admission_adequacy.py` synthetic admission/adequacy, conflict, and fault-boundary checks are implemented; resolver and compiler tests remain planned. |
 
 ## Drafting guardrail
 
@@ -235,12 +235,13 @@ This context ABI is still a design target. VCM interface support remains `argume
 |---|---|---|
 | Context ABI fixture validation | Check that the context ABI fixture includes lifecycle state, request, address, version, mount scope, snapshot, resolver policy, representation contract, authority ceiling, admission, adequacy requirement, fault, materialization, consumer policy, replay boundary, source refs, support-state effect, and audit fields. | implemented by protocol validation; validated locally |
 | Snapshot-bound reference predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
-| Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | planned; not run |
-| Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | planned; not run |
+| Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed adequacy-classifier claim |
+| Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no conflict-adjudication claim |
 | Mandatory-miss fault predicate | Check that mandatory misses produce typed faults instead of best-effort packets. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
+| Synthetic context fault harness | Check that non-success ABI states, stale certificates, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver claim |
 | Resolver conformance test | Check that a deployed resolver rejects invalid addresses, versions, mounts, and snapshots before materialization. | planned; not run |
 
-The fixture-shape check and finite-record proof predicates are implemented. Resolver behavior, adequacy classification, and service-level fault emission require a context compiler or deterministic test harness.
+The fixture-shape check, finite-record proof predicates, and synthetic cross-record context harness are implemented. Resolver behavior, deployed adequacy classification, service-level fault emission, and context-compiler traces still require a concrete VCM service or deterministic resolver harness.
 
 ### Formalization hooks
 
