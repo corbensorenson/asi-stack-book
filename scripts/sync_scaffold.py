@@ -627,9 +627,9 @@ Third-party references should be added only when bibliographic metadata is recor
 |---|---|---|
 | AI alignment and corrigibility | External comparison for the alignment and constitution layer. | initial source records and source notes added; no local reproduction or support-state promotion |
 | AI governance, evals, and deployment policy | External comparison for authority ceilings, readiness gates, and release governance. | initial source records and source notes added; no local reproduction, compliance claim, or support-state promotion |
-| Planning, task decomposition, and agent control | External comparison for PlanForge-style planning/control. | queued; no citation recorded |
-| Retrieval, memory, and context engineering | External comparison for VCM and context-packet discipline. | queued; no citation recorded |
-| Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | queued; no citation recorded |
+| Planning, task decomposition, and agent control | External comparison for PlanForge-style planning/control. | initial source records and source notes added; no local reproduction or support-state promotion |
+| Retrieval, memory, and context engineering | External comparison for VCM and context-packet discipline. | initial source records and source notes added; no local reproduction or support-state promotion |
+| Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | initial source records and source notes added; no imported formal artifact or support-state promotion |
 | Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | queued; no citation recorded |
 | Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | queued; no citation recorded |
 | Fast generation, decoding substrates, and serving acceleration | External comparison for MTP, speculative decoding, internal draft heads, diffusion LLMs, early exit, state-space alternatives, KV-cache memory, and useful-solution-per-second metrics. | initial source records and source notes added; no local reproduction or support-state promotion |

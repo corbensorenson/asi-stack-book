@@ -2,9 +2,10 @@
 
 Last updated: 2026-06-28
 
-This document records the first Phase 6 external-literature backfill pass for
-alignment/control and AI governance/evaluation. It does not claim complete
-literature coverage.
+This document records the initial Phase 6 external-literature backfill passes.
+The current pass covers alignment/control, AI governance/evaluation,
+planning/agent control, retrieval/context, and formal methods. It does not claim
+complete literature coverage.
 
 ## Added Records
 
@@ -17,12 +18,18 @@ literature coverage.
 | `ext_model_evaluation_extreme_risks_2023` | governance/evals | Dangerous-capability and alignment evaluations for extreme-risk decisions. |
 | `ext_frontier_ai_regulation_2023` | governance/evals | Frontier AI governance, pre-deployment risk assessment, external scrutiny, and post-deployment monitoring. |
 | `ext_nist_ai_rmf_1_0_2023` | governance/evals | Official AI risk-management framework structure and lifecycle vocabulary. |
+| `ext_react_2022` | planning/agent control | Interleaved reasoning, acting, observation, and environment interaction. |
+| `ext_tree_of_thoughts_2023` | planning/search | Deliberative search over intermediate reasoning paths with evaluation and backtracking. |
+| `ext_rag_2020` | retrieval/context | Retrieval-augmented generation and the boundary between model memory and retrieved evidence. |
+| `ext_lost_in_middle_2023` | retrieval/context | Long-context position sensitivity and the gap between available context and used evidence. |
+| `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
+| `ext_tla_plus_home_docs` | formal methods | System specification and model-checking vocabulary for concurrent and distributed systems. |
 
 ## Current Effect
 
 - Added public-safe source inventory records.
 - Added matching source notes.
-- Generated Appendix H can now list initial source-noted records for the first two Phase 6 priority queues.
+- Generated Appendix H can now list initial source-noted records for five Phase 6 priority queues.
 - No chapter source assignments, Appendix C support states, evidence transitions, proof targets, or test results changed.
 
 ## Non-Claims
@@ -36,9 +43,9 @@ literature coverage.
 
 ## Next Queues
 
-1. Planning, task decomposition, HTN, behavior trees, GOAP, TAMP, and agent orchestration.
-2. Retrieval, memory, context engineering, long-context evaluation, and context compilation.
-3. Formal methods, proof assistants, runtime assurance, and contract verification.
+1. Deepen planning coverage with HTN, behavior trees, GOAP, TAMP, and agent-orchestration sources.
+2. Deepen retrieval/context coverage with context-engineering and long-context benchmark sources.
+3. Deepen formal-methods coverage with runtime assurance, proof-assistant, and contract-verification sources.
 4. Mixture-of-experts, routing, modular agents, and model/system routing.
 5. Compression, representation learning, program synthesis, and residual/error accounting.
 6. Benchmark science, contamination, saturation, hidden tests, and evaluation gaming.
