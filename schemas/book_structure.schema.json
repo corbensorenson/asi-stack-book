@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/book_structure.schema.json",
+  "title": "Book Structure Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "title",
+    "subtitle",
+    "author",
+    "site_url",
+    "repo_url",
+    "front_matter",
+    "parts",
+    "appendices"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer" },
+    "title": { "type": "string", "minLength": 1 },
+    "subtitle": { "type": "string", "minLength": 1 },
+    "author": { "type": "string", "minLength": 1 },
+    "site_url": { "type": "string", "minLength": 1 },
+    "repo_url": { "type": "string", "minLength": 1 },
+    "front_matter": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "parts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "part_job",
+          "source_queue",
+          "chapters"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "part_job": { "type": "string", "minLength": 1 },
+          "source_queue": {
+            "type": "object",
+            "required": [
+              "core",
+              "supporting",
+              "connector_or_recovery"
+            ],
+            "properties": {
+              "core": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              },
+              "supporting": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              },
+              "connector_or_recovery": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            },
+            "additionalProperties": false
+          },
+          "chapters": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "file",
+                "status",
+                "evidence_level",
+                "claim_label",
+                "source_ids",
+                "source_queue",
+                "problem",
+                "insufficient",
+                "core_claim",
+                "claim_source_mappings",
+                "mechanism",
+                "interfaces",
+                "invariants",
+                "failure_modes",
+                "minimal_implementation",
+                "beyond_state_of_art",
+                "codex_tests",
+                "proof_targets"
+              ],
+              "properties": {
+                "id": { "type": "string", "minLength": 1 },
+                "title": { "type": "string", "minLength": 1 },
+                "file": { "type": "string", "minLength": 1 },
+                "status": { "type": "string", "minLength": 1 },
+                "evidence_level": {
+                  "type": "string",
+                  "enum": [
+                    "unsupported",
+                    "argument",
+                    "source-derived",
+                    "prototype-backed",
+                    "synthetic-test-backed",
+                    "empirical-test-backed",
+                    "external-literature-backed",
+                    "deprecated",
+                    "refuted"
+                  ]
+                },
+                "claim_label": {
+                  "type": "string",
+                  "enum": [
+                    "Demonstrated",
+                    "Measured",
+                    "Mechanized",
+                    "Hypothesized",
+                    "Design rationale",
+                    "Speculative"
+                  ]
+                },
+                "source_ids": {
+                  "type": "array",
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "source_queue": {
+                  "type": "object",
+                  "required": [
+                    "primary",
+                    "supporting",
+                    "variants",
+                    "connector_or_recovery",
+                    "handoff_or_recovery_notes"
+                  ],
+                  "properties": {
+                    "primary": {
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1 }
+                    },
+                    "supporting": {
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1 }
+                    },
+                    "variants": {
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1 }
+                    },
+                    "connector_or_recovery": {
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1 }
+                    },
+                    "handoff_or_recovery_notes": {
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1 }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "problem": { "type": "string", "minLength": 1 },
+                "insufficient": { "type": "string", "minLength": 1 },
+                "core_claim": { "type": "string", "minLength": 1 },
+                "claim_source_mappings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "source_id",
+                      "mapped_support",
+                      "limits",
+                      "passage_refs",
+                      "passage_review_note",
+                      "passage_review_state"
+                    ],
+                    "properties": {
+                      "source_id": { "type": "string", "minLength": 1 },
+                      "mapped_support": { "type": "string", "minLength": 1 },
+                      "limits": { "type": "string", "minLength": 1 },
+                      "passage_refs": {
+                        "type": "array",
+                        "items": { "type": "string", "minLength": 1 }
+                      },
+                      "passage_review_note": { "type": "string", "minLength": 1 },
+                      "passage_review_state": { "type": "string", "minLength": 1 }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "mechanism": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "interfaces": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "invariants": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "failure_modes": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "minimal_implementation": { "type": "string", "minLength": 1 },
+                "beyond_state_of_art": { "type": "string", "minLength": 1 },
+                "codex_tests": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      { "type": "string", "minLength": 1 },
+                      {
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "implementation_status",
+                          "result_status"
+                        ],
+                        "properties": {
+                          "name": { "type": "string", "minLength": 1 },
+                          "purpose": { "type": "string", "minLength": 1 },
+                          "status": { "type": "string", "minLength": 1 },
+                          "implementation_status": { "type": "string", "minLength": 1 },
+                          "result_status": { "type": "string", "minLength": 1 }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "lean_module": { "type": "string", "minLength": 1 },
+                "proof_targets": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "tag",
+                      "module",
+                      "target",
+                      "status"
+                    ],
+                    "properties": {
+                      "tag": { "type": "string", "minLength": 1 },
+                      "module": { "type": "string", "minLength": 1 },
+                      "target": { "type": "string", "minLength": 1 },
+                      "status": { "type": "string", "minLength": 1 }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "draft_maturity": { "type": "string", "minLength": 1 },
+                "open_evidence_gaps": {
+                  "type": "array",
+                  "items": { "type": "string", "minLength": 1 }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "appendices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "file"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

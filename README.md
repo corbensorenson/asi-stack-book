@@ -15,7 +15,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - Quarto book structure is initialized and renders to HTML.
 - All 54 outline chapters exist as manuscript drafts across four manifest-driven parts.
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
-- `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
+- `book_structure.json` controls parts, chapter order, stable chapter IDs, source assignments, implementation horizons, proof hooks, and appendix order, and `schemas/book_structure.schema.json` plus `scripts/validate_book.py` guard its shape.
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
@@ -44,7 +44,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
 - `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.
 - Current source-note coverage, exact claim-source mappings, and passage-reviewed mappings are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted evidence transitions justify promotion.
-- A protocol schema fixture check is implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
+- Protocol schema fixture checks and manifest schema validation are implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
 
 ## Start Here
@@ -82,7 +82,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
 | [docs/major_version_release_runbook.md](docs/major_version_release_runbook.md) | Operational ladder for tagged live, reader, e-reader/document, and audio releases. |
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
-| [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
+| [book_structure.json](book_structure.json) | Schema-validated manifest for dynamic parts, chapters, source assignments, implementation horizons, proof hooks, and appendices. |
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
 | [editions/reader_manuscript/README.md](editions/reader_manuscript/README.md) | Dormant curated reader-manuscript path and future graduation rule. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
@@ -239,7 +239,7 @@ When adding a new AI paper or artifact, use [docs/living_update_workflow.md](doc
 
 Claims use both a claim label and a support state. Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` unless the source ingestion, prototype review, proof check, or test execution actually happened and is recorded. Conversation-mined material can guide author intent and lineage, but it is not external evidence.
 
-Every chapter record in `book_structure.json` must explicitly declare both `claim_label` and `evidence_level`. `scripts/add_chapter.py` supplies conservative defaults for new chapters, and `python3 scripts/validate_book.py` rejects missing or invalid values.
+Every chapter record in `book_structure.json` must explicitly declare both `claim_label` and `evidence_level`. `scripts/add_chapter.py` supplies conservative defaults for new chapters, and `python3 scripts/validate_book.py` validates the manifest against `schemas/book_structure.schema.json` before rejecting missing or invalid semantic values.
 
 ## Proof Discipline
 

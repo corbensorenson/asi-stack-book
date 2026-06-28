@@ -27,7 +27,7 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | Repeated `remains a target architecture, not a current-result claim` disclaimer | 0 after Phase 1 pass; 42 before pass | Phase 1 preserved the non-claim boundary with chapter-specific language. |
 | Repeated `keeps ... honest` construction | 0 after Phase 1 pass; 9 before pass by regex | Phase 1 replaced the reusable cadence with mechanism-specific prose and added a guard. |
 | Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition, then graduate toward a curated parallel reader manuscript when prose divergence becomes too large for overlays. |
-| Manifest claim/support defaults should not hide source-of-truth state | Resolved for the current chapter set: all 54 chapter records now declare explicit `claim_label` and `evidence_level` fields | Phase 0 guardrail. `scripts/add_chapter.py` creates explicit fields for new chapters, and `scripts/validate_book.py` rejects missing or invalid values. A broader `book_structure` schema remains optional future hardening. |
+| Manifest claim/support defaults should not hide source-of-truth state | Resolved for the current chapter set: all 54 chapter records now declare explicit `claim_label` and `evidence_level` fields, and `schemas/book_structure.schema.json` records the whole-file manifest shape | Phase 0 guardrail. `scripts/add_chapter.py` creates explicit fields for new chapters, and `scripts/validate_book.py` validates `book_structure.json` against the schema before semantic source/proof checks. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
 ## What Is Already Resolved Or Not Actionable
@@ -348,7 +348,7 @@ Tasks:
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
 - Continue table and inline-code overflow checks after large source, claim-matrix, or changelog growth; the current source-growth and inline-code probes found no page-level overflow on Appendices A/C/F/H/K.
-- Optional broader `book_structure` JSON Schema if the manifest contract needs field-level validation beyond the current explicit claim-label/support-state guard.
+- Maintain `schemas/book_structure.schema.json` alongside future manifest fields; the schema now validates the top-level book contract before the semantic validators check source IDs, proof targets, reader surfaces, and evidence boundaries.
 - Optional clearer `validate_live_human_view.py` error when `_site` is missing or stale.
 - Optional local `git gc` if loose-object warnings recur.
 

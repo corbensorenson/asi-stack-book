@@ -4,7 +4,7 @@ This repository is organized around the living book and its validation loop.
 
 | Path | Role | Public status |
 |---|---|---|
-| `book_structure.json` | Source of truth for parts, chapters, stable IDs, source assignments, and appendices. | tracked |
+| `book_structure.json` | Source of truth for parts, chapters, stable IDs, source assignments, implementation horizons, support states, proof targets, and appendices. | tracked; schema-validated |
 | `_quarto.yml` | Generated Quarto configuration. | tracked; do not hand-edit |
 | `index.qmd`, `preface.qmd` | Front matter for the rendered book. | tracked |
 | `chapters/` | Chapter source files. | tracked |
@@ -55,7 +55,7 @@ This repository is organized around the living book and its validation loop.
 | `sources/source_notes/` | Public-safe notes created after source text is actually read. | tracked when notes are added |
 | `proofs/` | Proof plans and generated proof target manifest. | tracked |
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
-| `schemas/` | JSON Schemas for protocol records. | tracked |
+| `schemas/` | JSON Schemas for protocol records and the book-structure manifest contract. | tracked |
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `evidence_transitions/` | Evidence-transition review records checked against `schemas/evidence_transition_record.schema.json`. | tracked |
 | `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state, authority, plan-execution, runtime-adapter, context-admission, readiness/residual, benchmark anti-Goodhart fixtures and result records, and the Phase 5 harness registry. | tracked |
@@ -67,7 +67,7 @@ This repository is organized around the living book and its validation loop.
 
 ## Ownership Rules
 
-- Edit `book_structure.json`, then run `python3 scripts/sync_scaffold.py`.
+- Edit `book_structure.json`, then run `python3 scripts/sync_scaffold.py`; `python3 scripts/validate_book.py` validates the manifest against `schemas/book_structure.schema.json` before semantic source/proof checks.
 - Keep every chapter record in `book_structure.json` explicit about `claim_label` and `evidence_level`; `python3 scripts/validate_book.py` rejects missing or invalid values.
 - Use `python3 scripts/chapter_adjacency_report.py` after adding, moving, merging, or removing chapters to identify the small set of Handoff sections whose manifest-order prose must be repaired.
 - Edit `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`.

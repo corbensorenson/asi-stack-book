@@ -48,6 +48,7 @@ REQUIRED = [
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
+    "schemas/book_structure.schema.json",
     "docs/book_outline.md",
     "docs/proof_artifact_audit.md",
     "docs/source_evidence_audit.md",
@@ -134,6 +135,91 @@ def fail(message: str) -> None:
 def read_json(path: Path) -> object:
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+def type_ok(value: object, expected: str) -> bool:
+    if expected == "object":
+        return isinstance(value, dict)
+    if expected == "array":
+        return isinstance(value, list)
+    if expected == "string":
+        return isinstance(value, str)
+    if expected == "number":
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if expected == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if expected == "boolean":
+        return isinstance(value, bool)
+    return True
+
+
+def validate_schema_value(value: object, schema: dict, path: str) -> list[str]:
+    errors: list[str] = []
+    any_of = schema.get("anyOf")
+    if isinstance(any_of, list):
+        option_errors = []
+        for option in any_of:
+            if not isinstance(option, dict):
+                continue
+            candidate_errors = validate_schema_value(value, option, path)
+            if not candidate_errors:
+                return []
+            option_errors.append(candidate_errors[0])
+        if option_errors:
+            return [f"{path}: does not match anyOf options ({'; '.join(option_errors)})"]
+        return [f"{path}: anyOf has no valid schema options"]
+
+    expected_type = schema.get("type")
+    if isinstance(expected_type, str) and not type_ok(value, expected_type):
+        return [f"{path}: expected {expected_type}, got {type(value).__name__}"]
+
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{path}: value {value!r} not in enum {schema['enum']!r}")
+
+    if expected_type == "string":
+        min_length = schema.get("minLength", 0)
+        if isinstance(value, str) and isinstance(min_length, int) and len(value) < min_length:
+            errors.append(f"{path}: string shorter than minLength {min_length}")
+
+    if expected_type == "array" and isinstance(value, list):
+        min_items = schema.get("minItems", 0)
+        if isinstance(min_items, int) and len(value) < min_items:
+            errors.append(f"{path}: array shorter than minItems {min_items}")
+        item_schema = schema.get("items", {})
+        if isinstance(item_schema, dict):
+            for index, item in enumerate(value):
+                errors.extend(validate_schema_value(item, item_schema, f"{path}[{index}]"))
+
+    if expected_type == "object" and isinstance(value, dict):
+        required = schema.get("required", [])
+        if isinstance(required, list):
+            for key in required:
+                if key not in value:
+                    errors.append(f"{path}: missing required key {key!r}")
+        properties = schema.get("properties", {})
+        if isinstance(properties, dict):
+            if schema.get("additionalProperties") is False:
+                for key in value:
+                    if key not in properties:
+                        errors.append(f"{path}: unexpected key {key!r}")
+            for key, child_schema in properties.items():
+                if key in value and isinstance(child_schema, dict):
+                    errors.extend(validate_schema_value(value[key], child_schema, f"{path}.{key}"))
+
+    return errors
+
+
+def validate_structure_schema() -> None:
+    structure = read_json(ROOT / "book_structure.json")
+    schema = read_json(ROOT / "schemas" / "book_structure.schema.json")
+    if not isinstance(schema, dict):
+        fail("schemas/book_structure.schema.json must contain an object.")
+    errors = validate_schema_value(structure, schema, "book_structure.json")
+    if errors:
+        print("book_structure.json does not match schemas/book_structure.schema.json:")
+        for error in errors:
+            print(f" - {error}")
+        sys.exit(1)
 
 
 def flatten_chapters(structure: dict) -> list[dict]:
@@ -401,6 +487,7 @@ def run_validator(script_name: str, *args: str) -> None:
 
 def main() -> None:
     validate_required_files()
+    validate_structure_schema()
     source_ids = validate_inventory()
     chapters = validate_structure(source_ids)
     validate_quarto_generated()
