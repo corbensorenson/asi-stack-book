@@ -13,11 +13,14 @@ The same file also defines the content-layer contract: reader-facing chapter spi
 
 Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a semantic reader overlay under `reader_overlays/` when the delta belongs only to a major human-reader edition. The tracked overlay manifest and chapter operation files are the editable reader-delta source; `reader_delta_report.md` is generated review output with a zero-active-operation note or operation digests and before/after excerpts, and should not be patched by hand.
 
+`editions/reader_manuscript/` is the dormant future path for a curated human-reader manuscript. Its v1.0 manifest currently records `not_graduated`: generated reader source plus overlays remain the active path. If the normal reader edition eventually needs sustained prose editing chapter by chapter, the curated manuscript can become a tracked parallel derivative source for narrative only, with reconciliation back to the live manifest, support states, source boundaries, proof/test status, implementation horizons, and release records.
+
 Validate the profile definitions with:
 
 ```bash
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_reading_mode_toggle.py
+python3 scripts/validate_reader_manuscript_manifest.py
 ```
 
 Create or check a derived reader-edition draft with:

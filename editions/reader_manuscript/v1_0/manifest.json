@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "not_graduated",
+  "canonical_relationship": "parallel_derivative_not_equal_authority",
+  "live_sources_of_truth": [
+    "book_structure.json",
+    "docs/book_outline.md",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "appendices/G_corben_source_corpus.qmd",
+    "appendices/H_external_sources.qmd",
+    "proofs/proof_manifest.json",
+    "appendices/E_codex_test_specs.qmd",
+    "appendices/K_implementation_horizons.qmd",
+    "release_records/"
+  ],
+  "generated_baseline": {
+    "command": "python3 scripts/build_reader_edition.py",
+    "check_command": "python3 scripts/build_reader_edition.py --check",
+    "baseline_dir": "build/reader_edition",
+    "delta_report": "build/reader_edition/reader_delta_report.md",
+    "policy": "Use generated reader source and reader overlays as the reconciliation baseline before any curated reader chapter is treated as release input."
+  },
+  "overlay_source": {
+    "manifest": "editions/reader_overlays/v1_0/manifest.json",
+    "asset": "assets/reader-overlays.html",
+    "policy": "Prefer semantic overlays for section-local reader-only edits; graduate to curated manuscript files only when the edit is too broad for overlays."
+  },
+  "allowed_divergence": [
+    "pacing",
+    "chapter openings and closings",
+    "section flow",
+    "reader examples",
+    "transition prose",
+    "sentence-level voice",
+    "companion-note routing for dense material"
+  ],
+  "blocked_divergence": [
+    "claim text meaning",
+    "support-state meaning",
+    "source boundary meaning",
+    "proof/test status",
+    "minimum viable implementation status",
+    "beyond-state-of-the-art non-claim boundary",
+    "release artifact existence",
+    "chapter identity or manifest mapping"
+  ],
+  "graduation_criteria": [
+    "Generated reader source plus overlays are reviewed and found insufficient for final human-reader prose.",
+    "A curated chapter file maps to exactly one manifest chapter ID.",
+    "Every curated chapter records its generated-reader baseline, live-source commit or tag, and reconciliation status.",
+    "Meaning-changing caveats, support-state limits, implementation horizons, and non-claim boundaries are preserved.",
+    "A reconciliation report exists before any reader artifact is rendered from curated source.",
+    "The release record names curated reader source only after review actually happens."
+  ],
+  "chapter_records": [],
+  "reconciliation_report": {
+    "required_before_release": true,
+    "path": "editions/reader_manuscript/v1_0/reconciliation_report.md",
+    "status": "not_started"
+  },
+  "non_claims": [
+    "This manifest does not create a reviewed reader release.",
+    "This manifest does not create EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.",
+    "This manifest does not promote any claim support state.",
+    "This manifest does not supersede the live Quarto book as the source of truth for evidence, source boundaries, proof/test status, implementation horizons, or release records."
+  ]
+}

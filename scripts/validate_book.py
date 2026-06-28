@@ -25,6 +25,7 @@ REQUIRED = [
     "scripts/validate_human_reading_paths.py",
     "scripts/validate_reader_evidence_boundaries.py",
     "scripts/validate_reader_overlays.py",
+    "scripts/validate_reader_manuscript_manifest.py",
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_chapter_handoffs.py",
@@ -59,6 +60,8 @@ REQUIRED = [
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
     "editions/reader_overlays/v1_0/manifest.json",
+    "editions/reader_manuscript/README.md",
+    "editions/reader_manuscript/v1_0/manifest.json",
     "assets/reader-overlays.html",
     "proofs/proof_manifest.json",
     "appendices/A_source_matrix.qmd",
@@ -388,6 +391,7 @@ def main() -> None:
     run_validator("validate_reading_mode_toggle.py")
     run_validator("validate_human_reading_paths.py")
     run_validator("validate_reader_evidence_boundaries.py", "--check")
+    run_validator("validate_reader_manuscript_manifest.py")
     run_validator("validate_source_appendices.py")
     run_validator("validate_v1_status_snapshot.py")
     run_validator("validate_outline_consistency.py")

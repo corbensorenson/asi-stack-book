@@ -20,6 +20,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
 - `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The first v1.0 pilot currently rewrites the opening chapter's `Problem` and `Summary` sections for Human view and generated reader editions only.
+- `editions/reader_manuscript/v1_0/manifest.json` defines the dormant curated reader-manuscript path for the point where generated reader output plus overlays are no longer enough. Its current status is `not_graduated`, and `scripts/validate_reader_manuscript_manifest.py` enforces that any future curated manuscript remains a parallel derivative source for human prose, not an equal authority for claims, support states, source boundaries, proof/test status, implementation horizons, or release records.
 - `scripts/sync_reader_overlay_asset.py` embeds active reader overlay operations in `assets/reader-overlays.html` so the live Human view and generated reader edition share the same section-delta source.
 - `scripts/validate_reader_overlays.py` checks that reader overlays are section-anchored, apply cleanly, and produce a generated delta report with operation digests and before/after review excerpts.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, section-level prose/word-count floors, chapter-specific Handoff continuity, and no live-only scaffolding after stripping.
@@ -67,6 +68,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/local_project_mining_theseus_circle.md](docs/local_project_mining_theseus_circle.md) | Public-safe mining report for Project Theseus and Circle Calculus. |
 | [book_structure.json](book_structure.json) | Manifest for dynamic parts, chapters, source assignments, and appendices. |
 | [editions/release_profiles.json](editions/release_profiles.json) | Audience-specific release profile definitions. |
+| [editions/reader_manuscript/README.md](editions/reader_manuscript/README.md) | Dormant curated reader-manuscript path and future graduation rule. |
 | [appendices/A_source_matrix.qmd](appendices/A_source_matrix.qmd) | Generated source-to-chapter matrix. |
 | [appendices/C_claim_evidence_matrix.qmd](appendices/C_claim_evidence_matrix.qmd) | Generated claim/evidence matrix. |
 | [appendices/G_corben_source_corpus.qmd](appendices/G_corben_source_corpus.qmd) | Generated appendix for Corben's own sources, papers, and local project records. |
@@ -96,6 +98,7 @@ python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_overlays.py --check
+python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_support_state_transitions.py
 python3 scripts/validate_authority_transitions.py

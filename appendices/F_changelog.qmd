@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 curated reader manuscript scaffold
+
+- Added the dormant curated reader-manuscript path under `editions/reader_manuscript/`, with `editions/reader_manuscript/v1_0/manifest.json` recording `not_graduated` status, allowed prose divergence, blocked evidence divergence, generated-reader baseline, reconciliation requirement, and non-claim boundaries. Added `scripts/validate_reader_manuscript_manifest.py` and wired it into `scripts/validate_book.py`, the release/runbook docs, README, repository map, and v1.0 status snapshot. This prepares the eventual human-edited reader manuscript path without creating a reviewed reader release, EPUB/PDF/DOCX artifact, audio artifact, support-state promotion, or second evidence authority.
+
 ## 2026-06-28 - v1.0 Phase 5 harness registry
 
 - Added a machine-readable Phase 5 harness registry at `experiments/phase5_harness_registry.json`, the public summary `docs/phase5_harness_registry.md`, and `scripts/validate_phase5_harness_registry.py`. The validator checks that the six initial synthetic harnesses keep their scripts, docs, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, non-claim boundaries, and `scripts/validate_book.py` wiring aligned. Wired the registry into `scripts/validate_book.py`, the generated Appendix E repository-level checks, the v1.0 roadmap/status/focus surfaces, README, repository map, and experiments index. This is evidence plumbing only: it does not rerun the harnesses, prove runtime behavior, validate benchmark quality, or promote any Appendix C support state.

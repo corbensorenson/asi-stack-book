@@ -63,11 +63,13 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
 - `editions/reader_overlays/` defines versioned semantic reader overlays for human-edition deltas that should survive regeneration without forking the live book.
+- `editions/reader_manuscript/v1_0/manifest.json` records the dormant curated reader-manuscript path, its graduation criteria, allowed prose divergence, blocked evidence divergence, generated-reader baseline, reconciliation requirement, and current `not_graduated` status.
 - `appendices/J_release_editions.qmd` publishes the model inside the live book.
 - `docs/major_version_release_runbook.md` gives the operational sequence for live, research, reader, ebook/document, and audio release work.
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_overlays.py` checks the reader-overlay manifest and confirms generated reader builds include a coherent `reader_delta_report.md` with either a zero-active-operation note or operation digests and before/after review excerpts.
+- `scripts/validate_reader_manuscript_manifest.py` checks that any future curated reader manuscript remains a parallel derivative source for prose and cannot silently diverge from manifest chapter IDs, support boundaries, source boundaries, proof/test status, implementation horizons, or release records.
 - `scripts/sync_reader_overlay_asset.py` embeds active overlay operations in `assets/reader-overlays.html` so the live Human view can apply the same section deltas as generated reader editions.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, chapter-specific Handoff continuity, view-block cleanup, and stripped live-only scaffolding.
 - `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and inline plain-language support-state boundaries.
@@ -88,6 +90,7 @@ Check the reader profile without leaving generated files in the repo:
 python3 scripts/build_reader_edition.py --check
 python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
+python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 ```
