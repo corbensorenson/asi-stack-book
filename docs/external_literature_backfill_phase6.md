@@ -4,8 +4,9 @@ Last updated: 2026-06-28
 
 This document records the initial Phase 6 external-literature backfill passes.
 The current pass covers alignment/control, AI governance/evaluation,
-planning/agent control, retrieval/context, and formal methods. It does not claim
-complete literature coverage.
+planning/agent control, retrieval/context, formal methods, routing/MoE,
+compression/representation, and benchmark science. It does not claim complete
+literature coverage.
 
 ## Added Records
 
@@ -24,12 +25,20 @@ complete literature coverage.
 | `ext_lost_in_middle_2023` | retrieval/context | Long-context position sensitivity and the gap between available context and used evidence. |
 | `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
 | `ext_tla_plus_home_docs` | formal methods | System specification and model-checking vocabulary for concurrent and distributed systems. |
+| `ext_sparse_moe_2017` | routing/MoE | Sparsely gated expert layers, conditional computation, and load-balancing limits. |
+| `ext_gshard_2020` | routing/MoE | Conditional computation with automatic sharding and distributed sparse-model constraints. |
+| `ext_switch_transformer_2021` | routing/MoE | Simplified sparse expert routing, stability, communication, and speed/scale boundaries. |
+| `ext_deep_compression_2015` | compression/representation | Pruning, trained quantization, coding, and utility-preservation boundaries. |
+| `ext_lora_2021` | compression/representation | Low-rank adaptation, parameter-efficient updates, and adaptation-boundary vocabulary. |
+| `ext_mmlu_2020` | benchmark science | Broad multitask benchmark coverage, uneven performance, and saturation pressure. |
+| `ext_bigbench_2022` | benchmark science | Broad community benchmark tasks, scale trends, calibration, and residual tradeoffs. |
+| `ext_helm_2022` | benchmark science | Multi-scenario, multi-metric, transparent, living evaluation practice. |
 
 ## Current Effect
 
 - Added public-safe source inventory records.
 - Added matching source notes.
-- Generated Appendix H can now list initial source-noted records for five Phase 6 priority queues.
+- Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
 - No chapter source assignments, Appendix C support states, evidence transitions, proof targets, or test results changed.
 
 ## Non-Claims
@@ -46,6 +55,6 @@ complete literature coverage.
 1. Deepen planning coverage with HTN, behavior trees, GOAP, TAMP, and agent-orchestration sources.
 2. Deepen retrieval/context coverage with context-engineering and long-context benchmark sources.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant, and contract-verification sources.
-4. Mixture-of-experts, routing, modular agents, and model/system routing.
-5. Compression, representation learning, program synthesis, and residual/error accounting.
-6. Benchmark science, contamination, saturation, hidden tests, and evaluation gaming.
+4. Deepen routing coverage with modern LLM MoE surveys, router evaluation, and modular-agent orchestration sources.
+5. Deepen compression coverage with program synthesis, quantization, distillation, residual coding, and artifact-utility sources.
+6. Deepen benchmark-science coverage with contamination, hidden-test, saturation, and evaluation-gaming sources.

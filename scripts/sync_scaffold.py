@@ -454,7 +454,7 @@ def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
                 elif target:
                     target_labels.append(str(target))
             if target_labels:
-                current_targets = "; ".join(target_labels) + " (inventory target; not manifest-assigned)"
+                current_targets = "; ".join(target_labels) + " (inventory chapter target; not Appendix C support mapping)"
             else:
                 current_targets = "Unassigned in current structure"
         doi = record.get("doi", "")
@@ -630,11 +630,11 @@ Third-party references should be added only when bibliographic metadata is recor
 | Planning, task decomposition, and agent control | External comparison for PlanForge-style planning/control. | initial source records and source notes added; no local reproduction or support-state promotion |
 | Retrieval, memory, and context engineering | External comparison for VCM and context-packet discipline. | initial source records and source notes added; no local reproduction or support-state promotion |
 | Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | initial source records and source notes added; no imported formal artifact or support-state promotion |
-| Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | queued; no citation recorded |
-| Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | queued; no citation recorded |
+| Modular systems, routing, and mixture-of-experts | External comparison for routing and specialist promotion. | initial source records and source notes added; no local reproduction or support-state promotion |
+| Compression, representation learning, and program synthesis | External comparison for compact generative systems and residual accounting. | initial source records and source notes added; no compression experiment or support-state promotion |
 | Fast generation, decoding substrates, and serving acceleration | External comparison for MTP, speculative decoding, internal draft heads, diffusion LLMs, early exit, state-space alternatives, KV-cache memory, and useful-solution-per-second metrics. | initial source records and source notes added; no local reproduction or support-state promotion |
 | Policy optimization and learning from feedback | External comparison for PPO/RLHF, GRPO/RLVR, DPO-style preference optimization, verifier rewards, reward hacking, reasoning-budget RL, and control-policy RL for planners, routers, VCM, execution, and generation modes. | initial source records and source notes added; no local reproduction or support-state promotion |
-| Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | queued; no citation recorded |
+| Benchmarks, evaluation science, and anti-Goodhart methods | External comparison for evidence ratchets and regression preservation. | initial source records and source notes added; no local benchmark run or support-state promotion |
 
 ## External Citation Policy
 

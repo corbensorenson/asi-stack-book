@@ -201,7 +201,7 @@ Initial completion:
 
 ## Phase 6 - External Literature Backfill
 
-Status: started. Initial backfill passes added thirteen primary external source records and source notes for alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, and formal methods, summarized in `docs/external_literature_backfill_phase6.md`. No claim support state, reproduction result, compliance claim, imported formal artifact, or evidence transition changed.
+Status: started across all priority queues. Initial backfill passes added twenty-one primary external source records and source notes across alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, formal methods, routing/MoE, compression/representation, and benchmark science, summarized in `docs/external_literature_backfill_phase6.md`. No claim support state, reproduction result, compliance claim, imported formal artifact, benchmark run, compression experiment, or evidence transition changed.
 
 Purpose: ground the architecture against third-party literature where outside readers will expect comparison.
 
