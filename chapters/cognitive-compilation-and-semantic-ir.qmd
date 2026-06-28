@@ -65,7 +65,7 @@ Direct generation asks one model turn to hold the user's intent, infer missing c
 
 The layer receives accepted goals and command contracts from planning. It emits typed semantic atoms with dependencies, constraints, validators, target hints, and repair surfaces. The output should be boring in the best sense: a downstream worker can inspect what must be preserved without rereading the entire conversation.
 
-The problem is also repair locality. When a generated artifact fails, an opaque prompt transcript gives the system few stable addresses for what broke. A semantic IR should identify which obligation, dependency, validator, or lowering step failed so repair does not rewrite the whole artifact by accident. That is how compilation turns generation into inspectable work.
+Repair locality creates the second pressure. When a generated artifact fails, an opaque prompt transcript gives the system few stable addresses for what broke. A semantic IR should identify which obligation, dependency, validator, or lowering step failed so repair does not rewrite the whole artifact by accident. That is how compilation turns generation into inspectable work.
 
 ## Why existing approaches are insufficient
 

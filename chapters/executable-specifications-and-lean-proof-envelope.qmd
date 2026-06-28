@@ -67,7 +67,7 @@ The book contains many claims that sound formal: authority boundaries, support-s
 
 GenesisCode supplies the small trusted-kernel and obligation discipline. Spinoza supplies proof-carrying claim and downgrade discipline. Circle Calculus supplies a strong warning: theorem ids and proof status must not be confused with model quality, runtime, memory, or deployment claims.
 
-The problem is not whether formal methods are desirable. The problem is where they are honest. If the book treats every rigorous-sounding concept as a Lean target, it creates proof theater. If it treats every proof as too narrow to matter, it loses a powerful boundary tool. The proof envelope must decide which predicates can be mechanized, which artifacts validate shape, which tests validate behavior, and which claims must remain prose.
+Formal methods are desirable only when their scope is honest. If the book treats every rigorous-sounding concept as a Lean target, it creates proof theater. If it treats every proof as too narrow to matter, it loses a powerful boundary tool. The proof envelope must decide which predicates can be mechanized, which artifacts validate shape, which tests validate behavior, and which claims must remain prose.
 
 ## Why existing approaches are insufficient
 

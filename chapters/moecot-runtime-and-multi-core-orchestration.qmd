@@ -66,7 +66,7 @@ At least one concrete runtime shape is necessary for the architecture described 
 
 MoECOT is the current implementation-reference lane for that shape. Its source note describes a governed, skill-native, low-parameter orchestration architecture with a compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, and explicit limitations.
 
-The problem is public evidence boundary. MoECOT can help the book reason about runtime shape, but source-note and connector context do not become reproduced runtime proof. The integration record therefore has to use MoECOT as an implementation-reference pressure surface while keeping claims about benchmark behavior, deployed reliability, and security properties bounded until public artifacts and replayable runs exist.
+Public evidence is the runtime boundary for MoECOT. MoECOT can help the book reason about runtime shape, but source-note and connector context do not become reproduced runtime proof. The integration record therefore has to use MoECOT as an implementation-reference pressure surface while keeping claims about benchmark behavior, deployed reliability, and security properties bounded until public artifacts and replayable runs exist.
 
 ## Why existing approaches are insufficient
 

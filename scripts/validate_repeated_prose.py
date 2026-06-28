@@ -54,6 +54,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The ASI Stack needs",
     "The public schema now records",
     "The insufficiency is",
+    "The problem is",
     "The interface is the",
     "The interface is a",
     "The interface is an",

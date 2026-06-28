@@ -62,7 +62,7 @@ Long context and recurrence can fail in quiet ways: stale reads, duplicate reque
 
 Memory and attention records must distinguish structural facts from semantic success. A ring buffer can say which slots are live. It cannot prove that the retrieved content is useful. A sparse orbit can say which lags are covered. It cannot prove that arbitrary dependencies were captured.
 
-The problem is not cyclic structure itself; it is claim confusion around cyclic structure. Recurrence can help preserve local state, expose coverage, and create cheap structural checks. It can also hide stale memory, repeated reasoning loops, and false confidence about long-context adequacy. The contract has to make the cheap facts visible while keeping quality claims blocked until retrieval and task evidence exist.
+Cyclic structure itself is not the failure; claim confusion around cyclic structure is. Recurrence can help preserve local state, expose coverage, and create cheap structural checks. It can also hide stale memory, repeated reasoning loops, and false confidence about long-context adequacy. The contract has to make the cheap facts visible while keeping quality claims blocked until retrieval and task evidence exist.
 
 ## Why existing approaches are insufficient
 
