@@ -93,13 +93,13 @@ Acceptance criteria:
 
 ## Phase 2 - Reviewed Reader Manuscript Path
 
-Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the active semantic reader-overlay log is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations, four Personal Compute Hives table-to-prose operations, and two Policy Optimization table-to-prose operations; and the generated heuristic continuity audit is recorded in `docs/reader_continuity_audit.md`. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
+Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the active semantic reader-overlay log is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations, four Personal Compute Hives table-to-prose operations, two Policy Optimization table-to-prose operations, and two Artifact Steward Agents table-to-prose operations; and the generated heuristic continuity audit is recorded in `docs/reader_continuity_audit.md`. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
 Tasks:
 
-1. Generate the reader edition with `python3 scripts/build_reader_edition.py`. The initial baseline generated on 2026-06-28 had 54 chapters, 59 files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and no active reader overlays. The current generated check applies 8 active reader-overlay operations.
+1. Generate the reader edition with `python3 scripts/build_reader_edition.py`. The initial baseline generated on 2026-06-28 had 54 chapters, 59 files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and no active reader overlays. The current generated check applies 10 active reader-overlay operations.
 2. Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`. Initial review recorded in `docs/reader_manuscript_review.md`.
 3. Read the generated reader manuscript for continuity, pacing, duplicated live-book scaffolding, missing transitions, and caveats that became too thin after stripping.
 4. Apply human-reader-only deltas through `editions/reader_overlays/` only when the change should not alter AI/research view.
@@ -112,14 +112,15 @@ Active overlay set:
 - `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json` carries two active reader-only section replacements for the opening chapter's `Problem` and `Summary` sections.
 - `editions/reader_overlays/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.json` carries four active reader-only section replacements that convert the `Owned substrate and device roles`, `Hive objects`, `Job classes and federation modes`, and `Hive memory` tables into narrative prose.
 - `editions/reader_overlays/v1_0/chapters/policy-optimization-and-learning-from-feedback.json` carries two active reader-only section replacements that convert the `Method families` and external-literature tables into narrative prose, including a heading alias for the generated reader/source heading difference.
+- `editions/reader_overlays/v1_0/chapters/artifact-steward-agents-and-living-project-governance.json` carries two active reader-only section replacements that convert the `Autonomy and treasury modes` and `Project objects` tables into narrative prose.
 - The overlay set exercises the intended divergence path: Human view and generated reader editions receive calmer book prose, while AI view and canonical chapter source keep the original live/research scaffold, tables, and evidence surfaces.
 - The overlay set is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, or runtime result.
 
 Automated continuity audit:
 
 - `python3 scripts/audit_reader_continuity.py --write` generated `docs/reader_continuity_audit.md` from a temporary reader-edition workspace.
-- The audit measures 54 reader chapters, 119,137 reader words, 8 active/applied reader-overlay operations, 181 table rows, 58 Mermaid diagrams, 1 non-Mermaid code block, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
-- It identifies 16 high-priority heuristic review chapters. These rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
+- The audit measures 54 reader chapters, 119,526 reader words, 10 active/applied reader-overlay operations, 156 table rows, 58 Mermaid diagrams, 1 non-Mermaid code block, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
+- It identifies 15 high-priority heuristic review chapters. These rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
 - The audit is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, or substitute for reading the manuscript.
 
 Reader-source divergence rule:

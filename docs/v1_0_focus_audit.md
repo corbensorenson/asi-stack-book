@@ -68,9 +68,9 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Planned/unrun chapter test rows | 155 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
 | Implemented or partial test/proof/check rows in Appendix E | 73 | Appendix E now has 57 implemented chapter rows, 1 partial chapter row, and 15 repository-level checks. Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, synthetic readiness/residual gate consistency, synthetic benchmark anti-Goodhart consistency, the Phase 5 harness registry, the reader continuity audit, Lean build, or proof/source traceability mechanics. |
 | Reader spine | 54 chapters, minimum 1957 words | The generated reader source is structurally substantial. |
-| Reader continuity audit | 54 chapters, 16 high-priority heuristic review rows | The audit gives Phase 2 a deterministic human-review queue without claiming manual review or release readiness. |
+| Reader continuity audit | 54 chapters, 15 high-priority heuristic review rows | The audit gives Phase 2 a deterministic human-review queue without claiming manual review or release readiness. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
-| Reader overlay operations | 8 active | The opening-chapter semantic overlay pilot, Personal Compute Hives table-to-prose pass, and Policy Optimization table-to-prose pass are active; broader reader continuity review and chapter-by-chapter overlays remain open. |
+| Reader overlay operations | 10 active | The opening-chapter semantic overlay pilot, Personal Compute Hives table-to-prose pass, Policy Optimization table-to-prose pass, and Artifact Steward Agents table-to-prose pass are active; broader reader continuity review and chapter-by-chapter overlays remain open. |
 | Reader format readiness | HTML, EPUB, DOCX ready for attempts | The check confirms setup readiness, not produced reviewed artifacts. |
 | Audio script readiness | 59 script files generated for review | The check confirms script generation, not audio existence or review. |
 | GitHub Pages workflow | Latest checked runs passing | Public deployment mechanics are healthy. |
@@ -142,7 +142,7 @@ These are not failures. They are the correct next frontier after a strong scaffo
 
 | Priority | Focus area | Current strength | Main gap | Best next artifact |
 |---|---|---|---|---|
-| P0 | Human-reader continuity review | Generated reader spine is substantial and mechanically clean; `docs/reader_continuity_audit.md` now gives the review pass a deterministic queue. | No reviewed human-reader manuscript exists. | Work through the 16 high-priority heuristic rows first, then record chapter-level overlay operations, canonical prose edits, companion-note treatment, or no-action decisions for real problems found. |
+| P0 | Human-reader continuity review | Generated reader spine is substantial and mechanically clean; `docs/reader_continuity_audit.md` now gives the review pass a deterministic queue. | No reviewed human-reader manuscript exists. | Work through the 15 high-priority heuristic rows first, then record chapter-level overlay operations, canonical prose edits, companion-note treatment, or no-action decisions for real problems found. |
 | P0 | Claim-to-mechanism support review | 461 mappings are exact and passage-reviewed. | No accepted evidence transitions have promoted claims above `argument`. | Evidence transition records for a small number of narrow claims, or explicit decisions to keep them at `argument`. |
 | P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with six synthetic behavior-gate harnesses now wired into validation and registry-checked. | 155 Appendix E chapter rows remain planned/not run. | Next executable test harnesses should move toward replayable empirical slices or imported prototype traces with command, environment, result, and non-claim boundaries. |
 | P0 | Proof adequacy review | 112 Lean targets build and trace. | All are finite-record predicates; adequacy has not been reviewed. | `docs/proof_adequacy_review.md` or an equivalent audit classifying each target as adequate, too narrow, too broad, or needing a stronger model. |
@@ -171,7 +171,7 @@ Suggested review order:
 
 Output should be either canonical prose edits or tracked reader overlay operations, plus a reviewed residual list. Do not claim a reader release until a release record names actual rendered artifacts and review status.
 
-The current automated audit identifies 16 high-priority heuristic rows. Start with those rows because they are table-heavy, dense, or otherwise most likely to need human pacing decisions. The audit itself is not a manual review and should not be treated as release approval.
+The current automated audit identifies 15 high-priority heuristic rows. Start with those rows because they are table-heavy, dense, or otherwise most likely to need human pacing decisions. The audit itself is not a manual review and should not be treated as release approval.
 
 ### 2. Evidence Transition Pilot
 

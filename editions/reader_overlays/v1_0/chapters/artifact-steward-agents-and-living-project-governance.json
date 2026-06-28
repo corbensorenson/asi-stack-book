@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+  "operations": [
+    {
+      "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Autonomy and treasury modes"
+      },
+      "rationale": "Replace the autonomy and treasury mode tables with reader prose while preserving the canonical AI/research mode matrices.",
+      "content_lines": [
+        "A steward should not start life as an autonomous project manager. The lowest mode is manual: it drafts plans, labels, summaries, and proposed contracts while humans approve every action. Assisted mode lets it perform low-risk hygiene and local validation, but protected branches, funds, releases, and governance remain human-gated. Bounded autonomy is narrower than the name sounds: ordinary work may proceed only inside recorded budgets, allowlists, logs, rollback paths, and appeal channels.",
+        "",
+        "Community-governed mode changes the approval surface rather than granting sovereignty. Major changes route through maintainers, contributors, holders, guardians, delays, quorum rules, fork paths, and exit rights. Sunset mode is stricter still: the steward preserves, archives, transfers, or freezes the artifact while ordinary feature work stops until a sunset review changes the state.",
+        "",
+        "Treasury behavior needs the same staging. Manual treasury means every spend is proposed and externally approved. Budgeted autonomy allows small repeated work below strict caps, with spend policy doing the authorizing rather than the steward. Bounty escrow reserves funds for verified work contracts. Recurring operations cover hosting, domains, CI, storage, and monitoring. Compute rental can pay for GPUs, runners, or cloud jobs only when data class and sandbox rules permit the exposure.",
+        "",
+        "A governed treasury may use proposals and votes for larger changes, but legitimacy, legal authority, and economic control remain separate problems. Emergency freeze exists so continuity can yield to protection. In every mode, the steward can be a clerk for the treasury, not the treasury's sovereign."
+      ]
+    },
+    {
+      "id": "v1_0.artifact_stewards.project_objects_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Project objects"
+      },
+      "rationale": "Turn the project-object catalog table into prose for the relaxed reader path without removing the canonical record vocabulary.",
+      "content_lines": [
+        "The steward's records are deliberately plain because they need to survive across tools. The `ArtifactStewardCharter` binds the steward to one artifact and records mission, non-goals, maintainers, governance model, authority ceiling, budget policy, evidence policy, release policy, federation policy, and sunset criteria. The `ProjectWorkContract` turns roadmap intent into bounded work by naming the objective, context references, allowed files or systems, allowed tools, forbidden tools, outputs, acceptance tests, review gates, evidence references, budget, deadline, rollback, and non-claims.",
+        "",
+        "The `ContributionLedgerEntry` records contribution without collapsing credit, money, votes, and evidence. Authorship, review role, evidence role, compensation reference, reputation signal, governance effect, and conflict notes remain separate. The `TreasuryPolicyRecord` bounds funds, compute credits, bounties, recurring operations, and freezes through policy id, artifact id, mode, autonomous limits, single-action limits, compute or rental limits, approval thresholds, protected spend classes, freeze authorities, and audit requirements.",
+        "",
+        "The `EventTaintRecord` keeps repository and worker events from becoming privileged control text. It records event source, actor, surface, taint state, trusted fields, untrusted fields, forbidden control uses, review requirements, sanitized artifacts, and residuals. The `StewardActionDecision` explains what the steward proposed, ran, blocked, or escalated, including authority basis, inputs, rejected options, approvals, evidence references, residuals, affected artifacts, and non-claims.",
+        "",
+        "The `SunsetReviewRecord` is the death-protocol object. It records value signal, active users, active maintainers, open risks, funds, dependencies, archival plan, fork or transfer path, and appeal path. Together these records make stewardship inspectable before it becomes machinery."
+      ]
+    }
+  ]
+}

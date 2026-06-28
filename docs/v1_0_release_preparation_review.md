@@ -5,9 +5,9 @@ Last updated: 2026-06-28
 This review records a Phase 8 preparation pass for major-version reader, ebook,
 document, PDF, and audio packaging. It does not create a release and does not
 claim that any human-edition artifact is ready for publication. It was updated
-after the opening-chapter, Personal Compute Hives, and Policy Optimization
-reader overlays so the current overlay state is not mistaken for a released
-reader manuscript.
+after the opening-chapter, Personal Compute Hives, Policy Optimization, and
+Artifact Steward Agents reader overlays so the current overlay state is not
+mistaken for a released reader manuscript.
 
 ## Commands Run
 
@@ -27,11 +27,11 @@ Results:
 - Reader spine validation passed for 54 chapters, with minimum reader-spine
   chapter length 1,957 words.
 - Reader evidence-boundary validation passed for 54 chapters.
-- Reader overlay validation now passes with 8 active operations and 8 applied
+- Reader overlay validation now passes with 10 active operations and 10 applied
   operations. The reader overlay log is recorded separately in
   `docs/reader_overlay_pilot.md`.
 - Reader edition check passed for 54 chapters and 59 files; 275 live-only
-  sections would be removed, 60 reader scaffold terms would be humanized, and 8
+  sections would be removed, 60 reader scaffold terms would be humanized, and 10
   reader overlay operations would apply.
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
@@ -45,8 +45,8 @@ Results:
 - Generated reader and audio workspaces under `build/` are ignored review
   workspaces, not durable release artifacts.
 - The v1.0 reader overlay set now has opening-chapter, Personal Compute Hives,
-  and Policy Optimization operations. They are reader-only semantic deltas, not
-  a reviewed reader release.
+  Policy Optimization, and Artifact Steward Agents operations. They are
+  reader-only semantic deltas, not a reviewed reader release.
 
 ## Blockers Before Major-Version Packaging
 
