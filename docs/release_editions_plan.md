@@ -69,6 +69,7 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_overlays.py` checks the reader-overlay manifest and confirms generated reader builds include a coherent `reader_delta_report.md` with either a zero-active-operation note or operation digests and before/after review excerpts.
+- `scripts/audit_reader_continuity.py --check` verifies that `docs/reader_continuity_audit.md` matches the current generated reader source and remains a heuristic review queue rather than a manual review claim.
 - `scripts/validate_reader_manuscript_manifest.py` checks that any future curated reader manuscript remains a parallel derivative source for prose and cannot silently diverge from manifest chapter IDs, support boundaries, source boundaries, proof/test status, implementation horizons, or release records.
 - `scripts/sync_reader_overlay_asset.py` embeds active overlay operations in `assets/reader-overlays.html` so the live Human view can apply the same section deltas as generated reader editions.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, chapter-specific Handoff continuity, view-block cleanup, and stripped live-only scaffolding.
@@ -90,6 +91,7 @@ Check the reader profile without leaving generated files in the repo:
 python3 scripts/build_reader_edition.py --check
 python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
+python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -106,6 +108,8 @@ The generated tree is ignored by git. Review it before rendering release artifac
 Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, view-block processing counts, reader-overlay status, reader-spine validation policy, Handoff continuity review requirement, review status, e-reader quality checks, downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, Handoff review, overlay delta review, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, companion notes, and release-record residuals. The generated `companion_notes.md` records stripped live-only section counts and the dense material that needs reader/audio treatment. The generated `reader_delta_report.md` records generator transformations, editable overlay source, loaded operation files, operation content digests, before/after review excerpts, review checklist, and any semantic overlay operations applied for the major reader version. The tracked overlay files under `editions/reader_overlays/` are the editable reader-delta source; the generated report is reviewed, not manually patched. The tracked `assets/reader-overlays.html` payload is the live-site counterpart for those same active overlay operations. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
 
 The generated reader manifest also carries the human-consumption bundle policy so a release run can distinguish reader formats, optional e-reader conversions, and later audio artifacts without relying on memory.
+
+The tracked `docs/reader_continuity_audit.md` is regenerated from a temporary reader-edition workspace. It gives the human review pass a deterministic queue based on word counts, table/code/diagram density, repeated-opening heuristics, and reader-overlay counts. It is not a replacement for reading the manuscript.
 
 `docs/major_version_release_runbook.md` is the checklist to follow once a tagged major version is ready. It keeps the live/research surface, reader manuscript, and audio package in a single derivation ladder so a generated source tree cannot be mistaken for a published artifact.
 

@@ -18,6 +18,7 @@ REQUIRED = [
     "scripts/sync_scaffold.py",
     "scripts/sync_proof_manifest.py",
     "scripts/sync_reader_overlay_asset.py",
+    "scripts/audit_reader_continuity.py",
     "scripts/validate_publication.py",
     "scripts/validate_release_profiles.py",
     "scripts/validate_reader_spine.py",
@@ -55,6 +56,7 @@ REQUIRED = [
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
     "docs/phase5_harness_registry.md",
+    "docs/reader_continuity_audit.md",
     "experiments/phase5_harness_registry.json",
     "evidence_transitions/README.md",
     "editions/release_profiles.json",
@@ -391,6 +393,7 @@ def main() -> None:
     run_validator("validate_reading_mode_toggle.py")
     run_validator("validate_human_reading_paths.py")
     run_validator("validate_reader_evidence_boundaries.py", "--check")
+    run_validator("audit_reader_continuity.py", "--check")
     run_validator("validate_reader_manuscript_manifest.py")
     run_validator("validate_source_appendices.py")
     run_validator("validate_v1_status_snapshot.py")

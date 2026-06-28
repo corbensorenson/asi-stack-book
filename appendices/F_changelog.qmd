@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 reader continuity audit
+
+- Added `scripts/audit_reader_continuity.py` and the generated Phase 2 report `docs/reader_continuity_audit.md`. The audit derives the reader edition in a temporary workspace, validates that the tracked report is current, and records reader-word counts, overlay counts, table/code/diagram density, repeated-opening heuristics, and a prioritized human-review queue. The current audit measures 54 reader chapters, 118,028 reader words, 2 active/applied reader-overlay operations, 254 table rows, 58 Mermaid diagrams, 1 non-Mermaid code block, 0 paragraphs at or above 160 words, 0 repeated first-sentence stems, and 18 high-priority heuristic review rows. Wired the check into `scripts/validate_book.py`, generated Appendix E, the v1.0 roadmap/status/focus surfaces, README, repository map, reader-review baseline, and release runbooks. This is not a manual reader review, reader release, ebook/document/PDF artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, or runtime result.
+
 ## 2026-06-28 - v1.0 curated reader manuscript scaffold
 
 - Added the dormant curated reader-manuscript path under `editions/reader_manuscript/`, with `editions/reader_manuscript/v1_0/manifest.json` recording `not_graduated` status, allowed prose divergence, blocked evidence divergence, generated-reader baseline, reconciliation requirement, and non-claim boundaries. Added `scripts/validate_reader_manuscript_manifest.py` and wired it into `scripts/validate_book.py`, the release/runbook docs, README, repository map, and v1.0 status snapshot. This prepares the eventual human-edited reader manuscript path without creating a reviewed reader release, EPUB/PDF/DOCX artifact, audio artifact, support-state promotion, or second evidence authority.

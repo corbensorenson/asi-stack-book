@@ -93,7 +93,7 @@ Acceptance criteria:
 
 ## Phase 2 - Reviewed Reader Manuscript Path
 
-Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the first active semantic reader-overlay pilot is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
+Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the first active semantic reader-overlay pilot is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations; and the generated heuristic continuity audit is recorded in `docs/reader_continuity_audit.md`. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
@@ -112,6 +112,13 @@ Initial overlay pilot:
 - `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json` carries two active reader-only section replacements for the opening chapter's `Problem` and `Summary` sections.
 - The pilot exercises the intended divergence path: Human view and generated reader editions receive calmer book prose, while AI view and canonical chapter source keep the original live/research scaffold and evidence surfaces.
 - The pilot is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, or runtime result.
+
+Automated continuity audit:
+
+- `python3 scripts/audit_reader_continuity.py --write` generated `docs/reader_continuity_audit.md` from a temporary reader-edition workspace.
+- The audit measures 54 reader chapters, 118,028 reader words, 2 active/applied reader-overlay operations, 254 table rows, 58 Mermaid diagrams, 1 non-Mermaid code block, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
+- It identifies 18 high-priority heuristic review chapters. These rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
+- The audit is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, or substitute for reading the manuscript.
 
 Reader-source divergence rule:
 

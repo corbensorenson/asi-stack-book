@@ -25,6 +25,8 @@ python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
+python3 scripts/audit_reader_continuity.py --check
+python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_repeated_prose.py
@@ -62,10 +64,11 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Lean proof targets | 112 implemented finite-record targets | Traceability is complete; semantic adequacy remains unreviewed. |
 | Protocol schemas | 71 | Record shapes are well-covered. |
 | Protocol fixtures | 70 valid fixtures | Fixture validation is broad but not a substitute for runtime tests. |
-| Test appendix rows | 226 | Appendix E now has 213 chapter-level rows plus 13 repository-level check rows. |
+| Test appendix rows | 228 | Appendix E now has 213 chapter-level rows plus 15 repository-level check rows. |
 | Planned/unrun chapter test rows | 155 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
-| Implemented or partial test/proof/check rows in Appendix E | 71 | Appendix E now has 57 implemented chapter rows, 1 partial chapter row, and 13 repository-level checks. Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, synthetic readiness/residual gate consistency, synthetic benchmark anti-Goodhart consistency, Lean build, or proof/source traceability mechanics. |
-| Reader spine | 54 chapters, minimum 1960 words | The generated reader source is structurally substantial. |
+| Implemented or partial test/proof/check rows in Appendix E | 73 | Appendix E now has 57 implemented chapter rows, 1 partial chapter row, and 15 repository-level checks. Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, synthetic readiness/residual gate consistency, synthetic benchmark anti-Goodhart consistency, the Phase 5 harness registry, the reader continuity audit, Lean build, or proof/source traceability mechanics. |
+| Reader spine | 54 chapters, minimum 1957 words | The generated reader source is structurally substantial. |
+| Reader continuity audit | 54 chapters, 18 high-priority heuristic review rows | The audit gives Phase 2 a deterministic human-review queue without claiming manual review or release readiness. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
 | Reader overlay operations | 2 active | The first opening-chapter semantic overlay pilot is active; broader reader continuity review and chapter-by-chapter overlays remain open. |
 | Reader format readiness | HTML, EPUB, DOCX ready for attempts | The check confirms setup readiness, not produced reviewed artifacts. |
@@ -139,9 +142,9 @@ These are not failures. They are the correct next frontier after a strong scaffo
 
 | Priority | Focus area | Current strength | Main gap | Best next artifact |
 |---|---|---|---|---|
-| P0 | Human-reader continuity review | Generated reader spine is substantial and mechanically clean. | No reviewed human-reader manuscript exists. | A reviewed `build/reader_edition/` pass with chapter-level overlay operations or canonical prose edits for real problems found. |
+| P0 | Human-reader continuity review | Generated reader spine is substantial and mechanically clean; `docs/reader_continuity_audit.md` now gives the review pass a deterministic queue. | No reviewed human-reader manuscript exists. | Work through the 18 high-priority heuristic rows first, then record chapter-level overlay operations, canonical prose edits, companion-note treatment, or no-action decisions for real problems found. |
 | P0 | Claim-to-mechanism support review | 461 mappings are exact and passage-reviewed. | No accepted evidence transitions have promoted claims above `argument`. | Evidence transition records for a small number of narrow claims, or explicit decisions to keep them at `argument`. |
-| P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with four synthetic behavior-gate harnesses now wired into validation. | 175 Appendix E chapter rows remain planned/not run. | Next executable test harnesses with command, environment, result, and non-claim boundaries. |
+| P0 | Test/prototype execution | 71 schemas and 70 fixtures validate record shape, with six synthetic behavior-gate harnesses now wired into validation and registry-checked. | 155 Appendix E chapter rows remain planned/not run. | Next executable test harnesses should move toward replayable empirical slices or imported prototype traces with command, environment, result, and non-claim boundaries. |
 | P0 | Proof adequacy review | 112 Lean targets build and trace. | All are finite-record predicates; adequacy has not been reviewed. | `docs/proof_adequacy_review.md` or an equivalent audit classifying each target as adequate, too narrow, too broad, or needing a stronger model. |
 | P1 | External literature normalization | Fast-generation, policy-optimization, hives, and artifact-steward external records exist. | Alignment, governance/evals, planning, memory/RAG, formal methods, routing/MoE, compression, and benchmark science remain queued. | Add citation-normalized source records and source notes only after reading the sources. |
 | P1 | Reader release dry run | Reader generation and HTML/EPUB/DOCX setup checks pass. | No actual reviewed reader artifact is recorded. | Render reader HTML/EPUB/DOCX, record actual local outcomes, inspect representative chapters, then create an edition release record only if review passes. |
@@ -155,7 +158,7 @@ These are not failures. They are the correct next frontier after a strong scaffo
 
 ### 1. Reader Manuscript Review
 
-Generate the reader edition, then read it like a book rather than like a validation target. The goal is not more word count. The goal is continuity, pacing, lack of duplicated scaffolding, readable transitions, and confidence that the ordinary prose carries all meaning-critical caveats after live-only sections are stripped.
+Generate the reader edition, refresh `docs/reader_continuity_audit.md`, then read it like a book rather than like a validation target. The goal is not more word count. The goal is continuity, pacing, lack of duplicated scaffolding, readable transitions, and confidence that the ordinary prose carries all meaning-critical caveats after live-only sections are stripped.
 
 Use the reader-overlay system only for human-reader presentation deltas that should not alter the canonical AI/research source. If the improvement also belongs in AI view, edit the chapter source instead.
 
@@ -167,6 +170,8 @@ Suggested review order:
 4. Appendices selected for reader release: glossary, Corben/local sources, external sources, release editions, and implementation horizons.
 
 Output should be either canonical prose edits or tracked reader overlay operations, plus a reviewed residual list. Do not claim a reader release until a release record names actual rendered artifacts and review status.
+
+The current automated audit identifies 18 high-priority heuristic rows. Start with those rows because they are table-heavy, dense, or otherwise most likely to need human pacing decisions. The audit itself is not a manual review and should not be treated as release approval.
 
 ### 2. Evidence Transition Pilot
 

@@ -23,6 +23,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `editions/reader_manuscript/v1_0/manifest.json` defines the dormant curated reader-manuscript path for the point where generated reader output plus overlays are no longer enough. Its current status is `not_graduated`, and `scripts/validate_reader_manuscript_manifest.py` enforces that any future curated manuscript remains a parallel derivative source for human prose, not an equal authority for claims, support states, source boundaries, proof/test status, implementation horizons, or release records.
 - `scripts/sync_reader_overlay_asset.py` embeds active reader overlay operations in `assets/reader-overlays.html` so the live Human view and generated reader edition share the same section-delta source.
 - `scripts/validate_reader_overlays.py` checks that reader overlays are section-anchored, apply cleanly, and produce a generated delta report with operation digests and before/after review excerpts.
+- `scripts/audit_reader_continuity.py --check` keeps `docs/reader_continuity_audit.md` current as a generated Phase 2 heuristic queue for human-reader continuity review; it does not claim a reviewed reader release exists.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, section-level prose/word-count floors, chapter-specific Handoff continuity, and no live-only scaffolding after stripping.
 - `scripts/validate_reader_evidence_boundaries.py` checks that every generated reader chapter strips raw live core-claim markers and repeated support boilerplate while preserving the claim text and a compact inline plain-language support-state boundary in the Core Claim section.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
@@ -55,6 +56,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/v1_0_focus_audit.md](docs/v1_0_focus_audit.md) | Detailed current-state audit and prioritized work plan for moving from v1.0 candidate toward evidence-release and reader-release quality. |
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
+| [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
 | [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |
 | [docs/plan_execution_contract_harness.md](docs/plan_execution_contract_harness.md) | Phase 5 synthetic plan graph and execution-contract harness. |
 | [docs/context_admission_adequacy_harness.md](docs/context_admission_adequacy_harness.md) | Phase 5 synthetic context admission and adequacy harness. |
@@ -98,6 +100,7 @@ python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_overlays.py --check
+python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_support_state_transitions.py
