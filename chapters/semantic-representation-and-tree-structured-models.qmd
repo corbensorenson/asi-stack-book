@@ -143,6 +143,8 @@ This lets the stack use tree or graph structure for retrieval, analogy, explanat
 
 The three gates are grounding, adequacy, and interoperability. Grounding asks what source or artifact supports the node. Adequacy asks whether the node preserves enough constraints for the current task. Interoperability asks whether the node can be consumed by VCM, Spinoza, planning, compilation, or evidence layers without hidden translation loss. A semantic representation should not be promoted because one gate passed while the others remain untested.
 
+### Semantic node lifecycle
+
 Semantic nodes should move through lifecycle states:
 
 | State | Meaning | Allowed use |
