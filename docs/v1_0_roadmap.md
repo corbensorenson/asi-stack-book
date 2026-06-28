@@ -291,7 +291,7 @@ Acceptance criteria:
 
 ## Phase 7 - Visual, Site, And Local-Hygiene Review
 
-Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. Optional splitting of the fast-generation and recursive-improvement diagrams remains open for reader-release review.
+Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. A follow-up probe after the source inventory reached 160 records found Appendix F overflow from long inline `code` spans, added scoped inline-code wrapping in `assets/styles.scss`, and rechecked the landing page, dense chapters, and Appendices A/C/F/H/K with zero page-level horizontal overflow at desktop and mobile sizes. Optional splitting of the fast-generation and recursive-improvement diagrams remains open for reader-release review.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
@@ -300,7 +300,7 @@ Tasks:
 - Manual diagram audit for overloaded or low-legibility Mermaid diagrams; first mobile screenshot pass is recorded for the densest diagrams.
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
-- Continue table overflow checks after large source or claim-matrix growth; the current source-growth probe found no page-level overflow on Appendices A/C/H.
+- Continue table and inline-code overflow checks after large source, claim-matrix, or changelog growth; the current source-growth and inline-code probes found no page-level overflow on Appendices A/C/F/H/K.
 - Optional broader `book_structure` JSON Schema if the manifest contract needs field-level validation beyond the current explicit claim-label/support-state guard.
 - Optional clearer `validate_live_human_view.py` error when `_site` is missing or stale.
 - Optional local `git gc` if loose-object warnings recur.

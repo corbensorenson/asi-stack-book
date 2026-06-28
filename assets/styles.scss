@@ -118,6 +118,15 @@ code {
   color: #28313d;
 }
 
+main.content p code,
+main.content li code,
+main.content td code,
+main.content th code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .asi-sr-only {
   position: absolute;
   width: 1px;

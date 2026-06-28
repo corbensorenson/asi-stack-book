@@ -70,6 +70,42 @@ hero-image expectation. This is a focused UX/readability probe only, not an
 accessibility certification, reader-release review, or proof of full design
 quality.
 
+## Appendix Inline-Code Overflow Follow-up
+
+After the source inventory reached 160 records, a focused local Playwright probe
+rechecked the landing page, the two dense diagram chapters, and Appendices A,
+C, F, H, and K at desktop and mobile sizes. The first run found a real overflow
+issue in Appendix F: long inline `code` spans in the changelog forced 191px of
+page-level horizontal overflow on a 1366px desktop viewport and 884px on a
+390px mobile viewport.
+
+`assets/styles.scss` now lets inline `code` in prose, list, and table contexts
+wrap within the available content width while leaving fenced code blocks alone.
+After rerendering, the same focused probe produced these metrics:
+
+| Page | Viewport | Scroll width | Client width | Page overflow | Tables | Wide tables | Toggle visible | Mermaid visible | Hero visible |
+|---|---:|---:|---:|---:|---:|---:|---|---|---|
+| `index` | desktop 1366 x 900 | 1366 | 1366 | 0 | 0 | 0 | yes | yes | yes |
+| `index` | mobile 390 x 844 | 390 | 390 | 0 | 0 | 0 | yes | yes | yes |
+| `fast-generation-architectures` | desktop 1366 x 900 | 1366 | 1366 | 0 | 6 | 0 | yes | yes | no |
+| `fast-generation-architectures` | mobile 390 x 844 | 390 | 390 | 0 | 6 | 0 | yes | yes | no |
+| `recursive-self-improvement-boundaries` | desktop 1366 x 900 | 1366 | 1366 | 0 | 5 | 0 | yes | yes | no |
+| `recursive-self-improvement-boundaries` | mobile 390 x 844 | 390 | 390 | 0 | 5 | 0 | yes | yes | no |
+| `A_source_matrix` | desktop 1366 x 900 | 1366 | 1366 | 0 | 1 | 0 | yes | no | no |
+| `A_source_matrix` | mobile 390 x 844 | 390 | 390 | 0 | 1 | 0 | yes | no | no |
+| `C_claim_evidence_matrix` | desktop 1366 x 900 | 1366 | 1366 | 0 | 3 | 0 | yes | no | no |
+| `C_claim_evidence_matrix` | mobile 390 x 844 | 390 | 390 | 0 | 3 | 0 | yes | no | no |
+| `F_changelog` | desktop 1366 x 900 | 1366 | 1366 | 0 | 0 | 0 | yes | no | no |
+| `F_changelog` | mobile 390 x 844 | 390 | 390 | 0 | 0 | 0 | yes | no | no |
+| `H_external_sources` | desktop 1366 x 900 | 1366 | 1366 | 0 | 4 | 0 | yes | no | no |
+| `H_external_sources` | mobile 390 x 844 | 390 | 390 | 0 | 4 | 0 | yes | no | no |
+| `K_implementation_horizons` | desktop 1366 x 900 | 1366 | 1366 | 0 | 4 | 0 | yes | no | no |
+| `K_implementation_horizons` | mobile 390 x 844 | 390 | 390 | 0 | 4 | 0 | yes | no | no |
+
+This follow-up hardens rendered-site readability for long inline paths and
+commands. It is not an accessibility certification, reader-release review,
+ebook layout review, or claim-evidence promotion.
+
 ## Diagram Audit
 
 The chapter corpus currently has 58 Mermaid diagrams across 54 manifest
@@ -150,8 +186,9 @@ garbage and the Phase 7 goal is site readiness, not repository compaction.
   recursive-improvement diagrams if reader-release review still finds them too
   crowded despite contained mobile scrolling.
 - Optional appendix table style review if future source growth introduces
-  horizontal overflow; the current source-growth probe found zero page-level
-  overflow on Appendix A, Appendix C, and Appendix H at desktop/mobile sizes.
+  horizontal overflow; the current source-growth and inline-code probes found
+  zero page-level overflow on Appendices A, C, F, H, and K at desktop/mobile
+  sizes.
 - Optional clearer stale-site guidance in `scripts/validate_live_human_view.py`
   if contributors run it before rendering.
 
