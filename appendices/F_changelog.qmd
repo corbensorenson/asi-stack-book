@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 curated reader chapter initializer
+
+- Added `scripts/init_curated_reader_chapter.py`, a dry-run-first helper that can initialize a future curated reader chapter record and starter file from the generated reader baseline after review decides overlays are too small for the intended human-reader edit. Updated the curated reader source contract, reader-manuscript README, repository map, and main README to document the workflow and its non-authority boundary. This creates no curated chapter file, no reader release, no ebook/document/PDF/audio artifact, no release record, no support-state promotion, and no equal source of truth beside the live AI/research book.
+
 ## 2026-06-28 - v1.0 efficiency-accounting evidence-transition no-changes
 
 - Added `evidence_transitions/v1_0_pilot/efficient_asi_no_change.json` and `evidence_transitions/v1_0_pilot/resource_economics_no_change.json` as the twelfth and thirteenth accepted no-change evidence-transition records. The reviews record that generation-mode/resource-budget schemas, deterministic baseline-accounting fixtures, exact source mappings, and proof/source review context improve route, useful-solution-per-second, budget, verification-tax, fallback, and residual accounting discipline, but do not justify moving `the-efficient-asi-hypothesis.core` or `resource-economics-and-token-budgets.core` above `argument`. Updated the evidence-transition pilot summary, pilot README, v1.0 roadmap/status/focus surfaces, repository map, and status guard. This is not a support-state promotion, route-search benchmark, budget-scheduler result, hidden-cost audit, useful-solution-per-second result, load-stability experiment, KV-cache or serving benchmark, economic result, runtime result, independent review, or source-derived evidence promotion.

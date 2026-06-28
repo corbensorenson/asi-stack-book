@@ -63,6 +63,20 @@ Every future curated chapter record must name:
 
 `python3 scripts/validate_reader_manuscript_manifest.py` enforces this contract.
 
+To initialize a future curated chapter without hand-building the record, first
+generate the reader baseline, then run the initializer in dry-run mode:
+
+```bash
+python3 scripts/build_reader_edition.py
+python3 scripts/init_curated_reader_chapter.py --chapter-id artifact-steward-agents-and-living-project-governance
+```
+
+Add `--write` only after review decides that overlays are too small for the
+intended human-reader edit. The initializer copies the generated reader chapter
+as a drafting baseline, records the live-source commit, adds the required
+release blockers, and leaves reconciliation incomplete until a later review
+approves it.
+
 ## Release Boundary
 
 The curation contract is not a reader release record. A curated manuscript can
