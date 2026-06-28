@@ -130,6 +130,8 @@ Promptcraft remains useful, but only inside this envelope. The command can inclu
 
 Field confidence belongs in the command record. Some fields are exact, some are inferred, some are defaulted, and some are missing. A planner should be able to distinguish "the user authorized this means" from "the system inferred a likely means" before it creates work. Missing or inferred authority should route to clarification, draft-only output, or residual rather than dispatch.
 
+### Command contract validation states
+
 Command contracts should move through explicit validation states:
 
 | State | Meaning | Allowed movement |
