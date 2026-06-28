@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 46,
-    "spot_checked": 8
+    "reviewed": 50,
+    "spot_checked": 4
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 52,
+    "no_immediate_action": 53,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -1062,17 +1062,16 @@
       "live_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
       "generated_reader_file": "build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_review_pass.md#decisions"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter treats benchmark results as governed evidence packets, preserves anti-Goodhart controls, and keeps fixture, source-reported, reproduced, and empirical evidence boundaries separate.",
+      "review_notes": "Full generated-reader chapter review recorded. Score/result boundaries, evidence-class separation, regression floors, residuals, saturation, contamination, transfer, public-calibration, and promotion-decision constraints remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1085,17 +1084,17 @@
       "live_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
       "generated_reader_file": "build/reader_edition/chapters/policy-optimization-and-learning-from-feedback.qmd",
       "overlay_operation_count": 2,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter review recorded. Existing overlays make method-family material readable while preserving target-policy identity, reward admissibility, drift limits, holdouts, reward-hacking probes, rollback, authority conservation, and non-promotion boundaries.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1108,8 +1107,8 @@
       "live_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "generated_reader_file": "build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "overlay_operation_count": 3,
-      "review_status": "spot_checked",
-      "review_depth": "medium_priority_manual_review",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
         "companion_note_candidate",
@@ -1117,11 +1116,10 @@
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
       ],
-      "review_notes": "Medium-priority length row read; retained for now because the governance, treasury, worker-federation, contribution-ledger, event-taint, and sunset concepts are central. Future curated reader work may compress examples or move the implementation ladder to companion material.",
+      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep the long steward chapter navigable while preserving charter, work contract, contribution ledger, treasury policy, event taint, steward-action, sunset, worker-federation, project-economy, and non-ownership boundaries; future curated-reader compression remains plausible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1134,17 +1132,16 @@
       "live_file": "chapters/integrated-reference-architecture.qmd",
       "generated_reader_file": "build/reader_edition/chapters/integrated-reference-architecture.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_review_pass.md#decisions"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter composes the stack through trace records and blocked-path visibility while preserving the non-claim that no completed integrated stack run is reported here.",
+      "review_notes": "Full generated-reader chapter review recorded. The chapter reads as a trace contract and preserves typed handoffs, parentage, authority deltas, evidence deltas, residual deltas, stop conditions, implementation-reference boundaries, and non-claims about completed integrated runtime behavior.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]

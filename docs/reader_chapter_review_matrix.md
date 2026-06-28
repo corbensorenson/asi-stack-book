@@ -10,11 +10,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 46 |
-| review_status:spot_checked | 8 |
+| review_status:reviewed | 50 |
+| review_status:spot_checked | 4 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 52 |
+| disposition:no_immediate_action | 53 |
 | disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
@@ -68,10 +68,10 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `executable-specifications-and-lean-proof-envelope` | reviewed | full_chapter_review | 1 | reader_overlay_active, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `benchmark-ratchets-and-anti-goodhart-evidence` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `policy-optimization-and-learning-from-feedback` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `artifact-steward-agents-and-living-project-governance` | spot_checked | medium_priority_manual_review | 3 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `integrated-reference-architecture` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `benchmark-ratchets-and-anti-goodhart-evidence` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `policy-optimization-and-learning-from-feedback` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `artifact-steward-agents-and-living-project-governance` | reviewed | full_chapter_review | 3 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `integrated-reference-architecture` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `project-theseus-as-report-first-implementation-reference` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `prototype-roadmap` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `living-book-methodology` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
