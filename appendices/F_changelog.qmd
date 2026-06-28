@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 reader-spine capitalization guard
+
+- Tightened `scripts/validate_reader_spine.py` so generated reader prose now rejects lower-case scaffold-term sentence starts such as `source review`, `source map`, `automation workflow`, and connector-review phrases after live/research terminology is humanized. The stricter guard passes on the current generated reader manuscript and prevents the reader-generator capitalization issue fixed during the Part IV review pass from returning. This is a reader-projection validation improvement only; it does not create a reviewed reader release, curated reader manuscript, ebook/document/PDF artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, implementation result, or release record.
+
 ## 2026-06-28 - v1.0 curated reader reconciliation template
 
 - Added `editions/reader_manuscript/v1_0/reconciliation_report.md` as the dormant chapter-by-chapter reconciliation surface for any future curated normal-reader manuscript. Tightened `scripts/validate_reader_manuscript_manifest.py` so an existing reconciliation report must preserve reader-release, support-state, live-source, generated-baseline, proof/test, implementation-horizon, and release-blocker boundaries. Wired the template into the README, release-editions plan, major-version release runbook, repository map, publication/book validators, v1.0 roadmap, and status snapshot guard. The curated reader manuscript remains `not_graduated`; no reader release, curated chapter source, ebook/document/PDF artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, implementation result, or release record is claimed.
