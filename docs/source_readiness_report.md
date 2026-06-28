@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 81
+- `source_note_available_uncached`: 84
 
 ## Records
 
@@ -94,6 +94,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_memgpt_2023` | MemGPT: Towards LLMs as Operating Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_longbench_2023` | LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_ruler_2024` | RULER: What's the Real Context Size of Your Long-Context Language Models? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_alce_2023` | Enabling Large Language Models to Generate Text with Citations | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_self_rag_2023` | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_longllmlingua_2023` | LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_tla_plus_home_docs` | My TLA+ Home Page | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lean4_theorem_proving` | Theorem Proving in Lean 4 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

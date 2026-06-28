@@ -32,6 +32,9 @@ literature coverage.
 | `ext_memgpt_2023` | retrieval/context management | OS-inspired virtual context management, memory tiers, and long-running conversation/document-analysis boundaries. |
 | `ext_longbench_2023` | long-context evaluation | Bilingual, multitask long-context benchmark coverage and task-specific context-understanding boundaries. |
 | `ext_ruler_2024` | long-context evaluation | Synthetic long-context stress testing beyond simple needle retrieval, including multi-needle, tracing, and aggregation tasks. |
+| `ext_alce_2023` | retrieval/citation evaluation | Retrieval-backed answer generation, citation-quality metrics, factual correctness, and evidence-support gaps. |
+| `ext_self_rag_2023` | retrieval/reflection | Adaptive retrieval, generated critique/reflection tokens, passage relevance, factuality, and citation accuracy boundaries. |
+| `ext_longllmlingua_2023` | context compression | Long-context prompt compression, key-information density, position bias, cost, latency, and compression-evaluation boundaries. |
 | `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
 | `ext_tla_plus_home_docs` | formal methods | System specification and model-checking vocabulary for concurrent and distributed systems. |
 | `ext_lean4_theorem_proving` | proof assistants | Lean theorem-proving vocabulary, dependent type theory, tactics, records, inductive types, and proof-term boundaries. |
@@ -61,7 +64,7 @@ literature coverage.
 - Added matching source notes.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
 - The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, task-and-motion planning, behavior trees, GOAP/F.E.A.R.-style game planning, and AutoGen-style multi-agent orchestration.
-- The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, and synthetic context-size stress tests.
+- The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, synthetic context-size stress tests, citation-quality evaluation, adaptive retrieval/reflection, and long-context prompt compression.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
 - The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, and QLoRA-style quantized finetuning.
@@ -80,7 +83,7 @@ literature coverage.
 ## Next Queues
 
 1. Deepen planning coverage with PlanForge-specific planning-language translation references, planner/runtime-adapter comparison records, and any additional orchestration sources needed after chapter-level review.
-2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, provenance-aware RAG, context compression/evaluation, and VCM-specific adapter references.
+2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, VCM-specific adapter references, and any additional provenance/compression sources needed after chapter-level review.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
 4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.
 5. Deepen compression coverage with program synthesis, residual coding, artifact-utility metrics, compression-regression testing, and representation-learning sources.
