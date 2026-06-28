@@ -216,7 +216,7 @@ Acceptance criteria:
 
 ## Phase 3 - Evidence Transition Pilot
 
-Status: initial pilot complete and extended. Nine no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All nine reviewed claims remain at `argument`.
+Status: initial pilot complete and extended. Ten no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All ten reviewed claims remain at `argument`.
 
 Purpose: prove that the claim/evidence system can move claims conservatively, or explicitly decide not to move them.
 
@@ -229,10 +229,10 @@ Initial candidates:
 
 Tasks:
 
-1. Pick narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; later extensions added `system-boundaries-and-authority.core` after the Authority proof follow-through, `planning-as-a-control-layer.core` after the Planning proof follow-through, `virtual-context-abi.core` after the context admission/adequacy harness, `benchmark-ratchets-and-anti-goodhart-evidence.core` after the benchmark anti-Goodhart harness, and `runtime-adapters-tool-permissions-and-human-approval.core` after the runtime-adapter permission harness.
+1. Pick narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; later extensions added `system-boundaries-and-authority.core` after the Authority proof follow-through, `planning-as-a-control-layer.core` after the Planning proof follow-through, `virtual-context-abi.core` after the context admission/adequacy harness, `benchmark-ratchets-and-anti-goodhart-evidence.core` after the benchmark anti-Goodhart harness, `runtime-adapters-tool-permissions-and-human-approval.core` after the runtime-adapter permission harness, and `readiness-gates-residual-escrow-and-quarantine.core` after the readiness/residual gate harness.
 2. Review exact source passages, repository artifacts, commands, and limitations. Initial pilot reviewed repository artifacts, validators, proof audit, source appendix mechanics, and known limitations; it did not claim independent source-interpretation review.
-3. Create or update evidence transition records. The pilot now has nine JSON records under `evidence_transitions/v1_0_pilot/`.
-4. Record non-promotion decisions where evidence remains insufficient. The pilot records all nine as no-change decisions that remain at `argument`.
+3. Create or update evidence transition records. The pilot now has ten JSON records under `evidence_transitions/v1_0_pilot/`.
+4. Record non-promotion decisions where evidence remains insufficient. The pilot records all ten as no-change decisions that remain at `argument`.
 5. Update Appendix C only after a transition is accepted. No Appendix C support-state update was made because no upward transition was accepted.
 
 Acceptance criteria:

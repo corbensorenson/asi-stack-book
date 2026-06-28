@@ -1,0 +1,112 @@
+{
+  "transition_id": "v1_0_pilot.readiness_residual.no_change",
+  "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
+  "claim_surface_refs": [
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/readiness_residual_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/costed_route_record.schema.json",
+    "schemas/readiness_gate_record.schema.json",
+    "schemas/replacement_transaction.schema.json",
+    "experiments/readiness_residual_gates/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic costed-route, readiness-gate, and replacement-transaction fixture behavior only; no routing accuracy, readiness-engine behavior, residual-ledger storage, deployed quarantine, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the Readiness Gates claim, public schemas for costed route, readiness gate, and replacement transaction records, a synthetic readiness/residual gate harness with valid and expected-invalid fixtures, and proof traceability for finite readiness-gate predicates. Those artifacts support the design discipline around field identity matching, candidate-route selection, authority scope, blocked-route refusal, fallback preservation, route verification, non-stale evidence, regression floors, residual escrow, quarantine, rollback dry-run receipts, monitor status, and approval presence. They still do not establish routing accuracy, a deployed readiness engine, residual-ledger storage, deployed quarantine behavior, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or runtime safety.",
+  "required_artifacts": [
+    "route-selection traces over representative route candidates with expected outcomes",
+    "readiness-engine execution trace that writes and rejects gate records under stale, failed, and authority-widening cases",
+    "residual-ledger storage and escrow replay tests",
+    "quarantine execution trace for failed selected routes with fallback preservation",
+    "rollback execution and monitor-status tests beyond dry-run receipt fields",
+    "MoECOT or prototype replay packet only if runtime-readiness claims are made",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/readiness_residual_harness.md",
+    "scripts/validate_readiness_residual_gates.py",
+    "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+    "schemas/costed_route_record.schema.json",
+    "schemas/readiness_gate_record.schema.json",
+    "schemas/replacement_transaction.schema.json",
+    "docs/proof_adequacy_review.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#readiness-gates-residual-escrow-and-quarantine.core",
+    "docs/source_evidence_audit.md#readiness-gates-residual-escrow-and-quarantine.core"
+  ],
+  "verification_command": "python3 scripts/validate_readiness_residual_gates.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Readiness Gates remains at argument",
+    "readiness/residual gate fixtures are synthetic",
+    "schemas validate record shape rather than deployed readiness behavior",
+    "route-selection traces, readiness-engine execution, residual-ledger storage, deployed quarantine, rollback execution, runtime monitoring, and MoECOT replay are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "docs/readiness_residual_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "readiness/residual gate harness failure",
+    "costed route or readiness schema drift",
+    "claim text interpreted as deployed readiness-engine or route-quality evidence",
+    "residual escrow claimed without storage or replay evidence",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after route-selection traces, readiness-engine behavior, residual-ledger replay, deployed quarantine, rollback execution, runtime monitoring, and any MoECOT replay claims are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove routing accuracy",
+    "schemas validate record shape rather than readiness-engine behavior",
+    "residual escrow fields do not prove a residual ledger stores or replays obligations",
+    "rollback dry-run receipt fields do not prove rollback execution",
+    "no independent routing, runtime, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent routing, runtime-safety, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no route-selection trace",
+    "no readiness-engine execution trace",
+    "no residual-ledger storage or replay test",
+    "no deployed quarantine trace",
+    "no rollback execution test",
+    "no runtime-monitoring trace",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-readiness-residual-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Readiness Gates above argument",
+    "does not prove routing accuracy",
+    "does not prove readiness-engine behavior",
+    "does not prove residual-ledger storage or replay",
+    "does not prove deployed quarantine or rollback execution",
+    "does not prove runtime monitoring, MoECOT replay, benchmark performance, or runtime safety"
+  ]
+}
