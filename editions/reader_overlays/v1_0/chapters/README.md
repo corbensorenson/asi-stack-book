@@ -1,28 +1,40 @@
-# v1.0 Chapter Overlays
+# Chapter Reader Overlay Operations
 
-Add one JSON file per reader-adapted chapter, usually named after the chapter slug.
+Add one JSON operation file per chapter only when a major human-reader version needs prose that should survive regeneration but should not change the canonical AI/research source.
 
-These files are the editable v1.0 reader-delta source. Do not edit generated files under `build/reader_edition/` to preserve a human-reader change; add or update an operation here, then rerun `python3 scripts/build_reader_edition.py`. The generated `reader_delta_report.md` is for review, not manual patching.
-
-Example shape:
+The manifest at `editions/reader_overlays/v1_0/manifest.json` loads `chapters/*.json`. Each file should use this shape:
 
 ```json
 {
   "schema_version": "0.1",
-  "target_file": "chapters/example-slug.qmd",
+  "target_file": "chapters/example-chapter.qmd",
   "operations": [
     {
-      "id": "example-slug.reader.problem-bridge.v1_0",
+      "id": "v1_0.example_chapter.reader_summary_replace",
       "status": "active",
-      "action": "prepend_to_section",
-      "section": { "level": 2, "title": "Problem" },
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Summary"
+      },
+      "rationale": "Make the major-version reader summary less workflow-heavy without changing the live AI/research source.",
       "content_lines": [
-        "Reader-only prose goes here. It should preserve uncertainty and must not add source-derived claims that are not present in the live evidence state."
-      ],
-      "rationale": "Explain why this belongs in the reader edition rather than the canonical live chapter."
+        "Replacement reader-edition prose goes here."
+      ]
     }
   ]
 }
 ```
 
-Use `status: "planned"` for notes that should validate but not apply yet, and `status: "retired"` for old deltas kept for version history.
+Supported actions are `replace_section`, `prepend_to_section`, `append_to_section`, `insert_before_section`, and `insert_after_section`. Target stable repository-relative `.qmd` files and heading titles, not generated line numbers.
+
+After adding or changing an operation, run:
+
+```bash
+python3 scripts/build_reader_edition.py --check
+python3 scripts/sync_reader_overlay_asset.py
+python3 scripts/sync_reader_overlay_asset.py --check
+python3 scripts/validate_reader_overlays.py --check
+```
+
+Review `build/reader_edition/reader_delta_report.md` after a non-check reader build. The report includes generated transformations, operation metadata, content digests, and before/after excerpts. It is review evidence, not an editable patch file.

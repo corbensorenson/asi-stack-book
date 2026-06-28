@@ -178,7 +178,7 @@ Contract closure requires an explicit acceptance state, not merely the absence o
 - Artifact identity lost.
 - Approval bypass.
 
-The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Each failure should block promotion until the trace is repaired.
+The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Trace failures block promotion until the trace is repaired.
 
 Helpful overrun is the contract failure that feels productive. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
 

@@ -196,7 +196,7 @@ A refusal to verify under too little bandwidth is a valid outcome, not a failure
 - Adequacy laundering, where a context packet adequate for drafting is reused as if it were adequate for support promotion.
 - Mode confusion, where a local schema or proof check is treated as an empirical or deployment result.
 
-Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Each failure should emit a residual record, not merely a lower confidence score.
+Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Dominance, summary-loss, and local-consistency failures emit residual records, not merely lower confidence scores.
 
 Verification debt rollover turns skipped checks into apparent acceptance when they are repeatedly deferred.
 

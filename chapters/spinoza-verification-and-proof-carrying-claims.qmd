@@ -182,7 +182,7 @@ A verification record must also preserve scope. The artifact should say which cl
 - Invalid formalization.
 - Justification artifact missing.
 
-Certified delusion happens when the artifact looks formal but certifies the wrong thing. Invalid formalization means the mapping between natural-language claim and formal object is untrusted. Missing justification means the tier is unsupported. Each failure should downgrade or block the claim.
+Certified delusion happens when the artifact looks formal but certifies the wrong thing. Invalid formalization means the mapping between natural-language claim and formal object is untrusted. Missing justification means the tier is unsupported. Those proof-carrying failures downgrade or block the claim.
 
 Verification theater is the broader failure. A title, theorem tag, citation count, or procedure log becomes a symbol of rigor while the actual support boundary remains unchanged. The proof-carrying record should force the system to say exactly which claim, tier, mapping, and limitation the artifact covers.
 

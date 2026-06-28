@@ -154,7 +154,7 @@ python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 ```
 
-Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, and `build/reader_edition/reader_delta_report.md` alongside the generated manuscript.
+Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, and `build/reader_edition/reader_delta_report.md` alongside the generated manuscript. The delta report includes operation digests and before/after excerpts for review; treat those excerpts as evidence of derivation, not as editable patches.
 
 If the reader manuscript needs human-edition prose that should not change the AI/research source, edit the tracked overlay files under `editions/reader_overlays/` and regenerate. Do not preserve changes by editing `build/reader_edition/` or by hand-patching `reader_delta_report.md`; the report is generated review evidence for the overlay and strip transformations.
 

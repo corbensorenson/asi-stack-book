@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal reader overlay delta review detail
+
+- Strengthened the reader-overlay delta workflow so generated `reader_delta_report.md` now records operation content digests and before/after review excerpts in addition to strip transformations, editable overlay source, loaded operation files, operation metadata, review checklist, and non-claims. Added an authoring guide under `editions/reader_overlays/v1_0/chapters/` for future chapter-level overlay operations, tightened the overlay validator so the report-detail section cannot disappear, and updated the release profile, outline, workflow docs, release docs, public-readiness notes, site-quality standard, status snapshot, and release-editions appendix. The v1.0 overlay manifest still has zero active operations, so no reader-only prose was invented in this pass. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
+## 2026-06-27 - v1.0 improvement goal failure-route prose polish
+
+- Reworked repeated reader-visible `Each failure should` formulas across fourteen failure-mode passages so each chapter names its actual residual, downgrade, blocked-promotion, rollback, violation, quarantine, or acceptance path directly. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, and v1.0 status guard so future failure-mode prose avoids the same generic failure-obligation opener. Refreshed the v1.0 status manuscript scale to 183,942 chapter words excluding YAML and 191,441 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal interface-obligation prose polish
 
 - Reworked repeated reader-visible `The interface should` formulas across eight passages so each interface paragraph names the actual record, receipt, boundary, or artifact directly: simulation claim classes, routing receipts, authority-delta lowering, raw-request/contract separation, semantic command specificity, mode-tagged adequacy, context receipts, and failure receipts. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, and v1.0 status guard so future interface prose avoids the same generic obligation opener. Refreshed the v1.0 status manuscript scale to 183,944 chapter words excluding YAML and 191,443 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

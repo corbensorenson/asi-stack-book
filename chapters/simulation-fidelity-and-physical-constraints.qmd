@@ -201,7 +201,7 @@ A simulation record must also keep cost and bottlenecks visible. A simulated res
 - Changing the parent physics assumptions without recording it.
 - Using a benchmark sandbox as evidence for open-world deployment.
 
-Each failure should create a residual or downgrade. The correct response to a weak simulation is not to discard simulation; it is to reduce the claim, state the approximation, or run a better experiment.
+Weak simulation failures create explicit residuals or downgrades. The correct response to a weak simulation is not to discard simulation; it is to reduce the claim, state the approximation, or run a better experiment.
 
 Simulation laundering is the fidelity failure. A synthetic environment is used to produce a clean result, then the result is described as if the omitted variables, resource bottlenecks, and transfer limits were irrelevant.
 

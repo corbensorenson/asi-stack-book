@@ -6,7 +6,7 @@ The live Quarto source remains canonical. Generated reader workspaces under `bui
 
 Use overlays only when the change should affect the generated reader edition without changing the live AI/research source. If the change should also affect the live site, source maps, proof hooks, or future writing runs, edit the canonical chapter source instead.
 
-The editable delta source is the tracked overlay manifest plus operation files under this directory. `reader_delta_report.md` is generated from that source during `scripts/build_reader_edition.py`; review the report, but do not edit it to change reader prose. If the report shows the wrong delta, edit the overlay operation or the canonical chapter and regenerate.
+The editable delta source is the tracked overlay manifest plus operation files under this directory. `reader_delta_report.md` is generated from that source during `scripts/build_reader_edition.py`; review the report, but do not edit it to change reader prose. The report records operation metadata, content digests, and before/after excerpts so a reviewer can inspect the semantic delta without treating it as a patch file. If the report shows the wrong delta, edit the overlay operation or the canonical chapter and regenerate.
 
 Supported operation types are section-anchored:
 
@@ -28,4 +28,4 @@ python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py --check
 ```
 
-Generating the reader edition writes `build/reader_edition/reader_delta_report.md`, which records generator transformations and applied overlay operations. That report is a review aid, not a release record and not proof that any EPUB, PDF, DOCX, or audio artifact exists.
+Generating the reader edition writes `build/reader_edition/reader_delta_report.md`, which records generator transformations, applied overlay operations, content digests, and before/after excerpts. That report is a review aid, not a release record and not proof that any EPUB, PDF, DOCX, or audio artifact exists.

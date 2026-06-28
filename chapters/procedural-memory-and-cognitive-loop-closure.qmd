@@ -185,7 +185,7 @@ Scope fidelity is the tool-memory invariant. The generated tool may be narrower 
 - Anecdote closure, where one appealing trace becomes a tool without a comparable cluster.
 - Route drift, where a verified tool is reused outside its SCF, benchmark floor, or authority envelope.
 
-Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Each failure should keep the tool in draft, residual, quarantine, or retired state.
+Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Those memory failures keep the tool in draft, residual, quarantine, or retired state.
 
 Tool immortality is the memory-layer failure. A procedure that was once verified can become stale when sources change, APIs shift, benchmarks saturate, or governance rules tighten. Retirement criteria and monitoring are therefore part of memory, not administrative cleanup.
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+import hashlib
 import json
 import re
 import shutil
@@ -76,6 +77,7 @@ OVERLAY_ACTIONS = {
 }
 OVERLAY_STATUSES = {"active", "planned", "retired"}
 DEFAULT_DELTA_REPORT = "reader_delta_report.md"
+DELTA_EXCERPT_CHARS = 900
 
 
 def load_json(path: Path) -> object:
@@ -288,6 +290,26 @@ def operation_content(operation: dict) -> str:
     if isinstance(lines, list) and all(isinstance(line, str) for line in lines):
         return "\n".join(lines).strip()
     return ""
+
+
+def text_digest(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+
+
+def excerpt_lines(lines: list[str], limit: int = DELTA_EXCERPT_CHARS) -> str:
+    text = "\n".join(line.rstrip() for line in lines).strip()
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "\n..."
+
+
+def excerpt_lines_tail(lines: list[str], limit: int = DELTA_EXCERPT_CHARS) -> str:
+    text = "\n".join(line.rstrip() for line in lines).strip()
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    if len(text) <= limit:
+        return text
+    return "...\n" + text[-limit:].lstrip()
 
 
 def normalize_overlay_operation(
@@ -517,6 +539,7 @@ def apply_reader_overlay_operation(text: str, operation: dict[str, object]) -> t
     start = int(span["start"])
     body_start = int(span["body_start"])
     end = int(span["end"])
+    before_excerpt = excerpt_lines(lines[start:end])
 
     if action == "replace_section":
         new_lines = lines[:body_start] + block + lines[end:]
@@ -533,6 +556,16 @@ def apply_reader_overlay_operation(text: str, operation: dict[str, object]) -> t
 
     cleaned = "\n".join(new_lines).strip() + "\n"
     after_words = len(WORD_RE.findall(cleaned))
+    if action in {"replace_section", "prepend_to_section"}:
+        after_span = find_section_span(new_lines, operation)
+        after_excerpt = excerpt_lines(new_lines[int(after_span["start"]):int(after_span["end"])])
+    elif action == "append_to_section":
+        after_span = find_section_span(new_lines, operation)
+        after_excerpt = excerpt_lines_tail(new_lines[int(after_span["start"]):int(after_span["end"])])
+    elif action == "insert_before_section":
+        after_excerpt = excerpt_lines(new_lines[start:min(len(new_lines), start + len(block) + (end - start))])
+    else:
+        after_excerpt = excerpt_lines(new_lines[end:min(len(new_lines), end + len(block))])
     section = operation["section"]
     record = {
         "id": operation["id"],
@@ -542,6 +575,11 @@ def apply_reader_overlay_operation(text: str, operation: dict[str, object]) -> t
         "source_path": operation["source_path"],
         "rationale": operation.get("rationale", ""),
         "word_delta": after_words - before_words,
+        "target_line_span": {"start": start + 1, "end": end},
+        "content_sha256_16": text_digest(str(operation["content"])),
+        "content_excerpt": excerpt_lines(str(operation["content"]).splitlines()),
+        "before_excerpt": before_excerpt,
+        "after_excerpt": after_excerpt,
     }
     return cleaned, record
 
@@ -697,8 +735,8 @@ def write_reader_delta_report(
     applied_records = overlay_summary.get("applied_records", [])
     if isinstance(applied_records, list) and applied_records:
         lines.extend([
-            "| Operation | Target file | Action | Section | Word delta | Rationale |",
-            "|---|---|---|---|---:|---|",
+            "| Operation | Target file | Action | Section | Word delta | Content digest | Rationale |",
+            "|---|---|---|---|---:|---|---|",
         ])
         for record in applied_records:
             section = record.get("section", {})
@@ -710,10 +748,55 @@ def write_reader_delta_report(
             lines.append(
                 f"| `{record.get('id', '')}` | `{record.get('target_file', '')}` | "
                 f"`{record.get('action', '')}` | `{section_label}` | "
-                f"{record.get('word_delta', 0)} | {rationale or 'n/a'} |"
+                f"{record.get('word_delta', 0)} | `{record.get('content_sha256_16', '')}` | "
+                f"{rationale or 'n/a'} |"
             )
     else:
         lines.append("No active reader overlay operations were applied.")
+
+    lines.extend([
+        "",
+        "## Applied Overlay Operation Details",
+        "",
+        "These excerpts are generated review evidence. They are not patch instructions and should not be edited by hand.",
+        "",
+    ])
+    if isinstance(applied_records, list) and applied_records:
+        for record in applied_records:
+            span = record.get("target_line_span", {})
+            if isinstance(span, dict):
+                span_label = f"{span.get('start', '?')}-{span.get('end', '?')}"
+            else:
+                span_label = "unknown"
+            lines.extend([
+                f"### {record.get('id', '')}",
+                "",
+                f"- Source operation file: `{record.get('source_path', '')}`",
+                f"- Target: `{record.get('target_file', '')}` lines `{span_label}` after reader-source derivation and before overlay application",
+                f"- Action: `{record.get('action', '')}`",
+                f"- Operation content digest: `{record.get('content_sha256_16', '')}`",
+                "",
+                "Operation content excerpt:",
+                "",
+                "````markdown",
+                str(record.get("content_excerpt", "")).strip() or "(empty)",
+                "````",
+                "",
+                "Target before excerpt:",
+                "",
+                "````markdown",
+                str(record.get("before_excerpt", "")).strip() or "(empty)",
+                "````",
+                "",
+                "Reader output excerpt after operation:",
+                "",
+                "````markdown",
+                str(record.get("after_excerpt", "")).strip() or "(empty)",
+                "````",
+                "",
+            ])
+    else:
+        lines.append("No operation-level before/after excerpts exist because no active reader overlay operations were applied.")
 
     skipped_records = overlay_summary.get("skipped_records", [])
     if isinstance(skipped_records, list) and skipped_records:

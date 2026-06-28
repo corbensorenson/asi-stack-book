@@ -177,7 +177,7 @@ Use preservation under transfer keeps certificates from widening authority. Movi
 - Provenance loss.
 - Authority escalation via compression.
 
-Summary overconfidence happens when fluent compression hides the actual loss contract. Provenance loss breaks source-to-claim mapping. Authority escalation via compression happens when a summary strips labels and then looks safe to use elsewhere. Each failure should block the representation from being used as evidence.
+Summary overconfidence happens when fluent compression hides the actual loss contract. Provenance loss breaks source-to-claim mapping. Authority escalation via compression happens when a summary strips labels and then looks safe to use elsewhere. Compression, provenance, and authority failures block the representation from being used as evidence.
 
 Certificate laundering is the context-cell failure. A certificate exists, so downstream layers stop asking whether its fields are truthful, current, and adequate for the new use. The certificate should make those questions easier, not exempt the cell from them.
 

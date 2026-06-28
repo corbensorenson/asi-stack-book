@@ -14,7 +14,7 @@
   "generated_report_contract": {
     "path": "reader_delta_report.md",
     "generator": "scripts/build_reader_edition.py",
-    "purpose": "Record strip transformations, reader-language transformations, overlay source files, applied operations, skipped planned or retired operations, review checks, and non-claims for the derived reader source.",
+    "purpose": "Record strip transformations, reader-language transformations, overlay source files, applied operations, content digests, before/after excerpts, skipped planned or retired operations, review checks, and non-claims for the derived reader source.",
     "manual_edit_policy": "Review this report after generation; change reader deltas by editing tracked overlay operations or canonical chapter source, then regenerate."
   },
   "operation_globs": [

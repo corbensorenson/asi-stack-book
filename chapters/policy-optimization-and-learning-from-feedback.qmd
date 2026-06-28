@@ -243,7 +243,7 @@ Proxy humility keeps optimization from outrunning evidence. Optimizing a proxy c
 - Latency rewards suppressing needed verification.
 - Policy drift crossing SCF authority or readiness boundaries.
 
-Each failure should block promotion or force rollback. If the reward is ambiguous, the update remains experimental. If the verifier can be gamed, the verifier enters residual escrow. If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.
+Reward, verifier, regression, and authority failures block promotion or force rollback. If the reward is ambiguous, the update remains experimental. If the verifier can be gamed, the verifier enters residual escrow. If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.
 
 Reward laundering is the policy-optimization failure. The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.
 

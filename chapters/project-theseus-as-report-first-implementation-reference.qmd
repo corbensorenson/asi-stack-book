@@ -168,7 +168,7 @@ Currentness is the boundary on implementation-reference claims. A pinned source 
 - Report-state drift, where an imported or historical report is narrated as a current reproduced run.
 - Missing-artifact smoothing, where absent commands, environment notes, checksums, or permissions disappear from the public boundary.
 
-Each failure should produce a residual, blocked promotion, or missing-artifact row. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
+Theseus import failures produce residual, blocked-promotion, or missing-artifact rows. The public book should prefer saying "not imported or not rerun" over smoothing source-reported implementation state into a stronger claim.
 
 Operator invisibility breaks the implementation-reference value. If a local system advances through automated loops but the operator cannot see which queue item, contract, gate, or residual caused the transition, the implementation has lost the report-first property even if the dashboard looks healthy.
 

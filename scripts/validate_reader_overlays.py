@@ -26,6 +26,7 @@ REQUIRED_DELTA_REPORT_SECTIONS = (
     "Editable Delta Source",
     "Generator Transformations",
     "Applied Overlay Operations",
+    "Applied Overlay Operation Details",
     "Review Checklist",
     "Non-Claims",
 )
@@ -130,9 +131,15 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
                     "Canonical editable delta source",
                     "Generated reader files under `build/reader_edition/` are disposable",
                     "do not edit it to change reader prose",
+                    "These excerpts are generated review evidence",
                 ):
                     if needle not in delta_text:
                         errors.append(f"reader_delta_report.md is missing required policy text: {needle}")
+                if (
+                    "No operation-level before/after excerpts exist" not in delta_text
+                    and "Reader output excerpt after operation:" not in delta_text
+                ):
+                    errors.append("reader_delta_report.md is missing before/after excerpt review detail.")
 
             reader_manifest_path = output_dir / "reader_manifest.json"
             if not reader_manifest_path.exists():

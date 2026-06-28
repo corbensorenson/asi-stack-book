@@ -180,7 +180,7 @@ The proof boundary also preserves artifact class. A schema pass, Python fixture,
 - Treating external theorem ids as local proof ownership.
 - Promoting a downstream claim from a structural receipt alone.
 
-Each failure should downgrade the target or move it to schema/process/research status.
+Semantic mismatch, unmodeled semantics, and spillover move the target to downgrade, schema, process, or research status.
 
 Proof laundering starts when a valid local predicate, external theorem id, generated receipt, or schema pass is used to promote a broader claim whose semantics were never formalized.
 
