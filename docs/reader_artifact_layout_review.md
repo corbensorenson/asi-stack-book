@@ -63,6 +63,39 @@ complete `_reader_site` preservation fix:
 | Mobile opening chapter | Styled mobile header loads; opening chapter prose is readable; no horizontal overflow detected. |
 | Mobile external-source appendix | Styled mobile header loads; inline code wraps; source-ownership prose is readable; no horizontal overflow detected. |
 
+## Broader HTML Navigation And Layout Probe
+
+After the 54-chapter generated-reader chapter-text review queue was completed,
+the local HTML, EPUB, and DOCX reader artifacts were regenerated from the
+current source:
+
+```bash
+python3 scripts/render_reader_formats.py --formats html epub docx
+python3 scripts/inspect_reader_format_artifacts.py
+```
+
+The structural inspection passed with 59 HTML files, 62 EPUB XHTML entries, and
+59 DOCX media entries.
+
+A broader local browser probe then opened 14 representative HTML surfaces at
+desktop and mobile widths: the index, preface, opening chapter, dense Part III
+and Part IV chapters, the final three chapters, the glossary, Corben/local
+source appendix, and external-source appendix. The probe checked stylesheet
+loading, visible titles, link counts, rendered SVG counts where diagrams exist,
+image counts, text volume, and page-level horizontal overflow.
+
+| Surface set | Viewports | Result |
+|---|---:|---|
+| Index and preface | 2 each | Styled pages loaded; no page-level horizontal overflow. |
+| Opening and dense technical chapters | 2 each | Styled pages loaded; diagrams rendered where expected; no page-level horizontal overflow. |
+| Final implementation, roadmap, living-book, and research-agenda chapters | 2 each | Styled pages loaded; diagram SVGs rendered; no page-level horizontal overflow. |
+| Glossary and source appendices | 2 each | Styled pages loaded; long inline source IDs wrapped; no page-level horizontal overflow. |
+
+The probe exercised 28 page-view pairs across 14 surfaces. Mobile Mermaid SVG
+internals remain wider than the viewport inside their contained diagram blocks,
+which is expected for readable diagrams; the page-level scroll width remained
+equal to the viewport width in the sampled mobile pages.
+
 ## Residuals
 
 - This is not a full chapter-by-chapter reader manuscript review.
@@ -70,7 +103,8 @@ complete `_reader_site` preservation fix:
 - EPUB was structurally inspected but not opened in an e-reader application.
 - DOCX was structurally inspected but not opened in Word, LibreOffice, or Google
   Docs.
-- Dense diagrams, long tables, bibliography behavior, search behavior, and
-  cross-reference behavior still need broader manual review.
+- Dense diagrams inside e-reader/PDF contexts, bibliography behavior, search
+  behavior, cross-reference behavior, EPUB rendering in an actual e-reader, and
+  DOCX rendering in an office application still need broader manual review.
 - No artifact should be called release-ready until a reviewed edition release
   record names it and records residuals.

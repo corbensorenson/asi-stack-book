@@ -61,11 +61,13 @@ Results:
   Local `pdfinfo` reported 574 letter-size pages, 8.0 MB, unencrypted, produced
   by LuaTeX-1.24.0; local text extraction found the title and compact
   evidence-boundary text.
-- `docs/reader_artifact_layout_review.md` records the first representative
-  layout spot check. Sampled PDF pages 1, 21, 25, and 527 showed no obvious
-  clipping. After fixing HTML preservation to copy the complete `_reader_site`
-  tree, sampled desktop/mobile HTML snapshots loaded styles and showed no
-  horizontal overflow at the inspected viewports.
+- `docs/reader_artifact_layout_review.md` records representative PDF layout
+  sampling and a broader local HTML layout/navigation probe. Sampled PDF pages
+  1, 21, 25, and 527 showed no obvious clipping. After fixing HTML preservation
+  to copy the complete `_reader_site` tree, the broader HTML probe exercised 28
+  page-view pairs across 14 reader surfaces at desktop and mobile widths, with
+  styles loaded and no page-level horizontal overflow at the inspected
+  viewports.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,

@@ -127,10 +127,10 @@ reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates,
 and 1 curated-manuscript candidate. `docs/reader_format_dry_run.md` records a
 local HTML/EPUB/DOCX render dry run, basic structural artifact inspection, and
 UTF-8 PDF probe with ignored snapshots; and
-`docs/reader_artifact_layout_review.md` records the first representative
-PDF/HTML layout spot check. The full generated-reader chapter-text review queue
+`docs/reader_artifact_layout_review.md` records representative PDF sampling and
+a broader 28 page-view HTML layout/navigation probe. The full generated-reader chapter-text review queue
 is complete for the current 54 chapters; broader reader overlays, broader
-artifact layout/navigation inspection, curated reader-manuscript graduation,
+EPUB/DOCX/PDF artifact inspection, curated reader-manuscript graduation,
 audio, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
@@ -143,7 +143,7 @@ Tasks:
 4. Apply human-reader-only deltas through `editions/reader_overlays/` only when the change should not alter AI/research view.
 5. Apply canonical prose edits when the improvement belongs in all views.
 6. Render reader HTML, EPUB, and DOCX when ready; attempt PDF only when local dependencies support it.
-7. Record actual render outcomes without claiming publication until review and release records exist. The first local dry run rendered HTML, EPUB, and DOCX, snapshotted them under ignored `build/reader_edition/format_artifacts/`, and passed basic structural inspection. The isolated PDF probe failed without explicit locale settings but rendered when `LANG` and `LC_ALL` were set to `en_US.UTF-8`. A representative PDF/HTML layout spot check exists, but no full manual layout review or release record exists.
+7. Record actual render outcomes without claiming publication until review and release records exist. The first local dry run rendered HTML, EPUB, and DOCX, snapshotted them under ignored `build/reader_edition/format_artifacts/`, and passed basic structural inspection. The isolated PDF probe failed without explicit locale settings but rendered when `LANG` and `LC_ALL` were set to `en_US.UTF-8`. Representative PDF sampling and a broader HTML layout/navigation probe exist, but no EPUB e-reader inspection, DOCX application inspection, full manual PDF layout review, or release record exists.
 
 Active overlay set:
 
@@ -349,7 +349,7 @@ Acceptance criteria:
 
 ## Phase 8 - Major Version Reader And Audio Packaging
 
-Status: preparation reviewed; still future and blocked on reviewed reader manuscript. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, UTF-8 PDF-probe, representative PDF/HTML layout spot-check, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, but no tag, reviewed reader release, full manual layout approval, audiobook, or edition release record was produced.
+Status: preparation reviewed; still future and blocked on reader release records and artifact review. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, UTF-8 PDF-probe, representative PDF sampling, broader HTML layout/navigation probing, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, but no tag, reviewed reader release, full manual layout approval, audiobook, or edition release record was produced.
 
 Purpose: produce human-consumption artifacts only after the live and reader surfaces are reviewed.
 
