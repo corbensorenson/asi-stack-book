@@ -61,7 +61,7 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
 | Passage-reviewed mappings | 461 | Every assigned pair has a recorded passage-review mapping state. |
-| Core claim support states | 54 at `argument` | The book is still conservative. The v1.0 evidence-transition pilot now records eight accepted no-change decisions; no upward support transition exists. |
+| Core claim support states | 54 at `argument` | The book is still conservative. The v1.0 evidence-transition pilot now records nine accepted no-change decisions; no upward support transition exists. |
 | Lean proof targets | 112 implemented finite-record targets | Traceability is complete; the initial proof adequacy review is recorded, Authority plus Planning have first follow-through envelopes, and Runtime Adapters now has a synthetic permission harness feeding the adequacy review. Most targets still need stronger semantics, executable tests, empirical baselines, or imported artifacts before they can carry broader claims. |
 | Protocol schemas | 71 | Record shapes are well-covered. |
 | Protocol fixtures | 70 valid fixtures | Fixture validation is broad but not a substitute for runtime tests. |

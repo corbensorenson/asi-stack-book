@@ -1,0 +1,108 @@
+{
+  "transition_id": "v1_0_pilot.runtime_adapters.no_change",
+  "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
+  "claim_surface_refs": [
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/runtime_adapter_permission_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/runtime_adapter_invocation.schema.json",
+    "schemas/authority_use_receipt.schema.json",
+    "experiments/runtime_adapter_permissions/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic runtime-adapter permission, approval, receipt, and rollback/residual fixture behavior only; no deployed adapter behavior, sandbox isolation, secret-handle safety, approval-service quality, rollback execution, real effect receipt validity, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the Runtime Adapters claim, public schemas for runtime adapter invocations and authority-use receipts, a synthetic runtime-adapter permission harness with valid and expected-invalid fixtures, and proof adequacy follow-through that moves the chapter from executable-tests-needed to useful-but-too-narrow. Those artifacts support the design discipline around permission coverage, high-impact approval gates, approval expiry markers, effect receipt presence, rollback handles or irreversible residual capture, and authority receipt alignment. They still do not establish deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, real effect receipt validity, or runtime safety.",
+  "required_artifacts": [
+    "deployed adapter traces across at least one real tool or runtime target",
+    "sandbox isolation tests with attempted forbidden effects",
+    "approval-service tests covering expiry, revocation, escalation, and denial receipts",
+    "secret-handle safety tests that avoid raw secret exposure in logs and artifacts",
+    "rollback execution tests for reversible effects and residual capture for irreversible effects",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/runtime_adapter_permission_harness.md",
+    "scripts/validate_runtime_adapter_permissions.py",
+    "experiments/runtime_adapter_permissions/results/2026-06-28-local.md",
+    "schemas/runtime_adapter_invocation.schema.json",
+    "schemas/authority_use_receipt.schema.json",
+    "docs/proof_adequacy_review.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "docs/source_evidence_audit.md#runtime-adapters-tool-permissions-and-human-approval.core"
+  ],
+  "verification_command": "python3 scripts/validate_runtime_adapter_permissions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Runtime Adapters remains at argument",
+    "runtime adapter permission fixtures are synthetic",
+    "schemas validate record shape rather than deployed adapter enforcement",
+    "deployed adapter traces, sandbox isolation tests, approval-service tests, secret-handle tests, and rollback execution tests are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/runtime_adapter_permission_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "runtime adapter permission harness failure",
+    "runtime adapter schema drift",
+    "claim text interpreted as deployed adapter behavior or sandbox-safety evidence",
+    "effect receipt validity claimed without real effect trace",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after deployed adapter traces, sandbox tests, approval-service behavior, secret-handle safety, rollback execution, and real effect receipt validity are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove deployed adapter behavior",
+    "schemas validate record shape rather than permission enforcement",
+    "approval expiry markers in fixtures do not prove an approval service exists",
+    "rollback handles and residual fields in fixtures do not prove rollback execution",
+    "no independent runtime-security or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-security, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed adapter trace",
+    "no sandbox isolation test",
+    "no approval-service behavior test",
+    "no secret-handle safety test",
+    "no rollback execution test",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-runtime-adapter-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Runtime Adapters above argument",
+    "does not prove deployed adapter behavior",
+    "does not prove sandbox isolation",
+    "does not prove approval-service quality",
+    "does not prove secret-handle safety",
+    "does not prove rollback execution or runtime safety"
+  ]
+}
