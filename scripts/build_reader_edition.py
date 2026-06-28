@@ -353,6 +353,12 @@ def normalize_overlay_operation(
         raise ValueError(f"{source_path}: operation {operation_id!r} section.level must be 1..6.")
     if not isinstance(title, str) or not title.strip():
         raise ValueError(f"{source_path}: operation {operation_id!r} section.title must be non-empty.")
+    aliases_value = section.get("aliases", [])
+    if aliases_value is None:
+        aliases_value = []
+    if not isinstance(aliases_value, list) or not all(isinstance(alias, str) for alias in aliases_value):
+        raise ValueError(f"{source_path}: operation {operation_id!r} section.aliases must be a list of strings.")
+    aliases = [alias.strip() for alias in aliases_value if alias.strip()]
 
     content = operation_content(operation)
     if status == "active" and not content:
@@ -367,7 +373,7 @@ def normalize_overlay_operation(
         "status": status,
         "action": action,
         "target_file": target_file,
-        "section": {"level": level, "title": title.strip()},
+        "section": {"level": level, "title": title.strip(), "aliases": aliases},
         "content": content,
         "rationale": str(rationale).strip(),
         "source_path": source_path,
@@ -502,11 +508,14 @@ def find_section_span(lines: list[str], operation: dict[str, object]) -> dict[st
     if not isinstance(section, dict):
         raise TypeError("reader overlay operation section must be an object")
     expected_level = int(section["level"])
-    expected_title = normalize_heading_title(str(section["title"]))
+    expected_titles = {normalize_heading_title(str(section["title"]))}
+    aliases = section.get("aliases", [])
+    if isinstance(aliases, list):
+        expected_titles.update(normalize_heading_title(str(alias)) for alias in aliases if str(alias).strip())
     matches = [
         span
         for span in heading_spans("\n".join(lines))
-        if int(span["level"]) == expected_level and str(span["title"]) == expected_title
+        if int(span["level"]) == expected_level and str(span["title"]) in expected_titles
     ]
     if not matches:
         raise ValueError(

@@ -232,13 +232,20 @@
   function findOverlaySection(operation) {
     const section = operation && operation.section ? operation.section : {};
     const expectedLevel = Number(section.level);
-    const expectedTitle = normalizeOverlayHeading(section.title);
-    if (!expectedLevel || !expectedTitle) return null;
+    const expectedTitles = new Set([normalizeOverlayHeading(section.title)]);
+    if (Array.isArray(section.aliases)) {
+      section.aliases.forEach((alias) => {
+        const normalized = normalizeOverlayHeading(alias);
+        if (normalized) expectedTitles.add(normalized);
+      });
+    }
+    expectedTitles.delete("");
+    if (!expectedLevel || expectedTitles.size === 0) return null;
     const matches = Array.from(document.querySelectorAll("section")).filter((candidate) => {
       const heading = Array.from(candidate.children).find((child) => /^H[1-6]$/.test(child.tagName));
       if (!heading) return false;
       const level = Number(heading.tagName.slice(1));
-      return level === expectedLevel && cleanHeadingText(heading) === expectedTitle;
+      return level === expectedLevel && expectedTitles.has(cleanHeadingText(heading));
     });
     return matches.length === 1 ? matches[0] : null;
   }

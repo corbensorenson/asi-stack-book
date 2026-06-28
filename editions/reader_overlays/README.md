@@ -18,7 +18,7 @@ Supported operation types are section-anchored:
 - `insert_before_section`
 - `insert_after_section`
 
-Each operation targets a stable repository-relative `.qmd` file and a heading by level and title. Do not target generated line numbers.
+Each operation targets a stable repository-relative `.qmd` file and a heading by level and title. If reader-edition derivation humanizes a source heading, add `section.aliases` for the live-source heading so the same operation can apply in the generated reader source and live Human view. Do not target generated line numbers.
 
 Active operations are embedded into `assets/reader-overlays.html` by `scripts/sync_reader_overlay_asset.py`. The generated reader edition applies the operations to derived Quarto source, while the live Human view applies the same operations in the browser and records page-level operation totals, matching operations, applied operations, and skipped operation ids for browser validation.
 

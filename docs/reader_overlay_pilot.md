@@ -18,6 +18,11 @@ The next reader-continuity pass added four active operations under `editions/rea
 - `v1_0.personal_compute_hives.job_classes_reader_replace` replaces the generated-reader and live Human-view `Job classes and federation modes` section.
 - `v1_0.personal_compute_hives.hive_memory_reader_replace` replaces the generated-reader and live Human-view `Hive memory` section.
 
+The following reader-continuity pass added two active operations under `editions/reader_overlays/v1_0/chapters/policy-optimization-and-learning-from-feedback.json`:
+
+- `v1_0.policy_optimization.method_families_reader_replace` replaces the generated-reader and live Human-view `Method families` section.
+- `v1_0.policy_optimization.external_literature_reader_replace` replaces the generated-reader `source-reviewed external literature` section and uses `Source-noted external literature` as a live-source heading alias for Human view.
+
 The canonical chapter source remains unchanged. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
 ## Why These Overlays Exist
@@ -27,6 +32,8 @@ The v1.0 roadmap allows the normal reader edition to diverge from the AI/researc
 The opening chapter is a good pilot because it has high reader-framing value and low claim risk. The overlay does not change the core claim. It rewrites the first problem statement and closing summary into calmer book prose so the Human view can begin as a readable book while the AI/research view remains a full architecture workbench.
 
 The Personal Compute Hives overlays convert four dense generated-reader tables into narrative prose while preserving the canonical AI/research tables in the live source. They reduce the generated reader manuscript's table load without claiming that the hive scheduler, federation protocol, approval path, or memory topology has been implemented.
+
+The Policy Optimization overlays convert method-family, target-policy, training-mode, and external-literature tables into narrative prose while preserving the canonical AI/research tables in the live source. They reduce the generated reader manuscript's table load without claiming that any PPO, DPO, GRPO, RLVR, router-policy, context-policy, verifier-policy, execution-policy, or reasoning-budget training run has been performed.
 
 ## Review Contract
 
@@ -38,11 +45,11 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 6 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 6 active and 6 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 6 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 6 active operations and 6 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 6 reader overlay operations applied.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 8 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 8 active and 8 applied operations.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 8 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 8 active operations and 8 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 8 reader overlay operations applied.
 - `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.

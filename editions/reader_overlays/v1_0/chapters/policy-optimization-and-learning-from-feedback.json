@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+  "operations": [
+    {
+      "id": "v1_0.policy_optimization.method_families_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Method families"
+      },
+      "rationale": "Replace three dense method-family tables with reader prose while keeping the canonical AI/research comparison tables in the live source.",
+      "content_lines": [
+        "The external method families matter, but the reader version should not turn this section into an acronym ledger. Foundational policy-gradient methods provide the minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, and ReMax-like critic-light simplifications. Trust-region and clipped online RL methods such as TRPO, PPO, PPO-RLHF, GRPO, DAPO, and GSPO add bounded online exploration and update-size discipline. Offline preference methods such as DPO, IPO, ORPO, KTO, and SimPO use static preference or binary-feedback data when online rollout is not the right first move.",
+        "",
+        "Verifier-based RL and RLVR sit closer to the ASI Stack's evidence machinery because they can learn from exact checks, process checks, tool results, context-grounding checks, governance checks, or efficiency verifiers. Reasoning-budget and latency-aware RL ask when to think longer, stop, retrieve, verify, use tools, or switch generation modes. Control-policy RL is broader: it can target planner decomposition, router choice, VCM retrieval, execution policy, verifier escalation, or generation-mode selection rather than only answer style.",
+        "",
+        "The architectural rule is that the target policy should be named before the optimizer is named. A planner reward cannot erase constraints, approvals, or residuals. A VCM reward for compact context is not valid unless evidence adequacy is preserved. A router reward for lower cost cannot bypass readiness, authority, or residual escrow. A generator reward for fluency or concision is not evidence without verifier support. A verifier reward has to be audited for gaming and coverage gaps. Tool success cannot expand the authority envelope, governance rewards must preserve rights and rollback, and speed is useful only when accepted-output quality and fallback are recorded.",
+        "",
+        "Training mode follows feedback and risk. SFT is appropriate when high-quality demonstrations exist, but imitation does not explore better policies. Preference optimization is useful when static feedback is available, but preference quality becomes a dependency. PPO-style online RL is for rollout and reward optimization, with critic cost, tuning sensitivity, and reward-model risk made explicit. Group-relative or critic-light methods need reliable contrast. Long-sequence variants may fit reasoning or MoE-specific training, but their literature moves quickly and reproduction risk is higher. RLVR works only when the verifier is good enough for the job. Control-policy RL needs system-level reward design and authority-aware evaluation."
+      ]
+    },
+    {
+      "id": "v1_0.policy_optimization.external_literature_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "source-reviewed external literature",
+        "aliases": [
+          "Source-noted external literature"
+        ]
+      },
+      "rationale": "Replace the external-literature table with prose while preserving the source-note/source-review boundary and local non-reproduction caveat.",
+      "content_lines": [
+        "These external records are method-family context, not reproduced ASI Stack results. TRPO and PPO supply the trust-region and proximal-update background for bounded online policy movement. ReMax and REINFORCE-style RLHF show why simpler or critic-light baselines still matter when a system is tempted to treat a PPO-heavy pipeline as the only serious reinforcement-learning route.",
+        "",
+        "DPO, IPO, ORPO, KTO, and SimPO supply the offline preference-optimization family: useful when static preference, binary feedback, reference-model, or sequence-reward assumptions match the available data. DeepSeek-R1, DAPO, GSPO, and S-GRPO provide reasoning-RL and sequence-level context, including reproducibility pressure and overthinking control. LongRLVR connects verifier rewards to long-context grounding, which is why it belongs next to VCM and context adequacy rather than only next to model training.",
+        "",
+        "The RLHF-limitations source is the warning layer. It feeds reward-hacking probes, evaluator-limit cautions, disclosure needs, and audit requirements. None of these source-reviewed records means that this repository has trained a policy, validated a reward model, reproduced a reasoning-RL result, solved reward hacking, or moved the governing claim above `argument` support."
+      ]
+    }
+  ]
+}

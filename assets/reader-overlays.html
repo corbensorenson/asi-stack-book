@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 6,
+  "operation_count": 8,
   "operations": [
     {
       "id": "v1_0.asi_stack_not_model.problem_reader_replace",
@@ -12,7 +12,8 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Problem"
+        "title": "Problem",
+        "aliases": []
       },
       "content": "The book begins by changing the unit of analysis. A future ASI system will not be made governable by pointing at the largest model in the room and asking it to be safe. The model matters, but it is only one part of a larger machine: the contracts that receive intent, the memory that carries context, the routes that choose capability, the tools that touch the world, and the records that decide what counts as evidence.\n\nThat distinction is practical. When an intelligent system acts, someone has to know what authorized the action, what source grounded the claim, what artifact crossed a boundary, and how the result could be challenged or rolled back. Those answers cannot live inside vague confidence about model quality. They need interfaces, ledgers, gates, and failure paths that remain visible even when the underlying model changes.\n\nSo the opening problem is not whether one model can become powerful enough. It is whether the whole arrangement can stay legible as power spreads across planning, memory, reasoning, execution, routing, compression, and self-improvement. The ASI Stack starts here because every later section depends on this move: treat intelligence as a governed architecture, then ask each layer what it owns and what it is not allowed to claim.",
       "rationale": "Start the v1.0 human-reader overlay pilot by making the opening problem section read like book prose while leaving the canonical AI/research source unchanged."
@@ -23,7 +24,8 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Summary"
+        "title": "Summary",
+        "aliases": []
       },
       "content": "The first claim of the book is modest but load-bearing: ASI should be read as a stack. A model can generate, compress, criticize, and propose, but a stack decides when those outputs become plans, claims, permissions, artifacts, or evidence. That separation is what makes later governance possible.\n\nOnce the system is a stack, capability has to answer to structure. A planning trace needs an authority boundary. A context packet needs an adequacy test. A routing decision needs residual accounting. A replacement needs rollback. Self-improvement has to return to governance instead of becoming an excuse to bypass it.\n\nThis does not prove that the architecture is implemented or safe. It gives the rest of the book a stable question to ask of every powerful mechanism: what does this part own, what evidence does it create, what can stop it, and how would the system know if it failed?",
       "rationale": "Give the generated reader edition and live Human view a calmer closing summary for the opening chapter without adding new claims or evidence."
@@ -34,7 +36,8 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Owned substrate and device roles"
+        "title": "Owned substrate and device roles",
+        "aliases": []
       },
       "content": "The hive starts by refusing to flatten devices into one pool of interchangeable compute. The phone is usually the identity surface, approval point, camera, microphone, and notification loop. The laptop is the mobile workbench where interactive writing, coding, review, and local file operations make sense. A desktop or GPU machine is a stronger worker, but that strength does not make it automatically safe for every family record, credential, or private dataset.\n\nStorage has its own role. A NAS or local server can hold durable memory, backups, artifacts, indexes, and source corpora, but it should not become a place where arbitrary internet-facing code runs just because it is always on. Older machines can still be useful for indexing, crawling, low-priority transforms, and test runs, yet patch state, sandboxing, and trust tier should limit what they receive. Tablets, TVs, browsers, and headsets are more like shared portals than private workers, so room context and audience matter as much as hardware capability.\n\nThe same separation applies outside the household. A workshop computer may connect to physical tools, sensors, CAD/CAM surfaces, robotics, or fabrication flows; its operator-presence rule should be stricter than a document summarizer. Rented or public nodes can absorb public tests, synthetic workloads, burst inference, or scrubbed jobs, but private memory and secrets need a stronger exposure contract before they cross that boundary.\n\nA phone can approve a job that runs on a desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device. The important distinction is not hardware type by itself; it is role, owner, audience, data class, tool class, and revocation path.",
       "rationale": "Replace the table-heavy device-role section with human-reader prose while keeping the canonical AI/research table in the live source."
@@ -45,7 +48,8 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Hive objects"
+        "title": "Hive objects",
+        "aliases": []
       },
       "content": "The first useful hive records are small enough to understand without treating the system like a distributed-operating-system manual. A `DeviceResourceCard` says what a node is, who owns or guards it, where it sits, what it can compute or store, what network shape it exposes, what data and tools it may touch, whether it can hold secret handles, when an operator must be present, and how it can be revoked.\n\nA `PortalCard` describes a human-facing surface. It records the person or guardian in scope, the input and output modes, the authority level, the privacy context, the attention state, the safe output profile, and the revocation path. That card keeps a phone, browser, headset, shared screen, or family tablet from being mistaken for the whole AI or for the owner's full authority.\n\nA `HiveJobContract` describes the work boundary before any node bids. It names the objective, source context references, data classes, tool classes, authority ceiling, risk tier, federation scope, budget, deadline, verification predicate, and residual policy. Once the contract exists, eligible nodes can answer with `HiveJobBid` records: latency, cost, energy, transfer estimate, thermal risk, interruption risk, privacy fit, capability fit, and policy reason.\n\nThe actual placement decision is a separate record. A `HiveSchedulingDecision` lists eligible nodes, rejected nodes, rejection reasons, selected node, approvals, data placement, cost and energy estimates, isolation mode, evidence references, and expiration. A `HiveApprovalReceipt` binds one human or guardian decision to one job boundary and time window. A `HiveFederationLease` lets another person, project, rented node, or public market borrow bounded capacity without inheriting private network access.\n\nThese objects do not prove that the hive works. They make the first implementation inspectable: what asked for work, which devices were rejected, who approved the boundary, where data moved, what evidence came back, and how the permission ends.",
       "rationale": "Turn the object catalog table into prose for the relaxed reader path without removing the record vocabulary from the AI/research source."
@@ -56,7 +60,8 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Job classes and federation modes"
+        "title": "Job classes and federation modes",
+        "aliases": []
       },
       "content": "Hive scheduling should classify work before it asks any device to bid. Some work is local and harmless: a small transform, a note cleanup, or a local review that touches no private memory, physical tool, credential, or spend. Some work is personal and private, which pushes it toward trusted local nodes and away from rented compute. Family-sensitive work adds dignity, role, and guardian boundaries; the route has to preserve the person in front of the portal, not merely satisfy a logging rule.\n\nHigh-compute work is not automatically cloud work. A desktop GPU, site node, or rented machine may be appropriate only after the data class, privacy exposure, cost, and verification need are clear. External project work should land in a disposable sandbox with no private network and no standing credentials, returning an artifact bundle instead of a durable foothold. Physical-world work needs operator presence and an approval receipt because the failure can leave the screen. Dangerous or irreversible work should default to denial or multi-party review, not ordinary autonomous execution.\n\nFederation mode changes the lease. A personal hive uses one person's devices. A family hive separates shared and private zones. A site hive binds a home, office, workshop, or lab. A joined private hive lets collaborators contribute under contract. A public project hive accepts bounded issue, benchmark, documentation, or test jobs. A market hive exposes spare capacity for payment or credit. An emergency hive prioritizes continuity when ordinary internet paths fail.\n\nThe common rule is that reachability never decides the route alone. Every class and federation mode changes what data may move, which tools may run, who must approve, what evidence must return, and how quickly the lease expires.",
       "rationale": "Replace the job-class table with narrative policy prose for the human reader while preserving the live/research taxonomy."
@@ -67,10 +72,37 @@
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Hive memory"
+        "title": "Hive memory",
+        "aliases": []
       },
       "content": "A hive is also a memory topology. Artifact memory holds documents, code, diagrams, builds, logs, and release bundles; it needs provenance, backup policy, and a durable store. Episodic memory holds meetings, sessions, approvals, and task events; it needs scoped retention and owner-visible review. Semantic memory holds concepts, source notes, embeddings, and claim references; it should stay source-bound and revocable through VCM rather than becoming an unowned vector swamp.\n\nProcedural memory is different again. Repeated workflows compiled into tools need tests, preconditions, postconditions, retirement rules, and failure evidence. Device memory records benchmarks, thermal history, reliability, and dropout events so the scheduler can make better placement decisions, but that history must not expand a node's authority. Trust memory tracks safe or unsafe behavior by nodes, projects, workers, or providers; it should be evidence-linked, contestable, and decay-aware rather than permanent reputation folklore.\n\nFamily and project memory require the sharpest boundary. Family memory may include learning context, guardian decisions, shared household records, or sensitive events, so dignity, role scope, and minimal logging matter more than convenience. Project memory belongs to issues, pull requests, contracts, CI logs, releases, steward decisions, and artifact bundles; it should remain artifact-bound and auditable.\n\nTreating all of these memories as one store erases the point of a hive. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context may exist, which device can materialize it, who can inspect it, and how it can be revoked.",
       "rationale": "Turn the memory topology table into reader prose so the human edition keeps the conceptual distinction without carrying dense matrix formatting."
+    },
+    {
+      "id": "v1_0.policy_optimization.method_families_reader_replace",
+      "target_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Method families",
+        "aliases": []
+      },
+      "content": "The external method families matter, but the reader version should not turn this section into an acronym ledger. Foundational policy-gradient methods provide the minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, and ReMax-like critic-light simplifications. Trust-region and clipped online RL methods such as TRPO, PPO, PPO-RLHF, GRPO, DAPO, and GSPO add bounded online exploration and update-size discipline. Offline preference methods such as DPO, IPO, ORPO, KTO, and SimPO use static preference or binary-feedback data when online rollout is not the right first move.\n\nVerifier-based RL and RLVR sit closer to the ASI Stack's evidence machinery because they can learn from exact checks, process checks, tool results, context-grounding checks, governance checks, or efficiency verifiers. Reasoning-budget and latency-aware RL ask when to think longer, stop, retrieve, verify, use tools, or switch generation modes. Control-policy RL is broader: it can target planner decomposition, router choice, VCM retrieval, execution policy, verifier escalation, or generation-mode selection rather than only answer style.\n\nThe architectural rule is that the target policy should be named before the optimizer is named. A planner reward cannot erase constraints, approvals, or residuals. A VCM reward for compact context is not valid unless evidence adequacy is preserved. A router reward for lower cost cannot bypass readiness, authority, or residual escrow. A generator reward for fluency or concision is not evidence without verifier support. A verifier reward has to be audited for gaming and coverage gaps. Tool success cannot expand the authority envelope, governance rewards must preserve rights and rollback, and speed is useful only when accepted-output quality and fallback are recorded.\n\nTraining mode follows feedback and risk. SFT is appropriate when high-quality demonstrations exist, but imitation does not explore better policies. Preference optimization is useful when static feedback is available, but preference quality becomes a dependency. PPO-style online RL is for rollout and reward optimization, with critic cost, tuning sensitivity, and reward-model risk made explicit. Group-relative or critic-light methods need reliable contrast. Long-sequence variants may fit reasoning or MoE-specific training, but their literature moves quickly and reproduction risk is higher. RLVR works only when the verifier is good enough for the job. Control-policy RL needs system-level reward design and authority-aware evaluation.",
+      "rationale": "Replace three dense method-family tables with reader prose while keeping the canonical AI/research comparison tables in the live source."
+    },
+    {
+      "id": "v1_0.policy_optimization.external_literature_reader_replace",
+      "target_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "source-reviewed external literature",
+        "aliases": [
+          "Source-noted external literature"
+        ]
+      },
+      "content": "These external records are method-family context, not reproduced ASI Stack results. TRPO and PPO supply the trust-region and proximal-update background for bounded online policy movement. ReMax and REINFORCE-style RLHF show why simpler or critic-light baselines still matter when a system is tempted to treat a PPO-heavy pipeline as the only serious reinforcement-learning route.\n\nDPO, IPO, ORPO, KTO, and SimPO supply the offline preference-optimization family: useful when static preference, binary feedback, reference-model, or sequence-reward assumptions match the available data. DeepSeek-R1, DAPO, GSPO, and S-GRPO provide reasoning-RL and sequence-level context, including reproducibility pressure and overthinking control. LongRLVR connects verifier rewards to long-context grounding, which is why it belongs next to VCM and context adequacy rather than only next to model training.\n\nThe RLHF-limitations source is the warning layer. It feeds reward-hacking probes, evaluator-limit cautions, disclosure needs, and audit requirements. None of these source-reviewed records means that this repository has trained a policy, validated a reward model, reproduced a reasoning-RL result, solved reward hacking, or moved the governing claim above `argument` support.",
+      "rationale": "Replace the external-literature table with prose while preserving the source-note/source-review boundary and local non-reproduction caveat."
     }
   ],
   "non_claims": [

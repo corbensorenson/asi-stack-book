@@ -15,7 +15,8 @@ The manifest at `editions/reader_overlays/v1_0/manifest.json` loads `chapters/*.
       "action": "replace_section",
       "section": {
         "level": 2,
-        "title": "Summary"
+        "title": "Summary",
+        "aliases": []
       },
       "rationale": "Make the major-version reader summary less workflow-heavy without changing the live AI/research source.",
       "content_lines": [
@@ -26,7 +27,7 @@ The manifest at `editions/reader_overlays/v1_0/manifest.json` loads `chapters/*.
 }
 ```
 
-Supported actions are `replace_section`, `prepend_to_section`, `append_to_section`, `insert_before_section`, and `insert_after_section`. Target stable repository-relative `.qmd` files and heading titles, not generated line numbers.
+Supported actions are `replace_section`, `prepend_to_section`, `append_to_section`, `insert_before_section`, and `insert_after_section`. Target stable repository-relative `.qmd` files and heading titles, not generated line numbers. Use `section.aliases` when the generated reader heading differs from the live source heading because of reader-language transformations.
 
 After adding or changing an operation, run:
 
