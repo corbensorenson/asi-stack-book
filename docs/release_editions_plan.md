@@ -64,6 +64,7 @@ The reader manuscript is the human source for the bundle. The audio script is do
 - `scripts/validate_release_profiles.py` checks the profile metadata.
 - `scripts/build_reader_edition.py` creates a cleaned reader-edition Quarto source tree under `build/reader_edition/`.
 - `scripts/validate_reader_overlays.py` checks the reader-overlay manifest and confirms generated reader builds include a coherent `reader_delta_report.md`.
+- `scripts/sync_reader_overlay_asset.py` embeds active overlay operations in `assets/reader-overlays.html` so the live Human view can apply the same section deltas as generated reader editions.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, chapter-specific Handoff continuity, view-block cleanup, and stripped live-only scaffolding.
 - `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and inline plain-language support-state boundaries.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
@@ -81,6 +82,7 @@ Check the reader profile without leaving generated files in the repo:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -94,7 +96,7 @@ python3 scripts/build_reader_edition.py
 
 The generated tree is ignored by git. Review it before rendering release artifacts.
 
-Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, view-block processing counts, reader-overlay status, reader-spine validation policy, Handoff continuity review requirement, review status, e-reader quality checks, downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, Handoff review, overlay delta review, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, companion notes, and release-record residuals. The generated `companion_notes.md` records stripped live-only section counts and the dense material that needs reader/audio treatment. The generated `reader_delta_report.md` records generator transformations and any semantic overlay operations applied for the major reader version. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
+Each generated reader tree includes `reader_manifest.json`, which records the source profile, target formats, content-layer policy, stripped-heading policy, view-block processing counts, reader-overlay status, reader-spine validation policy, Handoff continuity review requirement, review status, e-reader quality checks, downstream-format notes, companion-material policy, and non-claims. It also includes `READER_RELEASE_CHECKLIST.md` as the local review checklist for continuity, Handoff review, overlay delta review, typography, figure/diagram behavior, EPUB/DOCX/PDF checks, optional e-reader conversions, companion notes, and release-record residuals. The generated `companion_notes.md` records stripped live-only section counts and the dense material that needs reader/audio treatment. The generated `reader_delta_report.md` records generator transformations and any semantic overlay operations applied for the major reader version. The tracked `assets/reader-overlays.html` payload is the live-site counterpart for those same active overlay operations. These files are release-preparation aids; they are not evidence that any ebook or PDF has been rendered.
 
 The generated reader manifest also carries the human-consumption bundle policy so a release run can distinguish reader formats, optional e-reader conversions, and later audio artifacts without relying on memory.
 

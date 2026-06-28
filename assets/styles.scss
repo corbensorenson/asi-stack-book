@@ -193,12 +193,24 @@ html[data-asi-reading-mode="human"] .asi-core-claim-marker {
   display: none;
 }
 
+.asi-reader-overlay-only {
+  display: none;
+}
+
 html[data-asi-reading-mode="human"] .asi-support-boilerplate-ai {
   display: none !important;
 }
 
 html[data-asi-reading-mode="human"] .asi-support-boundary-human {
   display: inline;
+}
+
+html[data-asi-reading-mode="human"] .asi-reader-overlay-only {
+  display: block;
+}
+
+html[data-asi-reading-mode="human"] .asi-reader-overlay-original {
+  display: none !important;
 }
 
 html[data-asi-reading-mode="human"] .asi-support-boundary-human--claim {

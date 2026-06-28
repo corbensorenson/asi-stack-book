@@ -344,11 +344,31 @@ async function validateRenderedDiagrams(page, pageId, mode) {
   return metrics;
 }
 
+async function validateReaderOverlayPayload(page, pageId) {
+  const payload = await page.evaluate(() => {
+    const element = document.getElementById("asi-reader-overlays");
+    if (!element) return null;
+    try {
+      return JSON.parse(element.textContent || "{}");
+    } catch (_) {
+      return { parse_error: true };
+    }
+  });
+  if (!payload) throw new Error(`${pageId}: live Human view is missing embedded reader overlay payload.`);
+  if (payload.parse_error) throw new Error(`${pageId}: embedded reader overlay payload is not valid JSON.`);
+  if (payload.manifest_path !== "editions/reader_overlays/v1_0/manifest.json") {
+    throw new Error(`${pageId}: embedded reader overlay payload has unexpected manifest path.`);
+  }
+  if (!Array.isArray(payload.operations)) throw new Error(`${pageId}: embedded reader overlay operations are not an array.`);
+  return payload;
+}
+
 async function validateChapterPage(page, fileUrl, pageId) {
   const record = { page_id: pageId, url: fileUrl, checks: {} };
   await page.goto(`${fileUrl}?view=human`, { waitUntil: "domcontentloaded" });
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
+  const overlayPayload = await validateReaderOverlayPayload(page, pageId);
   await page.waitForSelector(".asi-core-claim-marker", { state: "attached", timeout: 5000 });
   await page.waitForSelector(".asi-support-boundary-human--claim", { state: "attached", timeout: 5000 });
 
@@ -379,6 +399,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_support_boilerplate_phrases: supportBoilerplateVisibleHuman,
     visible_human_support_boundaries: supportBoundaryVisibleHuman,
     visible_live_toc_links: liveTocVisibleHuman,
+    reader_overlay_operations: overlayPayload.operations.length,
     status_text: humanStatus || "",
     layout: humanLayout,
     diagrams: humanDiagrams,
@@ -459,8 +480,10 @@ async function validateAppendixPage(page, fileUrl, pageId) {
   await page.goto(`${fileUrl}?view=human`, { waitUntil: "domcontentloaded" });
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
+  const overlayPayload = await validateReaderOverlayPayload(page, pageId);
   const status = await page.locator("[data-asi-reading-mode-status]").textContent();
   record.checks.human_url_mode = {
+    reader_overlay_operations: overlayPayload.operations.length,
     status_text: status || "",
     layout: await validateResponsiveLayout(page, pageId, "human"),
   };

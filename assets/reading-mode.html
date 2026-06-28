@@ -30,6 +30,9 @@
   const coreClaimSupportPattern = /support:\s*([^\]]+)$/i;
   const supportBoundaryPattern = /(The claim remains at argument support\.|The current support state is argument\.|The current support state is argument, so the claim should be read as a design rationale unless a later evidence bundle promotes it\.)/g;
   const humanSupportBoundary = "Evidence boundary: architectural argument.";
+  const overlayPayloadId = "asi-reader-overlays";
+  const overlayOnlyClass = "asi-reader-overlay-only";
+  const overlayOriginalClass = "asi-reader-overlay-original";
 
   document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
 
@@ -177,6 +180,134 @@
     });
   }
 
+  function currentSourceFile() {
+    let pathname = window.location && window.location.pathname ? window.location.pathname : "";
+    try {
+      pathname = decodeURIComponent(pathname);
+    } catch (_) {
+      /* Keep the browser-provided path if it cannot be decoded. */
+    }
+    const structuredMatch = pathname.match(/(?:^|\/)((?:chapters|appendices)\/[^/]+)\.html$/);
+    if (structuredMatch) return `${structuredMatch[1]}.qmd`;
+    if (pathname.endsWith("/preface.html")) return "preface.qmd";
+    if (pathname.endsWith("/index.html") || pathname.endsWith("/")) return "index.qmd";
+    return "";
+  }
+
+  function readerOverlayPayload() {
+    const element = document.getElementById(overlayPayloadId);
+    if (!element) return { operations: [] };
+    try {
+      const payload = JSON.parse(element.textContent || "{}");
+      return payload && Array.isArray(payload.operations) ? payload : { operations: [] };
+    } catch (_) {
+      return { operations: [] };
+    }
+  }
+
+  function normalizeOverlayHeading(value) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+  }
+
+  function findOverlaySection(operation) {
+    const section = operation && operation.section ? operation.section : {};
+    const expectedLevel = Number(section.level);
+    const expectedTitle = normalizeOverlayHeading(section.title);
+    if (!expectedLevel || !expectedTitle) return null;
+    const matches = Array.from(document.querySelectorAll("section")).filter((candidate) => {
+      const heading = Array.from(candidate.children).find((child) => /^H[1-6]$/.test(child.tagName));
+      if (!heading) return false;
+      const level = Number(heading.tagName.slice(1));
+      return level === expectedLevel && cleanHeadingText(heading) === expectedTitle;
+    });
+    return matches.length === 1 ? matches[0] : null;
+  }
+
+  function overlayBlock(operation) {
+    const wrapper = document.createElement("div");
+    wrapper.className = overlayOnlyClass;
+    wrapper.setAttribute("data-asi-reader-overlay-id", operation.id || "");
+    wrapper.setAttribute("data-asi-reader-overlay-action", operation.action || "");
+    const blocks = String(operation.content || "")
+      .trim()
+      .split(/\n\s*\n/)
+      .map((block) => block.trim())
+      .filter(Boolean);
+    blocks.forEach((block) => {
+      const lines = block.split(/\n/).map((line) => line.trim());
+      if (lines.length && lines.every((line) => line.startsWith("- "))) {
+        const list = document.createElement("ul");
+        lines.forEach((line) => {
+          const item = document.createElement("li");
+          item.textContent = line.replace(/^-\s+/, "");
+          list.append(item);
+        });
+        wrapper.append(list);
+        return;
+      }
+      const paragraph = document.createElement("p");
+      paragraph.textContent = lines.join(" ");
+      wrapper.append(paragraph);
+    });
+    return wrapper;
+  }
+
+  function wrapSectionOriginal(section) {
+    if (section.querySelector(`:scope > .${overlayOriginalClass}`)) return;
+    const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+    const original = document.createElement("div");
+    original.className = overlayOriginalClass;
+    Array.from(section.children).forEach((child) => {
+      if (child === heading || child.classList.contains(overlayOnlyClass)) return;
+      original.append(child);
+    });
+    section.append(original);
+  }
+
+  function applyReaderOverlayOperation(operation) {
+    const section = findOverlaySection(operation);
+    if (!section) return false;
+    const block = overlayBlock(operation);
+    const action = operation.action || "";
+    const heading = Array.from(section.children).find((child) => /^H[1-6]$/.test(child.tagName));
+    if (action === "replace_section") {
+      wrapSectionOriginal(section);
+      section.insertBefore(block, section.querySelector(`:scope > .${overlayOriginalClass}`));
+      return true;
+    }
+    if (action === "prepend_to_section") {
+      section.insertBefore(block, heading ? heading.nextSibling : section.firstChild);
+      return true;
+    }
+    if (action === "append_to_section") {
+      section.append(block);
+      return true;
+    }
+    if (action === "insert_before_section") {
+      section.insertAdjacentElement("beforebegin", block);
+      return true;
+    }
+    if (action === "insert_after_section") {
+      section.insertAdjacentElement("afterend", block);
+      return true;
+    }
+    return false;
+  }
+
+  function applyReaderOverlays() {
+    const payload = readerOverlayPayload();
+    const sourceFile = currentSourceFile();
+    if (!sourceFile || !Array.isArray(payload.operations)) return;
+    payload.operations
+      .filter((operation) => operation && operation.target_file === sourceFile)
+      .forEach((operation) => {
+        applyReaderOverlayOperation(operation);
+      });
+  }
+
   function normalizeMode(mode) {
     return mode === humanMode ? humanMode : aiMode;
   }
@@ -266,6 +397,7 @@
     markViewModeTocLinks();
     markCoreClaimMarkers();
     markSupportBoundaryPhrases();
+    applyReaderOverlays();
     insertToggle();
     setMode(initialMode());
   });

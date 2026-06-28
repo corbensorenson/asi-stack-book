@@ -52,6 +52,7 @@ python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
+python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check

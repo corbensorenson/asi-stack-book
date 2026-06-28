@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = ROOT / "editions" / "release_profiles.json"
 READING_MODE_INCLUDE = ROOT / "assets" / "reading-mode.html"
+READER_OVERLAY_INCLUDE = ROOT / "assets" / "reader-overlays.html"
 STYLES = ROOT / "assets" / "styles.scss"
 SYNC_SCAFFOLD = ROOT / "scripts" / "sync_scaffold.py"
 QUARTO = ROOT / "_quarto.yml"
@@ -60,16 +61,25 @@ def main() -> None:
     policy = live_human_view_policy()
 
     include_text = READING_MODE_INCLUDE.read_text(encoding="utf-8", errors="ignore") if READING_MODE_INCLUDE.exists() else ""
+    overlay_text = READER_OVERLAY_INCLUDE.read_text(encoding="utf-8", errors="ignore") if READER_OVERLAY_INCLUDE.exists() else ""
     style_text = STYLES.read_text(encoding="utf-8", errors="ignore") if STYLES.exists() else ""
     sync_text = SYNC_SCAFFOLD.read_text(encoding="utf-8", errors="ignore") if SYNC_SCAFFOLD.exists() else ""
     quarto_text = QUARTO.read_text(encoding="utf-8", errors="ignore") if QUARTO.exists() else ""
 
     if not include_text:
         errors.append("Missing assets/reading-mode.html")
-    if "include-after-body: assets/reading-mode.html" not in sync_text:
-        errors.append("scripts/sync_scaffold.py does not include the reading-mode after-body asset")
-    if "include-after-body: assets/reading-mode.html" not in quarto_text:
-        errors.append("_quarto.yml is missing the generated reading-mode after-body include")
+    if not overlay_text:
+        errors.append("Missing assets/reader-overlays.html")
+    for path, text in (
+        ("scripts/sync_scaffold.py", sync_text),
+        ("_quarto.yml", quarto_text),
+    ):
+        if "include-after-body:" not in text:
+            errors.append(f"{path} is missing include-after-body.")
+        if "assets/reader-overlays.html" not in text:
+            errors.append(f"{path} does not include the reader overlay after-body asset")
+        if "assets/reading-mode.html" not in text:
+            errors.append(f"{path} does not include the reading-mode after-body asset")
     if 'html[data-asi-reading-mode="human"] section[data-asi-live-section="true"]' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode live-section hide rule")
     if 'html[data-asi-reading-mode="human"] [data-asi-live-toc-link="true"]' not in style_text:
@@ -88,6 +98,10 @@ def main() -> None:
         errors.append("assets/styles.scss is missing the human-mode support-boilerplate hide rule")
     if 'html[data-asi-reading-mode="human"] .asi-support-boundary-human' not in style_text:
         errors.append("assets/styles.scss is missing the human-mode support-boundary display rule")
+    if 'html[data-asi-reading-mode="human"] .asi-reader-overlay-only' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode reader overlay display rule")
+    if 'html[data-asi-reading-mode="human"] .asi-reader-overlay-original' not in style_text:
+        errors.append("assets/styles.scss is missing the human-mode reader overlay replacement hide rule")
     if ".asi-support-boundary-human--claim" not in style_text:
         errors.append("assets/styles.scss is missing the inline claim support-boundary style")
     if ".asi-sr-only" not in style_text:
@@ -100,6 +114,8 @@ def main() -> None:
 
     expected_policy = {
         "toggle_asset": "assets/reading-mode.html",
+        "reader_overlay_asset": "assets/reader-overlays.html",
+        "reader_overlay_asset_sync": "scripts/sync_reader_overlay_asset.py",
         "static_validator": "scripts/validate_live_human_view.py",
         "browser_validator": "scripts/validate_live_human_view_browser.js",
         "browser_report_path": "build/live_human_view_browser_report.json",
@@ -160,6 +176,15 @@ def main() -> None:
         "support AI class": "asi-support-boilerplate-ai",
         "support human class": "asi-support-boundary-human",
         "support data marker": "data-asi-support-boundary",
+        "reader overlay payload id": "asi-reader-overlays",
+        "reader overlay payload function": "function readerOverlayPayload",
+        "reader overlay source file function": "function currentSourceFile",
+        "reader overlay section finder": "function findOverlaySection",
+        "reader overlay operation function": "function applyReaderOverlayOperation",
+        "reader overlay apply function": "function applyReaderOverlays",
+        "reader overlay apply call": "applyReaderOverlays()",
+        "reader overlay only class": "asi-reader-overlay-only",
+        "reader overlay original class": "asi-reader-overlay-original",
         "toc link marker function": "function markLiveTocLinks",
         "toc link marker call": "markLiveTocLinks(liveIds)",
         "ai status copy": "AI/research view active.",
@@ -172,6 +197,16 @@ def main() -> None:
     for label, needle in required_asset_strings.items():
         if needle not in include_text:
             errors.append(f"assets/reading-mode.html is missing {label}: {needle!r}")
+
+    for needle in (
+        '<script type="application/json" id="asi-reader-overlays">',
+        '"schema_version": "0.1"',
+        '"profile": "reader_release"',
+        '"manifest_path": "editions/reader_overlays/v1_0/manifest.json"',
+        '"operations": []',
+    ):
+        if needle not in overlay_text:
+            errors.append(f"assets/reader-overlays.html is missing required payload text: {needle!r}")
 
     actual = set(re.findall(r'"([23]:[a-z0-9][^"]+)"', include_text))
     if actual != expected:

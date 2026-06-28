@@ -11,6 +11,7 @@ import sys
 import tempfile
 
 import build_reader_edition
+import sync_reader_overlay_asset
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT = ROOT / "build" / "reader_overlay_report.json"
@@ -52,6 +53,16 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
             errors.append(f"configured overlay manifest does not exist: {manifest_path}")
 
     generated_overlay_summary = overlay_summary
+    try:
+        sync_payload = sync_reader_overlay_asset.sync_asset(
+            sync_reader_overlay_asset.DEFAULT_OUTPUT,
+            profile_id,
+            check=True,
+        )
+    except Exception as exc:
+        errors.append(f"reader overlay live asset check failed: {exc}")
+        sync_payload = {}
+
     try:
         with tempfile.TemporaryDirectory(prefix="asi-reader-overlay-") as temp_dir:
             output_dir = Path(temp_dir)
@@ -105,6 +116,7 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "profile": profile_id,
         "overlay": generated_overlay_summary,
+        "live_human_view_asset": sync_payload,
         "reader_generation": generation_summary,
         "reader_manifest_overlay": reader_manifest.get("reader_overlay") if isinstance(reader_manifest, dict) else None,
         "status": "pass" if not errors else "fail",

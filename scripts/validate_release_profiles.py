@@ -538,9 +538,16 @@ def main() -> None:
                 "reader_overlay_policy.default_manifest must be "
                 "editions/reader_overlays/v1_0/manifest.json."
             )
+        if overlay_policy.get("live_human_view_asset") != "assets/reader-overlays.html":
+            errors.append("reader_overlay_policy.live_human_view_asset must be assets/reader-overlays.html.")
+        if overlay_policy.get("live_human_view_asset_sync") != "scripts/sync_reader_overlay_asset.py":
+            errors.append(
+                "reader_overlay_policy.live_human_view_asset_sync must be "
+                "scripts/sync_reader_overlay_asset.py."
+            )
         if overlay_policy.get("generated_delta_report") != "reader_delta_report.md":
             errors.append("reader_overlay_policy.generated_delta_report must be reader_delta_report.md.")
-        for path_key in ("script", "default_manifest"):
+        for path_key in ("script", "default_manifest", "live_human_view_asset", "live_human_view_asset_sync"):
             value = overlay_policy.get(path_key)
             if isinstance(value, str) and value and not (ROOT / value).exists():
                 errors.append(f"reader_overlay_policy.{path_key} does not exist: {value}")
@@ -683,6 +690,8 @@ def main() -> None:
     if isinstance(live_human_policy, dict):
         expected_values = {
             "toggle_asset": "assets/reading-mode.html",
+            "reader_overlay_asset": "assets/reader-overlays.html",
+            "reader_overlay_asset_sync": "scripts/sync_reader_overlay_asset.py",
             "static_validator": "scripts/validate_live_human_view.py",
             "browser_validator": "scripts/validate_live_human_view_browser.js",
             "browser_report_path": "build/live_human_view_browser_report.json",
@@ -708,7 +717,13 @@ def main() -> None:
         for key, expected in expected_values.items():
             if live_human_policy.get(key) != expected:
                 errors.append(f"live_human_view_policy.{key} must be {expected!r}.")
-        for path_key in ("toggle_asset", "static_validator", "browser_validator"):
+        for path_key in (
+            "toggle_asset",
+            "reader_overlay_asset",
+            "reader_overlay_asset_sync",
+            "static_validator",
+            "browser_validator",
+        ):
             value = live_human_policy.get(path_key)
             if isinstance(value, str) and value and not (ROOT / value).exists():
                 errors.append(f"live_human_view_policy.{path_key} does not exist: {value}")
@@ -858,6 +873,7 @@ def main() -> None:
             release_gate,
             [
                 "python3 scripts/build_reader_edition.py --check",
+                "python3 scripts/sync_reader_overlay_asset.py --check",
                 "python3 scripts/validate_reader_overlays.py --check",
                 "python3 scripts/validate_human_reading_paths.py",
                 "python3 scripts/validate_reader_evidence_boundaries.py --check",
@@ -880,6 +896,7 @@ def main() -> None:
                 "python3 scripts/validate_reading_mode_toggle.py",
                 "python3 scripts/validate_human_reading_paths.py",
                 "python3 scripts/validate_reader_evidence_boundaries.py --check",
+                "python3 scripts/sync_reader_overlay_asset.py --check",
                 "python3 scripts/validate_reader_overlays.py --check",
                 "python3 scripts/validate_publication.py",
                 "python3 scripts/validate_book.py",

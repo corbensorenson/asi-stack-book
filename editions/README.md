@@ -24,6 +24,7 @@ Create or check a derived reader-edition draft with:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py
 ```
@@ -44,4 +45,4 @@ python3 scripts/build_audio_script.py
 
 The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts have been rendered, converted, or generated until those commands actually run and a release record says so.
 
-Generated reader workspaces include `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. These manifests, checklists, delta reports, and companion notes document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.
+`scripts/sync_reader_overlay_asset.py` embeds active overlay operations in `assets/reader-overlays.html`, which is included before the live reading-mode toggle so the GitHub Pages Human view can consume the same section-delta source as generated reader editions. Generated reader workspaces include `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. These manifests, checklists, delta reports, and companion notes document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.

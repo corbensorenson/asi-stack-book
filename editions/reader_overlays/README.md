@@ -1,6 +1,6 @@
 # Reader Overlays
 
-Reader overlays are semantic deltas for major human-reader editions.
+Reader overlays are semantic deltas for major human-reader editions and live Human view.
 
 The live Quarto source remains canonical. Generated reader workspaces under `build/reader_edition/` remain disposable. When a major reader version needs prose that is specific to the relaxed human edition, add an overlay operation here instead of hand-editing generated files.
 
@@ -16,9 +16,12 @@ Supported operation types are section-anchored:
 
 Each operation targets a stable repository-relative `.qmd` file and a heading by level and title. Do not target generated line numbers.
 
+Active operations are embedded into `assets/reader-overlays.html` by `scripts/sync_reader_overlay_asset.py`. The generated reader edition applies the operations to derived Quarto source, while the live Human view applies the same operations in the browser only when Human view is active.
+
 Validate overlays with:
 
 ```bash
+python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py --check
 ```
