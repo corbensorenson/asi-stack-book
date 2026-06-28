@@ -30,6 +30,7 @@ REQUIRED_FIELDS = {
     "allowed_divergence",
     "blocked_divergence",
     "graduation_criteria",
+    "chapter_review_matrix",
     "chapter_records",
     "reconciliation_report",
     "non_claims",
@@ -132,6 +133,27 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
     if "pacing" not in allowed or "section flow" not in allowed:
         errors.append("allowed_divergence must include pacing and section flow.")
 
+    matrix = data.get("chapter_review_matrix")
+    if not isinstance(matrix, dict):
+        errors.append("chapter_review_matrix must be an object.")
+    else:
+        expected = {
+            "path": "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
+            "summary": "docs/reader_chapter_review_matrix.md",
+            "sync_command": "python3 scripts/sync_reader_chapter_review_matrix.py --write",
+            "check_command": "python3 scripts/sync_reader_chapter_review_matrix.py --check",
+        }
+        for key, expected_value in expected.items():
+            if matrix.get(key) != expected_value:
+                errors.append(f"chapter_review_matrix.{key} must be {expected_value}.")
+        for key in ("path", "summary"):
+            value = matrix.get(key)
+            if isinstance(value, str):
+                require_existing_path(f"chapter_review_matrix.{key}", value, errors)
+        policy = matrix.get("policy")
+        if not isinstance(policy, str) or "book_structure.json" not in policy or "release blockers" not in policy:
+            errors.append("chapter_review_matrix.policy must mention book_structure.json and release blockers.")
+
 
 def validate_chapter_records(data: dict[str, Any], chapters: dict[str, dict[str, Any]], errors: list[str]) -> None:
     records = data.get("chapter_records")
@@ -203,6 +225,7 @@ def validate_docs_reference_manifest(errors: list[str]) -> None:
         ROOT / "docs" / "release_editions_plan.md": "editions/reader_manuscript/v1_0/manifest.json",
         ROOT / "docs" / "major_version_release_runbook.md": "python3 scripts/validate_reader_manuscript_manifest.py",
         ROOT / "README.md": "scripts/validate_reader_manuscript_manifest.py",
+        ROOT / "docs" / "repository_map.md": "scripts/sync_reader_chapter_review_matrix.py --check",
     }
     for path, needle in required_mentions.items():
         text = path.read_text(encoding="utf-8", errors="ignore")

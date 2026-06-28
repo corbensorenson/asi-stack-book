@@ -60,6 +60,7 @@ python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_schemas.py
@@ -81,6 +82,7 @@ python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -93,9 +95,9 @@ Generate the local source workspace:
 python3 scripts/build_reader_edition.py
 ```
 
-Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, `docs/reader_continuity_audit.md`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
+Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, `docs/reader_continuity_audit.md`, `docs/reader_chapter_review_matrix.md`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. The review matrix names which chapters are not started, spot checked, active-overlay chapters, companion-note candidates, curated-manuscript candidates, and still blocked from release. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
 
-If the reader release has graduated to a curated reader manuscript, do not treat generated source as the only review target. Use `editions/reader_manuscript/v1_0/manifest.json` as the source-status record, use generated reader source as the reconciliation baseline, then review the curated manuscript chapter by chapter against the manifest and evidence boundaries before rendering.
+If the reader release has graduated to a curated reader manuscript, do not treat generated source as the only review target. Use `editions/reader_manuscript/v1_0/manifest.json` as the source-status record, use `editions/reader_manuscript/v1_0/chapter_review_matrix.json` as the chapter review queue, use generated reader source as the reconciliation baseline, then review the curated manuscript chapter by chapter against the manifest and evidence boundaries before rendering.
 
 Attempt specific formats and record actual local outcomes:
 

@@ -31,7 +31,7 @@ The live book serves all three audiences by separating content layers instead of
 
 Every chapter should keep meaning-critical caveats in the reader-facing spine. Live-only sections can expand the evidence trail, but they should not be the only place where a reader learns that a claim is speculative, blocked, or untested.
 
-Reader-source divergence is allowed only after review shows that generated reader source plus overlays are too limited for a high-quality human book. At that point, the curated reader manuscript becomes a tracked human-prose source, while `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof artifacts, and release records remain authoritative for evidence and structure. Each major reader release should include a reconciliation report that confirms the curated reader manuscript still maps to manifest chapters and preserves support boundaries.
+Reader-source divergence is allowed only after review shows that generated reader source plus overlays are too limited for a high-quality human book. The manifest-synced review matrix at `editions/reader_manuscript/v1_0/chapter_review_matrix.json` is the durable queue for that decision: it records each manifest chapter's review status, active overlay count, companion-note candidate status, curated-manuscript candidate status, and release blockers. At graduation, the curated reader manuscript becomes a tracked human-prose source, while `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof artifacts, and release records remain authoritative for evidence and structure. Each major reader release should include a reconciliation report that confirms the curated reader manuscript still maps to manifest chapters and preserves support boundaries.
 
 ## Major-Version Artifact Ladder
 
@@ -64,6 +64,7 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `editions/release_profiles.json` defines release profiles, audiences, strip rules, expected formats, release gates, and non-claims.
 - `editions/reader_overlays/` defines versioned semantic reader overlays for human-edition deltas that should survive regeneration without forking the live book.
 - `editions/reader_manuscript/v1_0/manifest.json` records the dormant curated reader-manuscript path, its graduation criteria, allowed prose divergence, blocked evidence divergence, generated-reader baseline, reconciliation requirement, and current `not_graduated` status.
+- `editions/reader_manuscript/v1_0/chapter_review_matrix.json` records the manifest-synced human-reader chapter review queue; `docs/reader_chapter_review_matrix.md` is the generated public summary.
 - `appendices/J_release_editions.qmd` publishes the model inside the live book.
 - `docs/major_version_release_runbook.md` gives the operational sequence for live, research, reader, ebook/document, and audio release work.
 - `scripts/validate_release_profiles.py` checks the profile metadata.
@@ -71,6 +72,7 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `scripts/validate_reader_overlays.py` checks the reader-overlay manifest and confirms generated reader builds include a coherent `reader_delta_report.md` with either a zero-active-operation note or operation digests and before/after review excerpts.
 - `scripts/audit_reader_continuity.py --check` verifies that `docs/reader_continuity_audit.md` matches the current generated reader source and remains a heuristic review queue rather than a manual review claim.
 - `scripts/validate_reader_manuscript_manifest.py` checks that any future curated reader manuscript remains a parallel derivative source for prose and cannot silently diverge from manifest chapter IDs, support boundaries, source boundaries, proof/test status, implementation horizons, or release records.
+- `scripts/sync_reader_chapter_review_matrix.py --check` checks that the reader-review queue stays in manifest order with current overlay counts and explicit release blockers.
 - `scripts/sync_reader_overlay_asset.py` embeds active overlay operations in `assets/reader-overlays.html` so the live Human view can apply the same section deltas as generated reader editions.
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, chapter-specific Handoff continuity, view-block cleanup, and stripped live-only scaffolding.
 - `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and inline plain-language support-state boundaries.
@@ -94,6 +96,7 @@ python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 ```

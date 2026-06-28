@@ -105,6 +105,25 @@ The three medium-priority audit rows have been read and classified in `docs/read
 
 This manual pass does not make the reader manuscript release-reviewed. It only records that the current medium-priority heuristic rows are not immediate blockers for the generated reader path.
 
+## Chapter Review Matrix
+
+The durable Phase 2 queue now lives in
+`editions/reader_manuscript/v1_0/chapter_review_matrix.json`, with the public
+summary at `docs/reader_chapter_review_matrix.md`. Generate or validate it with:
+
+```bash
+python3 scripts/sync_reader_chapter_review_matrix.py --write
+python3 scripts/sync_reader_chapter_review_matrix.py --check
+```
+
+The current matrix records 54 manifest-aligned chapter rows, 22
+`spot_checked` rows from this baseline and the medium-priority review, 32
+`not_started` rows, 20 chapters with active reader overlays, 3 companion-note
+candidates, and 1 curated-manuscript candidate. Every row still has release
+blockers for missing full chapter review, missing reader release record, and
+missing artifact review. The matrix is a review queue and release-control
+surface, not a reviewed reader manuscript.
+
 ## Residuals
 
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.
@@ -113,7 +132,7 @@ This manual pass does not make the reader manuscript release-reviewed. It only r
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
-- The automated continuity audit is current, but it does not replace the full 54-chapter human read.
+- The automated continuity audit and reader chapter review matrix are current, but neither replaces the full 54-chapter human read.
 
 ## Next Review Pass
 

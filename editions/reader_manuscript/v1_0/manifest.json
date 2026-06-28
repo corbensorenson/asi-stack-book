@@ -53,6 +53,13 @@
     "A reconciliation report exists before any reader artifact is rendered from curated source.",
     "The release record names curated reader source only after review actually happens."
   ],
+  "chapter_review_matrix": {
+    "path": "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
+    "summary": "docs/reader_chapter_review_matrix.md",
+    "sync_command": "python3 scripts/sync_reader_chapter_review_matrix.py --write",
+    "check_command": "python3 scripts/sync_reader_chapter_review_matrix.py --check",
+    "policy": "Track chapter-by-chapter human-reader review status, overlay disposition, companion-note candidates, curated-manuscript candidates, and release blockers while keeping manifest chapter identity synced to book_structure.json."
+  },
   "chapter_records": [],
   "reconciliation_report": {
     "required_before_release": true,

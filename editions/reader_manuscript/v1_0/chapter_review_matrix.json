@@ -1,0 +1,1217 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "active_review_queue",
+  "last_updated": "2026-06-28",
+  "source_of_truth": "book_structure.json",
+  "generated_reader_baseline": {
+    "command": "python3 scripts/build_reader_edition.py",
+    "workspace": "build/reader_edition",
+    "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
+  },
+  "review_status_counts": {
+    "not_started": 32,
+    "spot_checked": 22
+  },
+  "disposition_counts": {
+    "companion_note_candidate": 3,
+    "curated_manuscript_candidate": 1,
+    "no_immediate_action": 3,
+    "none": 34,
+    "reader_overlay_active": 20
+  },
+  "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
+  "chapters": [
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "title": "ASI Is a Stack, Not a Model",
+      "live_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "title": "The Efficient ASI Hypothesis",
+      "live_file": "chapters/the-efficient-asi-hypothesis.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "system-boundaries-and-authority",
+      "title": "System Boundaries and Authority",
+      "live_file": "chapters/system-boundaries-and-authority.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/system-boundaries-and-authority.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "title": "Failure Modes of Ungoverned Intelligence",
+      "live_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "title": "Evidence States and Claim Discipline",
+      "live_file": "chapters/evidence-states-and-claim-discipline.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "title": "Human Intent as a Formal Input",
+      "live_file": "chapters/human-intent-as-a-formal-input.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/human-intent-as-a-formal-input.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "constitutional-alignment-substrate",
+      "title": "Constitutional Alignment Substrate",
+      "live_file": "chapters/constitutional-alignment-substrate.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/constitutional-alignment-substrate.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "agency-dignity-and-corrigibility",
+      "title": "Agency, Dignity, and Corrigibility",
+      "live_file": "chapters/agency-dignity-and-corrigibility.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/agency-dignity-and-corrigibility.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "title": "Moral Uncertainty and Value Conflict",
+      "live_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/moral-uncertainty-and-value-conflict.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "governance-rights-fork-exit-and-audit",
+      "title": "Governance Rights: Fork, Exit, and Audit",
+      "live_file": "chapters/governance-rights-fork-exit-and-audit.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "stable-capability-fields",
+      "title": "Stable Capability Fields",
+      "live_file": "chapters/stable-capability-fields.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/stable-capability-fields.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "capability-replacement-and-rollback",
+      "title": "Capability Replacement and Rollback",
+      "live_file": "chapters/capability-replacement-and-rollback.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/capability-replacement-and-rollback.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "title": "Security Kernel and Digital SCIFs",
+      "live_file": "chapters/security-kernel-and-digital-scifs.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "title": "Recursive Self-Improvement Boundaries",
+      "live_file": "chapters/recursive-self-improvement-boundaries.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "intent-to-execution-contracts",
+      "title": "Intent-to-Execution Contracts",
+      "live_file": "chapters/intent-to-execution-contracts.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/intent-to-execution-contracts.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "title": "Command Contracts and Semantic Interfaces",
+      "live_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "planning-as-a-control-layer",
+      "title": "Planning as a Control Layer",
+      "live_file": "chapters/planning-as-a-control-layer.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/planning-as-a-control-layer.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "title": "PlanForge DAGs and Intelligence Arbitrage",
+      "live_file": "chapters/planforge-dags-and-intelligence-arbitrage.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/planforge-dags-and-intelligence-arbitrage.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "title": "Cognitive Compilation and Semantic IR",
+      "live_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "virtual-context-abi",
+      "title": "Virtual Context ABI",
+      "live_file": "chapters/virtual-context-abi.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/virtual-context-abi.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "semantic-pages-context-cells-and-certificates",
+      "title": "Semantic Pages, Context Cells, and Certificates",
+      "live_file": "chapters/semantic-pages-context-cells-and-certificates.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/semantic-pages-context-cells-and-certificates.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "title": "Context Transactions, Snapshots, Mounts, and Taint",
+      "live_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "title": "Verification Bandwidth and Context Adequacy",
+      "live_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "title": "Claim Ledgers and Belief Revision",
+      "live_file": "chapters/claim-ledgers-and-belief-revision.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/claim-ledgers-and-belief-revision.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "title": "Spinoza Verification and Proof-Carrying Claims",
+      "live_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
+      "title": "Unified Adaptive Tribunal and Adversarial Review",
+      "live_file": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "labor-os-and-typed-jobs",
+      "title": "Labor OS and Typed Jobs",
+      "live_file": "chapters/labor-os-and-typed-jobs.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/labor-os-and-typed-jobs.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "title": "Artifact Graphs, Audit Logs, and Replay",
+      "live_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "title": "Runtime Adapters, Tool Permissions, and Human Approval",
+      "live_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "title": "Procedural Memory and Cognitive Loop Closure",
+      "live_file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "title": "Routing Heads and Specialist Cores",
+      "live_file": "chapters/routing-heads-and-specialist-cores.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/routing-heads-and-specialist-cores.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "title": "Readiness Gates, Residual Escrow, and Quarantine",
+      "live_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "moecot-runtime-and-multi-core-orchestration",
+      "title": "MoECOT Runtime and Multi-Core Orchestration",
+      "live_file": "chapters/moecot-runtime-and-multi-core-orchestration.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/moecot-runtime-and-multi-core-orchestration.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "title": "Personal Compute Hives and Federated Edge Intelligence",
+      "live_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "overlay_operation_count": 6,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "title": "Compact Generative Systems and Residual Honesty",
+      "live_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "generate-verify-repair-compression",
+      "title": "Generate-Verify-Repair Compression",
+      "live_file": "chapters/generate-verify-repair-compression.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/generate-verify-repair-compression.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "fast-generation-architectures",
+      "title": "Fast Generation Architectures",
+      "live_file": "chapters/fast-generation-architectures.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/fast-generation-architectures.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "title": "RankFold, NeuralFold, and Artifact Compression",
+      "live_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "semantic-representation-and-tree-structured-models",
+      "title": "Semantic Representation and Tree-Structured Models",
+      "live_file": "chapters/semantic-representation-and-tree-structured-models.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/semantic-representation-and-tree-structured-models.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "title": "Resource Economics and Token Budgets",
+      "live_file": "chapters/resource-economics-and-token-budgets.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/resource-economics-and-token-budgets.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "simulation-fidelity-and-physical-constraints",
+      "title": "Simulation Fidelity and Physical Constraints",
+      "live_file": "chapters/simulation-fidelity-and-physical-constraints.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/simulation-fidelity-and-physical-constraints.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "mathematical-and-search-substrates",
+      "title": "Mathematical and Search Substrates",
+      "live_file": "chapters/mathematical-and-search-substrates.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/mathematical-and-search-substrates.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "title": "Circle Calculus and Proof-Carrying AI Contracts",
+      "live_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "medium_priority_manual_review",
+      "dispositions": [
+        "reader_overlay_active",
+        "companion_note_candidate",
+        "no_immediate_action"
+      ],
+      "review_refs": [
+        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+      ],
+      "review_notes": "Medium-priority density row read; no additional overlay now. The theorem-linked receipt boundary should stay visible, with possible companion-note or glossary treatment later.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+      "live_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+      "live_file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "title": "Executable Specifications and Lean Proof Envelope",
+      "live_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "overlay_operation_count": 1,
+      "review_status": "spot_checked",
+      "review_depth": "medium_priority_manual_review",
+      "dispositions": [
+        "reader_overlay_active",
+        "companion_note_candidate",
+        "no_immediate_action"
+      ],
+      "review_refs": [
+        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+      ],
+      "review_notes": "Medium-priority density row read; no additional overlay now. Future reader release work may route proof-envelope vocabulary through companion notes or glossary treatment.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
+      "live_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "title": "Policy Optimization and Learning from Feedback",
+      "live_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "overlay_operation_count": 2,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "reader_overlay_active"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "title": "Artifact Steward Agents and Living Project Governance",
+      "live_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "overlay_operation_count": 3,
+      "review_status": "spot_checked",
+      "review_depth": "medium_priority_manual_review",
+      "dispositions": [
+        "reader_overlay_active",
+        "companion_note_candidate",
+        "curated_manuscript_candidate",
+        "no_immediate_action"
+      ],
+      "review_refs": [
+        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+      ],
+      "review_notes": "Medium-priority length row read; retained for now because the governance, treasury, worker-federation, contribution-ledger, event-taint, and sunset concepts are central. Future curated reader work may compress examples or move the implementation ladder to companion material.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "integrated-reference-architecture",
+      "title": "Integrated Reference Architecture",
+      "live_file": "chapters/integrated-reference-architecture.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/integrated-reference-architecture.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "title": "Project Theseus as Report-First Implementation Reference",
+      "live_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "prototype-roadmap",
+      "title": "Prototype Roadmap",
+      "live_file": "chapters/prototype-roadmap.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/prototype-roadmap.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "living-book-methodology",
+      "title": "Living Book Methodology",
+      "live_file": "chapters/living-book-methodology.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/living-book-methodology.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "not_started",
+      "review_depth": "none",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [],
+      "review_notes": "Awaiting full human-reader continuity review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    },
+    {
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "title": "Open Research Agenda and Bibliography Plan",
+      "live_file": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "generated_reader_file": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "overlay_operation_count": 0,
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
+      "dispositions": [
+        "none"
+      ],
+      "review_refs": [
+        "docs/reader_manuscript_review.md#generated-baseline"
+      ],
+      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "release_blockers": [
+        "full_chapter_review_not_recorded",
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed"
+      ]
+    }
+  ],
+  "non_claims": [
+    "This matrix is a reader-review queue, not a reviewed reader release.",
+    "This matrix does not create EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.",
+    "This matrix does not promote any claim support state.",
+    "This matrix does not supersede the live Quarto book for claims, source boundaries, proof/test status, implementation horizons, or release records."
+  ]
+}

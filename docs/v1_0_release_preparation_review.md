@@ -70,6 +70,10 @@ Results:
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
+- `docs/reader_chapter_review_matrix.md` records the manifest-synced
+  54-chapter reader-review queue: 22 `spot_checked`, 32 `not_started`, 20
+  active-overlay chapters, 3 companion-note candidates, 1 curated-manuscript
+  candidate, and release blockers on every row.
 
 ## Current Release State
 
@@ -88,11 +92,17 @@ Results:
   Human Intent, System Boundaries, Evidence States, Verification Bandwidth, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Efficient ASI, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Executable Specifications, Policy
   Optimization, Artifact Steward Agents, and Semantic Representation operations.
   They are reader-only semantic deltas, not a reviewed reader release.
+- The reader chapter review matrix is a release-control queue only. It preserves
+  manifest chapter identity, current overlay counts, and review blockers; it is
+  not a full human continuity review and does not make any artifact
+  release-ready.
 
 ## Blockers Before Major-Version Packaging
 
 1. A validated live-book candidate needs to be selected and tagged.
-2. The generated reader manuscript needs full human continuity review.
+2. The generated reader manuscript needs full human continuity review; the
+   current matrix still has 32 `not_started` chapter rows and release blockers
+   on every row.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
 4. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual

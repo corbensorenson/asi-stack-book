@@ -1,0 +1,85 @@
+# Reader Chapter Review Matrix
+
+Last updated: 2026-06-28
+
+This document is generated from `editions/reader_manuscript/v1_0/chapter_review_matrix.json` by `python3 scripts/sync_reader_chapter_review_matrix.py --write`.
+
+It is a Phase 2 review-control surface for the normal human-reader manuscript. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.
+
+## Counts
+
+| Kind | Count |
+|---|---:|
+| review_status:not_started | 32 |
+| review_status:spot_checked | 22 |
+| disposition:companion_note_candidate | 3 |
+| disposition:curated_manuscript_candidate | 1 |
+| disposition:no_immediate_action | 3 |
+| disposition:none | 34 |
+| disposition:reader_overlay_active | 20 |
+
+## Chapter Queue
+
+| Part | Chapter | Review status | Depth | Overlays | Dispositions | Release blockers |
+|---|---|---|---|---:|---|---|
+| Part I - Foundations, Alignment, and Governance | `asi-is-a-stack-not-a-model` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `the-efficient-asi-hypothesis` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `system-boundaries-and-authority` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `failure-modes-of-ungoverned-intelligence` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `evidence-states-and-claim-discipline` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `human-intent-as-a-formal-input` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | spot_checked | representative_spot_check | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `security-kernel-and-digital-scifs` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `recursive-self-improvement-boundaries` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `intent-to-execution-contracts` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `command-contracts-and-semantic-interfaces` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `planning-as-a-control-layer` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `planforge-dags-and-intelligence-arbitrage` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `semantic-pages-context-cells-and-certificates` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `unified-adaptive-tribunal-and-adversarial-review` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `labor-os-and-typed-jobs` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | spot_checked | representative_spot_check | 6 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `circle-calculus-and-proof-carrying-ai-contracts` | spot_checked | medium_priority_manual_review | 2 | reader_overlay_active, companion_note_candidate, no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `executable-specifications-and-lean-proof-envelope` | spot_checked | medium_priority_manual_review | 1 | reader_overlay_active, companion_note_candidate, no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `benchmark-ratchets-and-anti-goodhart-evidence` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `policy-optimization-and-learning-from-feedback` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `artifact-steward-agents-and-living-project-governance` | spot_checked | medium_priority_manual_review | 3 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `integrated-reference-architecture` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `project-theseus-as-report-first-implementation-reference` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `prototype-roadmap` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `living-book-methodology` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `open-research-agenda-and-bibliography-plan` | spot_checked | representative_spot_check | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+
+## Non-Claims
+
+- This matrix is a reader-review queue, not a reviewed reader release.
+- This matrix does not create EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.
+- This matrix does not promote any claim support state.
+- This matrix does not supersede the live Quarto book for claims, source boundaries, proof/test status, implementation horizons, or release records.

@@ -10,6 +10,7 @@ Validate the manifest with:
 
 ```bash
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-Generated reader files under `build/reader_edition/` are still disposable. Do not copy or hand-edit them here as a release shortcut. A curated chapter belongs here only after a review decision says overlays are too small for the intended human-reader edit and the chapter has a reconciliation record back to the live manifest chapter.
+Generated reader files under `build/reader_edition/` are still disposable. Do not copy or hand-edit them here as a release shortcut. The durable reader-review queue is `v1_0/chapter_review_matrix.json`, with a public summary at `docs/reader_chapter_review_matrix.md`; run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter, overlay, or review-decision changes. A curated chapter belongs here only after a review decision says overlays are too small for the intended human-reader edit and the chapter has a reconciliation record back to the live manifest chapter.

@@ -21,6 +21,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
 - `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The current v1.0 overlay set carries 33 active operations across opening-chapter prose, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation for Human view and generated reader editions only.
 - `editions/reader_manuscript/v1_0/manifest.json` defines the dormant curated reader-manuscript path for the point where generated reader output plus overlays are no longer enough. Its current status is `not_graduated`, and `scripts/validate_reader_manuscript_manifest.py` enforces that any future curated manuscript remains a parallel derivative source for human prose, not an equal authority for claims, support states, source boundaries, proof/test status, implementation horizons, or release records.
+- `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and `docs/reader_chapter_review_matrix.md` track the full 54-chapter human-reader review queue. `scripts/sync_reader_chapter_review_matrix.py --check` keeps chapter IDs, part order, live files, generated-reader files, and active overlay counts synced to `book_structure.json` while preserving review statuses, dispositions, companion-note candidates, curated-manuscript candidates, and release blockers.
 - `scripts/sync_reader_overlay_asset.py` embeds active reader overlay operations in `assets/reader-overlays.html` so the live Human view and generated reader edition share the same section-delta source.
 - `scripts/validate_reader_overlays.py` checks that reader overlays are section-anchored, apply cleanly, and produce a generated delta report with operation digests and before/after review excerpts.
 - `scripts/audit_reader_continuity.py --check` keeps `docs/reader_continuity_audit.md` current as a generated Phase 2 heuristic queue for human-reader continuity review; it does not claim a reviewed reader release exists.
@@ -58,6 +59,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
+| [docs/reader_chapter_review_matrix.md](docs/reader_chapter_review_matrix.md) | Manifest-synced 54-chapter human-reader review queue and release blockers. |
 | [docs/reader_format_dry_run.md](docs/reader_format_dry_run.md) | Local HTML/EPUB/DOCX reader-format dry-run record and non-release boundary. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
 | [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |
@@ -106,6 +108,7 @@ python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_support_state_transitions.py
 python3 scripts/validate_authority_transitions.py
