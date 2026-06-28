@@ -245,7 +245,7 @@ Acceptance criteria:
 
 ## Phase 8 - Major Version Reader And Audio Packaging
 
-Status: future, blocked on reviewed reader manuscript.
+Status: preparation reviewed; still future and blocked on reviewed reader manuscript. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, and audio-script-check commands, but no tag, reader release, ebook/document/PDF artifact, audiobook, or edition release record was produced.
 
 Purpose: produce human-consumption artifacts only after the live and reader surfaces are reviewed.
 
