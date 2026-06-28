@@ -63,7 +63,7 @@ Efficiency routes cognition by cost and quality. That only works if route select
 
 Authority is not a mood, trust score, or model reputation. It is a typed capability attached to a principal, layer, tool, field, artifact, or handoff, bounded by a ceiling and revoked through an auditable path. VIEA needs this to keep intent-to-execution from becoming intent-to-side-effect. SCF needs it so replacement implementations cannot inherit broader powers by occupying a stable capability slot. Talos needs it so typed jobs and tool permissions stay inside a control plane. Ladon/Manhattan and GenesisCode sharpen the same point: secrets, effects, patches, and executors need explicit gates.
 
-The practical purpose is to make refusal and escalation normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence names the boundary the stack must protect. It lets the architecture remain useful under pressure, because a denial is not a failure to be intelligent; it is evidence that the correct authority boundary held.
+Refusal and escalation should behave like normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence names the boundary the stack must protect. It lets the architecture remain useful under pressure, because a denial is not a failure to be intelligent; it is evidence that the correct authority boundary held.
 
 ## Why existing approaches are insufficient
 

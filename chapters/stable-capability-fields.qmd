@@ -66,7 +66,7 @@ Rights become technical only when capability identity remains stable. Stable cap
 
 SCF supplies the core distinction: a field is the durable semantic boundary; an implementation is a replaceable realization of that boundary. The field carries identity, interface, authority ceiling, evaluator policy, qualification context, route validity, state-migration obligations, evidence, lifecycle state, and recovery paths. That separation is what lets recursive improvement be bounded instead of ambient.
 
-The practical point is that capability names should not be allowed to drift faster than evidence. If "planner," "retriever," "verifier," or "runtime adapter" means a different authority surface after every upgrade, the rest of the stack cannot reason about safety, regressions, or replacement. The field fixes the question before candidates compete to answer it, and that fixed question is what lets governance rights survive technical churn.
+Capability names should not be allowed to drift faster than evidence. If "planner," "retriever," "verifier," or "runtime adapter" means a different authority surface after every upgrade, the rest of the stack cannot reason about safety, regressions, or replacement. The field fixes the question before candidates compete to answer it, and that fixed question is what lets governance rights survive technical churn.
 
 ## Why existing approaches are insufficient
 

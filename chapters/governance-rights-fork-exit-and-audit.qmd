@@ -73,7 +73,7 @@ Transparency is not the same as auditability. A user can be shown an explanation
 
 The rights have to be technical. They need artifacts, permissions, retention rules, redaction rules, and failure tests.
 
-The practical test is whether a right still works when it is inconvenient for the system. Audit matters most when the decision is contested. Exit matters most when the platform would prefer retention. Fork matters most when maintainers disagree. Dissent matters most when the governing process wants closure. If those rights depend on voluntary cooperation from the authority being challenged, they are not robust interfaces; they are policy aspirations.
+A right earns engineering status when it still works while inconvenient for the system. Audit matters most when the decision is contested. Exit matters most when the platform would prefer retention. Fork matters most when maintainers disagree. Dissent matters most when the governing process wants closure. If those rights depend on voluntary cooperation from the authority being challenged, they are not robust interfaces; they are policy aspirations.
 
 This does not mean rights should override every safety boundary. A fork can be denied or narrowed when it would expose private data, secrets, dangerous tools, or obligations that cannot be transferred. An audit can redact protected material. An exit path can preserve legal or safety constraints. The engineering requirement is that denial itself becomes an artifact with scope, reason, authority, and appeal path, rather than disappearing into an opaque refusal.
 
