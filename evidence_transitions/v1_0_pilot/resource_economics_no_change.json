@@ -5,6 +5,7 @@
     "chapters/resource-economics-and-token-budgets.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "docs/generation_mode_baseline_harness.md",
+    "docs/resource_budget_ledger_harness.md",
     "docs/external_literature_backfill_phase6.md"
   ],
   "claim_record_refs": [
@@ -12,13 +13,14 @@
     "appendices/E_codex_test_specs.qmd",
     "schemas/resource_budget_record.schema.json",
     "schemas/generation_mode_record.schema.json",
-    "experiments/generation_mode_baselines/results/2026-06-28-local.md"
+    "experiments/generation_mode_baselines/results/2026-06-28-local.md",
+    "experiments/resource_budget_ledgers/results/2026-06-28-local.md"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "deterministic resource-budget and generation-mode fixture accounting only; no budget scheduler, load-stability experiment, KV-cache memory measurement, cost-quality economics result, verification-tax optimization, runtime budget enforcement, or serving benchmark",
+  "scope_boundary": "deterministic resource-budget, generation-mode, and budget-ledger fixture accounting only; no budget scheduler, review-queue optimizer, load-stability experiment, KV-cache memory measurement, cost-quality economics result, verification-tax optimization, runtime budget enforcement, or serving benchmark",
   "evidence_roles": [
     "deterministic_harness",
     "schema_fixture",
@@ -26,10 +28,11 @@
     "chapter_limitations",
     "source_evidence_audit"
   ],
-  "transition_reason": "The repository now has resource-budget schema validation and generation-mode fixtures that require budget refs, useful-solution-per-second accounting, quality metrics, residual metrics, fallback behavior, and no-promotion boundaries. The Resource Economics chapter already frames budgets as typed records for value, risk, capacity, verification tax, protected gates, serving pressure, and residuals. These artifacts improve the record discipline for future budget tests, but they do not implement a budget scheduler, measure load stability, reproduce KV-cache memory behavior, quantify verification-tax optimization, or establish an economic outcome.",
+  "transition_reason": "The repository now has resource-budget schema validation, generation-mode fixtures that require budget refs, useful-solution-per-second accounting, quality metrics, residual metrics, fallback behavior, and no-promotion boundaries, plus a deterministic budget-ledger harness for dispatch, high-risk escalation, protected overhead, displaced-cost residualization, scarce review-capacity deferral, and expected-invalid shortcut rejection. The Resource Economics chapter already frames budgets as typed records for value, risk, capacity, verification tax, protected gates, serving pressure, and residuals. These artifacts improve the record discipline for future budget tests, but they do not implement a budget scheduler, optimize a review queue, measure load stability, reproduce KV-cache memory behavior, quantify verification-tax optimization, or establish an economic outcome.",
   "required_artifacts": [
     "budget allocator or scheduler run with task, route, capacity, and protected-gate records",
     "load-stability scenario with burst, regeneration, deferral, and failure accounting",
+    "review-capacity allocation trace with actual high-risk and low-risk queue behavior",
     "risk-adjusted verification-tax experiment with baseline and negative control",
     "KV-cache or serving-memory measurement tied to resource-budget records",
     "cost-quality tradeoff run with residual and human-review accounting",
@@ -38,8 +41,11 @@
   ],
   "artifact_refs": [
     "docs/generation_mode_baseline_harness.md",
+    "docs/resource_budget_ledger_harness.md",
     "scripts/validate_generation_mode_baselines.py",
+    "scripts/validate_resource_budget_ledgers.py",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
+    "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "schemas/resource_budget_record.schema.json",
     "schemas/generation_mode_record.schema.json",
     "docs/phase5_harness_registry.md"
@@ -54,31 +60,37 @@
     "docs/source_evidence_audit.md#resource-economics-and-token-budgets.core",
     "appendices/H_external_sources.qmd#ext_pagedattention_vllm_2023"
   ],
-  "verification_command": "python3 scripts/validate_generation_mode_baselines.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_command": "python3 scripts/validate_generation_mode_baselines.py && python3 scripts/validate_resource_budget_ledgers.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_v1_status_snapshot.py",
   "verification_result": "pass",
   "negative_results": [
     "Resource Economics remains at argument",
     "resource-budget fixtures are deterministic accounting fixtures",
+    "budget-ledger fixtures are deterministic decision fixtures",
     "no budget scheduler or allocator was run",
+    "no review-capacity queue optimizer was run",
     "no load-stability or verification-tax experiment was run",
     "no KV-cache, serving, or economic result is established"
   ],
   "negative_evidence_refs": [
     "chapters/resource-economics-and-token-budgets.qmd",
     "docs/generation_mode_baseline_harness.md",
+    "docs/resource_budget_ledger_harness.md",
     "docs/v1_0_candidate_status.md",
     "docs/external_literature_backfill_phase6.md"
   ],
   "downgrade_triggers": [
     "generation mode baseline harness failure",
+    "resource budget ledger harness failure",
     "resource-budget schema drift",
     "chapter text interpreted as measured budget optimization",
+    "scarce review-capacity fixture interpreted as deployed queue behavior",
     "KV-cache or serving context treated as reproduced local performance evidence",
     "support-state promotion without accepted transition"
   ],
-  "promotion_burden": "Move above argument only after the claim is narrowed to deterministic accounting behavior that passed, or after budget-allocation runs, load-stability scenarios, cost-quality-residual measurements, serving-memory or KV-cache measurements, verification-tax experiments, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "promotion_burden": "Move above argument only after the claim is narrowed to deterministic accounting behavior that passed, or after budget-allocation runs, review-capacity allocation traces, load-stability scenarios, cost-quality-residual measurements, serving-memory or KV-cache measurements, verification-tax experiments, and independent source-interpretation review are recorded with accepted evidence-transition records.",
   "limitations": [
     "deterministic fixtures do not implement a scheduler or allocator",
+    "scarce review-capacity fixtures do not optimize or measure a real review queue",
     "schema validation does not prove load stability or budget optimality",
     "external serving literature supplies comparison vocabulary rather than reproduced local measurements",
     "verification tax remains a required accounting field, not an optimized result",
@@ -91,6 +103,7 @@
   "reviewer_independence": "local maintainer-agent review only; not an independent scheduler, serving-system, economic, benchmarking, or source-interpretation audit",
   "acceptance_blockers": [
     "no budget scheduler run",
+    "no review-capacity queue trace",
     "no load-stability experiment",
     "no KV-cache or serving benchmark",
     "no cost-quality economics result",
@@ -101,6 +114,7 @@
   "non_claims": [
     "does not promote Resource Economics above argument",
     "does not prove budget scheduling",
+    "does not prove review-capacity optimization",
     "does not prove load stability",
     "does not prove KV-cache or serving performance",
     "does not prove verification-tax optimization or economic outcomes"
