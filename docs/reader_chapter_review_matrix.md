@@ -10,8 +10,8 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 9 |
-| review_status:spot_checked | 45 |
+| review_status:reviewed | 14 |
+| review_status:spot_checked | 40 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
 | disposition:no_immediate_action | 41 |
@@ -31,11 +31,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `security-kernel-and-digital-scifs` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `recursive-self-improvement-boundaries` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `security-kernel-and-digital-scifs` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `recursive-self-improvement-boundaries` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `intent-to-execution-contracts` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `command-contracts-and-semantic-interfaces` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `planning-as-a-control-layer` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |

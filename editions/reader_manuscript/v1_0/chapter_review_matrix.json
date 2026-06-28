@@ -10,8 +10,8 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 9,
-    "spot_checked": 45
+    "reviewed": 14,
+    "spot_checked": 40
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
@@ -233,17 +233,16 @@
       "live_file": "chapters/governance-rights-fork-exit-and-audit.qmd",
       "generated_reader_file": "build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter reads as contestability infrastructure with audit, exit, fork, redaction, appeal, and rights-preservation receipts. It remains technical but does not need an overlay in this first pass.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the governance-rights chapter. Audit, exit, fork, dissent, redaction, appeal, rights-preservation receipts, and safety-limited denial paths remain intact; no additional reader-only overlay is needed.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -256,17 +255,16 @@
       "live_file": "chapters/stable-capability-fields.qmd",
       "generated_reader_file": "build/reader_edition/chapters/stable-capability-fields.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup removed repeated continuity cadence. It now names reversible qualification cleanly and needs no reader-only overlay in this pass.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the stable-capability-fields chapter. Field/implementation separation, authority ceilings, qualification leases, evaluator integrity, regression memory, and rollback obligations remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -279,17 +277,16 @@
       "live_file": "chapters/capability-replacement-and-rollback.qmd",
       "generated_reader_file": "build/reader_edition/chapters/capability-replacement-and-rollback.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter clearly distinguishes candidate improvement from accepted replacement, keeps rollback receipts and monitor-window caveats visible, and needs no immediate reader-only overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the replacement and rollback chapter. Candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, evaluator independence, and non-promotion boundaries remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -302,17 +299,16 @@
       "live_file": "chapters/security-kernel-and-digital-scifs.qmd",
       "generated_reader_file": "build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter preserves the least-exposure security argument around handles, SCIF lifecycle, sanitized commits, residual leak risk, and non-claim boundaries without needing an overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the security-kernel chapter. Handles, SCIF lifecycle, sanitized commits, residual leak risk, audit receipts, and non-claim boundaries remain intact without claiming production isolation.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -325,17 +321,16 @@
       "live_file": "chapters/recursive-self-improvement-boundaries.qmd",
       "generated_reader_file": "build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter closes Part I with a coherent bounded-improvement gate: protected invariants, evaluator independence, boundary-delta review, monitor windows, rollback, and non-self-ratification remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the recursive-self-improvement chapter. Protected invariants, evaluator independence, boundary-delta review, monitor windows, rollback, non-self-ratification, and the Part II handoff remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
