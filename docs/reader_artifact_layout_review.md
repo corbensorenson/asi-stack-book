@@ -39,9 +39,10 @@ site assets and styles:
 
 ## PDF Spot Check
 
-The successful UTF-8 PDF probe produced a 574-page, letter-size, unencrypted
-PDF. Local text extraction found the book title, `Reader Edition Draft`, and
-compact `evidence boundary: architectural argument` text.
+The successful UTF-8 PDF probe produced a 614-page, 8,672,117-byte,
+letter-size, unencrypted PDF. Local text extraction found the book title,
+`Reader Edition Draft`, and compact `evidence boundary: architectural argument`
+text.
 
 Representative pages were rendered and visually inspected:
 
@@ -50,7 +51,8 @@ Representative pages were rendered and visually inspected:
 | 1 | Title page | Clean title, subtitle, and author placement; no visible clipping. |
 | 21 | Reader edition note | Cover image and caption fit; reader-note prose is readable. LaTeX justification creates some wide word spacing, worth watching during final PDF polish. |
 | 25 | Opening chapter start | Chapter title, lead-in prose, and first `Problem` section are readable with no obvious clipping. |
-| 527 | External-source appendix start | Appendix title, ownership-boundary prose, and first table fit on the page without visible clipping. |
+| 527 | Corben/local source appendix table | The page is not blank or clipped, but long source IDs and neighboring table cells collide horizontally in the PDF table. |
+| 614 | External citation policy | Final external citation-policy page is readable and not clipped. |
 
 ## HTML Spot Check
 
@@ -75,7 +77,7 @@ python3 scripts/inspect_reader_format_artifacts.py
 ```
 
 The structural inspection passed with 59 HTML files, 62 EPUB XHTML entries, and
-59 DOCX media entries.
+61 DOCX media entries.
 
 A broader local browser probe then opened 14 representative HTML surfaces at
 desktop and mobile widths: the index, preface, opening chapter, dense Part III
@@ -99,7 +101,9 @@ equal to the viewport width in the sampled mobile pages.
 ## Residuals
 
 - This is not a full chapter-by-chapter reader manuscript review.
-- This is not a full 574-page PDF inspection.
+- This is not a full 614-page PDF inspection.
+- The current PDF probe has an unresolved source-appendix table residual:
+  page 527 shows long source IDs and adjacent table text colliding horizontally.
 - EPUB was structurally inspected but not opened in an e-reader application.
 - DOCX was structurally inspected but not opened in Word, LibreOffice, or Google
   Docs.

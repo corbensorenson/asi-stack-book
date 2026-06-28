@@ -7,6 +7,7 @@
   "source_docs": [
     "docs/reader_format_dry_run.md",
     "docs/reader_artifact_inspection_manifest.md",
+    "docs/reader_pdf_probe_manifest.md",
     "docs/reader_artifact_layout_review.md",
     "docs/reader_chapter_review_matrix.md"
   ],
@@ -15,6 +16,8 @@
   "release_blocker_counts": {
     "app_or_ereader_review_not_completed": 2,
     "full_format_artifact_review_not_completed": 4,
+    "full_pdf_layout_review_not_completed": 1,
+    "pdf_source_appendix_table_collision_unresolved": 1,
     "reader_release_record_not_created": 4
   },
   "records": [
@@ -98,13 +101,16 @@
       "release_approved": false,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#pdf-probe",
+        "docs/reader_pdf_probe_manifest.md#pdf-probe-summary",
         "docs/reader_artifact_layout_review.md#pdf-spot-check"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "full_format_artifact_review_not_completed"
+        "full_format_artifact_review_not_completed",
+        "full_pdf_layout_review_not_completed",
+        "pdf_source_appendix_table_collision_unresolved"
       ],
-      "notes": "The UTF-8 PDF probe rendered locally and representative pages 1, 21, 25, and 527 were visually sampled. The full 574-page PDF has not received a page-by-page layout review.",
+      "notes": "The UTF-8 PDF probe rendered locally as a 614-page, 8,672,117-byte snapshot, local text extraction found the expected title and evidence-boundary markers, and representative pages 1, 21, 25, 527, and 614 were visually sampled. Page 527 exposes source-appendix table text collision from long source IDs, and the full PDF has not received page-by-page layout review.",
       "non_claims": [
         "This row is not a release record.",
         "This row does not approve a PDF artifact for publication.",

@@ -59,7 +59,7 @@ Result:
 
 ```text
 Reader artifact inspection report wrote: /Users/corbensorenson/Documents/AI_book/build/reader_edition/reader_artifact_inspection_report.json
-Reader artifact inspection passed: 59 HTML files, 62 EPUB XHTML entries, 59 DOCX media entries.
+Reader artifact inspection passed: 59 HTML files, 62 EPUB XHTML entries, 61 DOCX media entries.
 ```
 
 The ignored local inspection report at
@@ -68,8 +68,8 @@ The ignored local inspection report at
 | Format | Structural checks passed |
 |---|---|
 | HTML | 59 rendered reader-site HTML files, 54 chapter files, required index/preface/source-appendix/opening-chapter files present, no live-only heading leaks detected in reader-site HTML, and no raw core-claim marker leaks detected in reader-site HTML. |
-| EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 128 entries, 62 XHTML entries, and 60 image entries. |
-| DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 75 entries, 59 embedded media entries, 18,440 paragraph markers, book title present, and compact evidence-boundary text present. |
+| EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 130 entries, 62 XHTML entries, and 62 image entries. |
+| DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 77 entries, 61 embedded media entries, 19,262 paragraph markers, book title present, and compact evidence-boundary text present. |
 
 ## PDF Probe
 
@@ -108,8 +108,8 @@ Local `pdfinfo` reported:
 
 | Field | Value |
 |---|---:|
-| File size | 8.0 MB |
-| Pages | 574 |
+| File size | 8,672,117 bytes |
+| Pages | 614 |
 | Page size | letter |
 | Encrypted | no |
 | Producer | LuaTeX-1.24.0 |
@@ -120,12 +120,15 @@ can be produced on this machine when the locale environment is set explicitly.
 
 ## Layout Spot Check
 
-`docs/reader_artifact_layout_review.md` records a representative local layout
-spot check. It visually inspected PDF pages 1, 21, 25, and 527, then checked
-desktop/mobile HTML snapshots after the complete `_reader_site` preservation
-fix. The sampled PDF pages had no obvious clipping; the sampled styled HTML
-pages had no horizontal overflow at the inspected desktop/mobile viewports. This
-is still only a spot check, not a full reader-release review.
+`docs/reader_artifact_layout_review.md` records representative local layout
+spot checks. The refreshed PDF sample inspected pages 1, 21, 25, 527, and 614,
+then checked desktop/mobile HTML snapshots after the complete `_reader_site`
+preservation fix. The sampled title, reader-note, opening-chapter, and final
+policy pages were readable and not clipped, but the page 527 source-appendix
+table sample showed long source IDs colliding with adjacent columns. The
+sampled styled HTML pages had no horizontal overflow at the inspected
+desktop/mobile viewports. This is still only a spot check, not a full
+reader-release review.
 
 ## Review State
 
@@ -133,10 +136,11 @@ The dry run establishes only that the current generated reader source can be
 rendered locally to HTML, EPUB, and DOCX on this machine and that the resulting
 local snapshots pass basic structural inspection. The isolated PDF probe also
 establishes that PDF can render locally when `LANG` and `LC_ALL` are set to
-`en_US.UTF-8`. It does not establish that the reader manuscript has been
-reviewed as a book, that diagrams and tables are optimal for e-readers or PDF,
-that navigation and bibliography behavior have been manually accepted, or that
-any artifact is suitable for publication.
+`en_US.UTF-8`, while also exposing a source-appendix PDF table layout residual.
+It does not establish that the reader manuscript has been reviewed as a book,
+that diagrams and tables are optimal for e-readers or PDF, that navigation and
+bibliography behavior have been manually accepted, or that any artifact is
+suitable for publication.
 
 ## Tracked Format Review Matrix
 
@@ -145,7 +149,8 @@ pre-release status of HTML, EPUB, DOCX, and PDF format review, and
 `docs/reader_format_review_matrix.md` is the generated public summary. The
 matrix currently keeps all four formats blocked until full format-artifact
 review and an edition release record exist; EPUB and DOCX also retain
-application or e-reader review blockers.
+application or e-reader review blockers, and PDF retains a specific unresolved
+source-appendix table-collision blocker.
 
 Audio generation was not attempted.
 

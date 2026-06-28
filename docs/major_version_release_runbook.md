@@ -60,6 +60,8 @@ python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/validate_reader_artifact_inspection_manifest.py
+python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_book.py
@@ -83,6 +85,8 @@ python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/validate_reader_artifact_inspection_manifest.py
+python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_human_reading_paths.py
@@ -97,7 +101,7 @@ Generate the local source workspace:
 python3 scripts/build_reader_edition.py
 ```
 
-Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, `docs/reader_continuity_audit.md`, `docs/reader_chapter_review_matrix.md`, `docs/reader_format_review_matrix.md`, `editions/reader_manuscript/v1_0/companion_note_routing.json`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. The chapter review matrix names each chapter's review status, active-overlay count, companion-note candidates, curated-manuscript candidates, and release blockers. The format review matrix names local render/inspection evidence and format-level blockers; it does not approve artifacts without an edition release record. The companion routing manifest names the current reader/e-reader/audio treatment for dense proof/governance chapters; it is not a release record or a substitute for meaning-critical prose in the reader spine. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
+Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, `docs/reader_continuity_audit.md`, `docs/reader_chapter_review_matrix.md`, `docs/reader_format_review_matrix.md`, `docs/reader_pdf_probe_manifest.md`, `editions/reader_manuscript/v1_0/companion_note_routing.json`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. The chapter review matrix names each chapter's review status, active-overlay count, companion-note candidates, curated-manuscript candidates, and release blockers. The format review matrix names local render/inspection evidence and format-level blockers; it does not approve artifacts without an edition release record. The PDF probe manifest records exact local probe metrics and sampled-page residuals, including source-appendix table collisions when present; it is not PDF approval. The companion routing manifest names the current reader/e-reader/audio treatment for dense proof/governance chapters; it is not a release record or a substitute for meaning-critical prose in the reader spine. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
 
 If the reader release has graduated to a curated reader manuscript, do not treat generated source as the only review target. Use `editions/reader_manuscript/v1_0/manifest.json` as the source-status record, use `editions/reader_manuscript/v1_0/chapter_review_matrix.json` as the chapter review queue, use `editions/reader_manuscript/v1_0/reconciliation_report.md` as the chapter-by-chapter reconciliation surface, use generated reader source as the reconciliation baseline, then review the curated manuscript chapter by chapter against the manifest and evidence boundaries before rendering.
 
@@ -107,6 +111,7 @@ Attempt specific formats and record actual local outcomes:
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
+python3 scripts/validate_reader_pdf_probe_manifest.py
 ```
 
 Successful format attempts are snapshotted under ignored `build/reader_edition/format_artifacts/` for local review and summarized in `build/reader_edition/reader_render_report.json`; structural artifact inspection writes `build/reader_edition/reader_artifact_inspection_report.json`. PDF is optional until local Quarto PDF dependencies are present and should use the explicit UTF-8 locale environment unless a later probe proves it unnecessary. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not canonical sources.
@@ -114,6 +119,7 @@ Successful format attempts are snapshotted under ignored `build/reader_edition/f
 After any format review decision changes, edit `editions/reader_manuscript/v1_0/format_review_matrix.json` and run:
 
 ```bash
+python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_format_review_matrix.py --write
 ```
 

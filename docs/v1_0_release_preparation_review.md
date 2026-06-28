@@ -53,27 +53,30 @@ Results:
 - Reader format artifact inspection passed for the local snapshots: 59 rendered
   reader-site HTML files, 54 chapter HTML files, no live-only heading or raw
   core-claim marker leaks detected in reader-site HTML, 62 EPUB XHTML entries,
-  60 EPUB image entries, and 59 DOCX media entries. The ignored local report is
+  62 EPUB image entries, and 61 DOCX media entries. The ignored local report is
   `build/reader_edition/reader_artifact_inspection_report.json`.
 - The isolated PDF probe without explicit locale settings failed inside the
   LuaLaTeX path with a locale-data error and automatic package-install failure.
   The UTF-8 locale retry rendered one ignored local PDF snapshot at
   `build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf`.
-  Local `pdfinfo` reported 574 letter-size pages, 8.0 MB, unencrypted, produced
-  by LuaTeX-1.24.0; local text extraction found the title and compact
-  evidence-boundary text.
+  Local `pdfinfo` reported 614 letter-size pages, 8,672,117 bytes,
+  unencrypted, produced by LuaTeX-1.24.0; local text extraction found the title
+  and compact evidence-boundary text. The tracked summary is
+  `docs/reader_pdf_probe_manifest.md`.
 - `docs/reader_artifact_layout_review.md` records representative PDF layout
   sampling and a broader local HTML layout/navigation probe. Sampled PDF pages
-  1, 21, 25, and 527 showed no obvious clipping. After fixing HTML preservation
-  to copy the complete `_reader_site` tree, the broader HTML probe exercised 28
-  page-view pairs across 14 reader surfaces at desktop and mobile widths, with
-  styles loaded and no page-level horizontal overflow at the inspected
-  viewports.
+  1, 21, 25, 527, and 614 showed readable title, reader-note, opening-chapter,
+  and final-policy pages, but page 527 exposed source-appendix table text
+  collision from long source IDs. After fixing HTML preservation to copy the
+  complete `_reader_site` tree, the broader HTML probe exercised 28 page-view
+  pairs across 14 reader surfaces at desktop and mobile widths, with styles
+  loaded and no page-level horizontal overflow at the inspected viewports.
 - `docs/reader_format_review_matrix.md` records the synced pre-release
   format-review ledger: 4 format rows, 4 full-format-review blockers, 4
-  release-record blockers, and 2 application/e-reader blockers. HTML and PDF
-  have representative spot checks only; EPUB and DOCX have structural checks
-  only until application/e-reader review happens.
+  release-record blockers, 2 application/e-reader blockers, 1 full-PDF-layout
+  blocker, and 1 PDF source-appendix table-collision blocker. HTML and PDF have
+  representative spot checks only; EPUB and DOCX have structural checks only
+  until application/e-reader review happens.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -94,9 +97,10 @@ Results:
 - The local reader-format dry run demonstrates that HTML, EPUB, and DOCX can
   render from the current generated reader source on this machine and pass basic
   structural inspection. The isolated PDF probe demonstrates that PDF can render
-  locally when `LANG` and `LC_ALL` are set to `en_US.UTF-8`. None of those
-  artifacts is approved for publication, and no audio artifact was attempted in
-  that dry run.
+  locally when `LANG` and `LC_ALL` are set to `en_US.UTF-8`, while the refreshed
+  PDF spot check also records an unresolved source-appendix table-collision
+  residual. None of those artifacts is approved for publication, and no audio
+  artifact was attempted in that dry run.
 - The v1.0 reader overlay set now has opening-chapter, Personal Compute Hives,
   Human Intent, System Boundaries, Evidence States, Verification Bandwidth, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Efficient ASI, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Executable Specifications, Policy
   Optimization, Artifact Steward Agents, and Semantic Representation operations.
