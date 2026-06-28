@@ -39,10 +39,12 @@ site assets and styles:
 
 ## PDF Spot Check
 
-The successful UTF-8 PDF probe produced a 614-page, 8,672,117-byte,
+The successful UTF-8 PDF probe produced a 535-page, 8,613,924-byte,
 letter-size, unencrypted PDF. Local text extraction found the book title,
 `Reader Edition Draft`, and compact `evidence boundary: architectural argument`
-text.
+text. It also found the generated reader source-card headings in Appendix G and
+Appendix H after the reader PDF source transformed those wide live-book source
+tables into wrapping source cards.
 
 Representative pages were rendered and visually inspected:
 
@@ -51,8 +53,10 @@ Representative pages were rendered and visually inspected:
 | 1 | Title page | Clean title, subtitle, and author placement; no visible clipping. |
 | 21 | Reader edition note | Cover image and caption fit; reader-note prose is readable. LaTeX justification creates some wide word spacing, worth watching during final PDF polish. |
 | 25 | Opening chapter start | Chapter title, lead-in prose, and first `Problem` section are readable with no obvious clipping. |
-| 527 | Corben/local source appendix table | The page is not blank or clipped, but long source IDs and neighboring table cells collide horizontally in the PDF table. |
-| 614 | External citation policy | Final external citation-policy page is readable and not clipped. |
+| 474 | Corben/local source appendix cards | Reader Source List heading, source-card introduction, and first Corben/local source card are readable and not clipped. |
+| 497 | Corben/local long source ID card | The former long-ID collision sample now wraps as source-card bullets without visible table-cell overlap. |
+| 499 | External source appendix cards | External source-card heading, source-card introduction, and first external source card are readable and not clipped. |
+| 535 | External citation policy | Final external citation-policy page is readable and not clipped. |
 
 ## HTML Spot Check
 
@@ -101,9 +105,10 @@ equal to the viewport width in the sampled mobile pages.
 ## Residuals
 
 - This is not a full chapter-by-chapter reader manuscript review.
-- This is not a full 614-page PDF inspection.
-- The current PDF probe has an unresolved source-appendix table residual:
-  page 527 shows long source IDs and adjacent table text colliding horizontally.
+- This is not a full 535-page PDF inspection.
+- The current PDF probe samples the generated reader source-card replacement
+  for Appendix G and Appendix H, but it is not a full source-appendix layout
+  review.
 - EPUB was structurally inspected but not opened in an e-reader application.
 - DOCX was structurally inspected but not opened in Word, LibreOffice, or Google
   Docs.

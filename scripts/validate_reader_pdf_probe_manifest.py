@@ -20,7 +20,6 @@ REQUIRED_BLOCKERS = {
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
     "full_pdf_layout_review_not_completed",
-    "pdf_source_appendix_table_collision_unresolved",
 }
 
 
@@ -125,10 +124,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("pdfinfo_summary.author must be Corben Sorenson.")
     if pdfinfo.get("producer") != "LuaTeX-1.24.0":
         errors.append("pdfinfo_summary.producer must be LuaTeX-1.24.0.")
-    if require_int("pdfinfo_summary", "pages", pdfinfo.get("pages"), errors, minimum=600) != 614:
-        errors.append("pdfinfo_summary.pages must be the current recorded probe count: 614.")
-    if require_int("pdfinfo_summary", "file_size_bytes", pdfinfo.get("file_size_bytes"), errors, minimum=1_000_000) != 8672117:
-        errors.append("pdfinfo_summary.file_size_bytes must be the current recorded probe size: 8672117.")
+    if require_int("pdfinfo_summary", "pages", pdfinfo.get("pages"), errors, minimum=500) != 535:
+        errors.append("pdfinfo_summary.pages must be the current recorded probe count: 535.")
+    if require_int("pdfinfo_summary", "file_size_bytes", pdfinfo.get("file_size_bytes"), errors, minimum=1_000_000) != 8613924:
+        errors.append("pdfinfo_summary.file_size_bytes must be the current recorded probe size: 8613924.")
     if pdfinfo.get("encrypted") is not False:
         errors.append("pdfinfo_summary.encrypted must be false.")
     if pdfinfo.get("page_size") != "612 x 792 pts (letter)":
@@ -142,8 +141,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if text.get(key) is not True:
             errors.append(f"text_extraction_summary.{key} must be true.")
     sampled_pages = text.get("sampled_pages")
-    if sampled_pages != [1, 21, 25, 527, 614]:
-        errors.append("text_extraction_summary.sampled_pages must be [1, 21, 25, 527, 614].")
+    if sampled_pages != [1, 21, 25, 474, 497, 499, 535]:
+        errors.append("text_extraction_summary.sampled_pages must be [1, 21, 25, 474, 497, 499, 535].")
 
     spot = manifest.get("spot_check_summary")
     if not isinstance(spot, dict):
@@ -152,21 +151,22 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if spot.get("status") != "representative_spot_check_with_residual":
         errors.append("spot_check_summary.status must be representative_spot_check_with_residual.")
     pages = spot.get("pages_sampled")
-    if not isinstance(pages, list) or len(pages) != 5:
-        errors.append("spot_check_summary.pages_sampled must contain exactly five records.")
+    if not isinstance(pages, list) or len(pages) != 7:
+        errors.append("spot_check_summary.pages_sampled must contain exactly seven records.")
     else:
         observed_pages = [record.get("page") for record in pages if isinstance(record, dict)]
-        if observed_pages != [1, 21, 25, 527, 614]:
-            errors.append("spot_check_summary.pages_sampled must record pages 1, 21, 25, 527, and 614 in order.")
+        if observed_pages != [1, 21, 25, 474, 497, 499, 535]:
+            errors.append("spot_check_summary.pages_sampled must record pages 1, 21, 25, 474, 497, 499, and 535 in order.")
         page_text = " ".join(
             str(record.get("observation", "")) for record in pages if isinstance(record, dict)
         ).lower()
-        if "collide horizontally" not in page_text:
-            errors.append("spot_check_summary must record the source-table horizontal collision residual.")
+        for phrase in ("source-card", "without visible table-cell overlap"):
+            if phrase not in page_text:
+                errors.append(f"spot_check_summary must record source-card inspection phrase: {phrase}")
 
     residuals = require_string_list("spot_check_summary", "layout_residuals", spot.get("layout_residuals"), errors)
     residual_text = " ".join(residuals).lower()
-    for phrase in ("source appendix table", "collision", "full page-by-page pdf layout review"):
+    for phrase in ("source cards", "full page-by-page pdf layout review", "ignored local probe artifact"):
         if phrase not in residual_text:
             errors.append(f"layout_residuals must include phrase: {phrase}")
 
@@ -192,12 +192,12 @@ def validate_summary(errors: list[str]) -> None:
     required_fragments = [
         "Reader PDF Probe Manifest",
         REQUIRED_COMMAND,
-        "| Pages | 614 |",
-        "| File size | 8,672,117 bytes |",
+        "| Pages | 535 |",
+        "| File size | 8,613,924 bytes |",
         "| Producer | LuaTeX-1.24.0 |",
         "evidence boundary: architectural argument",
-        "long source IDs and neighboring table cells collide horizontally",
-        "pdf_source_appendix_table_collision_unresolved",
+        "source cards",
+        "Full page-by-page PDF layout review has not been completed",
         "This manifest is not a reader release",
         "does not promote any claim support state",
     ]
@@ -214,7 +214,7 @@ def main() -> None:
     validate_summary(errors)
     if errors:
         fail(errors)
-    print("Reader PDF probe manifest validation passed: 614-page UTF-8 PDF probe recorded with layout residuals.")
+    print("Reader PDF probe manifest validation passed: 535-page UTF-8 PDF probe recorded with source-card residuals.")
 
 
 if __name__ == "__main__":

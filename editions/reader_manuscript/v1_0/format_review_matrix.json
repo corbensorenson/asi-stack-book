@@ -17,7 +17,6 @@
     "app_or_ereader_review_not_completed": 2,
     "full_format_artifact_review_not_completed": 4,
     "full_pdf_layout_review_not_completed": 1,
-    "pdf_source_appendix_table_collision_unresolved": 1,
     "reader_release_record_not_created": 4
   },
   "records": [
@@ -107,10 +106,9 @@
       "release_blockers": [
         "reader_release_record_not_created",
         "full_format_artifact_review_not_completed",
-        "full_pdf_layout_review_not_completed",
-        "pdf_source_appendix_table_collision_unresolved"
+        "full_pdf_layout_review_not_completed"
       ],
-      "notes": "The UTF-8 PDF probe rendered locally as a 614-page, 8,672,117-byte snapshot, local text extraction found the expected title and evidence-boundary markers, and representative pages 1, 21, 25, 527, and 614 were visually sampled. Page 527 exposes source-appendix table text collision from long source IDs, and the full PDF has not received page-by-page layout review.",
+      "notes": "The UTF-8 PDF probe rendered locally as a 535-page, 8,613,924-byte snapshot, local text extraction found the expected title, source-card, and evidence-boundary markers, and representative pages 1, 21, 25, 474, 497, 499, and 535 were visually sampled. Generated reader source now converts the wide Appendix G and Appendix H source tables into reader source cards before PDF rendering; no source-table collision was observed in the sampled source-card pages, but the full PDF has not received page-by-page layout review.",
       "non_claims": [
         "This row is not a release record.",
         "This row does not approve a PDF artifact for publication.",

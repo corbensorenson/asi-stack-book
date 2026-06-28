@@ -7,12 +7,14 @@
   "source_commands": [
     "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf",
     "pdfinfo build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "pdftotext build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf - | rg -n -m 20 'The ASI Stack|Reader Edition Draft|evidence boundary|Evidence boundary'",
+    "pdftotext build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf - | rg -n -m 30 'Reader Source List|Proof-Carrying Circular Computation|External Citation Policy|The ASI Stack|Reader Edition Draft|evidence boundary'",
     "pdftoppm -png -r 120 -f 1 -l 1 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
     "pdftoppm -png -r 120 -f 21 -l 21 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
     "pdftoppm -png -r 120 -f 25 -l 25 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
-    "pdftoppm -png -r 120 -f 527 -l 527 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
-    "pdftoppm -png -r 120 -f 614 -l 614 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page"
+    "pdftoppm -png -r 120 -f 474 -l 474 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
+    "pdftoppm -png -r 120 -f 497 -l 497 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
+    "pdftoppm -png -r 120 -f 499 -l 499 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page",
+    "pdftoppm -png -r 120 -f 535 -l 535 build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf build/reader_edition_pdf_probe_utf8/page_spot_check/page"
   ],
   "local_artifact_refs": [
     "build/reader_edition_pdf_probe_utf8/reader_render_report.json",
@@ -20,8 +22,10 @@
     "build/reader_edition_pdf_probe_utf8/page_spot_check/page-001.png",
     "build/reader_edition_pdf_probe_utf8/page_spot_check/page-021.png",
     "build/reader_edition_pdf_probe_utf8/page_spot_check/page-025.png",
-    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-527.png",
-    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-614.png"
+    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-474.png",
+    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-497.png",
+    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-499.png",
+    "build/reader_edition_pdf_probe_utf8/page_spot_check/page-535.png"
   ],
   "tracked_evidence_refs": [
     "docs/reader_format_dry_run.md#pdf-probe",
@@ -42,17 +46,17 @@
     "author": "Corben Sorenson",
     "creator": "LaTeX via pandoc",
     "producer": "LuaTeX-1.24.0",
-    "pages": 614,
+    "pages": 535,
     "encrypted": false,
     "page_size": "612 x 792 pts (letter)",
-    "file_size_bytes": 8672117,
+    "file_size_bytes": 8613924,
     "pdf_version": "1.7"
   },
   "text_extraction_summary": {
     "title_found": true,
     "reader_edition_draft_found": true,
     "evidence_boundary_found": true,
-    "sampled_pages": [1, 21, 25, 527, 614]
+    "sampled_pages": [1, 21, 25, 474, 497, 499, 535]
   },
   "spot_check_summary": {
     "status": "representative_spot_check_with_residual",
@@ -73,18 +77,28 @@
         "observation": "Opening chapter title, lead-in prose, and Problem section are readable and not clipped."
       },
       {
-        "page": 527,
-        "surface": "Corben/local source appendix table",
-        "observation": "The page is not blank or clipped, but long source IDs and neighboring table cells collide horizontally in the PDF table."
+        "page": 474,
+        "surface": "Corben/local source appendix cards",
+        "observation": "The reader source-card introduction and first Corben/local source card are readable and not clipped."
       },
       {
-        "page": 614,
+        "page": 497,
+        "surface": "Corben/local long source ID card",
+        "observation": "The former long-ID collision sample now wraps as source-card bullets without visible table-cell overlap."
+      },
+      {
+        "page": 499,
+        "surface": "external source appendix cards",
+        "observation": "The external source-card introduction and first external source card are readable and not clipped."
+      },
+      {
+        "page": 535,
         "surface": "external citation policy",
         "observation": "Final external citation-policy page is readable and not clipped."
       }
     ],
     "layout_residuals": [
-      "The Corben/local source appendix table sample on page 527 has long source ID and adjacent-column text collision in PDF.",
+      "The generated reader PDF converts the wide Appendix G and Appendix H source tables into source cards for the reader edition; no source-table collision was observed in the sampled source-card pages.",
       "Full page-by-page PDF layout review has not been completed.",
       "The PDF snapshot remains an ignored local probe artifact until a future edition release record names an exact reviewed artifact."
     ]
@@ -92,8 +106,7 @@
   "release_blockers_preserved": [
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
-    "full_pdf_layout_review_not_completed",
-    "pdf_source_appendix_table_collision_unresolved"
+    "full_pdf_layout_review_not_completed"
   ],
   "non_claims": [
     "This manifest records a local UTF-8 PDF render probe in ignored build space only.",

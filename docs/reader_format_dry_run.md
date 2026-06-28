@@ -108,8 +108,8 @@ Local `pdfinfo` reported:
 
 | Field | Value |
 |---|---:|
-| File size | 8,672,117 bytes |
-| Pages | 614 |
+| File size | 8,613,924 bytes |
+| Pages | 535 |
 | Page size | letter |
 | Encrypted | no |
 | Producer | LuaTeX-1.24.0 |
@@ -121,11 +121,12 @@ can be produced on this machine when the locale environment is set explicitly.
 ## Layout Spot Check
 
 `docs/reader_artifact_layout_review.md` records representative local layout
-spot checks. The refreshed PDF sample inspected pages 1, 21, 25, 527, and 614,
-then checked desktop/mobile HTML snapshots after the complete `_reader_site`
-preservation fix. The sampled title, reader-note, opening-chapter, and final
-policy pages were readable and not clipped, but the page 527 source-appendix
-table sample showed long source IDs colliding with adjacent columns. The
+spot checks. The refreshed PDF sample inspected pages 1, 21, 25, 474, 497,
+499, and 535, then checked desktop/mobile HTML snapshots after the complete
+`_reader_site` preservation fix. The sampled title, reader-note,
+opening-chapter, source-card appendix, and final policy pages were readable and
+not clipped. The reader PDF source now converts Appendix G and Appendix H wide
+source tables into source cards so long source IDs and citations wrap. The
 sampled styled HTML pages had no horizontal overflow at the inspected
 desktop/mobile viewports. This is still only a spot check, not a full
 reader-release review.
@@ -136,7 +137,10 @@ The dry run establishes only that the current generated reader source can be
 rendered locally to HTML, EPUB, and DOCX on this machine and that the resulting
 local snapshots pass basic structural inspection. The isolated PDF probe also
 establishes that PDF can render locally when `LANG` and `LC_ALL` are set to
-`en_US.UTF-8`, while also exposing a source-appendix PDF table layout residual.
+`en_US.UTF-8`. The current tracked probe no longer records the
+source-appendix table collision because the generated reader source now uses
+source cards for Appendix G and Appendix H; it still has not received full PDF
+layout review.
 It does not establish that the reader manuscript has been reviewed as a book,
 that diagrams and tables are optimal for e-readers or PDF, that navigation and
 bibliography behavior have been manually accepted, or that any artifact is
@@ -149,8 +153,8 @@ pre-release status of HTML, EPUB, DOCX, and PDF format review, and
 `docs/reader_format_review_matrix.md` is the generated public summary. The
 matrix currently keeps all four formats blocked until full format-artifact
 review and an edition release record exist; EPUB and DOCX also retain
-application or e-reader review blockers, and PDF retains a specific unresolved
-source-appendix table-collision blocker.
+application or e-reader review blockers, and PDF retains a full-layout-review
+blocker.
 
 Audio generation was not attempted.
 

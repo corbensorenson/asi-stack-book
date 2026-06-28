@@ -103,6 +103,16 @@ SUMMARY_HEADING_RE = re.compile(r"^## Summary\s*$", re.MULTILINE)
 NEXT_HEADING_RE = re.compile(r"^##\s+", re.MULTILINE)
 SECTION_HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
 NUMBERED_CHAPTER_RE = re.compile(r"\bchapter\s+\d+\b", re.IGNORECASE)
+READER_SOURCE_APPENDIX_EXPECTATIONS = {
+    "appendices/G_corben_source_corpus.qmd": {
+        "blocked_header": "| Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |",
+        "required_phrase": "The reader edition uses source cards",
+    },
+    "appendices/H_external_sources.qmd": {
+        "blocked_header": "| Source ID | Title | Citation or primary record | Layer | Current use | Source review state | Notes |",
+        "required_phrase": "The reader edition uses source cards",
+    },
+}
 
 
 def load_structure() -> dict:
@@ -511,6 +521,28 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
     for violation in view_marker_violations:
         errors.append(f"Reader view marker remains in reader edition: {violation}")
 
+    source_appendix_records: list[dict[str, object]] = []
+    for relative, expectation in READER_SOURCE_APPENDIX_EXPECTATIONS.items():
+        path = output_dir / relative
+        exists = path.exists()
+        text = path.read_text(encoding="utf-8") if exists else ""
+        blocked_present = expectation["blocked_header"] in text
+        required_present = expectation["required_phrase"] in text and "## Reader Source List" in text
+        source_appendix_records.append(
+            {
+                "file": relative,
+                "exists": exists,
+                "wide_source_table_present": blocked_present,
+                "reader_source_cards_present": required_present,
+            }
+        )
+        if not exists:
+            errors.append(f"{relative}: generated reader source appendix missing.")
+        if blocked_present:
+            errors.append(f"{relative}: wide source matrix table remains in generated reader source.")
+        if not required_present:
+            errors.append(f"{relative}: reader source-card transform marker missing.")
+
     return {
         "schema_version": "0.1",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -530,6 +562,7 @@ def validate_generated_reader(output_dir: Path) -> dict[str, object]:
             default=0,
         ),
         "chapter_records": chapter_records,
+        "source_appendix_records": source_appendix_records,
         "stripped_heading_violations": heading_violations,
         "status": "pass" if not errors else "fail",
         "errors": errors,

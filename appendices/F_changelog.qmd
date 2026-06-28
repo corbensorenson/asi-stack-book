@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Reader PDF source-card appendix transform
+
+- Updated the generated reader-edition pipeline so Appendix G and Appendix H
+  are converted from wide source audit tables into reader source cards only in
+  the generated reader source. The live AI/research appendices remain wide
+  audit tables. Strengthened `scripts/validate_reader_spine.py` so generated
+  reader source fails validation if the wide source tables return or the
+  reader source-card marker is missing.
+- Regenerated the UTF-8 reader PDF probe with
+  `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf`.
+  The refreshed tracked probe records a 535-page, 8,613,924-byte, letter-size,
+  unencrypted PDF produced by LuaTeX-1.24.0, expected title and compact
+  evidence-boundary text, and sampled pages 1, 21, 25, 474, 497, 499, and 535.
+  The sampled source-card pages are readable and the previous long-source-ID
+  table-cell collision is not observed in those samples. Updated the PDF probe
+  manifest, format-review matrix, reader dry-run and layout notes, README,
+  repository map, release docs, v1.0 status/roadmap/focus surfaces, and
+  validators.
+- The specific PDF source-table collision blocker is cleared for the sampled
+  reader source-card probe, but full page-by-page PDF layout review,
+  full-format artifact review, application/e-reader review, and an edition
+  release record remain open. This is not a reader release, PDF approval, EPUB
+  approval, DOCX approval, e-reader approval, audio artifact, support-state
+  promotion, proof result, source-derived evidence transition, benchmark
+  result, runtime result, or release-readiness claim.
+
 ## 2026-06-28 - v1.0 Reader PDF probe manifest
 
 - Regenerated the reader PDF probe with `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf`, inspected it with `pdfinfo`, `pdftotext`, and sampled page images, and added `editions/reader_manuscript/v1_0/pdf_probe_manifest.json`, `docs/reader_pdf_probe_manifest.md`, and `scripts/validate_reader_pdf_probe_manifest.py`. The tracked probe records a 614-page, 8,672,117-byte, letter-size, unencrypted PDF produced by LuaTeX-1.24.0, expected title and compact evidence-boundary text, and sampled pages 1, 21, 25, 527, and 614. The refreshed spot check found readable title, reader-note, opening-chapter, and final-policy pages, but page 527 exposes a source-appendix table collision from long source IDs, so the format-review matrix now preserves PDF-specific blockers for full layout review and the unresolved source-appendix table. Updated README, repository map, release docs, v1.0 status/roadmap/focus surfaces, and validation wiring. This is a local PDF probe record only; it does not approve a PDF, EPUB, DOCX, HTML, e-reader, document, audio, or audio-embedded EPUB artifact, does not create a reader release or edition release record, does not complete full layout/editorial/app/e-reader review, and does not promote support states, proof status, source-derived evidence, benchmark results, runtime behavior, or release readiness.

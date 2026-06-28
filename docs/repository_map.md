@@ -19,7 +19,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_chapter_review_matrix.md` | Generated public summary of the manifest-synced 54-chapter human-reader review queue, overlay dispositions, and release blockers. | tracked |
 | `docs/reader_format_review_matrix.md` | Generated public summary of the v1.0 reader-format review ledger, local render/inspection evidence, and artifact-release blockers. | tracked |
 | `docs/reader_artifact_inspection_manifest.md` | Tracked local HTML/EPUB/DOCX structural-inspection summary for ignored reader-format snapshots, preserving release blockers and non-claims. | tracked |
-| `docs/reader_pdf_probe_manifest.md` | Tracked local UTF-8 PDF probe summary for the ignored reader snapshot, including exact PDF metrics, sampled-page residuals, and PDF-specific release blockers. | tracked |
+| `docs/reader_pdf_probe_manifest.md` | Tracked local UTF-8 PDF probe summary for the ignored reader snapshot, including exact PDF metrics, sampled source-card pages, and PDF-specific release blockers. | tracked |
 | `docs/reader_companion_note_routing_review.md` | Human-readable companion-note routing decision for the dense proof/governance chapters flagged by the reader matrix. | tracked |
 | `docs/reader_part_i_review_pass.md` | First Part I generated-reader review pass over matrix rows, recording no-action decisions without release approval. | tracked |
 | `docs/reader_part_ii_review_pass.md` | First Part II generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |

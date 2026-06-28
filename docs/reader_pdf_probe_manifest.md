@@ -20,8 +20,8 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --o
 |---|---:|
 | Status | rendered |
 | Local artifact | `build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf` |
-| Pages | 614 |
-| File size | 8,672,117 bytes |
+| Pages | 535 |
+| File size | 8,613,924 bytes |
 | Page size | 612 x 792 pts (letter) |
 | Encrypted | no |
 | Producer | LuaTeX-1.24.0 |
@@ -38,15 +38,25 @@ can be produced on this machine when the locale environment is set explicitly.
 | 1 | Title page | Title, subtitle, and author text are readable and not clipped. |
 | 21 | Reader edition note | Cover image, caption, note heading, and note prose are readable and not clipped. |
 | 25 | Opening chapter start | Opening chapter title, lead-in prose, and Problem section are readable and not clipped. |
-| 527 | Corben/local source appendix table | The page is not blank or clipped, but long source IDs and neighboring table cells collide horizontally in the PDF table. |
-| 614 | External citation policy | Final external citation-policy page is readable and not clipped. |
+| 474 | Corben/local source appendix cards | The reader source-card introduction and first Corben/local source card are readable and not clipped. |
+| 497 | Corben/local long source ID card | The former long-ID collision sample now wraps as source-card bullets without visible table-cell overlap. |
+| 499 | External source appendix cards | The external source-card introduction and first external source card are readable and not clipped. |
+| 535 | External citation policy | Final external citation-policy page is readable and not clipped. |
+
+The generated reader source converts the wide Appendix G and Appendix H source
+tables into reader source cards before PDF rendering. That transform preserves
+the live AI/research appendices as wide audit tables while letting long source
+IDs, citations, chapter assignments, and notes wrap in the reader PDF and
+e-reader-oriented source.
 
 ## Release Blockers Preserved
 
 - `reader_release_record_not_created`
 - `full_format_artifact_review_not_completed`
 - `full_pdf_layout_review_not_completed`
-- `pdf_source_appendix_table_collision_unresolved`
+
+Full page-by-page PDF layout review has not been completed, and this ignored
+local probe artifact is not approved for publication.
 
 ## Non-Claims
 

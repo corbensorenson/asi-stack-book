@@ -66,6 +66,7 @@ NON_HEADING_TRANSFORM_KEYS = {
     "core_claim_markers_removed",
     "support_boilerplate_humanized",
     "reader_scaffold_terms_humanized",
+    "reader_source_appendix_tables_converted",
 }
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 OVERLAY_ACTIONS = {
@@ -238,6 +239,88 @@ def humanize_support_boilerplate(text: str) -> tuple[str, int]:
 
 def normalize_reader_spacing(text: str) -> str:
     return re.sub(r"(?<=[.!?]) {2,}(?=[A-Z0-9`])", " ", text)
+
+
+def split_markdown_table_row(line: str) -> list[str]:
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        return []
+    return [cell.strip() for cell in stripped.strip("|").split("|")]
+
+
+def replace_markdown_table_with_cards(text: str, header: str, columns: list[str], intro: str) -> tuple[str, int]:
+    lines = text.splitlines()
+    for index, line in enumerate(lines):
+        if line.strip() != header:
+            continue
+        separator_index = index + 1
+        if separator_index >= len(lines) or not lines[separator_index].lstrip().startswith("|---"):
+            return text, 0
+        end = separator_index + 1
+        while end < len(lines) and lines[end].strip().startswith("|"):
+            end += 1
+        row_lines = lines[separator_index + 1 : end]
+        card_lines = ["## Reader Source List", "", intro.strip(), ""]
+        converted = 0
+        for row_line in row_lines:
+            cells = split_markdown_table_row(row_line)
+            if len(cells) != len(columns):
+                continue
+            record = dict(zip(columns, cells))
+            title = record.get("Title", "").strip() or record.get("Source ID", "").strip()
+            card_lines.extend([f"### {title}", ""])
+            for column in columns:
+                if column == "Title":
+                    continue
+                value = record.get(column, "").strip()
+                if value:
+                    card_lines.append(f"- {column}: {value}")
+            card_lines.append("")
+            converted += 1
+        if not converted:
+            return text, 0
+        while card_lines and not card_lines[-1]:
+            card_lines.pop()
+        replacement = lines[:index] + card_lines + lines[end:]
+        return "\n".join(replacement).strip() + "\n", 1
+    return text, 0
+
+
+def reader_source_appendix_intro(kind: str) -> str:
+    if kind == "corben":
+        return (
+            "The live book keeps this corpus as a wide audit table. The reader "
+            "edition uses source cards so long source IDs, chapter assignments, "
+            "and citation status notes wrap cleanly in PDF and e-reader formats."
+        )
+    return (
+        "The live book keeps these external records as a wide audit table. The "
+        "reader edition uses source cards so long source IDs, citations, chapter "
+        "assignments, and notes wrap cleanly in PDF and e-reader formats."
+    )
+
+
+def transform_reader_source_appendix(path: Path, relative_path: str) -> int:
+    text = path.read_text(encoding="utf-8")
+    if relative_path == "appendices/G_corben_source_corpus.qmd":
+        transformed, count = replace_markdown_table_with_cards(
+            text,
+            "| Source ID | Title | Priority | Layer | Link | Current use | Bibliographic status |",
+            ["Source ID", "Title", "Priority", "Layer", "Link", "Current use", "Bibliographic status"],
+            reader_source_appendix_intro("corben"),
+        )
+    elif relative_path == "appendices/H_external_sources.qmd":
+        transformed, count = replace_markdown_table_with_cards(
+            text,
+            "| Source ID | Title | Citation or primary record | Layer | Current use | Source review state | Notes |",
+            ["Source ID", "Title", "Citation or primary record", "Layer", "Current use", "Source review state", "Notes"],
+            reader_source_appendix_intro("external"),
+        )
+    else:
+        return 0
+    if count:
+        path.write_text(transformed, encoding="utf-8")
+    return count
 
 
 def humanize_reader_scaffold_terms(text: str) -> tuple[str, int]:
@@ -1425,8 +1508,12 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     for appendix in profile.get("include_appendices", []):
         src = ROOT / appendix
         if src.exists():
-            removed = clean_file(src, output_dir / appendix, strip_headings)
-            apply_reader_overlay_to_file(output_dir / appendix, appendix, overlay_context)
+            output_path = output_dir / appendix
+            removed = clean_file(src, output_path, strip_headings)
+            apply_reader_overlay_to_file(output_path, appendix, overlay_context)
+            converted = transform_reader_source_appendix(output_path, appendix)
+            if converted:
+                removed["reader_source_appendix_tables_converted"] = converted
             copied_files += 1
             for key, count in removed.items():
                 if key == "ai_only_blocks_removed":
