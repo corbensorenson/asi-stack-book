@@ -67,6 +67,10 @@ literature coverage.
 | `ext_gpqa_2023` | benchmark science | Expert-written Google-proof questions, scalable-oversight pressure, and skilled non-expert validation limits. |
 | `ext_swe_bench_2023` | benchmark science | Real-world GitHub issue resolution, repository-scale context, executable environments, and patch-evaluation boundaries. |
 | `ext_livebench_2024` | benchmark science | Contamination-limited monthly updated benchmark practice, objective ground-truth scoring, and stale-score pressure. |
+| `ext_dynabench_2021` | dynamic benchmarking | Human-and-model-in-the-loop data collection, adversarial benchmark evolution, and stale static benchmark pressure. |
+| `ext_checklist_2020` | behavioral evaluation | Capability matrices, minimum functionality tests, invariance tests, and directional expectation tests beyond aggregate accuracy. |
+| `ext_benchmark_contamination_2023` | benchmark contamination | Training/test overlap pressure, benchmark-leakage risk, and score-interpretation limits in modern LLM evaluations. |
+| `ext_goodhart_variants_2018` | Goodhart taxonomy | Regressive, extremal, causal, and adversarial proxy-metric failure vocabulary. |
 
 ## Current Effect
 
@@ -78,8 +82,8 @@ literature coverage.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, Reluplex-style neural-network property checking, runtime assurance, generated runtime monitors, and probabilistic model checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, MoE-in-LLMs survey taxonomy, LLM cascades, quality-aware query routing, and learned route policies.
 - The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, QLoRA-style quantized finetuning, program-synthesis library learning, relevance-preserving bottlenecks, description-length residual accounting, and code-aware artifact metrics.
-- The benchmark-science queue now has initial source-noted coverage for broad multitask benchmarks, community benchmark collections, holistic evaluation, expert hard-question oversight, real-world software issue resolution, and contamination-limited living benchmarks.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, program-synthesis runs, information-bottleneck or MDL scorer implementations, CodeBLEU runs, finetuning runs, benchmark runs, or test results changed.
+- The benchmark-science queue now has initial source-noted coverage for broad multitask benchmarks, community benchmark collections, holistic evaluation, expert hard-question oversight, real-world software issue resolution, contamination-limited living benchmarks, dynamic adversarial benchmark evolution, behavioral test matrices, contamination-risk auditing, and Goodhart-style proxy-metric failure taxonomy.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, program-synthesis runs, information-bottleneck or MDL scorer implementations, CodeBLEU runs, dynamic benchmark runs, behavioral-test runs, contamination audits, Goodhart taxonomies over local tests, finetuning runs, benchmark runs, or test results changed.
 
 ## Non-Claims
 
@@ -97,4 +101,4 @@ literature coverage.
 3. Deepen formal-methods coverage with proof-assistant adequacy literature, ASI Stack protocol-verification sources, and any additional deployment model-checking references needed after chapter-level review.
 4. Deepen routing coverage with governance-aware route-selection sources, routing-specific modular-agent orchestration, and any additional model/system routing comparisons needed after chapter-level review.
 5. Deepen compression coverage with compression-regression testing, additional representation-learning sources, and any chapter-specific residual/error-accounting sources needed after review.
-6. Deepen benchmark-science coverage with hidden-test operations, saturation analysis, contamination audits, benchmark-gaming/evaluator-gaming sources, and release-grade benchmark governance.
+6. Deepen benchmark-science coverage with hidden-holdout operations, saturation analysis, evaluator-gaming sources, and release-grade benchmark governance.
