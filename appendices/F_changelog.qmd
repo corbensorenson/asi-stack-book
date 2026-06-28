@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Benchmark Ratchets evidence-transition no-change
+
+- Added `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` as the eighth accepted no-change evidence-transition record. The review records that exact source mappings, benchmark ratchet/policy/steward schemas, the synthetic benchmark anti-Goodhart harness, and external benchmark-science literature support regression-preserving benchmark discipline but do not justify moving `benchmark-ratchets-and-anti-goodhart-evidence.core` above `argument`. Updated the evidence-transition pilot summary, pilot README, v1.0 roadmap/status/focus surfaces, repository map, and status guard. This is not a support-state promotion, benchmark run, hidden-holdout validation, contamination audit, mutation or transfer result, policy-training result, steward-agent release-safety result, live model-quality result, independent review, or source-derived evidence promotion.
+
 ## 2026-06-28 - v1.0 Virtual Context ABI evidence-transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/virtual_context_abi_no_change.json` as the seventh accepted no-change evidence-transition record. The review records that exact source mappings, context ABI/packet schemas, the synthetic context admission/adequacy harness, and external context literature support VCM admission/adequacy discipline but do not justify moving `virtual-context-abi.core` above `argument`. Updated the evidence-transition pilot summary, pilot README, v1.0 roadmap/status/focus surfaces, repository map, and status guard. This is not a support-state promotion, VCM resolver trace, context compiler result, memory-store correctness result, summary-fidelity test, long-context benchmark run, model verification-bandwidth result, runtime behavior result, independent review, or source-derived evidence promotion.

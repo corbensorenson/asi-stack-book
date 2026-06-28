@@ -1,0 +1,117 @@
+{
+  "transition_id": "v1_0_pilot.benchmark_ratchets.no_change",
+  "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
+  "claim_surface_refs": [
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/benchmark_antigoodhart_harness.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/benchmark_ratchet_record.schema.json",
+    "schemas/policy_optimization_record.schema.json",
+    "schemas/artifact_steward_action.schema.json",
+    "experiments/benchmark_antigoodhart/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic benchmark-ratchet, policy-update, and steward-action gate behavior plus external benchmark-science vocabulary only; no live benchmark run, contamination audit, hidden-holdout validation, policy-training result, steward execution, or model-quality evidence is promoted",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "source_inventory",
+    "source_notes",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the Benchmark Ratchets claim, public schemas for benchmark ratchet and adjacent policy/steward records, a synthetic anti-Goodhart harness with valid and expected-invalid fixtures, and external source notes for MMLU, BIG-bench, HELM, GPQA, SWE-bench, and LiveBench. Those artifacts support the design discipline around regression preservation, blocked promotion from saturated benchmarks, holdout and contamination check requirements, reward-as-truth refusal, and release approval linkage, but they do not establish benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or any live model result.",
+  "required_artifacts": [
+    "versioned benchmark run records with model, environment, prompts, metrics, and raw outputs",
+    "hidden-holdout or private-evaluation procedure with custody and leakage controls",
+    "contamination audit against the evaluated artifacts and task sources",
+    "mutation or transfer checks tied to explicit benchmark-ratchet records",
+    "negative-result retention and stale-score invalidation workflow",
+    "policy-training or steward-action traces only when those claims are made",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/benchmark_antigoodhart_harness.md",
+    "scripts/validate_benchmark_antigoodhart.py",
+    "experiments/benchmark_antigoodhart/results/2026-06-28-local.md",
+    "schemas/benchmark_ratchet_record.schema.json",
+    "schemas/policy_optimization_record.schema.json",
+    "schemas/artifact_steward_action.schema.json",
+    "sources/source_notes/ext_mmlu_2020.md",
+    "sources/source_notes/ext_bigbench_2022.md",
+    "sources/source_notes/ext_helm_2022.md",
+    "sources/source_notes/ext_gpqa_2023.md",
+    "sources/source_notes/ext_swe_bench_2023.md",
+    "sources/source_notes/ext_livebench_2024.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#benchmark-ratchets-and-anti-goodhart-evidence.core",
+    "docs/source_evidence_audit.md#benchmark-ratchets-and-anti-goodhart-evidence.core"
+  ],
+  "verification_command": "python3 scripts/validate_benchmark_antigoodhart.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_source_notes.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Benchmark Ratchets remains at argument",
+    "benchmark anti-Goodhart fixtures are synthetic",
+    "external benchmark-science sources are comparison vocabulary only",
+    "no GPQA, SWE-bench, LiveBench, hidden-holdout, contamination, mutation, transfer, policy-training, or steward-release run exists in this repository"
+  ],
+  "negative_evidence_refs": [
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+    "docs/benchmark_antigoodhart_harness.md",
+    "docs/v1_0_candidate_status.md",
+    "sources/source_notes/ext_gpqa_2023.md",
+    "sources/source_notes/ext_swe_bench_2023.md",
+    "sources/source_notes/ext_livebench_2024.md"
+  ],
+  "downgrade_triggers": [
+    "benchmark anti-Goodhart harness failure",
+    "benchmark schema drift",
+    "source-note/source-inventory mismatch",
+    "claim text interpreted as model-quality or live benchmark evidence",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic gate behavior that passed, or after benchmark run records, hidden-holdout integrity, contamination checks, mutation or transfer checks, negative-result retention, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove benchmark quality",
+    "schemas validate record shape rather than benchmark validity",
+    "external benchmark literature is not a local reproduction or model result",
+    "no independent benchmark or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent benchmark, evaluation-science, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no live benchmark run",
+    "no hidden-holdout custody record",
+    "no contamination audit",
+    "no mutation or transfer check against local artifacts",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-benchmark-ratchets-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Benchmark Ratchets above argument",
+    "does not prove benchmark quality",
+    "does not prove hidden-holdout integrity",
+    "does not prove contamination detection",
+    "does not prove policy-training quality",
+    "does not prove steward-agent release safety or model behavior"
+  ]
+}

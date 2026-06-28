@@ -167,7 +167,7 @@ Acceptance criteria:
 
 ## Phase 3 - Evidence Transition Pilot
 
-Status: initial pilot complete and extended. Seven no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All seven reviewed claims remain at `argument`.
+Status: initial pilot complete and extended. Eight no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All eight reviewed claims remain at `argument`.
 
 Purpose: prove that the claim/evidence system can move claims conservatively, or explicitly decide not to move them.
 
@@ -182,8 +182,8 @@ Tasks:
 
 1. Pick narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; the first extension added `system-boundaries-and-authority.core` after the Authority proof follow-through; the second extension added `planning-as-a-control-layer.core` after the Planning proof follow-through.
 2. Review exact source passages, repository artifacts, commands, and limitations. Initial pilot reviewed repository artifacts, validators, proof audit, source appendix mechanics, and known limitations; it did not claim independent source-interpretation review.
-3. Create or update evidence transition records. The pilot now has seven JSON records under `evidence_transitions/v1_0_pilot/`.
-4. Record non-promotion decisions where evidence remains insufficient. The pilot records all seven as no-change decisions that remain at `argument`.
+3. Create or update evidence transition records. The pilot now has eight JSON records under `evidence_transitions/v1_0_pilot/`.
+4. Record non-promotion decisions where evidence remains insufficient. The pilot records all eight as no-change decisions that remain at `argument`.
 5. Update Appendix C only after a transition is accepted. No Appendix C support-state update was made because no upward transition was accepted.
 
 Acceptance criteria:
