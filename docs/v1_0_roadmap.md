@@ -159,7 +159,7 @@ Acceptance criteria:
 
 ## Phase 3 - Evidence Transition Pilot
 
-Status: initial pilot complete and extended. Five no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All five reviewed claims remain at `argument`.
+Status: initial pilot complete and extended. Six no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All six reviewed claims remain at `argument`.
 
 Purpose: prove that the claim/evidence system can move claims conservatively, or explicitly decide not to move them.
 
@@ -172,10 +172,10 @@ Initial candidates:
 
 Tasks:
 
-1. Pick 3-5 narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; the first extension added `system-boundaries-and-authority.core` after the Authority proof follow-through.
+1. Pick narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; the first extension added `system-boundaries-and-authority.core` after the Authority proof follow-through; the second extension added `planning-as-a-control-layer.core` after the Planning proof follow-through.
 2. Review exact source passages, repository artifacts, commands, and limitations. Initial pilot reviewed repository artifacts, validators, proof audit, source appendix mechanics, and known limitations; it did not claim independent source-interpretation review.
-3. Create or update evidence transition records. The pilot now has five JSON records under `evidence_transitions/v1_0_pilot/`.
-4. Record non-promotion decisions where evidence remains insufficient. The pilot records all five as no-change decisions that remain at `argument`.
+3. Create or update evidence transition records. The pilot now has six JSON records under `evidence_transitions/v1_0_pilot/`.
+4. Record non-promotion decisions where evidence remains insufficient. The pilot records all six as no-change decisions that remain at `argument`.
 5. Update Appendix C only after a transition is accepted. No Appendix C support-state update was made because no upward transition was accepted.
 
 Acceptance criteria:
@@ -186,16 +186,16 @@ Acceptance criteria:
 
 ## Phase 4 - Proof Adequacy Review
 
-Status: initial review complete, with first follow-through increment started. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope. System Boundaries remains `useful but too narrow` because deployed enforcement, revocation propagation, runtime confused-deputy probes, and policy traces remain unproven.
+Status: initial review complete, with two follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, and `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records. System Boundaries and Planning both remain `useful but too narrow` because deployed enforcement, runtime traces, planner quality, and richer integration behavior remain unproven.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
 
 Tasks:
 
 1. Review all 112 Lean proof targets. Initial review completed in `docs/proof_adequacy_review.md`.
-2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Initial target counts: 8 adequate finite-record, 26 useful-but-too-narrow, 20 richer-semantics-needed, 42 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
-3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it. No proof triage, Lean, chapter, or Appendix E change was made because the review did not identify a stronger predicate that should replace the current finite-record layer yet.
-4. Add or revise Lean code only where a stronger operational predicate is clear. No new Lean code was added in this pass.
+2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Current target counts after the Planning follow-through are 8 adequate finite-record, 27 useful-but-too-narrow, 20 richer-semantics-needed, 41 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
+3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it. The follow-through increments updated Lean code, the proof audit, chapter limitation prose, roadmap/status surfaces, and no-change evidence records without changing proof tags or support states.
+4. Add or revise Lean code only where a stronger operational predicate is clear. The current follow-through increments are `AsiStackProofs.Authority` and `AsiStackProofs.Planning`; both remain finite-record envelopes.
 
 Acceptance criteria:
 

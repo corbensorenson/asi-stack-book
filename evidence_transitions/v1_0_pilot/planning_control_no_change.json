@@ -1,0 +1,100 @@
+{
+  "transition_id": "v1_0_pilot.planning_control.no_change",
+  "claim_id": "planning-as-a-control-layer.core",
+  "claim_surface_refs": [
+    "chapters/planning-as-a-control-layer.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/plan_execution_contract_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "lean/AsiStackProofs/Planning.lean",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "finite planning-control proof and synthetic plan-execution fixture-gate behavior only; no planner-quality result, deployed scheduler behavior, context-demand predictor, runtime replanning trace, or source-derived support-state promotion",
+  "evidence_roles": [
+    "lean_build",
+    "synthetic_harness",
+    "proof_artifact_audit",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the Planning control-layer claim, a synthetic plan-execution contract harness with valid and expected-invalid fixtures, and a stronger finite Lean planning-control envelope for modeled dispatchable, blocked, and replanned records. Those artifacts support the design discipline around dispatch gates, receipt separation, authority preservation, stop-condition preservation, residual bookkeeping, and non-claim presence, but they still do not establish planner quality, decomposition accuracy, graph completeness, context-demand prediction, route choice, scheduler behavior, deployed execution, or runtime replanning behavior.",
+  "required_artifacts": [
+    "planner decomposition-quality harness over representative accepted commands",
+    "context-demand prediction tests with expected context packets and negative controls",
+    "runtime replanning traces that preserve authority, stop conditions, residuals, and receipt lineage",
+    "dependency-soundness and graph-completeness checks beyond synthetic fixtures",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "lean/AsiStackProofs/Planning.lean",
+    "docs/proof_artifact_audit.md",
+    "docs/plan_execution_contract_harness.md",
+    "scripts/validate_plan_execution_contracts.py",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#planning-as-a-control-layer.core",
+    "docs/source_evidence_audit.md#planning-as-a-control-layer.core"
+  ],
+  "verification_command": "python3 scripts/validate_plan_execution_contracts.py && (cd lean && lake build) && python3 scripts/validate_proof_artifact_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Planning remains at argument",
+    "plan-execution fixtures are synthetic",
+    "Planning Lean predicates are finite-record predicates",
+    "decomposition quality, context-demand prediction, and runtime replanning traces are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/planning-as-a-control-layer.qmd",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "plan-execution harness failure",
+    "Lean build failure",
+    "proof artifact audit drift",
+    "claim text interpreted as planner-quality or deployed-runtime evidence",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the specific artifact lane that actually passed, or after planner decomposition, context demand, dependency soundness, dispatch enforcement, and runtime replanning behavior are tested and reviewed with accepted evidence-transition records.",
+  "limitations": [
+    "finite Lean records do not establish planner behavior",
+    "synthetic fixtures do not establish deployed scheduler or runtime replanning behavior",
+    "source mappings support architectural discussion but do not by themselves promote support state",
+    "no independent planning-system or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent planning-system, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no planner decomposition-quality harness",
+    "no context-demand prediction test",
+    "no runtime replanning trace",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-planning-control-proof-and-evidence-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Planning above argument",
+    "does not establish planner quality",
+    "does not establish dependency soundness beyond synthetic fixtures",
+    "does not establish context-demand prediction",
+    "does not establish deployed runtime replanning behavior"
+  ]
+}

@@ -1179,7 +1179,8 @@ Draft deliverables:
 - Implemented protocol validation: `plan_graph` fixture validates public record shape only, including authority budget, replanning history, lifecycle states, blocked nodes, dispatch receipts, residual register, and non-claims.
 - Exact Appendix C claim-source mappings for the planning-control claim across PlanForge planning middleware, VIEA orchestration/runtime spine, Cognitive Compilation source-plan/S-IR pipeline, Software Magic Grimoire spell-stack workflow discipline, and MoECOT runtime-reference context; the four local mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`) now have reviewed passage references. `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, runtime replanning traces, or accepted evidence transitions.
 - Planned Codex test: Decomposition accuracy test.
-- Implemented synthetic Codex test: Dependency ordering test via `python3 scripts/validate_plan_execution_contracts.py`; runtime planner remains open.
+- Implemented synthetic Codex test: Dependency ordering and blocked-versus-dispatchable state checks via `python3 scripts/validate_plan_execution_contracts.py`; runtime planner remains open.
+- Implemented finite-record proof follow-through: `AsiStackProofs.Planning` now includes a `PlanControlRecord` envelope for modeled dispatchable, blocked, and replanned records; it checks required dispatch gates, receipt separation, parent-authority preservation, replanning stop-condition preservation, residual bookkeeping, and non-claim presence without treating those predicates as planner-quality or runtime-replanning evidence.
 - Planned Codex test: Context-demand prediction test.
 - Planned Codex test: Runtime replanning test.
 - Planned Codex test: Dispatch-state enforcement test.

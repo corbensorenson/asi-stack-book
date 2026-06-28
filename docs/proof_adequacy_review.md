@@ -9,9 +9,9 @@ This review classifies the 112 implemented Lean proof targets by adequacy for th
 | Adequacy class | Targets | Meaning |
 |---|---:|---|
 | adequate finite-record invariant | 8 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
-| useful but too narrow | 26 | The predicate is a useful guard, but the chapter needs state-machine, trace, or integration tests before the proof can support the larger boundary. |
+| useful but too narrow | 27 | The predicate is a useful guard, but the chapter needs state-machine, trace, or integration tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 20 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
-| needs executable tests first | 42 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
+| needs executable tests first | 41 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
 | needs empirical or baseline tests first | 10 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise. |
 | research-agenda until artifact import | 6 | The proof target remains a placeholder guard until external/local project artifacts are imported, built, replayed, or otherwise inspected. |
 
@@ -45,7 +45,7 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `recursive-self-improvement-boundaries` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `intent-to-execution-contracts` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `command-contracts-and-semantic-interfaces` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
-| `planning-as-a-control-layer` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `planning-as-a-control-layer` | 2 | useful but too narrow | Plan-control record envelope added; still add decomposition, context-demand, runtime replanning, and planner-quality tests. |
 | `planforge-dags-and-intelligence-arbitrage` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `cognitive-compilation-and-semantic-ir` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `virtual-context-abi` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
@@ -92,8 +92,14 @@ The first follow-through increment strengthened `AsiStackProofs.Authority` beyon
 
 This keeps the `system-boundaries-and-authority` proof cluster in the `useful but too narrow` class. The predicate is closer to the synthetic authority harness, but it still does not prove runtime adapter enforcement, deployed permission checks, revocation propagation, confused-deputy resistance in a live tool wrapper, or source interpretation adequacy.
 
+### Planning Control Record Envelope
+
+The second follow-through increment strengthened `AsiStackProofs.Planning` beyond the initial authority-inheritance and unsatisfied-constraint predicates. The module now includes a finite `PlanDispatchState`, `PlanControlRecord`, `PlanAuthorityWithinParent`, and `PlanControlRecordValid` envelope for modeled dispatchable, blocked, and replanned records. The new theorems check that valid modeled dispatchable plans expose command validation, satisfied constraints, stop conditions, context requirements, verification planning, dispatch receipts, absence of blocked nodes, and parent-authority preservation; that blocked modeled plans have no dispatch receipt; that replanned modeled plans preserve authority, stop conditions, and residual bookkeeping; and that valid records retain non-claim presence.
+
+This moves `planning-as-a-control-layer` from `needs executable tests first` to `useful but too narrow`. The predicate is now closer to the synthetic plan-execution harness, but it remains a finite-record formalization. It still does not establish planner quality, decomposition accuracy, graph completeness, context-demand prediction, route choice, scheduler behavior, deployed execution, or runtime replanning behavior.
+
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority and Planning now have stronger finite-record envelopes, but neither increment moves a chapter support state.
 
 No Appendix C support state changes were made.

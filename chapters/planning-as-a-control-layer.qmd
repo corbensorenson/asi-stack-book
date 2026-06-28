@@ -15,8 +15,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `moecot` remains connector/source-note mapped, and support remains argument until planner harnesses, dependency checks, context-demand tests, or runtime replanning traces exist."
-  - "The plan_graph fixture validates schema/example consistency only; decomposition, dependency ordering, context-demand, and runtime replanning tests remain unimplemented."
-  - "The implemented Planning Lean predicates cover finite plan-node records only; they do not prove planner quality, graph completeness, dependency soundness, or deployed replanning behavior."
+  - "The plan_graph fixture validates schema/example consistency, and the plan-execution harness checks synthetic dependency ordering; decomposition quality, context-demand prediction, and runtime replanning traces remain unimplemented."
+  - "The implemented Planning Lean predicates cover finite plan-node and plan-control records only; they do not establish planner quality, graph completeness, dependency soundness, or deployed replanning behavior."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-28 |
 | Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -262,7 +262,8 @@ This traffic-control layer is still an architectural target. Keep planning suppo
 |---|---|---|
 | Plan graph fixture validation | Check that the plan-graph fixture matches the public schema and declares assumptions, nodes, dependencies, context, tools, authority budget, risk and compute budgets, verification, replanning history, stop conditions, lifecycle states, dispatch receipts, residuals, non-claims, and dispatch state. | implemented by protocol validation; validated locally |
 | Authority inheritance finite-record proof | Check that a modeled plan node inherits the parent contract authority ceiling unless governance lowers it. | implemented in `AsiStackProofs.Planning`; runtime replanning test not run |
-| Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; planner harness not run |
+| Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; runtime planner not run |
+| Plan-control record proof envelope | Check that a modeled dispatchable plan carries command validation, constraints, stop conditions, context requirements, a verification plan, no blocked nodes, a dispatch receipt, and authority within the parent ceiling; check that modeled blocked and replanned states preserve the expected receipt and residual boundaries. | implemented in `AsiStackProofs.Planning`; planner quality and runtime replanning traces not run |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
 | Dependency ordering test | Check whether dependencies precede dependents before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic graph fixtures only |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
@@ -270,7 +271,7 @@ This traffic-control layer is still an architectural target. Keep planning suppo
 | Dispatch-state enforcement test | Check that only `dispatchable` nodes can lower into typed jobs and blocked/proposed nodes remain residuals or review items. | planned; not run |
 | Replanning-delta audit | Check that replanning records changed assumptions, authority basis, context, verification, stop conditions, and residuals. | planned; not run |
 
-The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency and dispatch-state consistency. Decomposition quality, context-demand prediction, runtime replanning, and support-state movement still require a planner harness, context-demand oracle, or replay trace.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency ordering, modeled dispatch gates, blocked-plan receipt separation, and replanning-residual bookkeeping. Decomposition quality, context-demand prediction, runtime replanning, and support-state movement still require a planner harness, context-demand oracle, or replay trace.
 
 ### Formalization hooks
 
@@ -279,7 +280,7 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
 
-These proof hooks are implemented only over finite Lean plan-node records in `AsiStackProofs.Planning`. They prove that a modeled node inherits the parent authority ceiling when no governance lowering is present, and that a modeled node with unsatisfied required constraints is not dispatchable. They do not prove plan quality, acyclicity, dependency ordering, context-demand prediction, route choice, or deployed replanning behavior.
+These proof hooks are implemented only over finite-record Lean surfaces in `AsiStackProofs.Planning`. The original node predicates check authority inheritance and unsatisfied-constraint blocking. The follow-through envelope adds modeled plan-control records for dispatchable, blocked, and replanned states: a valid modeled dispatchable record exposes command validation, required constraints, stop conditions, context requirements, verification planning, absence of blocked nodes, a dispatch receipt, and authority within the parent ceiling; a valid modeled blocked record has blocked nodes and no dispatch receipt; a valid modeled replanned record preserves authority, stop conditions, and a residual register. The formalization remains a local record guard, not a planner-quality result, acyclicity result, context-demand predictor, route-choice result, or deployed replanning trace.
 
 ## Source crosswalk
 

@@ -16,7 +16,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_manuscript_review.md` | Phase 2 baseline for the generated reader manuscript, including generated-reader metrics, spot-review notes, residuals, and non-claims. | tracked |
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
-| `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition pilot summary, recording five no-change support-state decisions and their blockers. | tracked |
+| `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition pilot summary, recording six no-change support-state decisions and their blockers. | tracked |
 | `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 112 Lean targets by what they do and do not justify. | tracked |
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
