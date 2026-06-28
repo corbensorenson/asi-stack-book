@@ -22,6 +22,7 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe --formats pdf
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf
 python3 scripts/build_audio_script.py --check
@@ -68,6 +69,11 @@ Results:
   page-view pairs across 14 reader surfaces at desktop and mobile widths, with
   styles loaded and no page-level horizontal overflow at the inspected
   viewports.
+- `docs/reader_format_review_matrix.md` records the synced pre-release
+  format-review ledger: 4 format rows, 4 full-format-review blockers, 4
+  release-record blockers, and 2 application/e-reader blockers. HTML and PDF
+  have representative spot checks only; EPUB and DOCX have structural checks
+  only until application/e-reader review happens.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -100,6 +106,10 @@ Results:
   full 54-chapter generated-reader chapter-text review queue is complete, but
   the matrix is not a reader release record and does not make any artifact
   release-ready.
+- The reader format review matrix is also a release-control queue only. It
+  records local render and inspection evidence for HTML, EPUB, DOCX, and PDF,
+  and it keeps every format unapproved until format-specific blockers and the
+  edition release record are reconciled.
 - `docs/reader_companion_note_routing_review.md` and
   `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
   reader/e-reader/audio companion-note routing for the three dense
@@ -123,9 +133,11 @@ Results:
    layout/navigation inspection and full reader-manuscript review before any
    release record can name them as reviewed artifacts; PDF also needs the
    explicit UTF-8 locale environment in this local setup.
-6. An edition release record must list exact produced artifacts, commands,
+6. The format-review matrix must be updated from actual review evidence rather
+   than inferred from successful renders; no row is release-approved today.
+7. An edition release record must list exact produced artifacts, commands,
    review state, failures, and residuals.
-7. Audio scripts need human review of diagrams, tables, code, schemas, source
+8. Audio scripts need human review of diagrams, tables, code, schemas, source
    IDs, proof-adjacent material, and pronunciation before any MP3, M4B, or
    audio-embedded EPUB work.
 
@@ -136,6 +148,9 @@ Results:
   review, but no EPUB, DOCX, PDF, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB
   artifact is claimed as published or release-ready.
 - No reader release, audiobook release, or edition release record is complete.
+- The reader format review matrix is not an edition release record and does not
+  approve HTML, EPUB, DOCX, PDF, e-reader conversion, audio, or audio-embedded
+  EPUB artifacts.
 - Passing readiness and structural artifact checks does not prove human
   editorial quality, layout quality, source interpretation, proof adequacy,
   benchmark behavior, or any chapter claim.

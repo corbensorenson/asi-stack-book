@@ -146,7 +146,7 @@ reader release or format-artifact approval.
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
-- The automated continuity audit and reader chapter review matrix are current, but neither replaces reader-release records, broader layout/navigation review, curated-manuscript reconciliation, or format artifact approval.
+- The automated continuity audit, reader chapter review matrix, and reader format review matrix are current, but none of them replaces reader-release records, broader layout/navigation review, curated-manuscript reconciliation, application/e-reader inspection, or format artifact approval.
 
 ## Next Review Pass
 
@@ -156,7 +156,7 @@ The next Phase 2 pass should:
 2. Classify each finding as a canonical live-book edit, a reader-only overlay, companion-note treatment, or no action.
 3. Add reader-only semantic deltas under `editions/reader_overlays/v1_0/` only when the live AI/research source should not change.
 4. Keep evidence boundaries, support states, implementation horizons, and non-claims inherited from the live book.
-5. Render reader HTML, EPUB, and DOCX only after the manuscript review is recorded. Attempt PDF only when local dependencies support it.
+5. Render reader HTML, EPUB, and DOCX only after the manuscript review is recorded. Attempt PDF only when local dependencies support it, then update `editions/reader_manuscript/v1_0/format_review_matrix.json` from actual format-review evidence rather than render success alone.
 6. Generate audio-script review output only after the reader manuscript is reviewed.
 
 ## Non-Claims
