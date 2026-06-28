@@ -1,6 +1,6 @@
 # Release Editions Plan
 
-Last updated: 2026-06-27
+Last updated: 2026-06-28
 
 The living book is the canonical architecture, evidence, source, proof, schema, and release-control source. Major-version editions begin as derived artifacts for different audiences. Once the normal reader manuscript needs sustained prose editing, it may become a curated parallel derivative source for human reading, but it is not an equal authority: claims, support states, source boundaries, proof/test status, implementation horizons, and release records remain governed by the live book.
 
@@ -75,7 +75,7 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `scripts/validate_reader_spine.py` checks the generated reader manuscript for substantial chapter prose, required reader headings, chapter-specific Handoff continuity, view-block cleanup, and stripped live-only scaffolding.
 - `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and inline plain-language support-state boundaries.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
-- `scripts/render_reader_formats.py` attempts selected reader-edition renders and writes `reader_render_report.json` with actual local outcomes.
+- `scripts/render_reader_formats.py` attempts selected reader-edition renders, snapshots successful format outputs under ignored `build/reader_edition/format_artifacts/`, and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source, and its check verifies that chapter scripts preserve the minimum-viable and beyond-state-of-the-art implementation horizons.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
@@ -137,7 +137,7 @@ python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
-This writes `build/reader_edition/reader_render_report.json`. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.
+This writes `build/reader_edition/reader_render_report.json` and snapshots successful formats under `build/reader_edition/format_artifacts/` for local review. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.
 
 Optional downstream formats such as Markdown, plain text, MOBI, or AZW3 can be produced from the reviewed reader source or reviewed EPUB with external tools. They should be listed in a release record only after generation and spot-checking.
 

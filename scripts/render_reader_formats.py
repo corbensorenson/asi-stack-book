@@ -2,10 +2,10 @@
 """Render selected reader-edition formats and record actual outcomes.
 
 This helper generates the reader-edition Quarto source, runs Quarto for the
-requested formats, and writes a local render report under the generated reader
-workspace. It does not publish artifacts and it does not mark a release
-complete. A major-version edition still needs review and an edition release
-record.
+requested formats, snapshots each successful format output under the ignored
+reader workspace, and writes a local render report. It does not publish
+artifacts and it does not mark a release complete. A major-version edition still
+needs review and an edition release record.
 """
 
 from __future__ import annotations
@@ -29,6 +29,7 @@ FORMAT_EXTENSIONS = {
     "docx": [".docx"],
     "pdf": [".pdf"],
 }
+PRESERVED_ARTIFACT_DIR = "format_artifacts"
 
 
 def find_artifacts(output_dir: Path, fmt: str) -> list[str]:
@@ -37,9 +38,31 @@ def find_artifacts(output_dir: Path, fmt: str) -> list[str]:
     for path in output_dir.rglob("*"):
         if not path.is_file():
             continue
+        if PRESERVED_ARTIFACT_DIR in path.relative_to(output_dir).parts:
+            continue
         if any(path.name.endswith(suffix) for suffix in suffixes):
             artifacts.append(str(path.relative_to(output_dir)))
     return sorted(artifacts)
+
+
+def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list[str]:
+    """Snapshot format outputs before a later Quarto render cleans the directory."""
+
+    snapshot_dir = output_dir / PRESERVED_ARTIFACT_DIR / fmt
+    if snapshot_dir.exists():
+        shutil.rmtree(snapshot_dir)
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+
+    preserved: list[str] = []
+    for artifact in artifacts:
+        src = output_dir / artifact
+        if not src.is_file():
+            continue
+        dst = snapshot_dir / artifact
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+        preserved.append(str(dst.relative_to(output_dir)))
+    return sorted(preserved)
 
 
 def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
@@ -53,12 +76,15 @@ def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
         stderr=subprocess.STDOUT,
     )
     output = result.stdout or ""
+    artifacts = find_artifacts(output_dir, fmt) if result.returncode == 0 else []
+    preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     return {
         "format": fmt,
         "status": "rendered" if result.returncode == 0 else "failed",
         "returncode": result.returncode,
         "command": " ".join(command),
-        "artifacts": find_artifacts(output_dir, fmt) if result.returncode == 0 else [],
+        "artifacts": artifacts,
+        "preserved_artifacts": preserved_artifacts,
         "log_excerpt": output[-4000:],
     }
 
@@ -79,6 +105,7 @@ def write_report(
         "non_claims": [
             "This report records local render attempts only.",
             "A rendered file is not a published major-version edition until reviewed and listed in an edition release record.",
+            "Preserved artifacts are local snapshots in an ignored review workspace, not release artifacts.",
             "PDF may fail on machines without local Quarto PDF dependencies.",
             "Audio artifacts are not produced by this reader-format renderer."
         ],

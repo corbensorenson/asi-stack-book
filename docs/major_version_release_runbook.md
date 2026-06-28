@@ -1,6 +1,6 @@
 # Major Version Release Runbook
 
-Last updated: 2026-06-27
+Last updated: 2026-06-28
 
 This runbook is for turning a tagged live-book state into human-consumable major-version artifacts without losing the live book's evidence authority.
 
@@ -104,7 +104,7 @@ python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
-PDF is optional until local Quarto PDF dependencies are present. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not canonical sources.
+Successful format attempts are snapshotted under ignored `build/reader_edition/format_artifacts/` for local review and summarized in `build/reader_edition/reader_render_report.json`. PDF is optional until local Quarto PDF dependencies are present. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not canonical sources.
 
 ## Audio Gate
 

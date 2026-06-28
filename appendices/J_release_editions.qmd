@@ -107,7 +107,7 @@ python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 ```
 
-That helper writes `reader_render_report.json` in the generated reader workspace. The report records local render outcomes only; it is not a major-version release record.
+That helper writes `reader_render_report.json` in the generated reader workspace and snapshots successful formats under `build/reader_edition/format_artifacts/` for local review. The report records local render outcomes only; it is not a major-version release record.
 
 The reader-facing spine is the ordinary chapter prose outside the stripped headings. Any uncertainty that changes the meaning of a claim belongs in that spine, not only in a guardrail, source crosswalk, proof hook, or test-plan section that a reader edition removes.
 
