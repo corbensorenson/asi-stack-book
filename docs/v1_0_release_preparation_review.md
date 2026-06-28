@@ -7,7 +7,7 @@ document, PDF, and audio packaging. It does not create a release and does not
 claim that any human-edition artifact is ready for publication. It was updated
 after the opening-chapter, Personal Compute Hives, Policy Optimization,
 Artifact Steward Agents, Semantic Representation, and Command Contracts reader
-overlays, plus the Fast Generation, Planning, Runtime Adapters, Labor OS, and Circle Contracts reader
+overlays, plus the Fast Generation, Human Intent, Planning, Runtime Adapters, Labor OS, and Circle Contracts reader
 overlays, so the current overlay state is not mistaken for a released reader
 manuscript.
 
@@ -29,11 +29,11 @@ Results:
 - Reader spine validation passed for 54 chapters, with minimum reader-spine
   chapter length 1,957 words.
 - Reader evidence-boundary validation passed for 54 chapters.
-- Reader overlay validation now passes with 20 active operations and 20 applied
+- Reader overlay validation now passes with 21 active operations and 21 applied
   operations. The reader overlay log is recorded separately in
   `docs/reader_overlay_pilot.md`.
 - Reader edition check passed for 54 chapters and 59 files; 275 live-only
-  sections would be removed, 60 reader scaffold terms would be humanized, and 20
+  sections would be removed, 60 reader scaffold terms would be humanized, and 21
   reader overlay operations would apply.
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
@@ -47,7 +47,7 @@ Results:
 - Generated reader and audio workspaces under `build/` are ignored review
   workspaces, not durable release artifacts.
 - The v1.0 reader overlay set now has opening-chapter, Personal Compute Hives,
-  Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Fast Generation, Policy
+  Human Intent, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Fast Generation, Policy
   Optimization, Artifact Steward Agents, and Semantic Representation operations.
   They are reader-only semantic deltas, not a reviewed reader release.
 

@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/human-intent-as-a-formal-input.qmd",
+  "operations": [
+    {
+      "id": "v1_0.human_intent.intake_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Intent intake states"
+      },
+      "rationale": "Replace the intent-intake state table with reader prose while preserving the canonical AI/research state matrix.",
+      "content_lines": [
+        "Intent intake needs states because a request is not permission just because it is understandable. A raw request can be interpreted and reviewed, but it should not dispatch work. An interpreted request has a structured reading, yet open assumptions may still limit it to drafting, option generation, or clarification. A bounded default is a low-risk assumption with scope and rollback; it may guide planning only inside that stated boundary.",
+        "",
+        "When missing information would change outcome, authority, evidence, or affected parties, the right state is clarification required. When the outcome is clear but the required means are not authorized, the state is authority pending: the system can ask for approval, offer a narrower route, or produce draft-only work, but it cannot quietly take the stronger power.",
+        "",
+        "An accepted contract is the first state that can lower into command contracts and plan sources, because objective, means, evidence, and stop conditions are sufficiently bounded. If downstream work changes the means, authority, publication surface, affected parties, evidence burden, or stop conditions, the work returns to re-contracting. Denied, stale, superseded, or outside-policy requests become lineage and residual records only.",
+        "",
+        "These states keep the human request corrigible. They let the system help where the lease is clear and stop where a useful interpretation would become unauthorized action."
+      ]
+    }
+  ]
+}

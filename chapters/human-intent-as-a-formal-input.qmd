@@ -4,7 +4,7 @@ chapter_id: "human-intent-as-a-formal-input"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "viea"
   - "software_magic_grimoire"
@@ -127,6 +127,10 @@ The contract compiles the request into an explicit objective, constraints, autho
 When ambiguity remains, the stack should not pretend to have resolved it. It can ask for clarification, choose a bounded default with visible assumptions, produce a draft-only artifact, or refuse the transition to execution.
 
 Contract change rules belong in the intent record. A plan that changes allowed means, adds a new tool class, expands publication surface, drops a stop condition, weakens evidence requirements, or changes the affected parties is not merely a better plan. It is a new authority question. This gives later governance, execution, and implementation-reference chapters a clean test: did the work stay inside the lease that the human actually granted?
+
+The state labels matter because they decide what kind of help is allowed. A draft, clarification, plan source, approval request, and rejected residual can all be useful, but they are not the same authority state. Conflating them is how helpful intake turns into hidden power.
+
+### Intent intake states
 
 Intent intake should use explicit states:
 
