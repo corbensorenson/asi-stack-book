@@ -148,6 +148,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Grounding fidelity test | planned | not run |
 | `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Hierarchy revision test | planned | not run |
 | `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Representation utility benchmark | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Generation-mode resource-budget alignment harness | implemented | passing via `python3 scripts/validate_generation_mode_baselines.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Load stability scenario | planned | not run |

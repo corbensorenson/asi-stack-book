@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Resource Economics proof-adequacy boundary alignment
+
+- Updated `docs/proof_adequacy_review.md`, `chapters/resource-economics-and-token-budgets.qmd`, `book_structure.json`, Appendix E, and v1.0 status/roadmap/focus surfaces to record the deterministic generation-mode/resource-budget alignment harness as Resource Economics proof-adequacy follow-through. Resource Economics moves from `needs executable tests first` to `useful but too narrow` because paired budget-accounting fixtures now check task/risk alignment, verification tax, protected overhead, safety gates, residuals, evidence refs, and no-promotion boundaries. The chapter remains at `argument`; this does not prove budget scheduling, load stability, verification-tax optimization, KV-cache or serving performance, cost-quality economics, runtime budget enforcement, support-state promotion, or source-derived evidence adequacy.
+
 ## 2026-06-28 - v1.0 curated reader chapter initializer
 
 - Added `scripts/init_curated_reader_chapter.py`, a dry-run-first helper that can initialize a future curated reader chapter record and starter file from the generated reader baseline after review decides overlays are too small for the intended human-reader edit. Updated the curated reader source contract, reader-manuscript README, repository map, and main README to document the workflow and its non-authority boundary. This creates no curated chapter file, no reader release, no ebook/document/PDF/audio artifact, no release record, no support-state promotion, and no equal source of truth beside the live AI/research book.

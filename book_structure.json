@@ -7733,6 +7733,13 @@
           "minimal_implementation": "A resource ledger with budget, risk, cost, quality, and verification tax fields.",
           "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review. In the mature budget OS, cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden.",
           "codex_tests": [
+            {
+              "name": "Generation-mode resource-budget alignment harness",
+              "purpose": "Check that deterministic generation-mode scenarios carry matching resource-budget records with task/risk alignment, verification tax, protected overhead, safety gates, residuals, evidence refs, and no-promotion boundaries.",
+              "status": "implemented; passing via `python3 scripts/validate_generation_mode_baselines.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_generation_mode_baselines.py`"
+            },
             "Budget allocation test",
             "Risk-adjusted verification test",
             "Load stability scenario",
