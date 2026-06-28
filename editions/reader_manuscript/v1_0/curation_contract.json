@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "active_contract",
+  "canonical_relationship": "parallel_derivative_not_equal_authority",
+  "manifest": "editions/reader_manuscript/v1_0/manifest.json",
+  "contract_doc": "docs/curated_reader_source_contract.md",
+  "curated_chapter_dir": "editions/reader_manuscript/v1_0/chapters",
+  "chapter_record_required_fields": [
+    "chapter_id",
+    "title",
+    "file",
+    "reconciliation_status",
+    "generated_baseline_ref",
+    "live_source_ref",
+    "claim_boundary_ref",
+    "implementation_horizon_ref",
+    "curation_scope",
+    "divergence_summary",
+    "meaning_preservation_checks",
+    "release_blockers",
+    "canonical_change_required",
+    "canonical_change_ref",
+    "review_notes"
+  ],
+  "allowed_edit_scopes": [
+    "pacing",
+    "chapter openings and closings",
+    "section flow",
+    "reader examples",
+    "transition prose",
+    "sentence-level voice",
+    "companion-note integration",
+    "paragraph ordering",
+    "chapter compression"
+  ],
+  "blocked_edit_scopes": [
+    "claim text meaning",
+    "support-state meaning",
+    "source boundary meaning",
+    "proof/test status",
+    "minimum viable implementation status",
+    "beyond-state-of-the-art non-claim boundary",
+    "release artifact existence",
+    "chapter identity or manifest mapping"
+  ],
+  "meaning_preservation_checks": [
+    "support-state boundary preserved in reader prose",
+    "source boundary preserved or reconciled back to the live chapter",
+    "proof/test status preserved without adding unrun results",
+    "implementation horizon preserved without implying current implementation",
+    "release blocker status preserved until an edition release record clears it",
+    "meaning-changing caveats either preserved or fixed in the live chapter"
+  ],
+  "required_release_blockers_before_release": [
+    "reader_release_record_not_created",
+    "format_artifact_not_reviewed",
+    "curated_reconciliation_not_approved"
+  ],
+  "required_commands": [
+    "python3 scripts/build_reader_edition.py --check",
+    "python3 scripts/validate_reader_manuscript_manifest.py",
+    "python3 scripts/sync_reader_chapter_review_matrix.py --check",
+    "python3 scripts/sync_reader_format_review_matrix.py --check",
+    "python3 scripts/validate_reader_spine.py --check",
+    "python3 scripts/validate_reader_evidence_boundaries.py --check"
+  ],
+  "graduation_modes": [
+    {
+      "status": "drafting",
+      "meaning": "Curated chapter files may exist for prose work, but every chapter keeps release blockers and reconciliation remains incomplete."
+    },
+    {
+      "status": "reconciliation",
+      "meaning": "Curated chapter files are being checked against live claims, generated baselines, support boundaries, proof/test status, and implementation horizons."
+    },
+    {
+      "status": "release_candidate",
+      "meaning": "All curated chapters are reconciled and may be used as reader-release input only after format review and an edition release record exist."
+    }
+  ],
+  "non_claims": [
+    "This contract does not create curated reader chapter files.",
+    "This contract does not create or approve EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.",
+    "This contract does not promote any Appendix C support state.",
+    "This contract is not equal authority beside the live AI/research book."
+  ]
+}

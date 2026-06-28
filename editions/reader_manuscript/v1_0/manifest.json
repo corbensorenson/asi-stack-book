@@ -72,6 +72,12 @@
     "check_command": "python3 scripts/sync_reader_format_review_matrix.py --check",
     "policy": "Track reader format artifact review separately from chapter-text review, and keep every format blocked until artifact review and an edition release record actually exist."
   },
+  "curation_contract": {
+    "path": "editions/reader_manuscript/v1_0/curation_contract.json",
+    "doc": "docs/curated_reader_source_contract.md",
+    "check_command": "python3 scripts/validate_reader_manuscript_manifest.py",
+    "policy": "If generated reader source plus overlays stop being enough, curated chapter files may become a parallel derivative prose source only under this contract; they remain subordinate to live-book claims, support states, source boundaries, proof/test status, implementation horizons, and release records."
+  },
   "chapter_records": [],
   "reconciliation_report": {
     "required_before_release": true,

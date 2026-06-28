@@ -10,6 +10,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 ## Inputs
 
 - Reader manuscript manifest: `editions/reader_manuscript/v1_0/manifest.json`
+- Curated source contract: `editions/reader_manuscript/v1_0/curation_contract.json`
+- Contract summary: `docs/curated_reader_source_contract.md`
 - Reconciliation template: `editions/reader_manuscript/v1_0/reconciliation_report.md`
 - Chapter review matrix: `editions/reader_manuscript/v1_0/chapter_review_matrix.json`
 - Public review summary: `docs/reader_chapter_review_matrix.md`
@@ -72,6 +74,9 @@ true:
   `editions/reader_manuscript/v1_0/manifest.json`.
 - Store curated chapter files under
   `editions/reader_manuscript/v1_0/chapters/`.
+- Follow `editions/reader_manuscript/v1_0/curation_contract.json` for required
+  record fields, allowed edit scopes, blocked divergence, meaning-preservation
+  checks, and pre-release blockers.
 - Update `editions/reader_manuscript/v1_0/reconciliation_report.md`.
 - Preserve generated-reader baseline refs, live-source refs, claim boundaries,
   source boundaries, proof/test status, implementation horizons, and release

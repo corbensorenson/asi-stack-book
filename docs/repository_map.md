@@ -47,7 +47,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `editions/release_profiles.json` | Machine-readable audience, content-layer, and release-profile definitions for live, research, reader, and audio editions. | tracked |
 | `editions/reader_overlays/` | Versioned semantic reader-edition overlays and examples; editable source for major human-reader deltas. | tracked |
-| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, synced chapter review matrix, companion-note routing manifest, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
+| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, curation contract, synced chapter review matrix, companion-note routing manifest, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |
@@ -76,7 +76,7 @@ This repository is organized around the living book and its validation loop.
 - Update `appendices/F_changelog.qmd` for meaningful changes.
 - Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py`, `python3 scripts/sync_reader_overlay_asset.py --check`, `python3 scripts/validate_reading_mode_toggle.py`, `python3 scripts/validate_human_reading_paths.py`, `python3 scripts/build_reader_edition.py --check`, `python3 scripts/validate_reader_overlays.py --check`, `python3 scripts/validate_reader_evidence_boundaries.py --check`, `python3 scripts/validate_reader_spine.py --check`, `python3 scripts/render_reader_formats.py --check`, and `python3 scripts/build_audio_script.py --check` when the audio path is affected.
 - Run `python3 scripts/audit_reader_continuity.py --write` after reader prose, overlay, or strip-policy changes that affect the generated reader manuscript, then validate with `python3 scripts/audit_reader_continuity.py --check`.
-- Edit `editions/reader_manuscript/v1_0/manifest.json` or `editions/reader_manuscript/v1_0/companion_note_routing.json` only when reader-manuscript status or companion-note routing changes, then run `python3 scripts/validate_reader_manuscript_manifest.py`.
+- Edit `editions/reader_manuscript/v1_0/manifest.json`, `editions/reader_manuscript/v1_0/curation_contract.json`, or `editions/reader_manuscript/v1_0/companion_note_routing.json` only when reader-manuscript status, curated-source policy, or companion-note routing changes, then run `python3 scripts/validate_reader_manuscript_manifest.py`.
 - Run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter additions, removals, moves, overlay changes, or manual reader-review decisions; validate with `python3 scripts/sync_reader_chapter_review_matrix.py --check`.
 - Edit `editions/reader_manuscript/v1_0/format_review_matrix.json` after reader-format render, structural inspection, e-reader/app inspection, PDF layout review, or release-record status changes; regenerate `docs/reader_format_review_matrix.md` with `python3 scripts/sync_reader_format_review_matrix.py --write`.
 

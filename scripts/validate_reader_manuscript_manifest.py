@@ -19,9 +19,49 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 ALLOWED_STATUS = {"not_graduated", "drafting", "reconciliation", "release_candidate", "released"}
 ALLOWED_RECONCILIATION_STATUS = {"not_started", "drafting", "blocked", "reconciled"}
+ALLOWED_CURATION_CONTRACT_STATUS = {"active_contract"}
 ALLOWED_ROUTING_STATUS = {
     "retain_in_reader_spine_with_companion_note",
     "future_curated_review_with_companion_note",
+}
+REQUIRED_CURATION_CONTRACT_FIELDS = {
+    "schema_version",
+    "major_version",
+    "status",
+    "canonical_relationship",
+    "manifest",
+    "contract_doc",
+    "curated_chapter_dir",
+    "chapter_record_required_fields",
+    "allowed_edit_scopes",
+    "blocked_edit_scopes",
+    "meaning_preservation_checks",
+    "required_release_blockers_before_release",
+    "required_commands",
+    "graduation_modes",
+    "non_claims",
+}
+REQUIRED_CURATED_CHAPTER_RECORD_FIELDS = {
+    "chapter_id",
+    "title",
+    "file",
+    "reconciliation_status",
+    "generated_baseline_ref",
+    "live_source_ref",
+    "claim_boundary_ref",
+    "implementation_horizon_ref",
+    "curation_scope",
+    "divergence_summary",
+    "meaning_preservation_checks",
+    "release_blockers",
+    "canonical_change_required",
+    "canonical_change_ref",
+    "review_notes",
+}
+REQUIRED_CURATION_RELEASE_BLOCKERS = {
+    "reader_release_record_not_created",
+    "format_artifact_not_reviewed",
+    "curated_reconciliation_not_approved",
 }
 REQUIRED_ROUTING_RELEASE_BLOCKERS = {
     "reader_release_record_not_created",
@@ -43,6 +83,7 @@ REQUIRED_FIELDS = {
     "companion_note_routing",
     "chapter_review_matrix",
     "format_review_matrix",
+    "curation_contract",
     "chapter_records",
     "reconciliation_report",
     "non_claims",
@@ -210,6 +251,176 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
         ):
             errors.append("format_review_matrix.policy must mention format artifact and edition release record.")
 
+    contract_ref = data.get("curation_contract")
+    if not isinstance(contract_ref, dict):
+        errors.append("curation_contract must be an object.")
+    else:
+        expected = {
+            "path": "editions/reader_manuscript/v1_0/curation_contract.json",
+            "doc": "docs/curated_reader_source_contract.md",
+            "check_command": "python3 scripts/validate_reader_manuscript_manifest.py",
+        }
+        for key, expected_value in expected.items():
+            if contract_ref.get(key) != expected_value:
+                errors.append(f"curation_contract.{key} must be {expected_value}.")
+        for key in ("path", "doc"):
+            value = contract_ref.get(key)
+            if isinstance(value, str):
+                require_existing_path(f"curation_contract.{key}", value, errors)
+        policy = contract_ref.get("policy")
+        if (
+            not isinstance(policy, str)
+            or "parallel derivative" not in policy
+            or "subordinate" not in policy
+            or "support states" not in policy
+        ):
+            errors.append(
+                "curation_contract.policy must mention parallel derivative, subordinate status, and support states."
+            )
+
+
+def validate_curation_contract(data: dict[str, Any], errors: list[str]) -> dict[str, Any] | None:
+    contract_ref = data.get("curation_contract")
+    if not isinstance(contract_ref, dict) or not isinstance(contract_ref.get("path"), str):
+        return None
+    contract_path = ROOT / contract_ref["path"]
+    if not contract_path.exists():
+        return None
+
+    contract = load_json(contract_path)
+    if not isinstance(contract, dict):
+        errors.append(f"{rel(contract_path)} must contain an object.")
+        return None
+
+    missing = sorted(REQUIRED_CURATION_CONTRACT_FIELDS - set(contract))
+    if missing:
+        errors.append(f"{rel(contract_path)} missing required fields: {missing}")
+        return contract
+
+    if contract.get("schema_version") != "0.1":
+        errors.append(f"{rel(contract_path)} schema_version must be 0.1.")
+    if contract.get("major_version") != "v1.0":
+        errors.append(f"{rel(contract_path)} major_version must be v1.0.")
+    if contract.get("status") not in ALLOWED_CURATION_CONTRACT_STATUS:
+        errors.append(f"{rel(contract_path)} status must be active_contract.")
+    if contract.get("canonical_relationship") != "parallel_derivative_not_equal_authority":
+        errors.append(f"{rel(contract_path)} canonical_relationship must be parallel_derivative_not_equal_authority.")
+
+    expected_paths = {
+        "manifest": "editions/reader_manuscript/v1_0/manifest.json",
+        "contract_doc": "docs/curated_reader_source_contract.md",
+        "curated_chapter_dir": "editions/reader_manuscript/v1_0/chapters",
+    }
+    for key, expected_value in expected_paths.items():
+        if contract.get(key) != expected_value:
+            errors.append(f"{rel(contract_path)} {key} must be {expected_value}.")
+        if isinstance(contract.get(key), str):
+            require_existing_path(f"{rel(contract_path)} {key}", contract[key], errors)
+
+    record_fields = set(
+        require_string_list(
+            "curation contract",
+            "chapter_record_required_fields",
+            contract.get("chapter_record_required_fields"),
+            errors,
+        )
+    )
+    missing_fields = sorted(REQUIRED_CURATED_CHAPTER_RECORD_FIELDS - record_fields)
+    if missing_fields:
+        errors.append(f"curation contract chapter_record_required_fields missing {missing_fields}.")
+
+    allowed = require_string_list(
+        "curation contract", "allowed_edit_scopes", contract.get("allowed_edit_scopes"), errors
+    )
+    if "pacing" not in allowed or "section flow" not in allowed:
+        errors.append("curation contract allowed_edit_scopes must include pacing and section flow.")
+
+    blocked = require_string_list(
+        "curation contract", "blocked_edit_scopes", contract.get("blocked_edit_scopes"), errors
+    )
+    blocked_text = " ".join(blocked).lower()
+    for phrase in ("support-state", "source boundary", "proof/test", "release artifact"):
+        if phrase not in blocked_text:
+            errors.append(f"curation contract blocked_edit_scopes must mention {phrase}.")
+
+    checks = require_string_list(
+        "curation contract",
+        "meaning_preservation_checks",
+        contract.get("meaning_preservation_checks"),
+        errors,
+    )
+    checks_text = " ".join(checks).lower()
+    for phrase in ("support-state", "source boundary", "proof/test", "implementation horizon", "release blocker"):
+        if phrase not in checks_text:
+            errors.append(f"curation contract meaning_preservation_checks must mention {phrase}.")
+
+    blockers = set(
+        require_string_list(
+            "curation contract",
+            "required_release_blockers_before_release",
+            contract.get("required_release_blockers_before_release"),
+            errors,
+        )
+    )
+    missing_blockers = REQUIRED_CURATION_RELEASE_BLOCKERS - blockers
+    if missing_blockers:
+        errors.append(f"curation contract required_release_blockers_before_release missing {sorted(missing_blockers)}.")
+
+    commands = require_string_list(
+        "curation contract", "required_commands", contract.get("required_commands"), errors
+    )
+    for command in (
+        "python3 scripts/validate_reader_manuscript_manifest.py",
+        "python3 scripts/validate_reader_spine.py --check",
+        "python3 scripts/validate_reader_evidence_boundaries.py --check",
+    ):
+        if command not in commands:
+            errors.append(f"curation contract required_commands must include {command}.")
+
+    modes = contract.get("graduation_modes")
+    if not isinstance(modes, list) or not modes:
+        errors.append("curation contract graduation_modes must be a non-empty list.")
+    else:
+        seen_modes: set[str] = set()
+        for index, mode in enumerate(modes):
+            if not isinstance(mode, dict):
+                errors.append(f"curation contract graduation_modes[{index}] must be an object.")
+                continue
+            status = mode.get("status")
+            if status not in {"drafting", "reconciliation", "release_candidate"}:
+                errors.append(f"curation contract graduation_modes[{index}].status is invalid.")
+            else:
+                seen_modes.add(status)
+            meaning = mode.get("meaning")
+            if not isinstance(meaning, str) or len(meaning.split()) < 8:
+                errors.append(f"curation contract graduation_modes[{index}].meaning must be substantive.")
+        for required_mode in ("drafting", "reconciliation", "release_candidate"):
+            if required_mode not in seen_modes:
+                errors.append(f"curation contract graduation_modes must include {required_mode}.")
+
+    non_claims = require_string_list("curation contract", "non_claims", contract.get("non_claims"), errors)
+    non_claim_text = " ".join(non_claims).lower()
+    for phrase in ("does not create", "does not promote", "not equal"):
+        if phrase not in non_claim_text:
+            errors.append(f"curation contract non_claims must include boundary phrase: {phrase}")
+
+    doc_value = contract.get("contract_doc")
+    if isinstance(doc_value, str) and (ROOT / doc_value).exists():
+        text = (ROOT / doc_value).read_text(encoding="utf-8", errors="ignore").lower()
+        for phrase in (
+            "not equal authority",
+            "claim text meaning",
+            "support-state meaning",
+            "source-boundary meaning",
+            "proof/test status",
+            "implementation horizons",
+            "release blockers",
+        ):
+            if phrase not in text:
+                errors.append(f"{doc_value} must include curation boundary phrase: {phrase}")
+
+    return contract
+
 
 def validate_companion_note_routing(
     data: dict[str, Any],
@@ -312,12 +523,21 @@ def validate_companion_note_routing(
         errors.append(f"companion-note routing has non-candidate records: {sorted(extra_routes)}")
 
 
-def validate_chapter_records(data: dict[str, Any], chapters: dict[str, dict[str, Any]], errors: list[str]) -> None:
+def validate_chapter_records(
+    data: dict[str, Any],
+    chapters: dict[str, dict[str, Any]],
+    contract: dict[str, Any] | None,
+    errors: list[str],
+) -> None:
     records = data.get("chapter_records")
     if not isinstance(records, list):
         errors.append("chapter_records must be a list.")
         return
 
+    allowed_scopes = set(contract.get("allowed_edit_scopes", [])) if isinstance(contract, dict) else set()
+    required_pre_release_blockers = (
+        set(contract.get("required_release_blockers_before_release", [])) if isinstance(contract, dict) else set()
+    )
     seen: set[str] = set()
     for index, record in enumerate(records):
         owner = f"chapter_records[{index}]"
@@ -332,6 +552,10 @@ def validate_chapter_records(data: dict[str, Any], chapters: dict[str, dict[str,
             errors.append(f"{owner}: duplicate chapter_id {chapter_id}.")
         seen.add(chapter_id)
 
+        expected_title = chapters[chapter_id].get("title")
+        if record.get("title") != expected_title:
+            errors.append(f"{owner}: title must match book_structure.json title {expected_title!r}.")
+
         file_path = record.get("file")
         if not isinstance(file_path, str) or not file_path.startswith("editions/reader_manuscript/v1_0/chapters/"):
             errors.append(f"{owner}: file must be under editions/reader_manuscript/v1_0/chapters/.")
@@ -345,6 +569,46 @@ def validate_chapter_records(data: dict[str, Any], chapters: dict[str, dict[str,
         for key in ("generated_baseline_ref", "live_source_ref", "claim_boundary_ref", "implementation_horizon_ref"):
             if not isinstance(record.get(key), str) or not record[key].strip():
                 errors.append(f"{owner}: {key} must be a non-empty string.")
+
+        scopes = require_string_list(owner, "curation_scope", record.get("curation_scope"), errors)
+        if allowed_scopes:
+            invalid_scopes = sorted(scope for scope in scopes if scope not in allowed_scopes)
+            if invalid_scopes:
+                errors.append(f"{owner}: curation_scope includes scopes not allowed by contract: {invalid_scopes}")
+
+        divergence_summary = record.get("divergence_summary")
+        if not isinstance(divergence_summary, str) or len(divergence_summary.split()) < 8:
+            errors.append(f"{owner}: divergence_summary must be a substantive sentence.")
+
+        preservation_checks = require_string_list(
+            owner,
+            "meaning_preservation_checks",
+            record.get("meaning_preservation_checks"),
+            errors,
+        )
+        preservation_text = " ".join(preservation_checks).lower()
+        for phrase in ("support-state", "source boundary", "proof/test", "implementation horizon", "release blocker"):
+            if phrase not in preservation_text:
+                errors.append(f"{owner}: meaning_preservation_checks must mention {phrase}.")
+
+        release_blockers = set(require_string_list(owner, "release_blockers", record.get("release_blockers"), errors))
+        if data.get("status") not in {"release_candidate", "released"} and required_pre_release_blockers:
+            missing_blockers = sorted(required_pre_release_blockers - release_blockers)
+            if missing_blockers:
+                errors.append(f"{owner}: release_blockers missing pre-release blockers {missing_blockers}.")
+
+        if not isinstance(record.get("canonical_change_required"), bool):
+            errors.append(f"{owner}: canonical_change_required must be a boolean.")
+        canonical_ref = record.get("canonical_change_ref")
+        if record.get("canonical_change_required") is True:
+            if not isinstance(canonical_ref, str) or len(canonical_ref.split()) < 3:
+                errors.append(f"{owner}: canonical_change_ref must explain the live-source change requirement.")
+        elif not isinstance(canonical_ref, str):
+            errors.append(f"{owner}: canonical_change_ref must be a string.")
+
+        review_notes = record.get("review_notes")
+        if not isinstance(review_notes, str) or len(review_notes.split()) < 5:
+            errors.append(f"{owner}: review_notes must be a substantive note.")
 
     if data.get("status") in {"release_candidate", "released"}:
         missing = sorted(set(chapters) - seen)
@@ -416,7 +680,8 @@ def main() -> None:
     chapters = flatten_chapters(structure if isinstance(structure, dict) else {})
 
     validate_manifest(data, errors)
-    validate_chapter_records(data, chapters, errors)
+    curation_contract = validate_curation_contract(data, errors)
+    validate_chapter_records(data, chapters, curation_contract, errors)
     validate_companion_note_routing(data, chapters, errors)
     validate_reconciliation_report(data, errors)
     validate_docs_reference_manifest(errors)
