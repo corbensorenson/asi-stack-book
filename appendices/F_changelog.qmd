@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 focus audit
+
+- Added `docs/v1_0_focus_audit.md` as the durable project audit and next-focus map for moving the book from v1.0 candidate mechanics toward evidence-release and reader-release quality. The audit records the current manifest, source, proof, schema, reader, test, and release surfaces; separates validated mechanics from unproven source interpretation, runtime behavior, proof adequacy, and reviewed reader artifacts; and prioritizes reader-manuscript review, evidence-transition pilots, executable tests, proof adequacy review, external literature backfill, release dry runs, visual review, and public-site inspection. Linked the audit from the README and repository map. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal result-transition prose polish
 
 - Reworked repeated reader-visible `The result is` summary and transition formulas across four chapter passages so each one names the actual bridge, discipline, lifecycle, or artifact path directly: proof-envelope formalization, residual-honest compression, typed-job autonomy, and readiness lifecycle discipline. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, and v1.0 status guard so future summaries avoid the same generic result scaffold. Refreshed the v1.0 status manuscript scale to 183,890 chapter words excluding YAML and 191,389 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
