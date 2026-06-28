@@ -11,7 +11,7 @@ This directory defines how major versions of the living book become audience-spe
 
 The same file also defines the content-layer contract: reader-facing chapter spine, live research scaffold, evidence matrices, machine-readable contracts, release derivatives, audio adaptation, and companion material. It also records the live Human view policy used by the GitHub Pages toggle. Future writing runs should keep meaning-critical prose in the reader spine and put repeatable source/proof/test machinery in live-only sections that the release profiles can remove or summarize.
 
-Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a semantic reader overlay under `reader_overlays/` when the delta belongs only to a major human-reader edition. The tracked overlay manifest and chapter operation files are the editable reader-delta source; `reader_delta_report.md` is generated review output with operation digests and before/after excerpts, and should not be patched by hand.
+Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a semantic reader overlay under `reader_overlays/` when the delta belongs only to a major human-reader edition. The tracked overlay manifest and chapter operation files are the editable reader-delta source; `reader_delta_report.md` is generated review output with a zero-active-operation note or operation digests and before/after excerpts, and should not be patched by hand.
 
 Validate the profile definitions with:
 

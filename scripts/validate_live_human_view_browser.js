@@ -360,7 +360,38 @@ async function validateReaderOverlayPayload(page, pageId) {
     throw new Error(`${pageId}: embedded reader overlay payload has unexpected manifest path.`);
   }
   if (!Array.isArray(payload.operations)) throw new Error(`${pageId}: embedded reader overlay operations are not an array.`);
+  if (payload.operation_count !== payload.operations.length) {
+    throw new Error(`${pageId}: embedded reader overlay operation_count does not match operations length.`);
+  }
   return payload;
+}
+
+async function validateReaderOverlayRuntime(page, pageId, payload) {
+  const metrics = await page.evaluate(() => {
+    const root = document.documentElement;
+    const numberAttr = (name) => Number(root.getAttribute(name) || "0");
+    return {
+      processed: root.getAttribute("data-asi-reader-overlay-processed") === "true",
+      total: numberAttr("data-asi-reader-overlay-total"),
+      matching: numberAttr("data-asi-reader-overlay-matching"),
+      applied: numberAttr("data-asi-reader-overlay-applied"),
+      skipped: numberAttr("data-asi-reader-overlay-skipped"),
+      skipped_ids: root.getAttribute("data-asi-reader-overlay-skipped-ids") || "",
+      applied_nodes: document.querySelectorAll(".asi-reader-overlay-only").length,
+      original_wrappers: document.querySelectorAll(".asi-reader-overlay-original").length,
+    };
+  });
+  if (!metrics.processed) throw new Error(`${pageId}: reader overlay payload was embedded but not processed.`);
+  if (metrics.total !== payload.operations.length) {
+    throw new Error(`${pageId}: reader overlay runtime total does not match embedded operations length.`);
+  }
+  if (metrics.matching !== metrics.applied + metrics.skipped) {
+    throw new Error(`${pageId}: reader overlay runtime matching count does not equal applied plus skipped.`);
+  }
+  if (metrics.applied !== metrics.applied_nodes) {
+    throw new Error(`${pageId}: reader overlay runtime applied count does not match inserted overlay nodes.`);
+  }
+  return metrics;
 }
 
 async function validateChapterPage(page, fileUrl, pageId) {
@@ -369,6 +400,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
   const overlayPayload = await validateReaderOverlayPayload(page, pageId);
+  const overlayRuntime = await validateReaderOverlayRuntime(page, pageId, overlayPayload);
   await page.waitForSelector(".asi-core-claim-marker", { state: "attached", timeout: 5000 });
   await page.waitForSelector(".asi-support-boundary-human--claim", { state: "attached", timeout: 5000 });
 
@@ -400,6 +432,7 @@ async function validateChapterPage(page, fileUrl, pageId) {
     visible_human_support_boundaries: supportBoundaryVisibleHuman,
     visible_live_toc_links: liveTocVisibleHuman,
     reader_overlay_operations: overlayPayload.operations.length,
+    reader_overlay_runtime: overlayRuntime,
     status_text: humanStatus || "",
     layout: humanLayout,
     diagrams: humanDiagrams,
@@ -481,9 +514,11 @@ async function validateAppendixPage(page, fileUrl, pageId) {
   await waitForMode(page, "human");
   await page.waitForSelector(".asi-reading-mode", { timeout: 5000 });
   const overlayPayload = await validateReaderOverlayPayload(page, pageId);
+  const overlayRuntime = await validateReaderOverlayRuntime(page, pageId, overlayPayload);
   const status = await page.locator("[data-asi-reading-mode-status]").textContent();
   record.checks.human_url_mode = {
     reader_overlay_operations: overlayPayload.operations.length,
+    reader_overlay_runtime: overlayRuntime,
     status_text: status || "",
     layout: await validateResponsiveLayout(page, pageId, "human"),
   };

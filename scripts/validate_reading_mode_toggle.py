@@ -183,6 +183,13 @@ def main() -> None:
         "reader overlay operation function": "function applyReaderOverlayOperation",
         "reader overlay apply function": "function applyReaderOverlays",
         "reader overlay apply call": "applyReaderOverlays()",
+        "reader overlay metric prefix": 'const overlayMetricPrefix = "data-asi-reader-overlay"',
+        "reader overlay processed attribute": "const overlayProcessedAttribute",
+        "reader overlay total attribute": "const overlayTotalAttribute",
+        "reader overlay matching attribute": "const overlayMatchingAttribute",
+        "reader overlay skipped attribute": "const overlaySkippedAttribute",
+        "reader overlay metrics function": "function setReaderOverlayMetrics",
+        "reader overlay applied attribute": "const overlayAppliedAttribute",
         "reader overlay only class": "asi-reader-overlay-only",
         "reader overlay original class": "asi-reader-overlay-original",
         "toc link marker function": "function markLiveTocLinks",
@@ -203,7 +210,8 @@ def main() -> None:
         '"schema_version": "0.1"',
         '"profile": "reader_release"',
         '"manifest_path": "editions/reader_overlays/v1_0/manifest.json"',
-        '"operations": []',
+        '"operation_count":',
+        '"operations":',
     ):
         if needle not in overlay_text:
             errors.append(f"assets/reader-overlays.html is missing required payload text: {needle!r}")

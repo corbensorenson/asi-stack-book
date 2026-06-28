@@ -1,6 +1,6 @@
 # Chapter Reader Overlay Operations
 
-Add one JSON operation file per chapter only when a major human-reader version needs prose that should survive regeneration but should not change the canonical AI/research source.
+Add one JSON operation file per chapter only when a major human-reader version needs prose that should survive regeneration but should not change the canonical AI/research source. It is valid for this directory to contain no active operation files when the reader edition does not yet need reader-only deltas.
 
 The manifest at `editions/reader_overlays/v1_0/manifest.json` loads `chapters/*.json`. Each file should use this shape:
 
@@ -37,4 +37,4 @@ python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/validate_reader_overlays.py --check
 ```
 
-Review `build/reader_edition/reader_delta_report.md` after a non-check reader build. The report includes generated transformations, operation metadata, content digests, and before/after excerpts. It is review evidence, not an editable patch file.
+Review `build/reader_edition/reader_delta_report.md` after a non-check reader build. The report includes generated transformations and either a zero-active-operation note or operation metadata, content digests, and before/after excerpts. It is review evidence, not an editable patch file.

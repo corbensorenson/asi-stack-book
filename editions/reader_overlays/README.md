@@ -8,6 +8,8 @@ Use overlays only when the change should affect the generated reader edition wit
 
 The editable delta source is the tracked overlay manifest plus operation files under this directory. `reader_delta_report.md` is generated from that source during `scripts/build_reader_edition.py`; review the report, but do not edit it to change reader prose. The report records operation metadata, content digests, and before/after excerpts so a reviewer can inspect the semantic delta without treating it as a patch file. If the report shows the wrong delta, edit the overlay operation or the canonical chapter and regenerate.
 
+Zero active operations is a valid state when the v1.0 reader edition has no reader-only prose deltas. In that state the generated delta report must say that no operation-level excerpts exist. Once active operations exist, every active operation must apply to exactly one derived source section, and the report must include operation digests plus before/after excerpts.
+
 Supported operation types are section-anchored:
 
 - `replace_section`
@@ -18,7 +20,7 @@ Supported operation types are section-anchored:
 
 Each operation targets a stable repository-relative `.qmd` file and a heading by level and title. Do not target generated line numbers.
 
-Active operations are embedded into `assets/reader-overlays.html` by `scripts/sync_reader_overlay_asset.py`. The generated reader edition applies the operations to derived Quarto source, while the live Human view applies the same operations in the browser only when Human view is active.
+Active operations are embedded into `assets/reader-overlays.html` by `scripts/sync_reader_overlay_asset.py`. The generated reader edition applies the operations to derived Quarto source, while the live Human view applies the same operations in the browser and records page-level operation totals, matching operations, applied operations, and skipped operation ids for browser validation.
 
 Validate overlays with:
 

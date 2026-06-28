@@ -106,6 +106,12 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
             profile_id,
             check=True,
         )
+        operations = sync_payload.get("operations", []) if isinstance(sync_payload, dict) else []
+        operation_count = sync_payload.get("operation_count") if isinstance(sync_payload, dict) else None
+        if not isinstance(operations, list):
+            errors.append("reader overlay live asset operations payload must be a list.")
+        elif operation_count != len(operations):
+            errors.append("reader overlay live asset operation_count does not match operations length.")
     except Exception as exc:
         errors.append(f"reader overlay live asset check failed: {exc}")
         sync_payload = {}
@@ -117,6 +123,12 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
             generated_overlay = generation_summary.get("reader_overlay")
             if isinstance(generated_overlay, dict):
                 generated_overlay_summary = generated_overlay
+                active_operations = generated_overlay.get("active_operations", 0)
+                applied_operations = generated_overlay.get("applied_operations", 0)
+                if active_operations != applied_operations:
+                    errors.append("generated reader overlay active-operation count does not match applied count.")
+                if isinstance(sync_payload, dict) and sync_payload.get("operation_count") != active_operations:
+                    errors.append("live overlay asset active-operation count does not match generated reader overlay count.")
             delta_report = output_dir / str(
                 generation_summary.get("reader_delta_report", build_reader_edition.DEFAULT_DELTA_REPORT)
             )
@@ -135,10 +147,13 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
                 ):
                     if needle not in delta_text:
                         errors.append(f"reader_delta_report.md is missing required policy text: {needle}")
-                if (
-                    "No operation-level before/after excerpts exist" not in delta_text
-                    and "Reader output excerpt after operation:" not in delta_text
-                ):
+                active_count = 0
+                if isinstance(generated_overlay, dict):
+                    active_count = int(generated_overlay.get("active_operations", 0))
+                if active_count == 0:
+                    if "No operation-level before/after excerpts exist" not in delta_text:
+                        errors.append("reader_delta_report.md is missing the zero-active-operation excerpt note.")
+                elif "Reader output excerpt after operation:" not in delta_text:
                     errors.append("reader_delta_report.md is missing before/after excerpt review detail.")
 
             reader_manifest_path = output_dir / "reader_manifest.json"

@@ -33,6 +33,13 @@
   const overlayPayloadId = "asi-reader-overlays";
   const overlayOnlyClass = "asi-reader-overlay-only";
   const overlayOriginalClass = "asi-reader-overlay-original";
+  const overlayMetricPrefix = "data-asi-reader-overlay";
+  const overlayProcessedAttribute = `${overlayMetricPrefix}-processed`;
+  const overlayTotalAttribute = `${overlayMetricPrefix}-total`;
+  const overlayMatchingAttribute = `${overlayMetricPrefix}-matching`;
+  const overlayAppliedAttribute = `${overlayMetricPrefix}-applied`;
+  const overlaySkippedAttribute = `${overlayMetricPrefix}-skipped`;
+  const overlaySkippedIdsAttribute = `${overlayMetricPrefix}-skipped-ids`;
 
   document.documentElement.setAttribute("data-asi-reading-mode", normalizeMode(initialMode()));
 
@@ -205,6 +212,16 @@
     }
   }
 
+  function setReaderOverlayMetrics(metrics) {
+    const root = document.documentElement;
+    root.setAttribute(overlayProcessedAttribute, "true");
+    root.setAttribute(overlayTotalAttribute, String(metrics.total || 0));
+    root.setAttribute(overlayMatchingAttribute, String(metrics.matching || 0));
+    root.setAttribute(overlayAppliedAttribute, String(metrics.applied || 0));
+    root.setAttribute(overlaySkippedAttribute, String(metrics.skipped || 0));
+    root.setAttribute(overlaySkippedIdsAttribute, (metrics.skippedIds || []).join(","));
+  }
+
   function normalizeOverlayHeading(value) {
     return String(value || "")
       .replace(/\s+/g, " ")
@@ -299,13 +316,34 @@
 
   function applyReaderOverlays() {
     const payload = readerOverlayPayload();
+    const operations = Array.isArray(payload.operations) ? payload.operations : [];
     const sourceFile = currentSourceFile();
-    if (!sourceFile || !Array.isArray(payload.operations)) return;
-    payload.operations
+    const metrics = {
+      total: operations.length,
+      matching: 0,
+      applied: 0,
+      skipped: 0,
+      skippedIds: []
+    };
+    if (document.documentElement.getAttribute(overlayProcessedAttribute) === "true") {
+      return;
+    }
+    if (!sourceFile) {
+      setReaderOverlayMetrics(metrics);
+      return;
+    }
+    operations
       .filter((operation) => operation && operation.target_file === sourceFile)
       .forEach((operation) => {
-        applyReaderOverlayOperation(operation);
+        metrics.matching += 1;
+        if (applyReaderOverlayOperation(operation)) {
+          metrics.applied += 1;
+          return;
+        }
+        metrics.skipped += 1;
+        metrics.skippedIds.push(operation.id || "(missing id)");
       });
+    setReaderOverlayMetrics(metrics);
   }
 
   function normalizeMode(mode) {
