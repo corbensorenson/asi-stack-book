@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Fast Generation proof-adequacy boundary alignment
+
+- Updated `docs/proof_adequacy_review.md`, `docs/v1_0_focus_audit.md`, and `docs/v1_0_roadmap.md` to record the generation-mode baseline harness as a proof-adequacy follow-through that does not change Fast Generation's adequacy class. The chapter remains in `needs empirical or baseline tests first`: the deterministic fixtures define the record shape future model runs must satisfy, but do not run an autoregressive baseline, speculative decoder, diffusion generator, early-exit model, state-space model, KV-cache serving path, or router-selected generation mode. This is boundary documentation only; it creates no support-state promotion, proof result, model-quality result, speed result, useful-solution-per-second result, benchmark result, runtime result, reader artifact, or release artifact.
+
 ## 2026-06-28 - v1.0 Fast Generation evidence-transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/fast_generation_no_change.json` as the eleventh accepted no-change evidence-transition record. The review records that exact source mappings, generation-mode/resource-budget schemas, external fast-generation source notes, and the deterministic generation-mode baseline harness support baseline, negative-control, quality, residual, fallback, resource-budget, latency-proxy, and no-promotion accounting, but do not justify moving `fast-generation-architectures.core` above `argument`. Updated the evidence-transition pilot summary, pilot README, v1.0 roadmap/status/focus surfaces, repository map, and status guard. This is not a support-state promotion, generation-speed result, useful-solution-per-second result, model-quality result, speculative decoding run, diffusion run, KV-cache throughput measurement, router trace, deployment result, independent review, or source-derived evidence promotion.

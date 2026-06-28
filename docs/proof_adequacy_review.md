@@ -12,7 +12,7 @@ This review classifies the 112 implemented Lean proof targets by adequacy for th
 | useful but too narrow | 28 | The predicate is a useful guard, but the chapter needs state-machine, trace, or integration tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 20 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
 | needs executable tests first | 40 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
-| needs empirical or baseline tests first | 10 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise. |
+| needs empirical or baseline tests first | 10 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise; deterministic accounting harnesses may check record discipline but do not replace model or workload results. |
 | research-agenda until artifact import | 6 | The proof target remains a placeholder guard until external/local project artifacts are imported, built, replayed, or otherwise inspected. |
 
 All 112 targets still build as narrow finite-record predicates. The review changes the project backlog, not the theorem status.
@@ -65,7 +65,7 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `compact-generative-systems-and-residual-honesty` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `generate-verify-repair-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `fast-generation-architectures` | 2 | needs empirical or baseline tests first | Build workload, baseline, and result record before stronger proof. |
+| `fast-generation-architectures` | 2 | needs empirical or baseline tests first | Generation-mode accounting harness added; still build matched model workload, baseline, negative-control, quality, residual, and result records before stronger proof. |
 | `rankfold-neuralfold-and-artifact-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `semantic-representation-and-tree-structured-models` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `resource-economics-and-token-budgets` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
@@ -104,6 +104,24 @@ The third follow-through increment did not add Lean code. It added `python3 scri
 
 This moves `runtime-adapters-tool-permissions-and-human-approval` from `needs executable tests first` to `useful but too narrow`. The proof target remains finite-record Lean, and the harness remains synthetic fixture behavior. It still does not establish deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, real effect receipt validity, or runtime safety.
 
+### Fast Generation Baseline Accounting Harness
+
+The Fast Generation follow-through increment did not add Lean code and did not
+change the adequacy class. It added
+`python3 scripts/validate_generation_mode_baselines.py`, a deterministic
+fixture-accounting harness over generation-mode and resource-budget records.
+The harness checks run, baseline, and negative-control refs; useful-solution
+per second plus quality and residual metrics; fallback behavior for
+medium-or-higher non-autoregressive modes; resource-budget alignment;
+latency-only proxy rejection; and support-state non-promotion.
+
+This keeps `fast-generation-architectures` in the `needs empirical or baseline
+tests first` class. The harness is useful because it defines the record shape a
+real model run must satisfy, but it does not run an autoregressive baseline,
+speculative decoder, diffusion generator, early-exit model, state-space model,
+KV-cache serving path, or router-selected generation mode. No speed, quality,
+useful-solution-per-second, model-behavior, or runtime claim is promoted.
+
 ### Claim Ledger And Proof-Carrying Claim Record Envelopes
 
 The fourth follow-through increment strengthened `AsiStackProofs.ClaimLedger` and `AsiStackProofs.ProofCarryingClaims` without changing proof targets or support states. `AsiStackProofs.ClaimLedger` now includes a finite `BeliefRevisionRecord`, `LedgerEffect`, and `BeliefRevisionRecordValid` envelope. The new theorems check that valid modeled revision records preserve claim identity, prior and new support-state fields, revision reasons, history references, and non-claim boundaries; that accepted modeled promotions require evidence refs, handled contradiction state, and a recorded support-state increase; and that open contradictions block promotion with a blocked ledger effect.
@@ -114,6 +132,6 @@ This keeps both `claim-ledgers-and-belief-revision` and `spinoza-verification-an
 
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority, Planning, Claim Ledger, and Proof-Carrying Claims now have stronger finite-record envelopes, and Runtime Adapters now has a synthetic permission harness, but no increment moves a chapter support state.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority, Planning, Claim Ledger, and Proof-Carrying Claims now have stronger finite-record envelopes; Runtime Adapters now has a synthetic permission harness; and Fast Generation now has deterministic baseline-accounting fixtures that define what future model runs must record. No increment moves a chapter support state.
 
 No Appendix C support state changes were made.
