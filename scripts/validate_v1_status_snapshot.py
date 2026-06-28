@@ -172,7 +172,7 @@ def main() -> None:
         "`docs/proof_adequacy_review.md`",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
-        "browser Human-view gate checks rendered Mermaid SVG visibility",
+        "browser Human-view gate checks rendered Mermaid SVG visibility; dense Mermaid diagrams keep mobile labels readable through contained diagram-block scrolling without page-level horizontal overflow",
         "| Chapter handoffs | All 54 manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",
         "the reader release has a tracked semantic overlay manifest as the editable delta source, generated reader delta report path as review output with a zero-active-operation note or operation digests and before/after excerpts, embedded live Human-view overlay payload for major-version human-edition deltas, and a generated reader-continuity audit with 0 high-priority and 3 medium-priority heuristic review rows",
         "`docs/reader_continuity_review.md` records first manual decisions for the three medium-priority reader-audit rows without treating them as release approval.",

@@ -13,6 +13,8 @@ claim-evidence promotion.
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_live_human_view.py
 node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html
+node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
 ```
 
 Results:
@@ -24,6 +26,8 @@ Results:
   source blocks rendered.
 - Browser validation passed: 112 rendered page/view pairs exercised across all
   manifest chapters and the configured desktop/mobile viewport set.
+- After the mobile Mermaid readability change, the full browser validation
+  passed again for 112 rendered page/view pairs.
 
 ## Diagram Audit
 
@@ -33,15 +37,36 @@ chapters. The largest chapter diagrams by non-comment Mermaid line count were:
 | Diagram | Lines | Edges | Initial assessment |
 |---|---:|---:|---|
 | `chapters/asi-is-a-stack-not-a-model.qmd` diagram 1 | 27 | 12 | Dense but still within readable range for an overview architecture diagram. |
-| `chapters/fast-generation-architectures.qmd` diagram 1 | 23 | 22 | Edge-dense; keep on the watch list for future manual simplification. |
+| `chapters/fast-generation-architectures.qmd` diagram 1 | 23 | 22 | Edge-dense; desktop readable; mobile readability improved by contained Mermaid scrolling. Keep on the watch list for future split if reader release review still finds it overloaded. |
 | `chapters/integrated-reference-architecture.qmd` diagram 1 | 20 | 10 | Appropriate for integrated stack closure. |
-| `chapters/recursive-self-improvement-boundaries.qmd` diagram 1 | 18 | 17 | Edge-dense but aligned with boundary/gate semantics. |
-| `chapters/moral-uncertainty-and-value-conflict.qmd` diagram 1 | 18 | 17 | Edge-dense but still readable as a conflict lifecycle. |
+| `chapters/recursive-self-improvement-boundaries.qmd` diagram 1 | 18 | 17 | Edge-dense but aligned with boundary/gate semantics; mobile readability improved by contained Mermaid scrolling. |
+| `chapters/moral-uncertainty-and-value-conflict.qmd` diagram 1 | 18 | 17 | Edge-dense but still readable as a conflict lifecycle; acceptable after mobile scroll-container review. |
 
 No diagram failed the automated visual-coverage gate. The next visual pass
-should manually inspect the edge-dense fast-generation, recursive-improvement,
-and value-conflict diagrams for possible splitting if they feel cramped on
-small screens.
+should revisit the fast-generation and recursive-improvement diagrams during
+reader-release review and split either diagram only if the scrollable mobile
+presentation still feels too dense.
+
+## Mobile Diagram Screenshot Review
+
+The first mobile screenshot pass found that the fast-generation and recursive
+self-improvement diagrams technically fit without page overflow, but their
+labels became too small to be useful on a phone. `assets/styles.scss` now lets
+Mermaid SVGs keep a readable minimum width inside their own horizontally
+scrollable `.cell-output-display` container on small screens while preserving
+zero page-level overflow.
+
+Local screenshot metrics after the change:
+
+| Page | Viewport | Page overflow | Container width | Diagram scroll width |
+|---|---:|---:|---:|---:|
+| `fast-generation-architectures` | 390px mobile | 0px | 339px | 782px |
+| `recursive-self-improvement-boundaries` | 390px mobile | 0px | 339px | 782px |
+| `moral-uncertainty-and-value-conflict` | 390px mobile | 0px | 339px | 782px |
+| `integrated-reference-architecture` | 390px mobile | 0px | 339px | 782px |
+
+The screenshot files remain local under `build/phase7_screenshots/` as review
+scratch output, not tracked release artifacts.
 
 ## Appendix Table Audit
 
@@ -80,10 +105,9 @@ garbage and the Phase 7 goal is site readiness, not repository compaction.
 
 ## Remaining Phase 7 Work
 
-- Manual screenshot review of the edge-dense diagrams on actual mobile and
-  desktop pages.
-- Optional visual refinement of the fast-generation diagram if it feels too
-  crowded despite passing validation.
+- Optional visual refinement or splitting of the fast-generation and
+  recursive-improvement diagrams if reader-release review still finds them too
+  crowded despite contained mobile scrolling.
 - Optional appendix table style review if future source growth introduces
   horizontal overflow.
 - Optional clearer stale-site guidance in `scripts/validate_live_human_view.py`

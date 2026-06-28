@@ -79,6 +79,16 @@ h3 {
   margin: 1rem 0 1.5rem;
 }
 
+.cell-output-display {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.cell-output-display svg[id^="mermaid"] {
+  max-width: 100%;
+  height: auto;
+}
+
 blockquote {
   border-left: 3px solid var(--asi-copper);
   color: #344150;
@@ -240,6 +250,15 @@ html[data-asi-reading-mode="human"] .asi-human-only h2 {
 }
 
 @media (max-width: 640px) {
+  .cell-output-display {
+    padding-bottom: 0.35rem;
+  }
+
+  .cell-output-display svg[id^="mermaid"] {
+    min-width: 46rem;
+    max-width: none;
+  }
+
   .asi-reading-mode {
     display: flex;
     width: 100%;

@@ -277,13 +277,13 @@ Acceptance criteria:
 
 ## Phase 7 - Visual, Site, And Local-Hygiene Review
 
-Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, and all-chapter/all-viewport browser validation passed. Manual screenshot review of the densest diagrams remains open.
+Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. Optional splitting of the fast-generation and recursive-improvement diagrams remains open for reader-release review.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
 Tasks:
 
-- Manual diagram audit for overloaded or low-legibility Mermaid diagrams.
+- Manual diagram audit for overloaded or low-legibility Mermaid diagrams; first mobile screenshot pass is recorded for the densest diagrams.
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
 - Table overflow check for appendices.
