@@ -434,13 +434,29 @@ def is_external_literature(record: dict) -> bool:
 
 def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
     assignments = chapter_assignments(structure)
+    chapter_titles = {
+        chapter["id"]: chapter["title"]
+        for chapter in flatten_chapters(structure)
+        if chapter.get("id") and chapter.get("title")
+    }
     rows = []
     for record in records:
         if not is_external_literature(record):
             continue
         citation = record.get("citation_label")
         arxiv_id = record.get("arxiv_id")
-        current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
+        current_targets = "; ".join(assignments.get(record["id"], []))
+        if not current_targets:
+            target_labels = []
+            for target in record.get("chapter_targets", []):
+                if target in chapter_titles:
+                    target_labels.append(f"{target} ({chapter_titles[target]})")
+                elif target:
+                    target_labels.append(str(target))
+            if target_labels:
+                current_targets = "; ".join(target_labels) + " (inventory target; not manifest-assigned)"
+            else:
+                current_targets = "Unassigned in current structure"
         doi = record.get("doi", "")
         if citation and arxiv_id:
             record_ref = f"{qmd_escape(citation)}; [arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
@@ -609,8 +625,8 @@ Third-party references should be added only when bibliographic metadata is recor
 
 | Area | Expected role | Status |
 |---|---|---|
-| AI alignment and corrigibility | External comparison for the alignment and constitution layer. | queued; no citation recorded |
-| AI governance, evals, and deployment policy | External comparison for authority ceilings, readiness gates, and release governance. | queued; no citation recorded |
+| AI alignment and corrigibility | External comparison for the alignment and constitution layer. | initial source records and source notes added; no local reproduction or support-state promotion |
+| AI governance, evals, and deployment policy | External comparison for authority ceilings, readiness gates, and release governance. | initial source records and source notes added; no local reproduction, compliance claim, or support-state promotion |
 | Planning, task decomposition, and agent control | External comparison for PlanForge-style planning/control. | queued; no citation recorded |
 | Retrieval, memory, and context engineering | External comparison for VCM and context-packet discipline. | queued; no citation recorded |
 | Formal methods, verification, and proof assistants | External comparison for claim ledgers, Lean proofs, and protocol invariants. | queued; no citation recorded |

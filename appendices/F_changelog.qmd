@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 6 initial external literature backfill
+
+- Added seven primary external literature records and source notes for the first Phase 6 backfill queues: Concrete Problems in AI Safety, Corrigibility, The Off-Switch Game, Optimal Policies Tend to Seek Power, Model evaluation for extreme risks, Frontier AI Regulation, and NIST AI RMF 1.0. Added `docs/external_literature_backfill_phase6.md`, updated the roadmap/status surfaces, and changed the generated Appendix H queue text so alignment/control and AI governance/evaluation are marked as initial source-noted queues rather than empty queues. The source inventory now contains 108 public-safe records with matching source notes. No chapter claim support state changed, no external result was reproduced, no compliance claim was made, and no evidence transition, proof target, benchmark result, runtime behavior, reader artifact, ebook, document, PDF, or audio artifact is claimed.
+
 ## 2026-06-28 - v1.0 Phase 5 support-state transition harness
 
 - Added the first Phase 5 executable harness for support-state transition gate semantics: `scripts/validate_support_state_transitions.py`, synthetic valid and expected-invalid fixtures under `experiments/support_state_transitions/`, a local result record, and `docs/support_state_transition_harness.md`. Wired the harness into `scripts/validate_book.py`, the generated Appendix E repository-level checks, the v1.0 roadmap, repository map, and v1.0 status snapshot. The local run passed with 2 valid fixtures and 2 expected-invalid fixtures. This validates synthetic transition-gate behavior only; no Appendix C support state changed, and no source interpretation, proof adequacy, benchmark result, runtime behavior, reader artifact, ebook, document, PDF, or audio artifact is claimed.

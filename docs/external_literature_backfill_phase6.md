@@ -1,0 +1,44 @@
+# Phase 6 External Literature Backfill
+
+Last updated: 2026-06-28
+
+This document records the first Phase 6 external-literature backfill pass for
+alignment/control and AI governance/evaluation. It does not claim complete
+literature coverage.
+
+## Added Records
+
+| Source ID | Area | Primary role |
+|---|---|---|
+| `ext_concrete_ai_safety_2016` | alignment/control | Practical accident-risk taxonomy: side effects, reward hacking, scalable oversight, safe exploration, and distributional shift. |
+| `ext_corrigibility_2015` | alignment/control | Corrigibility, shutdown tolerance, operator correction, and intervention-channel preservation. |
+| `ext_off_switch_game_2016` | alignment/control | Shutdown incentives and uncertainty about human objectives. |
+| `ext_optimal_policies_power_2019` | alignment/control | Power-seeking and option-preservation pressure. |
+| `ext_model_evaluation_extreme_risks_2023` | governance/evals | Dangerous-capability and alignment evaluations for extreme-risk decisions. |
+| `ext_frontier_ai_regulation_2023` | governance/evals | Frontier AI governance, pre-deployment risk assessment, external scrutiny, and post-deployment monitoring. |
+| `ext_nist_ai_rmf_1_0_2023` | governance/evals | Official AI risk-management framework structure and lifecycle vocabulary. |
+
+## Current Effect
+
+- Added public-safe source inventory records.
+- Added matching source notes.
+- Generated Appendix H can now list initial source-noted records for the first two Phase 6 priority queues.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, or test results changed.
+
+## Non-Claims
+
+- This pass does not prove any ASI Stack alignment, governance, safety,
+  evaluation, or deployment claim.
+- It does not reproduce any paper result.
+- It does not claim NIST AI RMF conformance, frontier-governance compliance, or
+  independent audit.
+- The literature set is initial and selective, not comprehensive.
+
+## Next Queues
+
+1. Planning, task decomposition, HTN, behavior trees, GOAP, TAMP, and agent orchestration.
+2. Retrieval, memory, context engineering, long-context evaluation, and context compilation.
+3. Formal methods, proof assistants, runtime assurance, and contract verification.
+4. Mixture-of-experts, routing, modular agents, and model/system routing.
+5. Compression, representation learning, program synthesis, and residual/error accounting.
+6. Benchmark science, contamination, saturation, hidden tests, and evaluation gaming.
