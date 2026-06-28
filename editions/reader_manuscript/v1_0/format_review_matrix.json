@@ -6,6 +6,7 @@
   "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records.",
   "source_docs": [
     "docs/reader_format_dry_run.md",
+    "docs/reader_artifact_inspection_manifest.md",
     "docs/reader_artifact_layout_review.md",
     "docs/reader_chapter_review_matrix.md"
   ],
@@ -26,6 +27,7 @@
       "release_approved": false,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_inspection_manifest.md#inspection-summary",
         "docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe"
       ],
       "release_blockers": [
@@ -48,6 +50,7 @@
       "release_approved": false,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_inspection_manifest.md#inspection-summary",
         "docs/reader_artifact_layout_review.md#residuals"
       ],
       "release_blockers": [
@@ -71,6 +74,7 @@
       "release_approved": false,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_inspection_manifest.md#inspection-summary",
         "docs/reader_artifact_layout_review.md#residuals"
       ],
       "release_blockers": [

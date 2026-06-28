@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "local_structural_inspection_record",
+  "last_updated": "2026-06-28",
+  "purpose": "Record the latest tracked summary of local reader-format structural inspection evidence without treating ignored build artifacts as release artifacts.",
+  "source_commands": [
+    "python3 scripts/render_reader_formats.py --formats html epub docx",
+    "python3 scripts/inspect_reader_format_artifacts.py"
+  ],
+  "local_report_refs": [
+    "build/reader_edition/reader_render_report.json",
+    "build/reader_edition/reader_artifact_inspection_report.json"
+  ],
+  "tracked_evidence_refs": [
+    "docs/reader_format_dry_run.md",
+    "docs/reader_artifact_layout_review.md",
+    "docs/reader_format_review_matrix.md"
+  ],
+  "render_summary": {
+    "html": {
+      "status": "rendered",
+      "artifacts_observed": 59,
+      "preserved_artifacts": 81
+    },
+    "epub": {
+      "status": "rendered",
+      "artifacts_observed": 1,
+      "preserved_artifacts": 1
+    },
+    "docx": {
+      "status": "rendered",
+      "artifacts_observed": 1,
+      "preserved_artifacts": 1
+    }
+  },
+  "inspection_summary": {
+    "html": {
+      "status": "passed",
+      "html_files": 59,
+      "site_html_files": 59,
+      "chapter_files": 54,
+      "checked_files_for_live_marker_leaks": 59,
+      "live_marker_leaks": 0,
+      "raw_core_claim_marker_leaks": 0
+    },
+    "epub": {
+      "status": "passed",
+      "bytes": 9060193,
+      "entries": 130,
+      "xhtml_entries": 62,
+      "image_entries": 62,
+      "required_entries_present": [
+        "EPUB/content.opf",
+        "EPUB/nav.xhtml",
+        "EPUB/toc.ncx",
+        "META-INF/container.xml",
+        "mimetype"
+      ]
+    },
+    "docx": {
+      "status": "passed",
+      "bytes": 7049660,
+      "entries": 77,
+      "media_entries": 61,
+      "paragraph_markers": 19262,
+      "required_entries_present": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "word/_rels/document.xml.rels",
+        "word/document.xml",
+        "word/styles.xml"
+      ]
+    }
+  },
+  "release_blockers_preserved": [
+    "reader_release_record_not_created",
+    "full_format_artifact_review_not_completed",
+    "app_or_ereader_review_not_completed for EPUB and DOCX"
+  ],
+  "non_claims": [
+    "This manifest records a local structural inspection of ignored reader-format snapshots only.",
+    "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",
+    "This manifest does not approve EPUB, DOCX, HTML, PDF, e-reader, or audio artifacts for publication.",
+    "This manifest does not check full editorial quality, full layout quality, e-reader behavior, app behavior, source interpretation, proof adequacy, benchmark behavior, runtime behavior, PDF output, or audio output.",
+    "This manifest does not promote any claim support state."
+  ]
+}
