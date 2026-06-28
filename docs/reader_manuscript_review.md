@@ -95,6 +95,16 @@ The audit currently measures 54 reader chapters, 59 generated files, 121,612 rea
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
+## Medium-Priority Manual Review
+
+The three medium-priority audit rows have been read and classified in `docs/reader_continuity_review.md`.
+
+- `executable-specifications-and-lean-proof-envelope`: no additional overlay now; the dense vocabulary is necessary proof-envelope language, and future reader release work should consider companion-note or glossary treatment rather than deleting the proof-lane distinctions.
+- `circle-calculus-and-proof-carrying-ai-contracts`: no additional overlay now; the dense terms preserve the theorem-linked receipt versus model-quality boundary, and future reader release work should consider companion-note or glossary treatment.
+- `artifact-steward-agents-and-living-project-governance`: retain current reader chapter; the long governance chapter carries central stewardship, treasury, worker-federation, contribution-ledger, event-taint, and sunset concepts. Future curated reader work may compress the implementation ladder or route parts to companion material.
+
+This manual pass does not make the reader manuscript release-reviewed. It only records that the current medium-priority heuristic rows are not immediate blockers for the generated reader path.
+
 ## Residuals
 
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.

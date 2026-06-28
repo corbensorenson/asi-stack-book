@@ -38,6 +38,9 @@ Results:
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
 - Audio script check passed for 59 script files generated for review.
+- `docs/reader_continuity_review.md` records first manual decisions for the
+  three medium-priority reader-continuity audit rows. This is a triage review,
+  not a reader-release approval.
 
 ## Current Release State
 
