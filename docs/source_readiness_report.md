@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 60
+- `source_note_available_uncached`: 66
 
 ## Records
 
@@ -83,8 +83,14 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_nist_ai_rmf_1_0_2023` | Artificial Intelligence Risk Management Framework (AI RMF 1.0) | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_react_2022` | ReAct: Synergizing Reasoning and Acting in Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_tree_of_thoughts_2023` | Tree of Thoughts: Deliberate Problem Solving with Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_pddl_1998` | PDDL: The Planning Domain Definition Language | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_shop2_2003` | SHOP2: An HTN Planning System | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_integrated_tamp_2020` | Integrated Task and Motion Planning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_rag_2020` | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lost_in_middle_2023` | Lost in the Middle: How Language Models Use Long Contexts | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_memgpt_2023` | MemGPT: Towards LLMs as Operating Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_longbench_2023` | LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ruler_2024` | RULER: What's the Real Context Size of Your Long-Context Language Models? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_tla_plus_home_docs` | My TLA+ Home Page | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_sparse_moe_2017` | Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

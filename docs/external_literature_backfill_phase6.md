@@ -26,6 +26,9 @@ literature coverage.
 | `ext_integrated_tamp_2020` | planning/TAMP | Discrete task planning, continuous feasibility subproblems, motion-planning interfaces, and integration-strategy vocabulary. |
 | `ext_rag_2020` | retrieval/context | Retrieval-augmented generation and the boundary between model memory and retrieved evidence. |
 | `ext_lost_in_middle_2023` | retrieval/context | Long-context position sensitivity and the gap between available context and used evidence. |
+| `ext_memgpt_2023` | retrieval/context management | OS-inspired virtual context management, memory tiers, and long-running conversation/document-analysis boundaries. |
+| `ext_longbench_2023` | long-context evaluation | Bilingual, multitask long-context benchmark coverage and task-specific context-understanding boundaries. |
+| `ext_ruler_2024` | long-context evaluation | Synthetic long-context stress testing beyond simple needle retrieval, including multi-needle, tracing, and aggregation tasks. |
 | `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
 | `ext_tla_plus_home_docs` | formal methods | System specification and model-checking vocabulary for concurrent and distributed systems. |
 | `ext_sparse_moe_2017` | routing/MoE | Sparsely gated expert layers, conditional computation, and load-balancing limits. |
@@ -43,7 +46,8 @@ literature coverage.
 - Added matching source notes.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
 - The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, and task-and-motion planning.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, or test results changed.
+- The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, and synthetic context-size stress tests.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, or test results changed.
 
 ## Non-Claims
 
@@ -57,7 +61,7 @@ literature coverage.
 ## Next Queues
 
 1. Deepen planning coverage with behavior trees, GOAP, broader agent-orchestration sources, and any PlanForge-specific planning-language translation references that become necessary.
-2. Deepen retrieval/context coverage with context-engineering and long-context benchmark sources.
+2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, provenance-aware RAG, context compression/evaluation, and VCM-specific adapter references.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant, and contract-verification sources.
 4. Deepen routing coverage with modern LLM MoE surveys, router evaluation, and modular-agent orchestration sources.
 5. Deepen compression coverage with program synthesis, quantization, distillation, residual coding, and artifact-utility sources.

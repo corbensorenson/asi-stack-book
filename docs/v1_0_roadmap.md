@@ -266,7 +266,7 @@ Next Phase 5 evidence work should move from synthetic record gates toward replay
 
 ## Phase 6 - External Literature Backfill
 
-Status: started across all priority queues. Initial backfill passes added twenty-four primary external source records and source notes across alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, formal methods, routing/MoE, compression/representation, and benchmark science, summarized in `docs/external_literature_backfill_phase6.md`. The planning slice now includes ReAct, Tree of Thoughts, PDDL, SHOP2, and Integrated TAMP as comparison vocabulary only. No claim support state, reproduction result, compliance claim, imported formal artifact, planner run, motion-planning run, benchmark run, compression experiment, or evidence transition changed.
+Status: started across all priority queues. Initial backfill passes added twenty-seven primary external source records and source notes across alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, formal methods, routing/MoE, compression/representation, and benchmark science, summarized in `docs/external_literature_backfill_phase6.md`. The planning slice now includes ReAct, Tree of Thoughts, PDDL, SHOP2, and Integrated TAMP as comparison vocabulary only. The retrieval/context slice now includes RAG, Lost in the Middle, MemGPT, LongBench, and RULER as context-interface and long-context-evaluation vocabulary only. No claim support state, reproduction result, compliance claim, imported formal artifact, planner run, motion-planning run, context benchmark run, compression experiment, or evidence transition changed.
 
 Purpose: ground the architecture against third-party literature where outside readers will expect comparison.
 
@@ -275,7 +275,7 @@ Priority queues:
 1. Alignment, corrigibility, power-seeking, and control.
 2. AI governance, evaluations, deployment policy, incident response, and model evals.
 3. Planning, task decomposition, behavior trees, GOAP, broader agent orchestration, and PlanForge translation comparisons.
-4. RAG, memory systems, context engineering, long-context evaluation, and context compilation.
+4. Provenance-aware RAG, memory systems, context engineering, context compression/evaluation, and VCM-specific adapter comparisons.
 5. Formal methods, proof assistants, proof-carrying code, runtime assurance, and contract verification.
 6. Mixture-of-experts, routing, modular agents, and model/system routing.
 7. Compression, representation learning, program synthesis, and residual/error accounting.
