@@ -15,6 +15,8 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | disposition:curated_manuscript_candidate | 1 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
+| release_blocker:format_artifact_not_reviewed | 54 |
+| release_blocker:reader_release_record_not_created | 54 |
 
 ## Chapter Queue
 

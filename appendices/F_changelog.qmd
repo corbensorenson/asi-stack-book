@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 reader release blocker count summary
+
+- Added generated `release_blocker_counts` to `editions/reader_manuscript/v1_0/chapter_review_matrix.json`, validated the counts in `scripts/sync_reader_chapter_review_matrix.py`, and regenerated `docs/reader_chapter_review_matrix.md` so the reader-release queue now summarizes both remaining blockers: 54 chapters still need a reader release record and 54 chapters still need format artifact review. This is release-control visibility only; it does not clear blockers, approve reader/ebook/document/PDF/audio artifacts, create a release record, graduate curated reader source, promote support states, or change proof/test/runtime evidence.
+
 ## 2026-06-28 - v1.0 Claim Ledger and Spinoza proof follow-through
 
 - Strengthened `AsiStackProofs.ClaimLedger` with a finite `BeliefRevisionRecord` envelope and `AsiStackProofs.ProofCarryingClaims` with a finite proof-carrying-claim record envelope. The new Lean predicates check modeled claim identity, support-state fields, revision reasons, history refs, non-claim boundaries, accepted-promotion evidence requirements, open-contradiction blocking, requested proof tier, interpretation mapping, verifier artifact refs, formal scope, limitations, support-state effects, and non-promotional handling of failed/timed-out/mismatched verifier results. Updated the two affected chapters, proof artifact audit, proof adequacy review, roadmap, focus audit, and status snapshot. Both claims remain at `argument`; this does not implement claim extraction, contradiction detection, substantive belief revision, verifier integration, semantic-equivalence checking, theorem validation, citation verification, source-derived promotion, benchmark evidence, runtime behavior, reader artifacts, or release readiness.

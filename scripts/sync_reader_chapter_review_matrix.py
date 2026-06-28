@@ -254,9 +254,12 @@ def build_matrix() -> dict[str, object]:
 
     status_counts = Counter(str(row["review_status"]) for row in chapters)
     disposition_counts: Counter[str] = Counter()
+    release_blocker_counts: Counter[str] = Counter()
     for row in chapters:
         for disposition in row["dispositions"]:
             disposition_counts[str(disposition)] += 1
+        for blocker in row["release_blockers"]:
+            release_blocker_counts[str(blocker)] += 1
 
     last_updated = "2026-06-28"
     if isinstance(existing, dict) and isinstance(existing.get("last_updated"), str):
@@ -277,6 +280,7 @@ def build_matrix() -> dict[str, object]:
         },
         "review_status_counts": dict(sorted(status_counts.items())),
         "disposition_counts": dict(sorted(disposition_counts.items())),
+        "release_blocker_counts": dict(sorted(release_blocker_counts.items())),
         "release_rule": (
             "No reader, ebook, document, PDF, audio, or curated manuscript release "
             "can use a chapter until its review status and blockers are reconciled "
@@ -368,6 +372,30 @@ def validate_matrix(matrix: dict[str, object]) -> list[str]:
         if row.get("review_status") == "reviewed" and "full_chapter_review_not_recorded" in row.get("release_blockers", []):
             errors.append(f"{owner} cannot be reviewed while full_chapter_review_not_recorded remains.")
 
+    if isinstance(chapters, list):
+        actual_status_counts = Counter(
+            str(row.get("review_status"))
+            for row in chapters
+            if isinstance(row, dict)
+        )
+        actual_disposition_counts: Counter[str] = Counter()
+        actual_release_blocker_counts: Counter[str] = Counter()
+        for row in chapters:
+            if not isinstance(row, dict):
+                continue
+            for disposition in row.get("dispositions", []):
+                actual_disposition_counts[str(disposition)] += 1
+            for blocker in row.get("release_blockers", []):
+                actual_release_blocker_counts[str(blocker)] += 1
+        expected_counts = {
+            "review_status_counts": dict(sorted(actual_status_counts.items())),
+            "disposition_counts": dict(sorted(actual_disposition_counts.items())),
+            "release_blocker_counts": dict(sorted(actual_release_blocker_counts.items())),
+        }
+        for key, expected in expected_counts.items():
+            if matrix.get(key) != expected:
+                errors.append(f"chapter_review_matrix.{key} must equal {expected}.")
+
     return errors
 
 
@@ -375,6 +403,7 @@ def markdown_table(matrix: dict[str, object]) -> str:
     chapters = matrix.get("chapters", [])
     status_counts = matrix.get("review_status_counts", {})
     disposition_counts = matrix.get("disposition_counts", {})
+    release_blocker_counts = matrix.get("release_blocker_counts", {})
     lines = [
         "# Reader Chapter Review Matrix",
         "",
@@ -395,6 +424,9 @@ def markdown_table(matrix: dict[str, object]) -> str:
     if isinstance(disposition_counts, dict):
         for key, value in sorted(disposition_counts.items()):
             lines.append(f"| disposition:{key} | {value} |")
+    if isinstance(release_blocker_counts, dict):
+        for key, value in sorted(release_blocker_counts.items()):
+            lines.append(f"| release_blocker:{key} | {value} |")
 
     lines.extend(
         [
