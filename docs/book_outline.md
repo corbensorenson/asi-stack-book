@@ -1048,9 +1048,9 @@ Draft deliverables:
 - Intent-contract, command-contract, and intent-to-execution trace schemas with one public-safe intent-to-artifact trace shape.
 - Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the core intent-to-execution claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, and MoECOT runtime-reference context; four local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`) now have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending contract-completeness tests, constraint-preservation tests, artifact-traceability tests, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
-- Planned Codex test: Contract field completeness test.
-- Planned Codex test: Constraint preservation test.
-- Planned Codex test: Artifact traceability test.
+- Implemented synthetic Codex test: Contract field completeness test via `python3 scripts/validate_plan_execution_contracts.py`; vertical execution remains open.
+- Implemented synthetic Codex test: Constraint preservation test via `python3 scripts/validate_plan_execution_contracts.py`; replayed trace remains open.
+- Implemented synthetic Codex test: Artifact traceability test via `python3 scripts/validate_plan_execution_contracts.py`; runtime artifact acceptance remains open.
 
 Lean proof targets:
 
@@ -1111,8 +1111,8 @@ Draft deliverables:
 - A canonical command-contract template used by future chapter drafting and experiment prompts.
 - Implemented protocol validation: `command_contract` fixture validates public record shape only, including validation state, field provenance, field confidence, bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the core command-contract claim across Software Magic Grimoire command-envelope vocabulary, VIEA structured command layers, GenesisCode protocol/effect boundaries, Cognitive Compilation source-plan/S-IR lowering, and Talos typed-job contract discipline; all five local mappings (`software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`) now have reviewed passage references. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, or accepted evidence transitions.
-- Planned Codex test: Command schema validation test.
-- Planned Codex test: Failure-behavior declaration test.
+- Implemented synthetic Codex test: Command schema validation test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
+- Implemented synthetic Codex test: Failure-behavior declaration test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
 - Planned Codex test: Prompt override scenario.
 - Planned Codex test: Field-confidence audit.
 - Planned Codex test: Authority-inference block test.
@@ -1179,7 +1179,7 @@ Draft deliverables:
 - Implemented protocol validation: `plan_graph` fixture validates public record shape only, including authority budget, replanning history, lifecycle states, blocked nodes, dispatch receipts, residual register, and non-claims.
 - Exact Appendix C claim-source mappings for the planning-control claim across PlanForge planning middleware, VIEA orchestration/runtime spine, Cognitive Compilation source-plan/S-IR pipeline, Software Magic Grimoire spell-stack workflow discipline, and MoECOT runtime-reference context; the four local mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`) now have reviewed passage references. `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, runtime replanning traces, or accepted evidence transitions.
 - Planned Codex test: Decomposition accuracy test.
-- Planned Codex test: Dependency ordering test.
+- Implemented synthetic Codex test: Dependency ordering test via `python3 scripts/validate_plan_execution_contracts.py`; runtime planner remains open.
 - Planned Codex test: Context-demand prediction test.
 - Planned Codex test: Runtime replanning test.
 - Planned Codex test: Dispatch-state enforcement test.
@@ -1240,6 +1240,7 @@ Draft deliverables:
 - Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
 - Implemented Lean proof target: a dispatchable finite indexed plan-graph record carries an acyclicity certificate and ordered member dependency edges.
 - Exact Appendix C claim-source mappings for the PlanForge DAG claim across PlanForge DAG/MVI scheduling, PlanForge compiler-architecture framing, Coherence Exchange speculative intelligence-arbitrage framing, Cognitive Compilation semantic-DAG routing/repair, TokenMana resource-governance pressure, and MoECOT runtime-reference context; the four local mappings (`planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`) now have reviewed passage references. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. Support remains `argument` pending deployed scheduler runs, route traces, tier-adequacy tests, cost-quality results, or accepted evidence transitions.
+- Implemented synthetic Codex test: DAG acyclicity test via `python3 scripts/validate_plan_execution_contracts.py`; deployed scheduler cycle rejection remains open.
 - Planned Codex test: Capability tier assignment test.
 - Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
 - Planned Codex test: deployed scheduler cycle rejection.
@@ -1299,7 +1300,7 @@ Draft deliverables:
 - A semantic IR sketch and compile/verify/repair loop for one artifact type.
 - Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, and VIEA intent-to-artifact ledger context; all five local mappings now have reviewed passage references. Support remains `argument` pending compiler traces, source-plan parsing, target-lowering preservation, validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
-- Planned Codex test: Requirement preservation test.
+- Implemented synthetic Codex test: Requirement preservation test via `python3 scripts/validate_plan_execution_contracts.py`; source-plan parser and real target artifact validation remain open.
 - Planned Codex test: Incremental repair regression test.
 - Planned Codex test: Target compilation audit.
 
@@ -1782,8 +1783,10 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for `labor-os-and-typed-jobs.core` across Talos, VIEA, GenesisCode, Software Magic Grimoire, Talos Markdown, and MoECOT; four local raw-cache mappings are passage-reviewed, while `talos_md` and `moecot` remain connector/source-note mapped.
 - Implemented protocol validation: `typed_job` fixture validates public record shape only.
 - Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
+- Implemented synthetic Codex test: Typed job lifecycle test via `python3 scripts/validate_plan_execution_contracts.py`; deployed job runner remains open.
 - Planned Codex test: Tool permission enforcement test.
 - Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
+- Implemented synthetic Codex test: Human approval gate test via `python3 scripts/validate_plan_execution_contracts.py`; deployed approval service remains open.
 - Planned Codex test: Delivery versus evidence-ready test.
 - Planned Codex test: Job parentage trace test.
 

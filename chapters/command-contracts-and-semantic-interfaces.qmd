@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `software_magic_grimoire`, `viea`; supporting: `genesiscode`, `cognitive_compilation`, `talos` |
 | Source loading state | source notes and passage-reviewed local raw cache: `software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos` |
-| Test state | `command_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.CommandContracts` implements finite required-field and explicit-constraint precedence gates; behavioral execution, prompt-injection, and dispatch-blocking tests remain planned. |
+| Test state | `command_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.CommandContracts` implements finite required-field and explicit-constraint precedence gates; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic command-field and failure-behavior consistency inside plan/job scenarios; behavioral execution, prompt-injection, parser quality, and deployed dispatch-blocking tests remain planned. |
 
 ## Drafting guardrail
 
@@ -253,13 +253,13 @@ This semantic firewall is still proposed architecture. Keep the support boundary
 | Test | Purpose | Status |
 |---|---|---|
 | Command contract fixture validation | Check that the command-contract fixture contains objective, constraints, output, verification, authority, approvals, artifacts, and failure behavior required by the schema. | implemented by protocol validation; validated locally |
-| Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | planned; not run |
-| Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | planned; not run |
+| Command schema validation test | Check that every command exposes objective, constraints, output contract, verification, and failure behavior. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
+| Failure-behavior declaration test | Check that missing or vague failure behavior blocks planning dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no deployed dispatcher claim |
 | Prompt override scenario | Check that hidden or conflicting context instructions cannot override explicit constraints. | planned; not run |
 | Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields have different dispatch consequences. | planned; not run |
 | Authority-inference block test | Check that inferred means, tools, disclosures, publications, or effects cannot lower into executable plans without re-contracting. | planned; not run |
 
-Only the fixture-shape check is implemented. The override and dispatch-blocking tests need a parser, conflict rule, or harness that can compare explicit fields against retrieved context and hidden instructions.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness cover field presence and failure-behavior consistency. The override and deployed dispatch-blocking tests still need a parser, conflict rule, or harness that can compare explicit fields against retrieved context and hidden instructions.
 
 ### Formalization hooks
 

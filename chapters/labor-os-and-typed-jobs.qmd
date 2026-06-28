@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; connector/source-note mapped: `talos_md`, `moecot` |
-| Test state | Typed job fixture validation implemented; finite lifecycle and approval predicates implemented in `AsiStackProofs.TypedJobs`; scheduler, permission, adapter, and replay tests remain planned. |
+| Test state | Typed job fixture validation implemented; finite lifecycle and approval predicates implemented in `AsiStackProofs.TypedJobs`; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic active-job receipt and approval-bypass cases; scheduler, permission, adapter, replay, and deployed approval-service tests remain planned. |
 
 ## Drafting guardrail
 
@@ -251,6 +251,7 @@ This accountable execution layer is still an architectural target. Leave typed-j
 |---|---|---|
 | Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; validated locally |
 | Typed job lifecycle predicate | Check that a transition record marked valid uses the declared finite lifecycle relation. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
+| Plan-execution typed-job dispatch harness | Check that active typed jobs match the command contract, appear in dispatch receipts, and do not bypass required approval. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
 | Human approval gate predicate | Check that an approval-required job cannot be allowed to run before approval is recorded. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 | Delivery versus evidence-ready test | Check that delivered jobs without verification, artifact capture, audit, residual, and replay/non-replay fields cannot support promotion. | planned; not run |

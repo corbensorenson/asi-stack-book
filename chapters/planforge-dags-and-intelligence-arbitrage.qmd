@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `planforge_compiler_arch`; supporting: `coherence_exchange`, `cognitive_compilation`, `tokenmana`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `planforge_compiler_arch`, `coherence_exchange`, `cognitive_compilation`, `tokenmana`, `moecot`; passage-reviewed local raw cache: `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`; connector/source-note only: `coherence_exchange`, `moecot` |
-| Test state | Protocol fixture validation and `AsiStackProofs.PlanForge` finite-record proofs are implemented; scheduler and behavioral execution tests remain planned. |
+| Test state | Protocol fixture validation, `AsiStackProofs.PlanForge` finite-record proofs, and `python3 scripts/validate_plan_execution_contracts.py` synthetic DAG acyclicity/order checks are implemented; deployed scheduler, route-selection, and behavioral execution tests remain planned. |
 
 ## Drafting guardrail
 
@@ -220,11 +220,12 @@ This traceable cognitive supply chain is still a design target. PlanForge stays 
 |---|---|---|
 | PlanForge DAG fixture validation | Check that the DAG fixture matches the public schema and includes nodes, edges, capability tiers, quality predicates, verification requirements, budgets, routes, escalation, residuals, and cost-quality ledger entries. | implemented by protocol validation; validated locally |
 | Indexed DAG dispatch predicate | Check that a dispatchable finite plan-graph record carries an acyclicity certificate and that every recorded dependency edge precedes its dependent. | implemented in `AsiStackProofs.PlanForge`; builds locally |
+| Synthetic DAG acyclicity harness | Check that plan-graph dependencies and PlanForge DAG edges are acyclic and agree before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no deployed scheduler claim |
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
 | Failed-quality fallback predicate | Check that a failed quality predicate routes to escalation or residual under the valid node-outcome predicate. | implemented in `AsiStackProofs.PlanForge`; builds locally |
 | Scheduler-level DAG acyclicity test | Check that a deployed scheduler rejects cycles before dispatch. | planned; not run |
 
-The fixture-shape check and finite-record proof predicates are implemented. Scheduler claims require graph algorithms, route-selection traces, quality predicates, and cost-quality results that can be reproduced.
+The fixture-shape check, finite-record proof predicates, and synthetic plan-execution harness are implemented. Scheduler claims require deployed graph algorithms, route-selection traces, quality predicates, and cost-quality results that can be reproduced.
 
 ### Formalization hooks
 

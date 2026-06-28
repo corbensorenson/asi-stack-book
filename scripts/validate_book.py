@@ -37,6 +37,7 @@ REQUIRED = [
     "scripts/validate_evidence_transitions.py",
     "scripts/validate_support_state_transitions.py",
     "scripts/validate_authority_transitions.py",
+    "scripts/validate_plan_execution_contracts.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
     "docs/book_outline.md",
@@ -44,6 +45,7 @@ REQUIRED = [
     "docs/source_evidence_audit.md",
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
+    "docs/plan_execution_contract_harness.md",
     "evidence_transitions/README.md",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
@@ -393,6 +395,7 @@ def main() -> None:
     run_validator("validate_evidence_transitions.py")
     run_validator("validate_support_state_transitions.py")
     run_validator("validate_authority_transitions.py")
+    run_validator("validate_plan_execution_contracts.py")
     print("Book validation passed.")
 
 

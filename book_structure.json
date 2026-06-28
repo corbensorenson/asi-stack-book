@@ -2625,9 +2625,21 @@
           "minimal_implementation": "A command-contract schema and one end-to-end intent-to-artifact trace.",
           "beyond_state_of_art": "The mature version is a contract operating spine for the whole stack, not a larger form of the minimal fixture. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done. Once contracts become the execution spine, no response is allowed to masquerade as execution. A human, reviewer, runtime, or later AI agent can ask what was requested, what was authorized, which defaults were used, what re-contract events occurred, which jobs ran, which side effects were approved, which artifacts were produced, which validators accepted them, and which residuals remain. The system can pause or stop for missing context, missing approval, missing verifier, budget exhaustion, or violated constraints without treating that stop as conversational failure.",
           "codex_tests": [
-            "Contract field completeness test",
-            "Constraint preservation test",
-            "Artifact traceability test"
+            {
+              "name": "Contract field completeness test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
+            {
+              "name": "Constraint preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
+            {
+              "name": "Artifact traceability test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim"
+            }
           ],
           "lean_module": "AsiStackProofs.IntentToExecution",
           "proof_targets": [
@@ -2775,8 +2787,16 @@
           "minimal_implementation": "A canonical command-contract template used by future chapter drafting and experiment prompts.",
           "beyond_state_of_art": "The mature version is a semantic control language for governed work. It is not a prompt template library. It is the small, inspectable language that humans, planners, verifiers, job runners, policy layers, and future AI agents use to agree on what the next unit of work means before any execution path opens. Inside the semantic interface, every command field has provenance, confidence, precedence, and dispatch consequence. A command can carry natural language, examples, style, and source context, but those materials cannot overwrite explicit objective, constraints, authority, output, verification, or failure behavior. Context informs the contract; it does not become a hidden command channel.",
           "codex_tests": [
-            "Command schema validation test",
-            "Failure-behavior declaration test",
+            {
+              "name": "Command schema validation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
+            {
+              "name": "Failure-behavior declaration test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
             "Prompt override scenario"
           ],
           "lean_module": "AsiStackProofs.CommandContracts",
@@ -2936,7 +2956,11 @@
           "beyond_state_of_art": "The mature version is a live control plane for work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs. As a control layer, planning is useful even when nothing executes. The planner can expose that a request is underspecified, a dependency is cyclic, a source is inadequate, a verifier is missing, a tool exceeds authority, a budget cannot support the quality predicate, or a stop condition has fired. Those outputs become plan residuals, not hidden failures.",
           "codex_tests": [
             "Decomposition accuracy test",
-            "Dependency ordering test",
+            {
+              "name": "Dependency ordering test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
             "Context-demand prediction test",
             "Runtime replanning test"
           ],
@@ -3096,7 +3120,11 @@
           "minimal_implementation": "A DAG schema with node-level capability and verification annotations.",
           "beyond_state_of_art": "The mature version is a governed scheduler and capacity allocator for cognitive work. It does not just draw a DAG. It turns plan nodes into schedulable units with dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior. In a governed DAG scheduler, intelligence arbitrage is measured after verification, repair, merge, human review, and residual cost are counted. A cheap route only counts as adequate when its output satisfies the node's adequacy contract and remains useful to downstream dependents. An expensive route is justified when the risk, context burden, quality predicate, or failure cost demands it. The scheduler is therefore accountable for quality and authority, not just token spend.",
           "codex_tests": [
-            "DAG acyclicity test",
+            {
+              "name": "DAG acyclicity test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no deployed scheduler claim"
+            },
             "Capability tier assignment test",
             "Escalation trigger test"
           ],
@@ -3253,7 +3281,11 @@
           "minimal_implementation": "A semantic IR sketch and compile/verify/repair loop for one artifact type.",
           "beyond_state_of_art": "The mature version is a compiler toolchain for cognitive work. It turns goals, command contracts, plans, and source context into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy. In a cognitive compiler, every important artifact has a lowering receipt. The receipt names the source plan, semantic atoms, obligations, assumptions, validators, target constraints, authority requirements, repair scope, support-state effect, and residuals that produced it. A later writer, model, compiler pass, or reviewer can change one node without erasing unrelated obligations or pretending that a syntactic pass is semantic acceptance.",
           "codex_tests": [
-            "Requirement preservation test",
+            {
+              "name": "Requirement preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness"
+            },
             "Incremental repair regression test",
             "Target compilation audit"
           ],
@@ -4549,9 +4581,17 @@
           "minimal_implementation": "A typed-job schema with lifecycle states and permission checks.",
           "beyond_state_of_art": "The mature version is an operating system for bounded cognitive labor. It does not run \"agents\" as ambient actors. It admits work only as typed jobs whose parent contract, plan node, lifecycle state, permission basis, approval record, workspace, adapter route, expected artifact, failure behavior, audit trail, delivery state, and evidence state are explicit. In a labor OS, every job can be refused, approved, dispatched, adjudicated, delivered, quarantined, replayed, or retired through declared transitions. Delivery and evidence readiness remain separate: a user-visible output may exist while verification, artifact capture, replay declaration, or residual accounting is still incomplete. That separation prevents useful output from being laundered into governed evidence.",
           "codex_tests": [
-            "Typed job lifecycle test",
+            {
+              "name": "Typed job lifecycle test",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build and synthetic plan-execution contract harness"
+            },
             "Tool permission enforcement test",
-            "Human approval gate test"
+            {
+              "name": "Human approval gate test",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build and synthetic approval-bypass fixture; no approval-service claim"
+            }
           ],
           "lean_module": "AsiStackProofs.TypedJobs",
           "proof_targets": [

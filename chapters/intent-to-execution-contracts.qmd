@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`; supporting: `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery without local raw passage review: `moecot` |
-| Test state | `intent_contract.valid.json` and `intent_execution_trace.valid.json` pass protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; behavioral execution, replay, and artifact-satisfaction tests remain planned. |
+| Test state | `intent_contract.valid.json` and `intent_execution_trace.valid.json` pass protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; `python3 scripts/validate_plan_execution_contracts.py` passes synthetic cross-record checks for contract field completeness, constraint preservation, artifact traceability, dependency order, dispatch receipts, and approval gating; behavioral execution, replay, and real artifact acceptance remain planned. |
 
 ## Drafting guardrail
 
@@ -215,11 +215,11 @@ This governed transaction protocol is still proposed architecture. Keep the tran
 | Test | Purpose | Status |
 |---|---|---|
 | Intent and trace fixture validation | Check that the intent and trace fixtures match the public schemas and preserve intake state, handoff receipts, dispatch receipts, re-contract triggers, stop/fault state, residuals, and non-claims. | implemented by protocol validation; validated locally |
-| Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | planned; not run |
-| Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | planned; not run |
-| Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | planned; not run |
+| Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
+| Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no runtime trace claim |
+| Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic artifact refs only |
 
-Only the fixture-shape check is implemented. The remaining tests require either an executable vertical slice or a replayed trace with command, environment, artifact, verification, and residual records.
+The shape checks, finite Lean predicates, and synthetic plan-execution harness now cover narrow record consistency. A stronger claim still requires an executable vertical slice or a replayed trace with command, environment, artifact, verification, and residual records.
 
 ### Formalization hooks
 

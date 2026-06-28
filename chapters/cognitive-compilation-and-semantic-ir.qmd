@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Source loading state | source notes and passage-reviewed local raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Test state | `semantic_atom.valid.json` passes protocol fixture validation with atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; source-plan parsing, target lowering, localized repair, and artifact validators remain planned. |
+| Test state | `semantic_atom.valid.json` passes protocol fixture validation with atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic requirement preservation across command constraints, semantic atoms, and artifact refs; source-plan parsing, real target lowering, localized repair, and artifact validators remain planned. |
 
 ## Drafting guardrail
 
@@ -219,11 +219,11 @@ This obligation-preserving compiler is still proposed architecture. The evidence
 | Test | Purpose | Status |
 |---|---|---|
 | Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares atom state, intent, obligation status, inputs, outputs, constraints, dependencies, authority, IR validity state, validator state, lowering state, target, repair scope, repair-ledger refs, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
-| Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | planned; not run |
+| Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic atoms only |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | planned; not run |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | planned; not run |
 
-Only the fixture-shape check is implemented. The remaining tests require a source-plan parser or hand-authored trace, a target artifact, and validators that can reject missing requirements.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow requirement-preservation records. The remaining tests require a source-plan parser or hand-authored trace, a target artifact, and validators that can reject missing requirements.
 
 ### Formalization hooks
 

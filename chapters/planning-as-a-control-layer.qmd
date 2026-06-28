@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`; supporting: `cognitive_compilation`, `software_magic_grimoire`; connector/recovery: `moecot` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`; connector/source-note only: `moecot` |
-| Test state | `plan_graph.valid.json` passes protocol fixture validation, and `AsiStackProofs.Planning` builds locally; decomposition, dependency ordering, context-demand, and runtime replanning tests remain planned. |
+| Test state | `plan_graph.valid.json` passes protocol fixture validation, `AsiStackProofs.Planning` builds locally, and `python3 scripts/validate_plan_execution_contracts.py` checks synthetic dependency ordering, blocked-vs-dispatchable state, dispatch receipts, and contract/job consistency; decomposition quality, context-demand prediction, and runtime replanning traces remain planned. |
 
 ## Drafting guardrail
 
@@ -262,13 +262,13 @@ This traffic-control layer is still an architectural target. Keep planning suppo
 | Authority inheritance finite-record proof | Check that a modeled plan node inherits the parent contract authority ceiling unless governance lowers it. | implemented in `AsiStackProofs.Planning`; runtime replanning test not run |
 | Unsatisfied-constraint finite-record proof | Check that a modeled plan node with unsatisfied required constraints cannot dispatch. | implemented in `AsiStackProofs.Planning`; planner harness not run |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
-| Dependency ordering test | Check whether dependencies precede dependents before dispatch. | planned; not run |
+| Dependency ordering test | Check whether dependencies precede dependents before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic graph fixtures only |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
 | Runtime replanning test | Check whether replanning preserves authority, stop conditions, and residual history. | planned; not run |
 | Dispatch-state enforcement test | Check that only `dispatchable` nodes can lower into typed jobs and blocked/proposed nodes remain residuals or review items. | planned; not run |
 | Replanning-delta audit | Check that replanning records changed assumptions, authority basis, context, verification, stop conditions, and residuals. | planned; not run |
 
-Only the fixture-shape check is implemented. The planned tests require a planner harness, dependency checker, context-demand oracle, or replay trace before the support state can move.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency and dispatch-state consistency. Decomposition quality, context-demand prediction, runtime replanning, and support-state movement still require a planner harness, context-demand oracle, or replay trace.
 
 ### Formalization hooks
 
