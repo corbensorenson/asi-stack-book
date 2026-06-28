@@ -121,6 +121,8 @@ The repository now mechanizes the smallest boundary that can be stated without i
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
 
+### Proof receipt lifecycle
+
 The receipt lifecycle is explicit:
 
 | State | Meaning | Allowed use |
