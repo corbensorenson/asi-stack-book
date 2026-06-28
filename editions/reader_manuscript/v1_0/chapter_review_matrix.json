@@ -9,6 +9,12 @@
     "workspace": "build/reader_edition",
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
+  "format_review_matrix": {
+    "path": "editions/reader_manuscript/v1_0/format_review_matrix.json",
+    "summary": "docs/reader_format_review_matrix.md",
+    "check_command": "python3 scripts/sync_reader_format_review_matrix.py --check",
+    "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists."
+  },
   "review_status_counts": {
     "reviewed": 54
   },

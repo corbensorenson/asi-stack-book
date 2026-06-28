@@ -6,6 +6,8 @@ This document is generated from `editions/reader_manuscript/v1_0/chapter_review_
 
 It is a Phase 2 review-control surface for the normal human-reader manuscript. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.
 
+Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0/format_review_matrix.json`; chapter rows cannot clear `format_artifact_not_reviewed` while reader formats or the edition release record remain blocked.
+
 ## Counts
 
 | Kind | Count |

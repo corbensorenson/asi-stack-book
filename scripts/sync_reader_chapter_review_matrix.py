@@ -21,6 +21,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_review_matrix.json"
 DOC_PATH = ROOT / "docs" / "reader_chapter_review_matrix.md"
+FORMAT_MATRIX_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "format_review_matrix.json"
 STRUCTURE_PATH = ROOT / "book_structure.json"
 OVERLAY_CHAPTER_DIR = ROOT / "editions" / "reader_overlays" / "v1_0" / "chapters"
 MANUSCRIPT_REVIEW = ROOT / "docs" / "reader_manuscript_review.md"
@@ -160,6 +161,27 @@ def active_overlay_counts() -> Counter[str]:
     return counts
 
 
+def blocked_reader_formats() -> list[str]:
+    matrix = load_json(FORMAT_MATRIX_PATH, {})
+    if not isinstance(matrix, dict):
+        return ["format_review_matrix_invalid"]
+    blockers: list[str] = []
+    if matrix.get("release_record_status") != "created":
+        blockers.append("reader_release_record_not_created")
+    records = matrix.get("records")
+    if not isinstance(records, list) or not records:
+        blockers.append("format_review_matrix_empty")
+        return sorted(set(blockers))
+    for record in records:
+        if not isinstance(record, dict):
+            blockers.append("format_review_matrix_invalid_record")
+            continue
+        fmt = str(record.get("format", "unknown"))
+        if record.get("release_approved") is not True or record.get("release_blockers"):
+            blockers.append(fmt)
+    return sorted(set(blockers))
+
+
 def initial_review_defaults(row: dict[str, str], overlay_count: int) -> dict[str, object]:
     chapter_id = row["chapter_id"]
     if chapter_id in SPECIAL_REVIEW_DEFAULTS:
@@ -278,6 +300,12 @@ def build_matrix() -> dict[str, object]:
             "workspace": "build/reader_edition",
             "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter.",
         },
+        "format_review_matrix": {
+            "path": "editions/reader_manuscript/v1_0/format_review_matrix.json",
+            "summary": "docs/reader_format_review_matrix.md",
+            "check_command": "python3 scripts/sync_reader_format_review_matrix.py --check",
+            "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists.",
+        },
         "review_status_counts": dict(sorted(status_counts.items())),
         "disposition_counts": dict(sorted(disposition_counts.items())),
         "release_blocker_counts": dict(sorted(release_blocker_counts.items())),
@@ -311,6 +339,21 @@ def validate_matrix(matrix: dict[str, object]) -> list[str]:
         errors.append("chapter_review_matrix.status must be active_review_queue.")
     if matrix.get("source_of_truth") != "book_structure.json":
         errors.append("chapter_review_matrix.source_of_truth must be book_structure.json.")
+    format_ref = matrix.get("format_review_matrix")
+    if not isinstance(format_ref, dict):
+        errors.append("chapter_review_matrix.format_review_matrix must be an object.")
+    else:
+        expected_format_ref = {
+            "path": "editions/reader_manuscript/v1_0/format_review_matrix.json",
+            "summary": "docs/reader_format_review_matrix.md",
+            "check_command": "python3 scripts/sync_reader_format_review_matrix.py --check",
+        }
+        for key, expected in expected_format_ref.items():
+            if format_ref.get(key) != expected:
+                errors.append(f"chapter_review_matrix.format_review_matrix.{key} must be {expected}.")
+        policy = format_ref.get("policy")
+        if not isinstance(policy, str) or "format-artifact blockers" not in policy or "edition release record" not in policy:
+            errors.append("chapter_review_matrix.format_review_matrix.policy must mention format-artifact blockers and edition release record.")
     for phrase in ("does not promote", "does not supersede", "does not create"):
         if phrase not in " ".join(str(item) for item in matrix.get("non_claims", [])).lower():
             errors.append(f"chapter_review_matrix.non_claims must include phrase: {phrase}")
@@ -319,6 +362,7 @@ def validate_matrix(matrix: dict[str, object]) -> list[str]:
     if not isinstance(chapters, list):
         errors.append("chapter_review_matrix.chapters must be a list.")
         return errors
+    format_blockers = blocked_reader_formats()
 
     ids = [row.get("chapter_id") for row in chapters if isinstance(row, dict)]
     if ids != manifest_ids:
@@ -366,6 +410,11 @@ def validate_matrix(matrix: dict[str, object]) -> list[str]:
                 unknown = sorted(set(str(item) for item in values) - ALLOWED_RELEASE_BLOCKERS)
                 if unknown:
                     errors.append(f"{owner}.release_blockers has unknown values: {unknown}")
+                if format_blockers and "format_artifact_not_reviewed" not in values:
+                    errors.append(
+                        f"{owner}.release_blockers must include format_artifact_not_reviewed "
+                        f"while reader format blockers remain: {format_blockers}"
+                    )
         notes = row.get("review_notes")
         if not isinstance(notes, str) or not notes.strip():
             errors.append(f"{owner}.review_notes must be a non-empty string.")
@@ -412,6 +461,8 @@ def markdown_table(matrix: dict[str, object]) -> str:
         "This document is generated from `editions/reader_manuscript/v1_0/chapter_review_matrix.json` by `python3 scripts/sync_reader_chapter_review_matrix.py --write`.",
         "",
         "It is a Phase 2 review-control surface for the normal human-reader manuscript. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.",
+        "",
+        "Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0/format_review_matrix.json`; chapter rows cannot clear `format_artifact_not_reviewed` while reader formats or the edition release record remain blocked.",
         "",
         "## Counts",
         "",
