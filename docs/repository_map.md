@@ -45,7 +45,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `editions/release_profiles.json` | Machine-readable audience, content-layer, and release-profile definitions for live, research, reader, and audio editions. | tracked |
 | `editions/reader_overlays/` | Versioned semantic reader-edition overlays and examples; editable source for major human-reader deltas. | tracked |
-| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, synced chapter review matrix, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
+| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, synced chapter review matrix, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |

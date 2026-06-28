@@ -73,6 +73,7 @@ REQUIRED = [
     "editions/reader_manuscript/README.md",
     "editions/reader_manuscript/v1_0/manifest.json",
     "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
+    "editions/reader_manuscript/v1_0/reconciliation_report.md",
     "assets/reader-overlays.html",
     "proofs/proof_manifest.json",
     "appendices/A_source_matrix.qmd",

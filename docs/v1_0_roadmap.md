@@ -146,6 +146,7 @@ Chapter review matrix:
 - The matrix currently records 54 chapter rows, 54 `spot_checked` rows from existing representative reader-review notes plus the first Part I, Part II, Part III, and Part IV review passes, 0 `not_started` rows, 20 chapters with active reader overlays, 35 no-immediate-action decisions, 3 companion-note candidates, and 1 curated-manuscript candidate.
 - Every row still carries release blockers for missing full chapter review, missing reader release record, and missing artifact review. The matrix is a review queue, not a reviewed reader release.
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
+- `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.
 
 Reader-source divergence rule:
 

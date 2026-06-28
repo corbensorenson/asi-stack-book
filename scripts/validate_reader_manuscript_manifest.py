@@ -215,8 +215,24 @@ def validate_reconciliation_report(data: dict[str, Any], errors: list[str]) -> N
     status = report.get("status")
     if status not in ALLOWED_RECONCILIATION_STATUS:
         errors.append(f"reconciliation_report.status must be one of {sorted(ALLOWED_RECONCILIATION_STATUS)}.")
-    if data.get("status") in {"release_candidate", "released"} and isinstance(path, str) and not (ROOT / path).exists():
-        errors.append(f"release-ready curated reader manuscript requires reconciliation report: {path}")
+    if isinstance(path, str):
+        report_path = ROOT / path
+        if report_path.exists():
+            text = report_path.read_text(encoding="utf-8", errors="ignore").lower()
+            for phrase in (
+                "not a reader release record",
+                "not a support-state promotion",
+                "live ai/research book",
+                "chapter_review_matrix.json",
+                "generated reader source",
+                "proof/test status",
+                "implementation horizons",
+                "release blockers",
+            ):
+                if phrase not in text:
+                    errors.append(f"{path} must include reconciliation boundary phrase: {phrase}")
+        elif data.get("status") in {"release_candidate", "released"}:
+            errors.append(f"release-ready curated reader manuscript requires reconciliation report: {path}")
 
 
 def validate_docs_reference_manifest(errors: list[str]) -> None:
