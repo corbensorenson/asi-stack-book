@@ -122,7 +122,7 @@ flowchart LR
 
 **What the simulation fidelity gate shows:** A simulation claim must pass through scope, fidelity, time semantics, demand, and bottleneck checks before it can support an experiment or benchmark. If the contract is infeasible for the claim, the output becomes a reduced-scope result, residual, or blocked claim rather than physical evidence.
 
-The record should specify:
+A simulation claim record specifies:
 
 - Scope: what system, variables, agents, or degrees of freedom are represented.
 - Claim class: invariant check, benchmark comparison, feasibility estimate, scenario exploration, safety rehearsal, or speculative thought experiment.

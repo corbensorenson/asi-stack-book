@@ -76,7 +76,7 @@ The right boundary is not "never call tools." It is "call tools through adapters
 
 Runtime adaptation is where intention stops being enough. A typed job can describe what should happen, and a plan can explain why it should happen, but neither one should receive ambient authority. The adapter grants a narrow effect lease: this capability, for this target, under this sandbox, with this approval state, producing this evidence and these residuals. Anything outside that lease is a denial, escalation, or new request.
 
-Human approval should also be treated as a structured artifact, not a vague blessing. The record should say what was approved, by whom or by which role, under what scope, for which risk tier, and with what expiration or revocation path. Otherwise approval becomes a ritual that hides responsibility instead of a control surface that can be audited.
+Human approval should also be treated as a structured artifact, not a vague blessing. The approval record says what was approved, by whom or by which role, under what scope, for which risk tier, and with what expiration or revocation path. Otherwise approval becomes a ritual that hides responsibility instead of a control surface that can be audited.
 
 Approval is not a transfer of authorship. A human may approve a bounded action without approving every downstream reuse of the result, every future route that resembles it, or every policy update trained on it. The approval artifact should therefore expire, name the approved target, and state whether reuse, publication, deployment, or training use is permitted.
 

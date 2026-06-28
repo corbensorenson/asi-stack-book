@@ -121,7 +121,7 @@ flowchart LR
 
 **What the compressed artifact gate shows:** The compressed artifact is a candidate route, not a replacement for the preserved source artifact. Reconstruction checks, task probes, fallback triggers, and non-claim ledgers decide whether the compressed form is usable for a specific task.
 
-The record should distinguish four claims that are often collapsed:
+A compressed artifact record distinguishes four claims that are often collapsed:
 
 - Representation claim: the artifact can be mapped into the chosen form.
 - Reconstruction claim: decoding reproduces the required target under a contract.
@@ -130,7 +130,7 @@ The record should distinguish four claims that are often collapsed:
 
 Each claim can fail separately. The architecture should preserve that separation instead of letting a good ratio imply task utility or a useful lossy representation imply exact reconstruction.
 
-The operational rule is simple: compression can save cost only inside a declared use envelope. The record should say which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact. A compressed artifact without those fields is a cost experiment, not an evidence-bearing representation.
+The operational rule is simple: compression can save cost only inside a declared use envelope. That same record says which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact. A compressed artifact without those fields is a cost experiment, not an evidence-bearing representation.
 
 Artifact-compression states:
 
@@ -179,7 +179,7 @@ Artifact graphs store compressed and full references. Routing selects the repres
 
 The artifact graph matters here because the compressed record should never stand alone. It should point back to the preserved full artifact, the codec manifest, the source/job that produced it, and any evaluation artifacts used to justify routing. That connection gives later readers and agents a way to distinguish source-reported compression lineage from locally reproduced compression behavior.
 
-The record should also declare an access pattern:
+The compression record also declares an access pattern:
 
 - cold archival storage
 - warm retrieval cache
@@ -203,7 +203,7 @@ Compression decisions should be allowed to differ across these patterns. A slow 
 
 Decode accountability is the compression chapter's hardest invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
-Admission is always relative to use. A compressed artifact may be adequate for preview, search, routing, or approximate planning while remaining inadequate for proof, legal review, source interpretation, or final release. The record should preserve which use was admitted, which verifier accepted it, which residual remained, and which fallback was available. Compression without a use-specific boundary becomes a quiet replacement of evidence with convenience.
+Admission is always relative to use. A compressed artifact may be adequate for preview, search, routing, or approximate planning while remaining inadequate for proof, legal review, source interpretation, or final release. The admission record preserves which use was admitted, which verifier accepted it, which residual remained, and which fallback was available. Compression without a use-specific boundary becomes a quiet replacement of evidence with convenience.
 
 ## Failure modes
 

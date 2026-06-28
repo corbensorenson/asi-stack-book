@@ -184,7 +184,7 @@ The runtime packet schema separates runtime packet state, route authority ledger
 
 Traceability across layers is the runtime invariant. A runtime route must be traceable to a command, specialist selection, authority envelope, readiness decision, ledger, replay status, and residual set. Without that trace, the runtime is not serving the stack; it is bypassing it.
 
-Evidence-state separation keeps runtime examples bounded. A run record can be complete as a design example, incomplete as a reproduced artifact, and unusable as benchmark evidence at the same time. The record should not collapse those states into one confidence label.
+Evidence-state separation keeps runtime examples bounded. A run record can be complete as a design example, incomplete as a reproduced artifact, and unusable as benchmark evidence at the same time. The runtime evidence packet keeps those states from collapsing into one confidence label.
 
 ## Failure modes
 

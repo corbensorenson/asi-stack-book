@@ -221,7 +221,7 @@ Minimum fields:
 - `promotion_decision`
 - `non_claims`
 
-The record should be boring by design. It prevents a fast-generation chapter from becoming a pile of impressive methods without a route, verifier, fallback, or promotion rule.
+A generation-mode record is boring by design. It prevents a fast-generation chapter from becoming a pile of impressive methods without a route, verifier, fallback, or promotion rule.
 
 It also gives consumers a refusal path. A high-risk task can require stricter verification or disallow a fast mode; a low-risk draft can accept provisional output with explicit fallback. Without that consumer policy, speed becomes a hidden pressure to skip checks.
 

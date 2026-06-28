@@ -100,7 +100,7 @@ Cyclic mixer adoption is where structural proof, parameter accounting, and hardw
 
 A Cyclic Mixer Evaluation Record keeps those layers separated. It can report evaluation state, workload target, structural invariant, receipt refs, receipt boundary, claim partitions, alias/load diagnostics, parameter accounting, hardware notes, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, consumer policy, and hardware refusal path while still refusing to claim quality, runtime, memory, training stability, context length, or deployment readiness without measured tradeoffs.
 
-The record should make three ledgers visible at once. The structural ledger names the invariant and receipt boundary. The resource ledger names parameters, kernel shape, memory, latency, and hardware assumptions. The empirical ledger names baselines, metrics, failures, and adoption state. A strong cyclic proposal eventually has to survive all three; a result in one ledger should not silently spend credit in another.
+A cyclic-substrate adoption record makes three ledgers visible at once. The structural ledger names the invariant and receipt boundary. The resource ledger names parameters, kernel shape, memory, latency, and hardware assumptions. The empirical ledger names baselines, metrics, failures, and adoption state. A strong cyclic proposal eventually has to survive all three; a result in one ledger should not silently spend credit in another.
 
 A RoPE or cyclic-mixer receipt should also name its consumer policy. Some consumers may accept a structural receipt for diagnostic use, reject it for quality promotion, or require a benchmark before canary routing. Without consumer policy, a receipt can be technically valid and operationally misused.
 
@@ -121,7 +121,7 @@ flowchart LR
 
 **What the cyclic mixer gate shows:** The cyclic mixer path separates structural invariants, proof or receipt boundaries, diagnostics, baselines, controls, and measured tradeoffs. Without measured tradeoffs, the result stays structural-only and feeds a benchmark backlog rather than becoming canary adoption evidence.
 
-The record should separate:
+The cyclic mixer ledger separates:
 
 - Structural invariant: phase bank, residue/winding, circulant law, block-cyclic route, or relative-position law.
 - Proof or receipt boundary: receipt refs, theorem ids, exact/discretized model, numerical diagnostic, or not run.
@@ -172,7 +172,7 @@ Semantic representation chapters define when cyclic structure is actually presen
 
 Hardware refusal belongs in the evaluation record. If a cyclic design assumes kernels, layouts, or precision behavior that the deployment substrate cannot provide, the evaluation record should block adoption or narrow scope rather than hiding the mismatch behind parameter counts.
 
-The record should make rejection ordinary. If alias diagnostics fail, hardware notes are missing, baselines are asymmetric, or metrics remain unrun, routing and architecture consumers should receive a blocked or research-only decision. A cyclic candidate can stay valuable as an experiment without becoming a default substrate.
+The canary decision record makes rejection ordinary. If alias diagnostics fail, hardware notes are missing, baselines are asymmetric, or metrics remain unrun, routing and architecture consumers should receive a blocked or research-only decision. A cyclic candidate can stay valuable as an experiment without becoming a default substrate.
 
 ## Invariants
 

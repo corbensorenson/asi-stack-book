@@ -139,7 +139,7 @@ flowchart LR
 
 **What the feedback update gate shows:** Feedback does not update behavior until admissibility, target policy, reward boundary, drift bound, rollback, holdouts, regressions, and reward-hacking probes are visible. Promotion is a governance decision, while failed updates route to quarantine, rollback, or residuals.
 
-The record should separate:
+A policy update record separates:
 
 - Target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
 - Training mode: SFT, policy gradient, PPO-like online RL, group-relative RL, offline preference optimization, RLVR, process reward, or control-policy RL.

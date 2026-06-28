@@ -130,7 +130,7 @@ The state machine should be explicit enough for a future implementation to refus
 
 A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
-Negative examples are part of the memory, not clutter. A loop detector that only sees successes will overgeneralize; a tool card without failed cases cannot say where the procedure stops. The record should preserve near misses, rejected traces, and residuals so the future router knows when not to use the tool.
+Negative examples are part of the memory, not clutter. A loop detector that only sees successes will overgeneralize; a tool card without failed cases cannot say where the procedure stops. The procedure card preserves near misses, rejected traces, and residuals so the future router knows when not to use the tool.
 
 Loop closure is reasoning compression. It turns many successful trajectories into one parameterized procedure, but only when the verification burden has been paid.
 
