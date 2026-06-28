@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 26,
-    "spot_checked": 28
+    "reviewed": 30,
+    "spot_checked": 24
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 44,
+    "no_immediate_action": 46,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -610,17 +610,17 @@
       "live_file": "chapters/labor-os-and-typed-jobs.qmd",
       "generated_reader_file": "build/reader_edition/chapters/labor-os-and-typed-jobs.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_ii_full_review_completion.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Labor OS chapter. Existing overlay is accepted for the reader path; typed work, approval, delivery, evidence readiness, replay, parentage, and deployed scheduler non-claim boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -633,17 +633,16 @@
       "live_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "generated_reader_file": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter reads as work-product continuity rather than evidence promotion. Artifact identity, provenance, replay grade, context transaction refs, claim/test links, and reuse limits remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the artifact graph chapter. Artifact identity, provenance, replay grade, context transaction refs, claim/test links, evidence gates, and reuse limits remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -656,17 +655,17 @@
       "live_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "generated_reader_file": "build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_ii_full_review_completion.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Runtime Adapters chapter. Existing overlay is accepted for the reader path; request, approval, execution, verification, rollback, irreversible residuals, approval scope, and adapter-runtime non-claim boundaries remain separate.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -679,17 +678,16 @@
       "live_file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "generated_reader_file": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_full_review_completion.md#decisions"
       ],
-      "review_notes": "The generated reader chapter closes Part II coherently by turning repeated traces into governed tool candidates while preserving negative examples, quarantine, regression, monitoring, and retirement requirements.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the procedural memory chapter. Negative examples, quarantine, regression, monitoring, retirement, and loop-detector/tool-generation non-claim boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
