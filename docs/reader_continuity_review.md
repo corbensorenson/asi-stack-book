@@ -10,7 +10,7 @@ This note records manual decisions made after reading the medium-priority rows f
 
 - Generated reader source: `build/reader_edition/`
 - Reader overlay set: 33 active and 33 applied operations
-- Reader continuity audit: 54 chapters, 121,668 reader words, 0 high-priority heuristic rows, 3 medium-priority heuristic rows, 0 table rows, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
+- Reader continuity audit: 54 chapters, 121,684 reader words, 0 high-priority heuristic rows, 3 medium-priority heuristic rows, 0 table rows, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
 - Live source of truth: Quarto chapters plus `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof/test records, implementation horizons, and release records
 
 ## Decision Rules

@@ -10,14 +10,14 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "not_started": 24,
-    "spot_checked": 30
+    "not_started": 13,
+    "spot_checked": 41
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 11,
-    "none": 26,
+    "no_immediate_action": 22,
+    "none": 15,
     "reader_overlay_active": 20
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
@@ -352,13 +352,15 @@
       "live_file": "chapters/intent-to-execution-contracts.qmd",
       "generated_reader_file": "build/reader_edition/chapters/intent-to-execution-contracts.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter establishes the governance-to-execution handoff cleanly: intent, authority, plans, jobs, artifacts, verification, feedback, residuals, and re-contract paths remain visible without requiring an overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -419,13 +421,15 @@
       "live_file": "chapters/planforge-dags-and-intelligence-arbitrage.qmd",
       "generated_reader_file": "build/reader_edition/chapters/planforge-dags-and-intelligence-arbitrage.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter reads as a cost-quality control layer rather than a cheap-model claim. Adequacy, route rejection, merge risk, cost ledger, and scheduler non-claim boundaries remain visible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -440,13 +444,15 @@
       "live_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
       "generated_reader_file": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated opening was spot-checked after a canonical Human Reading Path cleanup tightened repeated repair-locality cadence. It now frames partial correctness, obligation addressability, and IR repair without needing a reader-only overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -461,13 +467,15 @@
       "live_file": "chapters/virtual-context-abi.qmd",
       "generated_reader_file": "build/reader_edition/chapters/virtual-context-abi.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps the memory ABI boundary clear: address, version, mount, snapshot, representation, authority, admission, adequacy, lease, and typed fault remain legible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -482,13 +490,15 @@
       "live_file": "chapters/semantic-pages-context-cells-and-certificates.qmd",
       "generated_reader_file": "build/reader_edition/chapters/semantic-pages-context-cells-and-certificates.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup replaced a loose certificate metaphor with compact receipt language. The source-to-derived-cell certificate boundary needs no reader-only overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -503,13 +513,15 @@
       "live_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "generated_reader_file": "build/reader_edition/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter preserves the runtime-memory argument around coherent snapshots, mounts, branches, taint, deletion closure, replay boundaries, and typed faults without needing an overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -547,13 +559,15 @@
       "live_file": "chapters/claim-ledgers-and-belief-revision.qmd",
       "generated_reader_file": "build/reader_edition/chapters/claim-ledgers-and-belief-revision.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter presents belief revision as a durable maintenance operation and preserves downgrade, split, contradiction, revision-history, and confidence-laundering boundaries.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -568,13 +582,15 @@
       "live_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "generated_reader_file": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps proof-carrying claims narrow: interpretation mapping, verifier result, failed attempts, semantic adequacy, downgrade discipline, and non-overclaim boundaries remain intact.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -589,13 +605,15 @@
       "live_file": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
       "generated_reader_file": "build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup tightened an overextended preserved-objection sentence. Dossier-bounded review, dissent, cycle caps, role separation, and action-linked verdicts remain visible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -633,13 +651,15 @@
       "live_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "generated_reader_file": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter reads as work-product continuity rather than evidence promotion. Artifact identity, provenance, replay grade, context transaction refs, claim/test links, and reuse limits remain visible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -677,13 +697,15 @@
       "live_file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "generated_reader_file": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_ii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter closes Part II coherently by turning repeated traces into governed tool candidates while preserving negative examples, quarantine, regression, monitoring, and retirement requirements.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",

@@ -51,7 +51,7 @@ The Virtual Context ABI says how context enters the working surface. Semantic pa
 
 Summaries are not free. A summary deserves reuse only if the system records what it preserved, what it compressed away, and which downstream claims may rely on it. Otherwise compact context becomes a quiet source of evidence loss and accidental authority. Certificates make that loss visible before a later layer mistakes convenience for truth. Good context units should be small enough to move, explicit enough to audit, and humble enough to expire.
 
-The certificate is the small piece of paper that keeps context from pretending to be source.
+The certificate is the compact receipt that keeps derived context from pretending to be raw source.
 
 Certified context should make loss visible before reuse. A missing certificate should be a stop sign, not trivia before consequential downstream reuse.
 :::

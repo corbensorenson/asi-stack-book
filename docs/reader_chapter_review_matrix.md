@@ -10,12 +10,12 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:not_started | 24 |
-| review_status:spot_checked | 30 |
+| review_status:not_started | 13 |
+| review_status:spot_checked | 41 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 11 |
-| disposition:none | 26 |
+| disposition:no_immediate_action | 22 |
+| disposition:none | 15 |
 | disposition:reader_overlay_active | 20 |
 
 ## Chapter Queue
@@ -36,22 +36,22 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `security-kernel-and-digital-scifs` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `recursive-self-improvement-boundaries` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `intent-to-execution-contracts` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `intent-to-execution-contracts` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `command-contracts-and-semantic-interfaces` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `planning-as-a-control-layer` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `planforge-dags-and-intelligence-arbitrage` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `semantic-pages-context-cells-and-certificates` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `planforge-dags-and-intelligence-arbitrage` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `semantic-pages-context-cells-and-certificates` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `unified-adaptive-tribunal-and-adversarial-review` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `unified-adaptive-tribunal-and-adversarial-review` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `labor-os-and-typed-jobs` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
