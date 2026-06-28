@@ -39,18 +39,18 @@ No result is recorded here unless a test has actually been implemented and run.
 | `governance-rights-fork-exit-and-audit` | Governance Rights: Fork, Exit, and Audit | Exit-path preservation test | planned | not run |
 | `governance-rights-fork-exit-and-audit` | Governance Rights: Fork, Exit, and Audit | Fork-right safety test | planned | not run |
 | `stable-capability-fields` | Stable Capability Fields | Qualification predicate test | planned | not run |
-| `stable-capability-fields` | Stable Capability Fields | Route validity test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Route validity test | implemented | validated locally by synthetic fixtures |
 | `stable-capability-fields` | Stable Capability Fields | Authority non-escalation test | planned | not run |
-| `stable-capability-fields` | Stable Capability Fields | Rollback readiness test | planned | not run |
+| `stable-capability-fields` | Stable Capability Fields | Rollback readiness test | implemented | validated locally by synthetic fixtures; deployed rollback not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction test | planned | not run |
-| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | planned | not run |
-| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | planned | not run |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | implemented | validated locally by synthetic fixtures; real regression suite not run |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | implemented | validated locally by synthetic fixtures; production rollback not executed |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Secret-handle substitution test | planned | not run |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | SCIF least-privilege test | planned | not run |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Prompt-injection containment scenario | planned | not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | planned | not run |
-| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | planned | not run |
-| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | planned | not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
 | `intent-to-execution-contracts` | Intent-to-Execution Contracts | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Intent-to-Execution Contracts | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Intent-to-Execution Contracts | Artifact traceability test | implemented | passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim |
@@ -102,14 +102,14 @@ No result is recorded here unless a test has actually been implemented and run.
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | planned | not run |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | planned | not run |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Specialist routing accuracy test | planned | not run |
-| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Authority-bounded routing test | planned | not run |
-| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Fallback route test | planned | not run |
-| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate enforcement test | planned | not run |
-| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Residual escrow integrity test | planned | not run |
-| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine behavior test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Authority-bounded routing test | implemented | validated locally by synthetic fixtures; deployed router enforcement not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Fallback route test | implemented | validated locally by synthetic fixtures; live fallback routing not run |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate enforcement test | implemented | validated locally by synthetic fixtures |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Residual escrow integrity test | implemented | validated locally by synthetic fixtures |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine behavior test | implemented | validated locally by synthetic fixtures; live routing enforcement not run |
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | MoECOT source-ingestion gate | planned | not run |
 | `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Runtime crosswalk completeness test | planned | not run |
-| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | planned | not run |
+| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | partial | readiness mapping validated locally by synthetic fixtures; replay mapping not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Portal, approval, bid, and federation fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |
@@ -212,7 +212,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Self-evolution intervention ladder audit | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Dependency gate review | planned | not run |
-| `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | planned | not run |
+| `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | implemented | validated locally by synthetic fixtures; full phase acceptance audit not run |
 | `living-book-methodology` | Living Book Methodology | Quarto render check | planned | not run |
 | `living-book-methodology` | Living Book Methodology | Manifest/outline consistency check | planned | not run |
 | `living-book-methodology` | Living Book Methodology | Changelog update check | planned | not run |
@@ -229,6 +229,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | Authority transition harness | `python3 scripts/validate_authority_transitions.py` | Checks synthetic authority-transition records for non-escalation, permission separation, denial receipts, review escalation, and expected-invalid confused-deputy shortcuts. | Passing this check proves authority-gate behavior for synthetic fixtures only; it does not prove deployed permission enforcement, runtime adapter safety, secret handling, or revocation propagation. |
 | Plan-execution contract harness | `python3 scripts/validate_plan_execution_contracts.py` | Checks synthetic command-contract, plan-graph, DAG, semantic-atom, and typed-job scenarios for cross-record contract consistency, acyclic dependency order, dispatch receipts, requirement preservation, artifact traceability, and approval gating. | Passing this check proves synthetic cross-record gate behavior only; it does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, or benchmark performance. |
 | Context admission/adequacy harness | `python3 scripts/validate_context_admission_adequacy.py` | Checks synthetic context ABI, packet, semantic-page certificate, transaction, and adequacy scenarios for admission/adequacy separation, conflict blocking, stale certificate rejection, deletion closure, escalation, and mode-confusion gates. | Passing this check proves synthetic context-record gate behavior only; it does not prove VCM resolver behavior, context compiler behavior, memory-store correctness, summary fidelity, model verification bandwidth, or benchmark performance. |
+| Readiness/residual gate harness | `python3 scripts/validate_readiness_residual_gates.py` | Checks synthetic costed-route, readiness-gate, and replacement-transaction scenarios for promotion gates, residual escrow custody, quarantine, authority bounds, expired-evidence reruns, fallback, and rollback readiness. | Passing this check proves synthetic cross-record gate behavior only; it does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, rollback execution, runtime monitoring, MoECOT replay, or benchmark performance. |
 | Proof-readiness validation | `python3 scripts/validate_proof_readiness.py` | Checks that proof triage tags, modules, root imports, formal targets, and target statuses stay aligned with the generated proof manifest. | Passing this check proves manifest/triage/import consistency only; theorem status still requires implemented Lean modules and a passing Lean build. |
 | Proof artifact traceability audit | `python3 scripts/validate_proof_artifact_audit.py` | Checks that implemented proof targets are traceable from manifest and triage to Lean modules, root imports, chapter hooks, limitation prose, and Appendix E coverage. | Passing this check proves traceability and explicit non-claim coverage only; it does not prove semantic adequacy, source interpretation, deployed enforcement, or benchmark performance. |
 | Source evidence traceability audit | `python3 scripts/validate_source_evidence_audit.py` | Checks that assigned source/chapter pairs, source notes, chapter listings, and claim-source mappings stay aligned, and reports passage-review coverage. | Passing this check proves source-note/mapping consistency only; it does not quote private passages or promote any support state. |

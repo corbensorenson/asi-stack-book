@@ -21,6 +21,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/plan_execution_contract_harness.md` | Phase 5 plan-execution contract harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/context_admission_adequacy_harness.md` | Phase 5 context admission/adequacy harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/readiness_residual_harness.md` | Phase 5 readiness/residual gate harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/external_literature_backfill_phase6.md` | Phase 6 initial external-literature backfill report for alignment/control and governance/evaluation records. | tracked |
 | `docs/site_visual_phase7_review.md` | Phase 7 rendered-site, visual coverage, appendix table, landing-page trust, and local-hygiene review. | tracked |
 | `docs/v1_0_release_preparation_review.md` | Phase 8 preparation review for reader, ebook/document/PDF, and audio release gates and blockers. | tracked |
@@ -44,7 +45,7 @@ This repository is organized around the living book and its validation loop.
 | `schemas/` | JSON Schemas for protocol records. | tracked |
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `evidence_transitions/` | Evidence-transition review records checked against `schemas/evidence_transition_record.schema.json`. | tracked |
-| `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state transition fixtures and result records. | tracked |
+| `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state, authority, plan-execution, context-admission, and readiness/residual fixtures and result records. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |

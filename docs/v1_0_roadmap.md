@@ -178,7 +178,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: started. Four synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; and the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`. All four are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
+Status: started. Five synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; and the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`. All five are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -213,6 +213,9 @@ Initial completion:
 - `python3 scripts/validate_context_admission_adequacy.py` passed locally on 2026-06-28 with 3 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/context_admission_adequacy/results/2026-06-28-local.md`.
 - The context admission/adequacy harness checks synthetic context ABI, packet, certificate, transaction, and adequacy consistency only. It does not prove VCM resolver behavior, context compiler behavior, memory-store correctness, summary fidelity, contradiction-rate performance, distractor resistance, model verification bandwidth, runtime behavior, or support-state promotion.
+- `python3 scripts/validate_readiness_residual_gates.py` passed locally on 2026-06-28 with 4 valid fixtures and 5 expected-invalid fixtures.
+- The result record is `experiments/readiness_residual_gates/results/2026-06-28-local.md`.
+- The readiness/residual gate harness checks synthetic costed-route, readiness-gate, and replacement-transaction consistency only. It does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, deployed quarantine, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or support-state promotion.
 
 ## Phase 6 - External Literature Backfill
 

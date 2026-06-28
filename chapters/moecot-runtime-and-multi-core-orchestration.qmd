@@ -4,7 +4,7 @@ chapter_id: "moecot-runtime-and-multi-core-orchestration"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -22,7 +22,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all assigned MoECOT runtime sources; support remains at argument until MoECOT runtime artifacts, replay records, benchmark records, or reproduced local runs exist."
-  - "Only protocol schema/fixture validation and finite Lean predicates are implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
+  - "Protocol schema/fixture validation, finite Lean predicates, and a synthetic readiness/residual mapping slice are implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter."
   - "No support-state promotion is implied by this passage-review pass."
 ---
 
@@ -34,13 +34,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | chapter draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-28 |
 | Primary source records | `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; local raw cache reviewed for `octopus_router`, `rmi`, `benchmaxxing`, `beastbrain`, `viea`, `scf`, and `talos`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; tracked local-project source passages reviewed for the three Theseus records; raw source text is not published. |
-| Test state | MoECOT orchestration fixture validation implemented; `AsiStackProofs.MoECOTRuntime` implements finite runtime-core evidence-reference and unavailable-source promotion gates; runtime replay and benchmark checks remain planned. |
+| Test state | MoECOT orchestration fixture validation implemented; `AsiStackProofs.MoECOTRuntime` implements finite runtime-core evidence-reference and unavailable-source promotion gates; `python3 scripts/validate_readiness_residual_gates.py` validates readiness mapping across route evidence, gate decisions, residual escrow, fallback, and replacement decisions. Runtime replay and benchmark checks remain planned. |
 
 ## Drafting guardrail
 
@@ -227,9 +227,9 @@ This orchestration runtime is still proposed architecture. MoECOT runtime suppor
 | MoECOT orchestration fixture validation | Check that the orchestration fixture matches the public schema and declares run, command, orchestrator, route head, specialist cores, gates, ledgers, readiness refs, replay refs, handoff refs, blockers, residuals, and source-claim state. | implemented by protocol validation; validated locally |
 | MoECOT source-ingestion gate | Check that MoECOT-specific claims cite inspected source notes or imported artifacts before promotion. | planned; not run |
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
-| Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | planned; not run |
+| Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | partially implemented by readiness/residual gate harness for readiness mapping; MoECOT replay mapping not run |
 
-Only fixture-shape validation is implemented. Runtime claims require imported MoECOT artifacts, replay records, benchmark records, or reproduced local runs.
+Fixture-shape validation, finite Lean gates, and a synthetic readiness mapping slice are implemented. Runtime claims require imported MoECOT artifacts, replay records, benchmark records, or reproduced local runs.
 
 ### Formalization hooks
 

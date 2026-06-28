@@ -1907,9 +1907,21 @@
           "beyond_state_of_art": "Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals. A mature capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change.",
           "codex_tests": [
             "Qualification predicate test",
-            "Route validity test",
+            {
+              "name": "Route validity test",
+              "purpose": "Check that a routed candidate stays inside gate authority, allowed routes, blocked routes, fallback route, and residual-obligation boundaries before canary or default use.",
+              "status": "implemented by readiness/residual gate harness; validated locally",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures"
+            },
             "Authority non-escalation test",
-            "Rollback readiness test"
+            {
+              "name": "Rollback readiness test",
+              "purpose": "Check that canary/default replacement decisions require rollback receipt readiness, monitor state, and inherited residual escrow before stronger use.",
+              "status": "implemented by readiness/residual gate harness; validated locally; deployed rollback not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed rollback not run"
+            }
           ],
           "lean_module": "AsiStackProofs.StableCapabilityFields",
           "proof_targets": [
@@ -2055,8 +2067,20 @@
           "beyond_state_of_art": "Capability replacement only works as a transaction control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects. In that end state, a capability can improve continuously without making the system forget what it used to know. Regressions follow the field forward, not the old implementation backward. Failed canaries become residuals. Rollbacks are rehearsed and owned. State migration is classified as reversible, compensatable, forked, or residual rather than treated as an implementation detail. A default route is therefore never just the latest winner; it is the candidate that survived the transaction while preserving the floor.",
           "codex_tests": [
             "Replacement transaction test",
-            "Regression preservation test",
-            "Rollback execution dry run"
+            {
+              "name": "Regression preservation test",
+              "purpose": "Check that failed regression or missing floor evidence blocks canary/default replacement decisions in a cross-record readiness scenario.",
+              "status": "implemented by readiness/residual gate harness; validated locally; real regression suite not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; real regression suite not run"
+            },
+            {
+              "name": "Rollback execution dry run",
+              "purpose": "Check that canary/default replacement decisions require a passing rollback dry-run receipt before stronger use.",
+              "status": "implemented by readiness/residual gate harness; validated locally; production rollback not executed",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; production rollback not executed"
+            }
           ],
           "lean_module": "AsiStackProofs.Replacement",
           "proof_targets": [
@@ -2368,8 +2392,20 @@
           "beyond_state_of_art": "Recursive improvement belongs inside a governed improvement market, not a runaway loop. Components may propose patches, tools, routes, policy updates, benchmarks, teacher edits, and architecture changes, but promotion flows through stable fields, replacement transactions, independent evaluators, protected-invariant checks, boundary-delta review, monitor windows, and rollback ownership. In that end state, the system can improve faster because the rules are sharper. Cheap interventions are tried before expensive or irreversible ones. Verification, security, human review, and rollback budgets are protected from being \"optimized away.\" Readiness gates expire when the frontier, architecture, source corpus, lifecycle state, or threat model changes. A candidate may generate evidence, but it cannot be the only judge of whether the evidence is enough.",
           "codex_tests": [
             "Protected-invariant preservation test",
-            "Evaluator independence test",
-            "Self-improvement rollback scenario"
+            {
+              "name": "Evaluator independence test",
+              "purpose": "Check that a candidate replacement cannot enter canary or commit state when the replacement record indicates weak or self-referential evaluation.",
+              "status": "implemented by readiness/residual gate harness; validated locally for replacement evaluator wording; broader self-improvement evaluator tests remain planned",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; broader self-improvement behavior not run"
+            },
+            {
+              "name": "Self-improvement rollback scenario",
+              "purpose": "Check that canary/default and expired-rerun replacement scenarios carry rollback, monitor, fallback, and residual-escrow state before stronger transition.",
+              "status": "implemented by readiness/residual gate harness; validated locally; live self-improvement rollback not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; live self-improvement rollback not run"
+            }
           ],
           "lean_module": "AsiStackProofs.SelfImprovement",
           "proof_targets": [
@@ -5449,8 +5485,20 @@
           "beyond_state_of_art": "Routing becomes strategic when it is a governed capability market inside the stack. It is not a bigger tool picker. It is a control boundary that can select among specialists, proof checkers, retrieval lanes, local runtime cores, human review, and fallback routes while preserving the authority, evidence, and residual obligations attached to the choice. In the mature routing market, route selection is a governed lease, not a suggestion engine: a lightweight head selects bounded specialists only with the authority, context, tools, fallback, and residual ownership the task permits.",
           "codex_tests": [
             "Specialist routing accuracy test",
-            "Authority-bounded routing test",
-            "Fallback route test"
+            {
+              "name": "Authority-bounded routing test",
+              "purpose": "Check that a selected route cannot exceed the readiness gate authority scope or use a blocked route during canary/default promotion.",
+              "status": "implemented by readiness/residual gate harness; validated locally; deployed router enforcement not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed router enforcement not run"
+            },
+            {
+              "name": "Fallback route test",
+              "purpose": "Check that quarantine and canary/default scenarios preserve an explicit fallback route and prevent blocked selected routes from ordinary use.",
+              "status": "implemented by readiness/residual gate harness; validated locally; live fallback routing not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; live fallback routing not run"
+            }
           ],
           "lean_module": "AsiStackProofs.Routing",
           "proof_targets": [
@@ -5668,9 +5716,27 @@
           "minimal_implementation": "A module lifecycle state machine and residual escrow ledger.",
           "beyond_state_of_art": "Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use. In the mature readiness control plane, readiness is a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, rollback consequences, and review ownership.",
           "codex_tests": [
-            "Readiness gate enforcement test",
-            "Residual escrow integrity test",
-            "Quarantine behavior test"
+            {
+              "name": "Readiness gate enforcement test",
+              "purpose": "Check that canary/default, quarantine, and rerun decisions require compatible evidence state, lifecycle state, route state, authority scope, and replacement decision.",
+              "status": "implemented by readiness/residual gate harness; validated locally",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures"
+            },
+            {
+              "name": "Residual escrow integrity test",
+              "purpose": "Check that route residual obligations and inherited residuals are carried into gate or replacement escrow before promotion.",
+              "status": "implemented by readiness/residual gate harness; validated locally",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures"
+            },
+            {
+              "name": "Quarantine behavior test",
+              "purpose": "Check that a failed route is blocked, a fallback route remains allowed, and the replacement transaction records quarantine rather than promotion.",
+              "status": "implemented by readiness/residual gate harness; validated locally; live routing enforcement not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; live routing enforcement not run"
+            }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates",
           "proof_targets": [
@@ -5953,7 +6019,13 @@
           "codex_tests": [
             "MoECOT source-ingestion gate",
             "Runtime crosswalk completeness test",
-            "Readiness/replay mapping review"
+            {
+              "name": "Readiness/replay mapping review",
+              "purpose": "Check that readiness decisions reference route evidence, residual escrow, fallback, and replacement decisions rather than source branding alone; replay refs remain outside this harness.",
+              "status": "partially implemented by readiness/residual gate harness for readiness mapping; replay mapping remains planned",
+              "implementation_status": "partial",
+              "result_status": "readiness mapping validated locally by synthetic fixtures; replay mapping not run"
+            }
           ],
           "lean_module": "AsiStackProofs.MoECOTRuntime",
           "proof_targets": [
@@ -11278,7 +11350,13 @@
           "codex_tests": [
             "Phase acceptance checklist",
             "Dependency gate review",
-            "Prototype evidence-state audit"
+            {
+              "name": "Prototype evidence-state audit",
+              "purpose": "Check that expired or stale evidence routes to rerun/reject state with residual escrow instead of canary/default promotion.",
+              "status": "implemented by readiness/residual gate harness; validated locally; full phase acceptance audit not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; full phase acceptance audit not run"
+            }
           ],
           "lean_module": "AsiStackProofs.PrototypeRoadmap",
           "proof_targets": [

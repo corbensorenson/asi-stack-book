@@ -784,9 +784,9 @@ Draft deliverables:
 - An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context/status, qualification lease/status, evaluator independence, evidence, route validity/scope, route permission effect, consumer policy, readiness gate refs, field history refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, default-route blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
 - Planned Codex test: Qualification predicate test.
-- Planned Codex test: Route validity test.
+- Implemented Codex test: Route validity test, via `python3 scripts/validate_readiness_residual_gates.py` over synthetic costed-route/readiness-gate/replacement fixtures; deployed route enforcement remains unrun.
 - Planned Codex test: Authority non-escalation test.
-- Planned Codex test: Rollback readiness test.
+- Implemented Codex test: Rollback readiness test, via `python3 scripts/validate_readiness_residual_gates.py` over rollback receipt, monitor-state, and residual-escrow scenarios; deployed rollback remains unrun.
 
 Lean proof targets:
 
@@ -848,8 +848,8 @@ Draft deliverables:
 
 - A replacement transaction schema with transaction state, identity-preservation, precheck, gate, commit, canary scope, monitor status, evaluator-independence, rollback receipt, promotion blockers, source refs, support-state effect, residual, and non-claim fields.
 - Planned Codex test: Replacement transaction test.
-- Planned Codex test: Regression preservation test.
-- Planned Codex test: Rollback execution dry run.
+- Implemented Codex test: Regression preservation test, via `python3 scripts/validate_readiness_residual_gates.py` over failed-regression and missing-regression promotion blockers; real regression-suite coverage remains unrun.
+- Implemented Codex test: Rollback execution dry run, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback dry-run requirements; production rollback execution remains unrun.
 
 Lean proof targets:
 
@@ -976,11 +976,11 @@ Draft deliverables:
 - A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.
 - Exact Appendix C claim-source mappings for the core recursive-self-improvement claim across SCF stable fields, Benchmaxxing benchmark-ratchet discipline, RMI modular improvement loops, Alignment Field normative caution, VIEA durable artifact/feedback discipline, Talos typed jobs/audit/replay, MoECOT runtime-reference context, Field of God AI Constitution protected constraints, and Theseus self-evolution/readiness-gate notes; six local mappings (`scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped and the constitution/Theseus mappings remain public-project/source-note mapped until raw source is vendored or made durable in this project. Support remains `argument` pending protected-invariant tests, evaluator-independence scenarios, rollback/canary execution evidence, fresh Theseus report inspection, or accepted evidence transitions.
 - Planned Codex test: Protected-invariant preservation test.
-- Planned Codex test: Evaluator independence test.
+- Implemented Codex test: Evaluator independence test, via `python3 scripts/validate_readiness_residual_gates.py` over replacement records that reject weak or self-referential evaluator wording; broader self-improvement evaluator independence remains unrun.
 - Planned Codex test: Boundary-delta review test.
 - Planned Codex test: Verification-budget preservation test.
 - Planned Codex test: Stale-gate replay test.
-- Planned Codex test: Self-improvement rollback scenario.
+- Implemented Codex test: Self-improvement rollback scenario, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback readiness and expired-evidence rerun/reject scenarios; live self-improvement rollback remains unrun.
 
 Lean proof targets:
 
@@ -2055,8 +2055,8 @@ Draft deliverables:
 - Planned Codex test: Specialist routing accuracy test.
 - Implemented Lean predicate: selected routes satisfy authority and readiness.
 - Implemented Lean predicate: failed readiness routes to fallback or residual rather than promotion.
-- Planned Codex test: Runtime authority enforcement test.
-- Planned Codex test: Fallback route execution test.
+- Implemented Codex test: Authority-bounded routing test, via `python3 scripts/validate_readiness_residual_gates.py` over route authority ceilings, gate authority scopes, allowed routes, and blocked routes; deployed router enforcement remains unrun.
+- Implemented Codex test: Fallback route test, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default and quarantine fallback preservation; live fallback route execution remains unrun.
 
 Lean proof targets:
 
@@ -2119,9 +2119,9 @@ Draft deliverables:
 - Implemented protocol validation: `readiness_gate_record` fixture validates public record shape, field identity, workload family, freshness window, route permissions, inherited residuals, fallback path, expiry, and non-claims only.
 - Implemented Lean predicate: promoted decisions require all required gates to pass.
 - Implemented Lean predicate: quarantined targets cannot be selected for ordinary execution routes.
-- Planned Codex test: Readiness transition enforcement test.
-- Planned Codex test: Residual escrow integrity test.
-- Planned Codex test: Quarantine routing harness test.
+- Implemented Codex test: Readiness transition enforcement test, via `python3 scripts/validate_readiness_residual_gates.py` over canary, default, quarantine, and expired-rerun scenarios; deployed readiness-engine behavior remains unrun.
+- Implemented Codex test: Residual escrow integrity test, via `python3 scripts/validate_readiness_residual_gates.py` over route residual obligations and inherited residual custody; residual-ledger storage remains unrun.
+- Implemented Codex test: Quarantine routing harness test, via `python3 scripts/validate_readiness_residual_gates.py` over blocked selected routes and preserved fallback routes; live quarantine routing remains unrun.
 
 Lean proof targets:
 
@@ -2182,7 +2182,7 @@ Draft deliverables:
 - Implemented protocol validation: `moecot_orchestration_record` fixture validates public record shape only.
 - Planned Codex test: MoECOT source-ingestion gate.
 - Planned Codex test: Runtime crosswalk completeness test.
-- Planned Codex test: Readiness/replay mapping review.
+- Partially implemented Codex test: Readiness/replay mapping review, via `python3 scripts/validate_readiness_residual_gates.py` for readiness mapping across route evidence, gate decisions, residual escrow, fallback, and replacement decisions; MoECOT replay mapping remains planned and unrun.
 
 Lean proof targets:
 
@@ -3475,7 +3475,7 @@ Draft deliverables:
 - Implemented repository-level fixture: `prototype_phase_record.valid.json` validates prototype-phase record shape only; no phase completion or capability unlock is implied.
 - Planned Codex test: Phase acceptance checklist.
 - Planned Codex test: Dependency gate review.
-- Planned Codex test: Prototype evidence-state audit.
+- Implemented Codex test: Prototype evidence-state audit, via `python3 scripts/validate_readiness_residual_gates.py` over expired-evidence rerun/reject behavior; full phase acceptance audit remains unrun.
 
 Lean proof targets:
 

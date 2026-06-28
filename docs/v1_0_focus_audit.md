@@ -49,8 +49,8 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Manifest parts | 4 | The book has a stable four-part architecture. |
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
-| Chapter body words | 184,031 | The book is already full-length; the main risk is not shortness. |
-| Raw chapter-file words | 191,536 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
+| Chapter body words | 184,290 | The book is already full-length; the main risk is not shortness. |
+| Raw chapter-file words | 191,871 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
 | Source records | 122 | The corpus is substantial, with 59 Corben/local records and 63 external records by current appendices. |
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
@@ -59,9 +59,9 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Lean proof targets | 112 implemented finite-record targets | Traceability is complete; semantic adequacy remains unreviewed. |
 | Protocol schemas | 71 | Record shapes are well-covered. |
 | Protocol fixtures | 70 valid fixtures | Fixture validation is broad but not a substitute for runtime tests. |
-| Test appendix rows | 224 | Appendix E now has 213 chapter-level rows plus 11 repository-level check rows. |
-| Planned/unrun chapter test rows | 175 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
-| Implemented test/proof/check rows in Appendix E | 49 | Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, Lean build, or proof/source traceability mechanics. |
+| Test appendix rows | 225 | Appendix E now has 213 chapter-level rows plus 12 repository-level check rows. |
+| Planned/unrun chapter test rows | 162 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
+| Implemented or partial test/proof/check rows in Appendix E | 63 | Appendix E now has 50 implemented chapter rows, 1 partial chapter row, and 12 repository-level checks. Existing rows mostly validate fixtures, synthetic transition gates, synthetic plan-execution consistency, synthetic context admission/adequacy consistency, synthetic readiness/residual gate consistency, Lean build, or proof/source traceability mechanics. |
 | Reader spine | 54 chapters, minimum 1960 words | The generated reader source is structurally substantial. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
 | Reader overlay operations | 2 active | The first opening-chapter semantic overlay pilot is active; broader reader continuity review and chapter-by-chapter overlays remain open. |
@@ -200,10 +200,11 @@ Recommended first harnesses:
 | Authority non-escalation / permission receipt tests | System boundaries, security kernel, runtime adapters, labor OS | Turns authority vocabulary into reject/accept behavior. |
 | Plan graph and execution-contract tests | Intent contracts, command contracts, planning, PlanForge, cognitive compilation | Makes the planning/execution boundary executable. |
 | Context admission vs adequacy tests | Virtual Context ABI, semantic pages, context transactions, verification bandwidth | Tests a core memory/reasoning interface. |
-| Readiness gate and residual escrow tests | Routing, readiness, MoECOT, prototype roadmap, recursive self-improvement | Converts promotion-blocking language into state transitions. |
 | Benchmark ratchet anti-Goodhart tests | Benchmark ratchets, policy optimization, artifact steward agents | Addresses one of the most important evidence hazards. |
 
-Each harness should write public-safe results under a tracked result or report location only after it actually runs. If a test is negative, failed, or inconclusive, keep that result visible.
+The readiness gate and residual escrow harness is now implemented in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`, and backed by `experiments/readiness_residual_gates/`. It converts promotion-blocking language into synthetic cross-record gate behavior only; it does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or support-state promotion.
+
+Each remaining harness should write public-safe results under a tracked result or report location only after it actually runs. If a test is negative, failed, or inconclusive, keep that result visible.
 
 ### 4. Proof Adequacy Review
 
