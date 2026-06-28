@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 14,
-    "spot_checked": 40
+    "reviewed": 18,
+    "spot_checked": 36
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 41,
+    "no_immediate_action": 43,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -343,17 +343,16 @@
       "live_file": "chapters/intent-to-execution-contracts.qmd",
       "generated_reader_file": "build/reader_edition/chapters/intent-to-execution-contracts.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter establishes the governance-to-execution handoff cleanly: intent, authority, plans, jobs, artifacts, verification, feedback, residuals, and re-contract paths remain visible without requiring an overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the intent-to-execution chapter. Intent, authority, plans, typed jobs, artifacts, verification, feedback, residuals, and re-contract paths remain visible without claiming an executed vertical slice.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -366,17 +365,17 @@
       "live_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
       "generated_reader_file": "build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd",
       "overlay_operation_count": 2,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the command-contract chapter. Existing overlays are accepted for the reader path; field provenance, confidence, missing-field behavior, failure behavior, dispatch blockers, and non-execution boundaries remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -389,17 +388,17 @@
       "live_file": "chapters/planning-as-a-control-layer.qmd",
       "generated_reader_file": "build/reader_edition/chapters/planning-as-a-control-layer.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the planning chapter. Existing overlay is accepted for the reader path; proposed, blocked, dispatchable, replanned, stopped, and residual work remain distinct without claiming planner quality or dispatch safety.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -412,17 +411,16 @@
       "live_file": "chapters/planforge-dags-and-intelligence-arbitrage.qmd",
       "generated_reader_file": "build/reader_edition/chapters/planforge-dags-and-intelligence-arbitrage.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter reads as a cost-quality control layer rather than a cheap-model claim. Adequacy, route rejection, merge risk, cost ledger, and scheduler non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the PlanForge chapter. Adequacy contracts, route rejection, merge risk, cost-quality ledger, residuals, and scheduler non-claim boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]

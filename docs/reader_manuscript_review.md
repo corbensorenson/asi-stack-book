@@ -116,15 +116,16 @@ python3 scripts/sync_reader_chapter_review_matrix.py --write
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The current matrix records 54 manifest-aligned chapter rows: 14 `reviewed`
+The current matrix records 54 manifest-aligned chapter rows: 18 `reviewed`
 rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_boundary_full_review_pass.md`, and
 `docs/reader_normative_full_review_pass.md`, and
-`docs/reader_part_i_full_review_completion.md`, plus 40 `spot_checked` rows
-from this baseline, the medium-priority review, and the first Part I, Part II,
+`docs/reader_part_i_full_review_completion.md`, plus
+`docs/reader_part_ii_contracts_full_review_pass.md`, with 36 `spot_checked`
+rows from this baseline, the medium-priority review, and the first Part II,
 Part III, and Part IV review passes. It has 0 `not_started` rows, 20 chapters
-with active reader overlays, 41 no-immediate-action decisions, 3 companion-note
-candidates, and 1 curated-manuscript candidate. All 14 Part I rows have cleared
+with active reader overlays, 43 no-immediate-action decisions, 3 companion-note
+candidates, and 1 curated-manuscript candidate. The reviewed rows have cleared
 the `full_chapter_review_not_recorded` blocker, but all rows still retain
 release blockers until reader release records and format artifact review exist.
 The matrix is a review queue and release-control surface, not a reviewed reader
@@ -132,7 +133,7 @@ manuscript.
 
 ## Residuals
 
-- The generated manuscript has not received a full 54-chapter human continuity review. All 14 Part I chapters now have full chapter-text review records, while the remaining 40 chapters remain spot-checked. The manuscript is mechanically valid, not release-reviewed.
+- The generated manuscript has not received a full 54-chapter human continuity review. All 14 Part I chapters and the first four Part II chapters now have full chapter-text review records, while the remaining 36 chapters remain spot-checked. The manuscript is mechanically valid, not release-reviewed.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
