@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "pre_release_review_matrix",
+  "last_updated": "2026-06-28",
+  "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records.",
+  "source_docs": [
+    "docs/reader_format_dry_run.md",
+    "docs/reader_artifact_layout_review.md",
+    "docs/reader_chapter_review_matrix.md"
+  ],
+  "release_record_status": "not_created",
+  "release_record_path": "",
+  "release_blocker_counts": {
+    "app_or_ereader_review_not_completed": 2,
+    "full_format_artifact_review_not_completed": 4,
+    "reader_release_record_not_created": 4
+  },
+  "records": [
+    {
+      "format": "html",
+      "artifact_scope": "Local ignored generated reader-site snapshot under build/reader_edition/format_artifacts/html/.",
+      "render_status": "rendered_local",
+      "structural_inspection_status": "passed",
+      "manual_layout_review_status": "representative_spot_check",
+      "release_approved": false,
+      "evidence_refs": [
+        "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "full_format_artifact_review_not_completed"
+      ],
+      "notes": "Local HTML snapshots rendered, passed structural inspection, and received representative desktop/mobile browser checks across 28 page-view pairs. This is useful layout evidence but not a full release approval.",
+      "non_claims": [
+        "This row is not a release record.",
+        "This row does not approve a published reader HTML artifact.",
+        "This row does not promote any claim support state."
+      ]
+    },
+    {
+      "format": "epub",
+      "artifact_scope": "Local ignored EPUB snapshot under build/reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub.",
+      "render_status": "rendered_local",
+      "structural_inspection_status": "passed",
+      "manual_layout_review_status": "not_started",
+      "release_approved": false,
+      "evidence_refs": [
+        "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_layout_review.md#residuals"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "full_format_artifact_review_not_completed",
+        "app_or_ereader_review_not_completed"
+      ],
+      "notes": "The EPUB snapshot rendered and passed zip/navigation/content structural checks. It has not been opened and inspected in an e-reader application.",
+      "non_claims": [
+        "This row is not a release record.",
+        "This row does not approve an EPUB artifact for publication.",
+        "This row does not promote any claim support state."
+      ]
+    },
+    {
+      "format": "docx",
+      "artifact_scope": "Local ignored DOCX snapshot under build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx.",
+      "render_status": "rendered_local",
+      "structural_inspection_status": "passed",
+      "manual_layout_review_status": "not_started",
+      "release_approved": false,
+      "evidence_refs": [
+        "docs/reader_format_dry_run.md#structural-inspection",
+        "docs/reader_artifact_layout_review.md#residuals"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "full_format_artifact_review_not_completed",
+        "app_or_ereader_review_not_completed"
+      ],
+      "notes": "The DOCX snapshot rendered and passed container, document XML, media, title, and compact evidence-boundary structural checks. It has not been opened and inspected in Word, LibreOffice, or Google Docs.",
+      "non_claims": [
+        "This row is not a release record.",
+        "This row does not approve a DOCX artifact for publication.",
+        "This row does not promote any claim support state."
+      ]
+    },
+    {
+      "format": "pdf",
+      "artifact_scope": "Local ignored UTF-8 PDF probe snapshot under build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf.",
+      "render_status": "probe_rendered_local",
+      "structural_inspection_status": "partial",
+      "manual_layout_review_status": "representative_spot_check",
+      "release_approved": false,
+      "evidence_refs": [
+        "docs/reader_format_dry_run.md#pdf-probe",
+        "docs/reader_artifact_layout_review.md#pdf-spot-check"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "full_format_artifact_review_not_completed"
+      ],
+      "notes": "The UTF-8 PDF probe rendered locally and representative pages 1, 21, 25, and 527 were visually sampled. The full 574-page PDF has not received a page-by-page layout review.",
+      "non_claims": [
+        "This row is not a release record.",
+        "This row does not approve a PDF artifact for publication.",
+        "This row does not promote any claim support state."
+      ]
+    }
+  ],
+  "release_rule": "No reader HTML, EPUB, DOCX, PDF, e-reader conversion, audio, or audio-embedded EPUB artifact is release-approved until the relevant format row has no release blockers and an edition release record names the exact reviewed artifact.",
+  "non_claims": [
+    "This matrix is a pre-release format-review ledger, not an edition release record.",
+    "This matrix does not publish or approve reader artifacts.",
+    "This matrix does not promote any claim support state.",
+    "This matrix does not supersede the live AI/research book for claims, source boundaries, proof/test status, implementation horizons, or release records."
+  ]
+}

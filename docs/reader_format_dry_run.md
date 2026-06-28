@@ -138,6 +138,15 @@ reviewed as a book, that diagrams and tables are optimal for e-readers or PDF,
 that navigation and bibliography behavior have been manually accepted, or that
 any artifact is suitable for publication.
 
+## Tracked Format Review Matrix
+
+`editions/reader_manuscript/v1_0/format_review_matrix.json` records the current
+pre-release status of HTML, EPUB, DOCX, and PDF format review, and
+`docs/reader_format_review_matrix.md` is the generated public summary. The
+matrix currently keeps all four formats blocked until full format-artifact
+review and an edition release record exist; EPUB and DOCX also retain
+application or e-reader review blockers.
+
 Audio generation was not attempted.
 
 ## Non-Claims

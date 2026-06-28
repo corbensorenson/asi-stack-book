@@ -17,6 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
 | `docs/reader_chapter_review_matrix.md` | Generated public summary of the manifest-synced 54-chapter human-reader review queue, overlay dispositions, and release blockers. | tracked |
+| `docs/reader_format_review_matrix.md` | Generated public summary of the v1.0 reader-format review ledger, local render/inspection evidence, and artifact-release blockers. | tracked |
 | `docs/reader_companion_note_routing_review.md` | Human-readable companion-note routing decision for the dense proof/governance chapters flagged by the reader matrix. | tracked |
 | `docs/reader_part_i_review_pass.md` | First Part I generated-reader review pass over matrix rows, recording no-action decisions without release approval. | tracked |
 | `docs/reader_part_ii_review_pass.md` | First Part II generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |
@@ -77,6 +78,7 @@ This repository is organized around the living book and its validation loop.
 - Run `python3 scripts/audit_reader_continuity.py --write` after reader prose, overlay, or strip-policy changes that affect the generated reader manuscript, then validate with `python3 scripts/audit_reader_continuity.py --check`.
 - Edit `editions/reader_manuscript/v1_0/manifest.json` or `editions/reader_manuscript/v1_0/companion_note_routing.json` only when reader-manuscript status or companion-note routing changes, then run `python3 scripts/validate_reader_manuscript_manifest.py`.
 - Run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter additions, removals, moves, overlay changes, or manual reader-review decisions; validate with `python3 scripts/sync_reader_chapter_review_matrix.py --check`.
+- Edit `editions/reader_manuscript/v1_0/format_review_matrix.json` after reader-format render, structural inspection, e-reader/app inspection, PDF layout review, or release-record status changes; regenerate `docs/reader_format_review_matrix.md` with `python3 scripts/sync_reader_format_review_matrix.py --write`.
 
 ## Public Readiness Invariants
 

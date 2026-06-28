@@ -28,6 +28,7 @@ REQUIRED = [
     "scripts/validate_reader_overlays.py",
     "scripts/validate_reader_manuscript_manifest.py",
     "scripts/sync_reader_chapter_review_matrix.py",
+    "scripts/sync_reader_format_review_matrix.py",
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_chapter_handoffs.py",
@@ -62,6 +63,7 @@ REQUIRED = [
     "docs/phase5_harness_registry.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
+    "docs/reader_format_review_matrix.md",
     "docs/reader_part_i_review_pass.md",
     "docs/reader_part_ii_review_pass.md",
     "docs/reader_part_iii_review_pass.md",
@@ -74,6 +76,7 @@ REQUIRED = [
     "editions/reader_manuscript/README.md",
     "editions/reader_manuscript/v1_0/manifest.json",
     "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
+    "editions/reader_manuscript/v1_0/format_review_matrix.json",
     "editions/reader_manuscript/v1_0/companion_note_routing.json",
     "editions/reader_manuscript/v1_0/reconciliation_report.md",
     "docs/reader_companion_note_routing_review.md",
@@ -504,6 +507,7 @@ def main() -> None:
     run_validator("validate_reader_evidence_boundaries.py", "--check")
     run_validator("audit_reader_continuity.py", "--check")
     run_validator("validate_reader_manuscript_manifest.py")
+    run_validator("sync_reader_format_review_matrix.py", "--check")
     run_validator("validate_source_appendices.py")
     run_validator("validate_v1_status_snapshot.py")
     run_validator("validate_outline_consistency.py")

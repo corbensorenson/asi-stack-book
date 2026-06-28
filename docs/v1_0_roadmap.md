@@ -128,7 +128,12 @@ and 1 curated-manuscript candidate. `docs/reader_format_dry_run.md` records a
 local HTML/EPUB/DOCX render dry run, basic structural artifact inspection, and
 UTF-8 PDF probe with ignored snapshots; and
 `docs/reader_artifact_layout_review.md` records representative PDF sampling and
-a broader 28 page-view HTML layout/navigation probe. The full generated-reader chapter-text review queue
+a broader 28 page-view HTML layout/navigation probe. The tracked format-review
+ledger is recorded in
+`editions/reader_manuscript/v1_0/format_review_matrix.json` and summarized in
+`docs/reader_format_review_matrix.md`; it keeps HTML, EPUB, DOCX, and PDF
+unapproved until full format review and an edition release record exist, with
+EPUB and DOCX also blocked on application/e-reader inspection. The full generated-reader chapter-text review queue
 is complete for the current 54 chapters. `docs/reader_companion_note_routing_review.md`
 and `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
 chapter-level companion-note routing for the three proof/governance chapters
@@ -360,7 +365,7 @@ Acceptance criteria:
 
 ## Phase 8 - Major Version Reader And Audio Packaging
 
-Status: preparation reviewed; still future and blocked on reader release records and artifact review. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, UTF-8 PDF-probe, representative PDF sampling, broader HTML layout/navigation probing, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, but no tag, reviewed reader release, full manual layout approval, audiobook, or edition release record was produced.
+Status: preparation reviewed; still future and blocked on reader release records and artifact review. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, UTF-8 PDF-probe, representative PDF sampling, broader HTML layout/navigation probing, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, and `docs/reader_format_review_matrix.md` now records the format-level review blockers in a synced ledger, but no tag, reviewed reader release, full manual layout approval, audiobook, or edition release record was produced.
 
 Purpose: produce human-consumption artifacts only after the live and reader surfaces are reviewed.
 

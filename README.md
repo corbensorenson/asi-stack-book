@@ -31,6 +31,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders, snapshot successful format outputs under ignored `build/reader_edition/format_artifacts/`, and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/inspect_reader_format_artifacts.py` can structurally inspect ignored local HTML/EPUB/DOCX reader snapshots for required files, EPUB/DOCX container integrity, media counts, and obvious live-scaffold leaks without treating them as release artifacts.
+- `scripts/sync_reader_format_review_matrix.py` validates the tracked v1.0 format-review ledger and regenerates the public blocker summary, keeping local dry-run evidence separate from edition release approval.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
 - `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_runtime_adapter_permissions.py`, `scripts/validate_context_admission_adequacy.py`, `scripts/validate_readiness_residual_gates.py`, and `scripts/validate_benchmark_antigoodhart.py` run synthetic gate harnesses for support-state conservatism, authority non-escalation, plan/contract/job consistency, runtime-adapter permission/approval/receipt discipline, context admission/adequacy consistency, readiness/residual custody, and benchmark anti-Goodhart discipline; `experiments/phase5_harness_registry.json` plus `scripts/validate_phase5_harness_registry.py` keep the harness set wired to docs, fixtures, result records, Appendix E, and book validation. These are executable or traceability checks over fixtures and records, not claim promotions or deployed-runtime evidence.
@@ -69,6 +70,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [editions/reader_manuscript/v1_0/companion_note_routing.json](editions/reader_manuscript/v1_0/companion_note_routing.json) | Chapter-level companion-note routing manifest for reader, e-reader, and audio review. |
 | [docs/reader_companion_note_routing_review.md](docs/reader_companion_note_routing_review.md) | Human-readable review note for current companion-note routing decisions. |
 | [docs/reader_format_dry_run.md](docs/reader_format_dry_run.md) | Local HTML/EPUB/DOCX reader-format dry-run record and non-release boundary. |
+| [docs/reader_format_review_matrix.md](docs/reader_format_review_matrix.md) | Synced pre-release reader-format review ledger for HTML, EPUB, DOCX, and PDF blockers. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
 | [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |
 | [docs/plan_execution_contract_harness.md](docs/plan_execution_contract_harness.md) | Phase 5 synthetic plan graph and execution-contract harness. |
@@ -184,6 +186,7 @@ Render selected reader-edition formats and record actual local outcomes:
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+python3 scripts/sync_reader_format_review_matrix.py --check
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 

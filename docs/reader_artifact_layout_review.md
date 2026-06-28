@@ -108,3 +108,8 @@ equal to the viewport width in the sampled mobile pages.
   DOCX rendering in an office application still need broader manual review.
 - No artifact should be called release-ready until a reviewed edition release
   record names it and records residuals.
+
+The current structured ledger for these residuals is
+`editions/reader_manuscript/v1_0/format_review_matrix.json`, with generated
+summary `docs/reader_format_review_matrix.md`. It records the HTML and PDF
+representative spot checks without treating them as full artifact approval.

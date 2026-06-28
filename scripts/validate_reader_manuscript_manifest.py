@@ -42,6 +42,7 @@ REQUIRED_FIELDS = {
     "graduation_criteria",
     "companion_note_routing",
     "chapter_review_matrix",
+    "format_review_matrix",
     "chapter_records",
     "reconciliation_report",
     "non_claims",
@@ -183,6 +184,31 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
         policy = matrix.get("policy")
         if not isinstance(policy, str) or "book_structure.json" not in policy or "release blockers" not in policy:
             errors.append("chapter_review_matrix.policy must mention book_structure.json and release blockers.")
+
+    format_matrix = data.get("format_review_matrix")
+    if not isinstance(format_matrix, dict):
+        errors.append("format_review_matrix must be an object.")
+    else:
+        expected = {
+            "path": "editions/reader_manuscript/v1_0/format_review_matrix.json",
+            "summary": "docs/reader_format_review_matrix.md",
+            "sync_command": "python3 scripts/sync_reader_format_review_matrix.py --write",
+            "check_command": "python3 scripts/sync_reader_format_review_matrix.py --check",
+        }
+        for key, expected_value in expected.items():
+            if format_matrix.get(key) != expected_value:
+                errors.append(f"format_review_matrix.{key} must be {expected_value}.")
+        for key in ("path", "summary"):
+            value = format_matrix.get(key)
+            if isinstance(value, str):
+                require_existing_path(f"format_review_matrix.{key}", value, errors)
+        policy = format_matrix.get("policy")
+        if (
+            not isinstance(policy, str)
+            or "format artifact" not in policy
+            or "edition release record" not in policy
+        ):
+            errors.append("format_review_matrix.policy must mention format artifact and edition release record.")
 
 
 def validate_companion_note_routing(
