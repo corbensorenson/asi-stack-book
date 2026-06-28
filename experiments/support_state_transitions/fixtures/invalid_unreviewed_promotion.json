@@ -1,0 +1,66 @@
+{
+  "transition_id": "support-state-harness.invalid.unreviewed-promotion",
+  "claim_id": "claim://synthetic/support-state/unreviewed-promotion",
+  "claim_surface_refs": [
+    "experiments/support_state_transitions/fixtures/invalid_unreviewed_promotion.json"
+  ],
+  "claim_record_refs": [
+    "tests/fixtures/protocol_records/claim_record.valid.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "source-derived",
+  "transition_effect": "upward",
+  "transition_validity_state": "shape_validated",
+  "scope_boundary": "synthetic invalid fixture; upward movement must fail without accepted review and evidence refs",
+  "evidence_roles": [
+    "synthetic_fixture",
+    "negative_control"
+  ],
+  "transition_reason": "The fixture intentionally attempts an upward transition before review acceptance, source mapping, evidence packet, and artifact requirements are satisfied.",
+  "required_artifacts": [
+    "accepted review",
+    "claim-specific artifact",
+    "claim-specific evidence packet",
+    "source mapping"
+  ],
+  "artifact_refs": [],
+  "evidence_packet_refs": [],
+  "source_mapping_refs": [],
+  "verification_command": "python3 scripts/validate_support_state_transitions.py",
+  "verification_result": "not_run",
+  "negative_results": [
+    "review is open",
+    "verification has not run",
+    "artifact refs are absent",
+    "evidence packet refs are absent",
+    "source mapping refs are absent"
+  ],
+  "negative_evidence_refs": [
+    "experiments/support_state_transitions/README.md"
+  ],
+  "downgrade_triggers": [
+    "missing accepted review",
+    "missing verification",
+    "missing artifacts"
+  ],
+  "promotion_burden": "Upward movement is blocked until the exact claim has accepted review, passing verification, artifact refs, evidence packet refs, and source mapping refs.",
+  "limitations": [
+    "synthetic invalid fixture only"
+  ],
+  "review_status": "open",
+  "reviewer_refs": [],
+  "reviewer_independence": "no reviewer accepted this synthetic transition",
+  "acceptance_blockers": [
+    "no accepted review",
+    "no verification run",
+    "missing artifacts",
+    "missing evidence packet",
+    "missing source mapping"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#synthetic-fixture-only",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "does not promote any live chapter claim",
+    "does not prove claim truth"
+  ]
+}

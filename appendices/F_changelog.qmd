@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 5 support-state transition harness
+
+- Added the first Phase 5 executable harness for support-state transition gate semantics: `scripts/validate_support_state_transitions.py`, synthetic valid and expected-invalid fixtures under `experiments/support_state_transitions/`, a local result record, and `docs/support_state_transition_harness.md`. Wired the harness into `scripts/validate_book.py`, the generated Appendix E repository-level checks, the v1.0 roadmap, repository map, and v1.0 status snapshot. The local run passed with 2 valid fixtures and 2 expected-invalid fixtures. This validates synthetic transition-gate behavior only; no Appendix C support state changed, and no source interpretation, proof adequacy, benchmark result, runtime behavior, reader artifact, ebook, document, PDF, or audio artifact is claimed.
+
 ## 2026-06-28 - v1.0 Phase 4 proof adequacy review
 
 - Added `docs/proof_adequacy_review.md`, classifying all 112 implemented Lean targets by adequacy rather than mere build success: 8 adequate only as narrow finite-record invariants, 26 useful-but-too-narrow, 20 needing richer state-machine or review semantics, 42 needing executable tests first, 10 needing empirical or baseline tests first, and 6 remaining research-agenda until artifact import. Updated the roadmap, repo map, and v1.0 status snapshot while leaving `proofs/proof_triage.json`, Lean code, Appendix E, and Appendix C unchanged because no stronger operational predicate or support-state movement was justified. No broad proof, safety guarantee, runtime result, benchmark result, proof adequacy promotion, reader artifact, ebook, document, PDF, or audio artifact is claimed.

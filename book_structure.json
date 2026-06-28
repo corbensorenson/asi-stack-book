@@ -957,7 +957,13 @@
           "minimal_implementation": "A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.",
           "beyond_state_of_art": "Evidence discipline matures into the book's claim-accounting system. It gives every important sentence a governed path from unsupported idea to source-derived, test-backed, mechanized, deprecated, or refuted status without letting polish, enthusiasm, or release hygiene stand in for truth. In the mature evidence ledger, every major claim carries both a claim label and a support state, and movement requires source ingestion, prototype inspection, proof/spec evidence, benchmark evidence, or actual tests appropriate to the transition.",
           "codex_tests": [
-            "Support-state transition test",
+            {
+              "name": "Support-state transition test",
+              "purpose": "Check synthetic evidence-transition records for no-change conservatism, accepted-review gates, required evidence refs, and failed-verification blockers before any support-state movement.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally",
+              "status": "implemented by support-state transition harness; synthetic fixture validation only"
+            },
             "Claim ledger completeness test",
             "Evidence bundle completeness test",
             "Changelog consistency audit"

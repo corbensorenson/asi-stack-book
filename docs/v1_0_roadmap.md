@@ -172,7 +172,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: planned.
+Status: started. The first synthetic support-state transition harness is implemented in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`, and backed by valid plus expected-invalid fixtures under `experiments/support_state_transitions/`. It is wired into `scripts/validate_book.py`; no live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -192,6 +192,12 @@ Acceptance criteria:
 - Tests have commands, fixtures, environment notes, result records, and non-claims.
 - Failed or inconclusive tests remain visible.
 - Appendix E and relevant chapters distinguish fixture validation from behavior validation.
+
+Initial completion:
+
+- `python3 scripts/validate_support_state_transitions.py` passed locally on 2026-06-28 with 2 valid fixtures and 2 expected-invalid fixtures.
+- The result record is `experiments/support_state_transitions/results/2026-06-28-local.md`.
+- The harness is a gate-semantics test only. It does not promote Appendix C, validate source interpretation, prove proof adequacy, or exercise AI runtime behavior.
 
 ## Phase 6 - External Literature Backfill
 
