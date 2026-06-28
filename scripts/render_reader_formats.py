@@ -35,7 +35,8 @@ PRESERVED_ARTIFACT_DIR = "format_artifacts"
 def find_artifacts(output_dir: Path, fmt: str) -> list[str]:
     suffixes = FORMAT_EXTENSIONS.get(fmt, [])
     artifacts: list[str] = []
-    for path in output_dir.rglob("*"):
+    search_root = output_dir / "_reader_site" if fmt == "html" and (output_dir / "_reader_site").exists() else output_dir
+    for path in search_root.rglob("*"):
         if not path.is_file():
             continue
         if PRESERVED_ARTIFACT_DIR in path.relative_to(output_dir).parts:
@@ -52,6 +53,14 @@ def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list
     if snapshot_dir.exists():
         shutil.rmtree(snapshot_dir)
     snapshot_dir.mkdir(parents=True, exist_ok=True)
+
+    if fmt == "html" and (output_dir / "_reader_site").is_dir():
+        shutil.copytree(output_dir / "_reader_site", snapshot_dir / "_reader_site")
+        return sorted(
+            str(path.relative_to(output_dir))
+            for path in snapshot_dir.rglob("*")
+            if path.is_file()
+        )
 
     preserved: list[str] = []
     for artifact in artifacts:

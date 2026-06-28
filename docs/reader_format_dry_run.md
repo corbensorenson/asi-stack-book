@@ -29,13 +29,15 @@ records:
 
 | Format | Status | Return code | Artifacts observed | Preserved snapshots |
 |---|---:|---:|---:|---:|
-| HTML | rendered | 0 | 61 | 61 |
+| HTML | rendered | 0 | 59 | 81 |
 | EPUB | rendered | 0 | 1 | 1 |
 | DOCX | rendered | 0 | 1 | 1 |
 
 The render script now snapshots each format under
 `build/reader_edition/format_artifacts/` before the next Quarto format pass can
-replace the output tree:
+replace the output tree. For HTML, it preserves the complete rendered
+`_reader_site` tree rather than only copying `.html` files, so local browser
+review has the CSS, image, and site-library dependencies it needs:
 
 - HTML snapshot: `build/reader_edition/format_artifacts/html/`
 - EPUB snapshot: `build/reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub`
@@ -57,7 +59,7 @@ Result:
 
 ```text
 Reader artifact inspection report wrote: /Users/corbensorenson/Documents/AI_book/build/reader_edition/reader_artifact_inspection_report.json
-Reader artifact inspection passed: 61 HTML files, 62 EPUB XHTML entries, 59 DOCX media entries.
+Reader artifact inspection passed: 59 HTML files, 62 EPUB XHTML entries, 59 DOCX media entries.
 ```
 
 The ignored local inspection report at
@@ -65,7 +67,7 @@ The ignored local inspection report at
 
 | Format | Structural checks passed |
 |---|---|
-| HTML | 61 total HTML files, 59 rendered reader-site HTML files, 54 chapter files, required index/preface/source-appendix/opening-chapter files present, no live-only heading leaks detected in reader-site HTML, and no raw core-claim marker leaks detected in reader-site HTML. |
+| HTML | 59 rendered reader-site HTML files, 54 chapter files, required index/preface/source-appendix/opening-chapter files present, no live-only heading leaks detected in reader-site HTML, and no raw core-claim marker leaks detected in reader-site HTML. |
 | EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 128 entries, 62 XHTML entries, and 60 image entries. |
 | DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 75 entries, 59 embedded media entries, 18,440 paragraph markers, book title present, and compact evidence-boundary text present. |
 
@@ -115,6 +117,15 @@ Local `pdfinfo` reported:
 Local text extraction found the book title, `Reader Edition Draft`, and compact
 `evidence boundary: architectural argument` text. This confirms only that a PDF
 can be produced on this machine when the locale environment is set explicitly.
+
+## Layout Spot Check
+
+`docs/reader_artifact_layout_review.md` records a representative local layout
+spot check. It visually inspected PDF pages 1, 21, 25, and 527, then checked
+desktop/mobile HTML snapshots after the complete `_reader_site` preservation
+fix. The sampled PDF pages had no obvious clipping; the sampled styled HTML
+pages had no horizontal overflow at the inspected desktop/mobile viewports. This
+is still only a spot check, not a full reader-release review.
 
 ## Review State
 

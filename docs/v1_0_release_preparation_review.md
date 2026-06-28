@@ -45,14 +45,14 @@ Results:
   generated report is
   `build/reader_edition/reader_render_report.json`, and
   `docs/reader_format_dry_run.md` records the public-safe summary. The report
-  recorded 61 HTML artifacts, 1 EPUB artifact, and 1 DOCX artifact with matching
-  local snapshots under `build/reader_edition/format_artifacts/`. These snapshots
+  recorded 59 rendered reader-site HTML artifacts, 1 EPUB artifact, and 1 DOCX
+  artifact; the fixed HTML snapshot preserves 81 rendered site files and
+  dependencies under `build/reader_edition/format_artifacts/`. These snapshots
   are ignored review outputs, not release artifacts.
-- Reader format artifact inspection passed for the local snapshots: 61 HTML
-  files, 59 rendered reader-site HTML files, 54 chapter HTML files, no live-only
-  heading or raw core-claim marker leaks detected in reader-site HTML, 62 EPUB
-  XHTML entries, 60 EPUB image entries, and 59 DOCX media entries. The ignored
-  local report is
+- Reader format artifact inspection passed for the local snapshots: 59 rendered
+  reader-site HTML files, 54 chapter HTML files, no live-only heading or raw
+  core-claim marker leaks detected in reader-site HTML, 62 EPUB XHTML entries,
+  60 EPUB image entries, and 59 DOCX media entries. The ignored local report is
   `build/reader_edition/reader_artifact_inspection_report.json`.
 - The isolated PDF probe without explicit locale settings failed inside the
   LuaLaTeX path with a locale-data error and automatic package-install failure.
@@ -61,6 +61,11 @@ Results:
   Local `pdfinfo` reported 574 letter-size pages, 8.0 MB, unencrypted, produced
   by LuaTeX-1.24.0; local text extraction found the title and compact
   evidence-boundary text.
+- `docs/reader_artifact_layout_review.md` records the first representative
+  layout spot check. Sampled PDF pages 1, 21, 25, and 527 showed no obvious
+  clipping. After fixing HTML preservation to copy the complete `_reader_site`
+  tree, sampled desktop/mobile HTML snapshots loaded styles and showed no
+  horizontal overflow at the inspected viewports.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -90,10 +95,10 @@ Results:
 2. The generated reader manuscript needs full human continuity review.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
-4. The local HTML, EPUB, DOCX, and PDF snapshots still need manual
-   representative layout/navigation inspection and full reader-manuscript review
-   before any release record can name them as reviewed artifacts; PDF also needs
-   the explicit UTF-8 locale environment in this local setup.
+4. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual
+   layout/navigation inspection and full reader-manuscript review before any
+   release record can name them as reviewed artifacts; PDF also needs the
+   explicit UTF-8 locale environment in this local setup.
 5. An edition release record must list exact produced artifacts, commands,
    review state, failures, and residuals.
 6. Audio scripts need human review of diagrams, tables, code, schemas, source

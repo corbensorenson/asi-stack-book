@@ -17,6 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
 | `docs/reader_format_dry_run.md` | Local Phase 8 HTML/EPUB/DOCX reader-format dry-run summary, PDF probe, artifact snapshot paths, review status, and non-release boundary. | tracked |
+| `docs/reader_artifact_layout_review.md` | Representative local PDF/HTML layout spot-check notes for ignored reader-format snapshots, with residuals before any release artifact can be approved. | tracked |
 | `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition pilot summary, recording six no-change support-state decisions and their blockers. | tracked |
 | `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 112 Lean targets by what they do and do not justify. | tracked |
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
