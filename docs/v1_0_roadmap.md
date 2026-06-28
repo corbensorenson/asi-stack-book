@@ -93,13 +93,13 @@ Acceptance criteria:
 
 ## Phase 2 - Reviewed Reader Manuscript Path
 
-Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the active semantic reader-overlay log is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations, one Human Intent table-to-prose operation, one System Boundaries table-to-prose operation, four Personal Compute Hives table-to-prose operations, two Command Contracts table-to-prose operations, one Planning table-to-prose operation, one Runtime Adapters table-to-prose operation, one Labor OS table-to-prose operation, one Circle Contracts table-to-prose operation, two Fast Generation table/code-to-prose operations, two Policy Optimization table-to-prose operations, two Artifact Steward Agents table-to-prose operations, and two Semantic Representation table-to-prose operations; and the generated heuristic continuity audit is recorded in `docs/reader_continuity_audit.md`. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
+Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the active semantic reader-overlay log is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations, one Human Intent table-to-prose operation, one System Boundaries table-to-prose operation, four Personal Compute Hives table-to-prose operations, two Command Contracts table-to-prose operations, one Planning table-to-prose operation, one Runtime Adapters table-to-prose operation, one Labor OS table-to-prose operation, one Circle Contracts table-to-prose operation, two Fast Generation table/code-to-prose operations, one RankFold/NeuralFold table-to-prose operation, two Policy Optimization table-to-prose operations, two Artifact Steward Agents table-to-prose operations, and two Semantic Representation table-to-prose operations; and the generated heuristic continuity audit is recorded in `docs/reader_continuity_audit.md`. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
 Tasks:
 
-1. Generate the reader edition with `python3 scripts/build_reader_edition.py`. The initial baseline generated on 2026-06-28 had 54 chapters, 59 files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and no active reader overlays. The current generated check applies 22 active reader-overlay operations.
+1. Generate the reader edition with `python3 scripts/build_reader_edition.py`. The initial baseline generated on 2026-06-28 had 54 chapters, 59 files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and no active reader overlays. The current generated check applies 23 active reader-overlay operations.
 2. Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`. Initial review recorded in `docs/reader_manuscript_review.md`.
 3. Read the generated reader manuscript for continuity, pacing, duplicated live-book scaffolding, missing transitions, and caveats that became too thin after stripping.
 4. Apply human-reader-only deltas through `editions/reader_overlays/` only when the change should not alter AI/research view.
@@ -119,6 +119,7 @@ Active overlay set:
 - `editions/reader_overlays/v1_0/chapters/labor-os-and-typed-jobs.json` carries one active reader-only section replacement that converts the `Typed job lifecycle states` table into narrative prose.
 - `editions/reader_overlays/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.json` carries one active reader-only section replacement that converts the `Proof receipt lifecycle` table into narrative prose.
 - `editions/reader_overlays/v1_0/chapters/fast-generation-architectures.json` carries two active reader-only section replacements that convert the metric code block and `Generation-mode taxonomy` table material into narrative prose.
+- `editions/reader_overlays/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.json` carries one active reader-only section replacement that converts the `Artifact-compression states` table into narrative prose.
 - `editions/reader_overlays/v1_0/chapters/policy-optimization-and-learning-from-feedback.json` carries two active reader-only section replacements that convert the `Method families` and external-literature tables into narrative prose, including a heading alias for the generated reader/source heading difference.
 - `editions/reader_overlays/v1_0/chapters/artifact-steward-agents-and-living-project-governance.json` carries two active reader-only section replacements that convert the `Autonomy and treasury modes` and `Project objects` tables into narrative prose.
 - `editions/reader_overlays/v1_0/chapters/semantic-representation-and-tree-structured-models.json` carries two active reader-only section replacements that convert the `Mechanism` lifecycle material and `Interfaces` consumer-policy table into narrative prose while preserving the mechanism diagram.
@@ -128,8 +129,8 @@ Active overlay set:
 Automated continuity audit:
 
 - `python3 scripts/audit_reader_continuity.py --write` generated `docs/reader_continuity_audit.md` from a temporary reader-edition workspace.
-- The audit measures 54 reader chapters, 121,149 reader words, 22 active/applied reader-overlay operations, 47 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
-- It identifies 6 high-priority heuristic review chapters. These rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
+- The audit measures 54 reader chapters, 121,347 reader words, 23 active/applied reader-overlay operations, 38 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
+- It identifies 5 high-priority heuristic review chapters. These rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
 - The audit is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, or substitute for reading the manuscript.
 
 Reader-source divergence rule:

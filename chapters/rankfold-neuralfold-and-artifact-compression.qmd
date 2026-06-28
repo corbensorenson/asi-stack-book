@@ -132,7 +132,7 @@ Each claim can fail separately. The architecture should preserve that separation
 
 The operational rule is simple: compression can save cost only inside a declared use envelope. That same record says which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact. A compressed artifact without those fields is a cost experiment, not an evidence-bearing representation.
 
-Artifact-compression states:
+### Artifact-compression states
 
 | State | Meaning | Consequence |
 |---|---|---|

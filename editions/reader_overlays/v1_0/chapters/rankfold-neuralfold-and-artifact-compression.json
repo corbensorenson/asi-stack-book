@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+  "operations": [
+    {
+      "id": "v1_0.rankfold.artifact_compression_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Artifact-compression states"
+      },
+      "rationale": "Replace the artifact-compression admission-state table with reader prose while preserving the canonical AI/research state taxonomy.",
+      "content_lines": [
+        "A compressed artifact should enter the system through an admission state, not through enthusiasm about a smaller representation. The first state is non-admission: if the compressed form lacks a manifest, probe, residual account, fallback path, or decode metadata, no downstream consumer should route to it. A cold-archive candidate is narrower; it may be useful for rarely read, write-once material after decode checks, but that does not make it fit for active reasoning.",
+        "",
+        "Preview-only compression is useful when the system needs browsing, routing, or rough inspection, but it must carry loss labels and non-claim boundaries. A task-probe-passed artifact has cleared a bounded task under a declared use envelope, so routing can use it for that task family while preserving fallback. Exact-replay-ready is stronger: decode determinism and reconstruction contracts have passed for the target, although cost can still make the full artifact the better route.",
+        "",
+        "Negative states matter just as much. Fallback-dominant means probe failures or decode costs make the preserved full artifact the normal path, and the failed compression attempt becomes evidence rather than shame. Decoder-quarantined means platform drift, dependency drift, floating-point differences, or manifest mismatch has broken exact decode. In both cases the architecture blocks quiet promotion and routes back to the full artifact.",
+        "",
+        "These states keep WORM archive assumptions from leaking into planning, citation, audit, or benchmark contexts. A representation can be excellent for deep storage and still wrong for the next task."
+      ]
+    }
+  ]
+}
