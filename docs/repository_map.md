@@ -14,6 +14,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/v1_0_focus_audit.md` | Detailed current-state audit and prioritized focus plan for evidence-release, reader-release, proof adequacy, testing, source, and site work. | tracked |
 | `docs/v1_0_roadmap.md` | Roadmap and recommended next long-running goal for v1.0 completion work, reconciling current audit findings with external review input. | tracked |
 | `docs/reader_manuscript_review.md` | Phase 2 baseline for the generated reader manuscript, including generated-reader metrics, spot-review notes, residuals, and non-claims. | tracked |
+| `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition pilot summary, recording four no-change support-state decisions and their blockers. | tracked |
 | `docs/source_mining_synthesis.md` | Source-mining coverage, architecture cluster map, split rationale, and remaining source gaps. | tracked |
 | `docs/local_project_mining_theseus_circle.md` | Public-safe local mining report for Project Theseus and Circle Calculus. | tracked |
 | `docs/conversation_context_ingestion_report.md` | Public-safe synthesis of conversation-mined author intent and recovery tasks. | tracked |
@@ -33,6 +34,7 @@ This repository is organized around the living book and its validation loop.
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
 | `schemas/` | JSON Schemas for protocol records. | tracked |
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
+| `evidence_transitions/` | Evidence-transition review records checked against `schemas/evidence_transition_record.schema.json`. | tracked |
 | `experiments/` | Synthetic experiment and benchmark harness workspace. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |

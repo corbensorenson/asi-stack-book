@@ -1,0 +1,83 @@
+{
+  "transition_id": "v1_0_pilot.proof_envelope.no_change",
+  "claim_id": "executable-specifications-and-lean-proof-envelope.core",
+  "claim_surface_refs": [
+    "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+    "docs/proof_artifact_audit.md",
+    "proofs/proof_manifest.json"
+  ],
+  "claim_record_refs": [
+    "proofs/proof_manifest.json",
+    "proofs/proof_triage.json",
+    "lean/AsiStackProofs.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Lean finite-record proof wiring only; no semantic proof adequacy, runtime behavior, or broad system guarantee is promoted",
+  "evidence_roles": [
+    "lean_build",
+    "proof_manifest",
+    "proof_artifact_audit",
+    "chapter_limitations"
+  ],
+  "transition_reason": "All 112 proof targets build as narrow finite-record predicates and are wired through the manifest and audit, but the roadmap still requires proof adequacy review. Lean build success proves only the checked predicates, not that the predicates are the right formalization of each intended chapter boundary.",
+  "required_artifacts": [
+    "semantic proof adequacy review for all proof targets",
+    "classification of targets as adequate, too narrow, requiring tests first, or research agenda",
+    "chapter updates for any stronger proof interpretation"
+  ],
+  "artifact_refs": [
+    "proofs/proof_manifest.json",
+    "docs/proof_artifact_audit.md",
+    "lean/AsiStackProofs.lean",
+    "scripts/validate_proof_artifact_audit.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_artifact_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#executable-specifications-and-lean-proof-envelope.core"
+  ],
+  "verification_command": "(cd lean && lake build) && python3 scripts/validate_proof_artifact_audit.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "proof adequacy review has not been performed",
+    "finite-record proofs do not prove broad runtime behavior",
+    "proof build does not promote source interpretation"
+  ],
+  "negative_evidence_refs": [
+    "docs/v1_0_roadmap.md#phase-4---proof-adequacy-review",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "Lean build failure",
+    "proof manifest drift",
+    "chapter proof limitation missing",
+    "proof interpreted beyond checked predicate"
+  ],
+  "promotion_burden": "Move above argument only after proof adequacy review accepts a tightly scoped claim about proof wiring or formalized finite-record invariants and the claim text is narrowed accordingly.",
+  "limitations": [
+    "Lean proves only the imported finite predicates",
+    "schemas validate shape and tests validate behavior in separate lanes",
+    "no runtime property follows from these proofs alone"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent formal-methods audit",
+  "acceptance_blockers": [
+    "no semantic proof adequacy review",
+    "no independent proof review",
+    "claim text remains broader than proof wiring"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-phase-3-evidence-transition-pilot",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not claim broad proof of safety",
+    "does not claim the Lean targets are semantically adequate",
+    "does not promote any chapter claim"
+  ]
+}

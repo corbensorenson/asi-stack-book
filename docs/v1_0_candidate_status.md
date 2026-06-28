@@ -15,7 +15,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
-| Support states | 54 chapter core claims at `argument`; no support-state promotion in the v1.0 improvement pass | `book_structure.json`; Appendix C |
+| Support states | 54 chapter core claims at `argument`; the initial v1.0 evidence-transition pilot records four accepted no-change decisions and no support-state promotion | `book_structure.json`; Appendix C; `docs/evidence_transition_pilot.md`; `python3 scripts/validate_evidence_transitions.py` |
 | Proof envelope | 112 proof targets, all implemented as narrow finite-record Lean predicates | `proofs/proof_manifest.json`; `docs/proof_artifact_audit.md`; `lake build` |
 | Schemas and fixtures | 71 JSON Schemas, 70 valid protocol fixtures, 1 public release record | `schemas/`; `tests/fixtures/protocol_records/`; `release_records/`; `python3 scripts/validate_schemas.py`; `python3 scripts/validate_protocol_examples.py` |
 | Implementation horizons | 54 generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields | `book_structure.json`; Appendix K; `python3 scripts/validate_implementation_horizons.py` |
@@ -63,7 +63,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 
 ## Remaining Work Before v1.0 Evidence Release
 
-- Perform claim-to-mechanism support review after the passage-reviewed mappings and record accepted evidence transitions before any claim moves above `argument`.
+- Continue claim-to-mechanism support review after the passage-reviewed mappings. The first v1.0 evidence-transition pilot records four no-change decisions; accepted upward evidence transitions are still required before any claim moves above `argument`.
 - Run semantic proof adequacy review for all 112 finite-record Lean targets.
 - Implement or defer chapter-level Codex tests beyond protocol fixture validation, with explicit command, environment, and result records.
 - Normalize additional external literature where the book currently has queues rather than direct source records and source notes.

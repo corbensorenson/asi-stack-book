@@ -126,7 +126,7 @@ Acceptance criteria:
 
 ## Phase 3 - Evidence Transition Pilot
 
-Status: planned.
+Status: initial pilot complete. Four no-change evidence-transition records were added under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All four reviewed claims remain at `argument`.
 
 Purpose: prove that the claim/evidence system can move claims conservatively, or explicitly decide not to move them.
 
@@ -139,11 +139,11 @@ Initial candidates:
 
 Tasks:
 
-1. Pick 3-5 narrow claims.
-2. Review exact source passages, repository artifacts, commands, and limitations.
-3. Create or update evidence transition records.
-4. Record non-promotion decisions where evidence remains insufficient.
-5. Update Appendix C only after a transition is accepted.
+1. Pick 3-5 narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`.
+2. Review exact source passages, repository artifacts, commands, and limitations. Initial pilot reviewed repository artifacts, validators, proof audit, source appendix mechanics, and known limitations; it did not claim independent source-interpretation review.
+3. Create or update evidence transition records. Initial pilot added four JSON records under `evidence_transitions/v1_0_pilot/`.
+4. Record non-promotion decisions where evidence remains insufficient. Initial pilot records all four as no-change decisions that remain at `argument`.
+5. Update Appendix C only after a transition is accepted. No Appendix C support-state update was made because no upward transition was accepted.
 
 Acceptance criteria:
 

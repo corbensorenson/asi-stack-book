@@ -1,0 +1,88 @@
+{
+  "transition_id": "v1_0_pilot.research_agenda.no_change",
+  "claim_id": "open-research-agenda-and-bibliography-plan.core",
+  "claim_surface_refs": [
+    "chapters/open-research-agenda-and-bibliography-plan.qmd",
+    "sources/source_inventory.json",
+    "appendices/G_corben_source_corpus.qmd",
+    "appendices/H_external_sources.qmd",
+    "docs/external_literature_queue.md"
+  ],
+  "claim_record_refs": [
+    "sources/source_inventory.json",
+    "schemas/research_backlog_record.schema.json",
+    "tests/fixtures/protocol_records/research_backlog_record.valid.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "source inventory, appendix ownership, and backlog-shape mechanics only; no external-literature completeness or citation-normalization claim is promoted",
+  "evidence_roles": [
+    "source_inventory",
+    "source_appendix_validation",
+    "research_backlog_schema",
+    "external_literature_queue"
+  ],
+  "transition_reason": "The repository has public-safe source records, source notes, split Corben/local and external-source appendices, and a research-backlog schema fixture. The claim remains at argument because external literature normalization, citation verification, and backlog closure are still incomplete.",
+  "required_artifacts": [
+    "citation-normalized external literature records after direct reading",
+    "source-note updates for newly used outside literature",
+    "closed or advanced research backlog records",
+    "accepted evidence transition for any stronger bibliography claim"
+  ],
+  "artifact_refs": [
+    "sources/source_inventory.json",
+    "appendices/G_corben_source_corpus.qmd",
+    "appendices/H_external_sources.qmd",
+    "scripts/validate_source_appendices.py",
+    "schemas/research_backlog_record.schema.json"
+  ],
+  "evidence_packet_refs": [
+    "docs/source_readiness_report.md",
+    "docs/external_literature_queue.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core"
+  ],
+  "verification_command": "python3 scripts/validate_source_appendices.py && python3 scripts/validate_protocol_examples.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "external literature queues remain open",
+    "citation normalization is incomplete",
+    "research backlog fixture validates shape only"
+  ],
+  "negative_evidence_refs": [
+    "docs/external_literature_queue.md",
+    "docs/v1_0_roadmap.md#phase-6---external-literature-backfill"
+  ],
+  "downgrade_triggers": [
+    "source appendix ownership drift",
+    "source inventory/source note mismatch",
+    "external source cited without direct reading",
+    "private source leakage into public appendix"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to validated source-graph mechanics or after citation-normalized external-literature work is completed and reviewed.",
+  "limitations": [
+    "source inventory presence is not evidence strength",
+    "source notes are drafting context until accepted transitions or tests justify movement",
+    "external literature coverage remains incomplete"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent bibliography audit",
+  "acceptance_blockers": [
+    "external literature normalization remains open",
+    "no citation-completeness audit",
+    "no accepted stronger bibliography transition"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-phase-3-evidence-transition-pilot",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not claim complete bibliography coverage",
+    "does not claim external literature-backed support",
+    "does not promote any chapter claim"
+  ]
+}

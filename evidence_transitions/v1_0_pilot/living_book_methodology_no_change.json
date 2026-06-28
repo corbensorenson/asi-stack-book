@@ -1,0 +1,90 @@
+{
+  "transition_id": "v1_0_pilot.living_book_methodology.no_change",
+  "claim_id": "living-book-methodology.core",
+  "claim_surface_refs": [
+    "chapters/living-book-methodology.qmd",
+    "docs/living_update_workflow.md",
+    "docs/v1_0_roadmap.md",
+    "docs/reader_manuscript_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "release_records/2026-06-24-v1-improvement-569129a.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "repository living-book mechanics only; no claim about ASI system behavior, manuscript finality, or reader-release quality is promoted",
+  "evidence_roles": [
+    "manifest",
+    "quarto_render",
+    "validation_gate",
+    "changelog",
+    "release_record"
+  ],
+  "transition_reason": "The repository demonstrates manifest-driven Quarto structure, source queues, claim/evidence matrices, proof manifests, validation scripts, changelogs, release records, and reader-generation mechanics. The chapter claim remains broader than those mechanics because full evidence-release review, proof adequacy review, human reader review, and artifact release records are not complete.",
+  "required_artifacts": [
+    "accepted v1.0 evidence-release record",
+    "reviewed reader manuscript record if reader quality is claimed",
+    "proof adequacy review",
+    "first executable behavior tests beyond schema shape validation"
+  ],
+  "artifact_refs": [
+    "book_structure.json",
+    "_quarto.yml",
+    "scripts/sync_scaffold.py",
+    "scripts/validate_book.py",
+    "docs/v1_0_candidate_status.md",
+    "docs/reader_manuscript_review.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_0_candidate_status.md",
+    "release_records/2026-06-24-v1-improvement-569129a.json"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core"
+  ],
+  "verification_command": "python3 scripts/validate_book.py && quarto render --to html",
+  "verification_result": "pass",
+  "negative_results": [
+    "reader manuscript is generated and spot-reviewed only",
+    "no v1.0 evidence release record exists",
+    "no behavior-test harness has promoted a claim"
+  ],
+  "negative_evidence_refs": [
+    "docs/reader_manuscript_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "scaffold drift",
+    "render failure",
+    "claim matrix drift",
+    "release record overclaim",
+    "generated reader artifact claimed without review"
+  ],
+  "promotion_burden": "Move above argument only after a bounded claim is rewritten or scoped to the repository mechanics already validated, then accepted through review with release-record evidence.",
+  "limitations": [
+    "local validation does not prove manuscript quality",
+    "render success does not prove release readiness",
+    "generated reader source is not a reviewed reader manuscript"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
+  "acceptance_blockers": [
+    "no independent review",
+    "no v1.0 evidence-release record",
+    "proof adequacy and test harness work remain open"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-phase-3-evidence-transition-pilot",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not claim the book is final",
+    "does not claim reader artifacts exist",
+    "does not prove any ASI runtime behavior"
+  ]
+}
