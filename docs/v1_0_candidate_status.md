@@ -11,7 +11,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 | Surface | Current state | Evidence |
 |---|---|---|
 | Book structure | 4 parts, 54 manifest-driven chapters, 11 appendices | `book_structure.json`; `python3 scripts/sync_scaffold.py` |
-| Manuscript scale | 54 chapter files; 183,892 chapter words excluding YAML front matter; 191,391 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
+| Manuscript scale | 54 chapter files; 183,890 chapter words excluding YAML front matter; 191,389 raw chapter-file words including metadata and live scaffolding | Local word-count check on `chapters/*.qmd` |
 | Source inventory | 101 public-safe source records, each with a matching public source note; `sources/source_notes/` also contains a README and template | `sources/source_inventory.json`; `sources/source_notes/` |
 | Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row | `python3 scripts/validate_source_appendices.py` |
 | Claim/source traceability | 461 assigned source/chapter pairs, 461 exact claim-source mappings, 461 passage-reviewed mappings | `docs/source_evidence_audit.md`; `python3 scripts/validate_source_evidence_audit.py` |
@@ -43,6 +43,7 @@ The book is a stronger v1.0 candidate than the original v0.2 manuscript baseline
 - The repeated-prose guard now rejects fixture caveat formulas such as `The fixture validates`, `The fixture is not`, and `The fixture is only`, so MVI and proof-envelope passages must name the concrete fixture surface and non-claim boundary directly.
 - The repeated-prose guard now rejects `This is why`, so causal transitions must name the specific layer, record, authority change, or consequence directly.
 - The repeated-prose guard now rejects `This matters because`, so causal explanations must be integrated into chapter-specific prose rather than attached as reusable explanatory scaffolding.
+- The repeated-prose guard now rejects `The result is`, so summaries and transitions must name the actual bridge, discipline, lifecycle, or artifact path directly.
 - Appendix K is generated from the manifest and machine-checked as a book-wide implementation horizon map: one concrete first-build slice and one mature target endpoint per chapter, in manifest order.
 - Current source-note coverage, source-to-chapter assignment, core claim mapping, and passage-review mapping are internally traceable.
 - Current proof targets are wired through outline tags, generated manifest records, triage records, Lean modules, root imports, chapter hooks, limitation prose, and Appendix E.

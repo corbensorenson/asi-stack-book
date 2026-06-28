@@ -81,6 +81,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The practical problem is",
     "The record should",
     "The response is",
+    "The result is",
     "The stack should",
     "This is why",
     "This matters because",
