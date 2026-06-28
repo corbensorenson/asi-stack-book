@@ -63,6 +63,7 @@ REQUIRED = [
     "docs/reader_chapter_review_matrix.md",
     "docs/reader_part_i_review_pass.md",
     "docs/reader_part_ii_review_pass.md",
+    "docs/reader_part_iii_review_pass.md",
     "experiments/phase5_harness_registry.json",
     "evidence_transitions/README.md",
     "editions/release_profiles.json",

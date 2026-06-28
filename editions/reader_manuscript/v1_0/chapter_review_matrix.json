@@ -10,14 +10,14 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "not_started": 13,
-    "spot_checked": 41
+    "not_started": 5,
+    "spot_checked": 49
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 22,
-    "none": 15,
+    "no_immediate_action": 30,
+    "none": 7,
     "reader_overlay_active": 20
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
@@ -720,13 +720,15 @@
       "live_file": "chapters/routing-heads-and-specialist-cores.qmd",
       "generated_reader_file": "build/reader_edition/chapters/routing-heads-and-specialist-cores.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter opens Part III coherently by treating routing as a task-local authority lease rather than model picking. It was spot-checked after a canonical Human Reading Path cleanup removed redundant rejection wording while preserving the route-rejection boundary.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -741,13 +743,15 @@
       "live_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "generated_reader_file": "build/reader_edition/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter separates plausibility from readiness and preserves residual escrow, quarantine, diagnostic permissions, stale-gate reuse, and gate-laundering caveats without needing an overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -762,13 +766,15 @@
       "live_file": "chapters/moecot-runtime-and-multi-core-orchestration.qmd",
       "generated_reader_file": "build/reader_edition/chapters/moecot-runtime-and-multi-core-orchestration.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps MoECOT as implementation-reference context rather than reproduced runtime proof. It was spot-checked after a canonical Human Reading Path cleanup clarified that receipts explain coordination after execution.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -806,13 +812,15 @@
       "live_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
       "generated_reader_file": "build/reader_edition/chapters/compact-generative-systems-and-residual-honesty.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter preserves compactness as burden accounting: reconstruction, decision, governance, verifier independence, fallback, and residual costs stay visible.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -919,13 +927,15 @@
       "live_file": "chapters/resource-economics-and-token-budgets.qmd",
       "generated_reader_file": "build/reader_edition/chapters/resource-economics-and-token-budgets.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps budgets as policy objects and preserves verification tax, protected overhead, displaced costs, serving pressure, and no-cost-cutting-of-governance boundaries.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -940,13 +950,15 @@
       "live_file": "chapters/simulation-fidelity-and-physical-constraints.qmd",
       "generated_reader_file": "build/reader_edition/chapters/simulation-fidelity-and-physical-constraints.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter treats simulation as a claim-transport contract with scope, fidelity, resource bill, omitted variables, instrumentation effects, transfer decision, and non-claims intact.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -1009,13 +1021,15 @@
       "live_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "generated_reader_file": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps cyclic memory structural facts separate from retrieval quality and reasoning success, preserving alias, winding, stale-read, recurrence-exit, fallback, and baseline obligations.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -1030,13 +1044,15 @@
       "live_file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "generated_reader_file": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_iii_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter preserves cyclic substrate caution around structural receipts, baseline symmetry, diagnostics, hardware notes, and workload tradeoffs. It was spot-checked after a canonical Human Reading Path cleanup clarified that receipts must be earned under actual workloads.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
