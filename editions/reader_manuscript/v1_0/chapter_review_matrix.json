@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 22,
-    "spot_checked": 32
+    "reviewed": 26,
+    "spot_checked": 28
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 43,
+    "no_immediate_action": 44,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -521,17 +521,17 @@
       "live_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
       "generated_reader_file": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the verification-bandwidth chapter. Existing overlay is accepted for the reader path; generation-versus-verification, joint-check, summary-derived, escalation, contradiction, classifier, and test-suite boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -544,17 +544,16 @@
       "live_file": "chapters/claim-ledgers-and-belief-revision.qmd",
       "generated_reader_file": "build/reader_edition/chapters/claim-ledgers-and-belief-revision.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter presents belief revision as a durable maintenance operation and preserves downgrade, split, contradiction, revision-history, and confidence-laundering boundaries.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the claim-ledger chapter. Claim identity, evidence refs, contradiction links, revision history, downgrade behavior, and confidence-laundering boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -567,17 +566,16 @@
       "live_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "generated_reader_file": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter keeps proof-carrying claims narrow: interpretation mapping, verifier result, failed attempts, semantic adequacy, downgrade discipline, and non-overclaim boundaries remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Spinoza chapter. Required tier, interpretation mapping, verifier result, failed attempts, semantic adequacy, downgrade discipline, and non-overclaim boundaries remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -590,17 +588,16 @@
       "live_file": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
       "generated_reader_file": "build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup tightened an overextended preserved-objection sentence. Dossier-bounded review, dissent, cycle caps, role separation, and action-linked verdicts remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the tribunal chapter. Dossier boundaries, reviewer roles, adversarial probes, dissent, unchanged-evidence guards, required actions, and reviewer-quality non-claims remain clear.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]

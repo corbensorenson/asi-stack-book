@@ -10,11 +10,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 22 |
-| review_status:spot_checked | 32 |
+| review_status:reviewed | 26 |
+| review_status:spot_checked | 28 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 43 |
+| disposition:no_immediate_action | 44 |
 | disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
@@ -44,10 +44,10 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `semantic-pages-context-cells-and-certificates` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `unified-adaptive-tribunal-and-adversarial-review` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `unified-adaptive-tribunal-and-adversarial-review` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `labor-os-and-typed-jobs` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
