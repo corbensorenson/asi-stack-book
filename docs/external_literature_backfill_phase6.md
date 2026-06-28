@@ -48,6 +48,9 @@ literature coverage.
 | `ext_mmlu_2020` | benchmark science | Broad multitask benchmark coverage, uneven performance, and saturation pressure. |
 | `ext_bigbench_2022` | benchmark science | Broad community benchmark tasks, scale trends, calibration, and residual tradeoffs. |
 | `ext_helm_2022` | benchmark science | Multi-scenario, multi-metric, transparent, living evaluation practice. |
+| `ext_gpqa_2023` | benchmark science | Expert-written Google-proof questions, scalable-oversight pressure, and skilled non-expert validation limits. |
+| `ext_swe_bench_2023` | benchmark science | Real-world GitHub issue resolution, repository-scale context, executable environments, and patch-evaluation boundaries. |
+| `ext_livebench_2024` | benchmark science | Contamination-limited monthly updated benchmark practice, objective ground-truth scoring, and stale-score pressure. |
 
 ## Current Effect
 
@@ -59,7 +62,8 @@ literature coverage.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
 - The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, and QLoRA-style quantized finetuning.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, finetuning runs, or test results changed.
+- The benchmark-science queue now has initial source-noted coverage for broad multitask benchmarks, community benchmark collections, holistic evaluation, expert hard-question oversight, real-world software issue resolution, and contamination-limited living benchmarks.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, finetuning runs, benchmark runs, or test results changed.
 
 ## Non-Claims
 
@@ -77,4 +81,4 @@ literature coverage.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
 4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.
 5. Deepen compression coverage with program synthesis, residual coding, artifact-utility metrics, compression-regression testing, and representation-learning sources.
-6. Deepen benchmark-science coverage with contamination, hidden-test, saturation, and evaluation-gaming sources.
+6. Deepen benchmark-science coverage with hidden-test operations, saturation analysis, contamination audits, benchmark-gaming/evaluator-gaming sources, and release-grade benchmark governance.

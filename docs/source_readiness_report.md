@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 75
+- `source_note_available_uncached`: 78
 
 ## Records
 
@@ -110,6 +110,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mmlu_2020` | Measuring Massive Multitask Language Understanding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_bigbench_2022` | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_helm_2022` | Holistic Evaluation of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gpqa_2023` | GPQA: A Graduate-Level Google-Proof Q&A Benchmark | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_swe_bench_2023` | SWE-bench: Can Language Models Resolve Real-World GitHub Issues? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_livebench_2024` | LiveBench: A Challenging, Contamination-Limited LLM Benchmark | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_speculative_decoding_2022` | Fast Inference from Transformers via Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_multi_token_prediction_2024` | Better & Faster Large Language Models via Multi-token Prediction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_medusa_2024` | Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
