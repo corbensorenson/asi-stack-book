@@ -93,14 +93,14 @@ Acceptance criteria:
 
 ## Phase 2 - Reviewed Reader Manuscript Path
 
-Status: blocked on Phase 1 for best quality, but generation checks already pass.
+Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; full 54-chapter human continuity review, reader overlays, rendered reader artifacts, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
 Tasks:
 
-1. Generate the reader edition with `python3 scripts/build_reader_edition.py`.
-2. Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`.
+1. Generate the reader edition with `python3 scripts/build_reader_edition.py`. Baseline generated on 2026-06-28: 54 chapters, 59 files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and 0 active reader-overlay operations applied.
+2. Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`. Initial review recorded in `docs/reader_manuscript_review.md`.
 3. Read the generated reader manuscript for continuity, pacing, duplicated live-book scaffolding, missing transitions, and caveats that became too thin after stripping.
 4. Apply human-reader-only deltas through `editions/reader_overlays/` only when the change should not alter AI/research view.
 5. Apply canonical prose edits when the improvement belongs in all views.

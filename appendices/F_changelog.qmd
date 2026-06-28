@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 2 reader manuscript baseline
+
+- Generated the reader-edition workspace and recorded the Phase 2 baseline in `docs/reader_manuscript_review.md`: 54 chapters, 59 generated files, 275 live-only sections removed, 54 human-only bridges unwrapped, 54 raw core-claim markers removed, 50 support-boilerplate passages humanized, 60 reader scaffold terms humanized, and 0 active reader-overlay operations applied. Spot-read representative generated chapters and updated the roadmap to mark Phase 2 as started while keeping full human continuity review, reader-only overlays, rendered reader artifacts, curated reader manuscript graduation, and release records as open residuals. No reader release, ebook, document, PDF, audio, benchmark result, proof result, runtime result, or support-state promotion is claimed.
+
 ## 2026-06-28 - v1.0 Phase 1 reader-visible de-templating
 
 - Reworked the Phase 1 roadmap targets across the live manuscript: 26 `Beyond the State of the Art` sections no longer expose `Operating mechanism:` recap lists, the 42 repeated target-architecture disclaimers now use chapter-specific non-claim language, and the reusable `keeps ... honest` cadence was replaced with mechanism-specific prose. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, roadmap, and v1.0 status guard so those patterns cannot return unnoticed. Refreshed the v1.0 status manuscript scale to 183,509 chapter words excluding YAML and 191,008 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
