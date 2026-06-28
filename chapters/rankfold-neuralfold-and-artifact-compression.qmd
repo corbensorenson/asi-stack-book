@@ -98,7 +98,7 @@ Appendix C now carries passage-reviewed mappings for all five assigned sources. 
 
 ## Mechanism
 
-Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The stack should not ask whether a compressed artifact is impressive; it should ask whether this task can use it without losing the constraints that matter.
+Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The routing question is not whether a compressed artifact is impressive; it is whether this task can use it without losing the constraints that matter.
 
 A compressed artifact is therefore not a cheaper source of truth. It is a routed representation candidate with a preserved full-artifact fallback. The full artifact remains the reference unless reconstruction, probe, utility, and cost records justify a narrower use. This keeps storage savings from silently becoming evidence loss.
 
@@ -217,7 +217,7 @@ Admission is always relative to use. A compressed artifact may be adequate for p
 
 Probe failure should route to the full artifact. Rare-case damage should become a regression. Hidden encoder cost should move into resource accounting. Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.
 
-The most dangerous failure is silent narrowing. A compressed representation may work on common examples and still erase rare clauses, unusual diagrams, edge-case source formatting, or provenance details that matter for governance. The stack should treat those misses as residuals, not as acceptable noise, unless the task explicitly declares them irrelevant.
+The most dangerous failure is silent narrowing. A compressed representation may work on common examples and still erase rare clauses, unusual diagrams, edge-case source formatting, or provenance details that matter for governance. Artifact compression treats those misses as residuals, not as acceptable noise, unless the task explicitly declares them irrelevant.
 
 ## Minimum Viable Implementation
 

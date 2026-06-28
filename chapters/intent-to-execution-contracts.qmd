@@ -73,7 +73,7 @@ The missing-field case is just as important as the filled-field case. If the con
 
 ## Core Claim
 
-[intent-to-execution-contracts.core, label: Design rationale, support: argument] The stack should transform intent into execution contracts before any tool or runtime action occurs.
+[intent-to-execution-contracts.core, label: Design rationale, support: argument] Governed execution transforms intent into explicit contracts before any tool or runtime action occurs.
 
 The claim remains at `argument` support. VIEA supplies the intent-to-artifact spine, Talos supplies the typed-job and audit pressure, Software Magic Grimoire supplies the command-envelope vocabulary, GenesisCode supplies effect/provenance discipline, and MoECOT is still treated as an implementation-reference route rather than local proof.
 

@@ -47,7 +47,7 @@ Bounded self-improvement needs an explicit boundary. Autonomous improvement succ
 
 It closes Part I as a gate, not as a triumph claim. The book can discuss self-improving systems only after it has named the fields, transactions, security boundaries, protected predicates, and evidence ledgers that keep improvement from becoming self-ratification.
 
-That framing matters because self-improvement is the highest-stakes version of ordinary maintenance. The stack should want better components, but it should not let a component redefine the proof that it is better, widen the authority it receives, or erase the audit trail that would have caught the regression.
+That framing matters because self-improvement is the highest-stakes version of ordinary maintenance. A bounded self-improvement gate welcomes better components, but it does not let a component redefine the proof that it is better, widen the authority it receives, or erase the audit trail that would have caught the regression.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -207,7 +207,7 @@ Boundary monotonicity should hold unless review explicitly says otherwise. The c
 
 Recursive evaluator capture is the core failure: the system improves its ability to pass its own gate. Constitutional weakening removes the predicates that would have blocked the change. Irreversible flawed upgrades turn a failed experiment into a new baseline. These are not acceptable residuals for a default route; they require quarantine or rollback.
 
-Acceleration pressure is the self-improvement failure that will sound reasonable. A self-improvement loop can argue that the next change will make evaluation easier, cheaper, or more accurate later. The stack should treat that as debt, not evidence. Future verification cannot justify present promotion unless a protected gate explicitly allows the deferral.
+Acceleration pressure is the self-improvement failure that will sound reasonable. A self-improvement loop can argue that the next change will make evaluation easier, cheaper, or more accurate later. The transition gate treats that as debt, not evidence. Future verification cannot justify present promotion unless a protected gate explicitly allows the deferral.
 
 ## Minimum Viable Implementation
 

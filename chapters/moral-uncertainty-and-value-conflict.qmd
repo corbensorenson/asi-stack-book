@@ -71,7 +71,7 @@ Single-objective optimization hides moral uncertainty and encourages premature r
 
 Single-objective optimization is attractive because it gives the planner a total order. But value conflicts often do not deserve a total order at the point of action. Some require human review, some require delay, some require a reversible low-power action, and some require recording unresolved uncertainty while still making a bounded decision.
 
-The failure is false consensus: the system acts as if a contested value question has been settled because the plan needs a next step. The stack should instead produce a conflict record with stakeholders, value axes, reversibility, review requirement, decision, and residual uncertainty.
+The failure is false consensus: the system acts as if a contested value question has been settled because the plan needs a next step. Value-conflict handling instead produces a conflict record with stakeholders, value axes, reversibility, review requirement, decision, and residual uncertainty.
 
 Moral residuals are not embarrassing leftovers. They are part of the safety interface. If a plan helps one stakeholder while burdening another, trades truthfulness against privacy, or reduces short-term harm while creating dependency, the unresolved part belongs in the artifact trail. A system that can keep residuals visible can choose smaller actions, preserve appeal paths, or revisit the decision when new evidence arrives. A system that hides them turns uncertainty into invisible optimization pressure.
 

@@ -165,6 +165,7 @@ def main() -> None:
         "`The book needs`",
         "`The stack needs`",
         "`The ASI Stack needs`",
+        "`The stack should`",
         "`Failure closure:`",
         "`detect and route failure modes such as`",
         "`This is a target architecture, not a current-result claim`",

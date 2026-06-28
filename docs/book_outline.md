@@ -1007,7 +1007,7 @@ Stable ID: `intent-to-execution-contracts`
 
 Chapter job: Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
 
-Core claim: The stack should transform intent into execution contracts before any tool or runtime action occurs.
+Core claim: Governed execution transforms intent into explicit contracts before any tool or runtime action occurs.
 
 Source loading queue:
 
@@ -2603,7 +2603,7 @@ Stable ID: `resource-economics-and-token-budgets`
 
 Chapter job: Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.
 
-Core claim: The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value.
+Core claim: Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.
 
 Source loading queue:
 

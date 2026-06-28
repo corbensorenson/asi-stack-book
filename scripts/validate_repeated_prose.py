@@ -72,6 +72,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The practical rule is",
     "The practical purpose is",
     "The practical problem is",
+    "The stack should",
     "The subtle failure is",
     "The subtle failure mode is",
     "Another failure is",

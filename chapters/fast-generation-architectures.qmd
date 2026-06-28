@@ -187,7 +187,7 @@ This makes speed a governed policy choice. A low-risk autocomplete can use a che
 | State-space or recurrent alternatives | Reduce sequence-processing cost through different sequence substrate. | Separate cheaper long-context processing from multi-token acceptance. | Source-noted external literature; no local test |
 | KV-cache and serving-layer accelerators | Improve memory layout, batching, and throughput around generation. | Separate aggregate serving throughput from single-request verified output. | Source-noted external literature; no local test |
 
-The taxonomy is deliberately plural. The stack should not collapse all speed work into one bucket. A decoding trick, a training objective, a serving memory system, and a sequence-model substrate solve different bottlenecks. They can be combined, but their evidence records must stay separate.
+The taxonomy is deliberately plural. Generation governance must not collapse all speed work into one bucket. A decoding trick, a training objective, a serving memory system, and a sequence-model substrate solve different bottlenecks. They can be combined, but their evidence records must stay separate.
 
 ## Interfaces
 

@@ -62,7 +62,7 @@ The architecture needs a non-scale-only theory for how capability can increase w
 
 ASI as a stack has an economic consequence. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.
 
-The efficient-ASI hypothesis is therefore not "small models are enough" and not "scale is unnecessary." It is a claim about allocation. The stack should spend cognition where the current contract demands it, compile repeated work into durable tools or memories, preserve fallback paths, and make the unpaid residual visible. RMI supplies the ratchet language, CGS supplies the smallest-adequate-structure language, BBVCA v9 supplies exact repair and rate honesty, and Simulation Scaling supplies the reminder that feasibility is always contract-relative.
+The efficient-ASI hypothesis is therefore not "small models are enough" and not "scale is unnecessary." It is a claim about allocation. Efficient routing spends cognition where the current contract demands it, compiles repeated work into durable tools or memories, preserves fallback paths, and makes the unpaid residual visible. RMI supplies the ratchet language, CGS supplies the smallest-adequate-structure language, BBVCA v9 supplies exact repair and rate honesty, and Simulation Scaling supplies the reminder that feasibility is always contract-relative.
 
 Efficiency in this book is always three-sided. A route must say what quality it preserved, what cost it paid, and what residual it left behind. Any two-sided account is suspect. Low cost without quality is failure. High quality without cost accounting is not an efficiency claim. Low cost and high apparent quality without residual accounting is often just deferred work.
 
@@ -183,7 +183,7 @@ A complete record should also distinguish cost classes:
 - regression-maintenance cost
 - rollback or residual cost
 
-This distinction matters because different layers can optimize different costs while making the whole system worse. A router may reduce model tokens by increasing context-packaging burden. A compressor may reduce storage while increasing repair. A policy update may reduce latency while increasing human review. The stack should count the total contract cost, not only the cheapest visible meter.
+This distinction matters because different layers can optimize different costs while making the whole system worse. A router may reduce model tokens by increasing context-packaging burden. A compressor may reduce storage while increasing repair. A policy update may reduce latency while increasing human review. Total-contract accounting counts the whole route, not only the cheapest visible meter.
 
 ## Invariants
 

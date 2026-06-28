@@ -65,7 +65,7 @@ A command contract is not a prettier prompt. It is the smallest artifact that le
 
 The key property is contract precedence. Helpful context, style notes, examples, retrieved passages, and prior conversation can inform the work, but they should not silently rewrite objective, constraints, authority, verification, or failure behavior. The command contract is the semantic firewall between useful context and operational permission.
 
-This firewall has to be visible at field level. A command can look structured while still smuggling ambiguity into the fields. The stack should therefore record where each field came from: user-confirmed, system-inferred, source-derived, defaulted, policy-imposed, or missing. Field provenance is what lets planning distinguish a real grant from a plausible fill-in.
+This firewall has to be visible at field level. A command can look structured while still smuggling ambiguity into the fields. Each field therefore records where it came from: user-confirmed, system-inferred, source-derived, defaulted, policy-imposed, or missing. Field provenance is what lets planning distinguish a real grant from a plausible fill-in.
 
 ## Why existing approaches are insufficient
 

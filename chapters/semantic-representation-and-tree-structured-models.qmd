@@ -69,7 +69,7 @@ Advanced AI needs representations that are easier to inspect, update, route, and
 
 But explicit structure can also become false confidence. A semantic graph can be incomplete, biased, brittle, stale, or treated as an unreviewed authority source. The problem is to use semantic structure as an optional substrate with tests, not as a substitute for grounding.
 
-The stack should want semantic structure because it can make some work cheaper to inspect, not because it makes meaning magically settled. A good semantic representation reduces the distance between sources, claims, plans, proofs, and explanations. A bad one hides the same uncertainty behind a cleaner shape.
+Semantic structure is useful because it can make some work cheaper to inspect, not because it makes meaning magically settled. A good semantic representation reduces the distance between sources, claims, plans, proofs, and explanations. A bad one hides the same uncertainty behind a cleaner shape.
 
 Semantic representation therefore functions as a governed cache of meaning, not as meaning itself. The cache can accelerate retrieval, planning, compilation, and explanation, but it must remain answerable to source artifacts, claim ledgers, adequacy records, and revision history.
 
@@ -220,7 +220,7 @@ Consumer-specific adequacy must remain visible, because one useful representatio
 
 Brittleness should trigger residuals and versioning. False explainability should downgrade claims. Hierarchy drift should preserve supersession links. Canonical graph capture should route through governance and audit. Verification loss should be recorded as a context-adequacy failure.
 
-The most subtle failure is authority migration. A semantic graph may begin as a helpful index, then slowly become the thing later agents cite instead of sources, artifacts, or tests. The stack should counter that drift by requiring grounded nodes to keep provenance links active and by treating ungrounded or stale nodes as hypotheses, not as claims.
+The most subtle failure is authority migration. A semantic graph may begin as a helpful index, then slowly become the thing later agents cite instead of sources, artifacts, or tests. The semantic layer counters that drift by requiring grounded nodes to keep provenance links active and by treating ungrounded or stale nodes as hypotheses, not as claims.
 
 ## Minimum Viable Implementation
 

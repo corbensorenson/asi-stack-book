@@ -2583,7 +2583,7 @@
           },
           "problem": "Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.",
           "insufficient": "A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.",
-          "core_claim": "The stack should transform intent into execution contracts before any tool or runtime action occurs.",
+          "core_claim": "Governed execution transforms intent into explicit contracts before any tool or runtime action occurs.",
           "mechanism": [
             "Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.",
             "Route contracts through planning, memory, verification, and execution layers.",
@@ -7496,7 +7496,7 @@
           },
           "problem": "Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.",
           "insufficient": "Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.",
-          "core_claim": "The stack should account for token budgets, verification tax, load stability, and risk-adjusted inference value.",
+          "core_claim": "Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.",
           "mechanism": [
             "Track task value, uncertainty, cost of error, and inference cost.",
             "Use regenerative or budgeted capacity mechanisms where useful.",
