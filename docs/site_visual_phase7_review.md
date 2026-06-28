@@ -29,6 +29,47 @@ Results:
 - After the mobile Mermaid readability change, the full browser validation
   passed again for 112 rendered page/view pairs.
 
+## Source-Growth Site UX Probe
+
+After the Phase 6 external-literature expansion raised Appendix H and the
+source-readiness surfaces, a second local browser probe checked the rendered
+landing page, two dense diagram chapters, and the widest source/claim appendices
+at desktop and mobile sizes.
+
+Command:
+
+```bash
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html
+python3 scripts/validate_live_human_view.py
+node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
+node <local Playwright probe against _site/index.html, fast-generation, recursive-self-improvement, Appendix A, Appendix C, and Appendix H>
+```
+
+Probe metrics:
+
+| Page | Viewport | Scroll width | Client width | Page overflow | Tables | Wide tables | Toggle visible | Mermaid visible | Hero visible |
+|---|---:|---:|---:|---:|---:|---:|---|---|---|
+| `index` | desktop 1366 x 900 | 1366 | 1366 | 0 | 0 | 0 | yes | yes | yes |
+| `index` | mobile 390 x 844 | 390 | 390 | 0 | 0 | 0 | yes | yes | yes |
+| `fast-generation-architectures` | desktop 1366 x 900 | 1366 | 1366 | 0 | 6 | 0 | yes | yes | no |
+| `fast-generation-architectures` | mobile 390 x 844 | 390 | 390 | 0 | 6 | 0 | yes | yes | no |
+| `recursive-self-improvement-boundaries` | desktop 1366 x 900 | 1366 | 1366 | 0 | 5 | 0 | yes | yes | no |
+| `recursive-self-improvement-boundaries` | mobile 390 x 844 | 390 | 390 | 0 | 5 | 0 | yes | yes | no |
+| `A_source_matrix` | desktop 1366 x 900 | 1366 | 1366 | 0 | 1 | 0 | yes | no | no |
+| `A_source_matrix` | mobile 390 x 844 | 390 | 390 | 0 | 1 | 0 | yes | no | no |
+| `C_claim_evidence_matrix` | desktop 1366 x 900 | 1366 | 1366 | 0 | 3 | 0 | yes | no | no |
+| `C_claim_evidence_matrix` | mobile 390 x 844 | 390 | 390 | 0 | 3 | 0 | yes | no | no |
+| `H_external_sources` | desktop 1366 x 900 | 1366 | 1366 | 0 | 4 | 0 | yes | no | no |
+| `H_external_sources` | mobile 390 x 844 | 390 | 390 | 0 | 4 | 0 | yes | no | no |
+
+The probe found no page-level horizontal overflow on the inspected pages after
+the source-table growth. The reading-mode switch was visible on all inspected
+pages and both inspected viewports. Mermaid visibility was present on the
+landing page and dense chapter pages; appendix pages correctly had no Mermaid or
+hero-image expectation. This is a focused UX/readability probe only, not an
+accessibility certification, reader-release review, or proof of full design
+quality.
+
 ## Diagram Audit
 
 The chapter corpus currently has 58 Mermaid diagrams across 54 manifest
@@ -109,7 +150,8 @@ garbage and the Phase 7 goal is site readiness, not repository compaction.
   recursive-improvement diagrams if reader-release review still finds them too
   crowded despite contained mobile scrolling.
 - Optional appendix table style review if future source growth introduces
-  horizontal overflow.
+  horizontal overflow; the current source-growth probe found zero page-level
+  overflow on Appendix A, Appendix C, and Appendix H at desktop/mobile sizes.
 - Optional clearer stale-site guidance in `scripts/validate_live_human_view.py`
   if contributors run it before rendering.
 

@@ -289,7 +289,7 @@ Acceptance criteria:
 
 ## Phase 7 - Visual, Site, And Local-Hygiene Review
 
-Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. Optional splitting of the fast-generation and recursive-improvement diagrams remains open for reader-release review.
+Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. Optional splitting of the fast-generation and recursive-improvement diagrams remains open for reader-release review.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
@@ -298,7 +298,7 @@ Tasks:
 - Manual diagram audit for overloaded or low-legibility Mermaid diagrams; first mobile screenshot pass is recorded for the densest diagrams.
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
-- Table overflow check for appendices.
+- Continue table overflow checks after large source or claim-matrix growth; the current source-growth probe found no page-level overflow on Appendices A/C/H.
 - Optional clearer `validate_live_human_view.py` error when `_site` is missing or stale.
 - Optional local `git gc` if loose-object warnings recur.
 
