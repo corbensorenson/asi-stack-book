@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 84
+- `source_note_available_uncached`: 87
 
 ## Records
 
@@ -102,6 +102,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_lean4_theorem_proving` | Theorem Proving in Lean 4 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_dafny_2010` | Dafny: An Automatic Program Verifier For Functional Correctness | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_reluplex_2017` | Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_black_box_simplex_2021` | The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_copilot_runtime_monitor_2010` | Copilot: A Hard Real-Time Runtime Monitor | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_prism_model_checker_2002` | PRISM: Probabilistic Symbolic Model Checker | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_sparse_moe_2017` | Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_gshard_2020` | GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_switch_transformer_2021` | Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

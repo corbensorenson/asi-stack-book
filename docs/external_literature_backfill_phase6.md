@@ -40,6 +40,9 @@ literature coverage.
 | `ext_lean4_theorem_proving` | proof assistants | Lean theorem-proving vocabulary, dependent type theory, tactics, records, inductive types, and proof-term boundaries. |
 | `ext_dafny_2010` | program verification | Specification-oriented programming, functional-correctness verification, SMT-backed automation, and contract/verifier boundaries. |
 | `ext_reluplex_2017` | AI formal verification | Property-specific verification for ReLU neural networks, counterexamples, safety-critical property scope, and ACAS Xu evaluation boundaries. |
+| `ext_black_box_simplex_2021` | runtime assurance | Runtime control switching, backup safety behavior, black-box controllers, and assurance-wrapper boundaries. |
+| `ext_copilot_runtime_monitor_2010` | runtime monitoring | Stream-based hard real-time monitors, constant-time/constant-space generated C monitors, and monitor-scheduler boundaries. |
+| `ext_prism_model_checker_2002` | probabilistic model checking | Symbolic probabilistic model checking, model/property/tool-run separation, and probabilistic reliability-analysis vocabulary. |
 | `ext_sparse_moe_2017` | routing/MoE | Sparsely gated expert layers, conditional computation, and load-balancing limits. |
 | `ext_gshard_2020` | routing/MoE | Conditional computation with automatic sharding and distributed sparse-model constraints. |
 | `ext_switch_transformer_2021` | routing/MoE | Simplified sparse expert routing, stability, communication, and speed/scale boundaries. |
@@ -65,7 +68,7 @@ literature coverage.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
 - The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, task-and-motion planning, behavior trees, GOAP/F.E.A.R.-style game planning, and AutoGen-style multi-agent orchestration.
 - The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, synthetic context-size stress tests, citation-quality evaluation, adaptive retrieval/reflection, and long-context prompt compression.
-- The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
+- The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, Reluplex-style neural-network property checking, runtime assurance, generated runtime monitors, and probabilistic model checking.
 - The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
 - The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, and QLoRA-style quantized finetuning.
 - The benchmark-science queue now has initial source-noted coverage for broad multitask benchmarks, community benchmark collections, holistic evaluation, expert hard-question oversight, real-world software issue resolution, and contamination-limited living benchmarks.
@@ -84,7 +87,7 @@ literature coverage.
 
 1. Deepen planning coverage with PlanForge-specific planning-language translation references, planner/runtime-adapter comparison records, and any additional orchestration sources needed after chapter-level review.
 2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, VCM-specific adapter references, and any additional provenance/compression sources needed after chapter-level review.
-3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
+3. Deepen formal-methods coverage with proof-assistant adequacy literature, ASI Stack protocol-verification sources, and any additional deployment model-checking references needed after chapter-level review.
 4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.
 5. Deepen compression coverage with program synthesis, residual coding, artifact-utility metrics, compression-regression testing, and representation-learning sources.
 6. Deepen benchmark-science coverage with hidden-test operations, saturation analysis, contamination audits, benchmark-gaming/evaluator-gaming sources, and release-grade benchmark governance.

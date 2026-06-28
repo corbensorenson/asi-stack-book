@@ -1113,6 +1113,48 @@
     "doi": "10.48550/arXiv.1702.01135"
   },
   {
+    "id": "ext_black_box_simplex_2021",
+    "title": "The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS",
+    "priority": "external_literature",
+    "layer": "formal_runtime_assurance",
+    "chapter_targets": ["runtime-adapters-tool-permissions-and-human-approval", "readiness-gates-residual-escrow-and-quarantine", "executable-specifications-and-lean-proof-envelope", "integrated-reference-architecture"],
+    "url": "https://arxiv.org/abs/2102.12981",
+    "notes": "External runtime-assurance source for switching control authority from advanced controllers to backup safety-preserving behavior under runtime checks.",
+    "source_type": "arxiv",
+    "arxiv_id": "2102.12981",
+    "published": "2021-02-24",
+    "updated": "2022-05-31",
+    "citation_label": "Mehmood et al. (2021), Black-Box Simplex",
+    "doi": "10.1007/978-3-031-06773-0_12"
+  },
+  {
+    "id": "ext_copilot_runtime_monitor_2010",
+    "title": "Copilot: A Hard Real-Time Runtime Monitor",
+    "priority": "external_literature",
+    "layer": "runtime_monitoring",
+    "chapter_targets": ["runtime-adapters-tool-permissions-and-human-approval", "executable-specifications-and-lean-proof-envelope", "readiness-gates-residual-escrow-and-quarantine", "prototype-roadmap"],
+    "url": "https://leepike.github.io/pub_pages/rv2010.html",
+    "notes": "External runtime-monitoring source for a stream-based dataflow language/compiler generating constant-time, constant-space C monitors for hard real-time programs.",
+    "source_type": "conference_paper",
+    "published": "2010-11",
+    "updated": "",
+    "citation_label": "Pike et al. (2010), Copilot"
+  },
+  {
+    "id": "ext_prism_model_checker_2002",
+    "title": "PRISM: Probabilistic Symbolic Model Checker",
+    "priority": "external_literature",
+    "layer": "probabilistic_model_checking",
+    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "readiness-gates-residual-escrow-and-quarantine", "benchmark-ratchets-and-anti-goodhart-evidence", "integrated-reference-architecture"],
+    "url": "https://www.prismmodelchecker.org/papers/tools02.pdf",
+    "notes": "External probabilistic model-checking source for symbolic model checking of probabilistic systems, model-checker tooling, and deployment-facing property-analysis vocabulary.",
+    "source_type": "conference_paper_pdf",
+    "published": "2002",
+    "updated": "",
+    "citation_label": "Kwiatkowska et al. (2002), PRISM",
+    "doi": "10.1007/3-540-46002-0_42"
+  },
+  {
     "id": "ext_sparse_moe_2017",
     "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
     "priority": "external_literature",
