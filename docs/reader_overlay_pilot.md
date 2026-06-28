@@ -63,6 +63,10 @@ The next reader-continuity pass added one active operation under `editions/reade
 
 - `v1_0.human_intent.intake_states_reader_replace` replaces the generated-reader and live Human-view `Intent intake states` subsection while preserving the mechanism diagram.
 
+The following reader-continuity pass added one active operation under `editions/reader_overlays/v1_0/chapters/system-boundaries-and-authority.json`:
+
+- `v1_0.system_boundaries.permission_classes_reader_replace` replaces the generated-reader and live Human-view `Permission classes` subsection while preserving the canonical AI/research permission taxonomy.
+
 Canonical AI/research tables and evidence surfaces remain in the chapter source. Some chapters have narrow subsection-heading anchors so overlays can target a table without replacing an entire mechanism section. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
 ## Why These Overlays Exist
@@ -93,6 +97,8 @@ The Runtime Adapters overlay converts the effect-receipt field table into narrat
 
 The Human Intent overlay converts the intent-intake state table into narrative prose while preserving the canonical AI/research intake-state matrix and intent-contract boundary. It reduces the generated reader manuscript's table load without claiming an intent parser, authority extractor, stop-condition preservation harness, re-contract trigger test, bounded-default audit, or support-state promotion.
 
+The System Boundaries overlay converts the permission-class table into narrative prose while preserving the canonical AI/research permission taxonomy and authority-transition boundary. It reduces the generated reader manuscript's table load without claiming deployed permission enforcement, runtime adapter behavior, revocation propagation, confused-deputy mitigation, or support-state promotion.
+
 ## Review Contract
 
 Reviewers should compare the generated `build/reader_edition/reader_delta_report.md` against the tracked operation file. The delta report should show both operation digests and before/after excerpts after `python3 scripts/build_reader_edition.py` runs.
@@ -103,11 +109,11 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 21 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 21 active and 21 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 21 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 21 active operations and 21 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 21 reader overlay operations applied.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 22 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 22 active and 22 applied operations.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 22 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 22 active operations and 22 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 22 reader overlay operations applied.
 - `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.

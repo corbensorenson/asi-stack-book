@@ -177,6 +177,8 @@ Governance issues ceilings and grants. Planning and routing may request handoffs
 
 The authority-transition record names permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review condition, and non-claims. These fields do not prove enforcement. They make the exact place where enforcement would be tested visible: did the requested operation match its permission class, did delegation narrow rather than widen the caller's ceiling, did expiry or revocation block later use, and did the effect produce an audit receipt?
 
+### Permission classes
+
 The transition record should classify the permission being requested. At minimum, the book should distinguish:
 
 | Permission class | Example | Boundary rule |

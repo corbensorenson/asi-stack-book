@@ -23,7 +23,7 @@ Generated workspace:
 - 54 raw core-claim markers removed
 - 50 repeated support-boilerplate passages humanized
 - 60 reader scaffold terms humanized
-- 21 active reader-overlay operations applied
+- 22 active reader-overlay operations applied
 
 Generated review files inspected:
 
@@ -35,6 +35,7 @@ Representative generated chapters spot-read:
 
 - `build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd`
 - `build/reader_edition/chapters/human-intent-as-a-formal-input.qmd`
+- `build/reader_edition/chapters/system-boundaries-and-authority.qmd`
 - `build/reader_edition/chapters/agency-dignity-and-corrigibility.qmd`
 - `build/reader_edition/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd`
 - `build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd`
@@ -53,6 +54,7 @@ Representative generated chapters spot-read:
 
 - The generated reader source now has a coherent front door for the book: the first chapter opens as architecture prose rather than live scaffold.
 - The Human Intent reader overlay converts the intent-intake state table into narrative prose while keeping the canonical AI/research intake-state matrix and intent-contract boundary in the live source.
+- The System Boundaries reader overlay converts the permission-class table into narrative prose while keeping the canonical AI/research permission taxonomy and authority-transition boundary in the live source.
 - The Personal Compute Hives reader overlay converts four table-heavy sections into narrative prose for Human view and generated reader editions while keeping the canonical AI/research tables in the live source.
 - The Policy Optimization reader overlay converts method-family and external-literature tables into narrative prose while keeping the canonical AI/research comparison tables in the live source.
 - The Artifact Steward Agents reader overlay converts autonomy, treasury, and project-object tables into narrative prose while keeping the canonical AI/research matrices in the live source.
@@ -76,7 +78,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 54 reader chapters, 59 generated files, 120,934 reader words, 21 active and applied reader-overlay operations, 55 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 7 high-priority heuristic review chapters, mostly where generated reader chapters still carry table-heavy or dense technical material.
+The audit currently measures 54 reader chapters, 59 generated files, 121,149 reader words, 22 active and applied reader-overlay operations, 47 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 6 high-priority heuristic review chapters, mostly where generated reader chapters still carry table-heavy or dense technical material.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -85,7 +87,7 @@ This is review triage, not manual review. It creates a queue for the chapter-by-
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
-- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Human Intent, Personal Compute Hives, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Fast Generation, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
+- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Human Intent, System Boundaries, Personal Compute Hives, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Fast Generation, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
 - The automated continuity audit is current, but it does not replace the full 54-chapter human read.

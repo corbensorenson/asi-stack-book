@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 21,
+  "operation_count": 22,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -259,6 +259,18 @@
       },
       "content": "Semantic structure is carried by the Semantic Node Record. Its minimum vocabulary is deliberately boring: node identity, concept label, provenance references, parent and child references, relation references, tokenization contract, grounding state, version, supersession links, residual uncertainty, permitted uses, and evaluation references. The point is not to make the record impressive. The point is to make later use inspectable.\n\nDifferent consumers need different boundaries. VCM needs adequacy state, source coverage, and a loss contract before a node becomes a semantic page. Spinoza and the claim ledger need provenance, support tier, defeaters, and a downgrade path before a semantic claim can participate in belief revision. Planning needs permitted uses, residual uncertainty, and authority limits before it can safely plan through a node.\n\nCognitive compilation needs typed inputs, outputs, constraints, and repair behavior before it can lower the node into IR. Compression needs utility and fallback records for the represented task before a compact token can be treated as cheaper. Human readers need an explanation trace and visible non-claims, because a clean concept path can otherwise look more settled than the evidence allows.\n\nThat interface makes semantic representation a shared boundary rather than a private model feature. A node may be useful for routing while still disallowed for proof, citation, audit, or claim support. The representation earns trust only when the consuming layer can see what was preserved, what was dropped, and where to fall back.",
       "rationale": "Turn the consumer-policy table into reader prose while retaining the same boundary vocabulary."
+    },
+    {
+      "id": "v1_0.system_boundaries.permission_classes_reader_replace",
+      "target_file": "chapters/system-boundaries-and-authority.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Permission classes",
+        "aliases": []
+      },
+      "content": "The authority record has to name the kind of permission being requested, because the same information can be safe in one permission class and unsafe in another. Reading a source, transforming it into a summary, disclosing it to an audience, writing it into a durable artifact, executing a tool, and approving a high-impact action are different powers. A system that collapses them into a generic access flag has already lost the boundary it needs to enforce.\n\nRead permission lets a layer inspect material without publishing it, mutating it, or acting on it. Transform permission lets a layer derive a new artifact, but it carries provenance and taint obligations. Disclosure permission asks whether the output may be shown, exported, or transmitted to the intended audience. Write permission changes a file, ledger, memory cell, branch, or other durable target and therefore needs target-scoped authority plus audit. Execute permission crosses into a tool, runtime, service, or adapter and should leave an effect receipt. Approval permission is still more constrained: it authorizes a promotion or high-impact action and cannot be self-issued by the actor that benefits from it.\n\nThese classes are deliberately ordinary. Most failures at this layer are ordinary too: a model reads something and treats the text as approval, a planner turns a draft into an action, a tool wrapper lets a low-authority request borrow a broader credential, or a replacement implementation inherits a handle that was qualified for an earlier context. The point of the taxonomy is to make those mistakes visible before they become side effects.",
+      "rationale": "Replace the permission-class table with reader prose while preserving the canonical AI/research taxonomy."
     }
   ],
   "non_claims": [
