@@ -31,7 +31,7 @@ Results:
 
 - Release profile validation passed.
 - Reader spine validation passed for 54 chapters, with minimum reader-spine
-  chapter length 1,957 words.
+  chapter length 1,963 words.
 - Reader evidence-boundary validation passed for 54 chapters.
 - Reader overlay validation now passes with 33 active operations and 33 applied
   operations. The reader overlay log is recorded separately in
@@ -71,8 +71,8 @@ Results:
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
 - `docs/reader_chapter_review_matrix.md` records the manifest-synced
-  54-chapter reader-review queue: 49 `spot_checked`, 5 `not_started`, 20
-  active-overlay chapters, 30 no-immediate-action decisions, 3 companion-note
+  54-chapter reader-review queue: 54 `spot_checked`, 0 `not_started`, 20
+  active-overlay chapters, 35 no-immediate-action decisions, 3 companion-note
   candidates, 1 curated-manuscript candidate, and release blockers on every
   row.
 
@@ -101,9 +101,9 @@ Results:
 ## Blockers Before Major-Version Packaging
 
 1. A validated live-book candidate needs to be selected and tagged.
-2. The generated reader manuscript needs full human continuity review; the
-   current matrix still has 5 `not_started` chapter rows and release blockers
-   on every row.
+2. The generated reader manuscript needs release-grade full human continuity
+   review; the current matrix has no `not_started` rows, but every row still
+   carries release blockers.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
 4. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual

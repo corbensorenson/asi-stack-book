@@ -91,7 +91,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 54 reader chapters, 59 generated files, 121,684 reader words, 33 active and applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
+The audit currently measures 54 reader chapters, 59 generated files, 121,685 reader words, 33 active and applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -116,14 +116,15 @@ python3 scripts/sync_reader_chapter_review_matrix.py --write
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The current matrix records 54 manifest-aligned chapter rows, 49
+The current matrix records 54 manifest-aligned chapter rows and 54
 `spot_checked` rows from this baseline, the medium-priority review, and the
-first Part I, Part II, and Part III review passes, 5 `not_started` rows, 20 chapters with active
-reader overlays, 30 no-immediate-action decisions, 3 companion-note candidates,
-and 1 curated-manuscript candidate. Every row still has release
-blockers for missing full chapter review, missing reader release record, and
-missing artifact review. The matrix is a review queue and release-control
-surface, not a reviewed reader manuscript.
+first Part I, Part II, Part III, and Part IV review passes. It has 0
+`not_started` rows, 20 chapters with active reader overlays, 35
+no-immediate-action decisions, 3 companion-note candidates, and 1
+curated-manuscript candidate. Every row still has release blockers for missing
+full chapter review, missing reader release record, and missing artifact review.
+The matrix is a review queue and release-control surface, not a reviewed reader
+manuscript.
 
 ## Residuals
 

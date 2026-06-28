@@ -63,6 +63,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/reader_part_i_review_pass.md](docs/reader_part_i_review_pass.md) | First Part I reader-review matrix pass and no-action decisions. |
 | [docs/reader_part_ii_review_pass.md](docs/reader_part_ii_review_pass.md) | First Part II reader-review matrix pass and canonical prose cleanup decisions. |
 | [docs/reader_part_iii_review_pass.md](docs/reader_part_iii_review_pass.md) | First Part III reader-review matrix pass and canonical prose cleanup decisions. |
+| [docs/reader_part_iv_review_pass.md](docs/reader_part_iv_review_pass.md) | First Part IV reader-review matrix pass and reader-generator capitalization cleanup decision. |
 | [docs/reader_format_dry_run.md](docs/reader_format_dry_run.md) | Local HTML/EPUB/DOCX reader-format dry-run record and non-release boundary. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
 | [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |

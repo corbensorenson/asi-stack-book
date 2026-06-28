@@ -169,7 +169,7 @@ Current local results for this overlay set:
 - `python3 scripts/sync_reader_overlay_asset.py --check` passed with 33 active operations.
 - `python3 scripts/validate_reader_overlays.py --check` passed with 33 active operations and 33 applied operations.
 - `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 33 reader overlay operations applied.
-- `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
+- `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,963 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.
 - `python3 scripts/validate_live_human_view.py` passed for 67 rendered book pages and 54 rendered chapter pages.

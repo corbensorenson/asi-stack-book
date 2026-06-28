@@ -240,7 +240,12 @@ def humanize_reader_scaffold_terms(text: str) -> tuple[str, int]:
     count = 0
     cleaned = text
     for pattern, replacement in READER_SCAFFOLD_TERM_REPLACEMENTS:
-        cleaned, replacements = pattern.subn(replacement, cleaned)
+        def preserve_initial_case(match: re.Match[str]) -> str:
+            if match.group(0)[:1].isupper():
+                return replacement[:1].upper() + replacement[1:]
+            return replacement
+
+        cleaned, replacements = pattern.subn(preserve_initial_case, cleaned)
         count += replacements
     return cleaned, count
 
