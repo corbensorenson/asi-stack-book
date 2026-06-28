@@ -224,7 +224,7 @@ Acceptance criteria:
 
 ## Phase 7 - Visual, Site, And Local-Hygiene Review
 
-Status: planned.
+Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, and all-chapter/all-viewport browser validation passed. Manual screenshot review of the densest diagrams remains open.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
