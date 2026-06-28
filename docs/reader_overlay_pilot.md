@@ -83,6 +83,14 @@ The following reader-continuity pass added one active operation under `editions/
 
 - `v1_0.generate_verify_repair.receipt_states_reader_replace` replaces the generated-reader and live Human-view `Compression receipt states` subsection while preserving the canonical AI/research receipt-state matrix.
 
+The next reader-continuity pass added one active operation under `editions/reader_overlays/v1_0/chapters/the-efficient-asi-hypothesis.json`:
+
+- `v1_0.efficient_asi.route_outcome_states_reader_replace` replaces the generated-reader and live Human-view `Route outcome states` subsection while preserving the canonical AI/research efficiency-accounting matrix.
+
+The following reader-continuity pass added one active operation under `editions/reader_overlays/v1_0/chapters/mathematical-and-search-substrates.json`:
+
+- `v1_0.mathematical_substrates.adoption_lanes_reader_replace` replaces the generated-reader and live Human-view `Adoption packet lanes` subsection while preserving the canonical AI/research promotion-blocker matrix.
+
 Canonical AI/research tables and evidence surfaces remain in the chapter source. Some chapters have narrow subsection-heading anchors so overlays can target a table without replacing an entire mechanism section. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
 ## Why These Overlays Exist
@@ -123,6 +131,10 @@ The Verification Bandwidth overlay converts the adequacy-state table into narrat
 
 The Generate-Verify-Repair overlay converts the compression-receipt state table into narrative prose while preserving the canonical AI/research receipt-state matrix and exactness/repair/fallback boundary. It reduces the generated reader manuscript's table load without claiming codec correctness, reconstruction quality, repair-cost behavior, bounded-search behavior, rate improvement, or support-state promotion.
 
+The Efficient ASI overlay converts the route-outcome state table into narrative prose while preserving the canonical AI/research efficiency-accounting matrix. It reduces the generated reader manuscript's table load without claiming measured route efficiency, lower-cost route-search completeness, residual-burden measurement, utility-preserving compression, hidden-cost audit results, or support-state promotion.
+
+The Mathematical and Search Substrates overlay converts the substrate-adoption lane table into narrative prose while preserving the canonical AI/research promotion-blocker matrix. It reduces the generated reader manuscript's table load without claiming substrate usefulness, baseline comparison results, representation-efficiency results, sequence-substrate A/B results, Circle/Theseus transfer results, or support-state promotion.
+
 ## Review Contract
 
 Reviewers should compare the generated `build/reader_edition/reader_delta_report.md` against the tracked operation file. The delta report should show both operation digests and before/after excerpts after `python3 scripts/build_reader_edition.py` runs.
@@ -133,11 +145,11 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 26 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 26 active and 26 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 26 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 26 active operations and 26 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 26 reader overlay operations applied.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 28 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 28 active and 28 applied operations.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 28 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 28 active operations and 28 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 28 reader overlay operations applied.
 - `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.

@@ -130,6 +130,8 @@ RMI gives the route decision a ratchet: solved work should become regression cov
 
 The output is not a vague "use the cheapest model" policy. It is a record that explains why a route was adequate for a task and what it failed to discharge. A route can be useful while still failing to prove efficiency; a route can be cheap while still creating too much repair; and a route can be powerful while still being wasteful if its output never becomes reusable evidence.
 
+### Route outcome states
+
 The ledger also gives efficiency a set of outcome states:
 
 | Outcome | Meaning | Promotion consequence |

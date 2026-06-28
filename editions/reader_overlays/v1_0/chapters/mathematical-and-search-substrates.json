@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/mathematical-and-search-substrates.qmd",
+  "operations": [
+    {
+      "id": "v1_0.mathematical_substrates.adoption_lanes_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Adoption packet lanes"
+      },
+      "rationale": "Replace the substrate-adoption lane table with reader prose while preserving the canonical AI/research promotion-blocker matrix.",
+      "content_lines": [
+        "The adoption packet has four lanes because a substrate can be real in one sense and still unready in another. The structural lane asks what fact, proof receipt, or deterministic fixture exists. If the theorem is missing, the receipt is unresolved, or the model does not match the intended use, that lane blocks promotion even if the idea is mathematically attractive.",
+        "",
+        "The empirical lane asks for the workload, metric, baseline, negative control, and report. Without workload evidence or with failed controls, the substrate stays exploratory or becomes a recorded negative result. The consumer lane asks which downstream use may rely on the record; a consumer cannot borrow an axis the record does not support.",
+        "",
+        "The retirement lane is what keeps optionality honest. It names the result that would narrow, supersede, or retire the substrate, so a hidden negative result cannot quietly become architectural commitment. Together these lanes let the stack keep unusual mathematics available while refusing to turn elegance into permission."
+      ]
+    }
+  ]
+}

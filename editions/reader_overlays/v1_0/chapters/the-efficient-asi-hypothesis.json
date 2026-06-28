@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/the-efficient-asi-hypothesis.qmd",
+  "operations": [
+    {
+      "id": "v1_0.efficient_asi.route_outcome_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Route outcome states"
+      },
+      "rationale": "Replace the route-outcome state table with reader prose while preserving the canonical AI/research efficiency-accounting matrix.",
+      "content_lines": [
+        "The route ledger gives efficiency a set of outcome states so useful work, efficient work, brittle work, hidden-cost work, and unsafe work do not collapse into the same success label. An adequate minimum route is the strong case: the selected route satisfied the predicate, lower-cost authorized candidates were absent or failed, and the residuals were recorded. That result can become a candidate for a tool, memory, regression, or capability field, but only as a candidate.",
+        "",
+        "Adequate overkill is still useful, but it is not an efficiency result because the lower-cost route was not examined or recorded. Cheap brittle routes are the inverse: they save visible cost while failing quality, verification, or residual checks, so they create escrow and fallback work. Hidden-cost routes pass only because repair, verification, context, or human review was left outside the bill. Unsafe savings are blocked outright because they bypass authority, approval, verification, or rollback.",
+        "",
+        "These are accounting states, not benchmark results. They let a future implementation say that a route produced value without pretending it was efficient, or say that it saved cost only after the work that made it safe enough to use is visible in the same record."
+      ]
+    }
+  ]
+}

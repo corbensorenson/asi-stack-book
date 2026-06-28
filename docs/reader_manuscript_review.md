@@ -23,7 +23,7 @@ Generated workspace:
 - 54 raw core-claim markers removed
 - 50 repeated support-boilerplate passages humanized
 - 60 reader scaffold terms humanized
-- 26 active reader-overlay operations applied
+- 28 active reader-overlay operations applied
 
 Generated review files inspected:
 
@@ -34,6 +34,7 @@ Generated review files inspected:
 Representative generated chapters spot-read:
 
 - `build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd`
+- `build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd`
 - `build/reader_edition/chapters/human-intent-as-a-formal-input.qmd`
 - `build/reader_edition/chapters/system-boundaries-and-authority.qmd`
 - `build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd`
@@ -50,12 +51,14 @@ Representative generated chapters spot-read:
 - `build/reader_edition/chapters/generate-verify-repair-compression.qmd`
 - `build/reader_edition/chapters/fast-generation-architectures.qmd`
 - `build/reader_edition/chapters/rankfold-neuralfold-and-artifact-compression.qmd`
+- `build/reader_edition/chapters/mathematical-and-search-substrates.qmd`
 - `build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd`
 - `build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd`
 
 ## What Is Working
 
 - The generated reader source now has a coherent front door for the book: the first chapter opens as architecture prose rather than live scaffold.
+- The Efficient ASI reader overlay converts the route-outcome state table into narrative prose while keeping the canonical AI/research efficiency-accounting matrix and cost/quality/residual boundary in the live source.
 - The Human Intent reader overlay converts the intent-intake state table into narrative prose while keeping the canonical AI/research intake-state matrix and intent-contract boundary in the live source.
 - The System Boundaries reader overlay converts the permission-class table into narrative prose while keeping the canonical AI/research permission taxonomy and authority-transition boundary in the live source.
 - The Evidence States reader overlay converts the claim-source contribution table into narrative prose while keeping the canonical AI/research source-boundary matrix and support-state discipline in the live source.
@@ -70,6 +73,7 @@ Representative generated chapters spot-read:
 - The Fast Generation reader overlay converts metric-code and taxonomy-table material into narrative prose while keeping the canonical AI/research formulas and generation-mode matrix in the live source.
 - The Generate-Verify-Repair reader overlay converts the compression-receipt state table into narrative prose while keeping the canonical AI/research receipt-state matrix and exactness/repair/fallback boundary in the live source.
 - The RankFold/NeuralFold reader overlay converts the artifact-compression admission-state table into narrative prose while keeping the canonical AI/research state taxonomy and probe/fallback boundary in the live source.
+- The Mathematical and Search Substrates reader overlay converts the substrate-adoption lane table into narrative prose while keeping the canonical AI/research promotion-blocker matrix and optional-substrate adoption boundary in the live source.
 - The Labor OS reader overlay converts the typed-job lifecycle-state table into narrative prose while keeping the canonical AI/research lifecycle matrix in the live source.
 - The Circle Contracts reader overlay converts the proof-receipt lifecycle table into narrative prose while keeping the canonical AI/research receipt-state matrix in the live source.
 - Human Reading Path bridges survive as ordinary prose, and reader-spine validation confirms all 54 chapters preserve Handoff continuity.
@@ -85,7 +89,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 54 reader chapters, 59 generated files, 121,896 reader words, 26 active and applied reader-overlay operations, 13 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 2 high-priority heuristic review chapters, mostly where generated reader chapters still carry table-heavy or dense technical material.
+The audit currently measures 54 reader chapters, 59 generated files, 122,199 reader words, 28 active and applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority heuristic review chapters; the remaining queue is medium- and low-priority continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -94,7 +98,7 @@ This is review triage, not manual review. It creates a queue for the chapter-by-
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
-- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
+- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
 - The automated continuity audit is current, but it does not replace the full 54-chapter human read.

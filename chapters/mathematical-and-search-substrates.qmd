@@ -151,6 +151,8 @@ Optionality is a positive design state. It means the stack can route experiments
 
 Adoption states should therefore be operational: exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded. A state that does not change routing, testing, consumer access, or evidence obligations is a label, not governance. The schema uses the same states as machine-readable values such as `structural_only` and `qualified_for_scope`.
 
+### Adoption packet lanes
+
 The adoption packet has four lanes:
 
 | Lane | Required question | Promotion blocker |
