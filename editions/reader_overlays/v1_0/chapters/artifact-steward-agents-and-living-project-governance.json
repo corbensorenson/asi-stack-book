@@ -39,6 +39,25 @@
         "",
         "The `SunsetReviewRecord` is the death-protocol object. It records value signal, active users, active maintainers, open risks, funds, dependencies, archival plan, fork or transfer path, and appeal path. Together these records make stewardship inspectable before it becomes machinery."
       ]
+    },
+    {
+      "id": "v1_0.artifact_stewards.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense steward-OS target architecture with reader prose while preserving the canonical AI/research lifecycle-control checklist.",
+      "content_lines": [
+        "A mature stewardship layer would be a project-lifecycle operating system, but not a project owner. It would keep mission, memory, roadmap, work, funds, compute, contributors, evidence, releases, governance, and sunset criteria inspectable across many human and AI work cycles.",
+        "",
+        "The steward's power would come only from explicit records: a charter, work contracts, contribution ledgers, treasury policy, event-taint rules, release evidence, federation contracts, action decisions, and sunset reviews. Humans, maintainers, communities, project hives, personal hives, CI runners, and rented compute would receive scoped contracts rather than inheriting project authority.",
+        "",
+        "The mature system would make spending, compute, contribution credit, governance influence, releases, appeals, forks, and exit paths visible without forcing people to ask the steward for permission to understand the project. It would also know when to stop: if value, maintainership, funds, mission coherence, or safety posture falls below the charter threshold, ordinary work generation should yield to transfer, archive, freeze, or sunset.",
+        "",
+        "That endpoint remains unimplemented here. It should stay at `argument` support until workflow runners, treasury boundaries, event-taint pipelines, governance gates, release checks, sunset protocols, and behavioral tests show that stewardship can coordinate a project without seizing it."
+      ]
     }
   ]
 }

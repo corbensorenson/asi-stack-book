@@ -79,6 +79,42 @@
         "",
         "Treating all of these memories as one store erases the point of a hive. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context may exist, which device can materialize it, who can inspect it, and how it can be revoked."
       ]
+    },
+    {
+      "id": "v1_0.personal_compute_hives.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense hive target-architecture checklist with reader prose while preserving the canonical AI/research protocol surface.",
+      "content_lines": [
+        "A mature personal compute hive would be an owned compute fabric for a person, family, project, or temporary federation. It would let work run near the right data and device without treating reachability as authority, convenience as consent, or cheap rented compute as a reason to move private context.",
+        "",
+        "The fabric would classify jobs before scheduling them. Data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirements would shape which phones, laptops, dashboards, local GPUs, NAS boxes, old machines, workshop computers, project runners, or rented nodes may even bid. Policy filtering would happen before optimization, and approval receipts would bind sensitive work to a specific person, boundary, and time window.",
+        "",
+        "The Hive-to-Hive protocol would keep identities, device roles, portal roles, worker capabilities, sandbox rules, artifact manifests, evidence bundles, payments or credits, reputation records, revocations, and memory classes separate. Artifact stewards could request work, but the hive would govern whether that work is lawful for its devices, data, family roles, budget, and physical environment.",
+        "",
+        "The endpoint remains architectural. Hive support stays at `argument` until node inventories, policy-first scheduler traces, privacy and offline-mode tests, energy and budget records, contribution ledgers, and portal-continuity checks show that owned edge compute can join the stack without becoming an unmanaged compute swarm."
+      ]
+    },
+    {
+      "id": "v1_0.personal_compute_hives.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the checklist-shaped minimum hive implementation with concise reader prose while preserving the canonical AI/research implementation ladder.",
+      "content_lines": [
+        "The first hive should be deliberately small: a local dashboard, signed device cards, portal cards, a typed job queue, policy-first rejection before scoring, approval receipts for sensitive boundaries, and an artifact log that records decisions, outputs, residuals, and revocations.",
+        "",
+        "Federation can exist in the record model before it is enabled. The minimum should not include public federation, autonomous spending, private-data rented-node execution, or background operation across family devices without explicit enrollment.",
+        "",
+        "This repository has the record-shape starting point for that experiment: schemas and valid fixtures for device resource cards, portal cards, hive job contracts, bids, scheduling decisions, approval receipts, and federation leases. Those fixtures prove only that the public records validate locally. They do not prove that a hive scheduler exists or that edge execution is safe."
+      ]
     }
   ]
 }

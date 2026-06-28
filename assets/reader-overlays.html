@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 28,
+  "operation_count": 33,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -29,6 +29,18 @@
       },
       "content": "The steward's records are deliberately plain because they need to survive across tools. The `ArtifactStewardCharter` binds the steward to one artifact and records mission, non-goals, maintainers, governance model, authority ceiling, budget policy, evidence policy, release policy, federation policy, and sunset criteria. The `ProjectWorkContract` turns roadmap intent into bounded work by naming the objective, context references, allowed files or systems, allowed tools, forbidden tools, outputs, acceptance tests, review gates, evidence references, budget, deadline, rollback, and non-claims.\n\nThe `ContributionLedgerEntry` records contribution without collapsing credit, money, votes, and evidence. Authorship, review role, evidence role, compensation reference, reputation signal, governance effect, and conflict notes remain separate. The `TreasuryPolicyRecord` bounds funds, compute credits, bounties, recurring operations, and freezes through policy id, artifact id, mode, autonomous limits, single-action limits, compute or rental limits, approval thresholds, protected spend classes, freeze authorities, and audit requirements.\n\nThe `EventTaintRecord` keeps repository and worker events from becoming privileged control text. It records event source, actor, surface, taint state, trusted fields, untrusted fields, forbidden control uses, review requirements, sanitized artifacts, and residuals. The `StewardActionDecision` explains what the steward proposed, ran, blocked, or escalated, including authority basis, inputs, rejected options, approvals, evidence references, residuals, affected artifacts, and non-claims.\n\nThe `SunsetReviewRecord` is the death-protocol object. It records value signal, active users, active maintainers, open risks, funds, dependencies, archival plan, fork or transfer path, and appeal path. Together these records make stewardship inspectable before it becomes machinery.",
       "rationale": "Turn the project-object catalog table into prose for the relaxed reader path without removing the canonical record vocabulary."
+    },
+    {
+      "id": "v1_0.artifact_stewards.beyond_state_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "A mature stewardship layer would be a project-lifecycle operating system, but not a project owner. It would keep mission, memory, roadmap, work, funds, compute, contributors, evidence, releases, governance, and sunset criteria inspectable across many human and AI work cycles.\n\nThe steward's power would come only from explicit records: a charter, work contracts, contribution ledgers, treasury policy, event-taint rules, release evidence, federation contracts, action decisions, and sunset reviews. Humans, maintainers, communities, project hives, personal hives, CI runners, and rented compute would receive scoped contracts rather than inheriting project authority.\n\nThe mature system would make spending, compute, contribution credit, governance influence, releases, appeals, forks, and exit paths visible without forcing people to ask the steward for permission to understand the project. It would also know when to stop: if value, maintainership, funds, mission coherence, or safety posture falls below the charter threshold, ordinary work generation should yield to transfer, archive, freeze, or sunset.\n\nThat endpoint remains unimplemented here. It should stay at `argument` support until workflow runners, treasury boundaries, event-taint pipelines, governance gates, release checks, sunset protocols, and behavioral tests show that stewardship can coordinate a project without seizing it.",
+      "rationale": "Replace the dense steward-OS target architecture with reader prose while preserving the canonical AI/research lifecycle-control checklist."
     },
     {
       "id": "v1_0.asi_stack_not_model.problem_reader_replace",
@@ -67,6 +79,18 @@
       "rationale": "Replace the proof-receipt lifecycle table with reader prose while preserving the canonical AI/research receipt-state matrix."
     },
     {
+      "id": "v1_0.circle_contracts.beyond_state_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "In its finished form, Circle proof-carrying contracts would act as a transport service for small structural facts. A finite fact could move through the ASI Stack with its theorem reference, deterministic fields, fingerprint, resolver state, replay expectation, consumer gate, and non-claims still attached.\n\nThe point is not to make proof language grander. It is to make it harder for proof language to drift. A receipt should let another layer use a structural fact while also seeing exactly what the fact does not establish: model quality, real-valued deployment behavior, runtime efficiency, memory improvement, downstream usefulness, or broad safety.\n\nThe mature transport lane would keep receipt states separate from capability states. A receipt may be theorem-linked, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, or superseded; none of those states is a measured model result. Stale theorem IDs become residuals, fingerprint mismatches block replay, and workload-blocked receipts preserve structure without promotion.\n\nThe book has not demonstrated that transport service. The support state remains `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims can travel without overstating what the proof stack established.",
+      "rationale": "Replace the dense proof-contract transport target architecture with reader prose while preserving the canonical AI/research receipt-field requirements."
+    },
+    {
       "id": "v1_0.command_contracts.validation_states_reader_replace",
       "target_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
       "action": "replace_section",
@@ -101,6 +125,18 @@
       },
       "content": "The source map is useful because each source contributes a different kind of discipline and a different limit. Benchmaxxing gives the book benchmark lifecycle language, anti-Goodhart pressure, regression duties, and residual accounting, but it does not supply a local benchmark result or a permanent intelligence metric. Spinoza contributes claim tiers, belief revision, contradiction handling, and downgrade behavior, but it does not prove open-domain autoformalization or arbitrary theorem validity.\n\nVIEA contributes durable ledgers for claims, artifacts, residuals, feedback, and regression coverage; that is not the same as a completed VIEA deployment or runtime benchmark. UAT contributes retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and sign-off patterns, while remaining unproven as a general truth-discovery system. Coherence Exchange contributes contestability, verification supply-chain, fork, exit, and audit vocabulary, but its epistemic-liquidity framing stays speculative and connector-bound.\n\nVerification Bandwidth contributes the most important reader-facing warning: loading source material into context is not equivalent to verifying the claim. Contradiction-rate tests and the proposed theory are still unrun here. Taken together, these sources justify a disciplined claim/evidence vocabulary, not a stronger support state. The claim stays at architectural argument until a specific evidence transition closes the remaining boundary.",
       "rationale": "Replace the claim-source contribution matrix with reader prose while preserving the canonical AI/research source-boundary table."
+    },
+    {
+      "id": "v1_0.proof_envelope.beyond_state_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "The endpoint for this layer is not a single theorem that claims to prove safety, alignment, or intelligence. It is a claims control plane: every formal-looking promise has to travel with the artifact that actually supports it, the command that checked it, the boundary it covers, and the claims it refuses to support.\n\nIn a mature stack, chapters, protocols, releases, and runtime modules would consume proofs only through typed records. A Lean predicate, schema validation, process check, behavior test, benchmark, external theorem reference, and research backlog item would remain different kinds of authority. They could inform one another, but none of them could quietly stand in for the others.\n\nThe important future work is semantic adequacy. A finite predicate can build cleanly and still be the wrong predicate for the boundary the prose wants to defend. The mature proof envelope would therefore ask whether each proof is not only valid in its lane, but adequate for the consumer trying to rely on it. Stale proofs, orphaned targets, borrowed theorem ids, and claim-from-prose errors would become downgrade or residual events rather than confidence theater.\n\nWith that envelope in place, the stack could use mechanized record-level claims without pretending they prove deployed enforcement, empirical model quality, benchmark success, source truth, or broad ASI safety. The endpoint remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show exactly where each formal predicate can carry prose.",
+      "rationale": "Replace the dense proof-envelope target-architecture checklist with reader prose while preserving the canonical AI/research proof-consumption requirements."
     },
     {
       "id": "v1_0.fast_generation.insufficiency_reader_replace",
@@ -221,6 +257,30 @@
       },
       "content": "A hive is also a memory topology. Artifact memory holds documents, code, diagrams, builds, logs, and release bundles; it needs provenance, backup policy, and a durable store. Episodic memory holds meetings, sessions, approvals, and task events; it needs scoped retention and owner-visible review. Semantic memory holds concepts, source notes, embeddings, and claim references; it should stay source-bound and revocable through VCM rather than becoming an unowned vector swamp.\n\nProcedural memory is different again. Repeated workflows compiled into tools need tests, preconditions, postconditions, retirement rules, and failure evidence. Device memory records benchmarks, thermal history, reliability, and dropout events so the scheduler can make better placement decisions, but that history must not expand a node's authority. Trust memory tracks safe or unsafe behavior by nodes, projects, workers, or providers; it should be evidence-linked, contestable, and decay-aware rather than permanent reputation folklore.\n\nFamily and project memory require the sharpest boundary. Family memory may include learning context, guardian decisions, shared household records, or sensitive events, so dignity, role scope, and minimal logging matter more than convenience. Project memory belongs to issues, pull requests, contracts, CI logs, releases, steward decisions, and artifact bundles; it should remain artifact-bound and auditable.\n\nTreating all of these memories as one store erases the point of a hive. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context may exist, which device can materialize it, who can inspect it, and how it can be revoked.",
       "rationale": "Turn the memory topology table into reader prose so the human edition keeps the conceptual distinction without carrying dense matrix formatting."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.beyond_state_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "A mature personal compute hive would be an owned compute fabric for a person, family, project, or temporary federation. It would let work run near the right data and device without treating reachability as authority, convenience as consent, or cheap rented compute as a reason to move private context.\n\nThe fabric would classify jobs before scheduling them. Data sensitivity, tool authority, physical-world risk, federation scope, cost, energy, and verification requirements would shape which phones, laptops, dashboards, local GPUs, NAS boxes, old machines, workshop computers, project runners, or rented nodes may even bid. Policy filtering would happen before optimization, and approval receipts would bind sensitive work to a specific person, boundary, and time window.\n\nThe Hive-to-Hive protocol would keep identities, device roles, portal roles, worker capabilities, sandbox rules, artifact manifests, evidence bundles, payments or credits, reputation records, revocations, and memory classes separate. Artifact stewards could request work, but the hive would govern whether that work is lawful for its devices, data, family roles, budget, and physical environment.\n\nThe endpoint remains architectural. Hive support stays at `argument` until node inventories, policy-first scheduler traces, privacy and offline-mode tests, energy and budget records, contribution ledgers, and portal-continuity checks show that owned edge compute can join the stack without becoming an unmanaged compute swarm.",
+      "rationale": "Replace the dense hive target-architecture checklist with reader prose while preserving the canonical AI/research protocol surface."
+    },
+    {
+      "id": "v1_0.personal_compute_hives.minimum_viable_reader_replace",
+      "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The first hive should be deliberately small: a local dashboard, signed device cards, portal cards, a typed job queue, policy-first rejection before scoring, approval receipts for sensitive boundaries, and an artifact log that records decisions, outputs, residuals, and revocations.\n\nFederation can exist in the record model before it is enabled. The minimum should not include public federation, autonomous spending, private-data rented-node execution, or background operation across family devices without explicit enrollment.\n\nThis repository has the record-shape starting point for that experiment: schemas and valid fixtures for device resource cards, portal cards, hive job contracts, bids, scheduling decisions, approval receipts, and federation leases. Those fixtures prove only that the public records validate locally. They do not prove that a hive scheduler exists or that edge execution is safe.",
+      "rationale": "Replace the checklist-shaped minimum hive implementation with concise reader prose while preserving the canonical AI/research implementation ladder."
     },
     {
       "id": "v1_0.planning_control.node_lifecycle_reader_replace",

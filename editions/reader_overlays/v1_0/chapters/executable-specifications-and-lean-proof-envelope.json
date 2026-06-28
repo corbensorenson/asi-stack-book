@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+  "operations": [
+    {
+      "id": "v1_0.proof_envelope.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense proof-envelope target-architecture checklist with reader prose while preserving the canonical AI/research proof-consumption requirements.",
+      "content_lines": [
+        "The endpoint for this layer is not a single theorem that claims to prove safety, alignment, or intelligence. It is a claims control plane: every formal-looking promise has to travel with the artifact that actually supports it, the command that checked it, the boundary it covers, and the claims it refuses to support.",
+        "",
+        "In a mature stack, chapters, protocols, releases, and runtime modules would consume proofs only through typed records. A Lean predicate, schema validation, process check, behavior test, benchmark, external theorem reference, and research backlog item would remain different kinds of authority. They could inform one another, but none of them could quietly stand in for the others.",
+        "",
+        "The important future work is semantic adequacy. A finite predicate can build cleanly and still be the wrong predicate for the boundary the prose wants to defend. The mature proof envelope would therefore ask whether each proof is not only valid in its lane, but adequate for the consumer trying to rely on it. Stale proofs, orphaned targets, borrowed theorem ids, and claim-from-prose errors would become downgrade or residual events rather than confidence theater.",
+        "",
+        "With that envelope in place, the stack could use mechanized record-level claims without pretending they prove deployed enforcement, empirical model quality, benchmark success, source truth, or broad ASI safety. The endpoint remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show exactly where each formal predicate can carry prose."
+      ]
+    }
+  ]
+}

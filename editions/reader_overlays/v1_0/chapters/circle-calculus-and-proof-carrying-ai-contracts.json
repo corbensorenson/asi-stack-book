@@ -20,6 +20,25 @@
         "",
         "These states keep proof authority and consumer authority separate. A receipt can carry a narrow structural fact without carrying a model-quality claim."
       ]
+    },
+    {
+      "id": "v1_0.circle_contracts.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense proof-contract transport target architecture with reader prose while preserving the canonical AI/research receipt-field requirements.",
+      "content_lines": [
+        "In its finished form, Circle proof-carrying contracts would act as a transport service for small structural facts. A finite fact could move through the ASI Stack with its theorem reference, deterministic fields, fingerprint, resolver state, replay expectation, consumer gate, and non-claims still attached.",
+        "",
+        "The point is not to make proof language grander. It is to make it harder for proof language to drift. A receipt should let another layer use a structural fact while also seeing exactly what the fact does not establish: model quality, real-valued deployment behavior, runtime efficiency, memory improvement, downstream usefulness, or broad safety.",
+        "",
+        "The mature transport lane would keep receipt states separate from capability states. A receipt may be theorem-linked, fingerprinted, resolver-checked, consumer-gated, workload-blocked, retired, or superseded; none of those states is a measured model result. Stale theorem IDs become residuals, fingerprint mismatches block replay, and workload-blocked receipts preserve structure without promotion.",
+        "",
+        "The book has not demonstrated that transport service. The support state remains `argument` until receipt records, theorem-resolution checks, replay status, consumer-gate tests, stale-proof failure behavior, and downstream promotion reviews show that proof-carrying claims can travel without overstating what the proof stack established."
+      ]
     }
   ]
 }

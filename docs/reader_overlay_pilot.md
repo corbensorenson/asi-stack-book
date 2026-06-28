@@ -91,6 +91,23 @@ The following reader-continuity pass added one active operation under `editions/
 
 - `v1_0.mathematical_substrates.adoption_lanes_reader_replace` replaces the generated-reader and live Human-view `Adoption packet lanes` subsection while preserving the canonical AI/research promotion-blocker matrix.
 
+The next reader-continuity pass added one active operation under `editions/reader_overlays/v1_0/chapters/executable-specifications-and-lean-proof-envelope.json`:
+
+- `v1_0.proof_envelope.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research proof-envelope target checklist.
+
+The same medium-priority reader-continuity pass added one active operation to `editions/reader_overlays/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.json`:
+
+- `v1_0.circle_contracts.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research proof-contract transport checklist.
+
+The same medium-priority reader-continuity pass added one active operation to `editions/reader_overlays/v1_0/chapters/artifact-steward-agents-and-living-project-governance.json`:
+
+- `v1_0.artifact_stewards.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research steward-OS target checklist.
+
+The same medium-priority reader-continuity pass added two active operations to `editions/reader_overlays/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.json`:
+
+- `v1_0.personal_compute_hives.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research hive protocol checklist.
+- `v1_0.personal_compute_hives.minimum_viable_reader_replace` replaces the generated-reader and live Human-view `Minimum Viable Implementation` section while preserving the canonical AI/research minimum implementation ladder.
+
 Canonical AI/research tables and evidence surfaces remain in the chapter source. Some chapters have narrow subsection-heading anchors so overlays can target a table without replacing an entire mechanism section. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
 ## Why These Overlays Exist
@@ -99,11 +116,11 @@ The v1.0 roadmap allows the normal reader edition to diverge from the AI/researc
 
 The opening chapter is a good pilot because it has high reader-framing value and low claim risk. The overlay does not change the core claim. It rewrites the first problem statement and closing summary into calmer book prose so the Human view can begin as a readable book while the AI/research view remains a full architecture workbench.
 
-The Personal Compute Hives overlays convert four dense generated-reader tables into narrative prose while preserving the canonical AI/research tables in the live source. They reduce the generated reader manuscript's table load without claiming that the hive scheduler, federation protocol, approval path, or memory topology has been implemented.
+The Personal Compute Hives overlays convert four dense generated-reader tables and two checklist-shaped implementation-horizon sections into narrative prose while preserving the canonical AI/research tables, minimum implementation ladder, and mature protocol checklist in the live source. They reduce the generated reader manuscript's table load and long-chapter pressure without claiming that the hive scheduler, federation protocol, approval path, owned-edge execution, rented-node sandbox, or memory topology has been implemented.
 
 The Policy Optimization overlays convert method-family, target-policy, training-mode, and external-literature tables into narrative prose while preserving the canonical AI/research tables in the live source. They reduce the generated reader manuscript's table load without claiming that any PPO, DPO, GRPO, RLVR, router-policy, context-policy, verifier-policy, execution-policy, or reasoning-budget training run has been performed.
 
-The Artifact Steward Agents overlays convert autonomy, treasury, and project-object tables into narrative prose while preserving the canonical AI/research matrices in the live source. They reduce the generated reader manuscript's table load without claiming that a steward bot, treasury engine, event-taint workflow, governance runner, release runner, or project federation harness exists.
+The Artifact Steward Agents overlays convert autonomy, treasury, project-object, and mature stewardship endpoint material into narrative prose while preserving the canonical AI/research matrices and lifecycle-control checklist in the live source. They reduce the generated reader manuscript's table load and long-chapter pressure without claiming that a steward bot, treasury engine, event-taint workflow, governance runner, release runner, sunset protocol, or project federation harness exists.
 
 The Semantic Representation overlays convert the semantic-node lifecycle and consumer-policy tables into narrative prose while preserving the canonical AI/research mechanism, record vocabulary, and Mermaid gate. They reduce the generated reader manuscript's table load without claiming a TreeLLM implementation, semantic graph implementation, grounding benchmark, hierarchy-revision result, representation-utility result, consumer-policy harness, or support-state promotion.
 
@@ -113,7 +130,7 @@ The Fast Generation overlays convert the metric code block and generation-mode t
 
 The Labor OS overlay converts the typed-job lifecycle-state table into narrative prose while preserving the canonical AI/research state matrix, lifecycle vocabulary, and execution boundary. It reduces the generated reader manuscript's table load without claiming a scheduler, permission service, approval service, adapter runner, completion-receipt implementation, replay system, lifecycle harness result, or support-state promotion.
 
-The Circle Contracts overlay converts the proof-receipt lifecycle table into narrative prose while preserving the canonical AI/research receipt-state matrix and proof/consumer authority boundary. It reduces the generated reader manuscript's table load without claiming Circle theorem replay, theorem-id resolution, receipt replay, fingerprint validation, generated contract packs, downstream model-quality evidence, or support-state promotion.
+The Circle Contracts overlays convert the proof-receipt lifecycle table and mature proof-contract transport target into narrative prose while preserving the canonical AI/research receipt-state matrix, proof/consumer authority boundary, and transport checklist. They reduce the generated reader manuscript's table load and proof-density pressure without claiming Circle theorem replay, theorem-id resolution, receipt replay, fingerprint validation, generated contract packs, downstream model-quality evidence, or support-state promotion.
 
 The Planning overlay converts the plan-node lifecycle-state table into narrative prose while preserving the canonical AI/research state matrix and planning-control boundary. It reduces the generated reader manuscript's table load without claiming a planner implementation, dependency-soundness proof, context-demand prediction, runtime replanning trace, scheduler result, or support-state promotion.
 
@@ -135,6 +152,8 @@ The Efficient ASI overlay converts the route-outcome state table into narrative 
 
 The Mathematical and Search Substrates overlay converts the substrate-adoption lane table into narrative prose while preserving the canonical AI/research promotion-blocker matrix. It reduces the generated reader manuscript's table load without claiming substrate usefulness, baseline comparison results, representation-efficiency results, sequence-substrate A/B results, Circle/Theseus transfer results, or support-state promotion.
 
+The Executable Specifications and Lean Proof Envelope overlay converts the mature proof-envelope target checklist into narrative prose while preserving the canonical AI/research proof/spec registry, semantic adequacy, consumer-gate, stale-proof, and receipt-lane requirements. It reduces generated reader proof-density without claiming proof adequacy, semantic adequacy review completion, artifact audit completion, runtime consumer behavior, accepted evidence transitions, or support-state promotion.
+
 ## Review Contract
 
 Reviewers should compare the generated `build/reader_edition/reader_delta_report.md` against the tracked operation file. The delta report should show both operation digests and before/after excerpts after `python3 scripts/build_reader_edition.py` runs.
@@ -145,11 +164,11 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 28 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 28 active and 28 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 28 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 28 active operations and 28 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 28 reader overlay operations applied.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 33 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 33 active and 33 applied operations.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 33 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 33 active operations and 33 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 33 reader overlay operations applied.
 - `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.
