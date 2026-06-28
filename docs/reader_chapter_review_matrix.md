@@ -10,11 +10,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 38 |
-| review_status:spot_checked | 16 |
+| review_status:reviewed | 42 |
+| review_status:spot_checked | 12 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 50 |
+| disposition:no_immediate_action | 52 |
 | disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
@@ -60,10 +60,10 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `circle-calculus-and-proof-carrying-ai-contracts` | spot_checked | medium_priority_manual_review | 2 | reader_overlay_active, companion_note_candidate, no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
