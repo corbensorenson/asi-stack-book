@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-27 - v1.0 improvement goal insufficiency-opener prose polish
+
+- Reworked repeated reader-visible `The insufficiency is` openers across nine chapters so each insufficiency passage names its actual architectural failure directly: rollback gaps, finite-proof/learned-behavior gaps, cross-ledger spending, evidence scope drift, semantic proof drift, substrate leakage, reward substitution, route opacity, and self-improvement accounting. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, and v1.0 status guard so future insufficiency prose avoids the same generic opener. Refreshed the v1.0 status manuscript scale to 183,961 chapter words excluding YAML and 191,460 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-27 - v1.0 improvement goal reader overlay source contract
 
 - Hardened the reader-edition delta workflow so the tracked overlay manifest and chapter operation files are explicitly the editable source for human-reader-only semantic deltas, while generated `reader_delta_report.md` remains review output that is regenerated from overlays and canonical chapter source. Extended the generated delta report with editable-source, overlay-file, source-policy, and review-checklist sections; added manifest-level delta/report contracts; tightened release-profile and reader-overlay validators; and updated the outline, workflow docs, release appendix, edition docs, status snapshot, public readiness map, site quality standard, and writing runbook. The v1.0 overlay manifest still has zero active operations, so no reader-only prose was invented in this pass. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

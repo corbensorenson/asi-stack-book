@@ -74,7 +74,7 @@ The reader-facing distinction is structural memory versus useful memory. Structu
 
 This matters because long-context systems often fail by sounding continuous while their memory contract is broken. A stale cell may still be fluent. A covered lag may still be irrelevant. A recurrence loop may produce more text while making no progress. The contract gives later validators a place to look for those failures before they become invisible inside a model trace.
 
-The insufficiency is especially sharp at the boundary between finite proofs and learned behavior. A finite proof can certify a slot property, coverage property, or loop-exit property. It cannot certify that a learned model used the right information in the right way unless a workload-specific evaluation supplies that evidence.
+Finite proofs and learned behavior meet at the sharpest gap. A finite proof can certify a slot property, coverage property, or loop-exit property. It cannot certify that a learned model used the right information in the right way unless a workload-specific evaluation supplies that evidence.
 
 ## Core Claim
 

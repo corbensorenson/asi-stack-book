@@ -165,6 +165,7 @@ def main() -> None:
         "`The book needs`",
         "`The stack needs`",
         "`The ASI Stack needs`",
+        "`The insufficiency is`",
         "`The stack should`",
         "`The record should`",
         "`The response is`",

@@ -98,7 +98,7 @@ A reward signal can also become a failure channel. Human preference can reward p
 
 The stack therefore needs policy optimization to be governed by the same evidence discipline as every other layer.
 
-The insufficiency is reward substitution. A reward, preference label, verifier score, latency metric, or benchmark result stands in for the actual claim: safer routing, better context, truthful answers, lower cost, or stronger reasoning. The update record must keep the proxy and the target claim separate.
+Reward substitution is the policy-learning failure. A reward, preference label, verifier score, latency metric, or benchmark result stands in for the actual claim: safer routing, better context, truthful answers, lower cost, or stronger reasoning. The update record must keep the proxy and the target claim separate.
 
 ## Core Claim
 

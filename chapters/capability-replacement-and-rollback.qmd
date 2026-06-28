@@ -76,7 +76,7 @@ The key reader-facing distinction is candidate improvement versus accepted repla
 
 Rollback also has to be more specific than nostalgia for the prior version. The prior artifact must still exist, the old state must be readable or compensated, external effects must be accounted for, and the monitor window must say when rollback is triggered. If any of those pieces is missing, the transaction can still record a partial recovery plan, but it should not claim reversible improvement.
 
-The insufficiency is one-way improvement. A candidate is allowed to replace the old path because the forward story is attractive, while the reverse path, state compatibility, dependent artifacts, rights preservation, and external effects are left implicit.
+One-way improvement creates the rollback gap. A candidate is allowed to replace the old path because the forward story is attractive, while the reverse path, state compatibility, dependent artifacts, rights preservation, and external effects are left implicit.
 
 That one-way framing also hides who owns the risk. If a replacement fails, someone or something must know which artifact to restore, which state migration to reverse or compensate, which users or downstream routes were affected, and which residual remains unresolved. Without that owner, rollback is only a comforting word.
 
