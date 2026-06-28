@@ -129,9 +129,12 @@ local HTML/EPUB/DOCX render dry run, basic structural artifact inspection, and
 UTF-8 PDF probe with ignored snapshots; and
 `docs/reader_artifact_layout_review.md` records representative PDF sampling and
 a broader 28 page-view HTML layout/navigation probe. The full generated-reader chapter-text review queue
-is complete for the current 54 chapters; broader reader overlays, broader
-EPUB/DOCX/PDF artifact inspection, curated reader-manuscript graduation,
-audio, and release records remain open.
+is complete for the current 54 chapters. `docs/reader_companion_note_routing_review.md`
+and `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
+chapter-level companion-note routing for the three proof/governance chapters
+flagged by the review matrix, and generated reader/audio companion notes consume
+that routing manifest. Broader EPUB/DOCX/PDF artifact inspection, curated
+reader-manuscript graduation, audio review, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
@@ -186,6 +189,13 @@ Chapter review matrix:
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.
 - `docs/curated_reader_graduation_review.md` records the current graduation decision: do not create curated reader source for v1.0 yet; keep generated reader source plus overlays, with Artifact Steward Agents retained as the first curated-manuscript candidate.
+
+Companion-note routing:
+
+- `docs/reader_companion_note_routing_review.md` records the current routing decision for `circle-calculus-and-proof-carrying-ai-contracts`, `executable-specifications-and-lean-proof-envelope`, and `artifact-steward-agents-and-living-project-governance`.
+- `editions/reader_manuscript/v1_0/companion_note_routing.json` is the tracked routing manifest consumed by generated reader and audio companion notes.
+- Dense proof/governance vocabulary can receive glossary, quick-reference, and spoken-treatment support, but meaning-critical support limits, proof boundaries, governance boundaries, release blockers, and non-claims must remain in the reader spine.
+- This routing pass does not create a reader release, ebook/document/PDF artifact approval, audio approval, curated reader chapter, support-state promotion, proof result, benchmark result, runtime result, or release-readiness claim.
 
 Reader-source divergence rule:
 

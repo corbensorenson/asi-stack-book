@@ -53,6 +53,11 @@
     "A reconciliation report exists before any reader artifact is rendered from curated source.",
     "The release record names curated reader source only after review actually happens."
   ],
+  "companion_note_routing": {
+    "path": "editions/reader_manuscript/v1_0/companion_note_routing.json",
+    "review": "docs/reader_companion_note_routing_review.md",
+    "policy": "Track chapter-level companion-note decisions for reader, e-reader, and audio review while preserving meaning-critical caveats in the reader spine."
+  },
   "chapter_review_matrix": {
     "path": "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
     "summary": "docs/reader_chapter_review_matrix.md",

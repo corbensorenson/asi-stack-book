@@ -142,7 +142,7 @@ reader release or format-artifact approval.
 
 - The generated manuscript now has full chapter-text review records for all 54 chapters. That completes the generated-reader chapter-text queue, but it does not create a tagged reader release, a curated parallel reader manuscript, or reviewed format artifacts.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
-- Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
+- Some reader chapters still contain useful but dense schema-like material. The current three companion-note candidates now have routing decisions in `docs/reader_companion_note_routing_review.md` and `editions/reader_manuscript/v1_0/companion_note_routing.json`; a final human edition still needs release review before any generated companion notes, e-reader notes, or audio treatment can be approved.
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
@@ -152,7 +152,7 @@ reader release or format-artifact approval.
 
 The next Phase 2 pass should:
 
-1. Move from generated-reader chapter-text review into release-focused human-edition work: curated prose decisions, layout/navigation inspection, companion-note routing, and e-reader readability.
+1. Move from generated-reader chapter-text review into release-focused human-edition work: curated prose decisions, layout/navigation inspection, companion-note release review, and e-reader readability.
 2. Classify each finding as a canonical live-book edit, a reader-only overlay, companion-note treatment, or no action.
 3. Add reader-only semantic deltas under `editions/reader_overlays/v1_0/` only when the live AI/research source should not change.
 4. Keep evidence boundaries, support states, implementation horizons, and non-claims inherited from the live book.

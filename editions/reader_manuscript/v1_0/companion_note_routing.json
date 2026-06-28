@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "active_review_routing",
+  "purpose": "Record chapter-level companion-note decisions for reader, e-reader, and audio review without moving meaning-critical caveats out of the reader spine.",
+  "source_review_refs": [
+    "docs/reader_continuity_review.md#medium-priority-queue-decisions",
+    "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+    "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+    "docs/curated_reader_graduation_review.md#candidate-chapters",
+    "docs/reader_companion_note_routing_review.md"
+  ],
+  "records": [
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "title": "Circle Calculus and Proof-Carrying AI Contracts",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep proof receipt states, theorem references, resolver and replay boundaries, consumer gates, workload blockers, and explicit non-claims in the reader chapter.",
+      "companion_treatment": "Add a future e-reader/audio companion note that gives a short glossary for proof receipt, theorem-linked receipt, resolver-checked, consumer-gated, workload-blocked, fingerprint, replay, and theorem laundering.",
+      "audio_treatment": "Summarize the receipt lifecycle in narration and route the state vocabulary to companion notes rather than reading field lists verbatim.",
+      "dense_material": [
+        "proof receipt lifecycle states",
+        "proof-contract receipt fields",
+        "theorem reference, resolver, replay, fingerprint, and consumer-gate vocabulary"
+      ],
+      "must_remain_in_reader": [
+        "proof authority is not model-quality authority",
+        "workload, baseline, metric, and evidence artifacts are still required before downstream quality or runtime promotion",
+        "unreplayed or stale theorem references stay residual rather than becoming proof evidence"
+      ],
+      "companion_note_material": [
+        "plain-language receipt-state glossary",
+        "short example of a structural receipt that blocks a quality claim",
+        "audio note explaining why proof vocabulary is retained but not treated as capability evidence"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not claim local replay of external Circle proofs.",
+        "This route does not promote any model-quality, runtime, memory, context, safety, or ASI capability claim."
+      ]
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "title": "Executable Specifications and Lean Proof Envelope",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep the distinction between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and research backlog in the reader chapter.",
+      "companion_treatment": "Add a future companion note that maps proof lanes to ordinary reader language and explains why each lane has a different authority boundary.",
+      "audio_treatment": "Narrate the proof envelope as a claims-control discipline and route detailed lane vocabulary to companion notes or a glossary entry.",
+      "dense_material": [
+        "proof target records",
+        "artifact lanes",
+        "semantic adequacy review",
+        "proof/spec receipts"
+      ],
+      "must_remain_in_reader": [
+        "a passed Lean build supports only the finite predicate it checks",
+        "schemas, tests, benchmarks, and theorem references are different evidence lanes",
+        "semantic adequacy remains required before proof artifacts can strengthen broader prose claims"
+      ],
+      "companion_note_material": [
+        "proof-lane glossary for Lean, schema, process validator, behavior test, benchmark, external theorem reference, and semantic adequacy",
+        "short example showing a valid finite predicate that is too narrow for a broad safety claim",
+        "audio note for when proof details are summarized instead of read verbatim"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not claim proof adequacy beyond the recorded finite predicates.",
+        "This route does not promote any chapter claim above architectural argument."
+      ]
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "title": "Artifact Steward Agents and Living Project Governance",
+      "routing_decision": "future_curated_review_with_companion_note",
+      "reader_treatment": "Keep charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, worker federation, project-economy, and non-ownership boundaries in the reader chapter for v1.0.",
+      "companion_treatment": "Add a future companion note for the implementation ladder and project-object quick reference; revisit curated reader compression during release editing if the chapter still feels too long.",
+      "audio_treatment": "Summarize project objects and the implementation ladder in narration, with a companion note for exact record names and lifecycle order.",
+      "dense_material": [
+        "seven steward project records",
+        "autonomy and treasury modes",
+        "project object field vocabulary",
+        "worker federation and artifact economy ladder"
+      ],
+      "must_remain_in_reader": [
+        "the steward is not the owner",
+        "authority, spending, governance, and release actions remain bounded by explicit records and human approval",
+        "event taint and sunset policy are governance boundaries, not optional implementation details"
+      ],
+      "companion_note_material": [
+        "one-page project-object quick reference",
+        "implementation ladder summary for e-reader and audio users",
+        "future curated-reader compression notes if release editing decides overlays are too broad"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed",
+        "curated_reconciliation_not_recorded"
+      ],
+      "non_claims": [
+        "This route does not create a curated reader chapter.",
+        "This route does not claim steward workflow execution, treasury execution, governance correctness, or release readiness."
+      ]
+    }
+  ],
+  "non_claims": [
+    "This routing manifest is not a reader release record.",
+    "This routing manifest is not an EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifact record.",
+    "This routing manifest does not move meaning-critical uncertainty out of the reader spine.",
+    "This routing manifest does not promote any claim support state."
+  ]
+}

@@ -333,6 +333,43 @@ def write_audio_companion_notes(
         f"{totals['mermaid_diagrams']} | "
         f"{totals['code_or_schema_blocks']} | "
         f"{totals['images']} |",
+    ])
+
+    companion_routing = build_reader_edition.load_companion_routing(companion_policy)
+    if companion_routing.get("configured"):
+        records = companion_routing.get("records", [])
+        lines.extend([
+            "",
+            "## Chapter-Level Routing Decisions",
+            "",
+            f"- Routing manifest: `{companion_routing.get('manifest_path')}`",
+            f"- Routing status: `{companion_routing.get('status')}`",
+            "",
+        ])
+        if isinstance(records, list) and records:
+            lines.extend([
+                "| Chapter | Reader boundary | Spoken/companion treatment |",
+                "|---|---|---|",
+            ])
+            for record in records:
+                if not isinstance(record, dict):
+                    continue
+                route = " ".join(
+                    part
+                    for part in (
+                        str(record.get("companion_treatment", "")).strip(),
+                        str(record.get("audio_treatment", "")).strip(),
+                    )
+                    if part
+                )
+                lines.append(
+                    "| "
+                    f"`{build_reader_edition.markdown_table_cell(record.get('chapter_id', ''))}` | "
+                    f"{build_reader_edition.markdown_table_cell(record.get('reader_treatment', ''))} | "
+                    f"{build_reader_edition.markdown_table_cell(route)} |"
+                )
+
+    lines.extend([
         "",
         "## Companion Topics To Review",
         "",

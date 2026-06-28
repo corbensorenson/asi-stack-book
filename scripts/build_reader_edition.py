@@ -493,6 +493,42 @@ def load_reader_overlay_context(profile: dict) -> dict[str, object]:
     }
 
 
+def markdown_table_cell(value: object, limit: int = 220) -> str:
+    text = re.sub(r"\s+", " ", str(value).strip())
+    if len(text) > limit:
+        text = text[: limit - 3].rstrip() + "..."
+    return text.replace("|", "\\|")
+
+
+def load_companion_routing(companion_policy: dict) -> dict[str, object]:
+    routing_ref = companion_policy.get("routing_manifest")
+    if routing_ref is None:
+        return {"configured": False, "manifest_path": None, "records": []}
+
+    routing_rel = normalized_relative_path(routing_ref, "companion_material_policy.routing_manifest")
+    routing_path = ROOT / routing_rel
+    if not routing_path.exists():
+        raise FileNotFoundError(f"Companion-note routing manifest not found: {routing_rel}")
+
+    data = load_json(routing_path)
+    if not isinstance(data, dict):
+        raise TypeError(f"{routing_rel}: companion-note routing manifest must contain an object.")
+    if data.get("schema_version") != "0.1":
+        raise ValueError(f"{routing_rel}: schema_version must be 0.1.")
+    records = data.get("records", [])
+    if not isinstance(records, list):
+        raise TypeError(f"{routing_rel}: records must be a list.")
+
+    return {
+        "configured": True,
+        "manifest_path": routing_rel,
+        "status": data.get("status"),
+        "purpose": data.get("purpose", ""),
+        "records": records,
+        "non_claims": data.get("non_claims", []),
+    }
+
+
 def heading_spans(text: str) -> list[dict[str, object]]:
     lines = text.splitlines()
     spans: list[dict[str, object]] = []
@@ -1170,6 +1206,45 @@ def write_reader_companion_notes(
             for target_file in target_files:
                 lines.append(f"- `{target_file}`")
 
+    companion_routing = summary.get("companion_routing", {})
+    if isinstance(companion_routing, dict) and companion_routing.get("configured"):
+        records = companion_routing.get("records", [])
+        lines.extend([
+            "",
+            "## Chapter-Level Routing Decisions",
+            "",
+            f"- Routing manifest: `{companion_routing.get('manifest_path')}`",
+            f"- Routing status: `{companion_routing.get('status')}`",
+            "",
+        ])
+        if isinstance(records, list) and records:
+            lines.extend([
+                "| Chapter | Decision | Reader treatment | Companion/audio route |",
+                "|---|---|---|---|",
+            ])
+            for record in records:
+                if not isinstance(record, dict):
+                    continue
+                companion_route = " ".join(
+                    part
+                    for part in (
+                        str(record.get("companion_treatment", "")).strip(),
+                        str(record.get("audio_treatment", "")).strip(),
+                    )
+                    if part
+                )
+                lines.append(
+                    "| "
+                    f"`{markdown_table_cell(record.get('chapter_id', ''))}` | "
+                    f"`{markdown_table_cell(record.get('routing_decision', ''))}` | "
+                    f"{markdown_table_cell(record.get('reader_treatment', ''))} | "
+                    f"{markdown_table_cell(companion_route)} |"
+                )
+        lines.extend([
+            "",
+            "Routing note: meaning-critical caveats, support limits, proof boundaries, governance boundaries, release blockers, and non-claims must remain in the reader manuscript. Companion notes can help with glossary, quick-reference, and spoken-treatment support, but they are not a substitute for the reader spine.",
+        ])
+
     lines.extend([
         "",
         "## Companion Topics To Review",
@@ -1238,6 +1313,7 @@ def write_reader_manifest(
         "human_only_blocks_unwrapped": summary.get("human_only_blocks_unwrapped", 0),
         "reader_overlay": summary.get("reader_overlay", {}),
         "reader_delta_report": summary.get("reader_delta_report", DEFAULT_DELTA_REPORT),
+        "companion_note_routing": summary.get("companion_routing", {}),
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
         "reader_spine_validation": spine_policy,
@@ -1363,6 +1439,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     finalize_reader_overlay_context(overlay_context)
     write_quarto(output_dir, structure, profile)
     overlay_summary = reader_overlay_summary(overlay_context)
+    companion_routing = load_companion_routing(companion_policy)
     summary = {
         "output_dir": str(output_dir),
         "profile": profile_id,
@@ -1380,6 +1457,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "formats": profile.get("publication_formats", []),
         "reader_overlay": overlay_summary,
         "reader_overlay_operations_applied": overlay_summary.get("applied_operations", 0),
+        "companion_routing": companion_routing,
     }
     delta_report_path = write_reader_delta_report(output_dir, profile, summary, overlay_summary)
     summary["reader_delta_report"] = delta_report_path
@@ -1483,6 +1561,13 @@ def main() -> None:
             )
             if not (output_dir / companion_path).exists():
                 raise SystemExit(f"Reader edition check failed: missing {companion_path}.")
+            companion_text = (output_dir / companion_path).read_text(encoding="utf-8")
+            if (
+                isinstance(companion_policy, dict)
+                and companion_policy.get("routing_manifest")
+                and "Chapter-Level Routing Decisions" not in companion_text
+            ):
+                raise SystemExit("Reader edition check failed: companion notes missing routing decisions.")
             delta_report_path = output_dir / str(summary.get("reader_delta_report", DEFAULT_DELTA_REPORT))
             if not delta_report_path.exists():
                 raise SystemExit("Reader edition check failed: missing reader_delta_report.md.")
@@ -1496,6 +1581,12 @@ def main() -> None:
                 raise SystemExit("Reader edition check failed: manifest missing reader_overlay.")
             if manifest.get("reader_delta_report") != str(summary.get("reader_delta_report", DEFAULT_DELTA_REPORT)):
                 raise SystemExit("Reader edition check failed: manifest reader_delta_report mismatch.")
+            if (
+                isinstance(companion_policy, dict)
+                and companion_policy.get("routing_manifest")
+                and not isinstance(manifest.get("companion_note_routing"), dict)
+            ):
+                raise SystemExit("Reader edition check failed: manifest missing companion_note_routing.")
             if not isinstance(manifest.get("reader_spine_validation"), dict):
                 raise SystemExit("Reader edition check failed: manifest missing reader_spine_validation.")
             handoff_review = manifest.get("handoff_continuity_review")

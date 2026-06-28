@@ -19,6 +19,16 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 ALLOWED_STATUS = {"not_graduated", "drafting", "reconciliation", "release_candidate", "released"}
 ALLOWED_RECONCILIATION_STATUS = {"not_started", "drafting", "blocked", "reconciled"}
+ALLOWED_ROUTING_STATUS = {
+    "retain_in_reader_spine_with_companion_note",
+    "future_curated_review_with_companion_note",
+}
+REQUIRED_ROUTING_RELEASE_BLOCKERS = {
+    "reader_release_record_not_created",
+    "format_artifact_not_reviewed",
+    "companion_note_not_release_reviewed",
+    "audio_script_not_reviewed",
+}
 REQUIRED_FIELDS = {
     "schema_version",
     "major_version",
@@ -30,6 +40,7 @@ REQUIRED_FIELDS = {
     "allowed_divergence",
     "blocked_divergence",
     "graduation_criteria",
+    "companion_note_routing",
     "chapter_review_matrix",
     "chapter_records",
     "reconciliation_report",
@@ -133,6 +144,25 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
     if "pacing" not in allowed or "section flow" not in allowed:
         errors.append("allowed_divergence must include pacing and section flow.")
 
+    routing = data.get("companion_note_routing")
+    if not isinstance(routing, dict):
+        errors.append("companion_note_routing must be an object.")
+    else:
+        if routing.get("path") != "editions/reader_manuscript/v1_0/companion_note_routing.json":
+            errors.append(
+                "companion_note_routing.path must be "
+                "editions/reader_manuscript/v1_0/companion_note_routing.json."
+            )
+        if routing.get("review") != "docs/reader_companion_note_routing_review.md":
+            errors.append("companion_note_routing.review must be docs/reader_companion_note_routing_review.md.")
+        policy = routing.get("policy")
+        if not isinstance(policy, str) or "reader spine" not in policy or "audio" not in policy:
+            errors.append("companion_note_routing.policy must mention reader spine and audio.")
+        for key in ("path", "review"):
+            value = routing.get(key)
+            if isinstance(value, str):
+                require_existing_path(f"companion_note_routing.{key}", value, errors)
+
     matrix = data.get("chapter_review_matrix")
     if not isinstance(matrix, dict):
         errors.append("chapter_review_matrix must be an object.")
@@ -153,6 +183,107 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
         policy = matrix.get("policy")
         if not isinstance(policy, str) or "book_structure.json" not in policy or "release blockers" not in policy:
             errors.append("chapter_review_matrix.policy must mention book_structure.json and release blockers.")
+
+
+def validate_companion_note_routing(
+    data: dict[str, Any],
+    chapters: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> None:
+    routing_ref = data.get("companion_note_routing")
+    if not isinstance(routing_ref, dict) or not isinstance(routing_ref.get("path"), str):
+        return
+
+    routing_path = ROOT / routing_ref["path"]
+    if not routing_path.exists():
+        return
+    routing = load_json(routing_path)
+    if not isinstance(routing, dict):
+        errors.append(f"{rel(routing_path)} must contain an object.")
+        return
+
+    if routing.get("schema_version") != "0.1":
+        errors.append(f"{rel(routing_path)} schema_version must be 0.1.")
+    if routing.get("major_version") != "v1.0":
+        errors.append(f"{rel(routing_path)} major_version must be v1.0.")
+    if routing.get("status") != "active_review_routing":
+        errors.append(f"{rel(routing_path)} status must be active_review_routing.")
+    purpose = routing.get("purpose")
+    if not isinstance(purpose, str) or "reader spine" not in purpose or "companion" not in purpose:
+        errors.append(f"{rel(routing_path)} purpose must mention reader spine and companion routing.")
+
+    source_refs = require_string_list("companion-note routing", "source_review_refs", routing.get("source_review_refs"), errors)
+    for ref in source_refs:
+        path = ref.split("#", 1)[0]
+        if path and not (ROOT / path).exists():
+            errors.append(f"companion-note routing source_review_refs path does not exist: {path}")
+
+    non_claims = require_string_list("companion-note routing", "non_claims", routing.get("non_claims"), errors)
+    non_claim_text = " ".join(non_claims).lower()
+    for phrase in ("not a reader release", "does not move meaning-critical uncertainty", "does not promote"):
+        if phrase not in non_claim_text:
+            errors.append(f"companion-note routing non_claims must include boundary phrase: {phrase}")
+
+    matrix_path = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_review_matrix.json"
+    matrix = load_json(matrix_path) if matrix_path.exists() else {}
+    matrix_rows = matrix.get("chapters", []) if isinstance(matrix, dict) else []
+    companion_candidates = {
+        str(row.get("chapter_id"))
+        for row in matrix_rows
+        if isinstance(row, dict)
+        and "companion_note_candidate" in [str(item) for item in row.get("dispositions", [])]
+    }
+
+    records = routing.get("records")
+    if not isinstance(records, list) or not records:
+        errors.append("companion-note routing records must be a non-empty list.")
+        return
+
+    seen: set[str] = set()
+    for index, record in enumerate(records):
+        owner = f"companion_note_routing.records[{index}]"
+        if not isinstance(record, dict):
+            errors.append(f"{owner} must be an object.")
+            continue
+        chapter_id = record.get("chapter_id")
+        if not isinstance(chapter_id, str) or chapter_id not in chapters:
+            errors.append(f"{owner}: chapter_id must reference a manifest chapter.")
+            continue
+        if chapter_id in seen:
+            errors.append(f"{owner}: duplicate chapter_id {chapter_id}.")
+        seen.add(chapter_id)
+        if chapter_id not in companion_candidates:
+            errors.append(f"{owner}: {chapter_id} is not marked companion_note_candidate in the review matrix.")
+
+        expected_title = chapters[chapter_id].get("title")
+        if record.get("title") != expected_title:
+            errors.append(f"{owner}: title must match book_structure.json title {expected_title!r}.")
+        if record.get("routing_decision") not in ALLOWED_ROUTING_STATUS:
+            errors.append(f"{owner}: routing_decision must be one of {sorted(ALLOWED_ROUTING_STATUS)}.")
+
+        for key in ("reader_treatment", "companion_treatment", "audio_treatment"):
+            value = record.get(key)
+            if not isinstance(value, str) or len(value.split()) < 8:
+                errors.append(f"{owner}: {key} must be a substantive sentence.")
+
+        for key in ("dense_material", "must_remain_in_reader", "companion_note_material", "release_blockers", "non_claims"):
+            require_string_list(owner, key, record.get(key), errors)
+
+        blockers = {str(item) for item in record.get("release_blockers", []) if isinstance(item, str)}
+        missing_blockers = REQUIRED_ROUTING_RELEASE_BLOCKERS - blockers
+        if missing_blockers:
+            errors.append(f"{owner}: release_blockers missing {sorted(missing_blockers)}.")
+
+        reader_boundary = " ".join(str(item) for item in record.get("must_remain_in_reader", [])).lower()
+        if not any(term in reader_boundary for term in ("claim", "authority", "support", "boundary", "approval")):
+            errors.append(f"{owner}: must_remain_in_reader must preserve a claim, authority, support, or approval boundary.")
+
+    missing_routes = companion_candidates - seen
+    extra_routes = seen - companion_candidates
+    if missing_routes:
+        errors.append(f"companion-note routing missing matrix candidates: {sorted(missing_routes)}")
+    if extra_routes:
+        errors.append(f"companion-note routing has non-candidate records: {sorted(extra_routes)}")
 
 
 def validate_chapter_records(data: dict[str, Any], chapters: dict[str, dict[str, Any]], errors: list[str]) -> None:
@@ -260,6 +391,7 @@ def main() -> None:
 
     validate_manifest(data, errors)
     validate_chapter_records(data, chapters, errors)
+    validate_companion_note_routing(data, chapters, errors)
     validate_reconciliation_report(data, errors)
     validate_docs_reference_manifest(errors)
 

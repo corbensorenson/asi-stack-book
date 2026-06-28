@@ -100,6 +100,13 @@ Results:
   full 54-chapter generated-reader chapter-text review queue is complete, but
   the matrix is not a reader release record and does not make any artifact
   release-ready.
+- `docs/reader_companion_note_routing_review.md` and
+  `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
+  reader/e-reader/audio companion-note routing for the three dense
+  proof/governance chapters flagged by the review matrix. Generated reader and
+  audio companion notes consume that routing, but it does not clear release
+  records, format-artifact review, audio-script review, or curated
+  reconciliation blockers.
 
 ## Blockers Before Major-Version Packaging
 
@@ -109,13 +116,16 @@ Results:
    artifact-review blockers.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
-4. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual
+4. Companion-note routing has been recorded for the current three dense
+   proof/governance candidates, but companion notes still need release review
+   before e-reader, audio, or audio-embedded EPUB artifacts can rely on them.
+5. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual
    layout/navigation inspection and full reader-manuscript review before any
    release record can name them as reviewed artifacts; PDF also needs the
    explicit UTF-8 locale environment in this local setup.
-5. An edition release record must list exact produced artifacts, commands,
+6. An edition release record must list exact produced artifacts, commands,
    review state, failures, and residuals.
-6. Audio scripts need human review of diagrams, tables, code, schemas, source
+7. Audio scripts need human review of diagrams, tables, code, schemas, source
    IDs, proof-adjacent material, and pronunciation before any MP3, M4B, or
    audio-embedded EPUB work.
 

@@ -17,6 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
 | `docs/reader_chapter_review_matrix.md` | Generated public summary of the manifest-synced 54-chapter human-reader review queue, overlay dispositions, and release blockers. | tracked |
+| `docs/reader_companion_note_routing_review.md` | Human-readable companion-note routing decision for the dense proof/governance chapters flagged by the reader matrix. | tracked |
 | `docs/reader_part_i_review_pass.md` | First Part I generated-reader review pass over matrix rows, recording no-action decisions without release approval. | tracked |
 | `docs/reader_part_ii_review_pass.md` | First Part II generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |
 | `docs/reader_part_iii_review_pass.md` | First Part III generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |
@@ -45,7 +46,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/` | Runbooks, quality standards, readiness reports, and publication guidance. | tracked |
 | `editions/release_profiles.json` | Machine-readable audience, content-layer, and release-profile definitions for live, research, reader, and audio editions. | tracked |
 | `editions/reader_overlays/` | Versioned semantic reader-edition overlays and examples; editable source for major human-reader deltas. | tracked |
-| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, synced chapter review matrix, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
+| `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, synced chapter review matrix, companion-note routing manifest, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |
@@ -74,7 +75,7 @@ This repository is organized around the living book and its validation loop.
 - Update `appendices/F_changelog.qmd` for meaningful changes.
 - Edit `editions/release_profiles.json` for edition policy, then run `python3 scripts/validate_release_profiles.py`, `python3 scripts/sync_reader_overlay_asset.py --check`, `python3 scripts/validate_reading_mode_toggle.py`, `python3 scripts/validate_human_reading_paths.py`, `python3 scripts/build_reader_edition.py --check`, `python3 scripts/validate_reader_overlays.py --check`, `python3 scripts/validate_reader_evidence_boundaries.py --check`, `python3 scripts/validate_reader_spine.py --check`, `python3 scripts/render_reader_formats.py --check`, and `python3 scripts/build_audio_script.py --check` when the audio path is affected.
 - Run `python3 scripts/audit_reader_continuity.py --write` after reader prose, overlay, or strip-policy changes that affect the generated reader manuscript, then validate with `python3 scripts/audit_reader_continuity.py --check`.
-- Edit `editions/reader_manuscript/v1_0/manifest.json` only when the reader manuscript graduation state changes, then run `python3 scripts/validate_reader_manuscript_manifest.py`.
+- Edit `editions/reader_manuscript/v1_0/manifest.json` or `editions/reader_manuscript/v1_0/companion_note_routing.json` only when reader-manuscript status or companion-note routing changes, then run `python3 scripts/validate_reader_manuscript_manifest.py`.
 - Run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter additions, removals, moves, overlay changes, or manual reader-review decisions; validate with `python3 scripts/sync_reader_chapter_review_matrix.py --check`.
 
 ## Public Readiness Invariants

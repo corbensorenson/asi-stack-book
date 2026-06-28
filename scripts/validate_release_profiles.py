@@ -372,6 +372,14 @@ def main() -> None:
             value = companion_policy.get(key)
             if not isinstance(value, str) or not value.strip():
                 errors.append(f"companion_material_policy.{key} must be a non-empty string.")
+        routing_manifest = companion_policy.get("routing_manifest")
+        if routing_manifest != "editions/reader_manuscript/v1_0/companion_note_routing.json":
+            errors.append(
+                "companion_material_policy.routing_manifest must be "
+                "editions/reader_manuscript/v1_0/companion_note_routing.json."
+            )
+        elif not (ROOT / routing_manifest).exists():
+            errors.append(f"companion_material_policy.routing_manifest does not exist: {routing_manifest}")
         for path_key in ("reader_companion_path", "audio_companion_path"):
             value = companion_policy.get(path_key)
             if isinstance(value, str) and value and not value.endswith(".md"):
