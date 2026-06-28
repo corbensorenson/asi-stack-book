@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/labor-os-and-typed-jobs.qmd",
+  "operations": [
+    {
+      "id": "v1_0.labor_os.lifecycle_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Typed job lifecycle states"
+      },
+      "rationale": "Replace the typed-job lifecycle-state table with reader prose while preserving the canonical AI/research state matrix.",
+      "content_lines": [
+        "Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.",
+        "",
+        "Running is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.",
+        "",
+        "Evidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.",
+        "",
+        "The distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack."
+      ]
+    }
+  ]
+}

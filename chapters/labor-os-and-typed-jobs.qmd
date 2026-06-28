@@ -132,6 +132,8 @@ The execution layer should not merge all subfunctions into one agent. Orchestrat
 
 Typed jobs should also preserve parentage. A reviewer should be able to trace each job back to a command contract, plan node, approval record if required, runtime adapter, produced artifact, and residual. If that chain breaks, the job may still be useful work, but it should not count as governed execution.
 
+### Typed job lifecycle states
+
 Typed jobs should use explicit lifecycle states:
 
 | State | Meaning | Evidence consequence |

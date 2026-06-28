@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 16,
+  "operation_count": 17,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -101,6 +101,18 @@
       },
       "content": "The taxonomy is deliberately plural because generation speed is not one problem. The autoregressive baseline remains the fallback and measurement anchor: it is slow, but it gives the stack a known left-to-right route. Multi-token prediction, speculative decoding, multi-head internal drafting, and feature-level or latent drafting all try to propose more future work from a cheaper path, but their proposed output only matters when acceptance, rejection, verifier cost, and fallback are recorded separately.\n\nLookahead and trie retrieval reuse likely continuations from prior patterns, which can help only when stale procedural-memory shortcuts are controlled. Diffusion language modeling sketches or denoises many positions in parallel, but the stack still has to verify span commitments, uncertainty repair, and final task success. Multi-seed diffusion and hybrid autoregressive, MTP, and diffusion routes remain research directions here until useful solution per second improves after verifier and parallel-compute costs are counted.\n\nEarly-exit and self-speculative inference use intermediate layers as cheap drafts and deeper layers as verifiers. State-space or recurrent alternatives attack sequence-processing cost through a different substrate. KV-cache and serving-layer accelerators improve memory layout, batching, and throughput around generation. These methods can compose, but their evidence records cannot collapse into one speed claim.\n\nGeneration governance must keep decoding tricks, training objectives, serving memory systems, and sequence-model substrates separate. Each solves a different bottleneck. A faster route becomes useful only when the record shows which bottleneck improved and which quality, memory, verification, or fallback cost moved elsewhere.",
       "rationale": "Turn the generation-mode taxonomy table into reader prose while preserving the canonical AI/research comparison matrix."
+    },
+    {
+      "id": "v1_0.labor_os.lifecycle_states_reader_replace",
+      "target_file": "chapters/labor-os-and-typed-jobs.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Typed job lifecycle states",
+        "aliases": []
+      },
+      "content": "Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.\n\nRunning is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.\n\nEvidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.\n\nThe distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack.",
+      "rationale": "Replace the typed-job lifecycle-state table with reader prose while preserving the canonical AI/research state matrix."
     },
     {
       "id": "v1_0.personal_compute_hives.owned_substrate_reader_replace",
