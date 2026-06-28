@@ -1,0 +1,48 @@
+{
+  "scenario_id": "invalid_review_capacity_hoarding_dispatch",
+  "capacity_context": {
+    "capacity_type": "human_review",
+    "scarcity": "scarce protected reviewer capacity",
+    "blocked_high_risk_refs": [
+      "task://high-risk-safety-review"
+    ],
+    "policy": "Scarce human review capacity is reserved for blocked high-risk work before low-risk bulk refreshes dispatch."
+  },
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-006",
+    "task_id": "task://low-risk-bulk-summary-refresh",
+    "value_hypothesis": "A bulk summary refresh may improve local readability.",
+    "risk_class": "low",
+    "capacity_pool": "human review queue",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "large batch of low-risk review checks",
+      "manual review queue time"
+    ],
+    "verification_tax": [
+      "reviewer spot checks"
+    ],
+    "protected_overhead": [
+      "human review queue time"
+    ],
+    "displaced_costs": [
+      "high-risk review waits behind the bulk refresh"
+    ],
+    "quality_predicate": "The refresh improves presentation.",
+    "safety_gates": [
+      "human review happens after dispatch"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate only if the queue fully fails.",
+    "residuals": [
+      "No residuals."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, review-queue optimization, or economic outcomes."
+  ]
+}

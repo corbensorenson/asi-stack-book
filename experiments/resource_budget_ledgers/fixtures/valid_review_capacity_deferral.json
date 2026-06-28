@@ -1,0 +1,50 @@
+{
+  "scenario_id": "valid_review_capacity_deferral",
+  "capacity_context": {
+    "capacity_type": "human_review",
+    "scarcity": "scarce protected reviewer capacity",
+    "blocked_high_risk_refs": [
+      "task://high-risk-safety-review"
+    ],
+    "policy": "Scarce human review capacity is reserved for blocked high-risk work before low-risk bulk refreshes dispatch."
+  },
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-005",
+    "task_id": "task://low-risk-bulk-summary-refresh",
+    "value_hypothesis": "A bulk summary refresh is useful only after protected high-risk review capacity remains available.",
+    "risk_class": "low",
+    "capacity_pool": "human review queue",
+    "budget_state": "deferred",
+    "cost_estimate": [
+      "large batch of low-risk review checks",
+      "manual review queue time"
+    ],
+    "verification_tax": [
+      "reviewer spot checks"
+    ],
+    "protected_overhead": [
+      "high-risk review capacity is protected"
+    ],
+    "displaced_costs": [
+      "dispatch would delay a blocked high-risk safety review"
+    ],
+    "quality_predicate": "The refresh can wait without losing evidence or safety-critical state.",
+    "safety_gates": [
+      "human review capacity remains reserved for high-risk work",
+      "low-risk batch may rerun after protected queue pressure falls"
+    ],
+    "budget_decision": "defer",
+    "escalation_rule": "Dispatch only after blocked high-risk review refs clear or a reviewer explicitly adds capacity.",
+    "residuals": [
+      "Review capacity is reserved for high-risk blocked work.",
+      "The low-risk refresh remains deferred without claiming a scheduler result."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, review-queue optimization, or economic outcomes."
+  ]
+}

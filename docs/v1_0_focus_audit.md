@@ -57,8 +57,8 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
 | Manifest claim contract | 54 explicit `claim_label` fields and 54 explicit `evidence_level` fields | Chapter records no longer rely on scaffold defaults for claim classification or support state; `validate_book.py` rejects missing or invalid values. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
-| Chapter body words | 185,228 | The book is already full-length; the main risk is not shortness. |
-| Raw chapter-file words | 192,849 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
+| Chapter body words | 185,234 | The book is already full-length; the main risk is not shortness. |
+| Raw chapter-file words | 192,855 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
 | Source records | 160 | The corpus is substantial, with 59 Corben/local records and 101 external records by current appendices. |
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
@@ -215,7 +215,7 @@ Initial harness set:
 | Readiness gate and residual escrow tests | Routing, readiness gates, MoECOT, prototype roadmap, recursive self-improvement | Converts promotion-blocking language into synthetic cross-record gate behavior. |
 | Benchmark ratchet anti-Goodhart tests | Benchmark ratchets, policy optimization, artifact steward agents | Keeps benchmark, policy-update, and steward-release handoffs from treating proxy scores as authority. |
 | Generation mode baseline accounting tests | Fast generation architectures, efficient ASI hypothesis, resource economics | Keeps useful-solution-per-second, quality, residual, baseline, and fallback accounting together before any fast-generation claim can move. |
-| Resource budget ledger tests | Resource economics, efficient ASI hypothesis, planning, runtime adapters, benchmark ratchets | Makes dispatch, escalation, protected overhead, displaced-cost residualization, evidence refs, and no-promotion boundaries executable before any resource-economics claim can move. |
+| Resource budget ledger tests | Resource economics, efficient ASI hypothesis, planning, runtime adapters, benchmark ratchets | Makes dispatch, escalation, protected overhead, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries executable before any resource-economics claim can move. |
 
 The set is registered in `experiments/phase5_harness_registry.json`, documented in `docs/phase5_harness_registry.md`, and checked by `python3 scripts/validate_phase5_harness_registry.py`. The registry guard verifies command scripts, docs, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, non-claim boundaries, and `scripts/validate_book.py` wiring.
 

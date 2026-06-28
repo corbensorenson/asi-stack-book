@@ -156,7 +156,7 @@ def main() -> None:
         "`python3 scripts/validate_evidence_transitions.py`",
         "| Test harnesses | Nine synthetic or deterministic harnesses are wired into book validation and the Phase 5 registry:",
         "the generation mode baseline harness checks 2 valid and 4 expected-invalid generation-mode/resource-budget fixtures",
-        "the resource budget ledger harness checks 4 valid and 4 expected-invalid Resource Budget Record fixtures",
+        "the resource budget ledger harness checks 5 valid and 5 expected-invalid Resource Budget Record fixtures",
         "`docs/support_state_transition_harness.md`",
         "`python3 scripts/validate_support_state_transitions.py`",
         "`docs/authority_transition_harness.md`",

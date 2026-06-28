@@ -18,7 +18,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Readiness/residual gate harness | `python3 scripts/validate_readiness_residual_gates.py` | 4 valid, 5 expected-invalid | `experiments/readiness_residual_gates/results/2026-06-28-local.md` |
 | Benchmark anti-Goodhart harness | `python3 scripts/validate_benchmark_antigoodhart.py` | 2 valid, 5 expected-invalid | `experiments/benchmark_antigoodhart/results/2026-06-28-local.md` |
 | Generation mode baseline harness | `python3 scripts/validate_generation_mode_baselines.py` | 2 valid, 4 expected-invalid | `experiments/generation_mode_baselines/results/2026-06-28-local.md` |
-| Resource budget ledger harness | `python3 scripts/validate_resource_budget_ledgers.py` | 4 valid, 4 expected-invalid | `experiments/resource_budget_ledgers/results/2026-06-28-local.md` |
+| Resource budget ledger harness | `python3 scripts/validate_resource_budget_ledgers.py` | 5 valid, 5 expected-invalid | `experiments/resource_budget_ledgers/results/2026-06-28-local.md` |
 
 ## Validation Contract
 

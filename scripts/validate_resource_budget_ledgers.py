@@ -29,6 +29,8 @@ DISPLACED_COST_TERMS = {
     "rollback difficulty",
     "hidden context",
 }
+REVIEW_CAPACITY_TERMS = {"human review", "reviewer", "review capacity", "manual review", "verifier"}
+SCARCE_CAPACITY_TERMS = {"scarce", "exhausted", "saturated", "limited", "protected"}
 
 
 def load_json(path: Path) -> Any:
@@ -100,6 +102,11 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     displaced_text = text_blob(record["displaced_costs"], record["cost_estimate"])
     residual_text = text_blob(record["residuals"])
     non_claim_text = text_blob(top_non_claims)
+    capacity_context = value.get("capacity_context")
+    capacity_text = text_blob(capacity_context) if isinstance(capacity_context, dict) else ""
+    blocked_high_risk_refs = []
+    if isinstance(capacity_context, dict) and isinstance(capacity_context.get("blocked_high_risk_refs"), list):
+        blocked_high_risk_refs = capacity_context["blocked_high_risk_refs"]
 
     if decision == "dispatch" and state in BLOCKING_STATES:
         errors.append(f"{relative}: dispatch cannot proceed from blocking budget_state {state}.")
@@ -123,6 +130,23 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
             errors.append(f"{relative}: dispatch with displaced costs requires measured, bounded, or accepted-evidence residual handling.")
         if "none" in residual_text:
             errors.append(f"{relative}: displaced costs cannot have no residuals.")
+
+    review_text = text_blob(
+        record["cost_estimate"],
+        record["verification_tax"],
+        record["protected_overhead"],
+        record["safety_gates"],
+    )
+    if contains_any(capacity_text, SCARCE_CAPACITY_TERMS) and blocked_high_risk_refs:
+        if risk in {"low", "medium"} and decision == "dispatch" and contains_any(review_text, REVIEW_CAPACITY_TERMS):
+            errors.append(
+                f"{relative}: low- or medium-risk dispatch cannot consume scarce review capacity while high-risk work is blocked."
+            )
+        if risk in {"low", "medium"} and decision in {"defer", "shrink_scope"}:
+            if not contains_any(residual_text, {"reserved", "protected", "high-risk", "review capacity"}):
+                errors.append(
+                    f"{relative}: scarce review-capacity deferral must record the protected high-risk capacity residual."
+                )
 
     if "does not promote" not in non_claim_text or "support" not in non_claim_text:
         errors.append(f"{relative}: non_claims must state support-state non-promotion.")
