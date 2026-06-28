@@ -227,7 +227,7 @@ A memory ABI needs:
 - Admission/adequacy separation, so drafting-acceptable packets cannot silently become verification evidence.
 - Replay tools that reconstruct the exact context view used by a plan, job, claim, artifact, or release.
 
-This context ABI remains a target architecture, not a current-result claim. VCM interface support remains `argument` until resolver behavior, context-compiler traces, adequacy labels, conformance tests, and runtime audit records show what the model saw, why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work.
+This context ABI is still a design target. VCM interface support remains `argument` until resolver behavior, context-compiler traces, adequacy labels, conformance tests, and runtime audit records show what the model saw, why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work.
 
 ## Codex test plan
 

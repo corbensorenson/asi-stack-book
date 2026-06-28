@@ -176,7 +176,7 @@ The public semantic-atom schema now records atom state, source-plan refs, obliga
 
 Compiler success is not the preserved boundary; addressable failure is. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
 
-Obligation non-erasure keeps compilation honest. A compilation pass may refine, split, defer, or reject an obligation, but it cannot silently drop it. If an obligation is no longer applicable, the ledger needs a revision reason rather than an absent edge.
+Obligation non-erasure prevents compilation from erasing commitments. A compilation pass may refine, split, defer, or reject an obligation, but it cannot silently drop it. If an obligation is no longer applicable, the ledger needs a revision reason rather than an absent edge.
 
 ## Failure modes
 
@@ -212,7 +212,7 @@ A semantic compiler toolchain needs:
 - Target backends for chapters, diagrams, schemas, code, Lean proof targets, benchmark fixtures, release notes, and runtime job packets.
 - Build-system style traces that show which artifacts are up to date, which validators failed, which obligations changed, and which downstream artifacts must be rebuilt.
 
-This obligation-preserving compiler remains a target architecture, not a current-result claim. The evidence state should remain `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
+This obligation-preserving compiler is still proposed architecture. The evidence state should remain `argument` until compiler traces, lowering rules, validators, repair-locality tests, target backends, and benchmark comparisons show that the stack can optimize, route, repair, and rebuild cognitive artifacts while keeping semantic obligations addressable.
 
 ## Codex test plan
 

@@ -23,9 +23,9 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 
 | Finding | Current verification | Roadmap treatment |
 |---|---:|---|
-| Mechanical `Operating mechanism:` recap lists in `Beyond the State of the Art` sections | 26 chapter files | Phase 1. Rewrite into mature-product prose, then add a guard so the pattern cannot return. |
-| Repeated `remains a target architecture, not a current-result claim` disclaimer | 42 chapter files | Phase 1. Preserve the non-claim boundary, but vary the wording by chapter. |
-| Repeated `keeps ... honest` construction | 7 chapter files | Phase 1. Minor voice pass after the larger Beyond-SOTA/disclaimer work. |
+| Mechanical `Operating mechanism:` recap lists in `Beyond the State of the Art` sections | 0 after Phase 1 pass; 26 before pass | Phase 1 rewrote these into mature-product prose and added a guard so the pattern cannot return. |
+| Repeated `remains a target architecture, not a current-result claim` disclaimer | 0 after Phase 1 pass; 42 before pass | Phase 1 preserved the non-claim boundary with chapter-specific language. |
+| Repeated `keeps ... honest` construction | 0 after Phase 1 pass; 9 before pass by regex | Phase 1 replaced the reusable cadence with mechanism-specific prose and added a guard. |
 | Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition, then graduate toward a curated parallel reader manuscript when prose divergence becomes too large for overlays. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
@@ -62,7 +62,7 @@ Exit criteria:
 
 ## Phase 1 - Reader-Visible Voice And De-Templating
 
-Status: next highest-priority phase.
+Status: complete for the current tree after the 2026-06-28 prose-and-guard pass.
 
 Purpose: remove the remaining finite, measurable generator bleed-through without weakening evidence boundaries.
 

@@ -16,6 +16,8 @@ FORMULAIC_BEYOND_OPENERS = (
     "At maturity,",
 )
 FORMULAIC_BEYOND_PHRASES = (
+    "Operating mechanism:",
+    "remains a target architecture, not a current-result claim",
     "The mature version of",
     "The mature product surface would include:",
     "The final product surface would include:",
@@ -28,6 +30,9 @@ FORMULAIC_BEYOND_PHRASES = (
     "detect and route failure modes such as",
     "This is a target architecture, not a current-result claim",
     "It remains beyond the chapter's present support state",
+)
+FORMULAIC_REGEX_PATTERNS = (
+    re.compile(r"\bkeeps\b[^.]{0,120}\bhonest\b"),
 )
 FORMULAIC_MVI_PHRASES = (
     "The next useful implementation step is",
@@ -175,6 +180,7 @@ def main() -> None:
     formulaic_phrases: list[tuple[str, str]] = []
     formulaic_mvi_phrases: list[tuple[str, str]] = []
     formulaic_general_phrases: list[tuple[str, str]] = []
+    formulaic_regex_phrases: list[tuple[str, str]] = []
     for path in sorted((ROOT / "chapters").glob("*.qmd")):
         chapter_text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
         for paragraph in normalized_paragraphs(path):
@@ -182,6 +188,9 @@ def main() -> None:
         for phrase in FORMULAIC_GENERAL_PHRASES:
             if phrase in chapter_text:
                 formulaic_general_phrases.append((str(path.relative_to(ROOT)), phrase))
+        for pattern in FORMULAIC_REGEX_PATTERNS:
+            for match in pattern.finditer(chapter_text):
+                formulaic_regex_phrases.append((str(path.relative_to(ROOT)), match.group(0)))
         beyond_body = beyond_state_body(path)
         for opener in beyond_state_openers(beyond_body):
             if opener.startswith(FORMULAIC_BEYOND_OPENERS):
@@ -195,7 +204,7 @@ def main() -> None:
                 formulaic_mvi_phrases.append((str(path.relative_to(ROOT)), phrase))
 
     repeats = {paragraph: paths for paragraph, paths in locations.items() if len(paths) > 1}
-    if repeats or formulaic_openers or formulaic_phrases or formulaic_mvi_phrases or formulaic_general_phrases:
+    if repeats or formulaic_openers or formulaic_phrases or formulaic_mvi_phrases or formulaic_general_phrases or formulaic_regex_phrases:
         if repeats:
             print(f"Repeated long prose paragraphs found: {len(repeats)}")
         for paragraph, paths in sorted(repeats.items(), key=lambda item: (-len(item[1]), item[0])):
@@ -215,6 +224,10 @@ def main() -> None:
         if formulaic_general_phrases:
             print(f"Formulaic chapter prose phrases found: {len(formulaic_general_phrases)}")
             for path, phrase in formulaic_general_phrases:
+                print(f" - {path}: {phrase}")
+        if formulaic_regex_phrases:
+            print(f"Formulaic chapter prose regex matches found: {len(formulaic_regex_phrases)}")
+            for path, phrase in formulaic_regex_phrases:
                 print(f" - {path}: {phrase}")
         sys.exit(1)
 

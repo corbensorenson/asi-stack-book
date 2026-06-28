@@ -207,14 +207,11 @@ A field history fixture should make identity, lifecycle, and evidence aging conc
 
 Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
 
-A stable capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change. The capability-identity layer carries that continuity in:
+A stable capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change. Field identity stays separate from implementation, qualification claims bind to exact artifacts, lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired remain explicit, and promotion requires route validity plus evaluator integrity.
 
-- Operating mechanism: Separate field identity from implementation; Bind qualification claims to exact artifacts; Represent lifecycle transitions such as shadow, canary, qualified, default, deprecated, and retired; Require route validity and evaluator integrity before promotion.
-- Stack interface: Planning requests field capabilities; Execution invokes authorized routes; Evidence records qualification and regression results.
-- Preserved invariants: Replacement cannot expand authority by default; Evaluator integrity is protected; Qualification context is explicit and time-bound; Rollback remains available after failed mutation.
-- Field closure: identity drift, evaluator capture, and authority expansion during replacement should block qualification, force requalification, route rollback, or leave residual records before the field remains default.
+Planning requests field capabilities, execution invokes authorized routes, and evidence records qualification and regression results. Replacement cannot expand authority by default, evaluator integrity is protected, qualification context is explicit and time-bound, and rollback remains available after a failed mutation. Identity drift, evaluator capture, and authority expansion during replacement should block qualification, force requalification, trigger route rollback, or leave residual records before the field remains default.
 
-This capability-identity market remains a target architecture, not a current-result claim. SCF support should remain `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
+This capability-identity market is still a proposed control layer. SCF support should remain `argument` until lifecycle-transition fixtures, qualification records, evaluator-integrity checks, rollback-route tests, authority non-expansion predicates, and regression histories show that implementations can change without changing the field's trust contract.
 
 ## Codex test plan
 

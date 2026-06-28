@@ -246,7 +246,7 @@ A semantic command surface needs:
 - Lowering rules that let validated commands become plan inputs, while draft, conflicting, missing, or inferred-authority commands remain clarification requests, review items, or residuals.
 - Reusable command templates for recurring work, each versioned with its expected artifacts, guards, recovery path, and evidence burden.
 
-This semantic firewall remains a target architecture, not a current-result claim. Keep the support boundary at `argument` until parser behavior, conflict checks, override tests, dispatch enforcement, and downstream traces show that rich human instruction can be understood without letting unvalidated meaning cross into execution.
+This semantic firewall is still proposed architecture. Keep the support boundary at `argument` until parser behavior, conflict checks, override tests, dispatch enforcement, and downstream traces show that rich human instruction can be understood without letting unvalidated meaning cross into execution.
 
 ## Codex test plan
 

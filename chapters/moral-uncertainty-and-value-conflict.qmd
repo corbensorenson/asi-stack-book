@@ -213,14 +213,13 @@ Downstream routes must carry that unresolved status before acting, so the confli
 
 Moral uncertainty needs a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward.
 
-Value conflict remains a first-class record: unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk cannot be hidden inside a reward function. The value-conflict ledger preserves that boundary in:
+Value conflict remains a first-class record: unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk cannot be hidden inside a reward function. Conflicts are classified by value type, stakeholder, reversibility, and evidence requirement; unresolved cases escalate to tribunal or human review; decisions retain the moral uncertainty that survived review.
 
-- Operating mechanism: Classify conflicts by value type, stakeholder, reversibility, and evidence requirement; Escalate unresolved conflicts to tribunal or human review; Record decisions and residual moral uncertainty.
-- Stack interface: Alignment produces conflict records; Planning uses conflict constraints; Evidence records review outcomes.
-- Preserved invariants: Unresolved conflicts remain visible; High-stakes conflicts require stronger review; Speculative moral theory cannot silently authorize action.
-- Conflict closure: value flattening, false consensus, and review theater without decision records should create unresolved-conflict records, tribunal escalation, rollback, or residuals rather than being presented as agreement.
+Alignment produces conflict records, planning consumes them as constraints, and evidence records the review outcome. Unresolved conflicts remain visible, high-stakes conflicts require stronger review, and speculative moral theory cannot silently authorize action. Value flattening, false consensus, and review theater without decision records should create unresolved-conflict records, tribunal escalation, rollback, or residuals rather than being presented as agreement.
 
-This value-conflict ledger remains a target architecture, not a current-result claim. The moral-conflict layer stays at `argument` until conflict records carry stakeholder, reversibility, dissent, residual-risk, and escalation fields through high-stakes review tests that preserve disagreement rather than compressing it into a false consensus.
+In a mature deployment, recorded dissent is part of the control surface rather than editorial residue.
+
+This value-conflict ledger is still a design target. The moral-conflict layer stays at `argument` until conflict records carry stakeholder, reversibility, dissent, residual-risk, and escalation fields through high-stakes review tests that preserve disagreement rather than compressing it into a false consensus.
 
 ## Codex test plan
 

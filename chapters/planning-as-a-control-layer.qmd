@@ -252,7 +252,7 @@ A planning control plane needs:
 - Replanning deltas that record what changed after feedback, which obligations were preserved, and which residuals or stop conditions remain.
 - Control dashboards that show blocked context, blocked authority, blocked verifier, budget pressure, dependency pressure, and human approval queues before side effects occur.
 
-This traffic-control layer remains a target architecture, not a current-result claim. Keep planning support at `argument` until planner schemas, lifecycle enforcement, dispatch tests, replanning traces, and authority-preservation checks show that candidate work, authorized work, blocked work, and executed work remain separate under pressure.
+This traffic-control layer is still an architectural target. Keep planning support at `argument` until planner schemas, lifecycle enforcement, dispatch tests, replanning traces, and authority-preservation checks show that candidate work, authorized work, blocked work, and executed work remain separate under pressure.
 
 ## Codex test plan
 

@@ -219,14 +219,13 @@ The corpus should include one request that sounds urgent, one that implies trust
 
 Human intent enters the mature stack through a compiler that turns goals into bounded command contracts. It preserves goals, constraints, authority, evidence requirements, artifacts, stop conditions, ambiguity, and consent so downstream capability cannot treat a loose request as unlimited permission.
 
-Human intent enters the mature stack as a structured agreement, not a prompt-shaped wish: goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. The intent compiler carries that agreement through:
+Human intent enters the mature stack as a structured agreement, not a prompt-shaped wish: goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. The compiler parses intent into command contracts, separates the desired outcome from allowed means, and attaches acceptance criteria plus escalation conditions before planning sees executable work.
 
-- Operating mechanism: Parse intent into command contracts; Separate desired outcome from allowed means; Attach acceptance criteria and escalation conditions.
-- Stack interface: Alignment filters intent; Planning compiles accepted contracts; Execution consumes only authorized task contracts.
-- Preserved invariants: Ambiguity triggers clarification or bounded defaults; Intent contracts expose authority limits; Stop conditions remain attached to the plan.
-- Intent closure: goal misbinding, scope creep, and implicit permission to act should stop at intake review, re-confirmation, denial, escalation, or residual records before planning treats the request as authorized.
+Alignment filters the request, planning compiles only accepted contracts, and execution consumes only authorized task contracts. Ambiguity triggers clarification or bounded defaults. Authority limits stay visible. Stop conditions remain attached to the plan. Goal misbinding, scope creep, and implicit permission to act should stop at intake review, reconfirmation, denial, escalation, or residual records before planning treats the request as authorized.
 
-This intent compiler remains a target architecture, not a current-result claim. Keep intent formalization at `argument` until intent-parser fixtures, ambiguity and stop-condition tests, authorization handoff traces, scope-creep probes, and acceptance-criteria checks show that downstream execution cannot turn desire into unbounded permission.
+In a mature deployment, refusal, clarification, and acceptance are all contract states rather than conversational moods.
+
+This intent compiler is still a proposed stack layer. Intent formalization stays at `argument` until intent-parser fixtures, ambiguity and stop-condition tests, authorization handoff traces, scope-creep probes, and acceptance-criteria checks show that downstream execution cannot turn desire into unbounded permission.
 
 ## Codex test plan
 

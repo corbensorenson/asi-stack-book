@@ -255,7 +255,7 @@ A capability-firewall surface needs:
 - Effect receipts with pre/post state, external side effects, rollback handles, irreversible residuals, verification refs, incident refs, and artifact-graph links.
 - Promotion gates that refuse to convert successful tool calls into verified task success without evidence and residual accounting.
 
-This lease-bound action surface remains a target architecture, not a current-result claim. Tool-use support stays at `argument` until adapter harnesses, sandbox checks, approval workflows, secret-handle tests, rollback records, and effect-receipt validation show that the stack can use tools without giving cognition ambient power over the world.
+This lease-bound action surface is still proposed architecture. Tool-use support stays at `argument` until adapter harnesses, sandbox checks, approval workflows, secret-handle tests, rollback records, and effect-receipt validation show that the stack can use tools without giving cognition ambient power over the world.
 
 ## Codex test plan
 

@@ -215,14 +215,11 @@ That suite is still diagnostic, not preventive. Its value is to make recurring f
 
 A useful failure model routes ordinary stack breakdowns before they disappear into behavior. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior.
 
-Ungoverned intelligence should be monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language. The failure-radar layer makes that monitoring observable in:
+Ungoverned intelligence should be monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language. A mature failure-radar layer would classify failures by layer, map each failure to an invariant, attach at least one planned falsification test, and use the resulting failures to justify new boundaries only when the records show a real control need. Governance would limit authority creep, VCM would limit context pollution, verification would limit false certainty, and execution would limit side effects.
 
-- Operating mechanism: Classify failures by layer; Map every failure to an invariant and a planned falsification test; Use failures to motivate boundaries in later chapters.
-- Stack interface: Governance limits authority creep; VCM limits context pollution; Verification limits false certainty; Execution limits side effects.
-- Preserved invariants: Every risk maps to at least one boundary; Evaluator integrity is protected; Negative evidence stays visible.
-- Incident closure: evaluator capture, memory poisoning, tool overreach, and compression that hides residual complexity should produce quarantine, rollback, escalation, residual records, or SCF review before they can normalize.
+The finished failure model would preserve evaluator integrity and negative evidence. A risk that cannot be mapped to a boundary would remain a residual rather than becoming vague fear or rhetorical urgency. Evaluator capture, memory poisoning, tool overreach, and compression that hides residual complexity would produce quarantine, rollback, escalation, residual records, or SCF review before they can normalize as ordinary behavior.
 
-This failure-radar layer remains a target architecture, not a current-result claim. Its support stays at `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
+This failure-radar layer is still an architectural safety discipline. Its support stays at `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
 
 ## Codex test plan
 

@@ -210,15 +210,13 @@ A lifecycle trace should exercise gate semantics while leaving module quality un
 
 Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.
 
-Readiness becomes a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. The readiness control plane records that lifecycle in:
+Readiness becomes a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. Draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded states are scoped to field identity, workload family, freshness window, authority envelope, allowed routes, blocked routes, diagnostic permissions, fallback path, and expiry.
 
-- Operating mechanism: readiness records for draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded states, each scoped to a field identity, workload family, freshness window, authority envelope, allowed routes, blocked routes, diagnostic permissions, fallback path, and expiry.
-- Evidence surface: separate gate evidence, floor evidence, frontier evidence, regression results, inherited residuals, promotion blockers, closure conditions, review refs, and next review triggers so a module can improve on the frontier without losing the floor.
-- Stack interface: routers consume ordinary-route permissions; benchmark ratchets update frontier and floor evidence; SCF transactions use readiness records for replacement and rollback; artifact graphs preserve inherited residuals through rename, wrapper, split, merge, retirement, or retraining.
-- Upgrade loop: unresolved failures become residual escrow, recurring residuals become benchmark candidates, passed canaries become scoped qualification, stale qualifications expire, and unsafe or misleading modules remain available for diagnostic replay without staying in ordinary routing.
-- Gate closure: premature promotion, residual hiding, untracked regression after merge, stale-gate reuse, over-quarantine, and gate laundering become blocked transitions, rollback transactions, quarantine routes, tribunal issues, or explicit residual records.
+Gate evidence, floor evidence, frontier evidence, regression results, inherited residuals, promotion blockers, closure conditions, review refs, and next review triggers remain separate so a module can improve on the frontier without losing the floor. Routers consume ordinary-route permissions, benchmark ratchets update frontier and floor evidence, SCF transactions use readiness records for replacement and rollback, and artifact graphs preserve inherited residuals through rename, wrapper, split, merge, retirement, or retraining.
 
-This readiness lifecycle remains a target architecture, not a current-result claim. Keep readiness at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.
+Unresolved failures become residual escrow, recurring residuals become benchmark candidates, passed canaries become scoped qualification, stale qualifications expire, and unsafe or misleading modules remain available for diagnostic replay without staying in ordinary routing. Premature promotion, residual hiding, untracked regression after merge, stale-gate reuse, over-quarantine, and gate laundering become blocked transitions, rollback transactions, quarantine routes, tribunal issues, or explicit residual records.
+
+This readiness lifecycle is still a design target. Readiness remains at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.
 
 ## Codex test plan
 

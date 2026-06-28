@@ -144,7 +144,7 @@ SECTION_REQUIRED_PATTERNS = {
         (
             "mature target state",
             re.compile(
-                r"\b(mature|logical end state|final product|end state|target architecture|product-level endpoint|beyond current practice)\b",
+                r"\b(mature|logical end state|final product|end state|target architecture|design target|architectural target|architectural endpoint|architectural proposal|proposed architecture|proposed support layer|proposed stack layer|proposed control layer|architectural hypothesis|product-level endpoint|beyond current practice)\b",
                 re.IGNORECASE,
             ),
         ),

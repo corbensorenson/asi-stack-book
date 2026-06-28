@@ -210,14 +210,13 @@ It should also show that appeal and export routes have their own receipts rather
 
 Governance rights have to become contestability infrastructure for the stack. It makes disagreement operational through portable artifacts, inspectable records, exit paths, audit rights, forkable state, appeal surfaces, and review receipts rather than treating governance as an external social layer.
 
-Fork, exit, audit, dissent, appeal, and contestability become technical interfaces when they carry artifacts, receipts, portability guarantees, and safety limits. The contestability layer makes those rights usable through:
+Fork, exit, audit, dissent, appeal, and contestability become technical interfaces when they carry artifacts, receipts, portability guarantees, and safety limits. Rights are represented as capabilities with required interfaces, audit artifacts attach to governance decisions, and fork or exit remains available as an escape hatch against lock-in rather than a slogan.
 
-- Operating mechanism: Represent rights as capabilities and required interfaces; Attach audit artifacts to governance decisions; Treat fork/exit as preserved escape hatches against lock-in.
-- Stack interface: Governance issues rights; SCFs preserve rights across replacement; Execution logs evidence for audit.
-- Preserved invariants: Audit records cannot be silently deleted; Exit paths remain materially usable; Fork rights do not bypass safety constraints.
-- Rights closure: governance capture, data hostage-taking, and opaque automated policy updates should create appeal records, fork or exit support, rollback, escalation, or residuals instead of disappearing into administrative state.
+Governance issues the rights, SCFs preserve them across replacement, and execution logs the evidence needed for audit. Audit records cannot be silently deleted, exit paths have to remain materially usable, and fork rights cannot bypass safety constraints. Governance capture, data hostage-taking, and opaque automated policy updates should create appeal records, fork or exit support, rollback, escalation, or residuals instead of disappearing into administrative state.
 
-This contestability infrastructure remains a target architecture, not a current-result claim. The rights claim belongs at `argument` until fork/export fixtures, audit-retention checks, appeal and exit-path tests, data-portability reviews, and safety-limited fork scenarios show that rights remain usable without becoming an authority bypass.
+In a mature deployment, contestability is tested as an operational service.
+
+This contestability infrastructure is still an architectural target. The rights claim belongs at `argument` until fork/export fixtures, audit-retention checks, appeal and exit-path tests, data-portability reviews, and safety-limited fork scenarios show that rights remain usable without becoming an authority bypass.
 
 ## Codex test plan
 

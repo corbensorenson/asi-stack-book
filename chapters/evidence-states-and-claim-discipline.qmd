@@ -229,14 +229,11 @@ An evidence-receipt suite is the right first exercise: one lineage-only source, 
 
 Evidence discipline matures into the book's claim-accounting system. It gives every important sentence a governed path from unsupported idea to source-derived, test-backed, mechanized, deprecated, or refuted status without letting polish, enthusiasm, or release hygiene stand in for truth.
 
-Every major claim should carry both a claim label and a support state, and every movement between states should require source ingestion, prototype inspection, proof/spec evidence, benchmark evidence, or actual tests appropriate to the transition. The evidence ledger enforces that discipline through:
+Every major claim should carry both a claim label and a support state, and every movement between states should require source ingestion, prototype inspection, proof/spec evidence, benchmark evidence, or actual tests appropriate to the transition. A mature evidence ledger would use Appendix C as the public claim surface while keeping claim labels separate from support states, so design rationales, hypotheses, measurements, mechanisms, and speculative claims do not collapse into one confidence word. Source notes would be necessary but not sufficient for source-derived movement; test-backed movement would require evidence bundles that include negative or inconclusive results.
 
-- Operating mechanism: Use Appendix C as the claim ledger; Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed; Require source notes before promoting claims to source-derived; Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
-- Stack interface: Drafting updates claims; Experiments update evidence; Changelog records evidence movement.
-- Preserved invariants: No fabricated source support; No fabricated test results; Negative and inconclusive results remain visible.
-- Evidence closure: support-state inflation, citation laundering, and silent removal of failed claims should become ledger corrections, demotions, residual records, or review escalations rather than confidence creep.
+The mature workflow would make drafting, experiments, proof checks, release records, and changelog entries part of one evidence loop. Drafting can introduce or refine claims; experiments can update evidence; proof artifacts can mechanize narrow predicates; changelog entries can record why support moved or did not move. Support-state inflation, citation laundering, and silent removal of failed claims would become ledger corrections, demotions, residual records, or review escalations rather than confidence creep.
 
-This evidence ledger remains a target architecture, not a current-result claim. Its support stays at `argument` until claim-transition records, passage-reviewed source notes, evidence-bundle fixtures, citation-laundering checks, proof-scope audits, and changelog-linked reviews demonstrate that labels move only when their artifacts justify movement.
+This ledger is a proposed evidence-control system for the book and stack. Its support stays at `argument` until claim-transition records, passage-reviewed source notes, evidence-bundle fixtures, citation-laundering checks, proof-scope audits, and changelog-linked reviews demonstrate that labels move only when their artifacts justify movement.
 
 ## Codex test plan
 

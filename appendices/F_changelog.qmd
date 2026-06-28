@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 1 reader-visible de-templating
+
+- Reworked the Phase 1 roadmap targets across the live manuscript: 26 `Beyond the State of the Art` sections no longer expose `Operating mechanism:` recap lists, the 42 repeated target-architecture disclaimers now use chapter-specific non-claim language, and the reusable `keeps ... honest` cadence was replaced with mechanism-specific prose. Tightened `scripts/validate_repeated_prose.py`, the site-quality standard, writing runbook, roadmap, and v1.0 status guard so those patterns cannot return unnoticed. Refreshed the v1.0 status manuscript scale to 183,509 chapter words excluding YAML and 191,008 raw chapter-file words. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.
+
 ## 2026-06-28 - v1.0 reader manuscript divergence goal
 
 - Updated the v1.0 roadmap, release-edition plan, major-version release runbook, and full-book goal template so the normal reader version can eventually graduate from generated reader output plus overlays into a curated parallel derivative manuscript for human prose. The live AI/research book remains canonical for claims, support states, source boundaries, proof/test status, implementation horizons, diagrams with evidence meaning, and release records; the reader manuscript is allowed to diverge for pacing, section flow, examples, and relaxed reading only with reconciliation back to the manifest and evidence boundaries. Support states remain unchanged; no new source-derived evidence, proof result, benchmark result, runtime result, reviewed reader artifact, ebook, or audio artifact is claimed.

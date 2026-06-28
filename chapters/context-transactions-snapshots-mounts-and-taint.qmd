@@ -225,7 +225,7 @@ A context transaction substrate needs:
 - Deletion-closure and revocation checks that fault when deleted material survives in summaries, embeddings, artifacts, or cached packets.
 - Replay and audit tools that reconstruct a context view and its derivative obligations before a claim or artifact is promoted.
 
-This governable-memory state layer remains a target architecture, not a current-result claim. Keep the memory claim at `argument` until memory-store behavior, mount visibility, branch isolation, deletion closure, taint propagation, and replay tests show that the stack can branch, summarize, and forget without losing obligations attached to what it read.
+This governable-memory state layer is still an architectural target. Keep the memory claim at `argument` until memory-store behavior, mount visibility, branch isolation, deletion closure, taint propagation, and replay tests show that the stack can branch, summarize, and forget without losing obligations attached to what it read.
 
 ## Codex test plan
 

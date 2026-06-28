@@ -126,7 +126,7 @@ Each target should record its tag, module, artifact lane, formal target, artifac
 
 The repository now mechanizes the envelope rule as a finite target-status predicate. In `AsiStackProofs.ProofEnvelope`, an implemented target must carry module-existence and build-passed flags, and a non-operational target is routed to planned or blocked rather than implemented. The proof is a policy invariant over proof-target records; it is not a filesystem crawler, theorem-discovery tool, or coverage audit.
 
-A layered formalization path keeps the proof claim honest. First the prose names an invariant. Then the outline assigns a stable `lean:*` tag. Then the proof manifest records the target. Then triage decides whether the target belongs in Lean, a schema, a process validator, a research backlog, or a blocked state. Only then does an implementation artifact matter. This path makes it harder for a future writing run to confuse a desirable theorem with an existing theorem, or an existing theorem with a broad system guarantee.
+A layered formalization path protects proof claims from inflation. First the prose names an invariant. Then the outline assigns a stable `lean:*` tag. Then the proof manifest records the target. Then triage decides whether the target belongs in Lean, a schema, a process validator, a research backlog, or a blocked state. Only then does an implementation artifact matter. This path makes it harder for a future writing run to confuse a desirable theorem with an existing theorem, or an existing theorem with a broad system guarantee.
 
 Every passed artifact should produce a proof/spec receipt. The receipt says what command ran, what artifact was checked, what predicate or schema it covers, what consumer may rely on it, and what claims it explicitly does not support.
 
@@ -249,7 +249,7 @@ These Lean hooks are implemented as local finite-record predicates for proof-tar
 
 ## Summary
 
-The proof envelope keeps formality useful by keeping it small, operational, and honest. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.
+The proof envelope makes formality useful by staying small, operational, and bounded. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.
 
 The same separation applies to performance pressure. A benchmark result can raise confidence only when its run record, baseline, residuals, regression floor, and anti-Goodhart checks are explicit.
 

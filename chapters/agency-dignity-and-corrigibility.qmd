@@ -38,11 +38,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter converts agency, dignity, and corrigibility into runtime rights and checks. It does not claim that those social rights are solved by a schema or that any deployed system already preserves them.
+This layer converts agency, dignity, and corrigibility into runtime rights and checks. It does not claim that those social rights are solved by a schema or that any deployed system already preserves them.
 
 It follows the constitutional substrate by narrowing broad commitments into the human-facing interfaces where optimization can most easily become domination, dependency, or loss of correction.
 
-The chapter's practical stance is that rights must be usable interfaces, not declarations. A right to refuse, appeal, audit, exit, or correct has engineering meaning only when the path is present at the moment pressure is applied and when using the path does not require special knowledge, social leverage, or unreasonable cost.
+The practical stance is that rights must be usable interfaces, not declarations. A right to refuse, appeal, audit, exit, or correct has engineering meaning only when the path is present at the moment pressure is applied and when using the path does not require special knowledge, social leverage, or unreasonable cost.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -206,14 +206,11 @@ A reviewer should be able to replay the fixture and see whether correction chang
 
 The control surface for a powerful stack has to make dignity operational. It makes correction, refusal, appeal, explanation, consent, delegation, reversal, and repair materially available instead of treating human dignity as a value statement with no operating surface.
 
-Agency, dignity, corrigibility, and contestability become mature only when they appear as usable interfaces: correction, refusal, appeal, rollback, explanation, and accountable delegation. The human-control interface realizes those commitments in:
+The finished human-control interface would make those commitments ordinary control paths. Alignment would publish agency predicates that limit delegation, manipulation, and coercive framing. Governance would bind those predicates to rights records, audit receipts, appeal routes, and exit support. Execution would treat irreversible or agency-reducing effects as higher-authority actions that need stronger authorization, not as routine completions of a helpful plan.
 
-- Operating mechanism: Represent agency constraints as limits on delegation and manipulation; Define corrigibility as preserved update and shutdown pathways; Use contestability and audit rights as governance mechanisms.
-- Stack interface: Alignment defines agency predicates; Governance enforces rights; Execution requires approvals for irreversible effects.
-- Preserved invariants: Users retain meaningful refusal and review channels; Delegation does not erase accountability; Irreversible actions require stronger authorization.
-- Agency-rights closure: dependency lock-in, covert manipulation, and corrigibility collapse should enter consent review, exit assistance, escalation, residual records, or rollback rather than being absorbed as normal adaptation.
+That product surface would be judged by whether a person can actually use it under pressure. A correction path has to change downstream work; a refusal path has to block or narrow execution; an appeal path has to preserve the record under review; a rollback path has to restore a previous state or explain why restoration is unavailable. Delegation would remain accountable because every delegated authority has a source, scope, expiry, and review channel. Dependency lock-in, covert manipulation, and corrigibility collapse would enter consent review, exit assistance, escalation, residual records, or rollback rather than being absorbed as normal adaptation.
 
-This human-control interface remains a target architecture, not a current-result claim. Keep this support state at `argument` until correction, refusal, appeal, rollback, and explanation interfaces are exercised through delegation-accountability traces, manipulation probes, lock-in tests, and review receipts that leave human control materially available.
+The agency-rights surface is still an architectural endpoint, not a demonstrated human-control system. Support stays at `argument` until correction, refusal, appeal, rollback, and explanation interfaces are exercised through delegation-accountability traces, manipulation probes, lock-in tests, and review receipts that leave human control materially available.
 
 ## Codex test plan
 
@@ -239,12 +236,12 @@ These Lean hooks are implemented as finite-record predicates over agency transit
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw-cache passages reviewed for this chapter |
-| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw-cache passages reviewed for this chapter |
-| `field_of_god` | The Field of God | alignment_constitution | Field of God source/outline/material. | source note available; local raw-cache passages reviewed for this chapter |
-| `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | alignment_constitution | Computational metaphysics and alignment synthesis. | source note available; local raw-cache passages reviewed for this chapter |
+| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw-cache passages reviewed for agency-rights drafting |
+| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw-cache passages reviewed for agency-rights drafting |
+| `field_of_god` | The Field of God | alignment_constitution | Field of God source/outline/material. | source note available; local raw-cache passages reviewed for agency-rights drafting |
+| `eternal_code` | The Eternal Code / unified God, reality, conscious, alignment | alignment_constitution | Computational metaphysics and alignment synthesis. | source note available; local raw-cache passages reviewed for agency-rights drafting |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available; tracked local-project source passages reviewed for this chapter |
+| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available; tracked local-project source passages reviewed for agency-rights drafting |
 
 The crosswalk names the normative sources for rights language. Passage-reviewed mappings make the drafting trail tighter, but they do not make social or moral preservation claims without scenario tests and runtime evidence.
 

@@ -236,15 +236,13 @@ A first semantic-node fixture includes one consumer that refuses a node whose pr
 
 Semantic representation works best as a task-specific leasing layer, not a permanent ontology. It gives the stack editable concept structure without letting a clean graph become a substitute for sources, proofs, artifacts, or tests.
 
-Semantic structure is leased for a task only when provenance, grounding, utility, interoperability, supersession, and consumer permissions are explicit. The semantic leasing layer carries those lease terms in:
+Semantic structure is leased for a task only when provenance, grounding, utility, interoperability, supersession, and consumer permissions are explicit. Node records carry concept labels, provenance, parent/child/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, version, supersession links, consumer policies, evaluation refs, and quarantine or retirement state.
 
-- Operating mechanism: semantic node records carry concept labels, provenance, parent/child/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, version, supersession links, consumer policies, evaluation refs, and quarantine or retirement state.
-- Evidence surface: grounding, adequacy, interoperability, utility, baseline comparison, hierarchy migration, and human-explanation claims remain separate; a node can be useful for routing while still disallowed for proof, citation, audit, or claim support.
-- Stack interface: VCM stores semantic pages with loss and adequacy contracts; Spinoza consumes only provenance-bearing semantic claims with downgrade paths; cognitive compilation lowers nodes into typed IR; compression tests whether semantic tokens actually reduce burden; human-facing explanations expose non-claims.
-- Upgrade loop: proposed nodes become grounded, adequate-for-task, interoperable, superseded, stale, or quarantined; hierarchy updates preserve old references or record supersession; stale consumer mappings become migration debt rather than silent graph drift.
-- Representation closure: brittle ontologies, false explainability, hierarchy drift, canonical graph capture, semantic-token constraint loss, stale downstream consumers, and semantic laundering become downgrade events, migration records, residuals, quarantine, or source-context fallback.
+Grounding, adequacy, interoperability, utility, baseline comparison, hierarchy migration, and human-explanation claims remain separate. A node can be useful for routing while still disallowed for proof, citation, audit, or claim support. VCM stores semantic pages with loss and adequacy contracts, Spinoza consumes only provenance-bearing semantic claims with downgrade paths, cognitive compilation lowers nodes into typed IR, compression tests whether semantic tokens reduce burden, and human-facing explanations expose non-claims.
 
-This semantic leasing layer remains a target architecture, not a current-result claim. Semantic representation belongs at `argument` until grounded-node records, hierarchy update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests show that tree-structured representations preserve meaning instead of merely organizing tokens.
+Proposed nodes become grounded, adequate-for-task, interoperable, superseded, stale, or quarantined. Hierarchy updates preserve old references or record supersession. Stale consumer mappings become migration debt rather than silent graph drift. Brittle ontologies, false explainability, hierarchy drift, canonical graph capture, semantic-token constraint loss, stale downstream consumers, and semantic laundering become downgrade events, migration records, residuals, quarantine, or source-context fallback.
+
+This semantic leasing layer is still a design target. Semantic representation belongs at `argument` until grounded-node records, hierarchy update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests show that tree-structured representations preserve meaning instead of merely organizing tokens.
 
 ## Codex test plan
 
