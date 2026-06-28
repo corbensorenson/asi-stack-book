@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 3,
-    "spot_checked": 51
+    "reviewed": 6,
+    "spot_checked": 48
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 38,
+    "no_immediate_action": 40,
     "none": 2,
     "reader_overlay_active": 20
   },
@@ -99,17 +99,16 @@
       "live_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
       "generated_reader_file": "build/reader_edition/chapters/failure-modes-of-ungoverned-intelligence.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_review_pass.md#decisions"
+        "docs/reader_boundary_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter reads as a clear failure-boundary obligation map. The support boundary remains visible, the interface list remains useful, and no reader-only overlay is needed in this first pass.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the failure-boundary chapter. The obligation map, near-miss receipt framing, residual preservation, and architectural-argument support boundary remain intact; no additional reader-only overlay is needed.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -122,17 +121,17 @@
       "live_file": "chapters/evidence-states-and-claim-discipline.qmd",
       "generated_reader_file": "build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_boundary_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the evidence-discipline chapter. Existing overlay is accepted for the reader path; claim labels, support states, source roles, negative results, and non-promotion boundaries remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -145,17 +144,17 @@
       "live_file": "chapters/human-intent-as-a-formal-input.qmd",
       "generated_reader_file": "build/reader_edition/chapters/human-intent-as-a-formal-input.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_boundary_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the intent-intake chapter. Existing overlay is accepted for the reader path; desire/means separation, authority ceiling, ambiguity handling, bounded defaults, and re-contracting boundaries remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
