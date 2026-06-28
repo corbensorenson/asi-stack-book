@@ -7,6 +7,8 @@ This report is the required reconciliation surface for any future curated v1.0 r
 ## Current State
 
 - Curated manuscript status: `not_graduated`
+- Current graduation decision: keep generated reader source plus semantic
+  overlays for v1.0; see `docs/curated_reader_graduation_review.md`
 - Chapter records: none
 - Active reader baseline: generated reader source plus semantic reader overlays
 - Manifest source of truth: `book_structure.json`
@@ -26,7 +28,7 @@ No curated reader chapters exist yet.
 
 | Chapter ID | Curated file | Generated baseline ref | Live source ref | Reconciliation status | Divergence summary | Blockers |
 |---|---|---|---|---|---|---|
-| _none_ | _none_ | _none_ | _none_ | `not_started` | No curated derivative exists. | Full chapter review, release record, and artifact review are still blocked. |
+| _none_ | _none_ | _none_ | _none_ | `not_started` | No curated derivative exists. | Release record and format artifact review are still blocked; no curated chapter file has been approved. |
 
 ## Required Checks Before Reader Release
 

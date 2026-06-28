@@ -185,6 +185,7 @@ Chapter review matrix:
 - All rows retain reader-release and format-artifact blockers. The full chapter-text review blocker is cleared for every current chapter, but the matrix is still a review queue, not a reviewed reader release.
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.
+- `docs/curated_reader_graduation_review.md` records the current graduation decision: do not create curated reader source for v1.0 yet; keep generated reader source plus overlays, with Artifact Steward Agents retained as the first curated-manuscript candidate.
 
 Reader-source divergence rule:
 
