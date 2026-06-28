@@ -236,6 +236,10 @@ def humanize_support_boilerplate(text: str) -> tuple[str, int]:
     return cleaned, count
 
 
+def normalize_reader_spacing(text: str) -> str:
+    return re.sub(r"(?<=[.!?]) {2,}(?=[A-Z0-9`])", " ", text)
+
+
 def humanize_reader_scaffold_terms(text: str) -> tuple[str, int]:
     count = 0
     cleaned = text
@@ -866,6 +870,7 @@ def clean_file(
     cleaned, marker_count = strip_core_claim_markers(cleaned)
     cleaned, support_boilerplate_count = humanize_support_boilerplate(cleaned)
     cleaned, reader_scaffold_terms_count = humanize_reader_scaffold_terms(cleaned)
+    cleaned = normalize_reader_spacing(cleaned)
     if chapter_title:
         cleaned = f"# {chapter_title}\n\n{cleaned.lstrip()}"
     dst.parent.mkdir(parents=True, exist_ok=True)

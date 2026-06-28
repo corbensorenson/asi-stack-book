@@ -10,11 +10,11 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 30 |
-| review_status:spot_checked | 24 |
+| review_status:reviewed | 34 |
+| review_status:spot_checked | 20 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 46 |
+| disposition:no_immediate_action | 47 |
 | disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
@@ -52,10 +52,10 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | spot_checked | representative_spot_check | 6 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | reviewed | full_chapter_review | 6 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |

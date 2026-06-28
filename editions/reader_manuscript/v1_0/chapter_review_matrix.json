@@ -10,13 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 30,
-    "spot_checked": 24
+    "reviewed": 34,
+    "spot_checked": 20
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 46,
+    "no_immediate_action": 47,
     "none": 1,
     "reader_overlay_active": 20
   },
@@ -700,17 +700,16 @@
       "live_file": "chapters/routing-heads-and-specialist-cores.qmd",
       "generated_reader_file": "build/reader_edition/chapters/routing-heads-and-specialist-cores.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter opens Part III coherently by treating routing as a task-local authority lease rather than model picking. It was spot-checked after a canonical Human Reading Path cleanup removed redundant rejection wording while preserving the route-rejection boundary.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the routing chapter. Task-local authority leases, capability fit, readiness, rejected alternatives, residuals, and route-quality non-claims remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -723,17 +722,16 @@
       "live_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "generated_reader_file": "build/reader_edition/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter separates plausibility from readiness and preserves residual escrow, quarantine, diagnostic permissions, stale-gate reuse, and gate-laundering caveats without needing an overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the readiness chapter. Residual escrow, quarantine, stale-gate reuse, lifecycle state, benchmark saturation, inherited residual, and gate-laundering caveats remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -746,17 +744,16 @@
       "live_file": "chapters/moecot-runtime-and-multi-core-orchestration.qmd",
       "generated_reader_file": "build/reader_edition/chapters/moecot-runtime-and-multi-core-orchestration.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter keeps MoECOT as implementation-reference context rather than reproduced runtime proof. It was spot-checked after a canonical Human Reading Path cleanup clarified that receipts explain coordination after execution.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the MoECOT chapter. Source-reported, locally reproduced, externally corroborated, blocked-field, denied-route, failed-gate, replay, and promotion-boundary distinctions remain explicit.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -769,17 +766,17 @@
       "live_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
       "generated_reader_file": "build/reader_edition/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
       "overlay_operation_count": 6,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iii_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Personal Compute Hives chapter. Existing overlays are accepted for the reader path; consent, privacy, rented-node, family/project mediation, scheduler, and implementation non-claim boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
