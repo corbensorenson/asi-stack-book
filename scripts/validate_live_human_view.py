@@ -22,6 +22,7 @@ import build_reader_edition
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SITE = ROOT / "_site"
 DEFAULT_REPORT = ROOT / "build" / "live_human_view_report.json"
+RENDER_HINT = "Run `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` before this validator."
 
 
 class HeadingParser(HTMLParser):
@@ -74,6 +75,13 @@ def load_structure() -> dict:
     return value
 
 
+def display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def flatten_chapters(structure: dict) -> list[dict]:
     chapters: list[dict] = []
     for part in structure.get("parts", []):
@@ -107,6 +115,51 @@ def book_pages(structure: dict) -> list[dict[str, object]]:
             page["kind"] = "appendix"
             pages.append(page)
     return pages
+
+
+def site_readiness_errors(site_dir: Path, pages: list[dict[str, object]]) -> list[str]:
+    if not site_dir.exists():
+        return [f"Rendered site directory is missing: {display_path(site_dir)}. {RENDER_HINT}"]
+    if not site_dir.is_dir():
+        return [f"Rendered site path is not a directory: {display_path(site_dir)}. {RENDER_HINT}"]
+
+    errors: list[str] = []
+    if not (site_dir / "index.html").exists():
+        errors.append(f"Rendered site is missing index.html under {display_path(site_dir)}. {RENDER_HINT}")
+
+    global_inputs = [
+        ROOT / "_quarto.yml",
+        ROOT / "book_structure.json",
+        ROOT / "assets" / "reading-mode.html",
+        ROOT / "assets" / "reader-overlays.html",
+        ROOT / "assets" / "styles.scss",
+    ]
+    newest_global_input = max(path.stat().st_mtime for path in global_inputs if path.exists())
+    missing_html: list[str] = []
+    stale_html: list[str] = []
+    for page in pages:
+        source_file = str(page.get("file", ""))
+        source_path = ROOT / source_file
+        html_path = site_dir / Path(source_file).with_suffix(".html")
+        if not html_path.exists():
+            missing_html.append(f"{source_file} -> {display_path(html_path)}")
+            continue
+        newest_page_input = newest_global_input
+        if source_path.exists():
+            newest_page_input = max(newest_page_input, source_path.stat().st_mtime)
+        if html_path.stat().st_mtime + 1 < newest_page_input:
+            stale_html.append(f"{source_file} -> {display_path(html_path)}")
+
+    if missing_html:
+        sample = "; ".join(missing_html[:8])
+        suffix = f" and {len(missing_html) - 8} more" if len(missing_html) > 8 else ""
+        errors.append(f"Rendered site is incomplete: missing {sample}{suffix}. {RENDER_HINT}")
+    if stale_html:
+        sample = "; ".join(stale_html[:8])
+        suffix = f" and {len(stale_html) - 8} more" if len(stale_html) > 8 else ""
+        errors.append(f"Rendered site appears stale: {sample}{suffix}. {RENDER_HINT}")
+
+    return errors
 
 
 def normalize_html_heading(title: str) -> str:
@@ -168,6 +221,31 @@ def rendered_class_counts(path: Path) -> dict[str, int]:
 
 def validate(site_dir: Path) -> dict[str, object]:
     structure = load_structure()
+    pages = book_pages(structure)
+    readiness_errors = site_readiness_errors(site_dir, pages)
+    if readiness_errors:
+        chapter_count = sum(1 for page in pages if page.get("kind") == "chapter")
+        return {
+            "schema_version": "0.2",
+            "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+            "site_dir": str(site_dir),
+            "page_count": 0,
+            "expected_page_count": len(pages),
+            "chapter_count": 0,
+            "expected_chapter_count": chapter_count,
+            "live_only_heading_count": 0,
+            "live_only_toc_target_count": 0,
+            "view_mode_blocks": {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0},
+            "status": "fail",
+            "page_records": [],
+            "chapter_records": [],
+            "errors": readiness_errors,
+            "non_claims": [
+                "This static check validates rendered live-site Human view wiring only.",
+                "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
+            ],
+        }
+
     profile = build_reader_edition.find_profile("reader_release")
     strip_headings = build_reader_edition.profile_strip_headings(profile)
 
@@ -178,10 +256,7 @@ def validate(site_dir: Path) -> dict[str, object]:
     total_live_toc_targets = 0
     total_view_blocks = {"asi-human-only": 0, "asi-ai-only": 0, "asi-live-only": 0}
 
-    if not site_dir.exists():
-        errors.append(f"Rendered site directory is missing: {site_dir.relative_to(ROOT)}")
-
-    for page in book_pages(structure):
+    for page in pages:
         page_kind = str(page.get("kind", "unknown"))
         source_file = str(page.get("file", ""))
         source_path = ROOT / source_file
@@ -204,7 +279,7 @@ def validate(site_dir: Path) -> dict[str, object]:
             "page_kind": page_kind,
             "page_id": page.get("id", ""),
             "source_file": source_file,
-            "html_file": str(html_path.relative_to(ROOT)) if html_path.exists() else str(html_path),
+            "html_file": display_path(html_path),
             "live_only_heading_count": len(expected),
             "live_only_toc_target_count": 0,
             "view_mode_blocks": expected_view_classes,

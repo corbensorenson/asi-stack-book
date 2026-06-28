@@ -38,7 +38,7 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | Source notes, external appendix split, Lean toolchain, CI gates, proof imports, generated appendices | Resolved before this roadmap; do not re-spend effort unless a validator fails or new source/proof work changes the surface. |
 | `validate_proof_artifact_audit.py` and `validate_source_evidence_audit.py` silently writing files | Not reproduced. Both default to check mode and write only with `--write`; CI runs them in check mode. |
 | Stale deployed appendix set | Not a current blocker. Current Pages runs are checked before commits, and local render validates the A-K appendix surface. |
-| `validate_live_human_view.py` needing a fresh `_site` | Real but minor. CI orders render before this check. A clearer local error message is optional Phase 7 hygiene. |
+| `validate_live_human_view.py` needing a fresh `_site` | Resolved as local hygiene. CI orders render before this check, and the validator now preflights missing, incomplete, or stale `_site` output with a render-first diagnostic. |
 
 ## Phase 0 - Operating Discipline
 
@@ -349,7 +349,7 @@ Tasks:
 - Landing page status and trust review.
 - Continue table and inline-code overflow checks after large source, claim-matrix, or changelog growth; the current source-growth and inline-code probes found no page-level overflow on Appendices A/C/F/H/K.
 - Maintain `schemas/book_structure.schema.json` alongside future manifest fields; the schema now validates the top-level book contract before the semantic validators check source IDs, proof targets, reader surfaces, and evidence boundaries.
-- Optional clearer `validate_live_human_view.py` error when `_site` is missing or stale.
+- Keep the `validate_live_human_view.py` preflight current so missing, incomplete, or stale `_site` output fails with render-first guidance before page-level checks run.
 - Optional local `git gc` if loose-object warnings recur.
 
 Acceptance criteria:

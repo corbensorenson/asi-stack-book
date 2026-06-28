@@ -189,8 +189,9 @@ garbage and the Phase 7 goal is site readiness, not repository compaction.
   horizontal overflow; the current source-growth and inline-code probes found
   zero page-level overflow on Appendices A, C, F, H, and K at desktop/mobile
   sizes.
-- Optional clearer stale-site guidance in `scripts/validate_live_human_view.py`
-  if contributors run it before rendering.
+- Keep the `scripts/validate_live_human_view.py` preflight aligned with the
+  rendered-site contract so missing, incomplete, or stale `_site` output keeps
+  producing render-first guidance.
 
 ## Non-Claims
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 live Human view preflight hardening
+
+- Strengthened `scripts/validate_live_human_view.py` with a rendered-site preflight that fails early when `_site` is missing, incomplete, or older than the relevant source/asset inputs, and gives a direct `quarto render --to html` instruction before page-level Human-view checks run. Updated the v1.0 roadmap and Phase 7 visual review residuals accordingly. This is local validation hygiene only; it does not change chapter prose, reader overlays, evidence states, proof adequacy, benchmark results, runtime behavior, reader artifacts, or release status.
+
 ## 2026-06-28 - v1.0 manifest schema hardening
 
 - Added `schemas/book_structure.schema.json` as a whole-file schema for the dynamic book manifest, covering top-level metadata, parts, part source queues, chapter records, chapter source queues, claim labels, support states, claim-source mappings, implementation horizons, Codex test rows, Lean proof targets, and appendices. Wired `scripts/validate_book.py` to validate `book_structure.json` against the schema before semantic source/proof/reader/evidence validators, and updated public status/docs to record 72 schemas. This is structural manifest hardening only; it does not change book order, add chapters, alter source assignments, promote support states, prove proof adequacy, create runtime/benchmark evidence, approve reader artifacts, or publish ebook/audio outputs.
