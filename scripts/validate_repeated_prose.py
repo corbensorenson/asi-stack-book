@@ -61,6 +61,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The interface should expose",
     "The interface should carry",
     "The interface should also",
+    "The minimum should",
     "The contract should also",
     "None of those passages show",
     "The reviewed passages sharpen the",

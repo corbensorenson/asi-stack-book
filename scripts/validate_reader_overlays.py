@@ -15,6 +15,20 @@ import sync_reader_overlay_asset
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT = ROOT / "build" / "reader_overlay_report.json"
+REQUIRED_MANIFEST_POLICY_FRAGMENTS = (
+    "editable source for v1.0 reader-only semantic deltas",
+    "build/reader_edition/ is disposable",
+    "reader_delta_report.md is a review report",
+    "must not introduce new source-derived claims",
+)
+REQUIRED_DELTA_REPORT_SECTIONS = (
+    "Reader Delta Report",
+    "Editable Delta Source",
+    "Generator Transformations",
+    "Applied Overlay Operations",
+    "Review Checklist",
+    "Non-Claims",
+)
 
 
 def write_report(report: dict[str, object], path: Path) -> None:
@@ -51,6 +65,38 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
             errors.append("configured overlay is missing manifest_path.")
         elif not (ROOT / manifest_path).exists():
             errors.append(f"configured overlay manifest does not exist: {manifest_path}")
+        manifest = overlay_context.get("manifest", {})
+        if not isinstance(manifest, dict):
+            errors.append("configured overlay context is missing a manifest object.")
+        else:
+            delta_policy = manifest.get("delta_source_policy")
+            if not isinstance(delta_policy, list) or not all(isinstance(item, str) for item in delta_policy):
+                errors.append("overlay manifest must define delta_source_policy as a list of strings.")
+            else:
+                joined_policy = " ".join(delta_policy)
+                for fragment in REQUIRED_MANIFEST_POLICY_FRAGMENTS:
+                    if fragment not in joined_policy:
+                        errors.append(f"overlay manifest delta_source_policy must mention {fragment!r}.")
+            report_contract = manifest.get("generated_report_contract")
+            if not isinstance(report_contract, dict):
+                errors.append("overlay manifest must define generated_report_contract.")
+            else:
+                if report_contract.get("path") != build_reader_edition.DEFAULT_DELTA_REPORT:
+                    errors.append(
+                        "overlay manifest generated_report_contract.path must be "
+                        f"{build_reader_edition.DEFAULT_DELTA_REPORT}."
+                    )
+                if report_contract.get("generator") != "scripts/build_reader_edition.py":
+                    errors.append(
+                        "overlay manifest generated_report_contract.generator must be "
+                        "scripts/build_reader_edition.py."
+                    )
+                report_policy = str(report_contract.get("manual_edit_policy", ""))
+                if "Review this report" not in report_policy or "regenerate" not in report_policy:
+                    errors.append(
+                        "overlay manifest generated_report_contract.manual_edit_policy must say to "
+                        "review the generated report and regenerate from source changes."
+                    )
 
     generated_overlay_summary = overlay_summary
     try:
@@ -77,14 +123,16 @@ def validate_overlay(profile_id: str) -> dict[str, object]:
                 errors.append("generated reader edition is missing reader_delta_report.md.")
             else:
                 delta_text = delta_report.read_text(encoding="utf-8", errors="ignore")
-                for needle in (
-                    "Reader Delta Report",
-                    "Applied Overlay Operations",
-                    "Generator Transformations",
-                    "Non-Claims",
-                ):
+                for needle in REQUIRED_DELTA_REPORT_SECTIONS:
                     if needle not in delta_text:
                         errors.append(f"reader_delta_report.md is missing required section: {needle}")
+                for needle in (
+                    "Canonical editable delta source",
+                    "Generated reader files under `build/reader_edition/` are disposable",
+                    "do not edit it to change reader prose",
+                ):
+                    if needle not in delta_text:
+                        errors.append(f"reader_delta_report.md is missing required policy text: {needle}")
 
             reader_manifest_path = output_dir / "reader_manifest.json"
             if not reader_manifest_path.exists():

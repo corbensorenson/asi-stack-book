@@ -595,6 +595,9 @@ def finalize_reader_overlay_context(context: dict[str, object]) -> None:
 def reader_overlay_summary(context: dict[str, object]) -> dict[str, object]:
     applied_records = context.get("applied_records", [])
     skipped_records = context.get("skipped_records", [])
+    manifest = context.get("manifest", {})
+    if not isinstance(manifest, dict):
+        manifest = {}
     if not isinstance(applied_records, list):
         applied_records = []
     if not isinstance(skipped_records, list):
@@ -621,6 +624,9 @@ def reader_overlay_summary(context: dict[str, object]) -> dict[str, object]:
         "action_counts": action_counts,
         "applied_records": applied_records,
         "skipped_records": skipped_records,
+        "manual_edit_policy": manifest.get("manual_edit_policy", []),
+        "delta_source_policy": manifest.get("delta_source_policy", []),
+        "generated_report_contract": manifest.get("generated_report_contract", {}),
     }
 
 
@@ -649,6 +655,32 @@ def write_reader_delta_report(
         f"- Applied overlay operations: {overlay_summary.get('applied_operations', 0)}",
         f"- Skipped overlay operations: {overlay_summary.get('skipped_operations', 0)}",
         "",
+        "## Editable Delta Source",
+        "",
+        f"- Canonical editable delta source: `{overlay_summary.get('manifest_path') or 'not configured'}`",
+        "- Chapter-level overlay operations belong under `editions/reader_overlays/<version>/chapters/`.",
+        "- Generated reader files under `build/reader_edition/` are disposable derivations.",
+        f"- This generated report path is `{DEFAULT_DELTA_REPORT}`; review it, but do not edit it to change reader prose.",
+        "",
+        "### Overlay Source Files",
+        "",
+    ]
+
+    operation_files = overlay_summary.get("operation_files", [])
+    if isinstance(operation_files, list) and operation_files:
+        for operation_file in operation_files:
+            lines.append(f"- `{operation_file}`")
+    else:
+        lines.append("No chapter-level overlay operation files were loaded for this generation.")
+
+    delta_source_policy = overlay_summary.get("delta_source_policy", [])
+    if isinstance(delta_source_policy, list) and delta_source_policy:
+        lines.extend(["", "### Source Policy", ""])
+        for item in delta_source_policy:
+            lines.append(f"- {item}")
+
+    lines.extend([
+        "",
         "## Generator Transformations",
         "",
         f"- Live-only heading sections removed: {summary.get('stripped_heading_count', 0)}",
@@ -660,7 +692,7 @@ def write_reader_delta_report(
         "",
         "## Applied Overlay Operations",
         "",
-    ]
+    ])
 
     applied_records = overlay_summary.get("applied_records", [])
     if isinstance(applied_records, list) and applied_records:
@@ -699,6 +731,13 @@ def write_reader_delta_report(
             )
 
     lines.extend([
+        "",
+        "## Review Checklist",
+        "",
+        "- [ ] Confirm every active overlay operation is intentional for this major reader version.",
+        "- [ ] Confirm no generated reader `.qmd` file was edited as source.",
+        "- [ ] Confirm reader-only prose deltas belong in the overlay rather than the canonical AI/research chapter.",
+        "- [ ] Confirm any architecture, source, proof, evidence, or future-writing change was made in the canonical live source instead of the overlay.",
         "",
         "## Review Notes",
         "",
@@ -901,6 +940,7 @@ def write_reader_checklist(
         "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
         "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
         "- [ ] Review the generated reader delta report and confirm any overlay operations are intentional for this major version.",
+        "- [ ] Confirm generated reader source and `reader_delta_report.md` were not edited as canonical source for prose changes.",
         "- [ ] Check that glossary, Corben corpus/local-project appendix, and separate external-literature appendix are sufficient for interested human readers.",
         f"- [ ] Review `{companion_path}` for omitted dense material and e-reader/audio companion needs.",
         "- [ ] Record residuals and non-claims in an edition release record.",

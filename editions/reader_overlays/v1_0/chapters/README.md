@@ -2,6 +2,8 @@
 
 Add one JSON file per reader-adapted chapter, usually named after the chapter slug.
 
+These files are the editable v1.0 reader-delta source. Do not edit generated files under `build/reader_edition/` to preserve a human-reader change; add or update an operation here, then rerun `python3 scripts/build_reader_edition.py`. The generated `reader_delta_report.md` is for review, not manual patching.
+
 Example shape:
 
 ```json

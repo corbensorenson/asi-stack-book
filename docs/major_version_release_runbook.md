@@ -86,7 +86,7 @@ Generate the local source workspace:
 python3 scripts/build_reader_edition.py
 ```
 
-Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, the live `assets/reader-overlays.html` payload when active overlays exist, and the generated manuscript before rendering release artifacts.
+Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, the live `assets/reader-overlays.html` payload when active overlays exist, and the generated manuscript before rendering release artifacts. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
 
 Attempt specific formats and record actual local outcomes:
 

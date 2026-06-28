@@ -547,6 +547,14 @@ def main() -> None:
             )
         if overlay_policy.get("generated_delta_report") != "reader_delta_report.md":
             errors.append("reader_overlay_policy.generated_delta_report must be reader_delta_report.md.")
+        if overlay_policy.get("editable_delta_source") != "editions/reader_overlays/":
+            errors.append("reader_overlay_policy.editable_delta_source must be editions/reader_overlays/.")
+        report_policy = overlay_policy.get("generated_delta_report_policy")
+        if not isinstance(report_policy, str) or "review artifact" not in report_policy or "regenerate" not in report_policy:
+            errors.append(
+                "reader_overlay_policy.generated_delta_report_policy must describe the generated report as "
+                "a review artifact that is regenerated from source."
+            )
         for path_key in ("script", "default_manifest", "live_human_view_asset", "live_human_view_asset_sync"):
             value = overlay_policy.get(path_key)
             if isinstance(value, str) and value and not (ROOT / value).exists():
@@ -564,6 +572,16 @@ def main() -> None:
                 errors.append(f"reader_overlay_policy.allowed_actions has unknown actions {sorted(unknown_actions)}.")
         for key in ("manual_edit_policy", "non_claims"):
             validate_string_list("reader_overlay_policy", key, overlay_policy.get(key), errors)
+        manual_policy = overlay_policy.get("manual_edit_policy", [])
+        if isinstance(manual_policy, list):
+            joined_policy = " ".join(str(item) for item in manual_policy)
+            for fragment in (
+                "editable source for reader-only deltas",
+                "reader_delta_report.md is reviewed",
+                "stable repository-relative files and headings",
+            ):
+                if fragment not in joined_policy:
+                    errors.append(f"reader_overlay_policy.manual_edit_policy must mention {fragment!r}.")
         purpose = overlay_policy.get("purpose")
         if not isinstance(purpose, str) or not purpose.strip():
             errors.append("reader_overlay_policy.purpose must be a non-empty string.")

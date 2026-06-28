@@ -215,7 +215,7 @@ The fixture does not show feasibility. It makes the feasibility claim inspectabl
 
 A simulation receipt suite should be the first practical extension: one unit-invariant result, one benchmark result with approximation limits, one scenario-only result, one blocked transfer because a bottleneck is missing, and one downgraded claim after instrumentation cost is recorded.
 
-The minimum should make downgrade a normal result, since a simulation that only confirms claims is not yet evidence discipline.
+The first useful fidelity fixture makes downgrade a normal result, since a simulation that only confirms claims is not yet evidence discipline.
 
 ## Beyond the State of the Art
 

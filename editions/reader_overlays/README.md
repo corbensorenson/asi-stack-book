@@ -6,6 +6,8 @@ The live Quarto source remains canonical. Generated reader workspaces under `bui
 
 Use overlays only when the change should affect the generated reader edition without changing the live AI/research source. If the change should also affect the live site, source maps, proof hooks, or future writing runs, edit the canonical chapter source instead.
 
+The editable delta source is the tracked overlay manifest plus operation files under this directory. `reader_delta_report.md` is generated from that source during `scripts/build_reader_edition.py`; review the report, but do not edit it to change reader prose. If the report shows the wrong delta, edit the overlay operation or the canonical chapter and regenerate.
+
 Supported operation types are section-anchored:
 
 - `replace_section`

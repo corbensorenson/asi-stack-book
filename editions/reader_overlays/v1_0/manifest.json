@@ -5,6 +5,18 @@
   "status": "active",
   "applies_to_profile": "reader_release",
   "purpose": "Track semantic human-reader edition deltas for the v1.0 major reader source without hand-editing generated manuscripts.",
+  "delta_source_policy": [
+    "This manifest and operation files under editions/reader_overlays/v1_0/chapters/ are the editable source for v1.0 reader-only semantic deltas.",
+    "The generated reader manuscript under build/reader_edition/ is disposable and must not be edited as a canonical source.",
+    "The generated reader_delta_report.md is a review report, not an input patch file and not a canonical manuscript.",
+    "Reader overlays may adapt presentation for interested human readers, but they must not introduce new source-derived claims, proof results, benchmark results, runtime results, or support-state promotions."
+  ],
+  "generated_report_contract": {
+    "path": "reader_delta_report.md",
+    "generator": "scripts/build_reader_edition.py",
+    "purpose": "Record strip transformations, reader-language transformations, overlay source files, applied operations, skipped planned or retired operations, review checks, and non-claims for the derived reader source.",
+    "manual_edit_policy": "Review this report after generation; change reader deltas by editing tracked overlay operations or canonical chapter source, then regenerate."
+  },
   "operation_globs": [
     "chapters/*.json"
   ],

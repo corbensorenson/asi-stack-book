@@ -230,7 +230,7 @@ The fixture does not show that a semantic graph works. It gives the book a stabl
 
 A small grounded domain should be the first real comparison surface: source passages, artifact nodes, semantic nodes, and claim records can then be compared without pretending the graph is generally adequate. A future test should deliberately update the hierarchy, remove or supersede a source, and check whether downstream uses notice the change. Until then, the schema and Lean predicates show record discipline only, not representation adequacy.
 
-The minimum should include one consumer that refuses a node whose provenance or grounding state is insufficient.
+A first semantic-node fixture includes one consumer that refuses a node whose provenance or grounding state is insufficient.
 
 ## Beyond the State of the Art
 
