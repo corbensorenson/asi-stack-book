@@ -14,9 +14,12 @@ workflow:
 
 - HTML snapshot: `build/reader_edition/format_artifacts/html/_reader_site/`
 - PDF snapshot: `build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf`
+- DOCX snapshot: `build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx`
+- DOCX conversion probe: `build/reader_docx_probe/The-ASI-Stack.pdf`
 - Local PDF metadata: `pdfinfo`
 - Local PDF text extraction: `pdftotext`
 - Local PDF page images: `pdftoppm`
+- Local DOCX page images: documents-skill `render_docx.py`
 - Local browser screenshots against the preserved HTML snapshot
 
 ## Fix During Review
@@ -69,6 +72,28 @@ complete `_reader_site` preservation fix:
 | Mobile opening chapter | Styled mobile header loads; opening chapter prose is readable; no horizontal overflow detected. |
 | Mobile external-source appendix | Styled mobile header loads; inline code wraps; source-ownership prose is readable; no horizontal overflow detected. |
 
+## DOCX Conversion Spot Check
+
+After the reader source-card transform, the local HTML, EPUB, and DOCX
+snapshots were refreshed. The DOCX snapshot then rendered through the
+documents-skill `render_docx.py` path backed by headless LibreOffice, producing
+a 514-page, 8,190,127-byte, letter-size converted PDF and 514 page PNGs under
+`build/reader_docx_probe/`.
+
+Representative pages were visually inspected:
+
+| Page | Surface | Observation |
+|---:|---|---|
+| 1 | Front matter and reader note | Title, Reader Edition Draft marker, cover image, figure caption, and reader-edition note are readable and not clipped. |
+| 25 | Body prose and list sample | Body prose and nested bullet fields are readable with no visible clipping or overlap. |
+| 447 | Corben/local source appendix cards | Reader Source List heading, source-card introduction, and first Corben/local source card are readable and not clipped. |
+| 472 | Corben/local long source ID card | The long `proof_carrying_circular_computation` source ID wraps as a source-card bullet without visible table-cell overlap. |
+| 474 | External source appendix cards | External source-card heading, source-card introduction, first external source card, citation text, and wrapped chapter assignments are readable. |
+| 514 | External citation policy | Final external citation-policy page is readable and not clipped. |
+
+This is a representative LibreOffice conversion spot check. It is not a full
+DOCX application review in Word, LibreOffice GUI, or Google Docs.
+
 ## Broader HTML Navigation And Layout Probe
 
 After the 54-chapter generated-reader chapter-text review queue was completed,
@@ -110,8 +135,9 @@ equal to the viewport width in the sampled mobile pages.
   for Appendix G and Appendix H, but it is not a full source-appendix layout
   review.
 - EPUB was structurally inspected but not opened in an e-reader application.
-- DOCX was structurally inspected but not opened in Word, LibreOffice, or Google
-  Docs.
+- DOCX has a representative headless LibreOffice conversion and page-image spot
+  check, but it has not received full application review in Word, LibreOffice
+  GUI, or Google Docs.
 - Dense diagrams inside e-reader/PDF contexts, bibliography behavior, search
   behavior, cross-reference behavior, EPUB rendering in an actual e-reader, and
   DOCX rendering in an office application still need broader manual review.

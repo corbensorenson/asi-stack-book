@@ -69,7 +69,7 @@ The ignored local inspection report at
 |---|---|
 | HTML | 59 rendered reader-site HTML files, 54 chapter files, required index/preface/source-appendix/opening-chapter files present, no live-only heading leaks detected in reader-site HTML, and no raw core-claim marker leaks detected in reader-site HTML. |
 | EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 130 entries, 62 XHTML entries, and 62 image entries. |
-| DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 77 entries, 61 embedded media entries, 19,262 paragraph markers, book title present, and compact evidence-boundary text present. |
+| DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 77 entries, 61 embedded media entries, 19,229 paragraph markers, book title present, and compact evidence-boundary text present. |
 
 ## PDF Probe
 
@@ -131,6 +131,36 @@ sampled styled HTML pages had no horizontal overflow at the inspected
 desktop/mobile viewports. This is still only a spot check, not a full
 reader-release review.
 
+## DOCX Conversion Probe
+
+After refreshing the HTML, EPUB, and DOCX snapshots from the current generated
+reader source, the DOCX was rendered through the documents-skill
+`render_docx.py` path backed by headless LibreOffice:
+
+```bash
+python3 <documents-skill>/render_docx.py build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx --output_dir build/reader_docx_probe --emit_pdf
+```
+
+The probe produced 514 page images and
+`build/reader_docx_probe/The-ASI-Stack.pdf`. Local `pdfinfo` reported:
+
+| Field | Value |
+|---|---:|
+| Converted PDF file size | 8,190,127 bytes |
+| Converted PDF pages | 514 |
+| Page size | letter |
+| Encrypted | no |
+| Tagged | yes |
+| Producer | LibreOfficeDev 26.8.0.0.alpha0 (AARCH64) |
+
+Representative converted-DOCX pages 1, 25, 447, 472, 474, and 514 were
+visually sampled. The sample covered front matter, body prose/list layout, the
+Corben/local source-card start, a long source-ID card, the external source-card
+start, and the final external citation policy. The sampled pages were readable
+and did not show visible clipping or table-cell collision. This is a
+representative LibreOffice conversion spot check, not a full DOCX application
+review in Word, LibreOffice GUI, or Google Docs.
+
 ## Review State
 
 The dry run establishes only that the current generated reader source can be
@@ -152,8 +182,9 @@ suitable for publication.
 pre-release status of HTML, EPUB, DOCX, and PDF format review, and
 `docs/reader_format_review_matrix.md` is the generated public summary. The
 matrix currently keeps all four formats blocked until full format-artifact
-review and an edition release record exist; EPUB and DOCX also retain
-application or e-reader review blockers, and PDF retains a full-layout-review
+review and an edition release record exist; EPUB retains an application or
+e-reader review blocker, DOCX has representative LibreOffice conversion
+evidence but no full artifact approval, and PDF retains a full-layout-review
 blocker.
 
 Audio generation was not attempted.

@@ -34,6 +34,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/inspect_reader_format_artifacts.py` can structurally inspect ignored local HTML/EPUB/DOCX reader snapshots for required files, EPUB/DOCX container integrity, media counts, and obvious live-scaffold leaks without treating them as release artifacts.
 - `scripts/sync_reader_format_review_matrix.py` validates the tracked v1.0 format-review ledger and regenerates the public blocker summary, keeping local dry-run evidence separate from edition release approval.
 - `editions/reader_manuscript/v1_0/artifact_inspection_manifest.json`, `docs/reader_artifact_inspection_manifest.md`, and `scripts/validate_reader_artifact_inspection_manifest.py` preserve a tracked summary of the latest local HTML/EPUB/DOCX structural inspection while keeping the ignored build artifacts out of git and keeping all release blockers intact.
+- `editions/reader_manuscript/v1_0/docx_probe_manifest.json`, `docs/reader_docx_probe_manifest.md`, and `scripts/validate_reader_docx_probe_manifest.py` preserve the latest local DOCX LibreOffice conversion probe facts: 514 converted pages, 8,190,127 bytes, expected title/evidence-boundary/source-card text, and a representative six-page visual sample. This is a probe record, not DOCX approval.
 - `editions/reader_manuscript/v1_0/pdf_probe_manifest.json`, `docs/reader_pdf_probe_manifest.md`, and `scripts/validate_reader_pdf_probe_manifest.py` preserve the latest local UTF-8 PDF probe facts: 535 pages, 8,613,924 bytes, expected title/evidence-boundary text, refreshed sampled source-card pages, and the remaining full-PDF-layout blocker. This is a probe record, not PDF approval.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
@@ -77,6 +78,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/reader_format_dry_run.md](docs/reader_format_dry_run.md) | Local HTML/EPUB/DOCX reader-format dry-run record and non-release boundary. |
 | [docs/reader_format_review_matrix.md](docs/reader_format_review_matrix.md) | Synced pre-release reader-format review ledger for HTML, EPUB, DOCX, and PDF blockers. |
 | [docs/reader_artifact_inspection_manifest.md](docs/reader_artifact_inspection_manifest.md) | Tracked local HTML/EPUB/DOCX structural-inspection summary for ignored reader-format snapshots. |
+| [docs/reader_docx_probe_manifest.md](docs/reader_docx_probe_manifest.md) | Tracked local DOCX LibreOffice conversion probe summary, spot-check residuals, and DOCX-specific release blockers. |
 | [docs/reader_pdf_probe_manifest.md](docs/reader_pdf_probe_manifest.md) | Tracked local UTF-8 PDF probe summary, spot-check residuals, and PDF-specific release blockers. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
 | [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |
@@ -129,6 +131,7 @@ python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_artifact_inspection_manifest.py
+python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
@@ -202,6 +205,7 @@ Render selected reader-edition formats and record actual local outcomes:
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_format_review_matrix.py --check
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf

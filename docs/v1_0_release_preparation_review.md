@@ -22,6 +22,7 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe --formats pdf
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf
@@ -55,6 +56,12 @@ Results:
   core-claim marker leaks detected in reader-site HTML, 62 EPUB XHTML entries,
   62 EPUB image entries, and 61 DOCX media entries. The ignored local report is
   `build/reader_edition/reader_artifact_inspection_report.json`.
+- The refreshed DOCX snapshot converted through the documents-skill
+  `render_docx.py` path backed by headless LibreOffice into a 514-page,
+  8,190,127-byte probe PDF with 514 page images. Representative pages 1, 25,
+  447, 472, 474, and 514 were visually sampled, including source-card appendix
+  pages and the final external citation policy. The tracked summary is
+  `docs/reader_docx_probe_manifest.md`.
 - The isolated PDF probe without explicit locale settings failed inside the
   LuaLaTeX path with a locale-data error and automatic package-install failure.
   The UTF-8 locale retry rendered one ignored local PDF snapshot at
@@ -74,10 +81,9 @@ Results:
   loaded and no page-level horizontal overflow at the inspected viewports.
 - `docs/reader_format_review_matrix.md` records the synced pre-release
   format-review ledger: 4 format rows, 4 full-format-review blockers, 4
-  release-record blockers, 2 application/e-reader blockers, and 1 full-PDF-layout
-  blocker. HTML and PDF have
-  representative spot checks only; EPUB and DOCX have structural checks only
-  until application/e-reader review happens.
+  release-record blockers, 1 application/e-reader blocker, and 1 full-PDF-layout
+  blocker. HTML, DOCX, and PDF have representative spot checks only; EPUB has
+  structural checks only until application/e-reader review happens.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -97,7 +103,9 @@ Results:
   workspaces, not durable release artifacts.
 - The local reader-format dry run demonstrates that HTML, EPUB, and DOCX can
   render from the current generated reader source on this machine and pass basic
-  structural inspection. The isolated PDF probe demonstrates that PDF can render
+  structural inspection. The DOCX conversion probe demonstrates that the current
+  generated DOCX can convert through the local headless LibreOffice path for a
+  representative visual spot check. The isolated PDF probe demonstrates that PDF can render
   locally when `LANG` and `LC_ALL` are set to `en_US.UTF-8`, and the refreshed
   PDF spot check samples the generated source-card replacement for Appendix G
   and Appendix H. None of those artifacts is approved for publication, and no
@@ -113,8 +121,9 @@ Results:
   release-ready.
 - The reader format review matrix is also a release-control queue only. It
   records local render and inspection evidence for HTML, EPUB, DOCX, and PDF,
-  and it keeps every format unapproved until format-specific blockers and the
-  edition release record are reconciled.
+  including representative DOCX/PDF spot checks, and it keeps every format
+  unapproved until format-specific blockers and the edition release record are
+  reconciled.
 - `docs/reader_companion_note_routing_review.md` and
   `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
   reader/e-reader/audio companion-note routing for the three dense
@@ -136,9 +145,10 @@ Results:
    before e-reader, audio, or audio-embedded EPUB artifacts can rely on them.
 5. The local HTML, EPUB, DOCX, and PDF snapshots still need broader manual
    layout/navigation inspection and full reader-manuscript review before any
-   release record can name them as reviewed artifacts; PDF still needs full
-   page-by-page layout review and the explicit UTF-8 locale environment in this
-   local setup.
+   release record can name them as reviewed artifacts; DOCX still needs full
+   application review if it will be released as a document artifact, and PDF
+   still needs full page-by-page layout review plus the explicit UTF-8 locale
+   environment in this local setup.
 6. The format-review matrix must be updated from actual review evidence rather
    than inferred from successful renders; no row is release-approved today.
 7. An edition release record must list exact produced artifacts, commands,

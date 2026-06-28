@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "local_docx_conversion_probe_record",
+  "last_updated": "2026-06-28",
+  "purpose": "Record the latest tracked local LibreOffice conversion and representative visual spot check for the generated reader DOCX snapshot without treating the ignored DOCX, PDF, or page images as release artifacts or approval.",
+  "source_commands": [
+    "python3 scripts/render_reader_formats.py --formats html epub docx",
+    "python3 scripts/inspect_reader_format_artifacts.py",
+    "python3 <documents-skill>/render_docx.py build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx --output_dir build/reader_docx_probe --emit_pdf",
+    "pdfinfo build/reader_docx_probe/The-ASI-Stack.pdf",
+    "pdftotext build/reader_docx_probe/The-ASI-Stack.pdf - | awk 'BEGIN{RS=\"\\f\"} /Reader Source List/{print \"Reader Source List page\", NR} /Proof-Carrying Circular Computation/{print \"Proof-Carrying Circular Computation page\", NR} /External Citation Policy/{print \"External Citation Policy page\", NR} /concrete_ai_safety_2016/{print \"concrete_ai_safety page\", NR}'"
+  ],
+  "local_artifact_refs": [
+    "build/reader_edition/reader_render_report.json",
+    "build/reader_edition/reader_artifact_inspection_report.json",
+    "build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+    "build/reader_docx_probe/The-ASI-Stack.pdf",
+    "build/reader_docx_probe/page-1.png",
+    "build/reader_docx_probe/page-25.png",
+    "build/reader_docx_probe/page-447.png",
+    "build/reader_docx_probe/page-472.png",
+    "build/reader_docx_probe/page-474.png",
+    "build/reader_docx_probe/page-514.png"
+  ],
+  "tracked_evidence_refs": [
+    "docs/reader_format_dry_run.md#docx-conversion-probe",
+    "docs/reader_artifact_layout_review.md#docx-conversion-spot-check",
+    "docs/reader_format_review_matrix.md",
+    "docs/reader_artifact_inspection_manifest.md"
+  ],
+  "docx_source_summary": {
+    "format": "docx",
+    "status": "rendered_and_structurally_inspected",
+    "local_artifact_path": "build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+    "file_size_bytes": 7059440,
+    "zip_entries": 77,
+    "media_entries": 61,
+    "paragraph_markers": 19229
+  },
+  "conversion_summary": {
+    "format": "docx_to_pdf",
+    "status": "converted",
+    "renderer": "documents skill render_docx.py via headless LibreOffice",
+    "local_pdf_path": "build/reader_docx_probe/The-ASI-Stack.pdf",
+    "title": "The ASI Stack",
+    "author": "Corben Sorenson",
+    "creator": "Writer",
+    "producer": "LibreOfficeDev 26.8.0.0.alpha0 (AARCH64)",
+    "pages": 514,
+    "encrypted": false,
+    "tagged": true,
+    "page_size": "612 x 792 pts (letter)",
+    "file_size_bytes": 8190127,
+    "pdf_version": "1.7"
+  },
+  "text_extraction_summary": {
+    "title_found": true,
+    "reader_edition_draft_found": true,
+    "evidence_boundary_found": true,
+    "reader_source_list_found": true,
+    "external_citation_policy_found": true,
+    "sampled_pages": [1, 25, 447, 472, 474, 514]
+  },
+  "spot_check_summary": {
+    "status": "representative_libreoffice_conversion_spot_check",
+    "pages_sampled": [
+      {
+        "page": 1,
+        "surface": "front matter and reader note",
+        "observation": "Title, Reader Edition Draft marker, cover image, figure caption, and reader-edition note are readable and not clipped."
+      },
+      {
+        "page": 25,
+        "surface": "body prose and list sample",
+        "observation": "Body prose and nested bullet fields are readable with no visible clipping or overlap in the sampled page."
+      },
+      {
+        "page": 447,
+        "surface": "Corben/local source appendix cards",
+        "observation": "Reader Source List heading, source-card introduction, and first Corben/local source card are readable and not clipped."
+      },
+      {
+        "page": 472,
+        "surface": "Corben/local long source ID card",
+        "observation": "The long proof_carrying_circular_computation source ID wraps as a source-card bullet without visible table-cell overlap."
+      },
+      {
+        "page": 474,
+        "surface": "external source appendix cards",
+        "observation": "External source-card heading, source-card introduction, first external source card, citation text, and wrapped chapter assignments are readable."
+      },
+      {
+        "page": 514,
+        "surface": "external citation policy",
+        "observation": "Final external citation-policy page is readable and not clipped."
+      }
+    ],
+    "layout_residuals": [
+      "This is a representative LibreOffice conversion and page-image spot check, not a full DOCX application review in Word, LibreOffice GUI, or Google Docs.",
+      "The generated DOCX and converted PDF remain ignored local probe artifacts until a future edition release record names exact reviewed artifacts.",
+      "Full format-artifact review and release-record approval have not been completed."
+    ]
+  },
+  "release_blockers_preserved": [
+    "reader_release_record_not_created",
+    "full_format_artifact_review_not_completed"
+  ],
+  "non_claims": [
+    "This manifest records a local DOCX conversion and representative visual spot check in ignored build space only.",
+    "This manifest is not a reader release, DOCX release, document release, edition release record, or artifact approval.",
+    "This manifest does not approve DOCX, EPUB, PDF, HTML, e-reader, document, audio, or audio-embedded EPUB artifacts for publication.",
+    "This manifest does not check full editorial quality, full layout quality, full application behavior, Google Docs import behavior, e-reader behavior, source interpretation, proof adequacy, benchmark behavior, runtime behavior, PDF output approval, or audio output.",
+    "This manifest does not promote any claim support state."
+  ]
+}

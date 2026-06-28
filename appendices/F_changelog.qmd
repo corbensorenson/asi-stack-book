@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Reader DOCX conversion probe manifest
+
+- Refreshed the generated reader HTML, EPUB, and DOCX snapshots with
+  `python3 scripts/render_reader_formats.py --formats html epub docx`, reran
+  `python3 scripts/inspect_reader_format_artifacts.py`, and updated the
+  structural artifact manifest to the current EPUB/DOCX byte counts. Added
+  `editions/reader_manuscript/v1_0/docx_probe_manifest.json`,
+  `docs/reader_docx_probe_manifest.md`, and
+  `scripts/validate_reader_docx_probe_manifest.py` to preserve the local DOCX
+  LibreOffice conversion probe without committing ignored artifacts.
+- Rendered the generated DOCX through the documents-skill `render_docx.py`
+  path backed by headless LibreOffice, producing a 514-page, 8,190,127-byte
+  converted PDF and 514 page images under ignored `build/reader_docx_probe/`.
+  Representative pages 1, 25, 447, 472, 474, and 514 were visually sampled,
+  including front matter, body prose/list layout, Corben/local source cards,
+  the long `proof_carrying_circular_computation` source card, external source
+  cards, and the final external citation policy. Updated the reader format
+  matrix so DOCX now records a representative spot check while preserving
+  full-format-review and release-record blockers.
+- This is a local DOCX conversion probe only. It does not approve a DOCX,
+  EPUB, PDF, HTML, e-reader, document, audio, or audio-embedded EPUB artifact,
+  does not create a reader release or edition release record, does not complete
+  full Word/LibreOffice GUI/Google Docs review, and does not promote support
+  states, proof status, source-derived evidence, benchmark results, runtime
+  behavior, or release readiness.
+
 ## 2026-06-28 - v1.0 Reader PDF source-card appendix transform
 
 - Updated the generated reader-edition pipeline so Appendix G and Appendix H
