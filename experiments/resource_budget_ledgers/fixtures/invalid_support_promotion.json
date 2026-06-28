@@ -1,0 +1,39 @@
+{
+  "scenario_id": "invalid_support_promotion",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-004",
+    "task_id": "task://budget-promotion-shortcut",
+    "value_hypothesis": "A valid-looking budget record is treated as support promotion.",
+    "risk_class": "low",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "small fixture cost"
+    ],
+    "verification_tax": [
+      "schema validation"
+    ],
+    "protected_overhead": [
+      "support-state review"
+    ],
+    "displaced_costs": [
+      "no displaced cost recorded"
+    ],
+    "quality_predicate": "Fixture shape passes.",
+    "safety_gates": [
+      "book validation"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate if validation fails.",
+    "residuals": [
+      "No runtime result."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Promotes Resource Economics to synthetic-test-backed.",
+    "Proves budget scheduler behavior."
+  ]
+}

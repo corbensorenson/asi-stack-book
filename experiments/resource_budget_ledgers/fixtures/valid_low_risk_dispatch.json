@@ -1,0 +1,43 @@
+{
+  "scenario_id": "valid_low_risk_dispatch",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-001",
+    "task_id": "task://low-risk-summary-refresh",
+    "value_hypothesis": "A low-risk summary refresh is worth local validation time when it keeps source boundaries visible.",
+    "risk_class": "low",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "short local validation pass",
+      "reader-spine check"
+    ],
+    "verification_tax": [
+      "schema validation",
+      "reader boundary check"
+    ],
+    "protected_overhead": [
+      "support-state discipline remains present"
+    ],
+    "displaced_costs": [
+      "no displaced human repair burden identified beyond ordinary review"
+    ],
+    "quality_predicate": "The summary preserves source and support boundaries.",
+    "safety_gates": [
+      "no support-state promotion",
+      "book validation must pass"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate if validation fails or support boundaries are weakened.",
+    "residuals": [
+      "Any displaced ordinary review burden is bounded to the local validation pass.",
+      "No scheduler, load, or economic result is claimed."
+    ],
+    "evidence_refs": [
+      "docs/v1_0_candidate_status.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}

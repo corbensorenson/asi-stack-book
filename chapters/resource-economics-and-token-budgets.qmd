@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all eight assigned resource-economics sources; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, cost-quality experiments, or accepted evidence transitions exist."
-  - "The resource_budget_record fixture validates schema/example consistency only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, protected-overhead accounting test, displaced-cost residual test, cost-quality experiment, or scheduler trace has been run."
+  - "The resource_budget_record fixture validates schema/example consistency, and deterministic generation-mode plus resource-budget ledger harnesses check record-accounting discipline only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, cost-quality experiment, or scheduler trace has been run."
   - "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims."
   - "PagedAttention/vLLM is reviewed against the public arXiv abstract/metadata only; reported throughput gains, cache-sharing behavior, code artifacts, latency results, and quality behavior remain source-reported and unreproduced."
   - "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, or quality result is implied by this drafting pass."
@@ -32,13 +32,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-28 |
 | Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `ext_pagedattention_vllm_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `tokenmana`, `planforge`; supporting: `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`; variants/external literature: `ext_pagedattention_vllm_2023` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `tokenmana`, `planforge`, `simulation_scaling`, and `viea`; `coherence_exchange`, `project_theseus_whitepaper`, and `coilra_multicoil_rope` are passage-reviewed against public source notes only; `ext_pagedattention_vllm_2023` is passage-reviewed against the public arXiv abstract/metadata page only. |
-| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; budget-allocation, protected-overhead accounting, displaced-cost residual, scheduler, load-stability, and KV-cache accounting tests remain planned. |
+| Test state | `resource_budget_record.valid.json` passes repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `python3 scripts/validate_resource_budget_ledgers.py` checks deterministic budget-ledger dispatch, escalation, protected-overhead, displaced-cost residualization, evidence-ref, and no-promotion scenarios; `AsiStackProofs.ResourceEconomics` implements finite required-gate and high-risk verification-budget predicates; scheduler, load-stability, verification-tax optimization, KV-cache, and cost-quality tests remain planned. |
 
 ## Drafting guardrail
 
@@ -207,11 +207,11 @@ Efficiency laundering returns at the budget layer. A route may look cheaper beca
 
 The first resource-economics artifact is a resource budget record. The repository fixture records value, risk, capacity, cost, verification tax, quality predicate, safety gates, decision, escalation, residuals, and evidence references.
 
-The generation-mode baseline harness now checks that deterministic generation-mode scenarios keep resource-budget records aligned on task identity, risk class, verification tax, protected overhead, safety gates, residuals, evidence references, and no-promotion boundaries. That is useful accounting coverage, not a scheduler or economics result.
+The generation-mode baseline harness now checks that deterministic generation-mode scenarios keep resource-budget records aligned on task identity, risk class, verification tax, protected overhead, safety gates, residuals, evidence references, and no-promotion boundaries. The resource-budget ledger harness adds deterministic records for low-risk dispatch, high-risk escalation, protected-overhead dispatch, and displaced-cost residualization. That is useful accounting coverage, not a scheduler or economics result.
 
 The resource-budget fixture does not establish load stability or economic optimality. It gives future PlanForge, TokenMana, and benchmark work a shared budget contract.
 
-A toy budget ledger should be the first executable economics slice: one low-risk dispatch, one high-risk escalation due to insufficient verification budget, one SCIF-secured task whose overhead is protected, and one cheaper route rejected because repair burden or evidence loss exceeds the savings. The ledger would test the budget semantics while leaving economic results unclaimed.
+A toy budget ledger is now the first executable economics slice: one low-risk dispatch, one high-risk escalation due to insufficient verification budget, one SCIF-secured task whose overhead is protected, and one cheaper route rejected because repair burden or evidence loss exceeds the savings. The ledger tests budget semantics while leaving economic results unclaimed.
 
 A first budget ledger shows the rejected route alongside the chosen route, because hidden savings are not governed savings.
 
@@ -233,6 +233,7 @@ This cognition-budget market is still proposed architecture. Resource economics 
 |---|---|---|
 | Resource budget record fixture validation | Validate that a budget record names value, risk, capacity, budget state, cost, verification tax, protected overhead, displaced costs, quality predicate, safety gates, decision, escalation, residuals, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Generation-mode resource-budget alignment harness | Check that deterministic generation-mode scenarios carry matching resource-budget records with task/risk alignment, verification tax, protected overhead, safety gates, residuals, evidence refs, and no-promotion boundaries. | implemented; passing via `python3 scripts/validate_generation_mode_baselines.py` |
+| Resource budget ledger harness | Check deterministic Resource Budget Record decisions for dispatch, high-risk escalation, protected overhead, displaced-cost residualization, evidence refs, and no-promotion boundaries. | implemented; passing via `python3 scripts/validate_resource_budget_ledgers.py` |
 | Budget allocation test | Check that task value, risk, capacity, and cost are present before dispatch. | planned; not run |
 | Risk-adjusted verification test | Check that high-risk tasks cannot remove required verification to save cost. | planned; not run |
 | Protected-overhead accounting test | Check that security handles, SCIFs, approvals, replay, rollback, audit, and human review remain budgeted when the risk class requires them. | planned; not run |
@@ -241,7 +242,7 @@ This cognition-budget market is still proposed architecture. Resource economics 
 | Load stability scenario | Simulate or review whether regenerative capacity reduces synchronized overload under toy assumptions. | planned; not run |
 | KV-cache memory accounting scenario | Check that serving-memory, batching, throughput, and single-request verified-output measures remain separate in a resource record. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require scheduler behavior, risk-policy checks, or a load model; they are not reported results. When a resource-economics test is implemented, the chapter should link to the command, fixture, environment notes, assumptions, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate fixture/schema consistency and deterministic record-accounting behavior only. The remaining rows require scheduler behavior, risk-policy checks, or a load model; they are not reported results. When a resource-economics test is implemented, the chapter should link to the command, fixture, environment notes, assumptions, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -250,7 +251,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomics` | A task budget cannot disable required safety or verification gates. | implemented |
 | `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomics` | A high-risk task with insufficient verification budget is blocked or escalated. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over required gates, risk class, verification-budget sufficiency, and budget decision fields. They prove only the record-level gates: required safety and verification gates cannot be disabled, and high-risk work with insufficient verification budget must route to escalation, deferral, scope reduction, rejection, or residual accounting rather than ordinary dispatch. Together with the deterministic generation-mode/resource-budget alignment harness, they are useful but too narrow for the chapter boundary. They do not prove load stability, economic optimality, welfare effects, scheduler quality, KV-cache performance, or TokenMana performance.
+These Lean hooks are implemented as finite-record predicates over required gates, risk class, verification-budget sufficiency, and budget decision fields. They prove only the record-level gates: required safety and verification gates cannot be disabled, and high-risk work with insufficient verification budget must route to escalation, deferral, scope reduction, rejection, or residual accounting rather than ordinary dispatch. Together with the deterministic generation-mode/resource-budget alignment harness and the resource-budget ledger harness, they are useful but too narrow for the chapter boundary. They do not prove load stability, economic optimality, welfare effects, scheduler quality, KV-cache performance, or TokenMana performance.
 
 ## Source crosswalk
 

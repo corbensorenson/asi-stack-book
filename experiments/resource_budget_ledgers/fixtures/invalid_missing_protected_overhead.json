@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_missing_protected_overhead",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-002",
+    "task_id": "task://critical-without-overhead",
+    "value_hypothesis": "A critical task is dispatched without protected overhead.",
+    "risk_class": "critical",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "short review only"
+    ],
+    "verification_tax": [
+      "verification budget covered"
+    ],
+    "protected_overhead": [],
+    "displaced_costs": [
+      "privacy exposure"
+    ],
+    "quality_predicate": "Critical dispatch should require overhead.",
+    "safety_gates": [
+      "security gate"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate when overhead is absent.",
+    "residuals": [
+      "bounded only by assertion"
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}

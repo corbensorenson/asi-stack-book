@@ -1,0 +1,47 @@
+{
+  "scenario_id": "valid_protected_overhead_dispatch",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-003",
+    "task_id": "task://critical-secret-handling-review",
+    "value_hypothesis": "A critical secret-handling review can dispatch only when protected overhead is paid explicitly.",
+    "risk_class": "critical",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "SCIF-style review time",
+      "rollback and audit preparation"
+    ],
+    "verification_tax": [
+      "verification budget covered",
+      "approval review paid"
+    ],
+    "protected_overhead": [
+      "Digital SCIF handling",
+      "human review",
+      "approval",
+      "audit trail",
+      "rollback plan"
+    ],
+    "displaced_costs": [
+      "bounded residual review burden recorded before dispatch"
+    ],
+    "quality_predicate": "Dispatch is allowed only with protected overhead and review budget present.",
+    "safety_gates": [
+      "security gate active",
+      "approval gate active",
+      "no support-state promotion"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate if protected overhead, approval, rollback, or audit fields disappear.",
+    "residuals": [
+      "Displaced review burden is bounded in this fixture; no runtime or economic result is claimed."
+    ],
+    "evidence_refs": [
+      "chapters/resource-economics-and-token-budgets.qmd"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, or economic outcomes."
+  ]
+}

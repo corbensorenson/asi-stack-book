@@ -1,0 +1,44 @@
+{
+  "scenario_id": "valid_high_risk_escalation",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-002",
+    "task_id": "task://high-risk-policy-change",
+    "value_hypothesis": "A high-risk policy change may be valuable but cannot proceed without enough verification budget.",
+    "risk_class": "high",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "underfunded",
+    "cost_estimate": [
+      "policy review",
+      "adversarial review",
+      "release validation"
+    ],
+    "verification_tax": [
+      "insufficient verification budget recorded"
+    ],
+    "protected_overhead": [
+      "human review",
+      "approval",
+      "audit"
+    ],
+    "displaced_costs": [
+      "unverified policy change could create future debugging and reviewer burden"
+    ],
+    "quality_predicate": "No dispatch until required review capacity is available.",
+    "safety_gates": [
+      "approval required",
+      "support-state promotion blocked"
+    ],
+    "budget_decision": "escalate",
+    "escalation_rule": "Escalate to human review and defer dispatch until verification budget is covered.",
+    "residuals": [
+      "High-risk work remains blocked until verification budget is sufficient."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}

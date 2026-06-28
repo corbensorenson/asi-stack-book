@@ -182,5 +182,29 @@
       "Does not prove generation speed, speculative decoding quality, diffusion generation quality, KV-cache throughput, routing quality, or runtime behavior.",
       "Does not promote Appendix C support states."
     ]
+  },
+  {
+    "id": "resource_budget_ledgers",
+    "name": "Resource budget ledger harness",
+    "command": "python3 scripts/validate_resource_budget_ledgers.py",
+    "script": "scripts/validate_resource_budget_ledgers.py",
+    "doc": "docs/resource_budget_ledger_harness.md",
+    "experiment_dir": "experiments/resource_budget_ledgers",
+    "fixture_dir": "experiments/resource_budget_ledgers/fixtures",
+    "result_record": "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 4,
+    "expected_invalid_fixtures": 4,
+    "result_summary": "Resource budget ledger harness passed: 4 valid fixture(s), 4 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
+      "planning-as-a-control-layer",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "non_claims": [
+      "Does not prove budget scheduling, load stability, verification-tax optimization, KV-cache behavior, runtime budget enforcement, or economic outcomes.",
+      "Does not promote Appendix C support states."
+    ]
   }
 ]

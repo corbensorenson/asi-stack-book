@@ -1,0 +1,45 @@
+{
+  "scenario_id": "valid_rejected_displaced_costs",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-004",
+    "task_id": "task://cheap-route-with-hidden-costs",
+    "value_hypothesis": "A cheap route is not valuable when it shifts cost into future debugging and evidence loss.",
+    "risk_class": "medium",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "residualized",
+    "cost_estimate": [
+      "lower immediate token cost",
+      "higher future debugging risk"
+    ],
+    "verification_tax": [
+      "additional review required before acceptance"
+    ],
+    "protected_overhead": [
+      "reviewer burden must remain visible",
+      "rollback review required"
+    ],
+    "displaced_costs": [
+      "future debugging",
+      "human repair",
+      "evidence loss",
+      "rollback difficulty"
+    ],
+    "quality_predicate": "Savings cannot be accepted until displaced costs are measured or bounded.",
+    "safety_gates": [
+      "residual cost gate",
+      "no support-state promotion"
+    ],
+    "budget_decision": "residual",
+    "escalation_rule": "Residualize or reject cheap routes that hide future cost.",
+    "residuals": [
+      "Displaced costs remain residuals until measured."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}

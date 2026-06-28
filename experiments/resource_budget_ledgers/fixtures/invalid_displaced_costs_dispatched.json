@@ -1,0 +1,42 @@
+{
+  "scenario_id": "invalid_displaced_costs_dispatched",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-003",
+    "task_id": "task://cheap-hidden-cost-dispatch",
+    "value_hypothesis": "A cheap route is accepted while hiding repair burden.",
+    "risk_class": "medium",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "lower immediate token cost",
+      "future debugging shifted out of the budget"
+    ],
+    "verification_tax": [
+      "basic validation"
+    ],
+    "protected_overhead": [
+      "review should remain visible"
+    ],
+    "displaced_costs": [
+      "human repair",
+      "evidence loss",
+      "rollback difficulty"
+    ],
+    "quality_predicate": "Hidden costs should be residualized before dispatch.",
+    "safety_gates": [
+      "residual cost gate"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Residualize hidden costs.",
+    "residuals": [
+      "none"
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}

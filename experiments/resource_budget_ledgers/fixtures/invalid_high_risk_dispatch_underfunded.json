@@ -1,0 +1,39 @@
+{
+  "scenario_id": "invalid_high_risk_dispatch_underfunded",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-001",
+    "task_id": "task://high-risk-underfunded-dispatch",
+    "value_hypothesis": "A high-risk task is dispatched despite underfunded verification.",
+    "risk_class": "high",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "underfunded",
+    "cost_estimate": [
+      "policy review skipped"
+    ],
+    "verification_tax": [
+      "insufficient verification budget"
+    ],
+    "protected_overhead": [
+      "approval should have been required"
+    ],
+    "displaced_costs": [
+      "future debugging"
+    ],
+    "quality_predicate": "Dispatch should not be allowed.",
+    "safety_gates": [
+      "approval gate"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Should escalate instead of dispatch.",
+    "residuals": [
+      "none"
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, or economic outcomes."
+  ]
+}
