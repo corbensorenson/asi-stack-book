@@ -72,7 +72,7 @@ VCM and Verification Bandwidth reinforce the boundary: context admission, contex
 
 The reader-facing distinction is structural memory versus useful memory. Structural memory can say that a slot exists, a version is current, a stride covers a lag, or a recurrence loop has an exit. Useful memory requires the retrieved material to help the task under the current claim, authority, and adequacy boundary. The first kind of fact is necessary for disciplined systems work. The second kind needs workload evidence.
 
-This matters because long-context systems often fail by sounding continuous while their memory contract is broken. A stale cell may still be fluent. A covered lag may still be irrelevant. A recurrence loop may produce more text while making no progress. The contract gives later validators a place to look for those failures before they become invisible inside a model trace.
+Long-context systems often fail by sounding continuous while their memory contract is broken. A stale cell may still be fluent. A covered lag may still be irrelevant. A recurrence loop may produce more text while making no progress. The contract gives later validators a place to look for those failures before they become invisible inside a model trace.
 
 Finite proofs and learned behavior meet at the sharpest gap. A finite proof can certify a slot property, coverage property, or loop-exit property. It cannot certify that a learned model used the right information in the right way unless a workload-specific evaluation supplies that evidence.
 

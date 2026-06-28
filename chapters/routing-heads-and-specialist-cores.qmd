@@ -70,7 +70,7 @@ The hard problem is refusing plausible specialists. A route can look semanticall
 
 Monolithic scaling hides the route. Static tool lists hide the capability boundary. Prompt-only orchestration can choose a tool, but it rarely records why that tool was adequate, which authority envelope applied, which local memory was in scope, how readiness was checked, or what fallback will be used when the result is inadequate.
 
-This matters because routing is not just a performance problem. It is also a governance problem. A specialist that can read a private memory, call a tool, mutate an artifact, or advise a high-impact decision is exercising authority. The router therefore needs a registry and a decision record, not just a confidence score.
+Routing is not just a performance problem; it is a governance problem. A specialist that can read a private memory, call a tool, mutate an artifact, or advise a high-impact decision is exercising authority. The router therefore needs a registry and a decision record, not just a confidence score.
 
 Route opacity is the immediate routing failure. A system may choose a good specialist and still leave no explanation of rejected candidates, denied authority, missing readiness, fallback options, or residual work. That makes later audit and learning impossible.
 

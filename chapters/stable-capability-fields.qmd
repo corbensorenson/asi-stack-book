@@ -78,7 +78,7 @@ SCF makes the upgrade question testable: does this candidate satisfy the same fi
 
 Without that test, a system can suffer capability amnesia. It remembers that a component was replaced, but not what the old component was obligated to preserve, which regressions mattered, which authority ceiling applied, or which evaluator was trusted at the time. SCFs keep those obligations attached to the field rather than scattered across release notes.
 
-This matters because the most dangerous upgrade failures can look successful locally. The new implementation may pass its own demo while forgetting the field's historical incidents, weakening an audit hook, changing the meaning of a route, or treating an expired qualification as fresh. A stable field makes those losses visible as boundary violations instead of hidden costs of progress.
+The most dangerous upgrade failures can look successful locally. The new implementation may pass its own demo while forgetting the field's historical incidents, weakening an audit hook, changing the meaning of a route, or treating an expired qualification as fresh. A stable field makes those losses visible as boundary violations instead of hidden costs of progress.
 
 ## Core Claim
 
