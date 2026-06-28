@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/generate-verify-repair-compression.qmd",
+  "operations": [
+    {
+      "id": "v1_0.generate_verify_repair.receipt_states_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Compression receipt states"
+      },
+      "rationale": "Replace the compression-receipt state table with reader prose while preserving the canonical AI/research receipt-state matrix.",
+      "content_lines": [
+        "Compression receipts move through states because exactness is not a feeling produced by an elegant generator. A candidate receipt means a generator, seed, or law family has been proposed but not verified, so it belongs only in search and analysis. Verified exact is stronger: decode plus recorded repair equals the target under the declared reconstruction contract. Verified lossy is different again; loss has been declared and accepted only inside a bounded use envelope such as preview, drafting, routing, or another loss-tolerant task.",
+        "",
+        "Repaired exact is the honest middle case. The generator did useful work, but exactness depends on a recorded residual, and that repair stream has to be counted with the metadata and interface costs. Literal fallback is not failure to hide. It means compression was not cheaper, verification failed, or the literal artifact was the right route, so the receipt becomes negative evidence for this method on this target.",
+        "",
+        "Quarantine is the hard stop. If search, verification, decode, consumer policy, or rate accounting violates the contract, the representation is blocked from downstream use except debugging. These states are evidence states for a representation, not claims about universal compression. They let the system preserve failed experiments without turning them into codec success stories."
+      ]
+    }
+  ]
+}

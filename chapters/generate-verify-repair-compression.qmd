@@ -117,7 +117,7 @@ The process is contract-relative: a public law family and artifact-specific seed
 
 The compression record should include receipt state, reconstruction contract, law-family id, seed payload, search bound, verification region, repair stream, literal fallback, interface costs, consumer policy, use permissions, proxy model status, final serialization status, final entropy model, proxy gap, support-state effect, evidence refs, and non-claims. That record is the bridge from a beautiful compression idea to an auditable ASI substrate.
 
-Compression receipts should move through explicit states:
+### Compression receipt states
 
 | State | Meaning | Allowed downstream use |
 |---|---|---|
