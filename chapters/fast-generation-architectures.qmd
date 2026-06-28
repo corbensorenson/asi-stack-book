@@ -73,7 +73,7 @@ Latency gains count only after acceptance and fallback remain intact. Speed beco
 
 ## Problem
 
-The stack needs to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
+Fast-generation work has to reduce serial token-generation latency without treating raw tokens per second as intelligence or bypassing verification.
 
 Autoregressive language models make one high-value promise and one expensive tradeoff. They can condition each next token on the committed past, but the ordinary inference path is serial: produce a token, append it, run another step, and repeat. That is not merely an implementation detail. In a governed ASI stack, every second spent emitting text competes with planning, retrieval, verification, tool execution, artifact construction, benchmark replay, and human review.
 
@@ -85,7 +85,7 @@ Standard autoregressive decoding, raw throughput benchmarks, and isolated servin
 
 The failure is conceptual before it is technical. A model can emit many tokens quickly and still produce less useful cognition per second if more tokens are rejected, repaired, rerun, or audited. A serving system can improve aggregate throughput while leaving single-request latency unchanged. A speculative or diffusion system can look fast when proposed tokens are counted, then lose the advantage when accepted tokens, verifier cost, memory pressure, retries, and task success are counted.
 
-The ASI Stack needs a stricter unit of accounting:
+The accounting unit has to be stricter:
 
 ```text
 effective_verified_tokens_per_second =

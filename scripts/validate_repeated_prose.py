@@ -49,6 +49,9 @@ FORMULAIC_MVI_PHRASES = (
 )
 FORMULAIC_GENERAL_PHRASES = (
     "The book needs a place",
+    "The book needs",
+    "The stack needs",
+    "The ASI Stack needs",
     "The public schema now records",
     "The interface is the",
     "The interface is a",

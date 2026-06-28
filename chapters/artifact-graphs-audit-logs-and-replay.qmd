@@ -57,9 +57,9 @@ Durability matters because future trust depends on recoverable context, not memo
 
 ## Problem
 
-The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
+Durable artifacts and replayable traces make work inspectable, reusable, testable, and improvable.
 
-Typed jobs produce outputs. The stack needs those outputs to become artifacts with stable identities, provenance, audit events, replay metadata, claim/test links, and known replay limits. Otherwise every result is an isolated file or chat answer with no reliable path back to its causes.
+Typed jobs produce outputs. Those outputs must become artifacts with stable identities, provenance, audit events, replay metadata, claim/test links, and known replay limits. Otherwise every result is an isolated file or chat answer with no reliable path back to its causes.
 
 Talos treats evidence, logs, and replay as execution primitives. GenesisCode adds effect logs, semantic patches, provenance hashes, and obligation artifacts. Cognitive Loop Closure uses repeated artifact traces as the substrate for future tools.
 

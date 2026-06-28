@@ -72,6 +72,7 @@ Check that the stripped manuscript will still work as a book:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -84,7 +85,7 @@ Generate the local source workspace:
 python3 scripts/build_reader_edition.py
 ```
 
-Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, and the generated manuscript before rendering release artifacts.
+Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, and the generated manuscript before rendering release artifacts.
 
 Attempt specific formats and record actual local outcomes:
 

@@ -45,6 +45,7 @@ python3 scripts/validate_reading_mode_toggle.py
 python3 scripts/build_reader_edition.py --check
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py

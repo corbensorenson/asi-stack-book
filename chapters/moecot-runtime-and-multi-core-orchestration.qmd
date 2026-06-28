@@ -62,7 +62,7 @@ The runtime ideal is less about clever orchestration than about evidence-rich or
 
 ## Problem
 
-The book needs at least one concrete runtime shape for the architecture it describes. Otherwise the stack can become a set of persuasive layers without a believable operational surface. A governed ASI stack needs a compact orchestrator, specialist lanes, control-plane gates, ledgers, replay, handoff, and readiness boundaries that line up with the rest of the book.
+At least one concrete runtime shape is necessary for the architecture described here. Otherwise the stack can become a set of persuasive layers without a believable operational surface. A governed ASI stack needs a compact orchestrator, specialist lanes, control-plane gates, ledgers, replay, handoff, and readiness boundaries that line up with the rest of the book.
 
 MoECOT is the current implementation-reference lane for that shape. Its source note describes a governed, skill-native, low-parameter orchestration architecture with a compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, and explicit limitations.
 

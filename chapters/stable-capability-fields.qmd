@@ -60,7 +60,7 @@ Continuity is the promise that makes replacement governable only when a field su
 
 ## Problem
 
-The stack needs stable semantic boundaries so implementations can improve without changing what a capability means.
+Capability fields provide stable semantic boundaries so implementations can improve without changing what a capability means.
 
 Rights become technical only when capability identity remains stable. Stable capability fields let the system improve components without moving the target under those rights. A capability must have a stable meaning before it can be routed to, qualified, replaced, rolled back, or governed. Otherwise every implementation change is also a semantic change, and no one can tell whether the system improved or merely redefined success.
 

@@ -57,9 +57,9 @@ That refusal path is part of the system's intelligence, not an interruption of i
 
 ## Problem
 
-The stack needs a formal vocabulary for boundaries, authority ceilings, permissions, and handoffs before any layer can be made safe or testable.
+Boundaries, authority ceilings, permissions, and handoffs need a formal vocabulary before any layer can be made safe or testable.
 
-Efficiency routes cognition by cost and quality. That only works if route selection cannot silently become permission to act. A planner may know how to decompose a task without being allowed to touch production. A memory layer may read a source without being allowed to reveal it. A specialist may generate a patch without being allowed to apply it. The stack needs words and records for those separations before it can claim governance.
+Efficiency routes cognition by cost and quality. That only works if route selection cannot silently become permission to act. A planner may know how to decompose a task without being allowed to touch production. A memory layer may read a source without being allowed to reveal it. A specialist may generate a patch without being allowed to apply it. Those separations need words and records before governance can be claimed.
 
 Authority is not a mood, trust score, or model reputation. It is a typed capability attached to a principal, layer, tool, field, artifact, or handoff, bounded by a ceiling and revoked through an auditable path. VIEA needs this to keep intent-to-execution from becoming intent-to-side-effect. SCF needs it so replacement implementations cannot inherit broader powers by occupying a stable capability slot. Talos needs it so typed jobs and tool permissions stay inside a control plane. Ladon/Manhattan and GenesisCode sharpen the same point: secrets, effects, patches, and executors need explicit gates.
 

@@ -18,7 +18,9 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, and appendix order, including curated lineage appendices.
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree and `reader_manifest.json` under ignored `build/`.
+- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
+- `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book.
+- `scripts/validate_reader_overlays.py` checks that reader overlays are section-anchored, apply cleanly, and produce a generated delta report.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, section-level prose/word-count floors, chapter-specific Handoff continuity, and no live-only scaffolding after stripping.
 - `scripts/validate_reader_evidence_boundaries.py` checks that every generated reader chapter strips raw live core-claim markers and repeated support boilerplate while preserving the claim text and a compact inline plain-language support-state boundary in the Core Claim section.
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one `.asi-human-only` Human Reading Path bridge and that reader-edition generation unwraps it into ordinary prose.
@@ -81,6 +83,7 @@ python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
@@ -110,6 +113,7 @@ The project uses one canonical source tree with explicit content layers:
 - The reader-facing chapter spine is ordinary prose, diagrams, examples, uncertainty, and summaries that should still read well after live-only headings are removed.
 - The live research scaffold contains source crosswalks, guardrails, Codex tests, formalization hooks, claim mappings, and other audit machinery for AIs and researchers.
 - The live Human view uses the same reader-strip policy on the GitHub Pages site. Each chapter's `.asi-human-only` Human Reading Path bridge is hidden in default AI view, shown in Human view, and unwrapped into reader editions; `.asi-ai-only` blocks are removed from reader editions; raw bracketed core-claim markers and repeated support-state boilerplate are visible in AI view but hidden or humanized in Human view and stripped from generated reader chapters while the claim text and compact inline evidence boundary remain.
+- Reader overlays under `editions/reader_overlays/` are tracked semantic deltas for major human-reader versions. They target stable files and headings, then generate `reader_delta_report.md`; generated reader files under `build/` are still disposable and should not be hand-edited.
 - Companion material records how diagrams, tables, code, schemas, and omitted dense matrices should be handled for e-reader, document, and audio releases.
 - Release derivatives such as EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB exist only after generation or render, review, and release-record entry.
 
@@ -125,6 +129,7 @@ Generate or check a local reader-edition Quarto source tree:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -146,7 +151,7 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-Generated edition builds are written under `build/` and ignored by git. Reader builds include `READER_RELEASE_CHECKLIST.md` and `companion_notes.md`; audio builds include `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts unless those specific render, conversion, or audio-generation commands have actually succeeded and a release record says so.
+Generated edition builds are written under `build/` and ignored by git. Reader builds include `READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`; audio builds include `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. Do not claim EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts unless those specific render, conversion, or audio-generation commands have actually succeeded and a release record says so.
 
 ## Dynamic Book Structure
 

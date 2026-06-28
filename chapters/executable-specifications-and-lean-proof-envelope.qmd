@@ -71,7 +71,7 @@ The problem is not whether formal methods are desirable. The problem is where th
 
 ## Why existing approaches are insufficient
 
-Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions. They are also misleading when tests, diagrams, generated JSON, or Python examples are described as proofs. The stack needs a proof envelope that says what is mechanized, what is executable but not formal, what is blocked, and what is intentionally out of scope.
+Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions. They are also misleading when tests, diagrams, generated JSON, or Python examples are described as proofs. A useful proof envelope says what is mechanized, what is executable but not formal, what is blocked, and what is intentionally out of scope.
 
 The hard part is not enthusiasm for proof; it is choosing the right unit of proof. "The system is safe" is too broad. "An execution request without a required approval cannot enter the approved state" is narrow enough to test, model, or prove. "The architecture is aligned" is too broad. "A support-state transition cannot move above `argument` without the required evidence record" is narrow enough to encode. The proof envelope keeps this discipline visible so formal artifacts strengthen the book instead of decorating it.
 

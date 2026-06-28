@@ -57,7 +57,7 @@ The receipt should make a limited guarantee easier to trust and easier to refuse
 
 ## Problem
 
-The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
+Selected mathematical and AI-infrastructure claims need theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Circle-style artifacts are useful because they can identify theorem IDs, proof status, deterministic certificate fields, fingerprints, consumer checks, and explicit non-claims.
 
 The hard problem is authority transfer. A finite cyclic-address proof can be valid and still say nothing about language-model quality, runtime, memory, context length, deployment safety, or ASI capability. The ASI Stack therefore needs a contract boundary that lets downstream systems consume structural facts while preserving the limits of those facts.
 

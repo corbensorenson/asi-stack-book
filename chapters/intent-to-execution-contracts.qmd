@@ -67,7 +67,7 @@ A model response is not an execution contract; it lacks lifecycle, acceptance, a
 
 The common failure is to treat fluent text as completed work. A response can sound responsive while hiding missing approvals, untracked source boundaries, unverifiable artifacts, unexecuted tests, or side effects that were never authorized. Talos sharpens the point: work should enter a job lifecycle, not a loose conversational state. GenesisCode adds the software version of the same boundary: proposals, effects, replay logs, and obligations must be separated.
 
-The stack needs a contract boundary because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
+The contract boundary exists because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
 
 The missing-field case is just as important as the filled-field case. If the contract does not specify authority, acceptance, allowed tools, failure behavior, or approval path, downstream layers should not silently infer permissive defaults. They should emit clarification requests, draft-only routes, residuals, or blocked states.
 

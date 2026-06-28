@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+  "operations": [
+    {
+      "id": "asi-is-a-stack-not-a-model.reader.example.v1_0",
+      "status": "planned",
+      "action": "append_to_section",
+      "section": { "level": 2, "title": "Problem" },
+      "content_lines": [
+        "This planned example is not applied because the manifest only loads operations from ../chapters/*.json.",
+        "",
+        "Move a real operation into ../chapters/<chapter-slug>.json only after deciding that the prose belongs in the reader edition and not in the canonical live chapter."
+      ],
+      "rationale": "Document the semantic overlay format without changing the generated reader manuscript."
+    }
+  ]
+}

@@ -9,6 +9,7 @@ the cleaned Quarto source needed for those later release steps.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
 import re
 import shutil
@@ -65,6 +66,16 @@ NON_HEADING_TRANSFORM_KEYS = {
     "support_boilerplate_humanized",
     "reader_scaffold_terms_humanized",
 }
+WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
+OVERLAY_ACTIONS = {
+    "replace_section",
+    "prepend_to_section",
+    "append_to_section",
+    "insert_before_section",
+    "insert_after_section",
+}
+OVERLAY_STATUSES = {"active", "planned", "retired"}
+DEFAULT_DELTA_REPORT = "reader_delta_report.md"
 
 
 def load_json(path: Path) -> object:
@@ -261,6 +272,452 @@ def profile_strip_headings(profile: dict) -> set[tuple[int, str]]:
     return result
 
 
+def normalized_relative_path(value: object, owner: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{owner}: path must be a non-empty string.")
+    path = Path(value.strip())
+    if path.is_absolute() or ".." in path.parts:
+        raise ValueError(f"{owner}: path must be a safe repository-relative path: {value!r}.")
+    return path.as_posix()
+
+
+def operation_content(operation: dict) -> str:
+    if isinstance(operation.get("content"), str):
+        return str(operation["content"]).strip()
+    lines = operation.get("content_lines")
+    if isinstance(lines, list) and all(isinstance(line, str) for line in lines):
+        return "\n".join(lines).strip()
+    return ""
+
+
+def normalize_overlay_operation(
+    operation: object,
+    source_path: str,
+    index: int,
+    default_target_file: str | None = None,
+) -> dict[str, object]:
+    if not isinstance(operation, dict):
+        raise TypeError(f"{source_path}: operations[{index}] must be an object.")
+
+    operation_id = operation.get("id")
+    if not isinstance(operation_id, str) or not operation_id.strip():
+        raise ValueError(f"{source_path}: operations[{index}] missing non-empty id.")
+
+    status = str(operation.get("status", "active")).strip().lower()
+    if status not in OVERLAY_STATUSES:
+        raise ValueError(
+            f"{source_path}: operation {operation_id!r} status must be one of "
+            f"{sorted(OVERLAY_STATUSES)}."
+        )
+
+    action = operation.get("action")
+    if not isinstance(action, str) or action not in OVERLAY_ACTIONS:
+        raise ValueError(
+            f"{source_path}: operation {operation_id!r} action must be one of "
+            f"{sorted(OVERLAY_ACTIONS)}."
+        )
+
+    target_file_value = operation.get("target_file", default_target_file)
+    target_file = normalized_relative_path(target_file_value, f"{source_path}:{operation_id}.target_file")
+    if not target_file.endswith(".qmd"):
+        raise ValueError(f"{source_path}: operation {operation_id!r} target_file must end with .qmd.")
+
+    section = operation.get("section")
+    if not isinstance(section, dict):
+        raise ValueError(f"{source_path}: operation {operation_id!r} section must be an object.")
+    level = section.get("level")
+    title = section.get("title")
+    if not isinstance(level, int) or level < 1 or level > 6:
+        raise ValueError(f"{source_path}: operation {operation_id!r} section.level must be 1..6.")
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError(f"{source_path}: operation {operation_id!r} section.title must be non-empty.")
+
+    content = operation_content(operation)
+    if status == "active" and not content:
+        raise ValueError(f"{source_path}: operation {operation_id!r} active operations need content.")
+
+    rationale = operation.get("rationale", "")
+    if rationale is not None and not isinstance(rationale, str):
+        raise ValueError(f"{source_path}: operation {operation_id!r} rationale must be a string.")
+
+    return {
+        "id": operation_id.strip(),
+        "status": status,
+        "action": action,
+        "target_file": target_file,
+        "section": {"level": level, "title": title.strip()},
+        "content": content,
+        "rationale": str(rationale).strip(),
+        "source_path": source_path,
+    }
+
+
+def load_overlay_operations_from_file(path: Path, manifest_dir: Path) -> list[dict[str, object]]:
+    data = load_json(path)
+    if not isinstance(data, dict):
+        raise TypeError(f"{path}: overlay operation file must contain an object.")
+    if data.get("schema_version") != "0.1":
+        raise ValueError(f"{path}: schema_version must be 0.1.")
+    default_target_file = data.get("target_file")
+    if default_target_file is not None:
+        default_target_file = normalized_relative_path(default_target_file, f"{path}.target_file")
+    operations = data.get("operations", [])
+    if not isinstance(operations, list):
+        raise TypeError(f"{path}: operations must be a list.")
+    source_path = path.relative_to(ROOT).as_posix()
+    return [
+        normalize_overlay_operation(operation, source_path, index, default_target_file)
+        for index, operation in enumerate(operations)
+    ]
+
+
+def load_reader_overlay_context(profile: dict) -> dict[str, object]:
+    manifest_ref = profile.get("reader_overlay_manifest")
+    if manifest_ref is None:
+        return {
+            "configured": False,
+            "manifest_path": None,
+            "manifest": {},
+            "operations": [],
+            "applied_records": [],
+            "skipped_records": [],
+            "applied_ids": set(),
+        }
+
+    manifest_rel = normalized_relative_path(manifest_ref, "reader_overlay_manifest")
+    manifest_path = ROOT / manifest_rel
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"Reader overlay manifest not found: {manifest_rel}")
+
+    manifest = load_json(manifest_path)
+    if not isinstance(manifest, dict):
+        raise TypeError(f"{manifest_rel}: reader overlay manifest must contain an object.")
+    if manifest.get("schema_version") != "0.1":
+        raise ValueError(f"{manifest_rel}: schema_version must be 0.1.")
+    for key in ("id", "label", "purpose"):
+        value = manifest.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{manifest_rel}: {key} must be a non-empty string.")
+    status = manifest.get("status")
+    if status not in ("active", "planned", "retired"):
+        raise ValueError(f"{manifest_rel}: status must be active, planned, or retired.")
+    if manifest.get("applies_to_profile") not in (None, profile.get("id")):
+        raise ValueError(
+            f"{manifest_rel}: applies_to_profile must match {profile.get('id')!r} when present."
+        )
+
+    operations: list[dict[str, object]] = []
+    manifest_operations = manifest.get("operations", [])
+    if not isinstance(manifest_operations, list):
+        raise TypeError(f"{manifest_rel}: operations must be a list.")
+    operations.extend(
+        normalize_overlay_operation(operation, manifest_rel, index)
+        for index, operation in enumerate(manifest_operations)
+    )
+
+    manifest_dir = manifest_path.parent
+    operation_globs = manifest.get("operation_globs", [])
+    if not isinstance(operation_globs, list) or not all(isinstance(pattern, str) for pattern in operation_globs):
+        raise TypeError(f"{manifest_rel}: operation_globs must be a list of strings.")
+    operation_files: list[str] = []
+    for pattern in operation_globs:
+        normalized_pattern = normalized_relative_path(pattern, f"{manifest_rel}.operation_globs")
+        for path in sorted(manifest_dir.glob(normalized_pattern)):
+            if path.is_file():
+                operation_files.append(path.relative_to(ROOT).as_posix())
+                operations.extend(load_overlay_operations_from_file(path, manifest_dir))
+
+    ids: set[str] = set()
+    skipped_records: list[dict[str, object]] = []
+    for operation in operations:
+        operation_id = str(operation["id"])
+        if operation_id in ids:
+            raise ValueError(f"{manifest_rel}: duplicate reader overlay operation id: {operation_id}")
+        ids.add(operation_id)
+        if operation["status"] != "active":
+            skipped_records.append({
+                "id": operation_id,
+                "status": operation["status"],
+                "target_file": operation["target_file"],
+                "action": operation["action"],
+                "section": operation["section"],
+                "source_path": operation["source_path"],
+            })
+
+    return {
+        "configured": True,
+        "manifest_path": manifest_rel,
+        "manifest": manifest,
+        "operation_files": operation_files,
+        "operations": operations,
+        "applied_records": [],
+        "skipped_records": skipped_records,
+        "applied_ids": set(),
+    }
+
+
+def heading_spans(text: str) -> list[dict[str, object]]:
+    lines = text.splitlines()
+    spans: list[dict[str, object]] = []
+    for index, line in enumerate(lines):
+        match = HEADING_RE.match(line)
+        if not match:
+            continue
+        level = len(match.group(1))
+        title = normalize_heading_title(match.group(2))
+        end = len(lines)
+        for next_index in range(index + 1, len(lines)):
+            next_match = HEADING_RE.match(lines[next_index])
+            if next_match and len(next_match.group(1)) <= level:
+                end = next_index
+                break
+        spans.append({"start": index, "body_start": index + 1, "end": end, "level": level, "title": title})
+    return spans
+
+
+def find_section_span(lines: list[str], operation: dict[str, object]) -> dict[str, object]:
+    section = operation["section"]
+    if not isinstance(section, dict):
+        raise TypeError("reader overlay operation section must be an object")
+    expected_level = int(section["level"])
+    expected_title = normalize_heading_title(str(section["title"]))
+    matches = [
+        span
+        for span in heading_spans("\n".join(lines))
+        if int(span["level"]) == expected_level and str(span["title"]) == expected_title
+    ]
+    if not matches:
+        raise ValueError(
+            f"{operation['id']}: target section not found in {operation['target_file']}: "
+            f"{'#' * expected_level} {section['title']}"
+        )
+    if len(matches) > 1:
+        raise ValueError(
+            f"{operation['id']}: target section is ambiguous in {operation['target_file']}: "
+            f"{'#' * expected_level} {section['title']}"
+        )
+    return matches[0]
+
+
+def content_block_lines(content: str) -> list[str]:
+    lines = content.strip().splitlines()
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    return [""] + lines + [""]
+
+
+def apply_reader_overlay_operation(text: str, operation: dict[str, object]) -> tuple[str, dict[str, object]]:
+    before_words = len(WORD_RE.findall(text))
+    lines = text.splitlines()
+    span = find_section_span(lines, operation)
+    block = content_block_lines(str(operation["content"]))
+    action = str(operation["action"])
+    start = int(span["start"])
+    body_start = int(span["body_start"])
+    end = int(span["end"])
+
+    if action == "replace_section":
+        new_lines = lines[:body_start] + block + lines[end:]
+    elif action == "prepend_to_section":
+        new_lines = lines[:body_start] + block + lines[body_start:]
+    elif action == "append_to_section":
+        new_lines = lines[:end] + block + lines[end:]
+    elif action == "insert_before_section":
+        new_lines = lines[:start] + block + lines[start:]
+    elif action == "insert_after_section":
+        new_lines = lines[:end] + block + lines[end:]
+    else:
+        raise ValueError(f"Unsupported reader overlay action: {action}")
+
+    cleaned = "\n".join(new_lines).strip() + "\n"
+    after_words = len(WORD_RE.findall(cleaned))
+    section = operation["section"]
+    record = {
+        "id": operation["id"],
+        "target_file": operation["target_file"],
+        "action": operation["action"],
+        "section": section,
+        "source_path": operation["source_path"],
+        "rationale": operation.get("rationale", ""),
+        "word_delta": after_words - before_words,
+    }
+    return cleaned, record
+
+
+def apply_reader_overlay_to_file(output_path: Path, relative_path: str, context: dict[str, object]) -> None:
+    if not context.get("configured"):
+        return
+    operations = [
+        operation
+        for operation in context.get("operations", [])
+        if isinstance(operation, dict)
+        and operation.get("status") == "active"
+        and operation.get("target_file") == relative_path
+    ]
+    if not operations:
+        return
+
+    text = output_path.read_text(encoding="utf-8")
+    for operation in operations:
+        text, record = apply_reader_overlay_operation(text, operation)
+        applied_records = context.get("applied_records")
+        if isinstance(applied_records, list):
+            applied_records.append(record)
+        applied_ids = context.get("applied_ids")
+        if isinstance(applied_ids, set):
+            applied_ids.add(str(operation["id"]))
+    output_path.write_text(text, encoding="utf-8")
+
+
+def finalize_reader_overlay_context(context: dict[str, object]) -> None:
+    if not context.get("configured"):
+        return
+    applied_ids = context.get("applied_ids")
+    if not isinstance(applied_ids, set):
+        applied_ids = set()
+    unapplied = [
+        operation
+        for operation in context.get("operations", [])
+        if isinstance(operation, dict)
+        and operation.get("status") == "active"
+        and str(operation.get("id")) not in applied_ids
+    ]
+    if unapplied:
+        lines = [
+            f"{operation['id']} -> {operation['target_file']} ({operation['action']})"
+            for operation in unapplied
+        ]
+        raise ValueError("Active reader overlay operations were not applied: " + "; ".join(lines))
+
+
+def reader_overlay_summary(context: dict[str, object]) -> dict[str, object]:
+    applied_records = context.get("applied_records", [])
+    skipped_records = context.get("skipped_records", [])
+    if not isinstance(applied_records, list):
+        applied_records = []
+    if not isinstance(skipped_records, list):
+        skipped_records = []
+    active_operations = [
+        operation
+        for operation in context.get("operations", [])
+        if isinstance(operation, dict) and operation.get("status") == "active"
+    ]
+    target_files = sorted({str(record.get("target_file", "")) for record in applied_records if record.get("target_file")})
+    action_counts: dict[str, int] = {}
+    for record in applied_records:
+        action = str(record.get("action", ""))
+        action_counts[action] = action_counts.get(action, 0) + 1
+    return {
+        "configured": bool(context.get("configured")),
+        "manifest_path": context.get("manifest_path"),
+        "manifest_id": context.get("manifest", {}).get("id") if isinstance(context.get("manifest"), dict) else None,
+        "operation_files": context.get("operation_files", []),
+        "active_operations": len(active_operations),
+        "applied_operations": len(applied_records),
+        "skipped_operations": len(skipped_records),
+        "target_files": target_files,
+        "action_counts": action_counts,
+        "applied_records": applied_records,
+        "skipped_records": skipped_records,
+    }
+
+
+def write_reader_delta_report(
+    output_dir: Path,
+    profile: dict,
+    summary: dict[str, object],
+    overlay_summary: dict[str, object],
+) -> str:
+    report_path = DEFAULT_DELTA_REPORT
+    lines = [
+        "# Reader Delta Report",
+        "",
+        "Status: generated report for the derived reader edition.",
+        "",
+        "This report records the semantic difference between the live-book source and the generated human-reader source. It is regenerated by `scripts/build_reader_edition.py`; do not hand-edit the generated reader manuscript as the canonical source.",
+        "",
+        "## Source",
+        "",
+        f"- Profile: `{profile.get('id', 'reader_release')}`",
+        f"- Generated at UTC: `{datetime.now(timezone.utc).isoformat()}`",
+        f"- Overlay configured: `{str(overlay_summary.get('configured', False)).lower()}`",
+        f"- Overlay manifest: `{overlay_summary.get('manifest_path') or 'not configured'}`",
+        f"- Overlay manifest id: `{overlay_summary.get('manifest_id') or 'not configured'}`",
+        f"- Active overlay operations: {overlay_summary.get('active_operations', 0)}",
+        f"- Applied overlay operations: {overlay_summary.get('applied_operations', 0)}",
+        f"- Skipped overlay operations: {overlay_summary.get('skipped_operations', 0)}",
+        "",
+        "## Generator Transformations",
+        "",
+        f"- Live-only heading sections removed: {summary.get('stripped_heading_count', 0)}",
+        f"- AI-only fenced blocks removed: {summary.get('ai_only_blocks_removed', 0)}",
+        f"- Human-only fenced blocks unwrapped: {summary.get('human_only_blocks_unwrapped', 0)}",
+        f"- Raw core-claim markers removed: {summary.get('removed_sections', {}).get('core_claim_markers_removed', 0) if isinstance(summary.get('removed_sections'), dict) else 0}",
+        f"- Repeated support boilerplate humanized: {summary.get('removed_sections', {}).get('support_boilerplate_humanized', 0) if isinstance(summary.get('removed_sections'), dict) else 0}",
+        f"- Reader scaffold terms humanized: {summary.get('reader_scaffold_terms_humanized', 0)}",
+        "",
+        "## Applied Overlay Operations",
+        "",
+    ]
+
+    applied_records = overlay_summary.get("applied_records", [])
+    if isinstance(applied_records, list) and applied_records:
+        lines.extend([
+            "| Operation | Target file | Action | Section | Word delta | Rationale |",
+            "|---|---|---|---|---:|---|",
+        ])
+        for record in applied_records:
+            section = record.get("section", {})
+            if isinstance(section, dict):
+                section_label = f"{'#' * int(section.get('level', 2))} {section.get('title', '')}"
+            else:
+                section_label = ""
+            rationale = str(record.get("rationale", "")).replace("|", "\\|")
+            lines.append(
+                f"| `{record.get('id', '')}` | `{record.get('target_file', '')}` | "
+                f"`{record.get('action', '')}` | `{section_label}` | "
+                f"{record.get('word_delta', 0)} | {rationale or 'n/a'} |"
+            )
+    else:
+        lines.append("No active reader overlay operations were applied.")
+
+    skipped_records = overlay_summary.get("skipped_records", [])
+    if isinstance(skipped_records, list) and skipped_records:
+        lines.extend([
+            "",
+            "## Skipped Overlay Operations",
+            "",
+            "| Operation | Status | Target file | Action |",
+            "|---|---|---|---|",
+        ])
+        for record in skipped_records:
+            lines.append(
+                f"| `{record.get('id', '')}` | `{record.get('status', '')}` | "
+                f"`{record.get('target_file', '')}` | `{record.get('action', '')}` |"
+            )
+
+    lines.extend([
+        "",
+        "## Review Notes",
+        "",
+        "- Edit tracked overlay files under `editions/reader_overlays/` when a major reader version needs human-edition prose deltas that should survive regeneration.",
+        "- Edit live chapter source when the change should also affect AI view, Human view, research releases, proof hooks, source maps, or future writing runs.",
+        "- Keep reader overlays semantic: target stable files and headings, not generated line numbers.",
+        "",
+        "## Non-Claims",
+        "",
+        "- This report does not claim that an EPUB, PDF, DOCX, HTML reader artifact, audiobook, or audio-embedded EPUB exists.",
+        "- This report does not promote any claim support state.",
+        "- This report is not a reviewed major-version release record.",
+        "",
+    ])
+
+    (output_dir / report_path).write_text("\n".join(lines), encoding="utf-8")
+    return report_path
+
+
 def clean_file(
     src: Path,
     dst: Path,
@@ -422,6 +879,9 @@ def write_reader_checklist(
         f"- AI-only fenced blocks removed: {summary.get('ai_only_blocks_removed', 0)}",
         f"- Human-only fenced blocks unwrapped: {summary.get('human_only_blocks_unwrapped', 0)}",
         f"- Reader scaffold terms humanized: {summary.get('reader_scaffold_terms_humanized', 0)}",
+        f"- Reader overlay manifest: `{summary.get('reader_overlay', {}).get('manifest_path') if isinstance(summary.get('reader_overlay'), dict) else 'not configured'}`",
+        f"- Reader overlay operations applied: {summary.get('reader_overlay_operations_applied', 0)}",
+        f"- Reader delta report: `{summary.get('reader_delta_report', DEFAULT_DELTA_REPORT)}`",
         f"- Reader-spine validator: `{spine_script}`",
         f"- Handoff word floor: {min_handoff_words}",
         "",
@@ -440,6 +900,7 @@ def write_reader_checklist(
         "- [ ] Confirm non-final Handoffs name the next manifest chapter title and the final Handoff closes the book-level arc.",
         "- [ ] Check that meaning-critical caveats and support-state limits remain in ordinary prose.",
         "- [ ] Check that stripped source crosswalks, proof hooks, and guardrails did not leave broken transitions.",
+        "- [ ] Review the generated reader delta report and confirm any overlay operations are intentional for this major version.",
         "- [ ] Check that glossary, Corben corpus/local-project appendix, and separate external-literature appendix are sufficient for interested human readers.",
         f"- [ ] Review `{companion_path}` for omitted dense material and e-reader/audio companion needs.",
         "- [ ] Record residuals and non-claims in an edition release record.",
@@ -550,6 +1011,23 @@ def write_reader_companion_notes(
         for key, count in sorted(transform_counts.items()):
             lines.append(f"| `{key}` | {count} |")
 
+    reader_overlay = summary.get("reader_overlay", {})
+    if isinstance(reader_overlay, dict):
+        lines.extend([
+            "",
+            "## Reader Overlay Delta",
+            "",
+            f"- Overlay manifest: `{reader_overlay.get('manifest_path') or 'not configured'}`",
+            f"- Active operations: {reader_overlay.get('active_operations', 0)}",
+            f"- Applied operations: {reader_overlay.get('applied_operations', 0)}",
+            f"- Delta report: `{summary.get('reader_delta_report', DEFAULT_DELTA_REPORT)}`",
+        ])
+        target_files = reader_overlay.get("target_files", [])
+        if isinstance(target_files, list) and target_files:
+            lines.extend(["", "Overlay-touched reader files:"])
+            for target_file in target_files:
+                lines.append(f"- `{target_file}`")
+
     lines.extend([
         "",
         "## Companion Topics To Review",
@@ -616,6 +1094,8 @@ def write_reader_manifest(
         "reader_scaffold_terms_humanized": summary.get("reader_scaffold_terms_humanized", 0),
         "ai_only_blocks_removed": summary.get("ai_only_blocks_removed", 0),
         "human_only_blocks_unwrapped": summary.get("human_only_blocks_unwrapped", 0),
+        "reader_overlay": summary.get("reader_overlay", {}),
+        "reader_delta_report": summary.get("reader_delta_report", DEFAULT_DELTA_REPORT),
         "reader_review_required": profile.get("reader_review_required", True),
         "reader_review_checklist": summary.get("review_checklist", "READER_RELEASE_CHECKLIST.md"),
         "reader_spine_validation": spine_policy,
@@ -679,6 +1159,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         raise TypeError("human_consumption_bundle_policy must be an object")
     profile = find_profile(profile_id)
     strip_headings = profile_strip_headings(profile)
+    overlay_context = load_reader_overlay_context(profile)
 
     if output_dir.exists():
         shutil.rmtree(output_dir)
@@ -697,6 +1178,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         src = ROOT / front_file
         if src.exists():
             removed = clean_file(src, output_dir / front_file, strip_headings)
+            apply_reader_overlay_to_file(output_dir / front_file, front_file, overlay_context)
             copied_files += 1
             for key, count in removed.items():
                 if key == "ai_only_blocks_removed":
@@ -711,6 +1193,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         for chapter in part.get("chapters", []):
             src = ROOT / chapter["file"]
             removed = clean_file(src, output_dir / chapter["file"], strip_headings, str(chapter["title"]))
+            apply_reader_overlay_to_file(output_dir / chapter["file"], chapter["file"], overlay_context)
             copied_files += 1
             chapter_count += 1
             for key, count in removed.items():
@@ -725,6 +1208,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         src = ROOT / appendix
         if src.exists():
             removed = clean_file(src, output_dir / appendix, strip_headings)
+            apply_reader_overlay_to_file(output_dir / appendix, appendix, overlay_context)
             copied_files += 1
             for key, count in removed.items():
                 if key == "ai_only_blocks_removed":
@@ -734,7 +1218,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
                 else:
                     removed_totals[key] = removed_totals.get(key, 0) + count
 
+    finalize_reader_overlay_context(overlay_context)
     write_quarto(output_dir, structure, profile)
+    overlay_summary = reader_overlay_summary(overlay_context)
     summary = {
         "output_dir": str(output_dir),
         "profile": profile_id,
@@ -750,7 +1236,11 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "ai_only_blocks_removed": ai_only_blocks_removed,
         "human_only_blocks_unwrapped": human_only_blocks_unwrapped,
         "formats": profile.get("publication_formats", []),
+        "reader_overlay": overlay_summary,
+        "reader_overlay_operations_applied": overlay_summary.get("applied_operations", 0),
     }
+    delta_report_path = write_reader_delta_report(output_dir, profile, summary, overlay_summary)
+    summary["reader_delta_report"] = delta_report_path
     checklist_path = write_reader_checklist(
         output_dir,
         profile,
@@ -851,12 +1341,19 @@ def main() -> None:
             )
             if not (output_dir / companion_path).exists():
                 raise SystemExit(f"Reader edition check failed: missing {companion_path}.")
+            delta_report_path = output_dir / str(summary.get("reader_delta_report", DEFAULT_DELTA_REPORT))
+            if not delta_report_path.exists():
+                raise SystemExit("Reader edition check failed: missing reader_delta_report.md.")
             manifest_path = output_dir / "reader_manifest.json"
             if not manifest_path.exists():
                 raise SystemExit("Reader edition check failed: missing reader_manifest.json.")
             manifest = load_json(manifest_path)
             if not isinstance(manifest, dict):
                 raise SystemExit("Reader edition check failed: reader_manifest.json must contain an object.")
+            if not isinstance(manifest.get("reader_overlay"), dict):
+                raise SystemExit("Reader edition check failed: manifest missing reader_overlay.")
+            if manifest.get("reader_delta_report") != str(summary.get("reader_delta_report", DEFAULT_DELTA_REPORT)):
+                raise SystemExit("Reader edition check failed: manifest reader_delta_report mismatch.")
             if not isinstance(manifest.get("reader_spine_validation"), dict):
                 raise SystemExit("Reader edition check failed: manifest missing reader_spine_validation.")
             handoff_review = manifest.get("handoff_continuity_review")
@@ -866,7 +1363,8 @@ def main() -> None:
                 "Reader edition check passed: "
                 f"{summary['chapters']} chapters, {summary['files']} files, "
                 f"{summary['stripped_heading_count']} live-only sections removed, "
-                f"{summary.get('reader_scaffold_terms_humanized', 0)} reader scaffold terms humanized."
+                f"{summary.get('reader_scaffold_terms_humanized', 0)} reader scaffold terms humanized, "
+                f"{summary.get('reader_overlay_operations_applied', 0)} reader overlay operations applied."
             )
             return
 

@@ -248,6 +248,29 @@
       "mobi or azw3 converted from a reviewed EPUB with an external tool"
     ]
   },
+  "reader_overlay_policy": {
+    "script": "scripts/validate_reader_overlays.py",
+    "default_manifest": "editions/reader_overlays/v1_0/manifest.json",
+    "generated_delta_report": "reader_delta_report.md",
+    "allowed_actions": [
+      "replace_section",
+      "prepend_to_section",
+      "append_to_section",
+      "insert_before_section",
+      "insert_after_section"
+    ],
+    "purpose": "Allow major reader versions to carry semantic section-anchored human-edition deltas without hand-editing generated reader manuscripts or forking the canonical live book.",
+    "manual_edit_policy": [
+      "Generated reader files under build/ are disposable and must not be edited as canonical source.",
+      "Reader overlay operations target stable repository-relative files and headings, not generated line numbers.",
+      "Use overlays only for reader-edition deltas; edit canonical chapters when the change belongs in the live AI/research source."
+    ],
+    "non_claims": [
+      "A reader overlay is not a published reader edition.",
+      "A reader overlay does not imply that EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts exist.",
+      "A reader overlay does not promote any claim support state."
+    ]
+  },
   "reader_spine_validation": {
     "script": "scripts/validate_reader_spine.py",
     "report_path": "build/reader_spine_report.json",
@@ -443,6 +466,7 @@
         "python3 scripts/validate_reading_mode_toggle.py",
         "python3 scripts/validate_human_reading_paths.py",
         "python3 scripts/validate_reader_evidence_boundaries.py --check",
+        "python3 scripts/validate_reader_overlays.py --check",
         "python3 scripts/validate_publication.py",
         "python3 scripts/validate_book.py",
         "python3 scripts/validate_visual_coverage.py",
@@ -511,6 +535,7 @@
       },
       "publication_formats": ["html", "epub", "pdf", "docx"],
       "generated_source_dir": "build/reader_edition",
+      "reader_overlay_manifest": "editions/reader_overlays/v1_0/manifest.json",
       "reader_review_required": true,
       "include_appendices": [
         "appendices/B_glossary.qmd",
@@ -531,6 +556,7 @@
       ],
       "release_gate": [
         "python3 scripts/build_reader_edition.py --check",
+        "python3 scripts/validate_reader_overlays.py --check",
         "python3 scripts/validate_human_reading_paths.py",
         "python3 scripts/validate_reader_evidence_boundaries.py --check",
         "python3 scripts/validate_reader_spine.py --check",

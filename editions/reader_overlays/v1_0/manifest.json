@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "id": "v1_0_reader_overlay",
+  "label": "v1.0 Reader Overlay",
+  "status": "active",
+  "applies_to_profile": "reader_release",
+  "purpose": "Track semantic human-reader edition deltas for the v1.0 major reader source without hand-editing generated manuscripts.",
+  "operation_globs": [
+    "chapters/*.json"
+  ],
+  "operations": [],
+  "manual_edit_policy": [
+    "Do not edit build/reader_edition as canonical source.",
+    "Use overlays only for reader-edition deltas that should survive regeneration.",
+    "Use canonical chapters when the change should affect live AI view, live Human view, research releases, proof hooks, source maps, or future writing runs."
+  ],
+  "non_claims": [
+    "This overlay manifest is not a published reader edition.",
+    "This overlay manifest does not claim that EPUB, PDF, DOCX, HTML, audiobook, or audio-embedded EPUB artifacts exist.",
+    "This overlay manifest does not promote any claim support state."
+  ]
+}

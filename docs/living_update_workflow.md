@@ -128,6 +128,7 @@ python3 scripts/validate_v1_status_snapshot.py
 python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_spine.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/validate_book.py
@@ -140,6 +141,7 @@ node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_spine.py --check
 ```
@@ -150,7 +152,7 @@ python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 ```
 
-Review `build/reader_edition/READER_RELEASE_CHECKLIST.md` and `build/reader_edition/companion_notes.md` alongside the generated manuscript.
+Review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, and `build/reader_edition/reader_delta_report.md` alongside the generated manuscript.
 
 4. Attempt selected local reader renders and write a render report:
 

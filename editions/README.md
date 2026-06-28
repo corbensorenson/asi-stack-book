@@ -11,7 +11,7 @@ This directory defines how major versions of the living book become audience-spe
 
 The same file also defines the content-layer contract: reader-facing chapter spine, live research scaffold, evidence matrices, machine-readable contracts, release derivatives, audio adaptation, and companion material. It also records the live Human view policy used by the GitHub Pages toggle. Future writing runs should keep meaning-critical prose in the reader spine and put repeatable source/proof/test machinery in live-only sections that the release profiles can remove or summarize.
 
-Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a reviewed release script instead.
+Generated edition builds belong under `build/` and are ignored by git. Do not hand-edit generated reader or audio manuscripts as the canonical source; fix the live book, update the profile, or add a semantic reader overlay under `reader_overlays/` when the delta belongs only to a major human-reader edition.
 
 Validate the profile definitions with:
 
@@ -24,6 +24,7 @@ Create or check a derived reader-edition draft with:
 
 ```bash
 python3 scripts/build_reader_edition.py --check
+python3 scripts/validate_reader_overlays.py --check
 python3 scripts/build_reader_edition.py
 ```
 
@@ -43,4 +44,4 @@ python3 scripts/build_audio_script.py
 
 The generated reader edition and audio script are publication candidate scaffolds. They do not prove that EPUB, PDF, DOCX, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifacts have been rendered, converted, or generated until those commands actually run and a release record says so.
 
-Generated reader workspaces include `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, and `companion_notes.md`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. These manifests, checklists, and companion notes document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.
+Generated reader workspaces include `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md`; reader render attempts write `reader_render_report.json`; generated audio workspaces include `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`, `chapter_markers.md`, and `pronunciation_glossary.md`. These manifests, checklists, delta reports, and companion notes document derivation, local render outcomes, and review status for the release process. They are not publication artifacts by themselves.

@@ -27,6 +27,7 @@ REQUIRED_TOP_LEVEL_POLICIES = {
     "companion_material_policy",
     "human_consumption_bundle_policy",
     "reader_manuscript_policy",
+    "reader_overlay_policy",
     "reader_spine_validation",
     "live_human_view_policy",
     "audio_manuscript_policy",
@@ -104,6 +105,13 @@ READER_REQUIRED_SECTION_PROSE_PARAGRAPH_FLOORS = {
     "Beyond the State of the Art": 3,
     "Summary": 2,
     "Handoff": 1,
+}
+READER_OVERLAY_ALLOWED_ACTIONS = {
+    "replace_section",
+    "prepend_to_section",
+    "append_to_section",
+    "insert_before_section",
+    "insert_after_section",
 }
 AUDIO_FORBIDDEN_STRIPS = {
     (2, "minimum viable implementation"),
@@ -521,6 +529,40 @@ def main() -> None:
             errors,
         )
 
+    overlay_policy = data.get("reader_overlay_policy")
+    if isinstance(overlay_policy, dict):
+        if overlay_policy.get("script") != "scripts/validate_reader_overlays.py":
+            errors.append("reader_overlay_policy.script must be scripts/validate_reader_overlays.py.")
+        if overlay_policy.get("default_manifest") != "editions/reader_overlays/v1_0/manifest.json":
+            errors.append(
+                "reader_overlay_policy.default_manifest must be "
+                "editions/reader_overlays/v1_0/manifest.json."
+            )
+        if overlay_policy.get("generated_delta_report") != "reader_delta_report.md":
+            errors.append("reader_overlay_policy.generated_delta_report must be reader_delta_report.md.")
+        for path_key in ("script", "default_manifest"):
+            value = overlay_policy.get(path_key)
+            if isinstance(value, str) and value and not (ROOT / value).exists():
+                errors.append(f"reader_overlay_policy.{path_key} does not exist: {value}")
+        actions = overlay_policy.get("allowed_actions")
+        if not isinstance(actions, list):
+            errors.append("reader_overlay_policy.allowed_actions must be a list.")
+        else:
+            normalized_actions = {str(action) for action in actions if isinstance(action, str)}
+            missing_actions = READER_OVERLAY_ALLOWED_ACTIONS - normalized_actions
+            unknown_actions = normalized_actions - READER_OVERLAY_ALLOWED_ACTIONS
+            if missing_actions:
+                errors.append(f"reader_overlay_policy.allowed_actions missing {sorted(missing_actions)}.")
+            if unknown_actions:
+                errors.append(f"reader_overlay_policy.allowed_actions has unknown actions {sorted(unknown_actions)}.")
+        for key in ("manual_edit_policy", "non_claims"):
+            validate_string_list("reader_overlay_policy", key, overlay_policy.get(key), errors)
+        purpose = overlay_policy.get("purpose")
+        if not isinstance(purpose, str) or not purpose.strip():
+            errors.append("reader_overlay_policy.purpose must be a non-empty string.")
+    else:
+        errors.append("editions/release_profiles.json must define reader_overlay_policy.")
+
     spine_policy = data.get("reader_spine_validation")
     if isinstance(spine_policy, dict):
         if spine_policy.get("script") != "scripts/validate_reader_spine.py":
@@ -792,6 +834,14 @@ def main() -> None:
     if reader:
         if reader.get("generated_source_dir") != "build/reader_edition":
             errors.append("reader_release.generated_source_dir must be build/reader_edition.")
+        if reader.get("reader_overlay_manifest") != "editions/reader_overlays/v1_0/manifest.json":
+            errors.append(
+                "reader_release.reader_overlay_manifest must be "
+                "editions/reader_overlays/v1_0/manifest.json."
+            )
+        overlay_manifest = reader.get("reader_overlay_manifest")
+        if isinstance(overlay_manifest, str) and overlay_manifest and not (ROOT / overlay_manifest).exists():
+            errors.append(f"reader_release.reader_overlay_manifest does not exist: {overlay_manifest}")
         if reader.get("reader_review_required") is not True:
             errors.append("reader_release.reader_review_required must be true.")
         reader_strips = normalized_strip_set(reader)
@@ -808,6 +858,7 @@ def main() -> None:
             release_gate,
             [
                 "python3 scripts/build_reader_edition.py --check",
+                "python3 scripts/validate_reader_overlays.py --check",
                 "python3 scripts/validate_human_reading_paths.py",
                 "python3 scripts/validate_reader_evidence_boundaries.py --check",
                 "python3 scripts/validate_reader_spine.py --check",
@@ -829,6 +880,7 @@ def main() -> None:
                 "python3 scripts/validate_reading_mode_toggle.py",
                 "python3 scripts/validate_human_reading_paths.py",
                 "python3 scripts/validate_reader_evidence_boundaries.py --check",
+                "python3 scripts/validate_reader_overlays.py --check",
                 "python3 scripts/validate_publication.py",
                 "python3 scripts/validate_book.py",
                 "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",

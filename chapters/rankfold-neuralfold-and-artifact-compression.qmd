@@ -49,7 +49,7 @@ Compression therefore becomes an evidential firewall, not a storage trick. The s
 
 After fast generation, the stack returns to stored artifacts and retrieval. RankFold and NeuralFold are treated as compression-architecture ideas: ways to represent large artifacts more cheaply while preserving routes back to the full object when needed.
 
-A compressed artifact is not automatically a source of truth. The stack needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
+A compressed artifact is not automatically a source of truth. Compression needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
 
 The hard question is not whether compression is clever. It is whether a consumer can tell which property was preserved, which property was lost, and when the full artifact must be retrieved again.
 

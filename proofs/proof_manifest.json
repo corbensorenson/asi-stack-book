@@ -69,7 +69,7 @@
       "module": "AsiStackProofs.StackBoundaries",
       "formal_target": "A layer without external-action authority can only produce an action through an authorized handoff.",
       "status": "implemented",
-      "outline_line": 165,
+      "outline_line": 167,
       "module_path": "lean/AsiStackProofs/StackBoundaries.lean"
     },
     {
@@ -79,7 +79,7 @@
       "module": "AsiStackProofs.StackBoundaries",
       "formal_target": "A handoff that exceeds the caller authority ceiling is rejected.",
       "status": "implemented",
-      "outline_line": 166,
+      "outline_line": 168,
       "module_path": "lean/AsiStackProofs/StackBoundaries.lean"
     },
     {
@@ -89,7 +89,7 @@
       "module": "AsiStackProofs.Efficiency",
       "formal_target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
       "status": "implemented",
-      "outline_line": 226,
+      "outline_line": 228,
       "module_path": "lean/AsiStackProofs/Efficiency.lean"
     },
     {
@@ -99,7 +99,7 @@
       "module": "AsiStackProofs.Efficiency",
       "formal_target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
       "status": "implemented",
-      "outline_line": 227,
+      "outline_line": 229,
       "module_path": "lean/AsiStackProofs/Efficiency.lean"
     },
     {
@@ -109,7 +109,7 @@
       "module": "AsiStackProofs.Authority",
       "formal_target": "Every transition preserves or lowers the active authority ceiling unless a governance grant is present.",
       "status": "implemented",
-      "outline_line": 288,
+      "outline_line": 290,
       "module_path": "lean/AsiStackProofs/Authority.lean"
     },
     {
@@ -119,7 +119,7 @@
       "module": "AsiStackProofs.Authority",
       "formal_target": "A missing grant blocks execution rather than becoming default authorization.",
       "status": "implemented",
-      "outline_line": 289,
+      "outline_line": 291,
       "module_path": "lean/AsiStackProofs/Authority.lean"
     },
     {
@@ -129,7 +129,7 @@
       "module": "AsiStackProofs.FailureModes",
       "formal_target": "A component with a failed required invariant cannot be promoted.",
       "status": "implemented",
-      "outline_line": 350,
+      "outline_line": 352,
       "module_path": "lean/AsiStackProofs/FailureModes.lean"
     },
     {
@@ -139,7 +139,7 @@
       "module": "AsiStackProofs.FailureModes",
       "formal_target": "An unbounded authority field is detected as a governance failure.",
       "status": "implemented",
-      "outline_line": 351,
+      "outline_line": 353,
       "module_path": "lean/AsiStackProofs/FailureModes.lean"
     },
     {
@@ -149,7 +149,7 @@
       "module": "AsiStackProofs.EvidenceStates",
       "formal_target": "Support-state transitions require the corresponding evidence artifact.",
       "status": "implemented",
-      "outline_line": 410,
+      "outline_line": 412,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
     {
@@ -159,7 +159,7 @@
       "module": "AsiStackProofs.EvidenceStates",
       "formal_target": "A claim cannot be promoted when required evidence is absent.",
       "status": "implemented",
-      "outline_line": 411,
+      "outline_line": 413,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
     {
@@ -169,7 +169,7 @@
       "module": "AsiStackProofs.IntentContracts",
       "formal_target": "A compiled intent contract preserves declared constraints and stop conditions.",
       "status": "implemented",
-      "outline_line": 473,
+      "outline_line": 475,
       "module_path": "lean/AsiStackProofs/IntentContracts.lean"
     },
     {
@@ -179,7 +179,7 @@
       "module": "AsiStackProofs.IntentContracts",
       "formal_target": "A contract missing required authority cannot compile to an executable job.",
       "status": "implemented",
-      "outline_line": 474,
+      "outline_line": 476,
       "module_path": "lean/AsiStackProofs/IntentContracts.lean"
     },
     {
@@ -189,7 +189,7 @@
       "module": "AsiStackProofs.Alignment",
       "formal_target": "An admitted plan satisfies every active constitutional predicate.",
       "status": "implemented",
-      "outline_line": 538,
+      "outline_line": 540,
       "module_path": "lean/AsiStackProofs/Alignment.lean"
     },
     {
@@ -199,7 +199,7 @@
       "module": "AsiStackProofs.Alignment",
       "formal_target": "A self-modification that weakens a protected predicate is rejected.",
       "status": "implemented",
-      "outline_line": 539,
+      "outline_line": 541,
       "module_path": "lean/AsiStackProofs/Alignment.lean"
     },
     {
@@ -209,7 +209,7 @@
       "module": "AsiStackProofs.Corrigibility",
       "formal_target": "Protected agency rights remain available after an accepted transition.",
       "status": "implemented",
-      "outline_line": 602,
+      "outline_line": 604,
       "module_path": "lean/AsiStackProofs/Corrigibility.lean"
     },
     {
@@ -219,7 +219,7 @@
       "module": "AsiStackProofs.Corrigibility",
       "formal_target": "A transition that removes a required correction pathway is rejected.",
       "status": "implemented",
-      "outline_line": 603,
+      "outline_line": 605,
       "module_path": "lean/AsiStackProofs/Corrigibility.lean"
     },
     {
@@ -229,7 +229,7 @@
       "module": "AsiStackProofs.ValueConflict",
       "formal_target": "A decision with unresolved protected conflicts carries a residual conflict record.",
       "status": "implemented",
-      "outline_line": 670,
+      "outline_line": 672,
       "module_path": "lean/AsiStackProofs/ValueConflict.lean"
     },
     {
@@ -239,7 +239,7 @@
       "module": "AsiStackProofs.ValueConflict",
       "formal_target": "A high-stakes conflict cannot bypass the required review predicate.",
       "status": "implemented",
-      "outline_line": 671,
+      "outline_line": 673,
       "module_path": "lean/AsiStackProofs/ValueConflict.lean"
     },
     {
@@ -249,7 +249,7 @@
       "module": "AsiStackProofs.GovernanceRights",
       "formal_target": "A governance transition preserves required audit and exit capabilities.",
       "status": "implemented",
-      "outline_line": 729,
+      "outline_line": 731,
       "module_path": "lean/AsiStackProofs/GovernanceRights.lean"
     },
     {
@@ -259,7 +259,7 @@
       "module": "AsiStackProofs.GovernanceRights",
       "formal_target": "A transition that removes a protected right is rejected or marked invalid.",
       "status": "implemented",
-      "outline_line": 730,
+      "outline_line": 732,
       "module_path": "lean/AsiStackProofs/GovernanceRights.lean"
     },
     {
@@ -269,7 +269,7 @@
       "module": "AsiStackProofs.StableCapabilityFields",
       "formal_target": "An implementation can replace another only if it satisfies the field qualification predicate.",
       "status": "implemented",
-      "outline_line": 793,
+      "outline_line": 795,
       "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean"
     },
     {
@@ -279,7 +279,7 @@
       "module": "AsiStackProofs.StableCapabilityFields",
       "formal_target": "A replacement that expands authority without a governance grant is rejected.",
       "status": "implemented",
-      "outline_line": 794,
+      "outline_line": 796,
       "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean"
     },
     {
@@ -289,7 +289,7 @@
       "module": "AsiStackProofs.Replacement",
       "formal_target": "A replacement commit requires qualification evidence and rollback metadata.",
       "status": "implemented",
-      "outline_line": 856,
+      "outline_line": 858,
       "module_path": "lean/AsiStackProofs/Replacement.lean"
     },
     {
@@ -299,7 +299,7 @@
       "module": "AsiStackProofs.Replacement",
       "formal_target": "A failed regression blocks promotion of the replacement.",
       "status": "implemented",
-      "outline_line": 857,
+      "outline_line": 859,
       "module_path": "lean/AsiStackProofs/Replacement.lean"
     },
     {
@@ -309,7 +309,7 @@
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A secret handle can be substituted only inside an authorized execution boundary.",
       "status": "implemented",
-      "outline_line": 921,
+      "outline_line": 923,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"
     },
     {
@@ -319,7 +319,7 @@
       "module": "AsiStackProofs.SecurityKernel",
       "formal_target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
       "status": "implemented",
-      "outline_line": 922,
+      "outline_line": 924,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"
     },
     {
@@ -329,7 +329,7 @@
       "module": "AsiStackProofs.SelfImprovement",
       "formal_target": "An improvement transition preserves all protected invariants.",
       "status": "implemented",
-      "outline_line": 987,
+      "outline_line": 989,
       "module_path": "lean/AsiStackProofs/SelfImprovement.lean"
     },
     {
@@ -339,7 +339,7 @@
       "module": "AsiStackProofs.SelfImprovement",
       "formal_target": "A proposal evaluated only by the component being replaced cannot be promoted.",
       "status": "implemented",
-      "outline_line": 988,
+      "outline_line": 990,
       "module_path": "lean/AsiStackProofs/SelfImprovement.lean"
     },
     {
@@ -349,7 +349,7 @@
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "A compiled execution job preserves the parent contract constraints.",
       "status": "implemented",
-      "outline_line": 1057,
+      "outline_line": 1059,
       "module_path": "lean/AsiStackProofs/IntentToExecution.lean"
     },
     {
@@ -359,7 +359,7 @@
       "module": "AsiStackProofs.IntentToExecution",
       "formal_target": "An execution job without required approval cannot transition to running.",
       "status": "implemented",
-      "outline_line": 1058,
+      "outline_line": 1060,
       "module_path": "lean/AsiStackProofs/IntentToExecution.lean"
     },
     {
@@ -369,7 +369,7 @@
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A valid command contract contains objective, constraints, output contract, verification, and failure behavior.",
       "status": "implemented",
-      "outline_line": 1122,
+      "outline_line": 1124,
       "module_path": "lean/AsiStackProofs/CommandContracts.lean"
     },
     {
@@ -379,7 +379,7 @@
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
       "status": "implemented",
-      "outline_line": 1123,
+      "outline_line": 1125,
       "module_path": "lean/AsiStackProofs/CommandContracts.lean"
     },
     {
@@ -389,7 +389,7 @@
       "module": "AsiStackProofs.Planning",
       "formal_target": "A plan node inherits the authority ceiling of its parent contract unless governance lowers it.",
       "status": "implemented",
-      "outline_line": 1190,
+      "outline_line": 1192,
       "module_path": "lean/AsiStackProofs/Planning.lean"
     },
     {
@@ -399,7 +399,7 @@
       "module": "AsiStackProofs.Planning",
       "formal_target": "A plan with unsatisfied required constraints cannot be dispatched.",
       "status": "implemented",
-      "outline_line": 1191,
+      "outline_line": 1193,
       "module_path": "lean/AsiStackProofs/Planning.lean"
     },
     {
@@ -409,7 +409,7 @@
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
       "status": "implemented",
-      "outline_line": 1249,
+      "outline_line": 1251,
       "module_path": "lean/AsiStackProofs/PlanForge.lean"
     },
     {
@@ -419,7 +419,7 @@
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A node whose quality predicate fails must escalate or emit a residual.",
       "status": "implemented",
-      "outline_line": 1250,
+      "outline_line": 1252,
       "module_path": "lean/AsiStackProofs/PlanForge.lean"
     },
     {
@@ -429,7 +429,7 @@
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A compiled artifact preserves all required IR obligations.",
       "status": "implemented",
-      "outline_line": 1308,
+      "outline_line": 1310,
       "module_path": "lean/AsiStackProofs/CognitiveCompilation.lean"
     },
     {
@@ -439,7 +439,7 @@
       "module": "AsiStackProofs.CognitiveCompilation",
       "formal_target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
       "status": "implemented",
-      "outline_line": 1309,
+      "outline_line": 1311,
       "module_path": "lean/AsiStackProofs/CognitiveCompilation.lean"
     },
     {
@@ -449,7 +449,7 @@
       "module": "AsiStackProofs.VirtualContextABI",
       "formal_target": "A context reference resolves only when the requested address and version are valid for the snapshot.",
       "status": "implemented",
-      "outline_line": 1369,
+      "outline_line": 1371,
       "module_path": "lean/AsiStackProofs/VirtualContextABI.lean"
     },
     {
@@ -459,7 +459,7 @@
       "module": "AsiStackProofs.VirtualContextABI",
       "formal_target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
       "status": "implemented",
-      "outline_line": 1370,
+      "outline_line": 1372,
       "module_path": "lean/AsiStackProofs/VirtualContextABI.lean"
     },
     {
@@ -469,7 +469,7 @@
       "module": "AsiStackProofs.ContextCertificates",
       "formal_target": "A derived context cell carries source bindings and a declared loss/use contract.",
       "status": "implemented",
-      "outline_line": 1430,
+      "outline_line": 1432,
       "module_path": "lean/AsiStackProofs/ContextCertificates.lean"
     },
     {
@@ -479,7 +479,7 @@
       "module": "AsiStackProofs.ContextCertificates",
       "formal_target": "A summary cannot increase the authority ceiling of its source cells.",
       "status": "implemented",
-      "outline_line": 1431,
+      "outline_line": 1433,
       "module_path": "lean/AsiStackProofs/ContextCertificates.lean"
     },
     {
@@ -489,7 +489,7 @@
       "module": "AsiStackProofs.ContextTransactions",
       "formal_target": "A snapshot read sees the committed events in its declared view.",
       "status": "implemented",
-      "outline_line": 1491,
+      "outline_line": 1493,
       "module_path": "lean/AsiStackProofs/ContextTransactions.lean"
     },
     {
@@ -499,7 +499,7 @@
       "module": "AsiStackProofs.ContextTransactions",
       "formal_target": "A tainted source produces tainted derived context unless declassification is authorized.",
       "status": "implemented",
-      "outline_line": 1492,
+      "outline_line": 1494,
       "module_path": "lean/AsiStackProofs/ContextTransactions.lean"
     },
     {
@@ -509,7 +509,7 @@
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A context packet admitted for use may still be marked inadequate for a target claim.",
       "status": "implemented",
-      "outline_line": 1553,
+      "outline_line": 1555,
       "module_path": "lean/AsiStackProofs/VerificationBandwidth.lean"
     },
     {
@@ -519,7 +519,7 @@
       "module": "AsiStackProofs.VerificationBandwidth",
       "formal_target": "A high-risk claim with inadequate context cannot receive a verified support label.",
       "status": "implemented",
-      "outline_line": 1554,
+      "outline_line": 1556,
       "module_path": "lean/AsiStackProofs/VerificationBandwidth.lean"
     },
     {
@@ -529,7 +529,7 @@
       "module": "AsiStackProofs.ClaimLedger",
       "formal_target": "A claim update preserves prior evidence and revision history.",
       "status": "implemented",
-      "outline_line": 1612,
+      "outline_line": 1614,
       "module_path": "lean/AsiStackProofs/ClaimLedger.lean"
     },
     {
@@ -539,7 +539,7 @@
       "module": "AsiStackProofs.ClaimLedger",
       "formal_target": "A contradiction prevents promotion until resolved, bounded, or recorded as residual.",
       "status": "implemented",
-      "outline_line": 1613,
+      "outline_line": 1615,
       "module_path": "lean/AsiStackProofs/ClaimLedger.lean"
     },
     {
@@ -549,7 +549,7 @@
       "module": "AsiStackProofs.ProofCarryingClaims",
       "formal_target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
       "status": "implemented",
-      "outline_line": 1669,
+      "outline_line": 1671,
       "module_path": "lean/AsiStackProofs/ProofCarryingClaims.lean"
     },
     {
@@ -559,7 +559,7 @@
       "module": "AsiStackProofs.ProofCarryingClaims",
       "formal_target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
       "status": "implemented",
-      "outline_line": 1670,
+      "outline_line": 1672,
       "module_path": "lean/AsiStackProofs/ProofCarryingClaims.lean"
     },
     {
@@ -569,7 +569,7 @@
       "module": "AsiStackProofs.Tribunal",
       "formal_target": "A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent.",
       "status": "implemented",
-      "outline_line": 1726,
+      "outline_line": 1728,
       "module_path": "lean/AsiStackProofs/Tribunal.lean"
     },
     {
@@ -579,7 +579,7 @@
       "module": "AsiStackProofs.Tribunal",
       "formal_target": "A high-risk artifact cannot be accepted when required tribunal review is absent.",
       "status": "implemented",
-      "outline_line": 1727,
+      "outline_line": 1729,
       "module_path": "lean/AsiStackProofs/Tribunal.lean"
     },
     {
@@ -589,7 +589,7 @@
       "module": "AsiStackProofs.TypedJobs",
       "formal_target": "A job transitions only through valid lifecycle states.",
       "status": "implemented",
-      "outline_line": 1792,
+      "outline_line": 1794,
       "module_path": "lean/AsiStackProofs/TypedJobs.lean"
     },
     {
@@ -599,7 +599,7 @@
       "module": "AsiStackProofs.TypedJobs",
       "formal_target": "A job requiring approval cannot execute before approval is recorded.",
       "status": "implemented",
-      "outline_line": 1793,
+      "outline_line": 1795,
       "module_path": "lean/AsiStackProofs/TypedJobs.lean"
     },
     {
@@ -609,7 +609,7 @@
       "module": "AsiStackProofs.ArtifactGraph",
       "formal_target": "Every produced artifact records its parent job and source/context references.",
       "status": "implemented",
-      "outline_line": 1854,
+      "outline_line": 1856,
       "module_path": "lean/AsiStackProofs/ArtifactGraph.lean"
     },
     {
@@ -619,7 +619,7 @@
       "module": "AsiStackProofs.ArtifactGraph",
       "formal_target": "An artifact with missing required provenance cannot support a promoted claim.",
       "status": "implemented",
-      "outline_line": 1855,
+      "outline_line": 1857,
       "module_path": "lean/AsiStackProofs/ArtifactGraph.lean"
     },
     {
@@ -629,7 +629,7 @@
       "module": "AsiStackProofs.RuntimeAdapters",
       "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability.",
       "status": "implemented",
-      "outline_line": 1918,
+      "outline_line": 1920,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
     },
     {
@@ -639,7 +639,7 @@
       "module": "AsiStackProofs.RuntimeAdapters",
       "formal_target": "A high-impact adapter call without approval is rejected.",
       "status": "implemented",
-      "outline_line": 1919,
+      "outline_line": 1921,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
     },
     {
@@ -649,7 +649,7 @@
       "module": "AsiStackProofs.ProceduralMemory",
       "formal_target": "A generated tool records its source traces, parameters, and verification result.",
       "status": "implemented",
-      "outline_line": 1984,
+      "outline_line": 1986,
       "module_path": "lean/AsiStackProofs/ProceduralMemory.lean"
     },
     {
@@ -659,7 +659,7 @@
       "module": "AsiStackProofs.ProceduralMemory",
       "formal_target": "A tool with failed regression cannot be promoted to routable status.",
       "status": "implemented",
-      "outline_line": 1985,
+      "outline_line": 1987,
       "module_path": "lean/AsiStackProofs/ProceduralMemory.lean"
     },
     {
@@ -669,7 +669,7 @@
       "module": "AsiStackProofs.Routing",
       "formal_target": "A router may select only specialists whose authority and readiness satisfy the task requirement.",
       "status": "implemented",
-      "outline_line": 2059,
+      "outline_line": 2061,
       "module_path": "lean/AsiStackProofs/Routing.lean"
     },
     {
@@ -679,7 +679,7 @@
       "module": "AsiStackProofs.Routing",
       "formal_target": "A failed readiness predicate routes to fallback or residual, not promotion.",
       "status": "implemented",
-      "outline_line": 2060,
+      "outline_line": 2062,
       "module_path": "lean/AsiStackProofs/Routing.lean"
     },
     {
@@ -689,7 +689,7 @@
       "module": "AsiStackProofs.ReadinessGates",
       "formal_target": "A module can enter promoted state only after all required gates pass.",
       "status": "implemented",
-      "outline_line": 2124,
+      "outline_line": 2126,
       "module_path": "lean/AsiStackProofs/ReadinessGates.lean"
     },
     {
@@ -699,7 +699,7 @@
       "module": "AsiStackProofs.ReadinessGates",
       "formal_target": "A quarantined module cannot be selected for ordinary execution routes.",
       "status": "implemented",
-      "outline_line": 2125,
+      "outline_line": 2127,
       "module_path": "lean/AsiStackProofs/ReadinessGates.lean"
     },
     {
@@ -709,7 +709,7 @@
       "module": "AsiStackProofs.MoECOTRuntime",
       "formal_target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
       "status": "implemented",
-      "outline_line": 2185,
+      "outline_line": 2187,
       "module_path": "lean/AsiStackProofs/MoECOTRuntime.lean"
     },
     {
@@ -719,7 +719,7 @@
       "module": "AsiStackProofs.MoECOTRuntime",
       "formal_target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
       "status": "implemented",
-      "outline_line": 2186,
+      "outline_line": 2188,
       "module_path": "lean/AsiStackProofs/MoECOTRuntime.lean"
     },
     {
@@ -729,7 +729,7 @@
       "module": "AsiStackProofs.PersonalComputeHives",
       "formal_target": "A hive scheduler admits a job only when identity, data, tool, federation, and approval policy checks pass before optimization.",
       "status": "implemented",
-      "outline_line": 2265,
+      "outline_line": 2267,
       "module_path": "lean/AsiStackProofs/PersonalComputeHives.lean"
     },
     {
@@ -739,7 +739,7 @@
       "module": "AsiStackProofs.PersonalComputeHives",
       "formal_target": "A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope.",
       "status": "implemented",
-      "outline_line": 2266,
+      "outline_line": 2268,
       "module_path": "lean/AsiStackProofs/PersonalComputeHives.lean"
     },
     {
@@ -749,7 +749,7 @@
       "module": "AsiStackProofs.PersonalComputeHives",
       "formal_target": "A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present.",
       "status": "implemented",
-      "outline_line": 2267,
+      "outline_line": 2269,
       "module_path": "lean/AsiStackProofs/PersonalComputeHives.lean"
     },
     {
@@ -759,7 +759,7 @@
       "module": "AsiStackProofs.PersonalComputeHives",
       "formal_target": "External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records.",
       "status": "implemented",
-      "outline_line": 2268,
+      "outline_line": 2270,
       "module_path": "lean/AsiStackProofs/PersonalComputeHives.lean"
     },
     {
@@ -769,7 +769,7 @@
       "module": "AsiStackProofs.CompactGenerativeSystems",
       "formal_target": "A compact representation with unresolved obligations carries residual records.",
       "status": "implemented",
-      "outline_line": 2325,
+      "outline_line": 2327,
       "module_path": "lean/AsiStackProofs/CompactGenerativeSystems.lean"
     },
     {
@@ -779,7 +779,7 @@
       "module": "AsiStackProofs.CompactGenerativeSystems",
       "formal_target": "A lossy representation cannot be marked exact without verification evidence.",
       "status": "implemented",
-      "outline_line": 2326,
+      "outline_line": 2328,
       "module_path": "lean/AsiStackProofs/CompactGenerativeSystems.lean"
     },
     {
@@ -789,7 +789,7 @@
       "module": "AsiStackProofs.GenerateVerifyRepair",
       "formal_target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
       "status": "implemented",
-      "outline_line": 2387,
+      "outline_line": 2389,
       "module_path": "lean/AsiStackProofs/GenerateVerifyRepair.lean"
     },
     {
@@ -799,7 +799,7 @@
       "module": "AsiStackProofs.GenerateVerifyRepair",
       "formal_target": "A failed verification blocks exactness promotion.",
       "status": "implemented",
-      "outline_line": 2388,
+      "outline_line": 2390,
       "module_path": "lean/AsiStackProofs/GenerateVerifyRepair.lean"
     },
     {
@@ -809,7 +809,7 @@
       "module": "AsiStackProofs.FastGeneration",
       "formal_target": "A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion.",
       "status": "implemented",
-      "outline_line": 2471,
+      "outline_line": 2473,
       "module_path": "lean/AsiStackProofs/FastGeneration.lean"
     },
     {
@@ -819,7 +819,7 @@
       "module": "AsiStackProofs.FastGeneration",
       "formal_target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
       "status": "implemented",
-      "outline_line": 2472,
+      "outline_line": 2474,
       "module_path": "lean/AsiStackProofs/FastGeneration.lean"
     },
     {
@@ -829,7 +829,7 @@
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compressed artifact used for a task must pass that task probe or route to fallback.",
       "status": "implemented",
-      "outline_line": 2533,
+      "outline_line": 2535,
       "module_path": "lean/AsiStackProofs/ArtifactCompression.lean"
     },
     {
@@ -839,7 +839,7 @@
       "module": "AsiStackProofs.ArtifactCompression",
       "formal_target": "A compression record cannot omit residual or fallback metadata.",
       "status": "implemented",
-      "outline_line": 2534,
+      "outline_line": 2536,
       "module_path": "lean/AsiStackProofs/ArtifactCompression.lean"
     },
     {
@@ -849,7 +849,7 @@
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A semantic node marked grounded has at least one provenance link.",
       "status": "implemented",
-      "outline_line": 2595,
+      "outline_line": 2597,
       "module_path": "lean/AsiStackProofs/SemanticRepresentation.lean"
     },
     {
@@ -859,7 +859,7 @@
       "module": "AsiStackProofs.SemanticRepresentation",
       "formal_target": "A hierarchy update preserves prior node references or records supersession.",
       "status": "implemented",
-      "outline_line": 2596,
+      "outline_line": 2598,
       "module_path": "lean/AsiStackProofs/SemanticRepresentation.lean"
     },
     {
@@ -869,7 +869,7 @@
       "module": "AsiStackProofs.ResourceEconomics",
       "formal_target": "A task budget cannot disable required safety or verification gates.",
       "status": "implemented",
-      "outline_line": 2664,
+      "outline_line": 2666,
       "module_path": "lean/AsiStackProofs/ResourceEconomics.lean"
     },
     {
@@ -879,7 +879,7 @@
       "module": "AsiStackProofs.ResourceEconomics",
       "formal_target": "A high-risk task with insufficient verification budget is blocked or escalated.",
       "status": "implemented",
-      "outline_line": 2665,
+      "outline_line": 2667,
       "module_path": "lean/AsiStackProofs/ResourceEconomics.lean"
     },
     {
@@ -889,7 +889,7 @@
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
       "status": "implemented",
-      "outline_line": 2722,
+      "outline_line": 2724,
       "module_path": "lean/AsiStackProofs/SimulationFidelity.lean"
     },
     {
@@ -899,7 +899,7 @@
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
       "status": "implemented",
-      "outline_line": 2723,
+      "outline_line": 2725,
       "module_path": "lean/AsiStackProofs/SimulationFidelity.lean"
     },
     {
@@ -909,7 +909,7 @@
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate adoption record includes baseline, measured target, and falsification criterion.",
       "status": "implemented",
-      "outline_line": 2790,
+      "outline_line": 2792,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
     {
@@ -919,7 +919,7 @@
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate without passing evidence remains non-core.",
       "status": "implemented",
-      "outline_line": 2791,
+      "outline_line": 2793,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
     {
@@ -929,7 +929,7 @@
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
       "status": "implemented",
-      "outline_line": 2854,
+      "outline_line": 2856,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
     },
     {
@@ -939,7 +939,7 @@
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
       "status": "implemented",
-      "outline_line": 2855,
+      "outline_line": 2857,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
     },
     {
@@ -949,7 +949,7 @@
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
       "status": "implemented",
-      "outline_line": 2917,
+      "outline_line": 2919,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
     {
@@ -959,7 +959,7 @@
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
       "status": "implemented",
-      "outline_line": 2918,
+      "outline_line": 2920,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
     {
@@ -969,7 +969,7 @@
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
       "status": "implemented",
-      "outline_line": 2980,
+      "outline_line": 2982,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
     {
@@ -979,7 +979,7 @@
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
       "status": "implemented",
-      "outline_line": 2981,
+      "outline_line": 2983,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
     {
@@ -989,7 +989,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target marked implemented has an existing module and passes the build.",
       "status": "implemented",
-      "outline_line": 3058,
+      "outline_line": 3060,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -999,7 +999,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
       "status": "implemented",
-      "outline_line": 3059,
+      "outline_line": 3061,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -1009,7 +1009,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A capability promotion requires benchmark evidence and preserved regression records.",
       "status": "implemented",
-      "outline_line": 3124,
+      "outline_line": 3126,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -1019,7 +1019,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
       "status": "implemented",
-      "outline_line": 3125,
+      "outline_line": 3127,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -1029,7 +1029,7 @@
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
       "status": "implemented",
-      "outline_line": 3202,
+      "outline_line": 3204,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1039,7 +1039,7 @@
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
       "status": "implemented",
-      "outline_line": 3203,
+      "outline_line": 3205,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1049,7 +1049,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
       "status": "implemented",
-      "outline_line": 3288,
+      "outline_line": 3290,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1059,7 +1059,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
       "status": "implemented",
-      "outline_line": 3289,
+      "outline_line": 3291,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1069,7 +1069,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
       "status": "implemented",
-      "outline_line": 3290,
+      "outline_line": 3292,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1079,7 +1079,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
       "status": "implemented",
-      "outline_line": 3291,
+      "outline_line": 3293,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1089,7 +1089,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
       "status": "implemented",
-      "outline_line": 3347,
+      "outline_line": 3349,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1099,7 +1099,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
       "status": "implemented",
-      "outline_line": 3348,
+      "outline_line": 3350,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1109,7 +1109,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
       "status": "implemented",
-      "outline_line": 3421,
+      "outline_line": 3423,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1119,7 +1119,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 3422,
+      "outline_line": 3424,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1129,7 +1129,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
       "status": "implemented",
-      "outline_line": 3478,
+      "outline_line": 3480,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1139,7 +1139,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
       "status": "implemented",
-      "outline_line": 3479,
+      "outline_line": 3481,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1149,7 +1149,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3543,
+      "outline_line": 3545,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1159,7 +1159,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3544,
+      "outline_line": 3546,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1169,7 +1169,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3604,
+      "outline_line": 3606,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -1179,7 +1179,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3605,
+      "outline_line": 3607,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]
