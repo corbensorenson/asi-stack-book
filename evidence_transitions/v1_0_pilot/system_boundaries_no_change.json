@@ -1,0 +1,99 @@
+{
+  "transition_id": "v1_0_pilot.system_boundaries.no_change",
+  "claim_id": "system-boundaries-and-authority.core",
+  "claim_surface_refs": [
+    "chapters/system-boundaries-and-authority.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/authority_transition_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "lean/AsiStackProofs/Authority.lean",
+    "experiments/authority_transitions/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "finite authority-record proof and synthetic fixture-gate behavior only; no deployed authorization enforcement, runtime adapter behavior, or source-derived support-state promotion",
+  "evidence_roles": [
+    "lean_build",
+    "synthetic_harness",
+    "proof_artifact_audit",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the System Boundaries claim, a synthetic authority-transition harness with valid and expected-invalid fixtures, and a stronger finite Lean authority decision envelope for allow, deny, and escalate records. Those artifacts support the design discipline but still do not prove deployed permission enforcement, runtime adapter safety, revocation propagation, live confused-deputy resistance, or semantic adequacy of the broader authority model.",
+  "required_artifacts": [
+    "runtime adapter enforcement traces",
+    "revocation propagation tests across delegated and replacement contexts",
+    "adversarial confused-deputy probes against live tool wrappers",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "lean/AsiStackProofs/Authority.lean",
+    "docs/proof_artifact_audit.md",
+    "docs/authority_transition_harness.md",
+    "scripts/validate_authority_transitions.py",
+    "experiments/authority_transitions/results/2026-06-28-local.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#system-boundaries-and-authority.core",
+    "docs/source_evidence_audit.md#system-boundaries-and-authority.core"
+  ],
+  "verification_command": "python3 scripts/validate_authority_transitions.py && (cd lean && lake build) && python3 scripts/validate_proof_artifact_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "System Boundaries remains at argument",
+    "authority harness fixtures are synthetic",
+    "Authority Lean predicates are finite-record predicates",
+    "runtime adapter enforcement and revocation propagation are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/system-boundaries-and-authority.qmd",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "authority harness failure",
+    "Lean build failure",
+    "proof artifact audit drift",
+    "claim text interpreted as deployed enforcement",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the specific artifact lane that actually passed, or after deployed permission enforcement, revocation propagation, and confused-deputy behavior are tested and reviewed with accepted evidence-transition records.",
+  "limitations": [
+    "finite Lean records do not prove runtime enforcement",
+    "synthetic fixtures do not prove deployed tool-wrapper behavior",
+    "source mappings support architectural discussion but do not by themselves promote support state",
+    "no independent security or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent security, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed authorization enforcement trace",
+    "no revocation propagation test",
+    "no live confused-deputy probe",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-system-boundaries-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote System Boundaries above argument",
+    "does not prove deployed authorization enforcement",
+    "does not prove runtime adapter safety",
+    "does not prove revocation propagation",
+    "does not prove confused-deputy resistance in a live system"
+  ]
+}
