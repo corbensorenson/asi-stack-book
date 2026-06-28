@@ -10,8 +10,8 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 42,
-    "spot_checked": 12
+    "reviewed": 46,
+    "spot_checked": 8
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
@@ -970,19 +970,18 @@
       "live_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
       "generated_reader_file": "build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
       "overlay_operation_count": 2,
-      "review_status": "spot_checked",
-      "review_depth": "medium_priority_manual_review",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
         "companion_note_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
       ],
-      "review_notes": "Medium-priority density row read; no additional overlay now. The theorem-linked receipt boundary should stay visible, with possible companion-note or glossary treatment later.",
+      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep proof receipt states and mature endpoint prose readable while preserving theorem references, deterministic fields, resolver/replay status, consumer gates, workload blockers, non-claims, and the boundary between structural facts and quality claims.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -995,17 +994,16 @@
       "live_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "generated_reader_file": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter keeps cyclic memory structural facts separate from retrieval quality and reasoning success, preserving alias, winding, stale-read, recurrence-exit, fallback, and baseline obligations.",
+      "review_notes": "Full generated-reader chapter review recorded. The chapter preserves structural memory versus useful memory: slot coverage, winding, freshness, recurrence exits, fallback, VCM authority, baseline obligations, and retrieval-quality non-claims remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1018,17 +1016,16 @@
       "live_file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "generated_reader_file": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_review_pass.md#decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter preserves cyclic substrate caution around structural receipts, baseline symmetry, diagnostics, hardware notes, and workload tradeoffs. It was spot-checked after a canonical Human Reading Path cleanup clarified that receipts must be earned under actual workloads.",
+      "review_notes": "Full generated-reader chapter review recorded. Cyclic adapters and mixers remain optional specialist candidates requiring structural receipts, diagnostics, hardware notes, baseline symmetry, negative controls, tradeoff packets, and canary-route evidence before adoption.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1041,19 +1038,18 @@
       "live_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
       "generated_reader_file": "build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "medium_priority_manual_review",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
         "companion_note_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_continuity_review.md#medium-priority-queue-decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
       ],
-      "review_notes": "Medium-priority density row read; no additional overlay now. Future reader release work may route proof-envelope vocabulary through companion notes or glossary treatment.",
+      "review_notes": "Full generated-reader chapter review recorded. The existing overlay keeps the proof envelope readable while preserving separation between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and broad claim non-claims.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]

@@ -71,7 +71,7 @@ Results:
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
 - `docs/reader_chapter_review_matrix.md` records the manifest-synced
-  54-chapter reader-review queue: 42 `reviewed`, 12 `spot_checked`, 0
+  54-chapter reader-review queue: 46 `reviewed`, 8 `spot_checked`, 0
   `not_started`, 20 active-overlay chapters, 52 no-immediate-action decisions,
   3 companion-note candidates, 1 curated-manuscript candidate, and release
   blockers on every row until release records and artifact review exist.
@@ -95,14 +95,14 @@ Results:
   They are reader-only semantic deltas, not a reviewed reader release.
 - The reader chapter review matrix is a release-control queue only. It preserves
   manifest chapter identity, current overlay counts, and review blockers; the
-  full Part I and Part II sequences plus the first twelve Part III chapters have chapter-text review records, but the matrix is not
+  full Part I, Part II, and Part III sequences plus the first Part IV chapter have chapter-text review records, but the matrix is not
   a full human continuity review and does not make any artifact release-ready.
 
 ## Blockers Before Major-Version Packaging
 
 1. A validated live-book candidate needs to be selected and tagged.
 2. The generated reader manuscript needs release-grade full human continuity
-   review; the current matrix has 42 reviewed rows and no `not_started`
+   review; the current matrix has 46 reviewed rows and no `not_started`
    rows, but every row still carries release or artifact-review blockers.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
