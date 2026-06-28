@@ -10,12 +10,12 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 6 |
-| review_status:spot_checked | 48 |
+| review_status:reviewed | 9 |
+| review_status:spot_checked | 45 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 40 |
-| disposition:none | 2 |
+| disposition:no_immediate_action | 41 |
+| disposition:none | 1 |
 | disposition:reader_overlay_active | 20 |
 
 ## Chapter Queue
@@ -28,9 +28,9 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part I - Foundations, Alignment, and Governance | `failure-modes-of-ungoverned-intelligence` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `evidence-states-and-claim-discipline` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `human-intent-as-a-formal-input` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | spot_checked | representative_spot_check | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
