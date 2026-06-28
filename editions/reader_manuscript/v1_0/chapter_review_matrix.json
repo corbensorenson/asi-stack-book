@@ -10,8 +10,8 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 18,
-    "spot_checked": 36
+    "reviewed": 22,
+    "spot_checked": 32
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
@@ -433,17 +433,16 @@
       "live_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
       "generated_reader_file": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated opening was spot-checked after a canonical Human Reading Path cleanup tightened repeated repair-locality cadence. It now frames partial correctness, obligation addressability, and IR repair without needing a reader-only overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the cognitive compilation chapter. Semantic atoms, lowering receipts, local repair, validator receipts, and compiler non-claim boundaries remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -456,17 +455,16 @@
       "live_file": "chapters/virtual-context-abi.qmd",
       "generated_reader_file": "build/reader_edition/chapters/virtual-context-abi.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter keeps the memory ABI boundary clear: address, version, mount, snapshot, representation, authority, admission, adequacy, lease, and typed fault remain legible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Virtual Context ABI chapter. Address, version, mount, snapshot, representation, authority, admission, adequacy, lease, typed fault, and resolver non-claim boundaries remain clear.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -479,17 +477,16 @@
       "live_file": "chapters/semantic-pages-context-cells-and-certificates.qmd",
       "generated_reader_file": "build/reader_edition/chapters/semantic-pages-context-cells-and-certificates.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter was spot-checked after a canonical Human Reading Path cleanup replaced a loose certificate metaphor with compact receipt language. The source-to-derived-cell certificate boundary needs no reader-only overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the semantic pages chapter. Source binding, loss contract, permitted use, authority ceiling, revocation, and certificate-truthfulness limits remain explicit.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -502,17 +499,16 @@
       "live_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "generated_reader_file": "build/reader_edition/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter preserves the runtime-memory argument around coherent snapshots, mounts, branches, taint, deletion closure, replay boundaries, and typed faults without needing an overlay.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the context transactions chapter. Immutable events, coherent snapshots, mounts, branches, taint, deletion closure, replay boundaries, typed faults, and deployed-memory-store non-claims remain visible.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
