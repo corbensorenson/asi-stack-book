@@ -1,0 +1,21 @@
+{
+  "transition_id": "authority-harness-invalid-confused-deputy-001",
+  "principal": "low-authority-planner",
+  "source_layer": "planning",
+  "target_boundary": "external-service-adapter",
+  "requested_operation": "borrow adapter raw capability for external deployment",
+  "permission_class": "execute",
+  "grant_lifecycle_state": "receipted",
+  "caller_ceiling": "public_transform",
+  "authority_ceiling": "external_effect",
+  "target_required_authority": "external_effect",
+  "grant_id": "grant://synthetic/bad-confused-deputy",
+  "delegation_chain": ["low-authority planner -> high-authority adapter raw capability"],
+  "expiry_or_review": "end_of_current_fixture",
+  "revocation_epoch": "not_revoked",
+  "decision": "allow",
+  "denial_reason": "",
+  "effect_receipt": "receipt://invalid-confused-deputy-effect",
+  "audit_refs": ["experiments/authority_transitions/results/2026-06-28-local.md"],
+  "non_claims": ["expected-invalid fixture", "no external effect occurred", "no support-state promotion"]
+}

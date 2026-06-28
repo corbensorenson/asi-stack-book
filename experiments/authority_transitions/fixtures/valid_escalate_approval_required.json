@@ -1,0 +1,21 @@
+{
+  "transition_id": "authority-harness-escalate-approval-001",
+  "principal": "book-maintenance-agent",
+  "source_layer": "governance",
+  "target_boundary": "claim-support-state-update",
+  "requested_operation": "approve support-state promotion",
+  "permission_class": "approve",
+  "grant_lifecycle_state": "requested",
+  "caller_ceiling": "tracked_file_write",
+  "authority_ceiling": "tracked_file_write",
+  "target_required_authority": "governance_approval",
+  "grant_id": "grant://synthetic/requires-independent-approval",
+  "delegation_chain": ["book-maintenance-agent -> independent review queue -> governance approval"],
+  "expiry_or_review": "requires_independent_review",
+  "revocation_epoch": "not_revoked",
+  "decision": "escalate",
+  "denial_reason": "approval authority is separate from write authority",
+  "effect_receipt": "",
+  "audit_refs": ["experiments/authority_transitions/results/2026-06-28-local.md"],
+  "non_claims": ["synthetic escalation fixture only", "no Appendix C support state changed", "no support-state promotion"]
+}

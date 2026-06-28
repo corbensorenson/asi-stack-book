@@ -1,0 +1,21 @@
+{
+  "transition_id": "authority-harness-allow-write-001",
+  "principal": "book-maintenance-agent",
+  "source_layer": "planning",
+  "target_boundary": "tracked-public-book-file",
+  "requested_operation": "edit public chapter source under explicit repository workflow",
+  "permission_class": "write",
+  "grant_lifecycle_state": "receipted",
+  "caller_ceiling": "tracked_file_write",
+  "authority_ceiling": "tracked_file_write",
+  "target_required_authority": "tracked_file_write",
+  "grant_id": "grant://synthetic/book-write",
+  "delegation_chain": ["human request -> book-maintenance-agent -> repository write lease"],
+  "expiry_or_review": "end_of_current_book_editing_pass",
+  "revocation_epoch": "not_revoked",
+  "decision": "allow",
+  "denial_reason": "",
+  "effect_receipt": "receipt://authority-harness-allow-write-001",
+  "audit_refs": ["experiments/authority_transitions/results/2026-06-28-local.md"],
+  "non_claims": ["synthetic fixture only", "no deployed authorization middleware tested", "no support-state promotion"]
+}

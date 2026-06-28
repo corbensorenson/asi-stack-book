@@ -1,0 +1,21 @@
+{
+  "transition_id": "authority-harness-deny-external-effect-001",
+  "principal": "low-authority-planner",
+  "source_layer": "planning",
+  "target_boundary": "external-service-adapter",
+  "requested_operation": "call external deployment adapter",
+  "permission_class": "execute",
+  "grant_lifecycle_state": "denied",
+  "caller_ceiling": "public_transform",
+  "authority_ceiling": "public_transform",
+  "target_required_authority": "external_effect",
+  "grant_id": "grant://synthetic/missing-external-effect",
+  "delegation_chain": ["planner request -> authority gate denial"],
+  "expiry_or_review": "review_required_before_external_effect",
+  "revocation_epoch": "not_revoked",
+  "decision": "deny",
+  "denial_reason": "target requires external_effect authority above caller ceiling public_transform",
+  "effect_receipt": "",
+  "audit_refs": ["experiments/authority_transitions/results/2026-06-28-local.md"],
+  "non_claims": ["synthetic denial fixture only", "no adapter execution attempted", "no support-state promotion"]
+}

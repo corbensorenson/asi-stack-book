@@ -1,0 +1,21 @@
+{
+  "transition_id": "authority-harness-invalid-permission-collapse-001",
+  "principal": "source-reader",
+  "source_layer": "memory",
+  "target_boundary": "public-export-channel",
+  "requested_operation": "disclose private source summary as though read authority were enough",
+  "permission_class": "disclose",
+  "grant_lifecycle_state": "receipted",
+  "caller_ceiling": "public_read",
+  "authority_ceiling": "public_read",
+  "target_required_authority": "public_read",
+  "grant_id": "grant://synthetic/bad-disclosure-as-read",
+  "delegation_chain": ["memory read lease -> public export attempt"],
+  "expiry_or_review": "end_of_current_fixture",
+  "revocation_epoch": "not_revoked",
+  "decision": "allow",
+  "denial_reason": "",
+  "effect_receipt": "receipt://invalid-permission-collapse",
+  "audit_refs": ["experiments/authority_transitions/results/2026-06-28-local.md"],
+  "non_claims": ["expected-invalid fixture", "no private source text exported", "no support-state promotion"]
+}

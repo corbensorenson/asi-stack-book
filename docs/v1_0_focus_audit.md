@@ -30,6 +30,7 @@ python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_repeated_prose.py
 python3 scripts/validate_schemas.py
 python3 scripts/validate_protocol_examples.py
+python3 scripts/validate_authority_transitions.py
 python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_book.py
@@ -45,9 +46,9 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Manifest parts | 4 | The book has a stable four-part architecture. |
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
-| Chapter body words | 183,890 | The book is already full-length; the main risk is not shortness. |
-| Raw chapter-file words | 191,389 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
-| Source records | 101 | The corpus is substantial, with 59 Corben/local records and 42 external records by current appendices. |
+| Chapter body words | 183,611 | The book is already full-length; the main risk is not shortness. |
+| Raw chapter-file words | 191,131 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
+| Source records | 122 | The corpus is substantial, with 59 Corben/local records and 63 external records by current appendices. |
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
 | Passage-reviewed mappings | 461 | Every assigned pair has a recorded passage-review mapping state. |
@@ -55,9 +56,9 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Lean proof targets | 112 implemented finite-record targets | Traceability is complete; semantic adequacy remains unreviewed. |
 | Protocol schemas | 71 | Record shapes are well-covered. |
 | Protocol fixtures | 70 valid fixtures | Fixture validation is broad but not a substitute for runtime tests. |
-| Test appendix rows | 213 | The test roadmap is extensive. |
-| Planned/unrun test rows | 196 | The biggest technical evidence gap is tests beyond shape validation. |
-| Implemented test/proof/check rows in Appendix E | 17 | Existing rows mostly validate fixtures, Lean build, or proof-manifest/audit mechanics. |
+| Test appendix rows | 224 | Appendix E now has 213 chapter-level rows plus 11 repository-level check rows. |
+| Planned/unrun chapter test rows | 192 | The biggest technical evidence gap is still tests beyond shape validation, synthetic gate fixtures, and narrow finite-record proofs. |
+| Implemented test/proof/check rows in Appendix E | 32 | Existing rows mostly validate fixtures, synthetic transition gates, Lean build, or proof/source traceability mechanics. |
 | Reader spine | 54 chapters, minimum 1960 words | The generated reader source is structurally substantial. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
 | Reader overlay operations | 2 active | The first opening-chapter semantic overlay pilot is active; broader reader continuity review and chapter-by-chapter overlays remain open. |

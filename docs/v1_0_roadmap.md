@@ -178,7 +178,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: started. The first synthetic support-state transition harness is implemented in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`, and backed by valid plus expected-invalid fixtures under `experiments/support_state_transitions/`. It is wired into `scripts/validate_book.py`; no live support state changed.
+Status: started. Two synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`, and the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`. Both are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -204,6 +204,9 @@ Initial completion:
 - `python3 scripts/validate_support_state_transitions.py` passed locally on 2026-06-28 with 2 valid fixtures and 2 expected-invalid fixtures.
 - The result record is `experiments/support_state_transitions/results/2026-06-28-local.md`.
 - The harness is a gate-semantics test only. It does not promote Appendix C, validate source interpretation, prove proof adequacy, or exercise AI runtime behavior.
+- `python3 scripts/validate_authority_transitions.py` passed locally on 2026-06-28 with 3 valid fixtures and 3 expected-invalid fixtures.
+- The result record is `experiments/authority_transitions/results/2026-06-28-local.md`.
+- The authority harness checks synthetic non-escalation, permission-separation, denial-receipt, approval-escalation, and confused-deputy shortcut behavior only. It does not prove deployed authorization enforcement, runtime adapter safety, secret handling, revocation propagation, or support-state promotion.
 
 ## Phase 6 - External Literature Backfill
 

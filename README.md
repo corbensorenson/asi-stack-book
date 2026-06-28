@@ -28,6 +28,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
+- `scripts/validate_support_state_transitions.py` and `scripts/validate_authority_transitions.py` run synthetic gate harnesses for support-state conservatism and authority non-escalation; they are executable behavior checks over fixtures, not claim promotions or deployed-runtime evidence.
 - The live GitHub Pages site includes a persistent top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, including raw core-claim markers and repeated support-state boilerplate, while `Human view` hides the same repeated chapter sections, TOC entries, section-numbering artifacts, raw bracketed core-claim markers, and repeated support boilerplate used by the reader-release strip policy. Human view keeps the compact evidence boundary inline with the core claim rather than opening repeated support paragraphs. Readers can open a chapter directly in either mode with `?view=human` or `?view=ai`. All 54 chapters now carry a `.asi-human-only` Human Reading Path bridge for interested readers, and `.asi-ai-only` blocks remain available for mode-specific research notes without forking the manuscript. The rendered-site validator checks the static HTML hooks, and `scripts/validate_live_human_view_browser.js` exercises representative rendered pages by default or every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports` in a real browser when Playwright/Chrome is available, including reading-mode control visibility, rendered Mermaid visibility, raw-marker and support-boilerplate hiding/restoration, and page-overflow checks.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
@@ -53,6 +54,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/v1_0_focus_audit.md](docs/v1_0_focus_audit.md) | Detailed current-state audit and prioritized work plan for moving from v1.0 candidate toward evidence-release and reader-release quality. |
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
+| [docs/authority_transition_harness.md](docs/authority_transition_harness.md) | Phase 5 synthetic authority non-escalation and permission-separation harness. |
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Historical v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
@@ -90,6 +92,8 @@ python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/validate_reader_overlays.py --check
 python3 scripts/validate_reader_spine.py --check
+python3 scripts/validate_support_state_transitions.py
+python3 scripts/validate_authority_transitions.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_reading_mode_toggle.py

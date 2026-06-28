@@ -4,7 +4,7 @@ chapter_id: "system-boundaries-and-authority"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "viea"
   - "scf"
@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
-  - "The authority_transition_record fixture validates schema/example consistency only; full permission-separation and confused-deputy tests remain unimplemented."
+  - "The authority transition harness validates synthetic authority-transition gate semantics for scoped allow, over-ceiling denial, approval escalation, missing receipts, permission-class collapse, and confused-deputy shortcuts; deployed authorization enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain unimplemented."
   - "The implemented Authority Lean predicates cover finite-record ceiling preservation and missing-grant denial only; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -29,17 +29,17 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-28 |
 | Primary source records | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector-only/source-note mapped: `moecot` |
-| Test state | `authority_transition_record.valid.json` passes protocol fixture validation, and `AsiStackProofs.Authority` builds locally; full permission-separation and confused-deputy tests remain planned. |
+| Test state | `authority_transition_record.valid.json` passes protocol fixture validation, `AsiStackProofs.Authority` builds locally, and `python3 scripts/validate_authority_transitions.py` passes with 3 valid and 3 expected-invalid synthetic authority-transition fixtures; deployed permission enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain planned. |
 
 ## Drafting guardrail
 
-This chapter defines the authority vocabulary for the stack. It is not a claim that all authority checks are implemented; only the explicitly recorded schemas, fixtures, and Lean modules count as executable support.
+This chapter defines the authority vocabulary for the stack. It is not a claim that all authority checks are implemented; only the explicitly recorded schemas, fixtures, harnesses, and Lean modules count as executable support.
 
 It follows the efficiency chapter because the cheapest adequate route is useful only when route selection remains separate from permission to act. Cost, quality, and authority are different ledgers.
 
@@ -214,9 +214,9 @@ The confused-deputy pattern is central. A low-authority layer can ask a higher-a
 
 ## Minimum Viable Implementation
 
-The first useful authority artifact is an `authority_transition_record` schema plus a valid fixture for an allowed handoff and later fixtures for missing-grant and confused-deputy denials. It should stay small enough to support Lean and test work: principal, requested operation, permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review, decision, effect receipt, audit references, and non-claims.
+The first useful authority artifact is an `authority_transition_record` schema plus fixtures for allowed handoff, denial, escalation, missing receipt, permission collapse, and confused-deputy cases. It stays small enough to support Lean and test work: principal, requested operation, permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review, decision, effect receipt, audit references, and non-claims.
 
-The first negative fixture should be as important as the allowed one. A route that has context but lacks authority, or a caller that delegates beyond its ceiling, should produce a denial record before any downstream layer can treat the handoff as executable.
+The first negative fixture is as important as the allowed one. A route that has context but lacks authority, or a caller that delegates beyond its ceiling, should produce a denial record before any downstream layer can treat the handoff as executable. The local harness now rejects synthetic records that allow over-ceiling authority, omit effect receipts, or represent disclosure as read authority.
 
 The first boundary fixture also preserves the denial reason, so later planning cannot reinterpret absence of authority as missing context.
 
@@ -230,7 +230,7 @@ Governance issues ceilings, execution checks permissions, and evidence records a
 
 In a mature deployment, denial receipts matter as much as grants because missing authority must leave an inspectable trail.
 
-This authority type system is still an architectural target. Authority support remains at `argument` until missing-grant denials, ceiling-preservation checks, read/write separation fixtures, confused-deputy scenarios, and tool-call traces show that authority cannot expand silently by implication.
+This authority type system is still an architectural target. The synthetic harness exercises narrow transition-gate behavior, but authority support remains at `argument` until deployed denial paths, revocation propagation, runtime adapter enforcement, tool-call traces, and adversarial confused-deputy probes show that authority cannot expand silently by implication.
 
 ## Codex test plan
 
@@ -238,8 +238,9 @@ This authority type system is still an architectural target. Authority support r
 |---|---|---|
 | Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Authority ceiling finite-record proof | Check that a valid modeled transition cannot raise active authority unless a governance grant is present. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
-| Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | planned; not run |
-| Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | planned; not run |
+| Authority transition harness | Check synthetic allow, denial, escalation, missing receipt, permission-collapse, and confused-deputy records against authority-gate semantics. | implemented by `python3 scripts/validate_authority_transitions.py`; 3 valid and 3 expected-invalid fixtures passed locally |
+| Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | implemented for synthetic transition fixtures; deployed enforcement not run |
+| Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | implemented for expected-invalid synthetic fixture; runtime adapter probe not run |
 | Revocation propagation test | Check that expired or revoked grants fail later transition records, including delegated and replacement contexts. | planned; not run |
 
 ### Formalization hooks
@@ -249,7 +250,7 @@ This authority type system is still an architectural target. Authority support r
 | `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
 | `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, and that an over-ceiling execution request with no grant is not authorized by the model. They do not prove tool-wrapper enforcement, confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, and that an over-ceiling execution request with no grant is not authorized by the model. The synthetic authority harness exercises related fixture behavior outside Lean. These surfaces do not prove tool-wrapper enforcement, runtime confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
 
 ## Source crosswalk
 

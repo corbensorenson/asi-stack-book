@@ -590,9 +590,21 @@
           "minimal_implementation": "A small authority schema and transition table used by chapter examples and future Lean proofs.",
           "beyond_state_of_art": "System authority needs a type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do. In the mature authority architecture, authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes.",
           "codex_tests": [
-            "Authority ceiling preservation test",
-            "Permission separation test",
-            "Confused-deputy scenario"
+            {
+              "name": "Authority ceiling preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic authority transition harness"
+            },
+            {
+              "name": "Permission separation test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic authority transition harness"
+            },
+            {
+              "name": "Confused-deputy scenario",
+              "implementation_status": "implemented",
+              "result_status": "passes expected-invalid synthetic denial fixture; no runtime enforcement claim"
+            }
           ],
           "lean_module": "AsiStackProofs.Authority",
           "proof_targets": [
