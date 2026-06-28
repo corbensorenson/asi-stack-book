@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "planforge"
   - "viea"
@@ -132,6 +132,8 @@ The control layer compiles accepted work into strategic, tactical, and runtime p
 The planner should be allowed to say "I do not have enough context," "this dependency is cyclic," "this tool exceeds authority," or "this budget cannot satisfy the quality predicate." Those outputs are useful plan residuals, not failures to be hidden.
 
 Planning should preserve alternatives without pretending all alternatives are approved. A plan may list candidate routes, but only dispatchable nodes with satisfied constraints, authority, context, and verification plans should lower into typed jobs. The rest remain options, residuals, or review items.
+
+### Plan node lifecycle states
 
 Plan nodes should carry lifecycle states:
 

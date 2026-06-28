@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/planning-as-a-control-layer.qmd",
+  "operations": [
+    {
+      "id": "v1_0.planning_control.node_lifecycle_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Plan node lifecycle states"
+      },
+      "rationale": "Replace the plan-node lifecycle-state table with reader prose while preserving the canonical AI/research state matrix.",
+      "content_lines": [
+        "Plan nodes move through lifecycle states so a useful idea does not become execution authority by accident. Proposed nodes are decomposition candidates only. Nodes blocked on context need missing material or a narrower scope. Nodes blocked on authority need a new contract, approval route, or refusal. Nodes blocked on dependency wait for upstream work, and nodes blocked on verification need a success predicate before they can be dispatched.",
+        "",
+        "A dispatchable node is different from a plausible node: its constraints, context, authority, dependencies, and verification plan are all satisfied. Only then may it lower into a typed job. Once dispatched, it must preserve job parentage so later audit can trace the action back to the accepted command and plan node.",
+        "",
+        "Replanned nodes record what changed after feedback while keeping the original authority and stop-condition boundaries visible. Stopped nodes preserve the reason work ended, whether denial, budget exhaustion, risk, or a triggered stop condition. These states let the plan remain useful before execution and accountable after execution.",
+        "",
+        "The reader-level point is simple: the graph can contain many kinds of work, but only a narrow subset is authorized work."
+      ]
+    }
+  ]
+}

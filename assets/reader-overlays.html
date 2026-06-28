@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 18,
+  "operation_count": 19,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -173,6 +173,18 @@
       },
       "content": "A hive is also a memory topology. Artifact memory holds documents, code, diagrams, builds, logs, and release bundles; it needs provenance, backup policy, and a durable store. Episodic memory holds meetings, sessions, approvals, and task events; it needs scoped retention and owner-visible review. Semantic memory holds concepts, source notes, embeddings, and claim references; it should stay source-bound and revocable through VCM rather than becoming an unowned vector swamp.\n\nProcedural memory is different again. Repeated workflows compiled into tools need tests, preconditions, postconditions, retirement rules, and failure evidence. Device memory records benchmarks, thermal history, reliability, and dropout events so the scheduler can make better placement decisions, but that history must not expand a node's authority. Trust memory tracks safe or unsafe behavior by nodes, projects, workers, or providers; it should be evidence-linked, contestable, and decay-aware rather than permanent reputation folklore.\n\nFamily and project memory require the sharpest boundary. Family memory may include learning context, guardian decisions, shared household records, or sensitive events, so dignity, role scope, and minimal logging matter more than convenience. Project memory belongs to issues, pull requests, contracts, CI logs, releases, steward decisions, and artifact bundles; it should remain artifact-bound and auditable.\n\nTreating all of these memories as one store erases the point of a hive. VCM decides what context is needed and which source or taint labels travel with it. The hive decides where that context may exist, which device can materialize it, who can inspect it, and how it can be revoked.",
       "rationale": "Turn the memory topology table into reader prose so the human edition keeps the conceptual distinction without carrying dense matrix formatting."
+    },
+    {
+      "id": "v1_0.planning_control.node_lifecycle_reader_replace",
+      "target_file": "chapters/planning-as-a-control-layer.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Plan node lifecycle states",
+        "aliases": []
+      },
+      "content": "Plan nodes move through lifecycle states so a useful idea does not become execution authority by accident. Proposed nodes are decomposition candidates only. Nodes blocked on context need missing material or a narrower scope. Nodes blocked on authority need a new contract, approval route, or refusal. Nodes blocked on dependency wait for upstream work, and nodes blocked on verification need a success predicate before they can be dispatched.\n\nA dispatchable node is different from a plausible node: its constraints, context, authority, dependencies, and verification plan are all satisfied. Only then may it lower into a typed job. Once dispatched, it must preserve job parentage so later audit can trace the action back to the accepted command and plan node.\n\nReplanned nodes record what changed after feedback while keeping the original authority and stop-condition boundaries visible. Stopped nodes preserve the reason work ended, whether denial, budget exhaustion, risk, or a triggered stop condition. These states let the plan remain useful before execution and accountable after execution.\n\nThe reader-level point is simple: the graph can contain many kinds of work, but only a narrow subset is authorized work.",
+      "rationale": "Replace the plan-node lifecycle-state table with reader prose while preserving the canonical AI/research state matrix."
     },
     {
       "id": "v1_0.policy_optimization.method_families_reader_replace",
