@@ -10,12 +10,13 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "spot_checked": 54
+    "reviewed": 3,
+    "spot_checked": 51
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 35,
+    "no_immediate_action": 38,
     "none": 2,
     "reader_overlay_active": 20
   },
@@ -29,17 +30,17 @@
       "live_file": "chapters/asi-is-a-stack-not-a-model.qmd",
       "generated_reader_file": "build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd",
       "overlay_operation_count": 2,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the opening architecture contract. Existing overlays are accepted for the reader path; evidence boundary, stack map walkthrough, layer-boundary vocabulary, and handoff to efficiency remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -52,17 +53,17 @@
       "live_file": "chapters/the-efficient-asi-hypothesis.qmd",
       "generated_reader_file": "build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the efficiency-accounting chapter. Existing overlay is accepted for the reader path; cost/quality/residual boundary, route-ledger vocabulary, and handoff to authority remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -75,17 +76,17 @@
       "live_file": "chapters/system-boundaries-and-authority.qmd",
       "generated_reader_file": "build/reader_edition/chapters/system-boundaries-and-authority.qmd",
       "overlay_operation_count": 1,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "reader_overlay_active"
+        "reader_overlay_active",
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_opening_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the authority-boundary chapter. Existing overlay is accepted for the reader path; can/may separation, denial-as-success framing, permission-class prose, and support boundary remain intact.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
