@@ -77,7 +77,7 @@ GenesisCode adds a useful analogy from software: privileged effects and control 
 
 Unstructured prompts also make error recovery harder. If a result fails, the system cannot tell whether the failure came from a bad objective, missing context, invalid procedure, unsupported tool, weak verification, or ambiguous output contract. A semantic interface makes failures addressable instead of merely disappointing.
 
-Structured prompts can fail in the same way if they only move prose into boxes. A vague output field, inferred authority field, or missing failure behavior is not cured by being placed in YAML or JSON. The interface should require enough specificity that another layer can decide whether to dispatch, clarify, block, or create a residual.
+Structured prompts can fail in the same way if they only move prose into boxes. A vague output field, inferred authority field, or missing failure behavior is not cured by being placed in YAML or JSON. A semantic command interface has to be specific enough for another layer to decide whether to dispatch, clarify, block, or create a residual.
 
 ## Core Claim
 

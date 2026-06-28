@@ -174,7 +174,7 @@ An adequacy record also names the comparison mode:
 - human review
 - summary-only review
 
-Naming the mode prevents an adequacy state from becoming vague confidence. A claim may be locally checked by schema validation and still be unverified as an empirical claim. A proof-checker result may verify a finite predicate and still leave open whether the predicate models the real system. The interface should preserve that difference.
+Naming the mode prevents an adequacy state from becoming vague confidence. A claim may be locally checked by schema validation and still be unverified as an empirical claim. A proof-checker result may verify a finite predicate and still leave open whether the predicate models the real system. Mode-tagged adequacy preserves that difference.
 
 ## Invariants
 

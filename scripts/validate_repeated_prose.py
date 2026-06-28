@@ -58,6 +58,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "The interface is the",
     "The interface is a",
     "The interface is an",
+    "The interface should",
     "The interface should also record",
     "The interface should distinguish",
     "The interface should expose",

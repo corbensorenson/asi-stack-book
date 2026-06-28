@@ -168,7 +168,7 @@ Minimum fields:
 
 Alignment filters the contract before planning. Planning lowers accepted contracts into source plans, DAGs, semantic atoms, or typed jobs. Execution consumes only authorized job contracts. Evidence compares the delivered artifact against the acceptance criteria and unresolved ambiguities.
 
-The interface should preserve the raw request without letting it override the structured contract. The raw request is useful for empathy, intent recovery, and later review; the contract is what grants operational authority. That split lets the book support natural human expression while still giving planners, routers, tools, and report-first implementations an auditable boundary.
+Raw request preservation and contract authority stay split at the intent boundary. The raw request is useful for empathy, intent recovery, and later review; the contract is what grants operational authority. That split lets the book support natural human expression while still giving planners, routers, tools, and report-first implementations an auditable boundary.
 
 Lowering the contract emits an Intent Receipt when it produces:
 

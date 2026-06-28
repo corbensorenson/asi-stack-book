@@ -190,7 +190,7 @@ Routing Decision Record fields:
 
 Planning requests capabilities, not personalities. Governance bounds authority. Evidence updates readiness. Execution receives the selected specialist and the authority envelope. Artifact graphs receive the route decision so downstream claims can be traced back to the capability that produced them.
 
-The interface should include a route receipt. It records selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
+A route receipt is the routing interface artifact. It records selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
 
 The public schemas now make that receipt explicit. Specialist registry records carry owner, registry epoch, authority envelope, memory/tool lease policies, route limitations, and non-claims. Routing decision records carry rejected candidates, non-selection evidence, route receipt, granted and denied authority, context/tool leases, verifier requirement, budget, expiry, residual owner, and non-claims. These fields do not prove route quality; they preserve the information a future route-quality test needs.
 

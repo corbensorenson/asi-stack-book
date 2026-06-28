@@ -173,7 +173,7 @@ Minimum fields:
 
 Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
 
-The interface should produce context receipts. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
+Context receipts are the ABI's audit artifact. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
 
 The context-reference schema distinguishes lifecycle state, request validity, resolution validity, resolver policy, mount scope, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
 

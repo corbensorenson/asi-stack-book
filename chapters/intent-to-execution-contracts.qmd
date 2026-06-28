@@ -156,7 +156,7 @@ Minimum interface fields span the parent intent contract and the execution trace
 
 Intent contracts feed planning. Command contracts bind procedure and outputs. Plan graphs decompose the work. Typed jobs carry executable units. Authority transitions control side effects. Verification records decide whether the artifact satisfies the original intent.
 
-The interface should record authority deltas at every lowering step. Intent may authorize a goal; command contracts narrow procedure; plans allocate tasks; jobs request tools; runtime adapters ask for effects. Each step can preserve, narrow, expire, deny, or require approval. It cannot silently widen.
+Every lowering step records authority deltas. Intent may authorize a goal; command contracts narrow procedure; plans allocate tasks; jobs request tools; runtime adapters ask for effects. Each step can preserve, narrow, expire, deny, or require approval. It cannot silently widen.
 
 ## Invariants
 

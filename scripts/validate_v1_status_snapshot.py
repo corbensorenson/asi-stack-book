@@ -179,6 +179,7 @@ def main() -> None:
         "`The interface is a`",
         "`The interface is an`",
         "`The public schema now records`",
+        "`The interface should`",
         "`The interface should also record`",
         "`The interface should distinguish`",
         "`The interface should expose`",
