@@ -60,7 +60,7 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Implemented test/proof/check rows in Appendix E | 17 | Existing rows mostly validate fixtures, Lean build, or proof-manifest/audit mechanics. |
 | Reader spine | 54 chapters, minimum 1960 words | The generated reader source is structurally substantial. |
 | Human Reading Path bridges | 54, minimum 170 words | Every chapter has a human-entry bridge. |
-| Reader overlay operations | 0 active | The overlay layer is ready, but no semantic reader-only deltas are currently active. |
+| Reader overlay operations | 2 active | The first opening-chapter semantic overlay pilot is active; broader reader continuity review and chapter-by-chapter overlays remain open. |
 | Reader format readiness | HTML, EPUB, DOCX ready for attempts | The check confirms setup readiness, not produced reviewed artifacts. |
 | Audio script readiness | 59 script files generated for review | The check confirms script generation, not audio existence or review. |
 | GitHub Pages workflow | Latest checked runs passing | Public deployment mechanics are healthy. |

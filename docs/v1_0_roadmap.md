@@ -93,7 +93,7 @@ Acceptance criteria:
 
 ## Phase 2 - Reviewed Reader Manuscript Path
 
-Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; full 54-chapter human continuity review, reader overlays, rendered reader artifacts, and release records remain open.
+Status: started. The generated reader baseline was produced and recorded in `docs/reader_manuscript_review.md`; the first active semantic reader-overlay pilot is recorded in `docs/reader_overlay_pilot.md` with two opening-chapter operations. Full 54-chapter human continuity review, broader reader overlays, rendered reader artifacts, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
@@ -106,6 +106,12 @@ Tasks:
 5. Apply canonical prose edits when the improvement belongs in all views.
 6. Render reader HTML, EPUB, and DOCX when ready; attempt PDF only when local dependencies support it.
 7. Record actual render outcomes without claiming publication until review and release records exist.
+
+Initial overlay pilot:
+
+- `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json` carries two active reader-only section replacements for the opening chapter's `Problem` and `Summary` sections.
+- The pilot exercises the intended divergence path: Human view and generated reader editions receive calmer book prose, while AI view and canonical chapter source keep the original live/research scaffold and evidence surfaces.
+- The pilot is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, or runtime result.
 
 Reader-source divergence rule:
 

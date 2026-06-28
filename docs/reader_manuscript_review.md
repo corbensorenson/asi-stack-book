@@ -51,7 +51,7 @@ Representative generated chapters spot-read:
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
-- The current overlay manifest has zero active operations. That is a valid baseline, but it means no reader-only prose pacing, example insertion, or section-flow edits have been applied yet.
+- The original baseline had zero active overlay operations. That baseline has been superseded by the first opening-chapter reader-overlay pilot in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
 

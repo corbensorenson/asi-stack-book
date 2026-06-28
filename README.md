@@ -19,7 +19,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
-- `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book.
+- `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The first v1.0 pilot currently rewrites the opening chapter's `Problem` and `Summary` sections for Human view and generated reader editions only.
 - `scripts/sync_reader_overlay_asset.py` embeds active reader overlay operations in `assets/reader-overlays.html` so the live Human view and generated reader edition share the same section-delta source.
 - `scripts/validate_reader_overlays.py` checks that reader overlays are section-anchored, apply cleanly, and produce a generated delta report with operation digests and before/after review excerpts.
 - `scripts/validate_reader_spine.py` checks that every generated reader chapter keeps a substantial human-readable spine, required chapter sections, section-level prose/word-count floors, chapter-specific Handoff continuity, and no live-only scaffolding after stripping.
@@ -52,6 +52,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/v1_0_candidate_status.md](docs/v1_0_candidate_status.md) | Current v1.0 candidate snapshot, remaining evidence gaps, and release gate. |
 | [docs/v1_0_focus_audit.md](docs/v1_0_focus_audit.md) | Detailed current-state audit and prioritized work plan for moving from v1.0 candidate toward evidence-release and reader-release quality. |
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
+| [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Historical v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |

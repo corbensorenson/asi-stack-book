@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 2 reader overlay pilot
+
+- Added the first active semantic reader-overlay operations under `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json`, replacing the opening chapter's `Problem` and `Summary` sections in generated reader editions and live Human view only. Added `docs/reader_overlay_pilot.md`, regenerated `assets/reader-overlays.html`, updated the roadmap, status snapshot, focus audit, release-preparation review, reader-baseline note, repository map, and README, and refreshed `docs/source_readiness_report.md` so the Phase 6 external source notes appear in the readiness table as uncached source-note records. The canonical chapter source, AI view, core claim, support state, source mappings, proof targets, test status, reader-release status, ebook/document/PDF status, and audio status remain unchanged.
+
 ## 2026-06-28 - v1.0 Phase 8 release preparation review
 
 - Added `docs/v1_0_release_preparation_review.md` after running release-profile, reader-spine, reader evidence-boundary, reader-overlay, reader-edition check, reader-format check, and audio-script check commands. The review records what passed, what remains blocked, and why generated reader/audio workspaces are not release artifacts. Updated the roadmap and repository map while creating no tag, no reader release, no ebook/document/PDF artifact, no audiobook, no edition release record, and no support-state movement.

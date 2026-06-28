@@ -4,8 +4,31 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 0,
-  "operations": [],
+  "operation_count": 2,
+  "operations": [
+    {
+      "id": "v1_0.asi_stack_not_model.problem_reader_replace",
+      "target_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Problem"
+      },
+      "content": "The book begins by changing the unit of analysis. A future ASI system will not be made governable by pointing at the largest model in the room and asking it to be safe. The model matters, but it is only one part of a larger machine: the contracts that receive intent, the memory that carries context, the routes that choose capability, the tools that touch the world, and the records that decide what counts as evidence.\n\nThat distinction is practical. When an intelligent system acts, someone has to know what authorized the action, what source grounded the claim, what artifact crossed a boundary, and how the result could be challenged or rolled back. Those answers cannot live inside vague confidence about model quality. They need interfaces, ledgers, gates, and failure paths that remain visible even when the underlying model changes.\n\nSo the opening problem is not whether one model can become powerful enough. It is whether the whole arrangement can stay legible as power spreads across planning, memory, reasoning, execution, routing, compression, and self-improvement. The ASI Stack starts here because every later section depends on this move: treat intelligence as a governed architecture, then ask each layer what it owns and what it is not allowed to claim.",
+      "rationale": "Start the v1.0 human-reader overlay pilot by making the opening problem section read like book prose while leaving the canonical AI/research source unchanged."
+    },
+    {
+      "id": "v1_0.asi_stack_not_model.summary_reader_replace",
+      "target_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Summary"
+      },
+      "content": "The first claim of the book is modest but load-bearing: ASI should be read as a stack. A model can generate, compress, criticize, and propose, but a stack decides when those outputs become plans, claims, permissions, artifacts, or evidence. That separation is what makes later governance possible.\n\nOnce the system is a stack, capability has to answer to structure. A planning trace needs an authority boundary. A context packet needs an adequacy test. A routing decision needs residual accounting. A replacement needs rollback. Self-improvement has to return to governance instead of becoming an excuse to bypass it.\n\nThis does not prove that the architecture is implemented or safe. It gives the rest of the book a stable question to ask of every powerful mechanism: what does this part own, what evidence does it create, what can stop it, and how would the system know if it failed?",
+      "rationale": "Give the generated reader edition and live Human view a calmer closing summary for the opening chapter without adding new claims or evidence."
+    }
+  ],
   "non_claims": [
     "This embedded payload supports the live Human view only.",
     "It does not claim a reviewed reader edition, ebook, audio artifact, or support-state promotion."
