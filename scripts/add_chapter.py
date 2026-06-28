@@ -111,6 +111,7 @@ def main() -> None:
         "file": f"chapters/{chapter_id}.qmd",
         "status": "conceptual",
         "evidence_level": "argument",
+        "claim_label": "Design rationale",
         "source_ids": list(dict.fromkeys(args.source)),
         "problem": "No manifest problem statement declared yet.",
         "insufficient": "No manifest insufficiency statement declared yet.",

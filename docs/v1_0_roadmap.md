@@ -12,7 +12,7 @@ Use this file as the goal target for long-running improvement work. Use `book_st
 
 This roadmap reconciles:
 
-- the current repository state after commit `67911895`;
+- the current repository state during the 2026-06-28 extended v1.0 improvement run;
 - `docs/v1_0_focus_audit.md`;
 - the external Claude review supplied by Corben as planning input;
 - local verification of Claude's concrete claims against the current tree.
@@ -27,6 +27,7 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | Repeated `remains a target architecture, not a current-result claim` disclaimer | 0 after Phase 1 pass; 42 before pass | Phase 1 preserved the non-claim boundary with chapter-specific language. |
 | Repeated `keeps ... honest` construction | 0 after Phase 1 pass; 9 before pass by regex | Phase 1 replaced the reusable cadence with mechanism-specific prose and added a guard. |
 | Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition, then graduate toward a curated parallel reader manuscript when prose divergence becomes too large for overlays. |
+| Manifest claim/support defaults should not hide source-of-truth state | Resolved for the current chapter set: all 54 chapter records now declare explicit `claim_label` and `evidence_level` fields | Phase 0 guardrail. `scripts/add_chapter.py` creates explicit fields for new chapters, and `scripts/validate_book.py` rejects missing or invalid values. A broader `book_structure` schema remains optional future hardening. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
 ## What Is Already Resolved Or Not Actionable
@@ -50,6 +51,7 @@ Tasks:
 - Check the prior GitHub Pages run before each new commit.
 - Keep raw/private source exports out of the public repo.
 - Keep all 54 core claims at `argument` unless an accepted evidence transition justifies a narrower promotion.
+- Keep every manifest chapter record explicit about `claim_label` and `evidence_level`; missing or invalid values fail the book validator.
 - Do not report reader, ebook, document, PDF, or audio artifacts unless that exact artifact was generated, reviewed where required, and recorded.
 - Keep `book_structure.json` and `docs/book_outline.md` as source-of-truth surfaces.
 - Update `appendices/F_changelog.qmd` for meaningful roadmap, source, claim, proof, reader, release, or validation changes.
@@ -299,6 +301,7 @@ Tasks:
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
 - Continue table overflow checks after large source or claim-matrix growth; the current source-growth probe found no page-level overflow on Appendices A/C/H.
+- Optional broader `book_structure` JSON Schema if the manifest contract needs field-level validation beyond the current explicit claim-label/support-state guard.
 - Optional clearer `validate_live_human_view.py` error when `_site` is missing or stale.
 - Optional local `git gc` if loose-object warnings recur.
 

@@ -53,6 +53,7 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 |---|---:|---|
 | Manifest parts | 4 | The book has a stable four-part architecture. |
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
+| Manifest claim contract | 54 explicit `claim_label` fields and 54 explicit `evidence_level` fields | Chapter records no longer rely on scaffold defaults for claim classification or support state; `validate_book.py` rejects missing or invalid values. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
 | Chapter body words | 184,501 | The book is already full-length; the main risk is not shortness. |
 | Raw chapter-file words | 192,096 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
@@ -79,7 +80,7 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 
 ### Architecture And Dynamic Structure
 
-The project now has the right control plane. `book_structure.json` controls parts, chapter IDs, chapter order, source assignments, implementation horizons, and appendices. Quarto numbering is generated at render time. Chapter filenames are stable slugs. `scripts/add_chapter.py`, `scripts/add_part.py`, `scripts/chapter_adjacency_report.py`, `scripts/sync_scaffold.py`, and `scripts/validate_chapter_handoffs.py` make insertion, movement, and deletion feasible without manual renumbering.
+The project now has the right control plane. `book_structure.json` controls parts, chapter IDs, chapter order, source assignments, implementation horizons, claim labels, support states, and appendices. Quarto numbering is generated at render time. Chapter filenames are stable slugs. `scripts/add_chapter.py`, `scripts/add_part.py`, `scripts/chapter_adjacency_report.py`, `scripts/sync_scaffold.py`, `scripts/validate_book.py`, and `scripts/validate_chapter_handoffs.py` make insertion, movement, and deletion feasible without manual renumbering while requiring explicit claim-label and support-state fields.
 
 The outline is also doing real work. `docs/book_outline.md` matches the manifest order, titles, core claims, assigned sources, and Lean proof targets. That makes it a usable source of truth for future "write the whole book" goals.
 
@@ -151,7 +152,7 @@ These are not failures. They are the correct next frontier after a strong scaffo
 | P1 | Visual and diagram quality | Every chapter has a Mermaid diagram and walkthrough note; the first mobile screenshot pass improved dense Mermaid readability with contained diagram scrolling. | Validation proves coverage, not full explanatory excellence or e-reader artifact quality. | Continue manual diagram review during reader-release work, especially fast-generation and recursive-improvement split decisions. |
 | P1 | Public-site UX/accessibility | Pages deploy, Human view validates, and `docs/site_visual_phase7_review.md` now records both the first visual/mobile diagram pass and a source-growth browser probe over the landing page, dense chapters, and Appendices A/C/H with zero page-level overflow at inspected desktop/mobile sizes. | Site quality beyond mechanics still needs broader human inspection and should not be described as accessibility-certified. | Continue browser screenshots and manual notes for landing page, nav, mobile reading, table overflow after source growth, toggle clarity, and diagram legibility. |
 | P2 | Citation and bibliography polish | Source ownership is clear. | 59 Corben/local records still use stable source IDs rather than normalized citation metadata. | Citation-normalization pass where metadata is actually known, preserving unknowns honestly. |
-| P2 | Manifest schema hardening | Generators infer default claim labels and support states safely. | Many chapter manifest records rely on defaults instead of explicit `claim_label`. | Add a `book_structure` schema or explicit claim-label normalization after deciding the field contract. |
+| P2 | Manifest schema hardening | All 54 chapter manifest records now declare explicit `claim_label` and `evidence_level` fields, `scripts/add_chapter.py` creates those fields for new chapters, and `scripts/validate_book.py` rejects missing or invalid claim labels and support states. | A separate whole-file `book_structure` JSON Schema does not yet exist; validation remains script-level for the wider manifest contract. | Add a focused `book_structure` schema only when broader field-level validation needs it; keep the current explicit claim-label/support-state guard in the publication gate. |
 | P2 | Audio release path | Audio script generation check passes. | No reviewed audio script or audio artifacts exist. | Only begin after reader manuscript review; produce reviewed spoken-treatment notes before audio generation. |
 
 ## Recommended Work Packages

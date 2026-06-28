@@ -236,6 +236,8 @@ When adding a new AI paper or artifact, use [docs/living_update_workflow.md](doc
 
 Claims use both a claim label and a support state. Do not mark a claim as `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` unless the source ingestion, prototype review, proof check, or test execution actually happened and is recorded. Conversation-mined material can guide author intent and lineage, but it is not external evidence.
 
+Every chapter record in `book_structure.json` must explicitly declare both `claim_label` and `evidence_level`. `scripts/add_chapter.py` supplies conservative defaults for new chapters, and `python3 scripts/validate_book.py` rejects missing or invalid values.
+
 ## Proof Discipline
 
 `docs/book_outline.md` is the source of truth for Lean proof scope. Every chapter has `lean:*` proof tags under `Lean proof targets`, plus source queues that tell future writing runs what to load first.

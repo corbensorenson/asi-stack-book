@@ -202,6 +202,16 @@ def validate_structure(source_ids: set[str]) -> list[dict]:
         files.add(file_path)
         if not (ROOT / file_path).exists():
             missing_files.append(file_path)
+        claim_label = chapter.get("claim_label")
+        if not isinstance(claim_label, str) or not claim_label.strip():
+            fail(f"{chapter_id}: missing explicit claim_label in book_structure.json.")
+        if claim_label not in ALLOWED_CLAIM_LABELS:
+            fail(f"{chapter_id}: invalid claim_label {claim_label!r}.")
+        evidence_level = chapter.get("evidence_level")
+        if not isinstance(evidence_level, str) or not evidence_level.strip():
+            fail(f"{chapter_id}: missing explicit evidence_level in book_structure.json.")
+        if evidence_level not in ALLOWED_SUPPORT_STATES:
+            fail(f"{chapter_id}: invalid evidence_level {evidence_level!r}.")
         for source_id in chapter.get("source_ids", []):
             if source_id not in source_ids:
                 unknown_sources.append((chapter_id, source_id))

@@ -129,6 +129,7 @@ def main() -> None:
     source_ids = {str(record.get("id", "")) for record in source_records}
     missing_notes = sorted(source_ids - source_note_ids)
     evidence_counts = Counter(str(chapter.get("evidence_level", "")) for chapter in chapters)
+    claim_label_counts = Counter(str(chapter.get("claim_label", "")) for chapter in chapters)
     schema_count = len(list((ROOT / "schemas").glob("*.schema.json")))
     fixture_count = len(list((ROOT / "tests" / "fixtures" / "protocol_records").glob("*.json")))
     release_count = len(list((ROOT / "release_records").glob("*.json")))
@@ -146,6 +147,7 @@ def main() -> None:
 
     expected_fragments = [
         f"| Book structure | {len(structure.get('parts', []))} parts, {len(chapters)} manifest-driven chapters, {len(appendices)} appendices |",
+        f"| Manifest claim contract | {len(chapters)} chapters explicitly declare `claim_label` and `evidence_level`; current distribution is {claim_label_counts.get('Design rationale', 0)} `Design rationale` labels and {evidence_counts.get('argument', 0)} `argument` support states; missing or invalid values fail validation |",
         f"| Manuscript scale | {chapter_file_count} chapter files; {body_words:,} chapter words excluding YAML front matter; {raw_words:,} raw chapter-file words including metadata and live scaffolding |",
         f"| Source inventory | {len(source_records)} public-safe source records, each with a matching public source note;",
         "| Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row |",

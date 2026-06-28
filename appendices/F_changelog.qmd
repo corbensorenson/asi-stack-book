@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 manifest claim-label hardening
+
+- Added explicit `claim_label` fields to all 54 chapter records in `book_structure.json`, kept all labels at `Design rationale`, and kept all support states at `argument`. Updated `scripts/add_chapter.py` so new manifest chapters declare a conservative claim label by default, and tightened `scripts/validate_book.py` so missing or invalid `claim_label` and `evidence_level` values fail validation. Updated the v1.0 roadmap, focus audit, status surface, README, and repository map to record the manifest contract. This is a manifest-validation hardening pass only; it does not promote support states, change core claim text, add source-derived evidence, add proof/test/benchmark/runtime results, create reader artifacts, or create release records.
+
 ## 2026-06-28 - v1.0 Benchmark Ratchets evidence-transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` as the eighth accepted no-change evidence-transition record. The review records that exact source mappings, benchmark ratchet/policy/steward schemas, the synthetic benchmark anti-Goodhart harness, and external benchmark-science literature support regression-preserving benchmark discipline but do not justify moving `benchmark-ratchets-and-anti-goodhart-evidence.core` above `argument`. Updated the evidence-transition pilot summary, pilot README, v1.0 roadmap/status/focus surfaces, repository map, and status guard. This is not a support-state promotion, benchmark run, hidden-holdout validation, contamination audit, mutation or transfer result, policy-training result, steward-agent release-safety result, live model-quality result, independent review, or source-derived evidence promotion.
